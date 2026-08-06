@@ -1,0 +1,23 @@
+{
+ "captured_at": "2026-08-04T16:10:45Z",
+ "hf_metadata": {
+  "sha": "fa3598c048dd0eeababeb002336f7d7847ff25b8"
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "evol1213/netspace",
+ "repo_type": "spaces",
+ "sha": "fa3598c048dd0eeababeb002336f7d7847ff25b8",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/evol1213/netspace"
+}

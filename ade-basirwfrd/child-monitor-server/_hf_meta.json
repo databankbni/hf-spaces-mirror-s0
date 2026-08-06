@@ -1,0 +1,407 @@
+{
+ "captured_at": "2026-08-04T15:34:49Z",
+ "hf_metadata": {
+  "_id": "69a610e1ae4e7dd37ae18827",
+  "author": "ade-basirwfrd",
+  "cardData": {
+   "colorFrom": "blue",
+   "colorTo": "green",
+   "emoji": "🌖",
+   "license": "mit",
+   "pinned": false,
+   "sdk": "docker",
+   "title": "Child Monitor Server"
+  },
+  "createdAt": "2026-03-02T22:36:17.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://ade-basirwfrd-child-monitor-server.hf.space",
+  "id": "ade-basirwfrd/child-monitor-server",
+  "lastModified": "2026-08-02T05:55:13.000Z",
+  "likes": 0,
+  "private": false,
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "ade-basirwfrd-child-monitor-server.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": null,
+    "requested": "cpu-basic"
+   },
+   "replicas": {
+    "requested": 1
+   },
+   "stage": "SLEEPING"
+  },
+  "sdk": "docker",
+  "sha": "8cdd7b4be491fcfb28d7fdedc1d8604587e530e4",
+  "siblings": [
+   {
+    "rfilename": ".github/workflows/supabase-keepalive.yml"
+   },
+   {
+    "rfilename": ".gitignore"
+   },
+   {
+    "rfilename": "Blueprint/APPLICATION_BLUEPRINT.md"
+   },
+   {
+    "rfilename": "Blueprint/DEVICE_OWNER_ENROLLMENT.md"
+   },
+   {
+    "rfilename": "Blueprint/MI_TRANSFER_SAFE_WITH_DEVICE_OWNER.md"
+   },
+   {
+    "rfilename": "Blueprint/README.md"
+   },
+   {
+    "rfilename": "Blueprint/blueprint 2.md"
+   },
+   {
+    "rfilename": "Blueprint/blueprint.md"
+   },
+   {
+    "rfilename": "Dockerfile"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "android/ChildMonitor/app/build.gradle"
+   },
+   {
+    "rfilename": "android/ChildMonitor/app/google-services.json"
+   },
+   {
+    "rfilename": "android/ChildMonitor/app/proguard-rules.pro"
+   },
+   {
+    "rfilename": "android/ChildMonitor/app/src/debug/AndroidManifest.xml"
+   },
+   {
+    "rfilename": "android/ChildMonitor/app/src/main/AndroidManifest.xml"
+   },
+   {
+    "rfilename": "android/ChildMonitor/app/src/main/java/com/example/childmonitor/AccessibilityGuard.java"
+   },
+   {
+    "rfilename": "android/ChildMonitor/app/src/main/java/com/example/childmonitor/AdminReceiver.java"
+   },
+   {
+    "rfilename": "android/ChildMonitor/app/src/main/java/com/example/childmonitor/ApiService.java"
+   },
+   {
+    "rfilename": "android/ChildMonitor/app/src/main/java/com/example/childmonitor/AppDatabase.java"
+   },
+   {
+    "rfilename": "android/ChildMonitor/app/src/main/java/com/example/childmonitor/BlocklistResponse.java"
+   },
+   {
+    "rfilename": "android/ChildMonitor/app/src/main/java/com/example/childmonitor/BootReceiver.java"
+   },
+   {
+    "rfilename": "android/ChildMonitor/app/src/main/java/com/example/childmonitor/DeviceOwnerController.java"
+   },
+   {
+    "rfilename": "android/ChildMonitor/app/src/main/java/com/example/childmonitor/ErrorLogRequest.java"
+   },
+   {
+    "rfilename": "android/ChildMonitor/app/src/main/java/com/example/childmonitor/ErrorReporter.java"
+   },
+   {
+    "rfilename": "android/ChildMonitor/app/src/main/java/com/example/childmonitor/HeartbeatRequest.java"
+   },
+   {
+    "rfilename": "android/ChildMonitor/app/src/main/java/com/example/childmonitor/JudiFilter.java"
+   },
+   {
+    "rfilename": "android/ChildMonitor/app/src/main/java/com/example/childmonitor/LogDao.java"
+   },
+   {
+    "rfilename": "android/ChildMonitor/app/src/main/java/com/example/childmonitor/LogData.java"
+   },
+   {
+    "rfilename": "android/ChildMonitor/app/src/main/java/com/example/childmonitor/LogEntry.java"
+   },
+   {
+    "rfilename": "android/ChildMonitor/app/src/main/java/com/example/childmonitor/LogSenderWorker.java"
+   },
+   {
+    "rfilename": "android/ChildMonitor/app/src/main/java/com/example/childmonitor/MainService.java"
+   },
+   {
+    "rfilename": "android/ChildMonitor/app/src/main/java/com/example/childmonitor/MyFirebaseMessagingService.java"
+   },
+   {
+    "rfilename": "android/ChildMonitor/app/src/main/java/com/example/childmonitor/MyVpnService.java"
+   },
+   {
+    "rfilename": "android/ChildMonitor/app/src/main/java/com/example/childmonitor/OemPowerSetupHelper.java"
+   },
+   {
+    "rfilename": "android/ChildMonitor/app/src/main/java/com/example/childmonitor/PublicConfigResponse.java"
+   },
+   {
+    "rfilename": "android/ChildMonitor/app/src/main/java/com/example/childmonitor/QuizActivity.java"
+   },
+   {
+    "rfilename": "android/ChildMonitor/app/src/main/java/com/example/childmonitor/RegisterRequest.java"
+   },
+   {
+    "rfilename": "android/ChildMonitor/app/src/main/java/com/example/childmonitor/RegistrationWorker.java"
+   },
+   {
+    "rfilename": "android/ChildMonitor/app/src/main/java/com/example/childmonitor/RetrofitClient.java"
+   },
+   {
+    "rfilename": "android/ChildMonitor/app/src/main/java/com/example/childmonitor/SecretCodeReceiver.java"
+   },
+   {
+    "rfilename": "android/ChildMonitor/app/src/main/java/com/example/childmonitor/ServiceAlertRequest.java"
+   },
+   {
+    "rfilename": "android/ChildMonitor/app/src/main/java/com/example/childmonitor/SetupActivity.java"
+   },
+   {
+    "rfilename": "android/ChildMonitor/app/src/main/java/com/example/childmonitor/URLMonitoringService.java"
+   },
+   {
+    "rfilename": "android/ChildMonitor/app/src/main/java/com/example/childmonitor/UsageStatsMonitor.java"
+   },
+   {
+    "rfilename": "android/ChildMonitor/app/src/main/java/com/example/childmonitor/VpnStatus.java"
+   },
+   {
+    "rfilename": "android/ChildMonitor/app/src/main/res/layout/activity_quiz.xml"
+   },
+   {
+    "rfilename": "android/ChildMonitor/app/src/main/res/layout/activity_setup.xml"
+   },
+   {
+    "rfilename": "android/ChildMonitor/app/src/main/res/mipmap-hdpi/ic_launcher.png"
+   },
+   {
+    "rfilename": "android/ChildMonitor/app/src/main/res/mipmap-mdpi/ic_launcher.png"
+   },
+   {
+    "rfilename": "android/ChildMonitor/app/src/main/res/mipmap-xhdpi/ic_launcher.png"
+   },
+   {
+    "rfilename": "android/ChildMonitor/app/src/main/res/mipmap-xxhdpi/ic_launcher.png"
+   },
+   {
+    "rfilename": "android/ChildMonitor/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
+   },
+   {
+    "rfilename": "android/ChildMonitor/app/src/main/res/values/strings.xml"
+   },
+   {
+    "rfilename": "android/ChildMonitor/app/src/main/res/values/styles.xml"
+   },
+   {
+    "rfilename": "android/ChildMonitor/app/src/main/res/xml/accessibility_service_config.xml"
+   },
+   {
+    "rfilename": "android/ChildMonitor/app/src/main/res/xml/device_admin_receiver.xml"
+   },
+   {
+    "rfilename": "android/ChildMonitor/build.gradle"
+   },
+   {
+    "rfilename": "android/ChildMonitor/gradle.properties"
+   },
+   {
+    "rfilename": "android/ChildMonitor/gradle.properties.example"
+   },
+   {
+    "rfilename": "android/ChildMonitor/gradle/wrapper/gradle-wrapper.jar"
+   },
+   {
+    "rfilename": "android/ChildMonitor/gradle/wrapper/gradle-wrapper.properties"
+   },
+   {
+    "rfilename": "android/ChildMonitor/gradlew"
+   },
+   {
+    "rfilename": "android/ChildMonitor/settings.gradle"
+   },
+   {
+    "rfilename": "android/ParentMonitor/app/build.gradle"
+   },
+   {
+    "rfilename": "android/ParentMonitor/app/src/main/AndroidManifest.xml"
+   },
+   {
+    "rfilename": "android/ParentMonitor/app/src/main/java/com/example/parentmonitor/MainActivity.java"
+   },
+   {
+    "rfilename": "android/ParentMonitor/app/src/main/java/com/example/parentmonitor/SetupActivity.java"
+   },
+   {
+    "rfilename": "android/ParentMonitor/app/src/main/res/layout/activity_main.xml"
+   },
+   {
+    "rfilename": "android/ParentMonitor/app/src/main/res/layout/activity_setup.xml"
+   },
+   {
+    "rfilename": "android/ParentMonitor/app/src/main/res/mipmap-hdpi/ic_launcher.png"
+   },
+   {
+    "rfilename": "android/ParentMonitor/app/src/main/res/mipmap-mdpi/ic_launcher.png"
+   },
+   {
+    "rfilename": "android/ParentMonitor/app/src/main/res/mipmap-xhdpi/ic_launcher.png"
+   },
+   {
+    "rfilename": "android/ParentMonitor/app/src/main/res/mipmap-xxhdpi/ic_launcher.png"
+   },
+   {
+    "rfilename": "android/ParentMonitor/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
+   },
+   {
+    "rfilename": "android/ParentMonitor/app/src/main/res/values/strings.xml"
+   },
+   {
+    "rfilename": "android/ParentMonitor/app/src/main/res/values/styles.xml"
+   },
+   {
+    "rfilename": "android/ParentMonitor/build.gradle"
+   },
+   {
+    "rfilename": "android/ParentMonitor/gradle.properties"
+   },
+   {
+    "rfilename": "android/ParentMonitor/gradle/wrapper/gradle-wrapper.jar"
+   },
+   {
+    "rfilename": "android/ParentMonitor/gradle/wrapper/gradle-wrapper.properties"
+   },
+   {
+    "rfilename": "android/ParentMonitor/gradlew"
+   },
+   {
+    "rfilename": "android/ParentMonitor/settings.gradle"
+   },
+   {
+    "rfilename": "backend/.env.example"
+   },
+   {
+    "rfilename": "backend/.gitignore"
+   },
+   {
+    "rfilename": "backend/DEPLOY_ALWAYS_ON.md"
+   },
+   {
+    "rfilename": "backend/check_all.js"
+   },
+   {
+    "rfilename": "backend/check_errors.js"
+   },
+   {
+    "rfilename": "backend/config/env.js"
+   },
+   {
+    "rfilename": "backend/find_active.js"
+   },
+   {
+    "rfilename": "backend/index.js"
+   },
+   {
+    "rfilename": "backend/judi-domains.json"
+   },
+   {
+    "rfilename": "backend/models/db.js"
+   },
+   {
+    "rfilename": "backend/package-lock.json"
+   },
+   {
+    "rfilename": "backend/package.json"
+   },
+   {
+    "rfilename": "backend/public/index.html"
+   },
+   {
+    "rfilename": "backend/public/manifest.json"
+   },
+   {
+    "rfilename": "backend/public/open-child-monitor-setup.html"
+   },
+   {
+    "rfilename": "backend/public/open-child-setup.html"
+   },
+   {
+    "rfilename": "backend/routes/api.js"
+   },
+   {
+    "rfilename": "backend/services/blockActionCooldown.js"
+   },
+   {
+    "rfilename": "backend/services/emailNotifier.js"
+   },
+   {
+    "rfilename": "backend/services/fcm.js"
+   },
+   {
+    "rfilename": "backend/services/staleOfflineCooldown.js"
+   },
+   {
+    "rfilename": "backend/sql/devices_health_columns.sql"
+   },
+   {
+    "rfilename": "backend/sql/schema_bootstrap.sql"
+   },
+   {
+    "rfilename": "backend/utils/judiFilter.js"
+   },
+   {
+    "rfilename": "backend/wake_up.js"
+   },
+   {
+    "rfilename": "fly.toml"
+   },
+   {
+    "rfilename": "package.json"
+   },
+   {
+    "rfilename": "railway.toml"
+   },
+   {
+    "rfilename": "scripts/cleanup-duplicate-devices.md"
+   },
+   {
+    "rfilename": "scripts/enroll-device-owner.sh"
+   },
+   {
+    "rfilename": "scripts/sync-judi-blocklist.js"
+   }
+  ],
+  "subdomain": "ade-basirwfrd-child-monitor-server",
+  "tags": [
+   "docker",
+   "region:us"
+  ],
+  "usedStorage": 0
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitignore",
+   "stored_as": "_gitignore"
+  },
+  {
+   "original": "backend/.gitignore",
+   "stored_as": "backend/_gitignore"
+  }
+ ],
+ "renamed_gitattributes": [],
+ "repo_id": "ade-basirwfrd/child-monitor-server",
+ "repo_type": "spaces",
+ "sha": "8cdd7b4be491fcfb28d7fdedc1d8604587e530e4",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/ade-basirwfrd/child-monitor-server"
+}

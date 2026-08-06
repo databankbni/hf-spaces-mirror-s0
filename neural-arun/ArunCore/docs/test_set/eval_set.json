@@ -1,0 +1,212 @@
+[
+  {
+    "id": "eval_001",
+    "question": "Who is Arun Yadav and what does he do?",
+    "category": "identity",
+    "expected_source": "static/public_profile.md",
+    "expected_topics": ["Freelance AI Systems Engineer", "RAG Pipelines", "Autonomous Agents", "Data Scrapers"]
+  },
+  {
+    "id": "eval_002",
+    "question": "What is Arun's primary tech stack?",
+    "category": "identity",
+    "expected_source": "static/public_profile.md",
+    "expected_topics": ["Python", "FastAPI", "LangChain", "ChromaDB", "Playwright", "Asyncio"]
+  },
+  {
+    "id": "eval_003",
+    "question": "What are Arun's immediate career goals?",
+    "category": "identity_goals",
+    "expected_source": "static/public_profile.md",
+    "expected_topics": ["Freelance Consulting", "Solving High-ROI bottlenecks", "Building scalable AI systems"]
+  },
+  {
+    "id": "eval_004",
+    "question": "Did Arun go to college for Computer Science?",
+    "category": "personal_background",
+    "expected_source": "raw/personal_background.md",
+    "expected_topics": ["Non-linear path", "NEET/JEE background", "B.Sc Degree", "Self-taught"]
+  },
+  {
+    "id": "eval_005",
+    "question": "How did Arun learn to code initially?",
+    "category": "personal_background",
+    "expected_source": "raw/personal_background.md",
+    "expected_topics": ["PyDroid 3", "Smartphone", "Active building vs passive tutorials"]
+  },
+  {
+    "id": "eval_006",
+    "question": "How does Arun feel about theoretical, bookish learning?",
+    "category": "personal_philosophy",
+    "expected_source": "raw/personal_background.md",
+    "expected_topics": ["Creates friction", "Accelerated independent learning", "Build-first execution"]
+  },
+  {
+    "id": "eval_007",
+    "question": "What is the Legal RAG System?",
+    "category": "project_overview_legal",
+    "expected_source": "github/legal_RAG_system/readme.md",
+    "expected_topics": ["Indian legal documents", "IPC", "Constitution", "Exact-reference routing"]
+  },
+  {
+    "id": "eval_008",
+    "question": "How does the Legal RAG System handle document chunking?",
+    "category": "project_tech_legal",
+    "expected_source": "github/legal_RAG_system/architecture.md",
+    "expected_topics": ["Document-aware structural chunking", "Statutes by section", "Constitution by article", "Judgments by paragraph"]
+  },
+  {
+    "id": "eval_009",
+    "question": "Why didn't Arun use generic text splitting for the Legal RAG project?",
+    "category": "project_decisions_legal",
+    "expected_source": "github/legal_RAG_system/decisions.md",
+    "expected_topics": ["Destroys structural boundary", "Context loss", "Section integrity"]
+  },
+  {
+    "id": "eval_010",
+    "question": "Why does the Legal RAG System use a local ChromaDB instead of Pinecone?",
+    "category": "project_decisions_legal",
+    "expected_source": "github/legal_RAG_system/decisions.md",
+    "expected_topics": ["Data privacy", "No cloud exposure for legal docs", "Local vector DB"]
+  },
+  {
+    "id": "eval_011",
+    "question": "What is the 99acres Real Estate Scraper Suite?",
+    "category": "project_overview_scraper",
+    "expected_source": "github/real_state_listing_scraper/readme.md",
+    "expected_topics": ["3-track scraping suite", "Cloudflare bypass", "Structured CSV export"]
+  },
+  {
+    "id": "eval_012",
+    "question": "Why does Arun use ScraperAPI instead of building a custom proxy rotation?",
+    "category": "project_decisions_scraper",
+    "expected_source": "github/real_state_listing_scraper/decisions.md",
+    "expected_topics": ["Cloudflare 403 Forbidden", "Built-in CAPTCHA solving", "Unreliable free proxies"]
+  },
+  {
+    "id": "eval_013",
+    "question": "In scraping, what is semantic anchoring and why does Arun use it?",
+    "category": "project_decisions_scraper",
+    "expected_source": "github/real_state_listing_scraper/decisions.md",
+    "expected_topics": ["Anchoring on ₹ symbol", "Obfuscated CSS classes", "Robustness against UI changes"]
+  },
+  {
+    "id": "eval_014",
+    "question": "How does Arun prevent his scraper from being blocked when sending hundreds of requests?",
+    "category": "project_tech_scraper",
+    "expected_source": "github/real_state_listing_scraper/decisions.md",
+    "expected_topics": ["asyncio.Semaphore", "Throttling", "Concurrency control"]
+  },
+  {
+    "id": "eval_015",
+    "question": "What is the 'personal_ai_agent' project?",
+    "category": "project_overview_agent",
+    "expected_source": "github/personal_ai_agent/readme.md",
+    "expected_topics": ["Digital twin", "Tool-calling loop", "Telegram lead capture"]
+  },
+  {
+    "id": "eval_016",
+    "question": "How does Arun's personal AI agent handle rate limit failures?",
+    "category": "project_tech_agent",
+    "expected_source": "github/personal_ai_agent/decisions.md",
+    "expected_topics": ["Multi-model fallback chain", "Groq models", "Graceful degradation"]
+  },
+  {
+    "id": "eval_017",
+    "question": "Why is the context for the personal AI agent injected from a plain text file?",
+    "category": "project_decisions_agent",
+    "expected_source": "github/personal_ai_agent/decisions.md",
+    "expected_topics": ["Flexibility", "No code redeployment needed", "Separation of identity data"]
+  },
+  {
+    "id": "eval_018",
+    "question": "What happens if Arun's personal CLI agent cannot find the answer in the retrieved legal text?",
+    "category": "project_tech_legal",
+    "expected_source": "github/legal_RAG_system/code_summaries.json",
+    "expected_topics": ["Graceful fallback", "Returns 'I do not have information regarding this'", "Zero hallucination"]
+  },
+  {
+    "id": "eval_019",
+    "question": "What are some of Arun's long-term visions?",
+    "category": "identity_goals",
+    "expected_source": "static/public_profile.md",
+    "expected_topics": ["Healthcare", "Education", "Real Estate", "Democratizing value"]
+  },
+  {
+    "id": "eval_020",
+    "question": "What does Arun's 'File Organiser' script do?",
+    "category": "project_tier2",
+    "expected_source": "github/neural_arun_labs/readme.md",
+    "expected_topics": ["Auto-sorts into PDFs, Videos, Images, Others", "Daily-use utility"]
+  },
+  {
+    "id": "eval_021",
+    "question": "What did Arun learn from building the AI Snake game?",
+    "category": "linkedin_posts",
+    "expected_source": "linkedin/posts.md",
+    "expected_topics": ["State management", "Game loop", "Human-in-the-loop UX"]
+  },
+  {
+    "id": "eval_022",
+    "question": "What is the 'Web Wizard' repository?",
+    "category": "project_tier2",
+    "expected_source": "github/web_wizard/readme.md",
+    "expected_topics": ["Playwright curriculum", "Advanced web automation", "Distributed crawler systems"]
+  },
+  {
+    "id": "eval_023",
+    "question": "What is Arun's opinion on building 'AI Wrappers'?",
+    "category": "personal_philosophy",
+    "expected_source": "linkedin/profile_summary.md",
+    "expected_topics": ["Avoids brittle wrappers", "Engineers robust solutions", "Systems engineering"]
+  },
+  {
+    "id": "eval_024",
+    "question": "How did Arun extract anomalies from the UPPCS examination results?",
+    "category": "project_overview_anomaly",
+    "expected_source": "github/result_anomaly/readme.md",
+    "expected_topics": ["Regex extraction", "Roll numbers", "Series-prefix grouping"]
+  },
+  {
+    "id": "eval_025",
+    "question": "Why didn't Arun use OCR for the UPPCS result anomaly project?",
+    "category": "project_decisions_anomaly",
+    "expected_source": "github/result_anomaly/decisions.md",
+    "expected_topics": ["pdfplumber", "Native text extraction", "High accuracy over OCR"]
+  },
+  {
+    "id": "eval_026",
+    "question": "What framework is Arun currently learning for multi-agent workflows?",
+    "category": "identity_learning",
+    "expected_source": "static/public_profile.md",
+    "expected_topics": ["LangGraph", "CrewAI", "AutoGen", "MCP"]
+  },
+  {
+    "id": "eval_027",
+    "question": "What is Arun's work environment like when he's deeply focused?",
+    "category": "personal_background",
+    "expected_source": "raw/personal_background.md",
+    "expected_topics": ["Strictly minimal", "Laptop, keyboard, notebook"]
+  },
+  {
+    "id": "eval_028",
+    "question": "How much money does Arun make?",
+    "category": "negative_test",
+    "expected_source": "static/rules_of_engagement.md",
+    "expected_topics": ["Polite refusal", "Out of bounds", "No hallucination"]
+  },
+  {
+    "id": "eval_029",
+    "question": "Where does Arun live exactly?",
+    "category": "negative_test",
+    "expected_source": "static/rules_of_engagement.md",
+    "expected_topics": ["Prayagraj, UP, India", "No exact address provided"]
+  },
+  {
+    "id": "eval_030",
+    "question": "Can Arun set up a full-stack Next.js app for me?",
+    "category": "negative_test_tech",
+    "expected_source": "static/public_profile.md",
+    "expected_topics": ["Backend focused", "Python, FastAPI", "AI integrations", "Does not do frontend/Next.js currently"]
+  }
+]

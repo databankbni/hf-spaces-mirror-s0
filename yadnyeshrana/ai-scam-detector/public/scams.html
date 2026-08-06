@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Scam Threat Registry & Database | AI Scam Detector</title>
+  <meta name="description" content="Search our live registry of verified phishing, SMS scams, electricity bill fraud, and banking impersonation templates analyzed by AI.">
+  <meta name="robots" content="index, follow">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  
+  <style>
+    .scams-hero {
+      padding: 140px 0 60px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .scams-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    
+    .search-hud {
+      background: rgba(15, 22, 36, 0.7);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 30px;
+      margin-bottom: 40px;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .search-hud::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+    }
+    
+    .search-box-wrapper {
+      position: relative;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    
+    .search-input {
+      flex: 1;
+      min-width: 280px;
+      background: rgba(13, 17, 23, 0.8);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 16px 20px;
+      color: var(--text-color);
+      font-size: 1.1rem;
+      font-family: inherit;
+      transition: all 0.3s ease;
+    }
+    
+    .search-input:focus {
+      outline: none;
+      border-color: var(--accent-color);
+      box-shadow: 0 0 12px rgba(16, 185, 129, 0.2);
+    }
+    
+    .search-category-select {
+      background: rgba(13, 17, 23, 0.8);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 16px 20px;
+      color: var(--text-color);
+      font-size: 1rem;
+      font-family: inherit;
+      cursor: pointer;
+      min-width: 180px;
+      transition: all 0.3s ease;
+    }
+    
+    .search-category-select:focus {
+      outline: none;
+      border-color: var(--accent-color);
+    }
+    
+    .scams-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+      gap: 24px;
+      margin-bottom: 80px;
+    }
+    
+    .scam-card {
+      background: rgba(22, 27, 34, 0.4);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      backdrop-filter: blur(8px);
+      position: relative;
+    }
+    
+    .scam-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(239, 68, 68, 0.4);
+      box-shadow: 0 10px 30px rgba(239, 68, 68, 0.08);
+      background: rgba(22, 27, 34, 0.7);
+    }
+    
+    .scam-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+    
+    .scam-badge {
+      background: rgba(239, 68, 68, 0.1);
+      border: 1px solid rgba(239, 68, 68, 0.3);
+      color: #ef4444;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    
+    .scam-badge.safe {
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      color: #10b981;
+    }
+    
+    .scam-type-label {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      text-transform: capitalize;
+    }
+    
+    .scam-message-box {
+      background: rgba(13, 17, 23, 0.9);
+      border-left: 3px solid #ef4444;
+      padding: 12px 16px;
+      border-radius: 4px;
+      font-family: 'Space Grotesk', monospace;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      margin-bottom: 18px;
+      line-height: 1.5;
+      max-height: 120px;
+      overflow-y: auto;
+      white-space: pre-wrap;
+    }
+    
+    .scam-explanation {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      color: var(--text-color);
+      margin-bottom: 20px;
+    }
+    
+    .scam-card-footer {
+      border-top: 1px solid var(--border-color);
+      padding-top: 16px;
+      margin-top: auto;
+    }
+    
+    .scam-cta-btn {
+      width: 100%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      text-decoration: none;
+    }
+    
+    .loading-spinner {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 60px 0;
+      color: var(--text-secondary);
+    }
+    
+    .spinner {
+      border: 3px solid rgba(16, 185, 129, 0.1);
+      border-top: 3px solid var(--accent-color);
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      animation: spin 1s linear infinite;
+      margin: 0 auto 16px;
+    }
+    
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    
+    .no-results {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 60px 24px;
+      border: 1px dashed var(--border-color);
+      border-radius: 12px;
+      background: rgba(15, 22, 36, 0.3);
+    }
+  </style>
+</head>
+<body>
+  <!-- Custom Cyber Cursor -->
+  <div class="custom-cursor-dot"></div>
+  <div class="custom-cursor-outline"></div>
+
+  <!-- Dedicated Parallax Grid Backdrop -->
+  <div class="grid-bg-overlay"></div>
+
+  <!-- Decorative Glow Backgrounds -->
+  <div class="blur-glow bg-glow-1"></div>
+  <div class="blur-glow bg-glow-2"></div>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <img src="images/logo.png" alt="AI Scam Detector Logo" class="logo-img">
+        <span>AI Scam <span class="highlight">Detector</span></span>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html#how-it-works">How It Works</a>
+        <a href="index.html#demo">Live Demo</a>
+        <a href="index.html#stats">Stats</a>
+        <a href="index.html#pricing">Pricing</a>
+        <a href="index.html#about">Mission &amp; Support</a>
+      </nav>
+      <div class="nav-actions">
+        <a href="https://api.whatsapp.com/send?phone=919270249103&text=Hello" class="btn btn-sm btn-primary-outline" id="navWhatsAppBtn">WhatsApp Bot</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Banner -->
+  <section class="scams-hero">
+    <div class="scams-container">
+      <div class="badge" style="margin-bottom: 12px;"><ion-icon name="shield-checkmark" style="vertical-align: middle; margin-right: 4px; color: #10b981;"></ion-icon> Live Threat Intel Database</div>
+      <h1 style="font-size: 2.8rem; font-family: 'Outfit', sans-serif; font-weight: 800; color: var(--text-bold); margin-bottom: 16px;">
+        Online Threat & <span class="gradient-text">Scam Registry</span>
+      </h1>
+      <p style="max-width: 650px; margin: 0 auto; color: var(--text-secondary); font-size: 1.05rem; line-height: 1.6;">
+        Search through recent digital threats, text templates, and banking scams reported by the community and verified by our AI defense system.
+      </p>
+    </div>
+  </section>
+
+  <!-- Main Scams Section -->
+  <section class="scams-content" style="padding-bottom: 100px; position: relative; z-index: 10;">
+    <div class="scams-container">
+      
+      <!-- Search HUD -->
+      <div class="search-hud">
+        <div class="search-box-wrapper">
+          <input type="text" id="scamSearchInput" class="search-input" placeholder="Type keywords (e.g. 'electricity', 'SBI', 'lottery', 'unpaid bill')..." />
+          
+          <select id="scamCategorySelect" class="search-category-select">
+            <option value="all">All Threat Types</option>
+            <option value="banking_fraud">Banking Fraud</option>
+            <option value="utility_fraud">Utility Bill Fraud</option>
+            <option value="lottery_scam">Lottery & Giveaway</option>
+            <option value="job_scam">Fake Job Offers</option>
+            <option value="phishing">General Phishing</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Scams Grid -->
+      <div class="scams-grid" id="scamsGrid">
+        <div class="loading-spinner" id="loadingSpinner">
+          <div class="spinner"></div>
+          <p>Connecting to secure intelligence database...</p>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h4>AI Scam Detector</h4>
+        <p>Empowering Indians to navigate the digital world safely and prevent financial fraud.</p>
+        <div class="footer-status-widget">
+          <span class="status-dot pulsing" id="statusDot"></span>
+          <span id="liveStatusText">WhatsApp Service: Online</span>
+        </div>
+      </div>
+      <div class="footer-bottom" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; border-top: 1px solid var(--border-color); padding-top: 20px; margin-top: 20px;">
+        <p>&copy; 2026 AI Scam Detector. Built in India for Indian security.</p>
+        <div style="display: flex; gap: 20px; font-size: 0.9rem;">
+          <a href="index.html#how-it-works" style="color: var(--text-secondary); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='var(--accent-color)'" onmouseout="this.style.color='var(--text-secondary)'">How It Works</a>
+          <a href="index.html#demo" style="color: var(--text-secondary); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='var(--accent-color)'" onmouseout="this.style.color='var(--text-secondary)'">Live Demo</a>
+          <a href="scams.html" style="color: var(--text-secondary); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='var(--accent-color)'" onmouseout="this.style.color='var(--text-secondary)'">Scams Database</a>
+          <a href="index.html#about" style="color: var(--text-secondary); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='var(--accent-color)'" onmouseout="this.style.color='var(--text-secondary)'">Mission &amp; Support</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <!-- Ionicons CDN Script -->
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+
+  <script>
+    // Custom cursor logic
+    const cursorDot = document.querySelector('.custom-cursor-dot');
+    const cursorOutline = document.querySelector('.custom-cursor-outline');
+
+    window.addEventListener('mousemove', function(e) {
+      const posX = e.clientX;
+      const posY = e.clientY;
+
+      cursorDot.style.left = `${posX}px`;
+      cursorDot.style.top = `${posY}px`;
+
+      cursorOutline.animate({
+        left: `${posX}px`,
+        top: `${posY}px`
+      }, { duration: 500, fill: 'forwards' });
+    });
+
+    let allScams = [];
+
+    // Fetch scams from local public API
+    async function loadScams() {
+      const grid = document.getElementById('scamsGrid');
+      const spinner = document.getElementById('loadingSpinner');
+      
+      try {
+        const response = await fetch('/api/public-scams');
+        const data = await response.json();
+        
+        if (data.success && data.scams && data.scams.length > 0) {
+          allScams = data.scams;
+          renderScams(allScams);
+        } else {
+          // Fallback static seed list if DB is empty
+          allScams = getFallbackScams();
+          renderScams(allScams);
+        }
+      } catch (error) {
+        console.error('Failed to load database scams:', error);
+        allScams = getFallbackScams();
+        renderScams(allScams);
+      }
+    }
+
+    function renderScams(scamsToRender) {
+      const grid = document.getElementById('scamsGrid');
+      grid.innerHTML = '';
+      
+      if (scamsToRender.length === 0) {
+        grid.innerHTML = `
+          <div class="no-results">
+            <ion-icon name="search-outline" style="font-size: 2.5rem; color: var(--text-secondary); margin-bottom: 12px;"></ion-icon>
+            <h3 style="color: var(--text-bold); margin-bottom: 8px;">No Threats Match Your Query</h3>
+            <p style="color: var(--text-secondary); font-size: 0.9rem;">Try searching for other keywords or select a different threat category.</p>
+          </div>
+        `;
+        return;
+      }
+      
+      scamsToRender.forEach(scam => {
+        const card = document.createElement('div');
+        card.className = 'scam-card';
+        
+        // Clean display type name
+        const cleanType = (scam.type || 'unknown').replace('_', ' ');
+        
+        card.innerHTML = `
+          <div>
+            <div class="scam-card-header">
+              <span class="scam-badge">HIGH RISK</span>
+              <span class="scam-type-label">${cleanType}</span>
+            </div>
+            
+            <div class="scam-message-box">${escapeHtml(scam.message)}</div>
+            
+            <p class="scam-explanation">${escapeHtml(scam.explanation)}</p>
+          </div>
+          
+          <div class="scam-card-footer">
+            <a href="https://api.whatsapp.com/send?phone=919270249103&text=Hello" class="btn btn-primary scam-cta-btn" target="_blank">
+              <svg viewBox="0 0 16 16" fill="currentColor" style="width: 16px; height: 16px; margin-right: 4px;">
+                <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
+              </svg>
+              Scan Live on WhatsApp
+            </a>
+          </div>
+        `;
+        
+        grid.appendChild(card);
+      });
+    }
+
+    // Filter implementation
+    function filterScams() {
+      const query = document.getElementById('scamSearchInput').value.toLowerCase().trim();
+      const category = document.getElementById('scamCategorySelect').value;
+      
+      const filtered = allScams.filter(scam => {
+        const matchesQuery = !query || 
+          scam.message.toLowerCase().includes(query) || 
+          scam.explanation.toLowerCase().includes(query) ||
+          (scam.type || '').toLowerCase().includes(query);
+          
+        const matchesCategory = category === 'all' || scam.type === category;
+        
+        return matchesQuery && matchesCategory;
+      });
+      
+      renderScams(filtered);
+    }
+
+    document.getElementById('scamSearchInput').addEventListener('input', filterScams);
+    document.getElementById('scamCategorySelect').addEventListener('change', filterScams);
+
+    function escapeHtml(text) {
+      const map = {
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#039;'
+      };
+      return text.replace(/[&<>"']/g, function(m) { return map[m]; });
+    }
+
+    // Fallback seed list for SEO indexing if database is freshly deployed
+    function getFallbackScams() {
+      return [
+        {
+          id: 'fb1',
+          type: 'utility_fraud',
+          message: 'Dear consumer, your electricity power will be disconnected at 9:30 PM tonight because your previous month bill was unpaid. Please contact our electricity officer immediately at +91 [REDACTED PHONE] to verify.',
+          explanation: 'Impersonates utility officials. Instills artificial urgency (cutoff in minutes) to force immediate cash transfer via unauthorized portals.'
+        },
+        {
+          id: 'fb2',
+          type: 'banking_fraud',
+          message: 'Alert: Your SBI NetBanking account has been blocked due to suspicious activity. Please verify your PAN Card registration details instantly to unblock your account at: https://sbi-kyc-verify.net/pan',
+          explanation: 'Impersonates State Bank of India. Uses spoofed domain names resembling banking portals to harvest login credentials and PAN card details.'
+        },
+        {
+          id: 'fb3',
+          type: 'lottery_scam',
+          message: 'Congratulation! You have won ₹25,00,000/- (Twenty Five Lakhs) in KBC Lucky Draw 2026. File Number: KBC-[REDACTED CODE]. Please call KBC WhatsApp helpline at +91 [REDACTED PHONE] to claim your prize money.',
+          explanation: 'Fraudulent lottery claims (Kaun Banega Crorepati impersonation). Targets users by requesting advance registration fees under the guise of processing charges.'
+        },
+        {
+          id: 'fb4',
+          type: 'job_scam',
+          message: 'PART-TIME WORK FROM HOME OFFER: Earn ₹3,000 to ₹8,000 daily by liking YouTube videos and rating hotels on Google. No qualifications required. Contact executive on Telegram link: https://t.me/hr-[REDACTED]',
+          explanation: 'Task-based employment scam. Offers easy income for likes, but eventually coerces victims to deposit money in prepaid premium tasks, locking their capital.'
+        },
+        {
+          id: 'fb5',
+          type: 'phishing',
+          message: 'Your parcel from India Post has arrived at our warehouse but has been suspended due to incomplete address details. Please update your address and pay ₹26 custom re-delivery charges at: https://indiapost-update.xyz',
+          explanation: 'Postal delivery scam. Uses a nominal fee (₹26) to lure victims into submitting their credit/debit card numbers on a fake courier portal.'
+        }
+      ];
+    }
+
+    // Initial load
+    loadScams();
+  </script>
+</body>
+</html>

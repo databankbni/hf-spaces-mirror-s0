@@ -1,0 +1,23 @@
+{
+ "captured_at": "2026-08-04T16:24:18Z",
+ "hf_metadata": {
+  "sha": "87fff90f80b4f34d21b7f3a38a3ec079b122d9c4"
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "khaanlovedrama/khaanai",
+ "repo_type": "spaces",
+ "sha": "87fff90f80b4f34d21b7f3a38a3ec079b122d9c4",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/khaanlovedrama/khaanai"
+}

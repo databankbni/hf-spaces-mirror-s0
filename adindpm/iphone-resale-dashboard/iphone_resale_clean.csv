@@ -1,0 +1,1894 @@
+gen,storage,condition,price,model,is_pro,state,state_full,gen_group,type,condition_group
+14.0,128.0,Used,329.99,iPhone 14,False,CA,California,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,726.99,iPhone 14 Pro Max,True,CA,California,Modern (13-14),Pro,Second-hand
+14.0,256.0,Used,669.99,iPhone 14 Pro Max,True,CA,California,Modern (13-14),Pro,Second-hand
+14.0,512.0,Used,659.99,iPhone 14 Pro Max,True,CA,California,Modern (13-14),Pro,Second-hand
+14.0,1024.0,Used,628.99,iPhone 14 Pro Max,True,CA,California,Modern (13-14),Pro,Second-hand
+14.0,128.0,Used,726.99,iPhone 14 Pro Max,True,CA,California,Modern (13-14),Pro,Second-hand
+14.0,128.0,Very Good - Refurbished,469.99,iPhone 14 Pro Max,True,TX,Texas,Modern (13-14),Pro,Refurbished
+14.0,256.0,Open Box,729.99,iPhone 14 Pro Max,True,CA,California,Modern (13-14),Pro,Open Box
+14.0,128.0,Open Box,748.99,iPhone 14 Pro Max,True,CA,California,Modern (13-14),Pro,Open Box
+14.0,128.0,Used,358.99,iPhone 14,False,CA,California,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,365.99,iPhone 14,False,CA,California,Modern (13-14),Standard,Second-hand
+14.0,1024.0,Used,628.99,iPhone 14 Pro Max,True,CA,California,Modern (13-14),Pro,Second-hand
+14.0,128.0,Used,378.99,iPhone 14,False,CA,California,Modern (13-14),Standard,Second-hand
+14.0,512.0,Excellent - Refurbished,397.48,iPhone 14,False,MI,Michigan,Modern (13-14),Standard,Refurbished
+14.0,256.0,Open Box,769.99,iPhone 14 Pro Max,True,CA,California,Modern (13-14),Pro,Open Box
+14.0,128.0,Open Box,399.99,iPhone 14,False,CA,California,Modern (13-14),Standard,Open Box
+14.0,128.0,Open Box,399.99,iPhone 14,False,CA,California,Modern (13-14),Standard,Open Box
+14.0,128.0,Used,698.99,iPhone 14 Pro Max,True,CA,California,Modern (13-14),Pro,Second-hand
+14.0,128.0,Open Box,339.99,iPhone 14,False,CA,California,Modern (13-14),Standard,Open Box
+14.0,128.0,Used,329.99,iPhone 14,False,CA,California,Modern (13-14),Standard,Second-hand
+17.0,256.0,Open Box,779.0,iPhone 17,False,TX,Texas,Latest (15+),Standard,Open Box
+14.0,128.0,Open Box,389.99,iPhone 14,False,CA,California,Modern (13-14),Standard,Open Box
+13.0,128.0,Open Box,321.99,iPhone 13,False,CA,California,Modern (13-14),Standard,Open Box
+13.0,128.0,Excellent - Refurbished,249.48,iPhone 13,False,MI,Michigan,Modern (13-14),Standard,Refurbished
+14.0,128.0,Open Box,339.99,iPhone 14,False,CA,California,Modern (13-14),Standard,Open Box
+14.0,128.0,Open Box,395.99,iPhone 14,False,CA,California,Modern (13-14),Standard,Open Box
+12.0,128.0,Open Box,238.99,iPhone 12,False,CA,California,Mid-Gen (11-12),Standard,Open Box
+14.0,256.0,Used,365.99,iPhone 14,False,CA,California,Modern (13-14),Standard,Second-hand
+16.0,128.0,Excellent - Refurbished,549.95,iPhone 16,False,NY,New York,Latest (15+),Standard,Refurbished
+12.0,128.0,Open Box,231.99,iPhone 12,False,CA,California,Mid-Gen (11-12),Standard,Open Box
+13.0,128.0,Open Box,329.99,iPhone 13,False,CA,California,Modern (13-14),Standard,Open Box
+16.0,128.0,Open Box,575.0,iPhone 16,False,MA,Massachusetts,Latest (15+),Standard,Open Box
+14.0,256.0,Used,669.99,iPhone 14 Pro Max,True,CA,California,Modern (13-14),Pro,Second-hand
+14.0,256.0,Used,669.99,iPhone 14 Pro Max,True,CA,California,Modern (13-14),Pro,Second-hand
+12.0,128.0,Used,436.99,iPhone 12 Pro Max,True,CA,California,Mid-Gen (11-12),Pro,Second-hand
+14.0,512.0,Used,659.99,iPhone 14 Pro Max,True,CA,California,Modern (13-14),Pro,Second-hand
+14.0,128.0,Open Box,734.99,iPhone 14 Pro Max,True,CA,California,Modern (13-14),Pro,Open Box
+14.0,128.0,Used,329.99,iPhone 14,False,CA,California,Modern (13-14),Standard,Second-hand
+14.0,128.0,Open Box,338.99,iPhone 14,False,CA,California,Modern (13-14),Standard,Open Box
+14.0,128.0,Excellent - Refurbished,349.99,iPhone 14,False,IL,Illinois,Modern (13-14),Standard,Refurbished
+14.0,256.0,Open Box,729.99,iPhone 14 Pro Max,True,CA,California,Modern (13-14),Pro,Open Box
+13.0,128.0,Used,329.99,iPhone 13 Mini,False,CA,California,Modern (13-14),Standard,Second-hand
+15.0,256.0,Excellent - Refurbished,419.48,iPhone 15,False,MI,Michigan,Latest (15+),Standard,Refurbished
+12.0,256.0,Used,368.96,iPhone 12 Pro Max,True,NY,New York,Mid-Gen (11-12),Pro,Second-hand
+13.0,128.0,New,321.88,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+15.0,128.0,Open Box,389.48,iPhone 15,False,MI,Michigan,Latest (15+),Standard,Open Box
+13.0,128.0,Used,260.0,iPhone 13,False,NY,New York,Modern (13-14),Standard,Second-hand
+14.0,128.0,Open Box,394.99,iPhone 14,False,CA,California,Modern (13-14),Standard,Open Box
+14.0,256.0,Used,379.87,iPhone 14 Pro Max,True,AZ,Arizona,Modern (13-14),Pro,Second-hand
+14.0,256.0,Used,589.99,iPhone 14 Pro Max,True,AZ,Arizona,Modern (13-14),Pro,Second-hand
+14.0,256.0,Used,649.99,iPhone 14 Pro Max,True,AZ,Arizona,Modern (13-14),Pro,Second-hand
+14.0,128.0,Used,409.87,iPhone 14 Plus,False,AZ,Arizona,Modern (13-14),Standard,Second-hand
+13.0,128.0,Used,249.0,iPhone 13,False,MO,Missouri,Modern (13-14),Standard,Second-hand
+13.0,128.0,Open Box,321.99,iPhone 13,False,CA,California,Modern (13-14),Standard,Open Box
+15.0,512.0,Very Good - Refurbished,384.03,iPhone 15,False,TX,Texas,Latest (15+),Standard,Refurbished
+15.0,512.0,Excellent - Refurbished,412.86,iPhone 15,False,TX,Texas,Latest (15+),Standard,Refurbished
+12.0,64.0,Used,199.99,iPhone 12,False,CA,California,Mid-Gen (11-12),Standard,Second-hand
+14.0,128.0,Open Box,314.99,iPhone 14,False,CA,California,Modern (13-14),Standard,Open Box
+14.0,128.0,Open Box,339.99,iPhone 14,False,CA,California,Modern (13-14),Standard,Open Box
+16.0,128.0,New,599.0,iPhone 16,False,MA,Massachusetts,Latest (15+),Standard,New
+13.0,128.0,New,321.88,iPhone 13 Mini,False,NY,New York,Modern (13-14),Standard,New
+16.0,128.0,New,584.0,iPhone 16,False,NC,North Carolina,Latest (15+),Standard,New
+13.0,128.0,Open Box,326.99,iPhone 13,False,CA,California,Modern (13-14),Standard,Open Box
+12.0,64.0,Open Box,234.99,iPhone 12,False,CA,California,Mid-Gen (11-12),Standard,Open Box
+12.0,256.0,Open Box,241.99,iPhone 12,False,CA,California,Mid-Gen (11-12),Standard,Open Box
+12.0,256.0,Good - Refurbished,304.99,iPhone 12 Pro Max,True,TX,Texas,Mid-Gen (11-12),Pro,Refurbished
+12.0,64.0,Open Box,228.99,iPhone 12,False,CA,California,Mid-Gen (11-12),Standard,Open Box
+14.0,128.0,Used,314.99,iPhone 14,False,CA,California,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,300.0,iPhone 14,False,GA,Georgia,Modern (13-14),Standard,Second-hand
+14.0,512.0,Used,399.99,iPhone 14,False,CA,California,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,272.99,iPhone 14 Plus,False,MD,Maryland,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,229.99,iPhone 14,False,MD,Maryland,Modern (13-14),Standard,Second-hand
+17.0,256.0,Excellent - Refurbished,743.81,iPhone 17,False,TX,Texas,Latest (15+),Standard,Refurbished
+17.0,256.0,Very Good - Refurbished,669.86,iPhone 17,False,TX,Texas,Latest (15+),Standard,Refurbished
+17.0,256.0,Good - Refurbished,661.03,iPhone 17,False,TX,Texas,Latest (15+),Standard,Refurbished
+17.0,512.0,Very Good - Refurbished,931.96,iPhone 17,False,TX,Texas,Latest (15+),Standard,Refurbished
+17.0,512.0,Good - Refurbished,999.03,iPhone 17,False,TX,Texas,Latest (15+),Standard,Refurbished
+13.0,128.0,New,321.88,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+13.0,128.0,New,321.99,iPhone 13 Mini,False,NY,New York,Modern (13-14),Standard,New
+13.0,128.0,New,321.99,iPhone 13 Mini,False,NY,New York,Modern (13-14),Standard,New
+13.0,512.0,New,321.99,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+13.0,128.0,New,321.99,iPhone 13 Mini,False,NY,New York,Modern (13-14),Standard,New
+17.0,256.0,Open Box,769.95,iPhone 17,False,PA,Pennsylvania,Latest (15+),Standard,Open Box
+12.0,128.0,Open Box,231.99,iPhone 12,False,CA,California,Mid-Gen (11-12),Standard,Open Box
+13.0,128.0,Open Box,268.87,iPhone 13,False,AZ,Arizona,Modern (13-14),Standard,Open Box
+13.0,256.0,New,321.99,iPhone 13 Mini,False,NY,New York,Modern (13-14),Standard,New
+13.0,128.0,New,321.99,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+13.0,128.0,Used,107.5,iPhone 13,False,IL,Illinois,Modern (13-14),Standard,Second-hand
+14.0,256.0,Used,350.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+17.0,256.0,New,849.95,iPhone 17,False,PA,Pennsylvania,Latest (15+),Standard,New
+16.0,128.0,New,639.95,iPhone 16,False,PA,Pennsylvania,Latest (15+),Standard,New
+17.0,256.0,New,779.95,iPhone 17,False,FL,Florida,Latest (15+),Standard,New
+16.0,128.0,New,669.95,iPhone 16,False,TN,Tennessee,Latest (15+),Standard,New
+16.0,128.0,Open Box,604.99,iPhone 16,False,VA,Virginia,Latest (15+),Standard,Open Box
+14.0,128.0,Used,183.5,iPhone 14,False,CA,California,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,217.5,iPhone 14,False,CA,California,Modern (13-14),Standard,Second-hand
+13.0,128.0,Used,169.99,iPhone 13 Mini,False,TN,Tennessee,Modern (13-14),Standard,Second-hand
+16.0,128.0,Open Box,600.0,iPhone 16,False,MD,Maryland,Latest (15+),Standard,Open Box
+13.0,128.0,Very Good - Refurbished,319.0,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,Refurbished
+13.0,128.0,Good - Refurbished,299.0,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,Refurbished
+12.0,128.0,Excellent - Refurbished,419.88,iPhone 12,False,MI,Michigan,Mid-Gen (11-12),Standard,Refurbished
+12.0,256.0,Excellent - Refurbished,369.48,iPhone 12 Pro Max,True,MI,Michigan,Mid-Gen (11-12),Pro,Refurbished
+13.0,128.0,New,321.99,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+13.0,128.0,New,321.99,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+13.0,128.0,New,321.99,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+14.0,128.0,For Parts Or Not Working,199.99,iPhone 14 Plus,False,OH,Ohio,Modern (13-14),Standard,Damaged
+14.0,128.0,For Parts Or Not Working,224.99,iPhone 14 Plus,False,OH,Ohio,Modern (13-14),Standard,Damaged
+13.0,128.0,New,321.99,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+14.0,512.0,New,314.11,iPhone 14 Pro Max,True,NJ,New Jersey,Modern (13-14),Pro,New
+14.0,128.0,New,389.01,iPhone 14,False,NJ,New Jersey,Modern (13-14),Standard,New
+15.0,128.0,Excellent - Refurbished,369.48,iPhone 15,False,MI,Michigan,Latest (15+),Standard,Refurbished
+13.0,128.0,Good - Refurbished,249.0,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,Refurbished
+14.0,256.0,Used,268.99,iPhone 14 Plus,False,OH,Ohio,Modern (13-14),Standard,Second-hand
+14.0,128.0,New,675.95,iPhone 14 Pro Max,True,NJ,New Jersey,Modern (13-14),Pro,New
+14.0,128.0,For Parts Or Not Working,210.99,iPhone 14 Plus,False,OH,Ohio,Modern (13-14),Standard,Damaged
+17.0,256.0,Very Good - Refurbished,849.95,iPhone 17,False,MD,Maryland,Latest (15+),Standard,Refurbished
+14.0,128.0,Used,599.0,iPhone 14 Pro Max,True,CA,California,Modern (13-14),Pro,Second-hand
+14.0,128.0,For Parts Or Not Working,209.99,iPhone 14 Plus,False,OH,Ohio,Modern (13-14),Standard,Damaged
+14.0,128.0,For Parts Or Not Working,210.99,iPhone 14 Plus,False,OH,Ohio,Modern (13-14),Standard,Damaged
+14.0,512.0,New,675.95,iPhone 14 Pro Max,True,NJ,New Jersey,Modern (13-14),Pro,New
+14.0,128.0,For Parts Or Not Working,203.99,iPhone 14 Plus,False,OH,Ohio,Modern (13-14),Standard,Damaged
+14.0,128.0,For Parts Or Not Working,199.99,iPhone 14 Plus,False,OH,Ohio,Modern (13-14),Standard,Damaged
+14.0,128.0,For Parts Or Not Working,230.99,iPhone 14 Plus,False,OH,Ohio,Modern (13-14),Standard,Damaged
+12.0,128.0,Used,248.99,iPhone 12 Pro Max,True,OH,Ohio,Mid-Gen (11-12),Pro,Second-hand
+14.0,128.0,For Parts Or Not Working,192.99,iPhone 14 Plus,False,OH,Ohio,Modern (13-14),Standard,Damaged
+14.0,128.0,For Parts Or Not Working,199.99,iPhone 14 Plus,False,OH,Ohio,Modern (13-14),Standard,Damaged
+14.0,256.0,For Parts Or Not Working,222.99,iPhone 14 Plus,False,OH,Ohio,Modern (13-14),Standard,Damaged
+14.0,128.0,Used,298.99,iPhone 14 Plus,False,OH,Ohio,Modern (13-14),Standard,Second-hand
+13.0,128.0,New,321.88,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+14.0,128.0,For Parts Or Not Working,194.99,iPhone 14 Plus,False,OH,Ohio,Modern (13-14),Standard,Damaged
+13.0,512.0,New,432.13,iPhone 13,False,NJ,New Jersey,Modern (13-14),Standard,New
+13.0,128.0,Open Box,249.48,iPhone 13,False,MI,Michigan,Modern (13-14),Standard,Open Box
+14.0,128.0,For Parts Or Not Working,190.99,iPhone 14 Plus,False,OH,Ohio,Modern (13-14),Standard,Damaged
+14.0,256.0,For Parts Or Not Working,216.99,iPhone 14 Plus,False,OH,Ohio,Modern (13-14),Standard,Damaged
+14.0,128.0,For Parts Or Not Working,213.99,iPhone 14 Plus,False,OH,Ohio,Modern (13-14),Standard,Damaged
+14.0,256.0,For Parts Or Not Working,216.99,iPhone 14 Plus,False,OH,Ohio,Modern (13-14),Standard,Damaged
+13.0,128.0,Used,240.0,iPhone 13,False,AZ,Arizona,Modern (13-14),Standard,Second-hand
+14.0,128.0,For Parts Or Not Working,198.99,iPhone 14 Plus,False,OH,Ohio,Modern (13-14),Standard,Damaged
+12.0,128.0,Used,199.0,iPhone 12,False,AZ,Arizona,Mid-Gen (11-12),Standard,Second-hand
+13.0,128.0,Very Good - Refurbished,269.0,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,Refurbished
+14.0,128.0,New,675.95,iPhone 14 Pro Max,True,NJ,New Jersey,Modern (13-14),Pro,New
+12.0,128.0,For Parts Or Not Working,179.99,iPhone 12 Pro Max,True,FL,Florida,Mid-Gen (11-12),Pro,Damaged
+16.0,128.0,Open Box,235.5,iPhone 16,False,MD,Maryland,Latest (15+),Standard,Open Box
+14.0,512.0,New,389.01,iPhone 14,False,NJ,New Jersey,Modern (13-14),Standard,New
+14.0,128.0,New,389.01,iPhone 14,False,NJ,New Jersey,Modern (13-14),Standard,New
+14.0,128.0,New,389.01,iPhone 14,False,NJ,New Jersey,Modern (13-14),Standard,New
+13.0,128.0,Open Box,290.0,iPhone 13,False,NY,New York,Modern (13-14),Standard,Open Box
+13.0,256.0,New,321.99,iPhone 13 Mini,False,NY,New York,Modern (13-14),Standard,New
+17.0,256.0,New,610.0,iPhone 17 Pro Max,True,TX,Texas,Latest (15+),Pro,New
+14.0,128.0,New,675.95,iPhone 14 Pro Max,True,NJ,New Jersey,Modern (13-14),Pro,New
+14.0,128.0,For Parts Or Not Working,149.99,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Damaged
+14.0,128.0,Open Box,363.99,iPhone 14 Plus,False,CA,California,Modern (13-14),Standard,Open Box
+13.0,256.0,Used,1000.0,iPhone 13,False,CO,Colorado,Modern (13-14),Standard,Second-hand
+14.0,128.0,For Parts Or Not Working,199.99,iPhone 14 Plus,False,OH,Ohio,Modern (13-14),Standard,Damaged
+14.0,128.0,Used,539.99,iPhone 14 Pro Max,True,CA,California,Modern (13-14),Pro,Second-hand
+14.0,256.0,For Parts Or Not Working,235.99,iPhone 14 Plus,False,OH,Ohio,Modern (13-14),Standard,Damaged
+14.0,256.0,For Parts Or Not Working,220.99,iPhone 14 Plus,False,OH,Ohio,Modern (13-14),Standard,Damaged
+14.0,256.0,For Parts Or Not Working,230.99,iPhone 14 Plus,False,OH,Ohio,Modern (13-14),Standard,Damaged
+14.0,256.0,For Parts Or Not Working,220.99,iPhone 14 Plus,False,OH,Ohio,Modern (13-14),Standard,Damaged
+14.0,256.0,For Parts Or Not Working,222.99,iPhone 14 Plus,False,OH,Ohio,Modern (13-14),Standard,Damaged
+14.0,256.0,For Parts Or Not Working,216.99,iPhone 14 Plus,False,OH,Ohio,Modern (13-14),Standard,Damaged
+14.0,256.0,Used,613.99,iPhone 14 Pro Max,True,CA,California,Modern (13-14),Pro,Second-hand
+14.0,128.0,Used,332.99,iPhone 14 Plus,False,CA,California,Modern (13-14),Standard,Second-hand
+14.0,1024.0,Used,638.99,iPhone 14 Pro Max,True,CA,California,Modern (13-14),Pro,Second-hand
+14.0,256.0,Used,567.99,iPhone 14 Pro Max,True,CA,California,Modern (13-14),Pro,Second-hand
+14.0,256.0,For Parts Or Not Working,226.99,iPhone 14 Plus,False,OH,Ohio,Modern (13-14),Standard,Damaged
+14.0,128.0,For Parts Or Not Working,210.99,iPhone 14 Plus,False,OH,Ohio,Modern (13-14),Standard,Damaged
+14.0,128.0,For Parts Or Not Working,199.99,iPhone 14 Plus,False,OH,Ohio,Modern (13-14),Standard,Damaged
+14.0,128.0,For Parts Or Not Working,199.99,iPhone 14 Plus,False,OH,Ohio,Modern (13-14),Standard,Damaged
+12.0,128.0,Used,379.0,iPhone 12 Pro Max,True,PA,Pennsylvania,Mid-Gen (11-12),Pro,Second-hand
+14.0,128.0,For Parts Or Not Working,198.99,iPhone 14 Plus,False,OH,Ohio,Modern (13-14),Standard,Damaged
+14.0,128.0,For Parts Or Not Working,199.99,iPhone 14 Plus,False,OH,Ohio,Modern (13-14),Standard,Damaged
+14.0,256.0,Used,298.99,iPhone 14 Plus,False,OH,Ohio,Modern (13-14),Standard,Second-hand
+14.0,128.0,For Parts Or Not Working,199.99,iPhone 14 Plus,False,OH,Ohio,Modern (13-14),Standard,Damaged
+14.0,128.0,Good - Refurbished,569.0,iPhone 14 Pro Max,True,NJ,New Jersey,Modern (13-14),Pro,Refurbished
+14.0,128.0,For Parts Or Not Working,199.99,iPhone 14 Plus,False,OH,Ohio,Modern (13-14),Standard,Damaged
+14.0,128.0,For Parts Or Not Working,220.99,iPhone 14 Plus,False,OH,Ohio,Modern (13-14),Standard,Damaged
+17.0,256.0,Open Box,869.99,iPhone 17,False,MD,Maryland,Latest (15+),Standard,Open Box
+17.0,256.0,Excellent - Refurbished,869.99,iPhone 17,False,MD,Maryland,Latest (15+),Standard,Refurbished
+14.0,128.0,Used,370.0,iPhone 14 Pro Max,True,CA,California,Modern (13-14),Pro,Second-hand
+14.0,128.0,For Parts Or Not Working,192.99,iPhone 14 Plus,False,OH,Ohio,Modern (13-14),Standard,Damaged
+14.0,128.0,For Parts Or Not Working,199.99,iPhone 14 Plus,False,OH,Ohio,Modern (13-14),Standard,Damaged
+14.0,128.0,For Parts Or Not Working,199.99,iPhone 14 Plus,False,OH,Ohio,Modern (13-14),Standard,Damaged
+16.0,128.0,Open Box,634.99,iPhone 16,False,MD,Maryland,Latest (15+),Standard,Open Box
+14.0,256.0,For Parts Or Not Working,216.99,iPhone 14 Plus,False,OH,Ohio,Modern (13-14),Standard,Damaged
+14.0,128.0,For Parts Or Not Working,194.99,iPhone 14 Plus,False,OH,Ohio,Modern (13-14),Standard,Damaged
+14.0,128.0,Used,312.99,iPhone 14 Plus,False,OH,Ohio,Modern (13-14),Standard,Second-hand
+14.0,128.0,For Parts Or Not Working,188.99,iPhone 14 Plus,False,OH,Ohio,Modern (13-14),Standard,Damaged
+14.0,128.0,Used,274.99,iPhone 14,False,GA,Georgia,Modern (13-14),Standard,Second-hand
+14.0,128.0,For Parts Or Not Working,190.99,iPhone 14 Plus,False,OH,Ohio,Modern (13-14),Standard,Damaged
+14.0,128.0,Used,359.99,iPhone 14 Plus,False,CA,California,Modern (13-14),Standard,Second-hand
+14.0,128.0,For Parts Or Not Working,196.99,iPhone 14 Plus,False,OH,Ohio,Modern (13-14),Standard,Damaged
+14.0,256.0,For Parts Or Not Working,218.99,iPhone 14 Plus,False,OH,Ohio,Modern (13-14),Standard,Damaged
+14.0,128.0,For Parts Or Not Working,198.99,iPhone 14 Plus,False,OH,Ohio,Modern (13-14),Standard,Damaged
+14.0,512.0,Used,559.99,iPhone 14 Pro Max,True,CA,California,Modern (13-14),Pro,Second-hand
+14.0,256.0,For Parts Or Not Working,208.99,iPhone 14 Plus,False,OH,Ohio,Modern (13-14),Standard,Damaged
+14.0,128.0,For Parts Or Not Working,196.99,iPhone 14 Plus,False,OH,Ohio,Modern (13-14),Standard,Damaged
+14.0,128.0,Open Box,389.99,iPhone 14 Plus,False,CA,California,Modern (13-14),Standard,Open Box
+14.0,1024.0,Used,597.99,iPhone 14 Pro Max,True,CA,California,Modern (13-14),Pro,Second-hand
+12.0,256.0,Used,195.0,iPhone 12,False,CA,California,Mid-Gen (11-12),Standard,Second-hand
+14.0,128.0,Used,65.0,iPhone 14,False,KY,Kentucky,Modern (13-14),Standard,Second-hand
+13.0,256.0,Used,229.99,iPhone 13 Mini,False,PA,Pennsylvania,Modern (13-14),Standard,Second-hand
+17.0,1024.0,New,1000.0,iPhone 17 Pro Max,True,WY,Wyoming,Latest (15+),Pro,New
+16.0,128.0,New,699.99,iPhone 16,False,CA,California,Latest (15+),Standard,New
+17.0,1024.0,New,956.0,iPhone 17 Pro Max,True,CO,Colorado,Latest (15+),Pro,New
+12.0,64.0,Used,299.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+13.0,128.0,New,323.99,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+13.0,128.0,New,323.99,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+12.0,512.0,Used,1000.0,iPhone 12 Pro Max,True,TN,Tennessee,Mid-Gen (11-12),Pro,Second-hand
+13.0,128.0,New,323.99,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+13.0,64.0,New,323.99,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+13.0,512.0,New,323.99,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+12.0,128.0,Good - Refurbished,309.99,iPhone 12 Pro Max,True,NJ,New Jersey,Mid-Gen (11-12),Pro,Refurbished
+14.0,128.0,Very Good - Refurbished,334.99,iPhone 14,False,NJ,New Jersey,Modern (13-14),Standard,Refurbished
+13.0,128.0,New,323.99,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+14.0,128.0,Used,239.99,iPhone 14,False,NJ,New Jersey,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,319.99,iPhone 14 Plus,False,NJ,New Jersey,Modern (13-14),Standard,Second-hand
+13.0,128.0,New,323.99,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+13.0,128.0,New,323.99,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+13.0,128.0,New,323.99,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+13.0,128.0,Excellent - Refurbished,355.0,iPhone 13,False,NJ,New Jersey,Modern (13-14),Standard,Refurbished
+14.0,128.0,New,389.99,iPhone 14,False,NJ,New Jersey,Modern (13-14),Standard,New
+14.0,128.0,Excellent - Refurbished,350.0,iPhone 14,False,NJ,New Jersey,Modern (13-14),Standard,Refurbished
+14.0,128.0,New,745.12,iPhone 14 Pro Max,True,NJ,New Jersey,Modern (13-14),Pro,New
+14.0,128.0,New,745.12,iPhone 14 Pro Max,True,NJ,New Jersey,Modern (13-14),Pro,New
+13.0,128.0,New,322.01,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+14.0,128.0,New,745.12,iPhone 14 Pro Max,True,NJ,New Jersey,Modern (13-14),Pro,New
+12.0,128.0,Used,599.99,iPhone 12 Pro Max,True,FL,Florida,Mid-Gen (11-12),Pro,Second-hand
+17.0,256.0,New,879.0,iPhone 17,False,NH,New Hampshire,Latest (15+),Standard,New
+16.0,128.0,Good - Refurbished,549.99,iPhone 16,False,NJ,New Jersey,Latest (15+),Standard,Refurbished
+12.0,64.0,Very Good - Refurbished,259.99,iPhone 12,False,CA,California,Mid-Gen (11-12),Standard,Refurbished
+14.0,128.0,Used,399.99,iPhone 14 Pro Max,True,NJ,New Jersey,Modern (13-14),Pro,Second-hand
+14.0,128.0,Used,229.99,iPhone 14,False,NJ,New Jersey,Modern (13-14),Standard,Second-hand
+17.0,256.0,Excellent - Refurbished,799.99,iPhone 17,False,TX,Texas,Latest (15+),Standard,Refurbished
+12.0,128.0,Used,185.0,iPhone 12,False,FL,Florida,Mid-Gen (11-12),Standard,Second-hand
+14.0,128.0,Used,245.99,iPhone 14,False,MI,Michigan,Modern (13-14),Standard,Second-hand
+17.0,256.0,Very Good - Refurbished,764.99,iPhone 17,False,TX,Texas,Latest (15+),Standard,Refurbished
+12.0,128.0,Used,169.98,iPhone 12,False,OH,Ohio,Mid-Gen (11-12),Standard,Second-hand
+12.0,256.0,Used,210.0,iPhone 12,False,NC,North Carolina,Mid-Gen (11-12),Standard,Second-hand
+14.0,128.0,Used,300.0,iPhone 14,False,FL,Florida,Modern (13-14),Standard,Second-hand
+12.0,128.0,Used,77.0,iPhone 12,False,NY,New York,Mid-Gen (11-12),Standard,Second-hand
+17.0,256.0,Excellent - Refurbished,749.0,iPhone 17,False,TX,Texas,Latest (15+),Standard,Refurbished
+17.0,256.0,Excellent - Refurbished,749.0,iPhone 17,False,TX,Texas,Latest (15+),Standard,Refurbished
+14.0,128.0,Open Box,317.55,iPhone 14,False,CA,California,Modern (13-14),Standard,Open Box
+12.0,128.0,Used,325.0,iPhone 12 Pro Max,True,NC,North Carolina,Mid-Gen (11-12),Pro,Second-hand
+12.0,256.0,Used,159.99,iPhone 12,False,NY,New York,Mid-Gen (11-12),Standard,Second-hand
+13.0,128.0,Used,264.0,iPhone 13,False,NJ,New Jersey,Modern (13-14),Standard,Second-hand
+13.0,128.0,Very Good - Refurbished,320.0,iPhone 13,False,NJ,New Jersey,Modern (13-14),Standard,Refurbished
+13.0,128.0,Very Good - Refurbished,595.0,iPhone 13,False,NJ,New Jersey,Modern (13-14),Standard,Refurbished
+14.0,256.0,Used,700.0,iPhone 14 Plus,False,MI,Michigan,Modern (13-14),Standard,Second-hand
+13.0,256.0,New,323.99,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+13.0,512.0,New,321.01,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+13.0,512.0,New,321.01,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+13.0,512.0,New,321.01,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+13.0,256.0,New,321.01,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+13.0,128.0,New,323.99,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+13.0,128.0,New,335.99,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+13.0,256.0,New,323.99,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+13.0,128.0,New,323.99,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+13.0,256.0,New,323.99,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+13.0,128.0,New,322.99,iPhone 13 Pro Max,True,NJ,New Jersey,Modern (13-14),Pro,New
+13.0,256.0,New,321.01,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+13.0,512.0,Open Box,327.55,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,Open Box
+14.0,256.0,New,699.99,iPhone 14 Pro Max,True,NJ,New Jersey,Modern (13-14),Pro,New
+14.0,512.0,New,699.99,iPhone 14 Pro Max,True,NJ,New Jersey,Modern (13-14),Pro,New
+12.0,512.0,Good - Refurbished,609.0,iPhone 12 Pro Max,True,CA,California,Mid-Gen (11-12),Pro,Refurbished
+12.0,512.0,Good - Refurbished,609.0,iPhone 12 Pro Max,True,CA,California,Mid-Gen (11-12),Pro,Refurbished
+13.0,256.0,New,323.99,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+14.0,256.0,New,403.95,iPhone 14,False,NJ,New Jersey,Modern (13-14),Standard,New
+14.0,512.0,New,699.88,iPhone 14 Pro Max,True,NJ,New Jersey,Modern (13-14),Pro,New
+13.0,128.0,New,432.12,iPhone 13,False,NJ,New Jersey,Modern (13-14),Standard,New
+14.0,512.0,New,699.88,iPhone 14 Pro Max,True,CA,California,Modern (13-14),Pro,New
+14.0,128.0,Used,249.99,iPhone 14,False,CA,California,Modern (13-14),Standard,Second-hand
+13.0,128.0,New,321.01,iPhone 13 Mini,False,CA,California,Modern (13-14),Standard,New
+16.0,128.0,Excellent - Refurbished,634.99,iPhone 16,False,MD,Maryland,Latest (15+),Standard,Refurbished
+12.0,128.0,Used,141.5,iPhone 12,False,NJ,New Jersey,Mid-Gen (11-12),Standard,Second-hand
+13.0,128.0,New,432.12,iPhone 13,False,TX,Texas,Modern (13-14),Standard,New
+16.0,256.0,Open Box,599.0,iPhone 16,False,NY,New York,Latest (15+),Standard,Open Box
+17.0,256.0,Good - Refurbished,799.99,iPhone 17,False,TX,Texas,Latest (15+),Standard,Refurbished
+17.0,256.0,Excellent - Refurbished,789.99,iPhone 17,False,TX,Texas,Latest (15+),Standard,Refurbished
+13.0,256.0,New,321.88,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+17.0,256.0,Open Box,784.13,iPhone 17,False,HI,Hawaii,Latest (15+),Standard,Open Box
+13.0,256.0,New,321.88,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+13.0,256.0,Used,260.99,iPhone 13,False,MI,Michigan,Modern (13-14),Standard,Second-hand
+13.0,512.0,New,432.12,iPhone 13,False,NJ,New Jersey,Modern (13-14),Standard,New
+13.0,128.0,New,321.99,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+14.0,512.0,Used,526.99,iPhone 14 Pro Max,True,MI,Michigan,Modern (13-14),Pro,Second-hand
+13.0,128.0,New,321.01,iPhone 13 Mini,False,TX,Texas,Modern (13-14),Standard,New
+15.0,128.0,Excellent - Refurbished,457.99,iPhone 15 Plus,False,IL,Illinois,Latest (15+),Standard,Refurbished
+14.0,128.0,Used,90.0,iPhone 14 Plus,False,NY,New York,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,413.99,iPhone 14 Pro Max,True,MI,Michigan,Modern (13-14),Pro,Second-hand
+14.0,128.0,New,403.95,iPhone 14,False,TX,Texas,Modern (13-14),Standard,New
+14.0,128.0,New,403.95,iPhone 14,False,TX,Texas,Modern (13-14),Standard,New
+14.0,128.0,New,675.99,iPhone 14 Pro Max,True,TX,Texas,Modern (13-14),Pro,New
+15.0,256.0,Good - Refurbished,472.99,iPhone 15,False,IL,Illinois,Latest (15+),Standard,Refurbished
+12.0,256.0,Open Box,650.0,iPhone 12 Pro Max,True,FL,Florida,Mid-Gen (11-12),Pro,Open Box
+16.0,256.0,Good - Refurbished,570.01,iPhone 16,False,IA,Iowa,Latest (15+),Standard,Refurbished
+12.0,512.0,Used,385.0,iPhone 12 Pro Max,True,NY,New York,Mid-Gen (11-12),Pro,Second-hand
+13.0,128.0,Very Good - Refurbished,305.67,iPhone 13 Mini,False,MD,Maryland,Modern (13-14),Standard,Refurbished
+14.0,128.0,Good - Refurbished,399.99,iPhone 14 Plus,False,NY,New York,Modern (13-14),Standard,Refurbished
+14.0,128.0,Used,429.99,iPhone 14,False,CA,California,Modern (13-14),Standard,Second-hand
+13.0,128.0,For Parts Or Not Working,179.0,iPhone 13,False,PA,Pennsylvania,Modern (13-14),Standard,Damaged
+12.0,128.0,Used,299.99,iPhone 12 Pro Max,True,WI,Wisconsin,Mid-Gen (11-12),Pro,Second-hand
+16.0,128.0,Open Box,643.99,iPhone 16,False,NJ,New Jersey,Latest (15+),Standard,Open Box
+16.0,128.0,Open Box,669.99,iPhone 16,False,NJ,New Jersey,Latest (15+),Standard,Open Box
+17.0,256.0,Good - Refurbished,759.98,iPhone 17,False,IA,Iowa,Latest (15+),Standard,Refurbished
+17.0,256.0,Excellent - Refurbished,839.98,iPhone 17,False,IA,Iowa,Latest (15+),Standard,Refurbished
+16.0,256.0,New,875.0,iPhone 16,False,CA,California,Latest (15+),Standard,New
+17.0,256.0,Very Good - Refurbished,799.98,iPhone 17,False,IA,Iowa,Latest (15+),Standard,Refurbished
+17.0,256.0,Good - Refurbished,759.98,iPhone 17,False,IA,Iowa,Latest (15+),Standard,Refurbished
+13.0,256.0,Used,300.0,iPhone 13,False,CA,California,Modern (13-14),Standard,Second-hand
+13.0,128.0,Used,380.0,iPhone 13 Mini,False,MI,Michigan,Modern (13-14),Standard,Second-hand
+13.0,128.0,Used,173.5,iPhone 13,False,DE,Delaware,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,500.0,iPhone 14 Pro Max,True,MS,Mississippi,Modern (13-14),Pro,Second-hand
+12.0,128.0,For Parts Or Not Working,169.99,iPhone 12,False,OH,Ohio,Mid-Gen (11-12),Standard,Damaged
+16.0,128.0,New,599.0,iPhone 16,False,NY,New York,Latest (15+),Standard,New
+13.0,128.0,Used,200.0,iPhone 13,False,TN,Tennessee,Modern (13-14),Standard,Second-hand
+13.0,128.0,Used,200.0,iPhone 13,False,TN,Tennessee,Modern (13-14),Standard,Second-hand
+16.0,128.0,New,625.0,iPhone 16,False,CA,California,Latest (15+),Standard,New
+14.0,128.0,Used,200.0,iPhone 14,False,CA,California,Modern (13-14),Standard,Second-hand
+12.0,64.0,Very Good - Refurbished,194.7,iPhone 12,False,SC,South Carolina,Mid-Gen (11-12),Standard,Refurbished
+15.0,128.0,Good - Refurbished,357.38,iPhone 15,False,IA,Iowa,Latest (15+),Standard,Refurbished
+12.0,128.0,Used,349.0,iPhone 12 Pro Max,True,NY,New York,Mid-Gen (11-12),Pro,Second-hand
+16.0,256.0,Good - Refurbished,570.01,iPhone 16,False,IA,Iowa,Latest (15+),Standard,Refurbished
+12.0,64.0,Used,195.99,iPhone 12,False,FL,Florida,Mid-Gen (11-12),Standard,Second-hand
+14.0,128.0,Used,269.99,iPhone 14,False,IN,Indiana,Modern (13-14),Standard,Second-hand
+12.0,128.0,Used,295.0,iPhone 12 Pro Max,True,NJ,New Jersey,Mid-Gen (11-12),Pro,Second-hand
+13.0,128.0,Used,179.85,iPhone 13 Mini,False,NY,New York,Modern (13-14),Standard,Second-hand
+12.0,128.0,For Parts Or Not Working,210.0,iPhone 12 Pro Max,True,IN,Indiana,Mid-Gen (11-12),Pro,Damaged
+13.0,512.0,Good - Refurbished,357.77,iPhone 13 Mini,False,NY,New York,Modern (13-14),Standard,Refurbished
+14.0,128.0,For Parts Or Not Working,92.0,iPhone 14 Plus,False,TX,Texas,Modern (13-14),Standard,Damaged
+17.0,256.0,Very Good - Refurbished,799.98,iPhone 17,False,IA,Iowa,Latest (15+),Standard,Refurbished
+13.0,128.0,For Parts Or Not Working,154.98,iPhone 13,False,NY,New York,Modern (13-14),Standard,Damaged
+14.0,128.0,Used,333.33,iPhone 14,False,KS,Kansas,Modern (13-14),Standard,Second-hand
+14.0,512.0,Open Box,500.0,iPhone 14 Plus,False,TX,Texas,Modern (13-14),Standard,Open Box
+17.0,256.0,Excellent - Refurbished,839.98,iPhone 17,False,IA,Iowa,Latest (15+),Standard,Refurbished
+12.0,256.0,Used,790.0,iPhone 12 Pro Max,True,NJ,New Jersey,Mid-Gen (11-12),Pro,Second-hand
+14.0,128.0,Used,350.0,iPhone 14,False,FL,Florida,Modern (13-14),Standard,Second-hand
+17.0,256.0,Good - Refurbished,759.98,iPhone 17,False,IA,Iowa,Latest (15+),Standard,Refurbished
+12.0,512.0,Used,299.99,iPhone 12 Pro Max,True,NY,New York,Mid-Gen (11-12),Pro,Second-hand
+12.0,64.0,Used,149.99,iPhone 12,False,NY,New York,Mid-Gen (11-12),Standard,Second-hand
+16.0,128.0,Open Box,800.0,iPhone 16,False,PA,Pennsylvania,Latest (15+),Standard,Open Box
+16.0,128.0,New,674.99,iPhone 16,False,NC,North Carolina,Latest (15+),Standard,New
+16.0,128.0,Open Box,629.97,iPhone 16,False,FL,Florida,Latest (15+),Standard,Open Box
+12.0,64.0,Used,209.99,iPhone 12,False,FL,Florida,Mid-Gen (11-12),Standard,Second-hand
+14.0,256.0,Used,364.0,iPhone 14 Plus,False,KY,Kentucky,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,249.99,iPhone 14 Plus,False,NY,New York,Modern (13-14),Standard,Second-hand
+14.0,512.0,Used,309.99,iPhone 14 Plus,False,NY,New York,Modern (13-14),Standard,Second-hand
+15.0,128.0,Very Good - Refurbished,363.99,iPhone 15,False,NJ,New Jersey,Latest (15+),Standard,Refurbished
+17.0,512.0,Open Box,825.0,iPhone 17,False,TX,Texas,Latest (15+),Standard,Open Box
+12.0,64.0,Used,169.99,iPhone 12,False,IN,Indiana,Mid-Gen (11-12),Standard,Second-hand
+12.0,256.0,Used,265.0,iPhone 12 Pro Max,True,NY,New York,Mid-Gen (11-12),Pro,Second-hand
+14.0,1024.0,Used,469.99,iPhone 14 Pro Max,True,NY,New York,Modern (13-14),Pro,Second-hand
+17.0,1024.0,New,670.0,iPhone 17 Pro Max,True,MI,Michigan,Latest (15+),Pro,New
+17.0,1024.0,New,710.0,iPhone 17 Pro Max,True,TX,Texas,Latest (15+),Pro,New
+14.0,128.0,For Parts Or Not Working,239.0,iPhone 14 Plus,False,WI,Wisconsin,Modern (13-14),Standard,Damaged
+17.0,256.0,New,869.95,iPhone 17,False,OR,Oregon,Latest (15+),Standard,New
+13.0,128.0,Used,315.0,iPhone 13,False,NY,New York,Modern (13-14),Standard,Second-hand
+12.0,128.0,Used,189.99,iPhone 12,False,NY,New York,Mid-Gen (11-12),Standard,Second-hand
+15.0,128.0,Good - Refurbished,369.99,iPhone 15 Plus,False,IA,Iowa,Latest (15+),Standard,Refurbished
+13.0,256.0,Used,1000.0,iPhone 13,False,NY,New York,Modern (13-14),Standard,Second-hand
+13.0,128.0,Used,310.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+12.0,256.0,Used,229.99,iPhone 12,False,OH,Ohio,Mid-Gen (11-12),Standard,Second-hand
+12.0,128.0,Used,346.85,iPhone 12 Pro Max,True,IL,Illinois,Mid-Gen (11-12),Pro,Second-hand
+12.0,128.0,Used,341.91,iPhone 12 Pro Max,True,IL,Illinois,Mid-Gen (11-12),Pro,Second-hand
+15.0,128.0,Good - Refurbished,359.95,iPhone 15,False,FL,Florida,Latest (15+),Standard,Refurbished
+17.0,1024.0,New,1000.0,iPhone 17 Pro Max,True,IA,Iowa,Latest (15+),Pro,New
+17.0,512.0,New,650.0,iPhone 17 Pro Max,True,AL,Alabama,Latest (15+),Pro,New
+12.0,64.0,Used,199.99,iPhone 12,False,IL,Illinois,Mid-Gen (11-12),Standard,Second-hand
+12.0,512.0,Used,1000.0,iPhone 12 Pro Max,True,SC,South Carolina,Mid-Gen (11-12),Pro,Second-hand
+13.0,256.0,Open Box,321.01,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,Open Box
+12.0,256.0,Very Good - Refurbished,269.95,iPhone 12,False,IL,Illinois,Mid-Gen (11-12),Standard,Refurbished
+13.0,256.0,New,321.43,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+13.0,512.0,New,321.43,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+12.0,128.0,Very Good - Refurbished,224.99,iPhone 12,False,NY,New York,Mid-Gen (11-12),Standard,Refurbished
+12.0,64.0,Good - Refurbished,187.99,iPhone 12,False,NY,New York,Mid-Gen (11-12),Standard,Refurbished
+12.0,256.0,Used,250.99,iPhone 12 Pro Max,True,TX,Texas,Mid-Gen (11-12),Pro,Second-hand
+13.0,128.0,Open Box,321.01,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,Open Box
+14.0,128.0,Very Good - Refurbished,304.99,iPhone 14 Plus,False,NY,New York,Modern (13-14),Standard,Refurbished
+12.0,128.0,Very Good - Refurbished,324.99,iPhone 12 Pro Max,True,NY,New York,Mid-Gen (11-12),Pro,Refurbished
+14.0,128.0,New,403.95,iPhone 14,False,NJ,New Jersey,Modern (13-14),Standard,New
+14.0,256.0,New,699.99,iPhone 14 Pro Max,True,NJ,New Jersey,Modern (13-14),Pro,New
+14.0,512.0,New,629.51,iPhone 14 Pro Max,True,NJ,New Jersey,Modern (13-14),Pro,New
+13.0,128.0,New,409.95,iPhone 13,False,NJ,New Jersey,Modern (13-14),Standard,New
+14.0,128.0,New,699.99,iPhone 14 Pro Max,True,NJ,New Jersey,Modern (13-14),Pro,New
+14.0,128.0,New,403.95,iPhone 14,False,NJ,New Jersey,Modern (13-14),Standard,New
+13.0,512.0,New,321.43,iPhone 13 Mini,False,CA,California,Modern (13-14),Standard,New
+12.0,256.0,Used,229.0,iPhone 12 Pro Max,True,FL,Florida,Mid-Gen (11-12),Pro,Second-hand
+12.0,256.0,Used,229.0,iPhone 12 Pro Max,True,FL,Florida,Mid-Gen (11-12),Pro,Second-hand
+14.0,1024.0,New,629.51,iPhone 14 Pro Max,True,NJ,New Jersey,Modern (13-14),Pro,New
+14.0,1024.0,New,629.51,iPhone 14 Pro Max,True,NJ,New Jersey,Modern (13-14),Pro,New
+12.0,128.0,Used,343.88,iPhone 12 Pro Max,True,IL,Illinois,Mid-Gen (11-12),Pro,Second-hand
+16.0,128.0,Open Box,589.0,iPhone 16,False,NY,New York,Latest (15+),Standard,Open Box
+14.0,1024.0,Used,699.99,iPhone 14 Pro Max,True,NJ,New Jersey,Modern (13-14),Pro,Second-hand
+13.0,256.0,New,321.43,iPhone 13 Mini,False,CA,California,Modern (13-14),Standard,New
+13.0,128.0,New,345.29,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+16.0,128.0,Open Box,558.0,iPhone 16,False,NY,New York,Latest (15+),Standard,Open Box
+14.0,256.0,Used,395.0,iPhone 14 Pro Max,True,FL,Florida,Modern (13-14),Pro,Second-hand
+12.0,256.0,For Parts Or Not Working,177.19,iPhone 12 Pro Max,True,TX,Texas,Mid-Gen (11-12),Pro,Damaged
+16.0,128.0,Open Box,550.0,iPhone 16,False,CA,California,Latest (15+),Standard,Open Box
+12.0,128.0,For Parts Or Not Working,110.29,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Damaged
+14.0,128.0,New,403.95,iPhone 14,False,TX,Texas,Modern (13-14),Standard,New
+14.0,512.0,New,403.95,iPhone 14,False,TX,Texas,Modern (13-14),Standard,New
+14.0,512.0,New,389.01,iPhone 14,False,NJ,New Jersey,Modern (13-14),Standard,New
+14.0,256.0,For Parts Or Not Working,222.49,iPhone 14,False,NV,Nevada,Modern (13-14),Standard,Damaged
+12.0,128.0,New,429.99,iPhone 12 Pro Max,True,CA,California,Mid-Gen (11-12),Pro,New
+13.0,128.0,Open Box,429.95,iPhone 13,False,CA,California,Modern (13-14),Standard,Open Box
+13.0,128.0,New,366.95,iPhone 13,False,CA,California,Modern (13-14),Standard,New
+14.0,128.0,New,422.95,iPhone 14,False,CA,California,Modern (13-14),Standard,New
+14.0,128.0,New,419.95,iPhone 14,False,CA,California,Modern (13-14),Standard,New
+12.0,64.0,Very Good - Refurbished,188.99,iPhone 12,False,NY,New York,Mid-Gen (11-12),Standard,Refurbished
+12.0,64.0,Excellent - Refurbished,202.99,iPhone 12,False,NY,New York,Mid-Gen (11-12),Standard,Refurbished
+12.0,128.0,Very Good - Refurbished,314.99,iPhone 12 Pro Max,True,NY,New York,Mid-Gen (11-12),Pro,Refurbished
+12.0,256.0,Used,520.0,iPhone 12 Pro Max,True,NY,New York,Mid-Gen (11-12),Pro,Second-hand
+12.0,128.0,Excellent - Refurbished,324.99,iPhone 12 Pro Max,True,NY,New York,Mid-Gen (11-12),Pro,Refurbished
+12.0,256.0,Used,204.99,iPhone 12,False,NY,New York,Mid-Gen (11-12),Standard,Second-hand
+14.0,128.0,New,416.95,iPhone 14 Plus,False,CA,California,Modern (13-14),Standard,New
+15.0,128.0,New,526.95,iPhone 15,False,CA,California,Latest (15+),Standard,New
+14.0,512.0,Used,344.99,iPhone 14 Plus,False,NY,New York,Modern (13-14),Standard,Second-hand
+14.0,512.0,Used,319.99,iPhone 14 Plus,False,NY,New York,Modern (13-14),Standard,Second-hand
+13.0,512.0,Used,244.99,iPhone 13,False,NY,New York,Modern (13-14),Standard,Second-hand
+14.0,128.0,Very Good - Refurbished,299.99,iPhone 14,False,NY,New York,Modern (13-14),Standard,Refurbished
+12.0,128.0,Used,480.0,iPhone 12 Pro Max,True,NY,New York,Mid-Gen (11-12),Pro,Second-hand
+12.0,128.0,Used,280.0,iPhone 12,False,NY,New York,Mid-Gen (11-12),Standard,Second-hand
+13.0,512.0,New,322.01,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+13.0,512.0,New,322.01,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+12.0,128.0,Used,480.0,iPhone 12 Pro Max,True,NY,New York,Mid-Gen (11-12),Pro,Second-hand
+12.0,256.0,Used,280.0,iPhone 12 Pro Max,True,CA,California,Mid-Gen (11-12),Pro,Second-hand
+14.0,128.0,Used,274.99,iPhone 14 Plus,False,NY,New York,Modern (13-14),Standard,Second-hand
+16.0,128.0,New,649.95,iPhone 16,False,CA,California,Latest (15+),Standard,New
+15.0,128.0,Very Good - Refurbished,389.99,iPhone 15,False,NY,New York,Latest (15+),Standard,Refurbished
+14.0,128.0,Used,279.99,iPhone 14 Plus,False,NY,New York,Modern (13-14),Standard,Second-hand
+13.0,512.0,New,322.01,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+14.0,128.0,New,745.12,iPhone 14 Pro Max,True,NJ,New Jersey,Modern (13-14),Pro,New
+14.0,128.0,New,699.99,iPhone 14 Pro Max,True,NJ,New Jersey,Modern (13-14),Pro,New
+14.0,512.0,New,699.99,iPhone 14 Pro Max,True,NJ,New Jersey,Modern (13-14),Pro,New
+13.0,512.0,Excellent - Refurbished,254.99,iPhone 13 Mini,False,NY,New York,Modern (13-14),Standard,Refurbished
+12.0,256.0,Excellent - Refurbished,229.99,iPhone 12,False,NY,New York,Mid-Gen (11-12),Standard,Refurbished
+14.0,128.0,New,699.99,iPhone 14 Pro Max,True,NJ,New Jersey,Modern (13-14),Pro,New
+14.0,128.0,New,403.95,iPhone 14,False,NJ,New Jersey,Modern (13-14),Standard,New
+14.0,256.0,New,745.12,iPhone 14 Pro Max,True,NJ,New Jersey,Modern (13-14),Pro,New
+14.0,128.0,New,403.95,iPhone 14,False,NJ,New Jersey,Modern (13-14),Standard,New
+14.0,512.0,New,403.95,iPhone 14,False,NJ,New Jersey,Modern (13-14),Standard,New
+13.0,256.0,New,321.01,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+13.0,256.0,New,432.12,iPhone 13,False,NJ,New Jersey,Modern (13-14),Standard,New
+16.0,128.0,Excellent - Refurbished,545.0,iPhone 16,False,IN,Indiana,Latest (15+),Standard,Refurbished
+13.0,128.0,Excellent - Refurbished,298.95,iPhone 13,False,CA,California,Modern (13-14),Standard,Refurbished
+16.0,128.0,Good - Refurbished,518.0,iPhone 16,False,IN,Indiana,Latest (15+),Standard,Refurbished
+13.0,256.0,New,331.99,iPhone 13 Mini,False,CA,California,Modern (13-14),Standard,New
+14.0,128.0,New,745.12,iPhone 14 Pro Max,True,NJ,New Jersey,Modern (13-14),Pro,New
+12.0,64.0,Used,99.99,iPhone 12,False,OK,Oklahoma,Mid-Gen (11-12),Standard,Second-hand
+13.0,256.0,For Parts Or Not Working,229.0,iPhone 13,False,CA,California,Modern (13-14),Standard,Damaged
+14.0,1024.0,Used,638.99,iPhone 14 Pro Max,True,CA,California,Modern (13-14),Pro,Second-hand
+14.0,1024.0,Used,634.99,iPhone 14 Pro Max,True,CA,California,Modern (13-14),Pro,Second-hand
+17.0,256.0,New,989.95,iPhone 17,False,CA,California,Latest (15+),Standard,New
+14.0,128.0,Good - Refurbished,349.95,iPhone 14,False,CA,California,Modern (13-14),Standard,Refurbished
+13.0,256.0,Used,305.0,iPhone 13,False,NY,New York,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,420.0,iPhone 14 Pro Max,True,LA,Louisiana,Modern (13-14),Pro,Second-hand
+13.0,256.0,New,321.01,iPhone 13 Mini,False,CA,California,Modern (13-14),Standard,New
+12.0,128.0,New,432.95,iPhone 12 Pro Max,True,CA,California,Mid-Gen (11-12),Pro,New
+12.0,128.0,Used,329.0,iPhone 12 Pro Max,True,FL,Florida,Mid-Gen (11-12),Pro,Second-hand
+16.0,128.0,Excellent - Refurbished,487.99,iPhone 16,False,MD,Maryland,Latest (15+),Standard,Refurbished
+12.0,256.0,Used,449.99,iPhone 12 Pro Max,True,NY,New York,Mid-Gen (11-12),Pro,Second-hand
+13.0,128.0,New,322.01,iPhone 13 Mini,False,CA,California,Modern (13-14),Standard,New
+13.0,128.0,New,332.01,iPhone 13 Mini,False,CA,California,Modern (13-14),Standard,New
+13.0,256.0,Used,260.0,iPhone 13,False,IL,Illinois,Modern (13-14),Standard,Second-hand
+13.0,128.0,New,347.0,iPhone 13,False,MI,Michigan,Modern (13-14),Standard,New
+12.0,128.0,For Parts Or Not Working,149.99,iPhone 12,False,NY,New York,Mid-Gen (11-12),Standard,Damaged
+12.0,128.0,New,334.99,iPhone 12,False,CA,California,Mid-Gen (11-12),Standard,New
+12.0,128.0,New,329.99,iPhone 12,False,CA,California,Mid-Gen (11-12),Standard,New
+12.0,512.0,Used,499.99,iPhone 12 Pro Max,True,NJ,New Jersey,Mid-Gen (11-12),Pro,Second-hand
+12.0,128.0,Used,347.84,iPhone 12 Pro Max,True,IL,Illinois,Mid-Gen (11-12),Pro,Second-hand
+12.0,128.0,Used,342.89,iPhone 12 Pro Max,True,IL,Illinois,Mid-Gen (11-12),Pro,Second-hand
+13.0,128.0,Used,250.0,iPhone 13,False,FL,Florida,Modern (13-14),Standard,Second-hand
+16.0,256.0,Good - Refurbished,599.0,iPhone 16,False,IN,Indiana,Latest (15+),Standard,Refurbished
+12.0,512.0,For Parts Or Not Working,268.0,iPhone 12 Pro Max,True,UT,Utah,Mid-Gen (11-12),Pro,Damaged
+13.0,256.0,Used,313.0,iPhone 13,False,OR,Oregon,Modern (13-14),Standard,Second-hand
+13.0,128.0,Used,215.0,iPhone 13 Mini,False,UT,Utah,Modern (13-14),Standard,Second-hand
+16.0,128.0,New,648.95,iPhone 16,False,CA,California,Latest (15+),Standard,New
+17.0,256.0,New,869.0,iPhone 17,False,NY,New York,Latest (15+),Standard,New
+14.0,128.0,Used,280.0,iPhone 14,False,MS,Mississippi,Modern (13-14),Standard,Second-hand
+17.0,256.0,New,739.0,iPhone 17,False,OH,Ohio,Latest (15+),Standard,New
+17.0,256.0,Open Box,848.0,iPhone 17,False,UT,Utah,Latest (15+),Standard,Open Box
+13.0,256.0,Used,270.0,iPhone 13 Mini,False,TX,Texas,Modern (13-14),Standard,Second-hand
+13.0,128.0,Used,228.0,iPhone 13,False,UT,Utah,Modern (13-14),Standard,Second-hand
+16.0,128.0,New,628.0,iPhone 16,False,NY,New York,Latest (15+),Standard,New
+17.0,256.0,New,829.95,iPhone 17,False,NY,New York,Latest (15+),Standard,New
+14.0,128.0,Used,358.99,iPhone 14 Plus,False,CA,California,Modern (13-14),Standard,Second-hand
+16.0,256.0,Open Box,499.0,iPhone 16,False,MD,Maryland,Latest (15+),Standard,Open Box
+14.0,128.0,Open Box,364.99,iPhone 14 Plus,False,CA,California,Modern (13-14),Standard,Open Box
+14.0,128.0,New,403.95,iPhone 14,False,TX,Texas,Modern (13-14),Standard,New
+14.0,128.0,New,403.95,iPhone 14,False,TX,Texas,Modern (13-14),Standard,New
+14.0,128.0,Open Box,362.99,iPhone 14 Plus,False,CA,California,Modern (13-14),Standard,Open Box
+15.0,128.0,New,479.99,iPhone 15,False,WI,Wisconsin,Latest (15+),Standard,New
+17.0,256.0,New,610.0,iPhone 17 Pro Max,True,PA,Pennsylvania,Latest (15+),Pro,New
+14.0,512.0,New,675.99,iPhone 14 Pro Max,True,NY,New York,Modern (13-14),Pro,New
+14.0,512.0,New,675.99,iPhone 14 Pro Max,True,NY,New York,Modern (13-14),Pro,New
+12.0,64.0,Used,200.0,iPhone 12,False,RI,Rhode Island,Mid-Gen (11-12),Standard,Second-hand
+17.0,256.0,New,699.99,iPhone 17,False,ME,Maine,Latest (15+),Standard,New
+12.0,512.0,Used,269.99,iPhone 12 Pro Max,True,NY,New York,Mid-Gen (11-12),Pro,Second-hand
+12.0,256.0,Used,154.99,iPhone 12,False,NY,New York,Mid-Gen (11-12),Standard,Second-hand
+12.0,512.0,Used,264.99,iPhone 12 Pro Max,True,NY,New York,Mid-Gen (11-12),Pro,Second-hand
+12.0,256.0,Used,179.99,iPhone 12,False,NY,New York,Mid-Gen (11-12),Standard,Second-hand
+14.0,512.0,Used,304.99,iPhone 14 Plus,False,NY,New York,Modern (13-14),Standard,Second-hand
+13.0,512.0,Used,294.99,iPhone 13,False,NY,New York,Modern (13-14),Standard,Second-hand
+12.0,512.0,Used,339.99,iPhone 12 Pro Max,True,NY,New York,Mid-Gen (11-12),Pro,Second-hand
+13.0,512.0,Used,264.99,iPhone 13,False,NY,New York,Modern (13-14),Standard,Second-hand
+14.0,512.0,Excellent - Refurbished,359.99,iPhone 14,False,NY,New York,Modern (13-14),Standard,Refurbished
+14.0,512.0,Very Good - Refurbished,309.99,iPhone 14 Plus,False,NY,New York,Modern (13-14),Standard,Refurbished
+14.0,128.0,Very Good - Refurbished,289.99,iPhone 14,False,NY,New York,Modern (13-14),Standard,Refurbished
+13.0,512.0,Very Good - Refurbished,229.99,iPhone 13 Mini,False,NY,New York,Modern (13-14),Standard,Refurbished
+12.0,512.0,Very Good - Refurbished,349.99,iPhone 12 Pro Max,True,NY,New York,Mid-Gen (11-12),Pro,Refurbished
+14.0,1024.0,Used,649.99,iPhone 14 Pro Max,True,NY,New York,Modern (13-14),Pro,Second-hand
+13.0,128.0,Used,250.99,iPhone 13 Mini,False,PA,Pennsylvania,Modern (13-14),Standard,Second-hand
+17.0,256.0,Open Box,739.0,iPhone 17,False,NY,New York,Latest (15+),Standard,Open Box
+17.0,256.0,Open Box,925.0,iPhone 17,False,FL,Florida,Latest (15+),Standard,Open Box
+17.0,256.0,New,799.0,iPhone 17,False,MD,Maryland,Latest (15+),Standard,New
+12.0,64.0,New,102.5,iPhone 12,False,NY,New York,Mid-Gen (11-12),Standard,New
+17.0,512.0,New,399.0,iPhone 17,False,TX,Texas,Latest (15+),Standard,New
+17.0,256.0,New,799.28,iPhone 17 Pro Max,True,UT,Utah,Latest (15+),Pro,New
+16.0,128.0,Open Box,549.0,iPhone 16,False,FL,Florida,Latest (15+),Standard,Open Box
+13.0,128.0,Used,219.94,iPhone 13 Mini,False,FL,Florida,Modern (13-14),Standard,Second-hand
+13.0,128.0,Very Good - Refurbished,275.45,iPhone 13,False,SC,South Carolina,Modern (13-14),Standard,Refurbished
+14.0,128.0,Very Good - Refurbished,270.7,iPhone 14,False,SC,South Carolina,Modern (13-14),Standard,Refurbished
+14.0,128.0,Excellent - Refurbished,299.2,iPhone 14,False,SC,South Carolina,Modern (13-14),Standard,Refurbished
+12.0,64.0,Used,425.0,iPhone 12,False,IL,Illinois,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Open Box,142.45,iPhone 12,False,SC,South Carolina,Mid-Gen (11-12),Standard,Open Box
+13.0,128.0,Open Box,289.95,iPhone 13 Mini,False,TX,Texas,Modern (13-14),Standard,Open Box
+12.0,128.0,Used,309.94,iPhone 12 Pro Max,True,FL,Florida,Mid-Gen (11-12),Pro,Second-hand
+13.0,128.0,Used,209.0,iPhone 13 Mini,False,FL,Florida,Modern (13-14),Standard,Second-hand
+14.0,512.0,Very Good - Refurbished,479.0,iPhone 14 Plus,False,NY,New York,Modern (13-14),Standard,Refurbished
+14.0,128.0,Used,309.0,iPhone 14 Plus,False,FL,Florida,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,309.94,iPhone 14 Plus,False,FL,Florida,Modern (13-14),Standard,Second-hand
+14.0,128.0,Good - Refurbished,289.7,iPhone 14,False,SC,South Carolina,Modern (13-14),Standard,Refurbished
+14.0,128.0,Used,299.93,iPhone 14,False,FL,Florida,Modern (13-14),Standard,Second-hand
+12.0,64.0,Used,189.94,iPhone 12,False,FL,Florida,Mid-Gen (11-12),Standard,Second-hand
+14.0,128.0,Used,309.94,iPhone 14 Plus,False,FL,Florida,Modern (13-14),Standard,Second-hand
+14.0,128.0,Good - Refurbished,299.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Refurbished
+13.0,256.0,Open Box,339.95,iPhone 13 Mini,False,TX,Texas,Modern (13-14),Standard,Open Box
+14.0,512.0,Open Box,519.95,iPhone 14 Plus,False,TX,Texas,Modern (13-14),Standard,Open Box
+14.0,128.0,Used,239.99,iPhone 14,False,NY,New York,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,234.99,iPhone 14,False,NY,New York,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,249.99,iPhone 14 Plus,False,NY,New York,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,249.99,iPhone 14 Plus,False,NY,New York,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,459.95,iPhone 14 Pro Max,True,FL,Florida,Modern (13-14),Pro,Second-hand
+14.0,128.0,Used,459.0,iPhone 14 Pro Max,True,FL,Florida,Modern (13-14),Pro,Second-hand
+15.0,128.0,Very Good - Refurbished,384.99,iPhone 15,False,NY,New York,Latest (15+),Standard,Refurbished
+15.0,128.0,Good - Refurbished,369.99,iPhone 15,False,NY,New York,Latest (15+),Standard,Refurbished
+15.0,128.0,Excellent - Refurbished,489.99,iPhone 15 Pro,True,NY,New York,Latest (15+),Pro,Refurbished
+13.0,128.0,Used,229.0,iPhone 13 Mini,False,FL,Florida,Modern (13-14),Standard,Second-hand
+15.0,128.0,Excellent - Refurbished,399.99,iPhone 15,False,NY,New York,Latest (15+),Standard,Refurbished
+14.0,512.0,Open Box,449.95,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Open Box
+15.0,128.0,Excellent - Refurbished,429.99,iPhone 15 Plus,False,NY,New York,Latest (15+),Standard,Refurbished
+14.0,256.0,Open Box,389.95,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Open Box
+13.0,256.0,Used,289.0,iPhone 13,False,FL,Florida,Modern (13-14),Standard,Second-hand
+13.0,128.0,Used,224.94,iPhone 13 Mini,False,FL,Florida,Modern (13-14),Standard,Second-hand
+15.0,128.0,Open Box,434.99,iPhone 15,False,NY,New York,Latest (15+),Standard,Open Box
+12.0,128.0,Used,345.86,iPhone 12 Pro Max,True,IL,Illinois,Mid-Gen (11-12),Pro,Second-hand
+12.0,128.0,Used,340.92,iPhone 12 Pro Max,True,IL,Illinois,Mid-Gen (11-12),Pro,Second-hand
+13.0,128.0,Used,299.95,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,269.95,iPhone 14 Plus,False,FL,Florida,Modern (13-14),Standard,Second-hand
+13.0,128.0,Used,249.94,iPhone 13,False,FL,Florida,Modern (13-14),Standard,Second-hand
+17.0,256.0,Open Box,799.99,iPhone 17,False,NY,New York,Latest (15+),Standard,Open Box
+13.0,256.0,Used,213.89,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+13.0,128.0,Used,189.94,iPhone 13 Mini,False,FL,Florida,Modern (13-14),Standard,Second-hand
+13.0,128.0,Used,199.93,iPhone 13 Mini,False,FL,Florida,Modern (13-14),Standard,Second-hand
+13.0,256.0,Used,249.0,iPhone 13,False,FL,Florida,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,279.0,iPhone 14 Plus,False,FL,Florida,Modern (13-14),Standard,Second-hand
+13.0,256.0,Used,299.0,iPhone 13,False,FL,Florida,Modern (13-14),Standard,Second-hand
+17.0,256.0,Open Box,769.99,iPhone 17,False,NY,New York,Latest (15+),Standard,Open Box
+17.0,256.0,Open Box,784.99,iPhone 17,False,NY,New York,Latest (15+),Standard,Open Box
+13.0,128.0,Used,175.29,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+13.0,128.0,Used,174.69,iPhone 13 Mini,False,TX,Texas,Modern (13-14),Standard,Second-hand
+13.0,256.0,Used,197.69,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+16.0,128.0,New,499.99,iPhone 16,False,NY,New York,Latest (15+),Standard,New
+17.0,256.0,Open Box,659.99,iPhone 17,False,NY,New York,Latest (15+),Standard,Open Box
+16.0,128.0,Open Box,575.0,iPhone 16,False,NY,New York,Latest (15+),Standard,Open Box
+16.0,128.0,Open Box,575.0,iPhone 16,False,NY,New York,Latest (15+),Standard,Open Box
+16.0,128.0,Open Box,575.0,iPhone 16,False,NY,New York,Latest (15+),Standard,Open Box
+17.0,256.0,Open Box,759.99,iPhone 17,False,NY,New York,Latest (15+),Standard,Open Box
+17.0,256.0,Open Box,759.99,iPhone 17,False,NY,New York,Latest (15+),Standard,Open Box
+17.0,256.0,New,699.0,iPhone 17,False,WA,Washington,Latest (15+),Standard,New
+17.0,256.0,New,795.0,iPhone 17,False,NY,New York,Latest (15+),Standard,New
+14.0,128.0,New,403.0,iPhone 14,False,OK,Oklahoma,Modern (13-14),Standard,New
+14.0,128.0,Used,320.0,iPhone 14 Plus,False,CA,California,Modern (13-14),Standard,Second-hand
+12.0,256.0,Very Good - Refurbished,357.69,iPhone 12 Pro Max,True,NJ,New Jersey,Mid-Gen (11-12),Pro,Refurbished
+17.0,256.0,New,848.99,iPhone 17,False,NY,New York,Latest (15+),Standard,New
+17.0,256.0,Open Box,659.99,iPhone 17,False,NY,New York,Latest (15+),Standard,Open Box
+14.0,128.0,For Parts Or Not Working,199.99,iPhone 14 Plus,False,NY,New York,Modern (13-14),Standard,Damaged
+13.0,128.0,Used,240.0,iPhone 13,False,MN,Minnesota,Modern (13-14),Standard,Second-hand
+16.0,128.0,New,629.99,iPhone 16,False,NY,New York,Latest (15+),Standard,New
+13.0,128.0,Excellent - Refurbished,294.45,iPhone 13,False,SC,South Carolina,Modern (13-14),Standard,Refurbished
+14.0,256.0,Open Box,399.95,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Open Box
+14.0,256.0,Open Box,439.0,iPhone 14 Plus,False,NY,New York,Modern (13-14),Standard,Open Box
+14.0,128.0,Open Box,349.99,iPhone 14,False,CA,California,Modern (13-14),Standard,Open Box
+14.0,128.0,Very Good - Refurbished,719.99,iPhone 14 Pro Max,True,CA,California,Modern (13-14),Pro,Refurbished
+14.0,128.0,Open Box,399.99,iPhone 14 Plus,False,CA,California,Modern (13-14),Standard,Open Box
+14.0,128.0,Excellent - Refurbished,369.99,iPhone 14 Plus,False,CA,California,Modern (13-14),Standard,Refurbished
+14.0,512.0,Used,669.99,iPhone 14 Pro Max,True,CA,California,Modern (13-14),Pro,Second-hand
+13.0,128.0,Good - Refurbished,256.45,iPhone 13,False,SC,South Carolina,Modern (13-14),Standard,Refurbished
+13.0,128.0,Open Box,294.95,iPhone 13 Mini,False,TX,Texas,Modern (13-14),Standard,Open Box
+14.0,128.0,Excellent - Refurbished,719.99,iPhone 14 Pro Max,True,CA,California,Modern (13-14),Pro,Refurbished
+14.0,128.0,Open Box,384.99,iPhone 14 Plus,False,CA,California,Modern (13-14),Standard,Open Box
+14.0,256.0,Very Good - Refurbished,735.99,iPhone 14 Pro Max,True,CA,California,Modern (13-14),Pro,Refurbished
+14.0,128.0,Very Good - Refurbished,349.99,iPhone 14,False,CA,California,Modern (13-14),Standard,Refurbished
+14.0,128.0,Excellent - Refurbished,399.99,iPhone 14 Plus,False,CA,California,Modern (13-14),Standard,Refurbished
+14.0,1024.0,Very Good - Refurbished,661.99,iPhone 14 Pro Max,True,CA,California,Modern (13-14),Pro,Refurbished
+14.0,512.0,Open Box,699.99,iPhone 14 Pro Max,True,CA,California,Modern (13-14),Pro,Open Box
+14.0,512.0,Open Box,489.9,iPhone 14 Plus,False,TX,Texas,Modern (13-14),Standard,Open Box
+13.0,128.0,Open Box,314.99,iPhone 13,False,CA,California,Modern (13-14),Standard,Open Box
+12.0,128.0,Used,154.95,iPhone 12,False,NY,New York,Mid-Gen (11-12),Standard,Second-hand
+14.0,128.0,Used,219.99,iPhone 14,False,NY,New York,Modern (13-14),Standard,Second-hand
+13.0,256.0,Open Box,344.95,iPhone 13 Mini,False,TX,Texas,Modern (13-14),Standard,Open Box
+13.0,128.0,Used,259.95,iPhone 13 Mini,False,TX,Texas,Modern (13-14),Standard,Second-hand
+13.0,256.0,Used,319.95,iPhone 13 Mini,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,350.0,iPhone 14 Pro,True,NJ,New Jersey,Modern (13-14),Pro,Second-hand
+16.0,128.0,New,645.15,iPhone 16,False,NJ,New Jersey,Latest (15+),Standard,New
+14.0,256.0,Open Box,379.95,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Open Box
+14.0,128.0,Open Box,369.95,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Open Box
+14.0,128.0,Open Box,359.95,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Open Box
+14.0,256.0,Excellent - Refurbished,308.29,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Refurbished
+14.0,256.0,Used,399.0,iPhone 14 Pro Max,True,FL,Florida,Modern (13-14),Pro,Second-hand
+16.0,128.0,Open Box,599.0,iPhone 16,False,NY,New York,Latest (15+),Standard,Open Box
+17.0,256.0,New,849.99,iPhone 17,False,NY,New York,Latest (15+),Standard,New
+16.0,256.0,Open Box,650.0,iPhone 16,False,NY,New York,Latest (15+),Standard,Open Box
+13.0,128.0,Used,190.89,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+16.0,128.0,Open Box,594.99,iPhone 16,False,NY,New York,Latest (15+),Standard,Open Box
+17.0,256.0,Open Box,779.99,iPhone 17,False,NY,New York,Latest (15+),Standard,Open Box
+17.0,256.0,Open Box,659.99,iPhone 17,False,NY,New York,Latest (15+),Standard,Open Box
+16.0,128.0,Open Box,569.99,iPhone 16,False,NY,New York,Latest (15+),Standard,Open Box
+15.0,128.0,Excellent - Refurbished,409.99,iPhone 15,False,FL,Florida,Latest (15+),Standard,Refurbished
+14.0,128.0,For Parts Or Not Working,430.99,iPhone 14,False,FL,Florida,Modern (13-14),Standard,Damaged
+16.0,128.0,New,649.99,iPhone 16,False,FL,Florida,Latest (15+),Standard,New
+16.0,128.0,Excellent - Refurbished,569.0,iPhone 16,False,AZ,Arizona,Latest (15+),Standard,Refurbished
+12.0,128.0,Used,269.0,iPhone 12,False,FL,Florida,Mid-Gen (11-12),Standard,Second-hand
+16.0,128.0,Excellent - Refurbished,569.99,iPhone 16,False,FL,Florida,Latest (15+),Standard,Refurbished
+16.0,128.0,Very Good - Refurbished,549.99,iPhone 16,False,FL,Florida,Latest (15+),Standard,Refurbished
+13.0,256.0,Used,315.97,iPhone 13,False,FL,Florida,Modern (13-14),Standard,Second-hand
+16.0,128.0,Very Good - Refurbished,557.0,iPhone 16,False,AZ,Arizona,Latest (15+),Standard,Refurbished
+12.0,256.0,Used,370.0,iPhone 12 Pro Max,True,CA,California,Mid-Gen (11-12),Pro,Second-hand
+14.0,256.0,Used,650.0,iPhone 14 Pro Max,True,NY,New York,Modern (13-14),Pro,Second-hand
+16.0,128.0,New,669.99,iPhone 16,False,FL,Florida,Latest (15+),Standard,New
+12.0,128.0,Used,206.0,iPhone 12,False,FL,Florida,Mid-Gen (11-12),Standard,Second-hand
+16.0,128.0,Good - Refurbished,459.0,iPhone 16,False,AZ,Arizona,Latest (15+),Standard,Refurbished
+17.0,256.0,Excellent - Refurbished,789.0,iPhone 17,False,AZ,Arizona,Latest (15+),Standard,Refurbished
+17.0,256.0,Excellent - Refurbished,799.99,iPhone 17,False,FL,Florida,Latest (15+),Standard,Refurbished
+17.0,256.0,Open Box,925.0,iPhone 17,False,ME,Maine,Latest (15+),Standard,Open Box
+13.0,128.0,Used,259.99,iPhone 13,False,FL,Florida,Modern (13-14),Standard,Second-hand
+17.0,256.0,Open Box,925.0,iPhone 17,False,ME,Maine,Latest (15+),Standard,Open Box
+17.0,256.0,Open Box,925.0,iPhone 17,False,ME,Maine,Latest (15+),Standard,Open Box
+17.0,256.0,New,919.99,iPhone 17,False,FL,Florida,Latest (15+),Standard,New
+17.0,256.0,Open Box,1000.0,iPhone 17 Pro Max,True,ME,Maine,Latest (15+),Pro,Open Box
+13.0,128.0,Used,249.69,iPhone 13,False,FL,Florida,Modern (13-14),Standard,Second-hand
+15.0,512.0,Excellent - Refurbished,449.0,iPhone 15,False,NY,New York,Latest (15+),Standard,Refurbished
+12.0,128.0,For Parts Or Not Working,387.59,iPhone 12 Pro Max,True,FL,Florida,Mid-Gen (11-12),Pro,Damaged
+17.0,512.0,Excellent - Refurbished,929.0,iPhone 17,False,AZ,Arizona,Latest (15+),Standard,Refurbished
+12.0,512.0,For Parts Or Not Working,326.39,iPhone 12 Pro Max,True,FL,Florida,Mid-Gen (11-12),Pro,Damaged
+14.0,256.0,Used,377.39,iPhone 14 Plus,False,FL,Florida,Modern (13-14),Standard,Second-hand
+14.0,128.0,For Parts Or Not Working,275.39,iPhone 14 Plus,False,FL,Florida,Modern (13-14),Standard,Damaged
+14.0,512.0,For Parts Or Not Working,489.59,iPhone 14 Pro Max,True,FL,Florida,Modern (13-14),Pro,Damaged
+14.0,256.0,For Parts Or Not Working,399.99,iPhone 14 Pro Max,True,LA,Louisiana,Modern (13-14),Pro,Damaged
+12.0,128.0,Very Good - Refurbished,200.19,iPhone 12,False,NJ,New Jersey,Mid-Gen (11-12),Standard,Refurbished
+16.0,128.0,New,699.99,iPhone 16,False,FL,Florida,Latest (15+),Standard,New
+12.0,128.0,Open Box,225.0,iPhone 12 Pro Max,True,FL,Florida,Mid-Gen (11-12),Pro,Open Box
+13.0,512.0,Used,430.0,iPhone 13,False,NY,New York,Modern (13-14),Standard,Second-hand
+15.0,128.0,Very Good - Refurbished,369.99,iPhone 15,False,FL,Florida,Latest (15+),Standard,Refurbished
+12.0,256.0,Very Good - Refurbished,339.99,iPhone 12 Pro Max,True,FL,Florida,Mid-Gen (11-12),Pro,Refurbished
+12.0,256.0,Excellent - Refurbished,409.99,iPhone 12 Pro Max,True,FL,Florida,Mid-Gen (11-12),Pro,Refurbished
+12.0,64.0,Used,160.0,iPhone 12,False,NY,New York,Mid-Gen (11-12),Standard,Second-hand
+13.0,128.0,Open Box,279.77,iPhone 13,False,NY,New York,Modern (13-14),Standard,Open Box
+13.0,256.0,New,314.11,iPhone 13 Mini,False,NY,New York,Modern (13-14),Standard,New
+13.0,256.0,New,321.88,iPhone 13 Mini,False,NY,New York,Modern (13-14),Standard,New
+13.0,128.0,New,321.99,iPhone 13 Mini,False,NY,New York,Modern (13-14),Standard,New
+13.0,128.0,New,321.99,iPhone 13 Mini,False,NY,New York,Modern (13-14),Standard,New
+13.0,64.0,New,314.11,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+12.0,64.0,Used,375.99,iPhone 12,False,FL,Florida,Mid-Gen (11-12),Standard,Second-hand
+13.0,128.0,New,321.88,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+12.0,256.0,Used,420.0,iPhone 12 Pro Max,True,NY,New York,Mid-Gen (11-12),Pro,Second-hand
+16.0,256.0,Very Good - Refurbished,679.99,iPhone 16,False,FL,Florida,Latest (15+),Standard,Refurbished
+13.0,128.0,New,432.13,iPhone 13,False,NY,New York,Modern (13-14),Standard,New
+13.0,512.0,New,432.13,iPhone 13,False,NJ,New Jersey,Modern (13-14),Standard,New
+13.0,256.0,Open Box,294.98,iPhone 13,False,NY,New York,Modern (13-14),Standard,Open Box
+14.0,1024.0,Used,661.99,iPhone 14 Pro Max,True,CA,California,Modern (13-14),Pro,Second-hand
+14.0,128.0,Open Box,748.99,iPhone 14 Pro Max,True,CA,California,Modern (13-14),Pro,Open Box
+14.0,256.0,Open Box,779.99,iPhone 14 Pro Max,True,CA,California,Modern (13-14),Pro,Open Box
+16.0,128.0,Open Box,749.99,iPhone 16,False,CA,California,Latest (15+),Standard,Open Box
+14.0,128.0,Open Box,748.99,iPhone 14 Pro Max,True,CA,California,Modern (13-14),Pro,Open Box
+12.0,64.0,Used,240.0,iPhone 12,False,NY,New York,Mid-Gen (11-12),Standard,Second-hand
+13.0,128.0,New,321.99,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+13.0,128.0,New,321.99,iPhone 13 Mini,False,NY,New York,Modern (13-14),Standard,New
+14.0,128.0,New,675.95,iPhone 14 Pro Max,True,NJ,New Jersey,Modern (13-14),Pro,New
+13.0,512.0,Open Box,429.97,iPhone 13,False,NJ,New Jersey,Modern (13-14),Standard,Open Box
+14.0,128.0,New,745.12,iPhone 14 Pro Max,True,NJ,New Jersey,Modern (13-14),Pro,New
+16.0,256.0,Good - Refurbished,579.0,iPhone 16,False,AZ,Arizona,Latest (15+),Standard,Refurbished
+13.0,512.0,New,321.88,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+14.0,128.0,New,389.01,iPhone 14,False,NJ,New Jersey,Modern (13-14),Standard,New
+14.0,1024.0,Excellent - Refurbished,675.99,iPhone 14 Pro Max,True,CA,California,Modern (13-14),Pro,Refurbished
+14.0,512.0,New,389.01,iPhone 14,False,NY,New York,Modern (13-14),Standard,New
+12.0,128.0,Good - Refurbished,183.99,iPhone 12,False,NY,New York,Mid-Gen (11-12),Standard,Refurbished
+12.0,256.0,Used,420.0,iPhone 12 Pro Max,True,NY,New York,Mid-Gen (11-12),Pro,Second-hand
+16.0,128.0,Excellent - Refurbished,525.0,iPhone 16,False,AZ,Arizona,Latest (15+),Standard,Refurbished
+16.0,128.0,Very Good - Refurbished,490.0,iPhone 16,False,AZ,Arizona,Latest (15+),Standard,Refurbished
+14.0,128.0,Excellent - Refurbished,748.99,iPhone 14 Pro Max,True,CA,California,Modern (13-14),Pro,Refurbished
+15.0,128.0,Excellent - Refurbished,400.49,iPhone 15,False,CA,California,Latest (15+),Standard,Refurbished
+15.0,128.0,Excellent - Refurbished,570.59,iPhone 15 Pro,True,CA,California,Latest (15+),Pro,Refurbished
+16.0,128.0,Excellent - Refurbished,530.99,iPhone 16,False,CA,California,Latest (15+),Standard,Refurbished
+15.0,128.0,Very Good - Refurbished,390.59,iPhone 15,False,CA,California,Latest (15+),Standard,Refurbished
+13.0,128.0,New,322.01,iPhone 13 Mini,False,CA,California,Modern (13-14),Standard,New
+17.0,256.0,New,837.0,iPhone 17,False,AZ,Arizona,Latest (15+),Standard,New
+17.0,256.0,Excellent - Refurbished,789.0,iPhone 17,False,AZ,Arizona,Latest (15+),Standard,Refurbished
+13.0,128.0,New,321.88,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+13.0,128.0,Open Box,318.99,iPhone 13,False,CA,California,Modern (13-14),Standard,Open Box
+13.0,256.0,New,321.88,iPhone 13 Mini,False,NY,New York,Modern (13-14),Standard,New
+14.0,128.0,Open Box,389.99,iPhone 14,False,CA,California,Modern (13-14),Standard,Open Box
+17.0,256.0,Excellent - Refurbished,789.0,iPhone 17,False,AZ,Arizona,Latest (15+),Standard,Refurbished
+16.0,128.0,Open Box,599.0,iPhone 16,False,MO,Missouri,Latest (15+),Standard,Open Box
+14.0,256.0,Used,380.0,iPhone 14 Pro Max,True,MD,Maryland,Modern (13-14),Pro,Second-hand
+17.0,256.0,Excellent - Refurbished,789.0,iPhone 17,False,AZ,Arizona,Latest (15+),Standard,Refurbished
+14.0,128.0,Excellent - Refurbished,322.99,iPhone 14,False,CA,California,Modern (13-14),Standard,Refurbished
+15.0,128.0,Very Good - Refurbished,400.49,iPhone 15,False,CA,California,Latest (15+),Standard,Refurbished
+15.0,128.0,Excellent - Refurbished,411.29,iPhone 15,False,CA,California,Latest (15+),Standard,Refurbished
+15.0,128.0,Good - Refurbished,390.59,iPhone 15,False,CA,California,Latest (15+),Standard,Refurbished
+15.0,128.0,Very Good - Refurbished,400.49,iPhone 15,False,CA,California,Latest (15+),Standard,Refurbished
+15.0,128.0,Good - Refurbished,421.19,iPhone 15 Plus,False,CA,California,Latest (15+),Standard,Refurbished
+14.0,128.0,Open Box,289.99,iPhone 14,False,NM,New Mexico,Modern (13-14),Standard,Open Box
+14.0,512.0,New,675.95,iPhone 14 Pro Max,True,NY,New York,Modern (13-14),Pro,New
+13.0,128.0,New,321.88,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+13.0,512.0,New,432.13,iPhone 13,False,NJ,New Jersey,Modern (13-14),Standard,New
+14.0,1024.0,New,675.95,iPhone 14 Pro Max,True,NJ,New Jersey,Modern (13-14),Pro,New
+13.0,128.0,New,432.13,iPhone 13,False,NJ,New Jersey,Modern (13-14),Standard,New
+13.0,128.0,New,432.13,iPhone 13,False,NJ,New Jersey,Modern (13-14),Standard,New
+13.0,128.0,New,432.13,iPhone 13,False,NJ,New Jersey,Modern (13-14),Standard,New
+13.0,128.0,New,432.13,iPhone 13,False,NJ,New Jersey,Modern (13-14),Standard,New
+13.0,512.0,New,321.88,iPhone 13 Mini,False,NY,New York,Modern (13-14),Standard,New
+13.0,256.0,New,321.88,iPhone 13 Mini,False,NY,New York,Modern (13-14),Standard,New
+13.0,128.0,New,321.88,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+13.0,256.0,New,321.99,iPhone 13 Mini,False,NY,New York,Modern (13-14),Standard,New
+14.0,128.0,Used,290.0,iPhone 14,False,FL,Florida,Modern (13-14),Standard,Second-hand
+12.0,128.0,Open Box,254.99,iPhone 12,False,CA,California,Mid-Gen (11-12),Standard,Open Box
+12.0,64.0,Very Good - Refurbished,208.99,iPhone 12,False,CA,California,Mid-Gen (11-12),Standard,Refurbished
+13.0,128.0,New,321.99,iPhone 13 Mini,False,NY,New York,Modern (13-14),Standard,New
+13.0,128.0,New,321.99,iPhone 13 Mini,False,NY,New York,Modern (13-14),Standard,New
+13.0,128.0,New,321.88,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+13.0,256.0,New,321.88,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+13.0,128.0,New,321.88,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+13.0,128.0,New,321.88,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+13.0,256.0,New,321.88,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+13.0,128.0,New,321.88,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+13.0,256.0,New,321.99,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+13.0,128.0,New,321.99,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+12.0,128.0,Used,200.0,iPhone 12,False,FL,Florida,Mid-Gen (11-12),Standard,Second-hand
+14.0,128.0,New,675.95,iPhone 14 Pro Max,True,NJ,New Jersey,Modern (13-14),Pro,New
+13.0,256.0,New,321.88,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+12.0,64.0,For Parts Or Not Working,142.79,iPhone 12,False,FL,Florida,Mid-Gen (11-12),Standard,Damaged
+12.0,128.0,Used,219.99,iPhone 12,False,NY,New York,Mid-Gen (11-12),Standard,Second-hand
+14.0,256.0,New,389.01,iPhone 14,False,NJ,New Jersey,Modern (13-14),Standard,New
+14.0,128.0,New,389.01,iPhone 14,False,NY,New York,Modern (13-14),Standard,New
+14.0,128.0,New,389.01,iPhone 14,False,NY,New York,Modern (13-14),Standard,New
+14.0,128.0,Open Box,395.99,iPhone 14 Plus,False,CA,California,Modern (13-14),Standard,Open Box
+15.0,128.0,Very Good - Refurbished,354.99,iPhone 15,False,NY,New York,Latest (15+),Standard,Refurbished
+14.0,128.0,New,675.95,iPhone 14 Pro Max,True,NJ,New Jersey,Modern (13-14),Pro,New
+13.0,128.0,New,321.99,iPhone 13 Mini,False,NY,New York,Modern (13-14),Standard,New
+15.0,256.0,Very Good - Refurbished,403.99,iPhone 15,False,NY,New York,Latest (15+),Standard,Refurbished
+17.0,256.0,New,450.0,iPhone 17,False,AL,Alabama,Latest (15+),Standard,New
+14.0,128.0,New,675.95,iPhone 14 Pro Max,True,NY,New York,Modern (13-14),Pro,New
+14.0,512.0,New,675.95,iPhone 14 Pro Max,True,NY,New York,Modern (13-14),Pro,New
+15.0,128.0,Open Box,469.0,iPhone 15,False,GA,Georgia,Latest (15+),Standard,Open Box
+13.0,256.0,Good - Refurbished,246.95,iPhone 13 Mini,False,KS,Kansas,Modern (13-14),Standard,Refurbished
+14.0,256.0,Used,249.95,iPhone 14,False,KS,Kansas,Modern (13-14),Standard,Second-hand
+12.0,256.0,Good - Refurbished,319.99,iPhone 12 Pro Max,True,FL,Florida,Mid-Gen (11-12),Pro,Refurbished
+15.0,256.0,Excellent - Refurbished,448.95,iPhone 15,False,KS,Kansas,Latest (15+),Standard,Refurbished
+15.0,256.0,Very Good - Refurbished,410.95,iPhone 15,False,KS,Kansas,Latest (15+),Standard,Refurbished
+15.0,128.0,Very Good - Refurbished,376.95,iPhone 15,False,KS,Kansas,Latest (15+),Standard,Refurbished
+15.0,128.0,Good - Refurbished,362.95,iPhone 15,False,KS,Kansas,Latest (15+),Standard,Refurbished
+15.0,128.0,Excellent - Refurbished,488.95,iPhone 15 Pro,True,KS,Kansas,Latest (15+),Pro,Refurbished
+15.0,128.0,Very Good - Refurbished,406.95,iPhone 15 Plus,False,KS,Kansas,Latest (15+),Standard,Refurbished
+12.0,64.0,Used,500.0,iPhone 12,False,CA,California,Mid-Gen (11-12),Standard,Second-hand
+15.0,256.0,Good - Refurbished,401.95,iPhone 15,False,KS,Kansas,Latest (15+),Standard,Refurbished
+14.0,512.0,Used,399.95,iPhone 14 Pro Max,True,KS,Kansas,Modern (13-14),Pro,Second-hand
+14.0,1024.0,Used,449.95,iPhone 14 Pro Max,True,KS,Kansas,Modern (13-14),Pro,Second-hand
+16.0,256.0,Very Good - Refurbished,590.95,iPhone 16,False,KS,Kansas,Latest (15+),Standard,Refurbished
+12.0,256.0,Used,686.0,iPhone 12 Pro Max,True,TX,Texas,Mid-Gen (11-12),Pro,Second-hand
+16.0,128.0,Excellent - Refurbished,575.95,iPhone 16,False,KS,Kansas,Latest (15+),Standard,Refurbished
+16.0,512.0,Very Good - Refurbished,677.95,iPhone 16,False,KS,Kansas,Latest (15+),Standard,Refurbished
+13.0,256.0,Used,400.0,iPhone 13,False,KS,Kansas,Modern (13-14),Standard,Second-hand
+16.0,256.0,Good - Refurbished,539.99,iPhone 16,False,FL,Florida,Latest (15+),Standard,Refurbished
+13.0,128.0,Used,349.0,iPhone 13,False,FL,Florida,Modern (13-14),Standard,Second-hand
+16.0,128.0,Open Box,624.7,iPhone 16,False,KS,Kansas,Latest (15+),Standard,Open Box
+12.0,64.0,Excellent - Refurbished,239.0,iPhone 12,False,IL,Illinois,Mid-Gen (11-12),Standard,Refurbished
+16.0,128.0,Good - Refurbished,539.99,iPhone 16,False,FL,Florida,Latest (15+),Standard,Refurbished
+14.0,128.0,Very Good - Refurbished,367.99,iPhone 14,False,FL,Florida,Modern (13-14),Standard,Refurbished
+12.0,64.0,Used,650.0,iPhone 12,False,CT,Connecticut,Mid-Gen (11-12),Standard,Second-hand
+14.0,128.0,Good - Refurbished,254.88,iPhone 14,False,NY,New York,Modern (13-14),Standard,Refurbished
+15.0,128.0,Excellent - Refurbished,389.88,iPhone 15,False,NY,New York,Latest (15+),Standard,Refurbished
+14.0,512.0,Used,760.0,iPhone 14 Pro Max,True,FL,Florida,Modern (13-14),Pro,Second-hand
+14.0,256.0,Used,600.0,iPhone 14 Pro Max,True,MO,Missouri,Modern (13-14),Pro,Second-hand
+12.0,64.0,Used,119.0,iPhone 12,False,PA,Pennsylvania,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,129.0,iPhone 12,False,PA,Pennsylvania,Mid-Gen (11-12),Standard,Second-hand
+14.0,512.0,Used,899.99,iPhone 14 Pro Max,True,FL,Florida,Modern (13-14),Pro,Second-hand
+13.0,256.0,Used,279.95,iPhone 13,False,WI,Wisconsin,Modern (13-14),Standard,Second-hand
+17.0,256.0,New,899.99,iPhone 17,False,FL,Florida,Latest (15+),Standard,New
+14.0,128.0,For Parts Or Not Working,160.0,iPhone 14,False,CO,Colorado,Modern (13-14),Standard,Damaged
+12.0,128.0,For Parts Or Not Working,71.99,iPhone 12,False,FL,Florida,Mid-Gen (11-12),Standard,Damaged
+13.0,128.0,Very Good - Refurbished,239.88,iPhone 13,False,NY,New York,Modern (13-14),Standard,Refurbished
+13.0,128.0,Used,259.99,iPhone 13,False,CA,California,Modern (13-14),Standard,Second-hand
+12.0,64.0,Good - Refurbished,179.0,iPhone 12,False,PA,Pennsylvania,Mid-Gen (11-12),Standard,Refurbished
+14.0,128.0,Used,356.99,iPhone 14 Plus,False,FL,Florida,Modern (13-14),Standard,Second-hand
+16.0,128.0,Open Box,565.0,iPhone 16,False,OH,Ohio,Latest (15+),Standard,Open Box
+16.0,512.0,Open Box,675.0,iPhone 16,False,FL,Florida,Latest (15+),Standard,Open Box
+17.0,512.0,Excellent - Refurbished,949.95,iPhone 17,False,KS,Kansas,Latest (15+),Standard,Refurbished
+16.0,512.0,Open Box,673.0,iPhone 16,False,FL,Florida,Latest (15+),Standard,Open Box
+13.0,128.0,Used,214.95,iPhone 13 Mini,False,KS,Kansas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,249.95,iPhone 14,False,KS,Kansas,Modern (13-14),Standard,Second-hand
+14.0,512.0,Very Good - Refurbished,362.95,iPhone 14 Plus,False,KS,Kansas,Modern (13-14),Standard,Refurbished
+14.0,512.0,Very Good - Refurbished,353.95,iPhone 14,False,KS,Kansas,Modern (13-14),Standard,Refurbished
+14.0,512.0,Used,279.95,iPhone 14,False,KS,Kansas,Modern (13-14),Standard,Second-hand
+15.0,256.0,Excellent - Refurbished,527.95,iPhone 15 Pro,True,KS,Kansas,Latest (15+),Pro,Refurbished
+15.0,128.0,Very Good - Refurbished,449.95,iPhone 15 Pro,True,KS,Kansas,Latest (15+),Pro,Refurbished
+14.0,128.0,Open Box,400.0,iPhone 14 Plus,False,MD,Maryland,Modern (13-14),Standard,Open Box
+14.0,256.0,Used,454.95,iPhone 14 Pro Max,True,KS,Kansas,Modern (13-14),Pro,Second-hand
+16.0,512.0,Excellent - Refurbished,720.95,iPhone 16,False,KS,Kansas,Latest (15+),Standard,Refurbished
+16.0,128.0,Very Good - Refurbished,546.95,iPhone 16,False,KS,Kansas,Latest (15+),Standard,Refurbished
+14.0,128.0,Used,299.95,iPhone 14 Plus,False,KS,Kansas,Modern (13-14),Standard,Second-hand
+13.0,128.0,Used,299.77,iPhone 13,False,FL,Florida,Modern (13-14),Standard,Second-hand
+13.0,512.0,New,432.13,iPhone 13,False,NJ,New Jersey,Modern (13-14),Standard,New
+14.0,128.0,New,675.95,iPhone 14 Pro Max,True,NJ,New Jersey,Modern (13-14),Pro,New
+13.0,128.0,New,432.13,iPhone 13,False,NJ,New Jersey,Modern (13-14),Standard,New
+14.0,128.0,For Parts Or Not Working,134.0,iPhone 14,False,NV,Nevada,Modern (13-14),Standard,Damaged
+14.0,128.0,New,389.01,iPhone 14,False,NJ,New Jersey,Modern (13-14),Standard,New
+14.0,256.0,New,389.01,iPhone 14,False,NJ,New Jersey,Modern (13-14),Standard,New
+14.0,512.0,New,675.95,iPhone 14 Pro Max,True,NJ,New Jersey,Modern (13-14),Pro,New
+14.0,512.0,New,675.95,iPhone 14 Pro Max,True,NJ,New Jersey,Modern (13-14),Pro,New
+14.0,128.0,New,389.01,iPhone 14,False,NJ,New Jersey,Modern (13-14),Standard,New
+14.0,512.0,New,675.95,iPhone 14 Pro Max,True,NJ,New Jersey,Modern (13-14),Pro,New
+14.0,256.0,Open Box,518.95,iPhone 14,False,NY,New York,Modern (13-14),Standard,Open Box
+12.0,256.0,Open Box,249.99,iPhone 12,False,NJ,New Jersey,Mid-Gen (11-12),Standard,Open Box
+13.0,128.0,New,349.55,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+14.0,128.0,Used,399.99,iPhone 14 Pro Max,True,WA,Washington,Modern (13-14),Pro,Second-hand
+16.0,128.0,Very Good - Refurbished,569.95,iPhone 16,False,KS,Kansas,Latest (15+),Standard,Refurbished
+14.0,128.0,New,374.99,iPhone 14,False,NJ,New Jersey,Modern (13-14),Standard,New
+14.0,128.0,New,397.99,iPhone 14 Plus,False,NJ,New Jersey,Modern (13-14),Standard,New
+13.0,128.0,New,321.88,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+13.0,512.0,New,432.13,iPhone 13,False,NJ,New Jersey,Modern (13-14),Standard,New
+13.0,512.0,New,432.13,iPhone 13,False,NJ,New Jersey,Modern (13-14),Standard,New
+12.0,128.0,Used,349.99,iPhone 12 Pro Max,True,KY,Kentucky,Mid-Gen (11-12),Pro,Second-hand
+13.0,512.0,Used,262.45,iPhone 13,False,OK,Oklahoma,Modern (13-14),Standard,Second-hand
+13.0,128.0,New,321.99,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+13.0,512.0,New,321.99,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+16.0,128.0,Open Box,469.99,iPhone 16,False,FL,Florida,Latest (15+),Standard,Open Box
+16.0,128.0,Open Box,569.99,iPhone 16,False,FL,Florida,Latest (15+),Standard,Open Box
+13.0,128.0,New,321.99,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+16.0,256.0,Open Box,679.99,iPhone 16,False,FL,Florida,Latest (15+),Standard,Open Box
+13.0,256.0,New,321.99,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+14.0,512.0,New,675.95,iPhone 14 Pro Max,True,NJ,New Jersey,Modern (13-14),Pro,New
+16.0,128.0,Open Box,579.99,iPhone 16,False,FL,Florida,Latest (15+),Standard,Open Box
+13.0,128.0,Used,234.35,iPhone 13,False,OK,Oklahoma,Modern (13-14),Standard,Second-hand
+14.0,512.0,New,389.01,iPhone 14,False,NJ,New Jersey,Modern (13-14),Standard,New
+16.0,128.0,Very Good - Refurbished,429.99,iPhone 16,False,FL,Florida,Latest (15+),Standard,Refurbished
+14.0,128.0,New,675.95,iPhone 14 Pro Max,True,NJ,New Jersey,Modern (13-14),Pro,New
+14.0,128.0,New,675.95,iPhone 14 Pro Max,True,NJ,New Jersey,Modern (13-14),Pro,New
+14.0,512.0,New,675.95,iPhone 14 Pro Max,True,NJ,New Jersey,Modern (13-14),Pro,New
+13.0,256.0,New,321.99,iPhone 13 Mini,False,NY,New York,Modern (13-14),Standard,New
+17.0,512.0,New,650.0,iPhone 17 Pro Max,True,NJ,New Jersey,Latest (15+),Pro,New
+14.0,512.0,New,675.95,iPhone 14 Pro Max,True,NJ,New Jersey,Modern (13-14),Pro,New
+14.0,128.0,New,675.95,iPhone 14 Pro Max,True,NJ,New Jersey,Modern (13-14),Pro,New
+14.0,128.0,New,675.95,iPhone 14 Pro Max,True,NJ,New Jersey,Modern (13-14),Pro,New
+13.0,128.0,For Parts Or Not Working,289.99,iPhone 13,False,IN,Indiana,Modern (13-14),Standard,Damaged
+17.0,2048.0,New,599.0,iPhone 17 Pro Max,True,MD,Maryland,Latest (15+),Pro,New
+13.0,128.0,Used,600.0,iPhone 13 Mini,False,NY,New York,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,978.54,iPhone 14 Pro Max,True,PA,Pennsylvania,Modern (13-14),Pro,Second-hand
+13.0,512.0,New,321.01,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+13.0,256.0,Used,750.0,iPhone 13,False,NC,North Carolina,Modern (13-14),Standard,Second-hand
+14.0,128.0,New,403.95,iPhone 14,False,NJ,New Jersey,Modern (13-14),Standard,New
+14.0,512.0,New,699.88,iPhone 14 Pro Max,True,NJ,New Jersey,Modern (13-14),Pro,New
+14.0,128.0,New,409.95,iPhone 14 Pro Max,True,NJ,New Jersey,Modern (13-14),Pro,New
+14.0,512.0,New,699.88,iPhone 14 Pro Max,True,NJ,New Jersey,Modern (13-14),Pro,New
+14.0,128.0,New,403.95,iPhone 14,False,NJ,New Jersey,Modern (13-14),Standard,New
+13.0,128.0,New,331.99,iPhone 13 Mini,False,CA,California,Modern (13-14),Standard,New
+14.0,512.0,New,699.88,iPhone 14 Pro Max,True,CA,California,Modern (13-14),Pro,New
+13.0,256.0,New,409.95,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+17.0,256.0,Open Box,859.0,iPhone 17,False,NY,New York,Latest (15+),Standard,Open Box
+12.0,128.0,For Parts Or Not Working,269.0,iPhone 12 Pro Max,True,NY,New York,Mid-Gen (11-12),Pro,Damaged
+13.0,256.0,New,399.28,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+12.0,128.0,Used,249.99,iPhone 12,False,WA,Washington,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,204.74,iPhone 12,False,WA,Washington,Mid-Gen (11-12),Standard,Second-hand
+17.0,256.0,Open Box,899.98,iPhone 17,False,FL,Florida,Latest (15+),Standard,Open Box
+12.0,64.0,New,295.65,iPhone 12,False,CA,California,Mid-Gen (11-12),Standard,New
+14.0,128.0,Used,220.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,299.0,iPhone 14 Plus,False,NJ,New Jersey,Modern (13-14),Standard,Second-hand
+17.0,1024.0,New,599.0,iPhone 17 Pro Max,True,TX,Texas,Latest (15+),Pro,New
+17.0,1024.0,New,560.0,iPhone 17 Pro Max,True,AL,Alabama,Latest (15+),Pro,New
+14.0,128.0,New,403.95,iPhone 14,False,TX,Texas,Modern (13-14),Standard,New
+13.0,128.0,For Parts Or Not Working,75.0,iPhone 13,False,MI,Michigan,Modern (13-14),Standard,Damaged
+16.0,128.0,New,549.99,iPhone 16,False,NY,New York,Latest (15+),Standard,New
+17.0,256.0,New,549.99,iPhone 17,False,NY,New York,Latest (15+),Standard,New
+17.0,256.0,New,580.0,iPhone 17,False,PA,Pennsylvania,Latest (15+),Standard,New
+17.0,512.0,New,489.95,iPhone 17,False,TX,Texas,Latest (15+),Standard,New
+17.0,2048.0,New,479.99,iPhone 17 Pro Max,True,CO,Colorado,Latest (15+),Pro,New
+12.0,64.0,Open Box,233.95,iPhone 12,False,CA,California,Mid-Gen (11-12),Standard,Open Box
+13.0,128.0,New,366.95,iPhone 13,False,CA,California,Modern (13-14),Standard,New
+14.0,128.0,Open Box,348.95,iPhone 14,False,CA,California,Modern (13-14),Standard,Open Box
+14.0,128.0,Used,289.99,iPhone 14,False,NY,New York,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,849.95,iPhone 14 Pro Max,True,CA,California,Modern (13-14),Pro,Second-hand
+14.0,512.0,Used,319.99,iPhone 14,False,NY,New York,Modern (13-14),Standard,Second-hand
+14.0,512.0,Used,399.99,iPhone 14 Pro Max,True,NY,New York,Modern (13-14),Pro,Second-hand
+15.0,128.0,Open Box,464.95,iPhone 15,False,CA,California,Latest (15+),Standard,Open Box
+14.0,512.0,Used,369.99,iPhone 14 Pro Max,True,NY,New York,Modern (13-14),Pro,Second-hand
+13.0,512.0,Used,254.99,iPhone 13 Mini,False,NY,New York,Modern (13-14),Standard,Second-hand
+12.0,256.0,Used,229.99,iPhone 12,False,NY,New York,Mid-Gen (11-12),Standard,Second-hand
+14.0,512.0,Used,454.99,iPhone 14 Pro Max,True,NY,New York,Modern (13-14),Pro,Second-hand
+12.0,512.0,Used,314.99,iPhone 12 Pro Max,True,NY,New York,Mid-Gen (11-12),Pro,Second-hand
+14.0,512.0,Used,469.99,iPhone 14 Pro Max,True,NY,New York,Modern (13-14),Pro,Second-hand
+13.0,512.0,Used,214.99,iPhone 13 Mini,False,NY,New York,Modern (13-14),Standard,Second-hand
+14.0,128.0,Excellent - Refurbished,734.95,iPhone 14 Pro Max,True,CA,California,Modern (13-14),Pro,Refurbished
+14.0,128.0,Excellent - Refurbished,304.99,iPhone 14,False,NY,New York,Modern (13-14),Standard,Refurbished
+15.0,128.0,Very Good - Refurbished,394.99,iPhone 15 Plus,False,NY,New York,Latest (15+),Standard,Refurbished
+15.0,128.0,Excellent - Refurbished,414.99,iPhone 15 Plus,False,NY,New York,Latest (15+),Standard,Refurbished
+14.0,128.0,Used,529.99,iPhone 14 Pro Max,True,NY,New York,Modern (13-14),Pro,Second-hand
+14.0,128.0,Used,571.6,iPhone 14 Pro Max,True,NY,New York,Modern (13-14),Pro,Second-hand
+14.0,256.0,Very Good - Refurbished,509.99,iPhone 14 Pro Max,True,NY,New York,Modern (13-14),Pro,Refurbished
+13.0,512.0,Excellent - Refurbished,339.99,iPhone 13,False,NY,New York,Modern (13-14),Standard,Refurbished
+12.0,512.0,Excellent - Refurbished,339.99,iPhone 12 Pro Max,True,NY,New York,Mid-Gen (11-12),Pro,Refurbished
+17.0,256.0,New,984.94,iPhone 17,False,CA,California,Latest (15+),Standard,New
+17.0,256.0,New,982.95,iPhone 17,False,CA,California,Latest (15+),Standard,New
+17.0,256.0,New,984.95,iPhone 17,False,CA,California,Latest (15+),Standard,New
+17.0,256.0,New,988.95,iPhone 17,False,CA,California,Latest (15+),Standard,New
+17.0,256.0,New,984.95,iPhone 17,False,CA,California,Latest (15+),Standard,New
+14.0,128.0,Used,329.99,iPhone 14,False,CA,California,Modern (13-14),Standard,Second-hand
+14.0,128.0,New,429.95,iPhone 14 Plus,False,CA,California,Modern (13-14),Standard,New
+12.0,128.0,New,329.99,iPhone 12,False,CA,California,Mid-Gen (11-12),Standard,New
+12.0,128.0,New,319.95,iPhone 12,False,CA,California,Mid-Gen (11-12),Standard,New
+14.0,128.0,Used,274.99,iPhone 14 Plus,False,NY,New York,Modern (13-14),Standard,Second-hand
+15.0,128.0,New,517.95,iPhone 15,False,CA,California,Latest (15+),Standard,New
+13.0,128.0,Used,250.0,iPhone 13,False,TN,Tennessee,Modern (13-14),Standard,Second-hand
+17.0,256.0,Open Box,848.0,iPhone 17,False,UT,Utah,Latest (15+),Standard,Open Box
+17.0,256.0,Open Box,848.0,iPhone 17,False,UT,Utah,Latest (15+),Standard,Open Box
+17.0,256.0,Open Box,848.0,iPhone 17,False,UT,Utah,Latest (15+),Standard,Open Box
+17.0,256.0,Open Box,777.0,iPhone 17,False,UT,Utah,Latest (15+),Standard,Open Box
+17.0,256.0,Open Box,777.0,iPhone 17,False,UT,Utah,Latest (15+),Standard,Open Box
+14.0,128.0,For Parts Or Not Working,99.99,iPhone 14,False,WI,Wisconsin,Modern (13-14),Standard,Damaged
+17.0,256.0,Open Box,829.99,iPhone 17,False,AR,Arkansas,Latest (15+),Standard,Open Box
+16.0,128.0,Open Box,659.99,iPhone 16,False,TX,Texas,Latest (15+),Standard,Open Box
+12.0,256.0,Used,650.0,iPhone 12 Pro Max,True,NV,Nevada,Mid-Gen (11-12),Pro,Second-hand
+16.0,128.0,Excellent - Refurbished,569.0,iPhone 16,False,CA,California,Latest (15+),Standard,Refurbished
+16.0,128.0,Very Good - Refurbished,549.0,iPhone 16,False,CA,California,Latest (15+),Standard,Refurbished
+14.0,512.0,New,629.51,iPhone 14 Pro Max,True,NJ,New Jersey,Modern (13-14),Pro,New
+14.0,512.0,New,629.51,iPhone 14 Pro Max,True,NJ,New Jersey,Modern (13-14),Pro,New
+14.0,512.0,New,629.51,iPhone 14 Pro Max,True,CA,California,Modern (13-14),Pro,New
+14.0,512.0,New,629.51,iPhone 14 Pro Max,True,CA,California,Modern (13-14),Pro,New
+14.0,512.0,New,629.51,iPhone 14 Pro Max,True,NJ,New Jersey,Modern (13-14),Pro,New
+12.0,128.0,For Parts Or Not Working,132.99,iPhone 12 Pro Max,True,TX,Texas,Mid-Gen (11-12),Pro,Damaged
+16.0,128.0,Very Good - Refurbished,539.0,iPhone 16,False,CA,California,Latest (15+),Standard,Refurbished
+16.0,128.0,Excellent - Refurbished,559.0,iPhone 16,False,CA,California,Latest (15+),Standard,Refurbished
+17.0,256.0,New,899.95,iPhone 17,False,UT,Utah,Latest (15+),Standard,New
+13.0,128.0,Used,910.0,iPhone 13,False,CA,California,Modern (13-14),Standard,Second-hand
+14.0,512.0,New,629.51,iPhone 14 Pro Max,True,NJ,New Jersey,Modern (13-14),Pro,New
+14.0,128.0,Used,333.6,iPhone 14,False,MO,Missouri,Modern (13-14),Standard,Second-hand
+13.0,128.0,New,430.69,iPhone 13,False,NJ,New Jersey,Modern (13-14),Standard,New
+14.0,1024.0,Used,749.99,iPhone 14 Pro Max,True,FL,Florida,Modern (13-14),Pro,Second-hand
+17.0,256.0,New,824.74,iPhone 17,False,OH,Ohio,Latest (15+),Standard,New
+12.0,64.0,New,500.0,iPhone 12,False,NJ,New Jersey,Mid-Gen (11-12),Standard,New
+17.0,256.0,Excellent - Refurbished,769.0,iPhone 17,False,CA,California,Latest (15+),Standard,Refurbished
+17.0,256.0,Very Good - Refurbished,749.0,iPhone 17,False,CA,California,Latest (15+),Standard,Refurbished
+16.0,256.0,New,799.74,iPhone 16,False,OH,Ohio,Latest (15+),Standard,New
+17.0,2048.0,New,499.0,iPhone 17 Pro Max,True,NH,New Hampshire,Latest (15+),Pro,New
+13.0,128.0,New,352.55,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+13.0,128.0,New,321.42,iPhone 13 Mini,False,CA,California,Modern (13-14),Standard,New
+17.0,256.0,New,730.0,iPhone 17,False,PA,Pennsylvania,Latest (15+),Standard,New
+14.0,128.0,Open Box,264.99,iPhone 14,False,FL,Florida,Modern (13-14),Standard,Open Box
+17.0,512.0,New,618.99,iPhone 17 Pro Max,True,FL,Florida,Latest (15+),Pro,New
+17.0,256.0,New,599.0,iPhone 17 Pro Max,True,TX,Texas,Latest (15+),Pro,New
+13.0,128.0,New,321.42,iPhone 13 Mini,False,CA,California,Modern (13-14),Standard,New
+17.0,256.0,New,828.74,iPhone 17,False,OH,Ohio,Latest (15+),Standard,New
+17.0,256.0,New,799.99,iPhone 17,False,FL,Florida,Latest (15+),Standard,New
+13.0,128.0,New,321.43,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+15.0,128.0,Very Good - Refurbished,390.99,iPhone 15,False,TX,Texas,Latest (15+),Standard,Refurbished
+15.0,256.0,Very Good - Refurbished,493.99,iPhone 15 Pro,True,TX,Texas,Latest (15+),Pro,Refurbished
+15.0,256.0,Very Good - Refurbished,568.99,iPhone 15 Pro Max,True,TX,Texas,Latest (15+),Pro,Refurbished
+15.0,128.0,Very Good - Refurbished,464.99,iPhone 15 Pro,True,TX,Texas,Latest (15+),Pro,Refurbished
+13.0,128.0,New,322.01,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+16.0,128.0,Very Good - Refurbished,570.99,iPhone 16,False,TX,Texas,Latest (15+),Standard,Refurbished
+16.0,128.0,Excellent - Refurbished,594.99,iPhone 16,False,TX,Texas,Latest (15+),Standard,Refurbished
+13.0,256.0,New,321.43,iPhone 13,False,NJ,New Jersey,Modern (13-14),Standard,New
+13.0,512.0,New,321.43,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+13.0,128.0,Used,475.0,iPhone 13,False,FL,Florida,Modern (13-14),Standard,Second-hand
+15.0,256.0,Very Good - Refurbished,423.99,iPhone 15 Plus,False,TX,Texas,Latest (15+),Standard,Refurbished
+14.0,128.0,New,745.12,iPhone 14 Pro Max,True,NJ,New Jersey,Modern (13-14),Pro,New
+14.0,512.0,New,629.51,iPhone 14 Pro Max,True,NJ,New Jersey,Modern (13-14),Pro,New
+15.0,256.0,Excellent - Refurbished,442.99,iPhone 15,False,TX,Texas,Latest (15+),Standard,Refurbished
+15.0,256.0,Very Good - Refurbished,410.99,iPhone 15,False,TX,Texas,Latest (15+),Standard,Refurbished
+16.0,256.0,Excellent - Refurbished,588.99,iPhone 16,False,TX,Texas,Latest (15+),Standard,Refurbished
+14.0,128.0,New,745.12,iPhone 14 Pro Max,True,NJ,New Jersey,Modern (13-14),Pro,New
+13.0,512.0,New,321.43,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+13.0,128.0,New,321.43,iPhone 13 Mini,False,CA,California,Modern (13-14),Standard,New
+14.0,512.0,Used,650.0,iPhone 14 Pro Max,True,GA,Georgia,Modern (13-14),Pro,Second-hand
+15.0,128.0,Good - Refurbished,386.93,iPhone 15,False,CA,California,Latest (15+),Standard,Refurbished
+12.0,64.0,Used,219.99,iPhone 12,False,RI,Rhode Island,Mid-Gen (11-12),Standard,Second-hand
+13.0,128.0,New,322.01,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+14.0,128.0,New,745.12,iPhone 14 Pro Max,True,CA,California,Modern (13-14),Pro,New
+14.0,512.0,New,629.51,iPhone 14 Pro Max,True,CA,California,Modern (13-14),Pro,New
+14.0,128.0,New,745.12,iPhone 14 Pro Max,True,CA,California,Modern (13-14),Pro,New
+14.0,512.0,New,389.01,iPhone 14,False,NJ,New Jersey,Modern (13-14),Standard,New
+14.0,512.0,New,389.01,iPhone 14,False,CA,California,Modern (13-14),Standard,New
+13.0,128.0,Open Box,382.01,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,Open Box
+15.0,128.0,Excellent - Refurbished,479.95,iPhone 15 Pro,True,IL,Illinois,Latest (15+),Pro,Refurbished
+14.0,512.0,New,745.12,iPhone 14 Pro Max,True,NJ,New Jersey,Modern (13-14),Pro,New
+12.0,64.0,Used,300.0,iPhone 12,False,MI,Michigan,Mid-Gen (11-12),Standard,Second-hand
+13.0,128.0,For Parts Or Not Working,160.0,iPhone 13,False,OK,Oklahoma,Modern (13-14),Standard,Damaged
+13.0,128.0,Used,500.0,iPhone 13 Mini,False,CA,California,Modern (13-14),Standard,Second-hand
+13.0,128.0,New,322.01,iPhone 13 Mini,False,CA,California,Modern (13-14),Standard,New
+14.0,512.0,New,629.51,iPhone 14 Pro Max,True,CA,California,Modern (13-14),Pro,New
+14.0,128.0,Used,390.0,iPhone 14 Pro Max,True,AZ,Arizona,Modern (13-14),Pro,Second-hand
+14.0,512.0,New,629.51,iPhone 14 Pro Max,True,CA,California,Modern (13-14),Pro,New
+13.0,128.0,Used,380.0,iPhone 13,False,HI,Hawaii,Modern (13-14),Standard,Second-hand
+14.0,128.0,Open Box,419.95,iPhone 14,False,FL,Florida,Modern (13-14),Standard,Open Box
+17.0,256.0,Excellent - Refurbished,847.99,iPhone 17,False,TX,Texas,Latest (15+),Standard,Refurbished
+17.0,256.0,Very Good - Refurbished,803.99,iPhone 17,False,TX,Texas,Latest (15+),Standard,Refurbished
+13.0,512.0,New,321.43,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+14.0,128.0,New,745.12,iPhone 14 Pro Max,True,CA,California,Modern (13-14),Pro,New
+14.0,512.0,New,332.01,iPhone 14 Pro Max,True,NJ,New Jersey,Modern (13-14),Pro,New
+13.0,512.0,New,321.41,iPhone 13 Mini,False,CA,California,Modern (13-14),Standard,New
+16.0,128.0,New,669.95,iPhone 16,False,FL,Florida,Latest (15+),Standard,New
+13.0,512.0,New,321.43,iPhone 13 Mini,False,CA,California,Modern (13-14),Standard,New
+14.0,128.0,Used,289.99,iPhone 14,False,KS,Kansas,Modern (13-14),Standard,Second-hand
+13.0,128.0,Used,239.99,iPhone 13,False,KS,Kansas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,309.99,iPhone 14,False,KS,Kansas,Modern (13-14),Standard,Second-hand
+13.0,128.0,Used,251.11,iPhone 13,False,KS,Kansas,Modern (13-14),Standard,Second-hand
+13.0,128.0,Open Box,339.95,iPhone 13 Mini,False,FL,Florida,Modern (13-14),Standard,Open Box
+16.0,128.0,New,679.99,iPhone 16,False,CA,California,Latest (15+),Standard,New
+13.0,512.0,Used,310.0,iPhone 13,False,LA,Louisiana,Modern (13-14),Standard,Second-hand
+12.0,64.0,Used,199.99,iPhone 12,False,MN,Minnesota,Mid-Gen (11-12),Standard,Second-hand
+13.0,256.0,Used,300.0,iPhone 13,False,IL,Illinois,Modern (13-14),Standard,Second-hand
+16.0,256.0,Open Box,550.0,iPhone 16,False,VA,Virginia,Latest (15+),Standard,Open Box
+17.0,1024.0,New,589.0,iPhone 17 Pro Max,True,FL,Florida,Latest (15+),Pro,New
+16.0,128.0,Open Box,609.95,iPhone 16,False,FL,Florida,Latest (15+),Standard,Open Box
+14.0,512.0,New,389.01,iPhone 14,False,NJ,New Jersey,Modern (13-14),Standard,New
+17.0,1024.0,New,610.0,iPhone 17 Pro Max,True,OH,Ohio,Latest (15+),Pro,New
+14.0,128.0,Used,279.99,iPhone 14,False,KS,Kansas,Modern (13-14),Standard,Second-hand
+14.0,1024.0,New,408.03,iPhone 14,False,NJ,New Jersey,Modern (13-14),Standard,New
+16.0,128.0,Open Box,599.99,iPhone 16,False,KS,Kansas,Latest (15+),Standard,Open Box
+13.0,128.0,Used,65.0,iPhone 13,False,MD,Maryland,Modern (13-14),Standard,Second-hand
+16.0,128.0,Open Box,515.55,iPhone 16,False,KS,Kansas,Latest (15+),Standard,Open Box
+17.0,512.0,New,399.99,iPhone 17,False,SC,South Carolina,Latest (15+),Standard,New
+17.0,512.0,New,399.99,iPhone 17,False,CA,California,Latest (15+),Standard,New
+14.0,128.0,Used,289.99,iPhone 14,False,KS,Kansas,Modern (13-14),Standard,Second-hand
+12.0,128.0,New,679.0,iPhone 12,False,CA,California,Mid-Gen (11-12),Standard,New
+16.0,128.0,Open Box,450.0,iPhone 16,False,NY,New York,Latest (15+),Standard,Open Box
+12.0,256.0,Used,145.5,iPhone 12 Pro Max,True,NC,North Carolina,Mid-Gen (11-12),Pro,Second-hand
+13.0,128.0,Used,219.99,iPhone 13,False,KS,Kansas,Modern (13-14),Standard,Second-hand
+12.0,128.0,Used,243.75,iPhone 12 Pro Max,True,IL,Illinois,Mid-Gen (11-12),Pro,Second-hand
+16.0,128.0,Open Box,320.0,iPhone 16,False,FL,Florida,Latest (15+),Standard,Open Box
+17.0,512.0,New,600.0,iPhone 17 Pro Max,True,WA,Washington,Latest (15+),Pro,New
+13.0,128.0,Open Box,650.0,iPhone 13,False,TN,Tennessee,Modern (13-14),Standard,Open Box
+12.0,128.0,Open Box,800.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Open Box
+13.0,128.0,Open Box,279.88,iPhone 13,False,NY,New York,Modern (13-14),Standard,Open Box
+13.0,128.0,Excellent - Refurbished,259.88,iPhone 13,False,NY,New York,Modern (13-14),Standard,Refurbished
+12.0,64.0,Used,144.99,iPhone 12,False,NY,New York,Mid-Gen (11-12),Standard,Second-hand
+14.0,256.0,Excellent - Refurbished,755.99,iPhone 14 Pro Max,True,CA,California,Modern (13-14),Pro,Refurbished
+14.0,128.0,Used,369.99,iPhone 14 Plus,False,CA,California,Modern (13-14),Standard,Second-hand
+14.0,256.0,Used,735.99,iPhone 14 Pro Max,True,CA,California,Modern (13-14),Pro,Second-hand
+14.0,1024.0,Used,661.99,iPhone 14 Pro Max,True,CA,California,Modern (13-14),Pro,Second-hand
+14.0,256.0,Excellent - Refurbished,759.99,iPhone 14 Pro Max,True,CA,California,Modern (13-14),Pro,Refurbished
+15.0,256.0,Excellent - Refurbished,468.95,iPhone 15,False,NJ,New Jersey,Latest (15+),Standard,Refurbished
+14.0,256.0,Good - Refurbished,299.0,iPhone 14,False,NY,New York,Modern (13-14),Standard,Refurbished
+15.0,128.0,Open Box,409.88,iPhone 15,False,NY,New York,Latest (15+),Standard,Open Box
+14.0,128.0,Open Box,354.99,iPhone 14,False,CA,California,Modern (13-14),Standard,Open Box
+13.0,128.0,Excellent - Refurbished,319.99,iPhone 13,False,CA,California,Modern (13-14),Standard,Refurbished
+12.0,64.0,Excellent - Refurbished,198.99,iPhone 12,False,CA,California,Mid-Gen (11-12),Standard,Refurbished
+12.0,256.0,Used,300.0,iPhone 12 Pro Max,True,CA,California,Mid-Gen (11-12),Pro,Second-hand
+12.0,64.0,For Parts Or Not Working,124.99,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Damaged
+13.0,128.0,Open Box,309.99,iPhone 13,False,CA,California,Modern (13-14),Standard,Open Box
+12.0,128.0,For Parts Or Not Working,199.99,iPhone 12 Pro Max,True,TX,Texas,Mid-Gen (11-12),Pro,Damaged
+12.0,128.0,Excellent - Refurbished,244.99,iPhone 12,False,CA,California,Mid-Gen (11-12),Standard,Refurbished
+14.0,128.0,Used,589.99,iPhone 14 Pro Max,True,FL,Florida,Modern (13-14),Pro,Second-hand
+13.0,128.0,Used,275.0,iPhone 13,False,ME,Maine,Modern (13-14),Standard,Second-hand
+13.0,128.0,Used,199.96,iPhone 13,False,FL,Florida,Modern (13-14),Standard,Second-hand
+13.0,256.0,New,321.88,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+13.0,512.0,New,321.88,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+13.0,128.0,New,321.99,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+14.0,128.0,Used,279.95,iPhone 14,False,KY,Kentucky,Modern (13-14),Standard,Second-hand
+17.0,256.0,New,715.0,iPhone 17,False,CA,California,Latest (15+),Standard,New
+13.0,128.0,New,353.88,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+13.0,256.0,New,321.88,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+16.0,128.0,Open Box,650.0,iPhone 16,False,NY,New York,Latest (15+),Standard,Open Box
+17.0,256.0,New,850.0,iPhone 17,False,MA,Massachusetts,Latest (15+),Standard,New
+14.0,128.0,Used,229.95,iPhone 14,False,KY,Kentucky,Modern (13-14),Standard,Second-hand
+17.0,256.0,New,810.0,iPhone 17 Pro Max,True,WA,Washington,Latest (15+),Pro,New
+17.0,512.0,New,459.0,iPhone 17,False,OH,Ohio,Latest (15+),Standard,New
+17.0,512.0,New,459.0,iPhone 17,False,FL,Florida,Latest (15+),Standard,New
+17.0,2048.0,New,599.0,iPhone 17 Pro Max,True,NY,New York,Latest (15+),Pro,New
+12.0,128.0,For Parts Or Not Working,119.99,iPhone 12,False,OH,Ohio,Mid-Gen (11-12),Standard,Damaged
+17.0,256.0,New,599.0,iPhone 17,False,MD,Maryland,Latest (15+),Standard,New
+17.0,2048.0,New,499.99,iPhone 17 Pro Max,True,OK,Oklahoma,Latest (15+),Pro,New
+15.0,128.0,Open Box,519.99,iPhone 15 Pro,True,MD,Maryland,Latest (15+),Pro,Open Box
+13.0,256.0,New,500.0,iPhone 13,False,MS,Mississippi,Modern (13-14),Standard,New
+13.0,128.0,New,322.01,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+13.0,128.0,Open Box,279.99,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,Open Box
+13.0,128.0,New,323.99,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+13.0,128.0,New,323.99,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+13.0,128.0,New,323.99,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+13.0,128.0,New,323.99,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+13.0,128.0,New,327.55,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+12.0,256.0,Used,479.0,iPhone 12 Pro Max,True,MA,Massachusetts,Mid-Gen (11-12),Pro,Second-hand
+13.0,128.0,New,335.99,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+14.0,128.0,New,745.12,iPhone 14 Pro Max,True,NJ,New Jersey,Modern (13-14),Pro,New
+14.0,1024.0,New,745.12,iPhone 14 Pro Max,True,NJ,New Jersey,Modern (13-14),Pro,New
+14.0,128.0,New,389.99,iPhone 14,False,NJ,New Jersey,Modern (13-14),Standard,New
+13.0,512.0,New,322.01,iPhone 13 Mini,False,CA,California,Modern (13-14),Standard,New
+13.0,256.0,New,322.01,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+14.0,128.0,Open Box,329.99,iPhone 14 Plus,False,NJ,New Jersey,Modern (13-14),Standard,Open Box
+13.0,512.0,New,322.01,iPhone 13 Mini,False,CA,California,Modern (13-14),Standard,New
+14.0,128.0,New,374.99,iPhone 14,False,NJ,New Jersey,Modern (13-14),Standard,New
+13.0,128.0,New,322.01,iPhone 13 Mini,False,CA,California,Modern (13-14),Standard,New
+13.0,128.0,Used,239.99,iPhone 13,False,FL,Florida,Modern (13-14),Standard,Second-hand
+13.0,128.0,For Parts Or Not Working,189.99,iPhone 13 Mini,False,FL,Florida,Modern (13-14),Standard,Damaged
+14.0,512.0,Used,329.99,iPhone 14,False,FL,Florida,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,279.99,iPhone 14,False,FL,Florida,Modern (13-14),Standard,Second-hand
+14.0,256.0,Used,309.99,iPhone 14,False,FL,Florida,Modern (13-14),Standard,Second-hand
+13.0,128.0,Used,229.99,iPhone 13,False,FL,Florida,Modern (13-14),Standard,Second-hand
+14.0,256.0,Used,339.99,iPhone 14 Plus,False,FL,Florida,Modern (13-14),Standard,Second-hand
+13.0,128.0,For Parts Or Not Working,189.99,iPhone 13,False,FL,Florida,Modern (13-14),Standard,Damaged
+14.0,128.0,Used,279.99,iPhone 14,False,FL,Florida,Modern (13-14),Standard,Second-hand
+13.0,128.0,Used,249.99,iPhone 13,False,FL,Florida,Modern (13-14),Standard,Second-hand
+14.0,128.0,For Parts Or Not Working,239.99,iPhone 14,False,FL,Florida,Modern (13-14),Standard,Damaged
+14.0,128.0,Used,419.99,iPhone 14 Pro Max,True,FL,Florida,Modern (13-14),Pro,Second-hand
+13.0,128.0,For Parts Or Not Working,199.99,iPhone 13,False,FL,Florida,Modern (13-14),Standard,Damaged
+14.0,128.0,Used,419.99,iPhone 14 Pro Max,True,FL,Florida,Modern (13-14),Pro,Second-hand
+12.0,128.0,For Parts Or Not Working,219.99,iPhone 12 Pro Max,True,FL,Florida,Mid-Gen (11-12),Pro,Damaged
+17.0,256.0,Open Box,850.0,iPhone 17,False,PA,Pennsylvania,Latest (15+),Standard,Open Box
+13.0,128.0,For Parts Or Not Working,199.99,iPhone 13,False,FL,Florida,Modern (13-14),Standard,Damaged
+12.0,128.0,Used,199.99,iPhone 12,False,FL,Florida,Mid-Gen (11-12),Standard,Second-hand
+13.0,128.0,Used,239.99,iPhone 13,False,FL,Florida,Modern (13-14),Standard,Second-hand
+13.0,256.0,Used,289.99,iPhone 13,False,FL,Florida,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,269.99,iPhone 14,False,FL,Florida,Modern (13-14),Standard,Second-hand
+12.0,128.0,Used,299.99,iPhone 12 Pro Max,True,FL,Florida,Mid-Gen (11-12),Pro,Second-hand
+14.0,256.0,Used,469.99,iPhone 14 Pro Max,True,FL,Florida,Modern (13-14),Pro,Second-hand
+14.0,256.0,For Parts Or Not Working,269.99,iPhone 14,False,FL,Florida,Modern (13-14),Standard,Damaged
+14.0,128.0,Used,269.99,iPhone 14,False,FL,Florida,Modern (13-14),Standard,Second-hand
+13.0,128.0,New,323.99,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+13.0,128.0,New,323.99,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+13.0,128.0,New,323.99,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+13.0,128.0,New,323.99,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+13.0,256.0,New,323.99,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+13.0,128.0,New,323.99,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+14.0,128.0,Used,439.99,iPhone 14 Pro Max,True,FL,Florida,Modern (13-14),Pro,Second-hand
+13.0,128.0,Used,239.99,iPhone 13,False,FL,Florida,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,269.99,iPhone 14,False,FL,Florida,Modern (13-14),Standard,Second-hand
+14.0,256.0,Used,459.99,iPhone 14 Pro Max,True,FL,Florida,Modern (13-14),Pro,Second-hand
+12.0,256.0,Used,319.99,iPhone 12 Pro Max,True,FL,Florida,Mid-Gen (11-12),Pro,Second-hand
+14.0,128.0,Used,299.99,iPhone 14 Plus,False,FL,Florida,Modern (13-14),Standard,Second-hand
+14.0,256.0,Used,329.99,iPhone 14 Plus,False,FL,Florida,Modern (13-14),Standard,Second-hand
+14.0,256.0,Used,419.99,iPhone 14 Pro Max,True,FL,Florida,Modern (13-14),Pro,Second-hand
+13.0,128.0,For Parts Or Not Working,199.99,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Damaged
+13.0,128.0,Used,249.99,iPhone 13,False,FL,Florida,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,309.99,iPhone 14 Plus,False,FL,Florida,Modern (13-14),Standard,Second-hand
+14.0,128.0,For Parts Or Not Working,359.99,iPhone 14 Pro Max,True,FL,Florida,Modern (13-14),Pro,Damaged
+14.0,256.0,For Parts Or Not Working,269.99,iPhone 14,False,FL,Florida,Modern (13-14),Standard,Damaged
+14.0,256.0,Used,339.99,iPhone 14 Plus,False,FL,Florida,Modern (13-14),Standard,Second-hand
+14.0,128.0,For Parts Or Not Working,229.99,iPhone 14,False,FL,Florida,Modern (13-14),Standard,Damaged
+14.0,128.0,Used,299.99,iPhone 14 Plus,False,FL,Florida,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,429.99,iPhone 14 Pro Max,True,FL,Florida,Modern (13-14),Pro,Second-hand
+13.0,256.0,Used,289.99,iPhone 13,False,FL,Florida,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,309.99,iPhone 14 Plus,False,FL,Florida,Modern (13-14),Standard,Second-hand
+13.0,256.0,New,405.18,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+14.0,256.0,Used,480.0,iPhone 14 Pro Max,True,IN,Indiana,Modern (13-14),Pro,Second-hand
+14.0,128.0,Used,279.99,iPhone 14,False,FL,Florida,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,299.99,iPhone 14 Plus,False,MN,Minnesota,Modern (13-14),Standard,Second-hand
+14.0,512.0,For Parts Or Not Working,409.99,iPhone 14 Pro Max,True,FL,Florida,Modern (13-14),Pro,Damaged
+12.0,64.0,Used,159.99,iPhone 12,False,FL,Florida,Mid-Gen (11-12),Standard,Second-hand
+14.0,128.0,Used,279.99,iPhone 14,False,FL,Florida,Modern (13-14),Standard,Second-hand
+12.0,128.0,Used,199.99,iPhone 12,False,FL,Florida,Mid-Gen (11-12),Standard,Second-hand
+13.0,128.0,Used,259.99,iPhone 13,False,FL,Florida,Modern (13-14),Standard,Second-hand
+14.0,256.0,For Parts Or Not Working,389.99,iPhone 14 Pro Max,True,FL,Florida,Modern (13-14),Pro,Damaged
+12.0,256.0,For Parts Or Not Working,279.99,iPhone 12 Pro Max,True,FL,Florida,Mid-Gen (11-12),Pro,Damaged
+13.0,128.0,Used,239.99,iPhone 13,False,FL,Florida,Modern (13-14),Standard,Second-hand
+12.0,64.0,Used,169.99,iPhone 12,False,FL,Florida,Mid-Gen (11-12),Standard,Second-hand
+14.0,128.0,Used,269.99,iPhone 14,False,FL,Florida,Modern (13-14),Standard,Second-hand
+14.0,128.0,For Parts Or Not Working,349.99,iPhone 14 Pro Max,True,FL,Florida,Modern (13-14),Pro,Damaged
+14.0,128.0,Used,279.99,iPhone 14,False,FL,Florida,Modern (13-14),Standard,Second-hand
+14.0,256.0,Used,429.99,iPhone 14 Pro Max,True,FL,Florida,Modern (13-14),Pro,Second-hand
+14.0,128.0,Used,439.99,iPhone 14 Pro Max,True,FL,Florida,Modern (13-14),Pro,Second-hand
+14.0,256.0,Used,469.99,iPhone 14 Pro Max,True,FL,Florida,Modern (13-14),Pro,Second-hand
+13.0,128.0,Used,219.99,iPhone 13,False,FL,Florida,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,429.99,iPhone 14 Pro Max,True,FL,Florida,Modern (13-14),Pro,Second-hand
+17.0,2048.0,New,649.0,iPhone 17 Pro Max,True,LA,Louisiana,Latest (15+),Pro,New
+12.0,256.0,For Parts Or Not Working,279.99,iPhone 12 Pro Max,True,FL,Florida,Mid-Gen (11-12),Pro,Damaged
+13.0,128.0,For Parts Or Not Working,199.99,iPhone 13,False,FL,Florida,Modern (13-14),Standard,Damaged
+12.0,128.0,Used,169.99,iPhone 12,False,FL,Florida,Mid-Gen (11-12),Standard,Second-hand
+14.0,256.0,Used,249.99,iPhone 14,False,FL,Florida,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,419.99,iPhone 14 Pro Max,True,FL,Florida,Modern (13-14),Pro,Second-hand
+14.0,128.0,Used,379.99,iPhone 14 Pro Max,True,FL,Florida,Modern (13-14),Pro,Second-hand
+16.0,256.0,Open Box,635.0,iPhone 16,False,FL,Florida,Latest (15+),Standard,Open Box
+12.0,256.0,Used,169.99,iPhone 12,False,NJ,New Jersey,Mid-Gen (11-12),Standard,Second-hand
+14.0,256.0,Used,429.99,iPhone 14 Pro Max,True,FL,Florida,Modern (13-14),Pro,Second-hand
+13.0,512.0,Used,280.0,iPhone 13 Mini,False,FL,Florida,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,259.99,iPhone 14,False,FL,Florida,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,429.99,iPhone 14 Pro Max,True,FL,Florida,Modern (13-14),Pro,Second-hand
+17.0,512.0,New,459.0,iPhone 17,False,TX,Texas,Latest (15+),Standard,New
+17.0,2048.0,New,499.0,iPhone 17 Pro Max,True,MO,Missouri,Latest (15+),Pro,New
+12.0,256.0,Used,299.99,iPhone 12 Pro Max,True,FL,Florida,Mid-Gen (11-12),Pro,Second-hand
+17.0,1024.0,New,498.0,iPhone 17 Pro Max,True,FL,Florida,Latest (15+),Pro,New
+16.0,128.0,Open Box,449.99,iPhone 16,False,VA,Virginia,Latest (15+),Standard,Open Box
+16.0,512.0,Open Box,675.0,iPhone 16,False,FL,Florida,Latest (15+),Standard,Open Box
+14.0,128.0,Used,259.99,iPhone 14,False,FL,Florida,Modern (13-14),Standard,Second-hand
+13.0,128.0,Used,239.99,iPhone 13,False,FL,Florida,Modern (13-14),Standard,Second-hand
+17.0,1024.0,New,579.0,iPhone 17 Pro Max,True,TX,Texas,Latest (15+),Pro,New
+17.0,1024.0,New,956.0,iPhone 17 Pro Max,True,TX,Texas,Latest (15+),Pro,New
+12.0,256.0,Used,650.0,iPhone 12 Pro Max,True,MD,Maryland,Mid-Gen (11-12),Pro,Second-hand
+12.0,64.0,Used,146.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,149.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,163.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,152.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,159.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,156.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+15.0,128.0,Excellent - Refurbished,408.95,iPhone 15,False,NJ,New Jersey,Latest (15+),Standard,Refurbished
+12.0,64.0,Used,158.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,144.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,149.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,145.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,150.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,128.0,Used,167.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,147.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,157.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,163.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,155.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,159.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,138.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,128.0,Used,145.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,162.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,148.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,151.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,165.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,147.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,162.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,152.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,144.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,147.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,128.0,Used,164.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,147.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,153.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,128.0,Used,148.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,163.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,149.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,153.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,154.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,156.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,147.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,153.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,153.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,153.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,145.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,154.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,154.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,149.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,128.0,Used,150.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,150.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,161.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,154.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,146.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,163.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,159.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,256.0,Used,600.0,iPhone 12 Pro Max,True,FL,Florida,Mid-Gen (11-12),Pro,Second-hand
+12.0,64.0,Used,158.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,160.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,156.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,128.0,Used,150.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+13.0,128.0,New,322.99,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+12.0,128.0,Used,155.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,167.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,128.0,Used,147.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,161.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,128.0,Used,161.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,153.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+13.0,128.0,Used,227.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+13.0,128.0,Used,220.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+13.0,128.0,Used,214.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+13.0,128.0,Used,209.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+13.0,128.0,Used,210.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+13.0,128.0,Used,229.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+13.0,128.0,Used,199.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+13.0,128.0,New,321.01,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+13.0,128.0,Used,208.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+13.0,256.0,Used,204.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+13.0,128.0,Used,199.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+13.0,128.0,Used,200.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+12.0,64.0,Used,163.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+13.0,512.0,Used,205.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+13.0,128.0,Used,210.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+13.0,128.0,New,323.99,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+13.0,128.0,New,323.99,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+13.0,128.0,Used,205.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+13.0,128.0,Used,208.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+13.0,128.0,Used,207.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+13.0,128.0,Used,208.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+12.0,64.0,Used,147.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+13.0,128.0,Used,205.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+12.0,64.0,Used,165.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,139.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+13.0,128.0,Used,214.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+13.0,128.0,Used,208.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+12.0,128.0,Used,150.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,235.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,230.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,160.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,149.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+13.0,512.0,Used,224.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+13.0,512.0,Used,209.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+12.0,64.0,Used,154.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,156.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,162.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+13.0,128.0,Used,203.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+12.0,64.0,Used,152.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,147.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,148.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,149.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,152.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,128.0,Used,161.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,156.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,156.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,148.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,152.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,169.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+13.0,128.0,Used,214.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+12.0,64.0,Used,151.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,155.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,142.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,157.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,128.0,Used,160.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,154.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+13.0,128.0,Used,226.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+12.0,64.0,Used,155.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+13.0,128.0,Used,211.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+12.0,64.0,Used,162.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,161.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+13.0,128.0,Used,217.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+13.0,128.0,Used,225.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+13.0,128.0,Used,211.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+12.0,64.0,Used,149.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,149.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+13.0,128.0,Used,213.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+12.0,64.0,Used,145.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,154.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,152.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,145.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,163.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,128.0,Used,167.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,155.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,150.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+13.0,128.0,Used,218.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+13.0,256.0,Used,220.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+12.0,64.0,Used,152.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+13.0,256.0,Used,227.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+12.0,64.0,Used,153.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,128.0,Used,147.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+13.0,128.0,Used,224.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+13.0,512.0,Used,210.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+12.0,64.0,Used,156.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,164.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+13.0,128.0,Used,212.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+13.0,128.0,Used,218.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+12.0,64.0,Used,149.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+13.0,128.0,Used,211.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+12.0,64.0,Used,159.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+13.0,128.0,Used,224.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+12.0,64.0,Used,151.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,156.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+13.0,128.0,Used,212.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+13.0,128.0,Used,217.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+12.0,128.0,Used,148.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+13.0,256.0,Used,750.88,iPhone 13,False,VA,Virginia,Modern (13-14),Standard,Second-hand
+13.0,256.0,Used,800.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+13.0,128.0,Used,223.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+12.0,64.0,Used,159.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,167.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+13.0,128.0,Used,217.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+12.0,64.0,Used,164.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+13.0,128.0,Used,217.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+12.0,64.0,Used,159.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+13.0,128.0,Used,201.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+12.0,128.0,Used,149.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,152.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,161.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,164.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,159.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,156.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,158.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+13.0,128.0,Used,215.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+13.0,128.0,Used,210.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+12.0,64.0,Used,153.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,153.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,153.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,155.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,156.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,223.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,128.0,Used,144.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,160.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+13.0,128.0,Used,222.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+12.0,64.0,Used,163.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,128.0,Used,151.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+13.0,128.0,Used,207.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+12.0,64.0,Used,154.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,512.0,Used,365.0,iPhone 12 Pro Max,True,AZ,Arizona,Mid-Gen (11-12),Pro,Second-hand
+13.0,128.0,Used,212.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+13.0,128.0,Used,211.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+12.0,128.0,Used,143.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,154.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+13.0,128.0,Used,206.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+12.0,64.0,Used,155.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,166.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,149.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+13.0,128.0,Used,205.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+12.0,64.0,Used,145.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,160.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,152.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,155.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,158.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,148.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,156.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,148.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,171.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,148.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,163.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+13.0,128.0,Used,212.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+13.0,128.0,Used,207.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+12.0,64.0,Used,150.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,161.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,156.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,155.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,164.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+13.0,128.0,Used,220.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+13.0,128.0,Used,216.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+12.0,64.0,Used,160.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,148.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,164.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,149.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,128.0,Used,159.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,153.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+13.0,128.0,Used,205.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+12.0,64.0,Used,145.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+13.0,128.0,Used,204.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+12.0,64.0,Used,156.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+13.0,128.0,Used,221.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+12.0,64.0,Used,157.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,150.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,128.0,Used,165.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+13.0,128.0,New,323.99,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+13.0,128.0,Used,219.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+12.0,64.0,Used,141.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+13.0,128.0,Used,209.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+13.0,128.0,Used,215.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+12.0,64.0,Used,153.0,iPhone 12,False,Unknown,,Mid-Gen (11-12),Standard,Second-hand
+13.0,128.0,Used,226.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+12.0,64.0,Used,153.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,159.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,149.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,162.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,148.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,154.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,167.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,159.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+13.0,128.0,Used,225.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+13.0,128.0,Used,218.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+12.0,64.0,Used,158.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,215.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+13.0,128.0,New,323.99,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+13.0,512.0,Used,207.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+12.0,64.0,Used,152.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,234.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,150.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,157.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+14.0,128.0,Used,260.0,iPhone 14 Plus,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,265.0,iPhone 14 Plus,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,263.0,iPhone 14 Plus,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,263.0,iPhone 14 Plus,False,TX,Texas,Modern (13-14),Standard,Second-hand
+12.0,64.0,Used,163.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+13.0,128.0,Used,214.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+13.0,128.0,Used,221.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+13.0,128.0,Used,214.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+12.0,64.0,Used,158.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,155.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+13.0,128.0,Used,213.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+12.0,64.0,Used,163.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+13.0,128.0,Used,216.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+13.0,128.0,Used,223.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+12.0,128.0,Used,153.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,146.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,159.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,157.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,151.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,144.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,153.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,154.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,141.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+13.0,128.0,Used,219.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+12.0,64.0,Used,155.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+13.0,128.0,Used,212.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+12.0,64.0,Used,157.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,144.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,157.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+13.0,128.0,Used,215.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+12.0,64.0,Used,162.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+13.0,256.0,Used,216.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+12.0,64.0,Used,164.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,153.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+13.0,128.0,Used,219.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+12.0,64.0,Used,150.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,158.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+13.0,128.0,Used,227.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+13.0,128.0,Used,220.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+12.0,64.0,Used,161.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+13.0,128.0,Used,225.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+12.0,64.0,Used,145.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,150.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,155.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+14.0,128.0,New,403.95,iPhone 14,False,NJ,New Jersey,Modern (13-14),Standard,New
+14.0,512.0,New,699.88,iPhone 14 Pro Max,True,NJ,New Jersey,Modern (13-14),Pro,New
+12.0,64.0,Used,159.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+13.0,128.0,Used,214.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+13.0,128.0,Used,212.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+12.0,64.0,Used,152.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+13.0,128.0,Used,210.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+13.0,128.0,New,323.99,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+13.0,128.0,New,323.99,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+13.0,128.0,New,323.99,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+13.0,128.0,New,323.99,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+13.0,128.0,New,323.99,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+13.0,512.0,Open Box,327.55,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,Open Box
+13.0,128.0,New,323.99,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+14.0,128.0,Used,243.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,236.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,237.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,239.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,512.0,New,403.95,iPhone 14,False,NJ,New Jersey,Modern (13-14),Standard,New
+14.0,128.0,Used,221.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,232.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,236.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,225.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,235.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,240.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,223.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,223.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,224.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,228.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,236.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,219.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,221.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,223.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,237.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,229.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,229.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,222.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,235.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,223.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,226.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+13.0,512.0,New,432.12,iPhone 13,False,NJ,New Jersey,Modern (13-14),Standard,New
+14.0,128.0,Used,224.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,231.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,New,673.99,iPhone 14 Pro Max,True,NJ,New Jersey,Modern (13-14),Pro,New
+14.0,128.0,Used,224.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,229.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,221.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,232.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,227.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,216.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,232.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,221.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,243.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,225.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,225.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,221.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,223.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,218.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,226.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,238.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+12.0,64.0,Used,143.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,158.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+13.0,128.0,Used,229.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,227.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,229.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,229.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+13.0,128.0,Used,211.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+12.0,64.0,Used,159.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,143.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+14.0,128.0,Used,227.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+13.0,128.0,Used,206.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+13.0,128.0,Used,224.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,New,699.88,iPhone 14 Pro Max,True,NJ,New Jersey,Modern (13-14),Pro,New
+13.0,128.0,Used,199.99,iPhone 13,False,VA,Virginia,Modern (13-14),Standard,Second-hand
+13.0,128.0,Used,216.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+13.0,128.0,Used,208.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+12.0,64.0,Used,154.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+14.0,128.0,Used,233.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,226.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,229.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,233.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+13.0,128.0,Used,209.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,232.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+12.0,64.0,Used,155.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,153.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+14.0,128.0,Used,230.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+12.0,64.0,Used,148.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+14.0,128.0,Used,242.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+12.0,64.0,Used,153.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+14.0,128.0,Used,234.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,221.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+12.0,64.0,Used,161.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,150.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,153.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,157.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+14.0,128.0,Used,228.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+12.0,64.0,Used,162.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,150.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,168.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,151.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+14.0,512.0,Used,227.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+12.0,64.0,Used,159.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+14.0,128.0,Used,220.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+12.0,64.0,Used,142.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+14.0,128.0,Used,218.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,237.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,233.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+12.0,64.0,Used,160.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,164.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+13.0,128.0,Used,240.0,iPhone 13,False,NY,New York,Modern (13-14),Standard,Second-hand
+13.0,128.0,Used,216.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,241.0,iPhone 14 Plus,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,224.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,256.0,iPhone 14 Plus,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,243.0,iPhone 14 Plus,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,234.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+12.0,64.0,Used,149.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+13.0,128.0,Used,206.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+17.0,256.0,Open Box,789.0,iPhone 17,False,NC,North Carolina,Latest (15+),Standard,Open Box
+14.0,128.0,Used,225.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+13.0,128.0,New,356.42,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+13.0,128.0,Used,299.0,iPhone 13,False,NY,New York,Modern (13-14),Standard,Second-hand
+12.0,64.0,Used,151.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+14.0,128.0,Used,227.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+13.0,128.0,Used,212.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,227.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,219.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+12.0,64.0,Used,158.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,155.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+13.0,128.0,Used,218.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+12.0,64.0,Used,162.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+13.0,128.0,Used,214.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,230.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,215.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,234.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+12.0,64.0,Used,147.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+14.0,128.0,Used,224.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,229.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,231.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+12.0,64.0,Used,141.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,160.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,140.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+13.0,128.0,Used,215.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+13.0,128.0,Used,205.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,227.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,269.0,iPhone 14 Plus,False,TX,Texas,Modern (13-14),Standard,Second-hand
+13.0,128.0,New,323.99,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+13.0,128.0,New,323.99,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+12.0,128.0,Used,165.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,152.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,144.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+13.0,128.0,Used,214.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+13.0,128.0,Used,199.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,224.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,227.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+13.0,128.0,Used,211.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,230.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,224.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+12.0,64.0,Used,154.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,152.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+14.0,128.0,Used,233.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,230.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+12.0,64.0,Used,146.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,153.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,155.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+13.0,128.0,Used,226.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+13.0,128.0,Used,201.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+12.0,64.0,Used,153.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,236.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+13.0,128.0,Used,206.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,224.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+12.0,64.0,Used,159.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+13.0,128.0,Used,216.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+13.0,128.0,Used,220.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,218.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,512.0,Used,229.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,233.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,227.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+12.0,64.0,Used,153.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+13.0,128.0,Used,206.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+13.0,128.0,Used,215.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,229.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,252.0,iPhone 14 Plus,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,268.0,iPhone 14 Plus,False,TX,Texas,Modern (13-14),Standard,Second-hand
+12.0,64.0,Used,155.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+13.0,128.0,Used,209.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,220.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,256.0,Used,222.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,219.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+13.0,512.0,Used,216.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+13.0,128.0,Used,205.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+12.0,64.0,Used,145.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,156.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+14.0,128.0,Used,223.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,218.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,234.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+13.0,128.0,Used,205.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,220.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,225.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,230.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,232.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,230.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+12.0,64.0,Used,158.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+14.0,128.0,Used,233.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,232.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,236.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+12.0,64.0,Used,151.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+13.0,256.0,Used,209.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,222.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+13.0,128.0,Used,219.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,226.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,225.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,230.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+12.0,64.0,Used,160.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,146.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+13.0,128.0,Used,219.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+13.0,128.0,Used,206.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,218.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+12.0,64.0,Used,167.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+14.0,128.0,Used,228.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,512.0,Used,226.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+12.0,64.0,Used,140.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,160.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,150.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+13.0,128.0,Used,214.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+13.0,128.0,Used,213.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,219.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,219.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,235.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+12.0,64.0,Used,160.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,152.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+13.0,128.0,Used,230.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,224.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,214.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,214.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+12.0,64.0,Used,149.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+13.0,128.0,Used,205.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,230.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,221.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+12.0,128.0,Used,154.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,163.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+13.0,128.0,Used,226.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+13.0,128.0,Used,221.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+13.0,128.0,Used,204.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,225.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+12.0,64.0,Used,156.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,164.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,152.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,239.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+13.0,256.0,Used,224.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,235.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,220.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,223.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+12.0,64.0,Used,158.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,153.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+13.0,128.0,Used,225.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+13.0,128.0,Used,210.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,237.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,225.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,241.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+12.0,64.0,Used,146.0,iPhone 12,False,TX,Texas,Mid-Gen (11-12),Standard,Second-hand
+13.0,128.0,Used,218.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+13.0,128.0,Used,218.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+13.0,128.0,Used,205.0,iPhone 13,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,234.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Used,224.0,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Second-hand
+14.0,128.0,Open Box,584.23,iPhone 14 Pro Max,True,KY,Kentucky,Modern (13-14),Pro,Open Box
+13.0,128.0,Used,253.99,iPhone 13,False,OH,Ohio,Modern (13-14),Standard,Second-hand
+17.0,256.0,New,685.0,iPhone 17,False,WA,Washington,Latest (15+),Standard,New
+17.0,1024.0,New,599.99,iPhone 17 Pro Max,True,TX,Texas,Latest (15+),Pro,New
+14.0,512.0,New,403.95,iPhone 14,False,TX,Texas,Modern (13-14),Standard,New
+14.0,128.0,New,403.95,iPhone 14,False,TX,Texas,Modern (13-14),Standard,New
+17.0,256.0,Open Box,700.0,iPhone 17 Pro Max,True,CA,California,Latest (15+),Pro,Open Box
+17.0,256.0,New,610.0,iPhone 17 Pro Max,True,CA,California,Latest (15+),Pro,New
+17.0,1024.0,New,498.0,iPhone 17 Pro Max,True,NC,North Carolina,Latest (15+),Pro,New
+12.0,128.0,Used,229.0,iPhone 12 Pro Max,True,VA,Virginia,Mid-Gen (11-12),Pro,Second-hand
+13.0,128.0,Used,499.99,iPhone 13,False,IL,Illinois,Modern (13-14),Standard,Second-hand
+13.0,128.0,Used,499.0,iPhone 13,False,CA,California,Modern (13-14),Standard,Second-hand
+13.0,128.0,New,321.43,iPhone 13 Mini,False,CA,California,Modern (13-14),Standard,New
+13.0,128.0,New,332.05,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+13.0,128.0,New,321.43,iPhone 13 Mini,False,CA,California,Modern (13-14),Standard,New
+12.0,512.0,Used,1000.0,iPhone 12 Pro Max,True,CA,California,Mid-Gen (11-12),Pro,Second-hand
+12.0,512.0,Used,385.5,iPhone 12 Pro Max,True,PA,Pennsylvania,Mid-Gen (11-12),Pro,Second-hand
+13.0,512.0,Open Box,362.97,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,Open Box
+13.0,256.0,Used,259.0,iPhone 13 Mini,False,WA,Washington,Modern (13-14),Standard,Second-hand
+13.0,256.0,New,332.08,iPhone 13 Mini,False,CA,California,Modern (13-14),Standard,New
+14.0,128.0,Used,389.99,iPhone 14,False,CA,California,Modern (13-14),Standard,Second-hand
+13.0,128.0,New,321.43,iPhone 13 Mini,False,CA,California,Modern (13-14),Standard,New
+13.0,128.0,New,321.42,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+13.0,512.0,Open Box,457.99,iPhone 13,False,CA,California,Modern (13-14),Standard,Open Box
+14.0,1024.0,New,629.51,iPhone 14 Pro Max,True,CA,California,Modern (13-14),Pro,New
+14.0,512.0,New,389.02,iPhone 14,False,NJ,New Jersey,Modern (13-14),Standard,New
+13.0,512.0,New,321.42,iPhone 13 Mini,False,CA,California,Modern (13-14),Standard,New
+14.0,128.0,New,673.99,iPhone 14 Pro Max,True,NY,New York,Modern (13-14),Pro,New
+14.0,128.0,For Parts Or Not Working,100.0,iPhone 14,False,MD,Maryland,Modern (13-14),Standard,Damaged
+13.0,128.0,New,321.43,iPhone 13 Mini,False,CA,California,Modern (13-14),Standard,New
+14.0,128.0,New,389.02,iPhone 14,False,CA,California,Modern (13-14),Standard,New
+13.0,128.0,New,321.43,iPhone 13 Mini,False,CA,California,Modern (13-14),Standard,New
+13.0,256.0,New,321.42,iPhone 13 Mini,False,CA,California,Modern (13-14),Standard,New
+13.0,512.0,New,321.42,iPhone 13 Mini,False,CA,California,Modern (13-14),Standard,New
+14.0,256.0,New,409.99,iPhone 14,False,NJ,New Jersey,Modern (13-14),Standard,New
+13.0,128.0,New,332.08,iPhone 13 Mini,False,CA,California,Modern (13-14),Standard,New
+13.0,512.0,New,321.42,iPhone 13 Mini,False,CA,California,Modern (13-14),Standard,New
+13.0,256.0,New,321.42,iPhone 13 Mini,False,TX,Texas,Modern (13-14),Standard,New
+13.0,512.0,New,321.42,iPhone 13 Mini,False,CA,California,Modern (13-14),Standard,New
+14.0,512.0,New,629.51,iPhone 14 Pro Max,True,NJ,New Jersey,Modern (13-14),Pro,New
+14.0,512.0,New,629.51,iPhone 14 Pro Max,True,NJ,New Jersey,Modern (13-14),Pro,New
+14.0,512.0,New,629.51,iPhone 14 Pro Max,True,NJ,New Jersey,Modern (13-14),Pro,New
+13.0,256.0,New,321.42,iPhone 13 Mini,False,CA,California,Modern (13-14),Standard,New
+13.0,128.0,New,321.43,iPhone 13 Mini,False,TX,Texas,Modern (13-14),Standard,New
+13.0,128.0,New,321.43,iPhone 13 Mini,False,CA,California,Modern (13-14),Standard,New
+14.0,128.0,New,400.0,iPhone 14,False,VA,Virginia,Modern (13-14),Standard,New
+13.0,128.0,New,335.99,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+13.0,128.0,New,323.99,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+13.0,128.0,New,322.99,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+13.0,128.0,New,323.99,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+13.0,128.0,New,335.99,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+13.0,128.0,New,322.99,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+13.0,128.0,New,333.88,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+13.0,128.0,New,321.43,iPhone 13 Mini,False,CA,California,Modern (13-14),Standard,New
+14.0,256.0,For Parts Or Not Working,229.99,iPhone 14 Plus,False,WI,Wisconsin,Modern (13-14),Standard,Damaged
+14.0,256.0,Used,299.99,iPhone 14 Plus,False,VA,Virginia,Modern (13-14),Standard,Second-hand
+13.0,512.0,New,321.42,iPhone 13 Mini,False,CA,California,Modern (13-14),Standard,New
+17.0,256.0,New,680.0,iPhone 17,False,VA,Virginia,Latest (15+),Standard,New
+13.0,128.0,Used,333.33,iPhone 13 Pro,True,NJ,New Jersey,Modern (13-14),Pro,Second-hand
+14.0,128.0,Used,300.0,iPhone 14 Plus,False,CA,California,Modern (13-14),Standard,Second-hand
+17.0,256.0,New,875.0,iPhone 17,False,NJ,New Jersey,Latest (15+),Standard,New
+17.0,256.0,Open Box,749.0,iPhone 17,False,CA,California,Latest (15+),Standard,Open Box
+12.0,128.0,Used,280.0,iPhone 12 Pro Max,True,VA,Virginia,Mid-Gen (11-12),Pro,Second-hand
+17.0,1024.0,New,599.0,iPhone 17 Pro Max,True,KY,Kentucky,Latest (15+),Pro,New
+13.0,128.0,New,352.55,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+13.0,128.0,For Parts Or Not Working,174.99,iPhone 13,False,WI,Wisconsin,Modern (13-14),Standard,Damaged
+13.0,128.0,New,321.43,iPhone 13 Mini,False,CA,California,Modern (13-14),Standard,New
+13.0,512.0,New,321.42,iPhone 13 Mini,False,CA,California,Modern (13-14),Standard,New
+17.0,256.0,Open Box,649.99,iPhone 17,False,OH,Ohio,Latest (15+),Standard,Open Box
+17.0,256.0,Open Box,699.0,iPhone 17,False,OH,Ohio,Latest (15+),Standard,Open Box
+17.0,2048.0,New,479.99,iPhone 17 Pro Max,True,WA,Washington,Latest (15+),Pro,New
+12.0,64.0,Used,199.18,iPhone 12,False,CA,California,Mid-Gen (11-12),Standard,Second-hand
+13.0,128.0,New,321.43,iPhone 13 Mini,False,CA,California,Modern (13-14),Standard,New
+17.0,2048.0,New,489.0,iPhone 17 Pro Max,True,SC,South Carolina,Latest (15+),Pro,New
+17.0,1024.0,New,579.98,iPhone 17 Pro Max,True,CA,California,Latest (15+),Pro,New
+12.0,64.0,Used,399.99,iPhone 12,False,IL,Illinois,Mid-Gen (11-12),Standard,Second-hand
+12.0,64.0,Used,399.99,iPhone 12,False,IL,Illinois,Mid-Gen (11-12),Standard,Second-hand
+13.0,128.0,Very Good - Refurbished,305.67,iPhone 13 Mini,False,MD,Maryland,Modern (13-14),Standard,Refurbished
+13.0,256.0,Used,699.0,iPhone 13,False,CA,California,Modern (13-14),Standard,Second-hand
+16.0,128.0,Excellent - Refurbished,569.95,iPhone 16,False,NY,New York,Latest (15+),Standard,Refurbished
+13.0,256.0,New,408.48,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+13.0,256.0,Used,365.0,iPhone 13 Mini,False,CA,California,Modern (13-14),Standard,Second-hand
+12.0,64.0,Used,419.99,iPhone 12,False,FL,Florida,Mid-Gen (11-12),Standard,Second-hand
+13.0,256.0,New,398.99,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+17.0,256.0,Excellent - Refurbished,789.99,iPhone 17,False,TX,Texas,Latest (15+),Standard,Refurbished
+17.0,256.0,Excellent - Refurbished,814.95,iPhone 17,False,NY,New York,Latest (15+),Standard,Refurbished
+14.0,128.0,Used,599.95,iPhone 14 Plus,False,CA,California,Modern (13-14),Standard,Second-hand
+14.0,512.0,New,699.88,iPhone 14 Pro Max,True,NJ,New Jersey,Modern (13-14),Pro,New
+14.0,128.0,New,699.88,iPhone 14 Pro Max,True,NJ,New Jersey,Modern (13-14),Pro,New
+14.0,128.0,Open Box,349.95,iPhone 14,False,TX,Texas,Modern (13-14),Standard,Open Box
+14.0,1024.0,Used,780.0,iPhone 14 Pro Max,True,NY,New York,Modern (13-14),Pro,Second-hand
+13.0,256.0,New,404.72,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+13.0,128.0,New,350.15,iPhone 13 Mini,False,NJ,New Jersey,Modern (13-14),Standard,New
+16.0,128.0,Open Box,595.0,iPhone 16,False,IL,Illinois,Latest (15+),Standard,Open Box
+14.0,128.0,Used,460.99,iPhone 14 Pro Max,True,FL,Florida,Modern (13-14),Pro,Second-hand
+13.0,128.0,Used,150.0,iPhone 13,False,TN,Tennessee,Modern (13-14),Standard,Second-hand
+16.0,512.0,Open Box,700.0,iPhone 16,False,FL,Florida,Latest (15+),Standard,Open Box
+14.0,256.0,New,403.95,iPhone 14,False,TX,Texas,Modern (13-14),Standard,New
+14.0,256.0,New,403.95,iPhone 14,False,TX,Texas,Modern (13-14),Standard,New
+14.0,128.0,New,403.95,iPhone 14,False,TX,Texas,Modern (13-14),Standard,New
+17.0,1024.0,New,610.0,iPhone 17 Pro Max,True,AZ,Arizona,Latest (15+),Pro,New
+17.0,512.0,New,659.99,iPhone 17 Pro Max,True,KS,Kansas,Latest (15+),Pro,New
+17.0,256.0,New,599.0,iPhone 17 Pro Max,True,GA,Georgia,Latest (15+),Pro,New
+14.0,512.0,New,675.99,iPhone 14 Pro Max,True,NJ,New Jersey,Modern (13-14),Pro,New
+14.0,128.0,New,675.99,iPhone 14 Pro Max,True,NJ,New Jersey,Modern (13-14),Pro,New
+14.0,128.0,For Parts Or Not Working,249.99,iPhone 14,False,FL,Florida,Modern (13-14),Standard,Damaged
+17.0,2048.0,New,499.0,iPhone 17 Pro Max,True,IL,Illinois,Latest (15+),Pro,New
+17.0,256.0,New,683.89,iPhone 17 Pro Max,True,MI,Michigan,Latest (15+),Pro,New
+16.0,256.0,Open Box,660.0,iPhone 16,False,FL,Florida,Latest (15+),Standard,Open Box
+16.0,256.0,Open Box,660.0,iPhone 16,False,FL,Florida,Latest (15+),Standard,Open Box
+17.0,2048.0,New,489.0,iPhone 17 Pro Max,True,TX,Texas,Latest (15+),Pro,New
+17.0,1024.0,New,579.0,iPhone 17 Pro Max,True,GA,Georgia,Latest (15+),Pro,New
+17.0,1024.0,New,579.99,iPhone 17 Pro Max,True,GA,Georgia,Latest (15+),Pro,New

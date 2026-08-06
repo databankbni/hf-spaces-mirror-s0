@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ c.groom_name_en }} &amp; {{ c.bride_name_en }} — Wedding Invitation</title>
+
+  <!-- Social share preview (Telegram / Facebook) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="💍 {{ c.groom_name_en }} & {{ c.bride_name_en }} — Wedding Invitation">
+  <meta property="og:description" content="{{ c.date_en }} · {{ c.venue_name_en }} — {{ c.invite_en[:120] }}">
+  <meta property="og:image" content="{{ url_for('og_image', _external=True) }}?v={{ og_v }}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url" content="{{ request.base_url }}">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%92%8D%3C/text%3E%3C/svg%3E">
+  <link rel="manifest" href="{{ url_for('manifest') }}">
+  <link rel="apple-touch-icon" href="{{ url_for('static', filename='icon-192.png') }}">
+  <meta name="theme-color" content="{{ c.theme_color }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family={{ c.font_kh_heading|replace(' ', '+') }}&family=Hanuman:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family={{ c.font_en_script|replace(' ', '+') }}&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}?v={{ asset_v }}">
+  <!-- Admin-chosen design settings override the stylesheet defaults -->
+  <style>
+    :root {
+      --gold: {{ c.theme_color }};
+      --gold-dark: {{ theme_dark }};
+      --kh-font: '{{ c.font_kh_heading }}', 'Hanuman', serif;
+      --script-font: '{{ c.font_en_script }}', cursive;
+    }
+    {% if c.bg_photo %}.page-bg::after { background: rgba(253, 249, 242, {{ c.bg_overlay }}); }{% endif %}
+  </style>
+  {% if c.hero_photo %}
+  <link rel="preload" as="image" href="{{ url_for('photos', filename=c.hero_photo) }}">
+  {% endif %}
+</head>
+<body class="{{ 'locked' if c.show_envelope == 'yes' else 'opened' }}">
+
+  {% if c.bg_photo %}
+  <div class="page-bg" style="background-image: url('{{ url_for('photos', filename=c.bg_photo) }}');"></div>
+  {% endif %}
+
+  {% if c.show_envelope == 'yes' %}
+  <!-- Envelope intro: tapping it reveals the page and starts the music.
+       Gallery photos crossfade behind the card with a slow zoom. -->
+  <div id="envelope" class="envelope">
+    {% if envelope_slides %}
+    <div class="env-slides">
+      {% for s in envelope_slides %}
+      <div class="env-slide{{ ' active' if loop.first }}" style="background-image: url('{{ url_for('photos', filename=s) }}');"></div>
+      {% endfor %}
+    </div>
+    {% endif %}
+    <div class="envelope-card">
+      {% if guest %}
+      <p class="envelope-guest"><span data-kh="{{ c.greeting_kh }}" data-en="{{ c.greeting_en }}">{{ c.greeting_kh }}</span> <b>{{ guest }}</b></p>
+      {% endif %}
+      <img class="envelope-heart" src="{{ url_for('static', filename='decor/heart.png') }}" alt="">
+      <p class="envelope-eyebrow" data-kh="{{ c.eyebrow_kh }}" data-en="{{ c.eyebrow_en }}">{{ c.eyebrow_kh }}</p>
+      <p class="envelope-names">
+        <span data-kh="{{ c.groom_name_kh }}" data-en="{{ c.groom_name_en }}">{{ c.groom_name_kh }}</span>
+        <span class="amp">&amp;</span>
+        <span data-kh="{{ c.bride_name_kh }}" data-en="{{ c.bride_name_en }}">{{ c.bride_name_kh }}</span>
+      </p>
+      <div class="hero-divider"><img src="{{ url_for('static', filename='decor/kbach-line.png') }}" alt=""></div>
+      <div class="envelope-btn" data-kh="{{ c.btn_open_kh }}" data-en="{{ c.btn_open_en }}">{{ c.btn_open_kh }}</div>
+    </div>
+  </div>
+  {% endif %}
+
+  <button id="lang-toggle" class="lang-toggle" aria-label="Toggle language">
+    <span id="lang-label">EN</span>
+  </button>
+
+  {% if c.music %}
+  <button id="music-toggle" class="music-toggle" aria-label="Toggle music">🎵</button>
+  <audio id="bg-music" loop preload="none">
+    <source src="{{ url_for('photos', filename=c.music) }}">
+  </audio>
+  {% endif %}
+
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% for category, message in messages %}
+      {% if category == 'toast' %}
+      {% set toast_kh = c.toast_rsvp_kh if message == 'rsvp_ok' else (c.toast_upload_kh if message == 'upload_ok' else c.toast_wish_kh) %}
+      {% set toast_en = c.toast_rsvp_en if message == 'rsvp_ok' else (c.toast_upload_en if message == 'upload_ok' else c.toast_wish_en) %}
+      <div class="toast" data-kh="{{ toast_kh }}" data-en="{{ toast_en }}">{{ toast_kh }}</div>
+      {% endif %}
+    {% endfor %}
+  {% endwith %}
+
+  <!-- Hero -->
+  <header class="hero{{ ' has-photo' if (c.hero_photo or slides) }}"
+          {% if c.hero_photo and not slides %}style="background-image: linear-gradient(rgba(28,22,15,.45), rgba(28,22,15,.55)), url('{{ url_for('photos', filename=c.hero_photo) }}');"{% endif %}>
+    {% if slides %}
+    <div class="hero-slides">
+      {% for s in slides %}
+      <div class="hero-slide{{ ' active' if loop.first }}" style="background-image: linear-gradient(rgba(28,22,15,.45), rgba(28,22,15,.55)), url('{{ url_for('photos', filename=s) }}');"></div>
+      {% endfor %}
+    </div>
+    {% endif %}
+    <div class="hero-inner">
+      {% if guest %}
+      <p class="guest-line"><span data-kh="{{ c.greeting_kh }}" data-en="{{ c.greeting_en }}">{{ c.greeting_kh }}</span> <b>{{ guest }}</b></p>
+      {% endif %}
+      {% if guest_table %}
+      <p class="table-badge"><span data-kh="{{ c.table_label_kh }}" data-en="{{ c.table_label_en }}">{{ c.table_label_kh }}</span> <b>{{ guest_table }}</b></p>
+      {% endif %}
+      <img class="hero-heart" src="{{ url_for('static', filename='decor/heart.png') }}" alt="">
+      <p class="hero-eyebrow" data-kh="{{ c.eyebrow_kh }}" data-en="{{ c.eyebrow_en }}">{{ c.eyebrow_kh }}</p>
+      <div class="hero-names">
+        <h1 class="name-kh" data-kh="{{ c.groom_name_kh }}" data-en="{{ c.groom_name_en }}">{{ c.groom_name_kh }}</h1>
+        <div class="amp">&amp;</div>
+        <h1 class="name-kh" data-kh="{{ c.bride_name_kh }}" data-en="{{ c.bride_name_en }}">{{ c.bride_name_kh }}</h1>
+      </div>
+      <div class="hero-divider"><img src="{{ url_for('static', filename='decor/kbach-line.png') }}" alt=""></div>
+      <p class="hero-date" data-kh="{{ c.date_kh }}" data-en="{{ c.date_en }}">{{ c.date_kh }}</p>
+      <p class="hero-time" data-kh="{{ c.time_display_kh }}" data-en="{{ c.time_display_en }}">{{ c.time_display_kh }}</p>
+    </div>
+    <div class="scroll-hint">▾</div>
+  </header>
+
+  <main>
+    {% for sec in sections %}
+
+    {% if sec == 'invitation' %}
+    <!-- Invitation message + parents -->
+    <section class="section">
+      <div class="card invite-card">
+        <div class="section-title" data-kh="{{ c.title_invitation_kh }}" data-en="{{ c.title_invitation_en }}">{{ c.title_invitation_kh }}</div>
+        <div class="parents">
+          <div class="family">
+            <h4 data-kh="{{ c.label_groom_family_kh }}" data-en="{{ c.label_groom_family_en }}">{{ c.label_groom_family_kh }}</h4>
+            <p data-kh="{{ c.groom_father_kh }}" data-en="{{ c.groom_father_en }}">{{ c.groom_father_kh }}</p>
+            <p data-kh="{{ c.groom_mother_kh }}" data-en="{{ c.groom_mother_en }}">{{ c.groom_mother_kh }}</p>
+          </div>
+          <div class="family">
+            <h4 data-kh="{{ c.label_bride_family_kh }}" data-en="{{ c.label_bride_family_en }}">{{ c.label_bride_family_kh }}</h4>
+            <p data-kh="{{ c.bride_father_kh }}" data-en="{{ c.bride_father_en }}">{{ c.bride_father_kh }}</p>
+            <p data-kh="{{ c.bride_mother_kh }}" data-en="{{ c.bride_mother_en }}">{{ c.bride_mother_kh }}</p>
+          </div>
+        </div>
+        <p class="invite-text" data-kh="{{ c.invite_kh }}" data-en="{{ c.invite_en }}">{{ c.invite_kh }}</p>
+      </div>
+    </section>
+
+    {% elif sec == 'story' %}
+    <!-- Love story timeline -->
+    {% if c.story %}
+    <section class="section">
+      <div class="card">
+        <div class="section-title" data-kh="{{ c.title_story_kh }}" data-en="{{ c.title_story_en }}">{{ c.title_story_kh }}</div>
+        <div class="timeline">
+          {% for item in c.story %}
+          <div class="timeline-item">
+            <div class="timeline-time">{{ item.time }}</div>
+            <div class="timeline-dot"></div>
+            <div class="timeline-title" data-kh="{{ item.title_kh }}" data-en="{{ item.title_en }}">{{ item.title_kh }}</div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+    {% endif %}
+
+    {% elif sec == 'faq' %}
+    <!-- FAQ -->
+    {% if c.faq %}
+    <section class="section">
+      <div class="card">
+        <div class="section-title" data-kh="{{ c.title_faq_kh }}" data-en="{{ c.title_faq_en }}">{{ c.title_faq_kh }}</div>
+        <div class="faq-list">
+          {% for item in c.faq %}
+          <details class="faq-item">
+            <summary data-kh="{{ item.q_kh }}" data-en="{{ item.q_en }}">{{ item.q_kh }}</summary>
+            <p data-kh="{{ item.a_kh }}" data-en="{{ item.a_en }}">{{ item.a_kh }}</p>
+          </details>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+    {% endif %}
+
+    {% elif sec == 'countdown' %}
+    <!-- Countdown / Married -->
+    <section class="section countdown-section">
+      <div id="countdown-block">
+        <div class="section-title" data-kh="{{ c.title_countdown_kh }}" data-en="{{ c.title_countdown_en }}">{{ c.title_countdown_kh }}</div>
+        <div id="countdown" class="countdown" data-datetime="{{ c.date_iso }}">
+          <div class="count-box"><span id="cd-days">--</span><small data-kh="{{ c.label_days_kh }}" data-en="{{ c.label_days_en }}">{{ c.label_days_kh }}</small></div>
+          <div class="count-box"><span id="cd-hours">--</span><small data-kh="{{ c.label_hours_kh }}" data-en="{{ c.label_hours_en }}">{{ c.label_hours_kh }}</small></div>
+          <div class="count-box"><span id="cd-mins">--</span><small data-kh="{{ c.label_minutes_kh }}" data-en="{{ c.label_minutes_en }}">{{ c.label_minutes_kh }}</small></div>
+          <div class="count-box"><span id="cd-secs">--</span><small data-kh="{{ c.label_seconds_kh }}" data-en="{{ c.label_seconds_en }}">{{ c.label_seconds_kh }}</small></div>
+        </div>
+      </div>
+      <div id="married-block" class="card married-card" hidden>
+        <div class="married-emoji">💍</div>
+        <p data-kh="{{ c.thank_you_kh }}" data-en="{{ c.thank_you_en }}">{{ c.thank_you_kh }}</p>
+        <p id="married-days" class="married-days"
+           data-tpl-kh="{{ c.married_days_kh }}" data-tpl-en="{{ c.married_days_en }}"></p>
+      </div>
+    </section>
+
+    {% elif sec == 'schedule' %}
+    <!-- Schedule -->
+    {% if c.schedule %}
+    <section class="section">
+      <div class="card">
+        <div class="section-title" data-kh="{{ c.title_schedule_kh }}" data-en="{{ c.title_schedule_en }}">{{ c.title_schedule_kh }}</div>
+        <div class="timeline">
+          {% for item in c.schedule %}
+          <div class="timeline-item">
+            <div class="timeline-time">{{ item.time }}</div>
+            <div class="timeline-dot"></div>
+            <div class="timeline-title" data-kh="{{ item.title_kh }}" data-en="{{ item.title_en }}">{{ item.title_kh }}</div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+    {% endif %}
+
+    {% elif sec == 'venue' %}
+    <!-- Venue -->
+    <section class="section">
+      <div class="card">
+        <div class="section-title" data-kh="{{ c.title_venue_kh }}" data-en="{{ c.title_venue_en }}">{{ c.title_venue_kh }}</div>
+        <h3 class="venue-name" data-kh="{{ c.venue_name_kh }}" data-en="{{ c.venue_name_en }}">{{ c.venue_name_kh }}</h3>
+        <p class="venue-address" data-kh="{{ c.venue_address_kh }}" data-en="{{ c.venue_address_en }}">{{ c.venue_address_kh }}</p>
+        <div class="venue-actions">
+          {% if c.maps_url %}
+          <a class="btn" href="{{ c.maps_url }}" target="_blank" rel="noopener" data-kh="{{ c.btn_maps_kh }}" data-en="{{ c.btn_maps_en }}">{{ c.btn_maps_kh }}</a>
+          {% endif %}
+          <a class="btn btn-light" href="{{ url_for('calendar_ics') }}" data-kh="{{ c.btn_calendar_kh }}" data-en="{{ c.btn_calendar_en }}">{{ c.btn_calendar_kh }}</a>
+          {% if c.ride_url %}
+          <a class="btn btn-light" href="{{ c.ride_url }}" target="_blank" rel="noopener" data-kh="{{ c.btn_ride_kh }}" data-en="{{ c.btn_ride_en }}">{{ c.btn_ride_kh }}</a>
+          {% endif %}
+        </div>
+      </div>
+    </section>
+
+    {% elif sec == 'dress' %}
+    <!-- Dress code -->
+    {% if dress_colors or c.dress_note_kh %}
+    <section class="section">
+      <div class="card">
+        <div class="section-title" data-kh="{{ c.dress_title_kh }}" data-en="{{ c.dress_title_en }}">{{ c.dress_title_kh }}</div>
+        <p data-kh="{{ c.dress_note_kh }}" data-en="{{ c.dress_note_en }}">{{ c.dress_note_kh }}</p>
+        {% if dress_colors %}
+        <div class="dress-swatches">
+          {% for col in dress_colors %}
+          <span class="dress-swatch" style="background: {{ col }};"></span>
+          {% endfor %}
+        </div>
+        {% endif %}
+      </div>
+    </section>
+    {% endif %}
+
+    {% elif sec == 'video' %}
+    <!-- Pre-wedding video / live stream -->
+    {% if video_embed or c.video or c.live_url %}
+    <section class="section" id="video">
+      <div class="card">
+        <div class="section-title" data-kh="{{ c.title_video_kh }}" data-en="{{ c.title_video_en }}">{{ c.title_video_kh }}</div>
+        {% if c.live_url %}
+        <a class="btn" style="margin-bottom:1.2rem;" href="{{ c.live_url }}" target="_blank" rel="noopener" data-kh="{{ c.btn_live_kh }}" data-en="{{ c.btn_live_en }}">{{ c.btn_live_kh }}</a>
+        {% endif %}
+        {% if video_embed %}
+        <div class="video-wrap">
+          <iframe src="{{ video_embed }}" title="Pre-wedding video"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen loading="lazy"></iframe>
+        </div>
+        {% else %}
+        <video class="video-el" controls preload="metadata"
+               src="{{ url_for('photos', filename=c.video) }}"></video>
+        {% endif %}
+      </div>
+    </section>
+    {% endif %}
+
+    {% elif sec == 'apology' %}
+    <!-- Thank you & apology -->
+    <section class="section">
+      <div class="card">
+        <div class="section-title" data-kh="{{ c.apology_title_kh }}" data-en="{{ c.apology_title_en }}">{{ c.apology_title_kh }}</div>
+        <p class="apology-text" data-kh="{{ c.apology_kh }}" data-en="{{ c.apology_en }}">{{ c.apology_kh }}</p>
+      </div>
+    </section>
+
+    {% elif sec == 'gallery' %}
+    <!-- Gallery -->
+    {% if c.gallery %}
+    <section class="section">
+      <div class="section-title" data-kh="{{ c.title_gallery_kh }}" data-en="{{ c.title_gallery_en }}">{{ c.title_gallery_kh }}</div>
+      <div class="gallery">
+        {% for img in c.gallery %}
+        <figure class="gallery-item">
+          <img src="{{ url_for('photos', filename='thumb_' + img) }}"
+               data-full="{{ url_for('photos', filename=img) }}"
+               alt="Wedding photo" loading="lazy"
+               onerror="this.onerror=null;this.src=this.dataset.full"
+               onclick="openLightbox(this.dataset.full)">
+        </figure>
+        {% endfor %}
+      </div>
+    </section>
+    {% endif %}
+
+    {% elif sec == 'guest_photos' %}
+    <!-- Guest photo uploads (moderated) -->
+    {% if c.guest_upload == 'yes' or guest_photos %}
+    <section class="section" id="guest-photos">
+      <div class="card">
+        <div class="section-title" data-kh="{{ c.guest_photos_title_kh }}" data-en="{{ c.guest_photos_title_en }}">{{ c.guest_photos_title_kh }}</div>
+        {% if c.guest_upload == 'yes' %}
+        <p data-kh="{{ c.upload_note_kh }}" data-en="{{ c.upload_note_en }}">{{ c.upload_note_kh }}</p>
+        <form class="guest-form" method="post" action="{{ url_for('upload_guest_photo') }}" enctype="multipart/form-data">
+          <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <input type="hidden" name="to" value="{{ guest }}">
+          <label data-kh="{{ c.label_name_kh }}" data-en="{{ c.label_name_en }}">{{ c.label_name_kh }}</label>
+          <input type="text" name="name" maxlength="80" value="{{ guest }}">
+          <input class="file-input" type="file" name="photos" accept="image/*" multiple required>
+          <button class="btn" type="submit" data-kh="{{ c.btn_upload_kh }}" data-en="{{ c.btn_upload_en }}">{{ c.btn_upload_kh }}</button>
+        </form>
+        {% endif %}
+        <button type="button" class="btn btn-light" id="selfie-btn" style="margin-top:0.9rem;"
+                data-kh="{{ c.btn_selfie_kh }}" data-en="{{ c.btn_selfie_en }}">{{ c.btn_selfie_kh }}</button>
+        <input type="file" id="selfie-input" accept="image/*" capture="user" hidden>
+        {% if guest_photos %}
+        <div class="gallery guest-gallery">
+          {% for p in guest_photos %}
+          <figure class="gallery-item">
+            <img src="{{ url_for('photos', filename=p.file) }}"
+                 data-full="{{ url_for('photos', filename=p.file) }}"
+                 alt="Guest photo" loading="lazy"
+                 onclick="openLightbox(this.dataset.full)">
+            {% if p.name %}<figcaption class="gp-name">{{ p.name }}</figcaption>{% endif %}
+          </figure>
+          {% endfor %}
+        </div>
+        {% endif %}
+      </div>
+    </section>
+    {% endif %}
+
+    {% elif sec == 'wishes' %}
+    <!-- Wishes / guestbook (live wall — auto-refreshes) -->
+    <section class="section" id="wishes">
+      <div class="card">
+        <div class="section-title" data-kh="{{ c.title_wishes_kh }}" data-en="{{ c.title_wishes_en }}">{{ c.title_wishes_kh }}</div>
+        <form class="guest-form" method="post" action="{{ url_for('wishes') }}">
+          <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <input type="hidden" name="to" value="{{ guest }}">
+          <label data-kh="{{ c.label_name_kh }}" data-en="{{ c.label_name_en }}">{{ c.label_name_kh }}</label>
+          <input type="text" name="name" required maxlength="80" value="{{ guest }}">
+          <label data-kh="{{ c.label_message_kh }}" data-en="{{ c.label_message_en }}">{{ c.label_message_kh }}</label>
+          <textarea name="message" rows="3" required maxlength="500"></textarea>
+          <button class="btn" type="submit" data-kh="{{ c.btn_wish_kh }}" data-en="{{ c.btn_wish_en }}">{{ c.btn_wish_kh }}</button>
+        </form>
+        {% if c.voice_wishes == 'yes' %}
+        <div class="voice-box">
+          <p class="qr-hint" data-kh="{{ c.voice_hint_kh }}" data-en="{{ c.voice_hint_en }}">{{ c.voice_hint_kh }}</p>
+          <button type="button" class="btn btn-light" id="voice-btn">🎙 <span id="voice-label">Record</span></button>
+          <audio id="voice-preview" controls hidden style="width:100%; margin-top:0.6rem;"></audio>
+          <button type="button" class="btn" id="voice-send" hidden>➤ Send</button>
+        </div>
+        {% endif %}
+        {% if voices %}
+        <div class="voice-list">
+          {% for v in voices %}
+          <div class="voice-item">
+            <span class="voice-name">🎙 {{ v.name or '♡' }}</span>
+            <audio controls preload="none" src="{{ url_for('photos', filename=v.file) }}"></audio>
+          </div>
+          {% endfor %}
+        </div>
+        {% endif %}
+        <div class="wish-list" id="wish-list">
+          {% for w in wishes %}
+          <div class="wish">
+            <div class="wish-name">{{ w.name }}</div>
+            <div class="wish-msg">{{ w.message }}</div>
+            <button type="button" class="wish-heart" data-id="{{ w.id }}">❤ <span>{{ w.hearts or 0 }}</span></button>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+
+    {% elif sec == 'rsvp' %}
+    <!-- RSVP -->
+    <section class="section" id="rsvp">
+      <div class="card rsvp-card">
+        <div class="section-title" data-kh="{{ c.title_rsvp_kh }}" data-en="{{ c.title_rsvp_en }}">{{ c.title_rsvp_kh }}</div>
+        {% if rsvp_open %}
+        <form class="guest-form" method="post" action="{{ url_for('rsvp') }}">
+          <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <input type="hidden" name="to" value="{{ guest }}">
+          <label data-kh="{{ c.label_name_kh }}" data-en="{{ c.label_name_en }}">{{ c.label_name_kh }}</label>
+          <input type="text" name="name" required maxlength="80" value="{{ guest }}">
+          <div class="attend-row">
+            <label class="radio"><input type="radio" name="attending" value="yes" checked><span data-kh="{{ c.label_attend_yes_kh }}" data-en="{{ c.label_attend_yes_en }}">{{ c.label_attend_yes_kh }}</span></label>
+            <label class="radio"><input type="radio" name="attending" value="no"><span data-kh="{{ c.label_attend_no_kh }}" data-en="{{ c.label_attend_no_en }}">{{ c.label_attend_no_kh }}</span></label>
+          </div>
+          <label data-kh="{{ c.label_guests_kh }}" data-en="{{ c.label_guests_en }}">{{ c.label_guests_kh }}</label>
+          <input type="number" name="guests" min="1" max="20" value="1">
+          <label data-kh="{{ c.label_companions_kh }}" data-en="{{ c.label_companions_en }}">{{ c.label_companions_kh }}</label>
+          <input type="text" name="companions" maxlength="300">
+          <label data-kh="{{ c.label_note_kh }}" data-en="{{ c.label_note_en }}">{{ c.label_note_kh }}</label>
+          <input type="text" name="note" maxlength="300">
+          <button class="btn" type="submit" data-kh="{{ c.btn_rsvp_kh }}" data-en="{{ c.btn_rsvp_en }}">{{ c.btn_rsvp_kh }}</button>
+        </form>
+        {% else %}
+        <p class="rsvp-closed" data-kh="{{ c.rsvp_closed_kh }}" data-en="{{ c.rsvp_closed_en }}">{{ c.rsvp_closed_kh }}</p>
+        {% endif %}
+        {% if c.rsvp_phone %}
+        <p class="rsvp-phone">☎ {{ c.rsvp_phone }}</p>
+        {% endif %}
+      </div>
+    </section>
+
+    {% elif sec == 'gift' %}
+    <!-- KHQR gift: groom's side / bride's side, each with USD/KHR -->
+    {% set has_groom = c.khqr_groom_usd or c.khqr_groom_khr %}
+    {% set has_bride = c.khqr_bride_usd or c.khqr_bride_khr %}
+    {% if has_groom or has_bride %}
+    <section class="section" id="gift">
+      <div class="card">
+        <div class="section-title" data-kh="{{ c.title_gift_kh }}" data-en="{{ c.title_gift_en }}">{{ c.title_gift_kh }}</div>
+        <p data-kh="{{ c.gift_note_kh }}" data-en="{{ c.gift_note_en }}">{{ c.gift_note_kh }}</p>
+        {% if has_groom and has_bride %}
+        <div class="side-toggle">
+          <button type="button" class="side-btn active" data-side="groom"
+                  data-kh="{{ c.khqr_side_groom_kh }}" data-en="{{ c.khqr_side_groom_en }}">{{ c.khqr_side_groom_kh }}</button>
+          <button type="button" class="side-btn" data-side="bride"
+                  data-kh="{{ c.khqr_side_bride_kh }}" data-en="{{ c.khqr_side_bride_en }}">{{ c.khqr_side_bride_kh }}</button>
+        </div>
+        {% endif %}
+        {% for side in ('groom', 'bride') %}
+        {% set usd = c['khqr_' + side + '_usd'] %}
+        {% set khr = c['khqr_' + side + '_khr'] %}
+        {% if usd or khr %}
+        <div class="qr-side{{ ' active' if (side == 'groom' and has_groom) or (side == 'bride' and not has_groom) }}" data-side="{{ side }}">
+          {% if not (has_groom and has_bride) %}
+          <p class="qr-side-label" data-kh="{{ c['khqr_side_' + side + '_kh'] }}" data-en="{{ c['khqr_side_' + side + '_en'] }}">{{ c['khqr_side_' + side + '_kh'] }}</p>
+          {% endif %}
+          {% if usd and khr %}
+          <div class="currency-toggle">
+            <button type="button" class="currency-btn active" data-currency="usd">USD</button>
+            <button type="button" class="currency-btn" data-currency="khr">KHR</button>
+          </div>
+          {% endif %}
+          <div class="qr-wrap">
+            {% if usd %}
+            <img class="qr-img active" data-cur="usd" src="{{ url_for('photos', filename=usd) }}" alt="KHQR USD">
+            {% endif %}
+            {% if khr %}
+            <img class="qr-img {{ 'active' if not usd }}" data-cur="khr" src="{{ url_for('photos', filename=khr) }}" alt="KHQR KHR">
+            {% endif %}
+          </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+        <p class="qr-hint" data-kh="{{ c.qr_hint_kh }}" data-en="{{ c.qr_hint_en }}">{{ c.qr_hint_kh }}</p>
+      </div>
+    </section>
+    {% endif %}
+
+    {% endif %}
+    {% endfor %}
+  </main>
+
+  <footer class="footer">
+    <div class="hero-divider"><img src="{{ url_for('static', filename='decor/kbach-line.png') }}" alt=""></div>
+    <img class="footer-heart" src="{{ url_for('static', filename='decor/heart.png') }}" alt="">
+    <p data-kh="{{ c.footer_kh }}" data-en="{{ c.footer_en }}">{{ c.footer_kh }}</p>
+    <p class="footer-names">{{ c.groom_name_en }} &amp; {{ c.bride_name_en }}</p>
+  </footer>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox">
+    <button type="button" class="lb-nav lb-prev" aria-label="Previous photo">‹</button>
+    <img id="lightbox-img" src="" alt="">
+    <button type="button" class="lb-nav lb-next" aria-label="Next photo">›</button>
+  </div>
+
+  <script>
+    // Language toggle: swaps every element's text using data-kh / data-en
+    let lang = 'kh';
+    const KH_DIGITS = ['០','១','២','៣','៤','៥','៦','៧','៨','៩'];
+    const localizeNum = s => lang === 'kh' ? String(s).replace(/\d/g, d => KH_DIGITS[d]) : String(s);
+    const toggle = document.getElementById('lang-toggle');
+    function applyLang(l) {
+      lang = l;
+      try { sessionStorage.setItem('lang', l); } catch (e) {}
+      document.getElementById('lang-label').textContent = lang === 'kh' ? 'EN' : 'ខ្មែរ';
+      document.documentElement.lang = lang === 'kh' ? 'km' : 'en';
+      document.querySelectorAll('[data-kh]').forEach(el => {
+        el.textContent = el.dataset[lang] || el.textContent;
+      });
+      tick(); // re-render countdown digits in the new numeral system
+      updateMarriedDays();
+      fitTitles(); // titles changed width — refit them to one line
+    }
+    toggle.addEventListener('click', () => applyLang(lang === 'kh' ? 'en' : 'kh'));
+
+    // Section titles stay on one line: shrink the font until each fits
+    function fitTitles() {
+      document.querySelectorAll('.section-title').forEach(el => {
+        el.style.fontSize = '';
+        let size = parseFloat(getComputedStyle(el).fontSize);
+        while (el.scrollWidth > el.clientWidth && size > 12) {
+          size -= 1;
+          el.style.fontSize = size + 'px';
+        }
+      });
+    }
+    fitTitles();
+    // refit once the Khmer web fonts finish loading (widths change)
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitTitles);
+    window.addEventListener('resize', fitTitles);
+
+    // Countdown → switches to "we're married" thank-you after the big day
+    const cdEl = document.getElementById('countdown');
+    const target = cdEl ? new Date(cdEl.dataset.datetime).getTime() : NaN;
+    let cdTimer = null;
+    function tick() {
+      if (!cdEl || isNaN(target)) return;
+      const diff = target - Date.now();
+      if (diff <= 0) {
+        document.getElementById('countdown-block').hidden = true;
+        document.getElementById('married-block').hidden = false;
+        updateMarriedDays();
+        if (cdTimer) clearInterval(cdTimer);
+        return;
+      }
+      const clamp = v => localizeNum(String(Math.max(0, v)).padStart(2, '0'));
+      document.getElementById('cd-days').textContent = clamp(Math.floor(diff / 86400000));
+      document.getElementById('cd-hours').textContent = clamp(Math.floor(diff / 3600000) % 24);
+      document.getElementById('cd-mins').textContent = clamp(Math.floor(diff / 60000) % 60);
+      const secsEl = document.getElementById('cd-secs');
+      const secs = clamp(Math.floor(diff / 1000) % 60);
+      if (secsEl.textContent !== secs) {
+        secsEl.textContent = secs;
+        secsEl.classList.remove('tick');
+        void secsEl.offsetWidth; // restart the pop animation
+        secsEl.classList.add('tick');
+      }
+    }
+    // "Married for X days" keepsake line, shown once the big day has passed
+    function updateMarriedDays() {
+      const el = document.getElementById('married-days');
+      if (!el || isNaN(target)) return;
+      const diff = Date.now() - target;
+      if (diff < 0) return;
+      const days = Math.floor(diff / 86400000);
+      const tpl = lang === 'kh' ? el.dataset.tplKh : el.dataset.tplEn;
+      el.textContent = (tpl || '').replace('{d}', localizeNum(days));
+    }
+    if (cdEl) {
+      tick();
+      cdTimer = setInterval(tick, 1000);
+    }
+
+    // Lightbox with prev/next arrows, swipe and keyboard navigation
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lbList = [...document.querySelectorAll('.gallery-item img')].map(i => i.dataset.full);
+    let lbIndex = 0;
+    function showLb() {
+      lightboxImg.src = lbList[lbIndex];
+      lightbox.classList.add('open');
+    }
+    function openLightbox(src) {
+      lbIndex = Math.max(0, lbList.indexOf(src));
+      showLb();
+    }
+    function stepLb(dir) {
+      if (lbList.length < 2) return;
+      lbIndex = (lbIndex + dir + lbList.length) % lbList.length;
+      showLb();
+    }
+    lightbox.addEventListener('click', e => {
+      if (e.target.classList.contains('lb-prev')) stepLb(-1);
+      else if (e.target.classList.contains('lb-next')) stepLb(1);
+      else if (e.target !== lightboxImg) lightbox.classList.remove('open');
+    });
+    document.addEventListener('keydown', e => {
+      if (!lightbox.classList.contains('open')) return;
+      if (e.key === 'ArrowLeft') stepLb(-1);
+      else if (e.key === 'ArrowRight') stepLb(1);
+      else if (e.key === 'Escape') lightbox.classList.remove('open');
+    });
+    let lbTouchX = null;
+    lightbox.addEventListener('touchstart', e => { lbTouchX = e.touches[0].clientX; }, { passive: true });
+    lightbox.addEventListener('touchend', e => {
+      if (lbTouchX === null) return;
+      const dx = e.changedTouches[0].clientX - lbTouchX;
+      if (Math.abs(dx) > 40) stepLb(dx < 0 ? 1 : -1);
+      lbTouchX = null;
+    }, { passive: true });
+
+    // Fade-in on scroll
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.section').forEach(s => observer.observe(s));
+
+    // KHQR groom's/bride's side toggle
+    document.querySelectorAll('.side-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.side-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        document.querySelectorAll('.qr-side').forEach(s => {
+          s.classList.toggle('active', s.dataset.side === btn.dataset.side);
+        });
+      });
+    });
+
+    // KHQR currency toggle (scoped to its own side)
+    document.querySelectorAll('.currency-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const side = btn.closest('.qr-side');
+        side.querySelectorAll('.currency-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        side.querySelectorAll('.qr-img').forEach(img => {
+          img.classList.toggle('active', img.dataset.cur === btn.dataset.currency);
+        });
+      });
+    });
+
+    // Background music
+    const musicBtn = document.getElementById('music-toggle');
+    const bgAudio = document.getElementById('bg-music');
+    function playMusic() {
+      if (!bgAudio) return;
+      bgAudio.play().then(() => {
+        if (musicBtn) { musicBtn.classList.add('playing'); musicBtn.textContent = '🔊'; }
+      }).catch(() => {});
+    }
+    if (musicBtn) {
+      musicBtn.addEventListener('click', () => {
+        if (bgAudio.paused) { playMusic(); }
+        else { bgAudio.pause(); musicBtn.classList.remove('playing'); musicBtn.textContent = '🎵'; }
+      });
+    }
+
+    // Envelope intro: reveal the page and start the music on first tap.
+    // Only skipped when coming back from a form submit (anchor/toast) so
+    // guests aren't blocked from seeing their thank-you message.
+    const envelope = document.getElementById('envelope');
+    function revealPage() {
+      document.body.classList.remove('locked');
+      document.body.classList.add('opened');
+    }
+    let envTimer = null;
+    if (!envelope) {
+      revealPage();
+    } else if (location.hash || document.querySelector('.toast')) {
+      envelope.remove();
+      revealPage();
+      if (location.hash) {
+        const anchorTarget = document.querySelector(location.hash);
+        if (anchorTarget) setTimeout(() => anchorTarget.scrollIntoView(), 50);
+      }
+    } else {
+      // Crossfade the gallery photos behind the envelope card
+      const envSlides = envelope.querySelectorAll('.env-slide');
+      if (envSlides.length > 1) {
+        let envIdx = 0;
+        envTimer = setInterval(() => {
+          envSlides[envIdx].classList.remove('active');
+          envIdx = (envIdx + 1) % envSlides.length;
+          envSlides[envIdx].classList.add('active');
+        }, 4000);
+      }
+      envelope.addEventListener('click', () => {
+        envelope.classList.add('opening');
+        revealPage();
+        playMusic();
+        if (envTimer) clearInterval(envTimer);
+        setTimeout(() => envelope.remove(), 900);
+      }, { once: true });
+    }
+
+    // Hero slideshow: crossfade through the slides every 5 seconds
+    const heroSlides = document.querySelectorAll('.hero-slide');
+    if (heroSlides.length > 1) {
+      let slideIdx = 0;
+      setInterval(() => {
+        heroSlides[slideIdx].classList.remove('active');
+        slideIdx = (slideIdx + 1) % heroSlides.length;
+        heroSlides[slideIdx].classList.add('active');
+      }, 5000);
+    }
+
+    // Wish hearts: one tap per wish per device (remembered locally)
+    let hearted = [];
+    try { hearted = JSON.parse(localStorage.getItem('hearted') || '[]'); } catch (e) {}
+    function markHearted() {
+      document.querySelectorAll('.wish-heart').forEach(b => {
+        if (hearted.includes(b.dataset.id)) b.classList.add('hearted');
+      });
+    }
+    document.addEventListener('click', async e => {
+      const btn = e.target.closest('.wish-heart');
+      if (!btn || hearted.includes(btn.dataset.id)) return;
+      hearted.push(btn.dataset.id);
+      try { localStorage.setItem('hearted', JSON.stringify(hearted.slice(-200))); } catch (err) {}
+      btn.classList.add('hearted');
+      try {
+        const r = await fetch('/wish-heart', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: 'id=' + encodeURIComponent(btn.dataset.id)
+        });
+        const data = await r.json();
+        if (data.hearts !== null) btn.querySelector('span').textContent = data.hearts;
+      } catch (err) {}
+    });
+    markHearted();
+
+    // Live wishes wall: refresh the list every 20 seconds
+    const wishList = document.getElementById('wish-list');
+    async function refreshWishes() {
+      try {
+        const data = await (await fetch('/api/wishes')).json();
+        wishList.innerHTML = '';
+        data.wishes.forEach(w => {
+          const div = document.createElement('div');
+          div.className = 'wish';
+          const n = document.createElement('div');
+          n.className = 'wish-name';
+          n.textContent = w.name;
+          const m = document.createElement('div');
+          m.className = 'wish-msg';
+          m.textContent = w.message;
+          const h = document.createElement('button');
+          h.type = 'button';
+          h.className = 'wish-heart';
+          h.dataset.id = w.id;
+          h.innerHTML = '❤ <span></span>';
+          h.querySelector('span').textContent = w.hearts || 0;
+          div.append(n, m, h);
+          wishList.appendChild(div);
+        });
+        markHearted();
+      } catch (e) {}
+    }
+    if (wishList) setInterval(refreshWishes, 20000);
+
+    // KHQR: tapping the QR opens the share sheet (guests can send it to
+    // their bank app) or downloads it where sharing isn't supported
+    document.querySelectorAll('.qr-img').forEach(img => {
+      img.addEventListener('click', async () => {
+        const ext = (img.src.split('.').pop() || 'png').split('?')[0];
+        try {
+          const blob = await (await fetch(img.src)).blob();
+          const file = new File([blob], `khqr.${ext}`, { type: blob.type });
+          if (navigator.canShare && navigator.canShare({ files: [file] })) {
+            await navigator.share({ files: [file], title: 'KHQR' });
+            return;
+          }
+        } catch (e) { if (e.name === 'AbortError') return; }
+        const a = document.createElement('a');
+        a.href = img.src;
+        a.download = `khqr.${ext}`;
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+      });
+    });
+
+    // Falling petals (emoji + count set in the admin design panel)
+    const PETAL_EMOJI = {{ c.petal_emoji|tojson }};
+    const PETAL_COUNT = {{ c.petal_count|int(5) }};
+    for (let i = 0; i < PETAL_COUNT; i++) {
+      const p = document.createElement('span');
+      p.className = 'petal';
+      p.textContent = PETAL_EMOJI;
+      p.style.left = Math.random() * 100 + 'vw';
+      p.style.fontSize = (0.7 + Math.random() * 0.9) + 'rem';
+      p.style.animationDuration = (9 + Math.random() * 10) + 's';
+      p.style.animationDelay = (Math.random() * 12) + 's';
+      document.body.appendChild(p);
+    }
+
+    // Voice blessing recorder (moderated before appearing)
+    const voiceBtn = document.getElementById('voice-btn');
+    if (voiceBtn && navigator.mediaDevices && window.MediaRecorder) {
+      let recorder = null, chunks = [], voiceBlob = null;
+      const voiceLabel = document.getElementById('voice-label');
+      const voicePreview = document.getElementById('voice-preview');
+      const voiceSend = document.getElementById('voice-send');
+      voiceBtn.addEventListener('click', async () => {
+        if (recorder && recorder.state === 'recording') { recorder.stop(); return; }
+        try {
+          const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+          recorder = new MediaRecorder(stream);
+          chunks = [];
+          recorder.ondataavailable = e => chunks.push(e.data);
+          recorder.onstop = () => {
+            stream.getTracks().forEach(t => t.stop());
+            voiceBlob = new Blob(chunks, { type: recorder.mimeType || 'audio/webm' });
+            voicePreview.src = URL.createObjectURL(voiceBlob);
+            voicePreview.hidden = false;
+            voiceSend.hidden = false;
+            voiceSend.disabled = false;
+            voiceLabel.textContent = '↺';
+          };
+          recorder.start();
+          voiceLabel.textContent = '■ Stop';
+          setTimeout(() => { if (recorder && recorder.state === 'recording') recorder.stop(); }, 30000);
+        } catch (e) { alert('Microphone not available.'); }
+      });
+      voiceSend.addEventListener('click', async () => {
+        if (!voiceBlob) return;
+        voiceSend.disabled = true;
+        const fd = new FormData();
+        fd.append('audio', voiceBlob, 'voice');
+        const nameInput = document.querySelector('#wishes input[name="name"]');
+        fd.append('name', nameInput ? nameInput.value : '');
+        try {
+          const r = await fetch('/upload-voice', { method: 'POST', body: fd });
+          if ((await r.json()).ok) {
+            voiceSend.hidden = true;
+            voicePreview.hidden = true;
+            voiceLabel.textContent = 'Record';
+            const t = document.createElement('div');
+            t.className = 'toast';
+            t.textContent = lang === 'kh' ? {{ c.toast_voice_kh | tojson }} : {{ c.toast_voice_en | tojson }};
+            document.body.appendChild(t);
+            setTimeout(() => t.classList.add('hide'), 4000);
+          } else { voiceSend.disabled = false; }
+        } catch (e) { voiceSend.disabled = false; }
+      });
+    } else if (voiceBtn) {
+      voiceBtn.closest('.voice-box').style.display = 'none';
+    }
+
+    // Selfie with a wedding frame: composited on canvas, shared or downloaded
+    const selfieBtn = document.getElementById('selfie-btn');
+    if (selfieBtn) {
+      const selfieInput = document.getElementById('selfie-input');
+      selfieBtn.addEventListener('click', () => selfieInput.click());
+      selfieInput.addEventListener('change', () => {
+        const file = selfieInput.files[0];
+        if (!file) return;
+        const img = new Image();
+        img.onload = async () => {
+          await Promise.all(['40px Moul', "60px 'Great Vibes'"].map(f => document.fonts.load(f)));
+          const W = 1080, H = 1350;
+          const cv = document.createElement('canvas');
+          cv.width = W; cv.height = H;
+          const ctx = cv.getContext('2d');
+          ctx.fillStyle = '#fdf9f2';
+          ctx.fillRect(0, 0, W, H);
+          // photo (cover-cropped) inside the frame
+          const px = 50, py = 50, pw = W - 100, ph = H - 320;
+          const sc = Math.max(pw / img.width, ph / img.height);
+          const sw = pw / sc, sh = ph / sc;
+          ctx.drawImage(img, (img.width - sw) / 2, (img.height - sh) / 2, sw, sh, px, py, pw, ph);
+          ctx.strokeStyle = {{ c.theme_color | tojson }};
+          ctx.lineWidth = 8;
+          ctx.strokeRect(px, py, pw, ph);
+          ctx.strokeRect(26, 26, W - 52, H - 52);
+          // caption band
+          ctx.textAlign = 'center';
+          ctx.fillStyle = {{ theme_dark | tojson }};
+          ctx.font = "64px 'Great Vibes'";
+          ctx.fillText({{ c.groom_name_en | tojson }} + '  &  ' + {{ c.bride_name_en | tojson }}, W / 2, H - 175);
+          ctx.font = '38px Hanuman';
+          ctx.fillStyle = '#3a3226';
+          ctx.fillText({{ c.date_kh | tojson }}, W / 2, H - 105);
+          cv.toBlob(async blob => {
+            const shareFile = new File([blob], 'wedding-selfie.jpg', { type: 'image/jpeg' });
+            if (navigator.canShare && navigator.canShare({ files: [shareFile] })) {
+              try { await navigator.share({ files: [shareFile] }); return; } catch (e) {}
+            }
+            const a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = 'wedding-selfie.jpg';
+            document.body.appendChild(a);
+            a.click();
+            a.remove();
+          }, 'image/jpeg', 0.92);
+          selfieInput.value = '';
+        };
+        img.src = URL.createObjectURL(file);
+      });
+    }
+
+    // Offline support: cache pages/photos as guests browse
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js').catch(() => {});
+    }
+
+    // Toast auto-hide + scroll into view
+    const toast = document.querySelector('.toast');
+    if (toast) setTimeout(() => toast.classList.add('hide'), 4000);
+
+    // Language: the guest's own choice (kept for the session, so it survives
+    // form submits) wins over the admin-chosen default
+    let startLang = {{ c.default_lang | tojson }};
+    try { startLang = sessionStorage.getItem('lang') || startLang; } catch (e) {}
+    if (startLang === 'en') applyLang('en');
+  </script>
+</body>
+</html>

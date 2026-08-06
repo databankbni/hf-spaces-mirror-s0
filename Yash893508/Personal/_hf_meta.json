@@ -1,0 +1,84 @@
+{
+ "captured_at": "2026-08-04T15:34:24Z",
+ "hf_metadata": {
+  "_id": "6a4dcef9ca934fbdf2612e77",
+  "author": "Yash893508",
+  "cardData": {
+   "colorFrom": "green",
+   "colorTo": "blue",
+   "emoji": "📊",
+   "pinned": false,
+   "sdk": "docker",
+   "title": "Personal"
+  },
+  "createdAt": "2026-07-08T04:15:53.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://yash893508-personal.hf.space",
+  "id": "Yash893508/Personal",
+  "lastModified": "2026-07-08T04:36:14.000Z",
+  "likes": 0,
+  "private": false,
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "yash893508-personal.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "errorMessage": "Scheduling failure: unable to schedule",
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": null,
+    "requested": "cpu-basic"
+   },
+   "replicas": {
+    "requested": 1
+   },
+   "stage": "RUNTIME_ERROR"
+  },
+  "sdk": "docker",
+  "sha": "b75187e7aa00da2d473a716bc62c2565c508f72e",
+  "siblings": [
+   {
+    "rfilename": ".gitattributes"
+   },
+   {
+    "rfilename": "Dockerfile"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "app.py"
+   },
+   {
+    "rfilename": "requirements.txt"
+   }
+  ],
+  "subdomain": "yash893508-personal",
+  "tags": [
+   "docker",
+   "region:us"
+  ],
+  "usedStorage": 0
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "Yash893508/Personal",
+ "repo_type": "spaces",
+ "sha": "b75187e7aa00da2d473a716bc62c2565c508f72e",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/Yash893508/Personal"
+}

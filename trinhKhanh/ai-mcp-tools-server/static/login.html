@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đăng nhập — AI Robot</title>
+  <link rel="stylesheet" href="/static/css/base.css">
+  <link rel="stylesheet" href="/static/css/auth.css">
+</head>
+<body>
+
+<div class="auth-wrap">
+  <div class="auth-card">
+    <div class="auth-logo">🤖</div>
+    <div class="auth-title" id="authTitle">Đăng nhập</div>
+    <div class="auth-sub" id="authSub">Quản lý robot và nội dung đã mua của bạn.</div>
+
+    <div class="auth-tabs">
+      <button class="auth-tab active" id="tabLogin" onclick="setAuthMode('login')">Đăng nhập</button>
+      <button class="auth-tab" id="tabRegister" onclick="setAuthMode('register')">Đăng ký</button>
+    </div>
+
+    <form onsubmit="submitAuth(event)">
+      <div class="auth-field" id="fieldName" style="display:none">
+        <label class="auth-label">Tên của bạn</label>
+        <input id="inName" type="text" class="auth-input" placeholder="VD: Khánh" autocomplete="name">
+      </div>
+
+      <div class="auth-field">
+        <label class="auth-label">Email</label>
+        <input id="inEmail" type="email" class="auth-input" placeholder="ban@email.com"
+               autocomplete="email" required>
+      </div>
+
+      <div class="auth-field" id="fieldPhone" style="display:none">
+        <label class="auth-label">Số điện thoại <span class="auth-optional">(không bắt buộc)</span></label>
+        <input id="inPhone" type="tel" class="auth-input" placeholder="09..." autocomplete="tel">
+      </div>
+
+      <div class="auth-field">
+        <label class="auth-label">Mật khẩu</label>
+        <input id="inPassword" type="password" class="auth-input" placeholder="Tối thiểu 8 ký tự"
+               autocomplete="current-password" required>
+        <div class="auth-hint" id="pwHint" style="display:none">Tối thiểu 8 ký tự.</div>
+      </div>
+
+      <div class="auth-msg" id="authMsg"></div>
+
+      <button class="auth-submit" id="btnSubmit" type="submit">ĐĂNG NHẬP</button>
+    </form>
+
+    <div class="auth-foot">
+      <a href="/">← Về trang chủ</a>
+      <span class="auth-note">Chưa có chức năng lấy lại mật khẩu</span>
+    </div>
+  </div>
+</div>
+
+<script defer src="/static/js/utils.js"></script>
+<script defer src="/static/js/auth.js"></script>
+</body>
+</html>

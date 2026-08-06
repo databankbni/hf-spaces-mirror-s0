@@ -1,0 +1,19 @@
+{
+ "lfs_not_stored": [
+  {
+   "oid": "e503a3f039c02c424b105a24df3e466bbff9fbc48255f3482781c1863cdfb2cd",
+   "path": "catalog.parquet",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6ZTUwM2EzZjAzOWMwMmM0MjRiMTA1YTI0ZGYzZTQ2NmJiZmY5ZmJjNDgyNTVmMzQ4Mjc4MWMxODYzY2RmYjJjZApzaXplIDMyMjA5MzgK",
+   "size": 3220938,
+   "url": "https://huggingface.co/spaces/Anastasios-K/book-recommender/resolve/e2ca5d4fc81c9373c526020da83615b9eee95081/catalog.parquet"
+  },
+  {
+   "oid": "e26e028e594f8bd1da656115d42183e91e20a89b4fbc594ddf409de66afdc210",
+   "path": "embeddings.npy",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6ZTI2ZTAyOGU1OTRmOGJkMWRhNjU2MTE1ZDQyMTgzZTkxZTIwYTg5YjRmYmM1OTRkZGY0MDlkZTY2YWZkYzIxMApzaXplIDIzMDQwMTI4Cg==",
+   "size": 23040128,
+   "url": "https://huggingface.co/spaces/Anastasios-K/book-recommender/resolve/e2ca5d4fc81c9373c526020da83615b9eee95081/embeddings.npy"
+  }
+ ],
+ "oversize_not_stored": []
+}

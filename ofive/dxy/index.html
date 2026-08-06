@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>充值与校准系统</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: #f5f5f5;
+        }
+
+        .status-bar {
+            background: #1890ff;
+            color: #fff;
+            padding: 16px 20px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .status-bar-content {
+            flex: 1;
+            text-align: center;
+        }
+
+        .status-bar-label {
+            font-size: 12px;
+            opacity: 0.9;
+            margin-bottom: 4px;
+        }
+
+        .status-bar-value {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .menu-btn {
+            background-color: #f8f9fa;
+            color: #0d6efd;
+            border: 1px solid #dee2e6;
+            border-radius: 20px;
+            padding: 6px 16px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .menu-btn:hover {
+            background-color: #0d6efd;
+            color: white;
+            border-color: #0d6efd;
+        }
+
+        .tabs {
+            display: flex;
+            background: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .tab {
+            flex: 1;
+            padding: 16px;
+            text-align: center;
+            background: #fff;
+            border: none;
+            font-size: 16px;
+            color: #666;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+        }
+
+        .tab.active {
+            color: #1890ff;
+            border-bottom-color: #1890ff;
+        }
+
+        .tab-content {
+            display: none;
+            padding: 20px;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-size: 14px;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #d9d9d9;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        input[type="number"]:focus {
+            outline: none;
+            border-color: #1890ff;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 14px;
+            background: #1890ff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .submit-btn:active {
+            background: #096dd9;
+        }
+
+        .message {
+            margin-top: 16px;
+            padding: 12px;
+            border-radius: 4px;
+            display: none;
+        }
+
+        .message.success {
+            background: #f6ffed;
+            border: 1px solid #b7eb8f;
+            color: #52c41a;
+        }
+
+        .message.error {
+            background: #fff2f0;
+            border: 1px solid #ffccc7;
+            color: #ff4d4f;
+        }
+    </style>
+</head>
+<body>
+    <div class="status-bar">
+        <!-- 左侧占位，保持平衡 -->
+        <div style="width: 80px;"></div>
+
+        <!-- 中间内容：余额显示 -->
+        <div class="status-bar-content">
+            <div class="status-bar-label">当前余额</div>
+            <div class="status-bar-value" id="balanceDisplay">¥ </div>
+        </div>
+
+        <!-- 右侧菜单按钮 -->
+        <button class="menu-btn" id="menuBtn">Calst</button>
+    </div>
+
+    <div class="tabs">
+        <button class="tab active" onclick="switchTab('recharge')">充值</button>
+        <button class="tab" onclick="switchTab('calibrate')">校准</button>
+    </div>
+
+    <div id="recharge" class="tab-content active">
+        <form id="rechargeForm">
+            <div class="form-group">
+                <label for="rechargeAmount">充值金额</label>
+                <input type="number" id="rechargeAmount" name="amount" step="0.01" min="0" required placeholder="请输入充值金额">
+            </div>
+            <button type="submit" class="submit-btn">提交充值</button>
+            <div id="rechargeMessage" class="message"></div>
+        </form>
+    </div>
+
+    <div id="calibrate" class="tab-content">
+        <form id="calibrateForm">
+            <div class="form-group">
+                <label for="calibrateAmount">校准金额</label>
+                <input type="number" id="calibrateAmount" name="amount" step="0.01" min="0" required placeholder="请输入校准金额">
+            </div>
+            <button type="submit" class="submit-btn">提交校准</button>
+            <div id="calibrateMessage" class="message"></div>
+        </form>
+    </div>
+
+    <script>
+        function switchTab(tabName) {
+            const tabs = document.querySelectorAll('.tab');
+            const contents = document.querySelectorAll('.tab-content');
+
+            tabs.forEach(tab => tab.classList.remove('active'));
+            contents.forEach(content => content.classList.remove('active'));
+
+            event.target.classList.add('active');
+            document.getElementById(tabName).classList.add('active');
+        }
+
+        function showMessage(elementId, message, isSuccess) {
+            const msgElement = document.getElementById(elementId);
+            msgElement.textContent = message;
+            msgElement.className = 'message ' + (isSuccess ? 'success' : 'error');
+            msgElement.style.display = 'block';
+
+            setTimeout(() => {
+                msgElement.style.display = 'none';
+            }, 3000);
+        }
+
+        function updateBalance() {
+            fetch('/api/balance')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.balance !== undefined) {
+                        document.getElementById('balanceDisplay').textContent =
+                            '¥ ' + parseFloat(data.balance).toFixed(2);
+                    }
+                })
+                .catch(error => console.error('获取余额失败:', error));
+        }
+
+        // 菜单按钮点击事件 - 跳转到/calst
+        document.getElementById('menuBtn').addEventListener('click', function() {
+            // 跳转到/calst页面
+            window.location.href = '/calst';
+
+            // 可选：添加跳转前的确认提示
+            // if (confirm('确定要跳转到校准统计页面吗？')) {
+            //     window.location.href = '/calst';
+            // }
+        });
+
+        // 页面加载时获取余额
+        document.addEventListener('DOMContentLoaded', updateBalance);
+
+        document.getElementById('rechargeForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const amount = document.getElementById('rechargeAmount').value;
+
+            try {
+                const response = await fetch('/api/recharge', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ amount: parseFloat(amount) })
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    showMessage('rechargeMessage', data.message, true);
+                    document.getElementById('rechargeForm').reset();
+                    updateBalance();
+                } else {
+                    showMessage('rechargeMessage', data.error, false);
+                }
+            } catch (error) {
+                showMessage('rechargeMessage', '网络错误，请重试', false);
+            }
+        });
+
+        document.getElementById('calibrateForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const amount = document.getElementById('calibrateAmount').value;
+
+            try {
+                const response = await fetch('/api/calibrate', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ amount: parseFloat(amount) })
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    showMessage('calibrateMessage', data.message, true);
+                    document.getElementById('calibrateForm').reset();
+                    updateBalance();
+                } else {
+                    showMessage('calibrateMessage', data.error, false);
+                }
+            } catch (error) {
+                showMessage('calibrateMessage', '网络错误，请重试', false);
+            }
+        });
+    </script>
+</body>
+</html>

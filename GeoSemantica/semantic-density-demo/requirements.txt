@@ -1,0 +1,7 @@
+torch
+transformers
+numpy
+scipy
+gradio
+accelerate
+matplotlib==3.7.1

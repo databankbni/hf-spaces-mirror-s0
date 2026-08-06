@@ -1,0 +1,18 @@
+{
+ "captured_at": "2026-08-04T17:15:04Z",
+ "hf_metadata": {
+  "sha": "2a329687b943822680d81302629d0532c69fc67b"
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitignore",
+   "stored_as": "_gitignore"
+  }
+ ],
+ "renamed_gitattributes": [],
+ "repo_id": "wyn071/stock-price-forecaster",
+ "repo_type": "spaces",
+ "sha": "2a329687b943822680d81302629d0532c69fc67b",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/wyn071/stock-price-forecaster"
+}

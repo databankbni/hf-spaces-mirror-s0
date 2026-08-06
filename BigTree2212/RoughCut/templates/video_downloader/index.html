@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% block title %}Video Downloader — AI Tools Studio{% endblock %}
+{% block head %}
+<link rel="stylesheet" href="{{ static_url('css/video_downloader.css') }}">
+{% endblock %}
+{% block content %}
+
+<div class="reel-strip">
+  <span class="reel-strip__dash"></span>
+  <span class="reel-strip__dot"></span>
+  <span class="reel-strip__dash"></span>
+</div>
+
+<div class="tool-intro">
+  <p class="tool-intro__title">Video Downloader</p>
+  <p class="tool-intro__subtitle">tempel link YouTube, TikTok, atau Instagram — pilih format &amp; resolusi, download langsung</p>
+</div>
+
+<div class="vd-card panel">
+  <div id="queue-banner" class="queue-banner hidden">
+    <span class="status-dot dot-yellow"></span>
+    <span id="queue-banner-text"></span>
+  </div>
+
+  <form id="check-form">
+    <label class="url-label" for="video-url">Link video (YouTube, TikTok, atau Instagram)</label>
+    <input type="url" id="video-url" placeholder="https://www.youtube.com/watch?v=..." required>
+    <button type="submit" id="check-btn" class="btn btn--primary">Cek Video</button>
+    <div id="check-error" class="error-text"></div>
+  </form>
+
+  <div id="preview-card" class="preview-card hidden">
+    <div class="divider"></div>
+    <div class="preview-body">
+      <img id="preview-thumb" class="preview-thumb hidden" alt="thumbnail">
+      <div class="preview-info">
+        <div id="preview-title" class="preview-title"></div>
+        <div class="preview-meta-row">
+          <span id="preview-platform" class="tag"></span>
+          <span id="preview-duration" class="tag tag-duration"></span>
+        </div>
+      </div>
+    </div>
+    <div id="watermark-note" class="watermark-note hidden">
+      Video TikTok kemungkinan tetap ada watermark bawaan — yt-dlp standar tidak menembak endpoint tidak resmi untuk versi tanpa watermark.
+    </div>
+
+    <div class="format-toggle">
+      <button type="button" class="format-btn active" data-mode="video">Video</button>
+      <button type="button" class="format-btn" data-mode="audio">Audio (MP3)</button>
+    </div>
+
+    <div id="resolution-section" class="resolution-section">
+      <label class="url-label">Resolusi</label>
+      <div id="resolution-list" class="resolution-list"></div>
+    </div>
+
+    <button type="button" id="download-btn" class="btn btn--primary">Download</button>
+  </div>
+</div>
+
+<section id="job-list" class="job-list"></section>
+
+{% endblock %}
+{% block scripts %}
+<script src="{{ static_url('js/video_downloader.js') }}"></script>
+{% endblock %}

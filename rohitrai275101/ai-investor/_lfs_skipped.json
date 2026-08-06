@@ -1,0 +1,34 @@
+{
+ "lfs_not_stored": [
+  {
+   "oid": "d3c9fd302f000d7790aa403c2d0d8fec363fe46f30b07d53020b6e33b22435a9",
+   "path": "data/chroma/19f319e6-4c19-49e5-b181-e54fbd9cf101/data_level0.bin",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6ZDNjOWZkMzAyZjAwMGQ3NzkwYWE0MDNjMmQwZDhmZWMzNjNmZTQ2ZjMwYjA3ZDUzMDIwYjZlMzNiMjI0MzVhOQpzaXplIDE2NzYwMDAK",
+   "size": 1676000,
+   "url": "https://huggingface.co/spaces/rohitrai275101/ai-investor/resolve/621cc37fe26d4c04864354ec13d6976a608cb1fa/data/chroma/19f319e6-4c19-49e5-b181-e54fbd9cf101/data_level0.bin"
+  },
+  {
+   "oid": "033d76cd6f28fc5ec08e1b3a405906ec7cdb93ed9f1e0cd112b6813cdec3319b",
+   "path": "data/chroma/d435c6b2-28cb-424e-a1ac-2741760c38b0/data_level0.bin",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6MDMzZDc2Y2Q2ZjI4ZmM1ZWMwOGUxYjNhNDA1OTA2ZWM3Y2RiOTNlZDlmMWUwY2QxMTJiNjgxM2NkZWMzMzE5YgpzaXplIDE2NzYwMDAK",
+   "size": 1676000,
+   "url": "https://huggingface.co/spaces/rohitrai275101/ai-investor/resolve/621cc37fe26d4c04864354ec13d6976a608cb1fa/data/chroma/d435c6b2-28cb-424e-a1ac-2741760c38b0/data_level0.bin"
+  },
+  {
+   "oid": "31a287d9bc892bc2228610597f4839f545e6a23e7c2a4481292abd3ad0d26a2c",
+   "path": "data/chroma/d5c48f2f-9ed6-4eb8-b6f5-98acd5b824e3/data_level0.bin",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6MzFhMjg3ZDliYzg5MmJjMjIyODYxMDU5N2Y0ODM5ZjU0NWU2YTIzZTdjMmE0NDgxMjkyYWJkM2FkMGQyNmEyYwpzaXplIDE2NzYwMDAK",
+   "size": 1676000,
+   "url": "https://huggingface.co/spaces/rohitrai275101/ai-investor/resolve/621cc37fe26d4c04864354ec13d6976a608cb1fa/data/chroma/d5c48f2f-9ed6-4eb8-b6f5-98acd5b824e3/data_level0.bin"
+  },
+  {
+   "oid": "f99cd714e9b568a80d39742da6d24f30f8669cc04f41ea15d53662ed2dfe5ea1",
+   "path": "notes/Presentation.pptx",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6Zjk5Y2Q3MTRlOWI1NjhhODBkMzk3NDJkYTZkMjRmMzBmODY2OWNjMDRmNDFlYTE1ZDUzNjYyZWQyZGZlNWVhMQpzaXplIDQ4MjY4NzEK",
+   "size": 4826871,
+   "url": "https://huggingface.co/spaces/rohitrai275101/ai-investor/resolve/621cc37fe26d4c04864354ec13d6976a608cb1fa/notes/Presentation.pptx"
+  }
+ ],
+ "overflow_not_stored": [],
+ "oversize_not_stored": []
+}

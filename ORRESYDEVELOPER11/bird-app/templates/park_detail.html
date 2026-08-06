@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% block title %}{{ park.name }} | Tanzania Bird Finder{% endblock %}
+{% block content %}
+<section class="detail-hero">
+  <img src="{{ park.image_url }}" alt="{{ park.name }}">
+  <div>
+    <span class="eyebrow">Protected area</span>
+    <h1>{{ park.name }}</h1>
+    <p>{{ park.description }}</p>
+    <div class="hero-actions">
+      <form method="post" action="{{ url_for('favorite', item_type='park', item_id=park.id) }}"><button class="button secondary" type="submit"><i data-lucide="bookmark"></i>Save park</button></form>
+      <form method="post" action="{{ url_for('visited', park_id=park.id) }}"><button class="button secondary" type="submit"><i data-lucide="check-circle"></i>Mark visited</button></form>
+    </div>
+    <div class="fact-grid">
+      <div><i data-lucide="map-pin"></i><span>Country</span><strong>{{ park.country }}</strong></div>
+      <div><i data-lucide="globe-2"></i><span>Region</span><strong>{{ park.region }}</strong></div>
+      <div><i data-lucide="leaf"></i><span>Habitat</span><strong>{{ park.habitat_type }}</strong></div>
+      <div><i data-lucide="calendar-days"></i><span>Best visit</span><strong>{{ park.best_visit_months }}</strong></div>
+      <div><i data-lucide="ruler"></i><span>Area</span><strong>{{ "{:,.0f}".format(park.area_km2) }} km2</strong></div>
+      <div><i data-lucide="shield-check"></i><span>Status</span><strong>{{ park.conservation_status }}</strong></div>
+      <div><i data-lucide="ticket"></i><span>Entry information</span><strong>Use official TANAPA/NCAA gates or licensed tour operators; carry ID or passport.</strong></div>
+      <div><i data-lucide="route"></i><span>Trip plan</span><strong>Pair with nearby habitats and start birding at sunrise for best activity.</strong></div>
+    </div>
+    <div class="weather-card" data-weather-card data-lat="{{ park.latitude }}" data-lon="{{ park.longitude }}">
+      <i data-lucide="cloud-sun"></i>
+      <div><span>Current weather</span><strong>Loading park weather...</strong></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-heading">
+    <span class="eyebrow">Linked species</span>
+    <h2>Birds associated with {{ park.habitat_type }}</h2>
+  </div>
+  <div class="grid card-grid">
+    {% for bird in park.birds %}
+      {% include "partials/species_card.html" %}
+    {% endfor %}
+  </div>
+</section>
+
+<section class="section split-section">
+  <div>
+    <div class="section-heading">
+      <span class="eyebrow">Location map</span>
+      <h2>{{ park.name }}</h2>
+    </div>
+    <div class="mini-map" data-mini-map data-lat="{{ park.latitude }}" data-lon="{{ park.longitude }}" data-title="{{ park.name }}"></div>
+  </div>
+  <div>
+    <div class="section-heading">
+      <span class="eyebrow">Reviews</span>
+      <h2>Visitor ratings</h2>
+    </div>
+    <form class="review-form" method="post">
+      <select name="rating">
+        <option value="5">5 - Excellent</option>
+        <option value="4">4 - Very good</option>
+        <option value="3">3 - Good</option>
+        <option value="2">2 - Fair</option>
+        <option value="1">1 - Poor</option>
+      </select>
+      <textarea name="comment" rows="3" placeholder="Share birding, access, or guide notes"></textarea>
+      <button class="button primary full" type="submit">Submit review</button>
+    </form>
+    <div class="stack-list reviews">
+      {% for review in park.reviews %}
+        <article class="review-card"><strong>{{ review.rating }}/5 by {{ review.user.name }}</strong><p>{{ review.comment }}</p></article>
+      {% else %}
+        <p class="empty-state">No reviews yet.</p>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}

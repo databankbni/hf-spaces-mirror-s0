@@ -1,0 +1,8 @@
+# Ignore environment variables
+.env
+
+# Ignore Gradio runtime/cache data (certificates, settings, etc.)
+.gradio/
+
+# Ignore scratch/helper scripts not needed on HF Spaces
+update_ui.py

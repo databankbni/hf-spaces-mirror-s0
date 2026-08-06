@@ -1,0 +1,91 @@
+{
+ "captured_at": "2026-08-06T03:15:37Z",
+ "hf_metadata": {
+  "_id": "6a73e8e3d6ae7d37a18f4eb3",
+  "author": "ppujari31",
+  "cardData": {
+   "app_file": "app.py",
+   "colorFrom": "red",
+   "colorTo": "red",
+   "emoji": "👀",
+   "license": "mit",
+   "pinned": false,
+   "python_version": "3.13",
+   "sdk": "gradio",
+   "sdk_version": "6.22.0",
+   "title": "Healthy Meals Churn Predictor"
+  },
+  "createdAt": "2026-08-06T01:52:35.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://ppujari31-healthy-meals-churn-predictor.hf.space",
+  "id": "ppujari31/healthy-meals-churn-predictor",
+  "lastModified": "2026-08-06T02:21:17.000Z",
+  "likes": 0,
+  "private": false,
+  "region": "us",
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "ppujari31-healthy-meals-churn-predictor.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": "cpu-basic",
+    "requested": "cpu-basic"
+   },
+   "pySpacesVersion": "0.51.1",
+   "replicas": {
+    "current": 1,
+    "requested": 1
+   },
+   "sha": "ed6588f430175d8ccac8239079aff39a0d4099f2",
+   "stage": "RUNNING"
+  },
+  "sdk": "gradio",
+  "sha": "ed6588f430175d8ccac8239079aff39a0d4099f2",
+  "siblings": [
+   {
+    "rfilename": ".gitattributes"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "app.py"
+   },
+   {
+    "rfilename": "churn_model.pkl"
+   },
+   {
+    "rfilename": "requirements.txt"
+   }
+  ],
+  "subdomain": "ppujari31-healthy-meals-churn-predictor",
+  "tags": [
+   "gradio",
+   "region:us"
+  ],
+  "usedStorage": 7373865
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "ppujari31/healthy-meals-churn-predictor",
+ "repo_type": "spaces",
+ "sha": "ed6588f430175d8ccac8239079aff39a0d4099f2",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/ppujari31/healthy-meals-churn-predictor"
+}

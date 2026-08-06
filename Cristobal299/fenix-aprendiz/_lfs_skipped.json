@@ -1,0 +1,47 @@
+{
+ "lfs_not_stored": [
+  {
+   "oid": "a9bd4eb192c99ad7212cd89329d61763fcef7de97176c904c45c334c093536ba",
+   "path": "cancion_1.mp3",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6YTliZDRlYjE5MmM5OWFkNzIxMmNkODkzMjlkNjE3NjNmY2VmN2RlOTcxNzZjOTA0YzQ1YzMzNGMwOTM1MzZiYQpzaXplIDQ4MjAzMjgK",
+   "size": 4820328,
+   "url": "https://huggingface.co/spaces/Cristobal299/fenix-aprendiz/resolve/57aff3e4dfaebf72346fff32126c8282292a8644/cancion_1.mp3"
+  },
+  {
+   "oid": "03170d12f3becce02bdb64a7863efca38638e8f057adc9be4dce4e9939400f62",
+   "path": "cancion_2.mp3",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6MDMxNzBkMTJmM2JlY2NlMDJiZGI2NGE3ODYzZWZjYTM4NjM4ZThmMDU3YWRjOWJlNGRjZTRlOTkzOTQwMGY2MgpzaXplIDM5MjgzODEK",
+   "size": 3928381,
+   "url": "https://huggingface.co/spaces/Cristobal299/fenix-aprendiz/resolve/57aff3e4dfaebf72346fff32126c8282292a8644/cancion_2.mp3"
+  },
+  {
+   "oid": "3ac27720874250104a1329f2de96a60999a0f35c070e9cd93413c4da092ba26d",
+   "path": "cancion_3.mp3",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6M2FjMjc3MjA4NzQyNTAxMDRhMTMyOWYyZGU5NmE2MDk5OWEwZjM1YzA3MGU5Y2Q5MzQxM2M0ZGEwOTJiYTI2ZApzaXplIDMwMzU1ODIK",
+   "size": 3035582,
+   "url": "https://huggingface.co/spaces/Cristobal299/fenix-aprendiz/resolve/57aff3e4dfaebf72346fff32126c8282292a8644/cancion_3.mp3"
+  },
+  {
+   "oid": "8024607ad6eb9e069683c7ecc8ea91293374a67c2d08deba94d8c8004965c311",
+   "path": "cancion_4.mp3",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6ODAyNDYwN2FkNmViOWUwNjk2ODNjN2VjYzhlYTkxMjkzMzc0YTY3YzJkMDhkZWJhOTRkOGM4MDA0OTY1YzMxMQpzaXplIDMzMDI3ODUK",
+   "size": 3302785,
+   "url": "https://huggingface.co/spaces/Cristobal299/fenix-aprendiz/resolve/57aff3e4dfaebf72346fff32126c8282292a8644/cancion_4.mp3"
+  },
+  {
+   "oid": "e61896024476dd88a8c52bf51af9bc099f4753d6319c9fa3107763f7a907b660",
+   "path": "cancion_5.mp3",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6ZTYxODk2MDI0NDc2ZGQ4OGE4YzUyYmY1MWFmOWJjMDk5ZjQ3NTNkNjMxOWM5ZmEzMTA3NzYzZjdhOTA3YjY2MApzaXplIDMwODY5ODcK",
+   "size": 3086987,
+   "url": "https://huggingface.co/spaces/Cristobal299/fenix-aprendiz/resolve/57aff3e4dfaebf72346fff32126c8282292a8644/cancion_5.mp3"
+  },
+  {
+   "oid": "741151a1e0e58d2c6834b84568daab96bd3ed227b1fe0cf2851e22532611258e",
+   "path": "cancion_6.mp3",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6NzQxMTUxYTFlMGU1OGQyYzY4MzRiODQ1NjhkYWFiOTZiZDNlZDIyN2IxZmUwY2YyODUxZTIyNTMyNjExMjU4ZQpzaXplIDE3MjEyOTEK",
+   "size": 1721291,
+   "url": "https://huggingface.co/spaces/Cristobal299/fenix-aprendiz/resolve/57aff3e4dfaebf72346fff32126c8282292a8644/cancion_6.mp3"
+  }
+ ],
+ "oversize_not_stored": []
+}

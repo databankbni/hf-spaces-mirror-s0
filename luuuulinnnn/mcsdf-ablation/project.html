@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MCSDF Project Overview · Goal / IO / Capabilities + SOTA Pipeline</title>
+<style>
+:root{--bg:#0d1117;--card:#161b22;--line:#30363d;--tx:#e6edf3;--dim:#8b949e;--acc:#63c98a;--warn:#e3b341;--bad:#f85149;--blu:#58a6ff;--pur:#bc8cff;--org:#f0883e}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:15px/1.65 -apple-system,"Segoe UI",Roboto,sans-serif;padding:28px 3vw 90px}
+h1{font-size:27px;margin:0 0 6px}h2{font-size:20px;margin:42px 0 12px;border-bottom:1px solid var(--line);padding-bottom:6px}
+.sub{color:var(--dim);margin-bottom:18px}
+.goal{background:linear-gradient(135deg,#12261a,#161b22);border:1px solid var(--acc);border-radius:12px;padding:18px 22px;margin:16px 0;font-size:16px}
+.goal b{color:var(--acc)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0}
+.box{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 18px}
+.box h3{margin:0 0 8px;font-size:16px}
+.box.in h3{color:var(--blu)} .box.out h3{color:var(--acc)}
+.box ul{margin:6px 0;padding-left:20px}.box li{margin:3px 0}
+code{background:#0d1117;border:1px solid var(--line);border-radius:5px;padding:1px 6px;font-size:13px}
+.ladder{margin:14px 0}
+.rung{display:flex;gap:12px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 16px;margin:8px 0}
+.rung .n{font-size:20px;font-weight:800;color:var(--dim);min-width:30px}
+.rung.done{border-left:4px solid var(--acc)} .rung.doing{border-left:4px solid var(--warn)} .rung.next{border-left:4px solid var(--line)}
+.rung .st{margin-left:auto;font-size:12px;white-space:nowrap;color:var(--dim)}
+.rung.done .st{color:var(--acc)} .rung.doing .st{color:var(--warn)}
+figure{margin:12px 0 26px;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px}
+figcaption{color:var(--dim);font-size:13px;padding:5px 2px;font-weight:600}
+img{width:100%;display:block;border-radius:5px}
+.note{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--blu);border-radius:8px;padding:11px 15px;margin:12px 0;color:var(--dim);font-size:13.5px}
+.svgwrap{background:var(--card);border:1px solid var(--acc);border-radius:12px;padding:12px;margin:14px 0;overflow-x:auto}
+svg text{font-family:inherit}
+a{color:var(--blu);text-decoration:none}
+.stat{display:inline-block;background:#12261a;border:1px solid var(--acc);border-radius:999px;padding:2px 13px;margin:3px 6px 3px 0;font-size:13.5px}
+.stat b{color:var(--acc)}
+@media(max-width:900px){.grid2{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<h1>MCSDF · Scene Extrapolation with World Memory</h1>
+<div class="sub">Memory-Conditioned Scene Diffusion Forcing — teaching a video diffusion model to remember the world it has seen and walk into the parts it hasn't · 2026-07-29</div>
+
+<div class="goal">🎯 <b>Goal:</b> Show the model a short observation of a real scene (18 frames), then have it <b>keep filming the same world</b> along an arbitrary camera trajectory (63 future frames). Wherever the scene was observed, the output must be <b>faithful to geometry</b> (no drift, no re-invention); wherever it wasn't, the model must <b>hallucinate plausibly and richly</b> (no gray, no blur). Core methodology: <b>content rides the channel, trust rides the noise field</b> — each token's knownness decides its place in the denoising calendar: who commits first, who serves as reference, who is in charge of imagination. North star: leave the scene and come back, and <b>the same world is still there</b> (revisit consistency = true world memory).</div>
+
+<h2>① Input / Output</h2>
+<div class="grid2">
+<div class="box in"><h3>INPUT</h3><ul>
+<li><b>18 observed frames</b> (480×832 RGB, real DL3DV scenes)</li>
+<li><b>81 camera poses + intrinsics</b> (18 observed + 63 target, forward trajectory, stride 2)</li>
+<li>Derived evidence (automatic): VGGT consistent geometry → point cloud (~2.7M) → <b>warp splat z_mem</b> (memory's prediction of every future frame, 16-ch VAE latent) + <b>knownness k</b> (per-token evidence, [21,30,52] ∈ [0,1])</li>
+</ul></div>
+<div class="box out"><h3>OUTPUT</h3><ul>
+<li><b>81-frame video</b> (480×832): first 18 ≈ reconstruction of the observation, next 63 = forward generation along the requested poses</li>
+<li>Constraints: seen regions aligned with GT geometry (seen-PSNR) · unseen regions carry real content energy (no gray/blur) · camera obeyed throughout</li>
+</ul></div>
+</div>
+<figure><figcaption>Example (held-out TEST clip). Row 1 = GT trajectory (frame 0 is observed; 20/40/60/80 are future). Row 2 = knownness evidence heatmap (red = well seen, blue = barely, dark = never seen). Row 3 = our output (expE_sync @1500).</figcaption><img src="project_io.png"></figure>
+
+<h2>② Capability ladder (what we are building, and where it stands)</h2>
+<div class="ladder">
+<div class="rung done"><div class="n">1</div><div><b>Geometric fidelity</b> — seen content appears where geometry says it should<div class="sub" style="margin:0">Persistent 17-ch warp channel feeds content at every step; VGGT + Umeyama fixed shattered geometry; z_mem-anchored training teaches "clean the splat"</div></div><div class="st">✅ established</div></div>
+<div class="rung done"><div class="n">2</div><div><b>Generative completeness</b> — unseen regions grow rich, plausible content, never gray<div class="sub" style="margin:0">P-SDEdit diagnosis: texture is synthesized in the high-noise segment → τ ≥ 0.85 + rehearsal preserves the generative prior; 4–7× the content energy of the uniform baseline</div></div><div class="st">✅ established</div></div>
+<div class="rung done"><div class="n">3</div><div><b>Trust scheduling</b> — knownness carries no content; it orchestrates who commits first and who references whom<div class="sub" style="margin:0">SYNC synchronized-start calendar (+0.23 dB, then a further lead once training matches it); cluster-128 trust regions; expJ is testing the continuous finish-timetable</div></div><div class="st">✅ core novelty</div></div>
+<div class="rung doing"><div class="n">4</div><div><b>Pose obedience everywhere</b> — empty regions also know where the camera is (fixes view-drift)<div class="sub" style="margin:0">6-ch Plücker ray map = declarative per-token pose (expF / expF_sync); first readout showed the best deep-frame alignment in the fleet</div></div><div class="st">🔥 training</div></div>
+<div class="rung doing"><div class="n">5</div><div><b>Posterior self-correction</b> — detect "the prior says seen, but it's wrong" and re-imagine those regions<div class="sub" style="margin:0">Uncertainty head (Patch-Forcing style, +1-ch logvar; stop-grad ⇒ trainable as a frozen-backbone probe) = expI candidate</div></div><div class="st">🧪 designed</div></div>
+<div class="rung next"><div class="n">6</div><div><b>World memory</b> — leave and return, and the scene is consistent (multi_visit / moving_back benchmarks)<div class="sub" style="margin:0">North star; revisit benchmarks are built and waiting for the champion model</div></div><div class="st">⏳ north star</div></div>
+</div>
+
+<h2>③ SOTA results showcase — 4 examples · 4 rows each</h2>
+<div class="sub">Row order per example: <b style="color:var(--acc)">GT trajectory</b> → <b style="color:var(--warn)">knownness map k</b> (the evidence chart) → <b style="color:var(--warn)">warp memory z_mem</b> (VAE-decoded — literally what the 17-ch channel feeds the model: splat + gray holes) → <b style="color:var(--acc)">OURS</b> (expE_sync, SYNC cl-128 τ.85, 24 forwards). Frames 0 / 20 / 40 / 60 / 80; frame 0 is observed, everything after is generated. Watch the red evidence recede into blue as the camera advances — and the output keep the seen and invent the unseen.</div>
+<div class="note" style="border-left-color:var(--acc)"><b style="color:var(--acc)">▶ Video comparisons (knownness map in motion):</b> the same story as the strips below, but animated — watch the red evidence drain out of the knownness panel as the camera advances.</div>
+<div class="grid2">
+<figure style="margin:0"><figcaption>TEST 111b656f · signals video (GT / warp memory / knownness / output)</figcaption><video src="signals_111b656f.mp4" controls loop muted playsinline style="width:100%;border-radius:5px"></video></figure>
+<figure style="margin:0"><figcaption>TEST 2501f488 · signals video</figcaption><video src="signals_2501f488.mp4" controls loop muted playsinline style="width:100%;border-radius:5px"></video></figure>
+<figure style="margin:0"><figcaption>TRAIN 00534f58 · knownness comparison video</figcaption><video src="https://luuuulinnnn-mcsdf-knownness-video.static.hf.space/known_00534f58.mp4" controls loop muted playsinline style="width:100%;border-radius:5px"></video></figure>
+<figure style="margin:0"><figcaption>TRAIN 0003dc82 · knownness comparison video</figcaption><video src="https://luuuulinnnn-mcsdf-knownness-video.static.hf.space/known_0003dc82.mp4" controls loop muted playsinline style="width:100%;border-radius:5px"></video></figure>
+</div>
+<div class="sub" style="margin-top:8px">More motion: <a href="videos.html">all video comparisons</a> · <a href="https://luuuulinnnn-mcsdf-knownness-video.static.hf.space/">knownness video space</a></div>
+<figure><figcaption>TEST (held-out) · 111b656f — seen-PSNR 17.0 dB. Deep frames: the warp memory has collapsed to holes, ours keeps shelf + brick-wall structure and invents the room beyond.</figcaption><img src="sota_111b656f.png" loading="lazy"></figure>
+<figure><figcaption>TEST (held-out) · 2501f488 — hardest clip in the dev set (10.5 dB): large unseen sweep, heavy imagination load.</figcaption><img src="sota_2501f488.png" loading="lazy"></figure>
+<figure><figcaption>TRAIN · 0003dc82 — outdoor scene, 13.5 dB; note the memory's speckle noise being cleaned up in the output.</figcaption><img src="sota_0003dc82.png" loading="lazy"></figure>
+<figure><figcaption>TRAIN · 00534f58 — 11.7 dB; strong forward motion, evidence half-gone by frame 40.</figcaption><img src="sota_00534f58.png" loading="lazy"></figure>
+
+<h2>④ Current SOTA pipeline (expE_sync · 13.20 avg / 17.1 test @ only 1500 steps)</h2>
+<div class="sub">Config fingerprint: Wan2.1-I2V-14B · LoRA-64 + trained time-modulation path · persistent 17-ch warp channel (zero-init) · τ = clip(1 − 0.95k, 0.85, 1) → cluster-128 → <b>SYNC synchronized-start sampler (24 forwards)</b> · training-field dice: rehearsal .10 / lift .35 / sync slices / patch fields · clean from-scratch lineage</div>
+
+<div class="svgwrap">
+<svg viewBox="0 0 1240 790" width="100%" style="min-width:1000px">
+<defs>
+<marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#8b949e"/></marker>
+<marker id="arg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#63c98a"/></marker>
+</defs>
+<style>
+.bx{fill:#0d1117;stroke:#30363d;rx:8}.bg{fill:#0d1117;stroke:#63c98a;rx:8}.bb{fill:#0d1117;stroke:#58a6ff;rx:8}.bp{fill:#0d1117;stroke:#bc8cff;rx:8}
+.t{fill:#e6edf3;font-size:14px;font-weight:700}.s{fill:#8b949e;font-size:11.5px}.ta{fill:#63c98a;font-size:12.5px;font-weight:700}.tb{fill:#58a6ff;font-size:12.5px;font-weight:700}.tp{fill:#bc8cff;font-size:12.5px;font-weight:700}
+.ln{stroke:#8b949e;stroke-width:1.6;fill:none;marker-end:url(#ar)}.lg{stroke:#63c98a;stroke-width:2;fill:none;marker-end:url(#arg)}
+.lane{fill:none;stroke:#21262d;stroke-dasharray:4 4}
+</style>
+
+<!-- lane titles -->
+<text x="18" y="26" class="tb">GEOMETRY EVIDENCE (offline, once per clip)</text>
+<text x="18" y="306" class="ta">TRUST SCHEDULING · knownness rides the noise field</text>
+<text x="18" y="486" class="tp">Wan2.1-I2V-14B BACKBONE (per-token diffusion)</text>
+<rect x="10" y="34" width="1220" height="230" class="lane"/>
+<rect x="10" y="314" width="1220" height="140" class="lane"/>
+<rect x="10" y="494" width="1220" height="286" class="lane"/>
+
+<!-- geometry lane -->
+<rect x="24" y="52" width="170" height="74" class="bx"/><text x="36" y="76" class="t">18 observed frames</text><text x="36" y="94" class="s">+ 81 poses / K</text><text x="36" y="110" class="s">DL3DV · 480×832 · stride 2</text>
+<rect x="234" y="52" width="170" height="74" class="bb"/><text x="246" y="76" class="t">VGGT geometry</text><text x="246" y="94" class="s">consistent depth + conf</text><text x="246" y="110" class="s">+ Umeyama scale align</text>
+<rect x="444" y="52" width="182" height="74" class="bb"/><text x="456" y="76" class="t">world cloud ~2.7M</text><text x="456" y="94" class="s">no-voxel (no fusion)</text><text x="456" y="110" class="s">density-k coverage stats</text>
+<rect x="666" y="42" width="250" height="42" class="bg"/><text x="678" y="62" class="t">z_mem [16,21,60,104]</text><text x="678" y="77" class="s">splat → 81 poses → VAE (memory frames); fed to the DiT + SDEdit init</text>
+<rect x="666" y="96" width="250" height="42" class="bg"/><text x="678" y="116" class="t">knownness k [21,30,52]</text><text x="678" y="131" class="s">per-token evidence ∈ [0,1] (density coverage)</text>
+<rect x="956" y="52" width="250" height="86" class="bx"/><text x="968" y="74" class="t">(expF branch: +6 ch)</text><text x="968" y="92" class="s">Plücker rays (d, o×d)</text><text x="968" y="108" class="s">frame-0-relative · span-normalized</text><text x="968" y="124" class="s">declarative per-token pose</text>
+<path class="ln" d="M194 89 L234 89"/><path class="ln" d="M404 89 L444 89"/>
+<path class="lg" d="M626 76 L666 63"/><path class="lg" d="M626 100 L666 117"/>
+<text x="30" y="170" class="s">Training and inference share the same evidence cache (cache_novoxel, 1430 clips); text prompt via frozen T5</text>
+
+<!-- trust lane (full width) -->
+<rect x="24" y="330" width="280" height="56" class="bg"/><text x="36" y="352" class="t">τ map: τ = clip(1 − 0.95k, 0.85, 1)</text><text x="36" y="370" class="s">start-noise = trust; 0.85 keeps the texture band</text>
+<rect x="344" y="330" width="270" height="56" class="bg"/><text x="356" y="352" class="t">cluster-128 trust regions</text><text x="356" y="370" class="s">k-means [4k, xyz(Xtok), pos] → cluster-mean τ</text>
+<rect x="654" y="322" width="564" height="118" class="bg"/><text x="666" y="344" class="t">SYNC synchronized-start calendar ⭐</text><text x="666" y="364" class="s">t_i(j) = max(0, τ_i − e_j); everyone starts at step 0; on zero-crossing: own x0-projection → PINNED (told-t = 0.02)</text><text x="666" y="384" class="ta">known commits first → becomes clean reference in attention →</text><text x="666" y="402" class="ta">the unseen decides its late game against GT-grade context (+0.23 dB validated)</text><text x="666" y="424" class="s">24 forwards · optional shift / CFG · expJ upgrade in training: continuous timetable τ = 1 − 0.2k</text>
+<path class="ln" d="M304 358 L344 358"/><path class="ln" d="M614 358 L654 366"/>
+<path class="lg" d="M791 138 L791 314 L791 322" opacity="0"/>
+<path class="lg" d="M791 138 L164 330" opacity="0.8"/>
+
+<!-- backbone lane -->
+<rect x="24" y="510" width="360" height="250" class="bp"/>
+<text x="36" y="534" class="t">DiT ×40 blocks (frozen + LoRA-64)</text>
+<text x="36" y="554" class="s">input: noisy x (16) + I2V cond (20) + z_mem/k channel (17)</text>
+<text x="36" y="578" class="tp">★ per-token AdaLN (the key detail)</text>
+<text x="36" y="596" class="s">each token's own t_i → sinusoidal(256)</text>
+<text x="36" y="612" class="s">→ time_embedding (MLP, trained ✓)</text>
+<text x="36" y="628" class="s">→ time_projection → t_mod [B, L, 6, dim]</text>
+<text x="36" y="644" class="s">→ per-token shift/scale/gate ×2 (attn + ffn)</text>
+<text x="36" y="660" class="s">(DiTBlock has_seq branch; block.modulation trained ✓)</text>
+<text x="36" y="684" class="tp">★ 3D RoPE positions · text cross-attn (T5)</text>
+<text x="36" y="704" class="s">same mechanism independently validated by Patch Forcing (CVPR'26)</text>
+<text x="36" y="728" class="s">v-prediction: v = (x_t − x0)/t points at the TRUE x0</text>
+
+<rect x="424" y="510" width="380" height="250" class="bx"/>
+<text x="436" y="534" class="t">training-field dice (one branch per step)</text>
+<text x="436" y="558" class="s">10%  rehearsal: global scalar t, evidence zeroed (anti-forgetting)</text>
+<text x="436" y="578" class="s">35%  lift: τ0 ← 1 − (1−τ0)γ², γ = U² (covers the high-noise edge)</text>
+<text x="436" y="598" class="ta">remaining 50/50:</text>
+<text x="436" y="618" class="s">· sync slice clamp(τ0 − c, .02, 1) ← what the sampler visits</text>
+<text x="436" y="638" class="s">· patch field u_patch·τ0 (contiguous 3D blocks, AsyncPatch-style)</text>
+<text x="436" y="662" class="s">anchor mixture: covered tokens w/ p=0.4 &amp; t≥0.3 anchor at z_mem</text>
+<text x="436" y="680" class="s">→ teaches "clean the splat"; the rest anchor at x0 → pure generation</text>
+<text x="436" y="704" class="s">loss = v-MSE with honest told-t (unknown_w = 1)</text>
+<text x="436" y="728" class="s">8-GPU DDP (manual grad all-reduce) · lr 5e-5 (LoRA)</text>
+
+<rect x="844" y="510" width="374" height="250" class="bx"/>
+<text x="856" y="534" class="t">inference loop (24 forwards)</text>
+<text x="856" y="558" class="s">for j in 0..23:</text>
+<text x="876" y="578" class="s">told_i = alive ? t_i : 0.02  (pinned broadcast clean)</text>
+<text x="876" y="598" class="s">v = DiT(x, told·1000, evidence, text)</text>
+<text x="876" y="618" class="s">t_next = max(0, τ_i − e_{j+1})  (SYNC constant-rate / shift)</text>
+<text x="876" y="638" class="s">crossing tokens: x ← x − t_i·v  (own x0-projection) → pin</text>
+<text x="876" y="658" class="s">others: x ← x + (t_next − t_i)·v  (per-token Δt)</text>
+<text x="856" y="686" class="ta">→ VAE decode → 81 output frames</text>
+<text x="856" y="710" class="s">metrics: seen-PSNR (k&gt;.5, frames 20/40/60)</text>
+<text x="856" y="726" class="s">+ unseen content energy (chroma+contrast, frame 40)</text>
+
+<!-- cross-lane arrows -->
+<path class="lg" d="M700 138 L204 510"/>
+<path class="lg" d="M900 440 L900 480 L1031 510"/>
+<path class="ln" d="M384 630 L424 630"/>
+<path class="ln" d="M804 630 L844 630"/>
+</svg>
+</div>
+
+<div class="note">🔍 Detail emphasis — three places this differs from most camera-conditioned video work: ① <b>conditioning is persistent</b> — the warp channel is injected at all 24 denoising steps, not only at initialization (this is what cured the gray-patch failure); ② <b>the timestep is not a global scalar</b> — the [B, L, 6, dim] per-token modulation lets all 32,760 tokens sit at different noise times simultaneously, the mechanical prerequisite for "trust = noise"; ③ <b>the sampling calendar carries semantics</b> — finish order = evidence order; known regions commit first and serve as references (SYNC), and expJ is currently upgrading this into a fully continuous timetable (τ = 1 − 0.2k).</div>
+
+<div style="margin:10px 0">
+<span class="stat">fleet best <b>13.20 dB</b> (4-clip avg)</span>
+<span class="stat">big TEST clip <b>17.1 dB</b></span>
+<span class="stat">only <b>1500</b>/10000 steps</span>
+<span class="stat"><b>4×</b> content energy vs uniform baseline</span>
+<span class="stat">24 forwards · ~70 s/clip</span>
+</div>
+
+<h2>⑤ Links</h2>
+<div class="note" style="border-left-color:var(--acc)">
+<a href="pipelines.html">All-experiment atlas (k→τ maps)</a> · <a href="latestall.html">Latest parade</a> · <a href="fleet.html">Fleet progress</a> · <a href="exph.html">expH verdict</a> · <a href="https://luuuulinnnn-scene-extrapolation-ctx18.static.hf.space/">ctx18 official benchmark</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,12 @@
+data/
+*.csv
+*.pdf
+*.pptx
+.venv/
+__pycache__/
+**/__pycache__/
+*.pyc
+.idea/
+.env
+.git/
+thesis/

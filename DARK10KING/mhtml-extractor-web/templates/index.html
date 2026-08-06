@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MHTML Tools</title>
+<style>
+  :root {
+    --bg: #0b0d11;
+    --card: #13161d;
+    --card-border: #1f2330;
+    --accent-blue: #5b8cff;
+    --accent-purple: #a78bfa;
+    --text: #e7e9ee;
+    --muted: #7a8094;
+    --ok: #3ddc97;
+    --err: #ff5c5c;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Segoe UI", Tahoma, system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 48px 16px 80px;
+  }
+
+  /* ─── Header ───────────────────────────────────────── */
+  header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  header h1 {
+    font-size: 26px;
+    font-weight: 800;
+    background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 6px;
+  }
+  header p { color: var(--muted); font-size: 14px; }
+
+  /* ─── Grid ─────────────────────────────────────────── */
+  .grid {
+    width: 100%;
+    max-width: 820px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  /* ─── Tool Card ─────────────────────────────────────── */
+  .tool {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 18px;
+    overflow: hidden;
+    transition: border-color .2s;
+  }
+  .tool.active { border-color: var(--tool-accent); }
+
+  .tool-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 20px 24px;
+    cursor: pointer;
+    user-select: none;
+    transition: background .15s;
+  }
+  .tool-header:hover { background: #161920; }
+
+  .tool-icon-wrap {
+    width: 46px; height: 46px;
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px;
+    flex-shrink: 0;
+  }
+  .tool-mhtml .tool-icon-wrap { background: #0d1528; }
+  .tool-rename .tool-icon-wrap { background: #150d28; }
+
+  .tool-meta { flex: 1; }
+  .tool-title {
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 3px;
+  }
+  .tool-desc { font-size: 13px; color: var(--muted); line-height: 1.5; }
+
+  .tool-chevron {
+    color: var(--muted);
+    font-size: 18px;
+    transition: transform .25s;
+    flex-shrink: 0;
+  }
+  .tool.active .tool-chevron { transform: rotate(180deg); }
+
+  /* ─── Tool Body ─────────────────────────────────────── */
+  .tool-body {
+    display: none;
+    padding: 0 24px 24px;
+    border-top: 1px solid var(--card-border);
+  }
+  .tool.active .tool-body { display: block; }
+
+  .tool-body-inner { padding-top: 20px; }
+
+  /* ─── Drop Zone ─────────────────────────────────────── */
+  .drop {
+    border: 2px dashed #2a2f3d;
+    border-radius: 12px;
+    padding: 28px;
+    text-align: center;
+    cursor: pointer;
+    transition: .2s;
+  }
+  .drop:hover, .drop.dragover {
+    border-color: var(--tool-accent);
+    background: #0f1120;
+  }
+  .drop input { display: none; }
+  .drop .drop-icon { font-size: 28px; margin-bottom: 8px; }
+  .drop .drop-label { font-size: 14px; color: var(--muted); }
+  .drop .drop-hint { font-size: 12px; color: #3a4060; margin-top: 4px; }
+
+  .file-info { margin-top: 10px; font-size: 13px; color: var(--muted); min-height: 18px; }
+
+  /* ─── Progress ──────────────────────────────────────── */
+  .bar-wrap {
+    margin-top: 16px;
+    background: #1a1d26;
+    border-radius: 8px;
+    overflow: hidden;
+    height: 20px;
+    display: none;
+  }
+  .bar {
+    height: 100%; width: 0%;
+    transition: width .2s;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px; font-weight: 700; color: #0a0a0a;
+  }
+  .tool-mhtml .bar { background: linear-gradient(90deg, var(--accent-blue), #7ea2ff); }
+  .tool-rename .bar { background: linear-gradient(90deg, var(--accent-purple), #c4b5fd); }
+
+  .status-line { margin-top: 8px; font-size: 13px; color: var(--muted); display: none; min-height: 18px; }
+
+  /* ─── Button ────────────────────────────────────────── */
+  .btn {
+    margin-top: 16px; width: 100%; padding: 12px;
+    border: none; border-radius: 10px;
+    font-size: 15px; font-weight: 700; cursor: pointer;
+    transition: opacity .15s;
+    color: white;
+  }
+  .tool-mhtml .btn { background: var(--accent-blue); }
+  .tool-rename .btn { background: var(--accent-purple); color: #0a0a0a; }
+  .btn:disabled { opacity: .35; cursor: not-allowed; }
+  .btn:not(:disabled):hover { opacity: .85; }
+
+  /* ─── Result ────────────────────────────────────────── */
+  .result {
+    margin-top: 16px; padding: 16px;
+    border-radius: 12px; background: #0e1016;
+    font-size: 13px; line-height: 1.9; display: none;
+  }
+  .result.ok { border: 1px solid var(--ok); }
+  .result.err { border: 1px solid var(--err); color: var(--err); }
+  .result-title { font-size: 14px; font-weight: 700; margin-bottom: 8px; }
+  .result.ok .result-title { color: var(--ok); }
+  .stat { display: flex; justify-content: space-between; color: var(--muted); }
+  .stat span:last-child { color: var(--text); font-weight: 600; }
+  .dl-btn {
+    display: block; margin-top: 12px;
+    background: var(--ok); color: #0a0a0a;
+    padding: 11px 16px; border-radius: 10px;
+    text-decoration: none; font-weight: 700;
+    text-align: center; font-size: 14px;
+    transition: opacity .15s;
+  }
+  .dl-btn:hover { opacity: .85; }
+
+  footer { margin-top: 48px; color: var(--muted); font-size: 12px; }
+
+  /* ─── Accent vars per tool ──────────────────────────── */
+  .tool-mhtml { --tool-accent: var(--accent-blue); }
+  .tool-rename { --tool-accent: var(--accent-purple); }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>🛠 MHTML Tools</h1>
+  <p>أدوات لمعالجة ملفات MHTML وصور الفصول</p>
+</header>
+
+<div class="grid">
+
+  <!-- ══════ أداة 1: MHTML Extractor ══════ -->
+  <div class="tool tool-mhtml" id="tool-mhtml">
+    <div class="tool-header" onclick="toggleTool('tool-mhtml')">
+      <div class="tool-icon-wrap">📄</div>
+      <div class="tool-meta">
+        <div class="tool-title">استخراج صور MHTML</div>
+        <div class="tool-desc">ارفع ملف MHTML واستخرج الصور المضمّنة فيه كـ ZIP منظم بترتيبها الصحيح</div>
+      </div>
+      <div class="tool-chevron">⌄</div>
+    </div>
+    <div class="tool-body">
+      <div class="tool-body-inner">
+        <div class="drop" id="mhtml-drop">
+          <div class="drop-icon">⬆️</div>
+          <div class="drop-label">اسحب ملف MHTML هنا أو اضغط للاختيار</div>
+          <div class="drop-hint">الحد الأقصى: {{ max_size_mb }}MB</div>
+          <input type="file" id="mhtml-fileInput" accept=".mhtml,.mht">
+        </div>
+        <div class="file-info" id="mhtml-fileInfo"></div>
+        <div class="bar-wrap" id="mhtml-barWrap"><div class="bar" id="mhtml-bar">0%</div></div>
+        <div class="status-line" id="mhtml-statusLine"></div>
+        <button class="btn" id="mhtml-btn" disabled>ابدأ الاستخراج</button>
+        <div class="result" id="mhtml-result"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════ أداة 2: Rename ZIP ══════ -->
+  <div class="tool tool-rename" id="tool-rename">
+    <div class="tool-header" onclick="toggleTool('tool-rename')">
+      <div class="tool-icon-wrap">🖼️</div>
+      <div class="tool-meta">
+        <div class="tool-title">إعادة ترقيم صور ZIP</div>
+        <div class="tool-desc">ارفع ZIP يحتوي صور وأعد ترقيمها تلقائياً إلى <span dir="ltr">001, 002, 003...</span> مع الحفاظ على الامتداد</div>
+      </div>
+      <div class="tool-chevron">⌄</div>
+    </div>
+    <div class="tool-body">
+      <div class="tool-body-inner">
+        <div class="drop" id="rename-drop">
+          <div class="drop-icon">📦</div>
+          <div class="drop-label">اسحب ملف ZIP هنا أو اضغط للاختيار</div>
+          <div class="drop-hint">jpg · png · webp · gif · bmp · avif — الحد الأقصى: {{ max_size_mb }}MB</div>
+          <input type="file" id="rename-fileInput" accept=".zip">
+        </div>
+        <div class="file-info" id="rename-fileInfo"></div>
+        <div class="bar-wrap" id="rename-barWrap"><div class="bar" id="rename-bar">0%</div></div>
+        <div class="status-line" id="rename-statusLine"></div>
+        <button class="btn" id="rename-btn" disabled>إعادة الترقيم</button>
+        <div class="result" id="rename-result"></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer>MHTML Tools — مبني لتسهيل معالجة صور الفصول</footer>
+
+<script>
+const CHUNK_SIZE = 5 * 1024 * 1024;
+
+// ─── Toggle cards ──────────────────────────────────────────────
+function toggleTool(id) {
+  const el = document.getElementById(id);
+  el.classList.toggle('active');
+}
+
+// ─── Generic tool setup ────────────────────────────────────────
+function setupTool({ prefix, accept, initUrl, chunkUrl, completeUrl, statusUrl, downloadUrl, buildResult }) {
+  const drop       = document.getElementById(`${prefix}-drop`);
+  const fileInput  = document.getElementById(`${prefix}-fileInput`);
+  const fileInfo   = document.getElementById(`${prefix}-fileInfo`);
+  const btn        = document.getElementById(`${prefix}-btn`);
+  const barWrap    = document.getElementById(`${prefix}-barWrap`);
+  const bar        = document.getElementById(`${prefix}-bar`);
+  const statusLine = document.getElementById(`${prefix}-statusLine`);
+  const result     = document.getElementById(`${prefix}-result`);
+  let selectedFile = null;
+
+  drop.addEventListener('click', () => fileInput.click());
+  drop.addEventListener('dragover', e => { e.preventDefault(); drop.classList.add('dragover'); });
+  drop.addEventListener('dragleave', () => drop.classList.remove('dragover'));
+  drop.addEventListener('drop', e => {
+    e.preventDefault(); drop.classList.remove('dragover');
+    if (e.dataTransfer.files.length) handleFile(e.dataTransfer.files[0]);
+  });
+  fileInput.addEventListener('change', () => {
+    if (fileInput.files.length) handleFile(fileInput.files[0]);
+  });
+
+  function handleFile(file) {
+    selectedFile = file;
+    fileInfo.textContent = `${file.name} — ${(file.size/(1024*1024)).toFixed(2)} MB`;
+    btn.disabled = false;
+    result.style.display = 'none';
+  }
+
+  function setProgress(pct, text) {
+    barWrap.style.display = 'block';
+    statusLine.style.display = 'block';
+    bar.style.width = pct + '%';
+    bar.textContent = pct + '%';
+    statusLine.textContent = text;
+  }
+
+  function showResult(ok, html) {
+    result.className = 'result ' + (ok ? 'ok' : 'err');
+    result.innerHTML = html;
+    result.style.display = 'block';
+  }
+
+  btn.addEventListener('click', async () => {
+    if (!selectedFile) return;
+    btn.disabled = true;
+    result.style.display = 'none';
+    setProgress(0, 'تجهيز الرفع...');
+
+    try {
+      const totalChunks = Math.ceil(selectedFile.size / CHUNK_SIZE);
+      const initRes = await fetch(initUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ filename: selectedFile.name, total_size: selectedFile.size, total_chunks: totalChunks })
+      });
+      const initData = await initRes.json();
+      if (initData.error) { showResult(false, initData.error); btn.disabled = false; return; }
+      const jobId = initData.job_id;
+
+      for (let i = 0; i < totalChunks; i++) {
+        const start = i * CHUNK_SIZE;
+        const blob = selectedFile.slice(start, start + CHUNK_SIZE);
+        const fd = new FormData();
+        fd.append('job_id', jobId);
+        fd.append('chunk_index', i);
+        fd.append('chunk', blob);
+        await fetch(chunkUrl, { method: 'POST', body: fd });
+        setProgress(Math.round((i+1)/totalChunks*50), `رفع الملف... ${i+1}/${totalChunks}`);
+      }
+
+      setProgress(52, 'جاري المعالجة...');
+      await fetch(completeUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ job_id: jobId })
+      });
+
+      // polling
+      for (let attempt = 0; attempt < 300; attempt++) {
+        await new Promise(r => setTimeout(r, 1000));
+        const res = await fetch(`${statusUrl}/${jobId}`);
+        const data = await res.json();
+
+        if (data.status === 'processing' || data.status === 'queued') {
+          setProgress(Math.min(52 + Math.round(data.percent * 0.45), 97), data.message || 'جاري المعالجة...');
+          continue;
+        }
+        if (data.status === 'done') {
+          setProgress(100, 'اكتملت العملية!');
+          showResult(true, buildResult(data.manifest, `${downloadUrl}/${jobId}`));
+          btn.disabled = false;
+          return;
+        }
+        if (data.status === 'error') {
+          setProgress(0, '');
+          showResult(false, `<div class="result-title">❌ فشلت العملية</div>${data.error || 'خطأ غير معروف'}`);
+          btn.disabled = false;
+          return;
+        }
+      }
+      showResult(false, 'انتهت مهلة الانتظار. حاول مرة أخرى.');
+      btn.disabled = false;
+
+    } catch(err) {
+      showResult(false, 'خطأ في الاتصال: ' + err.message);
+      btn.disabled = false;
+    }
+  });
+}
+
+// ─── أداة MHTML ────────────────────────────────────────────────
+setupTool({
+  prefix: 'mhtml',
+  initUrl: '/api/upload/init',
+  chunkUrl: '/api/upload/chunk',
+  completeUrl: '/api/upload/complete',
+  statusUrl: '/api/status',
+  downloadUrl: '/api/download',
+  buildResult(m, dlUrl) {
+    const s = m.stats || {};
+    return `
+      <div class="result-title">✅ تم الاستخراج بنجاح</div>
+      <div class="stat"><span>عدد الصور المستخرجة</span><span>${m.image_count} صورة</span></div>
+      ${s.unmatched_img_tags > 0 ? `<div class="stat"><span>صور غير مطابقة</span><span>${s.unmatched_img_tags}</span></div>` : ''}
+      ${s.invalid_images_skipped > 0 ? `<div class="stat"><span>صور غير صالحة مُتجاهلة</span><span>${s.invalid_images_skipped}</span></div>` : ''}
+      <a class="dl-btn" href="${dlUrl}">⬇️ تحميل ZIP</a>
+    `;
+  }
+});
+
+// ─── أداة Rename ───────────────────────────────────────────────
+setupTool({
+  prefix: 'rename',
+  initUrl: '/api/rename/init',
+  chunkUrl: '/api/rename/chunk',
+  completeUrl: '/api/rename/complete',
+  statusUrl: '/api/rename/status',
+  downloadUrl: '/api/rename/download',
+  buildResult(m, dlUrl) {
+    return `
+      <div class="result-title">✅ تمت إعادة الترقيم بنجاح</div>
+      <div class="stat"><span>عدد الصور</span><span>${m.image_count} صورة</span></div>
+      ${m.skipped_junk > 0 ? `<div class="stat"><span>ملفات نظام مُتجاهلة</span><span>${m.skipped_junk}</span></div>` : ''}
+      ${m.skipped_non_image > 0 ? `<div class="stat"><span>ملفات غير صورية</span><span>${m.skipped_non_image}</span></div>` : ''}
+      <a class="dl-btn" href="${dlUrl}">⬇️ تحميل ZIP المرتّب</a>
+    `;
+  }
+});
+</script>
+</body>
+</html>

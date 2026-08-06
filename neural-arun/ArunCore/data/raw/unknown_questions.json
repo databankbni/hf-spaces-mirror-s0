@@ -1,0 +1,112 @@
+[
+  {
+    "question": "How much do you charge for building custom medical AI tutors?",
+    "answer": "Pricing depends on project scope, custom clinical datasets, guardrail requirements, and model hosting. Basic MVPs start around $1,500 - $3,000, while full-scale custom systems with voice studio and EHR integration range from $3,500 - $7,000+.",
+    "timestamp": "2026-07-30T01:05:00Z"
+  },
+  {
+    "question": "How does MedCoach work?",
+    "answer": "MedCoach uses simulated patient interaction graphs and clinical reasoning evaluation.",
+    "timestamp": "2026-07-30T01:06:16.229451Z"
+  },
+  {
+    "question": "Automated Test Question 1785399027",
+    "answer": "This is a verified test answer ingested by the automated test suite.",
+    "timestamp": "2026-07-30T08:10:27.797137Z"
+  },
+  {
+    "question": "Automated Test Question 1785399039",
+    "answer": "This is a verified test answer ingested by the automated test suite.",
+    "timestamp": "2026-07-30T08:10:39.680568Z"
+  },
+  {
+    "question": "Automated Test Question 1785399073",
+    "answer": "This is a verified test answer ingested by the automated test suite.",
+    "timestamp": "2026-07-30T08:11:13.562636Z"
+  },
+  {
+    "question": "Automated Test Question 1785400778",
+    "answer": "This is a verified test answer ingested by the automated test suite.",
+    "timestamp": "2026-07-30T08:39:38.188818Z"
+  },
+  {
+    "question": "Automated Test Question 1785401384",
+    "answer": "This is a verified test answer ingested by the automated test suite.",
+    "timestamp": "2026-07-30T08:49:44.026293Z"
+  },
+  {
+    "question": "Automated Test Question 1785403384",
+    "answer": "This is a verified test answer ingested by the automated test suite.",
+    "timestamp": "2026-07-30T09:23:04.084088Z"
+  },
+  {
+    "question": "Automated Test Question 1785403733",
+    "answer": "This is a verified test answer ingested by the automated test suite.",
+    "timestamp": "2026-07-30T09:28:53.372262Z"
+  },
+  {
+    "question": "Automated Test Question 1785404030",
+    "answer": "This is a verified test answer ingested by the automated test suite.",
+    "timestamp": "2026-07-30T09:33:50.436811Z"
+  },
+  {
+    "question": "Automated Test Question 1785404962",
+    "answer": "This is a verified test answer ingested by the automated test suite.",
+    "timestamp": "2026-07-30T09:49:22.711988Z"
+  },
+  {
+    "question": "Automated Test Question 1785405084",
+    "answer": "This is a verified test answer ingested by the automated test suite.",
+    "timestamp": "2026-07-30T09:51:24.720118Z"
+  },
+  {
+    "question": "Automated Test Question 1785405619",
+    "answer": "This is a verified test answer ingested by the automated test suite.",
+    "timestamp": "2026-07-30T10:00:19.683627Z"
+  },
+  {
+    "question": "Automated Test Question 1785406188",
+    "answer": "This is a verified test answer ingested by the automated test suite.",
+    "timestamp": "2026-07-30T10:09:48.586093Z"
+  },
+  {
+    "question": "What is Arun favorite IDE for AI agent development?",
+    "answer": "I use Antigravity IDE and Cursor for building agentic AI systems.",
+    "timestamp": "2026-07-30T10:16:47.565954Z"
+  },
+  {
+    "question": "Automated Test Question 1785406623",
+    "answer": "This is a verified test answer ingested by the automated test suite.",
+    "timestamp": "2026-07-30T10:17:03.771920Z"
+  },
+  {
+    "question": "Automated Test Question 1785406862",
+    "answer": "This is a verified test answer ingested by the automated test suite.",
+    "timestamp": "2026-07-30T10:21:02.912389Z"
+  },
+  {
+    "question": "Automated Test Question 1785407307",
+    "answer": "This is a verified test answer ingested by the automated test suite.",
+    "timestamp": "2026-07-30T10:28:27.933664Z"
+  },
+  {
+    "question": "Automated Test Question 1785407619",
+    "answer": "This is a verified test answer ingested by the automated test suite.",
+    "timestamp": "2026-07-30T10:33:39.711222Z"
+  },
+  {
+    "question": "Automated Test Question 1785482397",
+    "answer": "This is a verified test answer ingested by the automated test suite.",
+    "timestamp": "2026-07-31T07:19:57.733349Z"
+  },
+  {
+    "question": "Automated Test Question 1785483068",
+    "answer": "This is a verified test answer ingested by the automated test suite.",
+    "timestamp": "2026-07-31T07:31:08.098092Z"
+  },
+  {
+    "question": "Automated Test Question 1785570521",
+    "answer": "This is a verified test answer ingested by the automated test suite.",
+    "timestamp": "2026-08-01T07:48:41.406944Z"
+  }
+]

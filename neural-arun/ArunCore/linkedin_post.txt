@@ -1,0 +1,29 @@
+Most AI chatbots fail because they lose high-ticket leads when a founder is away.
+I built 𝗔𝗿𝘂𝗻𝗖𝗼𝗿𝗲 𝘃𝟮.𝟬 — a production-grade 𝟯-𝗪𝗮𝘆 𝗟𝗶𝘃𝗲 𝗖𝗵𝗮𝘁 𝗘𝗻𝗴𝗶𝗻𝗲, 𝗜𝗻𝘁𝗲𝗿𝗮𝗰𝘁𝗶𝘃𝗲 𝗔𝗜 𝗣𝗼𝗿𝘁𝗳𝗼𝗹𝗶𝗼, and 𝟭-𝗖𝗹𝗶𝗰𝗸 𝗧𝗲𝗹𝗲𝗴𝗿𝗮𝗺 𝗛𝘂𝗺𝗮𝗻 𝗧𝗮𝗸𝗲𝗼𝘃𝗲𝗿 🚀
+🌐 Test the live system & portfolio here: https://aruncore.vercel.app
+
+Here is how it works:
+
+📂 𝗜𝗻𝘁𝗲𝗿𝗮𝗰𝘁𝗶𝘃𝗲 𝗔𝗜 𝗣𝗼𝗿𝘁𝗳𝗼𝗹𝗶𝗼: It functions as my complete personal engineering portfolio, showcasing 10+ AI & software projects, architecture specs, and live GitHub commit activity in real-time.
+
+⚡ 𝟮𝟰/𝟳 𝗜𝗻𝘀𝘁𝗮𝗻𝘁 𝗔𝗜 𝗧𝘄𝗶𝗻: Responds to visitor queries in <1 second, leading with real-world business value & problem-solving impact.
+
+📲 𝟭𝟬𝟬% 𝗔𝘂𝘁𝗼𝗺𝗮𝘁𝗲𝗱 𝗧𝗲𝗹𝗲𝗴𝗿𝗮𝗺 𝗔𝗹𝗲𝗿𝘁𝘀: Every visitor interaction automatically pings my Telegram phone app with the exact query & AI response.
+
+🔗 𝟭-𝗖𝗹𝗶𝗰𝗸 𝗠𝗮𝗴𝗶𝗰 𝗝𝗼𝗶𝗻 𝗟𝗶𝗻𝗸: Tapping the link in Telegram opens the website live on my phone in Admin Mode (authenticated via secure HMAC token).
+
+🎛️ 𝗛𝘂𝗺𝗮𝗻 𝗖𝗼𝗻𝘁𝗿𝗼𝗹 𝗦𝘁𝗮𝘁𝗲 𝗠𝗮𝗰𝗵𝗶𝗻𝗲: The moment I step into the chat, the AI Twin pauses automatically so I have 100% control. When I want the AI to co-pilot, I type /answer, and the AI Twin reads all 3 participants' messages to respond alongside me!
+
+🧠 𝗥𝗲𝗮𝗹-𝗧𝗶𝗺𝗲 𝗩𝗲𝗰𝘁𝗼𝗿 𝗗𝗕 𝗟𝗲𝗮𝗿𝗻𝗶𝗻𝗴: Every live answer I give is auto-saved into unknown_questions.json and re-indexes ChromaDB in real time. My AI Twin literally gets smarter after every conversation.
+
+🌐 𝗩𝗲𝗿𝗰𝗲𝗹 𝗦𝗲𝗿𝘃𝗲𝗿𝗹𝗲𝘀𝘀 𝗥𝗲𝗹𝗮𝘆: Outbound Telegram alerts route through Next.js serverless functions, eliminating Hugging Face Space firewall timeouts.
+
+---
+
+A massive shoutout and special thanks to 𝗘𝗱 𝗗𝗼𝗻𝗻𝗲𝗿! His 𝗔𝗴𝗲𝗻𝘁𝗶𝗰 𝗔𝗜 𝗘𝗻𝗴𝗶𝗻𝗲𝗲𝗿𝗶𝗻𝗴 𝗧𝗿𝗮𝗰𝗸 course was instrumental in guiding me through building stateful agents, RAG architectures, and production-grade AI systems. Thank you Ed for pushing the boundaries of AI education! 🙌
+
+Try 𝗔𝗿𝘂𝗻𝗖𝗼𝗿𝗲 𝘃𝟮.𝟬 live:
+🌐 Live Web App & Portfolio: https://aruncore.vercel.app
+🐙 GitHub Repo: https://github.com/neural-arun/ArunCore
+
+#AI #AgenticAI #MachineLearning #Python #FastAPI #NextJS #LangChain #RAG #AIArchitecture #SoftwareEngineering

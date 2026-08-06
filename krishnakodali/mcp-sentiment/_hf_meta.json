@@ -1,0 +1,23 @@
+{
+ "captured_at": "2026-08-04T16:30:05Z",
+ "hf_metadata": {
+  "sha": "7d83e5915032d4f8d960a04af0eaf1858723eba5"
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "krishnakodali/mcp-sentiment",
+ "repo_type": "spaces",
+ "sha": "7d83e5915032d4f8d960a04af0eaf1858723eba5",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/krishnakodali/mcp-sentiment"
+}

@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#1e3a5f" />
+    <meta
+      name="description"
+      content="Rules-led, AI-assisted care-documentation prototype. careTalk turns spoken observations into structured draft notes for staff review and approval. Live webhooks let supervisors view on-site information as draft records are created. Demonstration only — not a live care-record system."
+    />
+    <meta property="og:title" content="careTalk — AI-assisted voice documentation for care teams" />
+    <meta
+      property="og:description"
+      content="A rules-led, AI-assisted prototype that turns spoken care observations into structured draft notes for staff review. Demonstration only — do not enter real resident details."
+    />
+    <meta property="og:type" content="website" />
+    <link rel="icon" type="image/png" href="./icons/favicon.png" />
+    <title>careTalk — Speech-to-text care notes</title>
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem("don.ui.theme");
+          if (t !== "light" && t !== "dark") {
+            t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+          }
+          document.documentElement.setAttribute("data-theme", t);
+        } catch (e) {}
+      })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,550;9..144,700&family=Source+Sans+3:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script type="module" crossorigin src="./assets/main-fYjBO_9U.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/theme-CuaEyjDL.js">
+    <link rel="modulepreload" crossorigin href="./assets/subscribers-CLCOf4GQ.js">
+    <link rel="stylesheet" crossorigin href="./assets/subscribers-BHyrZ7wW.css">
+  <link rel="manifest" href="./manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="./registerSW.js"></script></head>
+  <body>
+    <header class="site-header">
+      <a class="brand-lockup" href="./">
+        <span class="avatar" aria-hidden="true">C</span>
+        <span class="brand-name">careTalk</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a class="nav-about" href="#spotlight">Spotlight</a>
+        <a class="nav-about" href="#how">How it works</a>
+        <a class="nav-about" href="#subscribe">Updates</a>
+        <a class="nav-about" href="#feedback">Feedback</a>
+        <button
+          type="button"
+          class="theme-toggle"
+          data-theme-toggle
+          aria-label="Switch to dark theme"
+          title="Dark theme"
+        >
+          <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="4" />
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
+          </svg>
+          <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 14.5A8.5 8.5 0 1 1 9.5 3a7 7 0 0 0 11.5 11.5z" />
+          </svg>
+        </button>
+        <a class="btn btn-ghost" href="./app.html">Open the app</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" aria-label="Introduction">
+        <div class="hero-media" aria-hidden="true">
+          <video
+            class="hero-video"
+            poster="./images/hero-voice-nurse.jpg"
+            autoplay
+            muted
+            playsinline
+            preload="metadata"
+            data-hero-playlist='[
+              {"cdn":"https://videos.pexels.com/video-files/4053216/4053216-hd_1920_1080_25fps.mp4","local":"/videos/hero-care-bg.mp4","credit":"https://www.pexels.com/download/video/4053216/"},
+              {"cdn":"https://videos.pexels.com/video-files/5941023/5941023-hd_1920_1080_25fps.mp4","local":"/videos/hero-care-bg-2.mp4","credit":"https://www.pexels.com/download/video/5941023/"}
+            ]'
+          >
+            <!-- Playlist clips load via landing.js (Pexels CDN first, local fallback) -->
+            <source
+              src="https://videos.pexels.com/video-files/4053216/4053216-hd_1920_1080_25fps.mp4"
+              type="video/mp4"
+            />
+            <source src="./videos/hero-care-bg.mp4" type="video/mp4" />
+          </video>
+          <img
+            class="hero-poster"
+            src="./images/hero-voice-nurse.jpg"
+            alt=""
+            width="612"
+            height="408"
+            fetchpriority="high"
+          />
+        </div>
+        <div class="hero-scrim" aria-hidden="true"></div>
+        <div class="hero-copy">
+          <p class="hero-brand">careTalk</p>
+          <p class="hero-theme">AI-assisted voice documentation for care teams · draft notes · live webhooks</p>
+          <h1 class="hero-headline">Speak the care. Keep the notes.</h1>
+          <p class="hero-lede">
+            A rules-led, AI-assisted care-documentation prototype. careTalk learns your home’s custom care training and documentation, then turns spoken observations into structured draft notes for staff review and approval. Live webhooks let supervisors receive and view on-site information as draft records are created.
+          </p>
+          <p class="hero-demo-banner" role="status">
+            Demo to collect feedback.
+          </p>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="./app.html">Try the live demo</a>
+            <a class="btn btn-ghost" href="./app.html#demo">One-tap demo roles</a>
+          </div>
+          <p class="version-pill">Version 1.1.31</p>
+        </div>
+      </section>
+
+      <div
+        class="feedback-marquee feedback-marquee-home"
+        id="feedbackMarquee"
+        aria-label="Recent feedback previews"
+        hidden
+      >
+        <p class="feedback-marquee-label">Recent notes from the floor</p>
+        <div class="feedback-marquee-viewport">
+          <div class="feedback-marquee-track" id="feedbackMarqueeTrack"></div>
+        </div>
+      </div>
+
+      <section class="section spotlight-band" id="spotlight" aria-labelledby="spotlight-title">
+        <div class="section-inner">
+          <h2 id="spotlight-title">Care in the moment</h2>
+          <p class="lede">
+            Voice notes on the floor, calm handover with the team, and time with the person you support — the moments careTalk is built around.
+          </p>
+        </div>
+        <div class="photo-rail" role="region" aria-label="Care photography spotlight">
+          <figure class="photo-tile">
+            <img
+              src="./images/hero-voice-nurse.jpg"
+              alt="Male nurse in scrubs recording a voice message on a smartphone"
+              width="612"
+              height="408"
+              loading="lazy"
+            />
+            <figcaption>
+              <strong>Speak on shift</strong>
+              <span>Capture what happened while it’s fresh — hands free for care.</span>
+            </figcaption>
+          </figure>
+          <figure class="photo-tile">
+            <img
+              src="./images/care-team-handover.jpg"
+              alt="Care professionals reviewing notes together during a team handover"
+              width="1600"
+              height="1067"
+              loading="lazy"
+            />
+            <figcaption>
+              <strong>Handover ready</strong>
+              <span>Clear notes for managers, nurses, and the next shift.</span>
+            </figcaption>
+          </figure>
+          <figure class="photo-tile">
+            <img
+              src="./images/carer-with-resident.jpg"
+              alt="Carer sitting with an older resident, offering attentive support"
+              width="1600"
+              height="1067"
+              loading="lazy"
+            />
+            <figcaption>
+              <strong>Stay with the person</strong>
+              <span>Less form-filling in the moment — more attention where it matters.</span>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="section band subscribe-band" id="subscribe" aria-labelledby="subscribe-title">
+        <div class="section-inner">
+          <h2 id="subscribe-title">Get careTalk update notes</h2>
+          <p class="lede">
+            Leave your email if you’d like occasional notes when we ship useful changes for care homes and agencies.
+            No marketing spam — updates about the product only.
+          </p>
+          <form id="subscribeForm" class="subscribe-form" novalidate>
+            <div class="subscribe-grid">
+              <label>
+                Email
+                <input
+                  id="subscribeEmail"
+                  name="email"
+                  type="email"
+                  autocomplete="email"
+                  required
+                  maxlength="160"
+                  placeholder="you@carehome.example"
+                />
+              </label>
+              <label>
+                Name <span class="optional">(optional)</span>
+                <input
+                  id="subscribeName"
+                  name="name"
+                  type="text"
+                  autocomplete="name"
+                  maxlength="80"
+                  placeholder="First name"
+                />
+              </label>
+            </div>
+            <div class="feedback-actions">
+              <button type="submit" class="btn btn-primary">Subscribe for updates</button>
+              <p id="subscribeStatus" class="feedback-status" hidden></p>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <section class="section band-alt" id="who" aria-labelledby="who-title">
+        <div class="section-inner">
+          <h2 id="who-title">Built for the people who deliver care</h2>
+          <p class="lede">
+            Share careTalk with managers and support workers who need practical help in the moment — not another heavy clinical system.
+          </p>
+          <div class="split split-with-photo">
+            <figure class="section-photo">
+              <img
+                src="./images/carer-with-resident.jpg"
+                alt="Carer offering calm, attentive support beside a resident"
+                width="1600"
+                height="1067"
+                loading="lazy"
+              />
+            </figure>
+            <div>
+              <h3 class="sr-only">For support workers</h3>
+              <ul class="feature-list">
+                <li>
+                  <strong>Speech to documentation</strong>
+                  <span>Speak naturally on shift — careTalk translates informal wording into relevant notes for record-keeping.</span>
+                </li>
+                <li>
+                  <strong>Voice notes &amp; live reports</strong>
+                  <span>Build a report as you speak — ready for handover, the agency, or live supervisor webhooks.</span>
+                </li>
+                <li>
+                  <strong>For managers, nurses &amp; supervisors</strong>
+                  <span>Review reports by category, approve registrations, and watch live webhook updates as carers create records on site.</span>
+                </li>
+                <li>
+                  <strong>Train from your practice</strong>
+                  <span>Teach careTalk custom care training from UK sources or a policy URL so documentation matches how your service works.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section band" id="how" aria-labelledby="how-title">
+        <div class="section-inner">
+          <div class="split split-with-photo split-photo-end">
+            <div>
+              <h2 id="how-title">How a home can try it</h2>
+              <p class="lede">No install required for the web demo. Use Chrome or Edge and allow the microphone when prompted.</p>
+              <ol class="steps">
+                <li>
+                  <strong>Open the demo</strong>
+                  <p>Use <em>Try as support worker</em> or <em>Try as manager</em> for a one-tap fictional demo — or Sign in / Register if you prefer.</p>
+                </li>
+                <li>
+                  <strong>Talk through a scenario</strong>
+                  <p>Try a fall, swallow concern, or wellbeing note — careTalk guides the next safe step and a <strong>draft</strong> write-up for staff review.</p>
+                </li>
+                <li>
+                  <strong>Review as a manager</strong>
+                  <p>Open Reports and Give careTalk more knowledge to see how oversight and local training fit together.</p>
+                </li>
+              </ol>
+              <p class="privacy-note">
+                <strong>Demonstration only.</strong> Do not enter real resident details. Data stays on this browser (local storage) unless you configure agency email or webhook forwarding.
+                careTalk produces draft notes for staff review — it does not replace clinical assessment, your policies, or calling <strong>999</strong> in an emergency.
+                Conversational replies use a rules-led dialogue engine, with an optional local Ollama model when available.
+              </p>
+            </div>
+            <figure class="section-photo">
+              <img
+                src="./images/care-team-handover.jpg"
+                alt="Care team reviewing documentation together"
+                width="1600"
+                height="1067"
+                loading="lazy"
+              />
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="section band-alt" id="feedback" aria-labelledby="feedback-title">
+        <div class="section-inner">
+          <h2 id="feedback-title">Would careTalk help on your shift?</h2>
+          <p class="lede feedback-lede">
+            Care assistants and supervisors — tell us how you think this could support your day-to-day work.
+            Send feedback is emailed straight to the careTalk inbox (no mail app needed).
+          </p>
+
+          <div class="feedback-layout">
+            <form id="feedbackForm" class="feedback-form" novalidate>
+              <!-- Honeypot for bots — leave empty -->
+              <input
+                class="hp-field"
+                type="text"
+                name="_honey"
+                tabindex="-1"
+                autocomplete="off"
+                aria-hidden="true"
+              />
+              <fieldset class="feedback-roles">
+                <legend>I am mainly a…</legend>
+                <div class="feedback-roles-row">
+                  <label class="role-option">
+                    <input type="radio" name="role" value="assistant" required />
+                    <span>Care assistant / support worker</span>
+                  </label>
+                  <label class="role-option">
+                    <input type="radio" name="role" value="supervisor" />
+                    <span>Supervisor / manager / nurse</span>
+                  </label>
+                  <label class="role-option">
+                    <input type="radio" name="role" value="other" />
+                    <span>Other / interested visitor</span>
+                  </label>
+                </div>
+              </fieldset>
+
+              <div class="feedback-grid">
+                <label>
+                  Name <span class="optional">(optional)</span>
+                  <input id="feedbackName" name="name" type="text" autocomplete="name" maxlength="80" placeholder="First name" />
+                </label>
+                <label>
+                  Organisation <span class="optional">(optional)</span>
+                  <input id="feedbackOrg" name="org" type="text" autocomplete="organization" maxlength="120" placeholder="Home or agency" />
+                </label>
+              </div>
+
+              <label class="feedback-message">
+                How might careTalk help you?
+                <textarea
+                  id="feedbackMessage"
+                  name="message"
+                  required
+                  rows="5"
+                  maxlength="2000"
+                  placeholder="e.g. calmer guidance after a fall, clearer handover notes, training reminders for new staff…"
+                ></textarea>
+              </label>
+
+              <div class="feedback-actions">
+                <button type="submit" class="btn btn-primary">Send feedback</button>
+                <p id="feedbackStatus" class="feedback-status" hidden></p>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <section class="section cta-band" aria-labelledby="cta-title">
+        <div class="section-inner">
+          <h2 id="cta-title">Share careTalk with your agency or home</h2>
+          <p class="lede">Send this page to a manager, then open the live demo together on a quiet shift.</p>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="./app.html">Open careTalk</a>
+            <a class="btn btn-ghost" href="https://huggingface.co/spaces/0001AMA/careTalk-demo">Hugging Face Space</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="section-inner footer-row">
+        <div>
+          <p>careTalk v1.1.31 · MIT</p>
+          <p>
+            <a href="./app.html">App</a>
+            ·
+            <a href="#subscribe">Updates</a>
+            ·
+            <a href="#feedback">Feedback</a>
+            ·
+            <a href="https://0001ama-caretalk-demo.static.hf.space/">Live site</a>
+          </p>
+        </div>
+        <a
+          class="footer-ops"
+          href="./admin.html"
+          aria-label="Updates access"
+          title=""
+        >
+          <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path
+              fill="currentColor"
+              d="M12 1a5 5 0 0 0-5 5v3H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2h-1V6a5 5 0 0 0-5-5zm-3 5a3 3 0 0 1 6 0v3H9V6zm3 8a2 2 0 1 1 0 4 2 2 0 0 1 0-4z"
+            />
+          </svg>
+        </a>
+      </div>
+    </footer>
+
+    <style>
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+    </style>
+  </body>
+</html>

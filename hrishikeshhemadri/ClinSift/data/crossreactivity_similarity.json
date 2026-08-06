@@ -1,0 +1,749 @@
+[
+  {
+    "drug_a": "penicillin",
+    "drug_b": "penicillins",
+    "similarity": 1.0,
+    "shared_reactions": [
+      "hives"
+    ]
+  },
+  {
+    "drug_a": "simvastatin",
+    "drug_b": "statin",
+    "similarity": 1.0,
+    "shared_reactions": [
+      "transaminitis"
+    ]
+  },
+  {
+    "drug_a": "atenolol",
+    "drug_b": "metoprolol",
+    "similarity": 0.964,
+    "shared_reactions": [
+      "bradycardia"
+    ]
+  },
+  {
+    "drug_a": "atenolol",
+    "drug_b": "labetalol",
+    "similarity": 0.925,
+    "shared_reactions": [
+      "bradycardia"
+    ]
+  },
+  {
+    "drug_a": "labetalol",
+    "drug_b": "metoprolol",
+    "similarity": 0.905,
+    "shared_reactions": [
+      "bradycardia"
+    ]
+  },
+  {
+    "drug_a": "atorvastatin",
+    "drug_b": "lipitor",
+    "similarity": 0.904,
+    "shared_reactions": [
+      "transaminitis"
+    ]
+  },
+  {
+    "drug_a": "losartan",
+    "drug_b": "metolazone",
+    "similarity": 0.899,
+    "shared_reactions": [
+      "worsening renal function"
+    ]
+  },
+  {
+    "drug_a": "metoprolol",
+    "drug_b": "metoprolol succinate",
+    "similarity": 0.889,
+    "shared_reactions": [
+      "bradycardia"
+    ]
+  },
+  {
+    "drug_a": "keflex",
+    "drug_b": "penicillins",
+    "similarity": 0.882,
+    "shared_reactions": [
+      "hives"
+    ]
+  },
+  {
+    "drug_a": "keflex",
+    "drug_b": "penicillin",
+    "similarity": 0.882,
+    "shared_reactions": [
+      "hives"
+    ]
+  },
+  {
+    "drug_a": "atenolol",
+    "drug_b": "metoprolol succinate",
+    "similarity": 0.871,
+    "shared_reactions": [
+      "bradycardia"
+    ]
+  },
+  {
+    "drug_a": "carvedilol",
+    "drug_b": "labetalol",
+    "similarity": 0.841,
+    "shared_reactions": [
+      "bradycardia"
+    ]
+  },
+  {
+    "drug_a": "atorvastatin",
+    "drug_b": "methotrexate",
+    "similarity": 0.837,
+    "shared_reactions": [
+      "rising transaminitis",
+      "transaminitis"
+    ]
+  },
+  {
+    "drug_a": "methotrexate",
+    "drug_b": "voriconazole",
+    "similarity": 0.829,
+    "shared_reactions": [
+      "transaminitis"
+    ]
+  },
+  {
+    "drug_a": "labetalol",
+    "drug_b": "metoprolol succinate",
+    "similarity": 0.829,
+    "shared_reactions": [
+      "bradycardia"
+    ]
+  },
+  {
+    "drug_a": "atorvastatin",
+    "drug_b": "seroquel",
+    "similarity": 0.827,
+    "shared_reactions": [
+      "transaminitis"
+    ]
+  },
+  {
+    "drug_a": "amiodarone",
+    "drug_b": "carvedilol",
+    "similarity": 0.821,
+    "shared_reactions": [
+      "bradycardia"
+    ]
+  },
+  {
+    "drug_a": "carvedilol",
+    "drug_b": "metoprolol",
+    "similarity": 0.81,
+    "shared_reactions": [
+      "bradycardia"
+    ]
+  },
+  {
+    "drug_a": "atorvastatin",
+    "drug_b": "voriconazole",
+    "similarity": 0.806,
+    "shared_reactions": [
+      "transaminitis"
+    ]
+  },
+  {
+    "drug_a": "amiodarone",
+    "drug_b": "labetalol",
+    "similarity": 0.804,
+    "shared_reactions": [
+      "bradycardia"
+    ]
+  },
+  {
+    "drug_a": "atenolol",
+    "drug_b": "carvedilol",
+    "similarity": 0.8,
+    "shared_reactions": [
+      "bradycardia"
+    ]
+  },
+  {
+    "drug_a": "penicillins",
+    "drug_b": "sulfasalazine",
+    "similarity": 0.795,
+    "shared_reactions": [
+      "hives"
+    ]
+  },
+  {
+    "drug_a": "penicillin",
+    "drug_b": "sulfasalazine",
+    "similarity": 0.795,
+    "shared_reactions": [
+      "hives"
+    ]
+  },
+  {
+    "drug_a": "metformin",
+    "drug_b": "methotrexate",
+    "similarity": 0.79,
+    "shared_reactions": [
+      "transaminitis"
+    ]
+  },
+  {
+    "drug_a": "methotrexate",
+    "drug_b": "penicillin",
+    "similarity": 0.79,
+    "shared_reactions": [
+      "hypersensitivity reaction"
+    ]
+  },
+  {
+    "drug_a": "cephalosporins",
+    "drug_b": "methotrexate",
+    "similarity": 0.786,
+    "shared_reactions": [
+      "transaminitis"
+    ]
+  },
+  {
+    "drug_a": "amiodarone",
+    "drug_b": "metoprolol",
+    "similarity": 0.784,
+    "shared_reactions": [
+      "bradycardia"
+    ]
+  },
+  {
+    "drug_a": "carvedilol",
+    "drug_b": "metoprolol succinate",
+    "similarity": 0.78,
+    "shared_reactions": [
+      "bradycardia"
+    ]
+  },
+  {
+    "drug_a": "levaquin",
+    "drug_b": "sertraline",
+    "similarity": 0.779,
+    "shared_reactions": [
+      "qt prolongation"
+    ]
+  },
+  {
+    "drug_a": "lipitor",
+    "drug_b": "methotrexate",
+    "similarity": 0.773,
+    "shared_reactions": [
+      "transaminitis"
+    ]
+  },
+  {
+    "drug_a": "amiodarone",
+    "drug_b": "atenolol",
+    "similarity": 0.771,
+    "shared_reactions": [
+      "bradycardia"
+    ]
+  },
+  {
+    "drug_a": "augmentin",
+    "drug_b": "lipitor",
+    "similarity": 0.771,
+    "shared_reactions": [
+      "transaminitis"
+    ]
+  },
+  {
+    "drug_a": "augmentin",
+    "drug_b": "methotrexate",
+    "similarity": 0.77,
+    "shared_reactions": [
+      "transaminitis"
+    ]
+  },
+  {
+    "drug_a": "seroquel",
+    "drug_b": "voriconazole",
+    "similarity": 0.767,
+    "shared_reactions": [
+      "transaminitis"
+    ]
+  },
+  {
+    "drug_a": "compazine",
+    "drug_b": "reglan",
+    "similarity": 0.767,
+    "shared_reactions": [
+      "dystonic reaction",
+      "concern for dystonic reaction"
+    ]
+  },
+  {
+    "drug_a": "ibuprofen",
+    "drug_b": "lisinopril",
+    "similarity": 0.764,
+    "shared_reactions": [
+      "acute renal failure"
+    ]
+  },
+  {
+    "drug_a": "keflex",
+    "drug_b": "levofloxacin",
+    "similarity": 0.762,
+    "shared_reactions": [
+      "hives"
+    ]
+  },
+  {
+    "drug_a": "methotrexate",
+    "drug_b": "seroquel",
+    "similarity": 0.761,
+    "shared_reactions": [
+      "transaminitis"
+    ]
+  },
+  {
+    "drug_a": "atorvastatin",
+    "drug_b": "augmentin",
+    "similarity": 0.759,
+    "shared_reactions": [
+      "transaminitis"
+    ]
+  },
+  {
+    "drug_a": "lisinopril",
+    "drug_b": "toradol",
+    "similarity": 0.756,
+    "shared_reactions": [
+      "elevated creatinine"
+    ]
+  },
+  {
+    "drug_a": "allopurinol",
+    "drug_b": "ibuprofen",
+    "similarity": 0.756,
+    "shared_reactions": [
+      "acute renal failure"
+    ]
+  },
+  {
+    "drug_a": "keflex",
+    "drug_b": "sulfasalazine",
+    "similarity": 0.747,
+    "shared_reactions": [
+      "hives"
+    ]
+  },
+  {
+    "drug_a": "allopurinol",
+    "drug_b": "chlorthalidone",
+    "similarity": 0.747,
+    "shared_reactions": [
+      "acute renal failure"
+    ]
+  },
+  {
+    "drug_a": "allopurinol",
+    "drug_b": "metformin",
+    "similarity": 0.745,
+    "shared_reactions": [
+      "acute renal failure"
+    ]
+  },
+  {
+    "drug_a": "augmentin",
+    "drug_b": "cephalosporins",
+    "similarity": 0.745,
+    "shared_reactions": [
+      "transaminitis"
+    ]
+  },
+  {
+    "drug_a": "levofloxacin",
+    "drug_b": "penicillins",
+    "similarity": 0.744,
+    "shared_reactions": [
+      "hives"
+    ]
+  },
+  {
+    "drug_a": "levofloxacin",
+    "drug_b": "penicillin",
+    "similarity": 0.744,
+    "shared_reactions": [
+      "hives"
+    ]
+  },
+  {
+    "drug_a": "lipitor",
+    "drug_b": "seroquel",
+    "similarity": 0.743,
+    "shared_reactions": [
+      "transaminitis"
+    ]
+  },
+  {
+    "drug_a": "lipitor",
+    "drug_b": "voriconazole",
+    "similarity": 0.741,
+    "shared_reactions": [
+      "transaminitis"
+    ]
+  },
+  {
+    "drug_a": "chlorthalidone",
+    "drug_b": "ibuprofen",
+    "similarity": 0.735,
+    "shared_reactions": [
+      "acute renal failure"
+    ]
+  },
+  {
+    "drug_a": "augmentin",
+    "drug_b": "voriconazole",
+    "similarity": 0.733,
+    "shared_reactions": [
+      "transaminitis"
+    ]
+  },
+  {
+    "drug_a": "metformin",
+    "drug_b": "voriconazole",
+    "similarity": 0.728,
+    "shared_reactions": [
+      "transaminitis"
+    ]
+  },
+  {
+    "drug_a": "amiodarone",
+    "drug_b": "metoprolol succinate",
+    "similarity": 0.725,
+    "shared_reactions": [
+      "bradycardia"
+    ]
+  },
+  {
+    "drug_a": "augmentin",
+    "drug_b": "statin",
+    "similarity": 0.724,
+    "shared_reactions": [
+      "transaminitis"
+    ]
+  },
+  {
+    "drug_a": "augmentin",
+    "drug_b": "simvastatin",
+    "similarity": 0.724,
+    "shared_reactions": [
+      "transaminitis"
+    ]
+  },
+  {
+    "drug_a": "cephalosporins",
+    "drug_b": "metformin",
+    "similarity": 0.723,
+    "shared_reactions": [
+      "transaminitis"
+    ]
+  },
+  {
+    "drug_a": "quetiapine",
+    "drug_b": "venlafaxine",
+    "similarity": 0.721,
+    "shared_reactions": [
+      "prolonged qtc"
+    ]
+  },
+  {
+    "drug_a": "oxycodone",
+    "drug_b": "quetiapine",
+    "similarity": 0.719,
+    "shared_reactions": [
+      "prolonged qtc"
+    ]
+  },
+  {
+    "drug_a": "allopurinol",
+    "drug_b": "lisinopril",
+    "similarity": 0.706,
+    "shared_reactions": [
+      "acute renal failure"
+    ]
+  },
+  {
+    "drug_a": "augmentin",
+    "drug_b": "seroquel",
+    "similarity": 0.706,
+    "shared_reactions": [
+      "transaminitis"
+    ]
+  },
+  {
+    "drug_a": "oxycodone",
+    "drug_b": "venlafaxine",
+    "similarity": 0.702,
+    "shared_reactions": [
+      "prolonged qtc"
+    ]
+  },
+  {
+    "drug_a": "atorvastatin",
+    "drug_b": "statin",
+    "similarity": 0.7,
+    "shared_reactions": [
+      "transaminitis"
+    ]
+  },
+  {
+    "drug_a": "atorvastatin",
+    "drug_b": "simvastatin",
+    "similarity": 0.7,
+    "shared_reactions": [
+      "transaminitis"
+    ]
+  },
+  {
+    "drug_a": "lisinopril",
+    "drug_b": "metformin",
+    "similarity": 0.697,
+    "shared_reactions": [
+      "acute renal failure"
+    ]
+  },
+  {
+    "drug_a": "cephalosporins",
+    "drug_b": "voriconazole",
+    "similarity": 0.695,
+    "shared_reactions": [
+      "transaminitis"
+    ]
+  },
+  {
+    "drug_a": "chlorthalidone",
+    "drug_b": "lisinopril",
+    "similarity": 0.689,
+    "shared_reactions": [
+      "acute renal failure"
+    ]
+  },
+  {
+    "drug_a": "levofloxacin",
+    "drug_b": "sulfasalazine",
+    "similarity": 0.686,
+    "shared_reactions": [
+      "hives"
+    ]
+  },
+  {
+    "drug_a": "atorvastatin",
+    "drug_b": "cephalosporins",
+    "similarity": 0.68,
+    "shared_reactions": [
+      "transaminitis"
+    ]
+  },
+  {
+    "drug_a": "ibuprofen",
+    "drug_b": "metformin",
+    "similarity": 0.676,
+    "shared_reactions": [
+      "acute renal failure"
+    ]
+  },
+  {
+    "drug_a": "cephalosporins",
+    "drug_b": "statin",
+    "similarity": 0.676,
+    "shared_reactions": [
+      "transaminitis"
+    ]
+  },
+  {
+    "drug_a": "cephalosporins",
+    "drug_b": "simvastatin",
+    "similarity": 0.676,
+    "shared_reactions": [
+      "transaminitis"
+    ]
+  },
+  {
+    "drug_a": "lipitor",
+    "drug_b": "statin",
+    "similarity": 0.673,
+    "shared_reactions": [
+      "transaminitis"
+    ]
+  },
+  {
+    "drug_a": "lipitor",
+    "drug_b": "simvastatin",
+    "similarity": 0.673,
+    "shared_reactions": [
+      "transaminitis"
+    ]
+  },
+  {
+    "drug_a": "chlorthalidone",
+    "drug_b": "metformin",
+    "similarity": 0.666,
+    "shared_reactions": [
+      "acute renal failure"
+    ]
+  },
+  {
+    "drug_a": "chlorthalidone",
+    "drug_b": "cytoxan",
+    "similarity": 0.666,
+    "shared_reactions": [
+      "acute renal failure"
+    ]
+  },
+  {
+    "drug_a": "cytoxan",
+    "drug_b": "lisinopril",
+    "similarity": 0.663,
+    "shared_reactions": [
+      "acute renal failure"
+    ]
+  },
+  {
+    "drug_a": "methotrexate",
+    "drug_b": "statin",
+    "similarity": 0.659,
+    "shared_reactions": [
+      "transaminitis"
+    ]
+  },
+  {
+    "drug_a": "methotrexate",
+    "drug_b": "simvastatin",
+    "similarity": 0.659,
+    "shared_reactions": [
+      "transaminitis"
+    ]
+  },
+  {
+    "drug_a": "cytoxan",
+    "drug_b": "ibuprofen",
+    "similarity": 0.656,
+    "shared_reactions": [
+      "acute renal failure"
+    ]
+  },
+  {
+    "drug_a": "cephalosporins",
+    "drug_b": "lipitor",
+    "similarity": 0.638,
+    "shared_reactions": [
+      "transaminitis"
+    ]
+  },
+  {
+    "drug_a": "statin",
+    "drug_b": "voriconazole",
+    "similarity": 0.633,
+    "shared_reactions": [
+      "transaminitis"
+    ]
+  },
+  {
+    "drug_a": "simvastatin",
+    "drug_b": "voriconazole",
+    "similarity": 0.633,
+    "shared_reactions": [
+      "transaminitis"
+    ]
+  },
+  {
+    "drug_a": "atorvastatin",
+    "drug_b": "metformin",
+    "similarity": 0.63,
+    "shared_reactions": [
+      "transaminitis"
+    ]
+  },
+  {
+    "drug_a": "augmentin",
+    "drug_b": "metformin",
+    "similarity": 0.626,
+    "shared_reactions": [
+      "transaminitis"
+    ]
+  },
+  {
+    "drug_a": "metformin",
+    "drug_b": "seroquel",
+    "similarity": 0.626,
+    "shared_reactions": [
+      "transaminitis"
+    ]
+  },
+  {
+    "drug_a": "cytoxan",
+    "drug_b": "metformin",
+    "similarity": 0.62,
+    "shared_reactions": [
+      "acute renal failure"
+    ]
+  },
+  {
+    "drug_a": "allopurinol",
+    "drug_b": "cytoxan",
+    "similarity": 0.61,
+    "shared_reactions": [
+      "acute renal failure"
+    ]
+  },
+  {
+    "drug_a": "cephalosporins",
+    "drug_b": "seroquel",
+    "similarity": 0.601,
+    "shared_reactions": [
+      "transaminitis"
+    ]
+  },
+  {
+    "drug_a": "seroquel",
+    "drug_b": "statin",
+    "similarity": 0.599,
+    "shared_reactions": [
+      "transaminitis"
+    ]
+  },
+  {
+    "drug_a": "seroquel",
+    "drug_b": "simvastatin",
+    "similarity": 0.599,
+    "shared_reactions": [
+      "transaminitis"
+    ]
+  },
+  {
+    "drug_a": "lipitor",
+    "drug_b": "metformin",
+    "similarity": 0.548,
+    "shared_reactions": [
+      "transaminitis",
+      "drug-induced hepatitis"
+    ]
+  },
+  {
+    "drug_a": "metformin",
+    "drug_b": "statin",
+    "similarity": 0.523,
+    "shared_reactions": [
+      "transaminitis"
+    ]
+  },
+  {
+    "drug_a": "metformin",
+    "drug_b": "simvastatin",
+    "similarity": 0.523,
+    "shared_reactions": [
+      "transaminitis"
+    ]
+  }
+]

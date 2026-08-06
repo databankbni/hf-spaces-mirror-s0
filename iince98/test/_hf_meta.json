@@ -1,0 +1,23 @@
+{
+ "captured_at": "2026-08-04T16:23:54Z",
+ "hf_metadata": {
+  "sha": "8427dea739c3be77563220b350093775c6874076"
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "iince98/test",
+ "repo_type": "spaces",
+ "sha": "8427dea739c3be77563220b350093775c6874076",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/iince98/test"
+}

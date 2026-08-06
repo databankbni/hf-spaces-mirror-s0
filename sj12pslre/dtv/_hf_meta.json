@@ -1,0 +1,23 @@
+{
+ "captured_at": "2026-08-04T16:59:42Z",
+ "hf_metadata": {
+  "sha": "24353d5cdc7edf659518f535c6b626fd65bb2b38"
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "sj12pslre/dtv",
+ "repo_type": "spaces",
+ "sha": "24353d5cdc7edf659518f535c6b626fd65bb2b38",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/sj12pslre/dtv"
+}

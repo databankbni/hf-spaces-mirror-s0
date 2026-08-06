@@ -1,0 +1,6 @@
+transformers
+torch
+tokenizers
+accelerate
+sentencepiece
+safetensors

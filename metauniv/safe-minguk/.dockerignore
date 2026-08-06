@@ -1,0 +1,14 @@
+# 런타임에 불필요한 것들 — 이미지 슬림화
+**/__pycache__/
+**/*.pyc
+.pytest_cache/
+tests/
+data/raw/
+data/build_admin.py
+data/build_orgs.py
+.streamlit/
+*.md
+*.html
+# ⚠단, 프런트엔드 정적 파일은 반드시 포함(index()가 static/index.html을 서빙)
+!static/index.html
+!static/**

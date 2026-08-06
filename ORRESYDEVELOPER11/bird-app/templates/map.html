@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% block title %}Interactive Map | Tanzania Bird Finder{% endblock %}
+{% block content %}
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
+<section class="page-hero map-hero">
+  <span class="eyebrow">GIS search</span>
+  <h1>Interactive Tanzania birding map</h1>
+  <p>Filter parks and habitat points by region, habitat, and bird records. Use location search to find nearby conservation areas.</p>
+</section>
+
+<section class="map-shell">
+  <aside class="map-sidebar">
+    <label class="search-box">
+      <i data-lucide="search"></i>
+      <input data-map-search placeholder="Search park, region, bird, habitat">
+    </label>
+    <select data-map-region>
+      <option value="">All regions</option>
+      {% for park in parks %}
+        <option value="{{ park.region }}">{{ park.region }}</option>
+      {% endfor %}
+    </select>
+    <select data-map-habitat>
+      <option value="">All habitats</option>
+      {% for habitat in habitats %}
+        <option value="{{ habitat.name }}">{{ habitat.name }}</option>
+      {% endfor %}
+    </select>
+    <select data-map-bird>
+      <option value="">All bird records</option>
+      {% for bird in birds %}
+        <option value="{{ bird.common_name }}">{{ bird.common_name }}</option>
+      {% endfor %}
+    </select>
+    <button class="button primary full" type="button" data-find-nearby><i data-lucide="navigation"></i>Find nearby</button>
+    <div class="nearby-panel" data-nearby-panel>
+      <strong>Nearby places</strong>
+      <p>Allow location access to calculate the closest parks from your current position.</p>
+    </div>
+    <hr style="margin:8px 0;border:none;border-top:1px solid var(--line);">
+    <div class="heatmap-controls">
+      <label class="toggle-row">
+        <input type="checkbox" data-heatmap-toggle checked>
+        <span>Bird sighting heatmap</span>
+      </label>
+      <select data-heatmap-species>
+        <option value="">All species</option>
+        {% for bird in birds %}
+          <option value="{{ bird.common_name }}">{{ bird.common_name }}</option>
+        {% endfor %}
+      </select>
+      <select data-heatmap-days>
+        <option value="">All time</option>
+        <option value="7">Last 7 days</option>
+        <option value="30">Last 30 days</option>
+        <option value="90">Last 90 days</option>
+      </select>
+      <div class="heatmap-legend">
+        <span>Low</span>
+        <div class="legend-bar"></div>
+        <span>High</span>
+      </div>
+    </div>
+  </aside>
+  <div id="tanzania-map" class="map-canvas" aria-label="Interactive Tanzania parks and habitats map"></div>
+</section>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet.heat@0.2.0/dist/leaflet-heat.js"></script>
+{% endblock %}

@@ -1,0 +1,90 @@
+{
+ "captured_at": "2026-08-06T03:14:14Z",
+ "hf_metadata": {
+  "_id": "6a340ebac0e171793d91ed28",
+  "author": "frontenrido",
+  "cardData": {
+   "colorFrom": "pink",
+   "colorTo": "green",
+   "emoji": "📉",
+   "pinned": false,
+   "sdk": "docker",
+   "title": "Modifiedxhub"
+  },
+  "createdAt": "2026-06-18T15:28:58.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://frontenrido-modifiedxhub.hf.space",
+  "id": "frontenrido/modifiedxhub",
+  "lastModified": "2026-08-05T07:56:47.000Z",
+  "likes": 0,
+  "models": [
+   "Qwen/Qwen2.5-7B-Instruct"
+  ],
+  "private": false,
+  "region": "us",
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "frontenrido-modifiedxhub.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": "cpu-basic",
+    "requested": "cpu-basic"
+   },
+   "pySpacesVersion": "0.51.1",
+   "replicas": {
+    "current": 1,
+    "requested": 1
+   },
+   "sha": "9282b9fc0faa4310f947e52db6728ff4d0a347ad",
+   "stage": "RUNNING"
+  },
+  "sdk": "docker",
+  "sha": "9282b9fc0faa4310f947e52db6728ff4d0a347ad",
+  "siblings": [
+   {
+    "rfilename": ".gitattributes"
+   },
+   {
+    "rfilename": "Dockerfile"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "app.py"
+   },
+   {
+    "rfilename": "requirements.txt"
+   }
+  ],
+  "subdomain": "frontenrido-modifiedxhub",
+  "tags": [
+   "docker",
+   "region:us"
+  ],
+  "usedStorage": 0
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "frontenrido/modifiedxhub",
+ "repo_type": "spaces",
+ "sha": "9282b9fc0faa4310f947e52db6728ff4d0a347ad",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/frontenrido/modifiedxhub"
+}

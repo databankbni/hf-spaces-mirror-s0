@@ -1,0 +1,18 @@
+# STT — OpenAI Whisper (CPU only, latest stable)
+openai-whisper
+
+# TTS — Piper TTS Python package (pip-installable, no binary needed)
+piper-tts==1.2.0
+
+# onnxruntime (CPU) — piper-tts uses onnxruntime for model inference
+# NOTE: using CPU version, NOT onnxruntime-gpu (no GPU on HF free tier)
+onnxruntime==1.17.1
+
+# Audio processing
+numpy==1.26.4
+soundfile==0.12.1
+
+# Web framework
+fastapi==0.115.0
+uvicorn==0.30.6
+python-multipart==0.0.12

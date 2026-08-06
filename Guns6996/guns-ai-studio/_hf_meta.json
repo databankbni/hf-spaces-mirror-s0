@@ -1,0 +1,201 @@
+{
+ "captured_at": "2026-08-05T02:52:24Z",
+ "hf_metadata": {
+  "_id": "6a6fa0927effe10da8eb04a4",
+  "author": "Guns6996",
+  "cardData": {
+   "app_file": "app.py",
+   "colorFrom": "blue",
+   "colorTo": "red",
+   "emoji": "🖼️",
+   "pinned": false,
+   "python_version": "3.10",
+   "sdk": "gradio",
+   "sdk_version": "4.44.1",
+   "title": "Guns AI Studio"
+  },
+  "createdAt": "2026-08-02T19:54:58.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://guns6996-guns-ai-studio.hf.space",
+  "id": "Guns6996/guns-ai-studio",
+  "lastModified": "2026-08-04T19:09:07.000Z",
+  "likes": 0,
+  "models": [
+   "black-forest-labs/FLUX.1-dev",
+   "h94/IP-Adapter-FaceID",
+   "laion/CLIP-ViT-H-14-laion2B-s32B-b79K",
+   "Lightricks/LTX-Video",
+   "runwayml/stable-diffusion-v1-5",
+   "SG161222/RealVisXL_V4.0",
+   "stabilityai/stable-diffusion-xl-base-1.0",
+   "Wan-AI/Wan2.2-TI2V-5B",
+   "zai-org/CogVideoX-5b-I2V"
+  ],
+  "private": false,
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "guns6996-guns-ai-studio.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "errorMessage": "Exit code: 1. Reason: \n[notice] A new release of pip is available: 26.1.2 -> 26.2\n[notice] To update, run: pip install --upgrade pip\nThe cache for model files in Transformers v4.22.0 has been updated. Migrating your old cache. This is a one-time only operation. You can interrupt this and resume the migration later on by calling `transformers.utils.move_cache()`.\n\n\r0it [00:00, ?it/s]\u001b[A\r0it [00:00, ?it/s]\n\u001b[0;93m2026-08-04 21:10:38.202695299 [W:onnxruntime:Default, device_discovery.cc:164 DiscoverDevicesForPlatform] GPU device discovery failed: device_discovery.cc:89 ReadFileContents Failed to open file: \"/sys/class/drm/card0/device/vendor\"\u001b[m\nLoading FLUX model on cuda...\n\n\rLoading pipeline components...:   0%|          | 0/7 [00:00<?, ?it/s]\u001b[AYou set `add_prefix_space`. The tokenizer needs to be converted from the slow tokenizers\n\n\rLoading pipeline components...:  29%|██▊       | 2/7 [00:02<00:07,  1.48s/it]\u001b[A\n\rLoading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]\u001b[A\rLoading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00,  4.44it/s]\n\n\rLoading pipeline components...:  86%|████████▌ | 6/7 [00:04<00:00,  1.55it/s]\u001b[A\rLoading pipeline components...: 100%|██████████| 7/7 [00:04<00:00,  1.46it/s]\nFLUX model loaded successfully.\nTraceback (most recent call last):\n  File \"/home/user/app/app.py\", line 11, in <module>\n    from ui.video_tab import build_video_tab\n  File \"/home/user/app/ui/video_tab.py\", line 2, in <module>\n    from engines.video_engine import generate_video_with_provider, toggle_model_id\n  File \"/home/user/app/engines/video_engine.py\", line 16, in <module>\n    from helpers import (\nImportError: cannot import name 'check_token' from 'helpers' (/home/user/app/helpers.py)\n",
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": null,
+    "requested": "zero-a10g"
+   },
+   "replicas": {
+    "requested": 1
+   },
+   "stage": "RUNTIME_ERROR"
+  },
+  "sdk": "gradio",
+  "sha": "5b2b2d1330b2f60ff43dc951ff7f938cd0ac5c04",
+  "siblings": [
+   {
+    "rfilename": ".github/workflows/docker.yml"
+   },
+   {
+    "rfilename": ".github/workflows/sync-to-hub.yml"
+   },
+   {
+    "rfilename": ".gitignore"
+   },
+   {
+    "rfilename": "Dockerfile/dockerfile"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "app.py"
+   },
+   {
+    "rfilename": "assets /banner.png"
+   },
+   {
+    "rfilename": "config.py"
+   },
+   {
+    "rfilename": "engines/face_engine.py"
+   },
+   {
+    "rfilename": "engines/faceid_engine.py"
+   },
+   {
+    "rfilename": "engines/image_engine.py"
+   },
+   {
+    "rfilename": "engines/img2img_engine.py"
+   },
+   {
+    "rfilename": "engines/init_.py"
+   },
+   {
+    "rfilename": "engines/lora_engine.py"
+   },
+   {
+    "rfilename": "engines/runpod_engine.py"
+   },
+   {
+    "rfilename": "engines/seamless_engine.py"
+   },
+   {
+    "rfilename": "engines/video_engine.py"
+   },
+   {
+    "rfilename": "face_helpers.py"
+   },
+   {
+    "rfilename": "guns_logo.png"
+   },
+   {
+    "rfilename": "handler.py"
+   },
+   {
+    "rfilename": "helpers.py"
+   },
+   {
+    "rfilename": "models/ipadapter"
+   },
+   {
+    "rfilename": "models/loras"
+   },
+   {
+    "rfilename": "outputs.gitkeep"
+   },
+   {
+    "rfilename": "pipelines.py"
+   },
+   {
+    "rfilename": "platform_compat.py"
+   },
+   {
+    "rfilename": "providers.py"
+   },
+   {
+    "rfilename": "requirements-runpod.txt"
+   },
+   {
+    "rfilename": "requirements.txt"
+   },
+   {
+    "rfilename": "test_input.json"
+   },
+   {
+    "rfilename": "ui/face_swap_video.py"
+   },
+   {
+    "rfilename": "ui/face_video_tab.py"
+   },
+   {
+    "rfilename": "ui/identity_lock.py"
+   },
+   {
+    "rfilename": "ui/image_tab.py"
+   },
+   {
+    "rfilename": "ui/img2img_tab.py"
+   },
+   {
+    "rfilename": "ui/init_.py"
+   },
+   {
+    "rfilename": "ui/lora_tab.py"
+   },
+   {
+    "rfilename": "ui/video_tab.py"
+   },
+   {
+    "rfilename": "utils/image_utils.py"
+   },
+   {
+    "rfilename": "utils/init_.py"
+   },
+   {
+    "rfilename": "utils/prompts.py"
+   }
+  ],
+  "subdomain": "guns6996-guns-ai-studio",
+  "tags": [
+   "gradio",
+   "region:us"
+  ],
+  "usedStorage": 0
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitignore",
+   "stored_as": "_gitignore"
+  }
+ ],
+ "renamed_gitattributes": [],
+ "repo_id": "Guns6996/guns-ai-studio",
+ "repo_type": "spaces",
+ "sha": "5b2b2d1330b2f60ff43dc951ff7f938cd0ac5c04",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/Guns6996/guns-ai-studio"
+}

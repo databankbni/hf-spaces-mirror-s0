@@ -1,0 +1,16 @@
+{
+  "created": "2026-07-24T16:29:40.291966",
+  "model": "nomic-ai/nomic-embed-text-v1.5",
+  "dimension": 768,
+  "total_entries": 209,
+  "total_chunks": 39061,
+  "total_pages": 8708,
+  "chunk_size": 800,
+  "chunk_overlap": 150,
+  "types": {
+    "Article": 89,
+    "Review": 39,
+    "Book": 18,
+    "Observer": 63
+  }
+}

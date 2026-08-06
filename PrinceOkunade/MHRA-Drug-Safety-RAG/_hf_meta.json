@@ -1,0 +1,76 @@
+{
+ "captured_at": "2026-08-06T03:07:45Z",
+ "hf_metadata": {
+  "_id": "6a6f45af34c714cf637ddc8e",
+  "author": "PrinceOkunade",
+  "cardData": {
+   "colorFrom": "green",
+   "colorTo": "indigo",
+   "emoji": "💊",
+   "license": "mit",
+   "pinned": false,
+   "sdk": "static",
+   "short_description": "Provenance-first RAG over UK MHRA Drug Safety Updates",
+   "title": "MHRA Drug Safety RAG"
+  },
+  "createdAt": "2026-08-02T13:27:11.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://princeokunade-mhra-drug-safety-rag.static.hf.space",
+  "id": "PrinceOkunade/MHRA-Drug-Safety-RAG",
+  "lastModified": "2026-08-06T10:00:00.000Z",
+  "likes": 0,
+  "private": false,
+  "region": "us",
+  "runtime": {
+   "hardware": {
+    "current": null,
+    "requested": null
+   },
+   "replicas": {
+    "current": 1,
+    "requested": 1
+   },
+   "stage": "RUNNING"
+  },
+  "sdk": "static",
+  "sha": "5aeec2022b9cde6592bc9da0188406b0451d59eb",
+  "siblings": [
+   {
+    "rfilename": ".gitattributes"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "demo_cache.json"
+   },
+   {
+    "rfilename": "index.html"
+   }
+  ],
+  "subdomain": "princeokunade-mhra-drug-safety-rag",
+  "tags": [
+   "static",
+   "region:us"
+  ],
+  "usedStorage": 0
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "PrinceOkunade/MHRA-Drug-Safety-RAG",
+ "repo_type": "spaces",
+ "sha": "5aeec2022b9cde6592bc9da0188406b0451d59eb",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/PrinceOkunade/MHRA-Drug-Safety-RAG"
+}

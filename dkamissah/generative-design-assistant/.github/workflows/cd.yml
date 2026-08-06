@@ -1,0 +1,61 @@
+name: CD — Deploy to HF Spaces
+
+on:
+  push:
+    branches: [main, master]
+  workflow_run:
+    workflows: [CI]
+    types: [completed]
+    branches: [main, master]
+
+jobs:
+  deploy:
+    name: Deploy to Hugging Face Spaces
+    runs-on: ubuntu-latest
+    # Only deploy if CI passed
+    if: ${{ github.event_name == 'push' || github.event.workflow_run.conclusion == 'success' }}
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          lfs: true
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install huggingface_hub
+        run: pip install "huggingface_hub[hf_xet]"
+
+      - name: Deploy to HF Spaces
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: |
+          python - << 'EOF'
+          from huggingface_hub import HfApi
+          import os
+
+          api = HfApi()
+          api.upload_folder(
+              folder_path    = ".",
+              repo_id        = "dkamissah/generative-design-assistant",
+              repo_type      = "space",
+              token          = os.environ["HF_TOKEN"],
+              ignore_patterns = [
+                  "*.pyc", "__pycache__", ".git", ".github",
+                  "mlruns", "outputs/reports", "outputs/designs",
+                  ".env", "*.md"
+              ],
+              commit_message = f"Deploy from GitHub Actions — {os.environ.get('GITHUB_SHA', '')[:7]}"
+          )
+          print("Deployed to HF Spaces successfully")
+          EOF
+
+      - name: Post deployment summary
+        run: |
+          echo "### Deployment Summary" >> $GITHUB_STEP_SUMMARY
+          echo "- **Space:** https://huggingface.co/spaces/dkamissah/generative-design-assistant" >> $GITHUB_STEP_SUMMARY
+          echo "- **Commit:** ${{ github.sha }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Branch:** ${{ github.ref_name }}" >> $GITHUB_STEP_SUMMARY

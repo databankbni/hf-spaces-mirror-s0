@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-spotify-black text-spotify-text antialiased;
+}
+
+@keyframes bounce-dot {
+  0%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-6px);
+  }
+}
+
+.animate-bounce-dot {
+  animation: bounce-dot 1.2s infinite ease-in-out;
+}
+
+.animate-bounce-dot-delay-1 {
+  animation-delay: 0.15s;
+}
+
+.animate-bounce-dot-delay-2 {
+  animation-delay: 0.3s;
+}

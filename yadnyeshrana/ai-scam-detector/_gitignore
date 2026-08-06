@@ -1,0 +1,9 @@
+node_modules
+npm-debug.log
+.env
+.wwebjs_auth
+.wwebjs_cache
+firebase-key.json
+local_db.json
+scratch
+Launch Promotion/

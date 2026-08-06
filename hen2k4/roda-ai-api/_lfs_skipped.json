@@ -1,0 +1,13 @@
+{
+ "lfs_not_stored": [
+  {
+   "oid": "8542745fa3e4f7ee0d03d8320443c6161747ba4658d2bbd770ee93abf7a7701a",
+   "path": "best.pt",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6ODU0Mjc0NWZhM2U0ZjdlZTBkMDNkODMyMDQ0M2M2MTYxNzQ3YmE0NjU4ZDJiYmQ3NzBlZTkzYWJmN2E3NzAxYQpzaXplIDIyNDkyOTcwCg==",
+   "size": 22492970,
+   "url": "https://huggingface.co/spaces/hen2k4/roda-ai-api/resolve/c0c1b83699633d1ad2ad43b0cd958eadb225d540/best.pt"
+  }
+ ],
+ "overflow_not_stored": [],
+ "oversize_not_stored": []
+}

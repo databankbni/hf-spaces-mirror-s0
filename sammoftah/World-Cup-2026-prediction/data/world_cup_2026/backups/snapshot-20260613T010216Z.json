@@ -1,0 +1,25 @@
+{
+  "information_cutoff": "2026-06-12T19:45:00Z",
+  "source_note": "Draw positions, June 2026 ranking inputs, fixtures, and results are a checked-in prospective tournament snapshot. Results must be updated without rewriting prior forecasts.",
+  "sources": [
+    "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026",
+    "https://inside.fifa.com/fifa-world-ranking/men",
+    "https://eloratings.net/World.tsv"
+  ],
+  "results": [
+    {
+      "group": "A",
+      "home": "Mexico",
+      "away": "South Africa",
+      "home_goals": 2,
+      "away_goals": 0
+    },
+    {
+      "group": "A",
+      "home": "South Korea",
+      "away": "Czechia",
+      "home_goals": 2,
+      "away_goals": 1
+    }
+  ]
+}

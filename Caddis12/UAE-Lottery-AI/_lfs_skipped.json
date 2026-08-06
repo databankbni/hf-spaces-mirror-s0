@@ -1,0 +1,26 @@
+{
+ "lfs_not_stored": [
+  {
+   "oid": "f15f3e2b026a6b2206699ae8d9488cc3b8fab9056df6b167b00b0cc74e185787",
+   "path": "assets/logo.png",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6ZjE1ZjNlMmIwMjZhNmIyMjA2Njk5YWU4ZDk0ODhjYzNiOGZhYjkwNTZkZjZiMTY3YjAwYjBjYzc0ZTE4NTc4NwpzaXplIDIyOTYzNTgK",
+   "size": 2296358,
+   "url": "https://huggingface.co/spaces/Caddis12/UAE-Lottery-AI/resolve/f5aa19ce30e62776983de38318c644719a74f75b/assets/logo.png"
+  },
+  {
+   "oid": "5181f44d9d5d3a9f9fb47ba424c896ea8018656546ceaba2c7d9b54338524af7",
+   "path": "assets/lottery_balls.png",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6NTE4MWY0NGQ5ZDVkM2E5ZjlmYjQ3YmE0MjRjODk2ZWE4MDE4NjU2NTQ2Y2VhYmEyYzdkOWI1NDMzODUyNGFmNwpzaXplIDMwNDQ3MDAK",
+   "size": 3044700,
+   "url": "https://huggingface.co/spaces/Caddis12/UAE-Lottery-AI/resolve/f5aa19ce30e62776983de38318c644719a74f75b/assets/lottery_balls.png"
+  },
+  {
+   "oid": "c5518285fa207533fb73133f28773ef2329792ee71a7bc9463a2a02f0002924f",
+   "path": "assets/lottery_machine.png",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6YzU1MTgyODVmYTIwNzUzM2ZiNzMxMzNmMjg3NzNlZjIzMjk3OTJlZTcxYTdiYzk0NjNhMmEwMmYwMDAyOTI0ZgpzaXplIDI2NjAyODAK",
+   "size": 2660280,
+   "url": "https://huggingface.co/spaces/Caddis12/UAE-Lottery-AI/resolve/f5aa19ce30e62776983de38318c644719a74f75b/assets/lottery_machine.png"
+  }
+ ],
+ "oversize_not_stored": []
+}

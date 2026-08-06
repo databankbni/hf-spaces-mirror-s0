@@ -1,0 +1,439 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>{{ t["page_title"] }}</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark shadow-sm">
+      <div class="container">
+        <a class="navbar-brand brand-logo" href="/?lang={{ lang }}">
+          <span class="brand-text">CocciNet</span>
+          <span class="ai-badge">AI</span>
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="/?lang={{ lang }}">
+                {{ t["home"] }}
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/species?lang={{ lang }}">
+                {{ t["supported_species"] }}
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/about?lang={{ lang }}">
+                {{ t["about"] }}
+              </a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+              >
+                🌐 {{ t["language"] }}
+              </a>
+
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li>
+                  <a class="dropdown-item" href="?lang=en"> 🇺🇸 English </a>
+                </li>
+
+                <li>
+                  <a class="dropdown-item" href="?lang=id"> 🇮🇩 Indonesia </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container py-5">
+      <!-- HEADER -->
+
+      <!-- HERO SECTION -->
+
+      <div class="hero-section text-center mb-5">
+        <div class="hero-content">
+          <div class="hero-icon"></div>
+
+          <h1 class="hero-title">{{ t["hero_title"] }}</h1>
+
+          <p class="hero-subtitle">{{ t["hero_subtitle"] }}</p>
+
+          <div class="hero-badge">{{ t["hero_badge"] }}</div>
+        </div>
+      </div>
+
+      <!-- IMAGE GUIDE -->
+
+      <div class="card shadow-sm mb-4">
+        <div class="card-body">
+          <h3 class="text-center mb-4">{{ t["upload_guidelines"] }}</h3>
+
+          <div class="row">
+            <div class="col-md-6 text-center">
+              <h4 class="text-success">{{ t["recommended"] }}</h4>
+
+              <div class="guideline-image-box shadow-sm mb-3">
+                <img
+                  src="{{ url_for('static', filename='examples/good_example.jpg') }}"
+                  alt="{{ t['recommended'] }}"
+                />
+              </div>
+              <div class="d-flex justify-content-center">
+                <ul>
+                  <li>{{ t["guide_1"] }}</li>
+                  <li>{{ t["guide_2"] }}</li>
+                  <li>{{ t["guide_3"] }}</li>
+                  <li>{{ t["guide_4"] }}</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="col-md-6 text-center">
+              <h4 class="text-danger">{{ t["not_recommended"] }}</h4>
+
+              <div class="guideline-image-box shadow-sm mb-3">
+                <img
+                  src="{{ url_for('static', filename='examples/bad_example.jpg') }}"
+                  alt="{{ t['not_recommended'] }}"
+                />
+              </div>
+
+              <div class="d-flex justify-content-center">
+                <ul>
+                  <li>{{ t["bad_1"] }}</li>
+                  <li>{{ t["bad_2"] }}</li>
+                  <li>{{ t["bad_3"] }}</li>
+                  <li>{{ t["bad_4"] }}</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- UPLOAD -->
+
+      <div class="card shadow-sm mb-4 upload-card">
+        <div class="card-body">
+          <form method="POST" enctype="multipart/form-data" id="uploadForm">
+            <div class="mb-3">
+              <label class="form-label"> {{ t["upload_image"] }} </label>
+
+              <input
+                type="file"
+                class="form-control"
+                name="image"
+                id="imageInput"
+                accept="image/*"
+                required
+              />
+            </div>
+
+            <!-- PREVIEW -->
+
+            <div class="text-center mb-3">
+              <div class="preview-container d-none" id="previewContainer">
+                <img id="previewImage" src="" class="preview-image" />
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary" id="predictBtn">
+              {{ t["predict_species"] }}
+            </button>
+          </form>
+        </div>
+      </div>
+
+      {% if prediction %}
+
+      <!-- RESULT -->
+
+      <div class="card shadow-sm mb-4">
+        <div class="card-body">
+          <div class="row align-items-center">
+            <!-- IMAGE -->
+
+            <div class="col-md-4 text-center">
+              <h4 class="mb-3">{{ t["uploaded_image"] }}</h4>
+
+              <div class="result-image-box">
+                <img src="{{ image_path }}" class="result-image" />
+              </div>
+            </div>
+
+            <!-- RESULT -->
+
+            <div class="col-md-8 mt-4 mt-md-0">
+              <h3 class="mb-4">{{ t["prediction_result"] }}</h3>
+
+              <h2 class="fw-bold text-success">{{ prediction }}</h2>
+
+              <p class="fs-5">
+                {{ t["confidence"] }}:
+
+                <strong> {{ confidence }}% </strong>
+              </p>
+
+              <p class="fs-5">
+                {{ t["prediction_time"] }}:
+
+                <strong> {{ prediction_time }} {{ t["seconds"] }} </strong>
+              </p>
+
+              {% if confidence < UNKNOWN_THRESHOLD %}
+
+              <span class="badge bg-dark fs-6">
+                {{ t["unknown_species"] }}
+              </span>
+
+              {% elif confidence >= 90 %}
+
+              <span class="badge bg-success fs-6">
+                {{ t["very_high_confidence"] }}
+              </span>
+
+              {% elif confidence >= 75 %}
+
+              <span class="badge bg-primary fs-6">
+                {{ t["high_confidence"] }}
+              </span>
+
+              {% elif confidence >= LOW_CONFIDENCE_THRESHOLD %}
+
+              <span class="badge bg-warning text-dark fs-6">
+                {{ t["moderate_confidence"] }}
+              </span>
+
+              {% else %}
+
+              <span class="badge bg-danger fs-6">
+                {{ t["low_confidence"] }}
+              </span>
+
+              {% endif %}
+
+              <div class="progress mt-3" style="height: 25px">
+                <div
+                  class="progress-bar {% if confidence < UNKNOWN_THRESHOLD %} bg-dark {% elif confidence >= 90 %} bg-success {% elif confidence >= 75 %} bg-primary {% elif confidence >= LOW_CONFIDENCE_THRESHOLD %} bg-warning text-dark {% else %} bg-danger {% endif %}"
+                  role="progressbar"
+                  style="width: {{ confidence }}%;"
+                >
+                  {{ confidence }}%
+                </div>
+              </div>
+
+              {% if confidence >= UNKNOWN_THRESHOLD and confidence <
+              LOW_CONFIDENCE_THRESHOLD %}
+
+              <div class="alert alert-warning mt-3">
+                <strong> {{ t["low_confidence_prediction"] }} </strong>
+
+                <br />
+
+                {{ t["upload_clearer"] }}
+              </div>
+
+              {% endif %} {% if confidence < UNKNOWN_THRESHOLD %}
+
+              <div class="alert alert-danger mt-3">
+                <strong> {{ t["unknown_detected"] }} </strong>
+
+                <br /><br />
+
+                {{ t["unknown_description"] }}
+              </div>
+
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TOP 3 -->
+      {% if confidence >= UNKNOWN_THRESHOLD %}
+      <div class="card shadow-sm mb-4">
+        <div class="card-body">
+          <h3 class="mb-4">{{ t["top3"] }}</h3>
+
+          <div class="row">
+            {% for item in top3_results %}
+
+            <div class="col-lg-4 col-md-4 col-sm-12 mb-3">
+              <div class="card border-primary h-100 rank-card">
+                <div class="card-body text-center">
+                  <h5>{{ t["rank"] }} {{ loop.index }}</h5>
+
+                  <hr />
+
+                  <p>{{ item.class }}</p>
+
+                  <h3 class="text-success">{{ item.confidence }}%</h3>
+                </div>
+              </div>
+            </div>
+
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+      {% endif %}
+
+      <!-- ALL PROBABILITIES -->
+      {% if confidence >= UNKNOWN_THRESHOLD %}
+      <div class="card shadow-sm mb-4">
+        <div class="card-body">
+          <h3 class="mb-4">{{ t["all_probabilities"] }}</h3>
+
+          <div class="table-responsive">
+            <table class="table table-striped table-hover">
+              <thead class="table-dark">
+                <tr>
+                  <th>{{ t["species"] }}</th>
+
+                  <th>{{ t["probability"] }} (%)</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                {% for item in all_predictions %}
+
+                <tr>
+                  <td>{{ item.class }}</td>
+
+                  <td>{{ item.confidence }}</td>
+                </tr>
+
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      {% endif %}
+
+      <!-- NEW PREDICTION BUTTON -->
+      <div class="text-center mt-4 mb-5">
+        <a
+          href="{{ url_for('new_prediction', lang=lang) }}"
+          class="btn btn-primary btn-lg px-5"
+        >
+          {{ t["new_prediction"] }}
+        </a>
+      </div>
+
+      {% endif %}
+    </div>
+    <div
+      class="modal fade"
+      id="loadingModal"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body text-center p-5">
+            <div class="spinner-border text-primary mb-3" role="status"></div>
+
+            <h4>{{ t["predicting"] }}</h4>
+
+            <p class="text-muted">{{ t["please_wait"] }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      // Preview image
+
+      document
+        .getElementById("imageInput")
+        .addEventListener("change", function (e) {
+          const file = e.target.files[0];
+
+          if (file) {
+            const reader = new FileReader();
+
+            reader.onload = function (event) {
+              const preview = document.getElementById("previewImage");
+
+              preview.src = event.target.result;
+
+              document
+                .getElementById("previewContainer")
+                .classList.remove("d-none");
+            };
+
+            reader.readAsDataURL(file);
+          }
+        });
+
+      // Loading modal
+
+      document
+        .getElementById("uploadForm")
+        .addEventListener("submit", function () {
+          document.getElementById("predictBtn").disabled = true;
+
+          document.getElementById("predictBtn").innerHTML =
+            "{{ t['processing'] }}";
+
+          const loadingModal = new bootstrap.Modal(
+            document.getElementById("loadingModal"),
+          );
+
+          loadingModal.show();
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- FOOTER -->
+
+    <footer class="text-center mt-5 py-4">
+      <hr />
+
+      <h6 class="fw-bold">{{ t["footer_title"] }}</h6>
+
+      <p class="text-muted mb-1">{{ t["footer_subtitle"] }}</p>
+
+      <p class="text-muted">Riolan Pratama • EfficientNetV2</p>
+    </footer>
+  </body>
+</html>

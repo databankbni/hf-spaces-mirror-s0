@@ -1,0 +1,25 @@
+# Dependencies
+node_modules/
+.wwebjs_auth/
+.wwebjs_cache/
+
+# Environment
+.env
+
+# Secrets & tokens
+whatsapp-qr.png
+state.json
+orders.json
+tg_session.json
+
+# Generated files
+*.png
+*.txt
+
+# Data directory (Docker)
+data/
+
+# Project files
+*.md
+start.bat
+start

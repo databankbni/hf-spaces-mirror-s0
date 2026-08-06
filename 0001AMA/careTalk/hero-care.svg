@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" role="img" aria-labelledby="heroTitle heroDesc">
+  <title id="heroTitle">careTalk on the floor</title>
+  <desc id="heroDesc">A care worker using a phone with careTalk beside a calm care-home corridor.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#d7ebff"/>
+      <stop offset="55%" stop-color="#f4f9ff"/>
+      <stop offset="100%" stop-color="#cfe2f8"/>
+    </linearGradient>
+    <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#edf5fd"/>
+      <stop offset="100%" stop-color="#d9eaf9"/>
+    </linearGradient>
+    <linearGradient id="phone" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#e8f2fc"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#7eb8f0"/>
+      <stop offset="100%" stop-color="#3b82d6"/>
+    </linearGradient>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="24" flood-color="#1e508c" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+
+  <rect width="1440" height="900" fill="url(#sky)"/>
+
+  <!-- corridor -->
+  <path d="M0 620 L520 420 L920 420 L1440 620 L1440 900 L0 900 Z" fill="#c5daf0" opacity="0.55"/>
+  <path d="M520 420 L920 420 L900 900 L540 900 Z" fill="url(#wall)"/>
+  <rect x="640" y="470" width="160" height="260" rx="8" fill="#ffffff" opacity="0.55"/>
+  <rect x="668" y="500" width="104" height="70" rx="6" fill="#b7d4f2"/>
+  <rect x="700" y="620" width="40" height="90" rx="4" fill="#9fc0e4"/>
+
+  <!-- soft window light -->
+  <ellipse cx="1180" cy="210" rx="220" ry="120" fill="#ffffff" opacity="0.45"/>
+
+  <!-- phone device -->
+  <g transform="translate(780 210)" filter="url(#soft)">
+    <rect x="0" y="0" width="280" height="520" rx="36" fill="#1a3555"/>
+    <rect x="12" y="12" width="256" height="496" rx="28" fill="url(#phone)"/>
+    <circle cx="140" cy="34" r="5" fill="#9fc0e4"/>
+    <!-- app screen -->
+    <circle cx="140" cy="150" r="42" fill="url(#accent)"/>
+    <text x="140" y="164" text-anchor="middle" font-family="Georgia, serif" font-size="36" font-weight="700" fill="#fff">C</text>
+    <text x="140" y="230" text-anchor="middle" font-family="Georgia, serif" font-size="28" font-weight="700" fill="#1a3555">careTalk</text>
+    <text x="140" y="262" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#5c7d9e">Listening&</text>
+    <rect x="48" y="300" width="184" height="54" rx="16" fill="#e8f3ff" stroke="#9fc0e4"/>
+    <text x="140" y="333" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#1d5fa8">Hi careTalk</text>
+    <rect x="48" y="370" width="184" height="72" rx="16" fill="#3b82d6"/>
+    <text x="140" y="400" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#fff">Im here  whats</text>
+    <text x="140" y="420" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#fff">happening?</text>
+    <circle cx="140" cy="480" r="22" fill="#2563b8"/>
+    <circle cx="140" cy="480" r="10" fill="#fff" opacity="0.9"/>
+  </g>
+
+  <!-- carer silhouette hint -->
+  <g transform="translate(210 340)" opacity="0.92">
+    <ellipse cx="120" cy="430" rx="110" ry="28" fill="#9fc0e4" opacity="0.45"/>
+    <path d="M60 420 C60 300 90 250 120 250 C150 250 180 300 180 420 Z" fill="#2f6fb5"/>
+    <circle cx="120" cy="190" r="52" fill="#f2d6c2"/>
+    <path d="M70 170 C90 130 150 130 170 170 C150 155 90 155 70 170 Z" fill="#1a3555"/>
+    <path d="M95 470 L95 560 L145 560 L145 470 Z" fill="#1d5fa8"/>
+    <!-- hand to phone suggestion -->
+    <path d="M175 390 C220 360 280 340 340 330" fill="none" stroke="#1a3555" stroke-width="10" stroke-linecap="round" opacity="0.25"/>
+  </g>
+</svg>

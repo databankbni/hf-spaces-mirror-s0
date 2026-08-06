@@ -1,0 +1,954 @@
+"use client"
+
+import { useMemo, useState } from "react"
+
+interface ScoreSeries {
+  /** Stable key — used by the metric dropdown to switch series. */
+  key: string
+  /** Short label shown in the dropdown and as the panel sub-title. */
+  label: string
+  /** Optional longer description shown next to the label. */
+  caption?: string
+  values: number[]
+  unit?: string
+  lowerIsBetter?: boolean
+  /**
+   * Per-model rows for the optional frontier-plot view. When provided
+   * (and at least one row carries a parseable releaseDate), the panel
+   * exposes a chip toggle that swaps the density curve for a
+   * release-date frontier (cumulative best score over time).
+   */
+  points?: Array<{
+    score: number
+    releaseDate?: string | null
+    modelName?: string | null
+  }>
+}
+
+interface ScoreDistributionProps {
+  /** Single-series shorthand. Either pass `values` (single) or `series` (multi). */
+  values?: number[]
+  label?: string
+  unit?: string
+  lowerIsBetter?: boolean
+  /** Multi-series — when provided, a dropdown picker swaps between them. */
+  series?: ScoreSeries[]
+  /** Initial selected key when multi-series. Defaults to first. */
+  initialKey?: string
+  /** Compact variant — shorter, used for matrix per-column distributions. */
+  compact?: boolean
+  /** Initial view when the active series supports both modes. Defaults
+   *  to "distribution". The /embed/.../frontier route passes "frontier"
+   *  to open directly on the Pareto-frontier view. */
+  defaultView?: "distribution" | "frontier"
+  /** When false, the Distribution/Frontier chip toggle is hidden so the
+   *  caller can lock the panel to a single view (e.g. inside an embed
+   *  iframe that the user explicitly chose to embed as Distribution
+   *  *or* Frontier). The metric chips above still appear when the panel
+   *  carries more than one series. Defaults to true. */
+  showViewToggle?: boolean
+}
+
+interface SummaryStats {
+  n: number
+  min: number
+  max: number
+  mean: number
+  median: number
+  q1: number
+  q3: number
+}
+
+function parseReleaseDate(value: string | null | undefined): number | null {
+  if (!value) return null
+  const raw = String(value).trim()
+  if (!raw) return null
+  // Numeric epoch — treat seconds-since-epoch values as such, ms otherwise.
+  const numeric = Number(raw)
+  if (!Number.isNaN(numeric) && !raw.includes("-")) {
+    const ms = numeric > 1_000_000_000_000 ? numeric : numeric * 1000
+    return Number.isFinite(ms) ? ms : null
+  }
+  const parsed = new Date(raw).getTime()
+  return Number.isFinite(parsed) ? parsed : null
+}
+
+const MONTH_LABELS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
+function formatMonthYear(ms: number): string {
+  const d = new Date(ms)
+  if (Number.isNaN(d.getTime())) return ""
+  return `${MONTH_LABELS[d.getUTCMonth()]} ${d.getUTCFullYear()}`
+}
+
+function computeStats(values: number[]): SummaryStats | null {
+  const sorted = values.filter((v) => Number.isFinite(v)).slice().sort((a, b) => a - b)
+  const n = sorted.length
+  if (n === 0) return null
+
+  const min = sorted[0]
+  const max = sorted[n - 1]
+  const mean = sorted.reduce((acc, v) => acc + v, 0) / n
+
+  const quantile = (p: number) => {
+    if (n === 1) return sorted[0]
+    const pos = (n - 1) * p
+    const base = Math.floor(pos)
+    const rest = pos - base
+    return sorted[base + 1] != null
+      ? sorted[base] + rest * (sorted[base + 1] - sorted[base])
+      : sorted[base]
+  }
+
+  return {
+    n,
+    min,
+    max,
+    mean,
+    median: quantile(0.5),
+    q1: quantile(0.25),
+    q3: quantile(0.75),
+  }
+}
+
+function formatValue(v: number, unit?: string) {
+  const abs = Math.abs(v)
+  let formatted: string
+  if (abs >= 100) formatted = v.toFixed(1)
+  else if (abs >= 10) formatted = v.toFixed(2)
+  else formatted = v.toFixed(3).replace(/0+$/g, "").replace(/\.$/, "")
+  return unit ? `${formatted} ${unit}` : formatted
+}
+
+/**
+ * Continuous-density distribution plot.
+ *
+ * Builds a smoothed kernel density estimate (KDE) from the raw values rather
+ * than a binned histogram, which reads as a continuous probability-weight
+ * curve in the paper's hairline style. Median and mean are rendered as
+ * vertical rules on top of the curve; IQR is a bracket along the baseline.
+ *
+ * Multi-series mode shows a small dropdown inside the panel header so a
+ * caller (e.g. a multi-metric leaderboard) can stack metrics into one
+ * visualization the user swaps between, instead of rendering N panels.
+ */
+export function ScoreDistribution({
+  values,
+  label,
+  unit,
+  lowerIsBetter,
+  series,
+  initialKey,
+  compact = false,
+  defaultView,
+  showViewToggle = true,
+}: ScoreDistributionProps) {
+  // Normalize: either we got a single series (via values) or many.
+  const seriesList: ScoreSeries[] = useMemo(() => {
+    if (series && series.length > 0) return series
+    if (values && values.length > 0) {
+      return [{ key: "__single", label: label ?? "Score", values, unit, lowerIsBetter }]
+    }
+    return []
+  }, [series, values, label, unit, lowerIsBetter])
+
+  const [activeKey, setActiveKey] = useState<string>(
+    () => initialKey ?? series?.[0]?.key ?? "__single",
+  )
+
+  const active =
+    seriesList.find((s) => s.key === activeKey) ?? seriesList[0]
+
+  const stats = useMemo(() => (active ? computeStats(active.values) : null), [active])
+
+  // Frontier-plot data: parse release dates, sort by time, then walk the
+  // sequence emitting an event whenever a model improves on the best
+  // score seen so far. Honours lowerIsBetter so e.g. "Mean Response
+  // Time · ms" shows the frontier descending instead of climbing.
+  const frontier = useMemo(() => {
+    if (!active?.points || active.points.length === 0) return null
+    const lowerIsBetter = active.lowerIsBetter ?? false
+    const parsed = active.points
+      .map((p) => {
+        const t = parseReleaseDate(p.releaseDate)
+        if (t == null) return null
+        if (!Number.isFinite(p.score)) return null
+        return { time: t, score: p.score, name: p.modelName ?? "" }
+      })
+      .filter((p): p is { time: number; score: number; name: string } => p !== null)
+      .sort((a, b) => a.time - b.time)
+
+    if (parsed.length < 2) return null
+
+    let best = lowerIsBetter ? Number.POSITIVE_INFINITY : Number.NEGATIVE_INFINITY
+    const events: typeof parsed = []
+    for (const p of parsed) {
+      const better = lowerIsBetter ? p.score < best : p.score > best
+      if (better) {
+        best = p.score
+        events.push(p)
+      }
+    }
+    if (events.length < 2) return null
+    return { events, samples: parsed }
+  }, [active])
+
+  const canShowFrontier = frontier != null
+  const [view, setView] = useState<"distribution" | "frontier">(
+    defaultView ?? "distribution",
+  )
+  // If the active series doesn't support frontier (e.g. user switched to
+  // a metric whose models don't carry release_date), fall back to the
+  // distribution view rather than rendering an empty panel.
+  const effectiveView = canShowFrontier ? view : "distribution"
+  // When the caller hides the toggle (embed locks to one view), force the
+  // panel to whatever defaultView/view it was created with — the user
+  // can't switch, so any "frontier" inference must come from props.
+  const renderViewToggle = showViewToggle && canShowFrontier
+
+  const density = useMemo(() => {
+    if (!active || !stats) return null
+    if (stats.max === stats.min) {
+      return { points: [{ x: stats.min, y: 1 }], maxY: 1 }
+    }
+    const sorted = active.values
+      .filter((v) => Number.isFinite(v))
+      .slice()
+      .sort((a, b) => a - b)
+    const n = sorted.length
+    if (n === 0) return null
+
+    // Silverman's rule of thumb for bandwidth.
+    const variance =
+      sorted.reduce((acc, v) => acc + (v - stats.mean) ** 2, 0) / n
+    const stdDev = Math.sqrt(variance)
+    const iqr = stats.q3 - stats.q1
+    const sigma = iqr > 0 ? Math.min(stdDev, iqr / 1.34) : stdDev || (stats.max - stats.min) / 6
+    const bandwidth = Math.max(
+      1.06 * sigma * Math.pow(n, -0.2),
+      (stats.max - stats.min) / 80,
+    )
+
+    const sampleCount = compact ? 80 : 140
+    const range = stats.max - stats.min
+    const xs: number[] = []
+    for (let i = 0; i < sampleCount; i++) {
+      xs.push(stats.min + (range * i) / (sampleCount - 1))
+    }
+
+    const ys = xs.map((x) => {
+      let sum = 0
+      for (const v of sorted) {
+        const u = (x - v) / bandwidth
+        sum += Math.exp(-0.5 * u * u)
+      }
+      return sum / (n * bandwidth * Math.sqrt(2 * Math.PI))
+    })
+
+    const maxY = Math.max(...ys, 1e-9)
+    const points = xs.map((x, i) => ({ x, y: ys[i] }))
+    return { points, maxY }
+  }, [active, stats, compact])
+
+  if (!active || !stats || !density) return null
+
+  const width = 100
+  const plotHeight = compact ? 28 : 56
+  const fullRange = stats.max - stats.min || 1
+  const markerX = (v: number) => ((v - stats.min) / fullRange) * width
+  const markerY = (y: number) => plotHeight - (y / density.maxY) * (plotHeight - 4)
+
+  const path = density.points
+    .map((p, i) => {
+      const x = markerX(p.x)
+      const y = markerY(p.y)
+      return `${i === 0 ? "M" : "L"}${x.toFixed(3)},${y.toFixed(3)}`
+    })
+    .join(" ")
+  const fillPath = `${path} L${width.toFixed(3)},${plotHeight.toFixed(3)} L0,${plotHeight.toFixed(3)} Z`
+
+  const captionItems: Array<{ label: string; value: string; key: string }> = [
+    { key: "n", label: "n", value: stats.n.toString() },
+    { key: "min", label: "min", value: formatValue(stats.min, active.unit) },
+    { key: "q1", label: "q1", value: formatValue(stats.q1, active.unit) },
+    { key: "median", label: "median", value: formatValue(stats.median, active.unit) },
+    { key: "mean", label: "mean", value: formatValue(stats.mean, active.unit) },
+    { key: "q3", label: "q3", value: formatValue(stats.q3, active.unit) },
+    { key: "max", label: "max", value: formatValue(stats.max, active.unit) },
+  ]
+
+  const directionHint = active.lowerIsBetter ? "lower is better ←" : "higher is better →"
+  const showPicker = seriesList.length > 1
+
+  return (
+    <div
+      style={{
+        padding: compact ? "10px 12px" : "16px 20px",
+        border: "1px solid var(--border-soft)",
+        background: "var(--bg)",
+      }}
+    >
+      {!compact && (
+        <div className="mb-3 space-y-2">
+          {/* Row 1 — View toggle (left) + direction hint (right). The
+              kicker label makes it clear that these chips switch the
+              chart type, distinguishing them from the metric chips
+              below. */}
+          <div className="flex items-center justify-between gap-3 flex-wrap">
+            <div className="flex items-center gap-2 min-w-0">
+              <span
+                className="font-mono uppercase shrink-0"
+                style={{ fontSize: 10, letterSpacing: "0.14em", color: "var(--fg-subtle)" }}
+              >
+                {renderViewToggle ? "View" : "Score distribution"}
+              </span>
+              {renderViewToggle && (
+                <div
+                  role="tablist"
+                  aria-label="Chart view"
+                  className="inline-flex items-center gap-1"
+                >
+                  {(["distribution", "frontier"] as const).map((view) => {
+                    const on = effectiveView === view
+                    const label = view === "distribution" ? "Distribution" : "Frontier"
+                    return (
+                      <button
+                        key={view}
+                        type="button"
+                        role="tab"
+                        aria-selected={on}
+                        onClick={() => setView(view)}
+                        title={
+                          view === "frontier"
+                            ? "Frontier score over model release dates (cumulative best)."
+                            : "Kernel-density distribution of model scores."
+                        }
+                        className={`ec-pill${on ? " on" : ""}`}
+                      >
+                        {label}
+                      </button>
+                    )
+                  })}
+                </div>
+              )}
+            </div>
+            <div
+              className="font-mono uppercase shrink-0"
+              style={{ fontSize: 9.5, letterSpacing: "0.12em", color: "var(--fg-subtle)" }}
+            >
+              {directionHint}
+            </div>
+          </div>
+
+          {/* Row 2 — Metric chips. Only shown when there's more than
+              one series; otherwise the active label gets a quiet inline
+              caption next to the view kicker. */}
+          {showPicker ? (
+            <div className="flex items-baseline gap-2 flex-wrap">
+              <span
+                className="font-mono uppercase shrink-0"
+                style={{ fontSize: 10, letterSpacing: "0.14em", color: "var(--fg-subtle)" }}
+              >
+                Metric
+              </span>
+              <div className="flex flex-wrap items-center gap-1.5">
+                {seriesList.map((s) => {
+                  const on = s.key === active.key
+                  return (
+                    <button
+                      key={s.key}
+                      type="button"
+                      className={`ec-pill${on ? " on" : ""}`}
+                      onClick={() => setActiveKey(s.key)}
+                      title={s.caption ? `${s.label} · ${s.caption}` : s.label}
+                    >
+                      {s.label}
+                      {s.caption ? (
+                        <span
+                          className="ml-1.5"
+                          style={{ color: on ? undefined : "var(--fg-subtle)" }}
+                        >
+                          · {s.caption}
+                        </span>
+                      ) : null}
+                    </button>
+                  )
+                })}
+              </div>
+            </div>
+          ) : (
+            <div
+              className="font-mono uppercase truncate"
+              style={{ fontSize: 11, letterSpacing: "0.08em", color: "var(--fg-muted)" }}
+              title={active.label}
+            >
+              {active.label}
+              {active.unit ? <span style={{ color: "var(--fg-subtle)" }}>{" · " + active.unit}</span> : null}
+            </div>
+          )}
+        </div>
+      )}
+
+      {compact && (
+        <div
+          className="font-mono uppercase mb-1.5 truncate"
+          style={{ fontSize: 9.5, letterSpacing: "0.1em", color: "var(--fg-subtle)" }}
+          title={active.label}
+        >
+          {active.label}
+        </div>
+      )}
+
+      {effectiveView === "frontier" && frontier ? (
+        <FrontierPlot
+          events={frontier.events}
+          samples={frontier.samples}
+          unit={active.unit}
+          lowerIsBetter={active.lowerIsBetter ?? false}
+          label={active.label}
+        />
+      ) : (
+      <svg
+        viewBox={`0 0 ${width} ${plotHeight + 8}`}
+        preserveAspectRatio="none"
+        style={{ width: "100%", height: compact ? 38 : 72, display: "block" }}
+        role="img"
+        aria-label={`${active.label} distribution: ${stats.n} models`}
+      >
+        {/* Filled density area */}
+        <path
+          d={fillPath}
+          fill="var(--bg-surface)"
+          stroke="none"
+          opacity={0.85}
+        />
+        {/* Density curve */}
+        <path
+          d={path}
+          fill="none"
+          stroke="var(--fg-muted)"
+          strokeWidth={0.7}
+          vectorEffect="non-scaling-stroke"
+          strokeLinejoin="round"
+          strokeLinecap="round"
+        />
+
+        {/* Baseline */}
+        <line
+          x1={0}
+          x2={width}
+          y1={plotHeight}
+          y2={plotHeight}
+          stroke="var(--border-strong)"
+          strokeWidth={0.4}
+          vectorEffect="non-scaling-stroke"
+        />
+
+        {/* IQR bracket along baseline */}
+        <line
+          x1={markerX(stats.q1)}
+          x2={markerX(stats.q3)}
+          y1={plotHeight + 3}
+          y2={plotHeight + 3}
+          stroke="var(--fg-muted)"
+          strokeWidth={0.7}
+          vectorEffect="non-scaling-stroke"
+        />
+        <line
+          x1={markerX(stats.q1)}
+          x2={markerX(stats.q1)}
+          y1={plotHeight + 1.5}
+          y2={plotHeight + 4.5}
+          stroke="var(--fg-muted)"
+          strokeWidth={0.7}
+          vectorEffect="non-scaling-stroke"
+        />
+        <line
+          x1={markerX(stats.q3)}
+          x2={markerX(stats.q3)}
+          y1={plotHeight + 1.5}
+          y2={plotHeight + 4.5}
+          stroke="var(--fg-muted)"
+          strokeWidth={0.7}
+          vectorEffect="non-scaling-stroke"
+        />
+
+        {/* Median vertical rule (accent) */}
+        <line
+          x1={markerX(stats.median)}
+          x2={markerX(stats.median)}
+          y1={2}
+          y2={plotHeight}
+          stroke="var(--accent)"
+          strokeWidth={0.9}
+          vectorEffect="non-scaling-stroke"
+        />
+
+        {/* Mean tick (dashed) */}
+        <line
+          x1={markerX(stats.mean)}
+          x2={markerX(stats.mean)}
+          y1={2}
+          y2={plotHeight}
+          stroke="var(--fg)"
+          strokeWidth={0.6}
+          strokeDasharray="2 2"
+          vectorEffect="non-scaling-stroke"
+        />
+      </svg>
+      )}
+
+      {/* Caption row — hidden in frontier view since it tracks
+          distribution stats; the frontier panel renders its own caption. */}
+      {effectiveView !== "frontier" && (
+      <div
+        className="mt-2 flex flex-wrap items-baseline font-mono"
+        style={{
+          fontSize: compact ? 9.5 : 10.5,
+          letterSpacing: "0.04em",
+          color: "var(--fg-muted)",
+          gap: compact ? "6px 10px" : "4px 14px",
+        }}
+      >
+        {captionItems.map((item, i) => (
+          <span key={item.key} className="inline-flex items-baseline gap-1">
+            {i > 0 && <span style={{ color: "var(--fg-subtle)" }}>·</span>}
+            <span
+              className="uppercase"
+              style={{
+                color: item.key === "median"
+                  ? "var(--accent)"
+                  : item.key === "mean"
+                  ? "var(--fg)"
+                  : "var(--fg-subtle)",
+                fontSize: compact ? 9 : 9.5,
+                letterSpacing: "0.12em",
+              }}
+            >
+              {item.label}
+            </span>
+            <span
+              className="tabular-nums"
+              style={{
+                color: item.key === "median" ? "var(--accent)" : "var(--fg)",
+                fontWeight: item.key === "median" ? 600 : 500,
+              }}
+            >
+              {item.value}
+            </span>
+          </span>
+        ))}
+      </div>
+      )}
+
+      {!compact && effectiveView !== "frontier" && (
+        <div
+          className="mt-1 flex items-center gap-3 font-mono"
+          style={{ fontSize: 9, letterSpacing: "0.06em", color: "var(--fg-subtle)" }}
+        >
+          <span className="inline-flex items-center gap-1">
+            <span
+              aria-hidden
+              style={{
+                display: "inline-block",
+                width: 10,
+                height: 1,
+                background: "var(--accent)",
+              }}
+            />
+            median
+          </span>
+          <span className="inline-flex items-center gap-1">
+            <span
+              aria-hidden
+              style={{
+                display: "inline-block",
+                width: 10,
+                height: 1,
+                borderTop: "1px dashed var(--fg)",
+              }}
+            />
+            mean
+          </span>
+          <span className="inline-flex items-center gap-1">
+            <span
+              aria-hidden
+              style={{
+                display: "inline-block",
+                width: 10,
+                height: 1,
+                background: "var(--fg-muted)",
+              }}
+            />
+            IQR (q1–q3)
+          </span>
+        </div>
+      )}
+    </div>
+  )
+}
+
+interface FrontierPlotProps {
+  /** Strictly-improving subset of the input — each entry pushes the
+   *  cumulative best score further. Already sorted ascending by time. */
+  events: Array<{ time: number; score: number; name: string }>
+  /** Every dated sample (improving or not), used as background dots. */
+  samples: Array<{ time: number; score: number; name: string }>
+  unit?: string
+  lowerIsBetter: boolean
+  label: string
+}
+
+function FrontierPlot({ events, samples, unit, lowerIsBetter, label }: FrontierPlotProps) {
+  const PLOT_HEIGHT = 180
+  const PAD_T = 8
+  const PAD_B = 22 // room for year labels under the axis
+  const PAD_L_PCT = 1
+  const PAD_R_PCT = 1
+
+  const tMin = Math.min(...samples.map((s) => s.time))
+  const tMaxData = Math.max(...samples.map((s) => s.time))
+  // Always extend the rightmost edge to "now" so the user sees how
+  // long the current frontier holder has been on top.
+  const tMax = Math.max(tMaxData, Date.now())
+  const tRange = tMax - tMin || 1
+  const sValues = samples.map((s) => s.score)
+  const sMin = Math.min(...sValues)
+  const sMax = Math.max(...sValues)
+  const sRange = sMax - sMin || Math.abs(sMax) || 1
+  // Pad y so dots don't kiss the borders.
+  const yLo = sMin - sRange * 0.05
+  const yHi = sMax + sRange * 0.05
+  const yRange = yHi - yLo || 1
+
+  // Percent helpers — used for both HTML overlay positioning and the
+  // SVG path (which uses a 0-100 viewBox so the line scales with the
+  // container without distorting other glyphs).
+  const xPct = (t: number) =>
+    PAD_L_PCT + ((t - tMin) / tRange) * (100 - PAD_L_PCT - PAD_R_PCT)
+  const yPct = (s: number) =>
+    100 - ((s - yLo) / yRange) * 100 // 0 at top, 100 at bottom
+
+  // Pixel helpers for the step-line SVG. Keep its viewBox at 100x100
+  // so it overlays the container 1:1, while strokeWidth uses
+  // vectorEffect=non-scaling-stroke so the line stays crisp.
+  let d = ""
+  for (let i = 0; i < events.length; i++) {
+    const e = events[i]
+    const x = xPct(e.time)
+    const y = yPct(e.score)
+    if (i === 0) {
+      d += `M${x.toFixed(3)},${y.toFixed(3)} `
+    } else {
+      const prev = events[i - 1]
+      const yPrev = yPct(prev.score)
+      d += `L${x.toFixed(3)},${yPrev.toFixed(3)} L${x.toFixed(3)},${y.toFixed(3)} `
+    }
+  }
+  if (events.length > 0) {
+    const last = events[events.length - 1]
+    d += `L${xPct(tMax).toFixed(3)},${yPct(last.score).toFixed(3)}`
+  }
+
+  // Year tick marks along the x-axis. Keep at most 6 to avoid label
+  // collisions on narrow viewports.
+  const startYear = new Date(tMin).getUTCFullYear()
+  const endYear = new Date(tMax).getUTCFullYear()
+  const yearSpan = endYear - startYear
+  const tickStep = yearSpan <= 6 ? 1 : Math.ceil(yearSpan / 6)
+  const yearTicks: number[] = []
+  for (let y = startYear; y <= endYear; y += tickStep) yearTicks.push(y)
+
+  // Pre-bucket samples that *aren't* on the frontier so we don't
+  // double-render them (the frontier dots are emphasised separately).
+  const eventTimes = new Set(events.map((e) => `${e.time}|${e.score}`))
+  const bgSamples = samples.filter((s) => !eventTimes.has(`${s.time}|${s.score}`))
+
+  // Local hover state so we can render a richer label than the native
+  // `title=` tooltip — keeps the dot and the popup nameplate in sync
+  // even when the cursor sits right between two dots.
+  const [hover, setHover] = useState<{
+    x: number
+    y: number
+    name: string
+    when: string
+    score: string
+    onFrontier: boolean
+  } | null>(null)
+
+  return (
+    <div>
+      <div
+        style={{
+          position: "relative",
+          width: "100%",
+          height: PLOT_HEIGHT,
+          paddingTop: PAD_T,
+          paddingBottom: PAD_B,
+          boxSizing: "border-box",
+        }}
+        onMouseLeave={() => setHover(null)}
+      >
+        {/* Inner plot canvas (the area minus axis padding). */}
+        <div
+          style={{
+            position: "absolute",
+            top: PAD_T,
+            bottom: PAD_B,
+            left: 0,
+            right: 0,
+          }}
+        >
+          {/* Step line. The SVG uses a 0-100 viewBox so its path lines
+              up with HTML overlays positioned via the same xPct/yPct
+              helpers; non-scaling-stroke keeps the stroke crisp. */}
+          <svg
+            viewBox="0 0 100 100"
+            preserveAspectRatio="none"
+            style={{
+              position: "absolute",
+              inset: 0,
+              width: "100%",
+              height: "100%",
+              pointerEvents: "none",
+            }}
+            aria-hidden
+          >
+            <path
+              d={d}
+              fill="none"
+              stroke="var(--accent)"
+              strokeWidth={1.5}
+              vectorEffect="non-scaling-stroke"
+              strokeLinejoin="round"
+              strokeLinecap="round"
+            />
+          </svg>
+
+          {/* Background sample dots — every dated model that's NOT on
+              the frontier. Rendered as HTML so they're crisp circles
+              and individually clickable / focusable. */}
+          {bgSamples.map((s, i) => (
+            <button
+              key={`s-${i}`}
+              type="button"
+              aria-label={`${s.name || "Model"} · ${formatMonthYear(s.time)} · ${formatValue(s.score, unit)}`}
+              onMouseEnter={(event) => {
+                const rect = event.currentTarget.parentElement!.getBoundingClientRect()
+                const dot = event.currentTarget.getBoundingClientRect()
+                setHover({
+                  x: dot.left + dot.width / 2 - rect.left,
+                  y: dot.top + dot.height / 2 - rect.top,
+                  name: s.name || "Model",
+                  when: formatMonthYear(s.time),
+                  score: formatValue(s.score, unit),
+                  onFrontier: false,
+                })
+              }}
+              onFocus={(event) => {
+                const rect = event.currentTarget.parentElement!.getBoundingClientRect()
+                const dot = event.currentTarget.getBoundingClientRect()
+                setHover({
+                  x: dot.left + dot.width / 2 - rect.left,
+                  y: dot.top + dot.height / 2 - rect.top,
+                  name: s.name || "Model",
+                  when: formatMonthYear(s.time),
+                  score: formatValue(s.score, unit),
+                  onFrontier: false,
+                })
+              }}
+              style={{
+                position: "absolute",
+                left: `${xPct(s.time)}%`,
+                top: `${yPct(s.score)}%`,
+                transform: "translate(-50%, -50%)",
+                width: 7,
+                height: 7,
+                borderRadius: "50%",
+                background: "var(--fg-subtle)",
+                opacity: 0.4,
+                border: "none",
+                padding: 0,
+                cursor: "pointer",
+              }}
+            />
+          ))}
+
+          {/* Frontier-crossing dots, foregrounded. */}
+          {events.map((e, i) => (
+            <button
+              key={`e-${i}`}
+              type="button"
+              aria-label={`Frontier: ${e.name || "Model"} · ${formatMonthYear(e.time)} · ${formatValue(e.score, unit)}`}
+              onMouseEnter={(event) => {
+                const rect = event.currentTarget.parentElement!.getBoundingClientRect()
+                const dot = event.currentTarget.getBoundingClientRect()
+                setHover({
+                  x: dot.left + dot.width / 2 - rect.left,
+                  y: dot.top + dot.height / 2 - rect.top,
+                  name: e.name || "Model",
+                  when: formatMonthYear(e.time),
+                  score: formatValue(e.score, unit),
+                  onFrontier: true,
+                })
+              }}
+              onFocus={(event) => {
+                const rect = event.currentTarget.parentElement!.getBoundingClientRect()
+                const dot = event.currentTarget.getBoundingClientRect()
+                setHover({
+                  x: dot.left + dot.width / 2 - rect.left,
+                  y: dot.top + dot.height / 2 - rect.top,
+                  name: e.name || "Model",
+                  when: formatMonthYear(e.time),
+                  score: formatValue(e.score, unit),
+                  onFrontier: true,
+                })
+              }}
+              style={{
+                position: "absolute",
+                left: `${xPct(e.time)}%`,
+                top: `${yPct(e.score)}%`,
+                transform: "translate(-50%, -50%)",
+                width: 11,
+                height: 11,
+                borderRadius: "50%",
+                background: "var(--accent)",
+                border: "1.5px solid var(--bg)",
+                padding: 0,
+                cursor: "pointer",
+                boxShadow: "0 0 0 0.5px var(--accent)",
+              }}
+            />
+          ))}
+
+          {/* Hover nameplate */}
+          {hover && (
+            <div
+              role="status"
+              style={{
+                position: "absolute",
+                left: hover.x,
+                top: hover.y - 14,
+                transform: "translate(-50%, -100%)",
+                pointerEvents: "none",
+                background: "var(--fg)",
+                color: "var(--bg)",
+                padding: "5px 9px",
+                fontSize: 11,
+                lineHeight: 1.3,
+                whiteSpace: "nowrap",
+                fontFamily: "var(--font-sans, inherit)",
+                boxShadow: "var(--shadow-card, 0 2px 6px rgba(0,0,0,0.18))",
+                zIndex: 2,
+              }}
+            >
+              <div style={{ fontWeight: 600 }}>{hover.name}</div>
+              <div
+                className="font-mono"
+                style={{
+                  fontSize: 10,
+                  letterSpacing: "0.04em",
+                  opacity: 0.8,
+                  marginTop: 1,
+                }}
+              >
+                {hover.when} · {hover.score}
+                {hover.onFrontier ? " · frontier" : ""}
+              </div>
+            </div>
+          )}
+
+          {/* Baseline */}
+          <div
+            aria-hidden
+            style={{
+              position: "absolute",
+              left: 0,
+              right: 0,
+              bottom: 0,
+              height: 1,
+              background: "var(--border-strong)",
+            }}
+          />
+        </div>
+
+        {/* Year ticks under the baseline */}
+        {yearTicks.map((y) => {
+          const t = Date.UTC(y, 0, 1)
+          if (t < tMin || t > tMax) return null
+          return (
+            <div
+              key={y}
+              aria-hidden
+              style={{
+                position: "absolute",
+                left: `${xPct(t)}%`,
+                bottom: 4,
+                transform: "translateX(-50%)",
+                fontFamily: "var(--font-mono)",
+                fontSize: 10,
+                color: "var(--fg-subtle)",
+                letterSpacing: "0.06em",
+              }}
+            >
+              {y}
+            </div>
+          )
+        })}
+      </div>
+
+      <div
+        className="mt-1 flex flex-wrap items-baseline font-mono"
+        style={{
+          fontSize: 10.5,
+          letterSpacing: "0.04em",
+          color: "var(--fg-muted)",
+          gap: "4px 14px",
+        }}
+      >
+        <span className="inline-flex items-baseline gap-1">
+          <span
+            className="uppercase"
+            style={{ fontSize: 9.5, letterSpacing: "0.12em", color: "var(--fg-subtle)" }}
+          >
+            frontier
+          </span>
+          <span className="tabular-nums" style={{ color: "var(--fg)", fontWeight: 600 }}>
+            {events.length} step{events.length === 1 ? "" : "s"}
+          </span>
+        </span>
+        <span className="inline-flex items-baseline gap-1">
+          <span style={{ color: "var(--fg-subtle)" }}>·</span>
+          <span
+            className="uppercase"
+            style={{ fontSize: 9.5, letterSpacing: "0.12em", color: "var(--fg-subtle)" }}
+          >
+            best
+          </span>
+          <span className="tabular-nums" style={{ color: "var(--fg)" }}>
+            {formatValue(events[events.length - 1]?.score, unit)}
+          </span>
+          <span style={{ color: "var(--fg-subtle)" }}>by</span>
+          <span style={{ color: "var(--fg)" }}>{events[events.length - 1]?.name || "—"}</span>
+        </span>
+        <span className="inline-flex items-baseline gap-1">
+          <span style={{ color: "var(--fg-subtle)" }}>·</span>
+          <span
+            className="uppercase"
+            style={{ fontSize: 9.5, letterSpacing: "0.12em", color: "var(--fg-subtle)" }}
+          >
+            since
+          </span>
+          <span className="tabular-nums" style={{ color: "var(--fg)" }}>
+            {formatMonthYear(events[0].time)}
+          </span>
+        </span>
+        <span className="inline-flex items-baseline gap-1" style={{ color: "var(--fg-subtle)" }}>
+          <span>·</span>
+          <span style={{ fontSize: 9 }}>
+            {lowerIsBetter ? "frontier descends: lower is better" : "frontier ascends: higher is better"}
+          </span>
+        </span>
+      </div>
+    </div>
+  )
+}

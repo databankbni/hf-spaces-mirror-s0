@@ -1,0 +1,2314 @@
+1
+00:00:10,920 --> 00:00:11,710
+Özür dilerim.
+
+2
+00:00:12,090 --> 00:00:13,920
+Seni almak için geri geleceğim.
+
+3
+00:00:15,880 --> 00:00:16,840
+Özür dilerim.
+
+4
+00:00:16,880 --> 00:00:17,720
+Özür dilerim.
+
+5
+00:00:25,020 --> 00:00:30,230
+Hey, hey, hey, Handsome isimli o ünlü grubun elemanı Goemon'un evliliğinin, kadın hamile kaldığı için olduğu ortaya çıkmış.
+
+6
+00:00:31,070 --> 00:00:31,980
+Çürük.
+
+7
+00:00:32,270 --> 00:00:33,940
+Evet, bu dünya çürümüş.
+
+8
+00:00:34,190 --> 00:00:36,070
+Aynı cinsiyettekilerin evlenmesi... hamile kalıp evlenmeler...
+
+9
+00:00:36,530 --> 00:00:38,400
+Dünya iyice kötüye gidiyor.
+
+10
+00:00:38,570 --> 00:00:39,860
+Ben ondan bahsetmiyorum.
+
+11
+00:00:40,030 --> 00:00:42,120
+Burada küf gibi bir şey var.
+
+12
+00:00:42,120 --> 00:00:43,410
+Küf bu, değil mi?
+
+13
+00:00:43,450 --> 00:00:47,160
+Doğru, benim düşüncem küflenecek kadar geri kafalı görünebilir ama...
+
+14
+00:00:47,160 --> 00:00:51,080
+...kendimize olan saygımızı yitirirsek, insanlığımızın sonu gelmiş demektir.
+
+15
+00:00:51,920 --> 00:00:53,250
+Hayır, öyle değil.
+
+16
+00:00:53,500 --> 00:00:54,710
+Bunu ne zaman aldık biz?
+
+17
+00:00:54,710 --> 00:00:56,170
+Son kullanma tarihi mi geçmiş?
+
+18
+00:00:56,260 --> 00:00:56,840
+Doğru.
+
+19
+00:00:56,840 --> 00:01:00,890
+Kadınlar son kullanma tarihlerini kafaya takmayıp kendilerine biraz değer vermeliler.
+
+20
+00:01:01,390 --> 00:01:03,010
+Hey, kesin be.
+
+21
+00:01:03,140 --> 00:01:04,390
+Çürümüş bu.
+
+22
+00:01:04,520 --> 00:01:05,850
+Bunu kim aldı?
+
+23
+00:01:05,980 --> 00:01:07,600
+Gerçekten çürümüş.
+
+24
+00:01:08,080 --> 00:01:11,100
+Emin olun çürümüşler. Beyinleriniz kesinlikle çürük.
+
+25
+00:01:12,520 --> 00:01:15,360
+Adamlar bir durup beni dinlemiyorlar bile...
+
+26
+00:01:16,150 --> 00:01:20,950
+Özellikle Shinpachi'nin alaycı bakışlarını üzerimde hissedebiliyorum.
+
+27
+00:01:21,320 --> 00:01:23,120
+Belki ona alçakgönülülüğü öğretebilirim.
+
+28
+00:01:23,160 --> 00:01:25,870
+Ama Kagura'da işe yaramaz.
+
+29
+00:01:31,480 --> 00:01:33,570
+Kağıtta: "Bu senin çocuğun. Sorumluluğu üstlen ve onu büyüt. Ben bıktım."
+
+30
+00:01:34,180 --> 00:01:36,420
+Yok. Olamaz. Benim olamaz.
+
+31
+00:01:37,210 --> 00:01:39,260
+Şakanın da bir sınırı var canım.
+
+32
+00:01:44,310 --> 00:01:46,310
+Hayır, hayır, hayır, hayır. Değil.
+
+33
+00:01:46,310 --> 00:01:47,560
+O zaman öyleydi.
+
+34
+00:01:47,560 --> 00:01:49,640
+O yüzden, sorun değil. Benim değil.
+
+35
+00:01:52,810 --> 00:01:54,060
+Değildeğildeğildeğildeğildeğildeğildeğil.
+
+36
+00:01:54,110 --> 00:01:55,150
+Değil! Benim değil!
+
+37
+00:01:55,150 --> 00:01:56,270
+O zaman öyleydi!
+
+38
+00:01:56,320 --> 00:02:00,070
+Pek çok yerde bir şeyler oldu ama hiç o kadar ileri gitmedim! Benim olamaz!
+
+39
+00:02:02,450 --> 00:02:03,490
+Dediğim gibi...
+
+40
+00:02:04,280 --> 00:02:06,950
+Sabahın köründe bu kadar ses çıkarmayın!
+
+41
+00:02:08,960 --> 00:02:11,960
+Hard Boiled FS
+
+42
+00:02:08,960 --> 00:02:11,960
+Sunar
+
+43
+00:02:11,960 --> 00:02:16,840
+Gin-iro no sora hatenai
+
+44
+00:02:11,960 --> 00:02:16,840
+Çeviri : Lady
+
+45
+00:02:16,840 --> 00:02:21,810
+Furitsudzuku netsu no youni
+
+46
+00:02:16,840 --> 00:02:21,810
+Encode :
+ Solufain
+
+47
+00:02:21,810 --> 00:02:27,190
+Mijikai kisetsu kaketeku
+
+48
+00:02:21,810 --> 00:02:27,190
+Açılış & Kapanış :
+            maelstromb
+
+49
+00:02:27,190 --> 00:02:32,190
+Bokura wo nurashite
+
+50
+00:02:37,650 --> 00:02:42,330
+Nani mo motazu yuku kara
+
+51
+00:02:42,330 --> 00:02:46,120
+Tayorinai tenohira ni
+
+52
+00:02:46,120 --> 00:02:47,620
+Madotte shimau yo
+
+53
+00:02:47,620 --> 00:02:52,840
+Hikiau chikara to butsuke au omoi
+
+54
+00:02:52,840 --> 00:02:57,590
+Kizutsukete demo dakiyoseta
+
+55
+00:02:57,590 --> 00:03:03,010
+Koware sou na kimi ni furete
+
+56
+00:03:03,010 --> 00:03:08,230
+Mienai mono shinjite yuku
+
+57
+00:03:08,230 --> 00:03:13,190
+Mou nani mo osorenai yo
+
+58
+00:03:13,190 --> 00:03:18,150
+Fukinukeru netsu no youni
+
+59
+00:03:18,150 --> 00:03:23,030
+Mijikaku aoku kaketeku
+
+60
+00:03:23,610 --> 00:03:28,160
+Bokura wo yurashite
+
+61
+00:02:11,960 --> 00:02:16,840
+Gümüş rengi gökyüzü sonsuza dek uzanıyor
+
+62
+00:02:16,840 --> 00:02:21,810
+Tıpkı kesintisiz bir tutku gibi
+
+63
+00:02:21,810 --> 00:02:27,190
+Kısa mevsim geçip gidiyor
+
+64
+00:02:27,190 --> 00:02:32,190
+ve bizi sırılsıklam ediyor
+
+65
+00:02:37,650 --> 00:02:42,330
+Bomboş ellerim...
+
+66
+00:02:42,330 --> 00:02:46,120
+Perişan ellerim...
+
+67
+00:02:46,120 --> 00:02:47,620
+kafamı karıştırıyor...
+
+68
+00:02:47,620 --> 00:02:52,840
+Seni çeken kuvvet ve karşılaştığın düşünceleri...
+
+69
+00:02:52,840 --> 00:02:57,590
+...acı verici olsalar bile kabullen.
+
+70
+00:02:57,590 --> 00:03:03,010
+Kırılmak üzere olan sana tutunacağım ve....
+
+71
+00:03:03,010 --> 00:03:08,230
+...göremediğim şeylere inanacağım.
+
+72
+00:03:08,230 --> 00:03:13,190
+Artık hiçbir şeyden korkmayacağım
+
+73
+00:03:13,190 --> 00:03:18,150
+Tıpkı esen tutku gibi
+
+74
+00:03:18,150 --> 00:03:23,030
+Kısa donukluk geçip gidiyor
+
+75
+00:03:23,610 --> 00:03:28,160
+ve bizi derinden sarsıyor
+
+76
+00:03:29,000 --> 00:03:35,960
+www.hardboiled-fs.blogspot.com
+
+77
+00:03:29,000 --> 00:03:35,960
+Ginraku <3
+
+78
+00:03:35,960 --> 00:03:40,960
+Yorozuya'nın önüne bırakılmış....
+
+79
+00:03:35,960 --> 00:03:40,960
+...kıvırcık saçlı bir bebek.
+
+80
+00:03:40,960 --> 00:03:45,840
+Akla hayale gelmeyen gizli bir çocuğun ortaya çıkmasıyla...
+
+81
+00:03:40,960 --> 00:03:45,840
+...Gin-chan şoklara girdi!
+
+82
+00:03:45,980 --> 00:03:51,780
+Sütü vücut IsIsInda servis edin
+
+83
+00:03:54,840 --> 00:03:55,760
+Çürük.
+
+84
+00:03:56,350 --> 00:03:57,760
+Kesinlikle.
+
+85
+00:03:58,060 --> 00:04:00,350
+Dikkatsiz olduğunun her zaman farkındaydım ama...
+
+86
+00:04:00,390 --> 00:04:06,190
+...bir kadını hamile bırakıp yaşantına devam edecek türden çürük bir herif olduğunu düşünmemiştim.
+
+87
+00:04:06,270 --> 00:04:09,320
+Dinleyin beni, Beden Eğitimi dersim hep 5 olmuştur.
+
+88
+00:04:09,320 --> 00:04:10,570
+Böyle bir hata yapacak adam değilim ben.
+
+89
+00:04:10,690 --> 00:04:12,650
+Hayır, bunun sağlığın ya da Beden Eğitimi'nle alakası yok.
+
+90
+00:04:13,070 --> 00:04:14,360
+Aptalmışsın gibi davranma.
+
+91
+00:04:14,530 --> 00:04:17,420
+Bu saç şekli, büyük, şişman bir kediye benzerliği ve bu kararsız bakışlar...
+
+92
+00:04:17,420 --> 00:04:19,120
+...senin genlerini taşıdığı şüphesiz.
+
+93
+00:04:19,200 --> 00:04:21,040
+Kıvırcık saç geni ileticisi miyim ben?!
+
+94
+00:04:21,120 --> 00:04:23,330
+Saçımı asla çocuğuma geçirmezdim!
+
+95
+00:04:23,750 --> 00:04:27,210
+Genleriyle oynamak zorunda kalsam bile, ipek saçlı bir çocuk yaratırdım!
+
+96
+00:04:27,210 --> 00:04:28,210
+Ah, sus be.
+
+97
+00:04:28,210 --> 00:04:31,750
+Bu kadar ses çıkarma yoksa çocuğu ağlatacaksın.
+
+98
+00:04:31,760 --> 00:04:33,630
+Değil mi? Silver J. Fox?
+
+99
+00:04:33,670 --> 00:04:34,470
+Kes şunu!
+
+100
+00:04:34,470 --> 00:04:35,800
+Ona öyle deme.
+
+101
+00:04:36,430 --> 00:04:40,050
+Eminim kumarbazın teki pachinko oynamak için onu buraya bırakıvermiştir.
+
+102
+00:04:40,060 --> 00:04:41,430
+Sinir bozucu herif.
+
+103
+00:04:41,430 --> 00:04:44,310
+Kıvırcık saçlı adamımız suçu başkasına atmaya çalışıyor.
+
+104
+00:04:44,430 --> 00:04:47,270
+Babacık işinin ehli bir adam, değil mi, Ginraku?
+
+105
+00:04:44,430 --> 00:04:47,270
+Ginraku: Yazılış biçimi "Gintoki"nin "Gin"i, "Kagura"nın "Gura"sıyla.
+
+106
+00:04:47,480 --> 00:04:48,270
+Kes artık?!
+
+107
+00:04:48,270 --> 00:04:50,400
+Abuk isimlerden vazgeç.
+
+108
+00:04:51,980 --> 00:04:52,900
+Ah, çok fena.
+
+109
+00:04:53,360 --> 00:04:54,610
+Ağlamaya başlayacak.
+
+110
+00:04:55,200 --> 00:04:57,570
+Belki de altını kirletmiştir?
+
+111
+00:04:57,660 --> 00:05:00,410
+Sanmam. Büyük ihtimalle süt istiyordur.
+
+112
+00:05:00,740 --> 00:05:01,740
+Biri!
+
+113
+00:05:01,790 --> 00:05:04,410
+Göğüslerinden süt çıkaracak biri var mı acaba?!
+
+114
+00:05:04,500 --> 00:05:07,830
+Bir deneyeyim. Şu an bir şeyler gelebilirmiş gibi hissediyorum.
+
+115
+00:05:07,830 --> 00:05:08,710
+Nerden çıksın?!
+
+116
+00:05:08,710 --> 00:05:10,380
+Anaçlık duyguların uyanmış gibi konuşmayı kes!
+
+117
+00:05:10,380 --> 00:05:14,130
+Benimki de gelebilir. Dünden beri midem ağrıyordu.
+
+118
+00:05:14,210 --> 00:05:16,130
+Bokun bir işe yaramaz!
+
+119
+00:05:18,970 --> 00:05:19,720
+İçiyor!
+
+120
+00:05:19,720 --> 00:05:20,800
+Gayet içiyor!
+
+121
+00:05:21,010 --> 00:05:23,760
+Aa! İyi emiyor ha! Sanki yaşıyormuş gibi!
+
+122
+00:05:23,770 --> 00:05:26,430
+Hey, artık bebeği Kagura'ya taşıtmayın.
+
+123
+00:05:26,730 --> 00:05:28,980
+Hadi ama ben de biraz yapayım.
+
+124
+00:05:28,980 --> 00:05:31,810
+Başka bir bebeğe dokunman için 100 yıl geçmesi gerek.
+
+125
+00:05:32,110 --> 00:05:34,190
+Bu günlerde erkekler bu tür şeylerde daha iyi.
+
+126
+00:05:34,190 --> 00:05:34,980
+Bebeğe ben bakayım-
+
+127
+00:05:35,030 --> 00:05:38,070
+Benim epey deneyimim olduğu için bana bırakın işte.
+
+128
+00:05:38,200 --> 00:05:39,030
+Hey, hey...
+
+129
+00:05:39,910 --> 00:05:41,320
+Bu hiç iyi görünmüyor.
+
+130
+00:05:42,030 --> 00:05:43,870
+Herkesin keyfi yerinde...
+
+131
+00:05:48,210 --> 00:05:50,500
+Bunlarla daha iyi olmaz mı?
+
+132
+00:05:50,540 --> 00:05:52,540
+Püüff, baş belası bebek.
+
+133
+00:05:52,630 --> 00:05:53,340
+Doğru.
+
+134
+00:05:53,550 --> 00:05:55,420
+Bu yüzden veletlerden nefret ederim.
+
+135
+00:05:56,170 --> 00:05:58,090
+Ne? Hiç gülmüyor bu.
+
+136
+00:05:58,700 --> 00:06:01,140
+Nedense... Ona hasta oldular.
+
+137
+00:06:01,430 --> 00:06:05,970
+Hey, hey, Gintoki. Baban gibi haylaz biri olmamalısın.
+
+138
+00:06:06,060 --> 00:06:08,020
+Mantoki, buraya bak. Mantoki.
+
+139
+00:06:08,020 --> 00:06:10,390
+Ginraku. Anneye bak, Ginraku.
+
+140
+00:06:10,440 --> 00:06:11,690
+Sakata, aptal Sakata.
+
+141
+00:06:12,150 --> 00:06:14,650
+İsimlerin hepsi benimle alakalı!
+
+142
+00:06:16,440 --> 00:06:17,860
+Aa? Nereye gidiyorsun?
+
+143
+00:06:19,950 --> 00:06:22,370
+Piç herif! Onu yine terk etmeyi düşünüyor olamaz, değil mi?!
+
+144
+00:06:22,410 --> 00:06:23,240
+Buna izin vermem!
+
+145
+00:06:23,450 --> 00:06:24,120
+Eee...
+
+146
+00:06:24,490 --> 00:06:25,160
+Ha?
+
+147
+00:06:25,260 --> 00:06:26,060
+Afedersiniz...
+
+148
+00:06:26,750 --> 00:06:29,330
+Size bir şey sorabilir miyim?
+
+149
+00:06:30,120 --> 00:06:31,870
+Terk edilmiş mi dedin?
+
+150
+00:06:32,290 --> 00:06:32,880
+Evet.
+
+151
+00:06:33,000 --> 00:06:36,840
+Böyle olduğu için, onu siz polislere bırakacağım. Kolay gelsin.
+
+152
+00:06:36,880 --> 00:06:39,380
+Hey, hey, şaka yapmayı kes, patron.
+
+153
+00:06:39,840 --> 00:06:42,550
+Bu çocuk senin tıpkın?
+
+154
+00:06:42,680 --> 00:06:44,550
+Bu ölü gözler de tıpkı seninkiler gibi.
+
+155
+00:06:44,680 --> 00:06:46,100
+Bilmiyor musun?
+
+156
+00:06:46,100 --> 00:06:48,470
+Şu son zamanlarda, tüm veletler böyle.
+
+157
+00:06:48,640 --> 00:06:52,270
+Hep dışarıya çıkmadan bilgisayar oyunu oynayıp internette takılmaktan. Acınası bir devir.
+
+158
+00:06:52,560 --> 00:06:55,150
+Tohumunu nereye ektin bilemiyorum ama...
+
+159
+00:06:55,150 --> 00:06:57,190
+...işini biliyormuşsun, patron.
+
+160
+00:06:57,570 --> 00:06:59,690
+Okita-kun. Ben buradayım.
+
+161
+00:06:59,740 --> 00:07:01,450
+Bilerek yapıyorsun, değil mi?
+
+162
+00:07:02,160 --> 00:07:03,200
+Eh, patron...
+
+163
+00:07:03,320 --> 00:07:08,040
+Yaptıklarının sorumluluğunu üstlenmelisin.
+
+164
+00:07:08,620 --> 00:07:13,330
+Şimdi, izninle, çok meşgulüm ve bu sorun-
+
+165
+00:07:16,380 --> 00:07:19,800
+Neden tanıdığım kimse beni dinlemiyor...
+
+166
+00:07:20,760 --> 00:07:22,590
+O kadar benziyor muyuz ya?
+
+167
+00:07:23,720 --> 00:07:24,840
+Hey, Gin-san.
+
+168
+00:07:25,300 --> 00:07:27,470
+İşte misin? Kolay gelsin.
+
+169
+00:07:27,600 --> 00:07:27,870
+Ee...
+
+170
+00:07:27,870 --> 00:07:29,020
+Evet...
+
+171
+00:07:29,020 --> 00:07:29,850
+Öyle...
+
+172
+00:07:30,230 --> 00:07:32,440
+Ona bakıcılık etmem söylendi...
+
+173
+00:07:32,440 --> 00:07:34,350
+Bi' bekleyebilir misin, Gin-san?
+
+174
+00:07:32,940 --> 00:07:34,350
+Bye.
+
+175
+00:07:34,600 --> 00:07:36,810
+Bir Azuki Bar ve bir Bargain Dash lütfen.
+
+176
+00:07:36,860 --> 00:07:39,190
+Biz öyle pahalı dondurmalar satmıyoruz.
+
+177
+00:07:36,860 --> 00:07:39,190
+Bırak gitsin. Kafana takma.
+
+178
+00:07:40,110 --> 00:07:41,860
+Bakkalda yok mu?
+
+179
+00:07:41,860 --> 00:07:42,360
+Gidip alırım.
+
+180
+00:07:42,610 --> 00:07:43,820
+Sorun değil cidden!
+
+181
+00:07:43,990 --> 00:07:45,660
+Kim bilir o ne diyecek?!
+
+182
+00:07:45,700 --> 00:07:46,740
+Aa, Gin-san!
+
+183
+00:07:47,120 --> 00:07:49,330
+Sana beklemeni söylüyorum!
+
+184
+00:07:50,540 --> 00:07:51,330
+Dinamit Bombası!
+
+185
+00:07:58,750 --> 00:07:59,170
+Ah...
+
+186
+00:07:59,380 --> 00:08:00,550
+Hey, iyi misin?
+
+187
+00:08:05,440 --> 00:08:06,640
+Anladım...
+
+188
+00:08:06,640 --> 00:08:07,680
+Demek böyle...
+
+189
+00:08:08,050 --> 00:08:10,060
+Demek öyle bir ilişkiniz vardı.
+
+190
+00:08:10,510 --> 00:08:11,930
+Ne kadar aptalım...
+
+191
+00:08:11,930 --> 00:08:13,100
+Hiçbir şeyden haberim yoktu...
+
+192
+00:08:13,230 --> 00:08:13,770
+Yapayalnızım...
+
+193
+00:08:14,560 --> 00:08:15,770
+Pierrot'muşum gibi hissediyorum.
+
+194
+00:08:16,610 --> 00:08:18,980
+Demek sadece gönül eğlendiriyordun...
+
+195
+00:08:18,980 --> 00:08:20,360
+Benim duygularımla oynuyordun...
+
+196
+00:08:20,730 --> 00:08:23,650
+Çocuğunuzun olduğu bir ilişkide olmanıza rağmen.
+
+197
+00:08:26,110 --> 00:08:27,780
+Sarutobi-san, ne diyorsun?
+
+198
+00:08:27,820 --> 00:08:29,030
+Kafanı kırarım.
+
+199
+00:08:29,040 --> 00:08:30,040
+Artık önemli değil...
+
+200
+00:08:30,040 --> 00:08:30,950
+Gerçekten, bırakın...
+
+201
+00:08:31,390 --> 00:08:33,200
+Aptalca görünüyorum...
+
+202
+00:08:33,290 --> 00:08:35,660
+"Görünüyor" değil, gayet aptalsın. Gerçekten aptalsın.
+
+203
+00:08:36,000 --> 00:08:39,040
+Beni ne kadar incitirsen incit, artık zevk almıyorum!
+
+204
+00:08:39,250 --> 00:08:40,750
+SM oyunumuz sona erdi!
+
+205
+00:08:40,840 --> 00:08:42,670
+Ne zaman senle SM oyunu oynadım ben be?!
+
+206
+00:08:42,920 --> 00:08:45,930
+Siz ikinizi gidip öyle takılın, daha fazla çocuk yapın...
+
+207
+00:08:45,930 --> 00:08:47,220
+Koskoca bir aile olun!
+
+208
+00:08:47,590 --> 00:08:49,720
+Ayakta zor duran eski bir evde yaşayın!
+
+209
+00:08:50,010 --> 00:08:51,680
+Güle güle. Size mutluluklar diliyorum!
+
+210
+00:08:52,850 --> 00:08:53,180
+Hayatta...
+
+211
+00:08:53,560 --> 00:08:54,850
+İzin vermem!
+
+212
+00:08:54,980 --> 00:08:56,190
+Bunun nesi var?
+
+213
+00:08:56,310 --> 00:08:58,400
+Kendi kendine tiyatro, hatta film bile yapabilir!
+
+214
+00:08:58,900 --> 00:09:00,310
+Çok yazık, Otae-san.
+
+215
+00:09:00,730 --> 00:09:04,690
+Bir kadın doğum yaptıktan sonra artık kadın olarak değil, aile olarak görülür.
+
+216
+00:09:05,450 --> 00:09:06,700
+Sen artık bir kadın değilsin!
+
+217
+00:09:06,990 --> 00:09:08,990
+Savaştan çekildin! Aynen öyle!
+
+218
+00:09:09,070 --> 00:09:09,950
+O yüzden, iyi günler!
+
+219
+00:09:10,080 --> 00:09:11,280
+Ne savaşı be?
+
+220
+00:09:11,580 --> 00:09:12,790
+Sana doğum falan yapmadım diyorum!
+
+221
+00:09:12,870 --> 00:09:14,660
+Kim o zavallı samurayın çocuğunu taşır?!
+
+222
+00:09:14,790 --> 00:09:16,710
+O zaman o çocuğun babası kim?
+
+223
+00:09:16,960 --> 00:09:18,790
+Tıpkısının aynısı! Gözleri ve saçları aynı!
+
+224
+00:09:20,670 --> 00:09:21,500
+Aynen onun gibi!
+
+225
+00:09:21,920 --> 00:09:25,340
+Ben nerden bileyim? Benim çocuğum değil.
+
+226
+00:09:25,630 --> 00:09:26,420
+Değil mi, Gin-san?
+
+227
+00:09:26,720 --> 00:09:27,840
+Bir şeyler dese-
+
+228
+00:09:30,100 --> 00:09:30,510
+Ha?
+
+229
+00:09:31,470 --> 00:09:33,100
+Aynısınız!
+
+230
+00:09:35,480 --> 00:09:37,180
+Sakladığın bir çocuğunun olması...
+
+231
+00:09:37,230 --> 00:09:38,140
+Aşağılık adam.
+
+232
+00:09:38,480 --> 00:09:39,600
+Seni yanlış tanımışım.
+
+233
+00:09:39,650 --> 00:09:41,480
+Shin-chan'a işini bıraktıracağım.
+
+234
+00:09:41,650 --> 00:09:42,820
+Gidelim, Sarutobi-san.
+
+235
+00:09:44,030 --> 00:09:44,820
+Ne bu?
+
+236
+00:09:45,320 --> 00:09:48,610
+Neden tanıdığım kimse beni dinlemiyor?
+
+237
+00:09:48,860 --> 00:09:49,820
+Çünkü...
+
+238
+00:09:50,030 --> 00:09:52,530
+...sen de onları dinlemiyorsun.
+
+239
+00:09:52,700 --> 00:09:53,200
+Aa...
+
+240
+00:09:53,200 --> 00:09:54,080
+Anladım.
+
+241
+00:09:54,620 --> 00:09:58,080
+Kusura bakmayın ama bu kızı tanımıyorum. Hiç görmedim.
+
+242
+00:09:58,500 --> 00:09:59,500
+Anladım.
+
+243
+00:10:00,130 --> 00:10:03,880
+Kendimi tanıtmadan böldüğüm için özürlerimi kabul edin lütfen.
+
+244
+00:10:04,380 --> 00:10:08,800
+Kendimi geç tanıttığım için özür dilerim. Ben Hashida Kahei.
+
+245
+00:10:08,880 --> 00:10:11,930
+Kabuki Bölgesi'nde bir dükkan işletiyorum.
+
+246
+00:10:12,180 --> 00:10:12,430
+Ha?
+
+247
+00:10:12,720 --> 00:10:14,050
+Ha? Orası mı?
+
+248
+00:10:14,260 --> 00:10:14,930
+O nedir?
+
+249
+00:10:15,460 --> 00:10:16,060
+Bak.
+
+250
+00:10:16,060 --> 00:10:17,470
+Yorozuya'dan onu görebilirsin.
+
+251
+00:10:17,520 --> 00:10:19,060
+O büyük bina.
+
+252
+00:10:20,190 --> 00:10:21,150
+Ve?
+
+253
+00:10:21,150 --> 00:10:22,940
+Ne oldu?
+
+254
+00:10:23,110 --> 00:10:24,060
+Şey...
+
+255
+00:10:24,320 --> 00:10:29,700
+Geçen gün tek torunum, birtanem birden bire kayıplara karıştı.
+
+256
+00:10:29,990 --> 00:10:31,610
+Bir kaçırma olayı?
+
+257
+00:10:31,740 --> 00:10:32,160
+Ha?
+
+258
+00:10:32,490 --> 00:10:37,290
+Henüz yürümeye başlayamadığı için bir fikre varamıyorum. Büyük ihtimalle...
+
+259
+00:10:37,500 --> 00:10:38,040
+Bu nedenle...
+
+260
+00:10:38,660 --> 00:10:42,210
+Şüpheli olarak sadece aklıma o geliyor.
+
+261
+00:10:42,750 --> 00:10:44,380
+Böyle hoş bir insan...
+
+262
+00:10:44,590 --> 00:10:45,590
+Shogunate İdaresi'ne sordunuz mu?
+
+263
+00:10:45,880 --> 00:10:49,260
+Şey, bu biraz özel bir mesele olduğundan...
+
+264
+00:10:49,340 --> 00:10:50,800
+...duyulmasını istemiyorum
+
+265
+00:10:51,380 --> 00:10:54,850
+Olay bu duruma gelmiş. Gizlilikle kafanızı yoramazsınız.
+
+266
+00:10:54,850 --> 00:10:55,680
+Şey...
+
+267
+00:10:55,680 --> 00:10:57,680
+Kesinlikle haklısınız ama öyle olsa bile...
+
+268
+00:10:58,020 --> 00:11:01,890
+Şuna ne dersiniz? O kızı görürseniz, hemen benimle irtibata geçin.
+
+269
+00:11:02,020 --> 00:11:03,560
+Size güveniyorum.
+
+270
+00:11:03,690 --> 00:11:05,860
+Bu da torunumun bir fotoğrafı...
+
+271
+00:11:05,940 --> 00:11:06,610
+Afedersiniz.
+
+272
+00:11:06,610 --> 00:11:07,070
+Hı?
+
+273
+00:11:07,110 --> 00:11:07,900
+Kimse yok mu?
+
+274
+00:11:07,980 --> 00:11:10,820
+Aa, buradayız. Ne istiyorsun?
+
+275
+00:11:15,480 --> 00:11:15,780
+Ah.
+
+276
+00:11:15,780 --> 00:11:18,490
+Kendime olan güvenimi kaybetmeye başladım.
+
+277
+00:11:19,120 --> 00:11:21,210
+Benim oğlum değilsin, değil mi?
+
+278
+00:11:22,330 --> 00:11:24,080
+Gerçek ebeveynlerin nerede?
+
+279
+00:11:24,420 --> 00:11:25,710
+Beni senden kurtarsalar ya.
+
+280
+00:11:26,800 --> 00:11:29,550
+"Baba, baba" diye seslenmeye çalış.
+
+281
+00:11:31,840 --> 00:11:33,470
+Her oradaki, dur bakalım.
+
+282
+00:11:34,140 --> 00:11:34,800
+Ha?
+
+283
+00:11:40,930 --> 00:11:44,900
+Hey hey, bu "baba" sayısı beklenmedik bişi oldu ama.
+
+284
+00:11:50,880 --> 00:11:51,770
+Durun!
+
+285
+00:11:51,770 --> 00:11:52,770
+Durun! Bırakın beni!
+
+286
+00:11:52,770 --> 00:11:54,060
+Huysuz kadın.
+
+287
+00:11:54,440 --> 00:11:55,520
+Sonunda seni buldum.
+
+288
+00:11:56,020 --> 00:11:58,480
+Kanshichirou nereden? Öt!
+
+289
+00:11:59,650 --> 00:12:00,940
+Seni...
+
+290
+00:12:01,820 --> 00:12:03,280
+Yerini bil!
+
+291
+00:12:03,700 --> 00:12:06,370
+Hop, hop, biraz ileri gitmiyor musun?
+
+292
+00:12:06,580 --> 00:12:08,830
+Bu şekilde konuşacak hali kalmayacak.
+
+293
+00:12:09,080 --> 00:12:11,540
+Özür dilerim, biraz kızgınım.
+
+294
+00:12:12,000 --> 00:12:16,080
+Ama şu andan itibaren, bu ailevi bir mesele. Kendimiz hallederiz.
+
+295
+00:12:17,130 --> 00:12:20,050
+Kaba gelişimin kusuruna bakmayın.
+
+296
+00:12:23,090 --> 00:12:24,220
+Otose-san...
+
+297
+00:12:24,340 --> 00:12:25,260
+Ah!
+
+298
+00:12:26,470 --> 00:12:27,390
+Ne oldu?
+
+299
+00:12:27,510 --> 00:12:29,770
+Bu... Bu şey, o adamın aradığı şey.
+
+300
+00:12:30,310 --> 00:12:31,560
+Torununun fotoğrafı.
+
+301
+00:12:31,810 --> 00:12:32,310
+Ha?
+
+302
+00:12:32,480 --> 00:12:36,270
+Not: Naruto'daki Konohamaru karakterinin "-kore"sine gönderme.
+
+303
+00:12:32,480 --> 00:12:34,310
+Hey, bu kötü.
+
+304
+00:12:34,440 --> 00:12:36,270
+Gin-san'ın başı belaya girecek?
+
+305
+00:12:36,610 --> 00:12:39,400
+Şu an girmiş bile olabilir.
+
+306
+00:12:40,150 --> 00:12:40,730
+Ha?
+
+307
+00:12:41,110 --> 00:12:41,740
+Kaçırma mı?
+
+308
+00:12:41,810 --> 00:12:42,610
+Ne?
+
+309
+00:12:42,610 --> 00:12:43,200
+Kim?
+
+310
+00:12:43,200 --> 00:12:43,650
+Nerede?
+
+311
+00:12:43,700 --> 00:12:44,740
+Aptal numarası yapmanın yararı yok.
+
+312
+00:12:45,160 --> 00:12:47,780
+O kadının tanıdığı gibi bir şeysin, değil mi?
+
+313
+00:12:47,990 --> 00:12:50,540
+Siz ikiniz, Kahei-sama'nın torununu kaçırmak için iş birliği yaptınız.
+
+314
+00:12:50,910 --> 00:12:52,910
+Ve Hashidaya'nın varlığını almayı planlıyorsunuz, değil mi?
+
+315
+00:12:52,910 --> 00:12:54,710
+Hey, bu herifler ne diyorlar böyle?
+
+316
+00:12:55,830 --> 00:12:57,000
+Sen, sen ne diyorsun, sen?
+
+317
+00:12:57,290 --> 00:12:59,210
+Bebeği canlı götürmem emredildi ama...
+
+318
+00:12:59,250 --> 00:13:00,710
+...adama ne yapacağım söylenmedi.
+
+319
+00:13:00,760 --> 00:13:01,960
+Öldürün onu!
+
+320
+00:13:04,970 --> 00:13:07,640
+Hey, hey, hey, benim bununla bir alakam yok.
+
+321
+00:13:07,720 --> 00:13:11,810
+Sarhoş gibi davranıp "Sizin esirinizim" falan diyebilirdim ama benim bu olanlarla bir alakam yok!
+
+322
+00:13:12,270 --> 00:13:13,810
+O zaman o bebeği bize ver.
+
+323
+00:13:13,980 --> 00:13:15,730
+Durun, durun, bu kadar acele etmeyin.
+
+324
+00:13:15,940 --> 00:13:18,110
+O kadar istiyorsanız, vermekten çe-
+
+325
+00:13:18,480 --> 00:13:18,940
+Ha?
+
+326
+00:13:26,450 --> 00:13:29,120
+Onu vermezsen, zorla almak zorunda kalacağız.
+
+327
+00:13:30,080 --> 00:13:30,660
+Gardını al!
+
+328
+00:13:33,000 --> 00:13:33,750
+Seni...
+
+329
+00:13:34,210 --> 00:13:35,910
+Hiçbir şey bilmiyorum!!!
+
+330
+00:13:36,580 --> 00:13:37,380
+O veleti...
+
+331
+00:13:37,380 --> 00:13:38,460
+...size geri vereyim!
+
+332
+00:13:39,210 --> 00:13:40,500
+Piç, naptın şimdi?!
+
+333
+00:13:40,550 --> 00:13:41,460
+Yakalayın!
+
+334
+00:13:53,310 --> 00:13:56,390
+İlginç bir dövüş anlayışın var...
+
+335
+00:13:56,440 --> 00:13:58,650
+Sanırım korumak için dövüşmeye alışıksın.
+
+336
+00:13:59,060 --> 00:14:02,190
+Sizin gibi odunların çocuk yetiştirmesi imkansız.
+
+337
+00:14:02,530 --> 00:14:03,940
+Ayrıca, süt içme zamanı geldi.
+
+338
+00:14:06,190 --> 00:14:06,490
+İyi...
+
+339
+00:14:06,490 --> 00:14:07,450
+Çok iyi...
+
+340
+00:14:08,740 --> 00:14:10,160
+İblisin kokusu...
+
+341
+00:14:10,320 --> 00:14:14,580
+Saklamanın yararı yok. Aynı o adam gibi, iblisin kokusuna sahipsin.
+
+342
+00:14:15,080 --> 00:14:17,830
+O buradayken seninle dövüşmeyi istemem.
+
+343
+00:14:17,870 --> 00:14:18,460
+Git.
+
+344
+00:14:25,170 --> 00:14:25,920
+Okada!
+
+345
+00:14:26,170 --> 00:14:27,510
+Napıyorsun, piç herif?!
+
+346
+00:14:27,510 --> 00:14:28,970
+Onu takip edin! Kaçmasına izin vermeyin!
+
+347
+00:14:34,970 --> 00:14:37,100
+Ah, çok pis!
+
+348
+00:14:37,100 --> 00:14:41,190
+Erkekler neden pisuvarları hep pis bırakırlar merak içerisindeyim... Ayrıca, her zaman sol el tarafında.
+
+349
+00:14:41,360 --> 00:14:44,070
+Ama tüm erkeklerinki sol tarafa doğrudur.
+
+350
+00:14:44,070 --> 00:14:46,530
+Sağ tarafa olanlarınki nadirdir.
+
+351
+00:14:46,650 --> 00:14:48,530
+Ama görünüşe göre, bu güçlü bir adamın işareti.
+
+352
+00:14:48,530 --> 00:14:50,620
+Toyotomi Hideyoshi'ninki sağa doğruydu.
+
+353
+00:14:50,620 --> 00:14:53,580
+Ah, benim kocamınki de sağa doğruydu! O da güçlüdür.
+
+354
+00:14:54,040 --> 00:14:56,410
+Son zamanlarda, klozetler de kötü oldu.
+
+355
+00:14:56,540 --> 00:14:58,790
+"Götünün deliği ne tarafa bakıyor?" gibi bir şey.
+
+356
+00:14:58,920 --> 00:15:00,210
+Öyle, öyle.
+
+357
+00:15:00,330 --> 00:15:03,670
+Büyük ihtimal, patronumuzun kiraladığı o ronin'lerin işi bunlar.
+
+358
+00:15:03,800 --> 00:15:04,670
+Cidden...
+
+359
+00:15:04,670 --> 00:15:08,840
+...tüvalet kullanmayı bilmiyorlar mı? Jouishishi midirler, nedirler...
+
+360
+00:15:09,220 --> 00:15:12,050
+Kim bilir patron gölgelerin içinde ne haltlar karıştırıyor?
+
+361
+00:15:12,510 --> 00:15:16,720
+Torunu Kanshichirou kaçırılmış falan gibi söylentiler duydum.
+
+362
+00:15:16,720 --> 00:15:18,890
+Belki de burnunu tehlikeli bir yerlere sokmuştur?
+
+363
+00:15:18,980 --> 00:15:20,350
+Hayır, öyle değil.
+
+364
+00:15:20,350 --> 00:15:22,560
+O büyük ihtimalle Ofusa'nın işiydi.
+
+365
+00:15:22,560 --> 00:15:23,690
+Ha? Öyle mi?
+
+366
+00:15:23,860 --> 00:15:25,570
+Öyle bir şey yapacağını düşünmek...
+
+367
+00:15:25,650 --> 00:15:28,780
+Ama kıza kötü davranıyorlar, yapacak bir şey yok.
+
+368
+00:15:28,860 --> 00:15:30,150
+Yani, o kız-
+
+369
+00:15:30,570 --> 00:15:31,110
+Ha?
+
+370
+00:15:34,080 --> 00:15:35,530
+Mütecaviz!
+
+371
+00:15:38,370 --> 00:15:40,630
+Ha? N-Ne yapıyorsunuz be karılar?!
+
+372
+00:15:40,630 --> 00:15:41,330
+Bakmayın!
+
+373
+00:15:41,330 --> 00:15:42,330
+Bakmayın bana!
+
+374
+00:15:42,330 --> 00:15:44,540
+Aaay! Mütecaviz falan değil, leş bir şeymiş.
+
+375
+00:15:44,540 --> 00:15:46,710
+Aay! Bu işe yeni alınan Hasegawa-san.
+
+376
+00:15:46,840 --> 00:15:49,460
+"Aay" deyip durmayın be! Sevimli falan olmuyorsunuz, kocakarılar!
+
+377
+00:15:49,590 --> 00:15:51,510
+Aay! Sol tarafa doğruymuş!
+
+378
+00:15:51,880 --> 00:15:54,220
+Ayrıca kavisi benim kocamınkinden bile beter!
+
+379
+00:15:54,220 --> 00:15:55,640
+Hey! Kapatın, kapatın!
+
+380
+00:15:55,850 --> 00:15:57,060
+Lütfen kapatın!
+
+381
+00:16:00,390 --> 00:16:00,980
+Kahretsin...
+
+382
+00:16:01,230 --> 00:16:03,350
+Bu işe hiç girmemeliydim.
+
+383
+00:16:03,770 --> 00:16:05,690
+Etrafta güzel hizmetçi falan da yok.
+
+384
+00:16:05,820 --> 00:16:07,110
+Anca kocakarılar!
+
+385
+00:16:07,860 --> 00:16:09,280
+Hey, yürüsene!
+
+386
+00:16:12,110 --> 00:16:13,110
+Bu...
+
+387
+00:16:13,110 --> 00:16:14,660
+Kocakarıların bahsettiği olay.
+
+388
+00:16:21,910 --> 00:16:26,000
+Hı? Hey, hey, burada uzun süre kalmamam gerek.
+
+389
+00:16:26,090 --> 00:16:28,130
+Ama işten çıkarsam ne yaparım?
+
+390
+00:16:28,130 --> 00:16:30,090
+Tüm gün kıçımın üzerinde oturacak mıyım?
+
+391
+00:16:30,540 --> 00:16:31,340
+Ah, evet.
+
+392
+00:16:31,340 --> 00:16:32,510
+Ben hep böyleyim.
+
+393
+00:16:32,590 --> 00:16:35,050
+İşte çirkin bir şey keşfedip hemen ayrılıyorum.
+
+394
+00:16:35,340 --> 00:16:36,600
+Görülüyor ki korkağın teki olmuşum.
+
+395
+00:16:36,760 --> 00:16:37,760
+Doğru.
+
+396
+00:16:37,850 --> 00:16:39,930
+Ben işe yaramaz bir adam, kısaca; Madao'yum.
+
+397
+00:16:39,930 --> 00:16:41,100
+Doğru. Öleceğim.
+
+398
+00:16:41,230 --> 00:16:42,640
+Hayır, hayır, hayır, bu doğru değil.
+
+399
+00:16:42,890 --> 00:16:44,730
+Neden ölecekmişim?! Garip garip konuşuyorum
+
+400
+00:16:45,150 --> 00:16:47,440
+"Doğru, Kyoto'ya gideceğim" gibi bir şey değildi.
+
+401
+00:16:47,480 --> 00:16:49,270
+Hayır, hayır, hayır, geber.
+
+402
+00:16:49,360 --> 00:16:51,990
+Yaşamaya devam edersem de bir şey olmayacak -aru.
+
+403
+00:16:52,070 --> 00:16:53,320
+Ha? Bu ne "aru"?
+
+404
+00:16:54,490 --> 00:16:56,240
+Siz veletlerin burada işi ne?!
+
+405
+00:16:56,530 --> 00:16:59,870
+Dur, siz miydiniz?! Kafama garip seslendirmeler yapan sizler miydiniz?!
+
+406
+00:17:00,040 --> 00:17:01,540
+Burada ne işiniz var?
+
+407
+00:17:01,790 --> 00:17:03,000
+Ben bir hizmetçiyim.
+
+408
+00:17:03,250 --> 00:17:06,250
+Aynı şey sizin için de geçerli Hasegawa-san. Burada işiniz ne?
+
+409
+00:17:06,460 --> 00:17:07,830
+Yine mi iş değiştiriyorsunuz?
+
+410
+00:17:08,040 --> 00:17:10,420
+Ne demek "yine mi"? Ayrıca o bakış ne öyle?
+
+411
+00:17:10,630 --> 00:17:12,090
+Eh, süper olacak.
+
+412
+00:17:12,420 --> 00:17:15,260
+Hasegawa-san, bize biraz etrafı gezdirebilir misiniz?
+
+413
+00:17:15,800 --> 00:17:17,010
+Etrafı mı gezdireyim?
+
+414
+00:17:18,010 --> 00:17:19,800
+Piç herif, nereye gitti?
+
+415
+00:17:20,010 --> 00:17:22,470
+Fazla uzaklaşmış olamaz! Arayın!
+
+416
+00:17:25,670 --> 00:17:26,270
+Hey.
+
+417
+00:17:26,270 --> 00:17:27,020
+Gittiler.
+
+418
+00:17:29,480 --> 00:17:30,900
+Sana gittiler diyorum!
+
+419
+00:17:33,030 --> 00:17:35,280
+Gittiler diyorum!
+
+420
+00:17:35,610 --> 00:17:37,740
+Ne diyorsun be?! Oraya mı saklandım?!
+
+421
+00:17:38,030 --> 00:17:40,370
+Ha, ne? En son oraya mı saklanmıştın?
+
+422
+00:17:40,700 --> 00:17:41,950
+"En son"muş.
+
+423
+00:17:42,080 --> 00:17:44,580
+O şeyin içine girecek halim yoktu herhalde!
+
+424
+00:17:44,790 --> 00:17:46,120
+Aptal mısın? Aptal olmalısın.
+
+425
+00:17:46,120 --> 00:17:47,580
+"Aptal" değil, Katsura.
+
+426
+00:17:48,880 --> 00:17:51,540
+Gintoki, onlar büyük ihtimalle Jouiroushi'ler.
+
+427
+00:17:51,710 --> 00:17:54,130
+Ve bahsettikleri "Hashidaya"...
+
+428
+00:17:54,130 --> 00:17:56,800
+...Edo'daki büyük bir şirket.
+
+429
+00:17:56,930 --> 00:17:58,050
+Bir şey biliyor musun?
+
+430
+00:17:58,640 --> 00:18:01,180
+Hashida Kahei isimli adam, tehlikeli biri.
+
+431
+00:18:01,640 --> 00:18:04,980
+Jouiroushi'yi destekleyerek, arkaplanda onları yönlendiriyor.
+
+432
+00:18:05,310 --> 00:18:09,020
+Bir iş adamının elde edemeyeceği türde bir güce sahip.
+
+433
+00:18:12,270 --> 00:18:14,570
+O herifin torununun benim evimde ne işi var?
+
+434
+00:18:14,740 --> 00:18:18,070
+Çünkü onun evine gidip kızlardan biriyle aşna fişne yaptın.
+
+435
+00:18:18,070 --> 00:18:19,910
+Öyle bir şey yok dedim ya!
+
+436
+00:18:20,070 --> 00:18:22,580
+"Aşna fişne" ne be? Ne eski kafalısın! Ne biçim sonuçlara varıyorsun?
+
+437
+00:18:22,790 --> 00:18:25,830
+Ama bu velet aynı sen.
+
+438
+00:18:25,960 --> 00:18:29,580
+Bir bebeğin işi ağlamaktır. Neden kaytarıyorsun?
+
+439
+00:18:30,750 --> 00:18:32,090
+Bu nasıl bir çocuk bakma?!
+
+440
+00:18:32,630 --> 00:18:34,000
+Böyle şakalar yapma.
+
+441
+00:18:34,260 --> 00:18:36,050
+Böyle bir yerde ağlayayım deme sakın.
+
+442
+00:18:36,300 --> 00:18:38,340
+Ağlarsan seni nehre atarım.
+
+443
+00:18:39,390 --> 00:18:40,340
+Evet, doğru.
+
+444
+00:18:40,510 --> 00:18:43,930
+Bir erkek sadece saçları karıştığında ağlayabilir.
+
+445
+00:18:44,390 --> 00:18:46,100
+Diğer bir yönden, senin olanakların var.
+
+446
+00:18:46,230 --> 00:18:47,480
+Shinpachi'den daha fazla.
+
+447
+00:18:47,770 --> 00:18:49,810
+Hop, Gintoki. Aşağı, aşağı.
+
+448
+00:18:50,810 --> 00:18:53,610
+Üst taraf iyi de alt taraf sulugözün teki gibi.
+
+449
+00:18:54,820 --> 00:18:56,110
+Hey, hey, bu kötü.
+
+450
+00:18:56,110 --> 00:18:58,860
+Patron Hashidaya sadece bir tüccar değil.
+
+451
+00:18:59,200 --> 00:19:01,780
+Karanlık işlerde de parmağı var. O moruk vahşi biri.
+
+452
+00:19:02,160 --> 00:19:03,910
+Eve gidelim mi? Benimle eve gelir misiniz?
+
+453
+00:19:03,910 --> 00:19:05,240
+Hadi ama size sukonbu alırım.
+
+454
+00:19:05,450 --> 00:19:07,830
+Böyle bir hikaye dinledikten sonra artık eve hiç gidesim yok.
+
+455
+00:19:08,160 --> 00:19:09,960
+Düşündüğüm gibi, gölgelerin ardında bir şeyler oluyor.
+
+456
+00:19:09,960 --> 00:19:13,330
+Sence sukonbu'yla kandırılacak kadar basit miyim?
+
+457
+00:19:13,590 --> 00:19:16,130
+Ne kadar? Ne kadar sukonbu getirirsin?
+
+458
+00:19:16,260 --> 00:19:19,130
+4 mü? 4 tane vermezdin, değil mi?
+
+459
+00:19:19,130 --> 00:19:20,430
+Kagura-chan, sessiz ol.
+
+460
+00:19:21,760 --> 00:19:22,590
+Burada mıydı?
+
+461
+00:19:22,680 --> 00:19:24,470
+O insanların kadını getirdikleri oda.
+
+462
+00:19:24,900 --> 00:19:25,600
+Hey, kaç tane diyorum?
+
+463
+00:19:25,600 --> 00:19:26,720
+Söylesene be!
+
+464
+00:19:26,770 --> 00:19:28,060
+İstediğimden falan değil ha...
+
+465
+00:19:30,390 --> 00:19:32,650
+Aa! Seninki sağ tarafa doğru!
+
+466
+00:19:32,900 --> 00:19:35,070
+Gelecekte önemli bir insan olacaksın. Şanslısın.
+
+467
+00:19:35,980 --> 00:19:36,820
+Neydi bu, neydi bu?
+
+468
+00:19:37,030 --> 00:19:39,280
+Sırf altına işedin diye üzülme çünkü...
+
+469
+00:19:39,400 --> 00:19:41,860
+...bir erkeğin üst tarafıyla alt tarafı başka hayat formudur.
+
+470
+00:19:41,990 --> 00:19:43,320
+Olur böyle şeyler.
+
+471
+00:19:44,370 --> 00:19:45,330
+Al bakalım.
+
+472
+00:19:46,290 --> 00:19:47,870
+Ah...
+
+473
+00:19:47,950 --> 00:19:51,250
+Önce baba sanılmak, sonra adam kaçırmakla suçlanmak...
+
+474
+00:19:51,290 --> 00:19:52,370
+Şanssız günümdeyim.
+
+475
+00:19:53,380 --> 00:19:54,710
+Ah, pardon, pardon.
+
+476
+00:19:55,090 --> 00:19:58,000
+Şanssız olan sensin, değil mi? İkimiz de dertliyiz ha?
+
+477
+00:19:58,260 --> 00:19:59,920
+Eh, eğer hayattaysak...
+
+478
+00:19:59,970 --> 00:20:01,170
+...böyle günler olacak demektir.
+
+479
+00:20:01,180 --> 00:20:04,840
+Senin için de geçerli. Bu andan itibaren, hayatında çok daha kötü şeyler olacak.
+
+480
+00:20:05,300 --> 00:20:08,010
+Hayatın %80'i zorluklardan yapılmıştır.
+
+481
+00:20:08,640 --> 00:20:09,470
+Ama gerçekten...
+
+482
+00:20:10,020 --> 00:20:12,100
+Benim başıma hep böyle şeyler geliyor.
+
+483
+00:20:12,270 --> 00:20:14,350
+Ama hepsi de kötü şeyler değil.
+
+484
+00:20:15,820 --> 00:20:18,860
+Böyle bir günün sonunda içilen sake gibisi yoktur.
+
+485
+00:20:19,240 --> 00:20:21,570
+Her şey bittiğinde beraber bir şeyler içelim mi?
+
+486
+00:20:23,710 --> 00:20:24,410
+Tamam.
+
+487
+00:20:24,410 --> 00:20:25,740
+O zaman, gidelim?
+
+488
+00:20:28,200 --> 00:20:29,330
+Hey! Artık konuş!
+
+489
+00:20:29,500 --> 00:20:31,160
+Kanshichirou-sama nerede?
+
+490
+00:20:31,160 --> 00:20:32,580
+Ötersen özgür bırakılacaksın.
+
+491
+00:20:32,750 --> 00:20:34,210
+Evet. Bir şeyler de!
+
+492
+00:20:34,670 --> 00:20:35,830
+İnatçı kadın.
+
+493
+00:20:36,090 --> 00:20:40,510
+Kantarou bu pis kaltakta ne görüyor?
+
+494
+00:20:41,720 --> 00:20:44,050
+Birinin oğlunu kandırıp onu ölüme sürükledin...
+
+495
+00:20:44,340 --> 00:20:46,010
+Sonra da çocuğunu kaçırdın.
+
+496
+00:20:46,220 --> 00:20:47,640
+Pis kadın!
+
+497
+00:20:47,760 --> 00:20:50,600
+Kanshichirou'yu kaçıranlar sizlerdiniz!
+
+498
+00:20:51,270 --> 00:20:52,640
+O çocuk benim oğlum!
+
+499
+00:20:52,730 --> 00:20:53,810
+Onu kimselere vermeyeceğim!
+
+500
+00:20:54,190 --> 00:20:58,270
+Zaten senin gibi bir kadının Hashida ailesinin çocuğunu doğurması yeterince utanç verici.
+
+501
+00:20:59,150 --> 00:21:00,900
+Kanshichirou'nun bir anneye ihtiyacı yok!
+
+502
+00:21:01,360 --> 00:21:04,320
+O çocuğu Hashida varisi olarak yetiştireceğim.
+
+503
+00:21:05,950 --> 00:21:08,950
+Bize söylemezsen...
+
+504
+00:21:08,950 --> 00:21:10,990
+...canın yanacak.
+
+505
+00:21:11,830 --> 00:21:13,750
+Çok kötü, Hasegawa-san.
+
+506
+00:21:13,910 --> 00:21:15,540
+Hey, siz orada ne yapıyorsunuz?
+
+507
+00:21:16,460 --> 00:21:17,540
+Temizlikçiler?
+
+508
+00:21:18,250 --> 00:21:19,540
+Aa, şey, efendim....
+
+509
+00:21:19,670 --> 00:21:21,960
+Bu ikisi burada yeniler, efendim.
+
+510
+00:21:22,590 --> 00:21:23,090
+Bu yüzden...
+
+511
+00:21:23,090 --> 00:21:24,880
+Onlara etrafı gösteriyorum...
+
+512
+00:21:24,970 --> 00:21:27,090
+Öyle, efendim.
+
+513
+00:21:27,300 --> 00:21:29,220
+Hayır, biz sizin efendiniz değiliz...
+
+514
+00:21:29,390 --> 00:21:30,010
+Ne?
+
+515
+00:21:30,140 --> 00:21:32,850
+Erkekleri böyle çağırınca memnun olmuyor musunuz?
+
+516
+00:21:32,980 --> 00:21:35,020
+Hayır, hayır, Kagura-chan! Öyle dememelisin!
+
+517
+00:21:35,060 --> 00:21:36,810
+İzninizle-
+
+518
+00:21:36,810 --> 00:21:37,600
+Dur.
+
+519
+00:21:38,150 --> 00:21:39,560
+Kötü kokuyor, ha?
+
+520
+00:21:39,570 --> 00:21:43,070
+Sıçan kokusu... Casus kokusu alıyorum, ha?
+
+521
+00:21:43,400 --> 00:21:46,240
+Bugün pek çok kokuyla karşılaştım.
+
+522
+00:21:46,780 --> 00:21:51,530
+Ama kanlı metal kokusu koklamak istemeye başladım.
+
+523
+00:21:52,370 --> 00:21:54,200
+Benimle oynar mısınız?
+
+524
+00:21:54,910 --> 00:21:57,370
+Bu katil, Nizou'yla?
+
+525
+00:22:02,090 --> 00:22:02,750
+Şimdi ne oluyor?
+
+526
+00:22:03,760 --> 00:22:06,260
+Eğlencenize karıştığım için kusura bakmayın.
+
+527
+00:22:06,590 --> 00:22:09,510
+Ama şüpheli fareler buldum.
+
+528
+00:22:10,800 --> 00:22:11,300
+Hı?
+
+529
+00:22:11,310 --> 00:22:13,890
+Sizler Otose-donu'nun yerindeki insanlarsınız.
+
+530
+00:22:14,140 --> 00:22:18,980
+Beni buraya kadar takip etmişsiniz. Ne meraklısınız.
+
+531
+00:22:19,100 --> 00:22:23,020
+Size daha fazla yardım istemediğimi söylediğimi hatırlıyorum.
+
+532
+00:22:23,320 --> 00:22:24,820
+Endişe etmeyin.
+
+533
+00:22:24,940 --> 00:22:26,690
+Buraya kişisel nedenlerden dolayı geldik.
+
+534
+00:22:27,360 --> 00:22:31,950
+Öyle olsa bile, torununu seviyor olsan bile biraz abartmıyor musun, Kahei-san?
+
+535
+00:22:32,160 --> 00:22:35,370
+Siz de meraklı davranarak abartıyorsunuz.
+
+536
+00:22:36,620 --> 00:22:39,370
+Bu dünyada bilmeseniz daha iyi olacak şeyler vardır.
+
+537
+00:22:54,000 --> 00:22:58,160
+mimizawari na yuuwaku
+
+538
+00:22:58,920 --> 00:23:03,080
+hana tsubaki no kaori
+
+539
+00:23:03,700 --> 00:23:07,960
+kumo nashi no gogo ni wa
+
+540
+00:23:08,340 --> 00:23:12,800
+boku no shura ga sawagu
+
+541
+00:23:12,900 --> 00:23:23,020
+yaketsuku omoi wa urei tsunoraseru
+
+542
+00:23:23,020 --> 00:23:32,650
+kasanaru omokage o mitsukete wa unadareteiru
+
+543
+00:23:32,770 --> 00:23:35,120
+dare ka boku no
+
+544
+00:23:35,220 --> 00:23:37,620
+hi o keshite
+
+545
+00:23:37,690 --> 00:23:40,000
+tobashite kure
+
+546
+00:23:40,110 --> 00:23:42,200
+Yeah Yeah
+
+547
+00:23:42,280 --> 00:23:52,420
+kusuburu omoi wa urei tsunoraseru
+
+548
+00:23:52,420 --> 00:24:02,180
+ano hi no omoide o usumete wa otonabite iku
+
+549
+00:24:02,260 --> 00:24:04,550
+dare ka boku ni
+
+550
+00:24:04,640 --> 00:24:06,980
+hi o tsukete
+
+551
+00:24:07,140 --> 00:24:09,440
+moyashite kure
+
+552
+00:22:54,000 --> 00:22:58,160
+Şiddetli bir istek...
+
+553
+00:22:58,920 --> 00:23:03,080
+Kamelya çiçeğinin kokusu
+
+554
+00:23:03,700 --> 00:23:07,960
+Bulutsuz bir akşamüstü...
+
+555
+00:23:08,340 --> 00:23:12,800
+...katliamım haykırmaya başlıyor.
+
+556
+00:23:12,900 --> 00:23:23,020
+Hafızama damgalanmış hatıralarım beni iyice huzursuz ediyor.
+
+557
+00:23:23,020 --> 00:23:32,650
+Benzer manzaralarla karşılaştıkça, başımı eğiyorum.
+
+558
+00:23:32,770 --> 00:23:35,120
+Birisi, lütfen...
+
+559
+00:23:35,220 --> 00:23:37,620
+Ateşimi söndürsün.
+
+560
+00:23:37,690 --> 00:23:40,000
+Uçayım.
+
+561
+00:23:40,110 --> 00:23:42,200
+Evet Evet
+
+562
+00:23:42,280 --> 00:23:52,420
+İçimi yakan hatıralarım beni iyice huzursuz ediyor.
+
+563
+00:23:52,420 --> 00:24:02,180
+O günün hatıraları silindikçe, büyüyorum.
+
+564
+00:24:02,260 --> 00:24:04,550
+Birisi, lütfen...
+
+565
+00:24:04,640 --> 00:24:06,980
+Ateşimi yaksın
+
+566
+00:24:07,140 --> 00:24:09,440
+Yansın.
+
+567
+00:24:09,600 --> 00:24:11,530
+Evet Evet
+
+568
+00:24:09,600 --> 00:24:11,530
+Yeah Yeah
+
+569
+00:24:19,040 --> 00:24:26,770
+Ön Gösterim
+
+570
+00:24:20,480 --> 00:24:21,890
+"Apo" mu yaptım?
+
+571
+00:24:21,980 --> 00:24:22,940
+"Apo" ne be?
+
+572
+00:24:23,060 --> 00:24:23,640
+Ah, yoksa...
+
+573
+00:24:23,900 --> 00:24:26,060
+Kuzey meyvası "Aomori elması" mı?
+
+574
+00:24:26,190 --> 00:24:28,940
+Gelecek Bölüm: Biriyle görüşmek istiyorsan önce randevu al.
+
+575
+00:24:29,040 --> 00:24:33,170
+Shinpachi'nin grubunun hali kötü...
+
+576
+00:24:29,040 --> 00:24:33,170
+Kanshichirou'nun kaderi ne olacak?
+
+577
+00:24:33,170 --> 00:24:38,430
+Korkulan Katil Nizou...
+
+578
+00:24:33,170 --> 00:24:38,430
+Güneş gözlüklü kılıç ustası, Okada Nizou.
+

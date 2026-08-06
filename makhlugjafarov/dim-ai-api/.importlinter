@@ -1,0 +1,153 @@
+[importlinter]
+root_package = app
+
+# Per-context layered architecture. Layers are listed high → low; a higher layer
+# may import lower layers, never the reverse. Dependency direction inside every
+# context is: api → application → infrastructure → domain (domain is the stable
+# core; infrastructure implements adapters the application orchestrates).
+
+[importlinter:contract:answer-layers]
+name = Answer Layers
+type = layers
+containers = app.answer
+layers =
+    api
+    application
+    infrastructure
+    domain
+
+[importlinter:contract:eval-layers]
+name = Eval Layers
+type = layers
+containers = app.eval
+layers =
+    application
+    infrastructure
+    domain
+
+[importlinter:contract:identity-layers]
+name = Identity Layers
+type = layers
+containers = app.identity
+layers =
+    api
+    application
+    infrastructure
+    domain
+
+[importlinter:contract:ingestion-layers]
+name = Ingestion Layers
+type = layers
+containers = app.ingestion
+layers =
+    api
+    application
+    infrastructure
+    domain
+
+[importlinter:contract:query-layers]
+name = Query Layers
+type = layers
+containers = app.query
+layers =
+    api
+    application
+    domain
+
+[importlinter:contract:retrieval-layers]
+name = Retrieval Layers
+type = layers
+containers = app.retrieval
+layers =
+    application
+    infrastructure
+    domain
+# No ignore_imports: the app.rag.retrieval shim was removed (GRO-100 CP16);
+# the retrieval context now owns its implementation. Keep this list empty.
+
+# ---------------------------------------------------------------------------
+# Cross-context direction rules. The query context orchestrates downstream
+# contexts; nothing downstream may import the orchestrator or the composition
+# root (app.api). Platform is foundational and depends on no bounded context.
+# ---------------------------------------------------------------------------
+
+[importlinter:contract:platform-forbidden]
+name = Platform Independence
+type = forbidden
+source_modules = app.platform
+forbidden_modules =
+    app.query
+    app.answer
+    app.retrieval
+    app.ingestion
+    app.identity
+    app.eval
+    app.api
+
+[importlinter:contract:answer-direction]
+name = Answer Direction
+type = forbidden
+source_modules = app.answer
+forbidden_modules =
+    app.query
+    app.api
+
+[importlinter:contract:retrieval-direction]
+name = Retrieval Direction
+type = forbidden
+source_modules = app.retrieval
+forbidden_modules =
+    app.query
+    app.answer
+    app.api
+
+[importlinter:contract:identity-direction]
+name = Identity Direction
+type = forbidden
+source_modules = app.identity
+forbidden_modules =
+    app.query
+    app.answer
+    app.retrieval
+    app.ingestion
+    app.api
+
+[importlinter:contract:eval-direction]
+name = Eval Direction
+type = forbidden
+source_modules = app.eval
+forbidden_modules =
+    app.query
+    app.answer
+    app.retrieval
+    app.ingestion
+    app.api
+    app.identity
+
+[importlinter:contract:ingestion-studio-layers]
+name = Ingestion Studio Layers
+type = layers
+containers = app.ingestion_studio
+layers =
+    api
+    application
+    infrastructure
+    domain
+
+[importlinter:contract:ingestion-studio-direction]
+name = Ingestion Studio Direction
+type = forbidden
+source_modules = app.ingestion
+forbidden_modules =
+    app.ingestion_studio
+
+[importlinter:contract:ingestion-studio-isolation]
+name = Ingestion Studio Isolation
+type = forbidden
+source_modules =
+    app.query
+    app.answer
+    app.api
+forbidden_modules =
+    app.ingestion_studio
+

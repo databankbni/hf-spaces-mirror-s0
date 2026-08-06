@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Check-in — Wedding</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%92%8D%3C/text%3E%3C/svg%3E">
+  <link href="https://fonts.googleapis.com/css2?family=Hanuman:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Hanuman', 'Playfair Display', serif; background: #faf6ee; color: #3a3226; }
+    .wrap { max-width: 640px; margin: 0 auto; padding: 1rem; padding-bottom: 4rem; }
+    header { display: flex; justify-content: space-between; align-items: center; gap: 0.6rem; margin-bottom: 0.8rem; }
+    h1 { color: #a8873a; font-size: 1.25rem; }
+    header a { color: #a8873a; text-decoration: none; border: 1px solid #c9a84c; border-radius: 999px; padding: 0.35rem 0.9rem; font-size: 0.85rem; }
+    .counters { display: flex; gap: 0.6rem; margin-bottom: 0.8rem; }
+    .counter { flex: 1; background: #fff; border: 1px solid #efe3c8; border-radius: 12px; text-align: center; padding: 0.6rem; }
+    .counter b { display: block; font-size: 1.6rem; color: #a8873a; }
+    .counter small { color: #888; font-size: 0.78rem; }
+    #search {
+      width: 100%; padding: 0.85rem 1rem; font-size: 16px;
+      border: 1px solid #c9a84c; border-radius: 12px; font-family: inherit;
+      margin-bottom: 0.8rem; background: #fff;
+    }
+    .guest {
+      display: flex; align-items: center; gap: 0.7rem;
+      background: #fff; border: 1px solid #efe3c8; border-radius: 14px;
+      padding: 0.8rem 1rem; margin-bottom: 0.55rem;
+    }
+    .guest.in { background: #eef7ea; border-color: #cde3c4; }
+    .g-info { flex: 1; min-width: 0; }
+    .g-name { font-weight: 700; font-size: 1.05rem; }
+    .g-meta { font-size: 0.8rem; color: #888; }
+    .g-btn {
+      border: none; border-radius: 999px; padding: 0.7rem 1.2rem;
+      font-family: inherit; font-size: 0.95rem; font-weight: 700; cursor: pointer;
+      background: linear-gradient(135deg, #c9a84c, #a8873a); color: #fff;
+      flex-shrink: 0; min-width: 108px;
+    }
+    .guest.in .g-btn { background: #4b7c3f; }
+    .empty { text-align: center; color: #999; padding: 2rem 0; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>🛎 Guest Check-in</h1>
+      <div>
+        <a href="#" id="scan-btn">📷 Scan QR</a>
+        {% if not token %}<a href="{{ url_for('admin') }}">← Admin</a>{% endif %}
+      </div>
+    </header>
+    <div id="scanner" style="display:none; position:relative; margin-bottom:0.8rem;">
+      <video id="scan-video" playsinline style="width:100%; border-radius:14px; border:2px solid #c9a84c;"></video>
+      <div id="scan-result" style="position:absolute; left:0; right:0; bottom:0.6rem; text-align:center; color:#fff; font-weight:700; text-shadow:0 1px 6px rgba(0,0,0,0.8);"></div>
+    </div>
+    <div class="counters">
+      <div class="counter"><b id="c-arrived">{{ arrived }}</b><small>Arrived</small></div>
+      <div class="counter"><b>{{ total }}</b><small>Guest list</small></div>
+    </div>
+    <input type="text" id="search" placeholder="🔍 Search guest name…" autocomplete="off">
+    {% if guests %}
+    <div id="guest-list">
+      {% for g in guests %}
+      <div class="guest{{ ' in' if g.arrived }}" data-name="{{ g.name | lower }}">
+        <div class="g-info">
+          <div class="g-name">{{ g.name }}</div>
+          <div class="g-meta">
+            {% if g.table %}🍽 Table {{ g.table }}{% endif %}
+            {% if g.group %} · 🏷 {{ g.group }}{% endif %}
+            {% if g.expected %} · ✅ RSVP: {{ g.expected }} guest(s){% endif %}
+            {% if g.companions %}<br>👥 {{ g.companions }}{% endif %}
+          </div>
+        </div>
+        <button class="g-btn" data-id="{{ g.id }}">{{ '✔ Arrived' if g.arrived else 'Check in' }}</button>
+      </div>
+      {% endfor %}
+    </div>
+    {% else %}
+    <p class="empty">No guests saved yet — add them in Admin → Guest Links.</p>
+    {% endif %}
+  </div>
+  <script>
+    document.getElementById('search').addEventListener('input', e => {
+      const q = e.target.value.trim().toLowerCase();
+      document.querySelectorAll('.guest').forEach(g => {
+        g.style.display = !q || g.dataset.name.includes(q) ? '' : 'none';
+      });
+    });
+    // QR scan check-in: point the camera at a guest's place-card/poster QR.
+    // The QR encodes their short link (…/g/<id>) — we extract the id.
+    const scanBtn = document.getElementById('scan-btn');
+    let scanning = false, scanStream = null;
+    scanBtn.addEventListener('click', async e => {
+      e.preventDefault();
+      const scanner = document.getElementById('scanner');
+      const video = document.getElementById('scan-video');
+      if (scanning) {
+        scanning = false;
+        scanner.style.display = 'none';
+        if (scanStream) scanStream.getTracks().forEach(t => t.stop());
+        scanBtn.textContent = '📷 Scan QR';
+        return;
+      }
+      if (!('BarcodeDetector' in window)) {
+        alert('QR scanning is not supported in this browser — use the search box instead.');
+        return;
+      }
+      try {
+        scanStream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' } });
+        video.srcObject = scanStream;
+        await video.play();
+        scanner.style.display = 'block';
+        scanBtn.textContent = '✕ Close';
+        scanning = true;
+        const detector = new BarcodeDetector({ formats: ['qr_code'] });
+        const result = document.getElementById('scan-result');
+        let lastId = null, lastAt = 0;
+        const loop = async () => {
+          if (!scanning) return;
+          try {
+            const codes = await detector.detect(video);
+            for (const code of codes) {
+              const m = (code.rawValue || '').match(/\/g\/(\w{6})/);
+              if (m && (m[1] !== lastId || Date.now() - lastAt > 4000)) {
+                lastId = m[1];
+                lastAt = Date.now();
+                const btn = document.querySelector('.g-btn[data-id="' + m[1] + '"]');
+                if (!btn) { result.textContent = '❓ Unknown QR'; break; }
+                const row = btn.closest('.guest');
+                if (row.classList.contains('in')) {
+                  result.textContent = '✔ ' + row.querySelector('.g-name').textContent + ' — already checked in';
+                } else {
+                  btn.click();
+                  result.textContent = '✅ ' + row.querySelector('.g-name').textContent + ' checked in!';
+                }
+                row.scrollIntoView({ block: 'center', behavior: 'smooth' });
+              }
+            }
+          } catch (err) {}
+          requestAnimationFrame(loop);
+        };
+        loop();
+      } catch (err) {
+        alert('Camera not available.');
+      }
+    });
+
+    document.querySelectorAll('.g-btn').forEach(btn => {
+      btn.addEventListener('click', async () => {
+        btn.disabled = true;
+        try {
+          const r = await fetch('{{ url_for("checkin_toggle") }}', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: 'id=' + encodeURIComponent(btn.dataset.id)
+                  + '&token=' + encodeURIComponent({{ (token or '') | tojson }})
+          });
+          const data = await r.json();
+          const row = btn.closest('.guest');
+          row.classList.toggle('in', data.arrived);
+          btn.textContent = data.arrived ? '✔ Arrived' : 'Check in';
+          const delta = data.arrived ? 1 : -1;
+          const counter = document.getElementById('c-arrived');
+          counter.textContent = parseInt(counter.textContent, 10) + delta;
+        } catch (e) {}
+        btn.disabled = false;
+      });
+    });
+  </script>
+</body>
+</html>

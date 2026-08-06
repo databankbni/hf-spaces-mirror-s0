@@ -1,0 +1,118 @@
+{
+ "captured_at": "2026-08-04T13:24:32Z",
+ "hf_metadata": {
+  "_id": "6a228975a114c240e0bdeab9",
+  "author": "DeStance",
+  "cardData": {
+   "app_file": "app.py",
+   "colorFrom": "yellow",
+   "colorTo": "purple",
+   "emoji": "🏃",
+   "pinned": false,
+   "sdk": "gradio",
+   "sdk_version": "6.8.0",
+   "title": "Acaiafeedback v3"
+  },
+  "createdAt": "2026-06-05T08:31:49.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://destance-acaiafeedback-v3.hf.space",
+  "id": "DeStance/Acaiafeedback_v3",
+  "lastModified": "2026-07-13T18:33:08.000Z",
+  "likes": 0,
+  "models": [
+   "DeStance/bio-v2",
+   "DeStance/ef_model_v5",
+   "DeStance/ep_model_v3",
+   "DeStance/roberta-ef-stance-v2",
+   "DeStance/roberta-emo-stance",
+   "DeStance/roberta-ep-stance-v2",
+   "strozz1/t5_ef",
+   "strozz1/t5_ep"
+  ],
+  "private": false,
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "destance-acaiafeedback-v3.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": null,
+    "requested": "cpu-basic"
+   },
+   "replicas": {
+    "requested": 1
+   },
+   "stage": "SLEEPING"
+  },
+  "sdk": "gradio",
+  "sha": "325648a218cfed021e9116f3d50f20fc23067d9d",
+  "siblings": [
+   {
+    "rfilename": ".gitattributes"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "app.py"
+   },
+   {
+    "rfilename": "change_labels.py"
+   },
+   {
+    "rfilename": "convert_new_t5_ep.py"
+   },
+   {
+    "rfilename": "new_t5_ef.json"
+   },
+   {
+    "rfilename": "new_t5_ep.json"
+   },
+   {
+    "rfilename": "nueva_base_datos.json"
+   },
+   {
+    "rfilename": "procesar_texto_into_tests.py"
+   },
+   {
+    "rfilename": "procesar_texto_to_json.py"
+   },
+   {
+    "rfilename": "requirements.txt"
+   },
+   {
+    "rfilename": "test_model.py"
+   },
+   {
+    "rfilename": "textolargo_etiq.json"
+   },
+   {
+    "rfilename": "train_ef_t5.py"
+   },
+   {
+    "rfilename": "train_ep_t5.py"
+   }
+  ],
+  "subdomain": "destance-acaiafeedback-v3",
+  "tags": [
+   "gradio",
+   "region:us"
+  ],
+  "usedStorage": 0
+ },
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "DeStance/Acaiafeedback_v3",
+ "repo_type": "spaces",
+ "sha": "325648a218cfed021e9116f3d50f20fc23067d9d",
+ "web_url": "https://huggingface.co/spaces/DeStance/Acaiafeedback_v3"
+}

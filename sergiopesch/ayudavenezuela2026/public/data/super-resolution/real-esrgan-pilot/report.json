@@ -1,0 +1,2802 @@
+{
+  "completedAois": 36,
+  "generatedAt": "2026-07-02T12:02:17.383497+00:00",
+  "model": {
+    "hallucinationRisk": "nonzero",
+    "learned": true,
+    "name": "RealESRGAN_x4plus",
+    "scale": 4,
+    "source": "https://github.com/xinntao/Real-ESRGAN/releases/download/v0.1.0/RealESRGAN_x4plus.pth"
+  },
+  "records": [
+    {
+      "afterEnhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-001/after/deterministic-enhanced-z19-512.jpg",
+      "afterRawPath": "/tmp/satellite-super-resolution-pilot/aoi-001/after/raw-z19-512.jpg",
+      "afterSrPath": "/tmp/satellite-super-resolution-pilot/aoi-001/after/real-esrgan-x4-z19-2048.jpg",
+      "beforeEnhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-001/before/deterministic-enhanced-z19-512.jpg",
+      "beforeRawPath": "/tmp/satellite-super-resolution-pilot/aoi-001/before/raw-z19-512.jpg",
+      "beforeSrPath": "/tmp/satellite-super-resolution-pilot/aoi-001/before/real-esrgan-x4-z19-2048.jpg",
+      "id": "aoi-001",
+      "interpretive": true,
+      "lat": 10.577782,
+      "lon": -67.017081,
+      "model": "RealESRGAN_x4plus",
+      "scenes": {
+        "after": {
+          "available": true,
+          "enhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-001/after/deterministic-enhanced-z19-512.jpg",
+          "enhancedStats": {
+            "height": 512,
+            "meanGradient": 6.504,
+            "meanLuminance": 112.417,
+            "stddevLuminance": 26.319,
+            "width": 512
+          },
+          "rawPath": "/tmp/satellite-super-resolution-pilot/aoi-001/after/raw-z19-512.jpg",
+          "rawStats": {
+            "height": 512,
+            "meanGradient": 2.884,
+            "meanLuminance": 105.356,
+            "stddevLuminance": 14.368,
+            "width": 512
+          },
+          "srPath": "/tmp/satellite-super-resolution-pilot/aoi-001/after/real-esrgan-x4-z19-2048.jpg",
+          "srStats": {
+            "height": 2048,
+            "meanGradient": 8.903,
+            "meanLuminance": 103.084,
+            "stddevLuminance": 20.331,
+            "width": 2048
+          }
+        },
+        "before": {
+          "available": true,
+          "enhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-001/before/deterministic-enhanced-z19-512.jpg",
+          "enhancedStats": {
+            "height": 512,
+            "meanGradient": 9.264,
+            "meanLuminance": 114.626,
+            "stddevLuminance": 36.72,
+            "width": 512
+          },
+          "rawPath": "/tmp/satellite-super-resolution-pilot/aoi-001/before/raw-z19-512.jpg",
+          "rawStats": {
+            "height": 512,
+            "meanGradient": 4.387,
+            "meanLuminance": 104.144,
+            "stddevLuminance": 22.563,
+            "width": 512
+          },
+          "srPath": "/tmp/satellite-super-resolution-pilot/aoi-001/before/real-esrgan-x4-z19-2048.jpg",
+          "srStats": {
+            "height": 2048,
+            "meanGradient": 11.227,
+            "meanLuminance": 99.314,
+            "stddevLuminance": 31.445,
+            "width": 2048
+          }
+        }
+      },
+      "severity": "high",
+      "severityCode": 0,
+      "tile": {
+        "x": 164543,
+        "y": 246650
+      },
+      "warning": "Learned super-resolution can hallucinate texture; compare against raw source before using for decisions.",
+      "zoom": 19
+    },
+    {
+      "afterEnhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-002/after/deterministic-enhanced-z19-512.jpg",
+      "afterRawPath": "/tmp/satellite-super-resolution-pilot/aoi-002/after/raw-z19-512.jpg",
+      "afterSrPath": "/tmp/satellite-super-resolution-pilot/aoi-002/after/real-esrgan-x4-z19-2048.jpg",
+      "beforeEnhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-002/before/deterministic-enhanced-z19-512.jpg",
+      "beforeRawPath": "/tmp/satellite-super-resolution-pilot/aoi-002/before/raw-z19-512.jpg",
+      "beforeSrPath": "/tmp/satellite-super-resolution-pilot/aoi-002/before/real-esrgan-x4-z19-2048.jpg",
+      "id": "aoi-002",
+      "interpretive": true,
+      "lat": 10.577866,
+      "lon": -67.015256,
+      "model": "RealESRGAN_x4plus",
+      "scenes": {
+        "after": {
+          "available": true,
+          "enhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-002/after/deterministic-enhanced-z19-512.jpg",
+          "enhancedStats": {
+            "height": 512,
+            "meanGradient": 8.003,
+            "meanLuminance": 119.237,
+            "stddevLuminance": 47.612,
+            "width": 512
+          },
+          "rawPath": "/tmp/satellite-super-resolution-pilot/aoi-002/after/raw-z19-512.jpg",
+          "rawStats": {
+            "height": 512,
+            "meanGradient": 4.364,
+            "meanLuminance": 126.015,
+            "stddevLuminance": 34.311,
+            "width": 512
+          },
+          "srPath": "/tmp/satellite-super-resolution-pilot/aoi-002/after/real-esrgan-x4-z19-2048.jpg",
+          "srStats": {
+            "height": 2048,
+            "meanGradient": 4.901,
+            "meanLuminance": 127.908,
+            "stddevLuminance": 38.047,
+            "width": 2048
+          }
+        },
+        "before": {
+          "available": true,
+          "enhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-002/before/deterministic-enhanced-z19-512.jpg",
+          "enhancedStats": {
+            "height": 512,
+            "meanGradient": 10.452,
+            "meanLuminance": 127.45,
+            "stddevLuminance": 50.62,
+            "width": 512
+          },
+          "rawPath": "/tmp/satellite-super-resolution-pilot/aoi-002/before/raw-z19-512.jpg",
+          "rawStats": {
+            "height": 512,
+            "meanGradient": 5.776,
+            "meanLuminance": 130.617,
+            "stddevLuminance": 38.975,
+            "width": 512
+          },
+          "srPath": "/tmp/satellite-super-resolution-pilot/aoi-002/before/real-esrgan-x4-z19-2048.jpg",
+          "srStats": {
+            "height": 2048,
+            "meanGradient": 4.896,
+            "meanLuminance": 131.901,
+            "stddevLuminance": 43.665,
+            "width": 2048
+          }
+        }
+      },
+      "severity": "high",
+      "severityCode": 0,
+      "tile": {
+        "x": 164545,
+        "y": 246650
+      },
+      "warning": "Learned super-resolution can hallucinate texture; compare against raw source before using for decisions.",
+      "zoom": 19
+    },
+    {
+      "afterEnhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-003/after/deterministic-enhanced-z19-512.jpg",
+      "afterRawPath": "/tmp/satellite-super-resolution-pilot/aoi-003/after/raw-z19-512.jpg",
+      "afterSrPath": "/tmp/satellite-super-resolution-pilot/aoi-003/after/real-esrgan-x4-z19-2048.jpg",
+      "beforeEnhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-003/before/deterministic-enhanced-z19-512.jpg",
+      "beforeRawPath": "/tmp/satellite-super-resolution-pilot/aoi-003/before/raw-z19-512.jpg",
+      "beforeSrPath": "/tmp/satellite-super-resolution-pilot/aoi-003/before/real-esrgan-x4-z19-2048.jpg",
+      "id": "aoi-003",
+      "interpretive": true,
+      "lat": 10.579868,
+      "lon": -67.028804,
+      "model": "RealESRGAN_x4plus",
+      "scenes": {
+        "after": {
+          "available": true,
+          "enhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-003/after/deterministic-enhanced-z19-512.jpg",
+          "enhancedStats": {
+            "height": 512,
+            "meanGradient": 6.843,
+            "meanLuminance": 116.815,
+            "stddevLuminance": 48.575,
+            "width": 512
+          },
+          "rawPath": "/tmp/satellite-super-resolution-pilot/aoi-003/after/raw-z19-512.jpg",
+          "rawStats": {
+            "height": 512,
+            "meanGradient": 3.557,
+            "meanLuminance": 116.073,
+            "stddevLuminance": 35.515,
+            "width": 512
+          },
+          "srPath": "/tmp/satellite-super-resolution-pilot/aoi-003/after/real-esrgan-x4-z19-2048.jpg",
+          "srStats": {
+            "height": 2048,
+            "meanGradient": 7.521,
+            "meanLuminance": 115.728,
+            "stddevLuminance": 40.635,
+            "width": 2048
+          }
+        },
+        "before": {
+          "available": true,
+          "enhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-003/before/deterministic-enhanced-z19-512.jpg",
+          "enhancedStats": {
+            "height": 512,
+            "meanGradient": 8.282,
+            "meanLuminance": 123.023,
+            "stddevLuminance": 47.717,
+            "width": 512
+          },
+          "rawPath": "/tmp/satellite-super-resolution-pilot/aoi-003/before/raw-z19-512.jpg",
+          "rawStats": {
+            "height": 512,
+            "meanGradient": 4.437,
+            "meanLuminance": 120.846,
+            "stddevLuminance": 36.615,
+            "width": 512
+          },
+          "srPath": "/tmp/satellite-super-resolution-pilot/aoi-003/before/real-esrgan-x4-z19-2048.jpg",
+          "srStats": {
+            "height": 2048,
+            "meanGradient": 7.261,
+            "meanLuminance": 120.848,
+            "stddevLuminance": 42.581,
+            "width": 2048
+          }
+        }
+      },
+      "severity": "high",
+      "severityCode": 0,
+      "tile": {
+        "x": 164526,
+        "y": 246647
+      },
+      "warning": "Learned super-resolution can hallucinate texture; compare against raw source before using for decisions.",
+      "zoom": 19
+    },
+    {
+      "afterEnhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-004/after/deterministic-enhanced-z19-512.jpg",
+      "afterRawPath": "/tmp/satellite-super-resolution-pilot/aoi-004/after/raw-z19-512.jpg",
+      "afterSrPath": "/tmp/satellite-super-resolution-pilot/aoi-004/after/real-esrgan-x4-z19-2048.jpg",
+      "beforeEnhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-004/before/deterministic-enhanced-z19-512.jpg",
+      "beforeRawPath": "/tmp/satellite-super-resolution-pilot/aoi-004/before/raw-z19-512.jpg",
+      "beforeSrPath": "/tmp/satellite-super-resolution-pilot/aoi-004/before/real-esrgan-x4-z19-2048.jpg",
+      "id": "aoi-004",
+      "interpretive": true,
+      "lat": 10.580224,
+      "lon": -67.029635,
+      "model": "RealESRGAN_x4plus",
+      "scenes": {
+        "after": {
+          "available": true,
+          "enhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-004/after/deterministic-enhanced-z19-512.jpg",
+          "enhancedStats": {
+            "height": 512,
+            "meanGradient": 7.25,
+            "meanLuminance": 110.098,
+            "stddevLuminance": 46.528,
+            "width": 512
+          },
+          "rawPath": "/tmp/satellite-super-resolution-pilot/aoi-004/after/raw-z19-512.jpg",
+          "rawStats": {
+            "height": 512,
+            "meanGradient": 3.704,
+            "meanLuminance": 106.276,
+            "stddevLuminance": 36.217,
+            "width": 512
+          },
+          "srPath": "/tmp/satellite-super-resolution-pilot/aoi-004/after/real-esrgan-x4-z19-2048.jpg",
+          "srStats": {
+            "height": 2048,
+            "meanGradient": 6.262,
+            "meanLuminance": 105.08,
+            "stddevLuminance": 40.755,
+            "width": 2048
+          }
+        },
+        "before": {
+          "available": true,
+          "enhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-004/before/deterministic-enhanced-z19-512.jpg",
+          "enhancedStats": {
+            "height": 512,
+            "meanGradient": 8.773,
+            "meanLuminance": 118.377,
+            "stddevLuminance": 50.373,
+            "width": 512
+          },
+          "rawPath": "/tmp/satellite-super-resolution-pilot/aoi-004/before/raw-z19-512.jpg",
+          "rawStats": {
+            "height": 512,
+            "meanGradient": 4.888,
+            "meanLuminance": 110.481,
+            "stddevLuminance": 40.717,
+            "width": 512
+          },
+          "srPath": "/tmp/satellite-super-resolution-pilot/aoi-004/before/real-esrgan-x4-z19-2048.jpg",
+          "srStats": {
+            "height": 2048,
+            "meanGradient": 6.707,
+            "meanLuminance": 108.455,
+            "stddevLuminance": 47.696,
+            "width": 2048
+          }
+        }
+      },
+      "severity": "high",
+      "severityCode": 0,
+      "tile": {
+        "x": 164525,
+        "y": 246647
+      },
+      "warning": "Learned super-resolution can hallucinate texture; compare against raw source before using for decisions.",
+      "zoom": 19
+    },
+    {
+      "afterEnhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-005/after/deterministic-enhanced-z19-512.jpg",
+      "afterRawPath": "/tmp/satellite-super-resolution-pilot/aoi-005/after/raw-z19-512.jpg",
+      "afterSrPath": "/tmp/satellite-super-resolution-pilot/aoi-005/after/real-esrgan-x4-z19-2048.jpg",
+      "beforeEnhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-005/before/deterministic-enhanced-z19-512.jpg",
+      "beforeRawPath": "/tmp/satellite-super-resolution-pilot/aoi-005/before/raw-z19-512.jpg",
+      "beforeSrPath": "/tmp/satellite-super-resolution-pilot/aoi-005/before/real-esrgan-x4-z19-2048.jpg",
+      "id": "aoi-005",
+      "interpretive": true,
+      "lat": 10.580687,
+      "lon": -67.018999,
+      "model": "RealESRGAN_x4plus",
+      "scenes": {
+        "after": {
+          "available": true,
+          "enhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-005/after/deterministic-enhanced-z19-512.jpg",
+          "enhancedStats": {
+            "height": 512,
+            "meanGradient": 6.965,
+            "meanLuminance": 111.091,
+            "stddevLuminance": 38.884,
+            "width": 512
+          },
+          "rawPath": "/tmp/satellite-super-resolution-pilot/aoi-005/after/raw-z19-512.jpg",
+          "rawStats": {
+            "height": 512,
+            "meanGradient": 3.394,
+            "meanLuminance": 108.376,
+            "stddevLuminance": 29.247,
+            "width": 512
+          },
+          "srPath": "/tmp/satellite-super-resolution-pilot/aoi-005/after/real-esrgan-x4-z19-2048.jpg",
+          "srStats": {
+            "height": 2048,
+            "meanGradient": 8.47,
+            "meanLuminance": 106.945,
+            "stddevLuminance": 34.095,
+            "width": 2048
+          }
+        },
+        "before": {
+          "available": true,
+          "enhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-005/before/deterministic-enhanced-z19-512.jpg",
+          "enhancedStats": {
+            "height": 512,
+            "meanGradient": 8.818,
+            "meanLuminance": 116.895,
+            "stddevLuminance": 47.997,
+            "width": 512
+          },
+          "rawPath": "/tmp/satellite-super-resolution-pilot/aoi-005/before/raw-z19-512.jpg",
+          "rawStats": {
+            "height": 512,
+            "meanGradient": 4.648,
+            "meanLuminance": 107.068,
+            "stddevLuminance": 39.855,
+            "width": 512
+          },
+          "srPath": "/tmp/satellite-super-resolution-pilot/aoi-005/before/real-esrgan-x4-z19-2048.jpg",
+          "srStats": {
+            "height": 2048,
+            "meanGradient": 7.66,
+            "meanLuminance": 104.287,
+            "stddevLuminance": 46.849,
+            "width": 2048
+          }
+        }
+      },
+      "severity": "high",
+      "severityCode": 0,
+      "tile": {
+        "x": 164540,
+        "y": 246646
+      },
+      "warning": "Learned super-resolution can hallucinate texture; compare against raw source before using for decisions.",
+      "zoom": 19
+    },
+    {
+      "afterEnhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-006/after/deterministic-enhanced-z19-512.jpg",
+      "afterRawPath": "/tmp/satellite-super-resolution-pilot/aoi-006/after/raw-z19-512.jpg",
+      "afterSrPath": "/tmp/satellite-super-resolution-pilot/aoi-006/after/real-esrgan-x4-z19-2048.jpg",
+      "beforeEnhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-006/before/deterministic-enhanced-z19-512.jpg",
+      "beforeRawPath": "/tmp/satellite-super-resolution-pilot/aoi-006/before/raw-z19-512.jpg",
+      "beforeSrPath": "/tmp/satellite-super-resolution-pilot/aoi-006/before/real-esrgan-x4-z19-2048.jpg",
+      "id": "aoi-006",
+      "interpretive": true,
+      "lat": 10.580704,
+      "lon": -67.01799,
+      "model": "RealESRGAN_x4plus",
+      "scenes": {
+        "after": {
+          "available": true,
+          "enhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-006/after/deterministic-enhanced-z19-512.jpg",
+          "enhancedStats": {
+            "height": 512,
+            "meanGradient": 6.614,
+            "meanLuminance": 114.174,
+            "stddevLuminance": 34.006,
+            "width": 512
+          },
+          "rawPath": "/tmp/satellite-super-resolution-pilot/aoi-006/after/raw-z19-512.jpg",
+          "rawStats": {
+            "height": 512,
+            "meanGradient": 3.143,
+            "meanLuminance": 110.768,
+            "stddevLuminance": 25.661,
+            "width": 512
+          },
+          "srPath": "/tmp/satellite-super-resolution-pilot/aoi-006/after/real-esrgan-x4-z19-2048.jpg",
+          "srStats": {
+            "height": 2048,
+            "meanGradient": 7.926,
+            "meanLuminance": 109.695,
+            "stddevLuminance": 30.87,
+            "width": 2048
+          }
+        },
+        "before": {
+          "available": true,
+          "enhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-006/before/deterministic-enhanced-z19-512.jpg",
+          "enhancedStats": {
+            "height": 512,
+            "meanGradient": 8.346,
+            "meanLuminance": 114.396,
+            "stddevLuminance": 43.827,
+            "width": 512
+          },
+          "rawPath": "/tmp/satellite-super-resolution-pilot/aoi-006/before/raw-z19-512.jpg",
+          "rawStats": {
+            "height": 512,
+            "meanGradient": 4.312,
+            "meanLuminance": 106.971,
+            "stddevLuminance": 37.267,
+            "width": 512
+          },
+          "srPath": "/tmp/satellite-super-resolution-pilot/aoi-006/before/real-esrgan-x4-z19-2048.jpg",
+          "srStats": {
+            "height": 2048,
+            "meanGradient": 6.476,
+            "meanLuminance": 106.124,
+            "stddevLuminance": 42.738,
+            "width": 2048
+          }
+        }
+      },
+      "severity": "high",
+      "severityCode": 0,
+      "tile": {
+        "x": 164541,
+        "y": 246646
+      },
+      "warning": "Learned super-resolution can hallucinate texture; compare against raw source before using for decisions.",
+      "zoom": 19
+    },
+    {
+      "afterEnhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-007/after/deterministic-enhanced-z19-512.jpg",
+      "afterRawPath": "/tmp/satellite-super-resolution-pilot/aoi-007/after/raw-z19-512.jpg",
+      "afterSrPath": "/tmp/satellite-super-resolution-pilot/aoi-007/after/real-esrgan-x4-z19-2048.jpg",
+      "beforeEnhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-007/before/deterministic-enhanced-z19-512.jpg",
+      "beforeRawPath": "/tmp/satellite-super-resolution-pilot/aoi-007/before/raw-z19-512.jpg",
+      "beforeSrPath": "/tmp/satellite-super-resolution-pilot/aoi-007/before/real-esrgan-x4-z19-2048.jpg",
+      "id": "aoi-007",
+      "interpretive": true,
+      "lat": 10.581199,
+      "lon": -67.017054,
+      "model": "RealESRGAN_x4plus",
+      "scenes": {
+        "after": {
+          "available": true,
+          "enhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-007/after/deterministic-enhanced-z19-512.jpg",
+          "enhancedStats": {
+            "height": 512,
+            "meanGradient": 7.284,
+            "meanLuminance": 123.714,
+            "stddevLuminance": 46.22,
+            "width": 512
+          },
+          "rawPath": "/tmp/satellite-super-resolution-pilot/aoi-007/after/raw-z19-512.jpg",
+          "rawStats": {
+            "height": 512,
+            "meanGradient": 3.844,
+            "meanLuminance": 127.527,
+            "stddevLuminance": 31.258,
+            "width": 512
+          },
+          "srPath": "/tmp/satellite-super-resolution-pilot/aoi-007/after/real-esrgan-x4-z19-2048.jpg",
+          "srStats": {
+            "height": 2048,
+            "meanGradient": 6.031,
+            "meanLuminance": 129.36,
+            "stddevLuminance": 35.66,
+            "width": 2048
+          }
+        },
+        "before": {
+          "available": true,
+          "enhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-007/before/deterministic-enhanced-z19-512.jpg",
+          "enhancedStats": {
+            "height": 512,
+            "meanGradient": 9.428,
+            "meanLuminance": 127.028,
+            "stddevLuminance": 50.925,
+            "width": 512
+          },
+          "rawPath": "/tmp/satellite-super-resolution-pilot/aoi-007/before/raw-z19-512.jpg",
+          "rawStats": {
+            "height": 512,
+            "meanGradient": 5.137,
+            "meanLuminance": 129.941,
+            "stddevLuminance": 36.523,
+            "width": 512
+          },
+          "srPath": "/tmp/satellite-super-resolution-pilot/aoi-007/before/real-esrgan-x4-z19-2048.jpg",
+          "srStats": {
+            "height": 2048,
+            "meanGradient": 7.027,
+            "meanLuminance": 131.151,
+            "stddevLuminance": 42.667,
+            "width": 2048
+          }
+        }
+      },
+      "severity": "high",
+      "severityCode": 0,
+      "tile": {
+        "x": 164543,
+        "y": 246645
+      },
+      "warning": "Learned super-resolution can hallucinate texture; compare against raw source before using for decisions.",
+      "zoom": 19
+    },
+    {
+      "afterEnhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-008/after/deterministic-enhanced-z19-512.jpg",
+      "afterRawPath": "/tmp/satellite-super-resolution-pilot/aoi-008/after/raw-z19-512.jpg",
+      "afterSrPath": "/tmp/satellite-super-resolution-pilot/aoi-008/after/real-esrgan-x4-z19-2048.jpg",
+      "beforeEnhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-008/before/deterministic-enhanced-z19-512.jpg",
+      "beforeRawPath": "/tmp/satellite-super-resolution-pilot/aoi-008/before/raw-z19-512.jpg",
+      "beforeSrPath": "/tmp/satellite-super-resolution-pilot/aoi-008/before/real-esrgan-x4-z19-2048.jpg",
+      "id": "aoi-008",
+      "interpretive": true,
+      "lat": 10.581625,
+      "lon": -67.020528,
+      "model": "RealESRGAN_x4plus",
+      "scenes": {
+        "after": {
+          "available": true,
+          "enhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-008/after/deterministic-enhanced-z19-512.jpg",
+          "enhancedStats": {
+            "height": 512,
+            "meanGradient": 7.516,
+            "meanLuminance": 115.314,
+            "stddevLuminance": 37.242,
+            "width": 512
+          },
+          "rawPath": "/tmp/satellite-super-resolution-pilot/aoi-008/after/raw-z19-512.jpg",
+          "rawStats": {
+            "height": 512,
+            "meanGradient": 3.634,
+            "meanLuminance": 111.24,
+            "stddevLuminance": 27.076,
+            "width": 512
+          },
+          "srPath": "/tmp/satellite-super-resolution-pilot/aoi-008/after/real-esrgan-x4-z19-2048.jpg",
+          "srStats": {
+            "height": 2048,
+            "meanGradient": 8.743,
+            "meanLuminance": 109.76,
+            "stddevLuminance": 33.273,
+            "width": 2048
+          }
+        },
+        "before": {
+          "available": true,
+          "enhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-008/before/deterministic-enhanced-z19-512.jpg",
+          "enhancedStats": {
+            "height": 512,
+            "meanGradient": 9.295,
+            "meanLuminance": 117.761,
+            "stddevLuminance": 43.335,
+            "width": 512
+          },
+          "rawPath": "/tmp/satellite-super-resolution-pilot/aoi-008/before/raw-z19-512.jpg",
+          "rawStats": {
+            "height": 512,
+            "meanGradient": 4.815,
+            "meanLuminance": 111.495,
+            "stddevLuminance": 35.043,
+            "width": 512
+          },
+          "srPath": "/tmp/satellite-super-resolution-pilot/aoi-008/before/real-esrgan-x4-z19-2048.jpg",
+          "srStats": {
+            "height": 2048,
+            "meanGradient": 9.441,
+            "meanLuminance": 108.025,
+            "stddevLuminance": 43.957,
+            "width": 2048
+          }
+        }
+      },
+      "severity": "high",
+      "severityCode": 0,
+      "tile": {
+        "x": 164538,
+        "y": 246645
+      },
+      "warning": "Learned super-resolution can hallucinate texture; compare against raw source before using for decisions.",
+      "zoom": 19
+    },
+    {
+      "afterEnhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-009/after/deterministic-enhanced-z19-512.jpg",
+      "afterRawPath": "/tmp/satellite-super-resolution-pilot/aoi-009/after/raw-z19-512.jpg",
+      "afterSrPath": "/tmp/satellite-super-resolution-pilot/aoi-009/after/real-esrgan-x4-z19-2048.jpg",
+      "beforeEnhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-009/before/deterministic-enhanced-z19-512.jpg",
+      "beforeRawPath": "/tmp/satellite-super-resolution-pilot/aoi-009/before/raw-z19-512.jpg",
+      "beforeSrPath": "/tmp/satellite-super-resolution-pilot/aoi-009/before/real-esrgan-x4-z19-2048.jpg",
+      "id": "aoi-009",
+      "interpretive": true,
+      "lat": 10.582096,
+      "lon": -67.021366,
+      "model": "RealESRGAN_x4plus",
+      "scenes": {
+        "after": {
+          "available": true,
+          "enhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-009/after/deterministic-enhanced-z19-512.jpg",
+          "enhancedStats": {
+            "height": 512,
+            "meanGradient": 7.381,
+            "meanLuminance": 120.114,
+            "stddevLuminance": 41.014,
+            "width": 512
+          },
+          "rawPath": "/tmp/satellite-super-resolution-pilot/aoi-009/after/raw-z19-512.jpg",
+          "rawStats": {
+            "height": 512,
+            "meanGradient": 3.678,
+            "meanLuminance": 119.067,
+            "stddevLuminance": 29.136,
+            "width": 512
+          },
+          "srPath": "/tmp/satellite-super-resolution-pilot/aoi-009/after/real-esrgan-x4-z19-2048.jpg",
+          "srStats": {
+            "height": 2048,
+            "meanGradient": 8.863,
+            "meanLuminance": 119.161,
+            "stddevLuminance": 35.082,
+            "width": 2048
+          }
+        },
+        "before": {
+          "available": true,
+          "enhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-009/before/deterministic-enhanced-z19-512.jpg",
+          "enhancedStats": {
+            "height": 512,
+            "meanGradient": 9.624,
+            "meanLuminance": 117.002,
+            "stddevLuminance": 50.494,
+            "width": 512
+          },
+          "rawPath": "/tmp/satellite-super-resolution-pilot/aoi-009/before/raw-z19-512.jpg",
+          "rawStats": {
+            "height": 512,
+            "meanGradient": 5.268,
+            "meanLuminance": 109.207,
+            "stddevLuminance": 41.415,
+            "width": 512
+          },
+          "srPath": "/tmp/satellite-super-resolution-pilot/aoi-009/before/real-esrgan-x4-z19-2048.jpg",
+          "srStats": {
+            "height": 2048,
+            "meanGradient": 6.922,
+            "meanLuminance": 107.844,
+            "stddevLuminance": 47.731,
+            "width": 2048
+          }
+        }
+      },
+      "severity": "high",
+      "severityCode": 0,
+      "tile": {
+        "x": 164537,
+        "y": 246644
+      },
+      "warning": "Learned super-resolution can hallucinate texture; compare against raw source before using for decisions.",
+      "zoom": 19
+    },
+    {
+      "afterEnhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-010/after/deterministic-enhanced-z19-512.jpg",
+      "afterRawPath": "/tmp/satellite-super-resolution-pilot/aoi-010/after/raw-z19-512.jpg",
+      "afterSrPath": "/tmp/satellite-super-resolution-pilot/aoi-010/after/real-esrgan-x4-z19-2048.jpg",
+      "beforeEnhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-010/before/deterministic-enhanced-z19-512.jpg",
+      "beforeRawPath": "/tmp/satellite-super-resolution-pilot/aoi-010/before/raw-z19-512.jpg",
+      "beforeSrPath": "/tmp/satellite-super-resolution-pilot/aoi-010/before/real-esrgan-x4-z19-2048.jpg",
+      "id": "aoi-010",
+      "interpretive": true,
+      "lat": 10.582148,
+      "lon": -67.032311,
+      "model": "RealESRGAN_x4plus",
+      "scenes": {
+        "after": {
+          "available": true,
+          "enhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-010/after/deterministic-enhanced-z19-512.jpg",
+          "enhancedStats": {
+            "height": 512,
+            "meanGradient": 6.952,
+            "meanLuminance": 106.472,
+            "stddevLuminance": 37.334,
+            "width": 512
+          },
+          "rawPath": "/tmp/satellite-super-resolution-pilot/aoi-010/after/raw-z19-512.jpg",
+          "rawStats": {
+            "height": 512,
+            "meanGradient": 3.387,
+            "meanLuminance": 100.588,
+            "stddevLuminance": 28.388,
+            "width": 512
+          },
+          "srPath": "/tmp/satellite-super-resolution-pilot/aoi-010/after/real-esrgan-x4-z19-2048.jpg",
+          "srStats": {
+            "height": 2048,
+            "meanGradient": 6.123,
+            "meanLuminance": 98.765,
+            "stddevLuminance": 32.687,
+            "width": 2048
+          }
+        },
+        "before": {
+          "available": true,
+          "enhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-010/before/deterministic-enhanced-z19-512.jpg",
+          "enhancedStats": {
+            "height": 512,
+            "meanGradient": 7.406,
+            "meanLuminance": 111.855,
+            "stddevLuminance": 37.455,
+            "width": 512
+          },
+          "rawPath": "/tmp/satellite-super-resolution-pilot/aoi-010/before/raw-z19-512.jpg",
+          "rawStats": {
+            "height": 512,
+            "meanGradient": 3.607,
+            "meanLuminance": 102.493,
+            "stddevLuminance": 28.314,
+            "width": 512
+          },
+          "srPath": "/tmp/satellite-super-resolution-pilot/aoi-010/before/real-esrgan-x4-z19-2048.jpg",
+          "srStats": {
+            "height": 2048,
+            "meanGradient": 7.577,
+            "meanLuminance": 99.261,
+            "stddevLuminance": 34.455,
+            "width": 2048
+          }
+        }
+      },
+      "severity": "high",
+      "severityCode": 0,
+      "tile": {
+        "x": 164521,
+        "y": 246644
+      },
+      "warning": "Learned super-resolution can hallucinate texture; compare against raw source before using for decisions.",
+      "zoom": 19
+    },
+    {
+      "afterEnhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-011/after/deterministic-enhanced-z19-512.jpg",
+      "afterRawPath": "/tmp/satellite-super-resolution-pilot/aoi-011/after/raw-z19-512.jpg",
+      "afterSrPath": "/tmp/satellite-super-resolution-pilot/aoi-011/after/real-esrgan-x4-z19-2048.jpg",
+      "beforeEnhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-011/before/deterministic-enhanced-z19-512.jpg",
+      "beforeRawPath": "/tmp/satellite-super-resolution-pilot/aoi-011/before/raw-z19-512.jpg",
+      "beforeSrPath": "/tmp/satellite-super-resolution-pilot/aoi-011/before/real-esrgan-x4-z19-2048.jpg",
+      "id": "aoi-011",
+      "interpretive": true,
+      "lat": 10.58231,
+      "lon": -67.017948,
+      "model": "RealESRGAN_x4plus",
+      "scenes": {
+        "after": {
+          "available": true,
+          "enhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-011/after/deterministic-enhanced-z19-512.jpg",
+          "enhancedStats": {
+            "height": 512,
+            "meanGradient": 8.054,
+            "meanLuminance": 138.644,
+            "stddevLuminance": 47.642,
+            "width": 512
+          },
+          "rawPath": "/tmp/satellite-super-resolution-pilot/aoi-011/after/raw-z19-512.jpg",
+          "rawStats": {
+            "height": 512,
+            "meanGradient": 4.275,
+            "meanLuminance": 145.153,
+            "stddevLuminance": 33.058,
+            "width": 512
+          },
+          "srPath": "/tmp/satellite-super-resolution-pilot/aoi-011/after/real-esrgan-x4-z19-2048.jpg",
+          "srStats": {
+            "height": 2048,
+            "meanGradient": 5.913,
+            "meanLuminance": 147.138,
+            "stddevLuminance": 37.31,
+            "width": 2048
+          }
+        },
+        "before": {
+          "available": true,
+          "enhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-011/before/deterministic-enhanced-z19-512.jpg",
+          "enhancedStats": {
+            "height": 512,
+            "meanGradient": 11.056,
+            "meanLuminance": 133.423,
+            "stddevLuminance": 55.824,
+            "width": 512
+          },
+          "rawPath": "/tmp/satellite-super-resolution-pilot/aoi-011/before/raw-z19-512.jpg",
+          "rawStats": {
+            "height": 512,
+            "meanGradient": 6.373,
+            "meanLuminance": 135.541,
+            "stddevLuminance": 41.331,
+            "width": 512
+          },
+          "srPath": "/tmp/satellite-super-resolution-pilot/aoi-011/before/real-esrgan-x4-z19-2048.jpg",
+          "srStats": {
+            "height": 2048,
+            "meanGradient": 5.639,
+            "meanLuminance": 136.533,
+            "stddevLuminance": 47.911,
+            "width": 2048
+          }
+        }
+      },
+      "severity": "high",
+      "severityCode": 0,
+      "tile": {
+        "x": 164542,
+        "y": 246644
+      },
+      "warning": "Learned super-resolution can hallucinate texture; compare against raw source before using for decisions.",
+      "zoom": 19
+    },
+    {
+      "afterEnhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-012/after/deterministic-enhanced-z19-512.jpg",
+      "afterRawPath": "/tmp/satellite-super-resolution-pilot/aoi-012/after/raw-z19-512.jpg",
+      "afterSrPath": "/tmp/satellite-super-resolution-pilot/aoi-012/after/real-esrgan-x4-z19-2048.jpg",
+      "beforeEnhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-012/before/deterministic-enhanced-z19-512.jpg",
+      "beforeRawPath": "/tmp/satellite-super-resolution-pilot/aoi-012/before/raw-z19-512.jpg",
+      "beforeSrPath": "/tmp/satellite-super-resolution-pilot/aoi-012/before/real-esrgan-x4-z19-2048.jpg",
+      "id": "aoi-012",
+      "interpretive": true,
+      "lat": 10.582787,
+      "lon": -67.019231,
+      "model": "RealESRGAN_x4plus",
+      "scenes": {
+        "after": {
+          "available": true,
+          "enhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-012/after/deterministic-enhanced-z19-512.jpg",
+          "enhancedStats": {
+            "height": 512,
+            "meanGradient": 8.501,
+            "meanLuminance": 124.449,
+            "stddevLuminance": 47.013,
+            "width": 512
+          },
+          "rawPath": "/tmp/satellite-super-resolution-pilot/aoi-012/after/raw-z19-512.jpg",
+          "rawStats": {
+            "height": 512,
+            "meanGradient": 4.456,
+            "meanLuminance": 128.835,
+            "stddevLuminance": 33.89,
+            "width": 512
+          },
+          "srPath": "/tmp/satellite-super-resolution-pilot/aoi-012/after/real-esrgan-x4-z19-2048.jpg",
+          "srStats": {
+            "height": 2048,
+            "meanGradient": 5.985,
+            "meanLuminance": 130.747,
+            "stddevLuminance": 38.211,
+            "width": 2048
+          }
+        },
+        "before": {
+          "available": true,
+          "enhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-012/before/deterministic-enhanced-z19-512.jpg",
+          "enhancedStats": {
+            "height": 512,
+            "meanGradient": 11.3,
+            "meanLuminance": 129.152,
+            "stddevLuminance": 51.024,
+            "width": 512
+          },
+          "rawPath": "/tmp/satellite-super-resolution-pilot/aoi-012/before/raw-z19-512.jpg",
+          "rawStats": {
+            "height": 512,
+            "meanGradient": 6.221,
+            "meanLuminance": 131.403,
+            "stddevLuminance": 38.367,
+            "width": 512
+          },
+          "srPath": "/tmp/satellite-super-resolution-pilot/aoi-012/before/real-esrgan-x4-z19-2048.jpg",
+          "srStats": {
+            "height": 2048,
+            "meanGradient": 5.049,
+            "meanLuminance": 132.659,
+            "stddevLuminance": 43.873,
+            "width": 2048
+          }
+        }
+      },
+      "severity": "high",
+      "severityCode": 0,
+      "tile": {
+        "x": 164540,
+        "y": 246643
+      },
+      "warning": "Learned super-resolution can hallucinate texture; compare against raw source before using for decisions.",
+      "zoom": 19
+    },
+    {
+      "afterEnhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-013/after/deterministic-enhanced-z19-512.jpg",
+      "afterRawPath": "/tmp/satellite-super-resolution-pilot/aoi-013/after/raw-z19-512.jpg",
+      "afterSrPath": "/tmp/satellite-super-resolution-pilot/aoi-013/after/real-esrgan-x4-z19-2048.jpg",
+      "beforeEnhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-013/before/deterministic-enhanced-z19-512.jpg",
+      "beforeRawPath": "/tmp/satellite-super-resolution-pilot/aoi-013/before/raw-z19-512.jpg",
+      "beforeSrPath": "/tmp/satellite-super-resolution-pilot/aoi-013/before/real-esrgan-x4-z19-2048.jpg",
+      "id": "aoi-013",
+      "interpretive": true,
+      "lat": 10.582792,
+      "lon": -67.034816,
+      "model": "RealESRGAN_x4plus",
+      "scenes": {
+        "after": {
+          "available": true,
+          "enhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-013/after/deterministic-enhanced-z19-512.jpg",
+          "enhancedStats": {
+            "height": 512,
+            "meanGradient": 6.094,
+            "meanLuminance": 108.289,
+            "stddevLuminance": 34.124,
+            "width": 512
+          },
+          "rawPath": "/tmp/satellite-super-resolution-pilot/aoi-013/after/raw-z19-512.jpg",
+          "rawStats": {
+            "height": 512,
+            "meanGradient": 2.878,
+            "meanLuminance": 104.235,
+            "stddevLuminance": 22.601,
+            "width": 512
+          },
+          "srPath": "/tmp/satellite-super-resolution-pilot/aoi-013/after/real-esrgan-x4-z19-2048.jpg",
+          "srStats": {
+            "height": 2048,
+            "meanGradient": 4.712,
+            "meanLuminance": 103.692,
+            "stddevLuminance": 25.267,
+            "width": 2048
+          }
+        },
+        "before": {
+          "available": true,
+          "enhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-013/before/deterministic-enhanced-z19-512.jpg",
+          "enhancedStats": {
+            "height": 512,
+            "meanGradient": 7.368,
+            "meanLuminance": 119.838,
+            "stddevLuminance": 42.58,
+            "width": 512
+          },
+          "rawPath": "/tmp/satellite-super-resolution-pilot/aoi-013/before/raw-z19-512.jpg",
+          "rawStats": {
+            "height": 512,
+            "meanGradient": 3.715,
+            "meanLuminance": 113.625,
+            "stddevLuminance": 32.417,
+            "width": 512
+          },
+          "srPath": "/tmp/satellite-super-resolution-pilot/aoi-013/before/real-esrgan-x4-z19-2048.jpg",
+          "srStats": {
+            "height": 2048,
+            "meanGradient": 5.821,
+            "meanLuminance": 112.902,
+            "stddevLuminance": 36.991,
+            "width": 2048
+          }
+        }
+      },
+      "severity": "high",
+      "severityCode": 0,
+      "tile": {
+        "x": 164517,
+        "y": 246643
+      },
+      "warning": "Learned super-resolution can hallucinate texture; compare against raw source before using for decisions.",
+      "zoom": 19
+    },
+    {
+      "afterEnhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-014/after/deterministic-enhanced-z19-512.jpg",
+      "afterRawPath": "/tmp/satellite-super-resolution-pilot/aoi-014/after/raw-z19-512.jpg",
+      "afterSrPath": "/tmp/satellite-super-resolution-pilot/aoi-014/after/real-esrgan-x4-z19-2048.jpg",
+      "beforeEnhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-014/before/deterministic-enhanced-z19-512.jpg",
+      "beforeRawPath": "/tmp/satellite-super-resolution-pilot/aoi-014/before/raw-z19-512.jpg",
+      "beforeSrPath": "/tmp/satellite-super-resolution-pilot/aoi-014/before/real-esrgan-x4-z19-2048.jpg",
+      "id": "aoi-014",
+      "interpretive": true,
+      "lat": 10.582933,
+      "lon": -67.030499,
+      "model": "RealESRGAN_x4plus",
+      "scenes": {
+        "after": {
+          "available": true,
+          "enhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-014/after/deterministic-enhanced-z19-512.jpg",
+          "enhancedStats": {
+            "height": 512,
+            "meanGradient": 6.495,
+            "meanLuminance": 96.894,
+            "stddevLuminance": 33.781,
+            "width": 512
+          },
+          "rawPath": "/tmp/satellite-super-resolution-pilot/aoi-014/after/raw-z19-512.jpg",
+          "rawStats": {
+            "height": 512,
+            "meanGradient": 2.967,
+            "meanLuminance": 90.97,
+            "stddevLuminance": 23.129,
+            "width": 512
+          },
+          "srPath": "/tmp/satellite-super-resolution-pilot/aoi-014/after/real-esrgan-x4-z19-2048.jpg",
+          "srStats": {
+            "height": 2048,
+            "meanGradient": 7.458,
+            "meanLuminance": 87.961,
+            "stddevLuminance": 28.059,
+            "width": 2048
+          }
+        },
+        "before": {
+          "available": true,
+          "enhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-014/before/deterministic-enhanced-z19-512.jpg",
+          "enhancedStats": {
+            "height": 512,
+            "meanGradient": 6.753,
+            "meanLuminance": 115.786,
+            "stddevLuminance": 38.63,
+            "width": 512
+          },
+          "rawPath": "/tmp/satellite-super-resolution-pilot/aoi-014/before/raw-z19-512.jpg",
+          "rawStats": {
+            "height": 512,
+            "meanGradient": 3.35,
+            "meanLuminance": 106.26,
+            "stddevLuminance": 30.723,
+            "width": 512
+          },
+          "srPath": "/tmp/satellite-super-resolution-pilot/aoi-014/before/real-esrgan-x4-z19-2048.jpg",
+          "srStats": {
+            "height": 2048,
+            "meanGradient": 6.745,
+            "meanLuminance": 104.108,
+            "stddevLuminance": 36.425,
+            "width": 2048
+          }
+        }
+      },
+      "severity": "high",
+      "severityCode": 0,
+      "tile": {
+        "x": 164523,
+        "y": 246643
+      },
+      "warning": "Learned super-resolution can hallucinate texture; compare against raw source before using for decisions.",
+      "zoom": 19
+    },
+    {
+      "afterEnhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-015/after/deterministic-enhanced-z19-512.jpg",
+      "afterRawPath": "/tmp/satellite-super-resolution-pilot/aoi-015/after/raw-z19-512.jpg",
+      "afterSrPath": "/tmp/satellite-super-resolution-pilot/aoi-015/after/real-esrgan-x4-z19-2048.jpg",
+      "beforeEnhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-015/before/deterministic-enhanced-z19-512.jpg",
+      "beforeRawPath": "/tmp/satellite-super-resolution-pilot/aoi-015/before/raw-z19-512.jpg",
+      "beforeSrPath": "/tmp/satellite-super-resolution-pilot/aoi-015/before/real-esrgan-x4-z19-2048.jpg",
+      "id": "aoi-015",
+      "interpretive": true,
+      "lat": 10.583208,
+      "lon": -67.017759,
+      "model": "RealESRGAN_x4plus",
+      "scenes": {
+        "after": {
+          "available": true,
+          "enhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-015/after/deterministic-enhanced-z19-512.jpg",
+          "enhancedStats": {
+            "height": 512,
+            "meanGradient": 6.974,
+            "meanLuminance": 130.961,
+            "stddevLuminance": 47.657,
+            "width": 512
+          },
+          "rawPath": "/tmp/satellite-super-resolution-pilot/aoi-015/after/raw-z19-512.jpg",
+          "rawStats": {
+            "height": 512,
+            "meanGradient": 3.791,
+            "meanLuminance": 135.576,
+            "stddevLuminance": 34.519,
+            "width": 512
+          },
+          "srPath": "/tmp/satellite-super-resolution-pilot/aoi-015/after/real-esrgan-x4-z19-2048.jpg",
+          "srStats": {
+            "height": 2048,
+            "meanGradient": 4.653,
+            "meanLuminance": 136.961,
+            "stddevLuminance": 38.033,
+            "width": 2048
+          }
+        },
+        "before": {
+          "available": true,
+          "enhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-015/before/deterministic-enhanced-z19-512.jpg",
+          "enhancedStats": {
+            "height": 512,
+            "meanGradient": 9.063,
+            "meanLuminance": 132.73,
+            "stddevLuminance": 55.046,
+            "width": 512
+          },
+          "rawPath": "/tmp/satellite-super-resolution-pilot/aoi-015/before/raw-z19-512.jpg",
+          "rawStats": {
+            "height": 512,
+            "meanGradient": 5.382,
+            "meanLuminance": 143.2,
+            "stddevLuminance": 42.821,
+            "width": 512
+          },
+          "srPath": "/tmp/satellite-super-resolution-pilot/aoi-015/before/real-esrgan-x4-z19-2048.jpg",
+          "srStats": {
+            "height": 2048,
+            "meanGradient": 4.941,
+            "meanLuminance": 145.051,
+            "stddevLuminance": 48.462,
+            "width": 2048
+          }
+        }
+      },
+      "severity": "high",
+      "severityCode": 0,
+      "tile": {
+        "x": 164542,
+        "y": 246642
+      },
+      "warning": "Learned super-resolution can hallucinate texture; compare against raw source before using for decisions.",
+      "zoom": 19
+    },
+    {
+      "afterEnhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-016/after/deterministic-enhanced-z19-512.jpg",
+      "afterRawPath": "/tmp/satellite-super-resolution-pilot/aoi-016/after/raw-z19-512.jpg",
+      "afterSrPath": "/tmp/satellite-super-resolution-pilot/aoi-016/after/real-esrgan-x4-z19-2048.jpg",
+      "beforeEnhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-016/before/deterministic-enhanced-z19-512.jpg",
+      "beforeRawPath": "/tmp/satellite-super-resolution-pilot/aoi-016/before/raw-z19-512.jpg",
+      "beforeSrPath": "/tmp/satellite-super-resolution-pilot/aoi-016/before/real-esrgan-x4-z19-2048.jpg",
+      "id": "aoi-016",
+      "interpretive": true,
+      "lat": 10.583343,
+      "lon": -67.031827,
+      "model": "RealESRGAN_x4plus",
+      "scenes": {
+        "after": {
+          "available": true,
+          "enhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-016/after/deterministic-enhanced-z19-512.jpg",
+          "enhancedStats": {
+            "height": 512,
+            "meanGradient": 7.453,
+            "meanLuminance": 108.179,
+            "stddevLuminance": 43.885,
+            "width": 512
+          },
+          "rawPath": "/tmp/satellite-super-resolution-pilot/aoi-016/after/raw-z19-512.jpg",
+          "rawStats": {
+            "height": 512,
+            "meanGradient": 3.744,
+            "meanLuminance": 106.121,
+            "stddevLuminance": 32.089,
+            "width": 512
+          },
+          "srPath": "/tmp/satellite-super-resolution-pilot/aoi-016/after/real-esrgan-x4-z19-2048.jpg",
+          "srStats": {
+            "height": 2048,
+            "meanGradient": 7.34,
+            "meanLuminance": 104.915,
+            "stddevLuminance": 37.181,
+            "width": 2048
+          }
+        },
+        "before": {
+          "available": true,
+          "enhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-016/before/deterministic-enhanced-z19-512.jpg",
+          "enhancedStats": {
+            "height": 512,
+            "meanGradient": 9.979,
+            "meanLuminance": 122.175,
+            "stddevLuminance": 52.847,
+            "width": 512
+          },
+          "rawPath": "/tmp/satellite-super-resolution-pilot/aoi-016/before/raw-z19-512.jpg",
+          "rawStats": {
+            "height": 512,
+            "meanGradient": 5.561,
+            "meanLuminance": 116.563,
+            "stddevLuminance": 40.056,
+            "width": 512
+          },
+          "srPath": "/tmp/satellite-super-resolution-pilot/aoi-016/before/real-esrgan-x4-z19-2048.jpg",
+          "srStats": {
+            "height": 2048,
+            "meanGradient": 8.861,
+            "meanLuminance": 114.316,
+            "stddevLuminance": 48.897,
+            "width": 2048
+          }
+        }
+      },
+      "severity": "high",
+      "severityCode": 0,
+      "tile": {
+        "x": 164521,
+        "y": 246642
+      },
+      "warning": "Learned super-resolution can hallucinate texture; compare against raw source before using for decisions.",
+      "zoom": 19
+    },
+    {
+      "afterEnhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-017/after/deterministic-enhanced-z19-512.jpg",
+      "afterRawPath": "/tmp/satellite-super-resolution-pilot/aoi-017/after/raw-z19-512.jpg",
+      "afterSrPath": "/tmp/satellite-super-resolution-pilot/aoi-017/after/real-esrgan-x4-z19-2048.jpg",
+      "beforeEnhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-017/before/deterministic-enhanced-z19-512.jpg",
+      "beforeRawPath": "/tmp/satellite-super-resolution-pilot/aoi-017/before/raw-z19-512.jpg",
+      "beforeSrPath": "/tmp/satellite-super-resolution-pilot/aoi-017/before/real-esrgan-x4-z19-2048.jpg",
+      "id": "aoi-017",
+      "interpretive": true,
+      "lat": 10.583373,
+      "lon": -67.018734,
+      "model": "RealESRGAN_x4plus",
+      "scenes": {
+        "after": {
+          "available": true,
+          "enhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-017/after/deterministic-enhanced-z19-512.jpg",
+          "enhancedStats": {
+            "height": 512,
+            "meanGradient": 8.337,
+            "meanLuminance": 124.148,
+            "stddevLuminance": 47.43,
+            "width": 512
+          },
+          "rawPath": "/tmp/satellite-super-resolution-pilot/aoi-017/after/raw-z19-512.jpg",
+          "rawStats": {
+            "height": 512,
+            "meanGradient": 4.33,
+            "meanLuminance": 127.971,
+            "stddevLuminance": 37.262,
+            "width": 512
+          },
+          "srPath": "/tmp/satellite-super-resolution-pilot/aoi-017/after/real-esrgan-x4-z19-2048.jpg",
+          "srStats": {
+            "height": 2048,
+            "meanGradient": 5.882,
+            "meanLuminance": 128.551,
+            "stddevLuminance": 41.063,
+            "width": 2048
+          }
+        },
+        "before": {
+          "available": true,
+          "enhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-017/before/deterministic-enhanced-z19-512.jpg",
+          "enhancedStats": {
+            "height": 512,
+            "meanGradient": 11.722,
+            "meanLuminance": 126.303,
+            "stddevLuminance": 52.446,
+            "width": 512
+          },
+          "rawPath": "/tmp/satellite-super-resolution-pilot/aoi-017/before/raw-z19-512.jpg",
+          "rawStats": {
+            "height": 512,
+            "meanGradient": 6.495,
+            "meanLuminance": 125.058,
+            "stddevLuminance": 42.41,
+            "width": 512
+          },
+          "srPath": "/tmp/satellite-super-resolution-pilot/aoi-017/before/real-esrgan-x4-z19-2048.jpg",
+          "srStats": {
+            "height": 2048,
+            "meanGradient": 6.06,
+            "meanLuminance": 123.906,
+            "stddevLuminance": 48.856,
+            "width": 2048
+          }
+        }
+      },
+      "severity": "high",
+      "severityCode": 0,
+      "tile": {
+        "x": 164540,
+        "y": 246642
+      },
+      "warning": "Learned super-resolution can hallucinate texture; compare against raw source before using for decisions.",
+      "zoom": 19
+    },
+    {
+      "afterEnhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-018/after/deterministic-enhanced-z19-512.jpg",
+      "afterRawPath": "/tmp/satellite-super-resolution-pilot/aoi-018/after/raw-z19-512.jpg",
+      "afterSrPath": "/tmp/satellite-super-resolution-pilot/aoi-018/after/real-esrgan-x4-z19-2048.jpg",
+      "beforeEnhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-018/before/deterministic-enhanced-z19-512.jpg",
+      "beforeRawPath": "/tmp/satellite-super-resolution-pilot/aoi-018/before/raw-z19-512.jpg",
+      "beforeSrPath": "/tmp/satellite-super-resolution-pilot/aoi-018/before/real-esrgan-x4-z19-2048.jpg",
+      "id": "aoi-018",
+      "interpretive": true,
+      "lat": 10.583628,
+      "lon": -67.019541,
+      "model": "RealESRGAN_x4plus",
+      "scenes": {
+        "after": {
+          "available": true,
+          "enhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-018/after/deterministic-enhanced-z19-512.jpg",
+          "enhancedStats": {
+            "height": 512,
+            "meanGradient": 7.256,
+            "meanLuminance": 123.058,
+            "stddevLuminance": 45.579,
+            "width": 512
+          },
+          "rawPath": "/tmp/satellite-super-resolution-pilot/aoi-018/after/raw-z19-512.jpg",
+          "rawStats": {
+            "height": 512,
+            "meanGradient": 3.742,
+            "meanLuminance": 124.422,
+            "stddevLuminance": 35.087,
+            "width": 512
+          },
+          "srPath": "/tmp/satellite-super-resolution-pilot/aoi-018/after/real-esrgan-x4-z19-2048.jpg",
+          "srStats": {
+            "height": 2048,
+            "meanGradient": 8.184,
+            "meanLuminance": 124.388,
+            "stddevLuminance": 40.4,
+            "width": 2048
+          }
+        },
+        "before": {
+          "available": true,
+          "enhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-018/before/deterministic-enhanced-z19-512.jpg",
+          "enhancedStats": {
+            "height": 512,
+            "meanGradient": 10.669,
+            "meanLuminance": 120.945,
+            "stddevLuminance": 54.717,
+            "width": 512
+          },
+          "rawPath": "/tmp/satellite-super-resolution-pilot/aoi-018/before/raw-z19-512.jpg",
+          "rawStats": {
+            "height": 512,
+            "meanGradient": 5.903,
+            "meanLuminance": 114.088,
+            "stddevLuminance": 43.341,
+            "width": 512
+          },
+          "srPath": "/tmp/satellite-super-resolution-pilot/aoi-018/before/real-esrgan-x4-z19-2048.jpg",
+          "srStats": {
+            "height": 2048,
+            "meanGradient": 7.21,
+            "meanLuminance": 112.73,
+            "stddevLuminance": 50.387,
+            "width": 2048
+          }
+        }
+      },
+      "severity": "high",
+      "severityCode": 0,
+      "tile": {
+        "x": 164539,
+        "y": 246642
+      },
+      "warning": "Learned super-resolution can hallucinate texture; compare against raw source before using for decisions.",
+      "zoom": 19
+    },
+    {
+      "afterEnhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-019/after/deterministic-enhanced-z19-512.jpg",
+      "afterRawPath": "/tmp/satellite-super-resolution-pilot/aoi-019/after/raw-z19-512.jpg",
+      "afterSrPath": "/tmp/satellite-super-resolution-pilot/aoi-019/after/real-esrgan-x4-z19-2048.jpg",
+      "beforeEnhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-019/before/deterministic-enhanced-z19-512.jpg",
+      "beforeRawPath": "/tmp/satellite-super-resolution-pilot/aoi-019/before/raw-z19-512.jpg",
+      "beforeSrPath": "/tmp/satellite-super-resolution-pilot/aoi-019/before/real-esrgan-x4-z19-2048.jpg",
+      "id": "aoi-019",
+      "interpretive": true,
+      "lat": 10.58381,
+      "lon": -67.029313,
+      "model": "RealESRGAN_x4plus",
+      "scenes": {
+        "after": {
+          "available": true,
+          "enhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-019/after/deterministic-enhanced-z19-512.jpg",
+          "enhancedStats": {
+            "height": 512,
+            "meanGradient": 5.518,
+            "meanLuminance": 115.67,
+            "stddevLuminance": 21.345,
+            "width": 512
+          },
+          "rawPath": "/tmp/satellite-super-resolution-pilot/aoi-019/after/raw-z19-512.jpg",
+          "rawStats": {
+            "height": 512,
+            "meanGradient": 2.365,
+            "meanLuminance": 105.139,
+            "stddevLuminance": 11.253,
+            "width": 512
+          },
+          "srPath": "/tmp/satellite-super-resolution-pilot/aoi-019/after/real-esrgan-x4-z19-2048.jpg",
+          "srStats": {
+            "height": 2048,
+            "meanGradient": 6.253,
+            "meanLuminance": 103.068,
+            "stddevLuminance": 15.793,
+            "width": 2048
+          }
+        },
+        "before": {
+          "available": true,
+          "enhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-019/before/deterministic-enhanced-z19-512.jpg",
+          "enhancedStats": {
+            "height": 512,
+            "meanGradient": 6.749,
+            "meanLuminance": 118.375,
+            "stddevLuminance": 28.502,
+            "width": 512
+          },
+          "rawPath": "/tmp/satellite-super-resolution-pilot/aoi-019/before/raw-z19-512.jpg",
+          "rawStats": {
+            "height": 512,
+            "meanGradient": 3.019,
+            "meanLuminance": 108.738,
+            "stddevLuminance": 15.653,
+            "width": 512
+          },
+          "srPath": "/tmp/satellite-super-resolution-pilot/aoi-019/before/real-esrgan-x4-z19-2048.jpg",
+          "srStats": {
+            "height": 2048,
+            "meanGradient": 7.407,
+            "meanLuminance": 107.542,
+            "stddevLuminance": 20.763,
+            "width": 2048
+          }
+        }
+      },
+      "severity": "high",
+      "severityCode": 0,
+      "tile": {
+        "x": 164525,
+        "y": 246641
+      },
+      "warning": "Learned super-resolution can hallucinate texture; compare against raw source before using for decisions.",
+      "zoom": 19
+    },
+    {
+      "afterEnhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-020/after/deterministic-enhanced-z19-512.jpg",
+      "afterRawPath": "/tmp/satellite-super-resolution-pilot/aoi-020/after/raw-z19-512.jpg",
+      "afterSrPath": "/tmp/satellite-super-resolution-pilot/aoi-020/after/real-esrgan-x4-z19-2048.jpg",
+      "beforeEnhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-020/before/deterministic-enhanced-z19-512.jpg",
+      "beforeRawPath": "/tmp/satellite-super-resolution-pilot/aoi-020/before/raw-z19-512.jpg",
+      "beforeSrPath": "/tmp/satellite-super-resolution-pilot/aoi-020/before/real-esrgan-x4-z19-2048.jpg",
+      "id": "aoi-020",
+      "interpretive": true,
+      "lat": 10.584103,
+      "lon": -67.030337,
+      "model": "RealESRGAN_x4plus",
+      "scenes": {
+        "after": {
+          "available": true,
+          "enhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-020/after/deterministic-enhanced-z19-512.jpg",
+          "enhancedStats": {
+            "height": 512,
+            "meanGradient": 6.219,
+            "meanLuminance": 95.359,
+            "stddevLuminance": 35.91,
+            "width": 512
+          },
+          "rawPath": "/tmp/satellite-super-resolution-pilot/aoi-020/after/raw-z19-512.jpg",
+          "rawStats": {
+            "height": 512,
+            "meanGradient": 3.001,
+            "meanLuminance": 91.627,
+            "stddevLuminance": 23.997,
+            "width": 512
+          },
+          "srPath": "/tmp/satellite-super-resolution-pilot/aoi-020/after/real-esrgan-x4-z19-2048.jpg",
+          "srStats": {
+            "height": 2048,
+            "meanGradient": 5.326,
+            "meanLuminance": 90.181,
+            "stddevLuminance": 27.408,
+            "width": 2048
+          }
+        },
+        "before": {
+          "available": true,
+          "enhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-020/before/deterministic-enhanced-z19-512.jpg",
+          "enhancedStats": {
+            "height": 512,
+            "meanGradient": 8.003,
+            "meanLuminance": 113.041,
+            "stddevLuminance": 45.528,
+            "width": 512
+          },
+          "rawPath": "/tmp/satellite-super-resolution-pilot/aoi-020/before/raw-z19-512.jpg",
+          "rawStats": {
+            "height": 512,
+            "meanGradient": 4.211,
+            "meanLuminance": 102.101,
+            "stddevLuminance": 33.654,
+            "width": 512
+          },
+          "srPath": "/tmp/satellite-super-resolution-pilot/aoi-020/before/real-esrgan-x4-z19-2048.jpg",
+          "srStats": {
+            "height": 2048,
+            "meanGradient": 7.879,
+            "meanLuminance": 99.032,
+            "stddevLuminance": 40.896,
+            "width": 2048
+          }
+        }
+      },
+      "severity": "high",
+      "severityCode": 0,
+      "tile": {
+        "x": 164523,
+        "y": 246641
+      },
+      "warning": "Learned super-resolution can hallucinate texture; compare against raw source before using for decisions.",
+      "zoom": 19
+    },
+    {
+      "afterEnhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-021/after/deterministic-enhanced-z19-512.jpg",
+      "afterRawPath": "/tmp/satellite-super-resolution-pilot/aoi-021/after/raw-z19-512.jpg",
+      "afterSrPath": "/tmp/satellite-super-resolution-pilot/aoi-021/after/real-esrgan-x4-z19-2048.jpg",
+      "beforeEnhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-021/before/deterministic-enhanced-z19-512.jpg",
+      "beforeRawPath": "/tmp/satellite-super-resolution-pilot/aoi-021/before/raw-z19-512.jpg",
+      "beforeSrPath": "/tmp/satellite-super-resolution-pilot/aoi-021/before/real-esrgan-x4-z19-2048.jpg",
+      "id": "aoi-021",
+      "interpretive": true,
+      "lat": 10.584234,
+      "lon": -67.035935,
+      "model": "RealESRGAN_x4plus",
+      "scenes": {
+        "after": {
+          "available": true,
+          "enhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-021/after/deterministic-enhanced-z19-512.jpg",
+          "enhancedStats": {
+            "height": 512,
+            "meanGradient": 6.392,
+            "meanLuminance": 126.929,
+            "stddevLuminance": 43.219,
+            "width": 512
+          },
+          "rawPath": "/tmp/satellite-super-resolution-pilot/aoi-021/after/raw-z19-512.jpg",
+          "rawStats": {
+            "height": 512,
+            "meanGradient": 3.261,
+            "meanLuminance": 127.0,
+            "stddevLuminance": 31.221,
+            "width": 512
+          },
+          "srPath": "/tmp/satellite-super-resolution-pilot/aoi-021/after/real-esrgan-x4-z19-2048.jpg",
+          "srStats": {
+            "height": 2048,
+            "meanGradient": 4.515,
+            "meanLuminance": 128.489,
+            "stddevLuminance": 34.495,
+            "width": 2048
+          }
+        },
+        "before": {
+          "available": true,
+          "enhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-021/before/deterministic-enhanced-z19-512.jpg",
+          "enhancedStats": {
+            "height": 512,
+            "meanGradient": 9.517,
+            "meanLuminance": 127.613,
+            "stddevLuminance": 51.172,
+            "width": 512
+          },
+          "rawPath": "/tmp/satellite-super-resolution-pilot/aoi-021/before/raw-z19-512.jpg",
+          "rawStats": {
+            "height": 512,
+            "meanGradient": 5.28,
+            "meanLuminance": 127.593,
+            "stddevLuminance": 38.43,
+            "width": 512
+          },
+          "srPath": "/tmp/satellite-super-resolution-pilot/aoi-021/before/real-esrgan-x4-z19-2048.jpg",
+          "srStats": {
+            "height": 2048,
+            "meanGradient": 6.298,
+            "meanLuminance": 128.07,
+            "stddevLuminance": 45.258,
+            "width": 2048
+          }
+        }
+      },
+      "severity": "high",
+      "severityCode": 0,
+      "tile": {
+        "x": 164515,
+        "y": 246641
+      },
+      "warning": "Learned super-resolution can hallucinate texture; compare against raw source before using for decisions.",
+      "zoom": 19
+    },
+    {
+      "afterEnhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-022/after/deterministic-enhanced-z19-512.jpg",
+      "afterRawPath": "/tmp/satellite-super-resolution-pilot/aoi-022/after/raw-z19-512.jpg",
+      "afterSrPath": "/tmp/satellite-super-resolution-pilot/aoi-022/after/real-esrgan-x4-z19-2048.jpg",
+      "beforeEnhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-022/before/deterministic-enhanced-z19-512.jpg",
+      "beforeRawPath": "/tmp/satellite-super-resolution-pilot/aoi-022/before/raw-z19-512.jpg",
+      "beforeSrPath": "/tmp/satellite-super-resolution-pilot/aoi-022/before/real-esrgan-x4-z19-2048.jpg",
+      "id": "aoi-022",
+      "interpretive": true,
+      "lat": 10.584308,
+      "lon": -67.031163,
+      "model": "RealESRGAN_x4plus",
+      "scenes": {
+        "after": {
+          "available": true,
+          "enhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-022/after/deterministic-enhanced-z19-512.jpg",
+          "enhancedStats": {
+            "height": 512,
+            "meanGradient": 6.743,
+            "meanLuminance": 112.147,
+            "stddevLuminance": 49.143,
+            "width": 512
+          },
+          "rawPath": "/tmp/satellite-super-resolution-pilot/aoi-022/after/raw-z19-512.jpg",
+          "rawStats": {
+            "height": 512,
+            "meanGradient": 3.672,
+            "meanLuminance": 114.586,
+            "stddevLuminance": 37.656,
+            "width": 512
+          },
+          "srPath": "/tmp/satellite-super-resolution-pilot/aoi-022/after/real-esrgan-x4-z19-2048.jpg",
+          "srStats": {
+            "height": 2048,
+            "meanGradient": 4.892,
+            "meanLuminance": 115.292,
+            "stddevLuminance": 41.162,
+            "width": 2048
+          }
+        },
+        "before": {
+          "available": true,
+          "enhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-022/before/deterministic-enhanced-z19-512.jpg",
+          "enhancedStats": {
+            "height": 512,
+            "meanGradient": 7.836,
+            "meanLuminance": 134.184,
+            "stddevLuminance": 51.005,
+            "width": 512
+          },
+          "rawPath": "/tmp/satellite-super-resolution-pilot/aoi-022/before/raw-z19-512.jpg",
+          "rawStats": {
+            "height": 512,
+            "meanGradient": 4.391,
+            "meanLuminance": 136.294,
+            "stddevLuminance": 40.011,
+            "width": 512
+          },
+          "srPath": "/tmp/satellite-super-resolution-pilot/aoi-022/before/real-esrgan-x4-z19-2048.jpg",
+          "srStats": {
+            "height": 2048,
+            "meanGradient": 4.652,
+            "meanLuminance": 137.927,
+            "stddevLuminance": 44.28,
+            "width": 2048
+          }
+        }
+      },
+      "severity": "high",
+      "severityCode": 0,
+      "tile": {
+        "x": 164522,
+        "y": 246641
+      },
+      "warning": "Learned super-resolution can hallucinate texture; compare against raw source before using for decisions.",
+      "zoom": 19
+    },
+    {
+      "afterEnhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-023/after/deterministic-enhanced-z19-512.jpg",
+      "afterRawPath": "/tmp/satellite-super-resolution-pilot/aoi-023/after/raw-z19-512.jpg",
+      "afterSrPath": "/tmp/satellite-super-resolution-pilot/aoi-023/after/real-esrgan-x4-z19-2048.jpg",
+      "beforeEnhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-023/before/deterministic-enhanced-z19-512.jpg",
+      "beforeRawPath": "/tmp/satellite-super-resolution-pilot/aoi-023/before/raw-z19-512.jpg",
+      "beforeSrPath": "/tmp/satellite-super-resolution-pilot/aoi-023/before/real-esrgan-x4-z19-2048.jpg",
+      "id": "aoi-023",
+      "interpretive": true,
+      "lat": 10.584468,
+      "lon": -67.019044,
+      "model": "RealESRGAN_x4plus",
+      "scenes": {
+        "after": {
+          "available": true,
+          "enhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-023/after/deterministic-enhanced-z19-512.jpg",
+          "enhancedStats": {
+            "height": 512,
+            "meanGradient": 8.652,
+            "meanLuminance": 130.77,
+            "stddevLuminance": 49.277,
+            "width": 512
+          },
+          "rawPath": "/tmp/satellite-super-resolution-pilot/aoi-023/after/raw-z19-512.jpg",
+          "rawStats": {
+            "height": 512,
+            "meanGradient": 4.723,
+            "meanLuminance": 138.196,
+            "stddevLuminance": 34.716,
+            "width": 512
+          },
+          "srPath": "/tmp/satellite-super-resolution-pilot/aoi-023/after/real-esrgan-x4-z19-2048.jpg",
+          "srStats": {
+            "height": 2048,
+            "meanGradient": 4.695,
+            "meanLuminance": 140.243,
+            "stddevLuminance": 38.439,
+            "width": 2048
+          }
+        },
+        "before": {
+          "available": true,
+          "enhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-023/before/deterministic-enhanced-z19-512.jpg",
+          "enhancedStats": {
+            "height": 512,
+            "meanGradient": 11.09,
+            "meanLuminance": 132.302,
+            "stddevLuminance": 51.578,
+            "width": 512
+          },
+          "rawPath": "/tmp/satellite-super-resolution-pilot/aoi-023/before/raw-z19-512.jpg",
+          "rawStats": {
+            "height": 512,
+            "meanGradient": 6.158,
+            "meanLuminance": 136.659,
+            "stddevLuminance": 36.482,
+            "width": 512
+          },
+          "srPath": "/tmp/satellite-super-resolution-pilot/aoi-023/before/real-esrgan-x4-z19-2048.jpg",
+          "srStats": {
+            "height": 2048,
+            "meanGradient": 6.62,
+            "meanLuminance": 139.504,
+            "stddevLuminance": 42.98,
+            "width": 2048
+          }
+        }
+      },
+      "severity": "high",
+      "severityCode": 0,
+      "tile": {
+        "x": 164540,
+        "y": 246640
+      },
+      "warning": "Learned super-resolution can hallucinate texture; compare against raw source before using for decisions.",
+      "zoom": 19
+    },
+    {
+      "afterEnhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-024/after/deterministic-enhanced-z19-512.jpg",
+      "afterRawPath": "/tmp/satellite-super-resolution-pilot/aoi-024/after/raw-z19-512.jpg",
+      "afterSrPath": "/tmp/satellite-super-resolution-pilot/aoi-024/after/real-esrgan-x4-z19-2048.jpg",
+      "beforeEnhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-024/before/deterministic-enhanced-z19-512.jpg",
+      "beforeRawPath": "/tmp/satellite-super-resolution-pilot/aoi-024/before/raw-z19-512.jpg",
+      "beforeSrPath": "/tmp/satellite-super-resolution-pilot/aoi-024/before/real-esrgan-x4-z19-2048.jpg",
+      "id": "aoi-024",
+      "interpretive": true,
+      "lat": 10.584675,
+      "lon": -67.017166,
+      "model": "RealESRGAN_x4plus",
+      "scenes": {
+        "after": {
+          "available": true,
+          "enhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-024/after/deterministic-enhanced-z19-512.jpg",
+          "enhancedStats": {
+            "height": 512,
+            "meanGradient": 7.705,
+            "meanLuminance": 114.253,
+            "stddevLuminance": 40.0,
+            "width": 512
+          },
+          "rawPath": "/tmp/satellite-super-resolution-pilot/aoi-024/after/raw-z19-512.jpg",
+          "rawStats": {
+            "height": 512,
+            "meanGradient": 3.813,
+            "meanLuminance": 112.393,
+            "stddevLuminance": 30.596,
+            "width": 512
+          },
+          "srPath": "/tmp/satellite-super-resolution-pilot/aoi-024/after/real-esrgan-x4-z19-2048.jpg",
+          "srStats": {
+            "height": 2048,
+            "meanGradient": 6.934,
+            "meanLuminance": 111.569,
+            "stddevLuminance": 35.466,
+            "width": 2048
+          }
+        },
+        "before": {
+          "available": true,
+          "enhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-024/before/deterministic-enhanced-z19-512.jpg",
+          "enhancedStats": {
+            "height": 512,
+            "meanGradient": 10.168,
+            "meanLuminance": 113.577,
+            "stddevLuminance": 45.664,
+            "width": 512
+          },
+          "rawPath": "/tmp/satellite-super-resolution-pilot/aoi-024/before/raw-z19-512.jpg",
+          "rawStats": {
+            "height": 512,
+            "meanGradient": 5.232,
+            "meanLuminance": 99.684,
+            "stddevLuminance": 38.41,
+            "width": 512
+          },
+          "srPath": "/tmp/satellite-super-resolution-pilot/aoi-024/before/real-esrgan-x4-z19-2048.jpg",
+          "srStats": {
+            "height": 2048,
+            "meanGradient": 8.186,
+            "meanLuminance": 93.835,
+            "stddevLuminance": 46.516,
+            "width": 2048
+          }
+        }
+      },
+      "severity": "high",
+      "severityCode": 0,
+      "tile": {
+        "x": 164543,
+        "y": 246640
+      },
+      "warning": "Learned super-resolution can hallucinate texture; compare against raw source before using for decisions.",
+      "zoom": 19
+    },
+    {
+      "afterEnhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-025/after/deterministic-enhanced-z19-512.jpg",
+      "afterRawPath": "/tmp/satellite-super-resolution-pilot/aoi-025/after/raw-z19-512.jpg",
+      "afterSrPath": "/tmp/satellite-super-resolution-pilot/aoi-025/after/real-esrgan-x4-z19-2048.jpg",
+      "beforeEnhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-025/before/deterministic-enhanced-z19-512.jpg",
+      "beforeRawPath": "/tmp/satellite-super-resolution-pilot/aoi-025/before/raw-z19-512.jpg",
+      "beforeSrPath": "/tmp/satellite-super-resolution-pilot/aoi-025/before/real-esrgan-x4-z19-2048.jpg",
+      "id": "aoi-025",
+      "interpretive": true,
+      "lat": 10.584749,
+      "lon": -67.020479,
+      "model": "RealESRGAN_x4plus",
+      "scenes": {
+        "after": {
+          "available": true,
+          "enhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-025/after/deterministic-enhanced-z19-512.jpg",
+          "enhancedStats": {
+            "height": 512,
+            "meanGradient": 7.971,
+            "meanLuminance": 128.005,
+            "stddevLuminance": 48.78,
+            "width": 512
+          },
+          "rawPath": "/tmp/satellite-super-resolution-pilot/aoi-025/after/raw-z19-512.jpg",
+          "rawStats": {
+            "height": 512,
+            "meanGradient": 4.199,
+            "meanLuminance": 133.369,
+            "stddevLuminance": 32.644,
+            "width": 512
+          },
+          "srPath": "/tmp/satellite-super-resolution-pilot/aoi-025/after/real-esrgan-x4-z19-2048.jpg",
+          "srStats": {
+            "height": 2048,
+            "meanGradient": 8.029,
+            "meanLuminance": 135.165,
+            "stddevLuminance": 38.33,
+            "width": 2048
+          }
+        },
+        "before": {
+          "available": true,
+          "enhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-025/before/deterministic-enhanced-z19-512.jpg",
+          "enhancedStats": {
+            "height": 512,
+            "meanGradient": 10.658,
+            "meanLuminance": 136.435,
+            "stddevLuminance": 51.781,
+            "width": 512
+          },
+          "rawPath": "/tmp/satellite-super-resolution-pilot/aoi-025/before/raw-z19-512.jpg",
+          "rawStats": {
+            "height": 512,
+            "meanGradient": 5.957,
+            "meanLuminance": 141.956,
+            "stddevLuminance": 37.608,
+            "width": 512
+          },
+          "srPath": "/tmp/satellite-super-resolution-pilot/aoi-025/before/real-esrgan-x4-z19-2048.jpg",
+          "srStats": {
+            "height": 2048,
+            "meanGradient": 7.517,
+            "meanLuminance": 144.5,
+            "stddevLuminance": 44.916,
+            "width": 2048
+          }
+        }
+      },
+      "severity": "high",
+      "severityCode": 0,
+      "tile": {
+        "x": 164538,
+        "y": 246640
+      },
+      "warning": "Learned super-resolution can hallucinate texture; compare against raw source before using for decisions.",
+      "zoom": 19
+    },
+    {
+      "afterEnhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-026/after/deterministic-enhanced-z19-512.jpg",
+      "afterRawPath": "/tmp/satellite-super-resolution-pilot/aoi-026/after/raw-z19-512.jpg",
+      "afterSrPath": "/tmp/satellite-super-resolution-pilot/aoi-026/after/real-esrgan-x4-z19-2048.jpg",
+      "beforeEnhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-026/before/deterministic-enhanced-z19-512.jpg",
+      "beforeRawPath": "/tmp/satellite-super-resolution-pilot/aoi-026/before/raw-z19-512.jpg",
+      "beforeSrPath": "/tmp/satellite-super-resolution-pilot/aoi-026/before/real-esrgan-x4-z19-2048.jpg",
+      "id": "aoi-026",
+      "interpretive": true,
+      "lat": 10.584851,
+      "lon": -67.03516,
+      "model": "RealESRGAN_x4plus",
+      "scenes": {
+        "after": {
+          "available": true,
+          "enhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-026/after/deterministic-enhanced-z19-512.jpg",
+          "enhancedStats": {
+            "height": 512,
+            "meanGradient": 7.786,
+            "meanLuminance": 127.277,
+            "stddevLuminance": 50.055,
+            "width": 512
+          },
+          "rawPath": "/tmp/satellite-super-resolution-pilot/aoi-026/after/raw-z19-512.jpg",
+          "rawStats": {
+            "height": 512,
+            "meanGradient": 4.137,
+            "meanLuminance": 129.712,
+            "stddevLuminance": 35.529,
+            "width": 512
+          },
+          "srPath": "/tmp/satellite-super-resolution-pilot/aoi-026/after/real-esrgan-x4-z19-2048.jpg",
+          "srStats": {
+            "height": 2048,
+            "meanGradient": 3.333,
+            "meanLuminance": 130.958,
+            "stddevLuminance": 37.925,
+            "width": 2048
+          }
+        },
+        "before": {
+          "available": true,
+          "enhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-026/before/deterministic-enhanced-z19-512.jpg",
+          "enhancedStats": {
+            "height": 512,
+            "meanGradient": 9.124,
+            "meanLuminance": 134.824,
+            "stddevLuminance": 50.567,
+            "width": 512
+          },
+          "rawPath": "/tmp/satellite-super-resolution-pilot/aoi-026/before/raw-z19-512.jpg",
+          "rawStats": {
+            "height": 512,
+            "meanGradient": 5.021,
+            "meanLuminance": 135.474,
+            "stddevLuminance": 36.267,
+            "width": 512
+          },
+          "srPath": "/tmp/satellite-super-resolution-pilot/aoi-026/before/real-esrgan-x4-z19-2048.jpg",
+          "srStats": {
+            "height": 2048,
+            "meanGradient": 4.2,
+            "meanLuminance": 136.877,
+            "stddevLuminance": 41.537,
+            "width": 2048
+          }
+        }
+      },
+      "severity": "high",
+      "severityCode": 0,
+      "tile": {
+        "x": 164516,
+        "y": 246640
+      },
+      "warning": "Learned super-resolution can hallucinate texture; compare against raw source before using for decisions.",
+      "zoom": 19
+    },
+    {
+      "afterEnhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-027/after/deterministic-enhanced-z19-512.jpg",
+      "afterRawPath": "/tmp/satellite-super-resolution-pilot/aoi-027/after/raw-z19-512.jpg",
+      "afterSrPath": "/tmp/satellite-super-resolution-pilot/aoi-027/after/real-esrgan-x4-z19-2048.jpg",
+      "beforeEnhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-027/before/deterministic-enhanced-z19-512.jpg",
+      "beforeRawPath": "/tmp/satellite-super-resolution-pilot/aoi-027/before/raw-z19-512.jpg",
+      "beforeSrPath": "/tmp/satellite-super-resolution-pilot/aoi-027/before/real-esrgan-x4-z19-2048.jpg",
+      "id": "aoi-027",
+      "interpretive": true,
+      "lat": 10.585053,
+      "lon": -67.033328,
+      "model": "RealESRGAN_x4plus",
+      "scenes": {
+        "after": {
+          "available": true,
+          "enhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-027/after/deterministic-enhanced-z19-512.jpg",
+          "enhancedStats": {
+            "height": 512,
+            "meanGradient": 6.328,
+            "meanLuminance": 113.399,
+            "stddevLuminance": 41.206,
+            "width": 512
+          },
+          "rawPath": "/tmp/satellite-super-resolution-pilot/aoi-027/after/raw-z19-512.jpg",
+          "rawStats": {
+            "height": 512,
+            "meanGradient": 3.176,
+            "meanLuminance": 114.517,
+            "stddevLuminance": 32.697,
+            "width": 512
+          },
+          "srPath": "/tmp/satellite-super-resolution-pilot/aoi-027/after/real-esrgan-x4-z19-2048.jpg",
+          "srStats": {
+            "height": 2048,
+            "meanGradient": 6.048,
+            "meanLuminance": 114.982,
+            "stddevLuminance": 36.763,
+            "width": 2048
+          }
+        },
+        "before": {
+          "available": true,
+          "enhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-027/before/deterministic-enhanced-z19-512.jpg",
+          "enhancedStats": {
+            "height": 512,
+            "meanGradient": 8.502,
+            "meanLuminance": 127.34,
+            "stddevLuminance": 44.697,
+            "width": 512
+          },
+          "rawPath": "/tmp/satellite-super-resolution-pilot/aoi-027/before/raw-z19-512.jpg",
+          "rawStats": {
+            "height": 512,
+            "meanGradient": 4.332,
+            "meanLuminance": 127.114,
+            "stddevLuminance": 30.965,
+            "width": 512
+          },
+          "srPath": "/tmp/satellite-super-resolution-pilot/aoi-027/before/real-esrgan-x4-z19-2048.jpg",
+          "srStats": {
+            "height": 2048,
+            "meanGradient": 6.202,
+            "meanLuminance": 129.283,
+            "stddevLuminance": 35.957,
+            "width": 2048
+          }
+        }
+      },
+      "severity": "high",
+      "severityCode": 0,
+      "tile": {
+        "x": 164519,
+        "y": 246639
+      },
+      "warning": "Learned super-resolution can hallucinate texture; compare against raw source before using for decisions.",
+      "zoom": 19
+    },
+    {
+      "afterEnhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-028/after/deterministic-enhanced-z19-512.jpg",
+      "afterRawPath": "/tmp/satellite-super-resolution-pilot/aoi-028/after/raw-z19-512.jpg",
+      "afterSrPath": "/tmp/satellite-super-resolution-pilot/aoi-028/after/real-esrgan-x4-z19-2048.jpg",
+      "beforeEnhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-028/before/deterministic-enhanced-z19-512.jpg",
+      "beforeRawPath": "/tmp/satellite-super-resolution-pilot/aoi-028/before/raw-z19-512.jpg",
+      "beforeSrPath": "/tmp/satellite-super-resolution-pilot/aoi-028/before/real-esrgan-x4-z19-2048.jpg",
+      "id": "aoi-028",
+      "interpretive": true,
+      "lat": 10.585081,
+      "lon": -67.038158,
+      "model": "RealESRGAN_x4plus",
+      "scenes": {
+        "after": {
+          "available": true,
+          "enhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-028/after/deterministic-enhanced-z19-512.jpg",
+          "enhancedStats": {
+            "height": 512,
+            "meanGradient": 4.888,
+            "meanLuminance": 111.869,
+            "stddevLuminance": 16.796,
+            "width": 512
+          },
+          "rawPath": "/tmp/satellite-super-resolution-pilot/aoi-028/after/raw-z19-512.jpg",
+          "rawStats": {
+            "height": 512,
+            "meanGradient": 2.055,
+            "meanLuminance": 105.339,
+            "stddevLuminance": 7.641,
+            "width": 512
+          },
+          "srPath": "/tmp/satellite-super-resolution-pilot/aoi-028/after/real-esrgan-x4-z19-2048.jpg",
+          "srStats": {
+            "height": 2048,
+            "meanGradient": 1.585,
+            "meanLuminance": 105.197,
+            "stddevLuminance": 7.95,
+            "width": 2048
+          }
+        },
+        "before": {
+          "available": true,
+          "enhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-028/before/deterministic-enhanced-z19-512.jpg",
+          "enhancedStats": {
+            "height": 512,
+            "meanGradient": 7.902,
+            "meanLuminance": 110.85,
+            "stddevLuminance": 23.382,
+            "width": 512
+          },
+          "rawPath": "/tmp/satellite-super-resolution-pilot/aoi-028/before/raw-z19-512.jpg",
+          "rawStats": {
+            "height": 512,
+            "meanGradient": 3.45,
+            "meanLuminance": 102.337,
+            "stddevLuminance": 12.466,
+            "width": 512
+          },
+          "srPath": "/tmp/satellite-super-resolution-pilot/aoi-028/before/real-esrgan-x4-z19-2048.jpg",
+          "srStats": {
+            "height": 2048,
+            "meanGradient": 5.658,
+            "meanLuminance": 101.828,
+            "stddevLuminance": 16.102,
+            "width": 2048
+          }
+        }
+      },
+      "severity": "high",
+      "severityCode": 0,
+      "tile": {
+        "x": 164512,
+        "y": 246639
+      },
+      "warning": "Learned super-resolution can hallucinate texture; compare against raw source before using for decisions.",
+      "zoom": 19
+    },
+    {
+      "afterEnhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-029/after/deterministic-enhanced-z19-512.jpg",
+      "afterRawPath": "/tmp/satellite-super-resolution-pilot/aoi-029/after/raw-z19-512.jpg",
+      "afterSrPath": "/tmp/satellite-super-resolution-pilot/aoi-029/after/real-esrgan-x4-z19-2048.jpg",
+      "beforeEnhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-029/before/deterministic-enhanced-z19-512.jpg",
+      "beforeRawPath": "/tmp/satellite-super-resolution-pilot/aoi-029/before/raw-z19-512.jpg",
+      "beforeSrPath": "/tmp/satellite-super-resolution-pilot/aoi-029/before/real-esrgan-x4-z19-2048.jpg",
+      "id": "aoi-029",
+      "interpretive": true,
+      "lat": 10.585454,
+      "lon": -67.033995,
+      "model": "RealESRGAN_x4plus",
+      "scenes": {
+        "after": {
+          "available": true,
+          "enhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-029/after/deterministic-enhanced-z19-512.jpg",
+          "enhancedStats": {
+            "height": 512,
+            "meanGradient": 4.884,
+            "meanLuminance": 90.515,
+            "stddevLuminance": 18.201,
+            "width": 512
+          },
+          "rawPath": "/tmp/satellite-super-resolution-pilot/aoi-029/after/raw-z19-512.jpg",
+          "rawStats": {
+            "height": 512,
+            "meanGradient": 2.056,
+            "meanLuminance": 84.505,
+            "stddevLuminance": 8.805,
+            "width": 512
+          },
+          "srPath": "/tmp/satellite-super-resolution-pilot/aoi-029/after/real-esrgan-x4-z19-2048.jpg",
+          "srStats": {
+            "height": 2048,
+            "meanGradient": 2.566,
+            "meanLuminance": 83.861,
+            "stddevLuminance": 10.04,
+            "width": 2048
+          }
+        },
+        "before": {
+          "available": true,
+          "enhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-029/before/deterministic-enhanced-z19-512.jpg",
+          "enhancedStats": {
+            "height": 512,
+            "meanGradient": 6.666,
+            "meanLuminance": 108.004,
+            "stddevLuminance": 26.564,
+            "width": 512
+          },
+          "rawPath": "/tmp/satellite-super-resolution-pilot/aoi-029/before/raw-z19-512.jpg",
+          "rawStats": {
+            "height": 512,
+            "meanGradient": 2.929,
+            "meanLuminance": 93.492,
+            "stddevLuminance": 12.899,
+            "width": 512
+          },
+          "srPath": "/tmp/satellite-super-resolution-pilot/aoi-029/before/real-esrgan-x4-z19-2048.jpg",
+          "srStats": {
+            "height": 2048,
+            "meanGradient": 1.828,
+            "meanLuminance": 92.935,
+            "stddevLuminance": 13.273,
+            "width": 2048
+          }
+        }
+      },
+      "severity": "high",
+      "severityCode": 0,
+      "tile": {
+        "x": 164518,
+        "y": 246639
+      },
+      "warning": "Learned super-resolution can hallucinate texture; compare against raw source before using for decisions.",
+      "zoom": 19
+    },
+    {
+      "afterEnhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-030/after/deterministic-enhanced-z19-512.jpg",
+      "afterRawPath": "/tmp/satellite-super-resolution-pilot/aoi-030/after/raw-z19-512.jpg",
+      "afterSrPath": "/tmp/satellite-super-resolution-pilot/aoi-030/after/real-esrgan-x4-z19-2048.jpg",
+      "beforeEnhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-030/before/deterministic-enhanced-z19-512.jpg",
+      "beforeRawPath": "/tmp/satellite-super-resolution-pilot/aoi-030/before/raw-z19-512.jpg",
+      "beforeSrPath": "/tmp/satellite-super-resolution-pilot/aoi-030/before/real-esrgan-x4-z19-2048.jpg",
+      "id": "aoi-030",
+      "interpretive": true,
+      "lat": 10.585567,
+      "lon": -67.036131,
+      "model": "RealESRGAN_x4plus",
+      "scenes": {
+        "after": {
+          "available": true,
+          "enhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-030/after/deterministic-enhanced-z19-512.jpg",
+          "enhancedStats": {
+            "height": 512,
+            "meanGradient": 7.071,
+            "meanLuminance": 123.364,
+            "stddevLuminance": 44.31,
+            "width": 512
+          },
+          "rawPath": "/tmp/satellite-super-resolution-pilot/aoi-030/after/raw-z19-512.jpg",
+          "rawStats": {
+            "height": 512,
+            "meanGradient": 3.735,
+            "meanLuminance": 125.412,
+            "stddevLuminance": 31.372,
+            "width": 512
+          },
+          "srPath": "/tmp/satellite-super-resolution-pilot/aoi-030/after/real-esrgan-x4-z19-2048.jpg",
+          "srStats": {
+            "height": 2048,
+            "meanGradient": 2.937,
+            "meanLuminance": 126.426,
+            "stddevLuminance": 33.264,
+            "width": 2048
+          }
+        },
+        "before": {
+          "available": true,
+          "enhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-030/before/deterministic-enhanced-z19-512.jpg",
+          "enhancedStats": {
+            "height": 512,
+            "meanGradient": 9.465,
+            "meanLuminance": 132.435,
+            "stddevLuminance": 47.168,
+            "width": 512
+          },
+          "rawPath": "/tmp/satellite-super-resolution-pilot/aoi-030/before/raw-z19-512.jpg",
+          "rawStats": {
+            "height": 512,
+            "meanGradient": 5.135,
+            "meanLuminance": 132.61,
+            "stddevLuminance": 31.815,
+            "width": 512
+          },
+          "srPath": "/tmp/satellite-super-resolution-pilot/aoi-030/before/real-esrgan-x4-z19-2048.jpg",
+          "srStats": {
+            "height": 2048,
+            "meanGradient": 5.137,
+            "meanLuminance": 134.46,
+            "stddevLuminance": 37.897,
+            "width": 2048
+          }
+        }
+      },
+      "severity": "high",
+      "severityCode": 0,
+      "tile": {
+        "x": 164515,
+        "y": 246639
+      },
+      "warning": "Learned super-resolution can hallucinate texture; compare against raw source before using for decisions.",
+      "zoom": 19
+    },
+    {
+      "afterEnhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-031/after/deterministic-enhanced-z19-512.jpg",
+      "afterRawPath": "/tmp/satellite-super-resolution-pilot/aoi-031/after/raw-z19-512.jpg",
+      "afterSrPath": "/tmp/satellite-super-resolution-pilot/aoi-031/after/real-esrgan-x4-z19-2048.jpg",
+      "beforeEnhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-031/before/deterministic-enhanced-z19-512.jpg",
+      "beforeRawPath": "/tmp/satellite-super-resolution-pilot/aoi-031/before/raw-z19-512.jpg",
+      "beforeSrPath": "/tmp/satellite-super-resolution-pilot/aoi-031/before/real-esrgan-x4-z19-2048.jpg",
+      "id": "aoi-031",
+      "interpretive": true,
+      "lat": 10.585633,
+      "lon": -67.018692,
+      "model": "RealESRGAN_x4plus",
+      "scenes": {
+        "after": {
+          "available": true,
+          "enhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-031/after/deterministic-enhanced-z19-512.jpg",
+          "enhancedStats": {
+            "height": 512,
+            "meanGradient": 8.508,
+            "meanLuminance": 126.225,
+            "stddevLuminance": 48.297,
+            "width": 512
+          },
+          "rawPath": "/tmp/satellite-super-resolution-pilot/aoi-031/after/raw-z19-512.jpg",
+          "rawStats": {
+            "height": 512,
+            "meanGradient": 4.532,
+            "meanLuminance": 132.085,
+            "stddevLuminance": 32.104,
+            "width": 512
+          },
+          "srPath": "/tmp/satellite-super-resolution-pilot/aoi-031/after/real-esrgan-x4-z19-2048.jpg",
+          "srStats": {
+            "height": 2048,
+            "meanGradient": 6.619,
+            "meanLuminance": 134.479,
+            "stddevLuminance": 36.699,
+            "width": 2048
+          }
+        },
+        "before": {
+          "available": true,
+          "enhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-031/before/deterministic-enhanced-z19-512.jpg",
+          "enhancedStats": {
+            "height": 512,
+            "meanGradient": 11.239,
+            "meanLuminance": 131.787,
+            "stddevLuminance": 54.542,
+            "width": 512
+          },
+          "rawPath": "/tmp/satellite-super-resolution-pilot/aoi-031/before/raw-z19-512.jpg",
+          "rawStats": {
+            "height": 512,
+            "meanGradient": 6.474,
+            "meanLuminance": 137.216,
+            "stddevLuminance": 40.05,
+            "width": 512
+          },
+          "srPath": "/tmp/satellite-super-resolution-pilot/aoi-031/before/real-esrgan-x4-z19-2048.jpg",
+          "srStats": {
+            "height": 2048,
+            "meanGradient": 5.683,
+            "meanLuminance": 139.284,
+            "stddevLuminance": 46.621,
+            "width": 2048
+          }
+        }
+      },
+      "severity": "high",
+      "severityCode": 0,
+      "tile": {
+        "x": 164540,
+        "y": 246639
+      },
+      "warning": "Learned super-resolution can hallucinate texture; compare against raw source before using for decisions.",
+      "zoom": 19
+    },
+    {
+      "afterEnhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-032/after/deterministic-enhanced-z19-512.jpg",
+      "afterRawPath": "/tmp/satellite-super-resolution-pilot/aoi-032/after/raw-z19-512.jpg",
+      "afterSrPath": "/tmp/satellite-super-resolution-pilot/aoi-032/after/real-esrgan-x4-z19-2048.jpg",
+      "beforeEnhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-032/before/deterministic-enhanced-z19-512.jpg",
+      "beforeRawPath": "/tmp/satellite-super-resolution-pilot/aoi-032/before/raw-z19-512.jpg",
+      "beforeSrPath": "/tmp/satellite-super-resolution-pilot/aoi-032/before/real-esrgan-x4-z19-2048.jpg",
+      "id": "aoi-032",
+      "interpretive": true,
+      "lat": 10.585696,
+      "lon": -67.037224,
+      "model": "RealESRGAN_x4plus",
+      "scenes": {
+        "after": {
+          "available": true,
+          "enhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-032/after/deterministic-enhanced-z19-512.jpg",
+          "enhancedStats": {
+            "height": 512,
+            "meanGradient": 4.818,
+            "meanLuminance": 113.098,
+            "stddevLuminance": 18.198,
+            "width": 512
+          },
+          "rawPath": "/tmp/satellite-super-resolution-pilot/aoi-032/after/raw-z19-512.jpg",
+          "rawStats": {
+            "height": 512,
+            "meanGradient": 2.058,
+            "meanLuminance": 108.151,
+            "stddevLuminance": 9.351,
+            "width": 512
+          },
+          "srPath": "/tmp/satellite-super-resolution-pilot/aoi-032/after/real-esrgan-x4-z19-2048.jpg",
+          "srStats": {
+            "height": 2048,
+            "meanGradient": 1.496,
+            "meanLuminance": 108.101,
+            "stddevLuminance": 9.511,
+            "width": 2048
+          }
+        },
+        "before": {
+          "available": true,
+          "enhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-032/before/deterministic-enhanced-z19-512.jpg",
+          "enhancedStats": {
+            "height": 512,
+            "meanGradient": 8.297,
+            "meanLuminance": 111.581,
+            "stddevLuminance": 26.45,
+            "width": 512
+          },
+          "rawPath": "/tmp/satellite-super-resolution-pilot/aoi-032/before/raw-z19-512.jpg",
+          "rawStats": {
+            "height": 512,
+            "meanGradient": 3.687,
+            "meanLuminance": 103.162,
+            "stddevLuminance": 14.745,
+            "width": 512
+          },
+          "srPath": "/tmp/satellite-super-resolution-pilot/aoi-032/before/real-esrgan-x4-z19-2048.jpg",
+          "srStats": {
+            "height": 2048,
+            "meanGradient": 7.236,
+            "meanLuminance": 101.873,
+            "stddevLuminance": 19.845,
+            "width": 2048
+          }
+        }
+      },
+      "severity": "high",
+      "severityCode": 0,
+      "tile": {
+        "x": 164513,
+        "y": 246639
+      },
+      "warning": "Learned super-resolution can hallucinate texture; compare against raw source before using for decisions.",
+      "zoom": 19
+    },
+    {
+      "afterEnhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-033/after/deterministic-enhanced-z19-512.jpg",
+      "afterRawPath": "/tmp/satellite-super-resolution-pilot/aoi-033/after/raw-z19-512.jpg",
+      "afterSrPath": "/tmp/satellite-super-resolution-pilot/aoi-033/after/real-esrgan-x4-z19-2048.jpg",
+      "beforeEnhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-033/before/deterministic-enhanced-z19-512.jpg",
+      "beforeRawPath": "/tmp/satellite-super-resolution-pilot/aoi-033/before/raw-z19-512.jpg",
+      "beforeSrPath": "/tmp/satellite-super-resolution-pilot/aoi-033/before/real-esrgan-x4-z19-2048.jpg",
+      "id": "aoi-033",
+      "interpretive": true,
+      "lat": 10.585901,
+      "lon": -67.030133,
+      "model": "RealESRGAN_x4plus",
+      "scenes": {
+        "after": {
+          "available": true,
+          "enhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-033/after/deterministic-enhanced-z19-512.jpg",
+          "enhancedStats": {
+            "height": 512,
+            "meanGradient": 6.424,
+            "meanLuminance": 117.251,
+            "stddevLuminance": 36.07,
+            "width": 512
+          },
+          "rawPath": "/tmp/satellite-super-resolution-pilot/aoi-033/after/raw-z19-512.jpg",
+          "rawStats": {
+            "height": 512,
+            "meanGradient": 3.047,
+            "meanLuminance": 114.014,
+            "stddevLuminance": 21.706,
+            "width": 512
+          },
+          "srPath": "/tmp/satellite-super-resolution-pilot/aoi-033/after/real-esrgan-x4-z19-2048.jpg",
+          "srStats": {
+            "height": 2048,
+            "meanGradient": 5.488,
+            "meanLuminance": 113.862,
+            "stddevLuminance": 25.102,
+            "width": 2048
+          }
+        },
+        "before": {
+          "available": true,
+          "enhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-033/before/deterministic-enhanced-z19-512.jpg",
+          "enhancedStats": {
+            "height": 512,
+            "meanGradient": 7.724,
+            "meanLuminance": 124.929,
+            "stddevLuminance": 39.431,
+            "width": 512
+          },
+          "rawPath": "/tmp/satellite-super-resolution-pilot/aoi-033/before/raw-z19-512.jpg",
+          "rawStats": {
+            "height": 512,
+            "meanGradient": 3.769,
+            "meanLuminance": 123.87,
+            "stddevLuminance": 24.701,
+            "width": 512
+          },
+          "srPath": "/tmp/satellite-super-resolution-pilot/aoi-033/before/real-esrgan-x4-z19-2048.jpg",
+          "srStats": {
+            "height": 2048,
+            "meanGradient": 6.138,
+            "meanLuminance": 125.481,
+            "stddevLuminance": 29.21,
+            "width": 2048
+          }
+        }
+      },
+      "severity": "high",
+      "severityCode": 0,
+      "tile": {
+        "x": 164524,
+        "y": 246638
+      },
+      "warning": "Learned super-resolution can hallucinate texture; compare against raw source before using for decisions.",
+      "zoom": 19
+    },
+    {
+      "afterEnhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-034/after/deterministic-enhanced-z19-512.jpg",
+      "afterRawPath": "/tmp/satellite-super-resolution-pilot/aoi-034/after/raw-z19-512.jpg",
+      "afterSrPath": "/tmp/satellite-super-resolution-pilot/aoi-034/after/real-esrgan-x4-z19-2048.jpg",
+      "beforeEnhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-034/before/deterministic-enhanced-z19-512.jpg",
+      "beforeRawPath": "/tmp/satellite-super-resolution-pilot/aoi-034/before/raw-z19-512.jpg",
+      "beforeSrPath": "/tmp/satellite-super-resolution-pilot/aoi-034/before/real-esrgan-x4-z19-2048.jpg",
+      "id": "aoi-034",
+      "interpretive": true,
+      "lat": 10.586051,
+      "lon": -67.031032,
+      "model": "RealESRGAN_x4plus",
+      "scenes": {
+        "after": {
+          "available": true,
+          "enhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-034/after/deterministic-enhanced-z19-512.jpg",
+          "enhancedStats": {
+            "height": 512,
+            "meanGradient": 7.099,
+            "meanLuminance": 105.809,
+            "stddevLuminance": 35.936,
+            "width": 512
+          },
+          "rawPath": "/tmp/satellite-super-resolution-pilot/aoi-034/after/raw-z19-512.jpg",
+          "rawStats": {
+            "height": 512,
+            "meanGradient": 3.433,
+            "meanLuminance": 102.613,
+            "stddevLuminance": 21.799,
+            "width": 512
+          },
+          "srPath": "/tmp/satellite-super-resolution-pilot/aoi-034/after/real-esrgan-x4-z19-2048.jpg",
+          "srStats": {
+            "height": 2048,
+            "meanGradient": 8.801,
+            "meanLuminance": 100.875,
+            "stddevLuminance": 27.854,
+            "width": 2048
+          }
+        },
+        "before": {
+          "available": true,
+          "enhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-034/before/deterministic-enhanced-z19-512.jpg",
+          "enhancedStats": {
+            "height": 512,
+            "meanGradient": 9.364,
+            "meanLuminance": 108.7,
+            "stddevLuminance": 45.669,
+            "width": 512
+          },
+          "rawPath": "/tmp/satellite-super-resolution-pilot/aoi-034/before/raw-z19-512.jpg",
+          "rawStats": {
+            "height": 512,
+            "meanGradient": 4.947,
+            "meanLuminance": 95.141,
+            "stddevLuminance": 32.079,
+            "width": 512
+          },
+          "srPath": "/tmp/satellite-super-resolution-pilot/aoi-034/before/real-esrgan-x4-z19-2048.jpg",
+          "srStats": {
+            "height": 2048,
+            "meanGradient": 7.088,
+            "meanLuminance": 91.882,
+            "stddevLuminance": 38.301,
+            "width": 2048
+          }
+        }
+      },
+      "severity": "high",
+      "severityCode": 0,
+      "tile": {
+        "x": 164522,
+        "y": 246638
+      },
+      "warning": "Learned super-resolution can hallucinate texture; compare against raw source before using for decisions.",
+      "zoom": 19
+    },
+    {
+      "afterEnhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-035/after/deterministic-enhanced-z19-512.jpg",
+      "afterRawPath": "/tmp/satellite-super-resolution-pilot/aoi-035/after/raw-z19-512.jpg",
+      "afterSrPath": "/tmp/satellite-super-resolution-pilot/aoi-035/after/real-esrgan-x4-z19-2048.jpg",
+      "beforeEnhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-035/before/deterministic-enhanced-z19-512.jpg",
+      "beforeRawPath": "/tmp/satellite-super-resolution-pilot/aoi-035/before/raw-z19-512.jpg",
+      "beforeSrPath": "/tmp/satellite-super-resolution-pilot/aoi-035/before/real-esrgan-x4-z19-2048.jpg",
+      "id": "aoi-035",
+      "interpretive": true,
+      "lat": 10.586227,
+      "lon": -67.015686,
+      "model": "RealESRGAN_x4plus",
+      "scenes": {
+        "after": {
+          "available": true,
+          "enhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-035/after/deterministic-enhanced-z19-512.jpg",
+          "enhancedStats": {
+            "height": 512,
+            "meanGradient": 5.784,
+            "meanLuminance": 105.453,
+            "stddevLuminance": 22.428,
+            "width": 512
+          },
+          "rawPath": "/tmp/satellite-super-resolution-pilot/aoi-035/after/raw-z19-512.jpg",
+          "rawStats": {
+            "height": 512,
+            "meanGradient": 2.523,
+            "meanLuminance": 102.345,
+            "stddevLuminance": 12.244,
+            "width": 512
+          },
+          "srPath": "/tmp/satellite-super-resolution-pilot/aoi-035/after/real-esrgan-x4-z19-2048.jpg",
+          "srStats": {
+            "height": 2048,
+            "meanGradient": 7.147,
+            "meanLuminance": 100.936,
+            "stddevLuminance": 16.501,
+            "width": 2048
+          }
+        },
+        "before": {
+          "available": true,
+          "enhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-035/before/deterministic-enhanced-z19-512.jpg",
+          "enhancedStats": {
+            "height": 512,
+            "meanGradient": 7.597,
+            "meanLuminance": 106.918,
+            "stddevLuminance": 31.203,
+            "width": 512
+          },
+          "rawPath": "/tmp/satellite-super-resolution-pilot/aoi-035/before/raw-z19-512.jpg",
+          "rawStats": {
+            "height": 512,
+            "meanGradient": 3.474,
+            "meanLuminance": 100.391,
+            "stddevLuminance": 16.936,
+            "width": 512
+          },
+          "srPath": "/tmp/satellite-super-resolution-pilot/aoi-035/before/real-esrgan-x4-z19-2048.jpg",
+          "srStats": {
+            "height": 2048,
+            "meanGradient": 6.473,
+            "meanLuminance": 99.489,
+            "stddevLuminance": 21.253,
+            "width": 2048
+          }
+        }
+      },
+      "severity": "high",
+      "severityCode": 0,
+      "tile": {
+        "x": 164545,
+        "y": 246638
+      },
+      "warning": "Learned super-resolution can hallucinate texture; compare against raw source before using for decisions.",
+      "zoom": 19
+    },
+    {
+      "afterEnhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-036/after/deterministic-enhanced-z19-512.jpg",
+      "afterRawPath": "/tmp/satellite-super-resolution-pilot/aoi-036/after/raw-z19-512.jpg",
+      "afterSrPath": "/tmp/satellite-super-resolution-pilot/aoi-036/after/real-esrgan-x4-z19-2048.jpg",
+      "beforeEnhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-036/before/deterministic-enhanced-z19-512.jpg",
+      "beforeRawPath": "/tmp/satellite-super-resolution-pilot/aoi-036/before/raw-z19-512.jpg",
+      "beforeSrPath": "/tmp/satellite-super-resolution-pilot/aoi-036/before/real-esrgan-x4-z19-2048.jpg",
+      "id": "aoi-036",
+      "interpretive": true,
+      "lat": 10.586244,
+      "lon": -67.016976,
+      "model": "RealESRGAN_x4plus",
+      "scenes": {
+        "after": {
+          "available": true,
+          "enhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-036/after/deterministic-enhanced-z19-512.jpg",
+          "enhancedStats": {
+            "height": 512,
+            "meanGradient": 6.031,
+            "meanLuminance": 97.358,
+            "stddevLuminance": 33.845,
+            "width": 512
+          },
+          "rawPath": "/tmp/satellite-super-resolution-pilot/aoi-036/after/raw-z19-512.jpg",
+          "rawStats": {
+            "height": 512,
+            "meanGradient": 2.887,
+            "meanLuminance": 95.555,
+            "stddevLuminance": 20.977,
+            "width": 512
+          },
+          "srPath": "/tmp/satellite-super-resolution-pilot/aoi-036/after/real-esrgan-x4-z19-2048.jpg",
+          "srStats": {
+            "height": 2048,
+            "meanGradient": 3.715,
+            "meanLuminance": 95.239,
+            "stddevLuminance": 22.844,
+            "width": 2048
+          }
+        },
+        "before": {
+          "available": true,
+          "enhancedPath": "/tmp/satellite-super-resolution-pilot/aoi-036/before/deterministic-enhanced-z19-512.jpg",
+          "enhancedStats": {
+            "height": 512,
+            "meanGradient": 7.69,
+            "meanLuminance": 116.698,
+            "stddevLuminance": 42.143,
+            "width": 512
+          },
+          "rawPath": "/tmp/satellite-super-resolution-pilot/aoi-036/before/raw-z19-512.jpg",
+          "rawStats": {
+            "height": 512,
+            "meanGradient": 3.941,
+            "meanLuminance": 111.734,
+            "stddevLuminance": 31.06,
+            "width": 512
+          },
+          "srPath": "/tmp/satellite-super-resolution-pilot/aoi-036/before/real-esrgan-x4-z19-2048.jpg",
+          "srStats": {
+            "height": 2048,
+            "meanGradient": 5.814,
+            "meanLuminance": 110.748,
+            "stddevLuminance": 36.781,
+            "width": 2048
+          }
+        }
+      },
+      "severity": "high",
+      "severityCode": 0,
+      "tile": {
+        "x": 164543,
+        "y": 246638
+      },
+      "warning": "Learned super-resolution can hallucinate texture; compare against raw source before using for decisions.",
+      "zoom": 19
+    }
+  ],
+  "requestedAois": 36,
+  "source": {
+    "after": {
+      "cog_url": "https://oin-hotosm-temp.s3.us-east-1.amazonaws.com/6a428384c460c0251235cc4f/0/6a428384c460c0251235cc50.tif",
+      "key": "after",
+      "label": "Vantor LG05 post-event imagery, 27 Jun 2026"
+    },
+    "before": {
+      "cog_url": "https://oin-hotosm-temp.s3.us-east-1.amazonaws.com/6a3db231ad92c093ebc2cc64/0/6a3db231ad92c093ebc2cc65.tif",
+      "key": "before",
+      "label": "Vantor LG06 pre-event imagery, 21 Mar 2026"
+    },
+    "damageIndex": "public/data/damage-view-index.json"
+  },
+  "type": "true-super-resolution-pilot",
+  "useGuidance": "Interpretive visual aid only. Use raw and deterministic enhanced imagery as evidence layers.",
+  "zoom": 19
+}

@@ -1,0 +1,18 @@
+{
+ "captured_at": "2026-08-04T17:08:57Z",
+ "hf_metadata": {
+  "sha": "4ace6ad17c453f1a4551b9bee62eb11d75771a2a"
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitignore",
+   "stored_as": "_gitignore"
+  }
+ ],
+ "renamed_gitattributes": [],
+ "repo_id": "tellback/sralanh-invites",
+ "repo_type": "spaces",
+ "sha": "4ace6ad17c453f1a4551b9bee62eb11d75771a2a",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/tellback/sralanh-invites"
+}

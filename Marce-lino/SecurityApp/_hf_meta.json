@@ -1,0 +1,357 @@
+{
+ "captured_at": "2026-08-04T14:31:27Z",
+ "hf_metadata": {
+  "_id": "6a49f0706117940ccb0d43bb",
+  "author": "Marce-lino",
+  "cardData": {
+   "app_port": 7860,
+   "colorFrom": "blue",
+   "colorTo": "indigo",
+   "emoji": "🛡️",
+   "pinned": false,
+   "sdk": "docker",
+   "title": "SecurityApp"
+  },
+  "createdAt": "2026-07-05T05:49:36.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://marce-lino-securityapp.hf.space",
+  "id": "Marce-lino/SecurityApp",
+  "lastModified": "2026-07-05T09:57:07.000Z",
+  "likes": 0,
+  "private": false,
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "marce-lino-securityapp.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "errorMessage": "Exit code: 1. Reason: \n   INFO  Configuration cache cleared successfully.  \n\n\nIn Connection.php line 857:\n                                                                               \n  SQLSTATE[08006] [7] connection to server at \"ep-red-night-at5103rw-pooler.c  \n  -9.us-east-1.aws.neon.tech\" (52.45.105.76), port 5432 failed: ERROR:  passw  \n  ord authentication failed for user 'neondb_owner' (Connection: pgsql, Host:  \n   ep-red-night-at5103rw-pooler.c-9.us-east-1.aws.neon.tech, Port: 5432, Data  \n  base: neondb, SQL: select exists (select 1 from pg_class c, pg_namespace n   \n  where n.nspname = current_schema() and c.relname = 'migrations' and c.relki  \n  nd in ('r', 'p') and n.oid = c.relnamespace))                                \n                                                                               \n\nIn Connector.php line 67:\n                                                                               \n  SQLSTATE[08006] [7] connection to server at \"ep-red-night-at5103rw-pooler.c  \n  -9.us-east-1.aws.neon.tech\" (52.45.105.76), port 5432 failed: ERROR:  passw  \n  ord authentication failed for user 'neondb_owner'                            \n                                                                               \n\n",
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": null,
+    "requested": "cpu-basic"
+   },
+   "replicas": {
+    "requested": 1
+   },
+   "stage": "RUNTIME_ERROR"
+  },
+  "sdk": "docker",
+  "sha": "552090fa67d2cc3d17dbcf414fdc4691ae5cfd1c",
+  "siblings": [
+   {
+    "rfilename": ".dockerignore"
+   },
+   {
+    "rfilename": ".editorconfig"
+   },
+   {
+    "rfilename": ".env.example"
+   },
+   {
+    "rfilename": ".gitattributes"
+   },
+   {
+    "rfilename": ".gitignore"
+   },
+   {
+    "rfilename": ".npmrc"
+   },
+   {
+    "rfilename": "Dockerfile"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "app/Console/Commands/BackupDatabase.php"
+   },
+   {
+    "rfilename": "app/Console/Commands/GeneratePassword.php"
+   },
+   {
+    "rfilename": "app/Console/Commands/RestoreDatabase.php"
+   },
+   {
+    "rfilename": "app/Helpers/SecurityHelper.php"
+   },
+   {
+    "rfilename": "app/Http/Controllers/Admin/ActivityLogController.php"
+   },
+   {
+    "rfilename": "app/Http/Controllers/Admin/BackupController.php"
+   },
+   {
+    "rfilename": "app/Http/Controllers/Auth/ForgotPasswordController.php"
+   },
+   {
+    "rfilename": "app/Http/Controllers/Auth/LoginController.php"
+   },
+   {
+    "rfilename": "app/Http/Controllers/Auth/OAuthController.php"
+   },
+   {
+    "rfilename": "app/Http/Controllers/Auth/RegisterController.php"
+   },
+   {
+    "rfilename": "app/Http/Controllers/Auth/ResetPasswordController.php"
+   },
+   {
+    "rfilename": "app/Http/Controllers/Auth/TfaController.php"
+   },
+   {
+    "rfilename": "app/Http/Controllers/Controller.php"
+   },
+   {
+    "rfilename": "app/Http/Controllers/DashboardController.php"
+   },
+   {
+    "rfilename": "app/Http/Middleware/LogActivity.php"
+   },
+   {
+    "rfilename": "app/Http/Middleware/RequireTfa.php"
+   },
+   {
+    "rfilename": "app/Models/ActivityLog.php"
+   },
+   {
+    "rfilename": "app/Models/Backup.php"
+   },
+   {
+    "rfilename": "app/Models/User.php"
+   },
+   {
+    "rfilename": "app/Notifications/BackupCompleteNotification.php"
+   },
+   {
+    "rfilename": "app/Notifications/LoginAlertNotification.php"
+   },
+   {
+    "rfilename": "app/Notifications/TfaCodeNotification.php"
+   },
+   {
+    "rfilename": "app/Providers/AppServiceProvider.php"
+   },
+   {
+    "rfilename": "app/Rules/StrongPassword.php"
+   },
+   {
+    "rfilename": "artisan"
+   },
+   {
+    "rfilename": "bootstrap/app.php"
+   },
+   {
+    "rfilename": "bootstrap/cache/.gitignore"
+   },
+   {
+    "rfilename": "bootstrap/providers.php"
+   },
+   {
+    "rfilename": "composer.json"
+   },
+   {
+    "rfilename": "composer.lock"
+   },
+   {
+    "rfilename": "config/app.php"
+   },
+   {
+    "rfilename": "config/auth.php"
+   },
+   {
+    "rfilename": "config/cache.php"
+   },
+   {
+    "rfilename": "config/database.php"
+   },
+   {
+    "rfilename": "config/filesystems.php"
+   },
+   {
+    "rfilename": "config/logging.php"
+   },
+   {
+    "rfilename": "config/mail.php"
+   },
+   {
+    "rfilename": "config/queue.php"
+   },
+   {
+    "rfilename": "config/services.php"
+   },
+   {
+    "rfilename": "config/session.php"
+   },
+   {
+    "rfilename": "database/.gitignore"
+   },
+   {
+    "rfilename": "database/factories/UserFactory.php"
+   },
+   {
+    "rfilename": "database/migrations/0001_01_01_000000_create_users_table.php"
+   },
+   {
+    "rfilename": "database/migrations/0001_01_01_000001_create_cache_table.php"
+   },
+   {
+    "rfilename": "database/migrations/0001_01_01_000002_create_jobs_table.php"
+   },
+   {
+    "rfilename": "database/migrations/2025_01_01_000004_add_tfa_to_users_table.php"
+   },
+   {
+    "rfilename": "database/migrations/2025_01_01_000005_add_oauth_to_users_table.php"
+   },
+   {
+    "rfilename": "database/migrations/2025_01_01_000006_create_activity_logs_table.php"
+   },
+   {
+    "rfilename": "database/migrations/2025_01_01_000007_create_backups_table.php"
+   },
+   {
+    "rfilename": "database/migrations/2025_01_01_000008_create_password_reset_tokens_table.php"
+   },
+   {
+    "rfilename": "database/seeders/DatabaseSeeder.php"
+   },
+   {
+    "rfilename": "nginx.conf"
+   },
+   {
+    "rfilename": "package.json"
+   },
+   {
+    "rfilename": "phpunit.xml"
+   },
+   {
+    "rfilename": "public/.htaccess"
+   },
+   {
+    "rfilename": "public/favicon.ico"
+   },
+   {
+    "rfilename": "public/index.php"
+   },
+   {
+    "rfilename": "public/robots.txt"
+   },
+   {
+    "rfilename": "resources/css/app.css"
+   },
+   {
+    "rfilename": "resources/js/app.js"
+   },
+   {
+    "rfilename": "resources/views/activity-logs/index.blade.php"
+   },
+   {
+    "rfilename": "resources/views/activity-logs/show.blade.php"
+   },
+   {
+    "rfilename": "resources/views/auth/forgot-password.blade.php"
+   },
+   {
+    "rfilename": "resources/views/auth/login.blade.php"
+   },
+   {
+    "rfilename": "resources/views/auth/register.blade.php"
+   },
+   {
+    "rfilename": "resources/views/auth/reset-password.blade.php"
+   },
+   {
+    "rfilename": "resources/views/auth/tfa-setup.blade.php"
+   },
+   {
+    "rfilename": "resources/views/auth/tfa.blade.php"
+   },
+   {
+    "rfilename": "resources/views/backups/index.blade.php"
+   },
+   {
+    "rfilename": "resources/views/dashboard.blade.php"
+   },
+   {
+    "rfilename": "resources/views/layouts/app.blade.php"
+   },
+   {
+    "rfilename": "resources/views/welcome.blade.php"
+   },
+   {
+    "rfilename": "routes/console.php"
+   },
+   {
+    "rfilename": "routes/web.php"
+   },
+   {
+    "rfilename": "start.sh"
+   },
+   {
+    "rfilename": "storage/app/.gitignore"
+   },
+   {
+    "rfilename": "storage/app/private/.gitignore"
+   },
+   {
+    "rfilename": "storage/app/public/.gitignore"
+   },
+   {
+    "rfilename": "storage/framework/.gitignore"
+   },
+   {
+    "rfilename": "storage/framework/cache/.gitignore"
+   },
+   {
+    "rfilename": "storage/framework/cache/data/.gitignore"
+   },
+   {
+    "rfilename": "storage/framework/sessions/.gitignore"
+   },
+   {
+    "rfilename": "storage/framework/testing/.gitignore"
+   },
+   {
+    "rfilename": "storage/framework/views/.gitignore"
+   },
+   {
+    "rfilename": "storage/logs/.gitignore"
+   },
+   {
+    "rfilename": "supervisord.conf"
+   },
+   {
+    "rfilename": "tests/Feature/ExampleTest.php"
+   },
+   {
+    "rfilename": "tests/TestCase.php"
+   },
+   {
+    "rfilename": "tests/Unit/ExampleTest.php"
+   },
+   {
+    "rfilename": "vite.config.js"
+   }
+  ],
+  "subdomain": "marce-lino-securityapp",
+  "tags": [
+   "docker",
+   "region:us"
+  ],
+  "usedStorage": 0
+ },
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "Marce-lino/SecurityApp",
+ "repo_type": "spaces",
+ "sha": "552090fa67d2cc3d17dbcf414fdc4691ae5cfd1c",
+ "web_url": "https://huggingface.co/spaces/Marce-lino/SecurityApp"
+}

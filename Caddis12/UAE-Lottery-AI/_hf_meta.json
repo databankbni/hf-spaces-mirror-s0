@@ -1,0 +1,121 @@
+{
+ "captured_at": "2026-08-04T13:23:44Z",
+ "hf_metadata": {
+  "_id": "6a6799e89dbd81c7019feeb7",
+  "author": "Caddis12",
+  "cardData": {
+   "app_file": "app.py",
+   "colorFrom": "yellow",
+   "colorTo": "blue",
+   "emoji": "🎲",
+   "pinned": false,
+   "python_version": "3.12",
+   "sdk": "gradio",
+   "sdk_version": "6.20.0",
+   "title": "UAE Lottery AI"
+  },
+  "createdAt": "2026-07-27T17:48:24.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://caddis12-uae-lottery-ai.hf.space",
+  "id": "Caddis12/UAE-Lottery-AI",
+  "lastModified": "2026-08-01T17:50:03.000Z",
+  "likes": 0,
+  "private": false,
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "caddis12-uae-lottery-ai.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": "cpu-basic",
+    "requested": "cpu-basic"
+   },
+   "pySpacesVersion": "0.51.1",
+   "replicas": {
+    "current": 1,
+    "requested": 1
+   },
+   "sha": "f5aa19ce30e62776983de38318c644719a74f75b",
+   "stage": "RUNNING"
+  },
+  "sdk": "gradio",
+  "sha": "f5aa19ce30e62776983de38318c644719a74f75b",
+  "siblings": [
+   {
+    "rfilename": ".gitattributes"
+   },
+   {
+    "rfilename": ".gitignore"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "analysis.py"
+   },
+   {
+    "rfilename": "app.py"
+   },
+   {
+    "rfilename": "assets/logo.png"
+   },
+   {
+    "rfilename": "assets/lottery_balls.png"
+   },
+   {
+    "rfilename": "assets/lottery_machine.png"
+   },
+   {
+    "rfilename": "assets/style.css"
+   },
+   {
+    "rfilename": "data.py"
+   },
+   {
+    "rfilename": "generator.py"
+   },
+   {
+    "rfilename": "lottery_data.xlsx"
+   },
+   {
+    "rfilename": "ml_predictor.py"
+   },
+   {
+    "rfilename": "predictor.py"
+   },
+   {
+    "rfilename": "report.py"
+   },
+   {
+    "rfilename": "requirements.txt"
+   },
+   {
+    "rfilename": "train.py"
+   },
+   {
+    "rfilename": "visualization.py"
+   }
+  ],
+  "subdomain": "caddis12-uae-lottery-ai",
+  "tags": [
+   "gradio",
+   "region:us"
+  ],
+  "usedStorage": 8001338
+ },
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "Caddis12/UAE-Lottery-AI",
+ "repo_type": "spaces",
+ "sha": "f5aa19ce30e62776983de38318c644719a74f75b",
+ "web_url": "https://huggingface.co/spaces/Caddis12/UAE-Lottery-AI"
+}

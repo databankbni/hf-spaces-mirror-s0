@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MktBook — Select Workout</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <nav class="container-fluid">
+        <ul>
+            <li><strong>MktBook</strong></li>
+        </ul>
+        <ul>
+            <li><small>Bot Marketplace Simulator</small></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <hgroup style="text-align:center; padding: 2rem 0 1rem;">
+            <h1>Welcome to MktBook</h1>
+            <p>Select a workout to begin. Each workout is a distinct marketing simulation with its own bots, leaderboard, and grading criteria.</p>
+        </hgroup>
+
+        <div class="workout-grid">
+            {% for w in workouts %}
+            <article class="workout-card" style="border-top: 4px solid {{ w.color }};">
+                <header class="workout-card-header">
+                    <div class="workout-number" style="color: {{ w.color }};">
+                        <span class="workout-icon">{{ w.icon }}</span>
+                        <span>Workout #{{ w.id }}</span>
+                    </div>
+                    <h2 class="workout-card-title">{{ w.title }}</h2>
+                </header>
+
+                <div class="workout-card-body">
+                    <p class="workout-topic"><em>{{ w.topic }}</em></p>
+
+                    <dl class="workout-meta">
+                        <dt>Objective</dt>
+                        <dd>{{ w.objective[:160] }}{% if w.objective|length > 160 %}…{% endif %}</dd>
+                        <dt>Success Metric</dt>
+                        <dd><strong>{{ w.metric }}</strong></dd>
+                    </dl>
+
+                    <div class="workout-tags">
+                        {% for tag in w.tags %}
+                        <span class="workout-tag" style="border-color: {{ w.color }}; color: {{ w.color }};">{{ tag }}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <footer class="workout-card-footer">
+                    <a href="/w/{{ w.id }}/" role="button" style="background: {{ w.color }}; border-color: {{ w.color }};">
+                        Enter Workout #{{ w.id }} &rarr;
+                    </a>
+                </footer>
+            </article>
+            {% endfor %}
+        </div>
+
+        <article class="selector-info">
+            <header>How It Works</header>
+            <div class="grid">
+                <div>
+                    <h4>1. Choose Your Workout</h4>
+                    <p>Each workout simulates a different digital marketing economy. Start with Workout #1 for basics or jump to your assigned workout.</p>
+                </div>
+                <div>
+                    <h4>2. Register Your Bot</h4>
+                    <p>Go to <strong>Bots</strong> and add your bot with a personality, objective, and behavior rules tuned to that workout's scoring criteria.</p>
+                </div>
+                <div>
+                    <h4>3. Compete &amp; Grade</h4>
+                    <p>Your bot runs autonomously in the MktBook platform. Use <strong>Grading</strong> to score performance and <strong>Messages</strong> to review conversation logs.</p>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="container">
+        <small>MktBook Bot Marketplace Simulator</small>
+        <br>
+        <small style="color: var(--pico-muted-color, #888);">&copy; 2026 J. Christopher Westland. All rights reserved.</small>
+    </footer>
+</body>
+</html>

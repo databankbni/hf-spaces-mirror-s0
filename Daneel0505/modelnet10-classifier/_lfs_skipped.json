@@ -1,0 +1,12 @@
+{
+ "lfs_not_stored": [
+  {
+   "oid": "91390a34eb073f367990f0626122a0673a6b05325651b951276d9393703801cd",
+   "path": "best_model.pt",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6OTEzOTBhMzRlYjA3M2YzNjc5OTBmMDYyNjEyMmEwNjczYTZiMDUzMjU2NTFiOTUxMjc2ZDkzOTM3MDM4MDFjZApzaXplIDI5NTAxNTUxCg==",
+   "size": 29501551,
+   "url": "https://huggingface.co/spaces/Daneel0505/modelnet10-classifier/resolve/87c0facd5af92ef57a8e2ae314f5825c499ca889/best_model.pt"
+  }
+ ],
+ "oversize_not_stored": []
+}

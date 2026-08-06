@@ -1,0 +1,17 @@
+*.db
+truku_dict.db
+truku-glosser/
+cols.txt
+cols_e.txt
+.env.example
+datasets/
+scratch_*.py
+build_db.py
+import_datasets.py
+temp_*.json
+test.py
+*.zip
+*.xlsx
+*.csv
+.env
+__pycache__/

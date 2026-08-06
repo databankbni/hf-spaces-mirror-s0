@@ -1,0 +1,160 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master, develop]
+  pull_request:
+    branches: [main, master]
+
+jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install lint dependencies
+        run: pip install ruff
+
+      - name: Run ruff
+        run: ruff check src/ app.py --ignore E501,E402
+
+  test:
+    name: Smoke Tests
+    runs-on: ubuntu-latest
+    needs: lint
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Test requirements parser (no LLM needed)
+        run: |
+          PYTHONPATH=. python -c "
+          from src.tools.requirements_parser import RequirementsParser
+          p = RequirementsParser()
+          result = p._fallback_parse('Design a lightweight bracket. Max weight 1kg. Priority: weight.')
+          assert result['component_name'], 'component_name missing'
+          print('RequirementsParser OK:', result['component_name'])
+          "
+
+      - name: Test knowledge retriever loads vector store
+        run: |
+          PYTHONPATH=. python -c "
+          from src.tools.knowledge_retriever import KnowledgeRetriever
+          r = KnowledgeRetriever()
+          count = r.collection.count()
+          assert count > 0, f'Vector store empty: {count}'
+          print(f'KnowledgeRetriever OK: {count} documents indexed')
+          "
+
+      - name: Test design generator fallback
+        run: |
+          PYTHONPATH=. python -c "
+          from src.tools.design_generator import DesignGenerator
+          g = DesignGenerator()
+          req = {'component_name': 'Test Bracket', 'priority': 'weight', 'constraints': []}
+          alts = g._fallback_designs(req)
+          assert len(alts) == 3, f'Expected 3 alternatives, got {len(alts)}'
+          assert all('id' in a for a in alts), 'Missing id in alternative'
+          print('DesignGenerator OK:', [a['id'] for a in alts])
+          "
+
+      - name: Test feasibility evaluator fallback
+        run: |
+          PYTHONPATH=. python -c "
+          from src.tools.feasibility_evaluator import FeasibilityEvaluator
+          e = FeasibilityEvaluator()
+          req  = {'component_name': 'Test', 'priority': 'weight'}
+          alts = [
+            {'id': 'A', 'performance_score': 3, 'estimated_cost_index': 2},
+            {'id': 'B', 'performance_score': 4, 'estimated_cost_index': 3},
+            {'id': 'C', 'performance_score': 5, 'estimated_cost_index': 5},
+          ]
+          ev = e._fallback_evaluation(req, alts)
+          assert 'recommended' in ev, 'recommended missing'
+          assert 'ranking' in ev, 'ranking missing'
+          print('FeasibilityEvaluator OK: recommended =', ev['recommended'])
+          "
+
+      - name: Test PDF export
+        run: |
+          PYTHONPATH=. python -c "
+          import os, tempfile
+          from src.tools.pdf_exporter import export_pdf
+          from src.tools.design_generator import DesignGenerator
+          from src.tools.feasibility_evaluator import FeasibilityEvaluator
+
+          req  = {'component_name': 'CI Test Bracket', 'priority': 'weight',
+                  'functional_requirements': ['Support 5kN load'],
+                  'performance_targets': {'max_weight_kg': 1.5},
+                  'constraints': ['Steel or aluminium only'],
+                  'design_space': '200x100x50mm', 'interface_requirements': []}
+          g    = DesignGenerator()
+          alts = g._fallback_designs(req)
+          e    = FeasibilityEvaluator()
+          ev   = e._fallback_evaluation(req, alts)
+
+          with tempfile.NamedTemporaryFile(suffix='.json', delete=False, mode='w') as f:
+              import json; json.dump({}, f); tmp = f.name
+
+          rep = {'report_id': 'CI-001', 'timestamp': '2026-01-01', 'component': 'CI Test',
+                 'executive_summary': 'Test summary.', 'next_steps': ['Step 1'],
+                 'knowledge_sources': ['Test source']}
+
+          with tempfile.TemporaryDirectory() as tmpdir:
+              path = os.path.join(tmpdir, 'test_report.pdf')
+              result_dict = {'requirements': req, 'alternatives': alts,
+                             'evaluation': ev, 'report': rep}
+              out = export_pdf(result_dict, path)
+              assert os.path.exists(out), 'PDF not created'
+              size = os.path.getsize(out)
+              assert size > 1000, f'PDF too small: {size} bytes'
+              print(f'PDF export OK: {size} bytes')
+          os.unlink(tmp)
+          "
+
+      - name: Test Word export
+        run: |
+          PYTHONPATH=. python -c "
+          import os, tempfile
+          from src.tools.docx_exporter import export_docx
+          from src.tools.design_generator import DesignGenerator
+          from src.tools.feasibility_evaluator import FeasibilityEvaluator
+
+          req  = {'component_name': 'CI Test Bracket', 'priority': 'weight',
+                  'functional_requirements': ['Support 5kN load'],
+                  'performance_targets': {'max_weight_kg': 1.5},
+                  'constraints': ['Steel or aluminium only'],
+                  'design_space': '200x100x50mm', 'interface_requirements': []}
+          g    = DesignGenerator()
+          alts = g._fallback_designs(req)
+          e    = FeasibilityEvaluator()
+          ev   = e._fallback_evaluation(req, alts)
+          rep  = {'report_id': 'CI-001', 'timestamp': '2026-01-01', 'component': 'CI Test',
+                  'executive_summary': 'Test summary.', 'next_steps': ['Step 1'],
+                  'knowledge_sources': ['Test source']}
+
+          with tempfile.TemporaryDirectory() as tmpdir:
+              path = os.path.join(tmpdir, 'test_report.docx')
+              result_dict = {'requirements': req, 'alternatives': alts,
+                             'evaluation': ev, 'report': rep}
+              out = export_docx(result_dict, path)
+              assert os.path.exists(out), 'Word doc not created'
+              size = os.path.getsize(out)
+              assert size > 1000, f'Word doc too small: {size} bytes'
+              print(f'Word export OK: {size} bytes')
+          "

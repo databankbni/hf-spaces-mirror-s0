@@ -1,0 +1,15 @@
+<article class="species-card">
+  <a href="{{ url_for('species_detail', bird_id=bird.id) }}">
+    <img src="{{ bird.image_url }}" alt="{{ bird.common_name }}">
+    <div class="card-body">
+      <span class="status">{{ bird.conservation_status }}</span>
+      <h2>{{ bird.common_name }}</h2>
+      <p class="latin">{{ bird.scientific_name }}</p>
+      <p>{{ bird.description }}</p>
+      <div class="meta-line">
+        <span><i data-lucide="map-pin"></i>{{ bird.region }}</span>
+        <span><i data-lucide="route"></i>{{ bird.migration_pattern }}</span>
+      </div>
+    </div>
+  </a>
+</article>

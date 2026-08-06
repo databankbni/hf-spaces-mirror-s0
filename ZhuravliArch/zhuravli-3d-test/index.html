@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+  >
+
+  <title>3D-модель проекта</title>
+
+  <script
+    type="module"
+    src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js">
+  </script>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      overflow: hidden;
+      background: #f1f0ed;
+      font-family: Arial, sans-serif;
+    }
+
+    .viewer-container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      min-height: 100dvh;
+      overflow: hidden;
+      background:
+        radial-gradient(
+          circle at 50% 42%,
+          #ffffff 0%,
+          #f4f3f0 55%,
+          #e8e7e3 100%
+        );
+    }
+
+    model-viewer {
+      width: 100%;
+      height: 100%;
+      min-height: 100dvh;
+      background: transparent;
+
+      /* Запрещаем смещение модели в воздухе */
+      --poster-color: transparent;
+      --progress-bar-color: #202020;
+      --progress-bar-height: 3px;
+
+      /* Вертикальное движение пальца управляет камерой */
+      touch-action: none;
+    }
+
+    .top-panel {
+      position: absolute;
+      top: max(18px, env(safe-area-inset-top));
+      left: 50%;
+      z-index: 10;
+      display: flex;
+      gap: 8px;
+      transform: translateX(-50%);
+    }
+
+    .control-button {
+      min-height: 44px;
+      padding: 0 18px;
+      color: #000000;
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid rgba(0, 0, 0, 0.14);
+      border-radius: 22px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .control-button:active {
+      transform: scale(0.97);
+    }
+
+    .help {
+      position: absolute;
+      right: 16px;
+      bottom: max(16px, env(safe-area-inset-bottom));
+      left: 16px;
+      z-index: 10;
+      padding: 12px 16px;
+      color: #000000;
+      background: rgba(255, 255, 255, 0.88);
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.1);
+      font-size: 13px;
+      line-height: 1.45;
+      text-align: center;
+      pointer-events: none;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .loading-status {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      z-index: 20;
+      min-width: 180px;
+      padding: 14px 20px;
+      color: #000000;
+      background: rgba(255, 255, 255, 0.94);
+      border-radius: 12px;
+      box-shadow: 0 5px 24px rgba(0, 0, 0, 0.15);
+      font-size: 14px;
+      text-align: center;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+
+    @media (min-width: 768px) {
+      .help {
+        right: auto;
+        left: 50%;
+        width: auto;
+        transform: translateX(-50%);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="viewer-container" id="viewerContainer">
+
+    <model-viewer
+      id="viewer"
+      src="./model.glb"
+      alt="Интерактивная 3D-модель архитектурного проекта"
+
+      camera-controls
+      disable-pan
+
+      camera-orbit="0deg 65deg auto"
+      min-camera-orbit="-Infinity 10deg auto"
+      max-camera-orbit="Infinity 100deg auto"
+
+      field-of-view="45deg"
+      min-field-of-view="20deg"
+      max-field-of-view="70deg"
+
+      shadow-intensity="1.2"
+      shadow-softness="0.8"
+      tone-mapping="neutral"
+      exposure="1"
+      environment-image="neutral"
+
+      interaction-prompt="auto"
+      interaction-prompt-style="wiggle"
+      loading="eager">
+    </model-viewer>
+
+    <div class="top-panel">
+
+      <button
+        class="control-button"
+        type="button"
+        onclick="resetView()">
+        Вернуть вид
+      </button>
+
+      <button
+        class="control-button"
+        type="button"
+        onclick="openFullscreen()">
+        На весь экран
+      </button>
+
+    </div>
+
+    <div class="help">
+      Влево и вправо — вращение по горизонтали.
+      Вверх и вниз — вращение по вертикали.
+      Масштаб — двумя пальцами или колесом мыши.
+    </div>
+
+    <div class="loading-status" id="loadingStatus">
+      Загрузка модели: 0%
+    </div>
+
+  </div>
+
+  <script>
+    const viewer = document.getElementById("viewer");
+    const loadingStatus = document.getElementById("loadingStatus");
+
+    const initialOrbit = "0deg 65deg auto";
+    const initialTarget = "auto auto auto";
+    const initialFieldOfView = "45deg";
+
+    viewer.addEventListener("progress", function (event) {
+      const percent = Math.round(
+        event.detail.totalProgress * 100
+      );
+
+      loadingStatus.textContent =
+        "Загрузка модели: " + percent + "%";
+
+      if (percent >= 100) {
+        setTimeout(function () {
+          loadingStatus.style.display = "none";
+        }, 500);
+      }
+    });
+
+    viewer.addEventListener("load", function () {
+      loadingStatus.style.display = "none";
+
+      if (viewer.updateFraming) {
+        viewer.updateFraming();
+      }
+    });
+
+    viewer.addEventListener("error", function () {
+      loadingStatus.style.display = "block";
+      loadingStatus.textContent =
+        "Не удалось загрузить модель";
+    });
+
+    function resetView() {
+      viewer.cameraOrbit = initialOrbit;
+      viewer.cameraTarget = initialTarget;
+      viewer.fieldOfView = initialFieldOfView;
+
+      if (viewer.jumpCameraToGoal) {
+        viewer.jumpCameraToGoal();
+      }
+    }
+
+    function openFullscreen() {
+      const container =
+        document.getElementById("viewerContainer");
+
+      if (container.requestFullscreen) {
+        container.requestFullscreen();
+      } else if (container.webkitRequestFullscreen) {
+        container.webkitRequestFullscreen();
+      }
+    }
+  </script>
+
+</body>
+</html>

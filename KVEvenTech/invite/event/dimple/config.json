@@ -1,0 +1,66 @@
+{
+  "brideName": "Dimple",
+  "familyName": "The Bhupathi Family",
+
+  "intro": {
+    "tagline": "Invites You",
+    "buttonText": "Open Invitation",
+    "sequenceInvite": "We cordially invite you",
+    "sequenceTo": "To celebrate"
+  },
+
+  "hero": {
+    "badge": "You Are Invited"
+  },
+
+  "scratchReveal": {
+    "teaser": "✦ For You ✦",
+    "heading": "A Little Secret",
+    "revealLabel": "Save The Date"
+  },
+
+  "countdown": {
+    "label": "Celebration Begins In",
+    "heading": "Counting Down",
+    "doneMessage": "The Celebration Is Here!"
+  },
+
+  "celebrations": {
+    "sectionTag": "✦ The Celebrations ✦",
+    "sectionHeading": "Joyous Events"
+  },
+
+  "venue": {
+    "sectionHeading": "Venue & Reception",
+    "locationLabel": "Main Event Location",
+    "directionsLabel": "Get Directions"
+  },
+
+  "blessings": {
+    "heading": "With Best Compliments",
+    "suffix": "& Family & Friends"
+  },
+
+  "events": {
+    "haldi": {
+      "title": "Haldi Ceremony",
+      "badge": "HALDI CEREMONY",
+      "blessing": "Come bless {brideName} with turmeric and love",
+      "date": "06 June 2027",
+      "time": "05:00 PM",
+      "venue": "At House",
+      "address": "Kottapalem, Gopalapatnam"
+    },
+    "halfSaree": {
+      "title": "Half Saree Ceremony",
+      "badge": "MAIN EVENT",
+      "blessing": "Witness a beautiful milestone in {brideName}'s life",
+      "date": "07 June 2027",
+      "time": "11:00 AM",
+      "dateISO": "2027-06-07T11:00:00+05:30",
+      "venue": "Dhanush Convention",
+      "address": "Narava Road, Kottapalem, Gopalapatnam",
+      "mapLink": "https://maps.app.goo.gl/VPiW413PNV4cLZiV9"
+    }
+  }
+}

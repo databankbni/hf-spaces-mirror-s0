@@ -1,0 +1,18 @@
+{
+ "captured_at": "2026-08-04T16:10:46Z",
+ "hf_metadata": {
+  "sha": "5e8607fe16eaee58f90e777a60917bf1974d53a8"
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitignore",
+   "stored_as": "_gitignore"
+  }
+ ],
+ "renamed_gitattributes": [],
+ "repo_id": "faizan454/Savour-conciarge",
+ "repo_type": "spaces",
+ "sha": "5e8607fe16eaee58f90e777a60917bf1974d53a8",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/faizan454/Savour-conciarge"
+}

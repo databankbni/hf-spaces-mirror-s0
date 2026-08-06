@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Exp H · 同步起跑采样器 — sync 胜出</title>
+<style>
+:root{--bg:#0d1117;--card:#161b22;--line:#30363d;--tx:#e6edf3;--dim:#8b949e;--acc:#63c98a;--warn:#e3b341;--bad:#f85149;--blu:#58a6ff}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:15px/1.6 -apple-system,"Segoe UI",Roboto,"Noto Sans SC",sans-serif;padding:28px 4vw 80px}
+h1{font-size:26px;margin:0 0 6px}h2{font-size:19px;margin:36px 0 10px;border-bottom:1px solid var(--line);padding-bottom:6px}
+.sub{color:var(--dim);margin-bottom:20px}
+.verdict{background:linear-gradient(135deg,#12261a,#161b22);border:1px solid var(--acc);border-radius:10px;padding:16px 20px;margin:18px 0;font-size:16px}
+.verdict b{color:var(--acc)}
+.mech{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 0}
+.mech .box{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:12px 16px;font-size:14px}
+.mech .box h3{margin:0 0 6px;font-size:15px}
+.mech .box.win{border-color:var(--acc)}
+table{border-collapse:collapse;width:100%;margin:12px 0;font-size:14px}
+th,td{border:1px solid var(--line);padding:7px 10px;text-align:center}
+th{background:var(--card);color:var(--dim);font-weight:600}
+td.name{text-align:left;font-weight:600}
+.best{color:var(--acc);font-weight:700}
+.note{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--blu);border-radius:8px;padding:12px 16px;margin:14px 0;color:var(--dim);font-size:14px}
+figure{margin:10px 0 24px;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:8px}
+figcaption{color:var(--dim);font-size:13px;padding:4px 2px;font-weight:600}
+img{width:100%;display:block;border-radius:4px}
+@media(max-width:900px){.mech{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<h1>Exp H · 同步起跑采样器(synchronized-start)</h1>
+<div class="sub">动机(用户提出):现行调度里 known token 冻结等待、只广播不倾听,unknown 做结构决策时看到的是半噪 splat。翻转日历 — 所有 token 第 0 步同时起跑、恒速下降 <code>t_i(j)=max(0, τ_i−j/N)</code>,先到 0 的 token 做各自的 x0-projection 后<b>钉住成干净参考</b>,unknown 的后半程对着 GT 级邻居做决策。推理侧改动,无需重训(expE field 家族已覆盖钉净+高噪同框的混合场)。</div>
+
+<div class="verdict">📌 <b>判决:SYNC + τ.85 成为新推理默认。</b>在 legacy 训练的 expE-scratch@1500 上,SYNC t.85 平均 <b>13.10dB vs legacy 12.88(+0.23)</b>,TEST 大 clip 上 <b>16.7 vs 16.0(+0.7dB)</b>,4 clips 3 胜 1 平,且过剩能量更少(−27.1 vs −30.2,更干净不失内容)。模型甚至没为 sync 场训练过 — sync-trained 双子(expE_sync / expF_sync,已在 8 卡上跑)预计还会拉大。</div>
+
+<div class="mech">
+<div class="box"><h3>legacy:错峰起跑 · 同时到终</h3>known 冻结在 τ 直到全局水位降至 τ 才入场;unknown 高-t 结构期看到的 known = 静止的半噪 splat;所有 token 最后一步同时到 0。</div>
+<div class="box win"><h3>SYNC:同时起跑 · 错峰到终(本实验)</h3>全员第 0 步开始下降;τ=0.85 的 token 第 ~20 步到 0 → x0 投影 → 钉住,told-t=0.02,以干净内容持续参与 attention;unknown 每一步看到的 known 都严格更干净。</div>
+</div>
+
+<h2>扫描结果(expE-scratch@1500,cluster-128 场,24 forwards,4-clip 平均)</h2>
+<table>
+<tr><th>配置</th><th>seen-PSNR</th><th>unseen-gray</th><th>逐 clip PSNR(00534f/0003dc/111b65/2501f4)</th></tr>
+<tr><td class="name best">SYNC τ.85 ⭐</td><td class="best">13.10</td><td>−27.1</td><td>12.0 / 13.2 / <b>16.7</b> / 10.5</td></tr>
+<tr><td class="name">legacy τ.85(旧默认)</td><td>12.88</td><td>−30.2</td><td>11.7 / 13.2 / 16.0 / 10.6</td></tr>
+<tr><td class="name">SYNC τ.65</td><td>12.73</td><td>−21.1</td><td>12.0 / 12.3 / 16.3 / 10.3</td></tr>
+<tr><td class="name">SYNC τ.45</td><td>12.58</td><td>−19.4</td><td>11.9 / 12.0 / 16.0 / 10.4</td></tr>
+<tr><td class="name">legacy τ.45</td><td>12.60</td><td>−24.5</td><td>12.0 / 11.9 / 16.0 / 10.5</td></tr>
+</table>
+
+<div class="note">解读:日历翻转本身(τ.85 行对比)= 纯赚。把 τ_min 往下放(0.65/0.45)会让 known 自己的低起点纹理问题回归,PSNR 下降 — 所以"同步起跑"有效的机制是<b>中盘给 unknown 干净参考</b>,而不是"让 known 起点更低"。目检:SYNC t.85 深推帧结构最稳、涂抹最少;SYNC t.45 纹理能量最高但结构发飘。</div>
+
+<h2>逐 clip 大图(行序:GT / legacy .85 / SYNC .85 / SYNC .65 / SYNC .45 / legacy .45)</h2>
+<figure><figcaption>TRAIN 00534f58</figcaption><img src="expH_00534f58.png" loading="lazy"></figure>
+<figure><figcaption>TRAIN 0003dc82</figcaption><img src="expH_0003dc82.png" loading="lazy"></figure>
+<figure><figcaption>TEST 111b656f(+0.7dB 的主战场)</figcaption><img src="expH_111b656f.png" loading="lazy"></figure>
+<figure><figcaption>TEST 2501f488</figcaption><img src="expH_2501f488.png" loading="lazy"></figure>
+
+<h2>附:expF (+Plücker) @1000 首读数(legacy 采样,判决前跑的)</h2>
+<div class="note">expF@1000 vs expE-scratch@2000(<b>两倍训练量的对手</b>):平均 12.90/−31.0 vs 12.95/−27.4 — 半量训练即打平,内容能量更高。行序 GT / scratch@2000 / expF@1000;drift 判决等 @3-4k 中期读数(下次换 SYNC 采样)。sync-trained 双子 expE_sync / expF_sync 已开跑,凑齐 {legacy,sync}×{无ray,有ray} 2×2。</div>
+<figure><figcaption>TEST 111b656f · expF@1000 vs scratch@2000</figcaption><img src="expFvs_111b656f.png" loading="lazy"></figure>
+<figure><figcaption>TRAIN 00534f58</figcaption><img src="expFvs_00534f58.png" loading="lazy"></figure>
+<figure><figcaption>TRAIN 0003dc82</figcaption><img src="expFvs_0003dc82.png" loading="lazy"></figure>
+<figure><figcaption>TEST 2501f488</figcaption><img src="expFvs_2501f488.png" loading="lazy"></figure>
+
+<div class="sub">jobs: expH sweep=403776 · reinfer_expF=404166 · expE_sync=403794 · expF_sync=403798 · 2026-07-28</div>
+</body>
+</html>

@@ -1,0 +1,3604 @@
+1
+00:00:14,630 --> 00:00:15,970
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Şimdi güzelce ve adilce.</font></font></b></b></font>
+
+2
+00:00:16,300 --> 00:00:18,430
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Adil?</font></font></b></b></font>
+
+3
+00:00:18,720 --> 00:00:20,020
+<font face="Tahoma" size="24"><b><font color="#1a0d0d"><font size="18">Touya Gölü</font></font></b></font>
+
+4
+00:00:23,690 --> 00:00:25,020
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Beni güldürmeyin</font></font></b></b></font>
+
+5
+00:00:25,690 --> 00:00:28,090
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Kaçıyor! Korkudan arkasını dönüp kaçtı!</font></font></b></b></font>
+
+6
+00:00:28,090 --> 00:00:29,090
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Peşinden koşun.</font></font></b></b></font>
+
+7
+00:00:29,090 --> 00:00:33,620
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Artık kılıçla dövüşmek bu modern çağda yapılacak iş değil, biliyor musunuz??</font></font></b></b></font>
+
+8
+00:00:33,620 --> 00:00:34,120
+<font face="Tahoma" size="24"><b><font color="#1a0d0d"><font size="16">Sakata Gintoki</font></font></b></font>
+
+9
+00:00:34,120 --> 00:00:40,000
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Kendisinin belirgin özellikleri; saçlarının kıvırcık olması ve tatlı yiyecekleri sevmesi.</font></font></b></b></font>
+
+10
+00:00:34,120 --> 00:00:40,000
+<font face="Tahoma" size="24"><b><font color="#1a0d0d"><font size="16">Sakata Gintoki</font></font></b></font>
+
+11
+00:00:40,000 --> 00:00:44,000
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">O, bu hikayenin ana kahramanı gibi bir şey.</font></font></b></b></font>
+
+12
+00:00:40,000 --> 00:00:44,000
+<font face="Tahoma" size="24"><b><font color="#1a0d0d"><font size="16">Sakata Gintoki</font></font></b></font>
+
+13
+00:00:46,700 --> 00:00:49,700
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Kusura bakmayın ama, akşamüstü 4 gibi, televizyonda izlemem gereken bir şey var.</font></font></b></b></font>
+
+14
+00:00:51,000 --> 00:00:52,900
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Gin-sannnn!</font></font></b></b></font>
+
+15
+00:00:52,900 --> 00:00:53,900
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Shinpachi?</font></font></b></b></font>
+
+16
+00:00:53,900 --> 00:00:56,380
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Gin-san! Y-yardım et!</font></font></b></b></font>
+
+17
+00:00:56,760 --> 00:00:57,380
+<font face="Tahoma" size="24"><b><font color="#1a0d0d"><font size="16"> Shimura Shinpachi</font></font></b></font>
+
+18
+00:00:57,380 --> 00:01:03,290
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Hikayenin ciddi adamı. Samurayların usulünü öğrenmek için, Gintoki ile çalışıyor.</font></font></b></b></font>
+
+19
+00:00:57,380 --> 00:01:03,290
+<font face="Tahoma" size="24"><b><font color="#1a0d0d"><font size="16">Shimura Shinpachi</font></font></b></font>
+
+20
+00:01:03,290 --> 00:01:06,700
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Hey hey, ne diye onların seni kovalamasına izin veriyorsun be salak?</font></font></b></b></font>
+
+21
+00:01:06,700 --> 00:01:09,950
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Kovalamalarına izin veriyor falan değilim!</font></font></b></b></font>
+
+22
+00:01:09,950 --> 00:01:10,950
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Her ne haltsa, haydi burdan gidelim!</font></font></b></b></font>
+
+23
+00:01:10,950 --> 00:01:11,950
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Peşlerinden gidin! Yakalayın!</font></font></b></b></font>
+
+24
+00:01:32,010 --> 00:01:34,040
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">İşte şimdi sizi yaka-
+Aaaah!</font></font></b></b></font>
+
+25
+00:01:34,040 --> 00:01:36,480
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Gin-chan, bu tarafta değil.</font></font></b></b></font>
+
+26
+00:01:37,180 --> 00:01:37,480
+<font face="Tahoma" size="24"><b><font color="#1a0d0d"><font size="16">Kagura</font></font></b></font>
+
+27
+00:01:37,480 --> 00:01:41,280
+<font face="Tahoma" size="24"><b><font color="#1a0d0d"><font size="16">Kagura</font></font></b></font>
+
+28
+00:01:37,480 --> 00:01:41,280
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="18">Kagura; kainatın en güçlü ırkı, Yato Klanı'nın bir üyesi.</font></font></b></b></font>
+
+29
+00:01:41,290 --> 00:01:44,600
+<font face="Tahoma" size="24"><b><font size="16">Öyle şeker görünümüne kanmayın, oldukça keskin bir dili vardır.</font></b></font>
+
+30
+00:01:41,290 --> 00:01:44,600
+<font face="Tahoma" size="24"><b><font color="#1a0d0d"><font size="16">Kagura</font></font></b></font>
+
+31
+00:01:44,600 --> 00:01:45,600
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Pardonnn</font></font></b></b></font>
+
+32
+00:01:47,140 --> 00:01:48,400
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Bu da ne böyle?</font></font></b></b></font>
+
+33
+00:01:48,400 --> 00:01:49,400
+<font face="Tahoma" size="24"><b><font color="#1a0d0d"><font size="16">Sadaharu</font></font></b></font>
+
+34
+00:01:49,400 --> 00:01:52,130
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Kagura'nın, uzaydan gelen, gizemli, evcil hayvanı.</font></font></b></b></font>
+
+35
+00:01:49,400 --> 00:01:52,130
+<font face="Tahoma" size="24"><b><font color="#1a0d0d"><font size="16">Sadaharu</font></font></b></font>
+
+36
+00:01:52,820 --> 00:01:56,560
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Etrafına bir baksana! Burada bir işler dönüyor.</font></font></b></b></font>
+
+37
+00:01:56,560 --> 00:01:59,540
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Kagura-san, koşsan iyi olur.</font></font></b></b></font>
+
+38
+00:02:04,110 --> 00:02:07,250
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Eğer acele etmezsek programı kaçıracağız!</font></font></b></b></font>
+
+39
+00:02:07,250 --> 00:02:09,890
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Heey, beni de bekleyin!</font></font></b></b></font>
+
+40
+00:02:11,890 --> 00:02:14,700
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Hey, rahat bırakın!</font></font></b></b></font>
+
+41
+00:02:21,300 --> 00:02:22,320
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Çı-çıkmaz sokak!</font></font></b></b></font>
+
+42
+00:02:27,550 --> 00:02:29,090
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Sonunda sizi köşeye sıkıştırdık.</font></font></b></b></font>
+
+43
+00:02:29,090 --> 00:02:32,100
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Ne diyorsun sen? Bizi köşeye sıkıştırmanıza izin veren biziz.</font></font></b></b></font>
+
+44
+00:02:32,100 --> 00:02:33,710
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Müteşekkir olun!</font></font></b></b></font>
+
+45
+00:02:33,710 --> 00:02:35,380
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Ne bu böyle? Kaybetmeyi kabullenemiyor musunuz?</font></font></b></b></font>
+
+46
+00:02:35,380 --> 00:02:37,500
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Bizi salak falan mı sandınız? Bizi şehrin etrafında dolandırıp durdunuz!</font></font></b></b></font>
+
+47
+00:02:37,500 --> 00:02:39,230
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Hem siz kim oluyorsunuz ki?</font></font></b></b></font>
+
+48
+00:02:39,230 --> 00:02:42,400
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Büyük ihtimalle, sırlarımızı çalmak için gönderilmiş birkaç ajansınız!</font></font></b></b></font>
+
+49
+00:02:42,400 --> 00:02:47,330
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Sizleri parçalara bölmeden önce son kez soruyoruz; sizler de kimsiniz?</font></font></b></b></font>
+
+50
+00:02:47,330 --> 00:02:49,750
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Kim miyiz?</font></font></b></b></font>
+
+51
+00:02:50,070 --> 00:02:52,600
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Görünüşe göre başka şansımız olmadığı için söylemek durumundayız!</font></font></b></b></font>
+
+52
+00:02:53,560 --> 00:02:56,810
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Biz her işi yaparız. Ev temizliğinden kayıp bir insanı bulmaya kadar.</font></font></b></b></font>
+
+53
+00:02:57,270 --> 00:02:59,790
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Bir şeye ihtiyacınız olursa, sadece bize gelmeniz yeterli!</font></font></b></b></font>
+
+54
+00:03:00,310 --> 00:03:03,600
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Her şey ya da hiçbir şey olsun. Bize ödeme yapıldığı sürece her şeyi yaparız.</font></font></b></b></font>
+
+55
+00:03:04,200 --> 00:03:07,410
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Biz Gin-chan'ın Yorozuyası'yız!</font></font></b></b></font>
+
+56
+00:03:07,410 --> 00:03:10,470
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Yorozuya? Bu, para için her şeyi yapacağınız anlamına mı geliyor?</font></font></b></b></font>
+
+57
+00:03:11,770 --> 00:03:14,980
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Demek biri sizi, bizim gizli barınağımıza gizlice girip...</font></font></b></b></font>
+
+58
+00:03:19,240 --> 00:03:19,900
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Ooh!</font></font></b></b></font>
+
+59
+00:03:19,900 --> 00:03:20,710
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">İşte burada!</font></font></b></b></font>
+
+60
+00:03:20,710 --> 00:03:24,570
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Benzetiyor olamayız. Bu, Yamayoyalar'ın kedisi, Kurami-chan!</font></font></b></b></font>
+
+61
+00:03:24,570 --> 00:03:24,850
+<font face="Tahoma" size="24"><b><font color="#1a0d0d"><font size="16">Kuromi</font></font></b></font>
+
+62
+00:03:24,850 --> 00:03:28,350
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Haydi bakalım, iyi kedi. Sana bir ikramım var!</font></font></b></b></font>
+
+63
+00:03:29,940 --> 00:03:31,810
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Bekle be, pis kedi!</font></font></b></b></font>
+
+64
+00:03:34,870 --> 00:03:36,670
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Aradıkları şey bir kedi miydi!?</font></font></b></b></font>
+
+65
+00:03:49,620 --> 00:03:52,480
+<font face="Tahoma" size="24"><b><font face="Monotype Corsiva"></font></b><i>Hadi dışarı çıkalım! Hava almaya gidelim</i></font>
+
+66
+00:03:49,620 --> 00:03:52,480
+<font face="Tahoma" size="24"><b></b><i><font face="Neverwinter">Let's go out open my mind</font></i></font>
+
+67
+00:03:52,480 --> 00:03:55,030
+<font face="Tahoma" size="24"><b><font face="Monotype Corsiva"></font></b><i>Hadi gidelim! Dışarıda tatlı bir rüya var</i></font>
+
+68
+00:03:52,480 --> 00:03:55,030
+<font face="Tahoma" size="24"><b></b><i><font face="Neverwinter">Let's go! Sweet dream other side</font></i></font>
+
+69
+00:03:55,030 --> 00:04:00,410
+<font face="Tahoma" size="24"><b></b><i><font face="Neverwinter">Ima tokiharatsu kago no soto he</font></i></font>
+
+70
+00:03:55,030 --> 00:04:00,410
+<font face="Tahoma" size="24"><b><font face="Monotype Corsiva"></font></b><i>Bizi, bu zamanda kelepçelemiş kafesten kurtulalım</i></font>
+
+71
+00:04:00,410 --> 00:04:05,960
+<font face="Tahoma" size="24"><b></b><i><font face="Neverwinter">Sabitsuita kagi nariyamanu kodou</font></i></font>
+
+72
+00:04:00,410 --> 00:04:05,960
+<font face="Tahoma" size="24"><b><font face="Monotype Corsiva"></font></b><i>Kafesin paslanmış anahtarı heyecanla atan kalbinde</i></font>
+
+73
+00:04:05,960 --> 00:04:10,360
+<font face="Tahoma" size="24"><b></b><i><font face="Neverwinter">Kidzuiteta mou modorenai</font></i></font>
+
+74
+00:04:05,960 --> 00:04:10,360
+<font face="Tahoma" size="24"><b><font face="Monotype Corsiva"></font></b><i>Ama biliyorum ki asla dönemem,</i></font>
+
+75
+00:04:10,360 --> 00:04:15,910
+<font face="Tahoma" size="24"><b></b><i><font face="Neverwinter">Ushinawareta hibi ga (Hey baby why?)</font></i></font>
+
+76
+00:04:10,360 --> 00:04:15,910
+<font face="Tahoma" size="24"><b><font face="Monotype Corsiva"></font></b><i>o kaybettiğim günlere... ( Neden bebeğim?)</i></font>
+
+77
+00:04:15,910 --> 00:04:21,440
+<font face="Tahoma" size="24"><b></b><i><font face="Neverwinter">Aoku Tsunegatteku (I want to cry)</font></i></font>
+
+78
+00:04:15,910 --> 00:04:21,440
+<font face="Tahoma" size="24"><b><font face="Monotype Corsiva"></font></b><i>O günler hafızamda gittikçe soluyorlar (Ağlamak istiyorum)</i></font>
+
+79
+00:04:21,440 --> 00:04:26,710
+<font face="Tahoma" size="24"><b></b><i><font face="Neverwinter">Kowagaru jibun ni maketakunaiyo</font></i></font>
+
+80
+00:04:21,440 --> 00:04:26,710
+<font face="Tahoma" size="24"><b><font face="Monotype Corsiva"></font></b><i>Ruhumun korkan tarafına kaybetmek istemiyorum</i></font>
+
+81
+00:04:26,710 --> 00:04:32,330
+<font face="Tahoma" size="24"><b></b><i><font face="Neverwinter">Unmei kara nigenai "Hitori jya nai"</font></i></font>
+
+82
+00:04:26,710 --> 00:04:32,330
+<font face="Tahoma" size="24"><b><font face="Monotype Corsiva"></font></b><i>Kaderimden kaçamam .. ancak yanlız değilim, biliyorum</i></font>
+
+83
+00:04:32,330 --> 00:04:35,800
+<font face="Tahoma" size="24"><b></b><i><font face="Neverwinter">Soba ni iru tatoe donna ni</font></i></font>
+
+84
+00:04:32,330 --> 00:04:35,800
+<font face="Tahoma" size="24"><b><font face="Monotype Corsiva"></font></b><i>Ama ne olursa olsun yanında olacağım</i></font>
+
+85
+00:04:35,800 --> 00:04:43,320
+<font face="Tahoma" size="24"><b></b><i><font face="Neverwinter">Kanashii yume datoshitemo kamawanai</font></i></font>
+
+86
+00:04:35,800 --> 00:04:43,320
+<font face="Tahoma" size="24"><b><font face="Monotype Corsiva"></font></b><i>Bütün hayallerin acı dolu olsada umrumda değil</i></font>
+
+87
+00:04:43,320 --> 00:04:47,770
+<font face="Tahoma" size="24"><b></b><i><font face="Neverwinter">Kimi no namida ni furetai yo... baby</font></i></font>
+
+88
+00:04:43,320 --> 00:04:47,770
+<font face="Tahoma" size="24"><b><font face="Monotype Corsiva"></font></b><i>Gözyaşlarını silmek istiyorum bebeğim</i></font>
+
+89
+00:04:47,780 --> 00:04:51,060
+<font face="Tahoma" size="24"><b></b><i><font face="Neverwinter">I pray shinjite</font></i></font>
+
+90
+00:04:47,780 --> 00:04:51,060
+<font face="Tahoma" size="24"><b><font face="Monotype Corsiva"></font></b><i>İnanabilmek için dua ediyorum</i></font>
+
+91
+00:04:51,060 --> 00:04:57,020
+<font face="Tahoma" size="24"><b></b><i><font face="Neverwinter">Tsumeitai kioku no yami kirisaite</font></i></font>
+
+92
+00:04:51,060 --> 00:04:57,020
+<font face="Tahoma" size="24"><b><font face="Monotype Corsiva"></font></b><i>Böylece o kapkaranlık anılarımızdan arınıp gelebileceksin</i></font>
+
+93
+00:05:03,380 --> 00:05:08,080
+<font face="Tahoma" size="24"><b><font face="MS Serif"></font></b><i><font color="#e43e3d"><font size="8">Haftanın en çok tekrar edilen tepkisi: Hmmmm</font></font></i></font>
+
+94
+00:05:03,380 --> 00:05:08,080
+<font face="Tahoma" size="24"><b><font face="Times New Roman"><font size="12"><font color="#314b6d">http://hardboiled-fs.blogspot.com</font></font></font></b></font>
+
+95
+00:05:29,550 --> 00:05:31,120
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Samurayların Ülkesi.</font></font></b></b></font>
+
+96
+00:05:31,760 --> 00:05:35,400
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Ülkemizin böyle isimlendirilmesinin üzerinden oldukça zaman geçti.</font></font></b></b></font>
+
+97
+00:05:36,020 --> 00:05:38,950
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">20 sene önce, Amanto isimli bir ırk iktidarı ele geçirdi...</font></font></b></b></font>
+
+98
+00:05:38,960 --> 00:05:41,580
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">...ve kılıç kullanmayı yasaklayan bir yasa çıkardı.</font></font></b></b></font>
+
+99
+00:05:41,860 --> 00:05:44,240
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Samuraylık artık yasadışı kabul ediliyor.</font></font></b></b></font>
+
+100
+00:05:45,490 --> 00:05:48,510
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Bu çağda, hala samuray ruhunu taşıyan bir adam var.</font></font></b></b></font>
+
+101
+00:05:48,520 --> 00:05:51,480
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Bu adamın ismi Sakata Gintoki.</font></font></b></b></font>
+
+102
+00:05:52,490 --> 00:05:57,380
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Ve Yorozuya, Gintama'da çalışırken pekçok maceradan maceraya koştum.</font></font></b></b></font>
+
+103
+00:05:57,380 --> 00:05:58,750
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Ben Shimura Shinpachi.</font></font></b></b></font>
+
+104
+00:05:58,750 --> 00:05:59,750
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Ve Kagura-chan.</font></font></b></b></font>
+
+105
+00:05:59,750 --> 00:06:03,290
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Onunla çalışmaya başlayalı 1 sene geçti sanırım.</font></font></b></b></font>
+
+106
+00:06:03,290 --> 00:06:06,420
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Ama bir kere bile maaşımın ödendiğini sanmıyorum.</font></font></b></b></font>
+
+107
+00:06:08,040 --> 00:06:14,130
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">(Sizi pislikler! Nasıl olur da kendinize Gintama diyebilirsiniz!?)</font></font></b></b></font>
+
+108
+00:06:15,560 --> 00:06:17,800
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Kariya-sama geldi!</font></font></b></b></font>
+
+109
+00:06:19,000 --> 00:06:20,430
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Hey!</font></font></b></b></font>
+
+110
+00:06:21,040 --> 00:06:22,740
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Heey!</font></font></b></b></font>
+
+111
+00:06:22,740 --> 00:06:25,440
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Sizi duyamıyorum! Bir kez daha!</font></font></b></b></font>
+
+112
+00:06:25,440 --> 00:06:26,440
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Heeey!</font></font></b></b></font>
+
+113
+00:06:26,440 --> 00:06:28,330
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Heeeeey!</font></font></b></b></font>
+
+114
+00:06:28,330 --> 00:06:29,330
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Hala yeterince bağırmıyorsunuz!</font></font></b></b></font>
+
+115
+00:06:29,770 --> 00:06:30,960
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Tekrar yapmak ister misiniz!?</font></font></b></b></font>
+
+116
+00:06:31,350 --> 00:06:34,120
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Hayır, yeterli zamanımız yok.</font></font></b></b></font>
+
+117
+00:06:34,120 --> 00:06:35,090
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Demek öyle.</font></font></b></b></font>
+
+118
+00:06:35,300 --> 00:06:36,090
+<font face="Tahoma" size="24"><b><font color="#1a0d0d"><font size="16">     Kariya</font></font></b></font>
+
+119
+00:06:35,300 --> 00:06:36,090
+<font face="Tahoma" size="24"><b><font color="#1a0d0d"><font size="16">Ronin</font></font></b></font>
+
+120
+00:06:36,090 --> 00:06:38,050
+<font face="Tahoma" size="24"><b><font color="#1a0d0d"><font size="16">Ronin</font></font></b></font>
+
+121
+00:06:36,090 --> 00:06:38,050
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Bunlar bugünün misafir karakterleri.</font></font></b></b></font>
+
+122
+00:06:36,090 --> 00:06:38,050
+<font face="Tahoma" size="24"><b><font color="#1a0d0d"><font size="16">     Kariya</font></font></b></font>
+
+123
+00:06:38,720 --> 00:06:39,530
+<font face="Tahoma" size="24"><b><font color="#1a0d0d"><font size="16">Shikei</font></font></b></font>
+
+124
+00:06:38,720 --> 00:06:39,530
+<font face="Tahoma" size="24"><b><font color="#1a0d0d"><font size="16">Buu</font></font></b></font>
+
+125
+00:06:39,530 --> 00:06:41,400
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Kesinlikle devamlı karakter değiller.</font></font></b></b></font>
+
+126
+00:06:39,530 --> 00:06:41,400
+<font face="Tahoma" size="24"><b><font color="#1a0d0d"><font size="16">Buu</font></font></b></font>
+
+127
+00:06:39,530 --> 00:06:41,400
+<font face="Tahoma" size="24"><b><font color="#1a0d0d"><font size="16">Shikei</font></font></b></font>
+
+128
+00:06:41,840 --> 00:06:43,440
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Ooooo, Kariya-sama</font></font></b></b></font>
+
+129
+00:06:43,440 --> 00:06:46,150
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Bu gadder yoli geldüğünüz üçün teşkürler.</font></font></b></b></font>
+
+130
+00:06:46,150 --> 00:06:47,500
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Resmiyeti bir kenara bırakalım.</font></font></b></b></font>
+
+131
+00:06:47,500 --> 00:06:48,500
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Shikei</font></font></b></b></font>
+
+132
+00:06:48,500 --> 00:06:50,470
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Meselenin ilerleme durumu nedir?</font></font></b></b></font>
+
+133
+00:06:50,470 --> 00:06:51,060
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Tabi!</font></font></b></b></font>
+
+134
+00:06:51,060 --> 00:06:53,240
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Gayet iyi ilerliyor efendim.</font></font></b></b></font>
+
+135
+00:06:53,250 --> 00:06:56,240
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Lütfen şu teklifimize bir göz atın.</font></font></b></b></font>
+
+136
+00:06:57,360 --> 00:06:59,360
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">İlk takım, bundan böyle "Planlamacılar"...</font></font></b></b></font>
+
+137
+00:06:59,360 --> 00:07:00,360
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">...olarak havale edilecek, bu vesile ile talep edil-</font></font></b></b></font>
+
+138
+00:07:00,370 --> 00:07:03,750
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Burada ne halttan bahsedildiğini anlamıyorum!</font></font></b></b></font>
+
+139
+00:07:04,270 --> 00:07:06,710
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Bu bir çeşit kanuni zırva mı!?</font></font></b></b></font>
+
+140
+00:07:09,720 --> 00:07:11,140
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Lütfen beni affedin.</font></font></b></b></font>
+
+141
+00:07:24,280 --> 00:07:24,900
+<font face="Tahoma" size="24"><b><font color="#1a0d0d"><font size="16">Shinsengumi</font></font></b></font>
+
+142
+00:07:24,900 --> 00:07:27,870
+<font face="Tahoma" size="24"><b><font color="#1a0d0d"><font size="16">Shinsengumi</font></font></b></font>
+
+143
+00:07:24,900 --> 00:07:27,870
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Shinsengumi; Shogunate'nin özel polis gücü.</font></font></b></b></font>
+
+144
+00:07:27,870 --> 00:07:29,090
+<font face="Tahoma" size="24"><b><font color="#1a0d0d"><font size="16">Hijikata Toushirou</font></font></b></font>
+
+145
+00:07:29,090 --> 00:07:31,330
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Yardımcı Kaptan Hijikata, bu birliğin beyni.</font></font></b></b></font>
+
+146
+00:07:29,090 --> 00:07:31,330
+<font face="Tahoma" size="24"><b><font color="#1a0d0d"><font size="16">Hijikata Toushirou</font></font></b></font>
+
+147
+00:07:31,340 --> 00:07:34,810
+<font face="Tahoma" size="24"><b><font color="#1a0d0d"><font size="16"> Okita Sougo</font></font></b></font>
+
+148
+00:07:31,340 --> 00:07:34,810
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Okita ise ulusun en iyi kılıç ustası.</font></font></b></b></font>
+
+149
+00:07:35,800 --> 00:07:37,710
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Durumlar nedir, Yamazaki?</font></font></b></b></font>
+
+150
+00:07:37,710 --> 00:07:39,750
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">3. katta toplanıyorlar.</font></font></b></b></font>
+
+151
+00:07:39,750 --> 00:07:42,110
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Dördünden biri Amanto...</font></font></b></b></font>
+
+152
+00:07:42,110 --> 00:07:45,530
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">...iki iş adamı ve sert görünüşlü bir ronin.</font></font></b></b></font>
+
+153
+00:07:42,110 --> 00:07:45,530
+<font face="Tahoma" size="24"><b><b><font face="Monotype Corsiva"><font size="18"><i>Ronin: Bir efendiye bağlı olmadan savaşan samuray</i></font></font></b></b></font>
+
+154
+00:07:45,530 --> 00:07:46,860
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Tam istediğim gibi.</font></font></b></b></font>
+
+155
+00:07:47,000 --> 00:07:47,860
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Gidelim!</font></font></b></b></font>
+
+156
+00:07:49,020 --> 00:07:51,200
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Sizin sayenizde aldığımız...</font></font></b></b></font>
+
+157
+00:07:51,210 --> 00:07:54,990
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">...Amanto mekanizmasının ihracatını bitirdik, Kariya-sama.</font></font></b></b></font>
+
+158
+00:07:54,990 --> 00:07:58,000
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Geriye sadece o küçük noktayı halletmek kaldı.</font></font></b></b></font>
+
+159
+00:07:59,860 --> 00:08:01,700
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Planımız başarıyla tamamlanırsa...</font></font></b></b></font>
+
+160
+00:08:01,700 --> 00:08:03,670
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">...Edo hemen hemen benim kontrolüm altında olacak.</font></font></b></b></font>
+
+161
+00:08:03,670 --> 00:08:06,240
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Doğru diyorsunuz, Kariya-sama.</font></font></b></b></font>
+
+162
+00:08:11,730 --> 00:08:12,960
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Tüm binayı arayın!</font></font></b></b></font>
+
+163
+00:08:12,960 --> 00:08:13,960
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Shinsengumi!</font></font></b></b></font>
+
+164
+00:08:14,890 --> 00:08:15,880
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Haydi, Sougo!</font></font></b></b></font>
+
+165
+00:08:15,880 --> 00:08:16,880
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Tamam efendim!</font></font></b></b></font>
+
+166
+00:08:22,400 --> 00:08:23,570
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Shinsengumi!</font></font></b></b></font>
+
+167
+00:08:29,270 --> 00:08:30,530
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Hoşça kal, Yardımcı Kaptan.</font></font></b></b></font>
+
+168
+00:08:30,530 --> 00:08:32,880
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Neden sonraki hayatında mayoneze dalmıyorsun?</font></font></b></b></font>
+
+169
+00:08:36,150 --> 00:08:37,050
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Heyy, Sougo.</font></font></b></b></font>
+
+170
+00:08:37,050 --> 00:08:39,470
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Ne yaptığını sanıyorsun sen?</font></font></b></b></font>
+
+171
+00:08:40,000 --> 00:08:40,100
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Tüh.</font></font></b></b></font>
+
+172
+00:08:40,940 --> 00:08:41,510
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Tühmüş!</font></font></b></b></font>
+
+173
+00:08:41,510 --> 00:08:43,170
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Beni öldürmeye mi çalışıyorsun sen!?</font></font></b></b></font>
+
+174
+00:08:43,170 --> 00:08:45,770
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Hayır ya. Sadece bir şakaydı. Şaka!</font></font></b></b></font>
+
+175
+00:08:46,380 --> 00:08:48,070
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Her zaman yaptığım şey, değil mi?</font></font></b></b></font>
+
+176
+00:08:48,490 --> 00:08:51,500
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Beni her zaman öldürmeye mi çalışıyorsun?</font></font></b></b></font>
+
+177
+00:08:51,500 --> 00:08:53,410
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Her neyse, Hijikata-san.</font></font></b></b></font>
+
+178
+00:08:53,720 --> 00:08:56,290
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Hedefi kaçırdık, değil mi?</font></font></b></b></font>
+
+179
+00:08:58,320 --> 00:09:00,560
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Hayır, tam anlamıyla değil.</font></font></b></b></font>
+
+180
+00:09:01,980 --> 00:09:04,740
+<font face="Tahoma" size="24"><b><font color="#1a0d0d"><font size="16"> Yorozuya - Para için her şey yapılır</font></font></b></font>
+
+181
+00:09:06,900 --> 00:09:10,320
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Jump okuma yaşını çoktan geçtim, ama...</font></font></b></b></font>
+
+182
+00:09:11,060 --> 00:09:13,690
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">...onda beni çeken bir şeyler var işte.</font></font></b></b></font>
+
+183
+00:09:13,690 --> 00:09:18,490
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Artık okumamalısın, Gin-chan. Onu okumak karın doyurmuyor.</font></font></b></b></font>
+
+184
+00:09:18,490 --> 00:09:20,530
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Kan şekerin düşecek.</font></font></b></b></font>
+
+185
+00:09:20,980 --> 00:09:24,090
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Öyle olsa bile, bu bir çeşit alışkanlık.</font></font></b></b></font>
+
+186
+00:09:24,090 --> 00:09:26,910
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Her zaman gelecek seferden sonra bırakacağımı söylüyorum.</font></font></b></b></font>
+
+187
+00:09:26,910 --> 00:09:29,140
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Gin-san, durumlar pek iyi görünmüyor.</font></font></b></b></font>
+
+188
+00:09:29,140 --> 00:09:32,860
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Evet, biliyorum. Benim yaşımda Jump okumak iyi bir şey değil.</font></font></b></b></font>
+
+189
+00:09:32,860 --> 00:09:36,210
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Doğru diyorsun, yaptığın onigirinin tadı berbat.</font></font></b></b></font>
+
+190
+00:09:36,210 --> 00:09:37,210
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Bahsettiğim şey bunlar değil!</font></font></b></b></font>
+
+191
+00:09:38,480 --> 00:09:40,000
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Ben bundan bahsediyorum!</font></font></b></b></font>
+
+192
+00:09:40,000 --> 00:09:41,370
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Banka cüzdanımız?</font></font></b></b></font>
+
+193
+00:09:41,380 --> 00:09:46,010
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Benimle dalga geçme. Bu yiyecek bir şey değil.</font></font></b></b></font>
+
+194
+00:09:46,010 --> 00:09:49,000
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Eğer buna biraz dikkat etmezseniz, artık yiyecek pirinç bile bulamayacağız!</font></font></b></b></font>
+
+195
+00:09:49,000 --> 00:09:51,620
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Aylardan beri doğru düzgün bir iş alamadık! Bizi kapı dışarı edecekler!</font></font></b></b></font>
+
+196
+00:09:51,620 --> 00:09:55,620
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">O kedi işini bile bedavaya aldık, değil mi!</font></font></b></b></font>
+
+197
+00:09:55,630 --> 00:09:59,940
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Endişelenme. Nesin sen? Jump almayı unuttuğu için öfke nöbeti geçiren velet mi?</font></font></b></b></font>
+
+198
+00:09:59,940 --> 00:10:03,300
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Paranın olmaması sinüslerde enfeksiyon gibidir.</font></font></b></b></font>
+
+199
+00:10:03,300 --> 00:10:08,990
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Görmezden gelmeli, uğraşmamalısın ve o kendi kendine gider.</font></font></b></b></font>
+
+200
+00:10:09,420 --> 00:10:11,180
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Neden bahsediyorsun sen?</font></font></b></b></font>
+
+201
+00:10:11,180 --> 00:10:12,500
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Ben Jump'tan bahsetmiyorum!</font></font></b></b></font>
+
+202
+00:10:12,500 --> 00:10:14,160
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Gerçekten güç bir durumdayız! Çok gergin bir haldeyiz!</font></font></b></b></font>
+
+203
+00:10:14,740 --> 00:10:17,660
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Yarından itibaren ekmek kırıntısından başka bir şey yiyemeyeceğiz.</font></font></b></b></font>
+
+204
+00:10:18,890 --> 00:10:19,280
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Bu...</font></font></b></b></font>
+
+205
+00:10:19,280 --> 00:10:20,280
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Sinüs enfeksiyonu?</font></font></b></b></font>
+
+206
+00:10:20,280 --> 00:10:21,280
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Deprem oluyor be, salak!</font></font></b></b></font>
+
+207
+00:10:24,730 --> 00:10:25,860
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Durdu gibi.</font></font></b></b></font>
+
+208
+00:10:25,860 --> 00:10:28,190
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Son zamanlarda pekçok deprem oluyor.</font></font></b></b></font>
+
+209
+00:10:29,200 --> 00:10:29,420
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Evet.</font></font></b></b></font>
+
+210
+00:10:29,770 --> 00:10:31,730
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Dünya, aynı çatı altında yaşayan...</font></font></b></b></font>
+
+211
+00:10:31,730 --> 00:10:34,500
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">...beş kişilik bir liseli delikanlı grubundan bile daha gürültücü.</font></font></b></b></font>
+
+212
+00:10:34,510 --> 00:10:37,320
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Bu normal değil, değil mi?</font></font></b></b></font>
+
+213
+00:10:37,650 --> 00:10:39,860
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Pekala Jump'ta oluyor.</font></font></b></b></font>
+
+214
+00:10:41,140 --> 00:10:42,110
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Müşteri mi?</font></font></b></b></font>
+
+215
+00:10:42,110 --> 00:10:44,790
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Olamaz, muhtemelen gazete falan satan bir satıcıdır.</font></font></b></b></font>
+
+216
+00:10:44,790 --> 00:10:47,460
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Shinpachi, Nikkei'den başka biriyse...</font></font></b></b></font>
+
+217
+00:10:47,460 --> 00:10:49,780
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">...onlara istemediğimizi söyle ve geri gönder.</font></font></b></b></font>
+
+218
+00:10:49,780 --> 00:10:50,780
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Eğer gelen Nikkei'yse...</font></font></b></b></font>
+
+219
+00:10:50,780 --> 00:10:53,700
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">...onu yeni doğan bir güneş gibi kibarca geri çevir.</font></font></b></b></font>
+
+220
+00:10:54,870 --> 00:10:57,100
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Tamam, tamam, geliyorum.</font></font></b></b></font>
+
+221
+00:10:57,200 --> 00:10:59,000
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Gazetemizi çoktan aldık.</font></font></b></b></font>
+
+222
+00:11:08,000 --> 00:11:08,720
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Umm...</font></font></b></b></font>
+
+223
+00:11:09,890 --> 00:11:14,420
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Buranın istediğimiz her şeyi yapan yer olduğunu duydum.</font></font></b></b></font>
+
+224
+00:11:16,650 --> 00:11:18,300
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Shinpachi, napıyorsun?</font></font></b></b></font>
+
+225
+00:11:18,300 --> 00:11:21,050
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Acele etmezsen programın başlayacak.</font></font></b></b></font>
+
+226
+00:11:21,060 --> 00:11:23,930
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Dediklerine göre, Yorozuya'ymışsınız.</font></font></b></b></font>
+
+227
+00:11:25,780 --> 00:11:28,690
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Tanrım, gerçekten o kadar ısrarcı mı?</font></font></b></b></font>
+
+228
+00:11:28,690 --> 00:11:31,970
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Eğer  vazgeçmiyorsa, kıçını tekmeleyeceğinizi ve--</font></font></b></b></font>
+
+229
+00:11:31,970 --> 00:11:33,750
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Burası Yorozuya, değil mi?</font></font></b></b></font>
+
+230
+00:11:38,790 --> 00:11:41,340
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Merhaba? Merhaba? Burda mısınız?</font></font></b></b></font>
+
+231
+00:11:41,350 --> 00:11:43,760
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">S-sen...Olamaz!</font></font></b></b></font>
+
+232
+00:11:44,640 --> 00:11:45,670
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Müşteri misin!?</font></font></b></b></font>
+
+233
+00:11:48,380 --> 00:11:49,510
+<font face="Tahoma" size="24"><b><font color="#1a0d0d"><font size="16">Katou Ken.</font></font></b></font>
+
+234
+00:11:49,510 --> 00:11:51,590
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Bir ronin ve bu bölümün müşterisi.</font></font></b></b></font>
+
+235
+00:11:49,510 --> 00:11:51,590
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Bir ronin ve bu bölümün müşterisi.</font></font></b></b></font>
+
+236
+00:11:49,510 --> 00:11:51,590
+<font face="Tahoma" size="24"><b><font color="#1a0d0d"><font size="16">Katou Ken</font></font></b></font>
+
+237
+00:11:52,360 --> 00:11:56,260
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Kendimi tanıtayım. Ben, Katou Ken.</font></font></b></b></font>
+
+238
+00:11:56,270 --> 00:11:58,390
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Son birkaç senedir bir ronin'im.</font></font></b></b></font>
+
+239
+00:11:59,330 --> 00:12:01,480
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Hey, burada neler oluyor?</font></font></b></b></font>
+
+240
+00:12:01,480 --> 00:12:05,870
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Yakın aralıklarla iki müşterinin gelmesi... bu olamaz!</font></font></b></b></font>
+
+241
+00:12:06,350 --> 00:12:09,350
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Ça..ça..ça-çayınız.</font></font></b></b></font>
+
+242
+00:12:11,080 --> 00:12:12,040
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Uum...</font></font></b></b></font>
+
+243
+00:12:12,250 --> 00:12:14,610
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Bu bir şaka falansa, seni ortadan ikiye ayırırım.</font></font></b></b></font>
+
+244
+00:12:14,610 --> 00:12:17,500
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Ne? Müşterimizle kavga başlatmaya falan mı çalışıyorsun?</font></font></b></b></font>
+
+245
+00:12:18,770 --> 00:12:19,820
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Ziyaretinizi neye borçluyuz?</font></font></b></b></font>
+
+246
+00:12:20,270 --> 00:12:24,830
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Şey, ben kaybettiğim bir şeyin bulunmasını istiyordum.</font></font></b></b></font>
+
+247
+00:12:24,830 --> 00:12:28,540
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Benim için çok önemli bir şeydi, ama artık yok.</font></font></b></b></font>
+
+248
+00:12:30,020 --> 00:12:32,980
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Uhm, kaybettiğiniz şey nedir?</font></font></b></b></font>
+
+249
+00:12:32,980 --> 00:12:36,590
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Şey... ama 30 milyon yen'im olsaydı geri alabilirdim...</font></font></b></b></font>
+
+250
+00:12:36,880 --> 00:12:37,880
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Aptal keltoş!</font></font></b></b></font>
+
+251
+00:12:37,880 --> 00:12:40,910
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Sana eğer bunlar bir şakaysa kıçına tekmeyi yersin dediğimi unuttun mu?</font></font></b></b></font>
+
+252
+00:12:41,630 --> 00:12:43,900
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Ne acı, her ona uzanıp dokunduğumuzu düşündüğümüzde...</font></font></b></b></font>
+
+253
+00:12:43,900 --> 00:12:47,000
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">...parmaklarımızın arasından kayıp gidiyor.</font></font></b></b></font>
+
+254
+00:12:47,000 --> 00:12:51,000
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Demek sebebi buydu? Bu el bütün paramızı kumarda harcadı!</font></font></b></b></font>
+
+255
+00:12:51,310 --> 00:12:54,870
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Ama her işi kabul edebileceğinizi düşünmüştüm.</font></font></b></b></font>
+
+256
+00:12:54,870 --> 00:12:57,330
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Evimizin kirasını bile ödeyemiyoruz!</font></font></b></b></font>
+
+257
+00:12:57,330 --> 00:12:59,330
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Sen kendini ne sanıyorsun da...</font></font></b></b></font>
+
+258
+00:12:59,330 --> 00:13:01,190
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">...kel kafanı buraya sokmuş, bize böyle bir teklifte bulunuyorsun?!</font></font></b></b></font>
+
+259
+00:13:01,550 --> 00:13:03,320
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Siz ikiniz, kendinize gelin.</font></font></b></b></font>
+
+260
+00:13:03,040 --> 00:13:07,120
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Her neyse, o parayla ne yapmayı düşünüyorsun?</font></font></b></b></font>
+
+261
+00:13:08,330 --> 00:13:12,660
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Bakın, bir ay önce, Madogiwa Grubu'ndan kovuldum ve işsiz kaldım.</font></font></b></b></font>
+
+262
+00:13:14,220 --> 00:13:19,470
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Sonra, üç hafta önce, dolandırıldım ve evimi elimden aldılar.</font></font></b></b></font>
+
+263
+00:13:20,960 --> 00:13:26,030
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Sonra, iki hafta önce, karım ve kızım bir not bile bırakmadan beni terketti.</font></font></b></b></font>
+
+264
+00:13:28,350 --> 00:13:29,480
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Sonra, bir hafta önce...</font></font></b></b></font>
+
+265
+00:13:37,460 --> 00:13:39,620
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Ne diye en önemli yerinde durmak zorundasın ki? Beni sinirlendiriyorsun!</font></font></b></b></font>
+
+266
+00:13:39,620 --> 00:13:43,740
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Bir hafta önce, şu son birkaç aydır başına gelen talihsizliklerden daha beter ne oldu?!</font></font></b></b></font>
+
+267
+00:13:43,740 --> 00:13:46,370
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Bir hafta önce ne oldu!?</font></font></b></b></font>
+
+268
+00:13:47,110 --> 00:13:49,870
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Devamını duymak istiyor musunuz?</font></font></b></b></font>
+
+269
+00:13:53,510 --> 00:13:56,950
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">İşi bitirdikten sonra devamını duyabilirsiniz de ne demek öyle?</font></font></b></b></font>
+
+270
+00:13:56,950 --> 00:14:00,470
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">İşi bitirip bitiremeyeceğimizden bile emin değilim ki.</font></font></b></b></font>
+
+271
+00:14:01,270 --> 00:14:03,740
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Şey, nereye gidiyoruz?</font></font></b></b></font>
+
+272
+00:14:03,740 --> 00:14:08,730
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Parayı en kısa zamanda almamız en iyisi değil mi?</font></font></b></b></font>
+
+273
+00:14:09,930 --> 00:14:12,760
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Ooo, hoş geldiniz... Ah, sizmişsiniz.</font></font></b></b></font>
+
+274
+00:14:12,770 --> 00:14:13,520
+<font face="Tahoma" size="24"><b><font color="#1a0d0d"><font size="16">Otose</font></font></b></font>
+
+275
+00:14:13,560 --> 00:14:17,850
+<font face="Tahoma" size="24"><b><font color="#1a0d0d"><font size="16">Otose</font></font></b></font>
+
+276
+00:14:13,560 --> 00:14:17,850
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22"> Bu Otose-san. Otose'nin Aperatif Dükkanı'nı işletiyor ve Gin-chan'ın ev sahibesi.</font></font></b></b></font>
+
+277
+00:14:20,360 --> 00:14:21,520
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22"> Anlıyorum.</font></font></b></b></font>
+
+278
+00:14:21,520 --> 00:14:24,860
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22"> Bu kadar parayı hızlı bir şekilde elde etmenin bir yolu olsaydı...</font></font></b></b></font>
+
+279
+00:14:24,860 --> 00:14:29,570
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22"> ...bu dünyada hırsız falan olmazdı!</font></font></b></b></font>
+
+280
+00:14:29,570 --> 00:14:31,490
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22"> Hırsız olan sensin!</font></font></b></b></font>
+
+281
+00:14:31,490 --> 00:14:32,490
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22"> Gerçekten.</font></font></b></b></font>
+
+282
+00:14:32,910 --> 00:14:33,490
+<font face="Tahoma" size="24"><b><font color="#1a0d0d"><font size="16"> Catherine</font></font></b></font>
+
+283
+00:14:33,500 --> 00:14:38,170
+<font face="Tahoma" size="24"><b><font color="#1a0d0d"><font size="16"> Catherine</font></font></b></font>
+
+284
+00:14:33,500 --> 00:14:38,170
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22"> Bu, Catherine. Otose'nin Aperatif Yeri'nde bir çalışan. Dünyaya, para kazanmaya geldi.</font></font></b></b></font>
+
+285
+00:14:40,330 --> 00:14:43,340
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22"> Pekala, başka seçeneğimiz yok değil.</font></font></b></b></font>
+
+286
+00:14:43,670 --> 00:14:44,590
+<font face="Tahoma" size="24"><b><font color="#1a0d0d"><font size="12"> Karaborsa Kliniği</font></font></b></font>
+
+287
+00:14:45,510 --> 00:14:47,510
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Pekala o zaman beyler, sonuç nedir?</font></font></b></b></font>
+
+288
+00:14:47,510 --> 00:14:48,510
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Uhhm, ben...</font></font></b></b></font>
+
+289
+00:14:49,590 --> 00:14:51,930
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Senden bundan iki tane var zaten, birinden vazgeç!</font></font></b></b></font>
+
+290
+00:14:52,800 --> 00:14:54,350
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Sıkıyorsa yap bakalım.</font></font></b></b></font>
+
+291
+00:14:54,640 --> 00:14:55,850
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Bu bir işe yaramıyor.</font></font></b></b></font>
+
+292
+00:14:56,480 --> 00:14:58,940
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Tanrım, dediğin kadar da her şeye çare bulabilen biri değilsin.</font></font></b></b></font>
+
+293
+00:14:59,900 --> 00:15:03,190
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Hiç, bir insan azıcık para için bir organından vazgeçebilir mi?</font></font></b></b></font>
+
+294
+00:15:03,190 --> 00:15:06,150
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Hiç sanmıyorum. Akıllı birinin bunu yapabileceğini sanmıyorum.</font></font></b></b></font>
+
+295
+00:15:12,280 --> 00:15:14,080
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Ah, herkese merhabalar. Tanıştığıma memnun oldum.</font></font></b></b></font>
+
+296
+00:15:14,120 --> 00:15:15,620
+<font face="Tahoma" size="24"><b><font color="#1a0d0d"><font size="16"> Sarutobi Ayame</font></font></b></font>
+
+297
+00:15:15,620 --> 00:15:19,710
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Diğer bir deyişle; Sacchan. Oniwaban Sarayı'nın eski koruyucularından. Seçkin bir ninja.</font></font></b></b></font>
+
+298
+00:15:15,620 --> 00:15:19,710
+<font face="Tahoma" size="24"><b><font color="#1a0d0d"><font size="16"> Sarutobi Ayame</font></font></b></font>
+
+299
+00:15:20,250 --> 00:15:23,670
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Ha? Çok miktarda para bulmanın kısa bir yolu mu?</font></font></b></b></font>
+
+300
+00:15:24,290 --> 00:15:26,800
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Sacchan-san, gözlüklerini tak.</font></font></b></b></font>
+
+301
+00:15:26,800 --> 00:15:29,220
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Diğer müşterileri rahatsız ediyorsun.</font></font></b></b></font>
+
+302
+00:15:29,220 --> 00:15:31,720
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Aynı tipte karakter olduğumuzu sorun etmem.</font></font></b></b></font>
+
+303
+00:15:32,180 --> 00:15:32,720
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Ne diyorsun?</font></font></b></b></font>
+
+304
+00:15:32,720 --> 00:15:36,640
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Seni azıcık da olsa umursamıyorum.</font></font></b></b></font>
+
+305
+00:15:37,520 --> 00:15:39,020
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Benim umursadığım tek kişi...</font></font></b></b></font>
+
+306
+00:15:42,270 --> 00:15:44,480
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">...sensin, Gin-san.</font></font></b></b></font>
+
+307
+00:15:46,360 --> 00:15:48,570
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Sana gözlüklerini tak diyorum!</font></font></b></b></font>
+
+308
+00:15:49,490 --> 00:15:50,820
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Anlıyorum.</font></font></b></b></font>
+
+309
+00:15:50,860 --> 00:15:54,280
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Çeyizimizde para yoktu değildi, Gin-san.</font></font></b></b></font>
+
+310
+00:15:54,910 --> 00:15:56,870
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Ne diye seni seveyim?</font></font></b></b></font>
+
+311
+00:15:56,870 --> 00:15:59,660
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">İşinden dolayı bir sevgilin bile olamaz.</font></font></b></b></font>
+
+312
+00:16:00,210 --> 00:16:01,750
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Her zamanki soğuk tavırlar...</font></font></b></b></font>
+
+313
+00:16:01,750 --> 00:16:04,880
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">...ama bu tür bir uyarıdan sonra bile vazgeçmeyeceğim.</font></font></b></b></font>
+
+314
+00:16:04,880 --> 00:16:07,210
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Hey, o natto ne için?</font></font></b></b></font>
+
+315
+00:16:07,210 --> 00:16:10,550
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Beni bununla tavlamaya çalışıyorsan, yanlış yoldasın.</font></font></b></b></font>
+
+316
+00:16:10,550 --> 00:16:14,760
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Beni kendinden uzaklaştırarak mutlu olacağımı mı sanıyorsun?</font></font></b></b></font>
+
+317
+00:16:14,760 --> 00:16:18,930
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Alış artık buna, seni natto-kadın!</font></font></b></b></font>
+
+318
+00:16:20,810 --> 00:16:22,350
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Doğru diyorsun.</font></font></b></b></font>
+
+319
+00:16:22,350 --> 00:16:24,350
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Kesinlikle haklısın.</font></font></b></b></font>
+
+320
+00:16:24,360 --> 00:16:26,270
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">İstediğim bu, bu benim tutkum.</font></font></b></b></font>
+
+321
+00:16:26,730 --> 00:16:28,650
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Beni bu baştan çıkarıyor!</font></font></b></b></font>
+
+322
+00:16:29,820 --> 00:16:31,780
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Bu da ne? Pis kokuyor!</font></font></b></b></font>
+
+323
+00:16:31,780 --> 00:16:33,910
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Natto kokusu mu onu baştan çıkarıyormuş?</font></font></b></b></font>
+
+324
+00:16:36,700 --> 00:16:37,780
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Katou.</font></font></b></b></font>
+
+325
+00:16:41,910 --> 00:16:44,330
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Hey, Katou, nasıl gidiyor?</font></font></b></b></font>
+
+326
+00:16:44,330 --> 00:16:45,330
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Ah, ben...</font></font></b></b></font>
+
+327
+00:16:49,000 --> 00:16:50,210
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Ne fena, değil mi?</font></font></b></b></font>
+
+328
+00:16:50,220 --> 00:16:55,010
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">İşte, insan bir belgeyi imzalamadan önce dikkatli olmalı.</font></font></b></b></font>
+
+329
+00:16:55,010 --> 00:17:00,430
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Görünüşe göre, bunun dışında da problemlerin varmış, değil mi?</font></font></b></b></font>
+
+330
+00:17:00,430 --> 00:17:01,430
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Ha, siz nasıl biliyorsunuz?</font></font></b></b></font>
+
+331
+00:17:03,640 --> 00:17:05,480
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Neyse, bu aralar ne yapıyorsun?</font></font></b></b></font>
+
+332
+00:17:06,190 --> 00:17:08,860
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Ah, onu bunu işte, evimi tekrardan satın alma gibi bir amacım var.</font></font></b></b></font>
+
+333
+00:17:08,860 --> 00:17:10,570
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Tekrardan almak mı? Bu hiçbir zaman gerçekleşmeyecek.</font></font></b></b></font>
+
+334
+00:17:10,570 --> 00:17:12,030
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Bu hiçbir zaman gerçekleşmeyecek.</font></font></b></b></font>
+
+335
+00:17:12,440 --> 00:17:13,860
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Sonuçta, o artık biz--</font></font></b></b></font>
+
+336
+00:17:13,900 --> 00:17:14,400
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Hey!</font></font></b></b></font>
+
+337
+00:17:15,490 --> 00:17:17,370
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Aaa, doğru ya!</font></font></b></b></font>
+
+338
+00:17:17,370 --> 00:17:20,240
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Eğer bir ev falan alırsan, bana haber ver.</font></font></b></b></font>
+
+339
+00:17:20,330 --> 00:17:22,750
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">En azından bir Yeni Yıl kartı gönderirim.</font></font></b></b></font>
+
+340
+00:17:24,370 --> 00:17:25,210
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Git bir duş al!</font></font></b></b></font>
+
+341
+00:17:25,210 --> 00:17:26,210
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Gelecek hafta görüşürüz</font></font></b></b></font>
+
+342
+00:17:29,000 --> 00:17:29,960
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Hey, sen.</font></font></b></b></font>
+
+343
+00:17:29,960 --> 00:17:30,960
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Efendim?</font></font></b></b></font>
+
+344
+00:17:31,800 --> 00:17:35,180
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">İstediğini değiştir, eğer onları öldürmemi istiyorsan onay vermen yeter.</font></font></b></b></font>
+
+345
+00:17:35,180 --> 00:17:37,260
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Sonuçta bu benim mesleğim.</font></font></b></b></font>
+
+346
+00:17:37,260 --> 00:17:41,600
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Onları öldürelim! Tam şu an onları nehire atmalıyız.</font></font></b></b></font>
+
+347
+00:17:41,600 --> 00:17:43,270
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Yo, bekleyin.</font></font></b></b></font>
+
+348
+00:17:44,520 --> 00:17:46,440
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Sözleşmemizin şartlarını değiştireceğim...</font></font></b></b></font>
+
+349
+00:17:47,150 --> 00:17:49,730
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">...ama öldürmenizi söylemiyorum.</font></font></b></b></font>
+
+350
+00:17:51,480 --> 00:17:54,240
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Güçlenmek istiyorum.</font></font></b></b></font>
+
+351
+00:17:54,240 --> 00:17:56,570
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Sorun değil!</font></font></b></b></font>
+
+352
+00:17:56,570 --> 00:17:57,570
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Hey, siz.</font></font></b></b></font>
+
+353
+00:17:59,530 --> 00:18:00,410
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Oof, her neyse.</font></font></b></b></font>
+
+354
+00:18:00,410 --> 00:18:03,950
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Ne olursa olsun, canını 100 kadar falan yükseltin.</font></font></b></b></font>
+
+355
+00:18:08,170 --> 00:18:10,290
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Benim halledecek başka işlerim var.</font></font></b></b></font>
+
+356
+00:18:13,960 --> 00:18:15,130
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">İşte burada.</font></font></b></b></font>
+
+357
+00:18:15,720 --> 00:18:19,300
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Planlar bunlar mı?</font></font></b></b></font>
+
+358
+00:18:20,100 --> 00:18:21,890
+<font face="Tahoma" size="24"><b><font color="#1a0d0d"><font size="16">Kondo Isao</font></font></b></font>
+
+359
+00:18:21,890 --> 00:18:24,270
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Shinsengumi'nin ürkütücü kaptanı.</font></font></b></b></font>
+
+360
+00:18:21,890 --> 00:18:24,270
+<font face="Tahoma" size="24"><b><font color="#1a0d0d"><font size="16">Kondo Isao</font></font></b></font>
+
+361
+00:18:25,270 --> 00:18:26,190
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Bu arada, Hijikata...</font></font></b></b></font>
+
+362
+00:18:27,810 --> 00:18:30,060
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">...bundan hiçbir şey anlamadım ben.</font></font></b></b></font>
+
+363
+00:18:30,900 --> 00:18:36,070
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">On dakikadır, bunun bir Amanto mekanizmasının...</font></font></b></b></font>
+
+364
+00:18:34,480 --> 00:18:37,240
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">...planları olduğundan bahsediyorum, Kondo-san.</font></font></b></b></font>
+
+365
+00:18:37,240 --> 00:18:38,240
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Aa, evet, doğru ya.</font></font></b></b></font>
+
+366
+00:18:38,240 --> 00:18:39,240
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Bir çeşit makina mı bu?</font></font></b></b></font>
+
+367
+00:18:40,660 --> 00:18:43,950
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Demek Edo'da bir yerlerde bu aleti kullanıp...</font></font></b></b></font>
+
+368
+00:18:43,950 --> 00:18:45,790
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">...kötü dolaplar çevirmek isteyen birisi var.</font></font></b></b></font>
+
+369
+00:18:47,830 --> 00:18:49,080
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Bekle...</font></font></b></b></font>
+
+370
+00:18:50,920 --> 00:18:53,920
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Kötü dolaplar ne demek?</font></font></b></b></font>
+
+371
+00:18:55,590 --> 00:18:57,590
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Beni hiç dinlemedin mi sen?!</font></font></b></b></font>
+
+372
+00:19:11,560 --> 00:19:14,110
+<font face="Tahoma" size="24"><b><font color="#1a0d0d"><font size="16"> "Amanto Elçiliği"</font></font></b></font>
+
+373
+00:19:18,200 --> 00:19:19,110
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22"> Amanto Elçiliği...</font></font></b></b></font>
+
+374
+00:19:19,700 --> 00:19:20,110
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22"> Gintoki.</font></font></b></b></font>
+
+375
+00:19:21,570 --> 00:19:22,490
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22"> Zura?</font></font></b></b></font>
+
+376
+00:19:22,700 --> 00:19:24,740
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22"> Zura değil, Katsura.</font></font></b></b></font>
+
+377
+00:19:24,740 --> 00:19:26,750
+<font face="Tahoma" size="24"><b><font color="#1a0d0d"><font size="16">Katsura Kotarou</font></font></b></font>
+
+378
+00:19:26,790 --> 00:19:32,130
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Eylemci. Amanto'ları, Edo'dan sürmeye ant içti.</font></font></b></b></font>
+
+379
+00:19:26,790 --> 00:19:32,130
+<font face="Tahoma" size="24"><b><font color="#1a0d0d"><font size="16">Katsura Kotarou</font></font></b></font>
+
+380
+00:19:33,210 --> 00:19:34,590
+<font face="Tahoma" size="24"><b><font color="#1a0d0d"><font size="16">Elizabeth</font></font></b></font>
+
+381
+00:19:34,590 --> 00:19:36,380
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Bu da ne böyle?!</font></font></b></b></font>
+
+382
+00:19:34,590 --> 00:19:36,380
+<font face="Tahoma" size="24"><b><font color="#1a0d0d"><font size="16">Elizabeth</font></font></b></font>
+
+383
+00:19:36,800 --> 00:19:39,380
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Gintoki, böyle bir yerde ne işin var?</font></font></b></b></font>
+
+384
+00:19:39,380 --> 00:19:46,390
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Hmm, sanırım, yürüyüşe çıkmak falan gibi garip şeyler yapıyorum.</font></font></b></b></font>
+
+385
+00:19:46,390 --> 00:19:48,020
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">O zaman iyi.</font></font></b></b></font>
+
+386
+00:19:49,560 --> 00:19:50,600
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Bu da ne demek?</font></font></b></b></font>
+
+387
+00:19:51,190 --> 00:19:54,360
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Etrafta garip söylentiler duydum.</font></font></b></b></font>
+
+388
+00:19:54,360 --> 00:19:55,360
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Söylentiler mi?</font></font></b></b></font>
+
+389
+00:19:55,360 --> 00:20:00,610
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Edo'yu tamamiyle yok etmeyi isteyen bir Amanto'nun olduğu gibi söylentiler.</font></font></b></b></font>
+
+390
+00:20:01,410 --> 00:20:04,410
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Neden bir Amanto bunu yapmak istesin ki?</font></font></b></b></font>
+
+391
+00:20:04,870 --> 00:20:05,700
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Bilmiyorum.</font></font></b></b></font>
+
+392
+00:20:05,740 --> 00:20:09,500
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Ama adaletin yerine gelmesi an meselesi.</font></font></b></b></font>
+
+393
+00:20:10,830 --> 00:20:15,090
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Gintoki, neyin peşinde olduğunu bilmiyorum, ama dikkat etsen iyi olur.</font></font></b></b></font>
+
+394
+00:20:15,090 --> 00:20:18,260
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Amanto Elçiliği, tamamen bambaşka bir ulus olarak sayılıyor.</font></font></b></b></font>
+
+395
+00:20:18,960 --> 00:20:20,550
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Başka bir ulus, ha?</font></font></b></b></font>
+
+396
+00:20:21,800 --> 00:20:23,340
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">O zaman tamam, dikkat etmeliyim.</font></font></b></b></font>
+
+397
+00:20:24,050 --> 00:20:25,050
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Görüşürüz, Zura.</font></font></b></b></font>
+
+398
+00:20:26,600 --> 00:20:28,810
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Zura değil, Katsura.</font></font></b></b></font>
+
+399
+00:20:41,240 --> 00:20:42,990
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Bu tip şapkalar moda mı?</font></font></b></b></font>
+
+400
+00:20:49,370 --> 00:20:51,040
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Şimdi sen dene.</font></font></b></b></font>
+
+401
+00:20:51,040 --> 00:20:52,040
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Bunu yapamaz!</font></font></b></b></font>
+
+402
+00:20:52,620 --> 00:20:54,960
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Ne diyorsun ya? Bu çok basit!</font></font></b></b></font>
+
+403
+00:20:55,500 --> 00:20:58,130
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Tek yapman gereken konsantre olmak. Zihin maddeden üstündür.</font></font></b></b></font>
+
+404
+00:20:58,130 --> 00:21:00,170
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Neden bahsettiğini anlamıyorum bile.</font></font></b></b></font>
+
+405
+00:21:02,720 --> 00:21:05,340
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Ne olursa olsun, eğer yapabiliyorsan, bana saldır.</font></font></b></b></font>
+
+406
+00:21:14,940 --> 00:21:17,270
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Neden gözlerini saklıyorsun?</font></font></b></b></font>
+
+407
+00:21:17,270 --> 00:21:18,270
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Tüm gece ayakta kalıp Tetris mi oynadın?</font></font></b></b></font>
+
+408
+00:21:19,940 --> 00:21:22,240
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Oyun, şimdi başlamak üzere.</font></font></b></b></font>
+
+409
+00:21:23,030 --> 00:21:23,820
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Bırak ama.</font></font></b></b></font>
+
+410
+00:21:23,820 --> 00:21:27,120
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Öyle bir şeyi etrafta sallayıp durursan, birilerinin canı yanabilir.</font></font></b></b></font>
+
+411
+00:21:28,410 --> 00:21:31,410
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Burada bir kılıç sakladığımı anladı mı?</font></font></b></b></font>
+
+412
+00:21:32,160 --> 00:21:36,580
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Ben sorun etmem, ama lütfen bana neden peşimde olduğunu söyler misin?</font></font></b></b></font>
+
+413
+00:21:36,580 --> 00:21:41,510
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Güldürme beni! Bu çevrede gizli gizli casusluk yaptığını biliyorum!</font></font></b></b></font>
+
+414
+00:21:42,010 --> 00:21:43,420
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Hayır, o ben değildim.</font></font></b></b></font>
+
+415
+00:21:43,920 --> 00:21:45,840
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Zura'ydı o.</font></font></b></b></font>
+
+416
+00:21:46,300 --> 00:21:47,800
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Fazla konuşma.</font></font></b></b></font>
+
+417
+00:21:52,640 --> 00:21:53,230
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Deprem mi?</font></font></b></b></font>
+
+418
+00:21:59,650 --> 00:22:01,190
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Çok açık veriyorsun!</font></font></b></b></font>
+
+419
+00:22:01,860 --> 00:22:03,530
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Bu şekilde daha fazla</font></font></b></b></font>
+
+420
+00:22:04,400 --> 00:22:05,990
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">güçlenebileceğini düşünüyor musun?
+</font></font></b></b></font>
+
+421
+00:22:07,990 --> 00:22:09,370
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Fazla sert davranıyorsun.</font></font></b></b></font>
+
+422
+00:22:09,990 --> 00:22:11,870
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Özür dilerim! İyi misiniz?!</font></font></b></b></font>
+
+423
+00:22:14,120 --> 00:22:15,870
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Ayağa kalk! Kalk, Katoken!</font></font></b></b></font>
+
+424
+00:22:16,830 --> 00:22:20,710
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Tamam, sadece ellerini kendine yakın tutacaksın.</font></font></b></b></font>
+
+425
+00:22:20,710 --> 00:22:22,300
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Yay gibi sarılı tutuyorsun...</font></font></b></b></font>
+
+426
+00:22:22,590 --> 00:22:23,300
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">...ve geçir!</font></font></b></b></font>
+
+427
+00:22:23,300 --> 00:22:24,920
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Geçir, geçir!</font></font></b></b></font>
+
+428
+00:22:24,920 --> 00:22:27,800
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Bir dakika, bu nasıl yumruk geçirilir, değil mi?</font></font></b></b></font>
+
+429
+00:22:27,800 --> 00:22:28,800
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">O yarına.</font></font></b></b></font>
+
+430
+00:22:29,890 --> 00:22:31,260
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Bunun kılıç ustalığıyla bir alakası yok.</font></font></b></b></font>
+
+431
+00:22:31,810 --> 00:22:34,270
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Kederin nehrini geç!</font></font></b></b></font>
+
+432
+00:22:40,270 --> 00:22:40,730
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Seni daha güçlü kılacağım!</font></font></b></b></font>
+
+433
+00:22:43,530 --> 00:22:44,360
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Daha güçlü!</font></font></b></b></font>
+
+434
+00:22:44,360 --> 00:22:46,200
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">B-bu şekilde mi?</font></font></b></b></font>
+
+435
+00:22:46,990 --> 00:22:48,530
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Daha fazla! Daha fazla!</font></font></b></b></font>
+
+436
+00:22:48,530 --> 00:22:49,530
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Tamam.</font></font></b></b></font>
+
+437
+00:22:50,870 --> 00:22:52,330
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Evet, tam böyle!</font></font></b></b></font>
+
+438
+00:22:52,370 --> 00:22:54,120
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Böyle mi?</font></font></b></b></font>
+
+439
+00:22:54,830 --> 00:22:56,960
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Sende potansiyel var.</font></font></b></b></font>
+
+440
+00:22:56,960 --> 00:22:58,670
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Bu ne çeşit bir eğitim böyle?</font></font></b></b></font>
+
+441
+00:22:58,670 --> 00:23:00,880
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Ayrıca ne çeşit bir potansiyele sahip?!</font></font></b></b></font>
+
+442
+00:23:00,880 --> 00:23:02,590
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Bir S&M kraliçesi olabilir.</font></font></b></b></font>
+
+443
+00:23:02,590 --> 00:23:03,590
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">O bir erkek değil mi?</font></font></b></b></font>
+
+444
+00:23:03,590 --> 00:23:05,840
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Her neyse, daha acil sorunlarımız var!</font></font></b></b></font>
+
+445
+00:23:05,840 --> 00:23:08,180
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Ooo, gayet iyi dayanıyorsun.</font></font></b></b></font>
+
+446
+00:23:08,180 --> 00:23:10,180
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Daha sonra seni ödüllendirmeliyim.</font></font></b></b></font>
+
+447
+00:23:10,180 --> 00:23:12,510
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Beni çöz yeter!</font></font></b></b></font>
+
+448
+00:23:12,510 --> 00:23:13,510
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Uum...
+</font></font></b></b></font>
+
+449
+00:23:14,680 --> 00:23:17,430
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Çok teşekkür ederim ama artık bu kadar yeter.</font></font></b></b></font>
+
+450
+00:23:18,640 --> 00:23:21,310
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Hiçbir şekilde daha güçlü olamayacağım.</font></font></b></b></font>
+
+451
+00:23:22,150 --> 00:23:23,230
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Vazgeçiyorum.</font></font></b></b></font>
+
+452
+00:23:23,230 --> 00:23:25,400
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Ooh, umm...</font></font></b></b></font>
+
+453
+00:23:25,400 --> 00:23:27,440
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">İzninizle...</font></font></b></b></font>
+
+454
+00:23:28,990 --> 00:23:29,700
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Katoken?</font></font></b></b></font>
+
+455
+00:23:36,080 --> 00:23:37,700
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">En güzel kıyafetimi mahfettin!</font></font></b></b></font>
+
+456
+00:23:37,710 --> 00:23:40,460
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Annem çok kızacak, seni pislik.</font></font></b></b></font>
+
+457
+00:23:40,830 --> 00:23:44,380
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Kıyafetlerin için endişeleneceğine, hayatın için endişelensen?!</font></font></b></b></font>
+
+458
+00:23:50,430 --> 00:23:53,350
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Gintoki'ya saldıran, gizemli adam Shishimura da kim?</font></font></b></b></font>
+
+459
+00:23:53,720 --> 00:23:56,350
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Ve Amanto Kariya neler planlıyor?</font></font></b></b></font>
+
+460
+00:23:57,770 --> 00:24:00,020
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Ve Katou, gerçekten vaz mı geçti?</font></font></b></b></font>
+
+461
+00:24:05,070 --> 00:24:08,690
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Pekala o zaman, belirli bir kısım olan sizler, gelecek hafta görüşmek üzere!</font></font></b></b></font>
+
+462
+00:24:09,190 --> 00:24:15,030
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Geri kalanlar, ikince bölüme devam edelim.</font></font></b></b></font>
+
+463
+00:24:12,620 --> 00:24:13,620
+<font face="Tahoma" size="24"><b><font color="#1a0d0d"><font size="16"> Devam Edecek</font></font></b></font>
+
+464
+00:24:24,380 --> 00:24:27,710
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Fena sayılmazsın... Bir zamanlar samuray mıydın?</font></font></b></b></font>
+
+465
+00:24:27,710 --> 00:24:29,920
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Eski bir çete üyesisin, değil mi?</font></font></b></b></font>
+
+466
+00:24:29,920 --> 00:24:32,930
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Bu kadar genç yaşta saçlarına bunu yapmamalıydın.</font></font></b></b></font>
+
+467
+00:24:32,930 --> 00:24:35,350
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Bunu doğal hali kıvırcık saçlı bir piçten duymaktan hoşlanmadım!</font></font></b></b></font>
+
+468
+00:24:35,430 --> 00:24:39,140
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Kırıldım! Böyle kıvırcık olmasını istediğimden değil!</font></font></b></b></font>
+
+469
+00:24:39,810 --> 00:24:43,060
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Bu kez elimden kaçamayacaksın. Kendini hazırla.</font></font></b></b></font>
+
+470
+00:24:43,270 --> 00:24:45,560
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Shimura, arkanda, arkanda.</font></font></b></b></font>
+
+471
+00:24:45,580 --> 00:24:47,400
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">İsmim Shimura değil, ismim--</font></font></b></b></font>
+
+472
+00:24:47,400 --> 00:24:50,740
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Hey, o elindeki o kılıçla ne yaptığını sanıyorsun sen?</font></font></b></b></font>
+
+473
+00:24:51,400 --> 00:24:52,400
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Aaa, ben--</font></font></b></b></font>
+
+474
+00:24:54,200 --> 00:24:55,160
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">İyi tutuş.
+</font></font></b></b></font>
+
+475
+00:24:55,950 --> 00:24:58,120
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Aaa, bir oyun için prova mı yapıyorsunuz?</font></font></b></b></font>
+
+476
+00:24:58,120 --> 00:25:02,210
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Aaa, evet... Doğru diyorsun, şey değil miydi o, um...</font></font></b></b></font>
+
+477
+00:25:03,460 --> 00:25:03,870
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Gitmiş.</font></font></b></b></font>
+
+478
+00:25:10,010 --> 00:25:11,470
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Ne oluyor? Gençliğin tadını mı çıkarıyorsunuz?</font></font></b></b></font>
+
+479
+00:25:11,510 --> 00:25:16,010
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Günbatımına doğru koşmak için içinizde koca bir istek var, değil mi?</font></font></b></b></font>
+
+480
+00:25:16,010 --> 00:25:17,010
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Gin-san!</font></font></b></b></font>
+
+481
+00:25:17,850 --> 00:25:19,010
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Üzgünüz, Gin-san.</font></font></b></b></font>
+
+482
+00:25:19,020 --> 00:25:20,930
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Katoken gitti.</font></font></b></b></font>
+
+483
+00:25:21,600 --> 00:25:22,180
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Katoken?</font></font></b></b></font>
+
+484
+00:25:22,190 --> 00:25:24,190
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Ha, müşteriden bahsediyorsunuz.</font></font></b></b></font>
+
+485
+00:25:24,270 --> 00:25:26,940
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Hey, beni çözsene!</font></font></b></b></font>
+
+486
+00:25:26,940 --> 00:25:28,480
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Bırakın, olur böyle şeyler.</font></font></b></b></font>
+
+487
+00:25:29,110 --> 00:25:30,570
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Bedavaya çok çalışıyoruz zaten.</font></font></b></b></font>
+
+488
+00:25:30,570 --> 00:25:33,070
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Bu tip şeyler için edişelenemeyiz.</font></font></b></b></font>
+
+489
+00:25:33,780 --> 00:25:37,030
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Zaten başından beri yürümeyeceğini biliyordum</font></font></b></b></font>
+
+490
+00:25:37,490 --> 00:25:38,280
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Gin-san!</font></font></b></b></font>
+
+491
+00:25:40,500 --> 00:25:44,890
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Ne acı, Gin-san'ın bu kadar gaddar olabileceği aklımın ucundan geçmemişti.</font></font></b></b></font>
+
+492
+00:25:45,220 --> 00:25:48,990
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Her zamanki gibi, gidenleri kovalamaz, gelenleri ise görmezden gelir.</font></font></b></b></font>
+
+493
+00:25:50,050 --> 00:25:54,440
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Bir dakika, Kagura-chan, sen neden benim evimdesin? Neden pilavımı yiyorsun?</font></font></b></b></font>
+
+494
+00:25:54,440 --> 00:25:56,350
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Artanları yiyorum.</font></font></b></b></font>
+
+495
+00:25:56,360 --> 00:25:57,360
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Onlar artık değil!</font></font></b></b></font>
+
+496
+00:25:58,020 --> 00:26:00,030
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Siz ikiniz, ne yapacaksınız?</font></font></b></b></font>
+
+497
+00:26:00,030 --> 00:26:01,150
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Abla.</font></font></b></b></font>
+
+498
+00:26:03,470 --> 00:26:04,220
+<font face="Tahoma" size="24"><b><font color="#1a0d0d"><font size="16">  Otae</font></font></b></font>
+
+499
+00:26:04,220 --> 00:26:05,440
+<font face="Tahoma" size="24"><b><font color="#1a0d0d"><font size="16">  Otae</font></font></b></font>
+
+500
+00:26:04,220 --> 00:26:05,440
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Shinpachi'nin ablası.</font></font></b></b></font>
+
+501
+00:26:05,440 --> 00:26:08,860
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Babasından miras kalan dojo'yu kurtarmak için, bir yerde part-time çalışıyor.</font></font></b></b></font>
+
+502
+00:26:05,440 --> 00:26:08,860
+<font face="Tahoma" size="24"><b><font color="#1a0d0d"><font size="16">  Otae</font></font></b></font>
+
+503
+00:26:08,870 --> 00:26:13,180
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Sizler Gin-san'a güvenmezseniz, kim güvenecek?</font></font></b></b></font>
+
+504
+00:26:13,640 --> 00:26:17,250
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Sana daha önceden söyledim. O güvenilir biri değil, Otae-san.</font></font></b></b></font>
+
+505
+00:26:17,910 --> 00:26:23,690
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Hiçbir güvenilir adam, ölü balık gibi gözlere sahip olamaz.</font></font></b></b></font>
+
+506
+00:26:23,690 --> 00:26:27,630
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Güvenilmez olan sensin be, pis sapık!</font></font></b></b></font>
+
+507
+00:26:27,630 --> 00:26:30,000
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Hala takip ediliyor mu?</font></font></b></b></font>
+
+508
+00:26:30,000 --> 00:26:33,110
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Evet, uzun hikaye.</font></font></b></b></font>
+
+509
+00:26:34,450 --> 00:26:36,910
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Gin-san neyin peşinde, merak ediyorum.</font></font></b></b></font>
+
+510
+00:26:40,690 --> 00:26:42,040
+<font face="Tahoma" size="24"><b><font color="#1a0d0d"><font size="16"> Higucchan Barı</font></font></b></font>
+
+511
+00:26:52,820 --> 00:26:53,270
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22"> Biraz ister misin?</font></font></b></b></font>
+
+512
+00:26:55,880 --> 00:26:57,510
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22"> O ne?!</font></font></b></b></font>
+
+513
+00:26:57,510 --> 00:27:00,640
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22"> Pilav üstü kırmızı fasulye. Bir Gintoki-don.</font></font></b></b></font>
+
+514
+00:27:01,050 --> 00:27:02,430
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22"> P-pekala.</font></font></b></b></font>
+
+515
+00:27:02,880 --> 00:27:04,820
+<font face="Tahoma" size="24"><b><font color="#1a0d0d"><font size="16"> 
+E
+n
+k
+a</font></font></b></font>
+
+516
+00:27:02,880 --> 00:27:04,820
+<font face="Tahoma" size="24"><b><font color="#1a0d0d"><font size="16"> Y
+a
+n
+
+Y
+o
+l</font></font></b></font>
+
+517
+00:27:12,430 --> 00:27:13,540
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Sake süper bir şey.</font></font></b></b></font>
+
+518
+00:27:14,150 --> 00:27:16,640
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Bir süreliğine bile olsa, tüm sorunlarını unutabiliyorsun.</font></font></b></b></font>
+
+519
+00:27:17,630 --> 00:27:23,760
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Ama yarın olunca yine hatırlamak durumundasın, ve dün gecekinden çok daha acı oluyor.</font></font></b></b></font>
+
+520
+00:27:25,490 --> 00:27:27,070
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Dertlerinden kaçamazsın.</font></font></b></b></font>
+
+521
+00:27:27,890 --> 00:27:28,600
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Özellikle de...</font></font></b></b></font>
+
+522
+00:27:30,180 --> 00:27:32,610
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Özellikle de, gerçekten unutmak istediklerinden.</font></font></b></b></font>
+
+523
+00:27:37,590 --> 00:27:40,020
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Sanırım tek istediğim, bir bahaneydi.</font></font></b></b></font>
+
+524
+00:27:40,020 --> 00:27:41,020
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Bahane mi?</font></font></b></b></font>
+
+525
+00:27:45,350 --> 00:27:46,550
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Sana söylemiştim, değil mi?</font></font></b></b></font>
+
+526
+00:27:46,560 --> 00:27:51,690
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">İşimden kovuldum, evim ellerimden alındı, ailem beni terketti.</font></font></b></b></font>
+
+527
+00:27:53,340 --> 00:27:57,130
+<font face="Tahoma" size="24"><b><font color="#1a0d0d"><font size="12">
+M
+u
+k
+a
+i
+d
+e
+r
+a
+ 
+s
+a
+l
+e
+s</font></font></b></font>
+
+528
+00:27:53,340 --> 00:27:57,130
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Bundan önce bir şirketin şatış departmanında çalışıyordum.</font></font></b></b></font>
+
+529
+00:27:58,460 --> 00:28:03,180
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Ailem için çalıştım da çalıştım, sonunda da kendime ait bir ev alabildim.</font></font></b></b></font>
+
+530
+00:28:04,390 --> 00:28:05,520
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Çok mutluydum.</font></font></b></b></font>
+
+531
+00:28:05,980 --> 00:28:09,750
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Ailem için çalışabileceğimi düşünüyordum ama...</font></font></b></b></font>
+
+532
+00:28:10,450 --> 00:28:10,750
+<font face="Tahoma" size="24"><b><font color="#1a0d0d"><font size="16">KÜTTT!!</font></font></b></font>
+
+533
+00:28:10,890 --> 00:28:11,620
+<font face="Tahoma" size="24"><b><font color="#1a0d0d"><font size="16">K
+o
+v
+u
+l
+d
+u
+n
+!</font></font></b></font>
+
+534
+00:28:11,650 --> 00:28:12,950
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22"> Neden böyle oldu bilmiyorum.</font></font></b></b></font>
+
+535
+00:28:11,650 --> 00:28:12,950
+<font face="Tahoma" size="24"><b><font color="#1a0d0d"><font size="16">K
+o
+v
+u
+l
+d
+u
+n
+!</font></font></b></font>
+
+536
+00:28:12,950 --> 00:28:17,120
+<font face="Tahoma" size="24"><b><font color="#1a0d0d"><font size="16">K
+o
+v
+u
+l
+d
+u
+n
+!</font></font></b></font>
+
+537
+00:28:12,950 --> 00:28:17,120
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22"> Bunu hakedecek bir şey yapmamıştım, ama kovulmuştum işte.</font></font></b></b></font>
+
+538
+00:28:17,720 --> 00:28:22,930
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22"> Acı içinde boğulurken, o herifler mühürümü vermem için beni zorladılar.</font></font></b></b></font>
+
+539
+00:28:22,930 --> 00:28:23,100
+<font face="Tahoma" size="24"><b><font color="#1a0d0d"><font size="16"> Gayrimenkul Kontratı</font></font></b></font>
+
+540
+00:28:22,930 --> 00:28:23,100
+<font face="Tahoma" size="24"><b><font color="#1a0d0d"><font size="16"> Katou Ken</font></font></b></font>
+
+541
+00:28:22,930 --> 00:28:23,100
+<font face="Tahoma" size="24"><b><font size="16"><font color="#cf0f0e"> Katou Ken</font></font></b></font>
+
+542
+00:28:23,100 --> 00:28:23,760
+<font face="Tahoma" size="24"><b><font color="#1a0d0d"><font size="16"> Gayrimenkul Kontratı</font></font></b></font>
+
+543
+00:28:23,100 --> 00:28:23,760
+<font face="Tahoma" size="24"><b><font color="#1a0d0d"><font size="16"> Katou Ken</font></font></b></font>
+
+544
+00:28:23,100 --> 00:28:23,760
+<font face="Tahoma" size="24"><b><font size="16"><font color="#cf0f0e"> Katou Ken</font></font></b></font>
+
+545
+00:28:23,760 --> 00:28:29,320
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22"> O kabadayılar, kendi mühürledikleri kağıtları alıp, beni kendi evimden kovdular.</font></font></b></b></font>
+
+546
+00:28:29,990 --> 00:28:32,220
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22"> Sonunda, eşim alacaklıların baskısına dayanamayıp beni terk etti.</font></font></b></b></font>
+
+547
+00:28:32,220 --> 00:28:35,070
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22"> Kızımı da beraberinde aldı.</font></font></b></b></font>
+
+548
+00:28:42,570 --> 00:28:44,880
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22"> Geçen hafta son bir şey oldu demiştim, değil mi?</font></font></b></b></font>
+
+549
+00:28:45,630 --> 00:28:47,680
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22"> Sence ne oldu?</font></font></b></b></font>
+
+550
+00:28:47,680 --> 00:28:48,680
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22"> Bilmem.</font></font></b></b></font>
+
+551
+00:28:51,250 --> 00:28:52,340
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22"> Mektup mu?</font></font></b></b></font>
+
+552
+00:28:52,340 --> 00:28:57,920
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22"> Evet. Tam tahliye edilmenin sınırındayken, kızım bana bir mektup verdi.</font></font></b></b></font>
+
+553
+00:29:01,630 --> 00:29:05,990
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">"Yakında eve gelmek istiyorum, babacığım."</font></font></b></b></font>
+
+554
+00:29:01,630 --> 00:29:05,990
+<font face="Tahoma" size="24"><b><font color="#1a0d0d"><font size="16"> "Yakında eve gelmek istiyorum, babacığım."</font></font></b></font>
+
+555
+00:29:17,090 --> 00:29:19,650
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">O andan önce, her şeyden vazgeçmiştim.</font></font></b></b></font>
+
+556
+00:29:19,650 --> 00:29:23,620
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Ama bu mektubu okuduktan sonra, biraz da olsa kendimi savunmayı denemeyi düşündüm.</font></font></b></b></font>
+
+557
+00:29:26,000 --> 00:29:27,410
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Çok aptalca, değil mi?</font></font></b></b></font>
+
+558
+00:29:27,410 --> 00:29:32,000
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Eğer evimi geri alırsam, ailemin tekrar normale döneceğini düşündüm.</font></font></b></b></font>
+
+559
+00:29:34,130 --> 00:29:38,520
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Ama artık, yapamayacağımı biliyorum.</font></font></b></b></font>
+
+560
+00:29:38,520 --> 00:29:40,370
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Benim gibi adama bir şans verilse bile--</font></font></b></b></font>
+
+561
+00:29:40,370 --> 00:29:41,370
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Gidelim.</font></font></b></b></font>
+
+562
+00:29:41,860 --> 00:29:42,790
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Umm...</font></font></b></b></font>
+
+563
+00:29:42,740 --> 00:29:45,530
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Haydi!</font></font></b></b></font>
+
+564
+00:29:48,030 --> 00:29:50,070
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Hesap, efendim.</font></font></b></b></font>
+
+565
+00:29:51,860 --> 00:29:53,400
+<font face="Tahoma" size="24"><b><font color="#1a0d0d"><font size="16">H
+i
+g
+u
+c
+c
+h
+a
+n</font></font></b></font>
+
+566
+00:29:53,400 --> 00:29:54,400
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Şey...</font></font></b></b></font>
+
+567
+00:29:54,400 --> 00:29:58,290
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">...ben işsizim, o nedenle en azından hesabı bölüşsek?</font></font></b></b></font>
+
+568
+00:29:58,300 --> 00:29:59,830
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Gidelim, Katoken!</font></font></b></b></font>
+
+569
+00:29:59,830 --> 00:30:01,100
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">"Gidelim" mi? Nereye?</font></font></b></b></font>
+
+570
+00:30:01,100 --> 00:30:04,450
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">O kontratı geri almak istemiyor musun yani?</font></font></b></b></font>
+
+571
+00:30:04,450 --> 00:30:06,280
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">O  zaman...</font></font></b></b></font>
+
+572
+00:30:06,280 --> 00:30:07,940
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Ben her işten anlarım.</font></font></b></b></font>
+
+573
+00:30:07,940 --> 00:30:09,150
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Her ne gerekirse yap--</font></font></b></b></font>
+
+574
+00:30:10,550 --> 00:30:12,730
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Ah, iğrenç...</font></font></b></b></font>
+
+575
+00:30:14,710 --> 00:30:16,890
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Yarın gitsen olmaz mı?</font></font></b></b></font>
+
+576
+00:30:16,890 --> 00:30:17,890
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Şey...</font></font></b></b></font>
+
+577
+00:30:17,890 --> 00:30:22,950
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Cidden o kadar içtim mi? Başım dönüyor ve her şey bulanık.</font></font></b></b></font>
+
+578
+00:30:22,950 --> 00:30:27,390
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Hayır, deprem oluyor, değil mi?</font></font></b></b></font>
+
+579
+00:30:27,390 --> 00:30:29,620
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Tutamıyorum!</font></font></b></b></font>
+
+580
+00:30:30,980 --> 00:30:32,820
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Sanırım ben de kusacağım</font></font></b></b></font>
+
+581
+00:30:34,180 --> 00:30:37,540
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Burada kusma. Biraz yana kaysana.</font></font></b></b></font>
+
+582
+00:30:37,540 --> 00:30:43,100
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Ah, başım ağrıyor.</font></font></b></b></font>
+
+583
+00:30:43,810 --> 00:30:45,760
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Çok feci akşamdan kalmayım.</font></font></b></b></font>
+
+584
+00:30:46,300 --> 00:30:47,800
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Tanrım, biraz su istiyorum.</font></font></b></b></font>
+
+585
+00:30:47,800 --> 00:30:51,790
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Beklediğim gibi, Gin-san. Sonunda her şeyin düzeleceğini biliyordum.</font></font></b></b></font>
+
+586
+00:30:51,800 --> 00:30:56,370
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Ne diyorsun? Daha dün gece, Gin-san'ın gaddarlığından bahsetmiyor muydun?</font></font></b></b></font>
+
+587
+00:30:57,130 --> 00:31:00,470
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Sen de gelenleri görmezden geldiğini söyledin.</font></font></b></b></font>
+
+588
+00:31:00,470 --> 00:31:05,270
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Susun. Çok ses çıkarmayın... Beynim sarsılıyor.</font></font></b></b></font>
+
+589
+00:31:07,150 --> 00:31:09,150
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Evet, işte burada.</font></font></b></b></font>
+
+590
+00:31:10,570 --> 00:31:13,280
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Katoken-san'ın kontratını geri alacağız, değil mi?</font></font></b></b></font>
+
+591
+00:31:13,280 --> 00:31:15,630
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">İçeriye nasıl sızacağız?</font></font></b></b></font>
+
+592
+00:31:15,630 --> 00:31:19,400
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Ha? Sızmayacağız, dalacağız.</font></font></b></b></font>
+
+593
+00:31:20,280 --> 00:31:24,050
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Dalmak demek, ön kapıdan girmek demek, ateşlenen tabancalar falan.</font></font></b></b></font>
+
+594
+00:31:24,050 --> 00:31:25,050
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Gin-san!</font></font></b></b></font>
+
+595
+00:31:25,050 --> 00:31:27,210
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">İzninizleeeeeeeee!</font></font></b></b></font>
+
+596
+00:31:29,450 --> 00:31:32,600
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Bunta! Bunta gibi mi olmaya çalışıyorsun!?</font></font></b></b></font>
+
+597
+00:31:33,100 --> 00:31:35,340
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Hey, kimse yok mu?</font></font></b></b></font>
+
+598
+00:31:35,340 --> 00:31:37,360
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Onları çağırmana gerek yok.</font></font></b></b></font>
+
+599
+00:31:37,980 --> 00:31:41,200
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Çok garip... Burada kimse yok gibi görünüyor.</font></font></b></b></font>
+
+600
+00:31:57,470 --> 00:32:01,100
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Hala sıcak. Bir süre öncesine kadar burada insan vardı.</font></font></b></b></font>
+
+601
+00:32:01,100 --> 00:32:03,550
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Doğru diyorsun. Leziz ve sıcak.</font></font></b></b></font>
+
+602
+00:32:03,550 --> 00:32:07,250
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Bu et gerçekten et mi? Çok yumuşak.</font></font></b></b></font>
+
+603
+00:32:07,250 --> 00:32:09,440
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Hey, neden yiyorsunuz!?</font></font></b></b></font>
+
+604
+00:32:09,440 --> 00:32:13,150
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Nimeti ziyan etmek iyi değildir, değil mi?</font></font></b></b></font>
+
+605
+00:32:13,150 --> 00:32:14,150
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Böylelikle daha az artık kalır.</font></font></b></b></font>
+
+606
+00:32:14,150 --> 00:32:17,900
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Yemeyin! İçinde zehir varsa ne halt edeceksiniz?</font></font></b></b></font>
+
+607
+00:32:17,900 --> 00:32:20,350
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Sorun etmeyin. Zehir falan yok.</font></font></b></b></font>
+
+608
+00:32:27,180 --> 00:32:30,590
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Bunlar o işimize burunlarını sokanlar mı?</font></font></b></b></font>
+
+609
+00:32:30,590 --> 00:32:31,590
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Bunlar onlar, Kariya-sama.</font></font></b></b></font>
+
+610
+00:32:31,600 --> 00:32:35,520
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Hey, bu Katou! Sen burada ne yapıyorsun?</font></font></b></b></font>
+
+611
+00:32:35,520 --> 00:32:36,520
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Ben...</font></font></b></b></font>
+
+612
+00:32:37,460 --> 00:32:41,570
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Hey, sizler, böyle salakça bir tuzak kurduğunuz için kendinizden hiç utanmıyor musunuz?</font></font></b></b></font>
+
+613
+00:32:41,580 --> 00:32:45,350
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Siz yakalandığınıza utanmıyor musunuz?</font></font></b></b></font>
+
+614
+00:32:45,350 --> 00:32:48,870
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Bu kadar çok ve güzel yemek yiyebildiğim sürece, benim için sorun yok!</font></font></b></b></font>
+
+615
+00:32:48,870 --> 00:32:49,870
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Beni dinlesenize!</font></font></b></b></font>
+
+616
+00:32:49,870 --> 00:32:53,850
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Sizler Katoken'in kontratını geri verin!</font></font></b></b></font>
+
+617
+00:32:55,010 --> 00:32:55,680
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Ne diyorsun?</font></font></b></b></font>
+
+618
+00:32:55,680 --> 00:32:58,860
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Bu kadar yolu sırf o şey için mi geldiniz?</font></font></b></b></font>
+
+619
+00:32:59,490 --> 00:33:00,600
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Öyleyse ne olmuş?</font></font></b></b></font>
+
+620
+00:33:03,680 --> 00:33:06,440
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Görünüşe göre, gösterdikleri tehlikeyi biraz gözünde büyütmüşsün, Shishimura.</font></font></b></b></font>
+
+621
+00:33:06,850 --> 00:33:08,320
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Özür dilerim.</font></font></b></b></font>
+
+622
+00:33:08,620 --> 00:33:09,830
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Gidelim. Zamanımız yok.</font></font></b></b></font>
+
+623
+00:33:10,160 --> 00:33:11,730
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Bu herifleri ne yapayım?</font></font></b></b></font>
+
+624
+00:33:11,730 --> 00:33:12,730
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">İcaplarına bak.</font></font></b></b></font>
+
+625
+00:33:15,490 --> 00:33:17,180
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Endişe etme, Katou.</font></font></b></b></font>
+
+626
+00:33:17,330 --> 00:33:20,760
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Yakında evini ya da başka bir şeyi sorun etmene gerek kalmayacak.</font></font></b></b></font>
+
+627
+00:33:20,760 --> 00:33:24,060
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Sonuçta, burada un ufak edileceksin.
+</font></font></b></b></font>
+
+628
+00:33:25,170 --> 00:33:26,180
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Un ufak edilmek mi?</font></font></b></b></font>
+
+629
+00:33:28,030 --> 00:33:32,200
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Limanı temizleyin. Kiyashimura Bir, kalkış için hazır.</font></font></b></b></font>
+
+630
+00:33:32,200 --> 00:33:35,040
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Kiyashimura Bir, kalkış için hazır.</font></font></b></b></font>
+
+631
+00:33:37,450 --> 00:33:38,930
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">İşimize koyulalım.</font></font></b></b></font>
+
+632
+00:33:38,930 --> 00:33:39,930
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Gidiyoruz.</font></font></b></b></font>
+
+633
+00:33:56,570 --> 00:33:57,770
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">İyice bir bakın.</font></font></b></b></font>
+
+634
+00:33:58,360 --> 00:34:00,650
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Bu Edo'yu son görüşümüz.</font></font></b></b></font>
+
+635
+00:34:06,350 --> 00:34:06,940
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">İşe yaramıyor.</font></font></b></b></font>
+
+636
+00:34:07,750 --> 00:34:09,880
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Hey, sizler de yardım edin!</font></font></b></b></font>
+
+637
+00:34:09,880 --> 00:34:12,350
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Haydi, Kagura, bir şeyler yap.</font></font></b></b></font>
+
+638
+00:34:12,350 --> 00:34:13,350
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Sen Yato Klanı'ndan değil misin?</font></font></b></b></font>
+
+639
+00:34:13,350 --> 00:34:15,010
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Yapamam.</font></font></b></b></font>
+
+640
+00:34:15,170 --> 00:34:17,780
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Gördüğüm tüm yemeği bitirene kadar kılımı kıpırdatmam.</font></font></b></b></font>
+
+641
+00:34:18,190 --> 00:34:18,780
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Tanrım.</font></font></b></b></font>
+
+642
+00:34:20,660 --> 00:34:21,520
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Elizabeth-san!
+</font></font></b></b></font>
+
+643
+00:34:22,220 --> 00:34:23,350
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Burada ne işin var?</font></font></b></b></font>
+
+644
+00:34:24,120 --> 00:34:25,800
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">O zaman Zura da burada.</font></font></b></b></font>
+
+645
+00:34:26,250 --> 00:34:28,460
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Zura değil, Katsura.</font></font></b></b></font>
+
+646
+00:34:29,000 --> 00:34:32,690
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Siz burada kavga ederken, ben içeri girdim.</font></font></b></b></font>
+
+647
+00:34:33,550 --> 00:34:35,610
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Mahzeni araştırırken, ilginç bir şey buldum.</font></font></b></b></font>
+
+648
+00:34:35,970 --> 00:34:38,390
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Nedir? Katoken'in kontratını mı buldun?</font></font></b></b></font>
+
+649
+00:34:38,850 --> 00:34:40,120
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Onu bilemem.</font></font></b></b></font>
+
+650
+00:34:40,790 --> 00:34:42,060
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Ama şuna bir bak.</font></font></b></b></font>
+
+651
+00:34:43,440 --> 00:34:44,560
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Aaa, hayır.</font></font></b></b></font>
+
+652
+00:34:45,130 --> 00:34:47,180
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Teknik şeylerde iyi değilimdir.</font></font></b></b></font>
+
+653
+00:34:47,630 --> 00:34:50,140
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Onu okuduktan sonraki fikrin nedir, Gintoki?</font></font></b></b></font>
+
+654
+00:34:51,170 --> 00:34:52,860
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Gerçekten bir fikrim yok.</font></font></b></b></font>
+
+655
+00:34:53,320 --> 00:34:54,710
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">O zaman sana söyleyeyim.</font></font></b></b></font>
+
+656
+00:34:55,230 --> 00:34:57,740
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Edo'yu yok etmeyi amaçlıyorlar!</font></font></b></b></font>
+
+657
+00:35:00,380 --> 00:35:01,380
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Yok edecekler, gerizekalı!</font></font></b></b></font>
+
+658
+00:35:03,160 --> 00:35:05,310
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Her şeyi açıklamam gerek, değil mi?</font></font></b></b></font>
+
+659
+00:35:06,670 --> 00:35:10,540
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Kusurlu bölge diye bir yer buldular...</font></font></b></b></font>
+
+660
+00:35:11,020 --> 00:35:14,010
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">...ve makinayı, dünyanın kabuğunu uyarmak için kullanıp...</font></font></b></b></font>
+
+661
+00:35:14,420 --> 00:35:16,700
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">...büyük bir yapay deprem yaratacaklar.</font></font></b></b></font>
+
+662
+00:35:17,150 --> 00:35:19,510
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Bunu Edo'yu yok etmek için kullanacaklar!</font></font></b></b></font>
+
+663
+00:35:20,880 --> 00:35:22,040
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">O-olamaz!</font></font></b></b></font>
+
+664
+00:35:22,190 --> 00:35:24,570
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Bu, bir animedeki kötü bir organizasyonun yapacağı bir işe benziyor.</font></font></b></b></font>
+
+665
+00:35:24,970 --> 00:35:27,050
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Ama ne diye böyle bir şey yapsınlar ki?</font></font></b></b></font>
+
+666
+00:35:27,310 --> 00:35:29,490
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Kariya ile olan adamlar arazi dolandırıcıları.</font></font></b></b></font>
+
+667
+00:35:30,150 --> 00:35:34,640
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Evlerini kaybeden insanlardan, arazilerini ucuza alıyorlar.</font></font></b></b></font>
+
+668
+00:35:35,450 --> 00:35:36,940
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">O zaman, arazinin peşindeler, ha?</font></font></b></b></font>
+
+669
+00:35:37,360 --> 00:35:40,480
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Amanto'lar tarafından yapılmayan binalar dayanıksız.</font></font></b></b></font>
+
+670
+00:35:40,770 --> 00:35:43,640
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Büyük çapta bir depreme karşı şansları yok.</font></font></b></b></font>
+
+671
+00:35:43,990 --> 00:35:46,510
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Bu çok fena. O zaman, Edo...</font></font></b></b></font>
+
+672
+00:35:46,810 --> 00:35:50,440
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Eğer kusurlu bölgenin nerede olduğunu bilemezsek...</font></font></b></b></font>
+
+673
+00:35:50,580 --> 00:35:52,170
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Hiçbir ipucun yok mu?</font></font></b></b></font>
+
+674
+00:35:52,430 --> 00:35:54,190
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Hayır. Benim bile yok.</font></font></b></b></font>
+
+675
+00:35:54,780 --> 00:35:55,920
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Ne yapacağız?</font></font></b></b></font>
+
+676
+00:35:56,460 --> 00:36:00,950
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Tüm Edo'yu gezip, kusurlu bölgeyi bulmaya zamanımız yok.</font></font></b></b></font>
+
+677
+00:36:03,230 --> 00:36:04,970
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Kagura, yemeğini bitirdin, değil mi?</font></font></b></b></font>
+
+678
+00:36:05,230 --> 00:36:06,260
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Demirleri kır da gidelim!</font></font></b></b></font>
+
+679
+00:36:06,720 --> 00:36:07,260
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Tamamdır!</font></font></b></b></font>
+
+680
+00:36:10,740 --> 00:36:13,930
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Bizi dışarı çıkarabiliyorsan, daha baştan neden yapmadın ki?!</font></font></b></b></font>
+
+681
+00:36:14,210 --> 00:36:14,930
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Katoken!</font></font></b></b></font>
+
+682
+00:36:14,930 --> 00:36:15,830
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">E-efendim?</font></font></b></b></font>
+
+683
+00:36:15,830 --> 00:36:17,380
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Evin nerede?</font></font></b></b></font>
+
+684
+00:36:20,850 --> 00:36:22,740
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Hey, Gintoki, nereye gidiyorsun?</font></font></b></b></font>
+
+685
+00:36:23,490 --> 00:36:25,140
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Tek başınıza gitmeniz çok tehlikeli!</font></font></b></b></font>
+
+686
+00:36:25,580 --> 00:36:28,910
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Yine de gitmeliyiz! Görüşürüz, Zura!</font></font></b></b></font>
+
+687
+00:36:28,910 --> 00:36:31,200
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Zura değil, Katsura!</font></font></b></b></font>
+
+688
+00:36:31,470 --> 00:36:33,540
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Gin-san, neler oluyor?</font></font></b></b></font>
+
+689
+00:36:33,850 --> 00:36:39,020
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Amaçları Edo'yu yok edip tüm arazileri kurallara uygun bir biçimde almak değil mi?</font></font></b></b></font>
+
+690
+00:36:39,440 --> 00:36:40,350
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Doğru.</font></font></b></b></font>
+
+691
+00:36:40,870 --> 00:36:44,580
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">O zaman ne diye en başta Katoken'in evini almak için uğraştılar?</font></font></b></b></font>
+
+692
+00:36:45,020 --> 00:36:46,360
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Um, şey...</font></font></b></b></font>
+
+693
+00:36:47,040 --> 00:36:49,600
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">
+Aaa, anladım! Kusurlu bölge!</font></font></b></b></font>
+
+694
+00:36:49,610 --> 00:36:50,980
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Doğru!</font></font></b></b></font>
+
+695
+00:36:51,260 --> 00:36:54,260
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Peki ya işinden kovulması ve evinin alınması?</font></font></b></b></font>
+
+696
+00:36:55,520 --> 00:36:56,330
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Hepsi onların işi.</font></font></b></b></font>
+
+697
+00:36:56,620 --> 00:36:57,170
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Çok gaddarca...</font></font></b></b></font>
+
+698
+00:36:57,590 --> 00:36:58,950
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Neyse, son gaz gidelim!</font></font></b></b></font>
+
+699
+00:36:58,950 --> 00:36:59,340
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Evet!</font></font></b></b></font>
+
+700
+00:36:59,900 --> 00:37:01,290
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Şeyyy, afedersiniz?</font></font></b></b></font>
+
+701
+00:37:01,860 --> 00:37:02,560
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Ne?</font></font></b></b></font>
+
+702
+00:37:02,560 --> 00:37:05,000
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Eğer diyecek bir lafın varsa, şimdi de!</font></font></b></b></font>
+
+703
+00:37:05,430 --> 00:37:07,970
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Doğru! Kaybedecek zamanımız yok!</font></font></b></b></font>
+
+704
+00:37:08,230 --> 00:37:09,510
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">O zaman söyleyeyim.</font></font></b></b></font>
+
+705
+00:37:10,000 --> 00:37:11,450
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Sokağı kaçırdık.</font></font></b></b></font>
+
+706
+00:37:16,650 --> 00:37:22,430
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">İşte burada, şirketim Drift'in yaptığı deprem makinası.</font></font></b></b></font>
+
+707
+00:37:22,950 --> 00:37:26,720
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Bunun yardımıyla, Kariya-sama'nın istekleri tamamlanacak.</font></font></b></b></font>
+
+708
+00:37:26,720 --> 00:37:29,160
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Zamanımız geldi!</font></font></b></b></font>
+
+709
+00:37:29,850 --> 00:37:30,620
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Başlatın.</font></font></b></b></font>
+
+710
+00:37:30,620 --> 00:37:31,620
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Tamam!</font></font></b></b></font>
+
+711
+00:37:40,830 --> 00:37:42,470
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Parçacık lazeri ateşleniyor.</font></font></b></b></font>
+
+712
+00:37:42,790 --> 00:37:45,230
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Hedefe ulaşılmasına on dakika!</font></font></b></b></font>
+
+713
+00:37:46,240 --> 00:37:48,910
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">İlerle ve isteklerimiz tamamlansın.</font></font></b></b></font>
+
+714
+00:37:48,910 --> 00:37:49,910
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">O da ne?</font></font></b></b></font>
+
+715
+00:37:54,190 --> 00:37:55,400
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Silahlarınızı indirin!</font></font></b></b></font>
+
+716
+00:37:55,400 --> 00:37:57,810
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Shinsengumi geldi! Teslim olun!</font></font></b></b></font>
+
+717
+00:37:59,630 --> 00:38:01,340
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Shogunate köpekleri!</font></font></b></b></font>
+
+718
+00:38:05,650 --> 00:38:07,520
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Shinsengumi'ye sataşıyorsun demek?</font></font></b></b></font>
+
+719
+00:38:07,890 --> 00:38:08,520
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">İlginç!</font></font></b></b></font>
+
+720
+00:38:09,110 --> 00:38:10,850
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Başlıyor. Hazır olun!</font></font></b></b></font>
+
+721
+00:38:11,460 --> 00:38:13,520
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Hijikata Toushirou, hazır!</font></font></b></b></font>
+
+722
+00:38:14,190 --> 00:38:16,260
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Okita Sougo, hazır!</font></font></b></b></font>
+
+723
+00:38:16,780 --> 00:38:17,670
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Gidelim!</font></font></b></b></font>
+
+724
+00:38:19,270 --> 00:38:20,230
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Kıpırdamayın!</font></font></b></b></font>
+
+725
+00:38:22,010 --> 00:38:23,140
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Sen neden bahsediyorsun be?</font></font></b></b></font>
+
+726
+00:38:23,420 --> 00:38:25,720
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Kıpırdamaması gereken sizlersiniz!</font></font></b></b></font>
+
+727
+00:38:25,720 --> 00:38:27,860
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Ne diyorsun?</font></font></b></b></font>
+
+728
+00:38:27,860 --> 00:38:30,440
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Burası Drift, hükümetin alanı!</font></font></b></b></font>
+
+729
+00:38:30,450 --> 00:38:34,550
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Eğer burada bir adım bile atarsanız, bu uluslararası olay yaratır!</font></font></b></b></font>
+
+730
+00:38:35,320 --> 00:38:36,900
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Toprak kanunu, ha?</font></font></b></b></font>
+
+731
+00:38:37,170 --> 00:38:37,900
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Kahretsin!</font></font></b></b></font>
+
+732
+00:38:39,100 --> 00:38:41,080
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Ama... toprak kanunu da ne?</font></font></b></b></font>
+
+733
+00:38:42,280 --> 00:38:46,470
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Eğer gerçekten eve girmek istiyorsanız, elinizde uygun evraklarla gelin.</font></font></b></b></font>
+
+734
+00:38:50,490 --> 00:38:51,860
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Hey, napıyorsun?</font></font></b></b></font>
+
+735
+00:38:52,310 --> 00:38:56,340
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Ortada ev falan kalmazsa içeri girebiliriz demek, değil mi?</font></font></b></b></font>
+
+736
+00:38:56,530 --> 00:38:58,240
+<font face="Tahoma" size="24"><b><font color="#1a0d0d"><font size="12"> Ikkyu-san bir keşiştir ve zeki, anlamsal oyunlarla başkalarının kurnazca ve sürekli olarak üstüne çıkar.</font></font></b></font>
+
+737
+00:38:56,530 --> 00:38:58,240
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Kimsin sen? Ikkyuu-san mı?!</font></font></b></b></font>
+
+738
+00:38:59,370 --> 00:39:01,690
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Tüm diyeceğiniz buysa, artık kibarca gidebilir misiniz?</font></font></b></b></font>
+
+739
+00:39:07,080 --> 00:39:08,210
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Yardımınız için teşekkürler!</font></font></b></b></font>
+
+740
+00:39:08,520 --> 00:39:09,640
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Gerçek kahramanlar artık burada!</font></font></b></b></font>
+
+741
+00:39:09,640 --> 00:39:10,640
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Bunlar...</font></font></b></b></font>
+
+742
+00:39:10,640 --> 00:39:11,640
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Yorozuya mı?</font></font></b></b></font>
+
+743
+00:39:12,740 --> 00:39:13,370
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Demek geldiler, ha?</font></font></b></b></font>
+
+744
+00:39:17,230 --> 00:39:20,060
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Gin-chan'ın Yorozuyası gerisini halleder!</font></font></b></b></font>
+
+745
+00:39:22,570 --> 00:39:23,240
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Anladım!</font></font></b></b></font>
+
+746
+00:39:23,240 --> 00:39:24,780
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Eğer hükümet adına çalışmıyorlarsa istediklerini yapabilirler!</font></font></b></b></font>
+
+747
+00:39:25,050 --> 00:39:26,490
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Artık alışkanlık olmaya başladı...</font></font></b></b></font>
+
+748
+00:39:30,200 --> 00:39:31,640
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Kariya-sama, hemen içeri girin.</font></font></b></b></font>
+
+749
+00:39:33,080 --> 00:39:33,600
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Bekleyin!</font></font></b></b></font>
+
+750
+00:39:34,970 --> 00:39:37,040
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Maçımızı tamamlamak istemiştim!</font></font></b></b></font>
+
+751
+00:39:37,540 --> 00:39:41,220
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Rakibim olduğunu falan sanma, sirk kaçkını!</font></font></b></b></font>
+
+752
+00:39:41,220 --> 00:39:42,220
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Seni!</font></font></b></b></font>
+
+753
+00:39:48,290 --> 00:39:49,820
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Hedefe ulaşmaya beş dakika!</font></font></b></b></font>
+
+754
+00:39:49,820 --> 00:39:53,290
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Tamamdır! Hedefe ulaştığı anda buradan ayrılıyoruz.</font></font></b></b></font>
+
+755
+00:39:53,290 --> 00:39:53,660
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Tamam!</font></font></b></b></font>
+
+756
+00:39:54,000 --> 00:39:55,610
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Makine, yüzeye çıkarılsın!</font></font></b></b></font>
+
+757
+00:40:00,680 --> 00:40:01,170
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Deprem mi?</font></font></b></b></font>
+
+758
+00:40:01,170 --> 00:40:01,930
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Şimdiden yapmış olamazlar--</font></font></b></b></font>
+
+759
+00:40:18,160 --> 00:40:21,340
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">O koca, dünya-yok-eden makine de ne öyle?!</font></font></b></b></font>
+
+760
+00:40:21,500 --> 00:40:24,160
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Özel bölüm diye her şeyi çığırından çıkarttı!</font></font></b></b></font>
+
+761
+00:40:25,070 --> 00:40:26,940
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Demek Zura'nın bahsettiği makina bu?</font></font></b></b></font>
+
+762
+00:40:31,150 --> 00:40:35,860
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">İyi işti, ama yakında planımız tamamlanacak!</font></font></b></b></font>
+
+763
+00:40:36,280 --> 00:40:36,850
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Kahretsin!</font></font></b></b></font>
+
+764
+00:40:36,850 --> 00:40:38,580
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">O zaman, Edo yok edilecek!</font></font></b></b></font>
+
+765
+00:40:41,510 --> 00:40:42,150
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Shinpachi!</font></font></b></b></font>
+
+766
+00:40:43,270 --> 00:40:45,080
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Dövüşmen gereken kişi benim.</font></font></b></b></font>
+
+767
+00:40:45,570 --> 00:40:46,280
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Piç.</font></font></b></b></font>
+
+768
+00:40:48,950 --> 00:40:51,000
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Hedefe ulaşılmasına üç dakika daha.</font></font></b></b></font>
+
+769
+00:40:54,770 --> 00:40:56,630
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">E-evim.</font></font></b></b></font>
+
+770
+00:40:57,530 --> 00:40:58,420
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Katoken!</font></font></b></b></font>
+
+771
+00:40:58,670 --> 00:41:00,990
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Salak! Ne diye onu yalnız bıraktın?!</font></font></b></b></font>
+
+772
+00:41:01,560 --> 00:41:03,140
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Ya, gözüme pek bir tehdit gibi görünmemişti.</font></font></b></b></font>
+
+773
+00:41:03,430 --> 00:41:05,780
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Haydi, Katoken! Onu durdurmak zorundasın!</font></font></b></b></font>
+
+774
+00:41:06,060 --> 00:41:07,350
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">A-ama...</font></font></b></b></font>
+
+775
+00:41:12,690 --> 00:41:14,030
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Seni parçalara ayıracağım.</font></font></b></b></font>
+
+776
+00:41:19,000 --> 00:41:20,190
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Ben...</font></font></b></b></font>
+
+777
+00:41:20,200 --> 00:41:21,540
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Kaçma!</font></font></b></b></font>
+
+778
+00:41:23,420 --> 00:41:26,480
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Önce kendini değiştirmelisin, yoksa hiçbir şey değişmez!</font></font></b></b></font>
+
+779
+00:41:27,410 --> 00:41:28,200
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Değişmek mi?</font></font></b></b></font>
+
+780
+00:41:28,910 --> 00:41:30,620
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Öylece kaçamazsın.</font></font></b></b></font>
+
+781
+00:41:30,980 --> 00:41:34,380
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Özellikle de gerçekten unutmak istediklerinden!</font></font></b></b></font>
+
+782
+00:41:52,930 --> 00:41:55,210
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Babacığım...</font></font></b></b></font>
+
+783
+00:41:59,100 --> 00:42:00,250
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Ben...</font></font></b></b></font>
+
+784
+00:42:00,250 --> 00:42:02,310
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">...ben...</font></font></b></b></font>
+
+785
+00:42:03,390 --> 00:42:04,130
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">...değişeceğim!</font></font></b></b></font>
+
+786
+00:42:08,270 --> 00:42:10,880
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Orada öylece durursan, sopayı yiyeceksin!</font></font></b></b></font>
+
+787
+00:42:10,880 --> 00:42:11,880
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Ne?!</font></font></b></b></font>
+
+788
+00:42:11,880 --> 00:42:12,880
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Mutlu musun?!</font></font></b></b></font>
+
+789
+00:42:12,880 --> 00:42:13,880
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Bu bir suç!</font></font></b></b></font>
+
+790
+00:42:14,490 --> 00:42:17,510
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Yapacağım son şey de olsa, senin canına okuyacağım!</font></font></b></b></font>
+
+791
+00:42:20,620 --> 00:42:21,820
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Al bakalım!</font></font></b></b></font>
+
+792
+00:42:24,360 --> 00:42:25,810
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Bu iyi değill!</font></font></b></b></font>
+
+793
+00:42:30,890 --> 00:42:31,870
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Kariya-sama!</font></font></b></b></font>
+
+794
+00:42:32,200 --> 00:42:33,260
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Ona göz kulak olmalıyız!</font></font></b></b></font>
+
+795
+00:42:37,090 --> 00:42:39,780
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">İşte öğrencimiz! Çok daha güçlü!</font></font></b></b></font>
+
+796
+00:42:40,070 --> 00:42:43,360
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Ona öğrettiğin nasıl yumruk atılacağıydı, sopa atmak değil, Kagura-chan.</font></font></b></b></font>
+
+797
+00:42:43,690 --> 00:42:44,640
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Ne yapıyorsun, Katoken?</font></font></b></b></font>
+
+798
+00:42:45,130 --> 00:42:46,680
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Acele et, makineyi durdur!</font></font></b></b></font>
+
+799
+00:42:46,680 --> 00:42:47,680
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Aaa, evet!</font></font></b></b></font>
+
+800
+00:42:51,030 --> 00:42:52,020
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Uumm.</font></font></b></b></font>
+
+801
+00:42:52,670 --> 00:42:53,480
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Bu mu?</font></font></b></b></font>
+
+802
+00:43:01,350 --> 00:43:04,660
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Elli saniye ikiye bölündü, sadece yirmi beş saniye kaldı!</font></font></b></b></font>
+
+803
+00:43:04,950 --> 00:43:05,690
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Acele et!</font></font></b></b></font>
+
+804
+00:43:05,690 --> 00:43:07,550
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Nasıl yaparsın bilemem, ama yap!</font></font></b></b></font>
+
+805
+00:43:07,890 --> 00:43:10,820
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Bu mu... yoksa şuradaki mi?</font></font></b></b></font>
+
+806
+00:43:11,730 --> 00:43:12,360
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Burada!</font></font></b></b></font>
+
+807
+00:43:15,180 --> 00:43:16,040
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Kırıldı!</font></font></b></b></font>
+
+808
+00:43:16,040 --> 00:43:18,450
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Kırıldı mı!? Cidden kırıldı mı!?</font></font></b></b></font>
+
+809
+00:43:20,950 --> 00:43:22,890
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Bekle! Dövüşümüz daha bitm--</font></font></b></b></font>
+
+810
+00:43:23,480 --> 00:43:24,900
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Kes sesini, geveze!</font></font></b></b></font>
+
+811
+00:43:24,900 --> 00:43:26,570
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Sohbet etmeye zamanım yok!</font></font></b></b></font>
+
+812
+00:43:26,570 --> 00:43:27,570
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Tek hamleyle mi?</font></font></b></b></font>
+
+813
+00:43:33,860 --> 00:43:35,030
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Dur!</font></font></b></b></font>
+
+814
+00:43:40,860 --> 00:43:42,360
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Durdu.</font></font></b></b></font>
+
+815
+00:43:43,220 --> 00:43:44,150
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Haydi buradan çıkalım.</font></font></b></b></font>
+
+816
+00:43:44,150 --> 00:43:45,150
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Aa, tamam!</font></font></b></b></font>
+
+817
+00:43:49,980 --> 00:43:51,240
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Başardılar!</font></font></b></b></font>
+
+818
+00:43:54,680 --> 00:43:59,260
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Hey, eğer bir adım atarsanız, toprak kanununuz bir boka yaramayacak!</font></font></b></b></font>
+
+819
+00:44:02,680 --> 00:44:04,570
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Fena değil, Gintoki.</font></font></b></b></font>
+
+820
+00:44:04,570 --> 00:44:06,080
+<font face="Tahoma" size="24"><b><font color="#1a0d0d"><font size="16">  Araba al.</font></font></b></font>
+
+821
+00:44:12,930 --> 00:44:13,950
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22"> Bizim...</font></font></b></b></font>
+
+822
+00:44:14,960 --> 00:44:15,730
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22"> ...evimiz.</font></font></b></b></font>
+
+823
+00:44:19,790 --> 00:44:20,650
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22"> Sakata-san.</font></font></b></b></font>
+
+824
+00:44:20,650 --> 00:44:23,130
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22"> Endişelenme. Evin halledilir.</font></font></b></b></font>
+
+825
+00:44:23,590 --> 00:44:24,130
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22"> Ama...</font></font></b></b></font>
+
+826
+00:44:26,210 --> 00:44:28,140
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22"> Değiştin, değil mi?</font></font></b></b></font>
+
+827
+00:44:29,180 --> 00:44:29,740
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22"> Evet.</font></font></b></b></font>
+
+828
+00:44:37,400 --> 00:44:39,100
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22"> Yamatoyalar'ın kedisi, Kuromi-chan!</font></font></b></b></font>
+
+829
+00:44:41,720 --> 00:44:44,420
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22"> Buraya gel bakayım, lanet kedi!</font></font></b></b></font>
+
+830
+00:44:51,430 --> 00:44:55,110
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22"> Ahhhh, keşke benim de bir bankai'm olsaydı.</font></font></b></b></font>
+
+831
+00:44:51,430 --> 00:44:55,110
+<font face="Tahoma" size="24"><b><font color="#1a0d0d"><font size="12"> Bankai: Bleach animesinde bir kılıcın en güçlü formu.</font></font></b></font>
+
+832
+00:44:55,120 --> 00:44:58,040
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22"> Gin-chan, televizyona bak!</font></font></b></b></font>
+
+833
+00:44:59,580 --> 00:45:03,690
+<font face="Tahoma" size="24"><b><font face="Monotype Corsiva"></font></b><i> Yaz! Bu Katoken yazı! Sadece rahatlayın ve ayakalarınızı havaya dikin!</i></font>
+
+834
+00:45:03,970 --> 00:45:05,720
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Bir dakika, olamaz!</font></font></b></b></font>
+
+835
+00:45:05,720 --> 00:45:08,440
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Benzetiyor olamayız. Bu Katoken!</font></font></b></b></font>
+
+836
+00:45:08,580 --> 00:45:14,530
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Aa, evet, Katoken-san, insanları bağlayabilen, popüler bir enka şarkıcısı oldu.</font></font></b></b></font>
+
+837
+00:45:16,020 --> 00:45:20,350
+<font face="Tahoma" size="24"><b><font face="Monotype Corsiva"></font></b><i> Ole! Ole! Bu bir Katoken yazı!</i></font>
+
+838
+00:45:21,130 --> 00:45:22,590
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Görünüşe göre, iyi gibi.</font></font></b></b></font>
+
+839
+00:45:23,960 --> 00:45:27,740
+<font face="Tahoma" size="24"><b><font face="Monotype Corsiva"></font></b><i> Ole! Ole! Bu bir Katoken yazı!</i></font>
+
+840
+00:45:27,740 --> 00:45:33,640
+<font face="Tahoma" size="24"><b><font color="#1a0d0d"><font size="16">Yorozuya'daki herkese; yepyeni bir ev aldık.
+Çok teşekkürler.
+Katou Ken</font></font></b></font>
+
+841
+00:45:42,870 --> 00:45:46,020
+<font face="Tahoma" size="24"><b><font face="Monotype Corsiva"></font></b><i>Kalbimdeki pervane</i></font>
+
+842
+00:45:42,870 --> 00:45:46,020
+<font face="Tahoma" size="24"><b>
+</b><i><font face="Neverwinter"> Batabata to kokoro no</font></i></font>
+
+843
+00:45:46,020 --> 00:45:49,780
+<font face="Tahoma" size="24"><b>
+</b><i><font face="Neverwinter"> senpuuki ga mawaru yo</font></i></font>
+
+844
+00:45:46,020 --> 00:45:49,780
+<font face="Tahoma" size="24"><b><font face="Monotype Corsiva"></font></b><i>Döndükçe mırıldanıyor</i></font>
+
+845
+00:45:49,780 --> 00:45:53,450
+<font face="Tahoma" size="24"><b></b><i><font face="Neverwinter"> togireta kaiwa no</font></i></font>
+
+846
+00:45:49,780 --> 00:45:53,450
+<font face="Tahoma" size="24"><b><font face="Monotype Corsiva"></font></b><i>Konuşmamız kısa sürdü</i></font>
+
+847
+00:45:53,450 --> 00:45:57,120
+<font face="Tahoma" size="24"><b></b><i><font face="Neverwinter"> kiritori sen ten ten</font></i></font>
+
+848
+00:45:53,450 --> 00:45:57,120
+<font face="Tahoma" size="24"><b><font face="Monotype Corsiva"></font></b><i>Yine ve yine bizim sözümüz kesilirken</i></font>
+
+849
+00:45:57,120 --> 00:46:03,080
+<font face="Tahoma" size="24"><b></b><i><font face="Neverwinter"> tetsubou ni sakasama ni burasagari</font></i></font>
+
+850
+00:45:57,120 --> 00:46:03,080
+<font face="Tahoma" size="24"><b><font face="Monotype Corsiva"></font></b><i>Ters durmuş bir kask takıyorum</i></font>
+
+851
+00:46:05,410 --> 00:46:08,260
+<font face="Tahoma" size="24"><b></b><i><font face="Neverwinter"> sorairo no kisu</font></i></font>
+
+852
+00:46:05,410 --> 00:46:08,260
+<font face="Tahoma" size="24"><b><font face="Monotype Corsiva"></font></b><i>Ve kafamdan düşüyor</i></font>
+
+853
+00:46:08,260 --> 00:46:15,400
+<font face="Tahoma" size="24"><b></b><i><font face="Neverwinter"> ganbare to hashiru scooter</font></i></font>
+
+854
+00:46:08,260 --> 00:46:15,400
+<font face="Tahoma" size="24"><b><font face="Monotype Corsiva"></font></b><i>Gökyüzü mavisi bir öpücük</i></font>
+
+855
+00:46:15,400 --> 00:46:23,940
+<font face="Tahoma" size="24"><b></b><i><font face="Neverwinter"> ore-tachi no hibi mo makimodoru</font></i></font>
+
+856
+00:46:15,400 --> 00:46:23,940
+<font face="Tahoma" size="24"><b><font face="Monotype Corsiva"></font></b><i>Motorsikletim gibi bende çok çalışıyorum</i></font>
+
+857
+00:46:23,950 --> 00:46:28,040
+<font face="Tahoma" size="24"><b><font face="Monotype Corsiva"></font></b><i>Bu günler yine gelecek</i></font>
+
+858
+00:46:23,950 --> 00:46:28,040
+<font face="Tahoma" size="24"><b></b><i><font face="Neverwinter"> fuusen gum kucha kucha</font></i></font>
+
+859
+00:46:28,490 --> 00:46:31,330
+<font face="Tahoma" size="24"><b></b><i><font face="Neverwinter"> dajiareppokute ikitemo</font></i></font>
+
+860
+00:46:28,490 --> 00:46:31,330
+<font face="Tahoma" size="24"><b><font face="Monotype Corsiva"></font></b><i>Biraz sakız çiğniyorum</i></font>
+
+861
+00:46:31,330 --> 00:46:35,360
+<font face="Tahoma" size="24"><b></b><i><font face="Neverwinter"> tamashii no kisseki wa</font></i></font>
+
+862
+00:46:31,330 --> 00:46:35,360
+<font face="Tahoma" size="24"><b><font face="Monotype Corsiva"></font></b><i>Ve hayatıma balıklama dalıyorum</i></font>
+
+863
+00:46:35,360 --> 00:46:38,630
+<font face="Tahoma" size="24"><b></b><i><font face="Neverwinter"> pikapika ni surudoi</font></i></font>
+
+864
+00:46:35,360 --> 00:46:38,630
+<font face="Tahoma" size="24"><b><font face="Monotype Corsiva"></font></b><i>Efsanevi ruhum bir jilet kadar keskin</i></font>
+
+865
+00:46:38,630 --> 00:46:42,450
+<font face="Tahoma" size="24"><b></b><i><font face="Neverwinter"> fuusen gum pachintte</font></i></font>
+
+866
+00:46:38,630 --> 00:46:42,450
+<font face="Tahoma" size="24"><b><font face="Monotype Corsiva"></font></b><i>Bir parça sakız daha çiğniyorum</i></font>
+
+867
+00:46:42,450 --> 00:46:43,450
+<font face="Tahoma" size="24"><b></b><i><font face="Neverwinter"> hajiketara dekakeyou</font></i></font>
+
+868
+00:46:42,450 --> 00:46:43,450
+<font face="Tahoma" size="24"><b><font face="Monotype Corsiva"></font></b><i>Ve o patlarsa.. haydi dışarı çıkıyoruz</i></font>
+
+869
+00:46:43,450 --> 00:46:46,120
+<font face="Tahoma" size="24"><b></b><i><font face="Neverwinter"> kamru hodo aji no dero</font></i></font>
+
+870
+00:46:43,450 --> 00:46:46,120
+<font face="Tahoma" size="24"><b><font face="Monotype Corsiva"></font></b><i>Çiğnedikçe tadı güzelleşiyor</i></font>
+
+871
+00:46:46,120 --> 00:46:49,980
+<font face="Tahoma" size="24"><b></b><i><font face="Neverwinter"> shibui yatsu kidotteo</font></i></font>
+
+872
+00:46:46,120 --> 00:46:49,980
+<font face="Tahoma" size="24"><b><font face="Monotype Corsiva"></font></b><i>O yüzden lütfen çok bilmişlik yapmayalım</i></font>
+
+873
+00:46:49,980 --> 00:46:53,690
+<font face="Tahoma" size="24"><b></b><i><font face="Neverwinter"> ore-tachi no bi-ishiki tsuranuite yarouze</font></i></font>
+
+874
+00:46:49,980 --> 00:46:53,690
+<font face="Tahoma" size="24"><b><font face="Monotype Corsiva"></font></b><i>Ve güzel heveslerimiz için bir hamle yapalım!</i></font>
+
+875
+00:46:53,980 --> 00:47:01,100
+<font face="Tahoma" size="24"><b></b><i><font face="Neverwinter"> ore-tachi no bi-ishiki tsuranuite yarouze</font></i></font>
+
+876
+00:46:53,980 --> 00:47:01,100
+<font face="Tahoma" size="24"><b><font face="Monotype Corsiva"></font></b><i>Ve güzel heveslerimiz için bir hamle yapalım!</i></font>
+
+877
+00:47:05,150 --> 00:47:05,870
+<font face="Tahoma" size="24"><b><font color="#1a0d0d"><font size="16"> Ön gösterim</font></font></b></font>
+
+878
+00:47:05,870 --> 00:47:08,520
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Bir sene önce o adamla tanıştım.</font></font></b></b></font>
+
+879
+00:47:09,070 --> 00:47:11,920
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Ona samuray demek için biraz fazla sertti...</font></font></b></b></font>
+
+880
+00:47:12,350 --> 00:47:15,210
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">...ama adi bir düzenbaz olmak için de fazla efendiydi.</font></font></b></b></font>
+
+881
+00:47:16,580 --> 00:47:17,050
+<font face="Tahoma" size="24"><b><font color="#1a0d0d"><font size="16"> Ekranda: Permalı ve kötü olan bir adam yoktur.</font></font></b></font>
+
+882
+00:47:17,050 --> 00:47:18,930
+<font face="Tahoma" size="24"><b><b><font face="Palatino Linotype"><font size="22">Haftaya "Doğal permalı insanlar kötü olamazlar."</font></font></b></b></font>
+
+883
+00:47:17,050 --> 00:47:18,930
+<font face="Tahoma" size="24"><b><font color="#1a0d0d"><font size="16"> Ekranda: Permalı ve kötü olan bir adam yoktur.</font></font></b></font>
+
+884
+00:47:18,930 --> 00:47:20,930
+<font face="Tahoma" size="24"><b></b></font>
+

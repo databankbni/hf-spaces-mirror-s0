@@ -1,0 +1,8 @@
+cff-version: 1.2.0
+message: "If you use HALT-CoT, please cite the paper."
+title: "HALT-CoT: Model-Agnostic Early Stopping for Chain-of-Thought Reasoning via Answer Entropy"
+authors:
+  - family-names: "Laaouach"
+    given-names: "Yassir"
+year: 2026
+license: "MIT"

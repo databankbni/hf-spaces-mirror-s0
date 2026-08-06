@@ -1,0 +1,143 @@
+{
+  "method": "groq-llm-insight",
+  "chunk_count": 206,
+  "source_chunk_count": 606,
+  "keywords": [
+    "discover",
+    "recommend",
+    "algorithm",
+    "repeat",
+    "same songs",
+    "playlist",
+    "suggestion",
+    "personali"
+  ],
+  "themes": [
+    {
+      "theme_name": "Users crave more control over music discovery and recommendations",
+      "count": 39,
+      "top_quotes": [
+        {
+          "text": "\"Recommended\" songs now? The app is horrid. You can pick what songs you want on the computer but not on the app??? Nobody goes to online music over radio to only be allowed to hear their music on shuffle. It's bad enough I have to listen to commercials, but to have to listen on shuffle is adding ins",
+          "source": "trustpilot",
+          "date": "2026-05-26"
+        },
+        {
+          "text": "I do not recommend Spotify to anymore. There is ZERO customization on the subscribers end. They get rid of features that link you to your followed podcasts which now make it impossible to find new episodes. They constantly \"recommend\" garbage podcasts based on what you listen to, which isn't even cl",
+          "source": "play_store",
+          "date": "2026-06-19"
+        },
+        {
+          "text": "at this point, I might as well use yt music because a lot of the stuff that I feel like should be part of the free version isn't like, we only get six skips per hour.And I agree, we hardly even get like any options of our own playlist, like we make the playlist.We don't want other people barging in ",
+          "source": "play_store",
+          "date": "2026-06-19"
+        }
+      ]
+    },
+    {
+      "theme_name": "Algorithm traps users in a loop of the same songs",
+      "count": 21,
+      "top_quotes": [
+        {
+          "text": "Using song preview makes the playlist/album stay i...\n\n...istening history even though i didn't play the content normally. This may ruin myalgorithmand I KNOW about the remove from taste profile button but there's no REASON to make the previewed song STAY in the l...",
+          "source": "spotify_community",
+          "date": "2026-06-07"
+        },
+        {
+          "text": "I've been trying to break out of my Spotify bubble by listening to random playlists, but the algorithm keeps pulling me back to the same music. Any tips for getting better recommendations? I've tried liking songs I discover elsewhere but it doesn't seem to help much.",
+          "source": "reddit",
+          "date": "2026-05-03"
+        },
+        {
+          "text": "Auto-Remove or Prompt to Remove Songs You Repeated...\n\n...o. You guys already track skips forrecommendationsso the data is already there. A few things to consider though — skipping in the last few seconds shouldn’t count because that’s basically a full l...",
+          "source": "spotify_community",
+          "date": "2026-06-11"
+        }
+      ]
+    },
+    {
+      "theme_name": "Forced auto-play injects unwanted songs after a playlist ends",
+      "count": 14,
+      "top_quotes": [
+        {
+          "text": "Title: This app has become terrible! Review: Spotify used to be great, but now it is completely ruined. There are way too many annoying ads. Whenever I search for a specific song, it forces me to listen to a whole playlist instead of that song. On top of that, you can only skip 6 songs in 2 hours! I",
+          "source": "play_store",
+          "date": "2026-06-19"
+        },
+        {
+          "text": "its not like a few years back. No matter what i did : clear the smart queue.. desactivated the auto add songs into the queue.. spotify forced me to listen to song i hated and didn't choosed. It slip songs into my playlist witout my accord.. Can't really play with my phone while driving to select the",
+          "source": "play_store",
+          "date": "2026-06-20"
+        },
+        {
+          "text": "A true invassive app. The auto connect/play feature needs to die. Just because my device is connected and or I turn the volume up on my stereo does not mean I want to listen to spotify. The shuffling of songs/artists when shuffle is turned off is unacceptable. Last but not least the repeat and recyc",
+          "source": "play_store",
+          "date": "2026-06-19"
+        }
+      ]
+    },
+    {
+      "theme_name": "Discover Weekly loses novelty within weeks",
+      "count": 11,
+      "top_quotes": [
+        {
+          "text": "can't add songs to my liked playlist. also there is no way to explore new music. homepage is full of AI made playlists and recommendations but they are all based on my history and liked songs. I want to Listen something new but there is no way unless I know a few songs myself. no novelty.",
+          "source": "play_store",
+          "date": "2026-06-18"
+        },
+        {
+          "text": "Scrollable music discovery feed — like TikTok, but...\n\n...iscovery features. It’s that thealgorithmkeeps showing me variations of what I already listen to. Even when I hit skip repeatedly, I stay inside my own bubble. I want to find something completely new, n...",
+          "source": "spotify_community",
+          "date": "2026-06-11"
+        },
+        {
+          "text": "Scrollable music discovery feed — like TikTok, but...\n\n...r a visual — and quickly decide if you want to save it or keep scrolling. No user-generated content needed, just the music itself. The difference from existing features likeDiscoverWeeklyor R...",
+          "source": "spotify_community",
+          "date": "2026-06-11"
+        }
+      ]
+    },
+    {
+      "theme_name": "Personalisation feels worse after recent updates",
+      "count": 11,
+      "top_quotes": [
+        {
+          "text": "My loving opinion lol\n\nIve loved Spotify so much ever since I got my new phone it has been much better than listening to a dumb radio, overall I have almost no complaints except for the recommendation system, like I like listening to the living tombstone but I never asked for freaking Japanese     M",
+          "source": "app_store",
+          "date": "2026-06-20"
+        },
+        {
+          "text": "I'm a long time Spotify premium user. Spotify used to be great for music and podcasts, efficient and easy to use. but no longer. Spotify is starting to get messy and commercial. It reminds me of how Myspace & Facebook used to be useful in their early days, but turned into bulky, spammy, corporate, g",
+          "source": "play_store",
+          "date": "2026-06-19"
+        },
+        {
+          "text": "AI generated garbage galore\n\nI used to love Spotify, and discovering new music. Now? My recommendations are constantly flooded with AI generated shit I don't want to ever hear. There is no way to block it. I don't want to need to do research instead of relaxing and enjoying. Time to find a new music",
+          "source": "trustpilot",
+          "date": "2026-06-04"
+        }
+      ]
+    },
+    {
+      "theme_name": "Recommendations override and ignore user-built playlists",
+      "count": 8,
+      "top_quotes": [
+        {
+          "text": "Was a paid customer but AI slop isn't what i paid for. Been paying for a decade with zero issues but woke up 2 days ago to my homepage just being AI slop playlists. When i contacted customer support they told me it was a glitch and put me through 7 hours and 18 advisors telling me to uninstall/reins",
+          "source": "trustpilot",
+          "date": "2026-05-23"
+        },
+        {
+          "text": "greedy, greedy people\n\nevery time i make a playlist i can’t even listen to it because it adds all of its stupid songs. they should make the free one better smh. do not recommend. why are they so greedy? they do not need to put 4 ads in between each song it ruins the mood. and how come i can’t contro",
+          "source": "app_store",
+          "date": "2026-06-18"
+        },
+        {
+          "text": "Premium member - Spotify has lost the plot! Premium member - Spotify has lost the plot! Spotify used to be brilliant, but lately, it refuses to play my choices in my order, always lands up going to some Spotify determined order and excludes many songs from my chosen playlist and adds whatever it dec",
+          "source": "trustpilot",
+          "date": "2026-06-10"
+        }
+      ]
+    }
+  ]
+}

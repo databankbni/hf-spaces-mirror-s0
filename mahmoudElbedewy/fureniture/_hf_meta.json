@@ -1,0 +1,27 @@
+{
+ "captured_at": "2026-08-04T16:30:33Z",
+ "hf_metadata": {
+  "sha": "79bfe77719590597ccb7e5f340d8677401748596"
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  },
+  {
+   "original": ".gitignore",
+   "stored_as": "_gitignore"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "mahmoudElbedewy/fureniture",
+ "repo_type": "spaces",
+ "sha": "79bfe77719590597ccb7e5f340d8677401748596",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/mahmoudElbedewy/fureniture"
+}

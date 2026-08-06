@@ -1,0 +1,23 @@
+{
+ "captured_at": "2026-08-04T17:15:03Z",
+ "hf_metadata": {
+  "sha": "c30b4602774cf1e5c1878ea1f7e52535983841f0"
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "wrice/repro-rmt-diffusion-consistency",
+ "repo_type": "spaces",
+ "sha": "c30b4602774cf1e5c1878ea1f7e52535983841f0",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/wrice/repro-rmt-diffusion-consistency"
+}

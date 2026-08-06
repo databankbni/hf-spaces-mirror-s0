@@ -1,0 +1,27 @@
+# Never commit secrets
+.env
+*.env
+secrets.txt
+*keys*.txt
+godena_keys*.txt
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+env/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+
+# Internal / private strategy (keep out of the public repo)
+strategy/
+private/
+*.private.md

@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}Page Not Found{% endblock %}
+
+{% block content %}
+<div class="container" style="text-align: center; padding: 4rem 0;">
+    <h1 style="font-size: 4rem; margin-bottom: 1rem;">404</h1>
+    <h2 style="margin-bottom: 2rem;">Page Not Found</h2>
+    <p style="color: var(--text-muted); margin-bottom: 3rem;">
+        The page you're looking for doesn't exist or has been moved.
+    </p>
+
+    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+        <a href="/" class="btn btn-primary">Go Home</a>
+        <a href="/archive" class="btn btn-secondary">Browse Archive</a>
+        <a href="/scrolls" class="btn btn-secondary">Browse Scrolls</a>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,27 @@
+{
+ "captured_at": "2026-08-04T17:08:57Z",
+ "hf_metadata": {
+  "sha": "ce1cb7a7e4352b4a0ae83dc638745a72ee4fd7c1"
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  },
+  {
+   "original": ".gitignore",
+   "stored_as": "_gitignore"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "tejassnaikk/gridmind",
+ "repo_type": "spaces",
+ "sha": "ce1cb7a7e4352b4a0ae83dc638745a72ee4fd7c1",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/tejassnaikk/gridmind"
+}

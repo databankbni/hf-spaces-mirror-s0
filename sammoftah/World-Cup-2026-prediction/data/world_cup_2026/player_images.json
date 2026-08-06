@@ -1,0 +1,149 @@
+{
+ "source_note": "Snapshot of Wikipedia/Wikimedia Commons profile photo thumbnails for the 36 award-shortlist players. Originally fetched 2026-06-15 via the Wikipedia REST summary API and Wikidata P18 claims; fourteen portraits swapped 2026-07-18 for clearer face crops via Commons file search, each verified against the rendered card before shipping. Not refreshed at runtime.",
+ "players": {
+  "Lamine Yamal": {
+   "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Lamine_Yamal_France_v_Spain_7.24.26-142.jpg/330px-Lamine_Yamal_France_v_Spain_7.24.26-142.jpg",
+   "source_title": "Lamine Yamal France v Spain 7.24.26-142.jpg"
+  },
+  "Pedri": {
+   "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Pedri_-_Paris_SG_-_FC_Barcelone_2021.png/330px-Pedri_-_Paris_SG_-_FC_Barcelone_2021.png",
+   "source_title": "Pedri - Paris SG - FC Barcelone 2021.png"
+  },
+  "Unai Simon": {
+   "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Unai_Sim%C3%B3n_Mendibil.jpg/330px-Unai_Sim%C3%B3n_Mendibil.jpg",
+   "source_title": "Unai Simón"
+  },
+  "Lionel Messi": {
+   "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Lionel_Messi_WC2022.jpg/330px-Lionel_Messi_WC2022.jpg",
+   "source_title": "Lionel Messi"
+  },
+  "Julian Alvarez": {
+   "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Juli%C3%A1n_%C3%81lvarez_%28footballer%29_2023_2.jpg/330px-Juli%C3%A1n_%C3%81lvarez_%28footballer%29_2023_2.jpg",
+   "source_title": "Julián Álvarez (footballer) 2023 2.jpg"
+  },
+  "Emiliano Martinez": {
+   "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/St._Louis_City_vs_Aston_Villa_%28Jul_2025%29_14_%28Emiliano_Mart%C3%ADnez%29.jpg/330px-St._Louis_City_vs_Aston_Villa_%28Jul_2025%29_14_%28Emiliano_Mart%C3%ADnez%29.jpg",
+   "source_title": "Emiliano Martínez"
+  },
+  "Kylian Mbappe": {
+   "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/2019-07-17_SG_Dynamo_Dresden_vs._Paris_Saint-Germain_by_Sandro_Halank%E2%80%93129_%28cropped%29.jpg/330px-2019-07-17_SG_Dynamo_Dresden_vs._Paris_Saint-Germain_by_Sandro_Halank%E2%80%93129_%28cropped%29.jpg",
+   "source_title": "2019-07-17 SG Dynamo Dresden vs. Paris Saint-Germain by Sandro Halank–129 (cropped).jpg"
+  },
+  "Desire Doue": {
+   "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Doue_asse_psg_2425_%28cropped%29.png/330px-Doue_asse_psg_2425_%28cropped%29.png",
+   "source_title": "Doue asse psg 2425 (cropped).png"
+  },
+  "Mike Maignan": {
+   "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Mike_Maignan_France_v_Norway_26_June_26-132_%28cropped%29.jpg/330px-Mike_Maignan_France_v_Norway_26_June_26-132_%28cropped%29.jpg",
+   "source_title": "Mike Maignan France v Norway 26 June 26-132 (cropped).jpg"
+  },
+  "Harry Kane": {
+   "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Harry_Kane_2023.jpg/330px-Harry_Kane_2023.jpg",
+   "source_title": "Harry Kane"
+  },
+  "Jude Bellingham": {
+   "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/2025_04_26_Final_de_la_Copa_del_Rey_-_54482387776_%28Jude_Bellingham%29.jpg/330px-2025_04_26_Final_de_la_Copa_del_Rey_-_54482387776_%28Jude_Bellingham%29.jpg",
+   "source_title": "Jude Bellingham"
+  },
+  "Jordan Pickford": {
+   "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Jordan_Pickford_2022-07-16_1.jpg/330px-Jordan_Pickford_2022-07-16_1.jpg",
+   "source_title": "Jordan Pickford"
+  },
+  "Cristiano Ronaldo": {
+   "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/2025_Cristiano_Ronaldo_%28cropped%29.jpg/330px-2025_Cristiano_Ronaldo_%28cropped%29.jpg",
+   "source_title": "Cristiano Ronaldo"
+  },
+  "Bruno Fernandes": {
+   "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Bruno_Fernandes_USMNT_v_Portugal_Mar_31_2026-27_%28cropped%29.jpg/330px-Bruno_Fernandes_USMNT_v_Portugal_Mar_31_2026-27_%28cropped%29.jpg",
+   "source_title": "Bruno Fernandes"
+  },
+  "Diogo Costa": {
+   "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Portugal_national_football_team_0866_%28Diogo_Costa%29.jpg/330px-Portugal_national_football_team_0866_%28Diogo_Costa%29.jpg",
+   "source_title": "Diogo Costa"
+  },
+  "Vinicius Junior": {
+   "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Vinicius_Jr_2021.jpg/330px-Vinicius_Jr_2021.jpg",
+   "source_title": "Vinícius Júnior"
+  },
+  "Estevao": {
+   "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Estevao-Palmeiras-Juventude-jun24-4.jpg/330px-Estevao-Palmeiras-Juventude-jun24-4.jpg",
+   "source_title": "Estevao-Palmeiras-Juventude-jun24-4.jpg"
+  },
+  "Alisson Becker": {
+   "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/20180610_FIFA_Friendly_Match_Austria_vs._Brazil_850_1625.jpg/330px-20180610_FIFA_Friendly_Match_Austria_vs._Brazil_850_1625.jpg",
+   "source_title": "Alisson Becker"
+  },
+  "Luis Diaz": {
+   "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/FC_RB_Salzburg_gegen_FC_Bayern_M%C3%BCnchen_%282026-01-06_Testspiel%29_40_%28Luiz_D%C3%ADaz%29.jpg/330px-FC_RB_Salzburg_gegen_FC_Bayern_M%C3%BCnchen_%282026-01-06_Testspiel%29_40_%28Luiz_D%C3%ADaz%29.jpg",
+   "source_title": "Luis Díaz (footballer, born 1997)"
+  },
+  "James Rodriguez": {
+   "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/James_al_natural_-_Series%2C_02.jpg/330px-James_al_natural_-_Series%2C_02.jpg",
+   "source_title": "James Rodríguez"
+  },
+  "Camilo Vargas": {
+   "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Camilo_Vargas_2022.jpeg/330px-Camilo_Vargas_2022.jpeg",
+   "source_title": "Camilo Vargas 2022.jpeg"
+  },
+  "Cody Gakpo": {
+   "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Austria_U-18_vs._Netherlands_U-18_2017-03-23_%28078%29.jpg/330px-Austria_U-18_vs._Netherlands_U-18_2017-03-23_%28078%29.jpg",
+   "source_title": "Austria U-18 vs. Netherlands U-18 2017-03-23 (078).jpg"
+  },
+  "Xavi Simons": {
+   "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Xavi-simons-paris_%28cropped%29.jpg/330px-Xavi-simons-paris_%28cropped%29.jpg",
+   "source_title": "Xavi-simons-paris (cropped).jpg"
+  },
+  "Bart Verbruggen": {
+   "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/c/cd/Bart_Verbruggen.png",
+   "source_title": "Bart Verbruggen"
+  },
+  "Kendry Paez": {
+   "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Kendry_Paez_Cote_D%27Ivoire_v_Ecuador_14_June_2026-37_%28cropped%29.jpg/330px-Kendry_Paez_Cote_D%27Ivoire_v_Ecuador_14_June_2026-37_%28cropped%29.jpg",
+   "source_title": "Kendry Paez Cote D'Ivoire v Ecuador 14 June 2026-37 (cropped).jpg"
+  },
+  "Moises Caicedo": {
+   "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Moises_Caicedo_Cote_D%27Ivoire_v_Ecuador_14_June_2026-43.jpg/330px-Moises_Caicedo_Cote_D%27Ivoire_v_Ecuador_14_June_2026-43.jpg",
+   "source_title": "Moises Caicedo Cote D'Ivoire v Ecuador 14 June 2026-43.jpg"
+  },
+  "Hernan Galindez": {
+   "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/HERN%C3%81N_GAL%C3%8DNDEZ.jpg/330px-HERN%C3%81N_GAL%C3%8DNDEZ.jpg",
+   "source_title": "Hernán Galíndez"
+  },
+  "Florian Wirtz": {
+   "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Florian_Wirtz_04012026_%283%29_%28extracted%29.jpg/330px-Florian_Wirtz_04012026_%283%29_%28extracted%29.jpg",
+   "source_title": "Florian Wirtz"
+  },
+  "Jamal Musiala": {
+   "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Jamal_Musiala_2022_%28cropped%29.jpg/330px-Jamal_Musiala_2022_%28cropped%29.jpg",
+   "source_title": "Jamal Musiala"
+  },
+  "Marc-Andre ter Stegen": {
+   "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Marc-Andre_Ter_Stegen_ACCI_FCBARCELONA_Turisme_Catalunya_gira_pretemporada_CATPRESS.jpg/330px-Marc-Andre_Ter_Stegen_ACCI_FCBARCELONA_Turisme_Catalunya_gira_pretemporada_CATPRESS.jpg",
+   "source_title": "Marc-André ter Stegen"
+  },
+  "Luka Modric": {
+   "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Luka_Modric_Interview_2021_%28cropped%29.jpg/330px-Luka_Modric_Interview_2021_%28cropped%29.jpg",
+   "source_title": "Luka Modrić"
+  },
+  "Josko Gvardiol": {
+   "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/2021_Jo%C5%A1ko_Gvardiol_2_%28cropped2%29.jpg/330px-2021_Jo%C5%A1ko_Gvardiol_2_%28cropped2%29.jpg",
+   "source_title": "Joško Gvardiol"
+  },
+  "Dominik Livakovic": {
+   "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Dominik_Livakovi%C4%87_2021.jpg/330px-Dominik_Livakovi%C4%87_2021.jpg",
+   "source_title": "Dominik Livaković"
+  },
+  "Kevin De Bruyne": {
+   "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Kevin_De_Bruyne_USMNT_v_Belgium_Mar_28_2026-64_%28cropped%29.jpg/330px-Kevin_De_Bruyne_USMNT_v_Belgium_Mar_28_2026-64_%28cropped%29.jpg",
+   "source_title": "Kevin De Bruyne"
+  },
+  "Jeremy Doku": {
+   "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/J%C3%A9r%C3%A9my_Doku_USMNT_v_Belgium_Mar_28_2026-27_%28cropped%29.jpg/330px-J%C3%A9r%C3%A9my_Doku_USMNT_v_Belgium_Mar_28_2026-27_%28cropped%29.jpg",
+   "source_title": "Jérémy Doku"
+  },
+  "Thibaut Courtois": {
+   "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Courtois_2018_%28cropped%29.jpg/330px-Courtois_2018_%28cropped%29.jpg",
+   "source_title": "Thibaut Courtois"
+  }
+ }
+}

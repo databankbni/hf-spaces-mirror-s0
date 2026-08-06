@@ -1,0 +1,37 @@
+project:
+  name: generative-design-assistant
+  version: "1.0.0"
+  description: "LangChain agent for AI-powered engineering requirements analysis and generative design"
+
+llm:
+  hf_model: "mistralai/Mistral-7B-Instruct-v0.3"
+  hf_url: "https://api-inference.huggingface.co/models/mistralai/Mistral-7B-Instruct-v0.3"
+  ollama_model: "llama3.2:3b"
+  ollama_url: "http://localhost:11434"
+  max_tokens: 1024
+  temperature: 0.3
+
+embeddings:
+  model: "sentence-transformers/all-MiniLM-L6-v2"
+  vector_store_path: "knowledge_base/vectorstore"
+  collection_name: "engineering_standards"
+
+retrieval:
+  top_k: 4
+  score_threshold: 0.25
+
+agent:
+  max_iterations: 5
+  design_alternatives: 3
+
+serving:
+  host: "0.0.0.0"
+  port: 8002
+
+outputs:
+  reports_dir: "outputs/reports"
+  designs_dir: "outputs/designs"
+
+mlflow:
+  tracking_uri: "http://localhost:5001"
+  experiment_name: "generative-design-assistant"

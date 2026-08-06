@@ -1,0 +1,368 @@
+{
+  "version": "selection_three_layer_non_overlapping_v1",
+  "parameter_sets_tested": 49896,
+  "ranking_weight_vectors_tested": 126,
+  "champion": {
+    "allowed_market_categories": "[\"流动行情\", \"结构性行情\", \"上涨行情\", \"常规行情\"]",
+    "allowed_dsi_labels": "[\"供不应求\", \"供需平衡\"]",
+    "min_sold_count": 3,
+    "max_loss_rate": 0.4,
+    "target_selection_rate": 0.21,
+    "eligible_candidate_rate": 0.32589433313495997,
+    "component_weights": "{\"acquisition\": 0.1, \"profit\": 0.3, \"ranking\": 0.2, \"sales\": 0.3, \"turnover\": 0.1}",
+    "candidate_count": 6366,
+    "acquired_count": 4039,
+    "sold_count": 2792,
+    "total_profit": 15389296.0,
+    "avg_profit": 5511.9255014326645,
+    "avg_days_to_sell": 22.39656982085058,
+    "acquired_conversion_numerator": 2400,
+    "acquired_conversion_denominator": 7127,
+    "acquisition_conversion_rate": 0.33674757962677143,
+    "sales_conversion_rate": 0.43679727427597953,
+    "loss_rate": 0.10422636103151862,
+    "selection_rate": 0.21047411227930965,
+    "profit_retention_rate": 0.559853475386675,
+    "avg_profit_lift": 1.8261409745720274,
+    "days_to_sell_improvement": 1.3644346542545434,
+    "acquisition_conversion_lift": 1.8750491643750427,
+    "sales_conversion_lift": 1.6466635789369737,
+    "leader_all_pass": true,
+    "min_margin": 1.2279911888290889,
+    "worst_ratio_vs_legacy": 1.0016987293870487,
+    "fold_joint_pass_count": 5,
+    "min_fold_margin": 1.034015042649897,
+    "median_fold_margin": 1.197755230897254
+  },
+  "choice_rule": "固定21%候选容量；五折去品牌全部通过；优先选择相对旧冠军在毛利、周转、收车转化、售车转化、亏损率和利润保留六项均不退化的组合，再最大化最弱一项相对优势。",
+  "legacy_champion_reference": {
+    "avg_profit": 5443.871315600288,
+    "avg_days_to_sell": 22.619918927397023,
+    "acquisition_conversion_rate": 0.3317502444475485,
+    "sales_conversion_rate": 0.4360565322302654,
+    "loss_rate": 0.10567936736161035,
+    "profit_retention_rate": 0.5509606746604837
+  },
+  "qualification_layer": {
+    "min_sold_count": 3,
+    "require_positive_total_profit": true,
+    "allowed_market_categories": [
+      "流动行情",
+      "结构性行情",
+      "上涨行情",
+      "常规行情"
+    ],
+    "allowed_dsi_labels": [
+      "供不应求",
+      "供需平衡"
+    ],
+    "weights": null,
+    "reason": "资格层只回答能否进入候选，不产生排序分。"
+  },
+  "ranking_layer": {
+    "weights": {
+      "acquisition": 0.1,
+      "profit": 0.3,
+      "ranking": 0.2,
+      "sales": 0.3,
+      "turnover": 0.1
+    },
+    "components": {
+      "acquisition": "买手2号岗定价后真实B2C收车转化率，贝叶斯平滑后相对基线得分",
+      "sales": "45天成熟上架队列售车转化率，贝叶斯平滑后相对基线得分",
+      "turnover": "90天已售车辆平均周转天数的反向百分位",
+      "profit": "单车平均毛利与单位候选毛利的等权百分位",
+      "ranking": "懂车帝销量/热门/城市榜正向证据扣除降价与噪声风险后的得分"
+    }
+  },
+  "risk_layer": {
+    "max_loss_rate": 0.4,
+    "weights": null,
+    "reason": "风险层只降级或拦截，不给机会分加分，避免与毛利重复计分。"
+  },
+  "portfolio_path": "results/evals/selection_three_layer_policy_portfolio_20260715.csv",
+  "grid_path": "results/evals/selection_three_layer_policy_grid_20260715.csv",
+  "time_stability": {
+    "method": "fixed_current_priority_portfolio_replayed_on_three_30d_event_slices_and_three_mature_listing_cohorts",
+    "periods": [
+      {
+        "period_type": "realized_events_30d",
+        "period": "P1",
+        "start": "2026-04-10T14:38:32",
+        "end": "2026-05-10T14:38:32",
+        "baseline_sold_count": 2838,
+        "priority_sold_count": 882,
+        "baseline_avg_profit": 5040.53911205074,
+        "priority_avg_profit": 6477.598639455782,
+        "avg_profit_lift": 1.2851003623738126,
+        "baseline_avg_days_to_sell": 21.18795322066868,
+        "priority_avg_days_to_sell": 15.652277349983203,
+        "days_to_sell_ratio": 0.7387347511563567,
+        "baseline_buyer_quote_count": 14535,
+        "priority_buyer_quote_count": 2423,
+        "baseline_acquisition_conversion_rate": 0.15617475060199518,
+        "priority_acquisition_conversion_rate": 0.34874122988031364,
+        "acquisition_conversion_lift": 2.2330192847182198
+      },
+      {
+        "period_type": "realized_events_30d",
+        "period": "P2",
+        "start": "2026-05-10T14:38:32",
+        "end": "2026-06-09T14:38:32",
+        "baseline_sold_count": 2711,
+        "priority_sold_count": 902,
+        "baseline_avg_profit": 3098.4020656584285,
+        "priority_avg_profit": 5370.0554323725055,
+        "avg_profit_lift": 1.733169330053147,
+        "baseline_avg_days_to_sell": 30.75734105393664,
+        "priority_avg_days_to_sell": 21.93394714420629,
+        "days_to_sell_ratio": 0.7131288464026366,
+        "baseline_buyer_quote_count": 14299,
+        "priority_buyer_quote_count": 2540,
+        "baseline_acquisition_conversion_rate": 0.1881250437093503,
+        "priority_acquisition_conversion_rate": 0.33188976377952756,
+        "acquisition_conversion_lift": 1.764197669993853
+      },
+      {
+        "period_type": "realized_events_30d",
+        "period": "P3",
+        "start": "2026-06-09T14:38:32",
+        "end": "2026-07-09T14:38:32",
+        "baseline_sold_count": 3558,
+        "priority_sold_count": 1008,
+        "baseline_avg_profit": 1344.3676222596964,
+        "priority_avg_profit": 4793.912698412699,
+        "avg_profit_lift": 3.565923947465198,
+        "baseline_avg_days_to_sell": 37.89350508333594,
+        "priority_avg_days_to_sell": 28.711799596285275,
+        "days_to_sell_ratio": 0.7576971180982566,
+        "baseline_buyer_quote_count": 13431,
+        "priority_buyer_quote_count": 2164,
+        "baseline_acquisition_conversion_rate": 0.1934331025240116,
+        "priority_acquisition_conversion_rate": 0.3290203327171904,
+        "acquisition_conversion_lift": 1.7009515353058446
+      },
+      {
+        "period_type": "mature_listing_cohort",
+        "period": "M1",
+        "start": "2026-04-10T14:38:32",
+        "end": "2026-04-25T14:38:32",
+        "baseline_listed_count": 4263,
+        "priority_listed_count": 1075,
+        "baseline_sales_conversion_rate": 0.2920478536242083,
+        "priority_sales_conversion_rate": 0.4930232558139535,
+        "sales_conversion_lift": 1.68815914822079
+      },
+      {
+        "period_type": "mature_listing_cohort",
+        "period": "M2",
+        "start": "2026-04-25T14:38:32",
+        "end": "2026-05-10T14:38:32",
+        "baseline_listed_count": 3076,
+        "priority_listed_count": 857,
+        "baseline_sales_conversion_rate": 0.23504551365409623,
+        "priority_sales_conversion_rate": 0.38273045507584597,
+        "sales_conversion_lift": 1.6283248683448164
+      },
+      {
+        "period_type": "mature_listing_cohort",
+        "period": "M3",
+        "start": "2026-05-10T14:38:32",
+        "end": "2026-05-25T14:38:32",
+        "baseline_listed_count": 3669,
+        "priority_listed_count": 1003,
+        "baseline_sales_conversion_rate": 0.25947124557100026,
+        "priority_sales_conversion_rate": 0.42273180458624127,
+        "sales_conversion_lift": 1.6292048225072682
+      }
+    ],
+    "realized_period_count": 3,
+    "avg_profit_pass_count": 3,
+    "turnover_pass_count": 3,
+    "acquisition_conversion_pass_count": 3,
+    "mature_sales_period_count": 3,
+    "sales_conversion_pass_count": 3,
+    "baseline_reference": {
+      "avg_profit": 3018.346107,
+      "avg_days_to_sell": 30.558656,
+      "acquisition_conversion_rate": 0.179594,
+      "sales_conversion_rate": 0.265262
+    }
+  },
+  "city_stability": {
+    "cities": [
+      {
+        "city": "重庆",
+        "baseline_candidate_count": 1840,
+        "selected_candidate_count": 555,
+        "baseline_avg_profit": 1051.541142303969,
+        "selected_avg_profit": 4607.08988764045,
+        "baseline_avg_days_to_sell": 36.703440901498006,
+        "selected_avg_days_to_sell": 27.58240825270495,
+        "avg_profit_lift": 4.381274019907704,
+        "turnover_improvement": 1.330682968841148
+      },
+      {
+        "city": "上海",
+        "baseline_candidate_count": 1738,
+        "selected_candidate_count": 354,
+        "baseline_avg_profit": 3719.6170212765956,
+        "selected_avg_profit": 6415.476190476191,
+        "baseline_avg_days_to_sell": 26.073754966180715,
+        "selected_avg_days_to_sell": 17.24513000165344,
+        "avg_profit_lift": 1.7247679408334247,
+        "turnover_improvement": 1.51194887853445
+      },
+      {
+        "city": "武汉",
+        "baseline_candidate_count": 1663,
+        "selected_candidate_count": 409,
+        "baseline_avg_profit": 906.0804953560372,
+        "selected_avg_profit": 5538.457564575646,
+        "baseline_avg_days_to_sell": 38.633734133474896,
+        "selected_avg_days_to_sell": 30.74986563823972,
+        "avg_profit_lift": 6.112544738532698,
+        "turnover_improvement": 1.2563870876050596
+      },
+      {
+        "city": "北京",
+        "baseline_candidate_count": 1646,
+        "selected_candidate_count": 304,
+        "baseline_avg_profit": 4648.410501193317,
+        "selected_avg_profit": 7332.846715328467,
+        "baseline_avg_days_to_sell": 26.062223557692302,
+        "selected_avg_days_to_sell": 15.396141778183296,
+        "avg_profit_lift": 1.5774955145304002,
+        "turnover_improvement": 1.6927762768866614
+      },
+      {
+        "city": "合肥",
+        "baseline_candidate_count": 1394,
+        "selected_candidate_count": 460,
+        "baseline_avg_profit": 1140.5537294563844,
+        "selected_avg_profit": 4569.258992805755,
+        "baseline_avg_days_to_sell": 38.577278980545024,
+        "selected_avg_days_to_sell": 29.623433919531045,
+        "avg_profit_lift": 4.0061760132804745,
+        "turnover_improvement": 1.3022554740053487
+      },
+      {
+        "city": "成都",
+        "baseline_candidate_count": 1333,
+        "selected_candidate_count": 253,
+        "baseline_avg_profit": 6787.894736842105,
+        "selected_avg_profit": 6398.360655737705,
+        "baseline_avg_days_to_sell": 13.090380238791424,
+        "selected_avg_days_to_sell": 13.511090429568915,
+        "avg_profit_lift": 0.942613417531336,
+        "turnover_improvement": 0.9688618625587191
+      },
+      {
+        "city": "杭州",
+        "baseline_candidate_count": 1312,
+        "selected_candidate_count": 296,
+        "baseline_avg_profit": 3685.2233400402415,
+        "selected_avg_profit": 5472.538922155689,
+        "baseline_avg_days_to_sell": 28.59268537148819,
+        "selected_avg_days_to_sell": 20.79583277888667,
+        "avg_profit_lift": 1.484995186776368,
+        "turnover_improvement": 1.3749237972579493
+      },
+      {
+        "city": "苏州",
+        "baseline_candidate_count": 1299,
+        "selected_candidate_count": 286,
+        "baseline_avg_profit": 2417.7038391224864,
+        "selected_avg_profit": 4843.235294117647,
+        "baseline_avg_days_to_sell": 33.61693363210102,
+        "selected_avg_days_to_sell": 25.081976239106755,
+        "avg_profit_lift": 2.00323762395791,
+        "turnover_improvement": 1.3402824925608103
+      },
+      {
+        "city": "佛山",
+        "baseline_candidate_count": 1290,
+        "selected_candidate_count": 303,
+        "baseline_avg_profit": 2855.7291666666665,
+        "selected_avg_profit": 4791.071428571428,
+        "baseline_avg_days_to_sell": 32.88702075117916,
+        "selected_avg_days_to_sell": 22.609139798280424,
+        "avg_profit_lift": 1.6777051145097834,
+        "turnover_improvement": 1.454589650229879
+      },
+      {
+        "city": "深圳",
+        "baseline_candidate_count": 1143,
+        "selected_candidate_count": 228,
+        "baseline_avg_profit": 3641.846153846154,
+        "selected_avg_profit": 6114.772727272727,
+        "baseline_avg_days_to_sell": 28.71976822174739,
+        "selected_avg_days_to_sell": 17.236816735058923,
+        "avg_profit_lift": 1.6790310378199023,
+        "turnover_improvement": 1.6661874789985236
+      },
+      {
+        "city": "广州",
+        "baseline_candidate_count": 1010,
+        "selected_candidate_count": 196,
+        "baseline_avg_profit": 4382.626168224299,
+        "selected_avg_profit": 6555.026315789473,
+        "baseline_avg_days_to_sell": 25.82512428608515,
+        "selected_avg_days_to_sell": 18.207480506822613,
+        "avg_profit_lift": 1.49568456541329,
+        "turnover_improvement": 1.4183798948134583
+      },
+      {
+        "city": "郑州",
+        "baseline_candidate_count": 922,
+        "selected_candidate_count": 219,
+        "baseline_avg_profit": 405.8677685950413,
+        "selected_avg_profit": 4624.603174603175,
+        "baseline_avg_days_to_sell": 40.233730199724526,
+        "selected_avg_days_to_sell": 25.099053957231042,
+        "avg_profit_lift": 11.394359277682431,
+        "turnover_improvement": 1.6029978766643187
+      },
+      {
+        "city": "南京",
+        "baseline_candidate_count": 693,
+        "selected_candidate_count": 114,
+        "baseline_avg_profit": 3886.0,
+        "selected_avg_profit": 4255.882352941177,
+        "baseline_avg_days_to_sell": 28.768359645061732,
+        "selected_avg_days_to_sell": 23.655028594771245,
+        "avg_profit_lift": 1.0951833126456965,
+        "turnover_improvement": 1.2161625393858433
+      },
+      {
+        "city": "东莞",
+        "baseline_candidate_count": 674,
+        "selected_candidate_count": 118,
+        "baseline_avg_profit": 4432.478632478633,
+        "selected_avg_profit": 6418.75,
+        "baseline_avg_days_to_sell": 24.97744747150997,
+        "selected_avg_days_to_sell": 16.029840494791667,
+        "avg_profit_lift": 1.448117527959892,
+        "turnover_improvement": 1.5581844048682525
+      },
+      {
+        "city": "天津",
+        "baseline_candidate_count": 657,
+        "selected_candidate_count": 126,
+        "baseline_avg_profit": 4813.0,
+        "selected_avg_profit": 6045.2830188679245,
+        "baseline_avg_days_to_sell": 28.950725269867853,
+        "selected_avg_days_to_sell": 22.830496811670166,
+        "avg_profit_lift": 1.2560322083664917,
+        "turnover_improvement": 1.2680725044524321
+      }
+    ],
+    "city_count": 15,
+    "profit_pass_count": 14,
+    "turnover_pass_count": 14
+  },
+  "limitations": [
+    "行情、DSI和懂车帝榜单缺少完整逐日历史快照；当前版本对经营结果做时间切片回放和去品牌验证，但不能冒充严格因果实验。",
+    "全国前台在车型+年款层展示；内部经营结果当前只能在车系层计算，因此车型年款继承同车系经营先验，再由车型年款行情证据区分。"
+  ]
+}

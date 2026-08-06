@@ -1,0 +1,11 @@
+torch
+torch_geometric
+rdkit
+transformers>=4.36.0
+fastapi
+uvicorn[standard]
+numpy
+pydantic
+einops
+scikit-learn==1.8.0
+joblib

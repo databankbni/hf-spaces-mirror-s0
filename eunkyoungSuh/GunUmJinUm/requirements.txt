@@ -1,0 +1,5 @@
+# requirements.txt
+transformers>=4.46.0
+peft==0.13.2
+accelerate==0.34.2
+torch

@@ -1,0 +1,18 @@
+{
+ "captured_at": "2026-08-04T16:59:37Z",
+ "hf_metadata": {
+  "sha": "2f06e7d4aa06e4e20bbd4bc5e8d655aa5ef38447"
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitignore",
+   "stored_as": "_gitignore"
+  }
+ ],
+ "renamed_gitattributes": [],
+ "repo_id": "shivamkole1969/Data_Extractor",
+ "repo_type": "spaces",
+ "sha": "2f06e7d4aa06e4e20bbd4bc5e8d655aa5ef38447",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/shivamkole1969/Data_Extractor"
+}

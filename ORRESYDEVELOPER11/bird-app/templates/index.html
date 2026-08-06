@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+{% block title %}Tanzania Bird Finder | Habitats, Parks & Birding{% endblock %}
+{% block content %}
+<section class="hero">
+  <div class="hero-copy">
+    <span class="eyebrow">AI-powered Tanzania conservation platform</span>
+    <h1>Identify birds and find their Tanzanian habitats.</h1>
+    <p>Upload a bird photo for image recognition, explore Tanzania-only species records, and connect each result to national parks, habitats, maps, and conservation learning.</p>
+    <div class="hero-actions">
+      <a class="button primary" href="{{ url_for('identify') }}"><i data-lucide="scan-search"></i>Identify bird</a>
+      <a class="button secondary" href="{{ url_for('map_view') }}"><i data-lucide="map"></i>Open map</a>
+    </div>
+  </div>
+  <div class="hero-panel">
+    <img src="{{ featured_birds[0].image_url if featured_birds else url_for('static', filename='img/placeholder.svg') }}" alt="Featured bird" loading="lazy">
+    <div class="observation-card">
+      <span>Tanzania bird record</span>
+      <strong>{{ featured_birds[0].common_name if featured_birds else 'Species record' }}</strong>
+      <small>{{ featured_birds[0].scientific_name if featured_birds else 'Verified habitat image' }}</small>
+    </div>
+  </div>
+</section>
+
+<section class="section reveal">
+  <div class="section-heading">
+    <span class="eyebrow">Tanzania ecosystems</span>
+    <h2>Habitats that shape bird movement</h2>
+  </div>
+  <div class="grid habitat-grid">
+    {% for habitat in habitats %}
+      <a class="habitat-card" href="{{ url_for('habitat_detail', slug=habitat.slug) }}">
+        <img src="{{ habitat.image_url }}" alt="{{ habitat.name }} habitat" loading="lazy">
+        <div>
+          <span class="icon-badge"><i data-lucide="{{ habitat.icon }}"></i></span>
+          <h3>{{ habitat.name }}</h3>
+          <p>{{ habitat.description }}</p>
+          <small>{{ habitat.birds|length }} species profiled</small>
+        </div>
+      </a>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="section split-section reveal">
+  <div>
+    <div class="section-heading">
+      <span class="eyebrow">Species directory</span>
+      <h2>Birds found in Tanzania</h2>
+    </div>
+    <div class="stack-list">
+      {% for bird in featured_birds %}
+        <a class="species-row" href="{{ url_for('species_detail', bird_id=bird.id) }}">
+          <img src="{{ bird.image_url }}" alt="{{ bird.common_name }}" loading="lazy">
+          <div>
+            <strong>{{ bird.common_name }}</strong>
+            <span>{{ bird.scientific_name }}</span>
+          </div>
+          <small>{{ bird.conservation_status }}</small>
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+  <div>
+    <div class="section-heading">
+      <span class="eyebrow">Eco-tourism</span>
+      <h2>National parks and conservation areas</h2>
+    </div>
+    <div class="park-strip">
+      {% for park in featured_parks %}
+        <a class="park-card compact" href="{{ url_for('park_detail', park_id=park.id) }}">
+          <img src="{{ park.image_url }}" alt="{{ park.name }}" loading="lazy">
+          <div>
+            <strong>{{ park.name }}</strong>
+            <span>{{ park.country }} | {{ park.habitat_type }}</span>
+          </div>
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section reveal">
+  <div class="section-heading">
+    <span class="eyebrow">Education</span>
+    <h2>Conservation learning</h2>
+  </div>
+  <div class="grid article-grid">
+    {% for article in articles %}
+      <article class="article-card">
+        <img src="{{ article.image_url }}" alt="{{ article.title }}" loading="lazy">
+        <div class="card-body">
+          <span class="status">{{ article.category }} | {{ article.read_time }} min read</span>
+          <h2>{{ article.title }}</h2>
+          <p>{{ article.content }}</p>
+        </div>
+      </article>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

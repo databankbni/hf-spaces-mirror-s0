@@ -1,0 +1,21 @@
+{
+  "fitur": [
+    "level_hulu_cm",
+    "level_hilir_cm",
+    "curah_hujan_mmjam",
+    "laju_naik_hulu",
+    "hujan_3jam",
+    "hujan_6jam",
+    "hujan_12jam",
+    "selisih_hulu_hilir",
+    "jam",
+    "bulan",
+    "musim_hujan"
+  ],
+  "threshold": {
+    "bahaya": 240,
+    "waspada": 160
+  },
+  "n_estimators": 100,
+  "trained_on": "2026-07-06"
+}

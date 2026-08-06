@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>expJ pipeline — 窄带 knownness 的完整数据流</title>
+<style>
+:root{--bg:#0d1117;--card:#161b22;--line:#30363d;--tx:#e6edf3;--dim:#8b949e;--acc:#63c98a;--warn:#e3b341;--bad:#f85149;--blu:#58a6ff;--pur:#bc8cff}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font:15px/1.6 -apple-system,"Segoe UI",Roboto,"Noto Sans SC",sans-serif;padding:28px 3vw 90px}
+h1{font-size:25px;margin:0 0 6px}
+h2{font-size:18px;margin:34px 0 4px;padding-bottom:6px;border-bottom:1px solid var(--line)}
+.sub{color:var(--dim);margin-bottom:8px;font-size:14px}
+.lane{display:flex;flex-wrap:wrap;align-items:stretch;gap:0;margin:14px 0 6px}
+.bx{background:var(--card);border:1px solid var(--line);border-radius:9px;padding:9px 12px;min-width:150px;max-width:250px;flex:1 1 168px}
+.bx .t{font-weight:700;font-size:13.5px;margin-bottom:3px}
+.bx .d{color:var(--dim);font-size:12px;line-height:1.45}
+.bx code{font-size:11.5px;color:var(--blu);background:#0d1117;padding:1px 3px;border-radius:3px}
+.ar{display:flex;align-items:center;justify-content:center;color:var(--dim);font-size:20px;padding:0 6px;flex:0 0 auto}
+.key{border-color:var(--acc);box-shadow:0 0 0 1px rgba(99,201,138,.25)}
+.key .t{color:var(--acc)}
+.opt{border-style:dashed}
+.dice{background:#0a0e14;border:1px solid var(--line);border-radius:9px;padding:8px 10px;flex:1 1 260px;max-width:330px}
+.dice .row{display:flex;gap:8px;align-items:baseline;font-size:12px;color:var(--dim);padding:3px 0;border-bottom:1px dashed #21262d}
+.dice .row:last-child{border-bottom:0}
+.dice .p{color:var(--warn);font-weight:700;flex:0 0 42px}
+.note{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--blu);border-radius:8px;padding:11px 15px;margin:14px 0;color:var(--dim);font-size:13.5px}
+.note b{color:var(--tx)}
+table{border-collapse:collapse;font-size:13px;margin:12px 0;min-width:560px}
+th,td{border:1px solid var(--line);padding:6px 10px;text-align:left}
+th{background:var(--card);color:var(--dim)}
+td.y{color:var(--acc);font-weight:700}td.n{color:var(--bad)}
+.wrap{overflow-x:auto}
+svg{max-width:100%;height:auto;display:block}
+a{color:var(--blu);text-decoration:none}
+.tag{display:inline-block;font-size:11px;padding:1px 7px;border-radius:9px;border:1px solid var(--line);color:var(--dim);margin-left:6px}
+@media(prefers-color-scheme:light){}
+</style>
+</head>
+<body>
+<h1>expJ pipeline <span class="tag">窄带 knownness · τ₀ = 1 − 0.2k</span></h1>
+<div class="sub">从 sbatch 命令逐 flag 核实的完整数据流 · <code>--backbone i2v14b --lora 64 --train_modulation --warp_cond --rehearsal 0.10 --lift 0.35 --patch_b2 --sync_sched --lam 0.2 --lr 5e-5</code>(expJ_ray 追加 <code>--plucker</code>)· 2026-07-29</div>
+
+<h2>A · 离线数据准备 <span class="tag">cache_novoxel,1430 clips 已缓存</span></h2>
+<div class="lane">
+  <div class="bx"><div class="t">DL3DV clip</div><div class="d">81 px 帧轨迹<br>832×480</div></div>
+  <div class="ar">▸</div>
+  <div class="bx"><div class="t">18 帧观察窗</div><div class="d"><code>forward_sched</code> 取前 18 帧作为唯一证据来源;其余 63 帧是要外推的未知区</div></div>
+  <div class="ar">▸</div>
+  <div class="bx"><div class="t">VGGT 几何</div><div class="d">深度 + 位姿,度量尺度由求解器对齐到 COLMAP 位姿</div></div>
+  <div class="ar">▸</div>
+  <div class="bx"><div class="t">前向 splat</div><div class="d">18 帧按几何投影到全部 81 个目标视角 → warped RGB + <b>density</b></div></div>
+  <div class="ar">▸</div>
+  <div class="bx"><div class="t">VAE encode</div><div class="d">warped RGB → <code>z_mem [16,21,60,104]</code><br>density → <code>k_tok [21,30,52]</code>(token 网格)<br>GT → <code>x0</code></div></div>
+  <div class="ar">▸</div>
+  <div class="bx opt"><div class="t">Plücker 光线 <span class="tag">expJ_ray</span></div><div class="d"><code>[6,21,60,104]</code> 方向+矩,相对帧 0,跨度归一</div></div>
+</div>
+<div class="note"><b>k 是什么:</b>splat 的密度累积 → 每个 token 有多少观察证据落在它身上。k=1 = warp 抄得到,k=0 = 从未见过。<b>这一整条 A 线是三代实验共用的</b>,expJ 没有改动它。</div>
+
+<h2>B · 训练一步</h2>
+<div class="lane">
+  <div class="bx key"><div class="t">① 窄带上限 ← expJ 的唯一改动</div><div class="d"><code>τ₀ = clamp(1 − 0.2k, .02, 1)</code><br>∈ <b>[0.80, 1.00]</b><br><span style="color:var(--warn)">对比 expF:<code>1 − 0.95k</code> ∈ [.45, 1]</span></div></div>
+  <div class="ar">▸</div>
+  <div class="dice"><div class="t" style="font-weight:700;font-size:13.5px;margin-bottom:5px">② 掷骰子取 t-场</div>
+    <div class="row"><span class="p">10%</span><span><b>rehearsal</b> — 全部条件通道置零 + 全局标量 t;防止忘掉预训练的从零生成能力</span></div>
+    <div class="row"><span class="p">45%</span><span><b>b1 sync 切片</b> <code>t = clamp(τ₀ − c, .02, 1)</code>,c~U(0,1) — 采样器日历在第 c 步的<b>精确快照</b></span></div>
+    <div class="row"><span class="p">45%</span><span><b>b2 patch 场</b> <code>t = u_patch · τ₀</code>,连续 3D 块内共享一个比例 — 补齐 b1 未覆盖的状态组合</span></div>
+    <div class="row"><span class="p">+35%</span><span><b>lift</b> 抬升分支:概率 0.35 把整幅场往上推,避免只见低噪声</span></div>
+  </div>
+  <div class="ar">▸</div>
+  <div class="bx"><div class="t">③ 锚点混合</div><div class="d">覆盖区 &amp; t≥0.3 时以 p=0.4 取 <code>c = z_mem</code>(学"修正 splat 误差"),否则 <code>c = x0</code>(学"从零生成")<br><code>x_t = (1−t)c + t·ε</code>,told = t(诚实告知)</div></div>
+  <div class="ar">▸</div>
+  <div class="bx"><div class="t">④ 通道拼接</div><div class="d"><code>33ch = x_t(16) ⊕ z_mem(16) ⊕ k(1)</code><br><span class="tag">expJ_ray: 39ch(+6 Plücker)</span><br>patch_embedding 加宽,新增权重零初始化</div></div>
+  <div class="ar">▸</div>
+  <div class="bx"><div class="t">⑤ Wan I2V-14B DiT</div><div class="d">LoRA-64 + <b>可训练 per-token AdaLN</b>(<code>has_seq</code> 路径)= knownness 的执行器<br>v-prediction MSE,未知区权重 1.0</div></div>
+</div>
+<div class="note"><b>为什么 b1 必须跟着采样器变(PatchForcing 的血泪教训):</b>训练喂的 t-场家族必须 == 推理走的日历家族。expJ 用 sync 日历,所以 b1 就是 sync 切片;expE 早期用 legacy 日历配 sync 推理,结果测试时模型遇到陌生 t 组合 → 纹理崩解(我们的 texture-dies 事故)。</div>
+
+<h2>C · 推理(强制 50 次 forward)</h2>
+<div class="lane">
+  <div class="bx"><div class="t">① cluster-τ</div><div class="d">32760 个 token 按 k 聚成 <b>128 个信任区</b>(λ=0.2,地板 0.8)<br>不逐 token 独立 → 同一物体不会被切成噪声马赛克</div></div>
+  <div class="ar">▸</div>
+  <div class="bx"><div class="t">② SDEdit 起点</div><div class="d"><code>x = (1−τ₀)·z_mem + τ₀·ε</code><br>因 τ₀≥0.8 → 记忆仅剩 ≤20%,<b>肉眼是纯噪声</b>,只传粗布局</div></div>
+  <div class="ar">▸</div>
+  <div class="bx key"><div class="t">③ SYNC 下降 × 50</div><div class="d"><code>t_i(e) = clamp(τ₀_i − e, 0, 1)</code><br>全体<b>同步起跑</b>,谁先到 0 谁先钉在 0.02 成为干净参考<br><b>warp 通道每一步重新喂</b></div></div>
+  <div class="ar">▸</div>
+  <div class="bx"><div class="t">④ VAE decode</div><div class="d">21 latent 帧 → 81 px 帧<br>seen-PSNR(k&gt;.5,帧 20/40/60)+ unseen-gray(帧 40)</div></div>
+</div>
+
+<h2>三代的 τ₀(k) 曲线 — 一张图看清分歧</h2>
+<div class="wrap">
+<svg viewBox="0 0 560 280" width="560" role="img" aria-label="tau0 vs knownness curves">
+  <rect x="60" y="30" width="400" height="200" fill="#0a0e14" stroke="#30363d"/>
+  <!-- gridlines + y ticks -->
+  <line x1="60" y1="30" x2="460" y2="30" stroke="#21262d"/>
+  <line x1="60" y1="96.7" x2="460" y2="96.7" stroke="#21262d" stroke-dasharray="3 3"/>
+  <line x1="60" y1="163.3" x2="460" y2="163.3" stroke="#21262d" stroke-dasharray="3 3"/>
+  <line x1="60" y1="213.3" x2="460" y2="213.3" stroke="#21262d" stroke-dasharray="3 3"/>
+  <text x="52" y="34" fill="#8b949e" font-size="11" text-anchor="end">1.00</text>
+  <text x="52" y="101" fill="#8b949e" font-size="11" text-anchor="end">0.80</text>
+  <text x="52" y="167" fill="#8b949e" font-size="11" text-anchor="end">0.60</text>
+  <text x="52" y="217" fill="#8b949e" font-size="11" text-anchor="end">0.45</text>
+  <text x="60" y="248" fill="#8b949e" font-size="11" text-anchor="middle">k=0</text>
+  <text x="260" y="248" fill="#8b949e" font-size="11" text-anchor="middle">k=0.5</text>
+  <text x="460" y="248" fill="#8b949e" font-size="11" text-anchor="middle">k=1</text>
+  <text x="260" y="268" fill="#8b949e" font-size="12" text-anchor="middle">knownness k  (观察证据)</text>
+  <text x="16" y="130" fill="#8b949e" font-size="12" transform="rotate(-90 16 130)" text-anchor="middle">起点噪声上限 τ₀</text>
+  <!-- expM: ceiling identically 1 -->
+  <line x1="60" y1="30" x2="460" y2="30" stroke="#bc8cff" stroke-width="3" stroke-dasharray="7 4"/>
+  <!-- expJ: 1-0.2k -->
+  <line x1="60" y1="30" x2="460" y2="96.7" stroke="#63c98a" stroke-width="3"/>
+  <!-- expF: clamp(1-0.95k,.45,1) -->
+  <polyline points="60,30 291.6,213.3 460,213.3" fill="none" stroke="#e3b341" stroke-width="3"/>
+  <!-- legend -->
+  <line x1="300" y1="52" x2="330" y2="52" stroke="#bc8cff" stroke-width="3" stroke-dasharray="7 4"/>
+  <text x="337" y="56" fill="#e6edf3" font-size="12">expM  τ₀ ≡ 1(改用速率 T=1−.5k)</text>
+  <line x1="300" y1="72" x2="330" y2="72" stroke="#63c98a" stroke-width="3"/>
+  <text x="337" y="76" fill="#e6edf3" font-size="12">expJ  1 − 0.2k(窄带)</text>
+  <line x1="300" y1="188" x2="330" y2="188" stroke="#e3b341" stroke-width="3"/>
+  <text x="337" y="192" fill="#e6edf3" font-size="12">expF  1 − .95k(全幅带,地板 .45)</text>
+</svg>
+</div>
+<div class="note">读法:横轴向右 = 证据越多。<b>expF(黄)</b>一路俯冲到 0.45 —— 全知区起手就是半张照片,可以"抄"。<b>expJ(绿)</b>只降到 0.80 —— 抄不到纹理,只拿到粗布局,内容必须每步从通道重读。<b>expM(紫)</b>贴着顶边 —— 起点一律纯噪声,k 改去决定<b>交卷顺序</b>。整条演进是主动放弃"抄"的便宜。</div>
+
+<h2>expJ vs expF — 单变量对照</h2>
+<div class="wrap"><table>
+<tr><th>组件</th><th>expF</th><th>expJ</th><th>是否同一</th></tr>
+<tr><td>backbone / 可训参数</td><td>I2V-14B, LoRA-64 + AdaLN</td><td>同</td><td class="y">✓ 同</td></tr>
+<tr><td>条件通道</td><td>17ch(+6 ray)</td><td>同</td><td class="y">✓ 同</td></tr>
+<tr><td>骰子(rehearsal/lift/patch/sync)</td><td>.10 / .35 / ✓ / ✓</td><td>同</td><td class="y">✓ 同</td></tr>
+<tr><td>lr / 步数 / 数据</td><td>5e-5 / 10k / cache_novoxel</td><td>同</td><td class="y">✓ 同</td></tr>
+<tr><td><b>λ(k→τ 斜率)</b></td><td><b>0.95</b>,地板 .45</td><td><b>0.20</b>,地板 .80</td><td class="n">✗ 唯一差异</td></tr>
+</table></div>
+<div class="note"><b>所以 expJ 是一次干净的单变量实验</b> —— 除了 λ 之外每一个 flag 都和 expF 逐字相同,分数差异只能归因于窄带本身。当前读数:expJ_narrow @3000 = 12.78,expF @5000 = 13.07(50 步终榜)。诚实脚注:<b>纯抄 z_mem 的零智能上限在同一度量下就是 12.85</b>,所以这个 0.3dB 差距很大程度是"谁描得更准"而非"谁更懂场景" —— 真判决要等 20-clip 官方评测与 revisit 一致性指标。</div>
+
+
+<h2 id="fig">expJ 实拍 <span class="tag">50 步 · @3500</span></h2>
+<div class="note"><b>行序:</b>GT / expJ_narrow / expJ_ray / expF +ray(参照)/ <b>τ₀ 热力图</b>(蓝 .80 早交卷 → 红 1.00 全程降噪)。
+最后一行是推理时<b>真实使用</b>的每 token 上限,和输出并排 —— 可以直接对照"哪块被判为已知"与"那块画成什么样"。</div>
+<div class="wrap"><table>
+<tr><th>clip</th><th>expJ_narrow</th><th>expJ_ray</th><th>expF +ray(参照)</th></tr>
+<tr><td>111b656f <span class="tag">TEST</span></td><td class="y">16.3</td><td class="y">16.3</td><td>16.4</td></tr>
+<tr><td>2501f488 <span class="tag">TEST</span></td><td>10.4</td><td>10.4</td><td>10.5</td></tr>
+<tr><td>0003dc82 <span class="tag">TRAIN</span></td><td>12.8</td><td>13.0</td><td>13.0</td></tr>
+<tr><td>00534f58 <span class="tag">TRAIN</span></td><td class="y">11.7</td><td>11.4</td><td>11.4</td></tr>
+<tr><td><b>平均</b></td><td><b>12.80</b></td><td><b>12.78</b></td><td><b>12.83</b></td></tr>
+</table></div>
+<div class="note"><b>读图三点。</b>① <b>窄带没有画质代价</b>:三行目视几乎无法区分,窄带 12.80 vs 上限家族 12.83 —— 0.03dB,远在噪声带内。放弃"抄纹理"<b>并没有</b>让画面变差,这是窄带路线最重要的正面证据。
+② <b>expJ 的内容能量更高</b>(unseen-gray −21~−36 vs expF −22~−35 相当,但 expJ_ray 在 3/4 个 clip 上更负)= 未观察区填得更满而非留灰。
+③ <b>τ₀ 图揭示了机制</b>:帧 0/20 几乎全蓝(τ₀≈.80,证据充足早交卷),帧 60/80 右侧转红(τ₀→1.00,新区全程降噪) —— 时刻表跟着相机走出覆盖区而正确演化。<b>但注意</b>:蓝色区里也包含 <a href="https://luuuulinnnn-mcsdf-atlas.static.hf.space">图鉴</a> 里指出的拉丝区(density-k 的乐观偏差)—— 那些地方"早交卷"其实交的是错答案。</div>
+<figure style="margin:12px 0 8px;background:var(--card);border:1px solid var(--line);border-radius:9px;padding:8px">
+<img src="https://luuuulinnnn-mcsdf-atlas.static.hf.space/expJ_111b656f_s.jpg" style="width:100%;display:block;border-radius:4px" loading="lazy">
+<figcaption style="color:var(--dim);font-size:13px;padding:6px 2px">TEST 111b656f — expJ 双臂 16.3dB,与冠军 expF 16.4 持平</figcaption></figure>
+<figure style="margin:12px 0 8px;background:var(--card);border:1px solid var(--line);border-radius:9px;padding:8px">
+<img src="https://luuuulinnnn-mcsdf-atlas.static.hf.space/expJ_2501f488_s.jpg" style="width:100%;display:block;border-radius:4px" loading="lazy">
+<figcaption style="color:var(--dim);font-size:13px;padding:6px 2px">TEST 2501f488 — 全场最难 clip(覆盖率 .678,深帧几乎无证据)</figcaption></figure>
+<figure style="margin:12px 0 8px;background:var(--card);border:1px solid var(--line);border-radius:9px;padding:8px">
+<img src="https://luuuulinnnn-mcsdf-atlas.static.hf.space/expJ_00534f58_s.jpg" style="width:100%;display:block;border-radius:4px" loading="lazy">
+<figcaption style="color:var(--dim);font-size:13px;padding:6px 2px">TRAIN 00534f58 — 窄带在此 clip 上反超参照 (11.7 vs 11.4)</figcaption></figure>
+
+<div class="sub" style="margin-top:26px">相关:<a href="noisedist.html">噪声分布三代对照</a> · <a href="noisedist.html#canvas">第 0 步画布实拍</a> · <a href="latestall.html">50 步终榜</a> · <a href="matrix.html">组件矩阵</a> · <a href="pipelines.html">实验图鉴</a> · <a href="https://luuuulinnnn-mcsdf-atlas.static.hf.space">warp/k 数据图鉴</a></div>
+</body>
+</html>

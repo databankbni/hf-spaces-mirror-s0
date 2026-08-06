@@ -1,0 +1,27 @@
+{
+ "captured_at": "2026-08-04T17:09:42Z",
+ "hf_metadata": {
+  "sha": "71f6084d09d18bd9b18949790d290b1cd1614d5a"
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  },
+  {
+   "original": "admin-panel/.gitignore",
+   "stored_as": "admin-panel/_gitignore"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "tuyucel/moneyplanpro",
+ "repo_type": "spaces",
+ "sha": "71f6084d09d18bd9b18949790d290b1cd1614d5a",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/tuyucel/moneyplanpro"
+}

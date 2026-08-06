@@ -1,0 +1,138 @@
+{
+ "captured_at": "2026-08-04T15:31:43Z",
+ "hf_metadata": {
+  "_id": "6a3a7f7902e6e7f9c780f4ee",
+  "author": "Titipong202539",
+  "cardData": {
+   "colorFrom": "pink",
+   "colorTo": "gray",
+   "emoji": "🏢",
+   "pinned": false,
+   "sdk": "docker",
+   "title": "Gold Ai Server"
+  },
+  "createdAt": "2026-06-23T12:43:37.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://titipong202539-gold-ai-server.hf.space",
+  "id": "Titipong202539/gold-ai-server",
+  "lastModified": "2026-07-13T02:01:24.000Z",
+  "likes": 0,
+  "private": false,
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "titipong202539-gold-ai-server.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "errorMessage": "Launch timed out, workload was not healthy after 30 min",
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": null,
+    "requested": "cpu-basic"
+   },
+   "replicas": {
+    "requested": 1
+   },
+   "stage": "RUNTIME_ERROR"
+  },
+  "sdk": "docker",
+  "sha": "47020c120d24e5b4a0c2d01df6f344640fa68e47",
+  "siblings": [
+   {
+    "rfilename": ".gitattributes"
+   },
+   {
+    "rfilename": ".github/workflows/auto_train.yml"
+   },
+   {
+    "rfilename": ".github/workflows/daily_fetch.yml"
+   },
+   {
+    "rfilename": ".github/workflows/hf_sync.yml"
+   },
+   {
+    "rfilename": "Dockerfile"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "__pycache__/xauusd_env.cpython-311.pyc"
+   },
+   {
+    "rfilename": "app.py"
+   },
+   {
+    "rfilename": "auto_train.yml"
+   },
+   {
+    "rfilename": "fetch_data.py"
+   },
+   {
+    "rfilename": "gold_champion_macro.json"
+   },
+   {
+    "rfilename": "hf_retrain_loop.py"
+   },
+   {
+    "rfilename": "latest_data.csv"
+   },
+   {
+    "rfilename": "main_updates.py"
+   },
+   {
+    "rfilename": "model_features.pkl"
+   },
+   {
+    "rfilename": "ppo_xauusd_model.zip"
+   },
+   {
+    "rfilename": "requirements.txt"
+   },
+   {
+    "rfilename": "retrain_auto.py"
+   },
+   {
+    "rfilename": "rf_model.pkl"
+   },
+   {
+    "rfilename": "train_model.py"
+   },
+   {
+    "rfilename": "train_rl.py"
+   },
+   {
+    "rfilename": "xauusd_env.py"
+   },
+   {
+    "rfilename": "xgboost_model.pkl"
+   }
+  ],
+  "subdomain": "titipong202539-gold-ai-server",
+  "tags": [
+   "docker",
+   "region:us"
+  ],
+  "usedStorage": 1303084
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "Titipong202539/gold-ai-server",
+ "repo_type": "spaces",
+ "sha": "47020c120d24e5b4a0c2d01df6f344640fa68e47",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/Titipong202539/gold-ai-server"
+}

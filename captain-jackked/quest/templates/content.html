@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}{{ title }}{% endblock %}
+{% block description %}{{ title }} — {{ subtitle }}{% endblock %}
+
+{% block content %}
+<article class="container">
+    <header class="content-header">
+        <p class="content-meta">
+            <a href="/{{ section }}">{{ subtitle }}</a>
+            {% if prev or next %}
+            <span class="content-nav">
+                {% if prev %}<a href="{{ prev.url }}">← Prev</a>{% endif %}
+                {% if prev and next %} | {% endif %}
+                {% if next %}<a href="{{ next.url }}">Next →</a>{% endif %}
+            </span>
+            {% endif %}
+        </p>
+    </header>
+    <div class="content-body">
+        {{ content | safe }}
+    </div>
+</article>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var links = document.querySelectorAll('.content-body a');
+        for (var i = 0; i < links.length; i++) {
+            var href = links[i].getAttribute('href');
+            if (href && (href.indexOf('youtube.com') !== -1 || href.indexOf('youtu.be') !== -1)) {
+                links[i].setAttribute('target', '_blank');
+                links[i].setAttribute('rel', 'noopener noreferrer');
+
+                // Add class if it contains an image (thumbnail)
+                if (links[i].querySelector('img')) {
+                    links[i].classList.add('video-link');
+                }
+            }
+        }
+    });
+</script>
+{% endblock %}

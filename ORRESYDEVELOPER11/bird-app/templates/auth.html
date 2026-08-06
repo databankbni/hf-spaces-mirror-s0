@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}{{ 'Login' if mode == 'login' else 'Register' }} | Tanzania Bird Finder{% endblock %}
+{% block content %}
+<section class="auth-shell">
+  <div class="auth-hero-content">
+    <span class="eyebrow">Secure account</span>
+    <h1>{{ 'Welcome back' if mode == 'login' else 'Create your explorer account' }}</h1>
+    <p>Save favorite birds and parks, bookmark locations, track visited places, and add park reviews.</p>
+  </div>
+  <div class="auth-form-wrap">
+    <div class="auth-glow"></div>
+    <form class="auth-card" method="post">
+      <div class="auth-card-header">
+        <i data-lucide="feather"></i>
+        <h2>{{ 'Sign in' if mode == 'login' else 'Create account' }}</h2>
+      </div>
+      {% if mode == 'register' %}
+        <label>Name
+          <div class="input-wrap"><i data-lucide="user"></i><input name="name" required placeholder="Your name"></div>
+        </label>
+      {% endif %}
+      <label>Email
+        <div class="input-wrap"><i data-lucide="mail"></i><input type="email" name="email" required placeholder="you@example.com"></div>
+      </label>
+      <label>Password
+        <div class="input-wrap"><i data-lucide="lock"></i><input type="password" name="password" required minlength="6" placeholder="Minimum 6 characters"></div>
+      </label>
+      <button class="admin-btn admin-btn-primary admin-btn-full" type="submit">{{ 'Login' if mode == 'login' else 'Register' }}</button>
+      {% if mode == 'login' %}
+        <p class="auth-switch">New here? <a href="{{ url_for('register') }}">Create an account</a></p>
+      {% else %}
+        <p class="auth-switch">Already registered? <a href="{{ url_for('login') }}">Login</a></p>
+      {% endif %}
+    </form>
+  </div>
+</section>
+{% endblock %}

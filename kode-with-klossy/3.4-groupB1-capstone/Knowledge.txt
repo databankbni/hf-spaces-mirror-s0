@@ -1,0 +1,920 @@
+# Finly Knowledge Base (MVP)
+
+## About Finly
+Finly is an AI financial literacy assistant that helps students and young adults understand personal finance in simple language. 
+It provides educational guidance and personalized recommendations after asking relevant follow-up questions.
+
+---
+
+# Budgeting
+
+## What is a budget?
+A budget is a plan for how you will spend and save your money over a period of time, usually one month.
+
+Budgeting helps you:
+- Understand where your money goes
+- Avoid overspending
+- Save for future goals
+- Prepare for emergencies
+
+## Common spending categories
+- Housing or rent
+- Food and groceries
+- Transportation
+- Utilities
+- Education
+- Entertainment
+- Healthcare/insurance
+- Savings
+
+## Budgeting tips
+- Track your spending.
+- Separate needs from wants.
+- Save before spending when possible.
+- Review your budget every month.
+
+---
+
+# Saving Money
+
+Saving means setting aside money for future needs or goals.
+
+Examples:
+- Emergency fund
+- Tuition fees
+- Laptop
+- Travel
+- New phone
+
+Good saving habits:
+- Save consistently.
+- Set realistic goals.
+- Avoid unnecessary impulse purchases.
+
+---
+
+# Bank Accounts
+
+Savings Account
+- Used for everyday savings.
+- Usually earns interest.
+- Suitable for most students.
+
+Current Account
+- Designed mainly for businesses.
+- Usually has higher transaction limits.
+
+Fixed Deposit (FD)
+- Money is locked for a fixed period.
+- Usually offers higher interest than a savings account.
+
+Recurring Deposit (RD)
+- Deposit a fixed amount regularly.
+- Useful for disciplined saving.
+
+---
+
+# Digital Payments
+
+Digital payments allow money to be transferred electronically.
+
+Examples include:
+- Bank transfers
+- Debit cards
+- Credit cards
+- Mobile wallets
+- Country-specific payment systems (for example, UPI in India)
+
+Never share OTPs, PINs, or passwords.
+
+---
+
+# Credit Cards
+
+A credit card lets you borrow money from a bank up to a credit limit.
+
+Best practices:
+- Pay the full bill on time.
+- Avoid spending beyond your ability to repay.
+- Don't treat the credit limit as extra income.
+
+---
+
+# Credit Scores
+
+A credit score estimates how reliably someone repays borrowed money.
+
+Factors that affect it:
+- Paying bills on time
+- Credit utilization
+- Length of credit history
+- Number of loan applications
+
+Higher scores generally improve chances of loan approval.
+
+---
+
+# Loans
+
+Common types:
+- Student loans
+- Personal loans
+- Home loans
+- Vehicle loans
+
+Before taking a loan:
+- Understand the interest rate.
+- Know the repayment period.
+- Make sure repayments fit your budget.
+
+---
+
+# Interest
+
+Simple Interest:
+Interest is calculated only on the original amount.
+
+Compound Interest:
+Interest is calculated on both the original amount and previously earned interest.
+
+Compound interest helps savings grow faster over long periods.
+
+---
+
+# Emergency Fund
+
+An emergency fund is money saved for unexpected expenses.
+
+Examples:
+- Medical emergencies
+- Job loss
+- Urgent travel
+- Major repairs
+
+Aim to build it gradually over time.
+
+---
+
+# Investing
+
+Investing means putting money into assets that may grow in value over time.
+
+Common investments:
+- Mutual funds
+- Stocks
+- Bonds
+- Fixed deposits
+
+General principles:
+- Higher potential returns usually involve higher risk.
+- Diversification helps reduce risk.
+- Invest according to your goals and risk tolerance.
+
+---
+# FAFSA (Free Application for Federal Student Aid)
+
+## What is FAFSA?
+The Free Application for Federal Student Aid (FAFSA) is the official application used by the U.S. government to determine a student's eligibility for federal financial aid for college.
+
+---
+
+## Who should apply?
+Students planning to attend eligible colleges or universities in the United States should complete the FAFSA if they wish to be considered for federal financial aid.
+
+Many colleges and states also use FAFSA information to award their own financial aid.
+
+---
+
+## Types of Aid Available
+Students who complete the FAFSA may be considered for:
+
+- Federal Pell Grants
+- Federal Work-Study
+- Federal Direct Subsidized Loans
+- Federal Direct Unsubsidized Loans
+- Some state financial aid programs
+- Institutional grants and scholarships offered by colleges
+
+---
+
+## Eligibility (General)
+Eligibility requirements may include:
+
+- U.S. citizen or eligible noncitizen
+- Valid Social Security Number (except certain exceptions)
+- High school diploma or equivalent
+- Enrolled or accepted into an eligible college program
+- Maintaining satisfactory academic progress
+
+---
+
+## Information Needed to Complete FAFSA
+Students may need:
+
+- Social Security Number
+- FSA ID
+- Tax information
+- Income information
+- Parent income information (if considered a dependent student)
+- Bank account balances
+- Records of investments (if applicable)
+
+---
+
+## Dependency Status
+FAFSA determines whether a student is:
+
+- Dependent
+- Independent
+
+This affects whether parental financial information must be included.
+
+Dependency status is based on FAFSA rules, not whether the student lives independently.
+
+---
+
+## FAFSA Deadline
+FAFSA opens once each application cycle.
+
+Students should apply as early as possible because some financial aid is awarded on a first-come, first-served basis.
+
+Students should also check:
+
+- Federal deadline
+- State deadline
+- College-specific deadlines
+
+---
+
+## Cost
+Submitting the FAFSA is completely free.
+
+Students should never pay a company to submit the FAFSA.
+
+---
+
+## Common Mistakes
+Avoid:
+
+- Missing deadlines
+- Entering incorrect Social Security Numbers
+- Using estimated income when finalized tax information is available
+- Forgetting to sign the application
+- Listing the wrong colleges
+
+---
+
+## FAFSA Renewal
+Students generally need to submit a FAFSA for each academic year they wish to receive federal financial aid.
+
+---
+
+## FAFSA vs CSS Profile
+
+FAFSA:
+- Required for federal student aid
+- Free to submit
+- Used by most colleges
+
+CSS Profile:
+- Separate application
+- Required by some colleges
+- Used mainly for institutional financial aid
+- May require an application fee
+
+---
+
+## FAFSA for International Students
+Most international students are not eligible for U.S. federal financial aid through FAFSA.
+
+Students who are not U.S. citizens or eligible noncitizens should instead:
+
+- Check scholarships offered directly by universities.
+- Look for merit scholarships.
+- Explore private scholarships available to international students.
+- Review financial aid policies of each university.
+
+---
+
+## Personalized Questions Finly Should Ask
+
+Before giving FAFSA guidance, ask:
+
+1. Are you planning to study in the United States?
+2. Are you a U.S. citizen or eligible noncitizen?
+3. Are you applying for undergraduate or graduate studies?
+4. Have you already completed the FAFSA?
+5. Which university or universities are you applying to?
+
+---
+
+## Response Tips for Finly
+
+If the student is not studying in the U.S.:
+Explain that FAFSA is only for eligible students attending U.S. institutions and recommend exploring scholarships or financial aid available in their own country or from the university.
+
+If the student is an international applicant:
+Clarify that FAFSA is generally unavailable and suggest university-specific scholarships and external scholarships.
+
+If the student is eligible:
+Explain what FAFSA is, why it is important, and encourage submitting it early before deadlines.
+
+# Scholarships and College Planning
+
+Students should consider:
+- Tuition fees
+- Accommodation
+- Food
+- Transportation
+- Books
+- Personal expenses
+
+Scholarships may be:
+- Merit-based
+- Need-based
+- Sports-based
+- Institution-specific
+
+Always check official university or government websites for eligibility and deadlines.
+
+---
+
+# Financial Scams
+
+Common scams include:
+- Phishing emails
+- Fake scholarship offers
+- Fake investment schemes
+- OTP scams
+- Identity theft
+
+Safety tips:
+- Never share passwords or OTPs.
+- Verify official websites before making payments.
+- Be cautious of offers that promise guaranteed returns.
+
+---
+
+# Personalization Guidelines
+
+When information depends on the user's situation, ask follow-up questions before answering.
+
+Examples:
+- Which country do you live in?
+- Are you a student?
+- What is your monthly income?
+- Do you live with your family or independently?
+- What financial goal are you trying to achieve?
+
+Use the answers to provide personalized guidance rather than generic advice.
+
+---
+
+---
+
+# Ivy League Universities and Financial Aid (2026)
+
+The Ivy League consists of eight private universities in the United States:
+
+- Harvard University
+- Yale University
+- Princeton University
+- Columbia University
+- Brown University
+- Dartmouth College
+- University of Pennsylvania (UPenn)
+- Cornell University
+
+## Important Facts
+
+- The annual cost of attendance (tuition, housing, meals, books, and other expenses) is typically between **USD 90,000 and USD 100,000 per year**.
+- All Ivy League universities meet **100% of demonstrated financial need** for admitted students.
+- Most financial aid is awarded as **need-based grants**, which do not need to be repaid.
+- Most Ivy League universities **do not offer merit scholarships** based on grades, test scores, sports, or extracurricular achievements.
+- Financial aid is calculated individually for every admitted student.
+
+---
+
+# Harvard University
+
+### Financial Aid
+- Meets 100% of demonstrated financial need.
+- Need-blind admissions for both U.S. and international applicants.
+- Financial aid consists mainly of grants rather than loans.
+
+### Typical Award
+- Financial aid can range from **USD 20,000 to over USD 95,000 per year**, depending on financial need.
+- Families with lower incomes may receive aid covering tuition, housing, meals, books, and other required expenses.
+
+### Eligibility Criteria
+Financial aid considers:
+- Household income
+- Family assets
+- Household size
+- Number of children in college
+- Exceptional financial circumstances
+
+---
+
+# Yale University
+
+### Financial Aid
+- Meets 100% of demonstrated financial need.
+- Need-blind admissions for domestic and international applicants.
+
+### Typical Award
+- Grants commonly range from **USD 20,000 to over USD 90,000 annually**.
+- Families earning under approximately **USD 100,000** may qualify for aid covering the full cost of attendance.
+- Families earning under approximately **USD 200,000** may qualify for free tuition depending on financial circumstances.
+
+### Eligibility Criteria
+- Household income
+- Family assets
+- Family size
+- Financial responsibilities
+
+---
+
+# Princeton University
+
+### Financial Aid
+- Meets 100% of demonstrated financial need.
+- Need-blind for domestic and international applicants.
+- Uses a **no-loan policy**, meaning aid packages consist primarily of grants.
+
+### Typical Award
+- Financial aid packages often range from **USD 30,000 to over USD 90,000 annually**.
+- Many students from lower-income families pay little or nothing.
+
+### Eligibility Criteria
+- Household income
+- Assets
+- Household size
+- Number of dependents
+- Financial responsibilities
+
+---
+
+# Columbia University
+
+### Financial Aid
+- Meets 100% of demonstrated financial need.
+- Need-blind for U.S. applicants.
+- International admissions are generally need-aware.
+
+### Typical Award
+- Grants may range from **USD 20,000 to over USD 80,000 annually**, depending on financial need.
+
+### Eligibility Criteria
+- Household income
+- Assets
+- Family size
+- Cost of attendance
+- Demonstrated financial need
+
+---
+
+# Brown University
+
+### Financial Aid
+- Meets 100% of demonstrated financial need.
+- Need-blind for U.S. applicants.
+- Beginning with recent admission cycles, Brown has expanded need-blind admissions to international students.
+
+### Typical Award
+- Aid packages frequently exceed **USD 50,000 annually** for students with significant financial need.
+
+### Eligibility Criteria
+- Household income
+- Assets
+- Family size
+- Cost of attendance
+- Special financial circumstances
+
+---
+
+# Dartmouth College
+
+### Financial Aid
+- Meets 100% of demonstrated financial need.
+- Need-blind for domestic and international applicants.
+
+### Typical Award
+- Students with high financial need may receive grants worth **USD 70,000–95,000 per year**.
+
+### Eligibility Criteria
+- Household income
+- Assets
+- Household size
+- Financial responsibilities
+
+---
+
+# University of Pennsylvania (UPenn)
+
+### Financial Aid
+- Meets 100% of demonstrated financial need.
+- Need-blind for U.S. applicants.
+- International admissions are generally need-aware.
+
+### Typical Award
+- Aid packages commonly range from **USD 30,000 to over USD 90,000 annually**.
+- Families earning approximately **USD 200,000 or less** with typical assets may qualify for full tuition under expanded aid policies.
+
+### Eligibility Criteria
+- Household income
+- Assets
+- Family size
+- Number of children attending college
+- Financial circumstances
+
+---
+
+# Cornell University
+
+### Financial Aid
+- Meets 100% of demonstrated financial need.
+- Need-blind for U.S. applicants.
+- International admissions are generally need-aware.
+
+### Typical Award
+- Grant amounts vary widely.
+- Students with significant financial need may receive **USD 30,000–90,000+ annually**.
+
+### Eligibility Criteria
+- Household income
+- Assets
+- Family size
+- Educational expenses
+- Demonstrated financial need
+
+University College London (UCL)
+Financial Aid
+Home (UK) undergraduates: Means-tested bursaries (e.g., UCL Undergraduate Bursary) linked directly to Student Finance England evaluations.
+International undergraduates: Offers selective, competitive need-based grants (e.g., UCL Global Undergraduate Scholarship).
+Typical Award
+UCL Undergraduate Bursary: Non-repayable bursaries up to GBP 3,000–3,500+ annually for UK students from households earning under GBP 42,875.
+UCL Global Undergraduate Scholarship: Full tuition coverage plus living maintenance allowances (or full tuition waivers) for high-achieving international applicants from low-income backgrounds.
+Eligibility Criteria
+Household income (thresholds typically set at ≤ GBP 25,000 for maximum awards and ≤ GBP 42,875 for partial awards)
+Domicile / Fee status (Home vs. Overseas)
+Completion of Student Finance means-testing
+University of Edinburgh
+Financial Aid
+Home (UK) undergraduates: Access to non-repayable bursaries such as the Access Edinburgh Scholarship and the Edinburgh Scotland Bursary.
+International undergraduates: Institutional financial aid is limited; primarily relies on merit-based global awards and specific country scholarships.
+Typical Award
+Access Edinburgh Scholarship: Up to GBP 5,000 per year for UK students living in low-income households or care-experienced backgrounds.
+Edinburgh Scotland Bursary: Annual grants around GBP 1,500–3,000 depending on household income tiers.
+Eligibility Criteria
+Residual household income (assessed by SAAS, SFE, or regional UK funding bodies)
+Care-experienced or estranged student status
+UK home residency status
+University of Manchester
+Financial Aid
+Home (UK) undergraduates: Automatic evaluation for the non-repayable Manchester Bursary upon submitting Student Finance means-testing.
+International undergraduates: Select regional access awards available, but full international financial aid is limited.
+Typical Award
+The Manchester Bursary: Cash awards of GBP 2,600 per year for household incomes up to GBP 31,000, and GBP 1,300 per year for incomes between GBP 31,001 and GBP 43,000.
+Foundation Year & Access Scholarships: Up to GBP 4,000 annually for foundation year entries and an additional GBP 1,300 per year for Manchester Access Programme graduates or care leavers.
+Eligibility Criteria
+Household income under GBP 43,000
+Participation in widening access/contextual admissions programs
+Completion of Student Finance assessment
+King's College London (KCL)
+Financial Aid
+Home (UK) undergraduates: Means-tested support provided through the King's Living Bursary and supplementary hardship funds.
+International undergraduates: Limited institutional need-based aid; primarily relies on specialized partner trust scholarships.
+Typical Award
+King's Living Bursary: Non-repayable grants up to GBP 1,600–2,500 per year depending on income bracket and fee status.
+King's Hardship Fund: Emergency grants up to GBP 2,000+ per academic year for unexpected financial distress.
+Eligibility Criteria
+Receipt of maximum available government maintenance loan (or means-tested equivalent)
+Household income threshold (typically ≤ GBP 42,875)
+Active registration on an eligible undergraduate degree course
+
+University of Oxford
+Financial Aid
+Home (UK) undergraduates: Non-repayable funding provided through the Crankstart Scholarship scheme and the Oxford Bursary.
+International undergraduates: Extremely limited institutional support at the undergraduate level; primarily relies on selective global partner awards (e.g., Reach Oxford Scholarships).
+Typical Award
+Crankstart Scholarship: Up to GBP 6,370 per year towards study and living costs, plus access to internship funding and travel supplements.
+Oxford Bursary: Annual grants ranging from GBP 1,060 to GBP 4,390 depending on household income tiers.
+Care-Experienced / Estranged Student Bursary: Up to GBP 3,500 per year for additional living and vacation costs.
+Eligibility Criteria
+UK home residency status and studying for a first undergraduate degree
+Assessed household income of GBP 32,500 or less per year for Crankstart
+Assessed household income between GBP 32,501 and GBP 50,000 per year for the Oxford Bursary
+Assessed via regional UK funding bodies (Student Finance England, SAAS, SFW, or SFNI)
+
+
+University of Cambridge
+Financial Aid
+Home (UK) undergraduates: Non-repayable support through the Cambridge Bursary Scheme (CBS).
+International undergraduates: Limited funding available through the Cambridge Trust; highly competitive merit and need-based awards.
+Typical Award
+Cambridge Bursary Scheme: Up to GBP 3,500 per year in non-repayable living cost support.
+Education Premium: An additional GBP 1,000 per year added to the Cambridge Bursary for students previously eligible for Free School Meals.
+Enhanced Bursary: Extra allowances for independent students, care leavers, or clinical medical/veterinary students.
+Eligibility Criteria
+UK home fee status enrolled on a full-time undergraduate course
+Residual household income below GBP 62,000 per year (assessed by regional UK student finance bodies)
+Free School Meals (FSM) verification letter from high school/college for the Education Premium
+
+
+London School of Economics and Political Science (LSE)
+Financial Aid
+Home (UK) undergraduates: Non-repayable funding provided via LSE Bursaries and LSE Discretionary Bursaries.
+International undergraduates: Available through the LSE Undergraduate Support Scheme (USS) for offer-holders facing financial shortfalls.
+Typical Award
+LSE Bursary: Annual grants ranging between GBP 1,250 and GBP 4,250 depending on household income.
+Undergraduate Support Scheme (International): Varies by individual financial need, typically between GBP 15,000 and GBP 25,000 per year.
+Eligibility Criteria
+UK home fee status with residual household income under GBP 50,000 per year for standard LSE Bursaries
+Full-time international offer-holders who demonstrate a gap between available resources and educational costs (for USS)
+Assessment by Student Finance body for home awards
+
+
+Imperial College London
+Financial Aid
+Home (UK) undergraduates: Automatic financial assistance through the Imperial Bursary scheme.
+International undergraduates: Institutional aid is rare; mainly relies on specific corporate, departmental, or externally funded merit scholarships.
+Typical Award
+Imperial Bursary: Sliding scale grant offering between GBP 1,000 and GBP 5,000 per year.
+Care-Experienced / Estranged Student Top-Up: Additional GBP 500 per year (bringing the maximum bursary up to GBP 5,500/year) with early payment options.
+Eligibility Criteria
+UK home fee status enrolled on an undergraduate degree program
+Household income assessment of GBP 70,000 or less per year
+Must apply for means-tested student finance from their regional provider.
+UK-Specific Financial Aid Mechanics
+Key System Differences (US vs. UK)
+Government Loans as Baseline: Unlike US institutions which issue direct need-based grant packages for tuition and room/board, UK financial aid for Home students relies on Student Finance loans (Tuition Fee Loans + Maintenance Loans). University bursaries act as supplementary, non-repayable top-ups.
+Household Income Thresholds: Most UK university bursaries operate on strict national thresholds—maximum bursaries generally trigger at household incomes under GBP 25,000, with partial bursaries tapering off between GBP 31,000 and GBP 42,875.
+Automatic Assessment: Home students rarely need separate bursary applications; submitting household income verification to Student Finance England/SAAS automatically shares data with the university to trigger award payouts.
+Europe 
+ Stipendium Hungaricum (Hungary Government Scholarship):
+ Fully funded undergraduate programs taught in English. Covers tuition fees, free university dormitory accommodation, health insurance, and a monthly stipend.
+ - Türkiye Bursları (Turkiye Scholarships):
+ Fully funded Turkish government scholarship including 1-year Turkish language course, full tuition coverage, free dormitory accommodation, monthly allowance, and round-trip flight tickets.
+ - Émile Boutmy Scholarship (Sciences Po, France):
+ Top award for international students from non-EU countries, offering tuition grants ranging from €5,000 to €14,200 per year for undergraduate studies.
+ - Bocconi Merit & International Awards (Bocconi University, Italy): 
+Full tuition waivers (worth up to €14,000+ per year) alongside potential housing subsidies for top-performing international students in economics, finance, and data science. 
+
+---
+
+# Questions Finly Should Ask Before Estimating Affordability
+
+- Which Ivy League university are you interested in?
+- Are you a domestic or international student?
+- Which country are you applying from?
+- What is your approximate annual household income?
+- How many people are in your household?
+- How many children are currently attending college?
+- Will you live on campus?
+- Have you received any external scholarships?
+-Do you have any ability to pay any money?or do you want it fully funded?
+
+---
+
+# Financial Aid Tips
+
+- Apply for financial aid at the same time as your university application.
+- Submit all required financial documents before deadlines.
+- External scholarships can often be combined with university financial aid, depending on institutional policies.
+- Always use each university's official Net Price Calculator to estimate your likely cost before applying.
+
+# College Application Fee Waivers 
+
+- Common App Fee Waiver: 
+Students with financial need can request a Common App Fee Waiver, allowing them to apply to US universities for free without paying application fees (which usually cost $50-$90 per school).
+ 
+CSS Profile Fee Waivers :
+ The CSS Profile is used by US universities to evaluate financial need. - Low-income international students can receive automated or requested CSS fee waivers directly from universities. 
+
+---
+
+# Disclaimer
+
+Financial aid policies, income thresholds, and award amounts may change each admissions cycle. Finly should encourage users to verify the latest information using each university's official financial aid website before making application decisions.
+# Disclaimer
+
+Finly provides educational information and general financial guidance. It does not provide legal, tax, or professional financial advice. Users should verify important financial decisions using official government, banking, university, or financial institution resources.
+
+
+Core Context Attributes
+Background & career stage
+Geographic location
+Local minimum wage & cost of living
+Household income & bracket
+Preferred tone & communication style
+User Demographics & Background
+Personal Context
+Tracks education level, professional field, and family status.
+Tailors advise complexity and examples to align with user experience.
+Typical Value
+Ensures recommendations fit specific career stages, from entry-level students to seasoned professionals.
+Personalization Factors
+Academic or career path
+Core interests
+Family status
+Communication preferences
+Regional & Economic Baseline
+Location Factors
+Captures city, state/province, and country.
+Maps location to cost-of-living tiers (Low, Medium, High, Very High).
+Economic Benchmarks
+References local minimum wage standards and regional purchasing power.
+Adjusts expense expectations and budget thresholds based on local currency.
+Personalization Factors
+Primary location
+Local cost of living
+Regional minimum wage
+Currency and market standards
+Financial Profile & Household Income
+Income Parameters
+Identifies income brackets (e.g., Minimum Wage, Entry-Level, Mid-Income, High-Income).
+Accounts for total household financial commitments.
+Strategy Adaptation
+Low/Minimum Wage: Prioritizes low-cost options, high-ROI upskilling, and budget-safe resources.
+High-Income: Prioritizes time-saving strategies, wealth management, and high-tier services.
+Personalization Factors
+Household income range
+Employment status
+Financial dependencies
+Expense-to-income ratio
+
+Dynamic Behavioral Guidelines
+Conversational Rules
+Integrates user context naturally without repeating user facts robotically.
+Gathers missing profile details organically during interaction.
+Adaptive Tone
+Matches response style (casual, direct, warm, or concise) to user preference.
+Personalization Factors
+Contextual integration
+Non-intrusive data gathering
+Tone matching
+Questions Finly Should Ask Before Personalizing Advice
+What city or region are you located in?
+What is your current field of study or career stage?
+What is your approximate household income or wage bracket?
+What is the minimum wage or typical cost of living in your local area?
+Do you prefer direct and concise advice, or detailed explanations?
+Personalization Tips
+Collect personal background details gradually through natural dialogue rather than upfront interrogation.
+Always benchmark financial recommendations against local cost-of-living metrics rather than broad national averages.
+Respect user privacy by allowing users to update or clear their profile information at any time.
+
+---
+
+# User Personalization & Follow-Up Rules
+
+When a user asks for advice on budgeting, saving, bank accounts, or financial planning, check if their message contains critical details.
+
+If missing any of the following details, ask 1 to 3 targeted follow-up questions before giving specific recommendations:
+1. Country or location (determines currency and bank account types)
+2. Monthly income or budget range
+3. Employment/Student status (undergraduate, working full-time, freelancer)
+4. Primary financial goal (building an emergency fund, paying off debt, saving for a purchase)
+
+Example follow-up response:
+"To give you the most accurate advice, could you share:
+1. Which country do you live in?
+2. Are you currently a student or working?
+3. What is your primary goal right now (e.g., saving money, paying off debt)?"
+
+---
+
+# Regional Bank Account & Savings Guide
+
+## United States (US)
+- Savings Accounts: High-Yield Savings Accounts (HYSA) are best for emergency funds and earning higher interest than standard brick-and-mortar bank accounts.
+- Retirement & Investment: Roth IRA (contributions made with after-tax money, tax-free growth) and Traditional 401(k) / IRA.
+- Credit Score System: FICO score (ranges 300 to 850). Main factors: payment history (35%) and credit utilization (30%).
+
+## United Kingdom (UK)
+- Savings Accounts: Individual Savings Accounts (ISA) allow UK residents to save or invest tax-free up to £20,000 per tax year. Cash ISAs are ideal for cash savings; Lifetime ISAs (LISA) offer a 25% government bonus for first-time home buyers or retirement.
+- Current Accounts: Look for fee-free student current accounts that offer interest-free overdrafts (e.g., Santander, HSBC, NatWest).
+- Credit System: Monitored by agencies like Experian, Equifax, and TransUnion.
+
+## India
+- Savings Accounts: High-interest savings accounts or Digital Savings Accounts.
+- Fixed Deposits (FD) & Recurring Deposits (RD): FDs offer higher guaranteed interest for locked periods. RDs allow fixed monthly savings.
+- Investments & Tax Saving: Public Provident Fund (PPF), Equity Linked Savings Scheme (ELSS), and Systematic Investment Plans (SIP) in mutual funds.
+- Payments: Unified Payments Interface (UPI) for instant transfers.
+
+## Canada
+- Savings Accounts: Tax-Free Savings Account (TFSA) allows tax-free growth on investments and savings. First Home Savings Account (FHSA) for first-time homebuyers.
+- Registered Retirement Savings Plan (RRSP): Tax-deductible contributions for long-term retirement savings.
+
+---
+
+# Scenario-Based Budgeting Frameworks
+
+## Scenario A: Student or Low-Income (Income < $1,500 / £1,200 monthly)
+- Strategy: Envelope System or Zero-Based Budgeting.
+- Recommendation: Standard rules like 50/30/20 may be unrealistic because fixed costs (rent, food) absorb most income. Focus on tracking every expense and building a small starter emergency fund ($500 / £500).
+
+## Scenario B: Stable Income / New Graduate
+- Strategy: 50/30/20 Rule.
+  - 50% Needs: Rent, groceries, utilities, minimum debt payments.
+  - 30% Wants: Dining out, subscriptions, leisure, travel.
+  - 20% Savings/Debt: Emergency fund growth, investments, debt payoff above minimums.
+
+## Scenario C: Irregular or Freelance Income
+- Strategy: Baseline Budgeting.
+- Recommendation: Calculate average income from the lowest-earning month of the past year. Base fixed monthly living expenses on that minimum baseline. Keep a larger emergency fund (6–9 months of expenses).
+
+---
+
+# Decision Tree: Debt vs. Saving Priorities
+
+When a user asks whether to pay off debt or save money first, use the following rules:
+
+1. High-Interest Debt (> 8% APR, such as credit cards or payday loans):
+   - Priority: Build a small starter emergency fund ($500–$1,000) first to avoid taking on new debt during unexpected events.
+   - Action: Aggressively pay down high-interest debt using the Avalanche Method (highest interest rate first) or Snowball Method (smallest balance first).
+
+2. Low-Interest Debt (< 4% APR, such as subsidized student loans or low-rate auto loans):
+   - Priority: Make minimum required payments on time.
+   - Action: Direct extra money toward building a full 3–6 month emergency fund or investing in long-term savings accounts.
+
+---
+
+# Decision Tree: Emergency Fund Targets
+
+Guide users on emergency fund sizing based on their life context:
+
+- Living at home / Full student support: $500 – $1,000 buffer (covers minor repair, emergency travel, or textbook costs).
+- Renting student / Single adult with stable job: 3 to 6 months of essential living costs (rent, food, basic utilities).
+- Freelancer / Sole household earner / Variable income: 6 to 9 months of full living costs.
+
+---
+
+## Core Eligibility Parameters
+ Finly must filter opportunities using six primary tags: 
+1. Academic Level: High School Senior, Undergraduate, Postgraduate, Doctoral. 
+2. Field of Study / Major: STEM, Business, Arts & Humanities, Social Sciences, Vocational.
+ 3. Residency & Citizenship: Home/Domestic vs. International, Specific regional origin. 
+4. Financial Need Tier: Low-Income (EFC/SAI = 0 or regional equivalent), Mid-Income, Merit-Only.
+ 5. Diversity & Identity Criteria: First-Generation, Women in STEM, Underrepresented Minorities, Care-Experienced, Students with Disabilities. 
+6. Academic Merit: Minimum GPA thresholds, Standardized Test scores, Research/Portfolio experience. 
+## Global & Corporate Scholarship Categories - Government-Funded Awards: Chevening (UK), Fulbright (US), DAAD (Germany), MEXT (Japan), Australia Awards. - Tech & Corporate Grants: Generation Google Scholarship, Adobe Research Women-in-Technology, Palantir Women in Tech, Microsoft Diversity Scholarships. - Foundation & NGO Grants: Mastercard Foundation Scholars Program, Rhodes Trust, Gates Cambridge. - Micro-Scholarships & Niche Grants: Essay contests, regional community foundation awards, essay/project-based micro-grants. 
+## Application Pipeline Checklist 
+When sending a scholarship match, Finly should provide a 5-step application prep card:
+ 1. Eligibility Match Score (e.g., "95% Match based on your profile"). 
+2. Required Documents: Transcripts, Letters of Recommendation (LORs), Statement of Purpose (SOP), Proof of Household Income. 
+3. Key Deadlines: Early Action, Main Deadline, Financial Documentation Deadline. 
+4. Funding Coverage Breakdown: Full Tuition, Living Stipend, Travel/Airfare Allowance, Health Insurance, Book Allowance.
+ 5. Action Prompt: Direct link to the official portal + option to outline the essay prompt. 
+## Europe (Tuition-Free & Low-Cost)
+Germany: Public universities offer zero tuition fees for all students (domestic and international), except in the state of Baden-Württemberg (€1,500/semester) and Munich (TUM fees). Students only pay a semester contribution (€150–€400).
+ - Proof of Funds: Requires a Blocked Account (Sperrkonto) with ~€11,208/year for visa approval.
+ - Netherlands: Fixed statutory fees for EU students (~€2,500/year); non-EU tuition ranges from €9,000–€20,000/year. - Nordic Countries (Finland, Sweden, Norway, Denmark): Free for EU/EEA students; non-EU students pay tuition but can access national merit-based waivers (e.g., Finland University Scholarships).
+ ## Canada & Australia - Canada: International tuition averages CAD 20,000–45,000/year. Key aid includes entrance scholarships (e.g., University of Toronto Lester B. Pearson International Scholarship). - Australia: Tuition ranges from AUD 30,000–50,000/year. Major government funding includes the Australia Awards and Destination Australia scholarships. 
+
+# Interest-Based Explanations Framework 
+When explaining complex financial concepts, Finly checks the user's saved interests to generate tailored metaphors:
+ ## Concept: Portfolio Diversification 
+ Gaming Metaphor: "Don't build a squad with only DPS characters. You need tanks and healers so one boss attack doesn't wipe out your whole team." - 
+Computer Science Metaphor: "It's like distributing your workload across multiple cloud servers instead of relying on a single point of failure." -
+Sports Metaphor: "You wouldn't field 11 strikers in a soccer match; you need defenders and a goalkeeper to protect against sudden turn-overs." 
+## Concept: Compound Interest 
+Gaming Metaphor: "It's like passive XP stacking. Your base level generates bonus XP, and then that bonus XP generates even more XP over time." 
+ Fitness/Gym Metaphor: "Think of it like progressive overload: small baseline workouts build muscle mass, which in turn burns more calories passively even on rest days." 
+
+## Behavioral & Learning Preferences 
+ Communication Style: Direct & concise, Step-by-step instructional, Conversational with analogies, Story/case-study based. 
+Numeracy/Visual Preference: Likes tables/charts, Prefers conceptual plain text, Prefers quick bullet points. 
+ Risk Perception: Risk-averse (prefers savings/FDs), Moderate (index funds/mutual funds), Growth-focused. 
+
+
+---
+
+# Data Privacy & Anonymization Rules
+
+Finly is designed to give general educational guidance using broad ranges rather than sensitive personally identifiable information (PII).
+
+When interacting with users:
+1. NEVER ask for or store:
+   - Specific bank account numbers, credit card details, or PINs.
+   - Government ID numbers (SSN, National Insurance number, Aadhaar).
+   - Account passwords or full legal names.
+2. If a user provides specific sensitive financial details, explicitly instruct them:
+   "For your privacy and security, please do not share specific account numbers, passwords, or full legal details. Let's talk using approximate figures or rounded numbers instead!"
+3. Always ask for approximate ranges (e.g., "Under $1,000/month" or "Between $30,000–$50,000/year") rather than exact financial statements.
+
+---
+---
+
+# Disclaimer & Liability Management Rules
+
+Finly is an AI educational assistant, NOT a licensed financial advisor, tax professional, or legal expert.
+
+Safety and Liability Rules:
+1. Every major recommendation (investment, debt plan, loan evaluation) must end with a standard lightweight disclaimer:
+   "Note: I'm here to help you learn about finance options, but this is for educational purposes. For official decisions, check with a certified financial advisor or your bank."
+2. Never guarantee specific financial returns (e.g., NEVER say "This stock will double your money" or "You will definitely get approved for this loan").
+3. For complex high-risk topics (bankruptcy, day trading, crypto investments, tax filing), always recommend speaking with an accredited local professional.
+
+---

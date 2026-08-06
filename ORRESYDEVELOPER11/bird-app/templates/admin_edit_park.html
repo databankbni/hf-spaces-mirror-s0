@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}Edit Park | Tanzania Bird Finder{% endblock %}
+{% block content %}
+<section class="admin-hero">
+  <div class="admin-hero-bg"></div>
+  <div class="admin-hero-content">
+    <span class="eyebrow">Admin edit</span>
+    <h1>{{ park.name }}</h1>
+    <p>{{ park.region }}</p>
+  </div>
+</section>
+<section class="admin-section">
+  <div class="admin-form-grid admin-form-single">
+    <div class="admin-glass-card">
+      <div class="admin-form-header">
+        <i data-lucide="trees"></i>
+        <h2>Edit park details</h2>
+      </div>
+      <form method="post">
+        <label>Name<input name="name" value="{{ park.name }}" required></label>
+        <label>Region<input name="region" value="{{ park.region }}" required></label>
+        <label>Latitude<input name="latitude" value="{{ park.latitude }}" required></label>
+        <label>Longitude<input name="longitude" value="{{ park.longitude }}" required></label>
+        <label>Habitat type<input name="habitat_type" value="{{ park.habitat_type }}" required></label>
+        <label>Best visiting time<input name="best_visit_months" value="{{ park.best_visit_months }}"></label>
+        <label>Status<input name="conservation_status" value="{{ park.conservation_status }}"></label>
+        <label>Area km2<input name="area_km2" value="{{ park.area_km2 }}"></label>
+        <label>Image URL<input name="image_url" value="{{ park.image_url }}"></label>
+        <label>Description<textarea name="description" rows="5">{{ park.description }}</textarea></label>
+        <button class="admin-btn admin-btn-primary" type="submit">Update park</button>
+      </form>
+    </div>
+  </div>
+</section>
+{% endblock %}

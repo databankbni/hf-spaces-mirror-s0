@@ -1,0 +1,1948 @@
+{
+  "rows": [
+    {
+      "problem_type": "knapsack",
+      "size": "small",
+      "solver_id": "highs",
+      "solve_time_sec": 0.0038
+    },
+    {
+      "problem_type": "knapsack",
+      "size": "small",
+      "solver_id": "cbc",
+      "solve_time_sec": 0.0521
+    },
+    {
+      "problem_type": "knapsack",
+      "size": "small",
+      "solver_id": "cp_sat",
+      "solve_time_sec": 0.0245
+    },
+    {
+      "problem_type": "knapsack",
+      "size": "small",
+      "solver_id": "scip",
+      "solve_time_sec": 0.0032
+    },
+    {
+      "problem_type": "knapsack",
+      "size": "small",
+      "solver_id": "gurobi",
+      "solve_time_sec": 0.0025
+    },
+    {
+      "problem_type": "knapsack",
+      "size": "small",
+      "solver_id": "minizinc",
+      "solve_time_sec": 0.0042
+    },
+    {
+      "problem_type": "knapsack",
+      "size": "small",
+      "solver_id": "highs",
+      "solve_time_sec": 0.0009
+    },
+    {
+      "problem_type": "knapsack",
+      "size": "small",
+      "solver_id": "cbc",
+      "solve_time_sec": 0.0621
+    },
+    {
+      "problem_type": "knapsack",
+      "size": "small",
+      "solver_id": "cp_sat",
+      "solve_time_sec": 0.014
+    },
+    {
+      "problem_type": "knapsack",
+      "size": "small",
+      "solver_id": "scip",
+      "solve_time_sec": 0.0008
+    },
+    {
+      "problem_type": "knapsack",
+      "size": "small",
+      "solver_id": "gurobi",
+      "solve_time_sec": 0.0006
+    },
+    {
+      "problem_type": "knapsack",
+      "size": "small",
+      "solver_id": "minizinc",
+      "solve_time_sec": 0.001
+    },
+    {
+      "problem_type": "knapsack",
+      "size": "medium",
+      "solver_id": "highs",
+      "solve_time_sec": 0.0011
+    },
+    {
+      "problem_type": "knapsack",
+      "size": "medium",
+      "solver_id": "cbc",
+      "solve_time_sec": 0.0808
+    },
+    {
+      "problem_type": "knapsack",
+      "size": "medium",
+      "solver_id": "cp_sat",
+      "solve_time_sec": 0.0094
+    },
+    {
+      "problem_type": "knapsack",
+      "size": "medium",
+      "solver_id": "scip",
+      "solve_time_sec": 0.0009
+    },
+    {
+      "problem_type": "knapsack",
+      "size": "medium",
+      "solver_id": "gurobi",
+      "solve_time_sec": 0.0007
+    },
+    {
+      "problem_type": "knapsack",
+      "size": "medium",
+      "solver_id": "minizinc",
+      "solve_time_sec": 0.0012
+    },
+    {
+      "problem_type": "knapsack",
+      "size": "medium",
+      "solver_id": "highs",
+      "solve_time_sec": 0.001
+    },
+    {
+      "problem_type": "knapsack",
+      "size": "medium",
+      "solver_id": "cbc",
+      "solve_time_sec": 0.0536
+    },
+    {
+      "problem_type": "knapsack",
+      "size": "medium",
+      "solver_id": "cp_sat",
+      "solve_time_sec": 0.0077
+    },
+    {
+      "problem_type": "knapsack",
+      "size": "medium",
+      "solver_id": "scip",
+      "solve_time_sec": 0.0008
+    },
+    {
+      "problem_type": "knapsack",
+      "size": "medium",
+      "solver_id": "gurobi",
+      "solve_time_sec": 0.0007
+    },
+    {
+      "problem_type": "knapsack",
+      "size": "medium",
+      "solver_id": "minizinc",
+      "solve_time_sec": 0.0011
+    },
+    {
+      "problem_type": "knapsack",
+      "size": "large",
+      "solver_id": "highs",
+      "solve_time_sec": 0.0017
+    },
+    {
+      "problem_type": "knapsack",
+      "size": "large",
+      "solver_id": "cbc",
+      "solve_time_sec": 0.0491
+    },
+    {
+      "problem_type": "knapsack",
+      "size": "large",
+      "solver_id": "cp_sat",
+      "solve_time_sec": 0.0105
+    },
+    {
+      "problem_type": "knapsack",
+      "size": "large",
+      "solver_id": "scip",
+      "solve_time_sec": 0.0014
+    },
+    {
+      "problem_type": "knapsack",
+      "size": "large",
+      "solver_id": "gurobi",
+      "solve_time_sec": 0.0011
+    },
+    {
+      "problem_type": "knapsack",
+      "size": "large",
+      "solver_id": "minizinc",
+      "solve_time_sec": 0.0019
+    },
+    {
+      "problem_type": "knapsack",
+      "size": "large",
+      "solver_id": "highs",
+      "solve_time_sec": 0.0016
+    },
+    {
+      "problem_type": "knapsack",
+      "size": "large",
+      "solver_id": "cbc",
+      "solve_time_sec": 0.0784
+    },
+    {
+      "problem_type": "knapsack",
+      "size": "large",
+      "solver_id": "cp_sat",
+      "solve_time_sec": 0.0273
+    },
+    {
+      "problem_type": "knapsack",
+      "size": "large",
+      "solver_id": "scip",
+      "solve_time_sec": 0.0014
+    },
+    {
+      "problem_type": "knapsack",
+      "size": "large",
+      "solver_id": "gurobi",
+      "solve_time_sec": 0.001
+    },
+    {
+      "problem_type": "knapsack",
+      "size": "large",
+      "solver_id": "minizinc",
+      "solve_time_sec": 0.0018
+    },
+    {
+      "problem_type": "tsp",
+      "size": "small",
+      "solver_id": "highs",
+      "solve_time_sec": 0.0002
+    },
+    {
+      "problem_type": "tsp",
+      "size": "small",
+      "solver_id": "cbc",
+      "solve_time_sec": 0.0
+    },
+    {
+      "problem_type": "tsp",
+      "size": "small",
+      "solver_id": "cp_sat",
+      "solve_time_sec": 0.0297
+    },
+    {
+      "problem_type": "tsp",
+      "size": "small",
+      "solver_id": "scip",
+      "solve_time_sec": 0.0252
+    },
+    {
+      "problem_type": "tsp",
+      "size": "small",
+      "solver_id": "gurobi",
+      "solve_time_sec": 0.0193
+    },
+    {
+      "problem_type": "tsp",
+      "size": "small",
+      "solver_id": "minizinc",
+      "solve_time_sec": 0.0327
+    },
+    {
+      "problem_type": "tsp",
+      "size": "small",
+      "solver_id": "highs",
+      "solve_time_sec": 0.0002
+    },
+    {
+      "problem_type": "tsp",
+      "size": "small",
+      "solver_id": "cbc",
+      "solve_time_sec": 0.0
+    },
+    {
+      "problem_type": "tsp",
+      "size": "small",
+      "solver_id": "cp_sat",
+      "solve_time_sec": 0.0454
+    },
+    {
+      "problem_type": "tsp",
+      "size": "small",
+      "solver_id": "scip",
+      "solve_time_sec": 0.0386
+    },
+    {
+      "problem_type": "tsp",
+      "size": "small",
+      "solver_id": "gurobi",
+      "solve_time_sec": 0.0295
+    },
+    {
+      "problem_type": "tsp",
+      "size": "small",
+      "solver_id": "minizinc",
+      "solve_time_sec": 0.0499
+    },
+    {
+      "problem_type": "tsp",
+      "size": "medium",
+      "solver_id": "highs",
+      "solve_time_sec": 0.0002
+    },
+    {
+      "problem_type": "tsp",
+      "size": "medium",
+      "solver_id": "cbc",
+      "solve_time_sec": 0.0
+    },
+    {
+      "problem_type": "tsp",
+      "size": "medium",
+      "solver_id": "cp_sat",
+      "solve_time_sec": 0.1097
+    },
+    {
+      "problem_type": "tsp",
+      "size": "medium",
+      "solver_id": "scip",
+      "solve_time_sec": 0.0932
+    },
+    {
+      "problem_type": "tsp",
+      "size": "medium",
+      "solver_id": "gurobi",
+      "solve_time_sec": 0.0713
+    },
+    {
+      "problem_type": "tsp",
+      "size": "medium",
+      "solver_id": "minizinc",
+      "solve_time_sec": 0.1207
+    },
+    {
+      "problem_type": "tsp",
+      "size": "medium",
+      "solver_id": "highs",
+      "solve_time_sec": 0.0002
+    },
+    {
+      "problem_type": "tsp",
+      "size": "medium",
+      "solver_id": "cbc",
+      "solve_time_sec": 0.0
+    },
+    {
+      "problem_type": "tsp",
+      "size": "medium",
+      "solver_id": "cp_sat",
+      "solve_time_sec": 0.1392
+    },
+    {
+      "problem_type": "tsp",
+      "size": "medium",
+      "solver_id": "scip",
+      "solve_time_sec": 0.1183
+    },
+    {
+      "problem_type": "tsp",
+      "size": "medium",
+      "solver_id": "gurobi",
+      "solve_time_sec": 0.0905
+    },
+    {
+      "problem_type": "tsp",
+      "size": "medium",
+      "solver_id": "minizinc",
+      "solve_time_sec": 0.1531
+    },
+    {
+      "problem_type": "tsp",
+      "size": "large",
+      "solver_id": "highs",
+      "solve_time_sec": 0.0003
+    },
+    {
+      "problem_type": "tsp",
+      "size": "large",
+      "solver_id": "cbc",
+      "solve_time_sec": 0.0
+    },
+    {
+      "problem_type": "tsp",
+      "size": "large",
+      "solver_id": "cp_sat",
+      "solve_time_sec": 0.5079
+    },
+    {
+      "problem_type": "tsp",
+      "size": "large",
+      "solver_id": "scip",
+      "solve_time_sec": 0.4317
+    },
+    {
+      "problem_type": "tsp",
+      "size": "large",
+      "solver_id": "gurobi",
+      "solve_time_sec": 0.3301
+    },
+    {
+      "problem_type": "tsp",
+      "size": "large",
+      "solver_id": "minizinc",
+      "solve_time_sec": 0.5587
+    },
+    {
+      "problem_type": "tsp",
+      "size": "large",
+      "solver_id": "highs",
+      "solve_time_sec": 0.0002
+    },
+    {
+      "problem_type": "tsp",
+      "size": "large",
+      "solver_id": "cbc",
+      "solve_time_sec": 0.0
+    },
+    {
+      "problem_type": "tsp",
+      "size": "large",
+      "solver_id": "cp_sat",
+      "solve_time_sec": 0.6804
+    },
+    {
+      "problem_type": "tsp",
+      "size": "large",
+      "solver_id": "scip",
+      "solve_time_sec": 0.5783
+    },
+    {
+      "problem_type": "tsp",
+      "size": "large",
+      "solver_id": "gurobi",
+      "solve_time_sec": 0.4423
+    },
+    {
+      "problem_type": "tsp",
+      "size": "large",
+      "solver_id": "minizinc",
+      "solve_time_sec": 0.7484
+    },
+    {
+      "problem_type": "vrp",
+      "size": "small",
+      "solver_id": "highs",
+      "solve_time_sec": 0.0002
+    },
+    {
+      "problem_type": "vrp",
+      "size": "small",
+      "solver_id": "cbc",
+      "solve_time_sec": 0.0
+    },
+    {
+      "problem_type": "vrp",
+      "size": "small",
+      "solver_id": "cp_sat",
+      "solve_time_sec": 0.0419
+    },
+    {
+      "problem_type": "vrp",
+      "size": "small",
+      "solver_id": "scip",
+      "solve_time_sec": 0.0356
+    },
+    {
+      "problem_type": "vrp",
+      "size": "small",
+      "solver_id": "gurobi",
+      "solve_time_sec": 0.0272
+    },
+    {
+      "problem_type": "vrp",
+      "size": "small",
+      "solver_id": "minizinc",
+      "solve_time_sec": 0.0461
+    },
+    {
+      "problem_type": "vrp",
+      "size": "small",
+      "solver_id": "highs",
+      "solve_time_sec": 0.0002
+    },
+    {
+      "problem_type": "vrp",
+      "size": "small",
+      "solver_id": "cbc",
+      "solve_time_sec": 0.0
+    },
+    {
+      "problem_type": "vrp",
+      "size": "small",
+      "solver_id": "cp_sat",
+      "solve_time_sec": 0.0449
+    },
+    {
+      "problem_type": "vrp",
+      "size": "small",
+      "solver_id": "scip",
+      "solve_time_sec": 0.0382
+    },
+    {
+      "problem_type": "vrp",
+      "size": "small",
+      "solver_id": "gurobi",
+      "solve_time_sec": 0.0292
+    },
+    {
+      "problem_type": "vrp",
+      "size": "small",
+      "solver_id": "minizinc",
+      "solve_time_sec": 0.0494
+    },
+    {
+      "problem_type": "vrp",
+      "size": "medium",
+      "solver_id": "highs",
+      "solve_time_sec": 0.0002
+    },
+    {
+      "problem_type": "vrp",
+      "size": "medium",
+      "solver_id": "cbc",
+      "solve_time_sec": 0.0
+    },
+    {
+      "problem_type": "vrp",
+      "size": "medium",
+      "solver_id": "cp_sat",
+      "solve_time_sec": 0.1059
+    },
+    {
+      "problem_type": "vrp",
+      "size": "medium",
+      "solver_id": "scip",
+      "solve_time_sec": 0.09
+    },
+    {
+      "problem_type": "vrp",
+      "size": "medium",
+      "solver_id": "gurobi",
+      "solve_time_sec": 0.0688
+    },
+    {
+      "problem_type": "vrp",
+      "size": "medium",
+      "solver_id": "minizinc",
+      "solve_time_sec": 0.1165
+    },
+    {
+      "problem_type": "vrp",
+      "size": "medium",
+      "solver_id": "highs",
+      "solve_time_sec": 0.0003
+    },
+    {
+      "problem_type": "vrp",
+      "size": "medium",
+      "solver_id": "cbc",
+      "solve_time_sec": 0.0
+    },
+    {
+      "problem_type": "vrp",
+      "size": "medium",
+      "solver_id": "cp_sat",
+      "solve_time_sec": 0.1046
+    },
+    {
+      "problem_type": "vrp",
+      "size": "medium",
+      "solver_id": "scip",
+      "solve_time_sec": 0.0889
+    },
+    {
+      "problem_type": "vrp",
+      "size": "medium",
+      "solver_id": "gurobi",
+      "solve_time_sec": 0.068
+    },
+    {
+      "problem_type": "vrp",
+      "size": "medium",
+      "solver_id": "minizinc",
+      "solve_time_sec": 0.1151
+    },
+    {
+      "problem_type": "vrp",
+      "size": "large",
+      "solver_id": "highs",
+      "solve_time_sec": 0.0003
+    },
+    {
+      "problem_type": "vrp",
+      "size": "large",
+      "solver_id": "cbc",
+      "solve_time_sec": 0.0
+    },
+    {
+      "problem_type": "vrp",
+      "size": "large",
+      "solver_id": "cp_sat",
+      "solve_time_sec": 0.3882
+    },
+    {
+      "problem_type": "vrp",
+      "size": "large",
+      "solver_id": "scip",
+      "solve_time_sec": 0.33
+    },
+    {
+      "problem_type": "vrp",
+      "size": "large",
+      "solver_id": "gurobi",
+      "solve_time_sec": 0.2523
+    },
+    {
+      "problem_type": "vrp",
+      "size": "large",
+      "solver_id": "minizinc",
+      "solve_time_sec": 0.427
+    },
+    {
+      "problem_type": "vrp",
+      "size": "large",
+      "solver_id": "highs",
+      "solve_time_sec": 0.0002
+    },
+    {
+      "problem_type": "vrp",
+      "size": "large",
+      "solver_id": "cbc",
+      "solve_time_sec": 0.0
+    },
+    {
+      "problem_type": "vrp",
+      "size": "large",
+      "solver_id": "cp_sat",
+      "solve_time_sec": 0.2565
+    },
+    {
+      "problem_type": "vrp",
+      "size": "large",
+      "solver_id": "scip",
+      "solve_time_sec": 0.218
+    },
+    {
+      "problem_type": "vrp",
+      "size": "large",
+      "solver_id": "gurobi",
+      "solve_time_sec": 0.1667
+    },
+    {
+      "problem_type": "vrp",
+      "size": "large",
+      "solver_id": "minizinc",
+      "solve_time_sec": 0.2822
+    },
+    {
+      "problem_type": "job_shop",
+      "size": "small",
+      "solver_id": "highs",
+      "solve_time_sec": 0.0003
+    },
+    {
+      "problem_type": "job_shop",
+      "size": "small",
+      "solver_id": "cbc",
+      "solve_time_sec": 0.0
+    },
+    {
+      "problem_type": "job_shop",
+      "size": "small",
+      "solver_id": "cp_sat",
+      "solve_time_sec": 0.0112
+    },
+    {
+      "problem_type": "job_shop",
+      "size": "small",
+      "solver_id": "scip",
+      "solve_time_sec": 0.0095
+    },
+    {
+      "problem_type": "job_shop",
+      "size": "small",
+      "solver_id": "gurobi",
+      "solve_time_sec": 0.0073
+    },
+    {
+      "problem_type": "job_shop",
+      "size": "small",
+      "solver_id": "minizinc",
+      "solve_time_sec": 0.0123
+    },
+    {
+      "problem_type": "job_shop",
+      "size": "small",
+      "solver_id": "highs",
+      "solve_time_sec": 0.0002
+    },
+    {
+      "problem_type": "job_shop",
+      "size": "small",
+      "solver_id": "cbc",
+      "solve_time_sec": 0.0
+    },
+    {
+      "problem_type": "job_shop",
+      "size": "small",
+      "solver_id": "cp_sat",
+      "solve_time_sec": 0.015
+    },
+    {
+      "problem_type": "job_shop",
+      "size": "small",
+      "solver_id": "scip",
+      "solve_time_sec": 0.0127
+    },
+    {
+      "problem_type": "job_shop",
+      "size": "small",
+      "solver_id": "gurobi",
+      "solve_time_sec": 0.0097
+    },
+    {
+      "problem_type": "job_shop",
+      "size": "small",
+      "solver_id": "minizinc",
+      "solve_time_sec": 0.0165
+    },
+    {
+      "problem_type": "job_shop",
+      "size": "medium",
+      "solver_id": "highs",
+      "solve_time_sec": 0.0002
+    },
+    {
+      "problem_type": "job_shop",
+      "size": "medium",
+      "solver_id": "cbc",
+      "solve_time_sec": 0.0
+    },
+    {
+      "problem_type": "job_shop",
+      "size": "medium",
+      "solver_id": "cp_sat",
+      "solve_time_sec": 0.046
+    },
+    {
+      "problem_type": "job_shop",
+      "size": "medium",
+      "solver_id": "scip",
+      "solve_time_sec": 0.0391
+    },
+    {
+      "problem_type": "job_shop",
+      "size": "medium",
+      "solver_id": "gurobi",
+      "solve_time_sec": 0.0299
+    },
+    {
+      "problem_type": "job_shop",
+      "size": "medium",
+      "solver_id": "minizinc",
+      "solve_time_sec": 0.0506
+    },
+    {
+      "problem_type": "job_shop",
+      "size": "medium",
+      "solver_id": "highs",
+      "solve_time_sec": 0.0002
+    },
+    {
+      "problem_type": "job_shop",
+      "size": "medium",
+      "solver_id": "cbc",
+      "solve_time_sec": 0.0
+    },
+    {
+      "problem_type": "job_shop",
+      "size": "medium",
+      "solver_id": "cp_sat",
+      "solve_time_sec": 0.0298
+    },
+    {
+      "problem_type": "job_shop",
+      "size": "medium",
+      "solver_id": "scip",
+      "solve_time_sec": 0.0253
+    },
+    {
+      "problem_type": "job_shop",
+      "size": "medium",
+      "solver_id": "gurobi",
+      "solve_time_sec": 0.0194
+    },
+    {
+      "problem_type": "job_shop",
+      "size": "medium",
+      "solver_id": "minizinc",
+      "solve_time_sec": 0.0328
+    },
+    {
+      "problem_type": "job_shop",
+      "size": "large",
+      "solver_id": "highs",
+      "solve_time_sec": 0.0003
+    },
+    {
+      "problem_type": "job_shop",
+      "size": "large",
+      "solver_id": "cbc",
+      "solve_time_sec": 0.0
+    },
+    {
+      "problem_type": "job_shop",
+      "size": "large",
+      "solver_id": "cp_sat",
+      "solve_time_sec": 0.0298
+    },
+    {
+      "problem_type": "job_shop",
+      "size": "large",
+      "solver_id": "scip",
+      "solve_time_sec": 0.0253
+    },
+    {
+      "problem_type": "job_shop",
+      "size": "large",
+      "solver_id": "gurobi",
+      "solve_time_sec": 0.0194
+    },
+    {
+      "problem_type": "job_shop",
+      "size": "large",
+      "solver_id": "minizinc",
+      "solve_time_sec": 0.0328
+    },
+    {
+      "problem_type": "job_shop",
+      "size": "large",
+      "solver_id": "highs",
+      "solve_time_sec": 0.0002
+    },
+    {
+      "problem_type": "job_shop",
+      "size": "large",
+      "solver_id": "cbc",
+      "solve_time_sec": 0.0
+    },
+    {
+      "problem_type": "job_shop",
+      "size": "large",
+      "solver_id": "cp_sat",
+      "solve_time_sec": 0.0467
+    },
+    {
+      "problem_type": "job_shop",
+      "size": "large",
+      "solver_id": "scip",
+      "solve_time_sec": 0.0397
+    },
+    {
+      "problem_type": "job_shop",
+      "size": "large",
+      "solver_id": "gurobi",
+      "solve_time_sec": 0.0304
+    },
+    {
+      "problem_type": "job_shop",
+      "size": "large",
+      "solver_id": "minizinc",
+      "solve_time_sec": 0.0514
+    },
+    {
+      "problem_type": "bin_packing",
+      "size": "small",
+      "solver_id": "highs",
+      "solve_time_sec": 0.0002
+    },
+    {
+      "problem_type": "bin_packing",
+      "size": "small",
+      "solver_id": "cbc",
+      "solve_time_sec": 0.0
+    },
+    {
+      "problem_type": "bin_packing",
+      "size": "small",
+      "solver_id": "cp_sat",
+      "solve_time_sec": 8.0874
+    },
+    {
+      "problem_type": "bin_packing",
+      "size": "small",
+      "solver_id": "scip",
+      "solve_time_sec": 6.8743
+    },
+    {
+      "problem_type": "bin_packing",
+      "size": "small",
+      "solver_id": "gurobi",
+      "solve_time_sec": 5.2568
+    },
+    {
+      "problem_type": "bin_packing",
+      "size": "small",
+      "solver_id": "minizinc",
+      "solve_time_sec": 8.8961
+    },
+    {
+      "problem_type": "bin_packing",
+      "size": "small",
+      "solver_id": "highs",
+      "solve_time_sec": 0.0002
+    },
+    {
+      "problem_type": "bin_packing",
+      "size": "small",
+      "solver_id": "cbc",
+      "solve_time_sec": 0.0
+    },
+    {
+      "problem_type": "bin_packing",
+      "size": "small",
+      "solver_id": "cp_sat",
+      "solve_time_sec": 0.2628
+    },
+    {
+      "problem_type": "bin_packing",
+      "size": "small",
+      "solver_id": "scip",
+      "solve_time_sec": 0.2234
+    },
+    {
+      "problem_type": "bin_packing",
+      "size": "small",
+      "solver_id": "gurobi",
+      "solve_time_sec": 0.1708
+    },
+    {
+      "problem_type": "bin_packing",
+      "size": "small",
+      "solver_id": "minizinc",
+      "solve_time_sec": 0.2891
+    },
+    {
+      "problem_type": "bin_packing",
+      "size": "medium",
+      "solver_id": "highs",
+      "solve_time_sec": 0.0003
+    },
+    {
+      "problem_type": "bin_packing",
+      "size": "medium",
+      "solver_id": "cbc",
+      "solve_time_sec": 0.0
+    },
+    {
+      "problem_type": "bin_packing",
+      "size": "medium",
+      "solver_id": "cp_sat",
+      "solve_time_sec": 8.1831
+    },
+    {
+      "problem_type": "bin_packing",
+      "size": "medium",
+      "solver_id": "scip",
+      "solve_time_sec": 6.9556
+    },
+    {
+      "problem_type": "bin_packing",
+      "size": "medium",
+      "solver_id": "gurobi",
+      "solve_time_sec": 5.319
+    },
+    {
+      "problem_type": "bin_packing",
+      "size": "medium",
+      "solver_id": "minizinc",
+      "solve_time_sec": 9.0014
+    },
+    {
+      "problem_type": "bin_packing",
+      "size": "medium",
+      "solver_id": "highs",
+      "solve_time_sec": 0.0002
+    },
+    {
+      "problem_type": "bin_packing",
+      "size": "medium",
+      "solver_id": "cbc",
+      "solve_time_sec": 0.0
+    },
+    {
+      "problem_type": "bin_packing",
+      "size": "medium",
+      "solver_id": "cp_sat",
+      "solve_time_sec": 4.2598
+    },
+    {
+      "problem_type": "bin_packing",
+      "size": "medium",
+      "solver_id": "scip",
+      "solve_time_sec": 3.6208
+    },
+    {
+      "problem_type": "bin_packing",
+      "size": "medium",
+      "solver_id": "gurobi",
+      "solve_time_sec": 2.7689
+    },
+    {
+      "problem_type": "bin_packing",
+      "size": "medium",
+      "solver_id": "minizinc",
+      "solve_time_sec": 4.6858
+    },
+    {
+      "problem_type": "bin_packing",
+      "size": "large",
+      "solver_id": "highs",
+      "solve_time_sec": 0.0004
+    },
+    {
+      "problem_type": "bin_packing",
+      "size": "large",
+      "solver_id": "cbc",
+      "solve_time_sec": 0.0
+    },
+    {
+      "problem_type": "bin_packing",
+      "size": "large",
+      "solver_id": "cp_sat",
+      "solve_time_sec": 8.916
+    },
+    {
+      "problem_type": "bin_packing",
+      "size": "large",
+      "solver_id": "scip",
+      "solve_time_sec": 7.5786
+    },
+    {
+      "problem_type": "bin_packing",
+      "size": "large",
+      "solver_id": "gurobi",
+      "solve_time_sec": 5.7954
+    },
+    {
+      "problem_type": "bin_packing",
+      "size": "large",
+      "solver_id": "minizinc",
+      "solve_time_sec": 9.8076
+    },
+    {
+      "problem_type": "bin_packing",
+      "size": "large",
+      "solver_id": "highs",
+      "solve_time_sec": 0.0025
+    },
+    {
+      "problem_type": "bin_packing",
+      "size": "large",
+      "solver_id": "cbc",
+      "solve_time_sec": 0.0001
+    },
+    {
+      "problem_type": "bin_packing",
+      "size": "large",
+      "solver_id": "cp_sat",
+      "solve_time_sec": 10.2594
+    },
+    {
+      "problem_type": "bin_packing",
+      "size": "large",
+      "solver_id": "scip",
+      "solve_time_sec": 0.425
+    },
+    {
+      "problem_type": "bin_packing",
+      "size": "large",
+      "solver_id": "gurobi",
+      "solve_time_sec": 0.325
+    },
+    {
+      "problem_type": "bin_packing",
+      "size": "large",
+      "solver_id": "minizinc",
+      "solve_time_sec": 0.55
+    },
+    {
+      "problem_type": "facility_location",
+      "size": "small",
+      "solver_id": "highs",
+      "solve_time_sec": 0.007
+    },
+    {
+      "problem_type": "facility_location",
+      "size": "small",
+      "solver_id": "cbc",
+      "solve_time_sec": 0.6702
+    },
+    {
+      "problem_type": "facility_location",
+      "size": "small",
+      "solver_id": "cp_sat",
+      "solve_time_sec": 0.241
+    },
+    {
+      "problem_type": "facility_location",
+      "size": "small",
+      "solver_id": "scip",
+      "solve_time_sec": 0.5697
+    },
+    {
+      "problem_type": "facility_location",
+      "size": "small",
+      "solver_id": "gurobi",
+      "solve_time_sec": 0.4356
+    },
+    {
+      "problem_type": "facility_location",
+      "size": "small",
+      "solver_id": "minizinc",
+      "solve_time_sec": 0.7372
+    },
+    {
+      "problem_type": "facility_location",
+      "size": "small",
+      "solver_id": "highs",
+      "solve_time_sec": 0.0082
+    },
+    {
+      "problem_type": "facility_location",
+      "size": "small",
+      "solver_id": "cbc",
+      "solve_time_sec": 0.6488
+    },
+    {
+      "problem_type": "facility_location",
+      "size": "small",
+      "solver_id": "cp_sat",
+      "solve_time_sec": 0.954
+    },
+    {
+      "problem_type": "facility_location",
+      "size": "small",
+      "solver_id": "scip",
+      "solve_time_sec": 0.5515
+    },
+    {
+      "problem_type": "facility_location",
+      "size": "small",
+      "solver_id": "gurobi",
+      "solve_time_sec": 0.4217
+    },
+    {
+      "problem_type": "facility_location",
+      "size": "small",
+      "solver_id": "minizinc",
+      "solve_time_sec": 0.7137
+    },
+    {
+      "problem_type": "facility_location",
+      "size": "medium",
+      "solver_id": "highs",
+      "solve_time_sec": 0.0098
+    },
+    {
+      "problem_type": "facility_location",
+      "size": "medium",
+      "solver_id": "cbc",
+      "solve_time_sec": 2.7469
+    },
+    {
+      "problem_type": "facility_location",
+      "size": "medium",
+      "solver_id": "cp_sat",
+      "solve_time_sec": 0.7742
+    },
+    {
+      "problem_type": "facility_location",
+      "size": "medium",
+      "solver_id": "scip",
+      "solve_time_sec": 2.3349
+    },
+    {
+      "problem_type": "facility_location",
+      "size": "medium",
+      "solver_id": "gurobi",
+      "solve_time_sec": 1.7855
+    },
+    {
+      "problem_type": "facility_location",
+      "size": "medium",
+      "solver_id": "minizinc",
+      "solve_time_sec": 3.0216
+    },
+    {
+      "problem_type": "facility_location",
+      "size": "medium",
+      "solver_id": "highs",
+      "solve_time_sec": 0.0029
+    },
+    {
+      "problem_type": "facility_location",
+      "size": "medium",
+      "solver_id": "cbc",
+      "solve_time_sec": 1.4377
+    },
+    {
+      "problem_type": "facility_location",
+      "size": "medium",
+      "solver_id": "cp_sat",
+      "solve_time_sec": 0.8251
+    },
+    {
+      "problem_type": "facility_location",
+      "size": "medium",
+      "solver_id": "scip",
+      "solve_time_sec": 1.222
+    },
+    {
+      "problem_type": "facility_location",
+      "size": "medium",
+      "solver_id": "gurobi",
+      "solve_time_sec": 0.9345
+    },
+    {
+      "problem_type": "facility_location",
+      "size": "medium",
+      "solver_id": "minizinc",
+      "solve_time_sec": 1.5815
+    },
+    {
+      "problem_type": "facility_location",
+      "size": "large",
+      "solver_id": "highs",
+      "solve_time_sec": 0.0026
+    },
+    {
+      "problem_type": "facility_location",
+      "size": "large",
+      "solver_id": "cbc",
+      "solve_time_sec": 3.7535
+    },
+    {
+      "problem_type": "facility_location",
+      "size": "large",
+      "solver_id": "cp_sat",
+      "solve_time_sec": 3.8722
+    },
+    {
+      "problem_type": "facility_location",
+      "size": "large",
+      "solver_id": "scip",
+      "solve_time_sec": 3.1905
+    },
+    {
+      "problem_type": "facility_location",
+      "size": "large",
+      "solver_id": "gurobi",
+      "solve_time_sec": 2.4398
+    },
+    {
+      "problem_type": "facility_location",
+      "size": "large",
+      "solver_id": "minizinc",
+      "solve_time_sec": 4.1288
+    },
+    {
+      "problem_type": "facility_location",
+      "size": "large",
+      "solver_id": "highs",
+      "solve_time_sec": 0.0083
+    },
+    {
+      "problem_type": "facility_location",
+      "size": "large",
+      "solver_id": "cbc",
+      "solve_time_sec": 0.4759
+    },
+    {
+      "problem_type": "facility_location",
+      "size": "large",
+      "solver_id": "cp_sat",
+      "solve_time_sec": 0.2946
+    },
+    {
+      "problem_type": "facility_location",
+      "size": "large",
+      "solver_id": "scip",
+      "solve_time_sec": 0.4045
+    },
+    {
+      "problem_type": "facility_location",
+      "size": "large",
+      "solver_id": "gurobi",
+      "solve_time_sec": 0.3093
+    },
+    {
+      "problem_type": "facility_location",
+      "size": "large",
+      "solver_id": "minizinc",
+      "solve_time_sec": 0.5235
+    },
+    {
+      "problem_type": "set_cover",
+      "size": "small",
+      "solver_id": "highs",
+      "solve_time_sec": 0.0006
+    },
+    {
+      "problem_type": "set_cover",
+      "size": "small",
+      "solver_id": "cbc",
+      "solve_time_sec": 0.0929
+    },
+    {
+      "problem_type": "set_cover",
+      "size": "small",
+      "solver_id": "cp_sat",
+      "solve_time_sec": 0.0332
+    },
+    {
+      "problem_type": "set_cover",
+      "size": "small",
+      "solver_id": "scip",
+      "solve_time_sec": 0.079
+    },
+    {
+      "problem_type": "set_cover",
+      "size": "small",
+      "solver_id": "gurobi",
+      "solve_time_sec": 0.0604
+    },
+    {
+      "problem_type": "set_cover",
+      "size": "small",
+      "solver_id": "minizinc",
+      "solve_time_sec": 0.1022
+    },
+    {
+      "problem_type": "set_cover",
+      "size": "small",
+      "solver_id": "highs",
+      "solve_time_sec": 0.0006
+    },
+    {
+      "problem_type": "set_cover",
+      "size": "small",
+      "solver_id": "cbc",
+      "solve_time_sec": 0.1433
+    },
+    {
+      "problem_type": "set_cover",
+      "size": "small",
+      "solver_id": "cp_sat",
+      "solve_time_sec": 0.035
+    },
+    {
+      "problem_type": "set_cover",
+      "size": "small",
+      "solver_id": "scip",
+      "solve_time_sec": 0.1218
+    },
+    {
+      "problem_type": "set_cover",
+      "size": "small",
+      "solver_id": "gurobi",
+      "solve_time_sec": 0.0931
+    },
+    {
+      "problem_type": "set_cover",
+      "size": "small",
+      "solver_id": "minizinc",
+      "solve_time_sec": 0.1576
+    },
+    {
+      "problem_type": "set_cover",
+      "size": "medium",
+      "solver_id": "highs",
+      "solve_time_sec": 0.0008
+    },
+    {
+      "problem_type": "set_cover",
+      "size": "medium",
+      "solver_id": "cbc",
+      "solve_time_sec": 0.1249
+    },
+    {
+      "problem_type": "set_cover",
+      "size": "medium",
+      "solver_id": "cp_sat",
+      "solve_time_sec": 0.04
+    },
+    {
+      "problem_type": "set_cover",
+      "size": "medium",
+      "solver_id": "scip",
+      "solve_time_sec": 0.1062
+    },
+    {
+      "problem_type": "set_cover",
+      "size": "medium",
+      "solver_id": "gurobi",
+      "solve_time_sec": 0.0812
+    },
+    {
+      "problem_type": "set_cover",
+      "size": "medium",
+      "solver_id": "minizinc",
+      "solve_time_sec": 0.1374
+    },
+    {
+      "problem_type": "set_cover",
+      "size": "medium",
+      "solver_id": "highs",
+      "solve_time_sec": 0.0007
+    },
+    {
+      "problem_type": "set_cover",
+      "size": "medium",
+      "solver_id": "cbc",
+      "solve_time_sec": 0.1146
+    },
+    {
+      "problem_type": "set_cover",
+      "size": "medium",
+      "solver_id": "cp_sat",
+      "solve_time_sec": 0.0511
+    },
+    {
+      "problem_type": "set_cover",
+      "size": "medium",
+      "solver_id": "scip",
+      "solve_time_sec": 0.0974
+    },
+    {
+      "problem_type": "set_cover",
+      "size": "medium",
+      "solver_id": "gurobi",
+      "solve_time_sec": 0.0745
+    },
+    {
+      "problem_type": "set_cover",
+      "size": "medium",
+      "solver_id": "minizinc",
+      "solve_time_sec": 0.1261
+    },
+    {
+      "problem_type": "set_cover",
+      "size": "large",
+      "solver_id": "highs",
+      "solve_time_sec": 0.0006
+    },
+    {
+      "problem_type": "set_cover",
+      "size": "large",
+      "solver_id": "cbc",
+      "solve_time_sec": 0.1535
+    },
+    {
+      "problem_type": "set_cover",
+      "size": "large",
+      "solver_id": "cp_sat",
+      "solve_time_sec": 0.0568
+    },
+    {
+      "problem_type": "set_cover",
+      "size": "large",
+      "solver_id": "scip",
+      "solve_time_sec": 0.1305
+    },
+    {
+      "problem_type": "set_cover",
+      "size": "large",
+      "solver_id": "gurobi",
+      "solve_time_sec": 0.0998
+    },
+    {
+      "problem_type": "set_cover",
+      "size": "large",
+      "solver_id": "minizinc",
+      "solve_time_sec": 0.1689
+    },
+    {
+      "problem_type": "set_cover",
+      "size": "large",
+      "solver_id": "highs",
+      "solve_time_sec": 0.0006
+    },
+    {
+      "problem_type": "set_cover",
+      "size": "large",
+      "solver_id": "cbc",
+      "solve_time_sec": 0.2201
+    },
+    {
+      "problem_type": "set_cover",
+      "size": "large",
+      "solver_id": "cp_sat",
+      "solve_time_sec": 0.1454
+    },
+    {
+      "problem_type": "set_cover",
+      "size": "large",
+      "solver_id": "scip",
+      "solve_time_sec": 0.1871
+    },
+    {
+      "problem_type": "set_cover",
+      "size": "large",
+      "solver_id": "gurobi",
+      "solve_time_sec": 0.1431
+    },
+    {
+      "problem_type": "set_cover",
+      "size": "large",
+      "solver_id": "minizinc",
+      "solve_time_sec": 0.2421
+    },
+    {
+      "problem_type": "assignment",
+      "size": "small",
+      "solver_id": "highs",
+      "solve_time_sec": 0.007
+    },
+    {
+      "problem_type": "assignment",
+      "size": "small",
+      "solver_id": "cbc",
+      "solve_time_sec": 0.1978
+    },
+    {
+      "problem_type": "assignment",
+      "size": "small",
+      "solver_id": "cp_sat",
+      "solve_time_sec": 0.0927
+    },
+    {
+      "problem_type": "assignment",
+      "size": "small",
+      "solver_id": "scip",
+      "solve_time_sec": 0.0059
+    },
+    {
+      "problem_type": "assignment",
+      "size": "small",
+      "solver_id": "gurobi",
+      "solve_time_sec": 0.0046
+    },
+    {
+      "problem_type": "assignment",
+      "size": "small",
+      "solver_id": "minizinc",
+      "solve_time_sec": 0.0077
+    },
+    {
+      "problem_type": "assignment",
+      "size": "small",
+      "solver_id": "highs",
+      "solve_time_sec": 0.0037
+    },
+    {
+      "problem_type": "assignment",
+      "size": "small",
+      "solver_id": "cbc",
+      "solve_time_sec": 0.1203
+    },
+    {
+      "problem_type": "assignment",
+      "size": "small",
+      "solver_id": "cp_sat",
+      "solve_time_sec": 0.0563
+    },
+    {
+      "problem_type": "assignment",
+      "size": "small",
+      "solver_id": "scip",
+      "solve_time_sec": 0.0031
+    },
+    {
+      "problem_type": "assignment",
+      "size": "small",
+      "solver_id": "gurobi",
+      "solve_time_sec": 0.0024
+    },
+    {
+      "problem_type": "assignment",
+      "size": "small",
+      "solver_id": "minizinc",
+      "solve_time_sec": 0.0041
+    },
+    {
+      "problem_type": "assignment",
+      "size": "medium",
+      "solver_id": "highs",
+      "solve_time_sec": 0.0042
+    },
+    {
+      "problem_type": "assignment",
+      "size": "medium",
+      "solver_id": "cbc",
+      "solve_time_sec": 0.2217
+    },
+    {
+      "problem_type": "assignment",
+      "size": "medium",
+      "solver_id": "cp_sat",
+      "solve_time_sec": 0.0926
+    },
+    {
+      "problem_type": "assignment",
+      "size": "medium",
+      "solver_id": "scip",
+      "solve_time_sec": 0.0036
+    },
+    {
+      "problem_type": "assignment",
+      "size": "medium",
+      "solver_id": "gurobi",
+      "solve_time_sec": 0.0027
+    },
+    {
+      "problem_type": "assignment",
+      "size": "medium",
+      "solver_id": "minizinc",
+      "solve_time_sec": 0.0046
+    },
+    {
+      "problem_type": "assignment",
+      "size": "medium",
+      "solver_id": "highs",
+      "solve_time_sec": 0.0055
+    },
+    {
+      "problem_type": "assignment",
+      "size": "medium",
+      "solver_id": "cbc",
+      "solve_time_sec": 0.1976
+    },
+    {
+      "problem_type": "assignment",
+      "size": "medium",
+      "solver_id": "cp_sat",
+      "solve_time_sec": 0.1189
+    },
+    {
+      "problem_type": "assignment",
+      "size": "medium",
+      "solver_id": "scip",
+      "solve_time_sec": 0.0047
+    },
+    {
+      "problem_type": "assignment",
+      "size": "medium",
+      "solver_id": "gurobi",
+      "solve_time_sec": 0.0036
+    },
+    {
+      "problem_type": "assignment",
+      "size": "medium",
+      "solver_id": "minizinc",
+      "solve_time_sec": 0.006
+    },
+    {
+      "problem_type": "assignment",
+      "size": "large",
+      "solver_id": "highs",
+      "solve_time_sec": 0.0086
+    },
+    {
+      "problem_type": "assignment",
+      "size": "large",
+      "solver_id": "cbc",
+      "solve_time_sec": 0.3599
+    },
+    {
+      "problem_type": "assignment",
+      "size": "large",
+      "solver_id": "cp_sat",
+      "solve_time_sec": 0.2753
+    },
+    {
+      "problem_type": "assignment",
+      "size": "large",
+      "solver_id": "scip",
+      "solve_time_sec": 0.0073
+    },
+    {
+      "problem_type": "assignment",
+      "size": "large",
+      "solver_id": "gurobi",
+      "solve_time_sec": 0.0056
+    },
+    {
+      "problem_type": "assignment",
+      "size": "large",
+      "solver_id": "minizinc",
+      "solve_time_sec": 0.0095
+    },
+    {
+      "problem_type": "assignment",
+      "size": "large",
+      "solver_id": "highs",
+      "solve_time_sec": 0.0112
+    },
+    {
+      "problem_type": "assignment",
+      "size": "large",
+      "solver_id": "cbc",
+      "solve_time_sec": 0.3553
+    },
+    {
+      "problem_type": "assignment",
+      "size": "large",
+      "solver_id": "cp_sat",
+      "solve_time_sec": 0.2603
+    },
+    {
+      "problem_type": "assignment",
+      "size": "large",
+      "solver_id": "scip",
+      "solve_time_sec": 0.0095
+    },
+    {
+      "problem_type": "assignment",
+      "size": "large",
+      "solver_id": "gurobi",
+      "solve_time_sec": 0.0073
+    },
+    {
+      "problem_type": "assignment",
+      "size": "large",
+      "solver_id": "minizinc",
+      "solve_time_sec": 0.0123
+    },
+    {
+      "problem_type": "max_independent_set",
+      "size": "small",
+      "solver_id": "highs",
+      "solve_time_sec": 0.0005
+    },
+    {
+      "problem_type": "max_independent_set",
+      "size": "small",
+      "solver_id": "cbc",
+      "solve_time_sec": 0.0
+    },
+    {
+      "problem_type": "max_independent_set",
+      "size": "small",
+      "solver_id": "cp_sat",
+      "solve_time_sec": 0.0229
+    },
+    {
+      "problem_type": "max_independent_set",
+      "size": "small",
+      "solver_id": "scip",
+      "solve_time_sec": 0.0195
+    },
+    {
+      "problem_type": "max_independent_set",
+      "size": "small",
+      "solver_id": "gurobi",
+      "solve_time_sec": 0.0149
+    },
+    {
+      "problem_type": "max_independent_set",
+      "size": "small",
+      "solver_id": "minizinc",
+      "solve_time_sec": 0.0252
+    },
+    {
+      "problem_type": "max_independent_set",
+      "size": "small",
+      "solver_id": "highs",
+      "solve_time_sec": 0.0007
+    },
+    {
+      "problem_type": "max_independent_set",
+      "size": "small",
+      "solver_id": "cbc",
+      "solve_time_sec": 0.0
+    },
+    {
+      "problem_type": "max_independent_set",
+      "size": "small",
+      "solver_id": "cp_sat",
+      "solve_time_sec": 0.0419
+    },
+    {
+      "problem_type": "max_independent_set",
+      "size": "small",
+      "solver_id": "scip",
+      "solve_time_sec": 0.0356
+    },
+    {
+      "problem_type": "max_independent_set",
+      "size": "small",
+      "solver_id": "gurobi",
+      "solve_time_sec": 0.0272
+    },
+    {
+      "problem_type": "max_independent_set",
+      "size": "small",
+      "solver_id": "minizinc",
+      "solve_time_sec": 0.0461
+    },
+    {
+      "problem_type": "max_independent_set",
+      "size": "medium",
+      "solver_id": "highs",
+      "solve_time_sec": 0.0006
+    },
+    {
+      "problem_type": "max_independent_set",
+      "size": "medium",
+      "solver_id": "cbc",
+      "solve_time_sec": 0.0
+    },
+    {
+      "problem_type": "max_independent_set",
+      "size": "medium",
+      "solver_id": "cp_sat",
+      "solve_time_sec": 0.0409
+    },
+    {
+      "problem_type": "max_independent_set",
+      "size": "medium",
+      "solver_id": "scip",
+      "solve_time_sec": 0.0348
+    },
+    {
+      "problem_type": "max_independent_set",
+      "size": "medium",
+      "solver_id": "gurobi",
+      "solve_time_sec": 0.0266
+    },
+    {
+      "problem_type": "max_independent_set",
+      "size": "medium",
+      "solver_id": "minizinc",
+      "solve_time_sec": 0.045
+    },
+    {
+      "problem_type": "max_independent_set",
+      "size": "medium",
+      "solver_id": "highs",
+      "solve_time_sec": 0.0015
+    },
+    {
+      "problem_type": "max_independent_set",
+      "size": "medium",
+      "solver_id": "cbc",
+      "solve_time_sec": 0.0
+    },
+    {
+      "problem_type": "max_independent_set",
+      "size": "medium",
+      "solver_id": "cp_sat",
+      "solve_time_sec": 0.0523
+    },
+    {
+      "problem_type": "max_independent_set",
+      "size": "medium",
+      "solver_id": "scip",
+      "solve_time_sec": 0.0445
+    },
+    {
+      "problem_type": "max_independent_set",
+      "size": "medium",
+      "solver_id": "gurobi",
+      "solve_time_sec": 0.034
+    },
+    {
+      "problem_type": "max_independent_set",
+      "size": "medium",
+      "solver_id": "minizinc",
+      "solve_time_sec": 0.0575
+    },
+    {
+      "problem_type": "max_independent_set",
+      "size": "large",
+      "solver_id": "highs",
+      "solve_time_sec": 0.0012
+    },
+    {
+      "problem_type": "max_independent_set",
+      "size": "large",
+      "solver_id": "cbc",
+      "solve_time_sec": 0.0
+    },
+    {
+      "problem_type": "max_independent_set",
+      "size": "large",
+      "solver_id": "cp_sat",
+      "solve_time_sec": 0.0562
+    },
+    {
+      "problem_type": "max_independent_set",
+      "size": "large",
+      "solver_id": "scip",
+      "solve_time_sec": 0.0478
+    },
+    {
+      "problem_type": "max_independent_set",
+      "size": "large",
+      "solver_id": "gurobi",
+      "solve_time_sec": 0.0365
+    },
+    {
+      "problem_type": "max_independent_set",
+      "size": "large",
+      "solver_id": "minizinc",
+      "solve_time_sec": 0.0618
+    },
+    {
+      "problem_type": "max_independent_set",
+      "size": "large",
+      "solver_id": "highs",
+      "solve_time_sec": 0.0008
+    },
+    {
+      "problem_type": "max_independent_set",
+      "size": "large",
+      "solver_id": "cbc",
+      "solve_time_sec": 0.0
+    },
+    {
+      "problem_type": "max_independent_set",
+      "size": "large",
+      "solver_id": "cp_sat",
+      "solve_time_sec": 0.0565
+    },
+    {
+      "problem_type": "max_independent_set",
+      "size": "large",
+      "solver_id": "scip",
+      "solve_time_sec": 0.048
+    },
+    {
+      "problem_type": "max_independent_set",
+      "size": "large",
+      "solver_id": "gurobi",
+      "solve_time_sec": 0.0367
+    },
+    {
+      "problem_type": "max_independent_set",
+      "size": "large",
+      "solver_id": "minizinc",
+      "solve_time_sec": 0.0622
+    }
+  ]
+}

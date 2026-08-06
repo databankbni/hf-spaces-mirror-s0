@@ -1,0 +1,76 @@
+{
+ "captured_at": "2026-08-04T13:23:55Z",
+ "hf_metadata": {
+  "_id": "6a4ccd3bff80e9c7f8f336ac",
+  "author": "Cnisa",
+  "cardData": {
+   "app_file": "app.py",
+   "colorFrom": "blue",
+   "colorTo": "purple",
+   "emoji": "📈",
+   "pinned": false,
+   "python_version": "3.13",
+   "sdk": "gradio",
+   "sdk_version": "6.19.0",
+   "title": "Biomass Torrefaction Predictor"
+  },
+  "createdAt": "2026-07-07T09:56:11.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://cnisa-biomass-torrefaction-predictor.hf.space",
+  "id": "Cnisa/biomass-torrefaction-predictor",
+  "lastModified": "2026-07-31T05:14:02.000Z",
+  "likes": 0,
+  "private": false,
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "cnisa-biomass-torrefaction-predictor.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": null,
+    "requested": "cpu-basic"
+   },
+   "replicas": {
+    "requested": 1
+   },
+   "stage": "SLEEPING"
+  },
+  "sdk": "gradio",
+  "sha": "ac72cddd935a5810bc8137aef6fa7ec9b73e97b0",
+  "siblings": [
+   {
+    "rfilename": ".gitattributes"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "app.py"
+   },
+   {
+    "rfilename": "requirements.txt"
+   }
+  ],
+  "subdomain": "cnisa-biomass-torrefaction-predictor",
+  "tags": [
+   "gradio",
+   "region:us"
+  ],
+  "usedStorage": 0
+ },
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "Cnisa/biomass-torrefaction-predictor",
+ "repo_type": "spaces",
+ "sha": "ac72cddd935a5810bc8137aef6fa7ec9b73e97b0",
+ "web_url": "https://huggingface.co/spaces/Cnisa/biomass-torrefaction-predictor"
+}

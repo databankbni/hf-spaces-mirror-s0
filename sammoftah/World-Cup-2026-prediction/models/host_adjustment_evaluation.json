@@ -1,0 +1,57 @@
+{
+  "candidate_boosts": [
+    0.0,
+    25.0,
+    50.0
+  ],
+  "fitted_host_elo_boost": 99.99999999996494,
+  "selection_editions": [
+    "AC-2015",
+    "AC-2019",
+    "CA-2015",
+    "CA-2016",
+    "CA-2019",
+    "CA-2021",
+    "EC-2016",
+    "EC-2021",
+    "WC-2018"
+  ],
+  "confirmation_editions": [
+    "AC-2024",
+    "CA-2024",
+    "EC-2024",
+    "WC-2022"
+  ],
+  "n_selection": 82,
+  "n_confirmation": 18,
+  "evaluations": {
+    "0.0": {
+      "selection_log_loss": 0.7682781486957051,
+      "confirmation_log_loss": 0.7149237224255186
+    },
+    "25.0": {
+      "selection_log_loss": 0.7492140241392978,
+      "confirmation_log_loss": 0.6963029815949857
+    },
+    "50.0": {
+      "selection_log_loss": 0.7346874337302839,
+      "confirmation_log_loss": 0.6826786366130198
+    },
+    "99.99999999996494": {
+      "selection_log_loss": 0.7189889474431906,
+      "confirmation_log_loss": 0.6702670728206412
+    }
+  },
+  "edition_cluster_bootstrap_95": {
+    "selection": [
+      -0.10492565189612492,
+      -0.01744263150971822
+    ],
+    "confirmation": [
+      -0.1952026997526005,
+      0.18613459077576663
+    ]
+  },
+  "adopted": false,
+  "criterion": "A host boost is adopted only if the fitted one-parameter value beats no boost on both selection and completed-edition confirmation data, with edition-cluster bootstrap intervals entirely below zero."
+}

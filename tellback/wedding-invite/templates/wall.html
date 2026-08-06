@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ c.groom_name_en }} &amp; {{ c.bride_name_en }} — Wishes Wall</title>
+  <link href="https://fonts.googleapis.com/css2?family={{ c.font_kh_heading|replace(' ', '+') }}&family=Hanuman:wght@400;700&family={{ c.font_en_script|replace(' ', '+') }}&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Hanuman', serif;
+      background: radial-gradient(ellipse at top, #3a2c1d 0%, #241b11 55%, #171109 100%);
+      color: #f7ecd4;
+      min-height: 100vh;
+      overflow: hidden;
+      padding: 3vh 4vw;
+      text-align: center;
+    }
+    header .names {
+      font-family: '{{ c.font_kh_heading }}', 'Hanuman', serif;
+      font-size: clamp(1.6rem, 4vw, 3.2rem);
+      color: {{ c.theme_color }};
+    }
+    header .sub {
+      font-family: '{{ c.font_en_script }}', cursive;
+      font-size: clamp(1.2rem, 2.6vw, 2rem);
+      color: #e5c569;
+      margin-top: 0.4rem;
+    }
+    .wall {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.4rem;
+      margin-top: 4vh;
+      max-height: 72vh;
+      overflow: hidden;
+      align-content: start;
+    }
+    .wall-wish {
+      background: rgba(253, 249, 242, 0.07);
+      border: 1px solid rgba(229, 197, 105, 0.35);
+      border-radius: 18px;
+      padding: 1.4rem 1.6rem;
+      text-align: left;
+      opacity: 0;
+      transform: translateY(24px);
+      animation: rise 0.8s ease forwards;
+    }
+    @keyframes rise { to { opacity: 1; transform: none; } }
+    .wall-wish .who { color: {{ c.theme_color }}; font-weight: 700; font-size: 1.15rem; }
+    .wall-wish .what { font-size: 1.3rem; margin-top: 0.4rem; line-height: 1.7; white-space: pre-line; }
+    .wall-wish .hearts { color: #d98a95; font-size: 0.95rem; margin-top: 0.5rem; }
+    .qr-corner {
+      position: fixed;
+      right: 2.2vw;
+      bottom: 3vh;
+      background: #fdf9f2;
+      border-radius: 14px;
+      padding: 0.7rem;
+      text-align: center;
+      color: #3a3226;
+    }
+    .qr-corner img { width: clamp(90px, 11vw, 160px); display: block; }
+    .qr-corner small { font-size: 0.72rem; display: block; margin-top: 0.3rem; }
+    .counter {
+      position: fixed;
+      left: 2.2vw;
+      bottom: 3vh;
+      color: #b9a77e;
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="names">{{ c.groom_name_kh }} ♥ {{ c.bride_name_kh }}</div>
+    <div class="sub">{{ c.groom_name_en }} &amp; {{ c.bride_name_en }} · {{ c.date_en }}</div>
+  </header>
+
+  <div class="wall" id="wall"></div>
+
+  <div class="counter"><span id="wish-count">0</span> 💬</div>
+  <div class="qr-corner">
+    <img src="{{ url_for('wall_qr') }}" alt="QR">
+    <small>ស្កេនដើម្បីផ្ញើពរជ័យ<br>Scan to send wishes</small>
+  </div>
+
+  <script>
+    // Rotates through pages of the latest wishes, newest first
+    const PER_PAGE = 6;
+    let wishes = [], page = 0;
+    async function load() {
+      try {
+        const data = await (await fetch('/api/wishes')).json();
+        wishes = data.wishes;
+        document.getElementById('wish-count').textContent = wishes.length;
+      } catch (e) {}
+    }
+    function show() {
+      const wall = document.getElementById('wall');
+      wall.innerHTML = '';
+      if (!wishes.length) return;
+      const pages = Math.ceil(wishes.length / PER_PAGE);
+      page = page % pages;
+      wishes.slice(page * PER_PAGE, (page + 1) * PER_PAGE).forEach((w, i) => {
+        const div = document.createElement('div');
+        div.className = 'wall-wish';
+        div.style.animationDelay = (i * 0.15) + 's';
+        const who = document.createElement('div');
+        who.className = 'who';
+        who.textContent = w.name;
+        const what = document.createElement('div');
+        what.className = 'what';
+        what.textContent = w.message;
+        div.append(who, what);
+        if (w.hearts) {
+          const h = document.createElement('div');
+          h.className = 'hearts';
+          h.textContent = '❤ ' + w.hearts;
+          div.appendChild(h);
+        }
+        wall.appendChild(div);
+      });
+      page++;
+    }
+    (async () => {
+      await load();
+      show();
+      setInterval(async () => { await load(); show(); }, 12000);
+    })();
+  </script>
+</body>
+</html>

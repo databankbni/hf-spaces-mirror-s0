@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}Antrian — AI Tools Studio{% endblock %}
+{% block content %}
+
+<div class="reel-strip">
+  <span class="reel-strip__dash"></span>
+  <span class="reel-strip__dot"></span>
+  <span class="reel-strip__dash"></span>
+</div>
+
+<div class="tool-intro">
+  <p class="tool-intro__title">Antrian</p>
+  <p class="tool-intro__subtitle">video mana yang lagi diproses, dan mana yang masih menunggu — lintas semua tools</p>
+</div>
+
+<div class="panel queue-card">
+  <h3 class="queue-section__title">Sedang diproses</h3>
+  <div id="queue-current"></div>
+</div>
+
+<div class="panel queue-card">
+  <h3 class="queue-section__title">Menunggu antrian</h3>
+  <div id="queue-pending"></div>
+</div>
+
+{% endblock %}
+{% block scripts %}
+<script src="{{ static_url('js/queue.js') }}"></script>
+{% endblock %}

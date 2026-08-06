@@ -1,0 +1,23 @@
+{
+ "captured_at": "2026-08-04T16:23:52Z",
+ "hf_metadata": {
+  "sha": "8a4b3fd9aa758d63d9ac929dc6c9e939bf1d8e60"
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "ieumhs/4team",
+ "repo_type": "spaces",
+ "sha": "8a4b3fd9aa758d63d9ac929dc6c9e939bf1d8e60",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/ieumhs/4team"
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>expM — parallel-concat + rate-sync (first readout @4500)</title>
+<style>
+  body { background:#0d1117; color:#e6edf3; font-family:-apple-system,'Segoe UI',Roboto,sans-serif; margin:0; padding:24px 32px; }
+  h1 { font-size:22px; margin:0 0 4px; } h2 { font-size:17px; margin:28px 0 8px; color:#63c98a; }
+  .sub { color:#8b949e; font-size:13px; margin-bottom:18px; }
+  table { border-collapse:collapse; font-size:13.5px; margin:10px 0 6px; }
+  th,td { border:1px solid #30363d; padding:5px 12px; text-align:center; }
+  th { background:#161b22; color:#e6edf3; } td.name { text-align:left; }
+  .lead { color:#63c98a; font-weight:600; } .warn { color:#e3b341; }
+  .note { font-size:13px; color:#8b949e; max-width:1080px; line-height:1.55; }
+  .note b { color:#e6edf3; }
+  img { width:100%; max-width:1600px; display:block; margin:6px 0 2px; border:1px solid #30363d; border-radius:6px; }
+  .cap { font-size:12.5px; color:#8b949e; margin-bottom:14px; }
+</style>
+</head>
+<body>
+<h1>expM — PARALLEL-CONCAT + RATE-SYNC · first readout</h1>
+<div class="sub">2026-07-29 · T2V-1.3B full-FT · 50 denoise steps · dev 4-clip (2 train + 2 test) · fwd18-k metric family ·
+rows: GT | expM_par(+Plücker) | expM_nopl | expL_nk(reference)</div>
+
+<div class="note">
+<b>Recipe.</b> Source = 5 clean ctx latent frames as a second token half (frame-aligned RoPE, told pinned .02);
+target = full 21 frames from <b>pure noise everywhere</b> (PatchForcing init). Knownness sets only the
+<b>descent rate</b>: T<sub>i</sub> = 1 − 0.5·k<sub>i</sub>; known tokens land early, x0-project, pin as clean attention
+references (expH). Training field == inference calendar family (branch1 exact slice t = clamp(1−c/T<sub>i</sub>),
+branch2 AsyncPatch-style bounded per-patch clock jitter). No warp / z_mem anywhere; content rides self-attention only.
+</div>
+
+<h2>seen-PSNR (dB) / unseen-gray &nbsp;<span style="font-weight:400;color:#8b949e">(gray more negative = richer unseen content)</span></h2>
+<table>
+<tr><th>clip</th><th>expM_par @4500<br>+6ch Plücker</th><th>expM_nopl @4500<br>no pose</th><th>expL_nk @9500<br>in-seq + z_mem init</th></tr>
+<tr><td class="name">00534f58 (train)</td><td>10.6 / −33.3</td><td>10.6 / −36.7</td><td>11.6 / −29.7</td></tr>
+<tr><td class="name">0003dc82 (train)</td><td>10.9 / −32.4</td><td>10.4 / −45.4</td><td>13.1 / −20.0</td></tr>
+<tr><td class="name">111b656f (test)</td><td>11.5 / −45.2</td><td>11.6 / −37.6</td><td class="lead">16.2 / −17.1</td></tr>
+<tr><td class="name">2501f488 (test)</td><td>11.4 / −35.2</td><td>11.3 / −36.2</td><td>10.6 / −28.9</td></tr>
+<tr><td class="name"><b>avg</b></td><td><b>11.10</b></td><td><b>10.98</b></td><td><b>12.88</b></td></tr>
+</table>
+
+<div class="note">
+<b>Reading (honest).</b>
+① expM trails expL_nk by ~1.8dB but the comparison is <span class="warn">not matched</span>: expM is at 4500/10k steps
+(expL at 9500) and expL_nk infers with SDEdit init from z_mem — geometric alignment is free; expM starts from pure
+noise and moves all content via attention. ② Plücker vs no-pose: +0.12dB — <span class="warn">not separated yet</span>
+at 4500 (zero-init channels engage late); verdict deferred to 10k. ③ Bright spot: expM's unseen-gray is markedly
+richer (−33…−45 vs −17…−30) — the pure-noise start + rehearsal preserves generation energy; the bottleneck is
+<b>alignment, not content</b> (mild CameraAnything pattern). Next: matched-step rerun @10k, add expL_uni row
+(equal information budget), per-block AdaLN camera injection if Plücker channel stays flat.
+</div>
+
+<h2>00534f58 · TRAIN</h2><img src="expm_00534f58.png"><div class="cap">frames 0 / 20 / 40 / 60 / 80 — rows: GT · expM_par · expM_nopl · expL_nk</div>
+<h2>0003dc82 · TRAIN</h2><img src="expm_0003dc82.png"><div class="cap">frames 0 / 20 / 40 / 60 / 80</div>
+<h2>111b656f · TEST</h2><img src="expm_111b656f.png"><div class="cap">frames 0 / 20 / 40 / 60 / 80</div>
+<h2>2501f488 · TEST</h2><img src="expm_2501f488.png"><div class="cap">frames 0 / 20 / 40 / 60 / 80</div>
+</body>
+</html>

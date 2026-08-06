@@ -1,0 +1,79 @@
+{
+ "captured_at": "2026-08-04T13:53:59Z",
+ "hf_metadata": {
+  "_id": "6a4b7bcb1c7e1a87c9028bc7",
+  "author": "King3Djbl",
+  "cardData": {
+   "app_file": "app.py",
+   "colorFrom": "green",
+   "colorTo": "blue",
+   "emoji": "💻",
+   "pinned": true,
+   "python_version": "3.11",
+   "sdk": "gradio",
+   "sdk_version": "4.44.0",
+   "title": "ShellWhisperer Terminal"
+  },
+  "createdAt": "2026-07-06T09:56:27.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://king3djbl-shellwhisperer-terminal.hf.space",
+  "id": "King3Djbl/shellwhisperer-terminal",
+  "lastModified": "2026-07-08T04:04:17.000Z",
+  "likes": 1,
+  "models": [
+   "fableforge-ai/ShellWhisperer-1.5B"
+  ],
+  "private": false,
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "king3djbl-shellwhisperer-terminal.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": null,
+    "requested": "cpu-basic"
+   },
+   "replicas": {
+    "requested": 1
+   },
+   "stage": "SLEEPING"
+  },
+  "sdk": "gradio",
+  "sha": "dff48631312f1fd56e9a1a04c999a3f166a09540",
+  "siblings": [
+   {
+    "rfilename": ".gitattributes"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "app.py"
+   },
+   {
+    "rfilename": "requirements.txt"
+   }
+  ],
+  "subdomain": "king3djbl-shellwhisperer-terminal",
+  "tags": [
+   "gradio",
+   "region:us"
+  ],
+  "usedStorage": 0
+ },
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "King3Djbl/shellwhisperer-terminal",
+ "repo_type": "spaces",
+ "sha": "dff48631312f1fd56e9a1a04c999a3f166a09540",
+ "web_url": "https://huggingface.co/spaces/King3Djbl/shellwhisperer-terminal"
+}

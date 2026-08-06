@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block title %}Messages - MktBook{% endblock %}
+{% block content %}
+<h1>Message Log</h1>
+
+<form method="get" action="/messages">
+    <div class="grid">
+        <label>
+            Filter by bot
+            <select name="bot_id" onchange="this.form.submit()">
+                <option value="">All bots</option>
+                {% for bot in bots %}
+                <option value="{{ bot.id }}" {% if selected_bot_id == bot.id %}selected{% endif %}>{{ bot.bot_name }}</option>
+                {% endfor %}
+            </select>
+        </label>
+    </div>
+</form>
+
+<table>
+    <thead>
+        <tr>
+            <th>Time</th>
+            <th>Author</th>
+            <th>Type</th>
+            <th>Content</th>
+            <th>Conv #</th>
+        </tr>
+    </thead>
+    <tbody id="message-table-body">
+        {% for msg in messages %}
+        <tr>
+            <td><small>{{ msg.created_at }}</small></td>
+            <td>{{ msg.author_name }}</td>
+            <td>{{ msg.author_type }}</td>
+            <td>{{ msg.content[:200] }}{% if msg.content|length > 200 %}...{% endif %}</td>
+            <td>{{ msg.conversation_id or '-' }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% if not messages %}
+<p>No messages recorded yet.</p>
+{% endif %}
+{% endblock %}

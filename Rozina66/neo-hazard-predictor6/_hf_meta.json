@@ -1,0 +1,82 @@
+{
+ "captured_at": "2026-08-04T14:33:11Z",
+ "hf_metadata": {
+  "_id": "6a3446bf5e6d4762871712c0",
+  "author": "Rozina66",
+  "cardData": {
+   "app_file": "app.py",
+   "colorFrom": "yellow",
+   "colorTo": "gray",
+   "emoji": "👀",
+   "pinned": false,
+   "python_version": "3.13",
+   "sdk": "gradio",
+   "sdk_version": "6.19.0",
+   "title": "Neo Hazard Predictor6"
+  },
+  "createdAt": "2026-06-18T19:27:59.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://rozina66-neo-hazard-predictor6.hf.space",
+  "id": "Rozina66/neo-hazard-predictor6",
+  "lastModified": "2026-07-08T04:59:49.000Z",
+  "likes": 0,
+  "private": false,
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "rozina66-neo-hazard-predictor6.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": null,
+    "requested": "cpu-basic"
+   },
+   "replicas": {
+    "requested": 1
+   },
+   "stage": "SLEEPING"
+  },
+  "sdk": "gradio",
+  "sha": "7024bee036b65fdb1f2c6915ceb199e0c01b4b41",
+  "siblings": [
+   {
+    "rfilename": ".gitattributes"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "app.py"
+   },
+   {
+    "rfilename": "model.pkl"
+   },
+   {
+    "rfilename": "requirements.txt"
+   },
+   {
+    "rfilename": "scaler.pkl"
+   }
+  ],
+  "subdomain": "rozina66-neo-hazard-predictor6",
+  "tags": [
+   "gradio",
+   "region:us"
+  ],
+  "usedStorage": 192679
+ },
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "Rozina66/neo-hazard-predictor6",
+ "repo_type": "spaces",
+ "sha": "7024bee036b65fdb1f2c6915ceb199e0c01b4b41",
+ "web_url": "https://huggingface.co/spaces/Rozina66/neo-hazard-predictor6"
+}

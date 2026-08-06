@@ -1,0 +1,27 @@
+{
+ "captured_at": "2026-08-04T16:08:07Z",
+ "hf_metadata": {
+  "sha": "9f5bf9e3b9a8203688f04cbe053b2e6c8719d99a"
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  },
+  {
+   "original": ".gitignore",
+   "stored_as": "_gitignore"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "dkamissah/generative-design-assistant",
+ "repo_type": "spaces",
+ "sha": "9f5bf9e3b9a8203688f04cbe053b2e6c8719d99a",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/dkamissah/generative-design-assistant"
+}

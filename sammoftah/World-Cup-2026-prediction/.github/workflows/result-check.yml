@@ -1,0 +1,111 @@
+name: WC2026 result check
+
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: wc2026-result-check
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+jobs:
+  update-results:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - run: python -m pip install pydantic pytest
+      - name: Fetch finished matches
+        id: fetch
+        env:
+          FOOTBALL_DATA_API_KEY: ${{ secrets.FOOTBALL_DATA_API_KEY }}
+        run: |
+          output="data/world_cup_2026/result_updates/provider-$(date -u +%Y%m%dT%H%M%SZ).json"
+          fetch_log="$(mktemp)"
+          PYTHONPATH=src python scripts/fetch_wc2026_results.py \
+            --provider auto \
+            --output "$output" | tee "$fetch_log"
+          provider="$(sed -n 's/^provider=//p' "$fetch_log" | tail -1)"
+          if [ -z "$provider" ]; then
+            echo "::error::Result fetcher did not report its provider."
+            exit 1
+          fi
+          echo "provider=$provider" >> "$GITHUB_OUTPUT"
+          if [ -f "$output" ]; then
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+            echo "output=$output" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Report result source
+        run: |
+          echo "result_provider=${{ steps.fetch.outputs.provider }}" >> "$GITHUB_STEP_SUMMARY"
+          echo "result_changes=${{ steps.fetch.outputs.changed }}" >> "$GITHUB_STEP_SUMMARY"
+      - name: Refresh knockout bracket
+        id: knockout
+        run: |
+          PYTHONPATH=src python scripts/build_knockout_snapshot.py --output /tmp/knockout.json
+          if [ ! -f data/world_cup_2026/knockout.json ] || ! cmp -s <(jq -S '.matches' data/world_cup_2026/knockout.json) <(jq -S '.matches' /tmp/knockout.json); then
+            cp /tmp/knockout.json data/world_cup_2026/knockout.json
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Apply audited update
+        if: steps.fetch.outputs.changed == 'true'
+        run: |
+          PYTHONPATH=src python scripts/update_snapshot.py \
+            --results-file "${{ steps.fetch.outputs.output }}"
+      - name: Verify candidate snapshot
+        if: steps.fetch.outputs.changed == 'true' || steps.knockout.outputs.changed == 'true'
+        run: |
+          PYTHONPATH=src python scripts/health_check.py --ignore-overdue-results
+          PYTHONPATH=src:. pytest
+          PYTHONPATH=src python scripts/track_record_summary.py
+      - name: Build PR summary
+        if: steps.fetch.outputs.changed == 'true' || steps.knockout.outputs.changed == 'true'
+        run: |
+          python - <<'PY'
+          import json, os
+          path = os.environ["UPDATE_PATH"]
+          data = json.load(open(path)) if path and os.path.exists(path) else {}
+          knockout_changed = os.environ["KNOCKOUT_CHANGED"] == "true"
+          with open("/tmp/result-pr.md", "w") as out:
+              out.write("Automated World Cup result and bracket update.\n\n")
+              out.write(f"- Additions: {len(data.get('results', []))}\n")
+              out.write(f"- Corrections requiring review: {len(data.get('corrections', []))}\n")
+              if data.get("raw_response_sha256"):
+                  out.write(f"- Raw response SHA-256: `{data['raw_response_sha256']}`\n")
+              for row in data.get("results", []):
+                  out.write(f"- Add `{row['fixture_id']}`: {row['home']} {row['home_goals']}-{row['away_goals']} {row['away']}\n")
+              for row in data.get("corrections", []):
+                  out.write(f"- **Correction** `{row['fixture_id']}`: {row['previous_home_goals']}-{row['previous_away_goals']} -> {row['home_goals']}-{row['away_goals']}\n")
+              if knockout_changed:
+                  out.write("- Knockout bracket refreshed from the canonical ESPN payload (see `data/world_cup_2026/knockout.json`).\n")
+          PY
+        env:
+          UPDATE_PATH: ${{ steps.fetch.outputs.output }}
+          KNOCKOUT_CHANGED: ${{ steps.knockout.outputs.changed }}
+      - name: Open or update result PR
+        if: steps.fetch.outputs.changed == 'true' || steps.knockout.outputs.changed == 'true'
+        uses: peter-evans/create-pull-request@v8
+        with:
+          branch: automation/wc2026-results
+          delete-branch: true
+          commit-message: Record audited WC2026 results
+          title: "Record audited WC2026 result updates"
+          body-path: /tmp/result-pr.md
+          labels: automated-results
+          add-paths: |
+            data/world_cup_2026/snapshot.json
+            data/world_cup_2026/backups/*.json
+            data/world_cup_2026/result_updates/*.json
+            data/world_cup_2026/knockout.json

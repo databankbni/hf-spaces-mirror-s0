@@ -1,0 +1,45 @@
+# Jaga Supabase gratis agar tidak auto-pause karena idle.
+# Ini TIDAK membangunkan Hugging Face Space — hanya mem-ping database.
+#
+# Secrets (GitHub → Settings → Secrets and variables → Actions):
+#   SUPABASE_URL                 e.g. https://xxxx.supabase.co
+#   SUPABASE_SERVICE_ROLE_KEY    service_role JWT (bukan anon jika RLS ketat)
+
+name: Supabase keep-alive
+
+on:
+  schedule:
+    # Setiap hari, jam 01:00 UTC (~08:00 WIB)
+    - cron: "0 1 * * *"
+  workflow_dispatch:
+
+jobs:
+  ping-supabase:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Query Supabase REST (devices)
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: |
+          set -euo pipefail
+          if [ -z "${SUPABASE_URL:-}" ] || [ -z "${SUPABASE_SERVICE_ROLE_KEY:-}" ]; then
+            echo "ERROR: Set repository secrets SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY"
+            exit 1
+          fi
+          BASE="${SUPABASE_URL%/}"
+          echo "Pinging ${BASE}/rest/v1/devices ..."
+          HTTP=$(curl -sS -o /tmp/sb_body.json -w "%{http_code}" \
+            --connect-timeout 20 --max-time 45 \
+            -H "apikey: ${SUPABASE_SERVICE_ROLE_KEY}" \
+            -H "Authorization: Bearer ${SUPABASE_SERVICE_ROLE_KEY}" \
+            -H "Accept: application/json" \
+            "${BASE}/rest/v1/devices?select=device_id&limit=1")
+          echo "HTTP ${HTTP}"
+          head -c 200 /tmp/sb_body.json; echo
+          if [ "$HTTP" != "200" ]; then
+            echo "Keep-alive failed"
+            exit 1
+          fi
+          echo "Supabase keep-alive OK"

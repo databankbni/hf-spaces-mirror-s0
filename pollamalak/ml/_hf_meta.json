@@ -1,0 +1,23 @@
+{
+ "captured_at": "2026-08-04T16:45:16Z",
+ "hf_metadata": {
+  "sha": "437bff58f2aa59b364426bb1ca5711c0db9e6e47"
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "pollamalak/ml",
+ "repo_type": "spaces",
+ "sha": "437bff58f2aa59b364426bb1ca5711c0db9e6e47",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/pollamalak/ml"
+}

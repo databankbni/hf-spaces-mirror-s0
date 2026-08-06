@@ -1,0 +1,61 @@
+{
+  "claims": [
+    {
+      "claim": "Finite-sample covariance effects renormalize the effective noise scale in the expected linear denoiser, causing overshrinkage of low-variance directions (Figure 2)",
+      "evidence": "A finite diagonal Gaussian spectrum reproduces the Silverstein noise renormalization and the resulting lower-band shrinkage in the optimal linear denoiser.",
+      "metrics": {
+        "kappa_minus_raw": 0.024710692135761325,
+        "low_band_finite_sample_shrinkage": 0.23149730143166006,
+        "low_band_population_shrinkage": 0.2649388553382139,
+        "raw_noise_variance": 0.12,
+        "renormalized_kappa": 0.14471069213576132
+      },
+      "verdict": "toy"
+    },
+    {
+      "claim": "The denoiser-variance theory predicts anisotropic, location-dependent cross-split deviations that decay with dataset size (Result 4.2)",
+      "evidence": "Result 4.2's factorized variance formula peaks near lambda ~= kappa and decays when n is increased on the same synthetic spectrum.",
+      "metrics": {
+        "kappa": 0.18424467363115132,
+        "large_n_peak_variance": 0.0014911744648617488,
+        "peak_direction_variance": 0.008058355830110765,
+        "peak_eigenvalue": 0.1749559327355391,
+        "profile_argmax_index": 4,
+        "top_direction_variance": 0.0041516114334281835,
+        "top_eigenvalue": 1.03
+      },
+      "verdict": "toy"
+    },
+    {
+      "claim": "The sampling-map analysis gives deterministic-equivalence formulas for expectation and variance over full diffusion trajectories (Results 5.1 and 5.2)",
+      "evidence": "Empirical sample-covariance square-root maps overshrink low modes and independent split maps have positive same-seed disagreement that drops with larger n.",
+      "metrics": {
+        "cross_split_mse": 0.03301474609073319,
+        "larger_n_cross_split_mse": 0.007808079651669725,
+        "larger_n_samples": 256.0,
+        "low_mode_empirical_sqrt_mean": 0.23166905538008903,
+        "low_mode_population_sqrt_mean": 0.2554801341252514,
+        "n_samples": 64.0
+      },
+      "verdict": "toy"
+    }
+  ],
+  "commands": [
+    "uv run --project submissions/a-random-matrix-perspective-on-the-consistency-of-diffusion-models python submissions/a-random-matrix-perspective-on-the-consistency-of-diffusion-models/generate_evidence.py",
+    "uv run --project submissions/a-random-matrix-perspective-on-the-consistency-of-diffusion-models python -m pytest submissions/a-random-matrix-perspective-on-the-consistency-of-diffusion-models/tests -q"
+  ],
+  "cpu_only": true,
+  "generated_at": "2026-07-29T02:30:00+00:00",
+  "limitations": [
+    "No official executable repository was found in the pinned arXiv source or web search.",
+    "The evidence targets the paper's linear/RMT theory claims on synthetic spectra, not the paper's UNet/DiT image experiments."
+  ],
+  "paper_id": "iPjuUQbkfl",
+  "target_claims": [
+    "Finite-sample covariance effects renormalize the effective noise scale in the expected linear denoiser, causing overshrinkage of low-variance directions (Figure 2)",
+    "The denoiser-variance theory predicts anisotropic, location-dependent cross-split deviations that decay with dataset size (Result 4.2)",
+    "The sampling-map analysis gives deterministic-equivalence formulas for expectation and variance over full diffusion trajectories (Results 5.1 and 5.2)"
+  ],
+  "title": "A Random Matrix Perspective on the Consistency of Diffusion Models",
+  "upstream_revision": "arxiv:2602.02908v2+arxiv-source-sha256:d315b147972a42b0672876faa771b7a27d759659ad2ffa49e44f68494d4f3f3d"
+}

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Habitats | Tanzania Bird Finder{% endblock %}
+{% block content %}
+<section class="page-hero">
+  <span class="eyebrow">Ecosystems</span>
+  <h1>Habitat profiles</h1>
+  <p>Each ecosystem connects climate, structure, and the species that depend on it.</p>
+</section>
+
+<section class="section">
+  <div class="grid habitat-grid">
+    {% for habitat in habitats %}
+      <a class="habitat-card" href="{{ url_for('habitat_detail', slug=habitat.slug) }}">
+        <img src="{{ habitat.image_url }}" alt="{{ habitat.name }} habitat">
+        <div>
+          <span class="icon-badge"><i data-lucide="{{ habitat.icon }}"></i></span>
+          <h2>{{ habitat.name }}</h2>
+          <p>{{ habitat.description }}</p>
+          <small>{{ habitat.climate }}</small>
+        </div>
+      </a>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

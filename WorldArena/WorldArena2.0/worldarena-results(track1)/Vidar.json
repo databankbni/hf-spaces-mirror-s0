@@ -1,0 +1,22 @@
+{
+    "Model": "Vidar",
+    "year": "2025",
+    "open_source":"yes",
+    "Metrics": {
+        "Image Quality": 0.4533,
+        "Aesthetic Quality": 0.4275,
+        "JEPA Similarity": 0.5476,
+        "Dynamic Degree": 0.2144,
+        "Flow Score": 0.1505,
+        "Motion Smoothness": 0.7854,
+        "Subject Consistency": 0.5336,
+        "Background Consistency": 0.6995,
+        "Photometric Consistency": 0.1096,
+        "Interaction Quality": 0.4304,
+        "Trajectory Accuracy": 0.1699,
+        "Depth Accuracy": 0.8155,
+        "Perspectivity": 0.677,
+        "Instruction Following": 0.4596,
+        "Semantic Alignment": 0.8724
+    }
+}

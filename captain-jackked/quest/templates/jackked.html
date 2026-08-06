@@ -1,0 +1,173 @@
+{% extends "base.html" %}
+
+{% block title %}The Lifter's Path{% endblock %}
+{% block description %}Discover your focus areas depending on your lifter expertise.{% endblock %}
+
+{% block content %}
+<style>
+.jackked-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin: 3rem 0;
+}
+
+@media (max-width: 900px) {
+    .jackked-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .jackked-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.jackked-col {
+    background: var(--glass);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    transition: all var(--transition);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+}
+
+.jackked-col:hover {
+    border-color: color-mix(in srgb, var(--primary) 40%, transparent);
+    box-shadow: 0 8px 32px color-mix(in srgb, var(--text) 8%, transparent);
+}
+
+.dark .jackked-col:hover {
+    box-shadow: 0 0 24px var(--glow), 0 8px 32px rgba(0, 0, 0, 0.3);
+    border-color: color-mix(in srgb, var(--primary) 50%, transparent);
+}
+
+.jackked-col h3 {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    color: var(--primary);
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.jackked-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    transition: filter 0.4s ease, opacity 0.4s ease;
+    filter: blur(8px);
+    opacity: 0.3;
+}
+
+.jackked-col.unblurred .jackked-content {
+    filter: blur(0);
+    opacity: 1;
+}
+
+.jackked-row {
+    background: var(--surface);
+    padding: 1rem;
+    border-radius: calc(var(--radius) / 2);
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-align: center;
+    border-left: 3px solid var(--primary);
+    color: var(--text);
+    box-shadow: 0 2px 8px color-mix(in srgb, var(--text) 5%, transparent);
+}
+
+.jackked-row.continued {
+    border-left-color: var(--text-muted);
+    font-style: italic;
+    font-weight: 400;
+}
+</style>
+
+<div class="container" style="padding-top: 4rem; padding-bottom: 4rem;">
+    <div style="text-align: center; margin-bottom: 4rem;">
+        <h1 class="app-title" style="margin-bottom: 1rem; display: inline-block;">The Lifter's Path</h1>
+        <p style="color: var(--text-muted); font-size: 1.1rem; max-width: 600px; margin: 0 auto;">
+            What matters at different levels of expertise?
+        </p>
+    </div>
+
+    {% set levels = [
+        ('Beginner', 'Focus on form'),
+        ('Novice', 'Make Personal Records'),
+        ('Intermediate', 'Prioritize Recovery'),
+        ('Advanced', 'Embrace Specificity'),
+    ] %}
+
+    <div class="jackked-grid" id="jackked-grid">
+        {% for level_name, new_item in levels %}
+        <div class="jackked-col" data-index="{{ loop.index }}">
+            <h3>{{ level_name }}</h3>
+            <div class="jackked-content">
+                {% for prev_name, prev_item in levels[:loop.index0] %}
+                <div class="jackked-row continued">{{ prev_item }}</div>
+                {% endfor %}
+                <div class="jackked-row">{{ new_item }}</div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div style="margin-top: 2.5rem; color: var(--text-muted); font-size: 0.8rem; line-height: 1.6;">
+        <p style="margin: 0;"><sup>1</sup> Hover over a column (or tap on mobile) to reveal the priorities for that stage of your journey.</p>
+        <p style="margin: 0.25rem 0 0 0;"><sup>2</sup> Curated resources for each focus area are on the way.</p>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const columns = document.querySelectorAll('.jackked-col');
+    const container = document.getElementById('jackked-grid');
+
+    function setFocus(index) {
+        columns.forEach(col => {
+            const colIndex = parseInt(col.getAttribute('data-index'));
+            // Unblur if it's the active column or any column before it
+            if (colIndex <= index && index !== 0) {
+                col.classList.add('unblurred');
+            } else {
+                col.classList.remove('unblurred');
+            }
+        });
+    }
+
+    // Desktop hover logic
+    columns.forEach(col => {
+        col.addEventListener('mouseenter', () => {
+            // Only apply on devices that support hover
+            if (window.matchMedia('(hover: hover)').matches) {
+                setFocus(parseInt(col.getAttribute('data-index')));
+            }
+        });
+    });
+
+    // Reset when leaving the grid container
+    container.addEventListener('mouseleave', () => {
+        if (window.matchMedia('(hover: hover)').matches) {
+            setFocus(0);
+        }
+    });
+
+    // Mobile tap logic
+    document.addEventListener('click', (e) => {
+        // If they clicked on a column, focus it
+        const clickedCol = e.target.closest('.jackked-col');
+        if (clickedCol) {
+            setFocus(parseInt(clickedCol.getAttribute('data-index')));
+        } else {
+            // If they clicked outside any column, reset focus
+            setFocus(0);
+        }
+    });
+});
+</script>
+{% endblock %}

@@ -1,0 +1,95 @@
+{
+ "captured_at": "2026-08-04T14:32:55Z",
+ "hf_metadata": {
+  "_id": "69f9ed02c8a2f2c83739f032",
+  "author": "RadicalNotionAI",
+  "cardData": {
+   "app_file": "app.py",
+   "colorFrom": "blue",
+   "colorTo": "gray",
+   "emoji": "🧬",
+   "license": "apache-2.0",
+   "pinned": true,
+   "sdk": "gradio",
+   "sdk_version": "5.50.0",
+   "short_description": "Verify AI model provenance before you download",
+   "title": "ModelDNA"
+  },
+  "createdAt": "2026-05-05T13:13:38.000Z",
+  "datasets": [
+   "RadicalNotionAI/modelatlas-reference",
+   "RadicalNotionAI/modeldna-scan-log"
+  ],
+  "disabled": false,
+  "gated": false,
+  "host": "https://radicalnotionai-modeldna.hf.space",
+  "id": "RadicalNotionAI/modeldna",
+  "lastModified": "2026-07-19T15:06:27.000Z",
+  "likes": 0,
+  "models": [
+   "deepseek-ai/DeepSeek-R1",
+   "Jackrong/Qwen3.5-35B-A3B-Claude-4.6-Opus-Reasoning-Distilled",
+   "mistralai/Mistral-Medium-3.5-128B",
+   "mixedbread-ai/mxbai-embed-large-v1",
+   "poolside/Laguna-XS.2",
+   "Qwen/Qwen3.5-27B"
+  ],
+  "private": false,
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "radicalnotionai-modeldna.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": null,
+    "requested": "cpu-basic"
+   },
+   "replicas": {
+    "requested": 1
+   },
+   "stage": "SLEEPING"
+  },
+  "sdk": "gradio",
+  "sha": "c88a4752dc35db7ec162c8297c1ed3b68e06ff8a",
+  "siblings": [
+   {
+    "rfilename": ".gitattributes"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "app.py"
+   },
+   {
+    "rfilename": "index.html"
+   },
+   {
+    "rfilename": "requirements.txt"
+   },
+   {
+    "rfilename": "scan.py"
+   }
+  ],
+  "subdomain": "radicalnotionai-modeldna",
+  "tags": [
+   "gradio",
+   "region:us"
+  ],
+  "usedStorage": 0
+ },
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "RadicalNotionAI/modeldna",
+ "repo_type": "spaces",
+ "sha": "c88a4752dc35db7ec162c8297c1ed3b68e06ff8a",
+ "web_url": "https://huggingface.co/spaces/RadicalNotionAI/modeldna"
+}

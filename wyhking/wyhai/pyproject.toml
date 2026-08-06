@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "usedcar-pricing"
+version = "194.2.0"
+description = "Strict temporal used-car comparable retrieval and pricing"
+requires-python = ">=3.9,<3.13"
+dependencies = [
+  "numpy",
+  "pandas",
+  "pyarrow",
+  "scikit-learn",
+  "lightgbm",
+  "catboost",
+  "xgboost",
+  "joblib",
+  "flask",
+  "flask-cors",
+  "pypdf",
+  "openpyxl",
+  "pytest",
+  "requests",
+  "beautifulsoup4",
+  "lxml",
+  "langgraph>=0.2.60,<0.3",
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+addopts = "-q"

@@ -1,0 +1,11 @@
+.git/
+.gitignore
+.gitattributes
+__pycache__/
+*.pyc
+*.db
+run.log
+run.stderr.log
+run.stdout.log
+dataset/
+static/uploads/

@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <g fill="none" stroke="#c9a04a" stroke-linecap="round">
+    <!-- corner rosette -->
+    <g transform="translate(34,34)">
+      <circle r="11" fill="#c9a04a" stroke="none"/>
+      <g stroke-width="7">
+        <path d="M0,-16 Q6,-26 0,-34 Q-6,-26 0,-16"/>
+        <path d="M16,0 Q26,6 34,0 Q26,-6 16,0"/>
+        <path d="M0,16 Q6,26 0,34 Q-6,26 0,16"/>
+        <path d="M-16,0 Q-26,6 -34,0 Q-26,-6 -16,0"/>
+        <path d="M11,-11 Q22,-14 26,-26 Q14,-22 11,-11"/>
+        <path d="M11,11 Q22,14 26,26 Q14,22 11,11"/>
+        <path d="M-11,11 Q-22,14 -26,26 Q-14,22 -11,11"/>
+        <path d="M-11,-11 Q-22,-14 -26,-26 Q-14,-22 -11,-11"/>
+      </g>
+    </g>
+    <!-- vine along top edge -->
+    <g stroke-width="7">
+      <path d="M74,26 Q104,10 134,26 Q160,40 190,22"/>
+      <path d="M84,42 Q112,30 138,44 Q160,54 182,44" stroke-width="5"/>
+      <path d="M96,22 Q104,10 118,10" stroke-width="5"/>
+      <path d="M140,26 Q150,16 164,16" stroke-width="5"/>
+      <path d="M120,38 Q130,30 142,32" stroke-width="4"/>
+    </g>
+    <!-- vine along left edge -->
+    <g stroke-width="7">
+      <path d="M26,74 Q10,104 26,134 Q40,160 22,190"/>
+      <path d="M42,84 Q30,112 44,138 Q54,160 44,182" stroke-width="5"/>
+      <path d="M22,96 Q10,104 10,118" stroke-width="5"/>
+      <path d="M26,140 Q16,150 16,164" stroke-width="5"/>
+      <path d="M38,120 Q30,130 32,142" stroke-width="4"/>
+    </g>
+    <!-- small leaf accents -->
+    <g fill="#c9a04a" stroke="none">
+      <path d="M70,60 Q84,54 92,62 Q82,70 70,60"/>
+      <path d="M60,70 Q54,84 62,92 Q70,82 60,70"/>
+      <circle cx="104" cy="18" r="4"/>
+      <circle cx="18" cy="104" r="4"/>
+      <circle cx="152" cy="34" r="4"/>
+      <circle cx="34" cy="152" r="4"/>
+    </g>
+  </g>
+</svg>

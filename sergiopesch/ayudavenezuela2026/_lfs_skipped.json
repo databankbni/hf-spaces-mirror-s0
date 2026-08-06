@@ -1,0 +1,27 @@
+{
+ "lfs_not_stored": [
+  {
+   "oid": "fea2e4f305621f1a913bc587bd3dbe2abe5b332a30ab335fc1debf10e5db8437",
+   "path": "assets/design/operations-dashboard-concept.png",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6ZmVhMmU0ZjMwNTYyMWYxYTkxM2JjNTg3YmQzZGJlMmFiZTViMzMyYTMwYWIzMzVmYzFkZWJmMTBlNWRiODQzNwpzaXplIDE5OTE0NzAK",
+   "size": 1991470,
+   "url": "https://huggingface.co/spaces/sergiopesch/ayudavenezuela2026/resolve/5ba79a36150670b89bd5edf945faf507a48b8021/assets/design/operations-dashboard-concept.png"
+  },
+  {
+   "oid": "3bb7d260fd5f74225c8cb27588aa59837e8b0c006c33a00be362d57deba8e298",
+   "path": "assets/design/operations-dashboard-mobile-first-concept.png",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6M2JiN2QyNjBmZDVmNzQyMjVjOGNiMjc1ODhhYTU5ODM3ZThiMGMwMDZjMzNhMDBiZTM2MmQ1N2RlYmE4ZTI5OApzaXplIDE4MDAxNTQK",
+   "size": 1800154,
+   "url": "https://huggingface.co/spaces/sergiopesch/ayudavenezuela2026/resolve/5ba79a36150670b89bd5edf945faf507a48b8021/assets/design/operations-dashboard-mobile-first-concept.png"
+  },
+  {
+   "oid": "9609cc163a52abcb573b38307fecff0fd375a2290b42ff3c0cfbeb68475b0815",
+   "path": "public/data/super-resolution/real-esrgan-pilot/contact-sheet.jpg",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6OTYwOWNjMTYzYTUyYWJjYjU3M2IzODMwN2ZlY2ZmMGZkMzc1YTIyOTBiNDJmZjNjMGNmYmViNjg0NzViMDgxNQpzaXplIDMyMjEzNjgK",
+   "size": 3221368,
+   "url": "https://huggingface.co/spaces/sergiopesch/ayudavenezuela2026/resolve/5ba79a36150670b89bd5edf945faf507a48b8021/public/data/super-resolution/real-esrgan-pilot/contact-sheet.jpg"
+  }
+ ],
+ "overflow_not_stored": [],
+ "oversize_not_stored": []
+}

@@ -1,0 +1,8 @@
+gradio
+transformers==4.38.2
+numpy
+pandas
+tensorflow-cpu
+tf-keras
+
+scikit-learn

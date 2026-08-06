@@ -1,0 +1,22 @@
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+.venv/
+
+# Flask stuff
+instance/
+.webassets-cache
+
+# dotenv
+.env
+
+# VSCode / IDE
+.vscode/
+.idea/

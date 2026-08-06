@@ -1,0 +1,21 @@
+# /etc/systemd/system/mktbook_3.service
+[Unit]
+Description=MktBook 3 (Workout #3) Agentic Economy Bot Ecosystem
+After=network.target mktbook.service
+Requires=mktbook.service
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/root
+Environment="PATH=/usr/local/bin:/usr/bin:/bin"
+EnvironmentFile=/root/mktbook_3/.env_3
+ExecStart=/usr/bin/python3 -m mktbook_3.main
+Restart=always
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=mktbook_3
+
+[Install]
+WantedBy=multi-user.target

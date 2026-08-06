@@ -1,0 +1,20 @@
+{
+ "lfs_not_stored": [
+  {
+   "oid": "47cd9ba59a24fe64d1284cbc697c4bcf786d49b8e3d6470fe4d6cdbc948a5ce4",
+   "path": "Zhuravli3D_Web_Mobile_11MB.glb",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6NDdjZDliYTU5YTI0ZmU2NGQxMjg0Y2JjNjk3YzRiY2Y3ODZkNDliOGUzZDY0NzBmZTRkNmNkYmM5NDhhNWNlNApzaXplIDExMjMxMjEyCg==",
+   "size": 11231212,
+   "url": "https://huggingface.co/spaces/ZhuravliArch/zhuravli-3d-test/resolve/3b73b9df4182a45881720765a09ccab800d4ab91/Zhuravli3D_Web_Mobile_11MB.glb"
+  },
+  {
+   "oid": "0429df1a25b46fbb3135fd5dda2f4aa9f48fe912ce3b38a2e7cf816fd07bf9bf",
+   "path": "model.glb",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6MDQyOWRmMWEyNWI0NmZiYjMxMzVmZDVkZGEyZjRhYTlmNDhmZTkxMmNlM2IzOGEyZTdjZjgxNmZkMDdiZjliZgpzaXplIDE1MjMyMzYyMAo=",
+   "size": 152323620,
+   "url": "https://huggingface.co/spaces/ZhuravliArch/zhuravli-3d-test/resolve/3b73b9df4182a45881720765a09ccab800d4ab91/model.glb"
+  }
+ ],
+ "overflow_not_stored": [],
+ "oversize_not_stored": []
+}

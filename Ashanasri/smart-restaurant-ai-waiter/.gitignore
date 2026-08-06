@@ -1,0 +1,33 @@
+# ── Secrets — NEVER commit these ─────────────────────────────
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+
+# ── Dependencies & build output ───────────────────────────────
+node_modules/
+dist/
+*.tsbuildinfo
+
+# ── Logs ──────────────────────────────────────────────────────
+*.log
+npm-debug.log*
+yarn-debug.log*
+logs/
+
+# ── Test & coverage ───────────────────────────────────────────
+coverage/
+.nyc_output/
+
+# ── Editors & OS ──────────────────────────────────────────────
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.swp
+
+# ── Temp ──────────────────────────────────────────────────────
+tmp/
+.cache/
+data/

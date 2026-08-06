@@ -1,0 +1,1915 @@
+1
+00:00:00,000 --> 00:00:02,010
+{\a6\fs12}[Sagaru Yamazaki]
+
+2
+00:00:00,000 --> 00:00:02,010
+{\a6\fs12}[Not: Prince of Tennis göndermesi.]
+
+3
+00:00:01,070 --> 00:00:02,010
+GinTama...
+
+4
+00:00:02,010 --> 00:00:03,570
+{\a6\fs12}[Mesajlardan hemen sonra!]
+
+5
+00:00:02,170 --> 00:00:03,570
+Mesajlardan hemen sonra!
+
+6
+00:00:03,570 --> 00:00:04,850
+Henüz bitmedi.
+
+7
+00:00:03,570 --> 00:00:04,850
+{\a6\fs12}[Not: Prince of Tennis'ten
+Ryoma'nın favori repliği.]
+
+8
+00:01:35,070 --> 00:01:39,480
+{\a6\fs12}[Nasıl denk geldiyse, 26 Haziran Katsura'nın doğum günü.
+Bu yüzden, bu ay Zenginleştirilmiş Katsura Ayı.]
+
+9
+00:01:39,480 --> 00:01:45,080
+{\a6\fs12}[Kotaro Katsura, 2X yaşında.
+Yetişkinler neden böyle değil?]
+
+10
+00:01:45,740 --> 00:01:50,750
+Duydun mu?
+Takasugi, Shinsengumi ile kapışmış.
+
+11
+00:01:50,750 --> 00:01:53,830
+Görünüşe göre Shinsengumi'ye
+bir ajan sokmuş...
+
+12
+00:01:53,830 --> 00:01:56,830
+...ve Şef Kondo'yu öldürmeye çalışmış.
+
+13
+00:01:57,170 --> 00:01:59,430
+Gerçi başarısız olmuş.
+
+14
+00:01:59,620 --> 00:02:04,850
+Ajan, he? Dikkatli olmalıyız.
+Bize de ajanlar sızabilir.
+
+15
+00:02:04,850 --> 00:02:06,060
+Affedersiniz.
+
+16
+00:02:06,640 --> 00:02:08,000
+Kimsin?!
+
+17
+00:02:08,000 --> 00:02:11,120
+Bir saniye. Şüpheli birisi değilim.
+
+18
+00:02:11,120 --> 00:02:12,730
+Kimsin? Adını söyle.
+
+19
+00:02:12,730 --> 00:02:16,610
+Şeyy... kılıç taşıma yasağı varken
+yanınızda kılıç taşıdığınızı görüyorum.
+
+20
+00:02:16,610 --> 00:02:18,500
+İstilâya Direniş Örgütü'nden
+olduğunu farzediyorum.
+
+21
+00:02:20,420 --> 00:02:21,730
+Ne istiyorsun?!
+
+22
+00:02:21,730 --> 00:02:22,940
+Lütfen...
+
+23
+00:02:22,940 --> 00:02:23,670
+Beni...
+
+24
+00:02:23,920 --> 00:02:28,090
+Beni, İstilâya Direniş Örgütü'ne
+alır mısınız?
+
+25
+00:02:28,660 --> 00:02:34,670
+{\a6}["Hayat Bir Sınavdır"]
+
+26
+00:02:35,210 --> 00:02:38,320
+<i>Bir ajan olarak görevimin
+en tehlikeli kısmı.</i>
+
+27
+00:02:38,320 --> 00:02:40,450
+<i>Buna gizli soruşturma deniliyor.</i>
+
+28
+00:02:41,170 --> 00:02:44,780
+<i>Düşmanın rütbelilerine yaklaşıyor ve
+arkadaşlarıma gizli bilgileri sızdırıyorum.</i>
+
+29
+00:02:45,480 --> 00:02:48,540
+<i>Getirisi büyük, ama tehlikesi de öyle.</i>
+
+30
+00:02:48,540 --> 00:02:53,370
+<i>Bu yüzden, sadece çok yetenekli
+ajanlar bu görevleri alıyor.</i>
+
+31
+00:02:54,220 --> 00:02:57,300
+<i>Düşman tarafından farkedilme
+tehlikesiyle karşı karşıya kaldığında...</i>
+
+32
+00:02:57,300 --> 00:02:59,960
+<i>...duygularını saklayabilmelisin.</i>
+
+33
+00:02:59,960 --> 00:03:03,580
+<i>Düşman bölgesindeyken tek bir
+hata bile yapamazsın.</i>
+
+34
+00:03:03,580 --> 00:03:06,760
+<i>İstisnai durumlara karşı
+işinde ustalaşmalısın.</i>
+
+35
+00:03:07,160 --> 00:03:08,630
+<i>Bir de...</i>
+
+36
+00:03:08,630 --> 00:03:11,410
+<i>Her şeyi bir araya getirmek için
+aşırı yumuşak olmalısın.</i>
+
+37
+00:03:12,010 --> 00:03:13,550
+<i>Shinsengumi'de bu yeteneklere
+sahip olan...</i>
+
+38
+00:03:13,550 --> 00:03:16,660
+<i>...benden başka kimse yok.</i>
+
+39
+00:03:17,510 --> 00:03:21,380
+<i>İstilâya Direniş Örgütü üyelerinin böyle
+bir kentte saklanmasını beklemiyordum.</i>
+
+40
+00:03:22,200 --> 00:03:23,860
+<i>Yeraltı şehri Akiba Neo.</i>
+
+41
+00:03:22,200 --> 00:03:23,860
+{\a6\fs12}[Not: Akihabara göndermesi.]
+
+42
+00:03:24,280 --> 00:03:27,490
+<i>Otakular efsanevi topraklar der,
+Edo'nun en ünlü sanayi bölgesidir.</i>
+
+43
+00:03:28,000 --> 00:03:32,000
+<i>Labirent gibi olan bu kent
+saklanmak için mükemmel bir yer.</i>
+
+44
+00:03:38,440 --> 00:03:41,140
+<i>Engellenemeyen Kotaro Katsura.</i>
+
+45
+00:03:41,740 --> 00:03:45,320
+<i>Ona yaklaşmalıyım. Adamlarının
+yerini bulmalı...</i>
+
+46
+00:03:45,740 --> 00:03:48,490
+<i>...ve tüm İstilâya Direniş Örgütü
+üyelerini tutuklamalıyım.</i>
+
+47
+00:03:49,120 --> 00:03:51,240
+Tamam. Anlaşılmıştır.
+
+48
+00:03:55,120 --> 00:03:57,980
+Pekâlâ. Mülâkatla başlayalım.
+
+49
+00:03:59,690 --> 00:04:01,290
+Özgeçmiş'ini ver.
+
+50
+00:04:01,290 --> 00:04:06,490
+Şeyy... mülâkat olmaksızın
+İstilâya Direniş Örgütü'ne giremem mi?
+
+51
+00:04:06,710 --> 00:04:09,100
+Ajanlara karşı önlem.
+
+52
+00:04:09,100 --> 00:04:13,000
+Şüpheli bir geçmişi olan birisine
+sırtımı dayayamam.
+
+53
+00:04:13,000 --> 00:04:14,510
+<i>Bu ne şimdi?</i>
+
+54
+00:04:14,510 --> 00:04:16,670
+<i>İstilâya Direniş Örgütü'ne katılmak için
+neden mülâkat oluyor?</i>
+
+55
+00:04:16,670 --> 00:04:21,080
+Özür dilerim...
+Özgeçmiş'imi unuttum.
+
+56
+00:04:21,080 --> 00:04:24,240
+Ama ülkemi herkesten daha çok seviyorum.
+
+57
+00:04:24,240 --> 00:04:26,810
+O umrumda değil.
+Özgeçmiş'ini ver.
+
+58
+00:04:33,920 --> 00:04:36,660
+Açık konuşayım.
+
+59
+00:04:36,660 --> 00:04:38,620
+Sende hiç sağduyu yok mu?
+
+60
+00:04:38,620 --> 00:04:42,950
+İş ararken, yanında Özgeçmiş taşırsın.
+
+61
+00:04:42,950 --> 00:04:45,880
+<i>İş aramak mı?
+İş mi arıyorum ben?!</i>
+
+62
+00:04:45,880 --> 00:04:48,900
+Takım elbise giymen gerekiyordu.
+
+63
+00:04:48,900 --> 00:04:50,800
+Sen ne için geldin ki?
+
+64
+00:04:50,800 --> 00:04:53,210
+Bunu sadece ben söylemem.
+
+65
+00:04:53,210 --> 00:04:56,390
+Bilesin diye söylüyorum,
+bütün şirketler aynısını der.
+
+66
+00:04:56,390 --> 00:04:57,740
+<i>Sen şirket değilsin ki!</i>
+
+67
+00:04:58,880 --> 00:05:02,940
+Ayrıca, sana otur demeden oturdun.
+
+68
+00:05:03,360 --> 00:05:07,180
+Genelde, mülâkatı yapan kimse
+"otur" dedikten sonra oturursun.
+
+69
+00:05:07,180 --> 00:05:08,650
+Özür dilerim...
+
+70
+00:05:09,580 --> 00:05:14,200
+Tüm meslekler sağduyulu insan ister.
+
+71
+00:05:14,670 --> 00:05:16,760
+Kişinin eğitimi bunu belli eder.
+
+72
+00:05:17,140 --> 00:05:21,010
+Ancak, herkes işini
+yaparken öğrenebilir.
+
+73
+00:05:21,470 --> 00:05:23,880
+Efendim, hoş geldiniz.
+
+74
+00:05:23,880 --> 00:05:26,030
+Efendim değil, Katsura.
+
+75
+00:05:26,030 --> 00:05:29,270
+Özel ücret ödeyerek,
+hizmetçilerle eğlenebilirsiniz.
+
+76
+00:05:29,440 --> 00:05:31,810
+<i>Senden duymak istemiyorum.</i>
+
+77
+00:05:31,810 --> 00:05:35,940
+<i>Neden hizmetçi kafede mülâkat düzenleyen
+birisinden nasihat dinliyorum ki?</i>
+
+78
+00:05:35,940 --> 00:05:37,720
+- Jankenpon.
+
+79
+00:05:35,940 --> 00:05:37,720
+{\a6\fs10}Jankenpon: Taş-kâğıt-makas.
+
+80
+00:05:35,940 --> 00:05:47,020
+{\a6\fs10}[Not: "Aikodesho" oyunda beraberlikte söylenir. Bir oyunda,
+o elin galibi parmağını bir yöne uzatır, mağlup kişi farklı bir yöne bakmazsa oyunu kaybeder.]
+
+81
+00:05:35,960 --> 00:05:38,180
+- Neyse, İstilâya Direniş Örgütü
+üyeleri olmamıza rağmen...
+
+82
+00:05:38,180 --> 00:05:39,940
+- ...sağduyuya ihtiyacımız var.
+
+83
+00:05:38,640 --> 00:05:43,490
+- Aikodesho, sho, sho, sho.
+
+84
+00:05:39,940 --> 00:05:42,620
+- Devrimciler var olan normları yok eder.
+
+85
+00:05:42,620 --> 00:05:46,550
+- Bundan dolayı, devrimcilerin genel
+ve normal şeyleri anlaması gerekiyor.
+
+86
+00:05:43,490 --> 00:05:44,840
+- Ben kazandım!
+
+87
+00:05:44,860 --> 00:05:47,030
+- O tarafa dön!
+
+88
+00:05:48,200 --> 00:05:52,850
+İstilâya Direniş Örgütü üyesi olmak
+istiyorsan, bunu aklından çıkarma.
+
+89
+00:05:52,850 --> 00:05:56,000
+<i>Başaramayacağımı düşünüyordum, ama...</i>
+
+90
+00:05:56,000 --> 00:05:57,300
+<i>...olacak gibi.</i>
+
+91
+00:05:57,880 --> 00:06:01,480
+- Neyse, mülâkat bitmiştir.
+Götürün onu.
+
+92
+00:05:57,880 --> 00:05:59,630
+- Jankenpon.
+
+93
+00:05:59,740 --> 00:06:01,480
+- Aikodesho.
+
+94
+00:06:01,480 --> 00:06:07,510
+- Aikodesho, sho, sho, sho.
+
+95
+00:06:01,530 --> 00:06:04,720
+<i>- Mülâkat olduğunu söyledi,
+yüzümü görmek istedi sanırım?</i>
+
+96
+00:06:04,850 --> 00:06:05,930
+- Gidelim.
+
+97
+00:06:05,930 --> 00:06:06,960
+- Tamam.
+
+98
+00:06:08,210 --> 00:06:09,790
+<i>Evet.</i>
+
+99
+00:06:09,790 --> 00:06:11,690
+- O tarafa dön!
+
+100
+00:06:09,810 --> 00:06:11,680
+<i>- İstilâya Direniş Örgütü'nün...</i>
+
+101
+00:06:11,680 --> 00:06:14,190
+<i>...öyle garip mülâkatlar yapmasının
+imkânı yok.</i>
+
+102
+00:06:14,450 --> 00:06:17,490
+<i>Çok şükür... aralarına sızmayı başardım.</i>
+
+103
+00:06:17,620 --> 00:06:22,290
+{\a6\fs12}[İstilâya Direniş Örgütü Giriş Sınavı]
+
+104
+00:06:22,360 --> 00:06:25,140
+<i>İstilâya Direniş Örgütü'nün neden
+giriş sınavı var?!</i>
+
+105
+00:06:25,140 --> 00:06:27,510
+<i>Önce mülâkat, sonra sınav mı?!</i>
+
+106
+00:06:27,510 --> 00:06:29,600
+<i>Bunun normal bir işten farkı yok ki.</i>
+
+107
+00:06:29,600 --> 00:06:31,430
+<i>Garip. Gerçekten garip!</i>
+
+108
+00:06:31,840 --> 00:06:33,140
+<i>Durum kötü.</i>
+
+109
+00:06:33,140 --> 00:06:36,910
+<i>İstilâya Direniş Örgütü üyesi olmanın
+bu kadar zor olmasını beklemiyordum.</i>
+
+110
+00:06:37,260 --> 00:06:39,470
+<i>Ne tür sorular soruyorlar?!</i>
+
+111
+00:06:39,470 --> 00:06:41,150
+<i>Hiç çalışmadım ki!</i>
+
+112
+00:06:41,150 --> 00:06:43,040
+<i>Herkes ne çalışıyor?!</i>
+
+113
+00:06:43,040 --> 00:06:45,490
+Çalıştın mı?
+
+114
+00:06:45,490 --> 00:06:51,160
+Durumum kötü. Hiç çalışmadım.
+Geçemeyeceğim. Eyvah.
+
+115
+00:06:51,570 --> 00:06:54,690
+<i>Gözlerin tam tersini söylüyor.</i>
+
+116
+00:06:54,690 --> 00:06:57,090
+<i>Sınıfta her zaman bir
+sahtekâr vardır.</i>
+
+117
+00:06:58,450 --> 00:07:00,710
+Pekâlâ, sessiz olun.
+
+118
+00:07:00,710 --> 00:07:04,060
+İstilâya Direniş Örgütü
+giriş sınavına başlıyoruz.
+
+119
+00:07:04,060 --> 00:07:05,830
+Kitaplarınızı kaldırın.
+
+120
+00:07:05,830 --> 00:07:07,140
+<i>Ne kitabı?!</i>
+
+121
+00:07:07,340 --> 00:07:09,760
+Bir şeyler öğrenmeniz için
+artık çok geç.
+
+122
+00:07:10,180 --> 00:07:13,320
+Zamanında çalışanlarla
+asla yarışamazsınız.
+
+123
+00:07:13,320 --> 00:07:15,960
+<i>Zamanında çalışmak mı?
+Ne zamanında çalışması?!</i>
+
+124
+00:07:16,510 --> 00:07:18,180
+Tamam, şuna bakın.
+
+125
+00:07:18,180 --> 00:07:21,380
+Ekrana sırayla soruları yansıtacağım.
+
+126
+00:07:21,380 --> 00:07:25,420
+Herkes sorulara önündeki
+panelden cevap verecek.
+
+127
+00:07:25,420 --> 00:07:28,330
+Sonra, cevabı vereceğim.
+
+128
+00:07:29,070 --> 00:07:33,550
+Arkanızda gözetmen olduğundan
+kopya çekmeye çalışmayın.
+
+129
+00:07:33,550 --> 00:07:36,110
+Hepinize başarılar dilerim.
+
+130
+00:07:36,800 --> 00:07:38,370
+Sınav başlasın!
+
+131
+00:07:39,170 --> 00:07:41,870
+{\a6}[Kelime: Shinsengumi]
+
+132
+00:07:39,180 --> 00:07:41,630
+Soru 1. Aşağıdaki kelimenin
+doğru okunuşunu yazınız.
+
+133
+00:07:42,080 --> 00:07:45,940
+<i>Bu ne böyle? Aşırı kolaymış.
+Anladım.</i>
+
+134
+00:07:46,450 --> 00:07:49,670
+İstilâya Direniş Örgütü üyeleri olmamıza
+rağmen, sağduyuya ihtiyacımız var.
+
+135
+00:07:49,670 --> 00:07:52,770
+<i>Sınav bile olsa, sağduyuyu
+ölçmek için sorulmuş bir soru.</i>
+
+136
+00:07:53,440 --> 00:07:56,350
+<i>Sınava çalışmadım,
+ama geçebilecek gibiyim.</i>
+
+137
+00:07:56,350 --> 00:07:58,360
+{\a6\fs12}[Shinsengumi]
+
+138
+00:07:56,540 --> 00:07:58,360
+<i>Cevap "Shinsengumi"!</i>
+
+139
+00:07:58,700 --> 00:08:01,270
+Zaman doldu. İşte cevap.
+
+140
+00:08:01,060 --> 00:08:01,860
+{\a6}[Bok]
+
+141
+00:08:02,360 --> 00:08:04,040
+Cevap "bok".
+
+142
+00:08:04,040 --> 00:08:06,310
+<i>Hangi gezegenin sağduyusu bu?!</i>
+
+143
+00:08:06,310 --> 00:08:09,200
+İstilâya Direniş Örgütü
+üyeleri arasındaki sağduyu bu.
+
+144
+00:08:09,200 --> 00:08:13,920
+"Aptallar", "çöplük" ve "işe yaramazlar"
+gibi cevaplar da doğrudur.
+
+145
+00:08:13,920 --> 00:08:15,710
+İşte bu. Bildim!
+
+146
+00:08:15,710 --> 00:08:18,480
+<i>Bize böyle mi diyor bu herifler?!</i>
+
+147
+00:08:18,480 --> 00:08:20,110
+Tüh! Aldatmaca soruymuş.
+
+148
+00:08:18,480 --> 00:08:24,110
+{\a6\fs12}[Shin (çizmiş)]
+Maeragumi]
+
+149
+00:08:20,110 --> 00:08:22,410
+<i>Sen de yanlış yapmışsın!</i>
+
+150
+00:08:22,410 --> 00:08:24,110
+<i>Gece boyu ne çalıştın ki?!</i>
+
+151
+00:08:24,830 --> 00:08:27,850
+<i>Çok kötü oldu. Sağduyu kullanmakla
+ilgili soruya bile doğru cevap veremedim.</i>
+
+152
+00:08:27,850 --> 00:08:30,130
+<i>İstilâya Direniş Örgütü üyesi gibi
+düşünerek cevap vermeliyim.</i>
+
+153
+00:08:31,010 --> 00:08:34,630
+2. soru: Aşağıdaki kelimenin
+doğru okunuşunu yazın.
+
+154
+00:08:34,360 --> 00:08:41,100
+{\a6\fs12}[Shogun]
+
+155
+00:08:34,630 --> 00:08:36,700
+<i>Normalde cevap "shogun" olurdu.</i>
+
+156
+00:08:36,700 --> 00:08:39,280
+<i>İstilâya Direniş Örgütü için
+düşmanın patronu.</i>
+
+157
+00:08:40,820 --> 00:08:42,100
+<i>Yani...</i>
+
+158
+00:08:41,100 --> 00:08:43,600
+{\a6\fs12}[Sünnetsiz]
+
+159
+00:08:42,100 --> 00:08:44,100
+<i>Onu aşağılarsam doğru yaparım.</i>
+
+160
+00:08:43,600 --> 00:08:48,340
+{\a6\fs12}[Doğru cevap: Ken Matsudaira]
+
+161
+00:08:44,100 --> 00:08:46,040
+Doğru cevap Ken Matsudaira.
+
+162
+00:08:46,040 --> 00:08:48,340
+<i>Bir kanjiyi niye kanjiyle
+okuyorsun ki?!</i>
+
+163
+00:08:48,820 --> 00:08:50,920
+Örgüt üyeleri arasında sağduyu böyle.
+
+164
+00:08:51,400 --> 00:08:54,380
+"Külhanbeyi" ve "yemek aşığı"
+cevapları da doğrudur.
+
+165
+00:08:51,400 --> 00:08:54,380
+{\a6\fs12}[Not: "Külhanbeyi" Japonca'da "Abarenbo" demek.
+Ken Matsudaira, TV Şovu Abarenbo Shogun'un yıldızı.]
+
+166
+00:08:54,380 --> 00:08:55,730
+İşte bu! Bildim!
+
+167
+00:08:55,730 --> 00:08:57,820
+<i>Nasıl bilenler çıkıyor?!</i>
+
+168
+00:08:57,820 --> 00:08:59,080
+<i>Ne tür beyinleri var?!</i>
+
+169
+00:08:59,710 --> 00:09:02,220
+3. soru. Aşağıdaki kelimeyi
+kanji ile yazın.
+
+170
+00:09:02,220 --> 00:09:04,580
+<i>Bunun artık İstilâya Direniş Örgütü
+ile bir alâkası kalmadı ki.</i>
+
+171
+00:09:04,580 --> 00:09:06,800
+<i>Jackie mi?! Ne bileyim!
+Bu tamamen mantıksız.</i>
+
+172
+00:09:06,800 --> 00:09:08,420
+Cevap "burun".
+
+173
+00:09:07,660 --> 00:09:11,100
+{\a6\fs12}[Burun]
+
+174
+00:09:08,420 --> 00:09:11,550
+<i>Jackie'nin burnundan
+nefret ediyorsun sadece!</i>
+
+175
+00:09:11,550 --> 00:09:13,660
+Örgüt üyeleri arasında sağduyu böyle.
+
+176
+00:09:14,210 --> 00:09:17,840
+"Sandalye" ve "Ryo Saeba epey
+acı vericiydi" cevapları da doğru.
+
+177
+00:09:14,210 --> 00:09:17,840
+{\a6\fs12}[Not: Jackie Chan, City Hunter'ın
+Hong Kong versiyonunda Ryo Saeba rolünü oynadı.]
+
+178
+00:09:18,040 --> 00:09:22,160
+<i>Sonuncusu sadece senin görüşün!
+City Hunter'dan bahsetme!</i>
+
+179
+00:09:22,160 --> 00:09:23,840
+<i>Buraya kadar olan kısım Japonca'ydı.</i>
+
+180
+00:09:23,840 --> 00:09:25,970
+Şimdiki sorumuzla birlikte
+matematiğe geçiyoruz.
+
+181
+00:09:25,970 --> 00:09:29,150
+<i>Durum kötü...
+Bir soru bile bilemedim.</i>
+
+182
+00:09:29,530 --> 00:09:30,820
+Soru 4.
+
+183
+00:09:30,820 --> 00:09:32,260
+10 tane Shinsengumi üyesi var.
+
+184
+00:09:32,260 --> 00:09:35,390
+6 İstilâya Direniş Örgütü üyesi ile
+yolda karşılaşıyorlar.
+
+185
+00:09:35,740 --> 00:09:40,050
+Shinsengumi saldırıyor ve 3 tane
+İstilâya Direniş Örgütü üyesi öldürülüyor.
+
+186
+00:09:40,050 --> 00:09:43,350
+Karşılığında, İstilâya Direniş Örgütü
+2 Shinsengumi üyesini öldürüyor.
+
+187
+00:09:43,960 --> 00:09:45,090
+Savaştaki karışıklıkta...
+
+188
+00:09:45,090 --> 00:09:47,530
+...2 Shinsengumi üyesi
+yaralanıyor, ama...
+
+189
+00:09:47,530 --> 00:09:51,310
+...6 tanesi daha katılıyor ve 2
+İstilâya Direniş Örgütü üyesi öldürülüyor.
+
+190
+00:09:51,990 --> 00:09:54,140
+Jackie'nin kaç burnu vardır?
+
+191
+00:09:54,330 --> 00:09:56,710
+<i>Elbette 1 tane!</i>
+
+192
+00:09:56,710 --> 00:09:58,660
+<i>Jackie'den daha ne kadar bahsedeceksin?!</i>
+
+193
+00:09:58,660 --> 00:10:00,740
+<i>Bunun savaşla bir alakâsı yok ki!</i>
+
+194
+00:10:00,910 --> 00:10:05,700
+Şeyy... bu soru aşırı zor olduğu için
+ekstra zaman vereceğim.
+
+195
+00:10:05,700 --> 00:10:07,650
+Bir saat düşünün.
+
+196
+00:10:07,650 --> 00:10:09,860
+<i>Bir saate ihtiyacım yok.</i>
+
+197
+00:10:09,860 --> 00:10:14,750
+<i>Hayır... dur! Başından beri
+kandırmaca sorular soruyor.</i>
+
+198
+00:10:15,530 --> 00:10:18,900
+<i>Ya Jackie de bu savaştaysa?!</i>
+
+199
+00:10:18,900 --> 00:10:21,220
+<i>Ya Jackie'nin burnu...</i>
+
+200
+00:10:21,220 --> 00:10:22,590
+<i>...savaşta kesildiyse?!</i>
+
+201
+00:10:22,590 --> 00:10:23,730
+Doğru cevap "bir".
+
+202
+00:10:24,430 --> 00:10:26,020
+Sessiz ol.
+
+203
+00:10:26,780 --> 00:10:28,120
+Özür dilerim...
+
+204
+00:10:29,050 --> 00:10:30,470
+<i>Tamamen kandırıldım.</i>
+
+205
+00:10:30,470 --> 00:10:33,080
+<i>Çok fazla irdeledim ve kolayca
+bilebileceğim soruyu bilemedim.</i>
+
+206
+00:10:33,510 --> 00:10:35,650
+Tüh! Kandırmacaymış, he?
+
+207
+00:10:35,650 --> 00:10:36,790
+Yazık oldu.
+
+208
+00:10:36,790 --> 00:10:39,650
+<i>Neye kandın yahu?!</i>
+
+209
+00:10:39,650 --> 00:10:41,600
+Bu kadar matematik yeter.
+
+210
+00:10:41,600 --> 00:10:43,270
+<i>Bu matematik değil ki!</i>
+
+211
+00:10:43,250 --> 00:10:47,990
+{\a6\fs12}[Aşağıdaki paragrafı çevirin.]
+
+212
+00:10:43,690 --> 00:10:45,440
+Sırada yabancı dil var.
+
+213
+00:10:45,440 --> 00:10:47,990
+Soru 5. Aşağıdaki paragrafı çevirin.
+
+214
+00:10:48,190 --> 00:10:51,180
+<i>Hangi dilde bu?!
+Okuyamıyorum.</i>
+
+215
+00:10:51,180 --> 00:10:52,690
+<i>Başka bir gezegendeki
+uzaylıların dili falan mı?!</i>
+
+216
+00:10:54,060 --> 00:10:56,920
+<i>Bir canlandırma mı?!
+İşte bu. O canlandırma!</i>
+
+217
+00:10:56,920 --> 00:11:00,020
+<i>O resmin paragrafın içeriğiyle
+bir alâkası olmalı.</i>
+
+218
+00:11:00,020 --> 00:11:02,110
+<i>Sezgilerime güvenerek,
+bu resme göre çevirmeliyim.</i>
+
+219
+00:11:02,920 --> 00:11:05,110
+<i>Nasıl bakarsam bakayım,
+savaş alanından bir sahne.</i>
+
+220
+00:11:05,110 --> 00:11:10,180
+<i>Birisi ölmek üzere ve diğeri ise
+onun son sözlerini dinliyor.</i>
+
+221
+00:11:11,240 --> 00:11:12,420
+<i>Elinde bir şey var.</i>
+
+222
+00:11:12,910 --> 00:11:15,020
+<i>Mektup mu? Hayır, bir fotoğraf.</i>
+
+223
+00:11:28,240 --> 00:11:32,040
+Beni boşver... Hemen kaç, kurtçuk!
+
+224
+00:11:32,660 --> 00:11:37,040
+<i>Çavuş kollarımda adeta buz kesmişti...</i>
+
+225
+00:11:37,910 --> 00:11:41,860
+<i>Çok korkunç ve nefret edilen
+bir çavuştu.</i>
+
+226
+00:11:42,440 --> 00:11:44,650
+<i>Şu an çok nazik.</i>
+
+227
+00:11:44,650 --> 00:11:47,630
+Üstlerinin emrini yerine
+getiremiyor musun, kurtçuk?!
+
+228
+00:11:47,630 --> 00:11:51,340
+Kurtçuk! Bana bir kurtçuk olduğunu
+söyle, pis kurtçuk!
+
+229
+00:11:51,340 --> 00:11:54,190
+Çavuş! Ben bir kurtçuğum!
+
+230
+00:11:54,190 --> 00:11:57,320
+Ailem tarafından
+bir kurtçuk gibi terkedildim!
+
+231
+00:11:57,320 --> 00:12:00,760
+Benim gibi bir kurtçuk ölürse
+kimse üzülmez.
+
+232
+00:12:01,270 --> 00:12:03,570
+Lütfen istediğinizi yaptırın.
+
+233
+00:12:04,140 --> 00:12:06,170
+Tesadüfe bak, kurtçuk!
+
+234
+00:12:06,610 --> 00:12:09,480
+Ben de elime silah aldığımda
+ailemi terketmiştim.
+
+235
+00:12:09,480 --> 00:12:13,340
+Kimse benim için üzülmeyecek.
+Ama sen farklısın...
+
+236
+00:12:13,990 --> 00:12:17,460
+<i>Çavuş böyle dedikten sonra
+iç cebinden...</i>
+
+237
+00:12:17,460 --> 00:12:19,220
+<i>...kanlanmış bir fotoğraf çıkardı.</i>
+
+238
+00:12:20,480 --> 00:12:23,320
+Senin için üzülecek yakınların var.
+
+239
+00:12:24,160 --> 00:12:28,060
+<i>Annemin genç ve sağlıklıyken
+çektirdiği bir fotoğraftı.</i>
+
+240
+00:12:28,570 --> 00:12:32,760
+<i>Yanında ise kollarında
+bir bebek olan Çavuş vardı.</i>
+
+241
+00:12:34,010 --> 00:12:37,210
+Bir kurtçuk olduğumu söyle... oğlum.
+
+242
+00:12:39,050 --> 00:12:40,510
+Çavuş...
+
+243
+00:12:40,510 --> 00:12:41,750
+Sen bir kurtçuksun.
+
+244
+00:12:42,720 --> 00:12:47,540
+Sen bir kurtçuğun işe yaramaz babasısın.
+
+245
+00:12:51,980 --> 00:12:56,390
+<i>Çavuş gülümsedi ve öylece kaldı.</i>
+
+246
+00:12:58,730 --> 00:13:01,190
+<i>Evet. Bu yeterli olmalı.</i>
+
+247
+00:13:01,510 --> 00:13:03,490
+Şimdi, doğru cevap...
+
+248
+00:13:06,120 --> 00:13:08,050
+Jackie'nin burnu büyükmüş, değil mi?
+
+249
+00:13:08,050 --> 00:13:09,020
+İşte bu.
+
+250
+00:13:09,630 --> 00:13:12,110
+<i>Jackie'nin fotoğrafı mıymış?!</i>
+
+251
+00:13:12,110 --> 00:13:16,670
+<i>Jackie'nin burnunun büyüklüğünü anlatmak
+için ne kadar uzun paragraf yazıyorsun?!</i>
+
+252
+00:13:18,170 --> 00:13:20,180
+<i>Yanlıştı, ama etkilendim.</i>
+
+253
+00:13:20,180 --> 00:13:24,650
+<i>Cevabıma bakma!
+Nedense çok utanç verici!</i>
+
+254
+00:13:24,650 --> 00:13:27,250
+Sonraki soru yazılı sınavın
+son sorusu olacak.
+
+255
+00:13:27,410 --> 00:13:29,990
+<i>Son sorusu mu?! Çoğu soru
+sadece Jackie ile ilgiliydi!</i>
+
+256
+00:13:30,050 --> 00:13:34,490
+{\a6\fs12}[Not: Kamchatkan kuzey-doğu Rusya'da
+konuşulan bir dil.]
+
+257
+00:13:30,560 --> 00:13:34,490
+İstilâya Direniş Örgütü'ne katılma
+sebebinizi Kamchatkan dilinde yazınız.
+
+258
+00:13:34,690 --> 00:13:37,300
+Kamchatkan mı?!
+
+259
+00:13:37,300 --> 00:13:41,860
+İmkânsız yahu. Öyle zor bir dilde
+nasıl yazalım?
+
+260
+00:13:41,860 --> 00:13:45,960
+Bu zor bir soru, bilirseniz geçersiniz.
+
+261
+00:13:47,330 --> 00:13:50,340
+<i>Bitti. Görevimde başarısız oldum.</i>
+
+262
+00:13:50,340 --> 00:13:51,980
+<i>Yardımcı Şef beni vuracak.</i>
+
+263
+00:13:51,980 --> 00:13:53,510
+<i>Rastgele bir şeyler yazayım bari.</i>
+
+264
+00:13:55,100 --> 00:13:59,480
+Evet... Bir kişi bildi.
+11 Numara!
+
+265
+00:14:01,490 --> 00:14:04,160
+<i>Rastgele yazmıştım.
+Gerçekten mi?</i>
+
+266
+00:14:04,160 --> 00:14:08,740
+<i>Her neyse, görevimi yerine getirebilirim.
+İşte bu!</i>
+
+267
+00:14:08,740 --> 00:14:10,380
+Başardım!
+
+268
+00:14:11,240 --> 00:14:14,100
+Madem bildi, cevabına bir bakalım.
+
+269
+00:14:14,100 --> 00:14:19,120
+Çevirdiğimizde, "Buraya gizli bir
+soruşturma için geldim."...
+
+270
+00:14:19,120 --> 00:14:23,110
+..."İstilâya Direniş Örgütü üyelerini
+cehenneme yollayacağım." mı?!
+
+271
+00:14:26,000 --> 00:14:30,000
+Altyazı: SyLaR_54
+www.animemangatr.com
+
+272
+00:14:33,530 --> 00:14:35,450
+<i>Eyvah...</i>
+
+273
+00:14:35,450 --> 00:14:37,890
+<i>Gizli bir soruşturma için
+geldiğimi anladılar.</i>
+
+274
+00:14:38,070 --> 00:14:39,630
+<i>N'olacak şimdi?!</i>
+
+275
+00:14:39,630 --> 00:14:42,220
+<i>Başından beri kim olduğumu
+biliyorlar mıydı?!</i>
+
+276
+00:14:43,160 --> 00:14:44,880
+Şeyy...
+
+277
+00:14:46,210 --> 00:14:48,440
+Gizli soruşturma bölüğünde
+çalışmak istiyorsun demek.
+
+278
+00:14:48,440 --> 00:14:50,720
+Aferin. Arkadaşlar, alkışlayın.
+
+279
+00:14:54,840 --> 00:14:57,100
+<i>Anlamamışlar...</i>
+
+280
+00:14:57,650 --> 00:14:59,480
+<i>Çok şükür... şimdi...</i>
+
+281
+00:14:59,480 --> 00:15:03,030
+Yazılı sınavı geçenler
+son bir teste alınacak.
+
+282
+00:15:03,030 --> 00:15:04,990
+Beceri testi yapacağız.
+
+283
+00:15:06,610 --> 00:15:10,370
+Gizli soruşturma için beceri
+testine tâbi tutulacaksın.
+
+284
+00:15:11,060 --> 00:15:12,930
+Gizli soruşturma,
+İstilâya Direniş Örgütü...
+
+285
+00:15:12,930 --> 00:15:14,930
+...aktiviteleri arasındaki
+en zor görevlerden biridir.
+
+286
+00:15:14,930 --> 00:15:19,030
+Düşman, ajanları dikkate almayacak
+kadar aptal değildir.
+
+287
+00:15:19,030 --> 00:15:21,700
+<i>Önümde tam bir aptal var.</i>
+
+288
+00:15:21,700 --> 00:15:24,250
+Bir test olmasına rağmen,
+neler olacağını bilemezsin.
+
+289
+00:15:24,250 --> 00:15:27,350
+Bu yüzden, testi gözlem
+altında yapacaksın.
+
+290
+00:15:27,810 --> 00:15:29,360
+Kaptan Dragon!
+
+291
+00:15:29,360 --> 00:15:31,480
+Kaptan... Dragon mu?
+
+292
+00:15:48,190 --> 00:15:49,650
+Şeyy...
+
+293
+00:15:49,650 --> 00:15:52,220
+Merhaba, ben Kaptan Dragon.
+
+294
+00:15:52,890 --> 00:15:56,230
+Birlikte bir örgütün
+karargâhına sızacağız.
+
+295
+00:15:56,230 --> 00:15:59,010
+Gizli belgeyi çalabilirsen
+sınavı geçeceksin.
+
+296
+00:15:59,010 --> 00:16:02,230
+Sonra ise, resmi bir İstilâya Direniş
+Örgütü üyesi olacaksın. Tamam mı?
+
+297
+00:16:02,230 --> 00:16:04,840
+Her neyse... O şey, değil mi?
+
+298
+00:16:04,840 --> 00:16:07,440
+O adamsın, değil mi?
+Jackie'ye benziyorsun...
+
+299
+00:16:07,440 --> 00:16:10,400
+Jackie değil, Kaptan Dragon!
+
+300
+00:16:10,400 --> 00:16:11,910
+Çok yakınsın.
+
+301
+00:16:11,910 --> 00:16:13,340
+Bir şey sorayım.
+
+302
+00:16:13,340 --> 00:16:17,690
+Gizli soruşturma sırasında
+en çok neyi koruman gerekiyor?
+
+303
+00:16:17,690 --> 00:16:19,570
+<i>Bu da mı sınav sorusu?</i>
+
+304
+00:16:20,420 --> 00:16:22,030
+Cevap "burun".
+
+305
+00:16:22,030 --> 00:16:22,830
+Burun mu?
+
+306
+00:16:22,830 --> 00:16:24,180
+Evet. Burun!
+
+307
+00:16:24,180 --> 00:16:27,640
+İnsan bedeninde birçok
+ölümcül nokta vardır.
+
+308
+00:16:27,640 --> 00:16:30,820
+Amatörler en hassas noktanın
+yumurtalıklar olduğunu sanır, ama...
+
+309
+00:16:30,820 --> 00:16:31,910
+...yanlış!
+
+310
+00:16:31,910 --> 00:16:33,680
+En hassas nokta burundur!
+
+311
+00:16:33,680 --> 00:16:34,940
+Anladın mı?!
+
+312
+00:16:36,980 --> 00:16:38,830
+Son test...
+
+313
+00:16:39,740 --> 00:16:42,020
+Z Projesi başlıyor!
+
+314
+00:16:51,590 --> 00:16:54,060
+<i>İşte. Aşırı kolay oldu.</i>
+
+315
+00:16:54,060 --> 00:16:57,340
+Başardım. Beceri testini geçtim.
+
+316
+00:17:00,180 --> 00:17:03,850
+Ne harika yetenek!
+Çabucak geçtin.
+
+317
+00:17:03,850 --> 00:17:08,710
+Ancak, o gizli belgeyi karargâhımıza
+getirene kadar testtesin.
+
+318
+00:17:08,710 --> 00:17:11,330
+Yolculuğun eve sağ salim dönene
+kadar devam eder.
+
+319
+00:17:11,330 --> 00:17:14,040
+Katsura-san, düşman bizi bulacak.
+
+320
+00:17:14,040 --> 00:17:15,610
+Hey, o ses de neydi?!
+
+321
+00:17:15,610 --> 00:17:16,880
+İzinsiz giriş var!
+
+322
+00:17:16,880 --> 00:17:18,410
+Gizli belge odasındalar.
+
+323
+00:17:18,410 --> 00:17:20,150
+Farkettiler!
+
+324
+00:17:20,150 --> 00:17:23,420
+Düşman seni kritik bir zamanda buldu.
+Çok toysun daha.
+
+325
+00:17:23,420 --> 00:17:25,420
+Senin yüzünden farkettiler.
+
+326
+00:17:25,420 --> 00:17:28,010
+Kaçalım. Takip et beni, sınav öğrencisi!
+
+327
+00:17:29,060 --> 00:17:31,800
+Durun! Oradalar!
+
+328
+00:17:32,210 --> 00:17:33,470
+Peşimizden geliyorlar!
+
+329
+00:17:33,470 --> 00:17:37,510
+İşte soru. Bu durumda doğru hareketi seç.
+
+330
+00:17:37,510 --> 00:17:38,900
+Bu da mı testin bir parçası?!
+
+331
+00:17:39,060 --> 00:17:41,670
+Doğru hareket mi?
+Tek şık kaçmak.
+
+332
+00:17:42,570 --> 00:17:43,770
+{\a6\fs12}[Saat Kulesi]
+
+333
+00:17:42,800 --> 00:17:43,770
+<i>Bisiklet mi?</i>
+
+334
+00:17:43,990 --> 00:17:47,190
+<i>Mınçıka. Çengel.
+Kirli bir futbol topu.</i>
+
+335
+00:17:47,190 --> 00:17:48,170
+<i>Saat kulesi mi?</i>
+
+336
+00:17:48,730 --> 00:17:51,460
+<i>Anladım! Bu nesnelerden
+birisini kullanmalıyım.</i>
+
+337
+00:17:52,040 --> 00:17:54,680
+<i>Kaçmak için en iyisini seçmeliyim.
+Madem öyle...</i>
+
+338
+00:17:54,860 --> 00:17:56,160
+İşte bu!
+
+339
+00:17:56,980 --> 00:17:58,870
+Doğru cevap bu.
+
+340
+00:18:01,060 --> 00:18:03,530
+<i>Olamaz! Doğru cevap o muymuş!</i>
+
+341
+00:18:18,310 --> 00:18:20,040
+Düştünüz mü yahu?!
+
+342
+00:18:20,040 --> 00:18:24,340
+Cevap: "Bu sahneyi kapanışta kullanacağız."
+
+343
+00:18:20,040 --> 00:18:24,340
+{\a6\fs12}[Not: Hong Kong
+Kung-fu aksiyon filmine gönderme.]
+
+344
+00:18:24,340 --> 00:18:25,590
+Kullanma!
+
+345
+00:18:25,590 --> 00:18:28,910
+Gidelim. Araba takibiyle
+hepsini atlatalım.
+
+346
+00:18:28,910 --> 00:18:31,040
+Oradalar. Durun!
+
+347
+00:18:31,040 --> 00:18:32,120
+Durum kötü.
+
+348
+00:18:39,600 --> 00:18:40,580
+Neden burnun?!
+
+349
+00:18:40,580 --> 00:18:42,120
+Burnunu koruyabilirsen,
+kıçını da korumalısın.
+
+350
+00:18:42,120 --> 00:18:47,020
+Bizi düşünme.
+Böyle çok tehlike atlattık.
+
+351
+00:18:47,020 --> 00:18:48,640
+Sadece aptalsınız.
+
+352
+00:18:52,220 --> 00:18:53,270
+Çıkmaz sokak.
+
+353
+00:18:53,270 --> 00:18:54,130
+Kahretsin!
+
+354
+00:18:54,130 --> 00:18:55,930
+Oradalar. İşte oradalar.
+
+355
+00:18:56,470 --> 00:18:58,130
+Olamaz. Peşimizdeler.
+
+356
+00:18:58,130 --> 00:19:01,950
+İşte soru. Bu durumda doğru
+hareketi seçin.
+
+357
+00:19:02,150 --> 00:19:04,740
+Önce sen doğru hareketi seç.
+
+358
+00:19:04,740 --> 00:19:06,010
+Üff...
+
+359
+00:19:06,010 --> 00:19:07,810
+Savaşmalıyız.
+
+360
+00:19:08,210 --> 00:19:12,230
+Yanlış. Doğru cevap
+Fatgon'u çağırmak.
+
+361
+00:19:08,210 --> 00:19:12,230
+{\a6\fs12}[Not: Sammo Hung'un
+"Enter The Fat Dragon"'una gönderme.]
+
+362
+00:19:12,230 --> 00:19:13,750
+Fatgon!
+
+363
+00:19:14,420 --> 00:19:15,740
+Efendim, Dragon?
+
+364
+00:19:15,740 --> 00:19:17,880
+Neden Fatgon?! O neden burada?!
+
+365
+00:19:17,880 --> 00:19:21,080
+Un Pyao çağırdıysan,
+yarı puan alırsın.
+
+366
+00:19:17,880 --> 00:19:21,080
+{\a6\fs12}[Not: Yuan Biao göndermesi.
+Başka bir Hong Kong aksiyon yıldızı.]
+
+367
+00:19:21,080 --> 00:19:22,290
+Çağırmam!
+
+368
+00:19:22,290 --> 00:19:24,650
+Neyse, buradan uzaklaşmalıyız.
+
+369
+00:19:24,650 --> 00:19:28,130
+Anladım. Ama bunun için puan vermem.
+
+370
+00:19:28,130 --> 00:19:29,170
+İhtiyacım yok!
+
+371
+00:19:29,170 --> 00:19:32,380
+Yine mi?! Edo'da niye bu kadar çok
+çıkmaz sokak var?
+
+372
+00:19:32,380 --> 00:19:33,940
+Hükümet ne yapıyor öyle?!
+
+373
+00:19:34,590 --> 00:19:36,330
+Tam bir İstilâya Direniş Örgütü
+üyesi gibi yorum yaptın.
+
+374
+00:19:36,330 --> 00:19:37,480
+Sana üç puan veriyorum.
+
+375
+00:19:37,480 --> 00:19:38,620
+Sıktın ama!
+
+376
+00:19:40,120 --> 00:19:41,190
+Sonumuz geldi...
+
+377
+00:19:41,190 --> 00:19:45,370
+İşte soru. Bu durumda sence
+Fatgon ne yapardı?
+
+378
+00:19:45,370 --> 00:19:49,100
+Bunun artık Jackie ile
+bir alâkası kalmadı. Fatgon o yahu!
+
+379
+00:19:50,370 --> 00:19:53,600
+Kusura bakma, Dragon, ölmek istemiyorum.
+
+380
+00:19:53,780 --> 00:19:55,240
+Beni hayal kırıklığına uğrattın!
+
+381
+00:19:55,240 --> 00:19:57,520
+Bir hırsızken de aynı böyleydin.
+
+382
+00:19:57,520 --> 00:20:00,270
+Bir hırsızdan yardım almaya
+çalışman beni tamamen çökertti.
+
+383
+00:20:00,270 --> 00:20:02,210
+Sonra konuşuruz. Yakalayın!
+
+384
+00:20:05,450 --> 00:20:08,290
+Sınav öğrencisi, gizli belgeyi
+korumak için vücudunu kullan.
+
+385
+00:20:12,720 --> 00:20:15,580
+Burnun dışındaki yerlerini de koru.
+
+386
+00:20:15,580 --> 00:20:17,210
+Tamam, şimdi.
+
+387
+00:20:17,210 --> 00:20:18,360
+İşte soru!
+
+388
+00:20:19,130 --> 00:20:21,280
+Arkadaşın saldırıya uğradı.
+
+389
+00:20:21,280 --> 00:20:22,660
+Ne yapmalısın?!
+
+390
+00:20:22,660 --> 00:20:24,730
+Neden doğrudan yardım istemiyorsunuz?!
+
+391
+00:20:25,570 --> 00:20:27,260
+<i>Katsura benim düşmanım.</i>
+
+392
+00:20:27,260 --> 00:20:29,890
+<i>Kaptan Dragon ise
+İstilâya Direniş Örgütü ile müttefik.</i>
+
+393
+00:20:29,890 --> 00:20:32,560
+<i>Bu durumda, onları terk edersem
+bir sorun olmaz.</i>
+
+394
+00:20:34,020 --> 00:20:36,550
+<i>Ama bu gizli bir görev.</i>
+
+395
+00:20:36,550 --> 00:20:39,600
+<i>Bir ajan zihnen ve bedenen
+İstilâya Direniş Örgütü üyesi olmalı.</i>
+
+396
+00:20:40,980 --> 00:20:42,250
+<i>Bu durumda...</i>
+
+397
+00:20:47,800 --> 00:20:50,390
+Kaçalım, Katsura-san,
+Kaptan Dragon!
+
+398
+00:20:52,900 --> 00:20:56,620
+İstilâya Direniş Örgütü üyesi
+hedefine ulaşmak için...
+
+399
+00:20:56,620 --> 00:20:59,020
+...bazen taş kalpli olmalıdır.
+
+400
+00:20:59,020 --> 00:21:02,000
+Orada kaçsan da sorun olmazdı.
+
+401
+00:21:02,000 --> 00:21:03,940
+Test için sana puan veremem.
+
+402
+00:21:05,530 --> 00:21:07,840
+Ama bir insan olarak geçtin.
+
+403
+00:21:12,780 --> 00:21:15,290
+Kahretsin... az kalmıştı.
+
+404
+00:21:15,730 --> 00:21:20,600
+Henüz bitmedi. Daha çok numaramız var.
+
+405
+00:21:20,600 --> 00:21:24,080
+Gerçekten iyi konuştun,
+ama bu kadarıyla...
+
+406
+00:21:24,990 --> 00:21:26,800
+İşte soru.
+
+407
+00:21:27,100 --> 00:21:31,010
+Arkadaşların sana yardım edemiyor
+ve kötü adamlar tarafından sarılmışsın.
+
+408
+00:21:31,010 --> 00:21:34,880
+Bu umutsuz durumda doğru hareketi seç.
+
+409
+00:21:35,290 --> 00:21:39,680
+<i>Bilmiyorum... böyle bir durumda
+ne yapmalıyım?</i>
+
+410
+00:21:40,190 --> 00:21:41,360
+Doğru cevap...
+
+411
+00:21:41,990 --> 00:21:43,580
+Vazgeçmemek!
+
+412
+00:21:43,580 --> 00:21:44,320
+Ama...
+
+413
+00:21:44,320 --> 00:21:46,260
+Gizli dosyayı al ve kaç.
+
+414
+00:21:46,260 --> 00:21:48,180
+Ya siz n'olacaksınız?
+
+415
+00:21:49,220 --> 00:21:50,510
+Biz...
+
+416
+00:21:50,510 --> 00:21:52,070
+...yeni arkadaşımızı...
+
+417
+00:21:52,070 --> 00:21:53,490
+...koruyacağız!
+
+418
+00:21:53,490 --> 00:21:54,520
+Katsura-san!
+
+419
+00:21:54,520 --> 00:21:55,860
+Kaptan Dragon!
+
+420
+00:21:56,270 --> 00:21:59,420
+Git! Kaç buradan!
+
+421
+00:22:00,270 --> 00:22:02,390
+Emeklerimizi heba etme.
+
+422
+00:22:02,390 --> 00:22:03,280
+Git!
+
+423
+00:22:06,370 --> 00:22:07,490
+İzin vermem.
+
+424
+00:22:10,210 --> 00:22:15,350
+Katsura-san, Kaptan Dragon,
+destek kuvvetlerle döneceğim.
+
+425
+00:22:16,850 --> 00:22:18,240
+Kaçmasına engel olun.
+
+426
+00:22:18,240 --> 00:22:19,080
+İzin vermem!
+
+427
+00:22:23,570 --> 00:22:25,670
+Yardım bulmalıyım.
+Bir an önce yardım bulmalıyım.
+
+428
+00:22:26,610 --> 00:22:28,590
+Katsura-san ve Kaptan Dragon...
+
+429
+00:22:39,420 --> 00:22:41,940
+Aferin. Kusursuzca geçtin.
+
+430
+00:22:46,280 --> 00:22:49,240
+Bugünden itibaren,
+İstilâya Direniş Örgütü üyesisin.
+
+431
+00:22:49,990 --> 00:22:52,820
+Katsura-san, Kaptan Dragon...
+
+432
+00:22:53,900 --> 00:22:55,210
+Bir şey düşürdün...
+
+433
+00:22:55,220 --> 00:22:57,720
+{\a6\fs12}[Shogunate Özel Silahlı Polisi Shinsengumi
+Müfettişi Sagaru Yamazaki]
+
+434
+00:24:30,600 --> 00:24:35,120
+{\a6}[Fragman]
+
+435
+00:24:30,810 --> 00:24:34,740
+Bir sonraki bölüm: "Herkes 'Benlik' Denen
+Kendi Hapishanesinden Kaçar."
+
+436
+00:24:35,120 --> 00:24:39,220
+{\a6\fs12}[Yamazaki'nin hareketleri işe
+yaradı mı yoksa? Katsura hapse atılıyor.]
+
+437
+00:24:39,220 --> 00:24:45,060
+{\a6\fs12}[Çelik kale, Hapishane Adası.
+Katsura güvenli bir şekilde kaçabilecek mi?!]
+

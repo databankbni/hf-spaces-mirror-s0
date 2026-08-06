@@ -1,0 +1,116 @@
+{
+ "captured_at": "2026-08-06T03:15:39Z",
+ "hf_metadata": {
+  "_id": "6a46d31e84fdaff35ac3054b",
+  "author": "sair-distillation",
+  "cardData": {
+   "app_port": 7860,
+   "colorFrom": "green",
+   "colorTo": "indigo",
+   "emoji": "⚡",
+   "hf_oauth": true,
+   "hf_oauth_authorized_org": "sair-distillation",
+   "hf_oauth_expiration_minutes": 43200,
+   "hf_oauth_scopes": [
+    "write-repos",
+    "email"
+   ],
+   "pinned": false,
+   "sdk": "docker",
+   "short_description": "Making Open-Weight LLMs better at Formal Math",
+   "tags": [
+    "agent-collab"
+   ],
+   "title": "SAIR Stage 2 Agent Collab"
+  },
+  "createdAt": "2026-07-02T21:07:42.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://sair-distillation-eq2-dashboard.hf.space",
+  "id": "sair-distillation/eq2-dashboard",
+  "lastModified": "2026-08-05T13:25:53.000Z",
+  "likes": 2,
+  "private": false,
+  "region": "us",
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "sair-distillation-eq2-dashboard.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": "cpu-basic",
+    "requested": "cpu-basic"
+   },
+   "pySpacesVersion": "0.51.1",
+   "replicas": {
+    "current": 1,
+    "requested": 1
+   },
+   "sha": "fef46108a42b1778d5754cf0274d5fc46c12e354",
+   "stage": "RUNNING"
+  },
+  "sdk": "docker",
+  "sha": "fef46108a42b1778d5754cf0274d5fc46c12e354",
+  "siblings": [
+   {
+    "rfilename": ".gitattributes"
+   },
+   {
+    "rfilename": ".gitignore"
+   },
+   {
+    "rfilename": "Dockerfile"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "app.py"
+   },
+   {
+    "rfilename": "requirements.txt"
+   },
+   {
+    "rfilename": "static/index.html"
+   },
+   {
+    "rfilename": "static/index.html.orig"
+   },
+   {
+    "rfilename": "static/problems.json"
+   }
+  ],
+  "subdomain": "sair-distillation-eq2-dashboard",
+  "tags": [
+   "docker",
+   "agent-collab",
+   "region:us"
+  ],
+  "usedStorage": 0
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  },
+  {
+   "original": ".gitignore",
+   "stored_as": "_gitignore"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "sair-distillation/eq2-dashboard",
+ "repo_type": "spaces",
+ "sha": "fef46108a42b1778d5754cf0274d5fc46c12e354",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/sair-distillation/eq2-dashboard"
+}

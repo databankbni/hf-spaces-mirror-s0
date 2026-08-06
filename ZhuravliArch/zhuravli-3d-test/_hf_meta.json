@@ -1,0 +1,81 @@
+{
+ "captured_at": "2026-08-06T03:08:19Z",
+ "hf_metadata": {
+  "_id": "6a6f0c9648e8911d521f56ae",
+  "author": "ZhuravliArch",
+  "cardData": {
+   "colorFrom": "blue",
+   "colorTo": "indigo",
+   "emoji": "🌍",
+   "pinned": false,
+   "sdk": "static",
+   "short_description": "Тестовый просмотрщик 3D-моделей",
+   "title": "Zhuravli 3d Test"
+  },
+  "createdAt": "2026-08-02T09:23:34.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://zhuravliarch-zhuravli-3d-test.static.hf.space",
+  "id": "ZhuravliArch/zhuravli-3d-test",
+  "lastModified": "2026-08-05T06:15:15.000Z",
+  "likes": 0,
+  "private": false,
+  "region": "us",
+  "runtime": {
+   "hardware": {
+    "current": null,
+    "requested": null
+   },
+   "replicas": {
+    "current": 1,
+    "requested": 1
+   },
+   "stage": "RUNNING"
+  },
+  "sdk": "static",
+  "sha": "3b73b9df4182a45881720765a09ccab800d4ab91",
+  "siblings": [
+   {
+    "rfilename": ".gitattributes"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "Zhuravli3D_Web_Mobile_11MB.glb"
+   },
+   {
+    "rfilename": "index.html"
+   },
+   {
+    "rfilename": "model.glb"
+   },
+   {
+    "rfilename": "style.css"
+   }
+  ],
+  "subdomain": "zhuravliarch-zhuravli-3d-test",
+  "tags": [
+   "static",
+   "region:us"
+  ],
+  "usedStorage": 315874264
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "ZhuravliArch/zhuravli-3d-test",
+ "repo_type": "spaces",
+ "sha": "3b73b9df4182a45881720765a09ccab800d4ab91",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/ZhuravliArch/zhuravli-3d-test"
+}

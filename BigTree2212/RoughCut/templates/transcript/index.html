@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% block title %}Video Transcript — AI Tools Studio{% endblock %}
+{% block head %}
+<link rel="stylesheet" href="{{ static_url('css/transcript.css') }}">
+{% endblock %}
+{% block content %}
+
+<div class="reel-strip">
+  <span class="reel-strip__dash"></span>
+  <span class="reel-strip__dot"></span>
+  <span class="reel-strip__dash"></span>
+</div>
+
+<div class="tool-intro">
+  <p class="tool-intro__title">Video Transcript</p>
+  <p class="tool-intro__subtitle">upload video, ekstrak audio, transkripsi otomatis — lokal &amp; offline</p>
+</div>
+
+<div class="tr-card panel">
+  <div id="queue-banner" class="queue-banner hidden">
+    <span class="status-dot dot-yellow"></span>
+    <span id="queue-banner-text"></span>
+  </div>
+
+  <div class="format-toggle">
+    <button type="button" class="format-btn active" data-source="upload">Upload File</button>
+    <button type="button" class="format-btn" data-source="url">Link Video</button>
+  </div>
+
+  <form id="upload-form">
+    <label class="slot" id="dropzone" for="video-input">
+      <div class="slot__reel"></div>
+      <div class="slot__text">
+        <strong id="dropzone-title">Taruh video di sini</strong>
+        <span id="dropzone-sub">atau klik untuk pilih file — MP4, MOV, MKV</span>
+      </div>
+      <div class="slot__reel"></div>
+    </label>
+    <input type="file" id="video-input" accept=".mp4,.mov,.mkv,video/mp4,video/quicktime,video/x-matroska" required hidden>
+    <button type="submit" class="btn btn--primary" id="upload-btn">Upload &amp; Transkrip</button>
+    <div id="upload-error" class="error-text"></div>
+  </form>
+
+  <form id="url-form" class="hidden">
+    <label class="url-label" for="video-url">Link video (YouTube, TikTok, atau Instagram)</label>
+    <input type="url" id="video-url" placeholder="https://www.youtube.com/watch?v=..." required>
+    <button type="submit" id="url-check-btn" class="btn btn--primary">Cek Video</button>
+    <div id="url-error" class="error-text"></div>
+  </form>
+
+  <div id="url-preview-card" class="preview-card hidden">
+    <div class="divider"></div>
+    <div class="preview-body">
+      <img id="url-preview-thumb" class="preview-thumb hidden" alt="thumbnail">
+      <div class="preview-info">
+        <div id="url-preview-title" class="preview-title"></div>
+        <div class="preview-meta-row">
+          <span id="url-preview-platform" class="tag"></span>
+          <span id="url-preview-duration" class="tag tag-duration"></span>
+        </div>
+      </div>
+    </div>
+    <button type="button" id="url-transcribe-btn" class="btn btn--primary">Transkrip Video Ini</button>
+  </div>
+</div>
+
+<section id="job-list" class="job-list"></section>
+
+{% endblock %}
+{% block scripts %}
+<script src="{{ static_url('js/transcript.js') }}"></script>
+{% endblock %}

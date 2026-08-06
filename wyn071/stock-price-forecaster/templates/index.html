@@ -1,0 +1,711 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stock Price Forecaster</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+      :root {
+        --bg: #0b0d10;
+        --panel: #14171b;
+        --panel-border: #23272d;
+        --text-primary: #e8e9eb;
+        --text-secondary: #8b9099;
+        --accent: #5b8def;
+        --accent-soft: rgba(91, 141, 239, 0.12);
+        --good: #4ade80;
+        --mid: #facc15;
+        --bad: #f87171;
+        --radius: 10px;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, sans-serif;
+        background: var(--bg);
+        color: var(--text-primary);
+        min-height: 100vh;
+        padding: 32px 20px 60px;
+      }
+
+      .wrap {
+        max-width: 980px;
+        margin: 0 auto;
+      }
+
+      header {
+        text-align: center;
+        margin-bottom: 40px;
+        padding-top: 12px;
+      }
+
+      header h1 {
+        font-size: 38px;
+        font-weight: 700;
+        letter-spacing: -0.03em;
+        line-height: 1.15;
+        background: linear-gradient(
+          135deg,
+          #ffffff 0%,
+          #aebbcc 60%,
+          #5b8def 100%
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      header p {
+        color: var(--text-secondary);
+        font-size: 15px;
+        margin-top: 12px;
+        white-space: nowrap;
+      }
+
+      @media (max-width: 640px) {
+        header h1 {
+          font-size: 24px;
+        }
+        header p {
+          font-size: 12px;
+          white-space: normal;
+          max-width: 320px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+
+      .panel {
+        background: var(--panel);
+        border: 1px solid var(--panel-border);
+        border-radius: var(--radius);
+        padding: 24px;
+        margin-bottom: 20px;
+      }
+
+      .controls-panel {
+        /* display: flex;
+        flex-direction: column;
+        gap: 18px; */
+        height: 120px;
+      }
+
+      .controls {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        align-items: flex-end;
+      }
+
+      .field {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        flex: 1;
+        min-width: 160px;
+      }
+
+      .field label {
+        font-size: 11.5px;
+        color: var(--text-secondary);
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+      }
+
+      select {
+        appearance: none;
+        background: #1b1f24;
+        border: 1px solid var(--panel-border);
+        color: var(--text-primary);
+        padding: 9px 36px 9px 14px;
+        border-radius: 8px;
+        font-size: 14px;
+        cursor: pointer;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%238b9099'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 14px center;
+      }
+
+      select:focus {
+        outline: none;
+        border-color: var(--accent);
+      }
+
+      button {
+        padding: 9px 26px;
+        background: var(--accent);
+        color: white;
+        font-size: 14px;
+        font-weight: 500;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background 0.15s;
+        height: 38px;
+      }
+
+      button:hover {
+        background: #4a7adb;
+      }
+      button:disabled {
+        background: #2a2f37;
+        color: var(--text-secondary);
+        cursor: not-allowed;
+      }
+
+      #status {
+        font-size: 11px;
+        font-style: italic;
+        color: var(--text-secondary);
+        margin-top: -14px;
+        min-height: 16px;
+        text-align: right;
+      }
+
+      #error {
+        font-size: 11px;
+        color: var(--bad);
+        margin-top: 14px;
+        min-height: 16px;
+        text-align: center;
+      }
+
+      .hidden {
+        display: none !important;
+      }
+
+      .chart-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        margin-bottom: 18px;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .chart-header h2 {
+        font-size: 16px;
+        font-weight: 600;
+      }
+
+      .badge {
+        font-size: 11.5px;
+        padding: 4px 10px;
+        border-radius: 999px;
+        font-weight: 500;
+      }
+
+      .badge.good {
+        background: rgba(74, 222, 128, 0.12);
+        color: var(--good);
+      }
+      .badge.mid {
+        background: rgba(250, 204, 21, 0.12);
+        color: var(--mid);
+      }
+      .badge.bad {
+        background: rgba(248, 113, 113, 0.12);
+        color: var(--bad);
+      }
+
+      canvas {
+        max-height: 360px;
+      }
+
+      .stat-cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+        margin-bottom: 24px;
+      }
+
+      .stat-card {
+        background: #1b1f24;
+        border: 1px solid var(--panel-border);
+        border-radius: 8px;
+        padding: 16px 18px;
+      }
+
+      .stat-card .stat-label {
+        font-size: 11px;
+        color: var(--text-secondary);
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        margin-bottom: 8px;
+      }
+
+      .stat-card .stat-value {
+        font-size: 24px;
+        font-weight: 600;
+        letter-spacing: -0.01em;
+      }
+
+      .stat-card .stat-sub {
+        font-size: 12px;
+        color: var(--text-secondary);
+        margin-top: 4px;
+      }
+
+      .stat-card.target .stat-value {
+        color: var(--accent);
+      }
+
+      .change-positive {
+        color: var(--good);
+      }
+      .change-negative {
+        color: var(--bad);
+      }
+
+      @media (max-width: 640px) {
+        .stat-cards {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .accuracy-note {
+        font-size: 12.5px;
+        color: var(--text-secondary);
+        margin-bottom: 16px;
+        line-height: 1.5;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 13px;
+      }
+
+      th {
+        text-align: left;
+        color: var(--text-secondary);
+        font-weight: 500;
+        font-size: 11.5px;
+        text-transform: uppercase;
+        letter-spacing: 0.03em;
+        padding: 10px 12px;
+        border-bottom: 1px solid var(--panel-border);
+      }
+
+      td {
+        padding: 12px;
+        border-bottom: 1px solid #1b1f24;
+      }
+
+      tr.active-row td {
+        background: var(--accent-soft);
+      }
+
+      tr.active-row td:first-child {
+        border-radius: 6px 0 0 6px;
+      }
+      tr.active-row td:last-child {
+        border-radius: 0 6px 6px 0;
+      }
+
+      .mape-pill {
+        display: inline-block;
+        padding: 3px 9px;
+        border-radius: 6px;
+        font-weight: 600;
+        font-size: 12.5px;
+      }
+
+      .horizon-label {
+        color: var(--text-primary);
+        font-weight: 500;
+      }
+
+      footer {
+        margin-top: 48px;
+        padding-top: 24px;
+        border-top: 1px solid var(--panel-border);
+        text-align: center;
+      }
+
+      footer .disclaimer {
+        color: var(--text-secondary);
+        font-size: 12px;
+        line-height: 1.6;
+        max-width: 520px;
+        margin: 0 auto;
+      }
+
+      footer .credit {
+        margin-top: 18px;
+        font-size: 12.5px;
+        color: var(--text-secondary);
+        letter-spacing: 0.01em;
+      }
+
+      footer .credit span {
+        color: var(--text-primary);
+        font-weight: 600;
+        background: linear-gradient(135deg, #ffffff 0%, #5b8def 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <header>
+        <h1>Stock Price Forecaster</h1>
+        <p>
+          Time series forecasting with Facebook Prophet, backtested across
+          multiple horizons.
+        </p>
+      </header>
+
+      <div class="panel controls-panel">
+        <div class="controls">
+          <div class="field">
+            <label for="ticker">Ticker</label>
+            <select id="ticker">
+              <option value="GOOG">Google (GOOG)</option>
+              <option value="AAPL">Apple (AAPL)</option>
+              <option value="MSFT">Microsoft (MSFT)</option>
+              <option value="TSLA">Tesla (TSLA)</option>
+              <option value="AMZN">Amazon (AMZN)</option>
+              <option value="META">Meta (META)</option>
+              <option value="NVDA">Nvidia (NVDA)</option>
+              <!-- <option value="NFLX">Netflix (NFLX)</option> -->
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="horizon">Forecast horizon</label>
+            <select id="horizon">
+              <option value="7">1 week</option>
+              <option value="30" selected>30 days</option>
+              <option value="90">90 days</option>
+              <option value="180">180 days</option>
+              <option value="365">365 days</option>
+            </select>
+          </div>
+
+          <button id="predictBtn" onclick="predict()">Run forecast</button>
+        </div>
+
+        <div id="error"></div>
+        <div id="status"></div>
+      </div>
+
+      <div id="resultsArea" class="hidden">
+        <div class="panel">
+          <div class="chart-header">
+            <h2 id="chartTitle"></h2>
+            <span id="confidenceBadge" class="badge"></span>
+          </div>
+
+          <div class="stat-cards">
+            <div class="stat-card">
+              <div class="stat-label">Latest closing price</div>
+              <div class="stat-value" id="currentPriceVal">—</div>
+              <div class="stat-sub" id="currentPriceDate">—</div>
+            </div>
+            <div class="stat-card target">
+              <div class="stat-label">Predicted price</div>
+              <div class="stat-value" id="targetPriceVal">—</div>
+              <div class="stat-sub" id="targetPriceDate">—</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-label">Expected change</div>
+              <div class="stat-value" id="changeVal">—</div>
+              <div class="stat-sub" id="rangeVal">—</div>
+            </div>
+          </div>
+
+          <canvas id="myChart"></canvas>
+        </div>
+
+        <div class="panel">
+          <div class="chart-header">
+            <h2>Backtested accuracy by horizon</h2>
+          </div>
+          <p class="accuracy-note">
+            Each row trains Prophet on all data up to a cutoff date, then checks
+            its prediction against what actually happened. Shorter horizons are
+            consistently more reliable, error compounds the further into the
+            future the model is asked to predict.
+          </p>
+          <table id="accuracyTable">
+            <thead>
+              <tr>
+                <th>Horizon</th>
+                <th>MAPE</th>
+                <th>MAE</th>
+                <th>RMSE</th>
+              </tr>
+            </thead>
+            <tbody id="accuracyBody"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <footer>
+        <p class="disclaimer">
+          Predictions are based on historical price patterns only and do not
+          account for news, earnings, or market events. Not financial advice.
+        </p>
+        <p class="credit">Made by <span>Sheena Ocon</span></p>
+      </footer>
+    </div>
+
+    <script>
+      let chartInstance = null;
+
+      const HORIZON_LABELS = {
+        7: "1 week",
+        30: "30 days",
+        90: "90 days",
+        180: "180 days",
+        365: "365 days",
+      };
+
+      function mapeBadge(mape) {
+        if (mape < 8) return { cls: "good", text: "High confidence" };
+        if (mape < 20) return { cls: "mid", text: "Moderate confidence" };
+        return { cls: "bad", text: "Low confidence" };
+      }
+
+      function mapePillColor(mape) {
+        if (mape < 8) return "color:#4ade80; background:rgba(74,222,128,0.12);";
+        if (mape < 20)
+          return "color:#facc15; background:rgba(250,204,21,0.12);";
+        return "color:#f87171; background:rgba(248,113,113,0.12);";
+      }
+
+      async function predict() {
+        const ticker = document.getElementById("ticker").value;
+        const horizon = parseInt(document.getElementById("horizon").value);
+        const btn = document.getElementById("predictBtn");
+        const status = document.getElementById("status");
+        const error = document.getElementById("error");
+        const resultsArea = document.getElementById("resultsArea");
+
+        error.textContent = "";
+        status.textContent = "";
+        resultsArea.classList.add("hidden");
+
+        btn.disabled = true;
+        btn.textContent = "Running forecast...";
+        status.textContent = "This can take a minute...";
+
+        try {
+          const response = await fetch("/predict", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ ticker, horizon }),
+          });
+
+          const data = await response.json();
+
+          if (!response.ok) {
+            error.textContent =
+              data.error || "Something went wrong. Please try again.";
+            return;
+          }
+
+          renderChart(data);
+          renderSummary(data.summary);
+          renderAccuracyTable(data.accuracy_table, horizon);
+
+          resultsArea.classList.remove("hidden");
+          status.textContent = "";
+        } catch (err) {
+          error.textContent =
+            "Could not connect to the server. Make sure app.py is running.";
+        } finally {
+          btn.disabled = false;
+          btn.textContent = "Run forecast";
+        }
+      }
+
+      function formatDate(dateStr) {
+        const d = new Date(dateStr + "T00:00:00");
+        return d.toLocaleDateString("en-US", {
+          month: "short",
+          day: "numeric",
+          year: "numeric",
+        });
+      }
+
+      function renderSummary(summary) {
+        document.getElementById("currentPriceVal").textContent =
+          "$" + summary.current_price.toLocaleString();
+        document.getElementById("currentPriceDate").textContent =
+          "as of " + formatDate(summary.current_date);
+
+        document.getElementById("targetPriceVal").textContent =
+          "$" + summary.target_price.toLocaleString();
+        document.getElementById("targetPriceDate").textContent =
+          "on " + formatDate(summary.target_date);
+
+        const isPositive = summary.change_amount >= 0;
+        const sign = isPositive ? "+" : "";
+        const changeEl = document.getElementById("changeVal");
+        changeEl.textContent = `${sign}$${summary.change_amount.toLocaleString()} (${sign}${summary.change_percent}%)`;
+        changeEl.className =
+          "stat-value " + (isPositive ? "change-positive" : "change-negative");
+
+        document.getElementById("rangeVal").textContent =
+          `Range: $${summary.target_low.toLocaleString()} – $${summary.target_high.toLocaleString()}`;
+      }
+
+      function renderChart(data) {
+        const historyLabels = data.history.map((d) => d.ds);
+        const historyValues = data.history.map(
+          (d) => Math.round(d.y * 100) / 100,
+        );
+
+        const forecastLabels = data.forecast.map((d) => d.ds);
+        const forecastValues = data.forecast.map(
+          (d) => Math.round(d.yhat * 100) / 100,
+        );
+        const lower = data.forecast.map(
+          (d) => Math.round(d.yhat_lower * 100) / 100,
+        );
+        const upper = data.forecast.map(
+          (d) => Math.round(d.yhat_upper * 100) / 100,
+        );
+
+        const labels = [...historyLabels, ...forecastLabels];
+        const historyPadded = [
+          ...historyValues,
+          ...Array(forecastLabels.length).fill(null),
+        ];
+        const forecastPadded = [
+          ...Array(historyLabels.length - 1).fill(null),
+          historyValues[historyValues.length - 1],
+          ...forecastValues,
+        ];
+        const lowerPadded = [
+          ...Array(historyLabels.length).fill(null),
+          ...lower,
+        ];
+        const upperPadded = [
+          ...Array(historyLabels.length).fill(null),
+          ...upper,
+        ];
+
+        if (chartInstance) chartInstance.destroy();
+
+        document.getElementById("chartTitle").textContent =
+          `${data.ticker} — ${HORIZON_LABELS[data.horizon]} forecast`;
+
+        const horizonMetric = data.accuracy_table.find(
+          (r) => r.horizon === data.horizon,
+        );
+        if (horizonMetric) {
+          const badge = mapeBadge(horizonMetric.mape);
+          const badgeEl = document.getElementById("confidenceBadge");
+          badgeEl.textContent = `${badge.text} · ${horizonMetric.mape}% MAPE`;
+          badgeEl.className = "badge " + badge.cls;
+        }
+
+        chartInstance = new Chart(document.getElementById("myChart"), {
+          type: "line",
+          data: {
+            labels,
+            datasets: [
+              {
+                label: "Historical price",
+                data: historyPadded,
+                borderColor: "#8b9099",
+                borderWidth: 1.5,
+                pointRadius: 0,
+                tension: 0.25,
+              },
+              {
+                label: "Forecast",
+                data: forecastPadded,
+                borderColor: "#5b8def",
+                borderWidth: 2,
+                pointRadius: 0,
+                tension: 0.25,
+              },
+              {
+                label: "Upper bound",
+                data: upperPadded,
+                borderColor: "transparent",
+                backgroundColor: "rgba(91, 141, 239, 0.10)",
+                pointRadius: 0,
+                fill: "+1",
+              },
+              {
+                label: "Lower bound",
+                data: lowerPadded,
+                borderColor: "transparent",
+                backgroundColor: "rgba(91, 141, 239, 0.10)",
+                pointRadius: 0,
+                fill: false,
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            interaction: { mode: "index", intersect: false },
+            plugins: {
+              legend: {
+                labels: {
+                  color: "#8b9099",
+                  usePointStyle: true,
+                  boxWidth: 8,
+                  font: { size: 11.5 },
+                },
+              },
+            },
+            scales: {
+              x: {
+                ticks: {
+                  color: "#8b9099",
+                  maxTicksLimit: 8,
+                  maxRotation: 0,
+                  font: { size: 11 },
+                },
+                grid: { color: "#1b1f24" },
+              },
+              y: {
+                ticks: {
+                  color: "#8b9099",
+                  callback: (v) => "$" + v.toLocaleString(),
+                  font: { size: 11 },
+                },
+                grid: { color: "#1b1f24" },
+              },
+            },
+          },
+        });
+      }
+
+      function renderAccuracyTable(table, selectedHorizon) {
+        const tbody = document.getElementById("accuracyBody");
+        tbody.innerHTML = "";
+
+        const sorted = [...table].sort((a, b) => a.horizon - b.horizon);
+
+        sorted.forEach((row) => {
+          const tr = document.createElement("tr");
+          if (row.horizon === selectedHorizon) tr.className = "active-row";
+
+          tr.innerHTML = `
+        <td class="horizon-label">${HORIZON_LABELS[row.horizon] || row.horizon + " days"}</td>
+        <td><span class="mape-pill" style="${mapePillColor(row.mape)}">${row.mape}%</span></td>
+        <td>$${row.mae}</td>
+        <td>$${row.rmse}</td>
+      `;
+          tbody.appendChild(tr);
+        });
+      }
+    </script>
+  </body>
+</html>

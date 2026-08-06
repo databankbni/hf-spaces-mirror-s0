@@ -1,0 +1,11 @@
+root ::= object
+object ::= "{" ws "\"factors\"" ws ":" ws factors ws "," ws "\"unsupported_claims\"" ws ":" ws strings ws "," ws "\"ambiguities\"" ws ":" ws strings ws "}"
+factors ::= "[" ws (factor (ws "," ws factor){0,2})? ws "]"
+factor ::= "{" ws "\"factor_type\"" ws ":" ws factor-type ws "," ws "\"team\"" ws ":" ws team ws "," ws "\"severity\"" ws ":" ws number ws "," ws "\"certainty\"" ws ":" ws number ws "," ws "\"evidence\"" ws ":" ws string ws "}"
+factor-type ::= "\"key_attacker_unavailable\"" | "\"key_defender_unavailable\"" | "\"goalkeeper_unavailable\"" | "\"multiple_starters_unavailable\"" | "\"squad_rotation\"" | "\"fatigue_disadvantage\"" | "\"rest_advantage\"" | "\"travel_disadvantage\"" | "\"altitude_disadvantage\"" | "\"heat_disadvantage\"" | "\"home_advantage\"" | "\"neutral_venue\"" | "\"defensive_game_state\"" | "\"must_win_incentive\""
+team ::= "\"home\"" | "\"away\"" | "\"both\"" | "\"unknown\""
+strings ::= "[" ws (string (ws "," ws string){0,1})? ws "]"
+string ::= "\"" char{1,96} "\""
+char ::= [^"\\\x00-\x1F] | "\\" ["\\/bfnrt] | "\\u" [0-9a-fA-F]{4}
+number ::= "0" ("." [0-9]+)? | "1" ("." "0"+)?
+ws ::= [ \t\n\r]*

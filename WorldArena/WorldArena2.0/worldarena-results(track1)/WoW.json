@@ -1,0 +1,22 @@
+{
+    "Model": "WoW",
+    "year": "2025",
+    "open_source": "yes",
+    "Metrics": {
+        "Image Quality": 0.4937,
+        "Aesthetic Quality": 0.4063,
+        "JEPA Similarity": 0.7325,
+        "Dynamic Degree": 0.3562,
+        "Flow Score": 0.244,
+        "Motion Smoothness": 0.6864,
+        "Subject Consistency": 0.6555,
+        "Background Consistency": 0.8341,
+        "Photometric Consistency": 0.1073,
+        "Interaction Quality": 0.4987,
+        "Trajectory Accuracy": 0.2139,
+        "Depth Accuracy": 0.8008,
+        "Perspectivity": 0.7624,
+        "Instruction Following": 0.5295,
+        "Semantic Alignment": 0.8767
+    }
+}

@@ -1,0 +1,13 @@
+{
+ "lfs_not_stored": [
+  {
+   "oid": "5da0104a1d2bad5e82742852d2f5eb4a6851aa92303273e225bfabf901ac8202",
+   "path": "athena_banner.png",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6NWRhMDEwNGExZDJiYWQ1ZTgyNzQyODUyZDJmNWViNGE2ODUxYWE5MjMwMzI3M2UyMjViZmFiZjkwMWFjODIwMgpzaXplIDE0MzQzODYK",
+   "size": 1434386,
+   "url": "https://huggingface.co/spaces/polinapred/KWKChatbot/resolve/3cadf2c9a8b41d4419f47e7b5401d9f0325f0c35/athena_banner.png"
+  }
+ ],
+ "overflow_not_stored": [],
+ "oversize_not_stored": []
+}

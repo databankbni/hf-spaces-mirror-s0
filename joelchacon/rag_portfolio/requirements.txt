@@ -1,0 +1,29 @@
+# Core LangChain packages
+langchain>=0.1.0
+langchain-google-genai>=0.0.1
+langchain-community>=0.1.0
+langchain_huggingface>=0.0.1
+langchain_chroma>=0.0.1
+langsmith>=0.1.0
+tiktoken
+sentence-transformers
+beautifulsoup4 
+lxml
+
+# Vector store / database
+chromadb>=0.3.0
+
+# Front-end app (Streamlit)
+streamlit
+
+# -----------------------------
+# Backend API (FastAPI + Uvicorn)
+# -----------------------------
+fastapi[all]
+#fastapi>=0.115.0
+#uvicorn[standard]>=0.30.0
+#python-multipart>=0.0.6
+
+# Optional extras for Chroma / HuggingFace
+requests
+pydantic>=2.0

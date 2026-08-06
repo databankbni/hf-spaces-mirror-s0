@@ -1,0 +1,23 @@
+{
+ "captured_at": "2026-08-04T16:07:18Z",
+ "hf_metadata": {
+  "sha": "5bde19e173776cc10db2d2c73ac4f34eb05af4e0"
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "davanstrien/prelinger-moments-space",
+ "repo_type": "spaces",
+ "sha": "5bde19e173776cc10db2d2c73ac4f34eb05af4e0",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/davanstrien/prelinger-moments-space"
+}

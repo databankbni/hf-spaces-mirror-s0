@@ -1,0 +1,5 @@
+fastapi
+uvicorn==0.30.6
+python-multipart==0.0.9
+pillow==10.4.0
+cloudinary==1.41.0

@@ -1,0 +1,43 @@
+{
+  "name": "smart-restaurant-ai-waiter-service",
+  "version": "1.0.0",
+  "description": "Smart Restaurant AI Waiter Service - a stateless digital waiter brain that understands customer messages, filters live menu data from the backend, and produces warm, human-like waiter replies (English + Swahili).",
+  "main": "dist/server.js",
+  "type": "commonjs",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/server.js",
+    "dev": "nodemon --watch src --ext ts --exec \"ts-node src/server.ts\"",
+    "mock": "node scripts/mock-backend.js",
+    "typecheck": "tsc --noEmit",
+    "test": "node --test"
+  },
+  "keywords": [
+    "ai",
+    "waiter",
+    "restaurant",
+    "intent",
+    "nlp",
+    "swahili",
+    "fastify"
+  ],
+  "author": "Smart Hotel System",
+  "license": "MIT",
+  "dependencies": {
+    "@fastify/cors": "^10.0.1",
+    "axios": "^1.7.7",
+    "dotenv": "^16.4.5",
+    "fastify": "^5.2.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "nodemon": "^3.1.4",
+    "pino-pretty": "^11.2.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.4"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+{% block description %}Quest — Gamify your fitness and coding journey with knowledge and tools.{% endblock %}
+
+{% block content %}
+<section class="container">
+    <header class="content-header"><h1>Explore</h1></header>
+    <div class="card-grid">
+        {% for name, desc in sections.items() %}
+        <a href="/{{ name }}" class="card reveal">
+            <h3>{{ name|title }}</h3>
+            <p>{{ desc }}</p>
+        </a>
+        {% endfor %}
+        <a href="/archive/4_1_where_i_have_been" class="card reveal">
+            <h3>Quest</h3>
+            <p>The story behind this project</p>
+        </a>
+    </div>
+</section>
+
+
+<section class="container">
+    <header class="content-header"><h1>Apps</h1></header>
+    <div class="card-grid">
+        <div class="app-panel-inner reveal">
+            <h2 class="app-title">Jackked</h2>
+            <img src="{{ url_for('static', filename='images/Jackked/jackked_logo.svg') }}" alt="Jackked" class="app-logo">
+            <p class="app-tagline">Your personal strength coach</p>
+            <p class="app-description">Individualized and optimized workouts for consistent PRs. No spreadsheets, no guesswork, no burnout.</p>
+            <div class="app-store-links">
+                <a href="https://play.google.com/store/apps/details?id=com.captainjackked.quest_app.jackked" target="_blank" class="store-link"><img src="{{ url_for('static', filename='images/playstore_badge.svg') }}" alt="Get it on Google Play" class="store-badge"></a>
+                <a href="https://apps.apple.com/us/app/jackked/id6759549495" target="_blank" class="store-link"><img src="{{ url_for('static', filename='images/appstore_badge.svg') }}" alt="Download on the App Store" class="store-badge"></a>
+            </div>
+            <a href="/scrolls/3_1_jackked" class="app-learn-more">Read more →</a>
+        </div>
+        <div class="app-panel-inner reveal">
+            <h2 class="app-title">Crackked</h2>
+            <img src="{{ url_for('static', filename='images/Crackked/crackked_logo.svg') }}" alt="Crackked" class="app-logo">
+            <p class="app-tagline">Your personal coding coach</p>
+            <p class="app-description">Smart LeetCode playlists. Solve the next apt problem. Build pattern-matching intuition — speed will follow.</p>
+            <div class="app-store-links">
+                <a href="https://play.google.com/store/apps/details?id=com.captainjackked.quest_app.crackked" target="_blank" class="store-link"><img src="{{ url_for('static', filename='images/playstore_badge.svg') }}" alt="Get it on Google Play" class="store-badge"></a>
+                <a href="https://apps.apple.com/us/app/crackked/id6759552491" target="_blank" class="store-link"><img src="{{ url_for('static', filename='images/appstore_badge.svg') }}" alt="Download on the App Store" class="store-badge"></a>
+            </div>
+            <a href="/scrolls/3_2_crackked" class="app-learn-more">Read more →</a>
+        </div>
+    </div>
+</section>
+{% endblock %}

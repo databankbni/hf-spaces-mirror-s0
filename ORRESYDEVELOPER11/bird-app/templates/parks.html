@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block title %}Protected Areas | Tanzania Bird Finder{% endblock %}
+{% block content %}
+<section class="page-hero">
+  <span class="eyebrow">Protected areas</span>
+  <h1>Parks and reserves</h1>
+  <p>Real conservation landscapes connected to habitat type, region, and species records.</p>
+</section>
+
+<section class="toolbar">
+  <select data-park-select="region">
+    <option value="">All regions</option>
+    {% for region in regions %}
+      <option value="{{ region }}">{{ region }}</option>
+    {% endfor %}
+  </select>
+  <select data-park-select="habitat">
+    <option value="">All habitats</option>
+    {% for habitat in habitats %}
+      <option value="{{ habitat }}">{{ habitat }}</option>
+    {% endfor %}
+  </select>
+</section>
+
+<section class="section">
+  <div class="grid park-grid" data-park-grid>
+    {% for park in parks %}
+      <article class="park-card" data-region="{{ park.region }}" data-habitat="{{ park.habitat_type }}">
+        <a href="{{ url_for('park_detail', park_id=park.id) }}">
+          <img src="{{ park.image_url }}" alt="{{ park.name }}">
+          <div class="card-body">
+            <span class="status">{{ park.conservation_status }}</span>
+            <h2>{{ park.name }}</h2>
+            <p>{{ park.description }}</p>
+            <div class="meta-line">
+              <span><i data-lucide="map-pin"></i>{{ park.country }}</span>
+              <span><i data-lucide="leaf"></i>{{ park.habitat_type }}</span>
+            </div>
+          </div>
+        </a>
+      </article>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,18 @@
+{
+ "captured_at": "2026-08-04T17:15:28Z",
+ "hf_metadata": {
+  "sha": "a7d39f7fd01cc9069300991fe5766043e822456f"
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitignore",
+   "stored_as": "_gitignore"
+  }
+ ],
+ "renamed_gitattributes": [],
+ "repo_id": "zohaibsuleman/hirementor-backend",
+ "repo_type": "spaces",
+ "sha": "a7d39f7fd01cc9069300991fe5766043e822456f",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/zohaibsuleman/hirementor-backend"
+}

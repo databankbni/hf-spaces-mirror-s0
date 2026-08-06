@@ -1,0 +1,23 @@
+{
+ "captured_at": "2026-08-04T17:15:08Z",
+ "hf_metadata": {
+  "sha": "74ef148b42d591795419778b835f20b10bb21b88"
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "yifan0sun/bert-attention-visualizer-backend",
+ "repo_type": "spaces",
+ "sha": "74ef148b42d591795419778b835f20b10bb21b88",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/yifan0sun/bert-attention-visualizer-backend"
+}

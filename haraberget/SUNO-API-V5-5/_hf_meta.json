@@ -1,0 +1,23 @@
+{
+ "captured_at": "2026-08-04T16:20:59Z",
+ "hf_metadata": {
+  "sha": "d2f8716818d76bc079cdac097202bc23a5e1acb0"
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "haraberget/SUNO-API-V5-5",
+ "repo_type": "spaces",
+ "sha": "d2f8716818d76bc079cdac097202bc23a5e1acb0",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/haraberget/SUNO-API-V5-5"
+}

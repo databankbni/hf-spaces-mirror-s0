@@ -1,0 +1,164 @@
+{
+ "captured_at": "2026-08-04T16:00:49Z",
+ "hf_metadata": {
+  "_id": "6a37c3b4a49a0500a00869ae",
+  "author": "arturrrg",
+  "cardData": {
+   "app_port": 7860,
+   "colorFrom": "red",
+   "colorTo": "gray",
+   "emoji": "⚽",
+   "license": "apache-2.0",
+   "pinned": false,
+   "sdk": "docker",
+   "title": "Extratimemonitor"
+  },
+  "createdAt": "2026-06-21T10:57:56.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://arturrrg-extra-time-monitor.hf.space",
+  "id": "arturrrg/extra-time-monitor",
+  "lastModified": "2026-07-07T07:33:38.000Z",
+  "likes": 0,
+  "private": false,
+  "runtime": {
+   "abuse": {
+    "detector": "abuse-handler",
+    "flaggedAt": "2026-07-11T19:02:24.880Z",
+    "reason": "Blocked by abuse-handler by rule: Cast AI Alert: suspicious_binary:vnc_server - VNC server related command line arguments"
+   },
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "arturrrg-extra-time-monitor.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "errorMessage": "Flagged as abusive",
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": null,
+    "requested": "cpu-basic"
+   },
+   "replicas": {
+    "requested": 1
+   },
+   "stage": "PAUSED",
+   "volumes": [
+    {
+     "configuredByUserId": "64704879d742e9ef65234119",
+     "mountPath": "/data",
+     "readOnly": false,
+     "source": "arturrrg/extra-time-monitor-storage",
+     "type": "bucket"
+    }
+   ]
+  },
+  "sdk": "docker",
+  "sha": "86fbda0ef123645d62bc2843f30f30c6ab299e0d",
+  "siblings": [
+   {
+    "rfilename": ".dockerignore"
+   },
+   {
+    "rfilename": ".gitattributes"
+   },
+   {
+    "rfilename": ".gitignore"
+   },
+   {
+    "rfilename": "Dockerfile"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "app.js"
+   },
+   {
+    "rfilename": "favicon.svg"
+   },
+   {
+    "rfilename": "index.html"
+   },
+   {
+    "rfilename": "manifest.webmanifest"
+   },
+   {
+    "rfilename": "odds-log.jsonl"
+   },
+   {
+    "rfilename": "onewin-logo.png"
+   },
+   {
+    "rfilename": "package.json"
+   },
+   {
+    "rfilename": "server.js"
+   },
+   {
+    "rfilename": "start.bat"
+   },
+   {
+    "rfilename": "style.css"
+   },
+   {
+    "rfilename": "sw.js"
+   },
+   {
+    "rfilename": "tools/confirm-1104.mjs"
+   },
+   {
+    "rfilename": "tools/coverage-1104.mjs"
+   },
+   {
+    "rfilename": "tools/probe-1win.mjs"
+   },
+   {
+    "rfilename": "tools/probe-boundary.mjs"
+   },
+   {
+    "rfilename": "tools/probe-deep2.mjs"
+   },
+   {
+    "rfilename": "tools/probe-endpoints.mjs"
+   },
+   {
+    "rfilename": "tools/probe-odds-groups.mjs"
+   },
+   {
+    "rfilename": "tools/test-delisted-probe.mjs"
+   },
+   {
+    "rfilename": "tools/verify-gate.mjs"
+   }
+  ],
+  "subdomain": "arturrrg-extra-time-monitor",
+  "tags": [
+   "docker",
+   "region:us"
+  ],
+  "usedStorage": 0
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  },
+  {
+   "original": ".gitignore",
+   "stored_as": "_gitignore"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "arturrrg/extra-time-monitor",
+ "repo_type": "spaces",
+ "sha": "86fbda0ef123645d62bc2843f30f30c6ab299e0d",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/arturrrg/extra-time-monitor"
+}

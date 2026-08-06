@@ -1,0 +1,85 @@
+{
+ "captured_at": "2026-08-04T13:34:36Z",
+ "hf_metadata": {
+  "_id": "6a4da28e6f126cfd703de65c",
+  "author": "GodblessFannyuy1",
+  "cardData": {
+   "app_file": "app.py",
+   "colorFrom": "yellow",
+   "colorTo": "pink",
+   "emoji": "👀",
+   "pinned": false,
+   "python_version": "3.13",
+   "sdk": "gradio",
+   "sdk_version": "6.20.0",
+   "title": "Electricity Theft Detection"
+  },
+  "createdAt": "2026-07-08T01:06:22.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://godblessfannyuy1-electricity-theft-detection.hf.space",
+  "id": "GodblessFannyuy1/Electricity-Theft-Detection",
+  "lastModified": "2026-07-08T01:08:08.000Z",
+  "likes": 0,
+  "private": false,
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "godblessfannyuy1-electricity-theft-detection.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": null,
+    "requested": "cpu-basic"
+   },
+   "replicas": {
+    "requested": 1
+   },
+   "stage": "SLEEPING"
+  },
+  "sdk": "gradio",
+  "sha": "fb58eeb54916102dadfee6787eb1143bc02841f5",
+  "siblings": [
+   {
+    "rfilename": ".gitattributes"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "app.py"
+   },
+   {
+    "rfilename": "models/metadata.json"
+   },
+   {
+    "rfilename": "models/scaler.joblib"
+   },
+   {
+    "rfilename": "models/theft_detector_model.joblib"
+   },
+   {
+    "rfilename": "requirements.txt"
+   }
+  ],
+  "subdomain": "godblessfannyuy1-electricity-theft-detection",
+  "tags": [
+   "gradio",
+   "region:us"
+  ],
+  "usedStorage": 349483
+ },
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "GodblessFannyuy1/Electricity-Theft-Detection",
+ "repo_type": "spaces",
+ "sha": "fb58eeb54916102dadfee6787eb1143bc02841f5",
+ "web_url": "https://huggingface.co/spaces/GodblessFannyuy1/Electricity-Theft-Detection"
+}

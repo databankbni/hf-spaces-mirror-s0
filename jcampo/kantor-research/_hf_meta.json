@@ -1,0 +1,27 @@
+{
+ "captured_at": "2026-08-04T16:24:02Z",
+ "hf_metadata": {
+  "sha": "b5f078fd3410458c8453a97582f33354e7feb090"
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  },
+  {
+   "original": ".gitignore",
+   "stored_as": "_gitignore"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "jcampo/kantor-research",
+ "repo_type": "spaces",
+ "sha": "b5f078fd3410458c8453a97582f33354e7feb090",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/jcampo/kantor-research"
+}

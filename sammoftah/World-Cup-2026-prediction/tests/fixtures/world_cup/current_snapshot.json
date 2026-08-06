@@ -1,0 +1,51 @@
+{
+  "information_cutoff": "2026-06-13T23:59:59Z",
+  "source_note": "Frozen copy of the current snapshot for integrity regression tests.",
+  "sources": [
+    "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026"
+  ],
+  "results": [
+    {
+      "group": "A",
+      "home": "Mexico",
+      "away": "South Africa",
+      "home_goals": 2,
+      "away_goals": 0
+    },
+    {
+      "group": "A",
+      "home": "South Korea",
+      "away": "Czechia",
+      "home_goals": 2,
+      "away_goals": 1
+    },
+    {
+      "group": "B",
+      "home": "Canada",
+      "away": "Bosnia and Herzegovina",
+      "home_goals": 1,
+      "away_goals": 1
+    },
+    {
+      "group": "D",
+      "home": "United States",
+      "away": "Paraguay",
+      "home_goals": 4,
+      "away_goals": 1
+    },
+    {
+      "group": "B",
+      "home": "Qatar",
+      "away": "Switzerland",
+      "home_goals": 1,
+      "away_goals": 1
+    },
+    {
+      "group": "C",
+      "home": "Brazil",
+      "away": "Morocco",
+      "home_goals": 1,
+      "away_goals": 1
+    }
+  ]
+}

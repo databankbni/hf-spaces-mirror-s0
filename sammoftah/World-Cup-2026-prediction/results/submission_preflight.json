@@ -1,0 +1,45 @@
+{
+  "claim_boundaries": [
+    "QLoRA adapter evaluated NO-SHIP; no Well-Tuned performance claim.",
+    "Scenario labels remain synthetic and review-pending; extraction metrics are pipeline diagnostics.",
+    "Forecast accuracy evidence is the walk-forward Dixon-Coles backtest, not isolated match outcomes."
+  ],
+  "failed_machine_checks": [],
+  "machine_checks": {
+    "adapter_url_declared": true,
+    "adapter_url_reachable": true,
+    "base_model_license_documented": true,
+    "base_model_url_reachable": true,
+    "code_license_documented": true,
+    "dataset_url_declared": true,
+    "dataset_url_reachable": true,
+    "forecast_backtest_ship_gate": true,
+    "github_public": true,
+    "github_url_declared": true,
+    "github_url_reachable": true,
+    "live_forecast_proof_verified": true,
+    "official_bracket_verified": true,
+    "parameter_limit": true,
+    "qlora_gate_closed": true,
+    "release_docs_present": true,
+    "space_revision_present": true,
+    "space_running": true,
+    "space_url_declared": true,
+    "space_url_reachable": true,
+    "world_cup_group_fixtures_72": true,
+    "world_cup_teams_48": true
+  },
+  "pending_human_actions": [
+    "demo_video_url",
+    "social_post_url",
+    "hackathon_submission_url"
+  ],
+  "status": "READY_FOR_HUMAN_SUBMISSION",
+  "urls": {
+    "adapter_url": "https://huggingface.co/sammoftah/underdog-lab-smollm2-360m-lora",
+    "base_model_url": "https://huggingface.co/bartowski/SmolLM2-360M-Instruct-GGUF",
+    "dataset_url": "https://huggingface.co/datasets/sammoftah/underdog-lab-scenarios",
+    "github_url": "https://github.com/OsamaMoftah/World-Cup-2026-predicition",
+    "space_url": "https://huggingface.co/spaces/sammoftah/World-Cup-2026-prediction"
+  }
+}

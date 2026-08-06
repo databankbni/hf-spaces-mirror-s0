@@ -1,0 +1,11 @@
+node_modules
+npm-debug.log
+.wwebjs_auth
+.wwebjs_cache
+local_db.json
+firebase-key.json
+.env
+.git
+.gitignore
+scratch
+*.md

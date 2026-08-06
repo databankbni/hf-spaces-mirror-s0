@@ -1,0 +1,126 @@
+{
+ "captured_at": "2026-08-04T13:23:59Z",
+ "hf_metadata": {
+  "_id": "6a4fc6464fb7b6ea7cc89b5b",
+  "author": "Cristobal299",
+  "cardData": {
+   "app_file": "app.py",
+   "colorFrom": "blue",
+   "colorTo": "green",
+   "emoji": "🎵",
+   "pinned": false,
+   "sdk": "gradio",
+   "title": "Fenix Aprendiz"
+  },
+  "createdAt": "2026-07-09T16:03:18.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://cristobal299-fenix-aprendiz.hf.space",
+  "id": "Cristobal299/fenix-aprendiz",
+  "lastModified": "2026-07-27T19:50:23.000Z",
+  "likes": 0,
+  "models": [
+   "black-forest-labs/FLUX.1-schnell",
+   "mistralai/Mistral-Large-3-675B-Instruct-2512"
+  ],
+  "private": false,
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "cristobal299-fenix-aprendiz.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": null,
+    "requested": "cpu-basic"
+   },
+   "replicas": {
+    "requested": 1
+   },
+   "stage": "PAUSED"
+  },
+  "sdk": "gradio",
+  "sha": "57aff3e4dfaebf72346fff32126c8282292a8644",
+  "siblings": [
+   {
+    "rfilename": ".gitattributes"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "app.py"
+   },
+   {
+    "rfilename": "app.pybakun"
+   },
+   {
+    "rfilename": "cancion_1.mp3"
+   },
+   {
+    "rfilename": "cancion_2.mp3"
+   },
+   {
+    "rfilename": "cancion_3.mp3"
+   },
+   {
+    "rfilename": "cancion_4.mp3"
+   },
+   {
+    "rfilename": "cancion_5.mp3"
+   },
+   {
+    "rfilename": "cancion_6.mp3"
+   },
+   {
+    "rfilename": "cargador_tora.py"
+   },
+   {
+    "rfilename": "circulo_sagrado.html"
+   },
+   {
+    "rfilename": "fenix_cjjjjore.py"
+   },
+   {
+    "rfilename": "fenix_core.py"
+   },
+   {
+    "rfilename": "fenix_core.pybnkun"
+   },
+   {
+    "rfilename": "fenix_progreso.py"
+   },
+   {
+    "rfilename": "gradio_theme_fenix.py"
+   },
+   {
+    "rfilename": "hebreo.py"
+   },
+   {
+    "rfilename": "lexico_hebreo.json"
+   },
+   {
+    "rfilename": "requirements.txt"
+   }
+  ],
+  "subdomain": "cristobal299-fenix-aprendiz",
+  "tags": [
+   "gradio",
+   "region:us"
+  ],
+  "usedStorage": 19895354
+ },
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "Cristobal299/fenix-aprendiz",
+ "repo_type": "spaces",
+ "sha": "57aff3e4dfaebf72346fff32126c8282292a8644",
+ "web_url": "https://huggingface.co/spaces/Cristobal299/fenix-aprendiz"
+}

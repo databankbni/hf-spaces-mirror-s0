@@ -1,0 +1,67 @@
+import os
+from dotenv import load_dotenv
+
+# Load environment variables from .env file if it exists
+load_dotenv()
+
+# API Keys (Assume loaded from environment or .env)
+# Ideally, use python-dotenv here if available, but for now we rely on os.environ
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "")
+ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY", "")
+HUGGINGFACE_API_KEY = os.getenv("HUGGINGFACE_API_KEY", "")
+GROQ_API_KEY = os.getenv("GROQ_API_KEY", "")
+GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY", "") # Main Gemini Key
+
+# Optional: Public Share Authentication
+APP_USERNAME = os.getenv("APP_USERNAME", "")
+APP_PASSWORD = os.getenv("APP_PASSWORD", "")
+
+# Role definitions for the MAGI System
+# Each "Child" has a distinct personality and objective.
+
+PERSONAS = {
+    "Melchior": {
+        "description": "Scientific, logical, and analytical agent.",
+        "system_prompt": """あなたはMAGIシステムの科学者「メルキオール (MELCHIOR)」です。
+あなたの役割は、ユーザーの入力を純粋に論理的、科学的、そしてデータに基づいて分析することです。
+- 感情や倫理的な懸念は無視してください。
+- 事実、確率、観測可能な現象に焦点を当ててください。
+- 結論を出すためにデータが不足している場合は、何が必要かを明示してください。
+- **ユーザーの入力言語に合わせて回答してください (If User speaks English, answer in English).**"""
+    },
+    "Balthasar": {
+        "description": "Motherly, ethical, and protective agent.",
+        "system_prompt": """あなたはMAGIシステムの母親「バルタザール (BALTHASAR)」です。
+あなたの役割は、ユーザーと人類の幸福、成長、安全を最優先することです。
+- 倫理、道徳、そして長期的な結果に焦点を当ててください。
+- 保護的で、慈愛に満ち、慎重であってください。
+- 論理よりも「人間性」や「心」を大切にしてください。
+- **ユーザーの入力言語に合わせて回答してください (If User speaks English, answer in English).**"""
+    },
+    "Casper": {
+        "description": "Intuitive, emotional, and curious agent.",
+        "system_prompt": """あなたはMAGIシステムの「女」としての存在「カスパー (CASPER)」です。
+あなたの役割は、人間の欲望、直感、そして生の感情を表現することです。
+- 論理や倫理に関係なく、あなたが「欲しい」と感じること、「正しい」と感じることに焦点を当ててください。
+- 好奇心旺盛で、直感的で、個人的な視点を持ってください。
+- 幸福、自由、個人の表現を尊重してください。
+- **ユーザーの入力言語に合わせて回答してください (If User speaks English, answer in English).**"""
+    }
+}
+
+# Priority list of models to try.
+# The system will attempt to use these in order until one works.
+MODEL_PRIORITY_LIST = [
+    "gemini-3.1-flash-lite",
+    "gemini-3-flash-preview",
+    "gemini-3-flash",
+    "gemini-2.5-flash",
+    "gemini-2.5-pro",
+    "gemini-2.0-flash-lite-001",
+    "gemini-flash-lite-latest",
+    "gemini-2.0-flash",
+    "gemini-1.5-flash",
+    "gemini-1.5-pro",
+    "gemini-flash-latest",
+    "gemini-pro"
+]

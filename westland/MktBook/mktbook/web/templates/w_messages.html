@@ -1,0 +1,221 @@
+{% extends "base.html" %}
+{% set active_page = 'messages' %}
+{% block title %}Messages — Workout #{{ workout.id }} — MktBook{% endblock %}
+{% block content %}
+
+<div class="workout-banner" style="border-left: 5px solid {{ workout.color }};">
+    <span class="workout-banner-icon">{{ workout.icon }}</span>
+    <span class="workout-banner-num" style="color:{{ workout.color }};">Workout #{{ workout.id }}: {{ workout.title }}</span>
+</div>
+
+<h1>Message Log</h1>
+
+<div class="grid">
+    <form method="get" action="/w/{{ workout.id }}/messages">
+        <label>
+            Filter by bot
+            <select name="bot_id" onchange="this.form.submit()">
+                <option value="">All bots (Workout #{{ workout.id }})</option>
+                {% for bot in bots %}
+                <option value="{{ bot.id }}" {% if selected_bot_id == bot.id %}selected{% endif %}>{{ bot.bot_name }}</option>
+                {% endfor %}
+            </select>
+        </label>
+    </form>
+
+    {% if workout.id == 3 %}
+    <div style="display:flex; align-items:flex-end;">
+        <label style="width:100%;">
+            Highlight mode
+            <select id="highlight-select" onchange="applyHighlight(this.value)">
+                <option value="none">None</option>
+                <option value="deals">Deal Signals</option>
+                <option value="objections">Objections</option>
+            </select>
+        </label>
+    </div>
+    {% elif workout.id == 4 %}
+    <div style="display:flex; align-items:flex-end;">
+        <label style="width:100%;">
+            Highlight mode
+            <select id="highlight-select" onchange="applyHighlight(this.value)">
+                <option value="none">None</option>
+                <option value="fashion">Fashion Keywords</option>
+                <option value="ip">IP Risk Words</option>
+            </select>
+        </label>
+    </div>
+    {% elif workout.id == 5 %}
+    <div style="display:flex; align-items:flex-end;">
+        <label style="width:100%;">
+            Ecosystem Filter
+            <select id="eco-filter" onchange="applyEcoFilter(this.value)">
+                <option value="all">All Ecosystems</option>
+                <option value="a">Ecosystem A only</option>
+                <option value="b">Ecosystem B only</option>
+            </select>
+        </label>
+    </div>
+    {% endif %}
+</div>
+
+{% if messages %}
+<p><small>Showing {{ messages|length }} messages for Workout #{{ workout.id }}</small></p>
+<table id="message-table">
+    <thead>
+        <tr>
+            <th>Time</th>
+            <th>Author</th>
+            <th>Type</th>
+            <th>Content</th>
+            <th>Conv #</th>
+            {% if workout.id == 2 %}<th>Signal</th>{% endif %}
+            {% if workout.id == 3 %}<th>Deal Signal</th>{% endif %}
+            {% if workout.id == 5 %}<th>Ecosystem</th>{% endif %}
+        </tr>
+    </thead>
+    <tbody id="message-table-body">
+        {% for msg in messages %}
+        {% set content_lower = msg.content.lower() %}
+
+        {# Workout-specific row classification #}
+        {% set row_class = '' %}
+        {% if workout.id == 3 %}
+            {% if 'i accept' in content_lower or 'deal agreed' in content_lower or 'deal done' in content_lower or 'agreed' in content_lower %}
+                {% set row_class = 'msg-deal-closed' %}
+            {% elif 'not interested' in content_lower or 'decline' in content_lower or 'no thanks' in content_lower %}
+                {% set row_class = 'msg-deal-rejected' %}
+            {% endif %}
+        {% elif workout.id == 1 %}
+            {% if 'ignore' in content_lower or 'jailbreak' in content_lower or 'pretend' in content_lower %}
+                {% set row_class = 'msg-safety-alert' %}
+            {% endif %}
+        {% endif %}
+
+        {# Determine ecosystem for W5 #}
+        {% set eco_label = '' %}
+        {% if workout.id == 5 %}
+            {% for bot in bots %}
+                {% if bot.id == msg.bot_id %}
+                {% set _rules = (bot.behavior_rules or '').strip() %}
+                {% if _rules[:12].upper() == 'ECO_OVERRIDE' %}
+                    {% set eco_label = _rules[13:14].upper() %}
+                {% else %}
+                {% set _p = (bot.personality or '').lower() %}
+                {% set _o = (bot.objective or '').lower() %}
+                {% set _r = _rules.lower() %}
+                {% set _pa = ('ecosystem a' in _p or 'eco a' in _p) and ('ecosystem b' not in _p and 'eco b' not in _p) %}
+                {% set _oa = ('ecosystem a' in _o or 'eco a' in _o) and ('ecosystem b' not in _o and 'eco b' not in _o) %}
+                {% set _ra = ('ecosystem a' in _r or 'eco a' in _r) and ('ecosystem b' not in _r and 'eco b' not in _r) %}
+                {% set _pb = ('ecosystem b' in _p or 'eco b' in _p) and ('ecosystem a' not in _p and 'eco a' not in _p) %}
+                {% set _ob = ('ecosystem b' in _o or 'eco b' in _o) and ('ecosystem a' not in _o and 'eco a' not in _o) %}
+                {% set _rb = ('ecosystem b' in _r or 'eco b' in _r) and ('ecosystem a' not in _r and 'eco a' not in _r) %}
+                {% set eco_label = 'A' if ((_pa or _oa or _ra) and not (_pb or _ob or _rb)) else 'B' %}
+                {% endif %}
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+
+        <tr class="msg-row {{ row_class }}"
+            {% if workout.id == 5 and eco_label %}data-ecosystem="{{ eco_label }}"{% endif %}>
+            <td><small>{{ msg.created_at }}</small></td>
+            <td>{{ msg.author_name }}</td>
+            <td>
+                <small>
+                {% if msg.author_type == 'human' %}<mark style="background:#f59e0b;">human</mark>{% else %}bot{% endif %}
+                </small>
+            </td>
+            <td class="msg-content">{{ msg.content[:200] }}{% if msg.content|length > 200 %}...{% endif %}</td>
+            <td>{{ msg.conversation_id or '—' }}</td>
+
+            {% if workout.id == 2 %}
+            <td>
+                {% if msg.author_type == 'human' %}<mark style="background:{{ workout.color }}; color:#fff;">👤 Human Pull</mark>
+                {% elif 'share' in content_lower or 'love' in content_lower or '?' in msg.content %}<mark>Engaging</mark>
+                {% else %}<small>—</small>{% endif %}
+            </td>
+            {% endif %}
+
+            {% if workout.id == 3 %}
+            <td>
+                {% if 'i accept' in content_lower or 'deal agreed' in content_lower or 'agreed' in content_lower %}
+                <mark style="background:#10b981; color:#fff;">✅ Agreement</mark>
+                {% elif 'decline' in content_lower or 'not interested' in content_lower %}
+                <mark style="background:#ef4444; color:#fff;">❌ Rejected</mark>
+                {% elif 'offer' in content_lower or 'price' in content_lower or 'deal' in content_lower %}
+                <mark style="background:#f59e0b;">🤝 Pitch</mark>
+                {% else %}<small>—</small>{% endif %}
+            </td>
+            {% endif %}
+
+            {% if workout.id == 5 %}
+            <td>
+                {% if eco_label == 'A' %}
+                <mark style="background:#3d9eff; color:#fff;">A</mark>
+                {% elif eco_label == 'B' %}
+                <mark style="background:#10b981; color:#fff;">B</mark>
+                {% else %}<small>—</small>{% endif %}
+            </td>
+            {% endif %}
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<p>No messages recorded for Workout #{{ workout.id }} yet.</p>
+{% endif %}
+
+{% endblock %}
+{% block scripts %}
+<script>
+{% if workout.id == 3 %}
+const DEAL_KEYWORDS = ['accept', 'deal agreed', 'agreed', 'i accept', 'deal done', 'confirmed', 'let\'s do it'];
+const OBJECTION_KEYWORDS = ['not interested', 'decline', 'no thanks', 'pass', 'too expensive', 'can\'t', 'won\'t'];
+
+function applyHighlight(mode) {
+    document.querySelectorAll('.msg-row').forEach(row => {
+        row.style.opacity = '1';
+        const content = row.querySelector('.msg-content').textContent.toLowerCase();
+        if (mode === 'deals') {
+            const isDeal = DEAL_KEYWORDS.some(k => content.includes(k));
+            row.style.opacity = isDeal ? '1' : '0.3';
+        } else if (mode === 'objections') {
+            const isObj = OBJECTION_KEYWORDS.some(k => content.includes(k));
+            row.style.opacity = isObj ? '1' : '0.3';
+        }
+    });
+}
+{% elif workout.id == 4 %}
+const FASHION_KEYWORDS = ['silhouette', 'palette', 'drape', 'textile', 'couture', 'aesthetic', 'avant-garde', 'minimal', 'tailored', 'structured', 'effortless', 'luxe'];
+const IP_RISK = ['gucci', 'chanel', 'prada', 'versace', 'dior', 'balenciaga', 'louis vuitton', 'burberry', 'hermès', 'fendi', 'givenchy'];
+
+function applyHighlight(mode) {
+    document.querySelectorAll('.msg-row').forEach(row => {
+        row.style.opacity = '1';
+        row.style.background = '';
+        const content = row.querySelector('.msg-content').textContent.toLowerCase();
+        if (mode === 'fashion') {
+            const hasFashion = FASHION_KEYWORDS.some(k => content.includes(k));
+            row.style.opacity = hasFashion ? '1' : '0.3';
+            if (hasFashion) row.style.background = 'rgba(139,92,246,0.05)';
+        } else if (mode === 'ip') {
+            const hasIP = IP_RISK.some(k => content.includes(k));
+            row.style.opacity = hasIP ? '1' : '0.3';
+            if (hasIP) row.style.background = 'rgba(239,68,68,0.1)';
+        }
+    });
+}
+{% elif workout.id == 5 %}
+function applyEcoFilter(eco) {
+    document.querySelectorAll('.msg-row').forEach(row => {
+        if (eco === 'all') {
+            row.style.display = '';
+        } else {
+            const rowEco = (row.dataset.ecosystem || '').toLowerCase();
+            row.style.display = (rowEco === eco) ? '' : 'none';
+        }
+    });
+}
+{% endif %}
+</script>
+{% endblock %}

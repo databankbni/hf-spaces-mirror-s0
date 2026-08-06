@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sala AI - Admin Dashboard</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+<style>
+  * { box-sizing: border-box; }
+  :root {
+    --blue: #2E6FF2;
+    --navy: #1A2540;
+    --orange: #FF7A2F;
+    --bg: #F5F7FB;
+    --border: #E7EAF0;
+    --muted: #8B93A7;
+  }
+  html, body {
+    margin: 0; height: 100%;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--navy);
+  }
+  .app { display: flex; min-height: 100vh; }
+
+  /* ---------- Sidebar ---------- */
+  .sidebar {
+    width: 220px; flex-shrink: 0;
+    background: var(--navy);
+    color: #fff;
+    display: flex; flex-direction: column;
+    padding: 20px 14px;
+    position: sticky; top: 0; height: 100vh;
+  }
+  .sidebar .brand { display: flex; align-items: center; gap: 10px; padding: 6px 8px 22px; }
+  .sidebar .brand .badge {
+    width: 34px; height: 34px; border-radius: 9px; background: var(--blue);
+    display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 15px;
+    flex-shrink: 0;
+  }
+  .sidebar .brand h1 { font-size: 15px; font-weight: 600; margin: 0; line-height: 1.3; }
+  .sidebar .brand span { font-size: 11px; color: rgba(255,255,255,0.5); }
+  .nav-item {
+    display: flex; align-items: center; gap: 10px;
+    padding: 10px 12px; border-radius: 8px; margin-bottom: 2px;
+    font-size: 13px; font-weight: 500; color: rgba(255,255,255,0.65);
+    cursor: pointer; transition: background 0.15s ease, color 0.15s ease;
+  }
+  .nav-item .dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; opacity: 0.5; flex-shrink: 0; }
+  .nav-item:hover { background: rgba(255,255,255,0.06); color: #fff; }
+  .nav-item.active { background: var(--blue); color: #fff; }
+  .nav-item.active .dot { opacity: 1; }
+  .sidebar-footer { margin-top: auto; font-size: 11px; color: rgba(255,255,255,0.35); padding: 8px; }
+
+  /* ---------- Main content ---------- */
+  .main { flex: 1; min-width: 0; padding: 28px 32px 60px; }
+  .page-header { margin-bottom: 22px; }
+  .page-header h2 { font-size: 19px; font-weight: 600; margin: 0 0 4px; }
+  .page-header p { font-size: 13px; color: var(--muted); margin: 0; }
+
+  .panel { display: none; }
+  .panel.active { display: block; }
+
+  .card {
+    background: #fff; border: 1px solid var(--border); border-radius: 12px;
+    padding: 18px; margin-bottom: 16px;
+  }
+  .card h3 { font-size: 13px; font-weight: 600; margin: 0 0 12px; }
+
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  @media (max-width: 900px) {
+    .grid-2, .grid-3 { grid-template-columns: 1fr; }
+    .app { flex-direction: column; }
+    .sidebar { width: 100%; height: auto; position: relative; flex-direction: row; align-items: center; overflow-x: auto; }
+    .sidebar .brand { padding: 4px 12px 4px 0; }
+    .nav-item { white-space: nowrap; }
+    .sidebar-footer { display: none; }
+  }
+
+  .stat-card { display: flex; align-items: center; gap: 12px; }
+  .stat-card .stat-icon {
+    width: 38px; height: 38px; border-radius: 9px; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 700;
+  }
+  .stat-label { font-size: 12px; color: var(--muted); margin: 0 0 3px; }
+  .stat-value { font-size: 22px; font-weight: 700; margin: 0; }
+
+  .row { display: flex; justify-content: space-between; padding: 7px 0; border-bottom: 1px solid #F0F2F7; font-size: 13px; }
+  .row:last-child { border-bottom: none; }
+  .row .count { color: var(--muted); }
+
+  input[type=text], textarea {
+    width: 100%; padding: 9px 12px; border: 1px solid var(--border); border-radius: 8px;
+    font-size: 13px; font-family: inherit;
+  }
+  textarea { resize: vertical; min-height: 70px; }
+
+  .checkbox-row {
+    display: flex; align-items: center; gap: 7px; margin-top: 10px; font-size: 13px;
+  }
+  .checkbox-row input[type=checkbox] {
+    width: 15px; height: 15px; cursor: pointer; margin: 0;
+  }
+  .checkbox-row label { cursor: pointer; user-select: none; }
+  .checkbox-hint { font-size: 11px; color: var(--muted); margin: 2px 0 0 22px; }
+
+  .btn {
+    background: var(--blue); color: #fff; border: none; border-radius: 8px;
+    padding: 9px 16px; font-size: 13px; font-weight: 500; cursor: pointer;
+  }
+  .btn.secondary { background: #fff; color: var(--blue); border: 1px solid var(--blue); }
+  .btn.danger { background: #fff; color: #E24B4A; border: 1px solid #E24B4A; padding: 4px 10px; font-size: 12px; }
+  .btn:disabled { opacity: .5; cursor: default; }
+  .btn-row { display: flex; gap: 8px; margin-top: 10px; align-items: center; flex-wrap: wrap; }
+
+  .pill { display: inline-block; font-size: 11px; padding: 2px 9px; border-radius: 20px; font-weight: 500; }
+  .pill.positive { background: #EAF3DE; color: #3B6D11; }
+  .pill.negative { background: #FCEBEB; color: #A32D2D; }
+  .pill.neutral { background: #F1EFE8; color: #5F5E5A; }
+  .pill.announcement { background: #FFF3EA; color: #B85A1E; }
+
+  .quota-bar-track { background: #F0F2F7; border-radius: 20px; height: 8px; overflow: hidden; margin-top: 6px; }
+  .quota-bar-fill { background: var(--blue); height: 100%; }
+  .muted { color: var(--muted); font-size: 13px; }
+
+  .placeholder-card { border: 1px dashed #D6DBE7; background: #FAFBFD; text-align: center; padding: 28px 16px; }
+  .placeholder-card .icon {
+    width: 34px; height: 34px; border-radius: 9px; background: #EEF1F7; color: var(--muted);
+    display: flex; align-items: center; justify-content: center; margin: 0 auto 10px; font-size: 13px; font-weight: 700;
+  }
+  .placeholder-card p { margin: 0; font-size: 13px; color: var(--muted); }
+
+  .result-item { border-bottom: 1px solid #F0F2F7; padding: 10px 0; }
+  .result-item:last-child { border-bottom: none; }
+  .result-item a { font-size: 13px; font-weight: 500; color: var(--blue); text-decoration: none; }
+  .result-item .snippet { font-size: 12px; color: var(--muted); margin: 4px 0 0; }
+  .kw-input-row { display: flex; gap: 8px; }
+
+  .ai-box {
+    background: var(--bg); border-left: 3px solid var(--orange); border-radius: 0 8px 8px 0;
+    padding: 12px 14px; font-size: 13px; line-height: 1.6; white-space: pre-wrap;
+  }
+
+  .doc-row { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid #F0F2F7; font-size: 13px; }
+  .doc-row:last-child { border-bottom: none; }
+  .doc-row .doc-name { font-weight: 500; }
+  .doc-row .doc-count { color: var(--muted); font-size: 12px; margin-left: 6px; }
+
+  .fix-note {
+    font-size: 11px; color: var(--orange); background: #FFF3EA; border-radius: 6px;
+    padding: 6px 10px; margin-top: 8px;
+  }
+</style>
+</head>
+<body>
+<div class="app">
+
+  <div class="sidebar">
+    <div class="brand">
+      <div class="badge">S</div>
+      <div>
+        <h1>Sala AI</h1>
+        <span>Admin console</span>
+      </div>
+    </div>
+    <div class="nav-item active" data-panel="overview"><span class="dot"></span>Overview</div>
+    <div class="nav-item" data-panel="knowledge"><span class="dot"></span>Knowledge base</div>
+    <div class="nav-item" data-panel="search"><span class="dot"></span>Search monitoring</div>
+    <div class="nav-item" data-panel="social"><span class="dot"></span>Social monitoring</div>
+    <div class="sidebar-footer">Sala Enterprises &middot; sala.lk</div>
+  </div>
+
+  <div class="main">
+
+    <div id="panel-overview" class="panel active">
+      <div class="page-header">
+        <h2>Overview</h2>
+        <p>Chatbot activity and performance for the last 7 days</p>
+      </div>
+
+      <div class="grid-3" id="stats-grid"></div>
+
+      <div class="card">
+        <h3>AI suggestions</h3>
+        <div id="ai-suggestions" class="ai-box">Loading...</div>
+        <div class="btn-row">
+          <button class="btn secondary" id="send-digest-btn">Email this to management</button>
+          <span id="digest-status" class="muted"></span>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <h3>Chats over time</h3>
+          <div style="position:relative;height:220px">
+            <canvas id="trend-chart"></canvas>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Sentiment breakdown</h3>
+          <div style="position:relative;height:220px;max-width:280px;margin:0 auto">
+            <canvas id="sentiment-chart"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <h3>Top asked products</h3>
+          <div style="position:relative;height:220px">
+            <canvas id="products-chart"></canvas>
+          </div>
+        </div>
+        <div class="card">
+          <h3>API quota usage</h3>
+          <div id="quota-list"></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="panel-knowledge" class="panel">
+      <div class="page-header">
+        <h2>Knowledge base</h2>
+        <p>Manage the content Sala AI uses to answer customer questions</p>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <h3>Add text entry</h3>
+          <input type="text" id="wiki-title" placeholder="Title (e.g. Warranty policy)" style="margin-bottom:8px" />
+          <textarea id="wiki-content" placeholder="Paste the content here"></textarea>
+          <div class="checkbox-row">
+            <input type="checkbox" id="wiki-is-announcement" />
+            <label for="wiki-is-announcement">Mark as announcement</label>
+          </div>
+          <p class="checkbox-hint">Shown automatically to every visitor right after the greeting, before they ask anything (e.g. "Today's discounted products"). Only the most recent announcement is shown.</p>
+          <div class="btn-row">
+            <button class="btn" id="wiki-save-btn">Save text</button>
+            <span id="wiki-status" class="muted"></span>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Upload PDF</h3>
+          <input type="file" id="wiki-pdf" accept="application/pdf" />
+          <div class="btn-row">
+            <button class="btn secondary" id="wiki-pdf-btn">Upload PDF</button>
+            <span id="wiki-pdf-status" class="muted"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Uploaded documents</h3>
+        <div id="wiki-doc-list"><p class="muted">Loading...</p></div>
+      </div>
+
+      <div class="card">
+        <h3>Product database</h3>
+        <p class="muted" style="margin-top:0">
+          Refetches products from WooCommerce and rebuilds the vector database.
+          Run this after updating product prices, stock, or descriptions.
+        </p>
+        <div class="btn-row">
+          <button class="btn" id="resync-btn">Re-sync products</button>
+          <span id="resync-status" class="muted"></span>
+        </div>
+
+        <p class="muted" style="margin-top:16px">
+          Backfills the "category" field for products already in the database,
+          without contacting WooCommerce. Use this while the WooCommerce
+          connection issue (403 errors) is unresolved, so category questions
+          (e.g. "show all UPS") return the full list.
+        </p>
+        <div class="btn-row">
+          <button class="btn secondary" id="backfill-btn">Backfill categories (temp fix)</button>
+          <span id="backfill-status" class="muted"></span>
+        </div>
+      </div>
+    </div>
+
+    <div id="panel-search" class="panel">
+      <div class="page-header">
+        <h2>Search monitoring</h2>
+        <p>Track how sala.lk and competitors show up in search results</p>
+      </div>
+      <div class="card">
+        <h3>Monitor keywords</h3>
+        <p class="muted" style="margin-top:0">Enter brand, product, or competitor names, comma separated.</p>
+        <div class="kw-input-row">
+          <input type="text" id="search-keywords" placeholder="sala.lk, Prolink UPS, competitor name" />
+          <button class="btn" id="search-btn">Search</button>
+        </div>
+      </div>
+      <div class="card" id="search-results-card" style="display:none">
+        <h3>Results</h3>
+        <div id="search-results"></div>
+      </div>
+    </div>
+
+    <div id="panel-social" class="panel">
+      <div class="page-header">
+        <h2>Social monitoring</h2>
+        <p>Connect social channels to track mentions and messages</p>
+      </div>
+      <div class="grid-3">
+        <div class="card placeholder-card">
+          <div class="icon">f</div>
+          <p>Facebook monitoring connects once your Page access token is added.</p>
+        </div>
+        <div class="card placeholder-card">
+          <div class="icon">ig</div>
+          <p>Instagram monitoring connects once your Business account is linked.</p>
+        </div>
+        <div class="card placeholder-card">
+          <div class="icon">tt</div>
+          <p>TikTok monitoring connects once your Business API access is approved.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  var navItems = document.querySelectorAll('.nav-item');
+  navItems.forEach(function (item) {
+    item.addEventListener('click', function () {
+      navItems.forEach(function (t) { t.classList.remove('active'); });
+      document.querySelectorAll('.panel').forEach(function (p) { p.classList.remove('active'); });
+      item.classList.add('active');
+      document.getElementById('panel-' + item.dataset.panel).classList.add('active');
+      if (item.dataset.panel === 'knowledge') {
+        loadWikiDocList();
+      }
+    });
+  });
+
+  var trendChart, sentimentChart, productsChart;
+
+  function loadOverview() {
+    fetch('/dashboard/insights?days=7')
+      .then(function (r) { return r.json(); })
+      .then(function (data) {
+        var summary = data.summary || {};
+        var statsGrid = document.getElementById('stats-grid');
+        var sentiment = summary.sentiment_breakdown || {};
+        statsGrid.innerHTML =
+          '<div class="card stat-card"><div class="stat-icon" style="background:#EAF0FE;color:#2E6FF2">C</div><div><p class="stat-label">Chats (7 days)</p><p class="stat-value">' + (summary.total_interactions != null ? summary.total_interactions : 0) + '</p></div></div>' +
+          '<div class="card stat-card"><div class="stat-icon" style="background:#FCEBEB;color:#E24B4A">&minus;</div><div><p class="stat-label">Negative sentiment</p><p class="stat-value" style="color:#E24B4A">' + (sentiment.negative || 0) + '</p></div></div>' +
+          '<div class="card stat-card"><div class="stat-icon" style="background:#EAF3DE;color:#3B6D11">+</div><div><p class="stat-label">Positive sentiment</p><p class="stat-value" style="color:#3B6D11">' + (sentiment.positive || 0) + '</p></div></div>';
+
+        document.getElementById('ai-suggestions').textContent = data.insights || 'No suggestions yet.';
+
+        var trend = summary.daily_trend || [];
+        var trendCtx = document.getElementById('trend-chart').getContext('2d');
+        if (trendChart) trendChart.destroy();
+        trendChart = new Chart(trendCtx, {
+          type: 'line',
+          data: {
+            labels: trend.map(function (d) { return d.date; }),
+            datasets: [{
+              label: 'Chats',
+              data: trend.map(function (d) { return d.total; }),
+              borderColor: '#2E6FF2',
+              backgroundColor: 'rgba(46,111,242,0.08)',
+              fill: true,
+              tension: 0.3,
+            }],
+          },
+          options: { maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { y: { beginAtZero: true } } },
+        });
+
+        var sentimentCtx = document.getElementById('sentiment-chart').getContext('2d');
+        if (sentimentChart) sentimentChart.destroy();
+        sentimentChart = new Chart(sentimentCtx, {
+          type: 'doughnut',
+          data: {
+            labels: ['Positive', 'Negative', 'Neutral'],
+            datasets: [{
+              data: [sentiment.positive || 0, sentiment.negative || 0, sentiment.neutral || 0],
+              backgroundColor: ['#639922', '#E24B4A', '#B4B2A9'],
+            }],
+          },
+          options: { maintainAspectRatio: false, plugins: { legend: { position: 'bottom', labels: { font: { size: 11 } } } } },
+        });
+
+        var products = (summary.top_products || []).slice(0, 6);
+        var productsCtx = document.getElementById('products-chart').getContext('2d');
+        if (productsChart) productsChart.destroy();
+        productsChart = new Chart(productsCtx, {
+          type: 'bar',
+          data: {
+            labels: products.map(function (p) { return p.product; }),
+            datasets: [{
+              label: 'Mentions',
+              data: products.map(function (p) { return p.count; }),
+              backgroundColor: '#FF7A2F',
+            }],
+          },
+          options: {
+            maintainAspectRatio: false,
+            indexAxis: 'y',
+            plugins: { legend: { display: false } },
+            scales: { x: { beginAtZero: true } },
+          },
+        });
+      })
+      .catch(function () {
+        document.getElementById('ai-suggestions').textContent = 'Could not load insights right now.';
+      });
+
+    fetch('/dashboard/quota')
+      .then(function (r) { return r.json(); })
+      .then(function (data) {
+        var quotaList = document.getElementById('quota-list');
+        var providers = data.providers || {};
+        var html = '';
+        Object.keys(providers).forEach(function (name) {
+          var info = providers[name];
+          var pct = info.tokens_pct_used != null ? info.tokens_pct_used : (info.requests_pct_used || 0);
+          html += '<div style="margin-bottom:10px">' +
+            '<div style="display:flex;justify-content:space-between;font-size:13px"><span style="text-transform:capitalize">' + name + '</span><span class="muted">' + Math.round(pct) + '%</span></div>' +
+            '<div class="quota-bar-track"><div class="quota-bar-fill" style="width:' + Math.min(pct, 100) + '%"></div></div>' +
+            '</div>';
+        });
+        quotaList.innerHTML = html || '<p class="muted">No quota data yet.</p>';
+      })
+      .catch(function () {});
+  }
+
+  document.getElementById('send-digest-btn').addEventListener('click', function () {
+    var status = document.getElementById('digest-status');
+    status.textContent = 'Sending...';
+    fetch('/dashboard/send-digest?days=1', { method: 'POST' })
+      .then(function (r) { return r.json().then(function (data) { return { ok: r.ok, data: data }; }); })
+      .then(function (res) {
+        if (res.ok) {
+          status.textContent = 'Sent to ' + res.data.recipient;
+        } else {
+          status.textContent = 'Failed: ' + (res.data.detail || 'check SMTP settings in .env');
+        }
+      })
+      .catch(function () { status.textContent = 'Failed to send.'; });
+  });
+
+  document.getElementById('wiki-save-btn').addEventListener('click', function () {
+    var title = document.getElementById('wiki-title').value.trim();
+    var content = document.getElementById('wiki-content').value.trim();
+    var isAnnouncement = document.getElementById('wiki-is-announcement').checked;
+    var status = document.getElementById('wiki-status');
+    if (!title || !content) { status.textContent = 'Title and content are required.'; return; }
+    status.textContent = 'Saving...';
+    fetch('/dashboard/wiki/text', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ title: title, content: content, is_announcement: isAnnouncement }),
+    })
+      .then(function (r) { return r.json(); })
+      .then(function (data) {
+        status.textContent = 'Saved (' + data.total_chunks + ' chunks total)' + (data.is_announcement ? ' - set as active announcement' : '') + '.';
+        document.getElementById('wiki-title').value = '';
+        document.getElementById('wiki-content').value = '';
+        document.getElementById('wiki-is-announcement').checked = false;
+        loadWikiDocList();
+      })
+      .catch(function () { status.textContent = 'Save failed - try again.'; });
+  });
+
+  document.getElementById('wiki-pdf-btn').addEventListener('click', function () {
+    var fileInput = document.getElementById('wiki-pdf');
+    var status = document.getElementById('wiki-pdf-status');
+    if (!fileInput.files.length) { status.textContent = 'Choose a PDF first.'; return; }
+    status.textContent = 'Uploading...';
+    var formData = new FormData();
+    formData.append('file', fileInput.files[0]);
+    fetch('/dashboard/wiki/pdf', { method: 'POST', body: formData })
+      .then(function (r) { return r.json(); })
+      .then(function (data) {
+        status.textContent = 'Uploaded (' + data.total_chunks + ' chunks total).';
+        loadWikiDocList();
+      })
+      .catch(function () { status.textContent = 'Upload failed - try again.'; });
+  });
+
+  function loadWikiDocList() {
+    var listEl = document.getElementById('wiki-doc-list');
+    listEl.innerHTML = '<p class="muted">Loading...</p>';
+    fetch('/dashboard/wiki/list')
+      .then(function (r) { return r.json(); })
+      .then(function (data) {
+        var docs = data.documents || [];
+        if (!docs.length) {
+          listEl.innerHTML = '<p class="muted">No documents uploaded yet.</p>';
+          return;
+        }
+        listEl.innerHTML = docs.map(function (d) {
+          return '<div class="doc-row">' +
+            '<span><span class="doc-name">' + d.title + '</span><span class="doc-count">(' + d.chunks + ' chunks)</span></span>' +
+            '<button class="btn danger" data-title="' + d.title.replace(/"/g, '&quot;') + '">Delete</button>' +
+            '</div>';
+        }).join('');
+
+        listEl.querySelectorAll('button.danger').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            var title = btn.dataset.title;
+            if (!confirm('Delete "' + title + '"? This cannot be undone.')) return;
+            btn.disabled = true;
+            btn.textContent = 'Deleting...';
+            fetch('/dashboard/wiki/' + encodeURIComponent(title), { method: 'DELETE' })
+              .then(function (r) { return r.json(); })
+              .then(function () { loadWikiDocList(); })
+              .catch(function () {
+                btn.disabled = false;
+                btn.textContent = 'Delete';
+              });
+          });
+        });
+      })
+      .catch(function () {
+        listEl.innerHTML = '<p class="muted">Could not load documents.</p>';
+      });
+  }
+
+  document.getElementById('resync-btn').addEventListener('click', function () {
+    var btn = document.getElementById('resync-btn');
+    var status = document.getElementById('resync-status');
+    btn.disabled = true;
+    status.textContent = 'Syncing... (this may take a moment)';
+    fetch('/dashboard/products/resync', { method: 'POST' })
+      .then(function (r) { return r.json().then(function (data) { return { ok: r.ok, data: data }; }); })
+      .then(function (res) {
+        btn.disabled = false;
+        if (res.ok) {
+          status.textContent = 'Synced ' + res.data.total_products + ' products';
+        } else {
+          status.textContent = 'Failed: ' + (res.data.detail || 'check WooCommerce keys');
+        }
+      })
+      .catch(function () {
+        btn.disabled = false;
+        status.textContent = 'Failed - try again.';
+      });
+  });
+
+  document.getElementById('backfill-btn').addEventListener('click', function () {
+    var btn = document.getElementById('backfill-btn');
+    var status = document.getElementById('backfill-status');
+    btn.disabled = true;
+    status.textContent = 'Backfilling...';
+    fetch('/chat/backfill-categories', { method: 'POST' })
+      .then(function (r) { return r.json().then(function (data) { return { ok: r.ok, data: data }; }); })
+      .then(function (res) {
+        btn.disabled = false;
+        if (res.ok && res.data.status === 'success') {
+          status.textContent = 'Updated ' + res.data.updated + '/' + res.data.total + ' products';
+        } else {
+          status.textContent = 'Failed: ' + (res.data.message || 'unknown error');
+        }
+      })
+      .catch(function () {
+        btn.disabled = false;
+        status.textContent = 'Failed - try again.';
+      });
+  });
+
+  document.getElementById('search-btn').addEventListener('click', function () {
+    var raw = document.getElementById('search-keywords').value.trim();
+    if (!raw) return;
+    var keywords = raw.split(',').map(function (k) { return k.trim(); }).filter(Boolean);
+    var card = document.getElementById('search-results-card');
+    var results = document.getElementById('search-results');
+    card.style.display = 'block';
+    results.innerHTML = '<p class="muted">Searching...</p>';
+
+    fetch('/dashboard/search-monitor', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ keywords: keywords, results_per_keyword: 5 }),
+    })
+      .then(function (r) { return r.json(); })
+      .then(function (data) {
+        if (!data.results || !data.results.length) {
+          results.innerHTML = '<p class="muted">No relevant mentions found.</p>';
+          return;
+        }
+        results.innerHTML = data.results.map(function (r) {
+          return '<div class="result-item">' +
+            '<span class="pill ' + r.sentiment + '">' + r.sentiment + '</span> ' +
+            '<a href="' + r.link + '" target="_blank" rel="noopener">' + r.title + '</a>' +
+            '<p class="snippet">' + r.snippet + '</p>' +
+            '</div>';
+        }).join('');
+      })
+      .catch(function () { results.innerHTML = '<p class="muted">Search failed - try again.</p>'; });
+  });
+
+  loadOverview();
+</script>
+</body>
+</html>

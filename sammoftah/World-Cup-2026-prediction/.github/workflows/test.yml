@@ -1,0 +1,25 @@
+name: test
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+jobs:
+  unit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - run: python -m pip install pydantic pytest
+      - run: PYTHONPATH=src python scripts/audit_dataset.py
+      - run: PYTHONPATH=src python scripts/close_qlora_gate.py
+      - run: PYTHONPATH=src python scripts/verify_world_cup_bracket.py
+      - run: PYTHONPATH=src python scripts/submission_preflight.py --allow-human-pending
+      - run: PYTHONPATH=src python scripts/health_check.py
+      - run: PYTHONPATH=src:. pytest

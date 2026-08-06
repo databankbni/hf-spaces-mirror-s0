@@ -1,0 +1,126 @@
+{
+ "captured_at": "2026-08-04T16:00:54Z",
+ "hf_metadata": {
+  "_id": "69f9784b77f946f25762db91",
+  "author": "azlaan428",
+  "cardData": {
+   "colorFrom": "blue",
+   "colorTo": "indigo",
+   "emoji": "🧬",
+   "pinned": false,
+   "sdk": "docker",
+   "title": "ARIA - Research Synthesis & Integrity Auditor"
+  },
+  "createdAt": "2026-05-05T04:55:39.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://azlaan428-glitch-squad-biomedical-assistant.hf.space",
+  "id": "azlaan428/glitch-squad-biomedical-assistant",
+  "lastModified": "2026-07-11T03:48:55.000Z",
+  "likes": 1,
+  "models": [
+   "Qwen/Qwen2.5-72B-Instruct"
+  ],
+  "private": false,
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "azlaan428-glitch-squad-biomedical-assistant.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": null,
+    "requested": "cpu-basic"
+   },
+   "replicas": {
+    "requested": 1
+   },
+   "stage": "SLEEPING"
+  },
+  "sdk": "docker",
+  "sha": "32be8bd0181b06606dafdab4bdb7d5d8f243475b",
+  "siblings": [
+   {
+    "rfilename": ".gitignore"
+   },
+   {
+    "rfilename": "Dockerfile"
+   },
+   {
+    "rfilename": "LICENSE"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "STATUS.md"
+   },
+   {
+    "rfilename": "agent/agent.py"
+   },
+   {
+    "rfilename": "agent/citation_ghost_detector.py"
+   },
+   {
+    "rfilename": "agent/confidence_calibration_check.py"
+   },
+   {
+    "rfilename": "agent/cross_paper_contradiction_finder.py"
+   },
+   {
+    "rfilename": "agent/methodology_drift_tracker.py"
+   },
+   {
+    "rfilename": "agent/reproducibility_score.py"
+   },
+   {
+    "rfilename": "app.py"
+   },
+   {
+    "rfilename": "aria_log.txt"
+   },
+   {
+    "rfilename": "requirements.txt"
+   },
+   {
+    "rfilename": "retrieval/pubmed.py"
+   },
+   {
+    "rfilename": "run.sh"
+   },
+   {
+    "rfilename": "sessions.json"
+   },
+   {
+    "rfilename": "static/script.js"
+   },
+   {
+    "rfilename": "static/style.css"
+   },
+   {
+    "rfilename": "templates/index.html"
+   }
+  ],
+  "subdomain": "azlaan428-glitch-squad-biomedical-assistant",
+  "tags": [
+   "docker",
+   "region:us"
+  ],
+  "usedStorage": 0
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitignore",
+   "stored_as": "_gitignore"
+  }
+ ],
+ "renamed_gitattributes": [],
+ "repo_id": "azlaan428/glitch-squad-biomedical-assistant",
+ "repo_type": "spaces",
+ "sha": "32be8bd0181b06606dafdab4bdb7d5d8f243475b",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/azlaan428/glitch-squad-biomedical-assistant"
+}

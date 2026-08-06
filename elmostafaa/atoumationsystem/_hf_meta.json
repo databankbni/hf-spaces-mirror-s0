@@ -1,0 +1,96 @@
+{
+ "captured_at": "2026-08-06T03:14:13Z",
+ "hf_metadata": {
+  "_id": "6a36dd65798b7cbd5076d46c",
+  "author": "elmostafaa",
+  "cardData": {
+   "colorFrom": "gray",
+   "colorTo": "red",
+   "emoji": "🐨",
+   "pinned": false,
+   "sdk": "docker",
+   "title": "Atoumationsystem"
+  },
+  "createdAt": "2026-06-20T18:35:17.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://elmostafaa-atoumationsystem.hf.space",
+  "id": "elmostafaa/atoumationsystem",
+  "lastModified": "2026-08-05T23:38:03.000Z",
+  "likes": 1,
+  "private": false,
+  "region": "us",
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "elmostafaa-atoumationsystem.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": "cpu-basic",
+    "requested": "cpu-basic"
+   },
+   "pySpacesVersion": "0.51.1",
+   "replicas": {
+    "current": 1,
+    "requested": 1
+   },
+   "sha": "b0ece724a413b95d60d0e98763c5fb0f05bef0e6",
+   "stage": "RUNNING"
+  },
+  "sdk": "docker",
+  "sha": "b0ece724a413b95d60d0e98763c5fb0f05bef0e6",
+  "siblings": [
+   {
+    "rfilename": ".gitattributes"
+   },
+   {
+    "rfilename": "Dockerfile"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "fonts/DigitalKhatt-NewV2.otf"
+   },
+   {
+    "rfilename": "fonts/TEHAFS2TharwatEmara.ttf"
+   },
+   {
+    "rfilename": "quran_app.py"
+   },
+   {
+    "rfilename": "requirements.txt"
+   },
+   {
+    "rfilename": "start.sh"
+   }
+  ],
+  "subdomain": "elmostafaa-atoumationsystem",
+  "tags": [
+   "docker",
+   "region:us"
+  ],
+  "usedStorage": 2840832
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "elmostafaa/atoumationsystem",
+ "repo_type": "spaces",
+ "sha": "b0ece724a413b95d60d0e98763c5fb0f05bef0e6",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/elmostafaa/atoumationsystem"
+}

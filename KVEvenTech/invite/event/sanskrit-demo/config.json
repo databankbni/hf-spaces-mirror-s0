@@ -1,0 +1,56 @@
+{
+  "brideName": "Priya & Vikram",
+  "familyName": "The Iyer Family",
+  "intro": {
+    "tagline": "ॐ Vivah Mangalam ॐ",
+    "buttonText": "Seek Blessings",
+    "sequenceInvite": "With the blessings of the divine",
+    "sequenceTo": "We joyfully invite you to the sacred union of"
+  },
+  "hero": { "badge": "A Sacred Union" },
+  "scratchReveal": {
+    "teaser": "Remove the veil of maya...",
+    "heading": "The Sacred Invitation",
+    "revealLabel": "Reveal the blessing"
+  },
+  "countdown": {
+    "label": "Until The Muhurtham",
+    "heading": "The Auspicious Moment",
+    "doneMessage": "The sacred fire has been lit!"
+  },
+  "celebrations": {
+    "sectionTag": "The Sacred Programme",
+    "sectionHeading": "Vedic Ceremonies"
+  },
+  "venue": {
+    "sectionHeading": "The Sacred Ground",
+    "locationLabel": "The Temple Hall",
+    "directionsLabel": "Get Directions"
+  },
+  "blessings": {
+    "heading": "Aapka Aashirvaad Hamara Saubhagya Hai",
+    "suffix": "— The Iyer & Sharma Families"
+  },
+  "events": {
+    "haldi": {
+      "title": "Seemantham & Mehndi",
+      "badge": "Day One",
+      "blessing": "Adorn with colour and grace",
+      "date": "10 Apr 2027",
+      "time": "09:00 AM",
+      "venue": "Sri Kalyanamantapam",
+      "address": "Anna Nagar, Chennai"
+    },
+    "halfSaree": {
+      "title": "Vivah Ceremony",
+      "badge": "The Muhurtham",
+      "blessing": "Two souls joined by sacred fire",
+      "date": "11 Apr 2027",
+      "time": "07:30 AM",
+      "dateISO": "2027-04-11T07:30:00",
+      "venue": "Kapaleeshwarar Temple Hall",
+      "address": "Mylapore, Chennai",
+      "mapLink": "https://maps.google.com"
+    }
+  }
+}

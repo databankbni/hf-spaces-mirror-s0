@@ -1,0 +1,74 @@
+{
+ "captured_at": "2026-08-04T13:22:25Z",
+ "hf_metadata": {
+  "_id": "6a4b31fae48400161b60576d",
+  "author": "Bomberman631",
+  "cardData": {
+   "app_file": "app.py",
+   "colorFrom": "green",
+   "colorTo": "yellow",
+   "emoji": "🐨",
+   "pinned": false,
+   "python_version": "3.13",
+   "sdk": "gradio",
+   "sdk_version": "6.19.0",
+   "short_description": "IELTS Reading Exercise",
+   "title": "Ielts Reading Exercise 4"
+  },
+  "createdAt": "2026-07-06T04:41:30.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://bomberman631-ielts-reading-exercise-4.hf.space",
+  "id": "Bomberman631/ielts-reading-exercise-4",
+  "lastModified": "2026-07-06T05:13:27.000Z",
+  "likes": 0,
+  "private": false,
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "bomberman631-ielts-reading-exercise-4.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": null,
+    "requested": "cpu-basic"
+   },
+   "replicas": {
+    "requested": 1
+   },
+   "stage": "SLEEPING"
+  },
+  "sdk": "gradio",
+  "sha": "afc17d28e6474ae796c2b952fd8c1a36595e399d",
+  "siblings": [
+   {
+    "rfilename": ".gitattributes"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "app.py"
+   }
+  ],
+  "subdomain": "bomberman631-ielts-reading-exercise-4",
+  "tags": [
+   "gradio",
+   "region:us"
+  ],
+  "usedStorage": 0
+ },
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "Bomberman631/ielts-reading-exercise-4",
+ "repo_type": "spaces",
+ "sha": "afc17d28e6474ae796c2b952fd8c1a36595e399d",
+ "web_url": "https://huggingface.co/spaces/Bomberman631/ielts-reading-exercise-4"
+}

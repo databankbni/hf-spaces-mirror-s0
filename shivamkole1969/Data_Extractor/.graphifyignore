@@ -1,0 +1,27 @@
+# Bundled dependencies and build artifacts
+lib/
+build/
+dist/
+deps/
+Portable Estimates App v1.0/
+output/
+uploads/
+.git/
+__pycache__/
+*.pyd
+*.exe
+*.pem
+*.pyc
+*.spec
+
+# Sample data files (PDFs, Excel)
+EGR/
+HAY/
+MNCS/
+RBC/
+RJ/
+TAS/
+UBS Global/
+
+# Graphify output itself
+graphify-out/

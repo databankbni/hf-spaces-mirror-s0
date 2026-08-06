@@ -1,0 +1,129 @@
+{
+ "captured_at": "2026-08-06T03:14:22Z",
+ "hf_metadata": {
+  "_id": "690a2a795ba58f90e6acdbbb",
+  "author": "joelchacon",
+  "cardData": {
+   "app_file": "app/main.py",
+   "colorFrom": "indigo",
+   "colorTo": "blue",
+   "emoji": "🧠",
+   "pinned": false,
+   "sdk": "docker",
+   "sdk_version": "latest",
+   "title": "Joel's Assistant API"
+  },
+  "createdAt": "2025-11-04T16:31:53.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://joelchacon-rag-portfolio.hf.space",
+  "id": "joelchacon/rag_portfolio",
+  "lastModified": "2026-08-06T01:27:19.000Z",
+  "likes": 0,
+  "models": [
+   "sentence-transformers/all-MiniLM-L6-v2"
+  ],
+  "private": false,
+  "region": "us",
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "joelchacon-rag-portfolio.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": "cpu-basic",
+    "requested": "cpu-basic"
+   },
+   "pySpacesVersion": "0.51.1",
+   "replicas": {
+    "current": 1,
+    "requested": 1
+   },
+   "sha": "c75def639138b7dcf26867bc22c0f2342cccc396",
+   "stage": "RUNNING"
+  },
+  "sdk": "docker",
+  "sha": "c75def639138b7dcf26867bc22c0f2342cccc396",
+  "siblings": [
+   {
+    "rfilename": ".gitattributes"
+   },
+   {
+    "rfilename": ".gitignore"
+   },
+   {
+    "rfilename": "Dockerfile"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "app/config.py"
+   },
+   {
+    "rfilename": "app/core/indexer.py"
+   },
+   {
+    "rfilename": "app/core/llm_agent.py"
+   },
+   {
+    "rfilename": "app/core/personalized_rag.py"
+   },
+   {
+    "rfilename": "app/core/retriever.py"
+   },
+   {
+    "rfilename": "app/main.py"
+   },
+   {
+    "rfilename": "app/preprocessing/create_test_file.py"
+   },
+   {
+    "rfilename": "config.py"
+   },
+   {
+    "rfilename": "data/user_information/Joel_info.txt"
+   },
+   {
+    "rfilename": "preprocessing/create_test_file.py"
+   },
+   {
+    "rfilename": "requirements.txt"
+   },
+   {
+    "rfilename": "streamlit_app.py"
+   }
+  ],
+  "subdomain": "joelchacon-rag-portfolio",
+  "tags": [
+   "docker",
+   "region:us"
+  ],
+  "usedStorage": 0
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  },
+  {
+   "original": ".gitignore",
+   "stored_as": "_gitignore"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "joelchacon/rag_portfolio",
+ "repo_type": "spaces",
+ "sha": "c75def639138b7dcf26867bc22c0f2342cccc396",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/joelchacon/rag_portfolio"
+}

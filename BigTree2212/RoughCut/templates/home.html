@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block title %}AI Tools Studio — Home{% endblock %}
+{% block content %}
+
+<div class="reel-strip">
+  <span class="reel-strip__dash"></span>
+  <span class="reel-strip__dot"></span>
+  <span class="reel-strip__dash"></span>
+</div>
+
+<header class="home-header">
+  <p class="home-header__eyebrow">Local video toolkit</p>
+  <h1 class="home-header__title">Pilih tool yang mau dipakai</h1>
+  <p class="home-header__subtitle">Tiga alat bantu edit video, jalan lokal di server kamu sendiri.</p>
+</header>
+
+<div class="tool-grid">
+  <a href="{{ url_for('silence_cutter.index') }}" class="tool-card panel">
+    <span class="tool-card__reel"><span class="tool-card__reel-icon">✂️</span></span>
+    <span class="tool-card__body">
+      <p class="tool-card__title">SILENCE CUTTER</p>
+      <p class="tool-card__desc">Buang bagian sunyi dari rekaman video secara otomatis — atur sensitivitas, render, download.</p>
+    </span>
+    <span class="tool-card__arrow">&rarr;</span>
+  </a>
+
+  <a href="{{ url_for('transcript.index') }}" class="tool-card panel">
+    <span class="tool-card__reel"><span class="tool-card__reel-icon">📝</span></span>
+    <span class="tool-card__body">
+      <p class="tool-card__title">VIDEO TRANSCRIPT</p>
+      <p class="tool-card__desc">Transkripsi video ke teks per segmen dengan timestamp, pakai faster-whisper — 100% lokal &amp; offline.</p>
+    </span>
+    <span class="tool-card__arrow">&rarr;</span>
+  </a>
+
+  <a href="{{ url_for('video_downloader.index') }}" class="tool-card panel">
+    <span class="tool-card__reel"><span class="tool-card__reel-icon">⬇️</span></span>
+    <span class="tool-card__body">
+      <p class="tool-card__title">VIDEO DOWNLOADER</p>
+      <p class="tool-card__desc">Download video/audio dari YouTube, TikTok, atau Instagram — pilih resolusi, langsung simpan filenya.</p>
+    </span>
+    <span class="tool-card__arrow">&rarr;</span>
+  </a>
+</div>
+
+<p class="home-footer">Semua proses jalan di server ini — tidak ada file yang dikirim ke pihak ketiga.</p>
+
+{% endblock %}

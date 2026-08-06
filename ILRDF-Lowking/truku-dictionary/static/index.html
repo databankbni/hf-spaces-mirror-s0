@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>太魯閣語線上辭典 - Truku Dictionary</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4M6KQ8KSY5"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-4M6KQ8KSY5');
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="logo">
+                <h1>太魯閣語辭典</h1>
+                <p>Truku Online Dictionary & Linguistics</p>
+            </div>
+
+            <div style="display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; justify-content: flex-end;">
+                <!-- Modern Tabs -->
+                <div class="tabs" style="margin-bottom: 0;">
+                    <button class="tab-btn active" data-tab="tab-search">辭典查詢</button>
+                    <button class="tab-btn" data-tab="tab-stats">語言統計分析</button>
+                    <button class="tab-btn" data-tab="tab-ai-analysis">🤖 AI 語言學家</button>
+                    <button class="tab-btn" data-tab="tab-glosser" id="tab-btn-glosser">🏷️ 語料標注</button>
+                </div>
+                
+                <button id="apiSettingsBtn" style="background: rgba(139,92,246,0.2); border: 1px solid rgba(139,92,246,0.5); color: #c4b5fd; padding: 0.5rem 1rem; border-radius: 20px; cursor: pointer; display: flex; align-items: center; gap: 0.5rem; transition: 0.3s; font-size: 0.9rem; white-space: nowrap;">
+                    ⚙️ API 設定
+                </button>
+                <button id="themeToggleBtn" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: var(--text-color); padding: 0.5rem 1rem; border-radius: 20px; cursor: pointer; display: flex; align-items: center; gap: 0.5rem; transition: 0.3s; font-size: 0.9rem; white-space: nowrap;">
+                    ☀️ 亮色模式
+                </button>
+            </div>
+        </header>
+
+        <main>
+            <!-- Search View -->
+            <div id="tab-search" class="tab-content active">
+                <div class="search-container">
+                    <!-- Target type selection -->
+                    <div class="search-options">
+                        <label class="radio-label">
+                            <input type="radio" name="searchType" value="truku" checked>
+                            <span>族語例句</span>
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="searchType" value="source">
+                            <span>來源詞條</span>
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="searchType" value="chinese">
+                            <span>中文關鍵詞</span>
+                        </label>
+                    </div>
+
+                    <!-- Match mode selection -->
+                    <div class="match-mode-options" id="match-mode-container">
+                        <label class="radio-label toggle-label">
+                            <input type="radio" name="matchMode" value="exact" checked>
+                            <span>精準搜尋</span>
+                        </label>
+                        <label class="radio-label toggle-label">
+                            <input type="radio" name="matchMode" value="partial">
+                            <span>部分搜尋</span>
+                        </label>
+                    </div>
+                    
+                    <div class="corpus-options">
+                        <span class="corpus-title">語料來源：</span>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="corpus" value="族語辭典" checked> 族語辭典
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="corpus" value="族語E樂園" checked> 族語E樂園
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="corpus" value="族語文學" checked> 族語文學
+                        </label>
+                    </div>
+                    
+                    <div class="search-box">
+                        <input type="text" id="searchInput" placeholder="輸入關鍵字..." autocomplete="off">
+                        <button id="searchBtn">
+                            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                        </button>
+                    </div>
+                    
+                    <div style="font-size: 0.85rem; color: #94a3b8; text-align: left; max-width: 600px; margin: 0.8rem auto 0; padding-left: 1rem;">
+                        <span style="color: #60a5fa; font-weight: bold;">💡 進階檢索技巧：</span><br>
+                        • <b>萬用字元</b>：輸入 <code>m*puy</code> 可找出 mhapuy, mlapuy 等變化型。<br>
+                        • <b>距離搜尋</b>：輸入 <code>ka NEAR:3 laqi</code> 可找出兩字相距不超過 3 的例句。<br>
+                        • <b>開發者 API</b>：可直接使用 <code>/api/v1/search?q=關鍵字&type=truku</code> 獲取 JSON 資料。
+                    </div>
+                    
+                    <div class="search-actions" style="margin-top: 1rem; text-align: center;">
+                        <button id="exportCsvBtn" class="hidden" style="background: rgba(16, 185, 129, 0.2); border: 1px solid rgba(16, 185, 129, 0.5); color: #10b981; padding: 0.5rem 1rem; border-radius: 6px; cursor: pointer; transition: all 0.2s;">
+                            <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 4px;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                            匯出搜尋結果 (CSV)
+                        </button>
+                    </div>
+                </div>
+
+                <div id="loading" class="hidden">
+                    <div class="spinner"></div>
+                    <p>搜尋中...</p>
+                </div>
+                
+                <div id="no-results" class="hidden">
+                    <p>找不到符合條件的結果，請嘗試其他關鍵字。</p>
+                </div>
+
+                <!-- Split UI Layout -->
+                <div id="split-layout" class="hidden">
+                    <!-- Left: List -->
+                    <div class="split-left">
+                        <div id="results-list" class="results-list">
+                            <!-- List items will be injected here -->
+                        </div>
+                    </div>
+
+                    <!-- Right: Details -->
+                    <div class="split-right">
+                        <div id="search-stats-summary" class="hidden">
+                            <!-- Stats summary injected here -->
+                        </div>
+                        
+                        <div id="result-detail-card" class="hidden">
+                            <!-- Detail card injected here -->
+                        </div>
+                        
+                        <div id="empty-detail-state">
+                            <p>請從左側點擊列表項目以查看詳細資訊。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats View -->
+            <div id="tab-stats" class="tab-content">
+                <div id="stats-loading" class="hidden">
+                    <div class="spinner"></div>
+                    <p>正在分析全庫語料，請稍候...</p>
+                </div>
+                
+                <div id="stats-dashboard" class="hidden">
+                    <div class="sub-tabs">
+                        <button class="sub-tab-btn active" data-subtab="subtab-overview">📊 語料庫總覽</button>
+                        <button class="sub-tab-btn" data-subtab="subtab-freq">🔤 詞頻與連詞</button>
+                        <button class="sub-tab-btn" data-subtab="subtab-morph">✨ 構詞與字母</button>
+                    </div>
+
+                    <!-- Subtab: Overview -->
+                    <div id="subtab-overview" class="sub-tab-content active">
+                        <div class="stats-overview">
+                            <div class="stat-card">
+                                <h3 id="stat-entries">0</h3>
+                                <p>總詞條數</p>
+                            </div>
+                            <div class="stat-card">
+                                <h3 id="stat-sentences">0</h3>
+                                <p>總例句數</p>
+                            </div>
+                            <div class="stat-card">
+                                <h3 id="stat-avg-len">0</h3>
+                                <p>平均句子長度 (詞)</p>
+                            </div>
+                        </div>
+                        <div class="chart-box" style="margin-top: 2rem;">
+                            <h3>三大語料庫分佈比例</h3>
+                            <div style="max-width: 400px; margin: 0 auto;">
+                                <canvas id="corpusPieChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Subtab: Frequency -->
+                    <div id="subtab-freq" class="sub-tab-content hidden">
+                        <!-- Split layout for Word Frequency -->
+                        <div id="stats-split-layout">
+                            <div class="split-left stats-list-container">
+                                <div class="stats-list-header">
+                                    <div class="col-word">熱門詞彙 (中文翻譯)</div>
+                                    <div class="col-count">詞頻</div>
+                                </div>
+                                <div id="stats-word-list" class="stats-word-list"></div>
+                                
+                                <div style="margin-top: 2rem;">
+                                    <h3>常用雙詞 (Top 10 Bigrams)</h3>
+                                    <div id="stats-bigrams" class="ngram-box"></div>
+                                </div>
+                                <div style="margin-top: 1rem;">
+                                    <h3>常用三詞 (Top 10 Trigrams)</h3>
+                                    <div id="stats-trigrams" class="ngram-box"></div>
+                                </div>
+                            </div>
+                            <div class="split-right stats-chart-container">
+                                <div class="chart-box" style="height: 1200px;">
+                                    <h3>熱門族語高頻詞彙 (Top 50)</h3>
+                                    <canvas id="wordChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-top: 3rem;">
+                            <h3 style="margin-bottom: 1rem; color: #60a5fa; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 0.5rem;">三大語料庫高頻詞比較表 (Top 50)</h3>
+                            <div style="overflow-x: auto; background: rgba(0,0,0,0.2); border-radius: 8px; border: 1px solid rgba(255,255,255,0.05);">
+                                <table id="corpus-compare-table" style="width: 100%; border-collapse: collapse; text-align: left;">
+                                    <thead>
+                                        <tr style="background: rgba(255,255,255,0.05); border-bottom: 1px solid rgba(255,255,255,0.1);">
+                                            <th style="padding: 1rem; font-weight: bold; width: 10%;">排名</th>
+                                            <th style="padding: 1rem; font-weight: bold; width: 30%; color: #60a5fa;">族語辭典</th>
+                                            <th style="padding: 1rem; font-weight: bold; width: 30%; color: #fde047;">族語E樂園</th>
+                                            <th style="padding: 1rem; font-weight: bold; width: 30%; color: #10b981;">族語文學</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- Populated via JS -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Subtab: Morphology -->
+                    <div id="subtab-morph" class="sub-tab-content hidden">
+                        <div id="stats-split-layout" style="margin-bottom: 2rem;">
+                            <div class="split-left chart-box">
+                                <h3>常見前綴分佈 (m-, p-, emp-, t-)</h3>
+                                <canvas id="prefixChart" style="max-height: 250px;"></canvas>
+                            </div>
+                            <div class="split-right chart-box">
+                                <h3>常見後綴分佈 (-an, -ay, -i, -un, -aw, -a)</h3>
+                                <canvas id="suffixChart" style="max-height: 250px;"></canvas>
+                            </div>
+                        </div>
+
+                        <div class="chart-box" style="margin-bottom: 2rem;">
+                            <h3>太魯閣語首字母分佈統計</h3>
+                            <canvas id="letterChart" style="max-height: 400px;"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- AI Analysis View -->
+            <div id="tab-ai-analysis" class="tab-content">
+                <div class="search-container">
+                    <h2 style="color: #fb923c; text-align: center; margin-bottom: 1rem; font-size: 1.5rem;">🤖 虛擬AI太魯閣語言學家</h2>
+                    <p style="text-align: center; color: #94a3b8; margin-bottom: 1.5rem;">輸入兩個太魯閣語單字進行語法與語意的深度對比分析，或者輸入單一詞彙進行剖析。</p>
+                    
+                    <div style="display: flex; gap: 1rem; justify-content: center; align-items: center; max-width: 600px; margin: 0 auto 1.5rem;">
+                        <input type="text" id="aiWord1" placeholder="輸入第一個詞彙 (例: kiyig)" autocomplete="off" style="flex: 1; padding: 0.75rem 1rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(0,0,0,0.3); color: #f8fafc; font-size: 1rem;">
+                        <span style="color: #94a3b8; font-weight: bold;">VS</span>
+                        <input type="text" id="aiWord2" placeholder="輸入第二個詞彙 (可選, 例: siyaw)" autocomplete="off" style="flex: 1; padding: 0.75rem 1rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(0,0,0,0.3); color: #f8fafc; font-size: 1rem;">
+                    </div>
+                    
+                    <div style="text-align: center; margin-bottom: 1.5rem;">
+                        <label for="aiSentenceLimit" style="color: #94a3b8; font-size: 0.95rem; margin-right: 0.5rem;">分析深度 (句數上限)：</label>
+                        <select id="aiSentenceLimit" style="padding: 0.4rem 0.8rem; border-radius: 6px; border: 1px solid rgba(255,255,255,0.2); background: rgba(30, 41, 59, 0.8); color: #f8fafc; font-size: 0.95rem; cursor: pointer;">
+                            <option value="20">20 句 (快速分析)</option>
+                            <option value="50">50 句 (標準分析)</option>
+                            <option value="100">100 句 (深度分析)</option>
+                            <option value="200">200 句 (極限分析)</option>
+                        </select>
+                    </div>
+                    
+                    <div style="text-align: center;">
+                        <button id="aiAnalyzeBtn" style="background: linear-gradient(135deg, #fb923c, #f97316); color: white; border: none; padding: 0.75rem 2rem; border-radius: 8px; font-weight: bold; font-size: 1.1rem; cursor: pointer; transition: all 0.2s; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);">
+                            開始 AI 分析
+                        </button>
+                    </div>
+                </div>
+
+                <div id="ai-loading" class="hidden" style="text-align: center; padding: 3rem;">
+                    <div class="spinner"></div>
+                    <p style="color: #94a3b8; margin-top: 1rem;">Gemini 正在讀取資料庫例句並進行深度分析，請稍候...</p>
+                </div>
+                
+                <div id="ai-error" class="hidden" style="max-width: 800px; margin: 2rem auto; background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.3); color: #fca5a5; padding: 1.5rem; border-radius: 8px; text-align: center;">
+                </div>
+
+                <div id="ai-result-container" class="hidden" style="max-width: 800px; margin: 2rem auto; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; padding: 2rem; box-shadow: var(--shadow);">
+                    <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 1rem; margin-bottom: 1.5rem;">
+                        <h3 style="color: #e2e8f0; margin: 0; font-size: 1.25rem;">✨ 語法分析報告</h3>
+                        <div style="display: flex; gap: 1rem; align-items: center;">
+                            <div id="ai-stats-info" style="color: #60a5fa; font-size: 0.9rem;"></div>
+                            <button onclick="exportToDoc()" style="background: rgba(59, 130, 246, 0.2); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.4); padding: 0.3rem 0.8rem; border-radius: 6px; cursor: pointer; font-size: 0.85rem; transition: all 0.2s;">📥 下載 DOC</button>
+                            <button onclick="exportToPdf()" style="background: rgba(239, 68, 68, 0.2); color: #fca5a5; border: 1px solid rgba(239, 68, 68, 0.4); padding: 0.3rem 0.8rem; border-radius: 6px; cursor: pointer; font-size: 0.85rem; transition: all 0.2s;">📥 下載 PDF</button>
+                        </div>
+                    </div>
+                    <div id="ai-markdown-content" class="markdown-body" style="color: #cbd5e1; line-height: 1.8;">
+                        <!-- Marked.js will render HTML here -->
+                    </div>
+                </div>
+                <!-- end AI tab -->
+            </div>
+
+            <!-- ====================================================
+                 🏷️  語料標注頁籤 (IGT Glosser)
+                 ==================================================== -->
+            <div id="tab-glosser" class="tab-content">
+                <div class="search-container">
+                    <div style="display:flex; align-items:center; justify-content:center; gap:1rem; margin-bottom:0.5rem;">
+                        <h2 style="color:#a78bfa; text-align:center; margin:0; font-size:1.5rem;">🏷️ 語料自動化標注 (IGT)</h2>
+                        <div id="glosser-status" style="display:flex; align-items:center; gap:0.4rem; font-size:0.82rem;">
+                            <span id="glosser-status-dot" style="width:9px; height:9px; border-radius:50%; background:#64748b; display:inline-block; transition:background 0.5s;"></span>
+                            <span id="glosser-status-text" style="color:#64748b;">檢查中...</span>
+                        </div>
+                    </div>
+                    <p style="text-align:center; color:#94a3b8; margin-bottom:1.5rem; font-size:0.9rem;">輸入太魯閣語句子，由 AI 自動進行學術級四行語言學標注（IGT），結果可人工校正後儲存至記憶庫或匯出。</p>
+
+                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; width:100%; margin:0 auto 1.5rem;">
+                        <div>
+                            <label style="color:#a78bfa; font-size:1rem; font-weight:600; display:block; margin-bottom:0.6rem;">① 族語例句（每行一句）</label>
+                            <textarea id="glosser-truku-input"
+                                placeholder="Gaga matas ptasan na ka laqi mu.&#10;Mhapuy qsurux ka bubu."
+                                style="width:100%; height:250px; padding:1rem; background:rgba(0,0,0,0.35); border:1px solid rgba(139,92,246,0.4); border-radius:10px; color:#f1f5f9; font-size:1.1rem; resize:vertical; font-family:'Consolas',monospace; box-sizing:border-box; line-height:1.6;"
+                            ></textarea>
+                        </div>
+                        <div>
+                            <label style="color:#94a3b8; font-size:1rem; font-weight:600; display:block; margin-bottom:0.6rem;">② 對應華語意譯（選填，可提升精準度）</label>
+                            <textarea id="glosser-chinese-input"
+                                placeholder="我的小孩在學校讀書。&#10;媽媽在煮魚。"
+                                style="width:100%; height:250px; padding:1rem; background:rgba(0,0,0,0.25); border:1px solid rgba(255,255,255,0.15); border-radius:10px; color:#f1f5f9; font-size:1.1rem; resize:vertical; font-family:'Consolas',monospace; box-sizing:border-box; line-height:1.6;"
+                            ></textarea>
+                        </div>
+                    </div>
+
+                    <div style="text-align:center;">
+                        <div style="margin-bottom: 1rem; display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center; justify-content: center;">
+                            <span style="font-size: 0.8rem; color: #94a3b8;">快速測試：</span>
+                            <button type="button" onclick="document.getElementById('glosser-truku-input').value='Wada rmigaw gasil na ka tama mu da.'; document.getElementById('glosser-chinese-input').value='我爸爸去看（巡視）陷阱了。';" style="background:rgba(139,92,246,0.2); border:1px solid rgba(139,92,246,0.5); color:#c4b5fd; padding:0.2rem 0.5rem; border-radius:4px; font-size:0.8rem; cursor:pointer;">測試句 1</button>
+                            <button type="button" onclick="document.getElementById('glosser-truku-input').value='Gaga matas ptasan na ka laqi mu.'; document.getElementById('glosser-chinese-input').value='我的小孩在學校讀書。';" style="background:rgba(139,92,246,0.2); border:1px solid rgba(139,92,246,0.5); color:#c4b5fd; padding:0.2rem 0.5rem; border-radius:4px; font-size:0.8rem; cursor:pointer;">測試句 2</button>
+                            <button type="button" onclick="document.getElementById('glosser-truku-input').value='Kndadax ku Skanki dhuq ku hini saw nii kman hari.'; document.getElementById('glosser-chinese-input').value='我從花蓮到這裡大概是晚上了。';" style="background:rgba(139,92,246,0.2); border:1px solid rgba(139,92,246,0.5); color:#c4b5fd; padding:0.2rem 0.5rem; border-radius:4px; font-size:0.8rem; cursor:pointer;">測試句 3</button>
+                        </div>
+                        <button id="glosserAnalyzeBtn"
+                            style="background:linear-gradient(135deg,#7c3aed,#6d28d9); color:white; border:none; padding:0.75rem 2.5rem; border-radius:8px; font-weight:bold; font-size:1rem; cursor:pointer; transition:all 0.2s; box-shadow:0 4px 15px rgba(109,40,217,0.4);">
+                            🚀 開始全自動批次標注
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Loading -->
+                <div id="glosser-loading" class="hidden" style="text-align:center; padding:2rem;">
+                    <div class="spinner" style="border-top-color:#a78bfa;"></div>
+                    <p style="color:#a78bfa; margin-top:1rem;">AI 正在分析語料，請稍候（約 10~30 秒）...</p>
+                </div>
+
+                <!-- Timer info -->
+                <div id="glosser-timer" class="hidden" style="max-width:800px; margin:1rem auto 0; background:rgba(139,92,246,0.1); border:1px solid rgba(139,92,246,0.25); border-radius:8px; padding:0.7rem 1.2rem; color:#c4b5fd; font-size:0.88rem;"></div>
+
+                <!-- Error -->
+                <div id="glosser-error" class="hidden" style="max-width:800px; margin:1rem auto 0; background:rgba(239,68,68,0.1); border:1px solid rgba(239,68,68,0.3); color:#fca5a5; padding:1.2rem; border-radius:8px;"></div>
+
+                <!-- IGT Results -->
+                <div id="glosser-results" style="max-width:900px; margin:1.5rem auto 0;"></div>
+
+                <!-- Batch download bar (hidden until results appear) -->
+                <div id="glosser-batch-bar" class="hidden" style="max-width:900px; margin:1rem auto; display:flex; gap:1rem; flex-wrap:wrap;">
+                    <button onclick="glosserBatchCsv()" style="background:rgba(16,185,129,0.15); color:#34d399; border:1px solid rgba(16,185,129,0.35); padding:0.4rem 1rem; border-radius:6px; cursor:pointer; font-size:0.88rem;">📥 全部匯出 CSV</button>
+                    <button onclick="glosserBatchWord()" style="background:rgba(59,130,246,0.15); color:#60a5fa; border:1px solid rgba(59,130,246,0.35); padding:0.4rem 1rem; border-radius:6px; cursor:pointer; font-size:0.88rem;">📄 全部匯出 Word</button>
+                    <span style="color:#64748b; font-size:0.82rem; align-self:center;">💡 行二（詞素切分）與行三（語法標記）均可直接點擊修改後儲存</span>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Report Modal -->
+    <div id="reportModal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>系統問題與例句回報</h2>
+                <button class="modal-close" onclick="closeReportModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>回報類型</label>
+                    <select id="reportType" onchange="document.getElementById('reportSentenceGroup').style.display = this.value === 'sentence_error' ? 'block' : 'none'">
+                        <option value="system_bug">系統功能異常</option>
+                        <option value="sentence_error">例句內容錯誤</option>
+                        <option value="suggestion">功能建議</option>
+                    </select>
+                </div>
+                <div class="form-group hidden" id="reportSentenceGroup" style="display: none;">
+                    <label>關聯例句 (系統自動帶入)</label>
+                    <textarea id="reportSentence" readonly rows="2" style="background: rgba(255,255,255,0.05);"></textarea>
+                    <input type="hidden" id="reportSentenceId">
+                </div>
+                <div class="form-group">
+                    <label>詳細說明</label>
+                    <textarea id="reportDescription" rows="4" placeholder="請詳細描述您發現的問題..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label>您的聯絡信箱 (選填)</label>
+                    <input type="email" id="reportEmail" placeholder="若需我們進一步聯繫，請留下 Email">
+                </div>
+                <button class="submit-btn" id="submitReportBtn" onclick="submitReport()">送出回報</button>
+                <div id="reportMessage" style="margin-top: 1rem; text-align: center; font-size: 0.9rem;"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 太魯閣語線上辭典檢索平臺</p>
+            <p><strong>系統建置與設計：</strong> Lowking Nowbucyang</p>
+            <p><strong>語料來源：</strong> 財團法人原住民族語言研究發展基金會 (ILRDF) - 原住民族語言線上辭典</p>
+            <p class="disclaimer">免責聲明：本網站之語料版權歸原機構所有，本系統之開發僅供學術研究、語言推廣與教學應用之非營利目的使用。</p>
+        </div>
+    </footer>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>

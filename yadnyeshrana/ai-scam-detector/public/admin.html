@@ -1,0 +1,1861 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard - AI Scam Detector</title>
+  <link rel="icon" href="/images/favicon.png" type="image/png">
+  <link rel="shortcut icon" href="/images/favicon.png" type="image/png">
+  
+  <!-- Resource Hints for Performance Optimization -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    /* Analytics section and charts styling */
+    .analytics-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 30px;
+      margin-bottom: 40px;
+    }
+
+    @media (min-width: 992px) {
+      .analytics-grid {
+        grid-template-columns: 2fr 1fr;
+      }
+    }
+
+    .chart-card {
+      min-height: 380px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .chart-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-top: 0;
+      margin-bottom: 20px;
+      color: var(--text-main);
+      background: linear-gradient(135deg, #f8fafc, #94a3b8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .chart-container {
+      position: relative;
+      flex: 1;
+      width: 100%;
+      height: 100%;
+      min-height: 280px;
+    }
+
+    :root {
+      --bg-color: #0b0f19;
+      --card-bg: rgba(30, 41, 59, 0.4);
+      --accent-color: #3b82f6;
+      --accent-glow: rgba(59, 130, 246, 0.15);
+      --border-color: rgba(255, 255, 255, 0.08);
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      
+      --color-green: #10b981;
+      --color-red: #ef4444;
+      --color-amber: #f59e0b;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      font-family: 'Outfit', sans-serif;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Auth screen modal styling */
+    #auth-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #090d16;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .auth-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      padding: 40px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      text-align: center;
+      backdrop-filter: blur(10px);
+    }
+
+    .auth-card h2 {
+      margin-top: 0;
+      margin-bottom: 24px;
+      font-weight: 700;
+      background: linear-gradient(135deg, #60a5fa, #3b82f6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .input-field {
+      width: 100%;
+      padding: 12px 16px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      color: #fff;
+      font-size: 1rem;
+      font-family: inherit;
+      outline: none;
+      box-sizing: border-box;
+      margin-bottom: 20px;
+      text-align: center;
+      transition: all 0.3s;
+    }
+
+    .input-field:focus {
+      border-color: var(--accent-color);
+      box-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
+    }
+
+    .btn {
+      width: 100%;
+      padding: 14px;
+      background: linear-gradient(135deg, #3b82f6, #2563eb);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 16px rgba(59, 130, 246, 0.5);
+    }
+
+    .error-msg {
+      color: var(--color-red);
+      font-size: 0.85rem;
+      margin-top: -12px;
+      margin-bottom: 16px;
+      display: none;
+    }
+
+    /* Main Dashboard Layout */
+    .dashboard {
+      flex: 1;
+      max-width: 1200px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 40px 20px;
+      box-sizing: border-box;
+      display: none;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 40px;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 20px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #ffffff, #94a3b8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .header-actions {
+      display: flex;
+      gap: 15px;
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 500;
+      font-size: 0.9rem;
+      transition: all 0.2s;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    /* Grid layout */
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 30px;
+      margin-bottom: 40px;
+    }
+
+    @media (min-width: 768px) {
+      .grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 24px;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+
+    .stat-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .stat-label {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 8px;
+    }
+
+    .stat-val {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin: 8px 0;
+    }
+
+    .stat-meta {
+      color: var(--text-muted);
+      font-size: 0.8rem;
+    }
+
+    /* Toggle Controls */
+    .controls-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 30px;
+      margin-bottom: 40px;
+    }
+
+    @media (min-width: 768px) {
+      .controls-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .control-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 24px;
+      backdrop-filter: blur(12px);
+    }
+
+    .control-info {
+      flex: 1;
+    }
+
+    .control-title {
+      font-weight: 600;
+      font-size: 1.15rem;
+      margin-bottom: 4px;
+    }
+
+    .control-desc {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      margin-right: 15px;
+    }
+
+    /* Switch toggle slider styling */
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 60px;
+      height: 34px;
+    }
+
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #334155;
+      transition: .4s;
+      border-radius: 34px;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 26px;
+      width: 26px;
+      left: 4px;
+      bottom: 4px;
+      background-color: white;
+      transition: .4s;
+      border-radius: 50%;
+    }
+
+    input:checked + .slider {
+      background-color: var(--color-green);
+    }
+
+    input:focus + .slider {
+      box-shadow: 0 0 1px var(--color-green);
+    }
+
+    input:checked + .slider:before {
+      transform: translateX(26px);
+    }
+
+    /* Status indicator dot */
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border-color);
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .dot-connected { background-color: var(--color-green); box-shadow: 0 0 8px var(--color-green); }
+    .dot-offline { background-color: var(--color-red); box-shadow: 0 0 8px var(--color-red); }
+    .dot-warning { background-color: var(--color-amber); box-shadow: 0 0 8px var(--color-amber); }
+
+    /* Scam patterns manager section */
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-top: 0;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .search-container {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .search-input {
+      flex: 1;
+      padding: 12px 16px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      color: #fff;
+      font-size: 0.95rem;
+      font-family: inherit;
+      outline: none;
+    }
+
+    .search-input:focus {
+      border-color: var(--accent-color);
+    }
+
+    .scam-table-container {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      overflow-x: auto;
+      margin-bottom: 40px;
+    }
+
+    table {
+      width: 100%;
+      min-width: 900px;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.95rem;
+    }
+
+    th, td {
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    th {
+      background: rgba(255,255,255,0.02);
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      letter-spacing: 0.05em;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    .scam-type-badge {
+      background: rgba(59, 130, 246, 0.1);
+      border: 1px solid rgba(59, 130, 246, 0.2);
+      color: #93c5fd;
+      padding: 4px 8px;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+
+    .btn-delete {
+      background: rgba(239, 68, 68, 0.1);
+      border: 1px solid rgba(239, 68, 68, 0.2);
+      color: #fca5a5;
+      padding: 6px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.8rem;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+
+    .btn-delete:hover {
+      background: var(--color-red);
+      color: #fff;
+    }
+
+    /* Modal dialog */
+    .modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(5px);
+      z-index: 500;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.3s ease;
+    }
+
+    .modal.active {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .modal-content {
+      background: #101726;
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      padding: 32px;
+      max-width: 500px;
+      width: 90%;
+      max-height: 90vh;
+      overflow-y: auto;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+      transform: translateY(-20px);
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .modal-content.wide {
+      max-width: 800px;
+    }
+
+    .modal-close-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 1.8rem;
+      font-weight: 300;
+      color: var(--text-muted);
+      background: none;
+      border: none;
+      cursor: pointer;
+      line-height: 1;
+      padding: 0;
+      transition: color 0.2s;
+      z-index: 10;
+    }
+
+    .modal-close-btn:hover {
+      color: var(--text-main);
+    }
+
+    .modal.active .modal-content {
+      transform: translateY(0);
+    }
+
+    .modal-header {
+      font-size: 1.35rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      color: #fff;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+      text-align: left;
+    }
+
+    .form-group label {
+      display: block;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      margin-bottom: 6px;
+      font-weight: 500;
+    }
+
+    .form-input {
+      width: 100%;
+      padding: 10px 14px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      color: #fff;
+      font-size: 0.95rem;
+      font-family: inherit;
+      outline: none;
+      box-sizing: border-box;
+    }
+
+    .form-input:focus {
+      border-color: var(--accent-color);
+    }
+
+    .modal-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 12px;
+      margin-top: 24px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- AUTH SCREEN -->
+  <div id="auth-screen">
+    <div class="auth-card">
+      <h2>Admin Authentication</h2>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin-top:-10px; margin-bottom: 24px;">AI Scam Detector Admin Panel</p>
+      <input type="password" id="admin-pass-field" class="input-field" placeholder="Enter Admin Password" autofocus>
+      <div id="auth-error" class="error-msg">Invalid password. Try again.</div>
+      <button onclick="attemptLogin()" class="btn">Authenticate</button>
+    </div>
+  </div>
+
+  <!-- DASHBOARD -->
+  <div class="dashboard" id="dashboard-content">
+    <header>
+      <h1>AI Scam Detector Admin</h1>
+      <div class="header-actions">
+        <button onclick="syncThreatFeeds()" class="btn-secondary" id="btn-sync-feeds">📡 Sync Threat Feeds</button>
+        <button onclick="loadDashboardStats()" class="btn-secondary">🔄 Refresh</button>
+        <button onclick="logout()" class="btn-secondary" style="border-color: rgba(239,68,68,0.2); color:#fca5a5;">Logout</button>
+      </div>
+    </header>
+
+    <!-- Controls Panel -->
+    <div class="controls-grid">
+      <!-- Pause / Resume Switch -->
+      <div class="control-card">
+        <div class="control-info">
+          <div class="control-title">WhatsApp Bot Status</div>
+          <div class="control-desc" id="bot-paused-text">Bot is running normally.</div>
+        </div>
+        <label class="switch">
+          <input type="checkbox" id="bot-pause-toggle" onchange="toggleBotPause(this.checked)">
+          <span class="slider"></span>
+        </label>
+      </div>
+
+      <!-- Live Connection Badge -->
+      <div class="control-card">
+        <div class="control-info">
+          <div class="control-title">WhatsApp Connection</div>
+          <div class="control-desc">Meta Cloud API status</div>
+        </div>
+        <div class="status-badge" id="conn-badge">
+          <span class="dot dot-offline" id="conn-dot"></span>
+          <span id="conn-text">Checking...</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats Grid -->
+    <div class="grid">
+      <div class="card stat-card">
+        <div>
+          <div class="stat-label">Total Users</div>
+          <div class="stat-val" id="stat-users">0</div>
+        </div>
+        <div class="stat-meta" id="stat-db-mode">Database Mode: checking</div>
+      </div>
+      
+      <div class="card stat-card">
+        <div>
+          <div class="stat-label">Premium Users</div>
+          <div class="stat-val" id="stat-premium" style="color: #fbbf24;">0</div>
+        </div>
+        <div class="stat-meta">Active paid subscriptions</div>
+      </div>
+      
+      <div class="card stat-card">
+        <div>
+          <div class="stat-label">Scams Flagged</div>
+          <div class="stat-val" id="stat-scams" style="color: var(--color-red);">0</div>
+        </div>
+        <div class="stat-meta">Matches across all check logs</div>
+      </div>
+      
+      <div class="card stat-card">
+        <div>
+          <div class="stat-label">Total Revenue</div>
+          <div class="stat-val" id="stat-revenue" style="color: var(--color-green);">₹0</div>
+        </div>
+        <div class="stat-meta">Total collected earnings</div>
+      </div>
+    </div>
+
+    <!-- Threat Analytics Charts -->
+    <div class="section-title">
+      <span>Threat Analytics & Trends</span>
+    </div>
+
+    <div class="analytics-grid">
+      <!-- Chart 1: Daily Scans Volume -->
+      <div class="card chart-card">
+        <h3 class="chart-title">Weekly Scan Volume & Threats Flagged</h3>
+        <div class="chart-container">
+          <canvas id="scans-trend-chart"></canvas>
+        </div>
+      </div>
+
+      <!-- Chart 2: Scam Types Doughnut -->
+      <div class="card chart-card">
+        <h3 class="chart-title">Flagged Scam Types Distribution</h3>
+        <div class="chart-container">
+          <canvas id="scam-types-chart"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <!-- Recent Scans Audit Log -->
+    <div class="section-title">
+      <span>Recent Scans Audit Log</span>
+    </div>
+
+    <div class="scam-table-container" style="margin-bottom: 50px;">
+      <table>
+        <thead>
+          <tr>
+            <th>Message Text Snippet</th>
+            <th>Hashed User</th>
+            <th>Source</th>
+            <th>Risk Level</th>
+            <th>Confidence</th>
+            <th>Scanned At</th>
+          </tr>
+        </thead>
+        <tbody id="scans-log-tbody">
+          <tr>
+            <td colspan="6" style="text-align: center; color: var(--text-muted); padding: 40px 0;">Loading scan history...</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Registered Users & Metrics -->
+    <div class="section-title">
+      <span>Registered Users &amp; Metrics</span>
+    </div>
+
+    <div class="search-container" style="margin-bottom: 20px;">
+      <input type="text" id="search-user-input" class="search-input" placeholder="🔍 Find User: Type phone number (e.g. 919975528455) to hash and find..." oninput="searchUserByPhone()">
+    </div>
+
+    <div class="scam-table-container" style="margin-bottom: 50px;">
+      <table>
+        <thead>
+          <tr>
+            <th>User Hash ID</th>
+            <th>Premium Status</th>
+            <th>Expiry Date</th>
+            <th>Checks Today</th>
+            <th>Checks This Month</th>
+            <th>Joined Date</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="users-tbody">
+          <tr>
+            <td colspan="7" style="text-align: center; color: var(--text-muted); padding: 40px 0;">Loading registered users...</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Recent Payments & Transactions -->
+    <div class="section-title">
+      <span>Recent Payments & Transactions</span>
+    </div>
+
+    <div class="scam-table-container" style="margin-bottom: 50px;">
+      <table>
+        <thead>
+          <tr>
+            <th>Transaction ID</th>
+            <th>Hashed User</th>
+            <th>Order ID / Payment ID</th>
+            <th>Amount Paid</th>
+            <th>Status</th>
+            <th>Transaction Date</th>
+          </tr>
+        </thead>
+        <tbody id="transactions-log-tbody">
+          <tr>
+            <td colspan="6" style="text-align: center; color: var(--text-muted); padding: 40px 0;">Loading payment history...</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Test Users (QA Whitelist) -->
+    <div class="section-title">
+      <span>Test Users (QA Whitelist - Unlimited scans)</span>
+      <button onclick="openAddTestUserModal()" class="btn" style="width: auto; padding: 10px 20px;">➕ Add Test User</button>
+    </div>
+
+    <div class="scam-table-container" style="margin-bottom: 50px;">
+      <table>
+        <thead>
+          <tr>
+            <th>Phone Number</th>
+            <th>Whitelist Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="test-users-tbody">
+          <tr>
+            <td colspan="3" style="text-align: center; color: var(--text-muted); padding: 40px 0;">Loading test users whitelist...</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Scam Patterns Manager -->
+    <div class="section-title">
+      <span>Scam Patterns Heuristics Blacklist</span>
+      <button onclick="openAddPatternModal()" class="btn" style="width: auto; padding: 10px 20px;">➕ Add Scam Pattern</button>
+    </div>
+
+    <div class="search-container">
+      <input type="text" id="search-pattern-input" class="search-input" placeholder="Search patterns, keywords, or URLs..." oninput="filterScamsTable()">
+    </div>
+
+    <div class="scam-table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Pattern Snippet / Source</th>
+            <th>Type</th>
+            <th>Confidence / Risk</th>
+            <th>Examples Caught</th>
+            <th>Last Flagged</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="scam-patterns-tbody">
+          <tr>
+            <td colspan="6" style="text-align: center; color: var(--text-muted); padding: 40px 0;">Loading scam patterns...</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ADD PATTERN MODAL -->
+  <div class="modal" id="add-pattern-modal">
+    <div class="modal-content">
+      <button class="modal-close-btn" onclick="closeAddPatternModal()">&times;</button>
+      <div class="modal-header">Register Scam Pattern</div>
+      
+      <div class="form-group">
+        <label>Pattern Description / Snippet (Required)</label>
+        <textarea id="form-pattern" class="form-input" rows="3" placeholder="e.g. your electricity connection will be suspended tonight" style="resize: none;"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label>Scam Type</label>
+        <select id="form-type" class="form-input">
+          <option value="utility_bill_fraud">Utility Bill Fraud</option>
+          <option value="banking_fraud">KYC / Banking Fraud</option>
+          <option value="lottery_fraud">Lottery / KBC Fraud</option>
+          <option value="job_fraud">Part-time Job Fraud</option>
+          <option value="customs_fraud">Customs / Police Detained Fraud</option>
+          <option value="loan_fraud">Instant Loan Apps Fraud</option>
+          <option value="family_distress">Urgent Family Distress</option>
+          <option value="other_fraud">Other Online Fraud</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Risk Level</label>
+        <select id="form-risk" class="form-input">
+          <option value="HIGH">HIGH RISK</option>
+          <option value="MEDIUM">MEDIUM RISK</option>
+          <option value="LOW">LOW RISK</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Blacklisted URLs (Comma separated)</label>
+        <input type="text" id="form-urls" class="form-input" placeholder="e.g. sbi-kyc-verify.net, power-bill-pay.in">
+      </div>
+
+      <div class="form-group">
+        <label>Blacklisted Contact Numbers (Comma separated)</label>
+        <input type="text" id="form-phones" class="form-input" placeholder="e.g. 9876543210, 8887776665">
+      </div>
+
+      <div class="modal-actions">
+        <button onclick="closeAddPatternModal()" class="btn-secondary">Cancel</button>
+        <button onclick="submitScamPattern()" class="btn" style="width: auto; padding: 10px 24px;">Register Pattern</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- USER DETAILS MODAL -->
+  <div class="modal" id="user-details-modal">
+    <div class="modal-content wide">
+      <button class="modal-close-btn" onclick="closeUserDetailsModal()">&times;</button>
+      <div class="modal-header">👤 User Profile &amp; Metrics</div>
+      
+      <div class="panel-meta" style="margin-bottom: 20px;">
+        <div class="meta-item">
+          <span class="meta-label">User Hash ID</span>
+          <span class="meta-value" id="detail-hash" style="font-size: 0.85rem; word-break: break-all; font-family: monospace;">-</span>
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-bottom: 30px;">
+        <div class="card stat-card" style="padding: 15px; margin-bottom: 0;">
+          <div class="stat-label">Sign Up Date</div>
+          <div class="stat-val" id="detail-created" style="font-size: 1.1rem; margin-top: 5px;">-</div>
+        </div>
+        <div class="card stat-card" style="padding: 15px; margin-bottom: 0;">
+          <div class="stat-label">Checks This Month</div>
+          <div class="stat-val" id="detail-checks" style="font-size: 1.5rem; margin-top: 5px;">0</div>
+        </div>
+        <div class="card stat-card" style="padding: 15px; margin-bottom: 0;">
+          <div class="stat-label">Pro Expiration</div>
+          <div class="stat-val" id="detail-pro-expiry" style="font-size: 1.0rem; color: #fbbf24; margin-top: 5px;">None</div>
+        </div>
+      </div>
+
+      <div class="controls-grid" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; margin-bottom: 30px;">
+        <!-- Premium Controller -->
+        <div class="control-card" style="padding: 12px 20px;">
+          <div class="control-info">
+            <div class="control-title">Pro Level Upgrade</div>
+            <div class="control-desc" id="pro-status-desc">Status: Free Tier</div>
+          </div>
+          <button id="btn-toggle-premium" class="btn" style="width: auto; padding: 8px 16px; font-size: 0.9rem;" onclick="toggleUserPremium()">Upgrade</button>
+        </div>
+      </div>
+
+      <h4 style="margin-top: 25px; margin-bottom: 12px; color: var(--text-main);">🔍 Scan Checks Log</h4>
+      <div class="scam-table-container" style="max-height: 250px; overflow-y: auto; margin-bottom: 25px;">
+        <table>
+          <thead>
+            <tr>
+              <th>Scanned Message Text</th>
+              <th>Verdict</th>
+              <th>Timings (AI / Total)</th>
+              <th>Date</th>
+            </tr>
+          </thead>
+          <tbody id="user-checks-tbody">
+            <tr>
+              <td colspan="4" style="text-align: center; color: var(--text-muted); padding: 20px 0;">No logs found for this user.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="modal-actions" style="margin-top: 0;">
+        <button onclick="closeUserDetailsModal()" class="btn" style="width: auto; padding: 10px 30px;">Close Dashboard</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let adminPass = sessionStorage.getItem('adminPassword') || '';
+    let scamsCache = [];
+    let scansTrendChart = null;
+    let scamTypesChart = null;
+
+    // Trigger login attempt on Enter key press
+    document.getElementById('admin-pass-field').addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') {
+        attemptLogin();
+      }
+    });
+
+    // Auto load if password exists
+    if (adminPass) {
+      document.getElementById('auth-screen').style.display = 'none';
+      document.getElementById('dashboard-content').style.display = 'block';
+      loadDashboardStats();
+    }
+
+    async function attemptLogin() {
+      const password = document.getElementById('admin-pass-field').value;
+      const errorDiv = document.getElementById('auth-error');
+      
+      if (!password) return;
+
+      try {
+        const response = await fetch('/admin/api/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ password })
+        });
+
+        if (response.ok) {
+          adminPass = password;
+          sessionStorage.setItem('adminPassword', password);
+          
+          document.getElementById('auth-screen').style.display = 'none';
+          document.getElementById('dashboard-content').style.display = 'block';
+          errorDiv.style.display = 'none';
+          loadDashboardStats();
+        } else {
+          errorDiv.style.display = 'block';
+          document.getElementById('admin-pass-field').value = '';
+        }
+      } catch (err) {
+        errorDiv.textContent = 'Server connection error.';
+        errorDiv.style.display = 'block';
+      }
+    }
+
+    function logout() {
+      sessionStorage.removeItem('adminPassword');
+      window.location.reload();
+    }
+
+    async function makeAdminRequest(url, options = {}) {
+      options.headers = options.headers || {};
+      options.headers['x-admin-password'] = adminPass;
+      
+      const response = await fetch(url, options);
+      if (response.status === 401) {
+        logout();
+        throw new Error('Unauthorized session.');
+      }
+      return response.json();
+    }
+
+    async function loadDashboardStats() {
+      try {
+        const data = await makeAdminRequest('/admin/api/stats');
+        if (data.success) {
+          // Update Statistics UI
+          document.getElementById('stat-users').textContent = data.stats.totalUsers;
+          document.getElementById('stat-premium').textContent = data.stats.totalPremium;
+          document.getElementById('stat-scams').textContent = data.stats.totalScamsDetected;
+          document.getElementById('stat-db-mode').textContent = `Database Mode: ${data.stats.dbMode}`;
+
+          // Update Pause Switch UI
+          const toggle = document.getElementById('bot-pause-toggle');
+          toggle.checked = data.isBotPaused;
+          updateBotPausedUI(data.isBotPaused);
+
+          // Update Connection Badge UI
+          updateConnectionBadge(data.whatsappStatus);
+        }
+
+        // Fetch Scam patterns
+        loadScamPatterns();
+
+        // Fetch recent scans log
+        loadRecentScans();
+
+        // Fetch recent transactions & revenue
+        loadTransactions();
+
+        // Fetch test users whitelist
+        loadTestUsers();
+
+        // Fetch registered users metrics
+        loadUsersList();
+
+        // Load charts analytics data
+        try {
+          const analyticsData = await makeAdminRequest('/admin/api/analytics');
+          if (analyticsData.success) {
+            updateCharts(analyticsData.daily, analyticsData.scamTypes);
+          }
+        } catch (chartErr) {
+          console.error('Failed to load chart analytics:', chartErr.message);
+        }
+      } catch (err) {
+        console.error('Failed to load stats:', err.message);
+      }
+    }
+
+    function updateCharts(dailyData, scamTypesData) {
+      // Line Chart for Daily Scans Trend - sort chronologically by parsing YYYY-DD-MM
+      const dates = Object.keys(dailyData || {}).sort((a, b) => {
+        const partsA = a.split('-');
+        const partsB = b.split('-');
+        if (partsA.length === 3 && partsB.length === 3) {
+          const dateA = new Date(partsA[0], parseInt(partsA[2]) - 1, partsA[1]);
+          const dateB = new Date(partsB[0], parseInt(partsB[2]) - 1, partsB[1]);
+          return dateA - dateB;
+        }
+        return a.localeCompare(b);
+      });
+      
+      const last7Dates = dates.slice(-7);
+      
+      const trendLabels = [];
+      const trendTotalChecks = [];
+      const trendHighRisk = [];
+      
+      last7Dates.forEach(d => {
+        const parts = d.split('-');
+        let formattedDate = d;
+        if (parts.length === 3) {
+          const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+          const day = parseInt(parts[1], 10);
+          const monthIdx = parseInt(parts[2], 10) - 1;
+          if (monthIdx >= 0 && monthIdx < 12) {
+            formattedDate = `${day} ${months[monthIdx]}`;
+          }
+        }
+        trendLabels.push(formattedDate);
+        trendTotalChecks.push(dailyData[d].totalChecks || 0);
+        trendHighRisk.push(dailyData[d].highRiskDetected || 0);
+      });
+      
+      if (trendLabels.length === 0) {
+        const today = new Date().toLocaleDateString('en-IN', { day: '2-digit', month: 'short' });
+        trendLabels.push(today);
+        trendTotalChecks.push(0);
+        trendHighRisk.push(0);
+      }
+
+      // Doughnut Chart for Scam Types
+      const typeLabelsMap = {
+        'utility_bill_fraud': 'Utility Bill Fraud',
+        'banking_fraud': 'Banking / KYC',
+        'lottery_fraud': 'Lottery / KBC',
+        'job_fraud': 'Part-time Job',
+        'customs_fraud': 'Customs / Police',
+        'loan_fraud': 'Instant Loan',
+        'family_distress': 'Family Distress',
+        'other_fraud': 'Other Scam',
+        'unknown_phishing': 'Phishing Feed'
+      };
+
+      const typeLabels = [];
+      const typeCounts = [];
+      
+      Object.keys(scamTypesData || {}).forEach(type => {
+        typeLabels.push(typeLabelsMap[type] || type);
+        typeCounts.push(scamTypesData[type]);
+      });
+
+      if (typeLabels.length === 0) {
+        typeLabels.push('None Registered');
+        typeCounts.push(0);
+      }
+
+      // 1. Render/Update Line Chart
+      const trendCtx = document.getElementById('scans-trend-chart').getContext('2d');
+      if (scansTrendChart) {
+        scansTrendChart.destroy();
+      }
+      scansTrendChart = new Chart(trendCtx, {
+        type: 'line',
+        data: {
+          labels: trendLabels,
+          datasets: [
+            {
+              label: 'Total Scans',
+              data: trendTotalChecks,
+              borderColor: '#3b82f6',
+              backgroundColor: 'rgba(59, 130, 246, 0.1)',
+              borderWidth: 2,
+              tension: 0.3,
+              fill: true
+            },
+            {
+              label: 'Threats Flagged',
+              data: trendHighRisk,
+              borderColor: '#ef4444',
+              backgroundColor: 'rgba(239, 68, 68, 0.1)',
+              borderWidth: 2,
+              tension: 0.3,
+              fill: true
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              labels: { color: '#94a3b8', font: { family: 'Outfit' } }
+            }
+          },
+          scales: {
+            x: {
+              grid: { color: 'rgba(255, 255, 255, 0.05)' },
+              ticks: { color: '#94a3b8', font: { family: 'Outfit' } }
+            },
+            y: {
+              grid: { color: 'rgba(255, 255, 255, 0.05)' },
+              ticks: { color: '#94a3b8', font: { family: 'Outfit' }, stepSize: 1 },
+              beginAtZero: true
+            }
+          }
+        }
+      });
+
+      // 2. Render/Update Doughnut Chart
+      const typesCtx = document.getElementById('scam-types-chart').getContext('2d');
+      if (scamTypesChart) {
+        scamTypesChart.destroy();
+      }
+      scamTypesChart = new Chart(typesCtx, {
+        type: 'doughnut',
+        data: {
+          labels: typeLabels,
+          datasets: [{
+            data: typeCounts,
+            backgroundColor: [
+              '#3b82f6', // blue
+              '#10b981', // green
+              '#ef4444', // red
+              '#f59e0b', // amber
+              '#8b5cf6', // purple
+              '#f97316', // orange
+              '#06b6d4', // cyan
+              '#ec4899', // pink
+              '#94a3b8'  // slate
+            ],
+            borderWidth: 1,
+            borderColor: 'rgba(11, 15, 25, 0.8)'
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              position: 'right',
+              labels: { color: '#94a3b8', font: { family: 'Outfit', size: 11 } }
+            }
+          }
+        }
+      });
+    }
+
+    function updateBotPausedUI(isPaused) {
+      const text = document.getElementById('bot-paused-text');
+      if (isPaused) {
+        text.innerHTML = '<span style="color: var(--color-red); font-weight:600;">⚠️ Bot is PAUSED (Maintenance)</span>';
+      } else {
+        text.innerHTML = '<span style="color: var(--color-green); font-weight:600;">✅ Bot is ACTIVE & Running</span>';
+      }
+    }
+
+    function updateConnectionBadge(status) {
+      const dot = document.getElementById('conn-dot');
+      const text = document.getElementById('conn-text');
+      
+      dot.className = 'dot';
+      
+      if (status === 'CONNECTED') {
+        dot.classList.add('dot-connected');
+        text.textContent = 'Connected';
+      } else if (status === 'PAIRING_REQUIRED') {
+        dot.classList.add('dot-warning');
+        text.textContent = 'Pairing Required';
+      } else {
+        dot.classList.add('dot-offline');
+        text.textContent = 'Initializing...';
+      }
+    }
+
+    async function toggleBotPause(paused) {
+      try {
+        const data = await makeAdminRequest('/admin/api/toggle-pause', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ paused })
+        });
+        
+        if (data.success) {
+          updateBotPausedUI(data.isBotPaused);
+        }
+      } catch (err) {
+        console.error('Error toggling pause state:', err.message);
+      }
+    }
+
+    async function syncThreatFeeds() {
+      const btn = document.getElementById('btn-sync-feeds');
+      const originalText = btn.innerHTML;
+      btn.disabled = true;
+      btn.innerHTML = '⏳ Syncing...';
+      
+      try {
+        const data = await makeAdminRequest('/admin/api/sync-feeds', {
+          method: 'POST'
+        });
+        
+        if (data.success) {
+          alert(`✅ Success: ${data.message}`);
+          loadDashboardStats();
+        } else {
+          alert(`❌ Error: ${data.message || 'Threat feed sync failed.'}`);
+        }
+      } catch (err) {
+        alert(`❌ Network Error: Failed to sync threat feeds.`);
+        console.error(err);
+      } finally {
+        btn.disabled = false;
+        btn.innerHTML = originalText;
+      }
+    }
+
+    async function loadScamPatterns() {
+      try {
+        const data = await makeAdminRequest('/admin/api/scams');
+        if (data.success) {
+          scamsCache = data.scams;
+          renderScamsTable(scamsCache);
+        }
+      } catch (err) {
+        console.error('Error loading scams:', err.message);
+      }
+    }
+
+    function renderScamsTable(scams) {
+      const tbody = document.getElementById('scam-patterns-tbody');
+      
+      if (scams.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="6" style="text-align: center; color: var(--text-muted); padding: 40px 0;">No registered scam patterns found.</td></tr>`;
+        return;
+      }
+
+      tbody.innerHTML = scams.map(scam => {
+        const formattedDate = new Date(scam.lastSeen).toLocaleString('en-IN', {
+          timeZone: 'Asia/Kolkata',
+          day: '2-digit',
+          month: 'short',
+          hour: '2-digit',
+          minute: '2-digit'
+        });
+
+        const details = [];
+        if (scam.urls && scam.urls.length > 0) details.push(`🔗 <b>URLs:</b> ${scam.urls.join(', ')}`);
+        if (scam.phoneNumbers && scam.phoneNumbers.length > 0) details.push(`📱 <b>Phones:</b> ${scam.phoneNumbers.join(', ')}`);
+        
+        const detailsString = details.length > 0 ? `<br><small style="color: var(--text-muted); display:block; margin-top:6px;">${details.join(' | ')}</small>` : '';
+
+        return `
+          <tr>
+            <td>
+              <span style="font-weight: 500;">"${scam.pattern}"</span>
+              ${detailsString}
+            </td>
+            <td><span class="scam-type-badge">${scam.type.replace(/_/g, ' ')}</span></td>
+            <td>
+              <span style="font-weight: 600; color: ${scam.riskLevel === 'HIGH' ? 'var(--color-red)' : 'var(--color-amber)'}">
+                ${scam.riskLevel}
+              </span>
+            </td>
+            <td style="font-weight: 600; text-align: center;">${scam.examples || 1}</td>
+            <td style="color: var(--text-muted); font-size: 0.85rem;">${formattedDate}</td>
+            <td>
+              <button class="btn-delete" onclick="deleteScamPattern('${scam.id}')">Delete</button>
+            </td>
+          </tr>
+        `;
+      }).join('');
+    }
+
+    function filterScamsTable() {
+      const query = document.getElementById('search-pattern-input').value.toLowerCase().trim();
+      if (!query) {
+        renderScamsTable(scamsCache);
+        return;
+      }
+
+      const filtered = scamsCache.filter(scam => {
+        const patternMatch = scam.pattern.toLowerCase().includes(query);
+        const typeMatch = scam.type.toLowerCase().includes(query);
+        const urlMatch = scam.urls && scam.urls.some(url => url.toLowerCase().includes(query));
+        const phoneMatch = scam.phoneNumbers && scam.phoneNumbers.some(phone => phone.includes(query));
+        
+        return patternMatch || typeMatch || urlMatch || phoneMatch;
+      });
+
+      renderScamsTable(filtered);
+    }
+
+    async function deleteScamPattern(id) {
+      if (!confirm('Are you sure you want to delete this scam pattern from heuristics?')) return;
+
+      try {
+        const data = await makeAdminRequest(`/admin/api/scams/${id}`, {
+          method: 'DELETE'
+        });
+
+        if (data.success) {
+          loadScamPatterns();
+        }
+      } catch (err) {
+        console.error('Error deleting scam:', err.message);
+      }
+    }
+
+    function openAddPatternModal() {
+      document.getElementById('add-pattern-modal').classList.add('active');
+    }
+
+    function closeAddPatternModal() {
+      document.getElementById('add-pattern-modal').classList.remove('active');
+      // Reset inputs
+      document.getElementById('form-pattern').value = '';
+      document.getElementById('form-urls').value = '';
+      document.getElementById('form-phones').value = '';
+    }
+
+    async function submitScamPattern() {
+      const pattern = document.getElementById('form-pattern').value.trim();
+      const type = document.getElementById('form-type').value;
+      const riskLevel = document.getElementById('form-risk').value;
+      const urlsInput = document.getElementById('form-urls').value.trim();
+      const phonesInput = document.getElementById('form-phones').value.trim();
+
+      if (!pattern) {
+        alert('Pattern Description is required.');
+        return;
+      }
+
+      const urls = urlsInput ? urlsInput.split(',').map(s => s.trim()).filter(Boolean) : [];
+      const phoneNumbers = phonesInput ? phonesInput.split(',').map(s => s.trim()).filter(Boolean) : [];
+
+      try {
+        const data = await makeAdminRequest('/admin/api/scams', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            pattern,
+            type,
+            riskLevel,
+            urls,
+            phoneNumbers
+          })
+        });
+
+        if (data.success) {
+          closeAddPatternModal();
+          loadScamPatterns();
+        }
+      } catch (err) {
+        console.error('Error creating scam pattern:', err.message);
+      }
+    }
+
+    async function loadRecentScans() {
+      try {
+        const data = await makeAdminRequest('/admin/api/recent-checks');
+        if (data.success) {
+          renderScansLogTable(data.checks);
+        }
+      } catch (err) {
+        console.error('Error loading recent scans:', err.message);
+      }
+    }
+
+    function renderScansLogTable(checks) {
+      const tbody = document.getElementById('scans-log-tbody');
+      
+      if (!checks || checks.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="6" style="text-align: center; color: var(--text-muted); padding: 40px 0;">No recent scans recorded.</td></tr>`;
+        return;
+      }
+
+      tbody.innerHTML = checks.map(check => {
+        const formattedDate = new Date(check.timestamp).toLocaleString('en-IN', {
+          timeZone: 'Asia/Kolkata',
+          day: '2-digit',
+          month: 'short',
+          hour: '2-digit',
+          minute: '2-digit'
+        });
+
+        const redactedUser = check.userHash ? check.userHash.substring(0, 10) + '...' : 'anonymous';
+        const truncatedMessage = check.message.length > 80 ? check.message.substring(0, 80) + '...' : check.message;
+        const source = check.result.source || 'gemini';
+        
+        const riskColors = {
+          'HIGH': 'var(--color-red)',
+          'MEDIUM': 'var(--color-amber)',
+          'LOW': 'var(--color-green)',
+          'SAFE': 'var(--color-green)'
+        };
+        
+        const riskColor = riskColors[check.result.riskLevel] || 'var(--text-main)';
+
+        return `
+          <tr>
+            <td style="max-width: 400px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+              <span style="font-weight: 500;">${escapeHtml(truncatedMessage)}</span>
+            </td>
+            <td style="font-family: monospace; font-size: 0.85rem; color: var(--text-muted);">${redactedUser}</td>
+            <td><span class="scam-type-badge" style="background: rgba(255,255,255,0.03); border-color: var(--border-color); color: var(--text-main);">${source}</span></td>
+            <td>
+              <span style="font-weight: 600; color: ${riskColor}">
+                ${check.result.riskLevel}
+              </span>
+            </td>
+            <td style="font-weight: 600;">${check.result.confidence}%</td>
+            <td style="color: var(--text-muted); font-size: 0.85rem;">${formattedDate}</td>
+          </tr>
+        `;
+      }).join('');
+    }
+
+    async function loadTransactions() {
+      try {
+        const data = await makeAdminRequest('/admin/api/transactions');
+        if (data.success) {
+          // Update total revenue UI
+          document.getElementById('stat-revenue').textContent = `₹${data.totalEarnings.toLocaleString('en-IN')}`;
+          renderTransactionsTable(data.transactions);
+        }
+      } catch (err) {
+        console.error('Error loading transactions:', err.message);
+      }
+    }
+
+    function renderTransactionsTable(transactions) {
+      const tbody = document.getElementById('transactions-log-tbody');
+      
+      if (!transactions || transactions.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="6" style="text-align: center; color: var(--text-muted); padding: 40px 0;">No transactions recorded.</td></tr>`;
+        return;
+      }
+
+      tbody.innerHTML = transactions.map(txn => {
+        const formattedDate = new Date(txn.timestamp).toLocaleString('en-IN', {
+          timeZone: 'Asia/Kolkata',
+          day: '2-digit',
+          month: 'short',
+          hour: '2-digit',
+          minute: '2-digit'
+        });
+
+        const redactedUser = txn.userHash ? txn.userHash.substring(0, 10) + '...' : 'anonymous';
+        const orderId = txn.orderId || 'N/A';
+        const paymentId = txn.paymentId || 'N/A';
+        const amount = txn.amount || 199;
+        
+        const isMock = orderId.includes('mock') || paymentId.includes('mock');
+        const badgeColor = isMock ? 'var(--color-amber)' : 'var(--color-green)';
+        const statusLabel = isMock ? 'VERIFIED (TEST)' : 'VERIFIED (LIVE)';
+
+        return `
+          <tr>
+            <td style="font-family: monospace; font-size: 0.85rem; font-weight: 600; color: var(--accent-color);">${txn.id}</td>
+            <td style="font-family: monospace; font-size: 0.85rem; color: var(--text-muted);">${redactedUser}</td>
+            <td style="font-family: monospace; font-size: 0.85rem; color: var(--text-muted);">
+              <span title="Order ID">${orderId}</span><br>
+              <span title="Payment ID" style="font-size: 0.75rem; opacity: 0.7;">${paymentId}</span>
+            </td>
+            <td style="font-weight: 700; color: var(--text-main);">₹${amount}</td>
+            <td>
+              <span class="scam-type-badge" style="background: rgba(255,255,255,0.03); border-color: ${badgeColor}; color: ${badgeColor}; font-weight: 600;">
+                ${statusLabel}
+              </span>
+            </td>
+            <td style="color: var(--text-muted); font-size: 0.85rem;">${formattedDate}</td>
+          </tr>
+        `;
+      }).join('');
+    }
+
+    function escapeHtml(text) {
+      if (!text) return '';
+      return text
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/'/g, "&#039;");
+    }
+
+    async function loadTestUsers() {
+      try {
+        const data = await makeAdminRequest('/admin/api/test-users');
+        if (data.success) {
+          renderTestUsersTable(data.users);
+        }
+      } catch (err) {
+        console.error('Error loading test users:', err.message);
+      }
+    }
+
+    function renderTestUsersTable(users) {
+      const tbody = document.getElementById('test-users-tbody');
+      if (!users || users.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="3" style="text-align: center; color: var(--text-muted); padding: 40px 0;">No whitelisted test users found.</td></tr>`;
+        return;
+      }
+
+      tbody.innerHTML = users.map(user => `
+        <tr>
+          <td style="font-weight: 600; font-family: monospace; color: var(--accent-color);">+${user}</td>
+          <td>
+            <span class="scam-type-badge" style="background: rgba(16, 185, 129, 0.1); border-color: var(--color-green); color: var(--color-green); font-weight: 600;">
+              UNLIMITED FREE SCANS
+            </span>
+          </td>
+          <td>
+            <button onclick="removeTestUser('${user}')" class="btn" style="background: rgba(239, 68, 68, 0.15); color: #ef4444; border: 1px solid rgba(239, 68, 68, 0.3); width: auto; padding: 6px 12px; font-size: 13px; cursor: pointer;">Delete</button>
+          </td>
+        </tr>
+      `).join('');
+    }
+
+    async function openAddTestUserModal() {
+      const phoneNumber = prompt("Enter Test User Phone Number (digits only, e.g. 919975528455):");
+      if (!phoneNumber) return;
+      const cleanPhone = phoneNumber.replace(/\D/g, '');
+      if (!cleanPhone) {
+        alert("Invalid phone number.");
+        return;
+      }
+
+      try {
+        const data = await makeAdminRequest('/admin/api/test-users', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ phoneNumber: cleanPhone })
+        });
+        if (data.success) {
+          alert(data.message);
+          loadTestUsers();
+        } else {
+          alert("Error: " + data.message);
+        }
+      } catch (err) {
+        alert("Request failed: " + err.message);
+      }
+    }
+
+    async function removeTestUser(phoneNumber) {
+      if (!confirm(`Are you sure you want to remove +${phoneNumber} from the Test Users whitelist?`)) return;
+
+      try {
+        const data = await makeAdminRequest('/admin/api/test-users', {
+          method: 'DELETE',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ phoneNumber })
+        });
+        if (data.success) {
+          alert(data.message);
+          loadTestUsers();
+        } else {
+          alert("Error: " + data.message);
+        }
+      } catch (err) {
+        alert("Request failed: " + err.message);
+      }
+    }
+
+    // ==========================================
+    // REGISTERED USERS & METRICS FUNCTIONS
+    // ==========================================
+    let usersCache = [];
+    let activeDetailHash = '';
+    let activeDetailPremium = false;
+
+    async function loadUsersList() {
+      try {
+        const data = await makeAdminRequest('/admin/api/users');
+        if (data.success) {
+          usersCache = data.users || [];
+          renderUsersTable(usersCache);
+        }
+      } catch (err) {
+        console.error('Error loading users:', err.message);
+      }
+    }
+
+    function renderUsersTable(users) {
+      const tbody = document.getElementById('users-tbody');
+      if (!users || users.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="7" style="text-align: center; color: var(--text-muted); padding: 40px 0;">No users found.</td></tr>`;
+        return;
+      }
+
+      tbody.innerHTML = users.map(user => {
+        const formattedDate = new Date(user.createdAt).toLocaleString('en-IN', {
+          timeZone: 'Asia/Kolkata',
+          day: '2-digit',
+          month: 'short',
+          year: 'numeric'
+        });
+
+        const formattedExpiry = user.premiumExpiry 
+          ? new Date(user.premiumExpiry).toLocaleString('en-IN', {
+              timeZone: 'Asia/Kolkata',
+              day: '2-digit',
+              month: 'short'
+            })
+          : 'None';
+
+        return `
+          <tr id="user-row-${user.hash}">
+            <td style="font-family: monospace; font-size: 0.85rem; word-break: break-all;">${user.hash}</td>
+            <td>
+              <span class="scam-type-badge" style="background: ${user.premium ? 'rgba(251, 191, 36, 0.1)' : 'rgba(148, 163, 184, 0.1)'}; border-color: ${user.premium ? '#fbbf24' : '#94a3b8'}; color: ${user.premium ? '#fbbf24' : '#94a3b8'}; font-weight: 600;">
+                ${user.premium ? 'PRO 🌟' : 'FREE 👤'}
+              </span>
+            </td>
+            <td style="font-weight: 500;">${formattedExpiry}</td>
+            <td style="font-weight: 600;">${user.checksToday || 0}</td>
+            <td style="font-weight: 600;">${user.checksThisMonth || 0}</td>
+            <td>${formattedDate}</td>
+            <td>
+              <button onclick="openUserDetails('${user.hash}', '${user.createdAt}', ${user.premium || false}, '${user.premiumExpiry || ''}', ${user.checksThisMonth || 0})" class="btn" style="width: auto; padding: 6px 12px; font-size: 13px; cursor: pointer;">🔍 View Details</button>
+            </td>
+          </tr>
+        `;
+      }).join('');
+    }
+
+    async function hashPhoneInBrowser(phone) {
+      const cleanPhone = phone.replace(/\D/g, '');
+      const msgUint8 = new TextEncoder().encode(cleanPhone);
+      const hashBuffer = await crypto.subtle.digest('SHA-256', msgUint8);
+      const hashArray = Array.from(new Uint8Array(hashBuffer));
+      const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+      return hashHex;
+    }
+
+    async function searchUserByPhone() {
+      const query = document.getElementById('search-user-input').value.trim();
+      
+      // Reset highlight states on all user rows
+      usersCache.forEach(u => {
+        const row = document.getElementById(`user-row-${u.hash}`);
+        if (row) {
+          row.style.background = '';
+          row.style.borderColor = '';
+        }
+      });
+
+      if (!query) {
+        renderUsersTable(usersCache);
+        return;
+      }
+
+      // If user typed numbers, try hashing to match
+      if (/^\+?\d+$/.test(query)) {
+        const computedHash = await hashPhoneInBrowser(query);
+        console.log(`Searching for phone hash: ${computedHash}`);
+        
+        // Find matching row
+        const row = document.getElementById(`user-row-${computedHash}`);
+        if (row) {
+          row.style.background = 'rgba(59, 130, 246, 0.15)';
+          row.style.border = '1px solid var(--accent-color)';
+          row.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        } else {
+          // If no row is present, filter using pattern matching
+          const filtered = usersCache.filter(u => u.hash.includes(query));
+          renderUsersTable(filtered);
+        }
+      } else {
+        // Fallback: search by hash substring
+        const filtered = usersCache.filter(u => u.hash.toLowerCase().includes(query.toLowerCase()));
+        renderUsersTable(filtered);
+      }
+    }
+
+    async function openUserDetails(hash, createdAt, premium, premiumExpiry, checksThisMonth) {
+      activeDetailHash = hash;
+      activeDetailPremium = premium;
+
+      document.getElementById('detail-hash').textContent = hash;
+      document.getElementById('detail-created').textContent = new Date(createdAt).toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' });
+      document.getElementById('detail-checks').textContent = checksThisMonth;
+      
+      const expiryText = premiumExpiry 
+        ? new Date(premiumExpiry).toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' })
+        : 'None';
+      document.getElementById('detail-pro-expiry').textContent = expiryText;
+
+      const proDesc = document.getElementById('pro-status-desc');
+      const toggleBtn = document.getElementById('btn-toggle-premium');
+
+      if (premium) {
+        proDesc.textContent = 'Status: Premium Pro 🌟';
+        toggleBtn.textContent = 'Revoke Pro';
+        toggleBtn.style.background = 'rgba(239, 68, 68, 0.15)';
+        toggleBtn.style.color = '#ef4444';
+        toggleBtn.style.border = '1px solid rgba(239, 68, 68, 0.3)';
+      } else {
+        proDesc.textContent = 'Status: Free Tier 👤';
+        toggleBtn.textContent = 'Upgrade to Pro';
+        toggleBtn.style.background = 'linear-gradient(135deg, #fbbf24, #d97706)';
+        toggleBtn.style.color = 'white';
+        toggleBtn.style.border = 'none';
+      }
+
+      // Fetch user checks history
+      const tbody = document.getElementById('user-checks-tbody');
+      tbody.innerHTML = `<tr><td colspan="4" style="text-align: center; color: var(--text-muted); padding: 20px 0;">Loading checks history...</td></tr>`;
+
+      try {
+        const data = await makeAdminRequest(`/admin/api/users/${hash}/checks`);
+        if (data.success && data.checks) {
+          if (data.checks.length === 0) {
+            tbody.innerHTML = `<tr><td colspan="4" style="text-align: center; color: var(--text-muted); padding: 20px 0;">No checks logged for this user.</td></tr>`;
+          } else {
+            tbody.innerHTML = data.checks.map(check => {
+              const formattedDate = new Date(check.timestamp).toLocaleString('en-IN', {
+                timeZone: 'Asia/Kolkata',
+                day: '2-digit',
+                month: 'short',
+                hour: '2-digit',
+                minute: '2-digit'
+              });
+              
+              const tAi = check.result.timings && check.result.timings.ai ? `${(check.result.timings.ai / 1000).toFixed(2)}s` : 'N/A';
+              const tTotal = check.result.timings && check.result.timings.total ? `${(check.result.timings.total / 1000).toFixed(2)}s` : 'N/A';
+              const timingsStr = `AI: ${tAi} / Total: ${tTotal}`;
+
+              return `
+                <tr>
+                  <td style="font-size: 0.9rem; word-break: break-all;">${check.message}</td>
+                  <td>
+                    <span class="scam-type-badge" style="background: ${check.result.riskLevel === 'HIGH' ? 'rgba(239, 68, 68, 0.1)' : 'rgba(16, 185, 129, 0.1)'}; border-color: ${check.result.riskLevel === 'HIGH' ? 'var(--color-red)' : 'var(--color-green)'}; color: ${check.result.riskLevel === 'HIGH' ? 'var(--color-red)' : 'var(--color-green)'}; font-weight:600;">
+                      ${check.result.riskLevel}
+                    </span>
+                  </td>
+                  <td style="font-size: 0.8rem; color: var(--text-muted);">${timingsStr}</td>
+                  <td style="font-size: 0.8rem; color: var(--text-muted);">${formattedDate}</td>
+                </tr>
+              `;
+            }).join('');
+          }
+        }
+      } catch (err) {
+        tbody.innerHTML = `<tr><td colspan="4" style="text-align: center; color: var(--color-red); padding: 20px 0;">Failed to load checks.</td></tr>`;
+      }
+
+      document.getElementById('user-details-modal').classList.add('active');
+    }
+
+    async function toggleUserPremium() {
+      const newStatus = !activeDetailPremium;
+      const confirmMsg = newStatus 
+        ? `Are you sure you want to upgrade this user to Premium Pro status for 30 days?`
+        : `Are you sure you want to revoke this user's Premium Pro status?`;
+      
+      if (!confirm(confirmMsg)) return;
+
+      try {
+        const data = await makeAdminRequest(`/admin/api/users/${activeDetailHash}/toggle-premium`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ premium: newStatus })
+        });
+
+        if (data.success) {
+          alert(data.message);
+          closeUserDetailsModal();
+          loadDashboardStats(); // refresh data
+        } else {
+          alert("Error: " + data.message);
+        }
+      } catch (err) {
+        alert("Action failed: " + err.message);
+      }
+    }
+
+    function closeUserDetailsModal() {
+      document.getElementById('user-details-modal').classList.remove('active');
+      activeDetailHash = '';
+    }
+  </script>
+</body>
+</html>

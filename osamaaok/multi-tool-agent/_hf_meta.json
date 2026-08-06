@@ -1,0 +1,18 @@
+{
+ "captured_at": "2026-08-04T16:44:57Z",
+ "hf_metadata": {
+  "sha": "a3e114dc5e68e4d14ea5651fa9bb727e0e0feb02"
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitignore",
+   "stored_as": "_gitignore"
+  }
+ ],
+ "renamed_gitattributes": [],
+ "repo_id": "osamaaok/multi-tool-agent",
+ "repo_type": "spaces",
+ "sha": "a3e114dc5e68e4d14ea5651fa9bb727e0e0feb02",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/osamaaok/multi-tool-agent"
+}

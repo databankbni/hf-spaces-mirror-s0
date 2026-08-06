@@ -1,0 +1,13 @@
+gradio>=4.0.0
+torch
+transformers>=4.40.0
+sentence-transformers
+qdrant-client
+langchain-groq
+langchain-core
+scikit-learn==1.7.2
+joblib==1.5.3
+numpy==1.26.4
+
+
+

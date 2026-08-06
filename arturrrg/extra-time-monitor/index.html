@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Extra Time Monitor System</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="favicon.svg" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="ExtraTime" />
+  <meta name="theme-color" content="#000000" />
+  <!-- FORCE BROWSER CACHE REFRESH: Updated to v=125 -->
+  <link rel="stylesheet" href="style.css?v=125" />
+</head>
+<body>
+  <div class="bg-fx" aria-hidden="true"></div>
+  <div class="app-container view-live-active">
+    <header class="app-header">
+      <div class="nav-pill">
+      <div class="nav-cluster">
+        <button class="logs-toggle-btn" id="nav-logs" type="button" aria-label="Show system logs" aria-expanded="false" data-tooltip="System logs">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 3h7l5 5v13H7z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M14 3v5h5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M10 13h6M10 17h5M10 9.5h2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          <span class="logs-badge" id="logs-badge" hidden>0</span>
+        </button>
+        <button class="queue-toggle-btn" id="awaiting-toggle-btn" type="button" aria-label="Show awaiting matches queue" aria-expanded="false" data-tooltip="Awaiting queue">
+          <svg class="hourglass" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <defs>
+              <clipPath id="hgTopClip"><path d="M7.6 4.2 H16.4 L12 11.4 Z"/></clipPath>
+              <clipPath id="hgBotClip"><path d="M12 12.6 L16.4 19.8 H7.6 Z"/></clipPath>
+            </defs>
+            <g class="hg-rotor">
+              <path class="hg-frame" d="M6 3 H18 M6 21 H18"/>
+              <path class="hg-frame" d="M7 3.4 C7 8 10.2 10 12 11.9 C13.8 10 17 8 17 3.4"/>
+              <path class="hg-frame" d="M7 20.6 C7 16 10.2 14 12 12.1 C13.8 14 17 16 17 20.6"/>
+              <g clip-path="url(#hgTopClip)"><rect class="hg-sand hg-sand-top" x="6" y="3" width="12" height="9"/></g>
+              <g clip-path="url(#hgBotClip)"><rect class="hg-sand hg-sand-bot" x="6" y="12" width="12" height="9"/></g>
+              <rect class="hg-stream" x="11.5" y="11" width="1" height="2.4"/>
+            </g>
+          </svg>
+          <span class="queue-badge" id="awaiting-badge" hidden>0</span>
+        </button>
+        <button class="mute-toggle-btn" id="alert-mute-btn" type="button" aria-pressed="false" aria-label="Toggle 78 minute alert sound" data-tooltip="Alert sound"></button>
+      </div>
+      </div>
+    </header>
+  </div>
+
+  <!-- FORCE BROWSER CACHE REFRESH: Updated to v=117 -->
+  <script src="app.js?v=117"></script>
+</body>
+</html>

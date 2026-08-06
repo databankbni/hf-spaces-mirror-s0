@@ -1,0 +1,13 @@
+{
+ "lfs_not_stored": [
+  {
+   "oid": "30f64b6def678623c9fb6320a488617549ab1cb9c56439492348267c8d2007d1",
+   "path": "export.pkl",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6MzBmNjRiNmRlZjY3ODYyM2M5ZmI2MzIwYTQ4ODYxNzU0OWFiMWNiOWM1NjQzOTQ5MjM0ODI2N2M4ZDIwMDdkMQpzaXplIDQ2OTcwNDQxCg==",
+   "size": 46970441,
+   "url": "https://huggingface.co/spaces/tomp4work/test/resolve/3dd426655125d6749953ff49d3554efc174f4b03/export.pkl"
+  }
+ ],
+ "overflow_not_stored": [],
+ "oversize_not_stored": []
+}

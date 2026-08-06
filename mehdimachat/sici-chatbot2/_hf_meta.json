@@ -1,0 +1,23 @@
+{
+ "captured_at": "2026-08-04T16:41:02Z",
+ "hf_metadata": {
+  "sha": "6a933d0502dcd60c60aa32cbe4ba694aee0e02f1"
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "mehdimachat/sici-chatbot2",
+ "repo_type": "spaces",
+ "sha": "6a933d0502dcd60c60aa32cbe4ba694aee0e02f1",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/mehdimachat/sici-chatbot2"
+}

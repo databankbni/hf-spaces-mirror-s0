@@ -1,0 +1,12 @@
+node_modules/
+.crabbox/
+.venv-hf/
+dist/
+public/data/enhanced-satellite-tiles/
+*.tsbuildinfo
+vite.config.js
+vite.config.d.ts
+.DS_Store
+.env
+.env.*
+!.env.example

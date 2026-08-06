@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 80" role="img" aria-labelledby="title">
+  <title id="title">DEC</title>
+  <rect width="180" height="80" rx="12" fill="#111827"/>
+  <path d="M24 18h36c17 0 29 9 29 22s-12 22-29 22H24V18zm18 14v16h17c7 0 12-3 12-8s-5-8-12-8H42z" fill="#fff"/>
+  <path d="M94 18h58v14h-40v7h34v12h-34v11H94V18z" fill="#ef4444"/>
+  <path d="M152 18h10v44h-10z" fill="#fff"/>
+</svg>

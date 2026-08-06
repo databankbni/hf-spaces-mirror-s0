@@ -1,0 +1,158 @@
+{
+  "version": "1.0.0",
+  "method": "expert_calibrated_linear_scoring",
+  "feature_names": [
+    "n_variables",
+    "n_constraints",
+    "density",
+    "symmetry",
+    "pct_integer",
+    "graph_sparsity",
+    "constraint_tightness"
+  ],
+  "normalization": {
+    "n_variables": 500,
+    "n_constraints": 300
+  },
+  "solver_weights": {
+    "highs": {
+      "bias": 0.55,
+      "coefficients": [
+        0.1,
+        0.05,
+        -0.2,
+        -0.1,
+        0.15,
+        0.1,
+        -0.05
+      ],
+      "problem_affinity": {
+        "assignment": 0.25,
+        "knapsack": 0.15,
+        "facility_location": 0.1
+      },
+      "config_rules": {
+        "large_mip": {
+          "presolve": "on",
+          "threads": 4
+        }
+      }
+    },
+    "cbc": {
+      "bias": 0.5,
+      "coefficients": [
+        0.05,
+        0.1,
+        0.1,
+        0.0,
+        0.1,
+        0.0,
+        0.05
+      ],
+      "problem_affinity": {
+        "set_cover": 0.2,
+        "bin_packing": 0.15,
+        "knapsack": 0.1
+      },
+      "config_rules": {
+        "default": {
+          "cuts": "on",
+          "heuristics": "on"
+        }
+      }
+    },
+    "cp_sat": {
+      "bias": 0.6,
+      "coefficients": [
+        -0.05,
+        0.05,
+        0.15,
+        0.2,
+        0.25,
+        0.15,
+        0.1
+      ],
+      "problem_affinity": {
+        "job_shop": 0.3,
+        "vrp": 0.2,
+        "tsp": 0.15,
+        "bin_packing": 0.15,
+        "max_independent_set": 0.1
+      },
+      "config_rules": {
+        "scheduling": {
+          "num_search_workers": 8
+        }
+      }
+    },
+    "scip": {
+      "bias": 0.58,
+      "coefficients": [
+        0.08,
+        0.12,
+        0.05,
+        -0.05,
+        0.12,
+        0.05,
+        0.08
+      ],
+      "problem_affinity": {
+        "facility_location": 0.2,
+        "set_cover": 0.15,
+        "max_independent_set": 0.1
+      },
+      "config_rules": {
+        "mip": {
+          "presolving": true,
+          "separating": true
+        }
+      }
+    },
+    "gurobi": {
+      "bias": 0.65,
+      "coefficients": [
+        0.12,
+        0.08,
+        0.0,
+        -0.15,
+        0.1,
+        0.0,
+        0.05
+      ],
+      "problem_affinity": {
+        "facility_location": 0.25,
+        "assignment": 0.2,
+        "vrp": 0.15,
+        "tsp": 0.1
+      },
+      "config_rules": {
+        "mip_focus": {
+          "MIPFocus": 1,
+          "Presolve": 2
+        }
+      }
+    },
+    "minizinc": {
+      "bias": 0.52,
+      "coefficients": [
+        -0.02,
+        0.03,
+        0.2,
+        0.25,
+        0.2,
+        0.2,
+        0.15
+      ],
+      "problem_affinity": {
+        "job_shop": 0.25,
+        "bin_packing": 0.2,
+        "tsp": 0.1
+      },
+      "config_rules": {
+        "cp": {
+          "solver": "chuffed"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,172 @@
+{
+  "header": {
+    "name": "Arun Yadav",
+    "badge_role": "AI Assistant",
+    "tab_chat": "AI Assistant",
+    "tab_projects": "Projects",
+    "tab_about": "About",
+    "cta_button": "Contact",
+    "social_links": [
+      {
+        "name": "GitHub",
+        "url": "https://github.com/neural-arun",
+        "icon": "github"
+      },
+      {
+        "name": "LinkedIn",
+        "url": "https://linkedin.com/in/neuralarun",
+        "icon": "linkedin"
+      },
+      {
+        "name": "X / Twitter",
+        "url": "https://x.com/neural_arun",
+        "icon": "x"
+      }
+    ]
+  },
+  "sidebar": {
+    "name": "Arun Yadav",
+    "role": "AI Systems Architect • Healthcare & Education",
+    "sub_badge": "Stateful RAG • Zero-Hallucination",
+    "social_links": [
+      {
+        "name": "GitHub",
+        "url": "https://github.com/neural-arun",
+        "icon": "github"
+      },
+      {
+        "name": "LinkedIn",
+        "url": "https://linkedin.com/in/neuralarun",
+        "icon": "linkedin"
+      },
+      {
+        "name": "X / Twitter",
+        "url": "https://x.com/Neural_Arun",
+        "icon": "x"
+      }
+    ],
+    "navigation_heading": "Navigation",
+    "nav_items": [
+      {
+        "id": "chat",
+        "label": "AI Assistant",
+        "description": "Interactive 3-Way Digital Twin"
+      },
+      {
+        "id": "projects",
+        "label": "Projects",
+        "description": "22+ Production Systems"
+      },
+      {
+        "id": "manifesto",
+        "label": "About & Manifesto",
+        "description": "Engineering Principles & Bio"
+      }
+    ],
+    "contact_button_label": "Contact & Consult",
+    "contact_button_subtext": "Hire Arun for Custom AI Systems",
+    "quick_questions_heading": "Quick Questions",
+    "quick_prompts": [
+      {
+        "category": "Healthcare",
+        "text": "How do you build trusted AI software for healthcare?"
+      },
+      {
+        "category": "RAG Architecture",
+        "text": "Explain your zero-hallucination hybrid RAG architecture."
+      },
+      {
+        "category": "Legal AI",
+        "text": "Tell me about the Indian Legal RAG System."
+      },
+      {
+        "category": "Collaboration",
+        "text": "How can I hire or consult with Arun for a project?"
+      }
+    ]
+  },
+  "chat_panel": {
+    "title": "Arun's AI Twin",
+    "status_badge": "Online",
+    "role_subtitle": "Healthcare AI Systems Architect",
+    "cta_button": "Consult Arun",
+    "welcome_message": "Hi! I'm Arun's AI Twin. I can explain his projects, architecture decisions, and healthcare AI work — plus, the real Arun monitors this channel and can jump in live to chat with you directly if needed!",
+    "suggested_questions_heading": "Suggested Questions",
+    "suggested_questions": [
+      {
+        "label": "Healthcare AI",
+        "query": "How do you build trusted AI software for healthcare?"
+      },
+      {
+        "label": "Zero-Hallucination RAG",
+        "query": "Explain your zero-hallucination hybrid RAG architecture."
+      },
+      {
+        "label": "Legal AI",
+        "query": "Tell me about the Indian Legal RAG System."
+      },
+      {
+        "label": "Consult with Arun",
+        "query": "How can I hire or consult with Arun for a project?"
+      }
+    ],
+    "input_placeholder": "Ask Arun's AI Assistant...",
+    "input_hint": "Press Enter to send or use 🎙️ Mic",
+    "clear_conversation": "Clear conversation"
+  },
+  "projects_view": {
+    "title": "Projects & Engineering Repositories",
+    "subtitle": "Click any project card to view its live GitHub repository, or ask my AI Twin for a summary.",
+    "search_placeholder": "Search stack or project...",
+    "categories": [
+      "All",
+      "Healthcare",
+      "Education",
+      "RAG & AI",
+      "Agents & Tools",
+      "Automation & Scraping"
+    ],
+    "sort_recent": "Latest commits",
+    "sort_stars": "Most stars"
+  },
+  "about_view": {
+    "name": "Arun Yadav",
+    "role": "AI Systems Builder • Healthcare & Education",
+    "paragraphs": [
+      "I am Arun Yadav, an AI Systems Builder engineering trust, production-grade software. I specialize in designing systems that combine AI, robust backend architecture, and domain expertise to solve high-stakes problems in Healthcare and Education.",
+      "Over the past few years, I’ve built complete, production-ready systems — from zero-hallucination RAG engines to clinical AI tutors and automated workflow pipelines. Some of my key highlighted projects include ArunCore (a hybrid RAG engine combining ChromaDB vector search, BM25 keyword matching, and Cohere reranking), NEET Medical Bot (an AI practice & diagnostic ecosystem for medical entrance exams with 10,000+ NCERT questions, spaced repetition, and solution breakdowns), MedCoach (a reasoning AI tutor and diagnostic workflow assistant built with guardrails & execution traces), and AI Note / Legal RAG (automated structured note generation and Indian legal document retrieval pipelines).",
+      "My engineering approach is simple: I always understand the domain deeply and analyze user friction before writing a single line of code. In healthcare and education, AI must be verifiable, so I build systems with strict guardrails and human oversight. Most importantly, I focus on finishing and shipping clean, deployed software that delivers real business leverage."
+    ],
+    "closing_text": "Looking for an AI Systems Architect to build custom software for your team or agency? Let’s talk! Feel free to chat with my AI Digital Twin here on this site, or click Consult Arun to connect directly."
+  },
+  "contact_modal": {
+    "title": "Get in Touch",
+    "description": "Connect directly with Arun Yadav to discuss AI software systems, consulting, or project collaborations.",
+    "channels": [
+      {
+        "type": "phone",
+        "label": "Phone / Call",
+        "value": "+91 8881109193",
+        "url": "tel:+918881109193"
+      },
+      {
+        "type": "whatsapp",
+        "label": "WhatsApp Direct",
+        "value": "+91 8881109193",
+        "url": "https://wa.me/918881109193"
+      },
+      {
+        "type": "email",
+        "label": "Email Address",
+        "value": "neural.arun.dev@gmail.com",
+        "url": "mailto:neural.arun.dev@gmail.com"
+      },
+      {
+        "type": "linkedin",
+        "label": "LinkedIn Profile",
+        "value": "linkedin.com/in/neuralarun",
+        "url": "https://linkedin.com/in/neuralarun"
+      }
+    ]
+  }
+}

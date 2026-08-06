@@ -1,0 +1,6 @@
+# NEVER commit patient-level MIMIC-derived data to a public repo (PhysioNet DUA).
+data/patient_allergies.json
+data/patient_crossreactivity_refined.json
+data_private/
+*.env
+__pycache__/

@@ -1,0 +1,23 @@
+{
+ "captured_at": "2026-08-04T16:44:58Z",
+ "hf_metadata": {
+  "sha": "83b69b2345176b051dd558b775920d0da05a64f6"
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "paninilabs/New",
+ "repo_type": "spaces",
+ "sha": "83b69b2345176b051dd558b775920d0da05a64f6",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/paninilabs/New"
+}

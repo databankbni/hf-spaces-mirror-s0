@@ -1,0 +1,23 @@
+name: Keep Alive
+
+# Keeps the HuggingFace Space awake and the Supabase DB warm so neither
+# idles into a sleep/pause (the failure that took Godena "offline" while
+# the data was still intact). Runs every ~10 min.
+#
+# CAVEAT: GitHub disables scheduled workflows after 60 days of repo
+# inactivity. Keep an external pinger (cron-job.org / UptimeRobot) on
+# https://sammygh-godena.hf.space/health as a backup — see OPERATIONS.md.
+
+on:
+  schedule:
+    - cron: '*/10 * * * *'
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Wake the Space (keeps HF from sleeping)
+        run: curl -s -m 45 "https://sammygh-godena.hf.space/health" -o /dev/null -w "health %{http_code}\n" || true
+      - name: Warm the DB (a real search touches Supabase, prevents idle pause)
+        run: curl -s -m 30 "https://sammygh-godena.hf.space/api/search?q=lawyer+kampala&limit=1" -o /dev/null -w "search %{http_code}\n" || true

@@ -1,0 +1,165 @@
+{
+ "captured_at": "2026-08-04T15:31:36Z",
+ "hf_metadata": {
+  "_id": "6a32bf3ec3b5570b363af9a1",
+  "author": "RiolanPratama",
+  "cardData": {
+   "colorFrom": "pink",
+   "colorTo": "gray",
+   "emoji": "🐨",
+   "license": "mit",
+   "pinned": false,
+   "sdk": "docker",
+   "title": "Coccinellidae Species Classification"
+  },
+  "createdAt": "2026-06-17T15:37:34.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://riolanpratama-coccinellidae-species-classification.hf.space",
+  "id": "RiolanPratama/Coccinellidae-Species-Classification",
+  "lastModified": "2026-07-22T15:45:27.000Z",
+  "likes": 0,
+  "private": false,
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "riolanpratama-coccinellidae-species-classification.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": null,
+    "requested": "cpu-basic"
+   },
+   "replicas": {
+    "requested": 1
+   },
+   "stage": "SLEEPING"
+  },
+  "sdk": "docker",
+  "sha": "8d4bc5d9e5ae703747c87912076cbb4537e0e4d9",
+  "siblings": [
+   {
+    "rfilename": ".gitattributes"
+   },
+   {
+    "rfilename": "Dockerfile"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "app.py"
+   },
+   {
+    "rfilename": "languages/__init__.py"
+   },
+   {
+    "rfilename": "languages/__pycache__/__init__.cpython-311.pyc"
+   },
+   {
+    "rfilename": "languages/__pycache__/__init__.cpython-312.pyc"
+   },
+   {
+    "rfilename": "languages/__pycache__/en.cpython-311.pyc"
+   },
+   {
+    "rfilename": "languages/__pycache__/en.cpython-312.pyc"
+   },
+   {
+    "rfilename": "languages/__pycache__/id.cpython-311.pyc"
+   },
+   {
+    "rfilename": "languages/__pycache__/id.cpython-312.pyc"
+   },
+   {
+    "rfilename": "languages/en.py"
+   },
+   {
+    "rfilename": "languages/id.py"
+   },
+   {
+    "rfilename": "models/FineTuning_Final_Exp.keras"
+   },
+   {
+    "rfilename": "requirements.txt"
+   },
+   {
+    "rfilename": "static/css/style.css"
+   },
+   {
+    "rfilename": "static/examples/bad_example.jpg"
+   },
+   {
+    "rfilename": "static/examples/good_example.jpg"
+   },
+   {
+    "rfilename": "static/species/calvia.jpg"
+   },
+   {
+    "rfilename": "static/species/cheilomenes.jpg"
+   },
+   {
+    "rfilename": "static/species/exochomus.jpg"
+   },
+   {
+    "rfilename": "static/species/henosepilachna.jpg"
+   },
+   {
+    "rfilename": "static/species/hippodamia.jpg"
+   },
+   {
+    "rfilename": "static/species/propylea.jpg"
+   },
+   {
+    "rfilename": "static/species/psyllobora.jpg"
+   },
+   {
+    "rfilename": "static/species/septempunctata.jpg"
+   },
+   {
+    "rfilename": "static/species/transversalis.jpg"
+   },
+   {
+    "rfilename": "static/species/tytthaspis.jpg"
+   },
+   {
+    "rfilename": "static/uploads/.gitkeep"
+   },
+   {
+    "rfilename": "templates/about.html"
+   },
+   {
+    "rfilename": "templates/index.html"
+   },
+   {
+    "rfilename": "templates/species.html"
+   }
+  ],
+  "subdomain": "riolanpratama-coccinellidae-species-classification",
+  "tags": [
+   "docker",
+   "region:us"
+  ],
+  "usedStorage": 260296952
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "RiolanPratama/Coccinellidae-Species-Classification",
+ "repo_type": "spaces",
+ "sha": "8d4bc5d9e5ae703747c87912076cbb4537e0e4d9",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/RiolanPratama/Coccinellidae-Species-Classification"
+}

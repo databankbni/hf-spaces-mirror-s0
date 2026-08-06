@@ -1,0 +1,495 @@
+{
+ "captured_at": "2026-08-06T03:15:36Z",
+ "hf_metadata": {
+  "_id": "69d8b65d8103f8ebcbc81833",
+  "author": "neural-arun",
+  "cardData": {
+   "app_port": 7860,
+   "colorFrom": "green",
+   "colorTo": "blue",
+   "emoji": "🧠",
+   "pinned": false,
+   "sdk": "docker",
+   "title": "ArunCore AI Assistant & Multi-Tenant Enterprise Engine"
+  },
+  "createdAt": "2026-04-10T08:35:41.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://neural-arun-aruncore.hf.space",
+  "id": "neural-arun/ArunCore",
+  "lastModified": "2026-08-05T21:41:14.000Z",
+  "likes": 1,
+  "private": false,
+  "region": "us",
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "neural-arun-aruncore.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": "cpu-basic",
+    "requested": "cpu-basic"
+   },
+   "pySpacesVersion": "0.51.1",
+   "replicas": {
+    "current": 1,
+    "requested": 1
+   },
+   "sha": "9ef497a92c8bcabe0dcb79420cacfa93db69009d",
+   "stage": "RUNNING"
+  },
+  "sdk": "docker",
+  "sha": "9ef497a92c8bcabe0dcb79420cacfa93db69009d",
+  "siblings": [
+   {
+    "rfilename": ".deploy-timestamp"
+   },
+   {
+    "rfilename": ".gitattributes"
+   },
+   {
+    "rfilename": ".github/workflows/deploy.yml"
+   },
+   {
+    "rfilename": ".gitignore"
+   },
+   {
+    "rfilename": ".opencode/opencode-loop/ses_04f15b806ffeVMcZMQ3SvTElIa.json"
+   },
+   {
+    "rfilename": ".opencode/opencode-loop/ses_04f15c7c7ffeptX8ZkC4eI4nwV.json"
+   },
+   {
+    "rfilename": ".opencode/opencode-loop/ses_06a20babdffeQ3bykyB3CydzUC.json"
+   },
+   {
+    "rfilename": ".opencode/opencode-loop/ses_06a20e31effezqv3Ypf6NlGToc.json"
+   },
+   {
+    "rfilename": ".python-version"
+   },
+   {
+    "rfilename": "Dockerfile"
+   },
+   {
+    "rfilename": "OPERATIONS_GUIDE.md"
+   },
+   {
+    "rfilename": "PRODUCTION_CLIENT_ONBOARDING_PLAYBOOK.md"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "core/README.md"
+   },
+   {
+    "rfilename": "core/__init__.py"
+   },
+   {
+    "rfilename": "core/agent.py"
+   },
+   {
+    "rfilename": "core/api.py"
+   },
+   {
+    "rfilename": "core/bot.py"
+   },
+   {
+    "rfilename": "core/evaluate.py"
+   },
+   {
+    "rfilename": "core/ingest.py"
+   },
+   {
+    "rfilename": "data/HOW_TO_UPDATE_DATA.md"
+   },
+   {
+    "rfilename": "data/README.md"
+   },
+   {
+    "rfilename": "data/github/01_manage_patient_task/README.md"
+   },
+   {
+    "rfilename": "data/github/01_manage_patient_task/metadata.json"
+   },
+   {
+    "rfilename": "data/github/Agentic_AI_Projects/README.md"
+   },
+   {
+    "rfilename": "data/github/Agentic_AI_Projects/metadata.json"
+   },
+   {
+    "rfilename": "data/github/ArunCore/README.md"
+   },
+   {
+    "rfilename": "data/github/ArunCore/metadata.json"
+   },
+   {
+    "rfilename": "data/github/Notes_maker_via_youtube_or_subs/README.md"
+   },
+   {
+    "rfilename": "data/github/Notes_maker_via_youtube_or_subs/metadata.json"
+   },
+   {
+    "rfilename": "data/github/api_projects/README.md"
+   },
+   {
+    "rfilename": "data/github/api_projects/metadata.json"
+   },
+   {
+    "rfilename": "data/github/deep_research/README.md"
+   },
+   {
+    "rfilename": "data/github/deep_research/metadata.json"
+   },
+   {
+    "rfilename": "data/github/legal_RAG_system/README.md"
+   },
+   {
+    "rfilename": "data/github/legal_RAG_system/metadata.json"
+   },
+   {
+    "rfilename": "data/github/mcp/README.md"
+   },
+   {
+    "rfilename": "data/github/mcp/metadata.json"
+   },
+   {
+    "rfilename": "data/github/med_coach/README.md"
+   },
+   {
+    "rfilename": "data/github/med_coach/metadata.json"
+   },
+   {
+    "rfilename": "data/github/neet-bot/README.md"
+   },
+   {
+    "rfilename": "data/github/neet-bot/metadata.json"
+   },
+   {
+    "rfilename": "data/github/neural-arun/README.md"
+   },
+   {
+    "rfilename": "data/github/neural-arun/metadata.json"
+   },
+   {
+    "rfilename": "data/github/neural_arun_labs/README.md"
+   },
+   {
+    "rfilename": "data/github/neural_arun_labs/metadata.json"
+   },
+   {
+    "rfilename": "data/github/personal_ai_agent/README.md"
+   },
+   {
+    "rfilename": "data/github/personal_ai_agent/metadata.json"
+   },
+   {
+    "rfilename": "data/github/personal_learning_lab/README.md"
+   },
+   {
+    "rfilename": "data/github/personal_learning_lab/metadata.json"
+   },
+   {
+    "rfilename": "data/github/real_state_listing_scraper/README.md"
+   },
+   {
+    "rfilename": "data/github/real_state_listing_scraper/metadata.json"
+   },
+   {
+    "rfilename": "data/github/relic-rush-game/README.md"
+   },
+   {
+    "rfilename": "data/github/relic-rush-game/metadata.json"
+   },
+   {
+    "rfilename": "data/github/result_anomaly/README.md"
+   },
+   {
+    "rfilename": "data/github/result_anomaly/metadata.json"
+   },
+   {
+    "rfilename": "data/github/skills/README.md"
+   },
+   {
+    "rfilename": "data/github/skills/metadata.json"
+   },
+   {
+    "rfilename": "data/github/uday_bpsc/README.md"
+   },
+   {
+    "rfilename": "data/github/uday_bpsc/metadata.json"
+   },
+   {
+    "rfilename": "data/github/valueable_notes/README.md"
+   },
+   {
+    "rfilename": "data/github/valueable_notes/metadata.json"
+   },
+   {
+    "rfilename": "data/github/web_wizard/README.md"
+   },
+   {
+    "rfilename": "data/github/web_wizard/metadata.json"
+   },
+   {
+    "rfilename": "data/github/working_with_LLMs/README.md"
+   },
+   {
+    "rfilename": "data/github/working_with_LLMs/metadata.json"
+   },
+   {
+    "rfilename": "data/leads/AGENT_ONBOARDING_PROMPT.md"
+   },
+   {
+    "rfilename": "data/leads/arun_enterprise_dictionary.json"
+   },
+   {
+    "rfilename": "data/leads/ed_donner_enterprise_dictionary.json"
+   },
+   {
+    "rfilename": "data/leads/frontend_texts_schema.json"
+   },
+   {
+    "rfilename": "data/leads/master_enterprise_dictionary.json"
+   },
+   {
+    "rfilename": "data/leads/master_lead_schema.json"
+   },
+   {
+    "rfilename": "data/linkedin/posts.md"
+   },
+   {
+    "rfilename": "data/linkedin/profile_summary.md"
+   },
+   {
+    "rfilename": "data/raw/personal_background.md"
+   },
+   {
+    "rfilename": "data/raw/unknown_questions.json"
+   },
+   {
+    "rfilename": "data/static/README.md"
+   },
+   {
+    "rfilename": "data/static/public_profile.md"
+   },
+   {
+    "rfilename": "data/static/rules_of_engagement.md"
+   },
+   {
+    "rfilename": "demos/TUTOR_ONBOARDING_GUIDE.md"
+   },
+   {
+    "rfilename": "demos/general.json"
+   },
+   {
+    "rfilename": "docs/README.md"
+   },
+   {
+    "rfilename": "docs/operations/master_operations_guide.md"
+   },
+   {
+    "rfilename": "docs/test_set/README.md"
+   },
+   {
+    "rfilename": "docs/test_set/eval_set.json"
+   },
+   {
+    "rfilename": "docs/test_set/evaluation_report.json"
+   },
+   {
+    "rfilename": "frontend/.gitignore"
+   },
+   {
+    "rfilename": "frontend/AGENTS.md"
+   },
+   {
+    "rfilename": "frontend/CLAUDE.md"
+   },
+   {
+    "rfilename": "frontend/README.md"
+   },
+   {
+    "rfilename": "frontend/app/api/telegram/route.ts"
+   },
+   {
+    "rfilename": "frontend/app/favicon.ico"
+   },
+   {
+    "rfilename": "frontend/app/globals.css"
+   },
+   {
+    "rfilename": "frontend/app/layout.tsx"
+   },
+   {
+    "rfilename": "frontend/app/page.tsx"
+   },
+   {
+    "rfilename": "frontend/components/ArchitectureView.tsx"
+   },
+   {
+    "rfilename": "frontend/components/ChatPanel.tsx"
+   },
+   {
+    "rfilename": "frontend/components/HandoffModal.tsx"
+   },
+   {
+    "rfilename": "frontend/components/Header.tsx"
+   },
+   {
+    "rfilename": "frontend/components/ManifestoView.tsx"
+   },
+   {
+    "rfilename": "frontend/components/MobileBottomNav.tsx"
+   },
+   {
+    "rfilename": "frontend/components/ProjectsView.tsx"
+   },
+   {
+    "rfilename": "frontend/components/Sidebar.tsx"
+   },
+   {
+    "rfilename": "frontend/components/TelemetryPanel.tsx"
+   },
+   {
+    "rfilename": "frontend/eslint.config.mjs"
+   },
+   {
+    "rfilename": "frontend/lib/projectsData.ts"
+   },
+   {
+    "rfilename": "frontend/lib/types.ts"
+   },
+   {
+    "rfilename": "frontend/next.config.ts"
+   },
+   {
+    "rfilename": "frontend/package-lock.json"
+   },
+   {
+    "rfilename": "frontend/package.json"
+   },
+   {
+    "rfilename": "frontend/postcss.config.mjs"
+   },
+   {
+    "rfilename": "frontend/public/file.svg"
+   },
+   {
+    "rfilename": "frontend/public/globe.svg"
+   },
+   {
+    "rfilename": "frontend/public/next.svg"
+   },
+   {
+    "rfilename": "frontend/public/vercel.svg"
+   },
+   {
+    "rfilename": "frontend/public/window.svg"
+   },
+   {
+    "rfilename": "frontend/tsconfig.json"
+   },
+   {
+    "rfilename": "linkedin_post.txt"
+   },
+   {
+    "rfilename": "prompts/README.md"
+   },
+   {
+    "rfilename": "prompts/guardrails.md"
+   },
+   {
+    "rfilename": "prompts/handoff_prompt.md"
+   },
+   {
+    "rfilename": "prompts/system_prompt.md"
+   },
+   {
+    "rfilename": "pyproject.toml"
+   },
+   {
+    "rfilename": "requirements.txt"
+   },
+   {
+    "rfilename": "scripts/README.md"
+   },
+   {
+    "rfilename": "scripts/evaluate_30_questions.py"
+   },
+   {
+    "rfilename": "scripts/sync_linkedin.py"
+   },
+   {
+    "rfilename": "system_design.md"
+   },
+   {
+    "rfilename": "tests/test_system.py"
+   },
+   {
+    "rfilename": "use_cases.md"
+   },
+   {
+    "rfilename": "use_cases/01_course_creators_educators.md"
+   },
+   {
+    "rfilename": "use_cases/02_specialty_medical_clinics.md"
+   },
+   {
+    "rfilename": "use_cases/03_b2b_saas_software.md"
+   },
+   {
+    "rfilename": "use_cases/04_solar_hvac_contractors.md"
+   },
+   {
+    "rfilename": "use_cases/05_luxury_real_estate.md"
+   },
+   {
+    "rfilename": "use_cases/README.md"
+   },
+   {
+    "rfilename": "who_am_i.md"
+   },
+   {
+    "rfilename": "whole_architecture.md"
+   }
+  ],
+  "subdomain": "neural-arun-aruncore",
+  "tags": [
+   "docker",
+   "region:us"
+  ],
+  "usedStorage": 5294244
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  },
+  {
+   "original": ".gitignore",
+   "stored_as": "_gitignore"
+  },
+  {
+   "original": "frontend/.gitignore",
+   "stored_as": "frontend/_gitignore"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "neural-arun/ArunCore",
+ "repo_type": "spaces",
+ "sha": "9ef497a92c8bcabe0dcb79420cacfa93db69009d",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/neural-arun/ArunCore"
+}

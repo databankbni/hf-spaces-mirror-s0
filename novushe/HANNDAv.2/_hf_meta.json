@@ -1,0 +1,23 @@
+{
+ "captured_at": "2026-08-04T16:44:54Z",
+ "hf_metadata": {
+  "sha": "576b43f44671b00d128e587dcd9059235fd7a4f3"
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "novushe/HANNDAv.2",
+ "repo_type": "spaces",
+ "sha": "576b43f44671b00d128e587dcd9059235fd7a4f3",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/novushe/HANNDAv.2"
+}

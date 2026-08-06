@@ -1,0 +1,19 @@
+{
+ "lfs_not_stored": [
+  {
+   "oid": "ed7f41f6106ac354fddd8829102e05dec70c198bee2733438d4507e0f0f6078b",
+   "path": "adaption_llama_4_scout_17b_16_rasopathy_vus_tier1.tgz",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6ZWQ3ZjQxZjYxMDZhYzM1NGZkZGQ4ODI5MTAyZTA1ZGVjNzBjMTk4YmVlMjczMzQzOGQ0NTA3ZTBmMGY2MDc4YgpzaXplIDgyODU3MjUyMQo=",
+   "size": 828572521,
+   "url": "https://huggingface.co/spaces/Fernandosr85/rasopathy-rephrase-on-vs-off/resolve/90a499ec3505b876e2098580eeffeffad57c7ddb/adaption_llama_4_scout_17b_16_rasopathy_vus_tier1.tgz"
+  },
+  {
+   "oid": "0722996fe7a1d85a662b5e674018f1795741616c571201e8124bb13ed491000b",
+   "path": "adaption_mixtral_8x7b_instruc_rasopathy_vus_tier1.tgz",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6MDcyMjk5NmZlN2ExZDg1YTY2MmI1ZTY3NDAxOGYxNzk1NzQxNjE2YzU3MTIwMWU4MTI0YmIxM2VkNDkxMDAwYgpzaXplIDUxMDI0NzQ0Cg==",
+   "size": 51024744,
+   "url": "https://huggingface.co/spaces/Fernandosr85/rasopathy-rephrase-on-vs-off/resolve/90a499ec3505b876e2098580eeffeffad57c7ddb/adaption_mixtral_8x7b_instruc_rasopathy_vus_tier1.tgz"
+  }
+ ],
+ "oversize_not_stored": []
+}

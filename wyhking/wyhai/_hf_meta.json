@@ -1,0 +1,23 @@
+{
+ "captured_at": "2026-08-04T17:15:06Z",
+ "hf_metadata": {
+  "sha": "0c74f748b25c10e0ccb46f738a31a36a1128f27b"
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "wyhking/wyhai",
+ "repo_type": "spaces",
+ "sha": "0c74f748b25c10e0ccb46f738a31a36a1128f27b",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/wyhking/wyhai"
+}

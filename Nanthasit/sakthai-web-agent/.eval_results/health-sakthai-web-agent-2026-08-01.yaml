@@ -1,0 +1,10 @@
+asset: Nanthasit/sakthai-web-agent
+type: space
+checked_at: "2026-08-01T01:15:30+00:00"
+status: issues_found
+issues:
+  - type: space_config
+    detail: "Configuration error: Missing configuration in README frontmatter. Frontmatter shows template placeholders like {{title}}, {{sdk}}, {{sdkVersion}}."
+verified_files:
+  - README.md
+notes: "Space page loads but fails with configuration error. README appears to contain Gradio template placeholders instead of actual config values. No app.py verified from page."

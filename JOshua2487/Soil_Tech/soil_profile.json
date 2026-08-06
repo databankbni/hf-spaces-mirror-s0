@@ -1,0 +1,27 @@
+{
+  "sandy": {
+    "om_default": "low",
+    "moisture_default": "low",
+    "drainage_default": "excessive"
+  },
+  "clay": {
+    "om_default": "moderate",
+    "moisture_default": "high",
+    "drainage_default": "poor"
+  },
+  "loamy": {
+    "om_default": "moderate",
+    "moisture_default": "moderate",
+    "drainage_default": "moderate"
+  },
+  "silt": {
+    "om_default": "moderate",
+    "moisture_default": "moderate",
+    "drainage_default": "moderate"
+  },
+  "peat": {
+    "om_default": "high",
+    "moisture_default": "high",
+    "drainage_default": "poor"
+  }
+}

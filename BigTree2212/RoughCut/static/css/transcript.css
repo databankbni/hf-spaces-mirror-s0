@@ -1,0 +1,40 @@
+/* Video Transcript — tool-specific styles. Shared vars/nav/panel/buttons/slot/
+   job-card/url-form/preview-card/format-toggle components live in base.css */
+
+.tr-card {
+  padding: 28px 24px 24px;
+}
+
+.dropzone-sub { color: var(--text-muted); }
+
+#upload-btn { margin-top: 20px; }
+
+.transcript-view {
+  display: none;
+  margin-top: 14px;
+  max-height: 340px;
+  overflow-y: auto;
+  border-top: 1px solid var(--line);
+  padding-top: 12px;
+}
+.transcript-view.open { display: block; }
+
+.segment {
+  display: flex;
+  gap: 12px;
+  padding: 7px 0;
+  border-bottom: 1px solid var(--panel-raised);
+  font-size: 13px;
+}
+
+.segment-time {
+  flex: 0 0 96px;
+  color: var(--text-muted);
+  font-family: var(--mono);
+  font-size: 11px;
+}
+
+.segment-text {
+  flex: 1;
+  line-height: 1.5;
+}

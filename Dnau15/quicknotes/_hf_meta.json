@@ -1,0 +1,71 @@
+{
+ "captured_at": "2026-08-04T13:34:18Z",
+ "hf_metadata": {
+  "_id": "6a4d63c1f73efab2e480a556",
+  "author": "Dnau15",
+  "cardData": {
+   "app_port": 8080,
+   "colorFrom": "indigo",
+   "colorTo": "blue",
+   "emoji": "📝",
+   "pinned": false,
+   "sdk": "docker",
+   "title": "QuickNotes"
+  },
+  "createdAt": "2026-07-07T20:38:25.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://dnau15-quicknotes.hf.space",
+  "id": "Dnau15/quicknotes",
+  "lastModified": "2026-07-07T20:41:58.000Z",
+  "likes": 0,
+  "private": false,
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "dnau15-quicknotes.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": null,
+    "requested": "cpu-basic"
+   },
+   "replicas": {
+    "requested": 1
+   },
+   "stage": "SLEEPING"
+  },
+  "sdk": "docker",
+  "sha": "3d06044001d73c762cc3365a5bcc0b42bf2ab52f",
+  "siblings": [
+   {
+    "rfilename": ".gitattributes"
+   },
+   {
+    "rfilename": "Dockerfile"
+   },
+   {
+    "rfilename": "README.md"
+   }
+  ],
+  "subdomain": "dnau15-quicknotes",
+  "tags": [
+   "docker",
+   "region:us"
+  ],
+  "usedStorage": 0
+ },
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "Dnau15/quicknotes",
+ "repo_type": "spaces",
+ "sha": "3d06044001d73c762cc3365a5bcc0b42bf2ab52f",
+ "web_url": "https://huggingface.co/spaces/Dnau15/quicknotes"
+}

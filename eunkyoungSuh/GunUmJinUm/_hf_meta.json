@@ -1,0 +1,23 @@
+{
+ "captured_at": "2026-08-04T16:10:44Z",
+ "hf_metadata": {
+  "sha": "6521210468ff6817432473894871cba60050e9b0"
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "eunkyoungSuh/GunUmJinUm",
+ "repo_type": "spaces",
+ "sha": "6521210468ff6817432473894871cba60050e9b0",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/eunkyoungSuh/GunUmJinUm"
+}

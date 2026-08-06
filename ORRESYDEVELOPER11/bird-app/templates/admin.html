@@ -1,0 +1,245 @@
+{% extends "base.html" %}
+{% block title %}Admin | Tanzania Bird Finder{% endblock %}
+{% block content %}
+<section class="admin-hero">
+  <div class="admin-hero-bg"></div>
+  <div class="admin-hero-content">
+    <span class="eyebrow">Admin dashboard</span>
+    <h1>Manage Tanzania birding content</h1>
+    <p>Add bird species, parks, images, review AI predictions, and keep every record linked to Tanzanian conservation locations.</p>
+  </div>
+</section>
+
+<section class="admin-stats-row">
+  <article class="admin-stat-card">
+    <div class="admin-stat-icon stats-blue"><i data-lucide="feather"></i></div>
+    <div class="admin-stat-body">
+      <span>Bird records</span>
+      <strong>{{ birds|length }}</strong>
+      <small>Tanzania-only species</small>
+    </div>
+  </article>
+  <article class="admin-stat-card">
+    <div class="admin-stat-icon stats-green"><i data-lucide="trees"></i></div>
+    <div class="admin-stat-body">
+      <span>Parks</span>
+      <strong>{{ parks|length }}</strong>
+      <small>National parks and conservation areas</small>
+    </div>
+  </article>
+  <article class="admin-stat-card">
+    <div class="admin-stat-icon stats-violet"><i data-lucide="scan-search"></i></div>
+    <div class="admin-stat-body">
+      <span>AI predictions</span>
+      <strong>{{ prediction_count }}</strong>
+      <small>{{ predictions|length }} shown in recent queue</small>
+    </div>
+  </article>
+  <article class="admin-stat-card">
+    <div class="admin-stat-icon stats-cyan"><i data-lucide="cpu"></i></div>
+    <div class="admin-stat-body">
+      <span>Avg confidence</span>
+      <strong>{{ "%.0f"|format(avg_prediction_confidence) }}%</strong>
+      <small>{{ reviewed_prediction_count }} reviewed predictions</small>
+    </div>
+  </article>
+  <article class="admin-stat-card {{ 'stat-warning' if unlinked_birds else '' }}">
+    <div class="admin-stat-icon {{ 'stats-amber' if unlinked_birds else 'stats-gray' }}"><i data-lucide="triangle-alert"></i></div>
+    <div class="admin-stat-body">
+      <span>Data checks</span>
+      <strong>{{ unlinked_birds|length }}</strong>
+      <small>Birds without park links</small>
+    </div>
+  </article>
+</section>
+
+{% if unlinked_birds %}
+<section class="admin-section">
+  <div class="admin-notice">
+    <i data-lucide="alert-triangle"></i>
+    <div>
+      <strong>Records needing park links</strong>
+      <p>{% for bird in unlinked_birds %}{{ bird.common_name }}{% if not loop.last %}, {% endif %}{% endfor %}</p>
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<section class="admin-section">
+  <div class="admin-form-grid">
+    <div class="admin-glass-card">
+      <div class="admin-form-header">
+        <i data-lucide="feather"></i>
+        <h2>Add bird species</h2>
+      </div>
+      <form method="post">
+        <input type="hidden" name="content_type" value="bird">
+        <label>Common / local name<input name="common_name" required placeholder="e.g. Grey Crowned Crane"></label>
+        <label>Scientific name<input name="scientific_name" required placeholder="e.g. Balearica regulorum"></label>
+        <label>Habitat<select name="habitat_id">{% for habitat in habitats %}<option value="{{ habitat.id }}">{{ habitat.name }}</option>{% endfor %}</select></label>
+        <label>Region<input name="region" placeholder="e.g. Arusha, Manyara"></label>
+        <label>Movement<input name="migration_pattern" placeholder="Resident, Migratory"></label>
+        <label>Status<input name="conservation_status" placeholder="Least Concern"></label>
+        <label>Image URL<input name="image_url" placeholder="https://..."></label>
+        <label>Description<textarea name="description" rows="4" placeholder="Description, behavior, habitat notes..."></textarea></label>
+        <button class="admin-btn admin-btn-primary" type="submit">Save bird</button>
+      </form>
+    </div>
+
+    <div class="admin-glass-card">
+      <div class="admin-form-header">
+        <i data-lucide="trees"></i>
+        <h2>Add park / conservation area</h2>
+      </div>
+      <form method="post">
+        <input type="hidden" name="content_type" value="park">
+        <label>Name<input name="name" required placeholder="e.g. Serengeti National Park"></label>
+        <label>Region<input name="region" required placeholder="e.g. Arusha"></label>
+        <label>Latitude<input name="latitude" required placeholder="-2.3333"></label>
+        <label>Longitude<input name="longitude" required placeholder="34.8333"></label>
+        <label>Habitat type<select name="habitat_type" required>{% for habitat in habitats %}<option value="{{ habitat.name }}">{{ habitat.name }}</option>{% endfor %}</select></label>
+        <label>Best visiting time<input name="best_visit_months" placeholder="June–October"></label>
+        <label>Status<input name="conservation_status" placeholder="National Park"></label>
+        <label>Area km2<input name="area_km2" placeholder="14763"></label>
+        <label>Image URL<input name="image_url" placeholder="https://..."></label>
+        <label>Description<textarea name="description" rows="4" placeholder="Park description..."></textarea></label>
+        <button class="admin-btn admin-btn-primary" type="submit">Save park</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="admin-section">
+  <div class="admin-section-header">
+    <div>
+      <span class="eyebrow">Platform data</span>
+      <h2>Editable content records</h2>
+    </div>
+    <label class="admin-search">
+      <i data-lucide="search"></i>
+      <input data-admin-search placeholder="Filter birds, parks, regions&hellip;">
+    </label>
+  </div>
+  <div class="admin-records-grid">
+    <div class="admin-glass-card">
+      <h3>Birds</h3>
+      <div class="admin-record-list">
+        {% for bird in birds %}
+          <a class="admin-record-item" href="{{ url_for('admin_edit_bird', bird_id=bird.id) }}" data-admin-item="{{ bird.common_name }} {{ bird.scientific_name }} {{ bird.habitat.name }} {{ bird.conservation_status }}">
+            <img src="{{ bird.image_url }}" alt="{{ bird.common_name }}">
+            <div>
+              <strong>{{ bird.common_name }}</strong>
+              <span>{{ bird.scientific_name }}</span>
+            </div>
+            <i data-lucide="chevron-right"></i>
+          </a>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="admin-glass-card">
+      <h3>Parks</h3>
+      <div class="admin-record-list">
+        {% for park in parks %}
+          <a class="admin-record-item" href="{{ url_for('admin_edit_park', park_id=park.id) }}" data-admin-item="{{ park.name }} {{ park.region }} {{ park.habitat_type }} {{ park.conservation_status }}">
+            <img src="{{ park.image_url }}" alt="{{ park.name }}">
+            <div>
+              <strong>{{ park.name }}</strong>
+              <span>{{ park.region }}</span>
+            </div>
+            <i data-lucide="chevron-right"></i>
+          </a>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="admin-section">
+  <div class="admin-section-header">
+    <div>
+      <span class="eyebrow">AI monitoring</span>
+      <h2>Recent image predictions</h2>
+    </div>
+  </div>
+  {% if low_confidence_predictions %}
+    <div class="admin-notice admin-notice-warning">
+      <i data-lucide="scan-search"></i>
+      <div>
+        <strong>Low-confidence predictions need review</strong>
+        <p>{{ low_confidence_predictions|length }} recent prediction{% if low_confidence_predictions|length != 1 %}s{% endif %} below 65% confidence.</p>
+      </div>
+    </div>
+  {% endif %}
+  <div class="admin-table-wrap">
+    <table class="admin-table">
+      <thead>
+        <tr>
+          <th>Upload</th>
+          <th>Prediction</th>
+          <th>Confidence</th>
+          <th>Model</th>
+          <th>User</th>
+          <th>Status</th>
+          <th>Correction</th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for prediction in predictions %}
+        <tr data-admin-prediction="{{ prediction.bird.common_name if prediction.bird else 'Unknown bird' }} {{ prediction.model_name }} {{ prediction.status }} {{ prediction.user.email if prediction.user else 'Guest' }}">
+          <td><img src="{{ prediction.image_path }}" alt="Prediction upload"></td>
+          <td><strong>{{ prediction.bird.common_name if prediction.bird else 'Unknown bird' }}</strong><span>{{ prediction.created_at.strftime('%Y-%m-%d %H:%M') }}</span></td>
+          <td class="conf-cell">{{ "%.1f"|format(prediction.confidence) }}%</td>
+          <td>{{ prediction.model_name }}</td>
+          <td>{{ prediction.user.email if prediction.user else 'Guest' }}</td>
+          <td>
+            <form method="post" action="{{ url_for('admin_prediction_status', prediction_id=prediction.id) }}">
+              <select name="status">
+                <option value="reviewed" {{ 'selected' if prediction.status == 'reviewed' else '' }}>Reviewed</option>
+                <option value="needs-review" {{ 'selected' if prediction.status == 'needs-review' or prediction.status.startswith('completed') else '' }}>Needs review</option>
+                <option value="rejected" {{ 'selected' if prediction.status == 'rejected' else '' }}>Rejected</option>
+              </select>
+              <button class="admin-btn admin-btn-sm" type="submit">Update</button>
+            </form>
+          </td>
+          <td>
+            <form method="post" action="{{ url_for('admin_prediction_correct', prediction_id=prediction.id) }}">
+              <select name="bird_id">
+                {% for bird in birds %}
+                  <option value="{{ bird.id }}" {{ 'selected' if prediction.bird and prediction.bird.id == bird.id else '' }}>{{ bird.common_name }}</option>
+                {% endfor %}
+              </select>
+              <button class="admin-btn admin-btn-sm" type="submit">Correct</button>
+            </form>
+          </td>
+        </tr>
+      {% else %}
+        <tr><td colspan="7" class="empty-cell">No AI predictions recorded yet.</td></tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  <div class="admin-prediction-cards">
+    {% for prediction in predictions %}
+      <article class="species-card">
+        <img src="{{ prediction.image_path }}" alt="Prediction upload">
+        <div class="card-body">
+          <span class="status">{{ "%.1f"|format(prediction.confidence) }}% | {{ prediction.status }}</span>
+          <h2>{{ prediction.bird.common_name if prediction.bird else 'Unknown bird' }}</h2>
+          <p>{{ prediction.model_name }}</p>
+          <p>{{ prediction.created_at.strftime('%Y-%m-%d %H:%M') }}{% if prediction.user %} by {{ prediction.user.email }}{% endif %}</p>
+          <form method="post" action="{{ url_for('admin_prediction_correct', prediction_id=prediction.id) }}">
+            <select name="bird_id">
+              {% for bird in birds %}
+                <option value="{{ bird.id }}" {{ 'selected' if prediction.bird and prediction.bird.id == bird.id else '' }}>{{ bird.common_name }}</option>
+              {% endfor %}
+            </select>
+            <button class="button secondary full" type="submit">Correct prediction</button>
+          </form>
+        </div>
+      </article>
+    {% else %}
+      <p class="empty-state">No AI predictions recorded yet.</p>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

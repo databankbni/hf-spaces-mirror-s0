@@ -1,0 +1,83 @@
+{
+ "captured_at": "2026-08-04T13:40:03Z",
+ "hf_metadata": {
+  "_id": "6a496882e2ff4ace90d14576",
+  "author": "Harry404",
+  "cardData": {
+   "app_port": 7860,
+   "colorFrom": "blue",
+   "colorTo": "purple",
+   "emoji": "🎙️",
+   "pinned": false,
+   "sdk": "docker",
+   "title": "AI Services STT TTS"
+  },
+  "createdAt": "2026-07-04T20:09:38.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://harry404-ai-stt-tts-service.hf.space",
+  "id": "Harry404/ai-stt-tts-service",
+  "lastModified": "2026-07-04T20:38:33.000Z",
+  "likes": 0,
+  "private": false,
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "harry404-ai-stt-tts-service.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": null,
+    "requested": "cpu-basic"
+   },
+   "replicas": {
+    "requested": 1
+   },
+   "stage": "SLEEPING"
+  },
+  "sdk": "docker",
+  "sha": "57693dc13ddf6bcdf10a7fa0c8f2b81e13a43019",
+  "siblings": [
+   {
+    "rfilename": ".gitattributes"
+   },
+   {
+    "rfilename": "Dockerfile"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "app.py"
+   },
+   {
+    "rfilename": "en_US-amy-medium.onnx"
+   },
+   {
+    "rfilename": "en_US-amy-medium.onnx.json"
+   },
+   {
+    "rfilename": "requirements.txt"
+   }
+  ],
+  "subdomain": "harry404-ai-stt-tts-service",
+  "tags": [
+   "docker",
+   "region:us"
+  ],
+  "usedStorage": 63201294
+ },
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "Harry404/ai-stt-tts-service",
+ "repo_type": "spaces",
+ "sha": "57693dc13ddf6bcdf10a7fa0c8f2b81e13a43019",
+ "web_url": "https://huggingface.co/spaces/Harry404/ai-stt-tts-service"
+}

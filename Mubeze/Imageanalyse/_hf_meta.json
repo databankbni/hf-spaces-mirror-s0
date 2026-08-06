@@ -1,0 +1,80 @@
+{
+ "captured_at": "2026-08-04T14:31:39Z",
+ "hf_metadata": {
+  "_id": "6a1e2aa1b347001137a18aa0",
+  "author": "Muktaryy",
+  "cardData": {
+   "colorFrom": "gray",
+   "colorTo": "purple",
+   "emoji": "😻",
+   "pinned": false,
+   "sdk": "docker",
+   "title": "Imageanalyse"
+  },
+  "createdAt": "2026-06-02T00:58:09.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://muktaryy-imageanalyse.hf.space",
+  "id": "Muktaryy/Imageanalyse",
+  "lastModified": "2026-07-15T16:12:32.000Z",
+  "likes": 0,
+  "private": false,
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "mubeze-imageanalyse.hf.space",
+     "stage": "READY"
+    },
+    {
+     "domain": "muktaryy-imageanalyse.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": null,
+    "requested": "cpu-basic"
+   },
+   "replicas": {
+    "requested": 1
+   },
+   "stage": "SLEEPING"
+  },
+  "sdk": "docker",
+  "sha": "01f8c2d77fe0b2c5da0921ec6e6371cdc7fc9862",
+  "siblings": [
+   {
+    "rfilename": ".gitattributes"
+   },
+   {
+    "rfilename": "Dockerfile"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "app.py"
+   },
+   {
+    "rfilename": "requirements.txt"
+   }
+  ],
+  "subdomain": "muktaryy-imageanalyse",
+  "tags": [
+   "docker",
+   "region:us"
+  ],
+  "usedStorage": 0
+ },
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "Mubeze/Imageanalyse",
+ "repo_type": "spaces",
+ "sha": "01f8c2d77fe0b2c5da0921ec6e6371cdc7fc9862",
+ "web_url": "https://huggingface.co/spaces/Mubeze/Imageanalyse"
+}

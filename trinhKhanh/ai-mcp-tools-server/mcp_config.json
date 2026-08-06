@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "combined-server": {
+      "type": "stdio",
+      "command": "python",
+      "args": ["servers/combined_server.py"]
+    }
+  }
+}

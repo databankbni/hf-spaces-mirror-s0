@@ -1,0 +1,13 @@
+{
+ "lfs_not_stored": [
+  {
+   "oid": "dccfc65a1c60ef34130428d5b14ce05d7e2ea41757d65b4891175d6892bbd1a6",
+   "path": "data/Laporan_Analisis_Sentimen_Semua_Mentor.xlsx",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6ZGNjZmM2NWExYzYwZWYzNDEzMDQyOGQ1YjE0Y2UwNWQ3ZTJlYTQxNzU3ZDY1YjQ4OTExNzVkNjg5MmJiZDFhNgpzaXplIDUzNjc0MDkK",
+   "size": 5367409,
+   "url": "https://huggingface.co/spaces/muhhesa/market-oracle-backend/resolve/930a7f6897890261ee0bf7cd5058eeecd54f6f78/data/Laporan_Analisis_Sentimen_Semua_Mentor.xlsx"
+  }
+ ],
+ "overflow_not_stored": [],
+ "oversize_not_stored": []
+}

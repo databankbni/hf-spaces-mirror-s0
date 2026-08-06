@@ -1,0 +1,13 @@
+{
+ "lfs_not_stored": [
+  {
+   "oid": "520d3993e13ca2db95811e2c8b082f107d417fd6b69654df6e0fc052377c59a3",
+   "path": "model.pkl",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6NTIwZDM5OTNlMTNjYTJkYjk1ODExZTJjOGIwODJmMTA3ZDQxN2ZkNmI2OTY1NGRmNmUwZmMwNTIzNzdjNTlhMwpzaXplIDgyMzExNTQK",
+   "size": 8231154,
+   "url": "https://huggingface.co/spaces/manohar2026-dev/Heart-Disease-Predictor1/resolve/f60c5493b675b211c6c57f4aafec614f8812af9a/model.pkl"
+  }
+ ],
+ "overflow_not_stored": [],
+ "oversize_not_stored": []
+}

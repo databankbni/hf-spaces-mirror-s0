@@ -1,0 +1,554 @@
+{
+  "day_idx": 62,
+  "date": "2025-04-04",
+  "n_events": 1,
+  "n_agents": 17,
+  "council_plan": {
+    "council_summary": "no LLM council; default equal commitment",
+    "focus_strategies": [
+      "insider_tracking",
+      "macro_narrative"
+    ],
+    "focus_categories": [
+      "XLE",
+      "XLF",
+      "ITA"
+    ],
+    "per_agent_commit_pct": {
+      "qwen-quant": 0.55,
+      "qwen-arb": 0.55,
+      "llama-contra": 0.55,
+      "gemini-anl": 0.55,
+      "gemini-tact": 0.55,
+      "mistral-large": 0.55,
+      "mistral-medium": 0.55,
+      "mistral-small": 0.55,
+      "mistral-nemo": 0.55,
+      "mistral-ministral": 0.55,
+      "nemotron-120b": 0.55,
+      "selfhost-qwen4b": 0.55,
+      "nvidia-minimax": 0.55,
+      "nvidia-llama70": 0.55,
+      "selfhost-gemma3": 0.55,
+      "selfhost-qwen06": 0.55,
+      "selfhost-dolphin3": 0.55
+    },
+    "shared_notes": "Deterministic fallback plan.",
+    "raw": ""
+  },
+  "rogue_state": {
+    "qwen-quant": {
+      "is_rogue": false,
+      "reasons": [],
+      "peer_leader": "gemini-tact",
+      "peer_bankroll": 12779.93
+    },
+    "qwen-arb": {
+      "is_rogue": false,
+      "reasons": [],
+      "peer_leader": "qwen-quant",
+      "peer_bankroll": 37223.79
+    },
+    "llama-contra": {
+      "is_rogue": false,
+      "reasons": [],
+      "peer_leader": "qwen-quant",
+      "peer_bankroll": 37223.79
+    },
+    "gemini-anl": {
+      "is_rogue": false,
+      "reasons": [],
+      "peer_leader": "qwen-quant",
+      "peer_bankroll": 37223.79
+    },
+    "gemini-tact": {
+      "is_rogue": false,
+      "reasons": [],
+      "peer_leader": "qwen-quant",
+      "peer_bankroll": 37223.79
+    },
+    "mistral-large": {
+      "is_rogue": false,
+      "reasons": [],
+      "peer_leader": "qwen-quant",
+      "peer_bankroll": 37223.79
+    },
+    "mistral-medium": {
+      "is_rogue": false,
+      "reasons": [],
+      "peer_leader": "qwen-quant",
+      "peer_bankroll": 37223.79
+    },
+    "mistral-small": {
+      "is_rogue": false,
+      "reasons": [],
+      "peer_leader": "qwen-quant",
+      "peer_bankroll": 37223.79
+    },
+    "mistral-nemo": {
+      "is_rogue": false,
+      "reasons": [],
+      "peer_leader": "qwen-quant",
+      "peer_bankroll": 37223.79
+    },
+    "mistral-ministral": {
+      "is_rogue": false,
+      "reasons": [],
+      "peer_leader": "qwen-quant",
+      "peer_bankroll": 37223.79
+    },
+    "nemotron-120b": {
+      "is_rogue": false,
+      "reasons": [],
+      "peer_leader": "qwen-quant",
+      "peer_bankroll": 37223.79
+    },
+    "selfhost-qwen4b": {
+      "is_rogue": false,
+      "reasons": [],
+      "peer_leader": "qwen-quant",
+      "peer_bankroll": 37223.79
+    },
+    "nvidia-minimax": {
+      "is_rogue": false,
+      "reasons": [],
+      "peer_leader": "qwen-quant",
+      "peer_bankroll": 37223.79
+    },
+    "nvidia-llama70": {
+      "is_rogue": false,
+      "reasons": [],
+      "peer_leader": "qwen-quant",
+      "peer_bankroll": 37223.79
+    },
+    "selfhost-gemma3": {
+      "is_rogue": false,
+      "reasons": [],
+      "peer_leader": "qwen-quant",
+      "peer_bankroll": 37223.79
+    },
+    "selfhost-qwen06": {
+      "is_rogue": false,
+      "reasons": [],
+      "peer_leader": "qwen-quant",
+      "peer_bankroll": 37223.79
+    },
+    "selfhost-dolphin3": {
+      "is_rogue": false,
+      "reasons": [],
+      "peer_leader": "qwen-quant",
+      "peer_bankroll": 37223.79
+    }
+  },
+  "agents": {
+    "qwen-quant": {
+      "day_idx": 62,
+      "date": "2025-04-04",
+      "n_events": 1,
+      "bankroll_before": 37223.79,
+      "bankroll_after": 37223.79,
+      "day_strategy": "",
+      "cash_held_pct": 1.0,
+      "cash_rationale": "no LLM response",
+      "allocations": [],
+      "rogue": {
+        "is_rogue": false,
+        "reasons": [],
+        "peer_leader": "gemini-tact",
+        "peer_bankroll": 12779.93
+      },
+      "council_commit_target": 0.55,
+      "council_alignment": null,
+      "ck_consensus_stance": {},
+      "events_considered": [],
+      "raw_preview": "",
+      "fallback_used": false,
+      "provider_status": "llm_ok"
+    },
+    "qwen-arb": {
+      "day_idx": 62,
+      "date": "2025-04-04",
+      "n_events": 1,
+      "bankroll_before": 6512.16,
+      "bankroll_after": 6512.16,
+      "day_strategy": "",
+      "cash_held_pct": 1.0,
+      "cash_rationale": "no LLM response",
+      "allocations": [],
+      "rogue": {
+        "is_rogue": false,
+        "reasons": [],
+        "peer_leader": "qwen-quant",
+        "peer_bankroll": 37223.79
+      },
+      "council_commit_target": 0.55,
+      "council_alignment": null,
+      "ck_consensus_stance": {},
+      "events_considered": [],
+      "raw_preview": "",
+      "fallback_used": false,
+      "provider_status": "llm_ok"
+    },
+    "llama-contra": {
+      "day_idx": 62,
+      "date": "2025-04-04",
+      "n_events": 1,
+      "bankroll_before": 4729.2,
+      "bankroll_after": 4729.2,
+      "day_strategy": "",
+      "cash_held_pct": 1.0,
+      "cash_rationale": "no LLM response",
+      "allocations": [],
+      "rogue": {
+        "is_rogue": false,
+        "reasons": [],
+        "peer_leader": "qwen-quant",
+        "peer_bankroll": 37223.79
+      },
+      "council_commit_target": 0.55,
+      "council_alignment": null,
+      "ck_consensus_stance": {},
+      "events_considered": [],
+      "raw_preview": "",
+      "fallback_used": false,
+      "provider_status": "llm_ok"
+    },
+    "gemini-anl": {
+      "day_idx": 62,
+      "date": "2025-04-04",
+      "n_events": 1,
+      "bankroll_before": 548.83,
+      "bankroll_after": 548.83,
+      "day_strategy": "",
+      "cash_held_pct": 1.0,
+      "cash_rationale": "no LLM response",
+      "allocations": [],
+      "rogue": {
+        "is_rogue": false,
+        "reasons": [],
+        "peer_leader": "qwen-quant",
+        "peer_bankroll": 37223.79
+      },
+      "council_commit_target": 0.55,
+      "council_alignment": null,
+      "ck_consensus_stance": {},
+      "events_considered": [],
+      "raw_preview": "",
+      "fallback_used": false,
+      "provider_status": "llm_ok"
+    },
+    "gemini-tact": {
+      "day_idx": 62,
+      "date": "2025-04-04",
+      "n_events": 1,
+      "bankroll_before": 12779.93,
+      "bankroll_after": 12779.93,
+      "day_strategy": "",
+      "cash_held_pct": 1.0,
+      "cash_rationale": "no LLM response",
+      "allocations": [],
+      "rogue": {
+        "is_rogue": false,
+        "reasons": [],
+        "peer_leader": "qwen-quant",
+        "peer_bankroll": 37223.79
+      },
+      "council_commit_target": 0.55,
+      "council_alignment": null,
+      "ck_consensus_stance": {},
+      "events_considered": [],
+      "raw_preview": "",
+      "fallback_used": false,
+      "provider_status": "llm_ok"
+    },
+    "mistral-large": {
+      "day_idx": 62,
+      "date": "2025-04-04",
+      "n_events": 1,
+      "bankroll_before": 2729.36,
+      "bankroll_after": 2729.36,
+      "day_strategy": "",
+      "cash_held_pct": 1.0,
+      "cash_rationale": "no LLM response",
+      "allocations": [],
+      "rogue": {
+        "is_rogue": false,
+        "reasons": [],
+        "peer_leader": "qwen-quant",
+        "peer_bankroll": 37223.79
+      },
+      "council_commit_target": 0.55,
+      "council_alignment": null,
+      "ck_consensus_stance": {},
+      "events_considered": [],
+      "raw_preview": "",
+      "fallback_used": false,
+      "provider_status": "llm_ok"
+    },
+    "mistral-medium": {
+      "day_idx": 62,
+      "date": "2025-04-04",
+      "n_events": 1,
+      "bankroll_before": 342.33,
+      "bankroll_after": 342.33,
+      "day_strategy": "",
+      "cash_held_pct": 1.0,
+      "cash_rationale": "no LLM response",
+      "allocations": [],
+      "rogue": {
+        "is_rogue": false,
+        "reasons": [],
+        "peer_leader": "qwen-quant",
+        "peer_bankroll": 37223.79
+      },
+      "council_commit_target": 0.55,
+      "council_alignment": null,
+      "ck_consensus_stance": {},
+      "events_considered": [],
+      "raw_preview": "",
+      "fallback_used": false,
+      "provider_status": "llm_ok"
+    },
+    "mistral-small": {
+      "day_idx": 62,
+      "date": "2025-04-04",
+      "n_events": 1,
+      "bankroll_before": 3957.77,
+      "bankroll_after": 3957.77,
+      "day_strategy": "",
+      "cash_held_pct": 1.0,
+      "cash_rationale": "no LLM response",
+      "allocations": [],
+      "rogue": {
+        "is_rogue": false,
+        "reasons": [],
+        "peer_leader": "qwen-quant",
+        "peer_bankroll": 37223.79
+      },
+      "council_commit_target": 0.55,
+      "council_alignment": null,
+      "ck_consensus_stance": {},
+      "events_considered": [],
+      "raw_preview": "",
+      "fallback_used": false,
+      "provider_status": "llm_ok"
+    },
+    "mistral-nemo": {
+      "day_idx": 62,
+      "date": "2025-04-04",
+      "n_events": 1,
+      "bankroll_before": 182.49,
+      "bankroll_after": 182.49,
+      "day_strategy": "",
+      "cash_held_pct": 1.0,
+      "cash_rationale": "no LLM response",
+      "allocations": [],
+      "rogue": {
+        "is_rogue": false,
+        "reasons": [],
+        "peer_leader": "qwen-quant",
+        "peer_bankroll": 37223.79
+      },
+      "council_commit_target": 0.55,
+      "council_alignment": null,
+      "ck_consensus_stance": {},
+      "events_considered": [],
+      "raw_preview": "",
+      "fallback_used": false,
+      "provider_status": "llm_ok"
+    },
+    "mistral-ministral": {
+      "day_idx": 62,
+      "date": "2025-04-04",
+      "n_events": 1,
+      "bankroll_before": 298.34,
+      "bankroll_after": 298.34,
+      "day_strategy": "",
+      "cash_held_pct": 1.0,
+      "cash_rationale": "no LLM response",
+      "allocations": [],
+      "rogue": {
+        "is_rogue": false,
+        "reasons": [],
+        "peer_leader": "qwen-quant",
+        "peer_bankroll": 37223.79
+      },
+      "council_commit_target": 0.55,
+      "council_alignment": null,
+      "ck_consensus_stance": {},
+      "events_considered": [],
+      "raw_preview": "",
+      "fallback_used": false,
+      "provider_status": "llm_ok"
+    },
+    "nemotron-120b": {
+      "day_idx": 62,
+      "date": "2025-04-04",
+      "n_events": 1,
+      "bankroll_before": 147.63,
+      "bankroll_after": 147.63,
+      "day_strategy": "",
+      "cash_held_pct": 1.0,
+      "cash_rationale": "no LLM response",
+      "allocations": [],
+      "rogue": {
+        "is_rogue": false,
+        "reasons": [],
+        "peer_leader": "qwen-quant",
+        "peer_bankroll": 37223.79
+      },
+      "council_commit_target": 0.55,
+      "council_alignment": null,
+      "ck_consensus_stance": {},
+      "events_considered": [],
+      "raw_preview": "",
+      "fallback_used": false,
+      "provider_status": "llm_ok"
+    },
+    "selfhost-qwen4b": {
+      "day_idx": 62,
+      "date": "2025-04-04",
+      "n_events": 1,
+      "bankroll_before": 58.11,
+      "bankroll_after": 58.11,
+      "day_strategy": "",
+      "cash_held_pct": 1.0,
+      "cash_rationale": "no LLM response",
+      "allocations": [],
+      "rogue": {
+        "is_rogue": false,
+        "reasons": [],
+        "peer_leader": "qwen-quant",
+        "peer_bankroll": 37223.79
+      },
+      "council_commit_target": 0.55,
+      "council_alignment": null,
+      "ck_consensus_stance": {},
+      "events_considered": [],
+      "raw_preview": "",
+      "fallback_used": false,
+      "provider_status": "llm_ok"
+    },
+    "nvidia-minimax": {
+      "day_idx": 62,
+      "date": "2025-04-04",
+      "n_events": 1,
+      "bankroll_before": 126.98,
+      "bankroll_after": 126.98,
+      "day_strategy": "",
+      "cash_held_pct": 1.0,
+      "cash_rationale": "no LLM response",
+      "allocations": [],
+      "rogue": {
+        "is_rogue": false,
+        "reasons": [],
+        "peer_leader": "qwen-quant",
+        "peer_bankroll": 37223.79
+      },
+      "council_commit_target": 0.55,
+      "council_alignment": null,
+      "ck_consensus_stance": {},
+      "events_considered": [],
+      "raw_preview": "",
+      "fallback_used": false,
+      "provider_status": "llm_ok"
+    },
+    "nvidia-llama70": {
+      "day_idx": 62,
+      "date": "2025-04-04",
+      "n_events": 1,
+      "bankroll_before": 119.78,
+      "bankroll_after": 119.78,
+      "day_strategy": "",
+      "cash_held_pct": 1.0,
+      "cash_rationale": "no LLM response",
+      "allocations": [],
+      "rogue": {
+        "is_rogue": false,
+        "reasons": [],
+        "peer_leader": "qwen-quant",
+        "peer_bankroll": 37223.79
+      },
+      "council_commit_target": 0.55,
+      "council_alignment": null,
+      "ck_consensus_stance": {},
+      "events_considered": [],
+      "raw_preview": "",
+      "fallback_used": false,
+      "provider_status": "llm_ok"
+    },
+    "selfhost-gemma3": {
+      "day_idx": 62,
+      "date": "2025-04-04",
+      "n_events": 1,
+      "bankroll_before": 97.4,
+      "bankroll_after": 97.4,
+      "day_strategy": "",
+      "cash_held_pct": 1.0,
+      "cash_rationale": "no LLM response",
+      "allocations": [],
+      "rogue": {
+        "is_rogue": false,
+        "reasons": [],
+        "peer_leader": "qwen-quant",
+        "peer_bankroll": 37223.79
+      },
+      "council_commit_target": 0.55,
+      "council_alignment": null,
+      "ck_consensus_stance": {},
+      "events_considered": [],
+      "raw_preview": "",
+      "fallback_used": false,
+      "provider_status": "llm_ok"
+    },
+    "selfhost-qwen06": {
+      "day_idx": 62,
+      "date": "2025-04-04",
+      "n_events": 1,
+      "bankroll_before": 76.43,
+      "bankroll_after": 76.43,
+      "day_strategy": "",
+      "cash_held_pct": 1.0,
+      "cash_rationale": "no LLM response",
+      "allocations": [],
+      "rogue": {
+        "is_rogue": false,
+        "reasons": [],
+        "peer_leader": "qwen-quant",
+        "peer_bankroll": 37223.79
+      },
+      "council_commit_target": 0.55,
+      "council_alignment": null,
+      "ck_consensus_stance": {},
+      "events_considered": [],
+      "raw_preview": "",
+      "fallback_used": false,
+      "provider_status": "llm_ok"
+    },
+    "selfhost-dolphin3": {
+      "day_idx": 62,
+      "date": "2025-04-04",
+      "n_events": 1,
+      "bankroll_before": 95.24,
+      "bankroll_after": 95.24,
+      "day_strategy": "",
+      "cash_held_pct": 1.0,
+      "cash_rationale": "no LLM response",
+      "allocations": [],
+      "rogue": {
+        "is_rogue": false,
+        "reasons": [],
+        "peer_leader": "qwen-quant",
+        "peer_bankroll": 37223.79
+      },
+      "council_commit_target": 0.55,
+      "council_alignment": null,
+      "ck_consensus_stance": {},
+      "events_considered": [],
+      "raw_preview": "",
+      "fallback_used": false,
+      "provider_status": "llm_ok"
+    }
+  },
+  "written_at": "2026-08-06T00:46:34.293836+00:00"
+}

@@ -1,0 +1,33 @@
+# SPB Backend - Dependencies
+# pip install -r requirements.txt
+
+# API Server
+fastapi>=0.115.0
+uvicorn>=0.30.0
+pydantic>=2.9.0
+python-multipart>=0.0.9
+
+# Google Gemini AI
+google-genai>=1.0.0
+
+# Configuration
+python-dotenv>=1.0.0
+
+# PDF text extraction (fallback parser)
+pdfminer.six>=20231228
+PyPDF2>=3.0.1
+
+# NLP & Semantic Matching (optional — enables fallback when Gemini is unavailable)
+sentence-transformers>=3.0.0
+scikit-learn>=1.5.0
+numpy>=1.26.0
+spacy>=3.7
+nltk>=3.9.0
+regex>=2024.7.0
+
+# Data handling
+pandas>=2.2.0
+
+# Utilities
+tqdm>=4.66.0
+joblib>=1.4.0

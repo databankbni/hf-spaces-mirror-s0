@@ -1,0 +1,4002 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>塔吊智能监控标定 | 4×3 相机矩阵</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/numeric/1.2.6/numeric.min.js">
+    </script>
+    <style>
+        /* ===== 全局样式（与之前完全相同） ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            font-family: 'Times New Roman', 'Segoe UI', 'Roboto', system-ui, sans-serif;
+            background: #f0f4f8;
+        }
+        .split-layout {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            flex-direction: row;
+            gap: 0;
+            background: #f0f4f8;
+        }
+        .left-video {
+            flex: 1;
+            background: #111827;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            margin: 12px 0 12px 12px;
+            border-radius: 24px;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3), inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+            overflow: hidden;
+            border: 2px solid #2a3a5a;
+        }
+        .left-video video {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            cursor: crosshair;
+            background: #000;
+        }
+        #markerCanvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 10;
+        }
+        .video-deco {
+            position: absolute;
+            top: 16px;
+            right: 20px;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 12px;
+            letter-spacing: 2px;
+            font-family: 'Times New Roman', monospace;
+            background: rgba(0, 0, 0, 0.4);
+            padding: 4px 14px;
+            border-radius: 30px;
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            pointer-events: none;
+            user-select: none;
+            font-weight: 300;
+        }
+        /* ===== 修改点：隐藏左上角提示文字 ===== */
+        .pick-tip {
+            display: none !important;
+        }
+        .video-control-bar {
+            position: absolute;
+            top: 16px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 20;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(0, 0, 0, 0.55);
+            backdrop-filter: blur(12px);
+            padding: 4px 14px 4px 18px;
+            border-radius: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.10);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+            pointer-events: auto;
+        }
+        .video-control-bar .ctrl-label {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.75rem;
+            font-family: 'Times New Roman', sans-serif;
+            letter-spacing: 0.5px;
+            font-weight: 400;
+            white-space: nowrap;
+        }
+        .video-control-bar select {
+            background: rgba(255, 255, 255, 0.10);
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 30px;
+            padding: 4px 28px 4px 16px;
+            font-size: 0.8rem;
+            font-family: 'Times New Roman', 'Segoe UI', sans-serif;
+            cursor: pointer;
+            outline: none;
+            min-width: 100px;
+            max-width: 200px;
+            height: 30px;
+            appearance: none;
+            -webkit-appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='rgba(255,255,255,0.5)'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 10px center;
+            transition: border-color 0.2s, background 0.2s;
+        }
+        .video-control-bar select:hover {
+            border-color: rgba(255, 255, 255, 0.3);
+            background-color: rgba(255, 255, 255, 0.15);
+        }
+        .video-control-bar select:focus {
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3);
+        }
+        .video-control-bar select option {
+            background: #1a2a3a;
+            color: #e8edf4;
+            font-family: 'Times New Roman', sans-serif;
+            padding: 4px 8px;
+        }
+        .video-control-bar .video-count {
+            color: rgba(255, 255, 255, 0.35);
+            font-size: 0.65rem;
+            font-family: 'Times New Roman', monospace;
+            padding-left: 4px;
+            white-space: nowrap;
+        }
+        .video-control-bar .refresh-btn {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 50%;
+            width: 26px;
+            height: 26px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            font-size: 0.8rem;
+            transition: background 0.2s, transform 0.15s;
+            padding: 0;
+            line-height: 1;
+        }
+        .video-control-bar .refresh-btn:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: rotate(60deg);
+        }
+        .video-control-bar .refresh-btn:active {
+            transform: rotate(120deg);
+        }
+        .right-panel {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            background: #f0f4f8;
+            padding: 12px 12px 12px 6px;
+            overflow: hidden;
+            gap: 8px;
+        }
+        .calib-area {
+            flex: 1;
+            overflow-y: auto;
+            padding: 16px 20px;
+            background: #ffffff;
+            border-radius: 24px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04), 0 0 0 1px rgba(0, 0, 0, 0.02);
+            border: 1px solid #e9edf4;
+            display: flex;
+            flex-direction: column;
+        }
+        .calib-area h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            border-left: 4px solid #3b82f6;
+            padding-left: 12px;
+            font-family: 'Times New Roman', 'Segoe UI', sans-serif;
+            color: #0b1e33;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-shrink: 0;
+        }
+        .calib-area h3::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(to right, #d1d9e6, transparent);
+            margin-left: 10px;
+        }
+        .boom-analysis {
+            background: #f1f5f9;
+            border-radius: 18px;
+            padding: 14px 18px;
+            margin-bottom: 20px;
+            border: 1px solid #dbe1ea;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+            flex-shrink: 0;
+        }
+        .boom-analysis .analysis-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .boom-analysis .analysis-header h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #0f172a;
+            font-family: 'Times New Roman', 'Segoe UI', sans-serif;
+            margin: 0;
+            border-left: 3px solid #f59e0b;
+            padding-left: 8px;
+        }
+        .boom-analysis .analysis-header button {
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+            color: white;
+            border: none;
+            border-radius: 30px;
+            padding: 6px 20px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            cursor: pointer;
+            font-family: 'Times New Roman', 'Segoe UI', sans-serif;
+            box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3);
+            transition: transform 0.15s, box-shadow 0.2s;
+            white-space: nowrap;
+        }
+        .boom-analysis .analysis-header button:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 16px rgba(245, 158, 11, 0.4);
+        }
+        .boom-analysis .analysis-header button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+        .boom-analysis .analysis-header .status-text {
+            font-size: 0.8rem;
+            color: #475569;
+            font-family: 'Times New Roman', sans-serif;
+        }
+        .boom-analysis .progress-wrap {
+            margin-top: 10px;
+            width: 100%;
+            height: 6px;
+            background: #e2e8f0;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+        .boom-analysis .progress-wrap .progress-bar {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, #f59e0b, #d97706);
+            border-radius: 10px;
+            transition: width 0.3s ease;
+        }
+        .boom-analysis .result-times {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px 20px;
+            margin-top: 10px;
+            font-size: 0.78rem;
+            font-family: 'Times New Roman', monospace;
+            color: #0f172a;
+            background: white;
+            padding: 8px 12px;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            min-height: 30px;
+        }
+        .boom-analysis .result-times .time-item {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .boom-analysis .result-times .time-item .label {
+            font-weight: 600;
+            color: #334155;
+        }
+        .boom-analysis .result-times .time-item .value {
+            color: #0f172a;
+            background: #f1f5f9;
+            padding: 0 6px;
+            border-radius: 4px;
+        }
+        .boom-analysis .result-times .time-item .marker-color {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-right: 4px;
+        }
+        .custom-progress-container {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 28px;
+            pointer-events: none;
+            z-index: 15;
+        }
+        .custom-progress-container .progress-track {
+            position: absolute;
+            bottom: 6px;
+            left: 10px;
+            right: 10px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.25);
+            border-radius: 4px;
+            pointer-events: none;
+        }
+        .custom-progress-container .progress-fill {
+            height: 100%;
+            width: 0%;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 4px;
+            transition: width 0.1s;
+        }
+        .custom-progress-container .markers {
+            position: absolute;
+            top: -10px;
+            left: 0;
+            right: 0;
+            height: 24px;
+            pointer-events: none;
+        }
+        .custom-progress-container .marker {
+            position: absolute;
+            width: 3px;
+            height: 18px;
+            background: #facc15;
+            border-radius: 2px;
+            transform: translateX(-50%);
+            top: 0;
+            transition: left 0.1s;
+            box-shadow: 0 0 6px rgba(250, 204, 21, 0.6);
+        }
+        .custom-progress-container .marker.lift {
+            background: #22c55e;
+            box-shadow: 0 0 6px rgba(34, 197, 94, 0.6);
+        }
+        .custom-progress-container .marker.place {
+            background: #ef4444;
+            box-shadow: 0 0 6px rgba(239, 68, 68, 0.6);
+        }
+        .custom-progress-container .marker.tip-sample {
+            background: #22d3ee;
+            height: 22px;
+            top: -2px;
+            box-shadow: 0 0 8px rgba(34, 211, 238, 0.75);
+        }
+        .param-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 20px;
+            flex: 1 0 auto;
+            min-height: 280px;
+        }
+        .card-base {
+            grid-row: 1 / 3;
+            grid-column: 1 / 2;
+        }
+        .card-vertical {
+            grid-row: 1 / 3;
+            grid-column: 2 / 3;
+        }
+        .card-trolley {
+            grid-row: 1 / 2;
+            grid-column: 3 / 4;
+        }
+        .card-worker {
+            grid-row: 2 / 3;
+            grid-column: 3 / 4;
+        }
+        .param-card {
+            background: #f9fbfd;
+            border-radius: 18px;
+            padding: 14px 16px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+            transition: box-shadow 0.2s, border-color 0.2s;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+        }
+        .param-card:hover {
+            border-color: #b9c8e0;
+            box-shadow: 0 8px 18px rgba(0, 20, 50, 0.06);
+        }
+        .param-card h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            border-left: 3px solid #3b82f6;
+            padding-left: 8px;
+            font-family: 'Times New Roman', 'Segoe UI', sans-serif;
+            color: #1e293b;
+            flex-shrink: 0;
+        }
+        .param-card label {
+            font-size: 0.75rem;
+            font-weight: 500;
+            display: block;
+            margin-bottom: 2px;
+            font-family: 'Times New Roman', 'Segoe UI', sans-serif;
+            color: #475569;
+        }
+        .compact-row {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-end;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+        .compact-field {
+            flex: 1;
+            min-width: 52px;
+        }
+        .coord-small {
+            display: flex;
+            gap: 4px;
+        }
+        .coord-small input {
+            width: 42px;
+        }
+        input {
+            padding: 5px 6px;
+            border-radius: 10px;
+            border: 1px solid #d0d7e2;
+            font-size: 0.8rem;
+            width: 100%;
+            font-family: 'Times New Roman', monospace;
+            background: white;
+            transition: border-color 0.15s, box-shadow 0.15s;
+        }
+        input:focus {
+            outline: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.12);
+        }
+        .param-card select {
+            padding: 5px 6px;
+            border-radius: 10px;
+            border: 1px solid #d0d7e2;
+            font-size: 0.8rem;
+            width: 100%;
+            font-family: 'Times New Roman', 'Segoe UI', sans-serif;
+            background: white;
+            color: #0f172a;
+            transition: border-color 0.15s, box-shadow 0.15s;
+            height: 30px;
+        }
+        .param-card select:focus {
+            outline: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.12);
+        }
+        button.pick-btn {
+            background: #eef2ff;
+            border: none;
+            border-radius: 10px;
+            padding: 4px 10px;
+            font-size: 0.6rem;
+            font-weight: 500;
+            color: #2563eb;
+            cursor: pointer;
+            height: 26px;
+            font-family: 'Times New Roman', 'Segoe UI', sans-serif;
+            white-space: nowrap;
+            transition: background 0.15s, transform 0.1s;
+            flex-shrink: 0;
+        }
+        button.pick-btn:hover {
+            background: #d9e6ff;
+            transform: scale(0.97);
+        }
+        .vpoint-row {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-end;
+            gap: 6px;
+            margin-bottom: 8px;
+            background: #ffffffcc;
+            padding: 6px;
+            border-radius: 12px;
+            border: 1px solid #edf2f7;
+        }
+        .tip-point-row {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-end;
+            gap: 6px;
+            margin-bottom: 8px;
+            background: #ecfeff;
+            padding: 6px;
+            border-radius: 12px;
+            border: 1px solid #bae6fd;
+        }
+        .tip-point-row .field {
+            flex: 1;
+            min-width: 36px;
+        }
+        .tip-point-row input {
+            padding: 4px 6px;
+            font-size: 0.75rem;
+        }
+        .tip-point-row label {
+            font-size: 0.7rem;
+        }
+        .vpoint-row .field {
+            flex: 1;
+            min-width: 36px;
+        }
+        .vpoint-row input {
+            padding: 4px 6px;
+            font-size: 0.75rem;
+        }
+        .vpoint-row label {
+            font-size: 0.7rem;
+        }
+        .add-point-btn {
+            background: #eef2ff;
+            border: 1px solid #cbd5e1;
+            border-radius: 20px;
+            padding: 4px 8px;
+            font-size: 0.6rem;
+            cursor: pointer;
+            margin-top: 6px;
+            width: 100%;
+            text-align: center;
+            font-family: 'Times New Roman', 'Segoe UI', sans-serif;
+            transition: background 0.15s;
+        }
+        .add-point-btn:hover {
+            background: #d9e6ff;
+        }
+        button.calc-btn {
+            background: linear-gradient(135deg, #3b82f6, #2563eb);
+            color: white;
+            border: none;
+            border-radius: 30px;
+            padding: 12px 20px;
+            font-weight: 600;
+            font-size: 1rem;
+            width: 100%;
+            margin: 10px 0 14px 0;
+            cursor: pointer;
+            font-family: 'Times New Roman', 'Segoe UI', sans-serif;
+            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.25);
+            transition: transform 0.15s, box-shadow 0.2s;
+            flex-shrink: 0;
+        }
+        button.calc-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 24px rgba(37, 99, 235, 0.35);
+        }
+        button.calc-btn:active {
+            transform: scale(0.98);
+        }
+        .matrix-output {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 18px;
+            padding: 12px 14px;
+            margin-top: 12px;
+            position: relative;
+            box-shadow: none;
+            flex-shrink: 0;
+        }
+        .matrix-output strong {
+            display: block;
+            color: #0f172a;
+            font-size: 0.85rem;
+            margin-bottom: 6px;
+        }
+        .matrix-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 4px;
+            background: #f8fafc;
+            padding: 2px;
+        }
+        .matrix-grid .cell {
+            background: white;
+            border-radius: 4px;
+            padding: 4px 2px;
+            text-align: center;
+            font-family: 'Times New Roman', monospace;
+            font-size: 0.75rem;
+            color: #0f172a;
+            border: 1px solid #e9edf4;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .error-msg {
+            color: #dc2626;
+            background: #fee2e2;
+            padding: 10px 14px;
+            border-radius: 14px;
+            font-size: 0.8rem;
+            margin: 8px 0;
+            font-family: 'Times New Roman', sans-serif;
+            border: 1px solid #fecaca;
+        }
+        .success-info {
+            color: #065f46;
+            background: #d1fae5;
+            padding: 10px 14px;
+            border-radius: 14px;
+            font-size: 0.8rem;
+            font-family: 'Times New Roman', sans-serif;
+            line-height: 1.6;
+            border: 1px solid #a7f3d0;
+        }
+        .draw-area {
+            flex: 1;
+            background: #ffffff;
+            border-radius: 24px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04), 0 0 0 1px rgba(0, 0, 0, 0.02);
+            border: 1px solid #e9edf4;
+            display: flex;
+            flex-direction: column;
+            padding: 14px 18px;
+            gap: 12px;
+            overflow: hidden;
+            font-family: 'Times New Roman', 'Segoe UI', sans-serif;
+            min-height: 0;
+        }
+        .risk-cards {
+            display: flex;
+            gap: 12px;
+            width: 100%;
+            height: 100%;
+            min-height: 0;
+        }
+        .risk-card {
+            flex: 1;
+            min-width: 0;
+            background: #f9fbfd;
+            border: 1px solid #e2e8f0;
+            border-radius: 18px;
+            padding: 12px 14px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        .risk-card:hover {
+            border-color: #b9c8e0;
+            box-shadow: 0 8px 18px rgba(0, 20, 50, 0.06);
+        }
+        .risk-card h4 {
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            border-left: 3px solid #f97316;
+            padding-left: 8px;
+            color: #1e293b;
+            font-family: 'Times New Roman', 'Segoe UI', sans-serif;
+            flex-shrink: 0;
+        }
+        .risk-info {
+            font-size: 0.7rem;
+            line-height: 1.5;
+            color: #334155;
+            overflow-y: auto;
+            white-space: pre-wrap;
+            word-break: break-word;
+            font-family: 'Times New Roman', monospace;
+            flex: 1;
+        }
+        .risk-canvas-wrap {
+            flex: 1;
+            min-height: 0;
+            position: relative;
+            border-radius: 14px;
+            overflow: hidden;
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+        }
+        .risk-canvas {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+        .risk-legend {
+            font-size: 0.72rem;
+            color: #475569;
+            margin-top: 6px;
+            line-height: 1.4;
+            font-family: 'Times New Roman', sans-serif;
+            flex-shrink: 0;
+        }
+        .legend-item {
+            display: inline-flex;
+            align-items: center;
+            margin-right: 10px;
+        }
+        .legend-color {
+            width: 10px;
+            height: 10px;
+            border-radius: 3px;
+            margin-right: 5px;
+            display: inline-block;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        #magnifier {
+            position: absolute;
+            display: none;
+            pointer-events: none;
+            z-index: 30;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.55), 0 0 0 2px rgba(255, 255, 255, 0.15);
+            background: rgba(20, 20, 30, 0.85);
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.20);
+            overflow: hidden;
+            user-select: none;
+            transition: opacity 0.12s ease;
+        }
+        #magnifierCanvas {
+            display: block;
+            width: 100%;
+            height: 100%;
+            image-rendering: pixelated;
+        }
+        #magnifierInfo {
+            position: absolute;
+            bottom: 6px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.70);
+            backdrop-filter: blur(4px);
+            color: #fff;
+            font-size: 11px;
+            font-family: 'Times New Roman', monospace;
+            padding: 2px 12px;
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.10);
+            white-space: nowrap;
+            letter-spacing: 0.3px;
+            pointer-events: none;
+            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+        }
+        #magnifierInfo .coord-label {
+            color: #94a3b8;
+            margin-right: 4px;
+        }
+        #magnifierInfo .coord-value {
+            color: #fcd34d;
+            font-weight: 600;
+        }
+        #magnifier .crosshair-h,
+        #magnifier .crosshair-v {
+            position: absolute;
+            pointer-events: none;
+            background: rgba(255, 80, 80, 0.85);
+            mix-blend-mode: difference;
+        }
+        #magnifier .crosshair-h {
+            left: 0;
+            right: 0;
+            top: 50%;
+            height: 1px;
+            transform: translateY(-50%);
+        }
+        #magnifier .crosshair-v {
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 1px;
+            transform: translateX(-50%);
+        }
+        #magnifier .crosshair-dot {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 3px;
+            height: 3px;
+            background: #ff3333;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 0 6px rgba(255, 0, 0, 0.7);
+            pointer-events: none;
+        }
+        #magnifier .crosshair-ring {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 18px;
+            height: 18px;
+            border: 1.5px solid rgba(255, 80, 80, 0.60);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            box-shadow: 0 0 8px rgba(255, 0, 0, 0.15);
+        }
+        @media (max-width: 900px) {
+            .param-grid {
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: auto auto auto;
+                min-height: 200px;
+            }
+            .card-base {
+                grid-row: 1 / 2;
+                grid-column: 1 / 2;
+            }
+            .card-vertical {
+                grid-row: 1 / 2;
+                grid-column: 2 / 3;
+            }
+            .card-trolley {
+                grid-row: 2 / 3;
+                grid-column: 1 / 2;
+            }
+            .card-worker {
+                grid-row: 3 / 4;
+                grid-column: 1 / 2;
+            }
+            .video-control-bar {
+                top: 10px;
+                padding: 3px 10px 3px 14px;
+                gap: 4px;
+            }
+            .video-control-bar select {
+                min-width: 70px;
+                max-width: 120px;
+                font-size: 0.7rem;
+                height: 26px;
+                padding-right: 24px;
+            }
+            .video-control-bar .ctrl-label {
+                font-size: 0.65rem;
+            }
+            .video-control-bar .video-count {
+                display: none;
+            }
+            .video-control-bar .refresh-btn {
+                width: 22px;
+                height: 22px;
+                font-size: 0.65rem;
+            }
+            .pick-tip {
+                display: none !important;
+            }
+            .video-deco {
+                font-size: 10px;
+                padding: 3px 10px;
+                top: 56px;
+                right: 12px;
+            }
+            .boom-analysis .analysis-header {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 6px;
+            }
+            .boom-analysis .analysis-header button {
+                width: 100%;
+                justify-content: center;
+            }
+            #magnifier {
+                width: 140px !important;
+                height: 140px !important;
+            }
+            #magnifierInfo {
+                font-size: 9px;
+                padding: 1px 8px;
+            }
+        }
+        @media (max-width: 600px) {
+            .param-grid {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto auto auto auto;
+            }
+            .card-base {
+                grid-row: 1 / 2;
+                grid-column: 1 / 2;
+            }
+            .card-vertical {
+                grid-row: 2 / 3;
+                grid-column: 1 / 2;
+            }
+            .card-trolley {
+                grid-row: 3 / 4;
+                grid-column: 1 / 2;
+            }
+            .card-worker {
+                grid-row: 4 / 5;
+                grid-column: 1 / 2;
+            }
+            .video-control-bar {
+                top: 8px;
+                padding: 2px 8px 2px 10px;
+                border-radius: 30px;
+            }
+            .video-control-bar select {
+                min-width: 60px;
+                max-width: 90px;
+                font-size: 0.6rem;
+                height: 22px;
+                padding-right: 20px;
+                padding-left: 10px;
+            }
+            .video-control-bar .ctrl-label {
+                font-size: 0.55rem;
+            }
+            .video-control-bar .refresh-btn {
+                width: 18px;
+                height: 18px;
+                font-size: 0.55rem;
+            }
+            .pick-tip {
+                display: none !important;
+            }
+            .video-deco {
+                font-size: 8px;
+                padding: 2px 8px;
+                top: 44px;
+                right: 8px;
+            }
+            #magnifier {
+                width: 110px !important;
+                height: 110px !important;
+            }
+            #magnifierInfo {
+                font-size: 8px;
+                padding: 1px 6px;
+                bottom: 4px;
+            }
+            #magnifier .crosshair-ring {
+                width: 12px;
+                height: 12px;
+            }
+            #magnifier .crosshair-dot {
+                width: 2px;
+                height: 2px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="split-layout">
+        <!-- 左侧视频 -->
+        <div class="left-video">
+            <div class="video-control-bar" id="videoControlBar">
+                <span class="ctrl-label">🎬 监控</span>
+                <select id="videoSelect"><option value="">加载中…</option></select>
+                <span class="video-count" id="videoCount"></span>
+                <button class="refresh-btn" id="refreshVideoList" title="刷新监控列表">⟳</button>
+            </div>
+            <video id="mainVideo" controls preload="auto" playsinline crossorigin="anonymous">
+                <source src="./Crane_working_1.mp4" type="video/mp4">
+                浏览器不支持视频播放。
+            </video>
+            <canvas id="markerCanvas"></canvas>
+            <div id="magnifier">
+                <canvas id="magnifierCanvas"></canvas>
+                <div class="crosshair-h"></div>
+                <div class="crosshair-v"></div>
+                <div class="crosshair-dot"></div>
+                <div class="crosshair-ring"></div>
+                <div id="magnifierInfo">
+                    <span class="coord-label">📍</span>
+                    <span class="coord-value" id="magCoordDisplay">(0, 0)</span>
+                </div>
+            </div>
+            <!-- 修改点：提示文字已移除（元素保留但隐藏，内容清空） -->
+            <div class="pick-tip" id="pickTip"></div>
+            <div id="aiStatus" style="position:absolute; top:16px; left:20px; z-index:25; background:rgba(0,0,0,0.75); backdrop-filter:blur(4px); color:#fff; padding:6px 16px; border-radius:30px; font-size:14px; font-family:'Times New Roman', monospace; display:none; pointer-events:none; border:1px solid rgba(255,255,255,0.1);"></div>
+            <div class="video-deco">● LIVE</div>
+            <div class="custom-progress-container" id="customProgressContainer">
+                <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+                <div class="markers" id="markersContainer"></div>
+            </div>
+        </div>
+        <!-- 右侧面板 -->
+        <div class="right-panel">
+            <div class="calib-area">
+                <h3>📐 相机标定 &amp; 3×4 投影矩阵</h3>
+                <div class="boom-analysis" id="boomAnalysis">
+                    <div class="analysis-header">
+                        <h4>⏱️ 塔吊运行时间点分析</h4>
+                        <button id="analyzeBtn">🔍 分析吊塔运行时间点</button>
+                        <span class="status-text" id="analysisStatus">就绪</span>
+                    </div>
+                    <div class="progress-wrap"><div class="progress-bar" id="analysisProgress" style="width:0%;"></div></div>
+                    <div class="result-times" id="resultTimes">
+                        <span style="color:#94a3b8; font-size:0.8rem;">点击「分析」按钮获取时间点</span>
+                    </div>
+                </div>
+                <div class="param-grid">
+                    <div class="param-card card-base">
+                        <h4>🏗️ 塔吊底座参数</h4>
+                        <div style="font-size:0.72rem; color:#64748b; line-height:1.5; margin-bottom:8px; background:#fff7ed; border:1px solid #fed7aa; border-radius:10px; padding:8px 10px;">
+                            <b>底座角点标记规则：</b><br>
+                            请按固定物理位置填写，不能随意调换 B1/B2/B3/B4 标签。<br>
+                            俯视图定义如下：<br>
+                            <span style="font-family:'Times New Roman', monospace;">
+                                &nbsp;&nbsp;&nbsp;&nbsp;B2 —— B1<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;B3 —— B4
+                            </span><br>
+                            若只选 3 个角点，程序将按近似平行四边形自动补全第 4 个角点。
+                        </div>
+                        <div class="compact-row">
+                            <div class="compact-field">
+                                <label>中心到底座角点距离 (米)</label>
+                                <input type="text" id="baseRadius" value="1.27" inputmode="decimal" autocomplete="off">
+                            </div>
+                        </div>
+                        <div style="margin: 8px 0 4px 0;"><label style="font-size:0.75rem;">📍 底座图像角点</label></div>
+                        <div class="compact-row"><div class="compact-field"><label>B1 (u,v)</label><div class="coord-small"><input id="b1u" value="1213.21" autocomplete="off"><input id="b1v" value="1719.83" autocomplete="off"></div></div><button class="pick-btn" data-target="b1">选取</button></div>
+                        <div class="compact-row"><div class="compact-field"><label>B2 (u,v)</label><div class="coord-small"><input id="b2u" value="" autocomplete="off"><input id="b2v" value="" autocomplete="off"></div></div><button class="pick-btn" data-target="b2">选取</button></div>
+                        <div class="compact-row"><div class="compact-field"><label>B3 (u,v)</label><div class="coord-small"><input id="b3u" value="1146.79" autocomplete="off"><input id="b3v" value="1760.71" autocomplete="off"></div></div><button class="pick-btn" data-target="b3">选取</button></div>
+                        <div class="compact-row"><div class="compact-field"><label>B4 (u,v)</label><div class="coord-small"><input id="b4u" value="1238.78" autocomplete="off"><input id="b4v" value="1745.38" autocomplete="off"></div></div><button class="pick-btn" data-target="b4">选取</button></div>
+                        <div class="compact-row"><div class="compact-field"><label>C 中心 (可选)</label><div class="coord-small"><input id="cu" value="" autocomplete="off"><input id="cv" value="" autocomplete="off"></div></div><button class="pick-btn" data-target="c">选取</button></div>
+                    </div>
+                    <div class="param-card card-vertical">
+                        <h4>📐 塔吊几何参数</h4>
+                        <div id="verticalPointsContainer">
+                            <div class="vpoint-row" data-idx="0">
+                                <div class="field"><label>Z1 (m)</label><input class="vz" type="text" value="21.85" inputmode="decimal" autocomplete="off"></div>
+                                <div class="field"><label>u</label><input class="vu" type="text" value="1136.57" inputmode="decimal" autocomplete="off"></div>
+                                <div class="field"><label>v</label><input class="vv" type="text" value="554.65" inputmode="decimal" autocomplete="off"></div>
+                                <button class="pick-btn pick-vertical" data-idx="0">选取</button>
+                            </div>
+                            <div class="vpoint-row" data-idx="1">
+                                <div class="field"><label>Z2 (m)</label><input class="vz" type="text" value="28.25" inputmode="decimal" autocomplete="off"></div>
+                                <div class="field"><label>u</label><input class="vu" type="text" value="1141.68" inputmode="decimal" autocomplete="off"></div>
+                                <div class="field"><label>v</label><input class="vv" type="text" value="115.15" inputmode="decimal" autocomplete="off"></div>
+                                <button class="pick-btn pick-vertical" data-idx="1">选取</button>
+                            </div>
+                        </div>
+                        <button id="addVerticalPoint" class="add-point-btn">+ 添加参考点</button>
+                        <div class="compact-row" style="margin-top:8px;">
+                            <div class="compact-field">
+                                <label>塔臂长度 / 臂尖半径 r (米)</label>
+                                <input type="text" id="boomLength" value="35.10" inputmode="decimal" autocomplete="off">
+                            </div>
+                        </div>
+                        <div class="compact-row">
+                            <div class="compact-field">
+                                <label>塔臂尖高度 H (米)</label>
+                                <input type="text" id="tipHeight" value="21.85" inputmode="decimal" autocomplete="off">
+                            </div>
+                        </div>
+                        <div style="margin: 8px 0 4px 0;">
+                            <label style="font-size:0.75rem;">📍 塔臂尖参考点，半径固定为塔臂长度</label>
+                        </div>
+                        <div id="tipPointsContainer">
+                            <div class="tip-point-row" data-idx="0">
+                                <div class="field">
+                                    <label>Tip1 u</label>
+                                    <input class="tip-u" type="text" value="3712.24" inputmode="decimal" autocomplete="off">
+                                </div>
+                                <div class="field">
+                                    <label>v</label>
+                                    <input class="tip-v" type="text" value="304.23" inputmode="decimal" autocomplete="off">
+                                </div>
+                                <button class="pick-btn pick-tip-point" data-idx="0">选取</button>
+                                <button class="pick-btn ai-tip-btn" data-idx="0" style="background:#8b5cf6; color:white;">AI</button>
+                            </div>
+                            <div class="tip-point-row" data-idx="1">
+                                <div class="field">
+                                    <label>Tip2 u</label>
+                                    <input class="tip-u" type="text" value="3599.81" inputmode="decimal" autocomplete="off">
+                                </div>
+                                <div class="field">
+                                    <label>v</label>
+                                    <input class="tip-v" type="text" value="299.12" inputmode="decimal" autocomplete="off">
+                                </div>
+                                <button class="pick-btn pick-tip-point" data-idx="1">选取</button>
+                                <button class="pick-btn ai-tip-btn" data-idx="1" style="background:#8b5cf6; color:white;">AI</button>
+                            </div>
+                        </div>
+                        <button id="addTipPoint" class="add-point-btn">+ 添加塔臂尖参考点</button>
+                        <div class="compact-row" style="margin-top:8px;">
+                            <div class="compact-field">
+                                <label>塔吊旋转方向</label>
+                                <select id="rotationDirection">
+                                    <option value="ccw" selected>逆时针 ccw</option>
+                                    <option value="cw">顺时针 cw</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="param-card card-trolley">
+                        <h4>🚛 小车关键点</h4>
+                        <div class="compact-row">
+                            <div class="compact-field">
+                                <label>小车高度 (米)</label>
+                                <input id="trolleyHeight" type="text" value="21.85" inputmode="decimal" autocomplete="off">
+                            </div>
+                            <div class="compact-field">
+                                <label>吊物危险区域半径 (米)</label>
+                                <input id="loadRiskRadius" type="text" value="2.00" inputmode="decimal" autocomplete="off">
+                            </div>
+                        </div>
+                        <div class="compact-row">
+                            <div class="compact-field"><label>起始小车 (u,v)</label><div class="coord-small"><input id="trolleyStartU" value="2455.06" autocomplete="off"><input id="trolleyStartV" value="452.44" autocomplete="off"></div></div>
+                            <button class="pick-btn" data-target="trolleyStart">选取</button>
+                            <button class="pick-btn ai-trolley-btn" data-target="trolleyStart" style="background:#8b5cf6; color:white; font-size:0.6rem; padding:4px 8px;">AI</button>
+                        </div>
+                        <div class="compact-row">
+                            <div class="compact-field"><label>结束小车 (u,v)</label><div class="coord-small"><input id="trolleyEndU" value="1662.94" autocomplete="off"><input id="trolleyEndV" value="416.66" autocomplete="off"></div></div>
+                            <button class="pick-btn" data-target="trolleyEnd">选取</button>
+                            <button class="pick-btn ai-trolley-btn" data-target="trolleyEnd" style="background:#8b5cf6; color:white; font-size:0.6rem; padding:4px 8px;">AI</button>
+                        </div>
+                    </div>
+                    <div class="param-card card-worker">
+                        <h4>👷 工人关键点</h4>
+                        <div class="compact-row">
+                            <div class="compact-field"><label>起始工人 (u,v)</label><div class="coord-small"><input id="workerStartU" value="2306.86" autocomplete="off"><input id="workerStartV" value="1515.41" autocomplete="off"></div></div>
+                            <button class="pick-btn" data-target="workerStart">选取</button>
+                        </div>
+                        <div class="compact-row">
+                            <div class="compact-field"><label>结束工人 (u,v)</label><div class="coord-small"><input id="workerEndU" value="2030.90" autocomplete="off"><input id="workerEndV" value="1484.75" autocomplete="off"></div></div>
+                            <button class="pick-btn" data-target="workerEnd">选取</button>
+                        </div>
+                    </div>
+                </div>
+                <button id="calibrateBtn" class="calc-btn">🔧 计算相机矩阵 (3×4 投影矩阵)</button>
+                <div id="resultPanel">
+                    <div class="matrix-output">
+                        <strong>📹 3×4 相机投影矩阵 P</strong>
+                        <div id="matrixGrid" class="matrix-grid"></div>
+                    </div>
+                    <div id="calibStatus"></div>
+                </div>
+            </div>
+            <div class="draw-area">
+                <div class="risk-cards">
+                    <div class="risk-card">
+                        <h4>👷 工人与塔吊运动参数</h4>
+                        <div id="riskParamInfo" class="risk-info">请先点击上方“计算相机矩阵”。</div>
+                    </div>
+                    <div class="risk-card">
+                        <h4>🏗️ 3D 坐标示意</h4>
+                        <div class="risk-canvas-wrap"><canvas id="risk3DCanvas" class="risk-canvas"></canvas></div>
+                        <div class="risk-legend"><span class="legend-item"><span class="legend-color" style="background:#16a34a;"></span>Worker</span></div>
+                    </div>
+                    <div class="risk-card">
+                        <h4>📍 俯视风险区域</h4>
+                        <div class="risk-canvas-wrap"><canvas id="riskTopCanvas" class="risk-canvas"></canvas></div>
+                        <div class="risk-legend">
+                            <span class="legend-item"><span class="legend-color" style="background:#16a34a;"></span>Worker</span>
+                            <span class="legend-item"><span class="legend-color" style="background:rgba(249,115,22,0.4);"></span>大臂扫过区域</span>
+                            <span class="legend-item"><span class="legend-color" style="background:rgba(59,130,246,0.4);"></span>吊物危险区域</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // ================================================================
+        // 0. 监控列表管理
+        // ================================================================
+        const REPO_OWNER = 'LAILI-civil';
+        const REPO_NAME = 'Crane_safety';
+        const BRANCH = 'main';
+        const VIDEO_EXTS = ['.mp4', '.webm', '.mov', '.avi', '.mkv', '.flv', '.wmv', '.m4v', '.mpg', '.mpeg'];
+        const videoEl = document.getElementById('mainVideo');
+        const videoSelect = document.getElementById('videoSelect');
+        const videoCountEl = document.getElementById('videoCount');
+        const refreshBtn = document.getElementById('refreshVideoList');
+        let cachedVideoList = [];
+        window.videoNameToDisplay = {};
+
+        function isVideoFile(filename) {
+            const lower = filename.toLowerCase();
+            return VIDEO_EXTS.some(ext => lower.endsWith(ext));
+        }
+        async function fetchGitHubFileList() {
+            const url = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/?ref=${BRANCH}`;
+            const resp = await fetch(url);
+            if (!resp.ok) throw new Error(`GitHub API 请求失败 (HTTP ${resp.status})`);
+            const data = await resp.json();
+            if (!Array.isArray(data)) throw new Error('GitHub API 返回数据格式异常');
+            return data.filter(item => item.type === 'file' && isVideoFile(item.name)).map(item => item.name).sort((a, b) => a
+                .localeCompare(b, undefined, { sensitivity: 'base' }));
+        }
+        async function loadVideoList() {
+            try {
+                videoSelect.disabled = true;
+                videoSelect.innerHTML = '<option value="">加载监控中…</option>';
+                videoCountEl.textContent = '…';
+                const videos = await fetchGitHubFileList();
+                cachedVideoList = videos;
+                videoSelect.innerHTML = '';
+                if (videos.length === 0) {
+                    const opt = document.createElement('option');
+                    opt.value = '';
+                    opt.textContent = '⚠️ 未找到监控文件';
+                    videoSelect.appendChild(opt);
+                    videoCountEl.textContent = '0';
+                    videoSelect.disabled = true;
+                    return;
+                }
+                const currentVal = videoSelect.value;
+                window.videoNameToDisplay = {};
+                videos.forEach((name, index) => {
+                    const opt = document.createElement('option');
+                    opt.value = name;
+                    const displayName = `Monitoring ${index + 1}`;
+                    window.videoNameToDisplay[name] = displayName;
+                    opt.textContent = displayName;
+                    videoSelect.appendChild(opt);
+                });
+                videoCountEl.textContent = `${videos.length} 个监控`;
+                if (currentVal && videos.includes(currentVal)) {
+                    videoSelect.value = currentVal;
+                } else {
+                    const preferred = 'Crane_working_2.mp4';
+                    const defaultVideo = videos.includes(preferred) ? preferred : videos[0];
+                    videoSelect.value = defaultVideo;
+                    switchVideo(defaultVideo);
+                }
+                videoSelect.disabled = false;
+                videoSelect.style.color = '#fff';
+            } catch (err) {
+                console.error('加载监控列表失败:', err);
+                videoSelect.innerHTML = '';
+                const opt = document.createElement('option');
+                opt.value = '';
+                opt.textContent = '⚠️ 加载失败，使用默认';
+                videoSelect.appendChild(opt);
+                videoCountEl.textContent = '?';
+                videoSelect.disabled = true;
+                const fallbackList = ['Crane_working_2.mp4', 'Crane_working_1.mp4'];
+                let found = false;
+                window.videoNameToDisplay = {};
+                for (const name of fallbackList) {
+                    try {
+                        const testResp = await fetch(`./${name}`, { method: 'HEAD' });
+                        if (testResp.ok) {
+                            const opt2 = document.createElement('option');
+                            opt2.value = name;
+                            const display = name === 'Crane_working_1.mp4' ? 'Monitoring 1' :
+                                name === 'Crane_working_2.mp4' ? 'Monitoring 2' : name;
+                            window.videoNameToDisplay[name] = display;
+                            opt2.textContent = display;
+                            videoSelect.appendChild(opt2);
+                            if (!found) {
+                                videoSelect.value = name;
+                                switchVideo(name);
+                                found = true;
+                            }
+                        }
+                    } catch (_) {}
+                }
+                if (!found) switchVideo('Crane_working_1.mp4');
+                videoSelect.disabled = false;
+            }
+        }
+        function switchVideo(filename) {
+            if (!filename) return;
+            const displayName = window.videoNameToDisplay[filename] || filename;
+            const currentSrc = videoEl.src;
+            const newSrc = `./${filename}`;
+            if (currentSrc.endsWith(filename) || currentSrc === newSrc) {
+                return;
+            }
+            videoEl.src = newSrc;
+            videoEl.load();
+            videoEl.play().catch(() => {});
+            setTimeout(drawMarkers, 500);
+        }
+        async function refreshVideoList() {
+            refreshBtn.style.transform = 'rotate(360deg)';
+            await loadVideoList();
+            setTimeout(() => { refreshBtn.style.transform = ''; }, 400);
+        }
+        videoSelect.addEventListener('change', function() {
+            const selected = this.value;
+            if (selected) switchVideo(selected);
+        });
+        refreshBtn.addEventListener('click', refreshVideoList);
+        window.addEventListener('DOMContentLoaded', () => { loadVideoList(); });
+        videoEl.addEventListener('error', function() {
+            const currentSrc = this.src;
+            const currentName = currentSrc.split('/').pop();
+            const idx = cachedVideoList.indexOf(currentName);
+            if (idx !== -1 && cachedVideoList.length > 1) {
+                const nextIdx = (idx + 1) % cachedVideoList.length;
+                const nextName = cachedVideoList[nextIdx];
+                if (nextName !== currentName) {
+                    videoSelect.value = nextName;
+                    switchVideo(nextName);
+                }
+            }
+        });
+
+        // ================================================================
+        // 1. 基础数学工具
+        // ================================================================
+        function leastSquares(A, b) {
+            const rows = A.length,
+                cols = A[0].length;
+            let U, S, V;
+            if (rows >= cols) {
+                const svd = numeric.svd(A);
+                U = svd.U;
+                S = svd.S;
+                V = svd.V;
+            } else {
+                const AT = numeric.transpose(A);
+                const svd = numeric.svd(AT);
+                U = svd.V;
+                S = svd.S;
+                V = svd.U;
+            }
+            const tol = 1e-12 * S[0];
+            const x = new Array(cols).fill(0);
+            for (let i = 0; i < S.length; i++) {
+                if (S[i] > tol) {
+                    const invS = 1.0 / S[i];
+                    const ui = U.map(row => row[i]);
+                    const coeff = invS * numeric.dot(ui, b);
+                    for (let j = 0; j < cols; j++) {
+                        x[j] += V[j][i] * coeff;
+                    }
+                }
+            }
+            return x;
+        }
+        function normalizePoints(points) {
+            const n = points.length;
+            let meanX = 0,
+                meanY = 0;
+            for (let i = 0; i < n; i++) { meanX += points[i][0];
+                meanY += points[i][1]; }
+            meanX /= n;
+            meanY /= n;
+            const centered = points.map(p => [p[0] - meanX, p[1] - meanY]);
+            let sumDist = 0;
+            for (let i = 0; i < n; i++) sumDist += Math.hypot(centered[i][0], centered[i][1]);
+            const meanDist = sumDist / n;
+            const scale = Math.sqrt(2) / meanDist;
+            const T = [
+                [scale, 0, -scale * meanX],
+                [0, scale, -scale * meanY],
+                [0, 0, 1]
+            ];
+            const normPoints = points.map(p => {
+                const ph = [p[0], p[1], 1];
+                const res = numeric.dot(T, ph);
+                return [res[0] / res[2], res[1] / res[2]];
+            });
+            return { normPoints, T };
+        }
+        function computeHomography(worldPts, imgPts) {
+            if (worldPts.length < 4) throw new Error("至少需要4对点");
+            const { normPoints: worldNorm, T: Tw } = normalizePoints(worldPts);
+            const { normPoints: imgNorm, T: Ti } = normalizePoints(imgPts);
+            const A = [];
+            for (let i = 0; i < worldNorm.length; i++) {
+                const X = worldNorm[i][0],
+                    Y = worldNorm[i][1];
+                const u = imgNorm[i][0],
+                    v = imgNorm[i][1];
+                A.push([X, Y, 1, 0, 0, 0, -u * X, -u * Y, -u]);
+                A.push([0, 0, 0, X, Y, 1, -v * X, -v * Y, -v]);
+            }
+            const AT = numeric.transpose(A);
+            const ATA = numeric.dot(AT, A);
+            const eig = numeric.eig(ATA);
+            const eigenValues = eig.lambda.x;
+            const eigenVectors = eig.E.x;
+            let minIdx = 0;
+            let minVal = Math.abs(eigenValues[0]);
+            for (let i = 1; i < eigenValues.length; i++) {
+                const val = Math.abs(eigenValues[i]);
+                if (val < minVal) { minVal = val;
+                    minIdx = i; }
+            }
+            const h = eigenVectors.map(row => row[minIdx]);
+            const Hn = [
+                [h[0], h[1], h[2]],
+                [h[3], h[4], h[5]],
+                [h[6], h[7], h[8]]
+            ];
+            const TiInv = numeric.inv(Ti);
+            let H = numeric.dot(numeric.dot(TiInv, Hn), Tw);
+            const scale = H[2][2];
+            if (Math.abs(scale) > 1e-12) {
+                for (let i = 0; i < 3; i++) {
+                    for (let j = 0; j < 3; j++) {
+                        H[i][j] /= scale;
+                    }
+                }
+            } else {
+                const norm = Math.hypot(H[0][0], H[0][1], H[0][2],
+                    H[1][0], H[1][1], H[1][2],
+                    H[2][0], H[2][1], H[2][2]);
+                if (norm > 1e-12) {
+                    for (let i = 0; i < 3; i++) {
+                        for (let j = 0; j < 3; j++) {
+                            H[i][j] /= norm;
+                        }
+                    }
+                }
+            }
+            return H;
+        }
+        function groundToImage(H, X, Y) {
+            const p = [X, Y, 1];
+            const res = numeric.dot(H, p);
+            const inv = 1.0 / res[2];
+            return [res[0] * inv, res[1] * inv];
+        }
+        function imageToPlane(H, u, v) {
+            const Hinv = numeric.inv(H);
+            const p = [u, v, 1];
+            const res = numeric.dot(Hinv, p);
+            const inv = 1.0 / res[2];
+            return [res[0] * inv, res[1] * inv];
+        }
+        function splitH0(H0) {
+            return [
+                [H0[0][0], H0[1][0], H0[2][0]],
+                [H0[0][1], H0[1][1], H0[2][1]],
+                [H0[0][2], H0[1][2], H0[2][2]]
+            ];
+        }
+
+        // ================================================================
+        // 2. 塔吊底座鲁棒补全逻辑
+        // ================================================================
+        const BASE_LABELS = ["B1", "B2", "B3", "B4"];
+        const OPPOSITE_CORNER = { "B1": "B3", "B2": "B4", "B3": "B1", "B4": "B2" };
+
+        function buildTowerBaseWorldPoints(baseRadius) {
+            const a = baseRadius / Math.sqrt(2);
+            return { B1: [a, a], B2: [-a, a], B3: [-a, -a], B4: [a, -a], C: [0, 0] };
+        }
+        function countVisibleCorners(imageMarks) {
+            const visible = [],
+                missing = [];
+            for (let label of BASE_LABELS) {
+                if (imageMarks[label] !== null && imageMarks[label] !== undefined) visible.push(label);
+                else missing.push(label);
+            }
+            return { visible, missing };
+        }
+        function estimateMissingFromThreeCorners(imageMarks, missingLabel) {
+            const pts = {};
+            for (let label of BASE_LABELS) {
+                if (imageMarks[label] !== null && imageMarks[label] !== undefined) pts[label] = imageMarks[label];
+            }
+            if (missingLabel === "B1") {
+                if (pts["B2"] && pts["B3"] && pts["B4"]) {
+                    return [pts["B2"][0] + pts["B4"][0] - pts["B3"][0],
+                        pts["B2"][1] + pts["B4"][1] - pts["B3"][1]
+                    ];
+                }
+            } else if (missingLabel === "B2") {
+                if (pts["B1"] && pts["B3"] && pts["B4"]) {
+                    return [pts["B1"][0] + pts["B3"][0] - pts["B4"][0],
+                        pts["B1"][1] + pts["B3"][1] - pts["B4"][1]
+                    ];
+                }
+            } else if (missingLabel === "B3") {
+                if (pts["B1"] && pts["B2"] && pts["B4"]) {
+                    return [pts["B2"][0] + pts["B4"][0] - pts["B1"][0],
+                        pts["B2"][1] + pts["B4"][1] - pts["B1"][1]
+                    ];
+                }
+            } else if (missingLabel === "B4") {
+                if (pts["B1"] && pts["B2"] && pts["B3"]) {
+                    return [pts["B1"][0] + pts["B3"][0] - pts["B2"][0],
+                        pts["B1"][1] + pts["B3"][1] - pts["B2"][1]
+                    ];
+                }
+            }
+            return null;
+        }
+        function estimateMissingFromCenter(imageMarks, missingLabel) {
+            if (!imageMarks["C"]) return null;
+            const opposite = OPPOSITE_CORNER[missingLabel];
+            if (!imageMarks[opposite]) return null;
+            const C = imageMarks["C"];
+            const bOpp = imageMarks[opposite];
+            return [2 * C[0] - bOpp[0], 2 * C[1] - bOpp[1]];
+        }
+        function completeBaseImageMarks(imageMarks, useCenterWhenFourCorners = true, blendCenterWeight = 0.7) {
+            const completed = {};
+            for (let label of [...BASE_LABELS, "C"]) {
+                completed[label] = (imageMarks[label] !== null && imageMarks[label] !== undefined) ? imageMarks[label] :
+                null;
+            }
+            const { visible, missing } = countVisibleCorners(completed);
+            const hasCenter = (completed["C"] !== null);
+            let estimatedInfo = { estimatedLabels: [], method: "none", warning: null };
+            if (visible.length === 4) {
+                if (hasCenter && useCenterWhenFourCorners) {
+                    estimatedInfo.method = "four_corners_plus_center";
+                } else {
+                    if (hasCenter) {
+                        completed["C"] = null;
+                        estimatedInfo.method = "four_corners_only_ignore_center";
+                    } else {
+                        estimatedInfo.method = "four_corners_only";
+                    }
+                }
+                return { completed, estimatedInfo };
+            }
+            if (visible.length === 3 && missing.length === 1) {
+                const missingLabel = missing[0];
+                const estThree = estimateMissingFromThreeCorners(completed, missingLabel);
+                const estCenter = hasCenter ? estimateMissingFromCenter(completed, missingLabel) : null;
+                let result = null,
+                    method = "",
+                    warning = "";
+                if (estThree !== null && estCenter !== null) {
+                    const w = Math.max(0, Math.min(1, blendCenterWeight));
+                    result = [w * estCenter[0] + (1 - w) * estThree[0],
+                        w * estCenter[1] + (1 - w) * estThree[1]
+                    ];
+                    method = "three_corners_plus_center_blend";
+                    warning = `使用3角点+中心点融合估计 ${missingLabel}，权重 center=${w.toFixed(2)}`;
+                } else if (estCenter !== null) {
+                    result = estCenter;
+                    method = "three_corners_plus_center";
+                    warning = `使用中心点估计 ${missingLabel}`;
+                } else if (estThree !== null) {
+                    result = estThree;
+                    method = "three_corners_affine";
+                    warning = `使用3角点仿射估计 ${missingLabel}`;
+                } else {
+                    throw new Error("无法补全缺失角点");
+                }
+                completed[missingLabel] = result;
+                estimatedInfo.estimatedLabels = [missingLabel];
+                estimatedInfo.method = method;
+                estimatedInfo.warning = warning;
+                return { completed, estimatedInfo };
+            }
+            throw new Error(`当前可见角点数量 ${visible.length}，中心点可见=${hasCenter}，不支持此标定情况`);
+        }
+        function prepareGroundCorrespondences(imageMarks, baseRadius, useCenterWhenFourCorners, blendCenterWeight) {
+            const { completed, estimatedInfo } = completeBaseImageMarks(
+                imageMarks, useCenterWhenFourCorners, blendCenterWeight
+            );
+            const worldDict = buildTowerBaseWorldPoints(baseRadius);
+            const validLabels = ["B1", "B2", "B3", "B4", "C"];
+            let worldPoints = [],
+                imagePoints = [];
+            for (let label of validLabels) {
+                if (completed[label] !== null && completed[label] !== undefined) {
+                    worldPoints.push(worldDict[label]);
+                    imagePoints.push(completed[label]);
+                }
+            }
+            return { worldPoints, imagePoints, completed, estimatedInfo };
+        }
+        function calibrateGroundHomography(imageMarks, baseRadius, useCenterWhenFourCorners = true, blendCenterWeight =
+            0.7) {
+            const { worldPoints, imagePoints, completed, estimatedInfo } = prepareGroundCorrespondences(
+                imageMarks, baseRadius, useCenterWhenFourCorners, blendCenterWeight
+            );
+            if (worldPoints.length < 4) throw new Error("地面 H0 标定至少需要 4 个点。");
+            const H0 = computeHomography(worldPoints, imagePoints);
+            return { H0, completed, estimatedInfo };
+        }
+
+        // ================================================================
+        // 3. 核心函数
+        // ================================================================
+        function estimateP3(H0, verticalPoints) {
+            const [p1, p2, p4] = splitH0(H0);
+            const usable = [];
+            for (let vp of verticalPoints) {
+                const Z = vp[0];
+                if (Math.abs(Z) < 1e-12) continue;
+                const u = vp[1],
+                    v = vp[2];
+                usable.push({ Z, x: [u, v, 1.0] });
+            }
+            if (usable.length < 2) throw new Error("至少需要2个有效垂直参考点");
+            const n = usable.length;
+            const A = [],
+                b = [];
+            for (let i = 0; i < n; i++) {
+                const Z = usable[i].Z;
+                const x = usable[i].x;
+                for (let r = 0; r < 3; r++) {
+                    const row = new Array(3 + n).fill(0);
+                    row[r] = Z;
+                    row[3 + i] = -x[r];
+                    A.push(row);
+                    b.push(-p4[r]);
+                }
+            }
+            const sol = leastSquares(A, b);
+            return sol.slice(0, 3);
+        }
+        function homographyAtHeight(H0, p3, Z) {
+            const [p1, p2, p4] = splitH0(H0);
+            const col3 = [
+                p4[0] + Z * p3[0],
+                p4[1] + Z * p3[1],
+                p4[2] + Z * p3[2]
+            ];
+            let HZ = [
+                [p1[0], p2[0], col3[0]],
+                [p1[1], p2[1], col3[1]],
+                [p1[2], p2[2], col3[2]]
+            ];
+            const scale = HZ[2][2];
+            if (Math.abs(scale) > 1e-12) {
+                for (let i = 0; i < 3; i++)
+                    for (let j = 0; j < 3; j++) HZ[i][j] /= scale;
+            }
+            return HZ;
+        }
+        function imageToXYAtHeight(H0, p3, pt, Z) {
+            const HZ = homographyAtHeight(H0, p3, Z);
+            return imageToPlane(HZ, pt[0], pt[1]);
+        }
+        function estimateHeight(H0, p3, X, Y, pt) {
+            const [p1, p2, p4] = splitH0(H0);
+            const x = [pt[0], pt[1], 1];
+            const q0 = [
+                X * p1[0] + Y * p2[0] + p4[0],
+                X * p1[1] + Y * p2[1] + p4[1],
+                X * p1[2] + Y * p2[2] + p4[2]
+            ];
+            const A = [
+                [p3[0], -x[0]],
+                [p3[1], -x[1]],
+                [p3[2], -x[2]]
+            ];
+            const b = [-q0[0], -q0[1], -q0[2]];
+            const sol = leastSquares(A, b);
+            return sol[0];
+        }
+
+        // ================================================================
+        // 3.1 使用塔臂尖圆周约束优化 3×4 投影矩阵 P
+        // ================================================================
+        function projectPointWithP(P, X, Y, Z) {
+            const q = numeric.dot(P, [X, Y, Z, 1]);
+            const w = q[2];
+            if (Math.abs(w) < 1e-12) return [NaN, NaN];
+            return [q[0] / w, q[1] / w];
+        }
+        function packPAndTheta(P, thetaList) {
+            return [
+                P[0][0], P[0][1], P[0][2], P[0][3],
+                P[1][0], P[1][1], P[1][2], P[1][3],
+                P[2][0], P[2][1], P[2][2],
+                ...thetaList
+            ];
+        }
+        function unpackPAndTheta(x, tipCount) {
+            const P = [
+                [x[0], x[1], x[2], x[3]],
+                [x[4], x[5], x[6], x[7]],
+                [x[8], x[9], x[10], 1.0]
+            ];
+            const thetaList = x.slice(11, 11 + tipCount);
+            return { P, thetaList };
+        }
+        function normalizePScale(P) {
+            const s = P[2][3];
+            if (Math.abs(s) > 1e-12) {
+                return P.map(row => row.map(v => v / s));
+            }
+            return P;
+        }
+        function computeReprojectionRMS(P, knownPoints, tipPoints, boomLength, tipHeight, thetaList) {
+            let sum = 0;
+            let n = 0;
+            for (const kp of knownPoints) {
+                const pred = projectPointWithP(P, kp.X, kp.Y, kp.Z);
+                if (!isFinite(pred[0]) || !isFinite(pred[1])) continue;
+                const du = pred[0] - kp.u;
+                const dv = pred[1] - kp.v;
+                sum += du * du + dv * dv;
+                n += 2;
+            }
+            for (let i = 0; i < tipPoints.length; i++) {
+                const th = thetaList[i];
+                const X = boomLength * Math.cos(th);
+                const Y = boomLength * Math.sin(th);
+                const Z = tipHeight;
+                const pred = projectPointWithP(P, X, Y, Z);
+                if (!isFinite(pred[0]) || !isFinite(pred[1])) continue;
+                const du = pred[0] - tipPoints[i].u;
+                const dv = pred[1] - tipPoints[i].v;
+                sum += du * du + dv * dv;
+                n += 2;
+            }
+            return n > 0 ? Math.sqrt(sum / n) : Infinity;
+        }
+        function buildCameraResidualVector(x, tipCount, knownPoints, tipPoints, boomLength, tipHeight) {
+            const { P, thetaList } = unpackPAndTheta(x, tipCount);
+            const residuals = [];
+            const knownWeight = 1.0;
+            const tipWeight = 1.2;
+            for (const kp of knownPoints) {
+                const pred = projectPointWithP(P, kp.X, kp.Y, kp.Z);
+                if (!isFinite(pred[0]) || !isFinite(pred[1])) {
+                    residuals.push(1e6, 1e6);
+                    continue;
+                }
+                residuals.push(knownWeight * (pred[0] - kp.u));
+                residuals.push(knownWeight * (pred[1] - kp.v));
+            }
+            for (let i = 0; i < tipPoints.length; i++) {
+                const th = thetaList[i];
+                const X = boomLength * Math.cos(th);
+                const Y = boomLength * Math.sin(th);
+                const Z = tipHeight;
+                const pred = projectPointWithP(P, X, Y, Z);
+                if (!isFinite(pred[0]) || !isFinite(pred[1])) {
+                    residuals.push(1e6, 1e6);
+                    continue;
+                }
+                residuals.push(tipWeight * (pred[0] - tipPoints[i].u));
+                residuals.push(tipWeight * (pred[1] - tipPoints[i].v));
+            }
+            return residuals;
+        }
+        function numericalJacobian(f, x, fx) {
+            const m = fx.length;
+            const n = x.length;
+            const J = Array.from({ length: m }, () => new Array(n).fill(0));
+            for (let j = 0; j < n; j++) {
+                const step = 1e-6 * Math.max(1, Math.abs(x[j]));
+                const xp = x.slice();
+                xp[j] += step;
+                const fp = f(xp);
+                for (let i = 0; i < m; i++) {
+                    J[i][j] = (fp[i] - fx[i]) / step;
+                }
+            }
+            return J;
+        }
+        function residualNorm2(r) {
+            let s = 0;
+            for (const v of r) s += v * v;
+            return s;
+        }
+        function levenbergMarquardt(f, x0, options = {}) {
+            let x = x0.slice();
+            const maxIter = options.maxIter || 35;
+            let lambda = options.lambda || 1e-3;
+            let r = f(x);
+            let bestErr = residualNorm2(r);
+            for (let iter = 0; iter < maxIter; iter++) {
+                const J = numericalJacobian(f, x, r);
+                const JT = numeric.transpose(J);
+                let JTJ = numeric.dot(JT, J);
+                const JTr = numeric.dot(JT, r);
+                for (let i = 0; i < JTJ.length; i++) {
+                    JTJ[i][i] += lambda;
+                }
+                let dx;
+                try {
+                    dx = numeric.solve(JTJ, numeric.mul(-1, JTr));
+                } catch (e) {
+                    lambda *= 10;
+                    continue;
+                }
+                const xNew = x.map((v, i) => v + dx[i]);
+                const rNew = f(xNew);
+                const errNew = residualNorm2(rNew);
+                if (errNew < bestErr) {
+                    x = xNew;
+                    r = rNew;
+                    bestErr = errNew;
+                    lambda *= 0.4;
+                    const stepNorm = Math.sqrt(dx.reduce((s, v) => s + v * v, 0));
+                    if (stepNorm < 1e-7) break;
+                } else {
+                    lambda *= 5;
+                }
+            }
+            return { x, residuals: r, error: bestErr };
+        }
+        function collectTipPointsFromDOM() {
+            const tipPoints = [];
+            document.querySelectorAll('.tip-point-row').forEach(row => {
+                const u = parseFloat(row.querySelector('.tip-u').value);
+                const v = parseFloat(row.querySelector('.tip-v').value);
+                if (!isNaN(u) && !isNaN(v)) {
+                    tipPoints.push({ u, v });
+                }
+            });
+            return tipPoints;
+        }
+        function initThetaForTipPoints(Pinit, tipPoints, tipHeight) {
+            const H0 = getH0FromP(Pinit);
+            const p3 = [Pinit[0][2], Pinit[1][2], Pinit[2][2]];
+            return tipPoints.map(tp => {
+                try {
+                    const xy = imageToXYAtHeight(H0, p3, [tp.u, tp.v], tipHeight);
+                    if (isFinite(xy[0]) && isFinite(xy[1])) {
+                        return Math.atan2(xy[1], xy[0]);
+                    }
+                } catch (e) {}
+                return 0;
+            });
+        }
+        function optimizePWithTipConstraints(Pinit, knownPoints, tipPoints, boomLength, tipHeight) {
+            if (!tipPoints || tipPoints.length === 0) {
+                return {
+                    P: Pinit,
+                    used: false,
+                    beforeRMS: null,
+                    afterRMS: null,
+                    tipCount: 0
+                };
+            }
+            if (!isFinite(boomLength) || boomLength <= 0) {
+                throw new Error("使用塔臂尖优化时，塔臂长度必须为正数");
+            }
+            if (!isFinite(tipHeight)) {
+                throw new Error("使用塔臂尖优化时，塔臂尖高度必须有效");
+            }
+            let P0 = normalizePScale(Pinit);
+            const theta0 = initThetaForTipPoints(P0, tipPoints, tipHeight);
+            const x0 = packPAndTheta(P0, theta0);
+            const beforeRMS = computeReprojectionRMS(P0, knownPoints, tipPoints, boomLength, tipHeight, theta0);
+            const f = x => buildCameraResidualVector(
+                x,
+                tipPoints.length,
+                knownPoints,
+                tipPoints,
+                boomLength,
+                tipHeight
+            );
+            const result = levenbergMarquardt(f, x0, {
+                maxIter: 35,
+                lambda: 1e-3
+            });
+            const unpacked = unpackPAndTheta(result.x, tipPoints.length);
+            const Popt = normalizePScale(unpacked.P);
+            const afterRMS = computeReprojectionRMS(
+                Popt,
+                knownPoints,
+                tipPoints,
+                boomLength,
+                tipHeight,
+                unpacked.thetaList
+            );
+            return {
+                P: Popt,
+                used: true,
+                beforeRMS,
+                afterRMS,
+                tipCount: tipPoints.length,
+                thetaList: unpacked.thetaList
+            };
+        }
+
+        // ================================================================
+        // 4. 风险计算与绘图
+        // ================================================================
+        function getH0FromP(P) {
+            return [
+                [P[0][0], P[0][1], P[0][3]],
+                [P[1][0], P[1][1], P[1][3]],
+                [P[2][0], P[2][1], P[2][3]]
+            ];
+        }
+        function groundToImageFromP(P, X, Y) {
+            const Xh = [X, Y, 0, 1];
+            const x = numeric.dot(P, Xh);
+            return [x[0] / x[2], x[1] / x[2]];
+        }
+        function imageToGroundFromP(P, pixel) {
+            const H0 = getH0FromP(P);
+            const Hinv = numeric.inv(H0);
+            const x = [pixel[0], pixel[1], 1];
+            const Xh = numeric.dot(Hinv, x);
+            return [Xh[0] / Xh[2], Xh[1] / Xh[2]];
+        }
+        function cross2JS(a, b) { return a[0] * b[1] - a[1] * b[0]; }
+        function dot2JS(a, b) { return a[0] * b[0] + a[1] * b[1]; }
+        function norm2JS(a) { return Math.hypot(a[0], a[1]); }
+        function signedAngleJS(a, b) { return Math.atan2(cross2JS(a, b), dot2JS(a, b)); }
+        function wrap2PiJS(theta) {
+            const twoPi = 2 * Math.PI;
+            return ((theta % twoPi) + twoPi) % twoPi;
+        }
+        function computeSweepParamsJS(A, B, direction) {
+            const rA = norm2JS(A);
+            const rB = norm2JS(B);
+            const aHat = [A[0] / rA, A[1] / rA];
+            const bHat = [B[0] / rB, B[1] / rB];
+            const sigma = direction === "ccw" ? 1.0 : -1.0;
+            const alphaAB = signedAngleJS(aHat, bHat);
+            const Delta = wrap2PiJS(sigma * alphaAB);
+            return { A, B, rA, rB, aHat, bHat, sigma, Delta, DeltaDeg: Delta * 180 / Math.PI };
+        }
+        function pointProgressJS(P, sweep) {
+            const rho = norm2JS(P);
+            if (rho < 1e-12) {
+                return { rho, delta: 0, deltaDeg: 0, hasDirection: false };
+            }
+            const pHat = [P[0] / rho, P[1] / rho];
+            const alphaAP = signedAngleJS(sweep.aHat, pHat);
+            const delta = wrap2PiJS(sweep.sigma * alphaAP);
+            return { rho, delta, deltaDeg: delta * 180 / Math.PI, hasDirection: true };
+        }
+        function loadTrackPointAtT(sweep, t) {
+            t = Math.max(0, Math.min(1, t));
+            const startAng = Math.atan2(sweep.A[1], sweep.A[0]);
+            const r = sweep.rA + t * (sweep.rB - sweep.rA);
+            const ang = startAng + sweep.sigma * sweep.Delta * t;
+            return [
+                r * Math.cos(ang),
+                r * Math.sin(ang)
+            ];
+        }
+        function pointToSegmentDistanceJS(P, A, B) {
+            const AB = [B[0] - A[0], B[1] - A[1]];
+            const AP = [P[0] - A[0], P[1] - A[1]];
+            const ab2 = dot2JS(AB, AB);
+            if (ab2 < 1e-12) {
+                return {
+                    distance: norm2JS([P[0] - A[0], P[1] - A[1]]),
+                    t: 0
+                };
+            }
+            let t = dot2JS(AP, AB) / ab2;
+            t = Math.max(0, Math.min(1, t));
+            const closest = [
+                A[0] + t * AB[0],
+                A[1] + t * AB[1]
+            ];
+            return {
+                distance: norm2JS([P[0] - closest[0], P[1] - closest[1]]),
+                t
+            };
+        }
+        function pointToVariableLoadTrackDistanceJS(P, sweep, steps = 160) {
+            let minDistance = Infinity;
+            let bestGlobalT = 0;
+            let closestPart = "track_middle";
+            let prev = loadTrackPointAtT(sweep, 0);
+            for (let i = 1; i <= steps; i++) {
+                const t1 = i / steps;
+                const curr = loadTrackPointAtT(sweep, t1);
+                const d = pointToSegmentDistanceJS(P, prev, curr);
+                if (d.distance < minDistance) {
+                    minDistance = d.distance;
+                    const t0 = (i - 1) / steps;
+                    bestGlobalT = t0 + d.t * (t1 - t0);
+                    if (bestGlobalT <= 1e-4) {
+                        closestPart = "start_cap";
+                    } else if (bestGlobalT >= 1 - 1e-4) {
+                        closestPart = "end_cap";
+                    } else {
+                        closestPart = "track_middle";
+                    }
+                }
+                prev = curr;
+            }
+            return {
+                distance: minDistance,
+                closestPart,
+                trackT: bestGlobalT
+            };
+        }
+        function checkRisk1PointJS(P, sweep, boomLength) {
+            const progress = pointProgressJS(P, sweep);
+            const inRadius = progress.rho <= boomLength + 1e-9;
+            const inAngle = !progress.hasDirection || progress.delta <= sweep.Delta + 1e-9;
+            return { inside: inRadius && inAngle, rho: progress.rho, deltaDeg: progress.deltaDeg, inRadius, inAngle };
+        }
+        function pointToArcDistanceJS(P, sweep) {
+            const d = pointToVariableLoadTrackDistanceJS(P, sweep, 160);
+            const progress = pointProgressJS(P, sweep);
+            return {
+                distance: d.distance,
+                closestPart: d.closestPart,
+                rho: norm2JS(P),
+                deltaDeg: progress.deltaDeg,
+                trackT: d.trackT
+            };
+        }
+        function checkRisk2PointJS(P, sweep, loadRadius) {
+            const d = pointToArcDistanceJS(P, sweep);
+            return { inside: d.distance <= loadRadius + 1e-12, distance: d.distance, closestPart: d.closestPart,
+                rho: d.rho, deltaDeg: d.deltaDeg };
+        }
+        function buildRiskDemoFromInputs(P, liftPixel, dropPixel, workerStartPixel, workerEndPixel, trolleyHeight,
+            boomLength, loadRadius, direction) {
+            const H0 = getH0FromP(P);
+            const p3 = [P[0][2], P[1][2], P[2][2]];
+            const liftGround = imageToXYAtHeight(H0, p3, liftPixel, trolleyHeight);
+            const dropGround = imageToXYAtHeight(H0, p3, dropPixel, trolleyHeight);
+            const workerStartGround = imageToGroundFromP(P, workerStartPixel);
+            const workerEndGround = imageToGroundFromP(P, workerEndPixel);
+            direction = direction === "cw" ? "cw" : "ccw";
+            const numSamples = 200;
+            const sweep = computeSweepParamsJS(liftGround, dropGround, direction);
+            let risk1Danger = false,
+                risk2Danger = false;
+            let risk1Count = 0,
+                risk2Count = 0;
+            let risk2MinDistance = Infinity;
+            for (let k = 0; k <= numSamples; k++) {
+                const t = k / numSamples;
+                const Pw = [workerStartGround[0] + t * (workerEndGround[0] - workerStartGround[0]),
+                    workerStartGround[1] + t * (workerEndGround[1] - workerStartGround[1])
+                ];
+                const r1 = checkRisk1PointJS(Pw, sweep, boomLength);
+                const r2 = checkRisk2PointJS(Pw, sweep, loadRadius);
+                if (r1.inside) { risk1Danger = true;
+                    risk1Count++; }
+                if (r2.inside) { risk2Danger = true;
+                    risk2Count++; }
+                if (r2.distance < risk2MinDistance) risk2MinDistance = r2.distance;
+            }
+            return {
+                P,
+                liftGround, dropGround,
+                workerStartGround, workerEndGround,
+                liftPixel, dropPixel,
+                workerStartPixel, workerEndPixel,
+                trolleyHeight,
+                boomLength,
+                loadRadius,
+                direction,
+                numSamples,
+                sweep,
+                risk1Danger,
+                risk2Danger,
+                risk1Count,
+                risk2Count,
+                risk2MinDistance
+            };
+        }
+        function updateRiskParamPanel(demo) {
+            const el = document.getElementById("riskParamInfo");
+            if (!el) return;
+            el.innerHTML =
+                `工人起点地面: (${demo.workerStartGround[0].toFixed(2)}, ${demo.workerStartGround[1].toFixed(2)}) m<br>` +
+                `工人终点地面: (${demo.workerEndGround[0].toFixed(2)}, ${demo.workerEndGround[1].toFixed(2)}) m<br>` +
+                `起吊点地面: (${demo.liftGround[0].toFixed(2)}, ${demo.liftGround[1].toFixed(2)}) m<br>` +
+                `落吊点地面: (${demo.dropGround[0].toFixed(2)}, ${demo.dropGround[1].toFixed(2)}) m<br>` +
+                `塔吊旋转方向: ${demo.direction === "ccw" ? "逆时针" : "顺时针"}<br>` +
+                `扫过角度: ${demo.sweep.DeltaDeg.toFixed(2)}°<br>` +
+                `塔臂长度: ${demo.boomLength.toFixed(2)} m<br>` +
+                `吊物危险区域半径: ${demo.loadRadius.toFixed(2)} m<br>` +
+                `Risk1 大臂扫过: ${demo.risk1Danger ? "危险" : "安全"}，采样点 ${demo.risk1Count}<br>` +
+                `Risk2 吊物外扩: ${demo.risk2Danger ? "危险" : "安全"}，采样点 ${demo.risk2Count}<br>` +
+                `Risk2 最小距离: ${demo.risk2MinDistance.toFixed(2)} m`;
+        }
+
+        // ===== 绘图函数（风险图） =====
+        function fitCanvas(canvas) {
+            const rect = canvas.getBoundingClientRect();
+            let w = rect.width,
+                h = rect.height;
+            if (w === 0 || h === 0) {
+                const parent = canvas.parentElement;
+                if (parent) {
+                    const parentRect = parent.getBoundingClientRect();
+                    w = parentRect.width || 300;
+                    h = parentRect.height || 200;
+                } else { w = 300;
+                    h = 200; }
+            }
+            const dpr = window.devicePixelRatio || 1;
+            canvas.width = Math.max(1, Math.floor(w * dpr));
+            canvas.height = Math.max(1, Math.floor(h * dpr));
+            const ctx = canvas.getContext("2d");
+            ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+            return { ctx, width: w, height: h };
+        }
+        function makeWorldMapper(points, width, height, padding = 28) {
+            let minX = Infinity,
+                maxX = -Infinity,
+                minY = Infinity,
+                maxY = -Infinity;
+            points.forEach(p => {
+                minX = Math.min(minX, p[0]);
+                maxX = Math.max(maxX, p[0]);
+                minY = Math.min(minY, p[1]);
+                maxY = Math.max(maxY, p[1]);
+            });
+            const spanX = Math.max(1e-6, maxX - minX);
+            const spanY = Math.max(1e-6, maxY - minY);
+            const scale = Math.min((width - 2 * padding) / spanX, (height - 2 * padding) / spanY);
+            const cx = 0.5 * (minX + maxX);
+            const cy = 0.5 * (minY + maxY);
+            function map(p) {
+                return [width / 2 + (p[0] - cx) * scale, height / 2 - (p[1] - cy) * scale];
+            }
+            return map;
+        }
+        function getMaxVerticalReferenceHeight() {
+            let maxZ = 0;
+            document.querySelectorAll('.vpoint-row').forEach(row => {
+                const z = parseFloat(row.querySelector('.vz')?.value);
+                if (!isNaN(z)) {
+                    maxZ = Math.max(maxZ, z);
+                }
+            });
+            return maxZ;
+        }
+        function getNumericInputValue(id, fallback = 0) {
+            const el = document.getElementById(id);
+            if (!el) return fallback;
+            const val = parseFloat(el.value);
+            return isNaN(val) ? fallback : val;
+        }
+        function loadTrackPoint3DAtT(sweep, t, z) {
+            const xy = loadTrackPointAtT(sweep, t);
+            return [xy[0], xy[1], z];
+        }
+        function drawRisk3D(demo) {
+            const canvas = document.getElementById("risk3DCanvas");
+            if (!canvas) return;
+            const { ctx, width, height } = fitCanvas(canvas);
+            ctx.clearRect(0, 0, width, height);
+            const O = [0, 0, 0];
+            const A = [demo.liftGround[0], demo.liftGround[1], 0];
+            const B = [demo.dropGround[0], demo.dropGround[1], 0];
+            const P0 = [demo.workerStartGround[0], demo.workerStartGround[1], 0];
+            const P1 = [demo.workerEndGround[0], demo.workerEndGround[1], 0];
+            const sweep = demo.sweep;
+            const boomLength = demo.boomLength;
+            const boomHeight = demo.trolleyHeight;
+            const tipHeight = getNumericInputValue('tipHeight', boomHeight);
+            const maxVerticalZ = getMaxVerticalReferenceHeight();
+            const towerHeight = Math.max(boomHeight, tipHeight, maxVerticalZ);
+            const baseRadius = getNumericInputValue('baseRadius', 1.0);
+            const towerHalf = baseRadius / Math.sqrt(2);
+            const towerTop = [0, 0, towerHeight];
+            const startAng = Math.atan2(demo.liftGround[1], demo.liftGround[0]);
+            const sigma = sweep.sigma;
+            const Delta = sweep.Delta;
+            const boomStartEnd = [
+                boomLength * Math.cos(startAng),
+                boomLength * Math.sin(startAng),
+                boomHeight
+            ];
+            const boomFinalEnd = [
+                boomLength * Math.cos(startAng + sigma * Delta),
+                boomLength * Math.sin(startAng + sigma * Delta),
+                boomHeight
+            ];
+            const hookTrackTop = [];
+            const hookTrackGround = [];
+            const hookSteps = 80;
+            for (let i = 0; i <= hookSteps; i++) {
+                const t = i / hookSteps;
+                const top = loadTrackPoint3DAtT(sweep, t, boomHeight);
+                const ground = loadTrackPoint3DAtT(sweep, t, 0);
+                hookTrackTop.push(top);
+                hookTrackGround.push(ground);
+            }
+            const hookStartTop = hookTrackTop[0];
+            const hookStartGround = hookTrackGround[0];
+            const hookDropLines = [];
+            const hookDropCount = 5;
+            for (let i = 0; i < hookDropCount; i++) {
+                const t = hookDropCount === 1 ? 0 : i / (hookDropCount - 1);
+                hookDropLines.push({
+                    top: loadTrackPoint3DAtT(sweep, t, boomHeight),
+                    bottom: loadTrackPoint3DAtT(sweep, t, 0)
+                });
+            }
+            const towerBaseCorners = [
+                [-towerHalf, -towerHalf, 0],
+                [towerHalf, -towerHalf, 0],
+                [towerHalf, towerHalf, 0],
+                [-towerHalf, towerHalf, 0]
+            ];
+            const towerTopCorners = [
+                [-towerHalf, -towerHalf, towerHeight],
+                [towerHalf, -towerHalf, towerHeight],
+                [towerHalf, towerHalf, towerHeight],
+                [-towerHalf, towerHalf, towerHeight]
+            ];
+            const allPoints = [
+                O,
+                towerTop,
+                boomStartEnd,
+                boomFinalEnd,
+                P0,
+                P1,
+                A,
+                B,
+                ...towerBaseCorners,
+                ...towerTopCorners,
+                ...hookTrackTop,
+                ...hookTrackGround,
+                ...hookDropLines.flatMap(h => [h.top, h.bottom])
+            ];
+            let minX = Infinity,
+                maxX = -Infinity,
+                minY = Infinity,
+                maxY = -Infinity,
+                minZ = Infinity,
+                maxZ = -Infinity;
+            allPoints.forEach(p => {
+                minX = Math.min(minX, p[0]);
+                maxX = Math.max(maxX, p[0]);
+                minY = Math.min(minY, p[1]);
+                maxY = Math.max(maxY, p[1]);
+                minZ = Math.min(minZ, p[2]);
+                maxZ = Math.max(maxZ, p[2]);
+            });
+            const spanX0 = Math.max(1e-6, maxX - minX);
+            const spanY0 = Math.max(1e-6, maxY - minY);
+            const spanZ0 = Math.max(1e-6, maxZ - minZ);
+            const padXY = 0.08 * Math.max(spanX0, spanY0, boomLength);
+            const padZ = 0.08 * Math.max(spanZ0, towerHeight);
+            minX -= padXY;
+            maxX += padXY;
+            minY -= padXY;
+            maxY += padXY;
+            minZ = Math.min(0, minZ);
+            maxZ += padZ;
+            const spanX = maxX - minX || 1;
+            const spanY = maxY - minY || 1;
+            const spanZ = maxZ - minZ || 1;
+            const projY = 0.55;
+            const projZ = 0.48;
+            const scale = Math.min(
+                width / (spanX + projY * spanY),
+                height / (projZ * spanY + spanZ)
+            ) * 0.86;
+            const cx = 0.5 * (minX + maxX);
+            const cy = 0.5 * (minY + maxY);
+            const cz = 0.5 * (minZ + maxZ);
+            function project3D(p) {
+                const x = p[0] - cx;
+                const y = p[1] - cy;
+                const z = p[2] - cz;
+                return [
+                    width / 2 + scale * (x - projY * y),
+                    height / 2 - scale * (projZ * y + z)
+                ];
+            }
+            function line(p, q, color, lw = 2, dash = null) {
+                const a = project3D(p);
+                const b = project3D(q);
+                ctx.save();
+                if (dash) ctx.setLineDash(dash);
+                else ctx.setLineDash([]);
+                ctx.beginPath();
+                ctx.moveTo(a[0], a[1]);
+                ctx.lineTo(b[0], b[1]);
+                ctx.strokeStyle = color;
+                ctx.lineWidth = lw;
+                ctx.lineCap = "round";
+                ctx.stroke();
+                ctx.restore();
+            }
+            function polyline(points, color, lw = 1.5, dash = null) {
+                if (!points || points.length < 2) return;
+                ctx.save();
+                if (dash) ctx.setLineDash(dash);
+                else ctx.setLineDash([]);
+                const first = project3D(points[0]);
+                ctx.beginPath();
+                ctx.moveTo(first[0], first[1]);
+                for (let i = 1; i < points.length; i++) {
+                    const p = project3D(points[i]);
+                    ctx.lineTo(p[0], p[1]);
+                }
+                ctx.strokeStyle = color;
+                ctx.lineWidth = lw;
+                ctx.lineCap = "round";
+                ctx.lineJoin = "round";
+                ctx.stroke();
+                ctx.restore();
+            }
+            function point(p, color, r = 4, stroke = true) {
+                const a = project3D(p);
+                ctx.beginPath();
+                ctx.arc(a[0], a[1], r, 0, 2 * Math.PI);
+                ctx.fillStyle = color;
+                ctx.fill();
+                if (stroke) {
+                    ctx.strokeStyle = "white";
+                    ctx.lineWidth = 2;
+                    ctx.stroke();
+                }
+            }
+            function textCenter(p, txt, color = "#334155", offsetY = -10) {
+                const a = project3D(p);
+                ctx.save();
+                ctx.font = "bold 12px Times New Roman";
+                ctx.textAlign = "center";
+                ctx.textBaseline = "bottom";
+                ctx.fillStyle = color;
+                ctx.strokeStyle = "rgba(255,255,255,0.9)";
+                ctx.lineWidth = 3;
+                ctx.strokeText(txt, a[0], a[1] + offsetY);
+                ctx.fillText(txt, a[0], a[1] + offsetY);
+                ctx.restore();
+            }
+            ctx.fillStyle = "#f8fafc";
+            ctx.fillRect(0, 0, width, height);
+            const gridExtent = Math.ceil(Math.max(
+                Math.abs(minX),
+                Math.abs(maxX),
+                Math.abs(minY),
+                Math.abs(maxY),
+                boomLength
+            ) / 5) * 5;
+            const gridStep = Math.max(2, Math.ceil(gridExtent / 5));
+            for (let g = -gridExtent; g <= gridExtent; g += gridStep) {
+                line([g, -gridExtent, 0], [g, gridExtent, 0], "rgba(148,163,184,0.25)", 1);
+                line([-gridExtent, g, 0], [gridExtent, g, 0], "rgba(148,163,184,0.25)", 1);
+            }
+            line(O, towerTop, "#111827", 4);
+            for (let i = 0; i < 4; i++) {
+                const j = (i + 1) % 4;
+                line(towerBaseCorners[i], towerTopCorners[i], "#111827", 2);
+                line(towerBaseCorners[i], towerBaseCorners[j], "#111827", 1.5);
+                line(towerTopCorners[i], towerTopCorners[j], "#111827", 1.5);
+            }
+            for (let k = 0; k < 4; k++) {
+                const z0 = (towerHeight / 4) * k;
+                const z1 = (towerHeight / 4) * (k + 1);
+                line([-towerHalf, -towerHalf, z0], [towerHalf, towerHalf, z1], "rgba(17,24,39,0.75)", 1);
+                line([towerHalf, -towerHalf, z0], [-towerHalf, towerHalf, z1], "rgba(17,24,39,0.75)", 1);
+            }
+            textCenter([0, 0, towerHeight], "Tower", "#111827", -2);
+            line([0, 0, boomHeight], boomStartEnd, "#facc15", 4);
+            line([0, 0, boomHeight], boomFinalEnd, "#f59e0b", 4);
+            line(
+                [0, 0, boomHeight + 0.02 * towerHeight],
+                [boomStartEnd[0], boomStartEnd[1], boomStartEnd[2] + 0.02 * towerHeight],
+                "rgba(250,204,21,0.65)",
+                1.5
+            );
+            line(
+                [0, 0, boomHeight + 0.02 * towerHeight],
+                [boomFinalEnd[0], boomFinalEnd[1], boomFinalEnd[2] + 0.02 * towerHeight],
+                "rgba(245,158,11,0.65)",
+                1.5
+            );
+            hookDropLines.forEach((h, idx) => {
+                const isMiddle = idx === Math.floor(hookDropLines.length / 2);
+                line(
+                    h.top,
+                    h.bottom,
+                    isMiddle ? "rgba(37,99,235,0.55)" : "rgba(37,99,235,0.32)",
+                    isMiddle ? 1.3 : 1.0,
+                    [4, 5]
+                );
+            });
+            polyline(hookTrackTop, "rgba(37,99,235,0.85)", 1.5);
+            polyline(hookTrackGround, "rgba(37,99,235,0.45)", 1.3);
+            point(hookStartTop, "#2563eb", 3.5);
+            point(hookStartGround, "rgba(37,99,235,0.55)", 2.5, false);
+            line(P0, P1, "#16a34a", 1.6);
+            point(P0, "#86efac", 2.8);
+            point(P1, "#16a34a", 3.5);
+            point(O, "#111827", 3);
+        }
+        function drawArrowLineOnTop(ctx, map, p, q, color = "#16a34a", lw = 4) {
+            const a = map(p),
+                b = map(q);
+            const dx = b[0] - a[0],
+                dy = b[1] - a[1];
+            const len = Math.hypot(dx, dy);
+            if (len < 1e-6) return;
+            const ux = dx / len,
+                uy = dy / len;
+            ctx.beginPath();
+            ctx.moveTo(a[0], a[1]);
+            ctx.lineTo(b[0], b[1]);
+            ctx.strokeStyle = color;
+            ctx.lineWidth = lw;
+            ctx.lineCap = "round";
+            ctx.stroke();
+            const arrowLen = 5,
+                arrowWidth = 3;
+            ctx.beginPath();
+            ctx.moveTo(b[0], b[1]);
+            ctx.lineTo(b[0] - arrowLen * ux - arrowWidth * uy, b[1] - arrowLen * uy + arrowWidth * ux);
+            ctx.lineTo(b[0] - arrowLen * ux + arrowWidth * uy, b[1] - arrowLen * uy - arrowWidth * ux);
+            ctx.closePath();
+            ctx.fillStyle = color;
+            ctx.fill();
+        }
+        function drawPolylineArrowOnTop(ctx, map, points, color = "#f97316", lw = 3) {
+            if (!points || points.length < 2) return;
+            ctx.beginPath();
+            const first = map(points[0]);
+            ctx.moveTo(first[0], first[1]);
+            for (let i = 1; i < points.length; i++) {
+                const p = map(points[i]);
+                ctx.lineTo(p[0], p[1]);
+            }
+            ctx.strokeStyle = color;
+            ctx.lineWidth = lw;
+            ctx.lineCap = "round";
+            ctx.lineJoin = "round";
+            ctx.stroke();
+            const p1 = map(points[points.length - 2]);
+            const p2 = map(points[points.length - 1]);
+            const dx = p2[0] - p1[0],
+                dy = p2[1] - p1[1];
+            const len = Math.hypot(dx, dy);
+            if (len < 1e-6) return;
+            const ux = dx / len,
+                uy = dy / len;
+            const arrowLen = 5,
+                arrowWidth = 3;
+            ctx.beginPath();
+            ctx.moveTo(p2[0], p2[1]);
+            ctx.lineTo(p2[0] - arrowLen * ux - arrowWidth * uy, p2[1] - arrowLen * uy + arrowWidth * ux);
+            ctx.lineTo(p2[0] - arrowLen * ux + arrowWidth * uy, p2[1] - arrowLen * uy - arrowWidth * ux);
+            ctx.closePath();
+            ctx.fillStyle = color;
+            ctx.fill();
+        }
+        function drawAngleMarkOnTop(ctx, map, center, radius, startAng, sigma, arcDelta, text, labelRadius = null, labelDelta =
+            null) {
+            const steps = 40;
+            const arcPts = [];
+            if (arcDelta > 1e-4) {
+                for (let i = 0; i <= steps; i++) {
+                    const t = i / steps;
+                    const ang = startAng + sigma * arcDelta * t;
+                    arcPts.push([center[0] + radius * Math.cos(ang), center[1] + radius * Math.sin(ang)]);
+                }
+                drawPolylineArrowOnTop(ctx, map, arcPts, "#f97316", 2.0);
+            }
+            const textDelta = labelDelta !== null ? labelDelta : arcDelta;
+            const midAng = startAng + sigma * textDelta * 0.5;
+            const textRadius = labelRadius !== null ? labelRadius : radius * 0.5;
+            const labelPos = [center[0] + textRadius * Math.cos(midAng), center[1] + textRadius * Math.sin(midAng)];
+            const lp = map(labelPos);
+            ctx.save();
+            ctx.font = "bold 14px Times New Roman";
+            ctx.fillStyle = "#ea580c";
+            ctx.strokeStyle = "rgba(255,255,255,0.9)";
+            ctx.lineWidth = 4;
+            ctx.textAlign = "center";
+            ctx.textBaseline = "middle";
+            ctx.strokeText(text, lp[0], lp[1]);
+            ctx.fillText(text, lp[0], lp[1]);
+            ctx.restore();
+        }
+        function drawRiskTopView(demo, progress = 1) {
+            const canvas = document.getElementById("riskTopCanvas");
+            if (!canvas) return;
+            const { ctx, width, height } = fitCanvas(canvas);
+            ctx.clearRect(0, 0, width, height);
+            progress = Math.max(0, Math.min(1, progress));
+            const O = [0, 0];
+            const A = demo.liftGround,
+                B = demo.dropGround;
+            const P0 = demo.workerStartGround,
+                P1 = demo.workerEndGround;
+            const boomLength = demo.boomLength,
+                loadRadius = demo.loadRadius;
+            const sweep = demo.sweep;
+            const steps = 80;
+            const startAng = Math.atan2(A[1], A[0]);
+            const sigma = sweep.sigma,
+                Delta = sweep.Delta;
+            const workerNow = [P0[0] + progress * (P1[0] - P0[0]), P0[1] + progress * (P1[1] - P0[1])];
+            const fanPoints = [];
+            for (let i = 0; i <= steps; i++) {
+                const t = i / steps;
+                const ang = startAng + sigma * Delta * t;
+                fanPoints.push([boomLength * Math.cos(ang), boomLength * Math.sin(ang)]);
+            }
+            const currentSteps = Math.max(2, Math.floor(steps * progress));
+            const currentFanPoints = [];
+            for (let i = 0; i <= currentSteps; i++) {
+                const t = progress * i / currentSteps;
+                const ang = startAng + sigma * Delta * t;
+                currentFanPoints.push([boomLength * Math.cos(ang), boomLength * Math.sin(ang)]);
+            }
+            const loadTrackPoints = [];
+            for (let i = 0; i <= steps; i++) {
+                const t = i / steps;
+                loadTrackPoints.push(loadTrackPointAtT(sweep, t));
+            }
+            const currentLoadTrackPoints = [];
+            for (let i = 0; i <= currentSteps; i++) {
+                const t = progress * i / currentSteps;
+                currentLoadTrackPoints.push(loadTrackPointAtT(sweep, t));
+            }
+            const allPoints = [
+                O, P0, P1, workerNow, [-2, -2], [14, 14],
+                ...fanPoints, ...loadTrackPoints
+            ];
+            const map = makeWorldMapper(allPoints, width, height, 24);
+            function drawPoint(p, color, r = 2, stroke = true) {
+                const a = map(p);
+                ctx.beginPath();
+                ctx.arc(a[0], a[1], r, 0, 2 * Math.PI);
+                ctx.fillStyle = color;
+                ctx.fill();
+                if (stroke) { ctx.strokeStyle = "white";
+                    ctx.lineWidth = 2;
+                    ctx.stroke(); }
+            }
+            ctx.fillStyle = "#f8fafc";
+            ctx.fillRect(0, 0, width, height);
+            ctx.beginPath();
+            let center = map(O);
+            ctx.moveTo(center[0], center[1]);
+            for (let i = 0; i < fanPoints.length; i++) {
+                const q = map(fanPoints[i]);
+                ctx.lineTo(q[0], q[1]);
+            }
+            ctx.closePath();
+            ctx.fillStyle = "rgba(249,115,22,0.12)";
+            ctx.fill();
+            ctx.beginPath();
+            center = map(O);
+            ctx.moveTo(center[0], center[1]);
+            for (let i = 0; i < currentFanPoints.length; i++) {
+                const q = map(currentFanPoints[i]);
+                ctx.lineTo(q[0], q[1]);
+            }
+            ctx.closePath();
+            ctx.fillStyle = "rgba(249,115,22,0.32)";
+            ctx.fill();
+            ctx.beginPath();
+            for (let i = 0; i < loadTrackPoints.length; i++) {
+                const q = map(loadTrackPoints[i]);
+                if (i === 0) ctx.moveTo(q[0], q[1]);
+                else ctx.lineTo(q[0], q[1]);
+            }
+            const pRef1 = map([0, 0]),
+                pRef2 = map([loadRadius, 0]);
+            const pixelLoadRadius = Math.abs(pRef2[0] - pRef1[0]);
+            ctx.strokeStyle = "rgba(59,130,246,0.20)";
+            ctx.lineWidth = Math.max(5, 2 * pixelLoadRadius);
+            ctx.lineCap = "round";
+            ctx.lineJoin = "round";
+            ctx.stroke();
+            ctx.beginPath();
+            for (let i = 0; i < currentLoadTrackPoints.length; i++) {
+                const q = map(currentLoadTrackPoints[i]);
+                if (i === 0) ctx.moveTo(q[0], q[1]);
+                else ctx.lineTo(q[0], q[1]);
+            }
+            ctx.strokeStyle = "rgba(59,130,246,0.48)";
+            ctx.lineWidth = Math.max(5, 2 * pixelLoadRadius);
+            ctx.lineCap = "round";
+            ctx.lineJoin = "round";
+            ctx.stroke();
+            const angleArrowR = boomLength * 0.99;
+            const angleTextR = boomLength * 0.48;
+            drawAngleMarkOnTop(ctx, map, O, angleArrowR, startAng, sigma, Delta * progress,
+                `${sweep.DeltaDeg.toFixed(1)}°`, angleTextR, Delta);
+            drawArrowLineOnTop(ctx, map, P0, P1, "rgba(22,163,74,0.28)", 2);
+            if (progress > 0.02) {
+                drawArrowLineOnTop(ctx, map, P0, workerNow, "#16a34a", 2);
+            }
+            drawPoint(workerNow, "#16a34a", 3);
+        }
+        let riskTopAnimId = null;
+        function updateRiskDrawArea(Pmat) {
+            const trolleyHeight = parseFloat(document.getElementById('trolleyHeight').value) || 17.926;
+            const boomLength = parseFloat(document.getElementById('boomLength').value) || 50;
+            const loadRadius = parseFloat(document.getElementById('loadRiskRadius').value) || 2.0;
+            const direction = document.getElementById('rotationDirection')?.value || "ccw";
+            const liftPixel = [
+                parseFloat(document.getElementById('trolleyStartU').value) || 0,
+                parseFloat(document.getElementById('trolleyStartV').value) || 0
+            ];
+            const dropPixel = [
+                parseFloat(document.getElementById('trolleyEndU').value) || 0,
+                parseFloat(document.getElementById('trolleyEndV').value) || 0
+            ];
+            const workerStartPixel = [
+                parseFloat(document.getElementById('workerStartU').value) || 0,
+                parseFloat(document.getElementById('workerStartV').value) || 0
+            ];
+            const workerEndPixel = [
+                parseFloat(document.getElementById('workerEndU').value) || 0,
+                parseFloat(document.getElementById('workerEndV').value) || 0
+            ];
+            if (liftPixel[0] === 0 && liftPixel[1] === 0) {
+                document.getElementById('riskParamInfo').innerHTML = '请确保输入有效的小车和工人像素坐标。';
+                return;
+            }
+            const demo = buildRiskDemoFromInputs(Pmat, liftPixel, dropPixel, workerStartPixel, workerEndPixel, trolleyHeight,
+                boomLength, loadRadius, direction);
+            updateRiskParamPanel(demo);
+            drawRisk3D(demo);
+            if (riskTopAnimId !== null) {
+                cancelAnimationFrame(riskTopAnimId);
+                riskTopAnimId = null;
+            }
+            const duration = 5000;
+            let startTime = null;
+            function animateRiskTop(timestamp) {
+                if (startTime === null) startTime = timestamp;
+                let progress = (timestamp - startTime) / duration;
+                if (progress > 1) { startTime = timestamp;
+                    progress = 0; }
+                drawRiskTopView(demo, progress);
+                riskTopAnimId = requestAnimationFrame(animateRiskTop);
+            }
+            riskTopAnimId = requestAnimationFrame(animateRiskTop);
+        }
+        function renderMatrix(matrix) {
+            const grid = document.getElementById('matrixGrid');
+            if (!grid) return;
+            grid.innerHTML = '';
+            for (let i = 0; i < 3; i++) {
+                for (let j = 0; j < 4; j++) {
+                    const cell = document.createElement('div');
+                    cell.className = 'cell';
+                    cell.textContent = matrix[i][j].toFixed(4);
+                    grid.appendChild(cell);
+                }
+            }
+        }
+
+        // ================================================================
+        // 5. 主计算流程
+        // ================================================================
+        const defaultP = [
+            [39.9991, 10.0031, 8.0001, 639.9998],
+            [4.9993, -14.9979, -20.0000, 419.9999],
+            [0.0020, 0.0030, -0.0010, 1.0000]
+        ];
+        let currentP = null;
+
+        function calibrateCamera() {
+            try {
+                document.getElementById('calibStatus').innerHTML = '';
+                const grid = document.getElementById('matrixGrid');
+                if (grid) grid.innerHTML = '<div style="grid-column:span 4; text-align:center; color:#94a3b8; padding:8px;">计算中...</div>';
+                const baseRadius = parseFloat(document.getElementById('baseRadius').value);
+                if (isNaN(baseRadius) || baseRadius <= 0) throw new Error("底座距离必须为正数");
+                const imageMarks = {
+                    B1: [parseFloat(document.getElementById('b1u').value), parseFloat(document.getElementById('b1v').value)],
+                    B2: [parseFloat(document.getElementById('b2u').value), parseFloat(document.getElementById('b2v').value)],
+                    B3: [parseFloat(document.getElementById('b3u').value), parseFloat(document.getElementById('b3v').value)],
+                    B4: [parseFloat(document.getElementById('b4u').value), parseFloat(document.getElementById('b4v').value)],
+                    C: null
+                };
+                const cu = document.getElementById('cu').value,
+                    cv = document.getElementById('cv').value;
+                if (cu && cv) { imageMarks.C = [parseFloat(cu), parseFloat(cv)]; }
+                for (let key of ['B1', 'B2', 'B3', 'B4', 'C']) {
+                    if (imageMarks[key] !== null && (isNaN(imageMarks[key][0]) || isNaN(imageMarks[key][1]))) {
+                        imageMarks[key] = null;
+                    }
+                }
+                const useCenter = true,
+                    blendWeight = 0.7;
+                const { H0, completed, estimatedInfo } = calibrateGroundHomography(
+                    imageMarks, baseRadius, useCenter, blendWeight
+                );
+                let infoMsg = "";
+                if (estimatedInfo.estimatedLabels.length > 0) {
+                    infoMsg = `⚠️ 底座点补全: ${estimatedInfo.estimatedLabels.join(', ')} (方法: ${estimatedInfo.method})`;
+                    if (estimatedInfo.warning) infoMsg += ` ${estimatedInfo.warning}`;
+                }
+                const vrows = document.querySelectorAll('.vpoint-row');
+                let verticalPts = [];
+                vrows.forEach(row => {
+                    let Z = parseFloat(row.querySelector('.vz').value);
+                    let u = parseFloat(row.querySelector('.vu').value);
+                    let v = parseFloat(row.querySelector('.vv').value);
+                    if (!isNaN(Z) && !isNaN(u) && !isNaN(v)) verticalPts.push([Z, u, v]);
+                });
+                if (verticalPts.length < 2) throw new Error("至少需要2个垂直参考点");
+                const p3 = estimateP3(H0, verticalPts);
+                const [p1, p2, p4] = splitH0(H0);
+                let Pmat = [
+                    [p1[0], p2[0], p3[0], p4[0]],
+                    [p1[1], p2[1], p3[1], p4[1]],
+                    [p1[2], p2[2], p3[2], p4[2]]
+                ];
+                // 构造已知 3D-2D 点，用于后续优化 P
+                const knownPoints = [];
+                const worldDict = buildTowerBaseWorldPoints(baseRadius);
+                for (const label of ["B1", "B2", "B3", "B4", "C"]) {
+                    if (completed[label] !== null && completed[label] !== undefined && worldDict[label]) {
+                        knownPoints.push({
+                            X: worldDict[label][0],
+                            Y: worldDict[label][1],
+                            Z: 0,
+                            u: completed[label][0],
+                            v: completed[label][1],
+                            label
+                        });
+                    }
+                }
+                verticalPts.forEach((vp, idx) => {
+                    knownPoints.push({
+                        X: 0,
+                        Y: 0,
+                        Z: vp[0],
+                        u: vp[1],
+                        v: vp[2],
+                        label: `V${idx + 1}`
+                    });
+                });
+                // 读取塔臂尖点，并用圆周约束优化 P
+                const boomLengthForOpt = parseFloat(document.getElementById('boomLength').value);
+                const tipHeight = parseFloat(document.getElementById('tipHeight').value);
+                const tipPoints = collectTipPointsFromDOM();
+                let optInfo = null;
+                if (tipPoints.length > 0) {
+                    optInfo = optimizePWithTipConstraints(
+                        Pmat,
+                        knownPoints,
+                        tipPoints,
+                        boomLengthForOpt,
+                        tipHeight
+                    );
+                    Pmat = optInfo.P;
+                }
+                currentP = Pmat;
+                renderMatrix(Pmat);
+                updateRiskDrawArea(Pmat);
+                let statusHtml = `<div class="success-info">✅ 标定成功`;
+                if (infoMsg) {
+                    statusHtml += `<br>📌 ${infoMsg}`;
+                }
+                if (optInfo && optInfo.used) {
+                    statusHtml += `<br>📌 已使用塔臂尖圆周约束优化 P`;
+                    statusHtml += `<br>📌 塔臂尖点数量: ${optInfo.tipCount}`;
+                    statusHtml += `<br>📌 优化前 RMS: ${optInfo.beforeRMS.toFixed(2)} px`;
+                    statusHtml += `<br>📌 优化后 RMS: ${optInfo.afterRMS.toFixed(2)} px`;
+                } else {
+                    statusHtml += `<br>📌 未使用塔臂尖优化：未输入有效塔臂尖点`;
+                }
+                statusHtml += `</div>`;
+                document.getElementById('calibStatus').innerHTML = statusHtml;
+            } catch (err) {
+                document.getElementById('calibStatus').innerHTML =
+                    `<div class="error-msg">❌ 标定失败: ${err.message}</div>`;
+                const grid = document.getElementById('matrixGrid');
+                if (grid) grid.innerHTML = '<div style="grid-column:span 4; text-align:center; color:#dc2626; padding:8px;">计算失败</div>';
+            }
+        }
+
+        // ================================================================
+        // 6. 视频交互选取 + 放大镜
+        // ================================================================
+        let activePickMode = null,
+            pickCallback = null;
+        const video = document.getElementById('mainVideo');
+
+        function getVideoDisplayRect() {
+            const rect = videoEl.getBoundingClientRect();
+            const vw = videoEl.videoWidth;
+            const vh = videoEl.videoHeight;
+            if (!vw || !vh) {
+                return {
+                    left: rect.left,
+                    top: rect.top,
+                    width: rect.width,
+                    height: rect.height
+                };
+            }
+            const elementAspect = rect.width / rect.height;
+            const videoAspect = vw / vh;
+            let displayWidth, displayHeight, offsetX, offsetY;
+            if (elementAspect > videoAspect) {
+                displayHeight = rect.height;
+                displayWidth = rect.height * videoAspect;
+                offsetX = (rect.width - displayWidth) / 2;
+                offsetY = 0;
+            } else {
+                displayWidth = rect.width;
+                displayHeight = rect.width / videoAspect;
+                offsetX = 0;
+                offsetY = (rect.height - displayHeight) / 2;
+            }
+            return {
+                left: rect.left + offsetX,
+                top: rect.top + offsetY,
+                width: displayWidth,
+                height: displayHeight
+            };
+        }
+
+        function getVideoOriginalCoordinates(event) {
+            const display = getVideoDisplayRect();
+            let x = event.clientX - display.left;
+            let y = event.clientY - display.top;
+            x = Math.min(Math.max(0, x), display.width);
+            y = Math.min(Math.max(0, y), display.height);
+            const u = x * videoEl.videoWidth / display.width;
+            const v = y * videoEl.videoHeight / display.height;
+            return {
+                u: Math.min(Math.max(0, u), videoEl.videoWidth),
+                v: Math.min(Math.max(0, v), videoEl.videoHeight)
+            };
+        }
+
+        // ---- 放大镜 ----
+        const magnifier = document.getElementById('magnifier');
+        const magCanvas = document.getElementById('magnifierCanvas');
+        const magCtx = magCanvas.getContext('2d');
+        const magCoordDisplay = document.getElementById('magCoordDisplay');
+        const MAG_SIZE = 180;
+        const MAG_ZOOM = 4;
+        const SAMPLE_SIZE = Math.round(MAG_SIZE / MAG_ZOOM);
+        let magDisplaySize = MAG_SIZE;
+        let frameCanvas = document.createElement('canvas');
+        let frameCtx = frameCanvas.getContext('2d');
+        let frameReady = false;
+        let currentMagUV = { u: 0, v: 0 };
+        let magVisible = false;
+
+        function initMagnifier() {
+            const dpr = window.devicePixelRatio || 1;
+            magCanvas.width = magDisplaySize * dpr;
+            magCanvas.height = magDisplaySize * dpr;
+            magCanvas.style.width = magDisplaySize + 'px';
+            magCanvas.style.height = magDisplaySize + 'px';
+            magCtx.setTransform(dpr, 0, 0, dpr, 0, 0);
+            magnifier.style.width = magDisplaySize + 'px';
+            magnifier.style.height = (magDisplaySize + 32) + 'px';
+        }
+        initMagnifier();
+
+        function updateFrameCanvas() {
+            if (!videoEl.videoWidth || !videoEl.videoHeight) return;
+            if (frameCanvas.width !== videoEl.videoWidth || frameCanvas.height !== videoEl.videoHeight) {
+                frameCanvas.width = videoEl.videoWidth;
+                frameCanvas.height = videoEl.videoHeight;
+                frameReady = false;
+            }
+            try {
+                frameCtx.drawImage(videoEl, 0, 0, frameCanvas.width, frameCanvas.height);
+                frameReady = true;
+            } catch (e) {
+                frameReady = false;
+            }
+        }
+        function animationLoop() {
+            if (videoEl.readyState >= 2) {
+                updateFrameCanvas();
+            }
+            requestAnimationFrame(animationLoop);
+        }
+        requestAnimationFrame(animationLoop);
+
+        function updateMagnifier(u, v) {
+            if (!frameReady || !videoEl.videoWidth || !videoEl.videoHeight) {
+                updateFrameCanvas();
+                if (!frameReady) return;
+            }
+            const vw = frameCanvas.width;
+            const vh = frameCanvas.height;
+            let su = Math.floor(u - SAMPLE_SIZE / 2);
+            let sv = Math.floor(v - SAMPLE_SIZE / 2);
+            let sw = SAMPLE_SIZE;
+            let sh = SAMPLE_SIZE;
+            const padLeft = su < 0 ? -su : 0;
+            const padTop = sv < 0 ? -sv : 0;
+            const padRight = (su + sw) > vw ? (su + sw - vw) : 0;
+            const padBottom = (sv + sh) > vh ? (sv + sh - vh) : 0;
+            su = Math.max(0, su);
+            sv = Math.max(0, sv);
+            sw = Math.min(sw, vw - su);
+            sh = Math.min(sh, vh - sv);
+            if (sw <= 0 || sh <= 0) return;
+            const dpr = window.devicePixelRatio || 1;
+            magCtx.clearRect(0, 0, magDisplaySize, magDisplaySize);
+            magCtx.drawImage(
+                frameCanvas,
+                su, sv, sw, sh,
+                0, 0, magDisplaySize, magDisplaySize
+            );
+            if (padLeft > 0 || padRight > 0 || padTop > 0 || padBottom > 0) {
+                if (padLeft > 0) {
+                    const fillW = (padLeft / SAMPLE_SIZE) * magDisplaySize;
+                    const srcX = su;
+                    const srcY = sv + sh / 2;
+                    for (let x = 0; x < fillW; x += 2) {
+                        magCtx.drawImage(frameCanvas, srcX, srcY, 1, 1, x, 0, 2, magDisplaySize);
+                    }
+                }
+                if (padRight > 0) {
+                    const fillW = (padRight / SAMPLE_SIZE) * magDisplaySize;
+                    const srcX = su + sw - 1;
+                    const srcY = sv + sh / 2;
+                    for (let x = magDisplaySize - fillW; x < magDisplaySize; x += 2) {
+                        magCtx.drawImage(frameCanvas, srcX, srcY, 1, 1, x, 0, 2, magDisplaySize);
+                    }
+                }
+                if (padTop > 0) {
+                    const fillH = (padTop / SAMPLE_SIZE) * magDisplaySize;
+                    const srcX = su + sw / 2;
+                    const srcY = sv;
+                    for (let y = 0; y < fillH; y += 2) {
+                        magCtx.drawImage(frameCanvas, srcX, srcY, 1, 1, 0, y, magDisplaySize, 2);
+                    }
+                }
+                if (padBottom > 0) {
+                    const fillH = (padBottom / SAMPLE_SIZE) * magDisplaySize;
+                    const srcX = su + sw / 2;
+                    const srcY = sv + sh - 1;
+                    for (let y = magDisplaySize - fillH; y < magDisplaySize; y += 2) {
+                        magCtx.drawImage(frameCanvas, srcX, srcY, 1, 1, 0, y, magDisplaySize, 2);
+                    }
+                }
+            }
+            magCoordDisplay.textContent = `(${u.toFixed(1)}, ${v.toFixed(1)})`;
+            currentMagUV.u = u;
+            currentMagUV.v = v;
+        }
+
+        function showMagnifier(show) {
+            if (show) {
+                magnifier.style.display = 'block';
+                magVisible = true;
+            } else {
+                magnifier.style.display = 'none';
+                magVisible = false;
+            }
+        }
+
+        function onVideoMouseMove(event) {
+            if (!activePickMode) {
+                if (magVisible) showMagnifier(false);
+                return;
+            }
+            if (!videoEl.videoWidth || !videoEl.videoHeight) return;
+            const { u, v } = getVideoOriginalCoordinates(event);
+            const display = getVideoDisplayRect();
+            const videoRect = videoEl.getBoundingClientRect();
+            const scaleX = display.width / videoEl.videoWidth;
+            const scaleY = display.height / videoEl.videoHeight;
+            const px = display.left + u * scaleX;
+            const py = display.top + v * scaleY;
+            const offsetX = 20;
+            const offsetY = 20;
+            let magX = px - videoRect.left + offsetX;
+            let magY = py - videoRect.top + offsetY;
+            const magW = magDisplaySize;
+            const magH = magDisplaySize + 32;
+            if (magX + magW > videoRect.width) {
+                magX = px - videoRect.left - magW - offsetX;
+            }
+            if (magY + magH > videoRect.height) {
+                magY = py - videoRect.top - magH - offsetY;
+            }
+            magX = Math.max(4, Math.min(magX, videoRect.width - magW - 4));
+            magY = Math.max(4, Math.min(magY, videoRect.height - magH - 4));
+            magnifier.style.left = magX + 'px';
+            magnifier.style.top = magY + 'px';
+            updateMagnifier(u, v);
+            if (!magVisible) showMagnifier(true);
+        }
+
+        function onVideoMouseLeave() {
+            if (magVisible) showMagnifier(false);
+        }
+        function onVideoMouseEnter() {
+            if (activePickMode && !magVisible) {}
+        }
+        video.addEventListener('mousemove', onVideoMouseMove);
+        video.addEventListener('mouseleave', onVideoMouseLeave);
+        video.addEventListener('mouseenter', onVideoMouseEnter);
+
+        function enterPickMode(targetId, callback) {
+            if (activePickMode) {
+                video.style.cursor = "default";
+                showMagnifier(false);
+            }
+            activePickMode = targetId;
+            video.style.cursor = "crosshair";
+            pickCallback = callback;
+            if (videoEl.videoWidth && videoEl.videoHeight) {
+                const u = videoEl.videoWidth / 2;
+                const v = videoEl.videoHeight / 2;
+                updateMagnifier(u, v);
+                showMagnifier(true);
+                const display = getVideoDisplayRect();
+                const videoRect = videoEl.getBoundingClientRect();
+                const scaleX = display.width / videoEl.videoWidth;
+                const scaleY = display.height / videoEl.videoHeight;
+                const px = display.left + u * scaleX;
+                const py = display.top + v * scaleY;
+                let magX = px - videoRect.left - magDisplaySize / 2;
+                let magY = py - videoRect.top - (magDisplaySize + 32) / 2;
+                magX = Math.max(4, Math.min(magX, videoRect.width - magDisplaySize - 4));
+                magY = Math.max(4, Math.min(magY, videoRect.height - magDisplaySize - 32 - 4));
+                magnifier.style.left = magX + 'px';
+                magnifier.style.top = magY + 'px';
+            }
+        }
+
+        function onVideoClick(event) {
+            if (!activePickMode) return;
+            const { u, v } = getVideoOriginalCoordinates(event);
+            if (pickCallback) pickCallback(activePickMode, u, v);
+            video.style.cursor = "default";
+            showMagnifier(false);
+            activePickMode = null;
+            setTimeout(drawMarkers, 100);
+        }
+        video.addEventListener('click', onVideoClick);
+
+        function bindPickButtons() {
+            const mappings = [
+                { id: 'b1', uId: 'b1u', vId: 'b1v' },
+                { id: 'b2', uId: 'b2u', vId: 'b2v' },
+                { id: 'b3', uId: 'b3u', vId: 'b3v' },
+                { id: 'b4', uId: 'b4u', vId: 'b4v' },
+                { id: 'c', uId: 'cu', vId: 'cv' },
+                { id: 'trolleyStart', uId: 'trolleyStartU', vId: 'trolleyStartV' },
+                { id: 'trolleyEnd', uId: 'trolleyEndU', vId: 'trolleyEndV' },
+                { id: 'workerStart', uId: 'workerStartU', vId: 'workerStartV' },
+                { id: 'workerEnd', uId: 'workerEndU', vId: 'workerEndV' }
+            ];
+            mappings.forEach(m => {
+                const btn = document.querySelector(`button.pick-btn[data-target="${m.id}"]`);
+                if (btn) {
+                    btn.addEventListener('click', () => {
+                        enterPickMode(m.id, (mode, u, v) => {
+                            document.getElementById(m.uId).value = u.toFixed(2);
+                            document.getElementById(m.vId).value = v.toFixed(2);
+                            drawMarkers();
+                            if (currentP) { updateRiskDrawArea(currentP); }
+                        });
+                    });
+                }
+            });
+        }
+
+        function handleVerticalPick(e) {
+            const btn = e.currentTarget;
+            const row = btn.closest('.vpoint-row');
+            const idx = row.getAttribute('data-idx');
+            enterPickMode(`vertical_${idx}`, (mode, u, v) => {
+                row.querySelector('.vu').value = u.toFixed(2);
+                row.querySelector('.vv').value = v.toFixed(2);
+                drawMarkers();
+            });
+        }
+
+        function handleTipPick(e) {
+            const btn = e.currentTarget;
+            const row = btn.closest('.tip-point-row');
+            const idx = row.getAttribute('data-idx');
+            enterPickMode(`tip_${idx}`, (mode, u, v) => {
+                row.querySelector('.tip-u').value = u.toFixed(2);
+                row.querySelector('.tip-v').value = v.toFixed(2);
+                drawMarkers();
+                if (currentP) {
+                    updateRiskDrawArea(currentP);
+                }
+            });
+        }
+
+        function addTipPoint(defaultU = "", defaultV = "", tipTime = null) {
+            if (defaultU && typeof defaultU === 'object') {
+                defaultU = "";
+                defaultV = "";
+                tipTime = null;
+            }
+            defaultU = formatCoord2(defaultU);
+            defaultV = formatCoord2(defaultV);
+            const container = document.getElementById('tipPointsContainer');
+            const idx = container.children.length;
+            const hasTime = tipTime !== null && tipTime !== undefined && isFinite(tipTime);
+            const timeText = hasTime ? ` (${tipTime.toFixed(3)}s)` : "";
+            const newRow = document.createElement('div');
+            newRow.className = 'tip-point-row';
+            newRow.setAttribute('data-idx', idx);
+            if (hasTime) {
+                newRow.dataset.time = tipTime;
+            }
+            newRow.innerHTML = `
+                <div class="field">
+                    <label>Tip${idx + 1} u${timeText}</label>
+                    <input class="tip-u" type="text" value="${defaultU}" inputmode="decimal" autocomplete="off">
+                </div>
+                <div class="field">
+                    <label>v</label>
+                    <input class="tip-v" type="text" value="${defaultV}" inputmode="decimal" autocomplete="off">
+                </div>
+                ${hasTime ? `<button class="pick-btn jump-tip-time" data-time="${tipTime.toFixed(6)}">跳转</button>` : ""}
+                <button class="pick-btn pick-tip-point" data-idx="${idx}">选取</button>
+                <button class="pick-btn ai-tip-btn" data-idx="${idx}" style="background:#8b5cf6; color:white;">AI</button>
+            `;
+            container.appendChild(newRow);
+            newRow.querySelector('.pick-tip-point').addEventListener('click', handleTipPick);
+            const jumpBtn = newRow.querySelector('.jump-tip-time');
+            if (jumpBtn) {
+                jumpBtn.addEventListener('click', () => {
+                    const t = parseFloat(jumpBtn.dataset.time);
+                    if (isFinite(t)) {
+                        videoEl.currentTime = t;
+                        videoEl.pause();
+                    }
+                });
+            }
+            bindInputChangeForElement(newRow);
+            return newRow;
+        }
+
+        function addVerticalPoint() {
+            const container = document.getElementById('verticalPointsContainer');
+            const idx = container.children.length;
+            const newRow = document.createElement('div');
+            newRow.className = 'vpoint-row';
+            newRow.setAttribute('data-idx', idx);
+            newRow.innerHTML = `
+                    <div class="field"><label>Z${idx+1} (m)</label><input class="vz" type="text" value="15.00" inputmode="decimal" autocomplete="off"></div>
+                    <div class="field"><label>u</label><input class="vu" type="text" value="770.00" inputmode="decimal" autocomplete="off"></div>
+                    <div class="field"><label>v</label><input class="vv" type="text" value="120.00" inputmode="decimal" autocomplete="off"></div>
+                    <button class="pick-btn pick-vertical" data-idx="${idx}">选取</button>
+                `;
+            container.appendChild(newRow);
+            newRow.querySelector('.pick-vertical').addEventListener('click', handleVerticalPick);
+            bindInputChangeForElement(newRow);
+        }
+
+        // ================================================================
+        // 7. 视频坐标标记绘制
+        // ================================================================
+        const markerCanvas = document.getElementById('markerCanvas');
+        const markerCtx = markerCanvas.getContext('2d');
+
+        function drawMarkers() {
+            if (!videoEl.videoWidth) {
+                setTimeout(drawMarkers, 200);
+                return;
+            }
+            const rect = videoEl.getBoundingClientRect();
+            markerCanvas.width = rect.width;
+            markerCanvas.height = rect.height;
+            markerCtx.clearRect(0, 0, markerCanvas.width, markerCanvas.height);
+            const display = getVideoDisplayRect();
+            const offsetX = display.left - rect.left;
+            const offsetY = display.top - rect.top;
+            const scaleX = display.width / videoEl.videoWidth;
+            const scaleY = display.height / videoEl.videoHeight;
+            const map = (u, v) => [
+                offsetX + u * scaleX,
+                offsetY + v * scaleY
+            ];
+            const points = [
+                { id: 'b1', label: 'B1', color: '#ff4444', suffix: 'lower' },
+                { id: 'b2', label: 'B2', color: '#ff4444', suffix: 'lower' },
+                { id: 'b3', label: 'B3', color: '#ff4444', suffix: 'lower' },
+                { id: 'b4', label: 'B4', color: '#ff4444', suffix: 'lower' },
+                { id: 'c', label: 'C', color: '#44ff44', suffix: 'lower' },
+                { id: 'trolleyStart', label: '小车起', color: '#44aaff', suffix: 'upper' },
+                { id: 'trolleyEnd', label: '小车终', color: '#44aaff', suffix: 'upper' },
+                { id: 'workerStart', label: '工人起', color: '#ffaa44', suffix: 'upper' },
+                { id: 'workerEnd', label: '工人终', color: '#ffaa44', suffix: 'upper' }
+            ];
+            const vrows = document.querySelectorAll('.vpoint-row');
+            vrows.forEach((row, idx) => {
+                const u = parseFloat(row.querySelector('.vu').value);
+                const v = parseFloat(row.querySelector('.vv').value);
+                if (!isNaN(u) && !isNaN(v)) {
+                    points.push({ id: `v${idx}`, label: `V${idx+1}`, color: '#ff66ff', u: u, v: v });
+                }
+            });
+            const tipRows = document.querySelectorAll('.tip-point-row');
+            tipRows.forEach((row, idx) => {
+                const u = parseFloat(row.querySelector('.tip-u').value);
+                const v = parseFloat(row.querySelector('.tip-v').value);
+                if (!isNaN(u) && !isNaN(v)) {
+                    points.push({
+                        id: `tip${idx}`,
+                        label: `Tip${idx + 1}`,
+                        color: '#22d3ee',
+                        u: u,
+                        v: v
+                    });
+                }
+            });
+            points.forEach(p => {
+                let u, v;
+                if (p.u !== undefined && p.v !== undefined) {
+                    u = p.u;
+                    v = p.v;
+                } else {
+                    let uSuffix, vSuffix;
+                    if (p.suffix === 'lower') {
+                        uSuffix = 'u';
+                        vSuffix = 'v';
+                    } else {
+                        uSuffix = 'U';
+                        vSuffix = 'V';
+                    }
+                    const uInput = document.getElementById(p.id + uSuffix);
+                    const vInput = document.getElementById(p.id + vSuffix);
+                    if (!uInput || !vInput) return;
+                    u = parseFloat(uInput.value);
+                    v = parseFloat(vInput.value);
+                    if (isNaN(u) || isNaN(v)) return;
+                }
+                const [x, y] = map(u, v);
+                markerCtx.save();
+                markerCtx.strokeStyle = p.color;
+                markerCtx.lineWidth = 1.5;
+                const size = 5;
+                markerCtx.beginPath();
+                markerCtx.moveTo(x - size, y);
+                markerCtx.lineTo(x + size, y);
+                markerCtx.moveTo(x, y - size);
+                markerCtx.lineTo(x, y + size);
+                markerCtx.stroke();
+                markerCtx.beginPath();
+                markerCtx.arc(x, y, 4, 0, 2 * Math.PI);
+                markerCtx.stroke();
+                markerCtx.fillStyle = p.color;
+                markerCtx.font = '10px Times New Roman';
+                markerCtx.textAlign = 'left';
+                markerCtx.textBaseline = 'bottom';
+                markerCtx.fillText(p.label, x + 8, y - 4);
+                markerCtx.restore();
+            });
+        }
+
+        function estimateBase64Bytes(dataUrl) {
+            if (!dataUrl || typeof dataUrl !== 'string') return 0;
+            const base64 = dataUrl.split(',')[1] || '';
+            return Math.floor(base64.length * 3 / 4);
+        }
+
+        function makeAIFrameBase64(options = {}) {
+            const maxBytes = options.maxBytes || 10 * 1024 * 1024;
+            const jpegQuality = options.jpegQuality || 0.92;
+            const minQuality = options.minQuality || 0.82;
+
+            const rawW = videoEl.videoWidth;
+            const rawH = videoEl.videoHeight;
+
+            if (!rawW || !rawH) {
+                throw new Error('视频原始尺寸无效，无法截图');
+            }
+
+            // 始终使用原始尺寸截图
+            let sendW = rawW;
+            let sendH = rawH;
+            let scale = 1.0;
+
+            function renderCanvas(w, h) {
+                const canvas = document.createElement('canvas');
+                canvas.width = w;
+                canvas.height = h;
+                const ctx = canvas.getContext('2d', { alpha: false });
+                // 只画视频帧，不画任何网格
+                ctx.drawImage(videoEl, 0, 0, w, h);
+                return canvas;
+            }
+
+            let canvas = renderCanvas(sendW, sendH);
+            let imageBase64 = canvas.toDataURL('image/jpeg', jpegQuality);
+            let bytes = estimateBase64Bytes(imageBase64);
+
+            // 如果原图小于限制，直接返回（无缩放）
+            if (bytes <= maxBytes) {
+                return {
+                    imageBase64,
+                    rawW,
+                    rawH,
+                    sendW,
+                    sendH,
+                    scale,
+                    bytes,
+                    mime: 'image/jpeg',
+                    hasGrid: false,
+                    frameTime: videoEl.currentTime
+                };
+            }
+
+            // 超过限制，先尝试降低 JPEG 质量
+            imageBase64 = canvas.toDataURL('image/jpeg', minQuality);
+            bytes = estimateBase64Bytes(imageBase64);
+            if (bytes <= maxBytes) {
+                return {
+                    imageBase64,
+                    rawW,
+                    rawH,
+                    sendW,
+                    sendH,
+                    scale,
+                    bytes,
+                    mime: 'image/jpeg',
+                    hasGrid: false,
+                    frameTime: videoEl.currentTime
+                };
+            }
+
+            // 仍然超过，按比例缩放
+            scale = Math.sqrt(maxBytes / bytes) * 0.95;
+            scale = Math.max(0.35, Math.min(1.0, scale));
+            sendW = Math.round(rawW * scale);
+            sendH = Math.round(rawH * scale);
+
+            canvas = renderCanvas(sendW, sendH);
+            imageBase64 = canvas.toDataURL('image/jpeg', minQuality);
+            bytes = estimateBase64Bytes(imageBase64);
+
+            return {
+                imageBase64,
+                rawW,
+                rawH,
+                sendW,
+                sendH,
+                scale,
+                bytes,
+                mime: 'image/jpeg',
+                hasGrid: false,
+                frameTime: videoEl.currentTime
+            };
+        }
+
+
+        // ================================================================
+        // AI 选点功能（调用后端 GLM 模型）
+        // ================================================================
+
+        /**
+         * 通用 AI 选点函数
+         * 后端返回归一化坐标和像素坐标，前端最终使用当前视频原始像素坐标。
+         *
+         * @param {string} prompt - 描述要找的目标
+         * @param {function} callback - 回调函数，接收 {x, y}
+         * @param {string} targetType - boom_tip / trolley / general
+         */
+        async function markWithAI(prompt, callback, targetType = 'general') {
+        const aiStatus = document.getElementById('aiStatus');
+        if (!aiStatus) {
+            console.warn('未找到 #aiStatus 元素，状态将不会显示');
+        }
+
+        if (!videoEl.videoWidth || !videoEl.videoHeight) {
+            alert('视频尚未加载完成，无法截图识别');
+            return;
+        }
+
+        // 显示分析中状态
+        if (aiStatus) {
+            aiStatus.style.display = 'block';
+            aiStatus.textContent = '⏳ AI 正在分析...';
+            aiStatus.style.color = '#fcd34d';
+        }
+
+        try {
+            // 1. 暂停视频并等待当前帧稳定
+            videoEl.pause();
+
+            if (videoEl.readyState < 2) {
+                await new Promise((resolve, reject) => {
+                    const timer = setTimeout(() => {
+                        cleanup();
+                        reject(new Error('等待视频帧超时'));
+                    }, 2000);
+                    const cleanup = () => {
+                        clearTimeout(timer);
+                        videoEl.removeEventListener('loadeddata', onReady);
+                        videoEl.removeEventListener('canplay', onReady);
+                    };
+                    const onReady = () => {
+                        cleanup();
+                        resolve();
+                    };
+                    videoEl.addEventListener('loadeddata', onReady, { once: true });
+                    videoEl.addEventListener('canplay', onReady, { once: true });
+                });
+            }
+
+            await new Promise(resolve => {
+                requestAnimationFrame(() => {
+                    requestAnimationFrame(resolve);
+                });
+            });
+
+            updateFrameCanvas();
+
+            // 2. 截取当前帧（强制使用原始尺寸，无压缩）
+            const aiFrame = makeAIFrameBase64({
+                maxBytes: 5 * 1024 * 1024
+            });
+
+            const imageBase64 = aiFrame.imageBase64;
+            const captureTime = aiFrame.frameTime;
+
+            // 🔍 日志1：发送图片信息
+            console.log('📤 发送图片信息:', {
+                rawW: aiFrame.rawW,
+                rawH: aiFrame.rawH,
+                sendW: aiFrame.sendW,
+                sendH: aiFrame.sendH,
+                scale: aiFrame.scale,
+                bytes: aiFrame.bytes,
+                mime: aiFrame.mime,
+                captureTime,
+                targetType
+            });
+
+            // 3. 发送请求到后端（修正：先 fetch）
+            const resp = await fetch('/ai_mark', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    image_base64: imageBase64,
+                    prompt: prompt,
+                    target_type: targetType,
+                    frame_time: captureTime,
+                    video_width: videoEl.videoWidth,
+                    video_height: videoEl.videoHeight,
+                    send_width: aiFrame.sendW,
+                    send_height: aiFrame.sendH,
+                    has_grid: aiFrame.hasGrid
+                })
+            });
+
+            if (!resp.ok) {
+                let msg = `请求失败，HTTP ${resp.status}`;
+                try {
+                    const err = await resp.json();
+                    msg = err.detail || msg;
+                } catch (_) {}
+                throw new Error(msg);
+            }
+
+            const data = await resp.json();
+
+            // 🔍 日志2：AI 返回原始数据
+            console.log('📥 AI 返回原始数据:', data);
+
+            if (!data.success) {
+                throw new Error(data.detail || 'AI 识别失败');
+            }
+
+            // 4. 换算坐标到原始视频尺寸
+            let x, y;
+            const sentW = Number(data.width || aiFrame.sendW);
+            const sentH = Number(data.height || aiFrame.sendH);
+
+            if (
+                typeof data.x === 'number' &&
+                typeof data.y === 'number' &&
+                isFinite(data.x) &&
+                isFinite(data.y) &&
+                sentW > 0 &&
+                sentH > 0
+            ) {
+                // 使用后端返回的像素坐标（基于发送图片尺寸）
+                x = data.x * aiFrame.rawW / sentW;
+                y = data.y * aiFrame.rawH / sentH;
+            } else if (
+                typeof data.x_ratio === 'number' &&
+                typeof data.y_ratio === 'number' &&
+                isFinite(data.x_ratio) &&
+                isFinite(data.y_ratio)
+            ) {
+                // 使用归一化坐标
+                x = data.x_ratio * (aiFrame.rawW - 1);
+                y = data.y_ratio * (aiFrame.rawH - 1);
+            } else {
+                throw new Error('AI 返回中缺少有效坐标');
+            }
+
+            x = Math.max(0, Math.min(videoEl.videoWidth - 1, x));
+            y = Math.max(0, Math.min(videoEl.videoHeight - 1, y));
+
+            // 🔍 日志3：最终映射坐标
+            console.log('📐 最终映射坐标:', {
+                aiX: data.x,
+                aiY: data.y,
+                aiX_ratio: data.x_ratio,
+                aiY_ratio: data.y_ratio,
+                sentW, sentH,
+                rawW: aiFrame.rawW,
+                rawH: aiFrame.rawH,
+                videoW: videoEl.videoWidth,
+                videoH: videoEl.videoHeight,
+                finalX: x,
+                finalY: y
+            });
+
+            // 5. 更新状态显示
+            if (aiStatus) {
+                const xRatio = data.x_ratio !== undefined ? data.x_ratio : (x / (videoEl.videoWidth - 1));
+                const yRatio = data.y_ratio !== undefined ? data.y_ratio : (y / (videoEl.videoHeight - 1));
+                aiStatus.textContent = `✅ x_ratio=${xRatio.toFixed(4)}, y_ratio=${yRatio.toFixed(4)}`;
+                aiStatus.style.color = '#22c55e';
+            }
+
+            // 6. 回填输入框并绘制标记
+            if (callback) callback(x, y);
+            drawMarkers();
+
+        } catch (err) {
+            console.error('❌ AI 选点错误:', err);
+            if (aiStatus) {
+                aiStatus.textContent = '❌ AI 分析失败';
+                aiStatus.style.color = '#ef4444';
+            }
+        }
+    }
+
+        function seekVideoToTime(t) {
+            return new Promise((resolve) => {
+                if (!videoEl || !isFinite(t)) {
+                    resolve();
+                    return;
+                }
+
+                const duration = videoEl.duration || 0;
+                if (duration > 0) {
+                    t = Math.max(0, Math.min(duration, t));
+                }
+
+                const onSeeked = () => {
+                    videoEl.removeEventListener('seeked', onSeeked);
+                    videoEl.pause();
+
+                    // 给浏览器一点时间把当前帧刷新到 video 元素上
+                    setTimeout(() => {
+                        updateFrameCanvas();
+                        drawMarkers();
+                        resolve();
+                    }, 120);
+                };
+
+                videoEl.addEventListener('seeked', onSeeked, { once: true });
+                videoEl.currentTime = t;
+                videoEl.pause();
+            });
+        }
+
+        function bindInputChangeForElement(root) {
+            const inputs = root.querySelectorAll('input');
+            inputs.forEach(input => {
+                input.addEventListener('change', () => {
+                    drawMarkers();
+                    if (currentP) {
+                        updateRiskDrawArea(currentP);
+                    }
+                });
+                input.addEventListener('input', () => {
+                    drawMarkers();
+                });
+            });
+        }
+
+        function bindInputChange() {
+            const inputs = document.querySelectorAll('input');
+            inputs.forEach(input => {
+                input.addEventListener('change', () => {
+                    drawMarkers();
+                    if (currentP) updateRiskDrawArea(currentP);
+                });
+                input.addEventListener('input', () => {
+                    drawMarkers();
+                });
+            });
+            const rotationSelect = document.getElementById('rotationDirection');
+            if (rotationSelect) {
+                rotationSelect.addEventListener('change', () => {
+                    if (currentP) updateRiskDrawArea(currentP);
+                });
+            }
+        }
+
+        // ================================================================
+        // 8. 塔吊运行时间点分析（调用后端 /analyze 接口）
+        // ================================================================
+        const analyzeBtn = document.getElementById('analyzeBtn');
+        const analysisStatus = document.getElementById('analysisStatus');
+        const analysisProgress = document.getElementById('analysisProgress');
+        const resultTimesDiv = document.getElementById('resultTimes');
+        const progressFill = document.getElementById('progressFill');
+        const markersContainer = document.getElementById('markersContainer');
+        const MARKER_COLORS = {
+            boom_start: '#facc15',
+            boom_end: '#f97316',
+            lift: '#22c55e',
+            place: '#ef4444'
+        };
+        let currentBoomTimes = null;
+        let currentTipSampleTimes = null;
+
+        const DEFAULT_TIP_POINTS = [
+            [3712.238, 304.232],
+            [3599.808, 299.122],
+            [3436.274, 294.011],
+            [3221.634, 294.011],
+            [3001.884, 278.680],
+            [2792.356, 268.459],
+            [2654.373, 263.348],
+            [2506.170, 263.348],
+            [2322.193, 258.238]
+        ];
+
+        function formatCoord2(value) {
+            if (value === "" || value === null || value === undefined) return "";
+            const num = parseFloat(value);
+            return isNaN(num) ? "" : num.toFixed(2);
+        }
+
+        function updateVideoProgress() {
+            if (!videoEl.duration) return;
+            const ratio = videoEl.currentTime / videoEl.duration;
+            progressFill.style.width = (ratio * 100) + '%';
+            if (currentBoomTimes) {
+                const markers = markersContainer.querySelectorAll('.marker');
+                markers.forEach(marker => {
+                    const time = parseFloat(marker.dataset.time);
+                    if (time !== undefined && videoEl.duration > 0) {
+                        const pos = (time / videoEl.duration) * 100;
+                        marker.style.left = pos + '%';
+                    }
+                });
+            }
+        }
+
+        function clearMarkers() { markersContainer.innerHTML = ''; }
+
+        function createMarker(time, label, className = '') {
+            const marker = document.createElement('div');
+            marker.className = `marker ${className}`;
+            marker.dataset.time = time;
+            marker.title = `${label}: ${time.toFixed(3)}s`;
+            return marker;
+        }
+
+        function generateTipSampleTimes(times, segments = 8) {
+            if (!times) return null;
+            const start = times.boom_start;
+            const end = times.boom_end;
+            if (start === null || start === undefined || end === null || end === undefined) {
+                return null;
+            }
+            if (!isFinite(start) || !isFinite(end) || end <= start) {
+                return null;
+            }
+            const result = [];
+            const duration = end - start;
+            for (let i = 0; i <= segments; i++) {
+                result.push(start + duration * i / segments);
+            }
+            return result;
+        }
+
+        function generateTipSampleRows(tipTimes, clearExisting = true) {
+            const container = document.getElementById('tipPointsContainer');
+            if (!container || !Array.isArray(tipTimes)) return;
+            if (clearExisting) {
+                container.innerHTML = '';
+            }
+            tipTimes.forEach((t, idx) => {
+                const defaultPt = DEFAULT_TIP_POINTS[idx] || ["", ""];
+                const defaultU = formatCoord2(defaultPt[0]);
+                const defaultV = formatCoord2(defaultPt[1]);
+                addTipPoint(defaultU, defaultV, t);
+            });
+            drawMarkers();
+        }
+
+        function appendTipSampleMarkers(tipTimes) {
+            if (!Array.isArray(tipTimes)) return;
+            tipTimes.forEach((t, idx) => {
+                const marker = createMarker(t, `Tip${idx + 1}`, 'tip-sample');
+                marker.title = `Tip${idx + 1}: ${t.toFixed(3)}s`;
+                markersContainer.appendChild(marker);
+            });
+        }
+
+        function displayResults(times) {
+            if (!times) {
+                resultTimesDiv.innerHTML = '<span style="color:#94a3b8; font-size:0.8rem;">点击「分析」按钮获取时间点</span>';
+                return;
+            }
+            const items = [
+                { key: 'boom_start', label: '吊臂开始转动', cls: '' },
+                { key: 'boom_end', label: '吊臂结束转动', cls: '' },
+                { key: 'lift', label: '起吊候选', cls: 'lift' },
+                { key: 'place', label: '落吊候选', cls: 'place' }
+            ];
+            let html = '';
+            for (const item of items) {
+                const val = times[item.key];
+                if (val !== null && val !== undefined) {
+                    const color = MARKER_COLORS[item.key] || '#94a3b8';
+                    html += `<span class="time-item">
+                                <span class="marker-color" style="background:${color};"></span>
+                                <span class="label">${item.label}:</span>
+                                <span class="value">${val.toFixed(2)}s (${formatTime(val)})</span>
+                            </span>`;
+                } else {
+                    html += `<span class="time-item" style="color:#94a3b8;">
+                                <span class="label">${item.label}:</span>
+                                <span class="value">未检测到</span>
+                            </span>`;
+                }
+            }
+            const tipTimes = generateTipSampleTimes(times, 8);
+            currentTipSampleTimes = tipTimes;
+            if (tipTimes && tipTimes.length > 0) {
+                html += `<span class="time-item" style="flex-basis:100%; margin-top:4px;">
+                            <span class="marker-color" style="background:#22d3ee;"></span>
+                            <span class="label">塔臂尖建议标注点:</span>
+                            <span class="value">${tipTimes.length} 个，已生成 Tip1–Tip${tipTimes.length}</span>
+                        </span>`;
+            } else {
+                html += `<span class="time-item" style="flex-basis:100%; margin-top:4px; color:#94a3b8;">
+                            <span class="label">塔臂尖建议标注点:</span>
+                            <span class="value">未生成，缺少吊臂开始/结束时间</span>
+                        </span>`;
+            }
+            resultTimesDiv.innerHTML = html;
+            clearMarkers();
+            const markerMap = [
+                { key: 'boom_start', cls: '', label: '开始' },
+                { key: 'boom_end', cls: '', label: '结束' },
+                { key: 'lift', cls: 'lift', label: '起吊' },
+                { key: 'place', cls: 'place', label: '落吊' }
+            ];
+            for (const m of markerMap) {
+                const val = times[m.key];
+                if (val !== null && val !== undefined) {
+                    const marker = createMarker(val, m.label, m.cls);
+                    markersContainer.appendChild(marker);
+                }
+            }
+            if (tipTimes && tipTimes.length > 0) {
+                appendTipSampleMarkers(tipTimes);
+                generateTipSampleRows(tipTimes, true);
+            }
+            updateVideoProgress();
+        }
+
+        function formatTime(sec) {
+            const m = Math.floor(sec / 60);
+            const s = (sec % 60);
+            return `${m.toString().padStart(2,'0')}:${s.toFixed(3).padStart(6,'0')}`;
+        }
+
+        // ================================================================
+        // 核心修改：调用后端 /analyze 接口
+        // ================================================================
+        async function performAnalysis(videoFile) {
+            // 显示进度（模拟）
+            let progress = 5;
+            const timer = setInterval(() => {
+                progress = Math.min(progress + 3, 90);
+                analysisProgress.style.width = progress + '%';
+            }, 500);
+
+            try {
+                const resp = await fetch('/analyze', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ video: videoFile })
+                });
+
+                if (!resp.ok) {
+                    let msg = `后端请求失败，HTTP ${resp.status}`;
+                    try {
+                        const err = await resp.json();
+                        msg = err.detail || msg;
+                    } catch (_) {}
+                    throw new Error(msg);
+                }
+
+                const result = await resp.json();
+                analysisProgress.style.width = '100%';
+
+                return {
+                    boom_start: result.boom_start,
+                    boom_end: result.boom_end,
+                    lift: result.lift,
+                    place: result.place
+                };
+            } finally {
+                clearInterval(timer);
+            }
+        }
+
+        // 点击分析按钮
+        analyzeBtn.addEventListener('click', async function() {
+            if (this.disabled) return;
+            const currentSrc = videoEl.src;
+            const videoName = currentSrc.split('/').pop().split('?')[0];
+            if (!videoName) {
+                analysisStatus.textContent = '❌ 未加载视频';
+                return;
+            }
+            this.disabled = true;
+            analysisStatus.textContent = '⏳ 分析中...';
+            analysisProgress.style.width = '0%';
+            resultTimesDiv.innerHTML = '<span style="color:#94a3b8; font-size:0.8rem;">分析中，请稍候...</span>';
+            clearMarkers();
+            try {
+                const times = await performAnalysis(videoName);
+                currentBoomTimes = times;
+                displayResults(times);
+                analysisStatus.textContent = '✅ 分析完成';
+                analysisProgress.style.width = '100%';
+            } catch (err) {
+                analysisStatus.textContent = '❌ 分析失败: ' + err.message;
+                resultTimesDiv.innerHTML = `<span style="color:#dc2626;">分析失败: ${err.message}</span>`;
+            } finally {
+                this.disabled = false;
+            }
+        });
+
+        videoEl.addEventListener('timeupdate', updateVideoProgress);
+        videoEl.addEventListener('loadedmetadata', updateVideoProgress);
+        videoEl.addEventListener('loadeddata', () => {
+            currentBoomTimes = null;
+            currentTipSampleTimes = null;
+            clearMarkers();
+            progressFill.style.width = '0%';
+            resultTimesDiv.innerHTML = '<span style="color:#94a3b8; font-size:0.8rem;">点击「分析」按钮获取时间点</span>';
+            drawMarkers();
+        });
+        window.addEventListener('resize', () => {
+            updateVideoProgress();
+            drawMarkers();
+        });
+
+        // ================================================================
+        // 9. 初始化
+        // ================================================================
+        window.addEventListener('DOMContentLoaded', () => {
+            bindPickButtons();
+            document.getElementById('addVerticalPoint').addEventListener('click', addVerticalPoint);
+            const addTipBtn = document.getElementById('addTipPoint');
+            if (addTipBtn) {
+                addTipBtn.addEventListener('click', addTipPoint);
+            }
+            document.getElementById('calibrateBtn').addEventListener('click', calibrateCamera);
+            video.muted = true;
+            video.play().catch(() => {});
+            document.querySelectorAll('.pick-vertical').forEach(btn => btn.addEventListener('click', handleVerticalPick));
+            document.querySelectorAll('.pick-tip-point').forEach(btn => {
+                btn.addEventListener('click', handleTipPick);
+            });
+    
+            // ============================================================
+            // AI 按钮事件绑定
+            // ============================================================
+    
+            // 1. 塔臂尖端 AI 按钮（使用事件委托，因为 Tip 点会动态增减）
+            document.getElementById('tipPointsContainer').addEventListener('click', async function(e) {
+                const btn = e.target.closest('.ai-tip-btn');
+                if (!btn) return;
+
+                const row = btn.closest('.tip-point-row');
+                const uInput = row.querySelector('.tip-u');
+                const vInput = row.querySelector('.tip-v');
+
+                // 如果该 Tip 行带有时间戳，先跳转到对应帧，再截图给大模型
+                const timeVal = row.dataset.time;
+                if (timeVal !== undefined && timeVal !== null && timeVal !== '') {
+                    const t = parseFloat(timeVal);
+                    if (isFinite(t)) {
+                        await seekVideoToTime(t);
+                    }
+                }
+
+                const prompt = `
+                当前帧用于标注塔吊主吊臂的臂尖点。
+
+                请寻找：
+                从塔身顶部伸出的主吊臂，沿吊臂桁架方向一直向外延伸，距离塔身最远的那个端部点。
+
+                必须选择：
+                主吊臂最外端的几何尖端中心点。
+
+                不要选择：
+                1. 吊钩；
+                2. 吊物；
+                3. 小车；
+                4. 塔身顶部；
+                5. 平衡臂或配重臂；
+                6. 吊臂中间的桁架节点；
+                7. 红色网格线上的文字。
+
+                如果吊臂尖端较细，请沿着主吊臂上下两根桁架线的延长方向，取最外端中点。
+                `;
+
+
+                markWithAI(prompt, (x, y) => {
+                    uInput.value = x.toFixed(2);
+                    vInput.value = y.toFixed(2);
+                    drawMarkers();
+                    if (currentP) updateRiskDrawArea(currentP);
+                }, 'boom_tip');
+            });
+
+    
+            // 2. 小车 AI 按钮（直接绑定，因为小车点不会动态增减）
+            document.querySelectorAll('.ai-trolley-btn').forEach(btn => {
+                btn.addEventListener('click', async function() {
+                    const target = this.dataset.target;
+                    const uInput = document.getElementById(target + 'U');
+                    const vInput = document.getElementById(target + 'V');
+
+                    const isStart = target === 'trolleyStart';
+
+                    // 如果已经分析出起吊/落吊时间，可自动跳到对应帧。
+                    // 起始小车建议用 lift 时刻，结束小车建议用 place 时刻。
+                    if (currentBoomTimes) {
+                        const t = isStart ? currentBoomTimes.lift : currentBoomTimes.place;
+                        if (t !== null && t !== undefined && isFinite(t)) {
+                            await seekVideoToTime(t);
+                        }
+                    }
+
+                    const prompt = isStart
+                        ? `
+            当前帧用于标注"起始小车位置"。
+            请找到塔吊吊臂上的小车中心点。
+            小车通常位于吊臂上，吊钩钢丝绳从小车下方垂下。
+            请优先选择吊绳与吊臂连接处附近的小车视觉中心。
+            不要选择吊钩底部、吊物中心、塔臂尖端或塔身。
+            `
+                        : `
+            当前帧用于标注"结束小车位置"。
+            请找到塔吊吊臂上的小车中心点。
+            小车通常位于吊臂上，吊钩钢丝绳从小车下方垂下。
+            请优先选择吊绳与吊臂连接处附近的小车视觉中心。
+            不要选择吊钩底部、吊物中心、塔臂尖端或塔身。
+            `;
+
+                    markWithAI(prompt, (x, y) => {
+                        uInput.value = x.toFixed(2);
+                        vInput.value = y.toFixed(2);
+                        drawMarkers();
+                        if (currentP) updateRiskDrawArea(currentP);
+                    }, 'trolley');
+                });
+            });
+
+    
+            // ============================================================
+            // AI 事件绑定结束
+            // ============================================================
+    
+            const observer = new MutationObserver(() => {
+                document.querySelectorAll('.pick-vertical').forEach(btn => {
+                    btn.removeEventListener('click', handleVerticalPick);
+                    btn.addEventListener('click', handleVerticalPick);
+                });
+            });
+            observer.observe(document.getElementById('verticalPointsContainer'), { childList: true, subtree: true });
+            const tipObserver = new MutationObserver(() => {
+                document.querySelectorAll('.pick-tip-point').forEach(btn => {
+                    btn.removeEventListener('click', handleTipPick);
+                    btn.addEventListener('click', handleTipPick);
+                });
+            });
+            const tipContainer = document.getElementById('tipPointsContainer');
+            if (tipContainer) {
+                tipObserver.observe(tipContainer, { childList: true, subtree: true });
+            }
+            bindInputChange();
+            renderMatrix(defaultP);
+            currentP = null;
+            setTimeout(drawMarkers, 1000);
+        });
+    </script>
+</body>
+</html>

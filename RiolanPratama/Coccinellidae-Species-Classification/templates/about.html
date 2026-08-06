@@ -1,0 +1,311 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>{{ t["about_page_title"] }}</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- NAVBAR -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark shadow-sm">
+      <div class="container">
+        <a class="navbar-brand brand-logo" href="/?lang={{ lang }}">
+          <span class="brand-text">CocciNet</span>
+          <span class="ai-badge">AI</span>
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/?lang={{ lang }}"> {{ t["home"] }} </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/species?lang={{ lang }}">
+                {{ t["supported_species"] }}
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link active" href="/about?lang={{ lang }}">
+                {{ t["about"] }}
+              </a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+              >
+                🌐 {{ t["language"] }}
+              </a>
+
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li>
+                  <a class="dropdown-item" href="?lang=en"> 🇺🇸 English </a>
+                </li>
+
+                <li>
+                  <a class="dropdown-item" href="?lang=id"> 🇮🇩 Indonesia </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- CONTENT -->
+
+    <div class="container py-5">
+      <!-- HERO -->
+
+      <div class="hero-section text-center mb-5">
+        <div class="hero-content">
+          <h1 class="hero-title">{{ t["about_title"] }}</h1>
+
+          <p class="hero-subtitle">{{ t["about_subtitle"] }}</p>
+        </div>
+      </div>
+
+      <!-- ABOUT CARD -->
+
+      <div class="card shadow-sm border-0">
+        <div class="card-body p-4 p-lg-5">
+          <h2 class="fw-bold mb-4">{{ t["about_research"] }}</h2>
+
+          <p class="about-text text-justify">{{ t["about_description"] }}</p>
+
+          <hr class="my-5" />
+
+          <h2 class="fw-bold mb-4">{{ t["research_information"] }}</h2>
+
+          <table class="table table-bordered align-middle">
+            <tbody>
+              <tr>
+                <th width="30%">{{ t["research_title"] }}</th>
+                <td>
+                  <strong>{{ t["official_title"] }}</strong>
+                </td>
+              </tr>
+
+              <tr>
+                <th>{{ t["researcher"] }}</th>
+                <td>Riolan Pratama</td>
+              </tr>
+
+              <tr>
+                <th>{{ t["supervisors"] }}</th>
+                <td>
+                  Ernawati, S.T., M.Cs.<br />
+                  Prof. Agustin Zarkani, S.P., M.Si., Ph.D.
+                </td>
+              </tr>
+
+              <tr>
+                <th>{{ t["study_program"] }}</th>
+                <td>{{ t["study_program_name"] }}</td>
+              </tr>
+
+              <tr>
+                <th>{{ t["architecture"] }}</th>
+                <td>{{ t["architecture_name"] }}</td>
+              </tr>
+
+              <tr>
+                <th>{{ t["research_year"] }}</th>
+                <td>2026</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <hr class="my-5" />
+
+          <h2 class="fw-bold mb-4">{{ t["dataset_information"] }}</h2>
+
+          <table class="table table-bordered align-middle">
+            <tbody>
+              <tr>
+                <th width="30%">{{ t["number_species"] }}</th>
+                <td>10</td>
+              </tr>
+
+              <tr>
+                <th>{{ t["images_per_species"] }}</th>
+                <td>250</td>
+              </tr>
+
+              <tr>
+                <th>{{ t["total_images"] }}</th>
+                <td>2,500</td>
+              </tr>
+
+              <tr>
+                <th>{{ t["image_resolution"] }}</th>
+                <td>512 × 512 pixels</td>
+              </tr>
+
+              <tr>
+                <th>{{ t["dataset_source"] }}</th>
+                <td>{{ t["dataset_source_value"] }}</td>
+              </tr>
+
+              <tr>
+                <th>{{ t["image_type"] }}</th>
+                <td>{{ t["image_type_value"] }}</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <hr class="my-5" />
+
+          <h2 class="fw-bold mb-4">{{ t["model_information"] }}</h2>
+
+          <table class="table table-bordered align-middle">
+            <tbody>
+              <tr>
+                <th width="30%">{{ t["model_architecture"] }}</th>
+                <td>EfficientNetV2</td>
+              </tr>
+
+              <tr>
+                <th>{{ t["framework"] }}</th>
+                <td>TensorFlow / Keras</td>
+              </tr>
+
+              <tr>
+                <th>{{ t["transfer_learning"] }}</th>
+                <td>{{ t["yes"] }}</td>
+              </tr>
+
+              <tr>
+                <th>{{ t["fine_tuning"] }}</th>
+                <td>{{ t["yes"] }}</td>
+              </tr>
+
+              <tr>
+                <th>{{ t["input_image_size"] }}</th>
+                <td>512 × 512 pixels</td>
+              </tr>
+
+              <tr>
+                <th>{{ t["prediction_output"] }}</th>
+                <td>{{ t["prediction_output_value"] }}</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <hr class="my-5" />
+
+          <h2 class="fw-bold mb-4">{{ t["technologies_used"] }}</h2>
+
+          <table class="table table-bordered align-middle">
+            <tbody>
+              <tr>
+                <th width="30%">Python</th>
+                <td>{{ t["python_usage"] }}</td>
+              </tr>
+
+              <tr>
+                <th>Flask</th>
+                <td>{{ t["flask_usage"] }}</td>
+              </tr>
+
+              <tr>
+                <th>HTML5</th>
+                <td>{{ t["html_usage"] }}</td>
+              </tr>
+
+              <tr>
+                <th>CSS3</th>
+                <td>{{ t["css_usage"] }}</td>
+              </tr>
+
+              <tr>
+                <th>Bootstrap 5</th>
+                <td>{{ t["bootstrap_usage"] }}</td>
+              </tr>
+
+              <tr>
+                <th>JavaScript</th>
+                <td>{{ t["javascript_usage"] }}</td>
+              </tr>
+
+              <tr>
+                <th>TensorFlow / Keras</th>
+                <td>{{ t["tensorflow_usage"] }}</td>
+              </tr>
+
+              <tr>
+                <th>EfficientNetV2</th>
+                <td>{{ t["efficientnet_usage"] }}</td>
+              </tr>
+
+              <tr>
+                <th>NumPy</th>
+                <td>{{ t["numpy_usage"] }}</td>
+              </tr>
+
+              <tr>
+                <th>Pillow (PIL)</th>
+                <td>{{ t["pillow_usage"] }}</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <hr class="my-5" />
+
+          <h2 class="fw-bold mb-4">{{ t["acknowledgement"] }}</h2>
+
+          <div class="card bg-light border-0">
+            <div class="card-body">
+              <p class="about-text text-justify mb-0">
+                {{ t["acknowledgement_text"] }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <footer class="text-center mt-5 py-4">
+      <hr />
+
+      <h6 class="fw-bold">{{ t["footer_title"] }}</h6>
+
+      <p class="text-muted mb-1">{{ t["footer_subtitle"] }}</p>
+
+      <p class="text-muted">Riolan Pratama • EfficientNetV2</p>
+    </footer>
+  </body>
+</html>

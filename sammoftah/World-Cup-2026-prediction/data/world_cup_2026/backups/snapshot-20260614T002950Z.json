@@ -1,0 +1,55 @@
+{
+  "information_cutoff": "2026-06-13T04:30:00Z",
+  "source_note": "Draw positions, June 2026 ranking inputs, fixtures, and results are a checked-in prospective tournament snapshot. Results must be updated without rewriting prior forecasts. information_cutoff corrected 2026-06-13: it previously read 2026-06-14T18:00:00Z, a future-dated cutoff that predated its own generation and caused already-played June 12 local-date fixtures to be forecast as upcoming (see predictions/INTEGRITY_NOTES.md). The cutoff now follows completion of the June 12 matches in UTC while preceding the June 13 matchday.",
+  "sources": [
+    "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026",
+    "https://inside.fifa.com/fifa-world-ranking/men",
+    "https://eloratings.net/World.tsv",
+    "https://www.espn.com/soccer/match/_/gameId/760416/bosnia-herzegovina-canada",
+    "https://www.espn.com/soccer/match/_/gameId/760417/paraguay-united-states"
+  ],
+  "results": [
+    {
+      "group": "A",
+      "home": "Mexico",
+      "away": "South Africa",
+      "home_goals": 2,
+      "away_goals": 0
+    },
+    {
+      "group": "A",
+      "home": "South Korea",
+      "away": "Czechia",
+      "home_goals": 2,
+      "away_goals": 1
+    },
+    {
+      "group": "B",
+      "home": "Canada",
+      "away": "Bosnia and Herzegovina",
+      "home_goals": 1,
+      "away_goals": 1
+    },
+    {
+      "group": "D",
+      "home": "United States",
+      "away": "Paraguay",
+      "home_goals": 4,
+      "away_goals": 1
+    },
+    {
+      "group": "B",
+      "home": "Qatar",
+      "away": "Switzerland",
+      "home_goals": 1,
+      "away_goals": 1
+    },
+    {
+      "group": "C",
+      "home": "Brazil",
+      "away": "Morocco",
+      "home_goals": 1,
+      "away_goals": 1
+    }
+  ]
+}

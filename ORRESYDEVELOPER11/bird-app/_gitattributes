@@ -1,0 +1,6 @@
+mobile-app/android/gradlew text eol=lf
+mobile-app/android/gradlew.bat text eol=crlf
+*.jpg filter=lfs diff=lfs merge=lfs -text
+*.png filter=lfs diff=lfs merge=lfs -text
+*.jar filter=lfs diff=lfs merge=lfs -text
+*.pkl filter=lfs diff=lfs merge=lfs -text

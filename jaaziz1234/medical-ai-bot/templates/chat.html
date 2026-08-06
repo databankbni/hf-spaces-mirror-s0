@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Chatbot</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css')}}"/>
+</head>
+<body>
+
+    <!-- Chat Box Container (Forced Visible for Testing) -->
+    <div id="chat-box-wrapper" class="chat-box-container">
+        <div class="chat-box-header">
+            <h3>Medical AI</h3>
+            <p id="close-chat"><i class="fa fa-times"></i></p>
+        </div>
+        <div class="chat-box-body" id="chat-body">
+            <!-- Initial Greeting -->
+            <div class="chat-box-body-receive">
+                <p>Hello! I am your pulse medical assistant. How can I help you today?</p>
+                <span>Now</span>
+            </div>
+        </div>
+        <div class="chat-box-footer">
+            <input id="chat-input" placeholder="Enter Your Message" type="text" autocomplete="off" />
+            <i id="send-btn" class="send far fa-paper-plane"></i>
+        </div>
+    </div>
+
+
+    <script>
+       
+
+        document.getElementById('close-chat').addEventListener('click', () => {
+            document.getElementById('chat-box-wrapper').classList.add('hidden');
+        });
+
+        // 2. Fetch & Render Logic
+        let conversationHistory = [];
+        const chatInput = document.getElementById('chat-input');
+        const sendBtn = document.getElementById('send-btn');
+        const chatBody = document.getElementById('chat-body');
+
+        function appendUserMessage(msg) {
+            const time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+            const html = `
+                <div class="chat-box-body-send">
+                    <p>${msg}</p>
+                    <span>${time}</span>
+                </div>
+            `;
+            chatBody.insertAdjacentHTML('beforeend', html);
+            chatBody.scrollTop = chatBody.scrollHeight;
+        }
+
+        function appendBotMessage(data) {
+            const time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+            
+            let mainText = data.answer || "I'm sorry, I couldn't find an answer.";
+            let disclaimerHtml = '';
+            
+            // Handle disclaimer split safely
+            const disclaimerMarker = "[DISCLAIMER:";
+            if (mainText.includes(disclaimerMarker)) {
+                const parts = mainText.split(disclaimerMarker);
+                mainText = parts[0].trim();
+                disclaimerHtml = `<div class="clinical-disclaimer-block">${disclaimerMarker} ${parts[1]}</div>`;
+            }
+
+            // Handle citations
+            let citationsHtml = '';
+            if (data.citations && data.citations.length > 0) {
+                const sources = data.citations.map(c => `<div class="source-item"><i class="fas fa-book-medical"></i> ${c.book} (Page ${c.page})</div>`).join('');
+                citationsHtml = `<div class="medical-sources-wrapper">${sources}</div>`;
+            }
+
+            const html = `
+                <div class="chat-box-body-receive">
+                    <p>${mainText}</p>
+                    ${citationsHtml}
+                    ${disclaimerHtml}
+                    <span>${time}</span>
+                </div>
+            `;
+            chatBody.insertAdjacentHTML('beforeend', html);
+            chatBody.scrollTop = chatBody.scrollHeight;
+        }
+
+        async function sendMessage() {
+            const text = chatInput.value.trim();
+            if (!text) return;
+
+            appendUserMessage(text);
+            chatInput.value = '';
+
+            try {
+                // Post to API
+                const response = await fetch('/api/chat', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ 
+                        question: text,
+                        history: conversationHistory
+                    })
+                });
+                
+                const data = await response.json();
+                if (data.status === 'success') {
+                    appendBotMessage(data);
+                    // Append to history sequentially upon successful API loop
+                    conversationHistory.push({ user: text, bot: data.answer });
+                } else {
+                    appendBotMessage({ answer: 'Error: ' + data.message });
+                }
+            } catch (err) {
+                appendBotMessage({ answer: 'Failed to connect to the server.' });
+            }
+        }
+
+        sendBtn.addEventListener('click', sendMessage);
+        chatInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') sendMessage();
+        });
+    </script>
+</body>
+</html>

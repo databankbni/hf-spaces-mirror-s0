@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kết Nối MCP Endpoint</title>
+
+<!-- CSS tách theo khu vực giao diện. GIỮ NGUYÊN THỨ TỰ: media.css/right-panel.css
+     chứa rule override .tool-card, đổi thứ tự sẽ đổi cascade. -->
+  <link rel="stylesheet" href="/static/css/base.css">
+  <link rel="stylesheet" href="/static/css/left-panel.css">
+  <link rel="stylesheet" href="/static/css/right-panel.css">
+  <link rel="stylesheet" href="/static/css/modal.css">
+  <link rel="stylesheet" href="/static/css/tool-test.css">
+  <link rel="stylesheet" href="/static/css/audio-player.css">
+  <link rel="stylesheet" href="/static/css/media.css">
+  <link rel="stylesheet" href="/static/css/tabs.css">
+  <link rel="stylesheet" href="/static/css/store.css">
+
+<!-- Script classic (không phải ES module) vì markup dùng inline onclick=,
+     các hàm phải nằm ở global scope. defer => chạy sau khi parse xong DOM,
+     theo đúng thứ tự khai báo; main.js cuối cùng vì nó gọi các hàm kia. -->
+<script defer src="/static/js/utils.js"></script>
+<script defer src="/static/js/tools.js"></script>
+<script defer src="/static/js/tool-test.js"></script>
+<script defer src="/static/js/media.js"></script>
+<script defer src="/static/js/mcp.js"></script>
+<script defer src="/static/js/store.js"></script>
+<script defer src="/static/js/tabs.js"></script>
+<script defer src="/static/js/account.js"></script>
+<script defer src="/static/js/main.js"></script>
+</head>
+<body>
+
+<!-- ===== TAB BAR ===== -->
+<div class="tabbar">
+  <button class="tab-btn active" data-tab="tools" onclick="switchTab('tools')">🔧 Đăng ký tools</button>
+  <button class="tab-btn" data-tab="store" onclick="switchTab('store')">🛒 Mua thêm nội dung</button>
+  <div class="acct-box" id="acctBox"></div>
+</div>
+
+<!-- ===== TAB 1: ĐĂNG KÝ TOOLS ===== -->
+<div class="tab-page active" id="page-tools">
+
+<!-- ===== LEFT PANEL ===== -->
+<div class="left-panel">
+  <!-- Robot SVG Logo -->
+  <div class="logo-wrap">
+    <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="bg" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#3a0080"/>
+          <stop offset="100%" stop-color="#1a0040"/>
+        </radialGradient>
+      </defs>
+      <circle cx="60" cy="60" r="58" fill="url(#bg)" stroke="#7700cc" stroke-width="2"/>
+      <!-- Head -->
+      <rect x="35" y="22" width="50" height="38" rx="10" fill="#4400aa" stroke="#cc66ff" stroke-width="1.5"/>
+      <!-- Eyes -->
+      <circle cx="48" cy="38" r="7" fill="#001a33" stroke="#00ccff" stroke-width="1.5"/>
+      <circle cx="72" cy="38" r="7" fill="#001a33" stroke="#00ccff" stroke-width="1.5"/>
+      <circle cx="48" cy="38" r="3" fill="#00ccff"/>
+      <circle cx="72" cy="38" r="3" fill="#00ccff"/>
+      <!-- Mouth -->
+      <rect x="44" y="50" width="32" height="5" rx="3" fill="#cc66ff" opacity=".6"/>
+      <!-- Neck -->
+      <rect x="54" y="60" width="12" height="8" fill="#3300aa"/>
+      <!-- Body -->
+      <rect x="28" y="68" width="64" height="40" rx="10" fill="#330088" stroke="#9933cc" stroke-width="1.5"/>
+      <!-- Chest panel -->
+      <rect x="38" y="76" width="44" height="22" rx="6" fill="#1a0044" stroke="#6600cc" stroke-width="1"/>
+      <!-- Chest dots -->
+      <circle cx="50" cy="87" r="4" fill="#00ccff" opacity=".8"/>
+      <circle cx="60" cy="87" r="4" fill="#cc66ff" opacity=".8"/>
+      <circle cx="70" cy="87" r="4" fill="#00ffaa" opacity=".8"/>
+      <!-- Arms -->
+      <rect x="12" y="70" width="14" height="30" rx="7" fill="#3300aa" stroke="#6600cc" stroke-width="1.2"/>
+      <rect x="94" y="70" width="14" height="30" rx="7" fill="#3300aa" stroke="#6600cc" stroke-width="1.2"/>
+      <!-- Antenna -->
+      <line x1="60" y1="22" x2="60" y2="12" stroke="#cc66ff" stroke-width="2"/>
+      <circle cx="60" cy="10" r="4" fill="#ff66ff"/>
+    </svg>
+  </div>
+
+  <div class="panel-title">Kết Nối MCP Endpoint</div>
+  <div class="panel-sub">Đăng ký Websocket URL thiết bị của bạn để tham gia vào hệ sinh thái AI của chúng tôi.</div>
+
+  <div class="form-group">
+    <label class="form-label">Tên thiết bị / Tên hiển thị:</label>
+    <input id="deviceName" type="text" class="form-input" placeholder="VD: Robot của Khánh">
+  </div>
+
+  <div class="form-group">
+    <label class="form-label">Websocket URL:</label>
+    <input id="wsUrl" type="text" class="form-input" placeholder="wss://...">
+  </div>
+
+  <button class="btn-connect" id="btnConnect" onclick="connectMCP()">KẾT NỐI MCP NGAY</button>
+
+  <div class="delete-box">
+    <div class="delete-title">🗑 Xoá Thiết Bị</div>
+    <div class="delete-desc">Nếu bạn không muốn dùng MCP của chúng tôi nữa, hãy nhập Websocket URL bạn đã đăng ký để xoá thiết bị của bạn khỏi hệ thống.</div>
+    <input id="deleteUrl" type="text" class="form-input" placeholder="wss://..." style="margin-bottom:10px">
+    <button class="btn-delete" onclick="deleteDevice()">🗑 Xoá Thiết Bị</button>
+  </div>
+
+  <div class="devices-box">
+    <div class="devices-title">📡 Thiết Bị Đã Kết Nối</div>
+    <div id="devicesList">
+      <div class="devices-empty">Đang tải...</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== RIGHT PANEL ===== -->
+<div class="right-panel">
+  <div class="section-box section-free">
+    <div class="section-title">CÔNG CỤ HIỆN CÓ</div>
+    <div class="tools-grid" id="toolsGrid">
+      <div class="loading-tools">
+        <div class="spinner" style="display:block;margin:0 auto 8px"></div>
+        Đang tải danh sách công cụ...
+      </div>
+    </div>
+  </div>
+
+  <div class="section-box section-media">
+    <div class="section-title">MEDIA SYNC SD CARD</div>
+    <div class="media-form-grid">
+      <div>
+        <label class="form-label">Media file</label>
+        <input id="mediaFile" type="file" class="form-input" accept=".jpg,.jpeg,.png,.mp3,.wav,.aac,.m4a,.flac,.ogg,.opus,.avi,.mp4,.mov,.mkv">
+      </div>
+      <div>
+        <label class="form-label">Title (optional)</label>
+        <input id="mediaTitle" type="text" class="form-input" placeholder="Ảnh gia đình">
+      </div>
+    </div>
+    <div class="media-actions">
+      <button class="btn-media" id="btnUploadMedia" onclick="uploadMedia()">Upload to S3/R2</button>
+      <button class="btn-media secondary" onclick="loadMedia()">Refresh media</button>
+    </div>
+    <div class="media-status" id="mediaStatus"></div>
+    <div class="media-list" id="mediaList">
+      <div class="loading-tools">No media loaded</div>
+    </div>
+  </div>
+</div>
+
+</div><!-- /#page-tools -->
+
+<!-- ===== TAB 2: MUA THÊM NỘI DUNG ===== -->
+<div class="tab-page" id="page-store">
+  <div class="store-head">
+    <div class="store-title">🛒 MUA THÊM NỘI DUNG</div>
+    <div class="store-sub" id="storeSub">Đang tải...</div>
+  </div>
+
+  <!-- Thiết bị của tôi: chỉ hiện khi đã đăng nhập -->
+  <div class="mydev-box" id="myDevBox" style="display:none">
+    <div class="mydev-title">🤖 THIẾT BỊ CỦA TÔI</div>
+    <div id="myDevList"><div class="store-empty">Đang tải...</div></div>
+    <div class="mydev-claim">
+      <input id="claimUrl" type="text" class="form-input"
+             placeholder="Dán Websocket URL của robot đã đăng ký để nhận về tài khoản này">
+      <button class="btn-buy" onclick="claimDevice()">Nhận thiết bị</button>
+    </div>
+    <div class="mydev-msg" id="claimMsg"></div>
+  </div>
+
+  <div class="topic-grid" id="topicGrid"></div>
+</div>
+
+<!-- Modal nằm NGOÀI .tab-page vì là overlay toàn trang -->
+<!-- ===== TOOL TEST MODAL ===== -->
+<div class="test-overlay" id="testOverlay" onclick="testOverlayClick(event)">
+  <div class="test-modal" id="testModal">
+    <div class="test-header">
+      <div style="flex:1;min-width:0">
+        <div class="test-tool-name" id="testToolName"></div>
+        <div class="test-tool-desc" id="testToolDesc"></div>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;flex-shrink:0">
+        <div class="mode-toggle">
+          <button class="btn-mode active" id="btnFormMode" onclick="setMode('form')">Form Mode</button>
+          <button class="btn-mode" id="btnJsonMode" onclick="setMode('json')">JSON Mode</button>
+        </div>
+        <button class="btn-close" onclick="closeTestModal()">✕</button>
+      </div>
+    </div>
+    <div class="test-body" id="testBody"></div>
+    <div class="result-box" id="resultBox">
+      <div class="result-label">Kết quả</div>
+      <div class="result-content" id="resultContent"></div>
+      <div class="audio-player-wrap" id="audioPlayerWrap">
+        <div class="audio-story-title" id="audioTitle"></div>
+        <div class="audio-story-meta" id="audioMeta"></div>
+        <audio id="storyAudio" controls></audio>
+        <div class="audio-url-text" id="audioUrlText"></div>
+      </div>
+    </div>
+    <div class="test-footer">
+      <button class="btn-cancel" onclick="closeTestModal()">Huỷ</button>
+      <button class="btn-run" id="btnRunTool" onclick="runTool()">▶ Run Tool</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===== MODAL ===== -->
+<div class="overlay" id="overlay" onclick="overlayClick(event)">
+  <div class="modal">
+    <div class="modal-head">
+      <div class="modal-title">MCP Endpoint</div>
+      <button class="btn-close" onclick="closeModal()">✕</button>
+    </div>
+
+    <div class="meta-label">Endpoint Status</div>
+    <div class="status-row">
+      <span class="dot checking" id="statusDot"></span>
+      <span class="status-text" id="statusText">Đang kiểm tra...</span>
+      <button class="btn-refresh" onclick="refresh()">↻ Refresh</button>
+    </div>
+
+    <div class="meta-label">Tools đã đăng ký với broker</div>
+    <div class="tags-wrap" id="tagsWrap">
+      <div class="modal-loading">
+        <div class="spinner" style="display:block;margin:0 auto 8px"></div>
+        Đang tải...
+      </div>
+    </div>
+
+    <div style="margin-top:20px;border-top:1px solid #2a2a4a;padding-top:16px">
+      <button class="btn-delete" id="btnDisconnect" onclick="disconnectMCP()"
+        style="width:auto;padding:8px 20px;font-size:12px">
+        🔌 Ngắt kết nối
+      </button>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Scam Detector - Real-Time WhatsApp Protection</title>
+  <meta name="description" content="Protect your family and savings from financial fraud on WhatsApp. Forward suspicious messages to our AI bot for real-time risk assessment and safety recommendations.">
+  
+  <!-- Open Graph / Facebook / WhatsApp Link Previews -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aiscamdetector.in/">
+  <meta property="og:title" content="AI Scam Detector - Real-Time WhatsApp Protection">
+  <meta property="og:description" content="Protect your family and savings from financial fraud on WhatsApp. Forward suspicious messages to our AI bot for real-time risk assessment and safety recommendations.">
+  <meta property="og:image" content="https://aiscamdetector.in/images/social-preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <!-- Twitter Card Link Previews -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://aiscamdetector.in/">
+  <meta name="twitter:title" content="AI Scam Detector - Real-Time WhatsApp Protection">
+  <meta name="twitter:description" content="Protect your family and savings from financial fraud on WhatsApp. Forward suspicious messages to our AI bot for real-time risk assessment and safety recommendations.">
+  <meta name="twitter:image" content="https://aiscamdetector.in/images/social-preview.png">
+  <link rel="icon" href="/images/favicon.png" type="image/png">
+  <link rel="shortcut icon" href="/images/favicon.png" type="image/png">
+  
+  <!-- Resource Hints for Performance Optimization -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://checkout.razorpay.com">
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+  <link rel="dns-prefetch" href="https://checkout.razorpay.com">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "AI Scam Detector",
+    "url": "https://aiscamdetector.in",
+    "applicationCategory": "SecurityApplication",
+    "operatingSystem": "All",
+    "browserRequirements": "Requires JavaScript. Requires HTML5.",
+    "description": "Frictionless AI-powered WhatsApp bot and web scanner to identify banking, utility bill, lottery, and job scam texts in real-time.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "INR"
+    }
+  }
+  </script>
+</head>
+<body>
+  <!-- Custom Cyber Cursor -->
+  <div class="custom-cursor-dot"></div>
+  <div class="custom-cursor-outline"></div>
+
+  <!-- Dedicated Parallax Grid Backdrop -->
+  <div class="grid-bg-overlay"></div>
+
+  <!-- Decorative Glow Backgrounds -->
+  <div class="blur-glow bg-glow-1"></div>
+  <div class="blur-glow bg-glow-2"></div>
+ 
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="#" class="logo">
+        <img src="images/logo.png" alt="AI Scam Detector Logo" class="logo-img">
+        <span>AI Scam <span class="highlight">Detector</span></span>
+      </a>
+      <nav class="nav-links">
+        <a href="#how-it-works">How It Works</a>
+        <a href="#demo">Live Demo</a>
+        <a href="#stats">Stats</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#about">Mission &amp; Support</a>
+      </nav>
+      <div class="nav-actions">
+        <a href="https://api.whatsapp.com/send?phone=919270249103&text=Hello" class="btn btn-sm btn-primary-outline" id="navWhatsAppBtn">WhatsApp Bot</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <canvas id="matrixCanvas" class="matrix-canvas"></canvas>
+    <div class="neon-bg-blob blob-1"></div>
+    <div class="neon-bg-blob blob-2"></div>
+    <div class="hero-container">
+      <div class="hero-content">
+        <div class="badge"><ion-icon name="flame" style="vertical-align: middle; margin-right: 4px; color: #f59e0b;"></ion-icon> 100% Free WhatsApp Integration</div>
+        <h1>Stop WhatsApp Scams <br><span class="gradient-text">In Real-Time</span></h1>
+        <p class="hero-description">
+          Protect your family and savings from utility bill fraud, fake lottery wins, and urgent banking scams. Simply forward any suspicious message to our AI chatbot and receive an instant, detailed risk report.
+        </p>
+        <div class="hero-ctas">
+          <a href="https://api.whatsapp.com/send?phone=919270249103&text=Hello" class="btn class-btn btn-primary" id="heroWhatsAppBtn">
+            <svg class="btn-icon" viewBox="0 0 16 16" fill="currentColor">
+              <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
+            </svg>
+            Add to WhatsApp
+          </a>
+          <a href="#demo" class="btn btn-secondary">Try Live Scanner</a>
+        </div>
+        <div class="hero-trust">
+          <div class="avatar-group">
+            <div class="avatar">A</div>
+            <div class="avatar">R</div>
+            <div class="avatar">S</div>
+            <div class="avatar">K</div>
+          </div>
+          <span class="trust-text">Trusted by 10,000+ Indian users. Powered by Gemini 2.5 Flash.</span>
+        </div>
+      </div>
+      
+      <!-- Interactive Floating WhatsApp Mockup -->
+      <div class="hero-visual">
+        <div class="hero-visual-perspective">
+          <!-- Futuristic Sci-Fi HUD Overlays -->
+          <div class="hud-panel hud-left">
+            <div class="hud-tag">SECURE NETWORK</div>
+            <div class="hud-title">SYS_MONITOR: ACTIVE</div>
+            <div class="hud-waveform">
+              <span class="bar-1"></span>
+              <span class="bar-2"></span>
+              <span class="bar-3"></span>
+              <span class="bar-4"></span>
+              <span class="bar-5"></span>
+            </div>
+            <div class="hud-detail">INTEGRITY_INDEX: 99.8%</div>
+          </div>
+
+          <div class="hud-panel hud-right">
+            <div class="hud-tag">SCANNER FEEDS</div>
+            <div class="hud-title">THREAT_LOG: INCOMING</div>
+            <div class="hud-radar">
+              <div class="radar-line"></div>
+            </div>
+            <div class="hud-detail">IP_SHIELD: STABLE</div>
+          </div>
+
+          <div class="phone-mockup">
+            <div class="phone-crt-overlay"></div>
+            <div class="phone-header">
+              <div class="phone-title">
+                <div class="status-indicator"></div>
+                <span>Scam Detector Bot</span>
+              </div>
+              <div class="phone-actions">•••</div>
+            </div>
+            <div class="phone-messages">
+              <div class="msg msg-incoming">
+                <span class="msg-meta">Forwarded</span>
+                <p>Dear customer your SBI account block today due to KYC update. click here to verify netbanking: http://sbi-kyc-verify-portal.in</p>
+                <span class="msg-time">12:00 PM</span>
+              </div>
+              <div class="msg msg-outgoing msg-glow">
+                <p>🚨 *RISK ASSESSMENT: HIGH*<br>
+                🎯 *Confidence:* 95%<br><br>
+                ℹ️ *Reason:*<br>
+                This message impersonates SBI requesting urgent KYC verification through an unofficial website. Real banks never send WhatsApp verification links.<br><br>
+                💡 *What to do:*<br>
+                ❌ Don't click the link.<br>
+                ❌ Don't share netbanking ID/password.<br>
+                ✅ Contact official customer support.</p>
+                <span class="msg-time">12:01 PM</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Demo Widget (The Scanner) -->
+  <section id="demo" class="demo-section">
+    <div class="section-header">
+      <h2>Try the Live <span class="gradient-text">AI Scanner</span></h2>
+      <p>Paste any suspicious message below to test our Gemini 2.5 Flash scam detection engine instantly. <br>
+      <span style="font-size: 0.95rem; display: inline-block; margin-top: 8px;">Not sure what to scan? <a href="scams.html" style="color: var(--accent-color); text-decoration: underline; font-weight: 500;">Browse our database of recently reported scams</a>.</span></p>
+    </div>
+
+    <div class="demo-container">
+      <div class="scanner-card">
+        <div class="scanner-lock-overlay hidden" id="scannerLockOverlay">
+          <div class="lock-content">
+            <ion-icon name="lock-closed" style="font-size: 3.5rem; color: #ef4444; margin-bottom: 16px; filter: drop-shadow(0 0 8px rgba(239, 68, 68, 0.4)); animation: lock-pulse 2s infinite alternate ease-in-out;"></ion-icon>
+            <h3>Web Scan Limit Reached</h3>
+            <p>To protect our AI engines, web scans are limited to 1 check per day. Unlock unlimited scans, screenshot uploads, and real-time fraud alerts by adding our WhatsApp bot!</p>
+            <a href="https://api.whatsapp.com/send?phone=919270249103&text=Hello" class="btn btn-primary" style="text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 8px;">
+              <svg class="btn-icon" viewBox="0 0 16 16" fill="currentColor" style="width: 18px; height: 18px;">
+                <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
+              </svg>
+              Add to WhatsApp
+            </a>
+          </div>
+        </div>
+        <div class="scanner-header">
+          <span>Suspicious Message Box</span>
+          <span class="character-count" id="charCount">0 characters</span>
+        </div>
+        <div class="scanner-body">
+          <textarea id="scanInput" placeholder="Paste electricity bill warnings, job offers, bank KYC links, or KBC lottery lottery messages here..."></textarea>
+          
+          <div class="samples-container">
+            <span class="samples-label">Examples to test:</span>
+            <div class="sample-pills">
+              <button class="sample-pill" data-scam="electricity"><ion-icon name="flash-outline" style="vertical-align: middle; margin-right: 4px; color: #f59e0b;"></ion-icon> Utility Bill Cut</button>
+              <button class="sample-pill" data-scam="lottery"><ion-icon name="trophy-outline" style="vertical-align: middle; margin-right: 4px; color: #f59e0b;"></ion-icon> KBC Lottery Win</button>
+              <button class="sample-pill" data-scam="kyc"><ion-icon name="business-outline" style="vertical-align: middle; margin-right: 4px; color: #3b82f6;"></ion-icon> Bank KYC Block</button>
+              <button class="sample-pill" data-scam="job"><ion-icon name="briefcase-outline" style="vertical-align: middle; margin-right: 4px; color: #10b981;"></ion-icon> Part-time Job</button>
+            </div>
+          </div>
+
+          <button id="scanBtn" class="btn btn-primary btn-block">
+            <span>Scan for Scams</span>
+            <div class="loader" id="scanLoader"></div>
+          </button>
+        </div>
+      </div>
+
+      <!-- Live Scan Output Container -->
+      <div class="output-card" id="outputCard">
+        <div class="output-placeholder" id="outputPlaceholder">
+          <div class="radar-scan">
+            <div class="radar-beam"></div>
+          </div>
+          <h3>Awaiting Input</h3>
+          <p>Type or select a sample message on the left and click "Scan for Scams" to generate the report.</p>
+        </div>
+
+        <div class="output-results hidden" id="outputResults">
+          <div class="result-header">
+            <span class="result-badge" id="riskBadge">HIGH RISK</span>
+            <div class="confidence-circle-wrap">
+              <svg class="confidence-ring" viewBox="0 0 36 36">
+                <path class="ring-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                <path class="ring-fill" id="confidenceRing" stroke-dasharray="0, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+              </svg>
+              <div class="confidence-text"><span id="confidencePct">0</span>%</div>
+            </div>
+          </div>
+
+          <div class="result-body">
+            <div class="result-group">
+              <h4>🎯 Risk Analysis Summary</h4>
+              <p id="resultExplanation">...</p>
+            </div>
+            
+            <div class="result-group">
+              <h4>💡 Recommended Steps</h4>
+              <ul class="action-list" id="resultActions">
+                <!-- Actions lists -->
+              </ul>
+            </div>
+
+            <div class="quota-alert" id="quotaAlert">
+              <!-- Quota detail -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section id="how-it-works" class="how-section reveal-on-scroll">
+    <div class="section-header">
+      <h2>How It <span class="gradient-text">Protects You</span></h2>
+      <p>Three simple steps to verify messages and secure your banking credentials.</p>
+    </div>
+    
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-num">01</div>
+        <h3>Forward Message</h3>
+        <p>Whenever you receive a message containing links, numbers, or threats of account disconnection, simply forward it to our WhatsApp bot number.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">02</div>
+        <h3>AI Analysis</h3>
+        <p>Our server extracts URLs, phone numbers, and evaluates patterns using our database of known scams and Gemini 2.5 Flash's reasoning capabilities.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">03</div>
+        <h3>Stay Secure</h3>
+        <p>Get a neat assessment screen listing the risk level (HIGH/MED/SAFE) along with clear, bulleted recommendations on what to do next.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Banner -->
+  <section id="stats" class="stats-section reveal-on-scroll">
+    <div class="stats-container">
+      <div class="stat-card">
+        <div class="cyber-telemetry">0x7F41 STATUS: READ</div>
+        <div class="stat-number" data-target="15000" id="statScams">0</div>
+        <div class="stat-label">Scams Detected</div>
+      </div>
+      <div class="stat-card">
+        <div class="cyber-telemetry">0x1A8E METRIC: SYNC</div>
+        <div class="stat-number" data-target="10000" id="statUsers">0</div>
+        <div class="stat-label">Active Users</div>
+      </div>
+      <div class="stat-card">
+        <div class="cyber-telemetry">0x9B12 AI_CORE: PASS</div>
+        <div class="stat-number" data-target="95" id="statRate">0</div>
+        <div class="stat-label">Accuracy Rate (%)</div>
+      </div>
+      <div class="stat-card">
+        <div class="cyber-telemetry">0x3D94 LATENCY: MIN</div>
+        <div class="stat-number" data-target="4" id="statUptime">0</div>
+        <div class="stat-label">Response Time (Seconds)</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Grid -->
+  <section class="features-section reveal-on-scroll">
+    <div class="section-header">
+      <h2>Engineered For <span class="gradient-text">Indian Scams</span></h2>
+      <p>Traditional spam blockers fail on local tactics. Our bot is built from the ground up for Indian contexts.</p>
+    </div>
+    
+    <div class="features-grid">
+      <div class="feature-card">
+        <h4><ion-icon name="language-outline" style="color: #3b82f6; margin-right: 8px; vertical-align: middle; font-size: 1.25rem;"></ion-icon>Regional Language Context</h4>
+        <p>Handles messages written in Hinglish, Hindi, Marathi, Tamil, and other regional scripts. Understands local idioms and spelling mistakes.</p>
+      </div>
+      <div class="feature-card">
+        <h4><ion-icon name="server-outline" style="color: #10b981; margin-right: 8px; vertical-align: middle; font-size: 1.25rem;"></ion-icon>Heuristic Database Lookup</h4>
+        <p>Maintains a database of reported scam links, numbers, and phrases. Resolves exact matches instantly without querying the LLM.</p>
+      </div>
+      <div class="feature-card">
+        <h4><ion-icon name="shield-checkmark-outline" style="color: #8b5cf6; margin-right: 8px; vertical-align: middle; font-size: 1.25rem;"></ion-icon>Private and Anonymous</h4>
+        <p>We do not store your name, profile picture, or private conversations. We only keep track of user numbers for rate limits and log message text for safety checks.</p>
+      </div>
+      <div class="feature-card">
+        <h4><ion-icon name="phone-portrait-outline" style="color: #06b6d4; margin-right: 8px; vertical-align: middle; font-size: 1.25rem;"></ion-icon>Zero App Installations</h4>
+        <p>No downloads, no logins, no battery drain. Works entirely inside the WhatsApp interface you use every single day.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section id="pricing" class="pricing-section reveal-on-scroll">
+    <div class="section-header">
+      <h2>Flexible Plans for <span class="gradient-text">Everyone</span></h2>
+      <p>Get started for free or upgrade to unlimited queries for full peace of mind.</p>
+    </div>
+
+    <div class="pricing-grid">
+      <!-- Free Plan -->
+      <div class="pricing-card">
+        <div class="plan-badge">Basic</div>
+        <h3>Free Protection</h3>
+        <div class="price">₹0<span>/month</span></div>
+        <ul class="plan-features">
+          <li><ion-icon name="checkmark-circle-outline" style="color: #10b981; vertical-align: middle; margin-right: 8px;"></ion-icon> 5 scam checks per day</li>
+          <li><ion-icon name="checkmark-circle-outline" style="color: #10b981; vertical-align: middle; margin-right: 8px;"></ion-icon> Standard response speed</li>
+          <li><ion-icon name="checkmark-circle-outline" style="color: #10b981; vertical-align: middle; margin-right: 8px;"></ion-icon> Gemini 2.5 Flash reasoning</li>
+          <li><ion-icon name="close-circle-outline" style="color: #ef4444; vertical-align: middle; margin-right: 8px;"></ion-icon> No history logs</li>
+          <li><ion-icon name="close-circle-outline" style="color: #ef4444; vertical-align: middle; margin-right: 8px;"></ion-icon> Standard customer support</li>
+        </ul>
+        <a href="https://api.whatsapp.com/send?phone=919270249103&text=Hello" class="btn btn-secondary btn-block" style="display: inline-flex; align-items: center; justify-content: center; gap: 8px;">
+          <svg class="btn-icon" viewBox="0 0 16 16" fill="currentColor" style="width: 18px; height: 18px;">
+            <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
+          </svg>
+          Add to WhatsApp
+        </a>
+      </div>
+
+      <!-- Premium Plan -->
+      <div class="pricing-card premium">
+        <div class="plan-badge bg-gradient">Premium</div>
+        <h3>Unlimited Security</h3>
+        <div class="price">₹199<span>/month</span></div>
+        <ul class="plan-features">
+          <li><ion-icon name="checkmark-circle" style="color: #10b981; vertical-align: middle; margin-right: 8px;"></ion-icon> Unlimited checks (no limits)</li>
+          <li><ion-icon name="checkmark-circle" style="color: #10b981; vertical-align: middle; margin-right: 8px;"></ion-icon> Priority queue (instant answers)</li>
+          <li><ion-icon name="checkmark-circle" style="color: #10b981; vertical-align: middle; margin-right: 8px;"></ion-icon> Complete scan history access</li>
+          <li><ion-icon name="checkmark-circle" style="color: #10b981; vertical-align: middle; margin-right: 8px;"></ion-icon> Personal safety dashboard</li>
+          <li><ion-icon name="checkmark-circle" style="color: #10b981; vertical-align: middle; margin-right: 8px;"></ion-icon> Premium customer support</li>
+        </ul>
+        <button onclick="triggerPremiumUpgrade()" class="btn btn-primary btn-block" id="premiumCheckoutBtn">Upgrade to Premium</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq-section reveal-on-scroll">
+    <div class="section-header">
+      <h2>Frequently Asked <span class="gradient-text">Questions</span></h2>
+      <p>Have questions about how it works? We have answers.</p>
+    </div>
+    
+    <div class="faq-container">
+      <div class="faq-item">
+        <div class="faq-question">How does the bot analyze my messages?</div>
+        <div class="faq-answer">When you forward a message, our server extracts any phone numbers, links, and keywords. It queries our blacklist database first. If no exact match is found, Gemini 2.5 Flash reads the text, identifies red flags (like urgency, OTP requests, fake accounts), and structures a risk report.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Is my private data secure?</div>
+        <div class="faq-answer">Yes. We value your privacy. The bot only reads messages you explicitly forward to it. It does not monitor your private conversations, calls, or media. We encrypt all logs and do not sell user data.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Why is there a limit of 5 checks/day on the free tier?</div>
+        <div class="faq-answer">Running advanced AI servers (like Gemini) incurs compute and API charges. To keep the service open for everyone for free, we limit the free tier to 5 checks per day. Upgrading to the Premium plan for ₹199/month helps us cover API fees and continue developing features.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">How do I add it to WhatsApp?</div>
+        <div class="faq-answer">Just click the "Add to WhatsApp" button on this page. It will open a chat window on your WhatsApp. Send any message (e.g. "Hello") to activate the bot. Then you can start forwarding suspicious texts directly to it!</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">How does the bot scan media and images?</div>
+        <div class="faq-answer">Simply forward any image, screenshot, or document to the bot. Our system downloads the attachment and forwards it to Gemini's vision engine to extract text and analyze visual red flags (like fake bank letterheads or threat seals). To optimize storage, we never save the raw image file—only a compressed text log description is stored.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Are my credit card or UPI details secure during upgrade?</div>
+        <div class="faq-answer">Yes. We do not store or process card numbers or UPI PINs. All payments are securely routed and processed via Razorpay, India's leading PCI-DSS compliant payment gateway, protecting your details with banking-grade security.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Can I trust the risk level assessment?</div>
+        <div class="faq-answer">Our engine combines pre-defined rules, real-time phishing URL lists, and Gemini's semantic logic. While the accuracy is extremely high (95%+), the report is a safety guideline. Always exercise personal caution and double-check with the official organization before making any payments.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">How can I report a new scam to blacklist it globally?</div>
+        <div class="faq-answer">Just send the word <b>REPORT</b> to our WhatsApp bot. The bot will guide you to submit the details (suspicious text, links, or screenshot images). Our AI will analyze your report and instantly blacklist confirmed threats globally to protect the entire community!</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About & Contact Section -->
+  <section id="about" class="about-section reveal-on-scroll" style="padding: 100px 0; background: rgba(16, 23, 38, 0.3);">
+    <div class="faq-container" style="max-width: 900px; margin: 0 auto; padding: 0 24px;">
+      <div class="section-header">
+        <h2>Mission &amp; Support</h2>
+        <p>A mission-driven initiative protecting Indian families from online fraud.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 20px;">
+        <!-- Card 1: Our Mission -->
+        <div class="faq-item" style="cursor: default; pointer-events: none;">
+          <h3 style="color: var(--text-main); margin-bottom: 12px; font-family: 'Space Grotesk', sans-serif;">🛡️ Our Mission</h3>
+          <p style="color: var(--text-secondary); line-height: 1.6; font-size: 0.95rem;">
+            AI Scam Detector is a non-commercial, self-funded security utility built specifically for Indian citizens. Our goal is to eliminate the complexity of identifying phishing attacks and digital scams, offering a simple, frictionless solution to protect families and hard-earned savings.
+          </p>
+        </div>
+
+        <!-- Card 2: Privacy Guarantee -->
+        <div class="faq-item" style="cursor: default; pointer-events: none;">
+          <h3 style="color: var(--text-main); margin-bottom: 12px; font-family: 'Space Grotesk', sans-serif;">🔒 Privacy Pledge</h3>
+          <p style="color: var(--text-secondary); line-height: 1.6; font-size: 0.95rem;">
+            We maintain strict data privacy: phone numbers are instantly hashed (SHA-256) upon receipt and never stored in raw text, logs are encrypted, and we never collect user contacts. We have zero interest in data harvesting or ads—the platform exists purely for defense.
+          </p>
+        </div>
+
+        <!-- Card 3: Join the Fight -->
+        <div class="faq-item" style="cursor: default; pointer-events: none;">
+          <h3 style="color: var(--text-main); margin-bottom: 12px; font-family: 'Space Grotesk', sans-serif;">📢 Join the Fight</h3>
+          <p style="color: var(--text-secondary); line-height: 1.6; font-size: 0.95rem;">
+            This security shield improves as our community grows. By forwarding suspicious messages or typing <b>REPORT</b> to our WhatsApp bot, you submit threat signatures that help us blacklist malicious links globally.
+          </p>
+        </div>
+
+        <!-- Card 4: Contact Details -->
+        <div class="faq-item" style="cursor: default; pointer-events: none;">
+          <h3 style="color: var(--text-main); margin-bottom: 12px; font-family: 'Space Grotesk', sans-serif;">✉️ Contact Support</h3>
+          <p style="color: var(--text-secondary); line-height: 1.6; font-size: 0.95rem; margin-bottom: 15px;">
+            Have questions, partnership inquiries, or need support? Drop us an email or connect with us on social channels. We respond to all queries within 24 hours.
+          </p>
+          <a href="mailto:support@aiscamdetector.in" style="color: var(--accent-color); font-weight: 600; text-decoration: none; display: flex; align-items: center; gap: 8px;">
+            <ion-icon name="mail-outline" style="font-size: 1.2rem; vertical-align: middle;"></ion-icon> support@aiscamdetector.in
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h4>AI Scam Detector</h4>
+        <p>Empowering Indians to navigate the digital world safely and prevent financial fraud.</p>
+        <div class="footer-status-widget">
+          <span class="status-dot pulsing" id="statusDot"></span>
+          <span id="liveStatusText">WhatsApp Service: Checking...</span>
+        </div>
+      </div>
+      <div class="footer-bottom" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; border-top: 1px solid var(--border-color); padding-top: 20px; margin-top: 20px;">
+        <p>&copy; 2026 AI Scam Detector. Built in India for Indian security.</p>
+        <div style="display: flex; gap: 20px; font-size: 0.9rem;">
+          <a href="#how-it-works" style="color: var(--text-secondary); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='var(--accent-color)'" onmouseout="this.style.color='var(--text-secondary)'">How It Works</a>
+          <a href="#demo" style="color: var(--text-secondary); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='var(--accent-color)'" onmouseout="this.style.color='var(--text-secondary)'">Live Demo</a>
+          <a href="scams.html" style="color: var(--text-secondary); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='var(--accent-color)'" onmouseout="this.style.color='var(--text-secondary)'">Scams Database</a>
+          <a href="#about" style="color: var(--text-secondary); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='var(--accent-color)'" onmouseout="this.style.color='var(--text-secondary)'">Mission &amp; Support</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <!-- Ionicons CDN Script -->
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

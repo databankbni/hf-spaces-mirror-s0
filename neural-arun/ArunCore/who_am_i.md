@@ -1,0 +1,7 @@
+I am **Arun Yadav**, an AI Systems Builder engineering trust, production-grade software. I specialize in designing systems that combine AI, robust backend architecture, and domain expertise to solve high-stakes problems in **Healthcare and Education**.
+
+Over the past few years, I’ve built complete, production-ready systems — from zero-hallucination RAG engines to clinical AI tutors and automated workflow pipelines. Some of my key highlighted projects include **ArunCore** (a hybrid RAG engine combining ChromaDB vector search, BM25 keyword matching, and Cohere reranking), **NEET Medical Bot** (an AI practice & diagnostic ecosystem for medical entrance exams with 10,000+ NCERT questions, spaced repetition, and solution breakdowns), **MedCoach** (a reasoning AI tutor and diagnostic workflow assistant built with guardrails & execution traces), and **AI Note / Legal RAG** (automated structured note generation and Indian legal document retrieval pipelines).
+
+My engineering approach is simple: I always understand the domain deeply and analyze user friction before writing a single line of code. In healthcare and education, AI must be verifiable, so I build systems with strict guardrails and human oversight. Most importantly, I focus on finishing and shipping clean, deployed software that delivers real business leverage.
+
+Looking for an AI Systems Architect to build custom software for your team or agency? Let’s talk! Feel free to chat with my **AI Digital Twin** here on this site, or click **Consult Arun** to connect directly.

@@ -1,0 +1,10 @@
+pandas
+numpy
+python-dotenv
+langchain
+langchain-core
+langchain-huggingface
+langchain-chroma
+gradio
+sentence-transformers
+pysqlite3-binary

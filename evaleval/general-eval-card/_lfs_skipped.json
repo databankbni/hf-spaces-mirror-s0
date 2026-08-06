@@ -1,0 +1,20 @@
+{
+ "lfs_not_stored": [
+  {
+   "oid": "368d6c5f9ac6c9c0ae8127f8717c56162195c8ee020b0abf8d4e053fc0f89f3f",
+   "path": "public/tutorials/screenshots/13-card-summary-full.png",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6MzY4ZDZjNWY5YWM2YzljMGFlODEyN2Y4NzE3YzU2MTYyMTk1YzhlZTAyMGIwYWJmOGQ0ZTA1M2ZjMGY4OWYzZgpzaXplIDExNzkwMTAK",
+   "size": 1179010,
+   "url": "https://huggingface.co/spaces/evaleval/general-eval-card/resolve/5e2801e6914469cd7cabfc6ea68c867fb82778ec/public/tutorials/screenshots/13-card-summary-full.png"
+  },
+  {
+   "oid": "c37f53ca2276b682721116f6be87ca6ed44127af7996e08261e40a85f3967092",
+   "path": "public/tutorials/screenshots/verified-checkmark.gif",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6YzM3ZjUzY2EyMjc2YjY4MjcyMTExNmY2YmU4N2NhNmVkNDQxMjdhZjc5OTZlMDgyNjFlNDBhODVmMzk2NzA5MgpzaXplIDE1ODcyOTIK",
+   "size": 1587292,
+   "url": "https://huggingface.co/spaces/evaleval/general-eval-card/resolve/5e2801e6914469cd7cabfc6ea68c867fb82778ec/public/tutorials/screenshots/verified-checkmark.gif"
+  }
+ ],
+ "overflow_not_stored": [],
+ "oversize_not_stored": []
+}

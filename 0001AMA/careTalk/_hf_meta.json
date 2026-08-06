@@ -1,0 +1,197 @@
+{
+ "captured_at": "2026-08-06T02:53:19Z",
+ "hf_metadata": {
+  "_id": "6a6112b32fa7f24184f3072d",
+  "author": "0001AMA",
+  "cardData": {
+   "app_file": "index.html",
+   "colorFrom": "blue",
+   "colorTo": "indigo",
+   "emoji": "🏥",
+   "license": "mit",
+   "pinned": true,
+   "sdk": "static",
+   "short_description": "AI-assisted voice documentation for care teams",
+   "tags": [
+    "healthcare",
+    "ai",
+    "bookkeeping",
+    "demo"
+   ],
+   "title": "careTalk"
+  },
+  "createdAt": "2026-07-22T18:57:55.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://0001ama-caretalk.static.hf.space",
+  "id": "0001AMA/careTalk",
+  "lastModified": "2026-08-06T02:46:11.000Z",
+  "likes": 0,
+  "private": false,
+  "region": "us",
+  "runtime": {
+   "hardware": {
+    "current": null,
+    "requested": null
+   },
+   "replicas": {
+    "current": 1,
+    "requested": 1
+   },
+   "stage": "RUNNING"
+  },
+  "sdk": "static",
+  "sha": "d6d7a464ad245b0e2e4ae75122365892a323277d",
+  "siblings": [
+   {
+    "rfilename": "LICENSE"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "admin.html"
+   },
+   {
+    "rfilename": "app.html"
+   },
+   {
+    "rfilename": "assets/admin-COcnhFD_.js"
+   },
+   {
+    "rfilename": "assets/app-Cr21RCtM.js"
+   },
+   {
+    "rfilename": "assets/app-DT9iTHEE.css"
+   },
+   {
+    "rfilename": "assets/main-fYjBO_9U.js"
+   },
+   {
+    "rfilename": "assets/subscribers-BHyrZ7wW.css"
+   },
+   {
+    "rfilename": "assets/subscribers-CLCOf4GQ.js"
+   },
+   {
+    "rfilename": "assets/theme-CuaEyjDL.js"
+   },
+   {
+    "rfilename": "assets/web-BoLQRCPk.js"
+   },
+   {
+    "rfilename": "assets/web-CbBz5VEx.js"
+   },
+   {
+    "rfilename": "assets/web-DrRVGgij.js"
+   },
+   {
+    "rfilename": "feedback-feed.json"
+   },
+   {
+    "rfilename": "guides/distress-space.svg"
+   },
+   {
+    "rfilename": "guides/dysphagia-stop.svg"
+   },
+   {
+    "rfilename": "guides/dysphagia-upright.svg"
+   },
+   {
+    "rfilename": "guides/fall-assess.svg"
+   },
+   {
+    "rfilename": "guides/fall-no-lift.svg"
+   },
+   {
+    "rfilename": "guides/skin-check.svg"
+   },
+   {
+    "rfilename": "hero-care.svg"
+   },
+   {
+    "rfilename": "icons/favicon.png"
+   },
+   {
+    "rfilename": "icons/icon-128.png"
+   },
+   {
+    "rfilename": "icons/icon-144.png"
+   },
+   {
+    "rfilename": "icons/icon-152.png"
+   },
+   {
+    "rfilename": "icons/icon-180.png"
+   },
+   {
+    "rfilename": "icons/icon-192.png"
+   },
+   {
+    "rfilename": "icons/icon-256.png"
+   },
+   {
+    "rfilename": "icons/icon-384.png"
+   },
+   {
+    "rfilename": "icons/icon-48.png"
+   },
+   {
+    "rfilename": "icons/icon-512.png"
+   },
+   {
+    "rfilename": "icons/icon-72.png"
+   },
+   {
+    "rfilename": "icons/icon-96.png"
+   },
+   {
+    "rfilename": "icons/maskable-512.png"
+   },
+   {
+    "rfilename": "images/care-team-handover.jpg"
+   },
+   {
+    "rfilename": "images/carer-with-resident.jpg"
+   },
+   {
+    "rfilename": "images/hero-voice-nurse.jpg"
+   },
+   {
+    "rfilename": "index.html"
+   },
+   {
+    "rfilename": "manifest.webmanifest"
+   },
+   {
+    "rfilename": "registerSW.js"
+   },
+   {
+    "rfilename": "sw.js"
+   },
+   {
+    "rfilename": "videos/README.txt"
+   },
+   {
+    "rfilename": "workbox-7e792205.js"
+   }
+  ],
+  "subdomain": "0001ama-caretalk",
+  "tags": [
+   "static",
+   "healthcare",
+   "ai",
+   "bookkeeping",
+   "demo",
+   "region:us"
+  ],
+  "usedStorage": 0
+ },
+ "renamed_git_metadata": [],
+ "renamed_gitattributes": [],
+ "repo_id": "0001AMA/careTalk",
+ "repo_type": "spaces",
+ "sha": "d6d7a464ad245b0e2e4ae75122365892a323277d",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/0001AMA/careTalk"
+}

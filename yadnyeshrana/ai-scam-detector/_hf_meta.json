@@ -1,0 +1,209 @@
+{
+ "captured_at": "2026-08-06T03:19:19Z",
+ "hf_metadata": {
+  "_id": "6a3d700985afca5b7a18247e",
+  "author": "yadnyeshrana",
+  "cardData": {
+   "app_port": 3000,
+   "colorFrom": "blue",
+   "colorTo": "indigo",
+   "emoji": "🛡️",
+   "pinned": false,
+   "sdk": "docker",
+   "title": "AI Scam Detector"
+  },
+  "createdAt": "2026-06-25T18:14:33.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://yadnyeshrana-ai-scam-detector.hf.space",
+  "id": "yadnyeshrana/ai-scam-detector",
+  "lastModified": "2026-08-05T06:35:51.000Z",
+  "likes": 0,
+  "private": false,
+  "region": "us",
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "yadnyeshrana-ai-scam-detector.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": "cpu-basic",
+    "requested": "cpu-basic"
+   },
+   "pySpacesVersion": "0.51.1",
+   "replicas": {
+    "current": 1,
+    "requested": 1
+   },
+   "sha": "cef0be6336d1b02e3d9e530dc4d619903a0d49ab",
+   "stage": "RUNNING"
+  },
+  "sdk": "docker",
+  "sha": "cef0be6336d1b02e3d9e530dc4d619903a0d49ab",
+  "siblings": [
+   {
+    "rfilename": ".dockerignore"
+   },
+   {
+    "rfilename": ".env.example"
+   },
+   {
+    "rfilename": ".gitattributes"
+   },
+   {
+    "rfilename": ".gitignore"
+   },
+   {
+    "rfilename": "AI_SCAM_DETECTOR_PRD.md"
+   },
+   {
+    "rfilename": "Dockerfile"
+   },
+   {
+    "rfilename": "PRD_ONE_PAGE_SUMMARY.md"
+   },
+   {
+    "rfilename": "PROJECT_SPEC.md"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "REAL_COSTS.md"
+   },
+   {
+    "rfilename": "docs/technical_spec.html"
+   },
+   {
+    "rfilename": "package-lock.json"
+   },
+   {
+    "rfilename": "package.json"
+   },
+   {
+    "rfilename": "public/admin.html"
+   },
+   {
+    "rfilename": "public/app.js"
+   },
+   {
+    "rfilename": "public/history.html"
+   },
+   {
+    "rfilename": "public/images/favicon.png"
+   },
+   {
+    "rfilename": "public/images/logo.png"
+   },
+   {
+    "rfilename": "public/images/social-preview.png"
+   },
+   {
+    "rfilename": "public/index.html"
+   },
+   {
+    "rfilename": "public/robots.txt"
+   },
+   {
+    "rfilename": "public/scams.html"
+   },
+   {
+    "rfilename": "public/sitemap.xml"
+   },
+   {
+    "rfilename": "public/style.css"
+   },
+   {
+    "rfilename": "scratch/reset_inflated_scam_stats.js"
+   },
+   {
+    "rfilename": "scratch/seed_scams.js"
+   },
+   {
+    "rfilename": "scratch/test_admin.js"
+   },
+   {
+    "rfilename": "scratch/test_alerts.js"
+   },
+   {
+    "rfilename": "scratch/test_multimodal.js"
+   },
+   {
+    "rfilename": "scratch/test_scraper.js"
+   },
+   {
+    "rfilename": "scratch/test_user_history.js"
+   },
+   {
+    "rfilename": "src/routes/admin.js"
+   },
+   {
+    "rfilename": "src/routes/api.js"
+   },
+   {
+    "rfilename": "src/routes/history.js"
+   },
+   {
+    "rfilename": "src/routes/payments.js"
+   },
+   {
+    "rfilename": "src/routes/webhook.js"
+   },
+   {
+    "rfilename": "src/server.js"
+   },
+   {
+    "rfilename": "src/services/alert.js"
+   },
+   {
+    "rfilename": "src/services/db.js"
+   },
+   {
+    "rfilename": "src/services/detector.js"
+   },
+   {
+    "rfilename": "src/services/scraper.js"
+   },
+   {
+    "rfilename": "src/services/security.js"
+   },
+   {
+    "rfilename": "src/services/session.js"
+   },
+   {
+    "rfilename": "src/services/whatsapp.js"
+   }
+  ],
+  "subdomain": "yadnyeshrana-ai-scam-detector",
+  "tags": [
+   "docker",
+   "region:us"
+  ],
+  "usedStorage": 2980712
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  },
+  {
+   "original": ".gitignore",
+   "stored_as": "_gitignore"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "yadnyeshrana/ai-scam-detector",
+ "repo_type": "spaces",
+ "sha": "cef0be6336d1b02e3d9e530dc4d619903a0d49ab",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/yadnyeshrana/ai-scam-detector"
+}

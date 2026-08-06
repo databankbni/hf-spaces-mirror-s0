@@ -1,0 +1,17 @@
+node_modules/
+package-lock.json
+.DS_Store
+.env
+.auth/
+icon.ico
+
+# Runtime/debug artifacts
+*.log
+testmonitor-state.json
+system-log.json
+prediction-audit.jsonl
+match-audit.jsonl
+vapid.json
+push-subscriptions.json
+tracker-check/
+onewin-tracker-probe.png

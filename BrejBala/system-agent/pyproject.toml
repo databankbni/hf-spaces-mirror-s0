@@ -1,0 +1,19 @@
+[project]
+name = "portfolio-system-agent"
+version = "1.0.0"
+description = "The System — grounded portfolio Q&A agent (FastAPI proxy with guardrails) for Brejesh Balakrishnan's status-window portfolio"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi==0.115.12",
+    "uvicorn==0.34.2",
+    "httpx==0.28.1",
+]
+
+[dependency-groups]
+dev = [
+    "pytest==8.3.5",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

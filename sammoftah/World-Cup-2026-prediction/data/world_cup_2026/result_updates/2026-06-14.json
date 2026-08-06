@@ -1,0 +1,23 @@
+{
+  "information_cutoff": "2026-06-14T06:30:00Z",
+  "sources": [
+    "https://www.sbnation.com/soccer/1117513/world-cup-schedule-2026-how-to-watch-every-match-scores-and-more",
+    "https://www.theguardian.com/football/live/2026/jun/14/fifa-world-cup-2026-live-socceroos-australia-v-turkey-updates-aus-vs-tur-group-d-match-score-latest"
+  ],
+  "results": [
+    {
+      "group": "C",
+      "home": "Haiti",
+      "away": "Scotland",
+      "home_goals": 0,
+      "away_goals": 1
+    },
+    {
+      "group": "D",
+      "home": "Australia",
+      "away": "Turkey",
+      "home_goals": 2,
+      "away_goals": 0
+    }
+  ]
+}

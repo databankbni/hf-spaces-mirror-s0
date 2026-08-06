@@ -1,0 +1,39 @@
+{
+ "captured_at": "2026-08-04T16:41:01Z",
+ "hf_metadata": {
+  "sha": "c3797b6d2d252468f2f12acc849d4af8561e3c4f"
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  },
+  {
+   "original": ".gitignore",
+   "stored_as": "_gitignore"
+  },
+  {
+   "original": ".import_linter_cache/.gitignore",
+   "stored_as": ".import_linter_cache/_gitignore"
+  },
+  {
+   "original": ".pytest_cache/.gitignore",
+   "stored_as": ".pytest_cache/_gitignore"
+  },
+  {
+   "original": ".ruff_cache/.gitignore",
+   "stored_as": ".ruff_cache/_gitignore"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "makhlugjafarov/dim-ai-api",
+ "repo_type": "spaces",
+ "sha": "c3797b6d2d252468f2f12acc849d4af8561e3c4f",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/makhlugjafarov/dim-ai-api"
+}

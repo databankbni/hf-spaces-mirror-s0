@@ -1,0 +1,1259 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#1a1a2e">
+  <title>Child Monitor - Parent Dashboard</title>
+  <link rel="manifest" href="/manifest.json">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg-primary: #0f0f23;
+      --bg-secondary: #1a1a2e;
+      --bg-card: #16213e;
+      --bg-card-hover: #1a2744;
+      --accent: #4ecca3;
+      --accent-glow: rgba(78, 204, 163, 0.3);
+      --danger: #ff6b6b;
+      --danger-glow: rgba(255, 107, 107, 0.3);
+      --warning: #ffd93d;
+      --text-primary: #e8e8e8;
+      --text-secondary: #a0a0b8;
+      --text-muted: #6c6c80;
+      --border: rgba(78, 204, 163, 0.15);
+      --shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Header */
+    .header {
+      background: linear-gradient(135deg, var(--bg-secondary) 0%, #0e2954 100%);
+      padding: 20px 16px 16px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(20px);
+    }
+
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .header h1 {
+      font-size: 20px;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--accent), #6ee7b7);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .header-subtitle {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .refresh-btn {
+      background: rgba(78, 204, 163, 0.1);
+      border: 1px solid var(--border);
+      color: var(--accent);
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .refresh-btn:active {
+      transform: scale(0.9);
+      background: rgba(78, 204, 163, 0.2);
+    }
+
+    .refresh-btn.spinning .material-icons-round {
+      animation: spin 0.8s ease;
+    }
+
+    @keyframes spin {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    /* Stats Bar */
+    .stats-bar {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+
+    .stats-bar::-webkit-scrollbar {
+      display: none;
+    }
+
+    .stat-chip {
+      background: rgba(78, 204, 163, 0.08);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 6px 14px;
+      font-size: 12px;
+      font-weight: 500;
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .stat-chip .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .dot.online {
+      background: var(--accent);
+      box-shadow: 0 0 6px var(--accent-glow);
+    }
+
+    .dot.offline {
+      background: var(--danger);
+      box-shadow: 0 0 6px var(--danger-glow);
+    }
+
+    .dot.warning {
+      background: var(--warning);
+    }
+
+    /* Navigation Tabs */
+    .nav-tabs {
+      display: flex;
+      background: var(--bg-secondary);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 90px;
+      z-index: 99;
+    }
+
+    .nav-tab {
+      flex: 1;
+      padding: 12px 8px;
+      text-align: center;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text-muted);
+      border: none;
+      background: none;
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      transition: all 0.3s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+    }
+
+    .nav-tab.active {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+
+    .nav-tab .material-icons-round {
+      font-size: 20px;
+    }
+
+    /* Content */
+    .content {
+      padding: 16px;
+      padding-bottom: 80px;
+    }
+
+    .page {
+      display: none;
+    }
+
+    .page.active {
+      display: block;
+    }
+
+    /* Device Cards */
+    .device-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 16px;
+      margin-bottom: 12px;
+      transition: all 0.3s;
+      cursor: pointer;
+    }
+
+    .device-card:active {
+      transform: scale(0.98);
+    }
+
+    .device-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .device-name {
+      font-size: 16px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .status-badge {
+      font-size: 10px;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .status-badge.online {
+      background: rgba(78, 204, 163, 0.15);
+      color: var(--accent);
+    }
+
+    .status-badge.offline {
+      background: rgba(255, 107, 107, 0.15);
+      color: var(--danger);
+    }
+
+    .device-info {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    .info-item {
+      font-size: 12px;
+      color: var(--text-secondary);
+    }
+
+    .info-item .label {
+      color: var(--text-muted);
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .device-actions {
+      display: flex;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .action-btn {
+      flex: 1;
+      padding: 10px;
+      border-radius: 12px;
+      border: none;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: all 0.3s;
+    }
+
+    .action-btn:active {
+      transform: scale(0.95);
+    }
+
+    .action-btn.lock {
+      background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+      color: white;
+    }
+
+    .action-btn.logs {
+      background: rgba(78, 204, 163, 0.15);
+      color: var(--accent);
+      border: 1px solid var(--border);
+    }
+
+    .btn-block-mini {
+      background: rgba(255, 107, 107, 0.15);
+      color: var(--danger);
+      border: 1px solid rgba(255, 107, 107, 0.2);
+      padding: 2px 8px;
+      border-radius: 6px;
+      font-size: 10px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-left: 8px;
+      transition: all 0.2s;
+    }
+
+    .btn-block-mini:active {
+      background: var(--danger);
+      color: white;
+    }
+
+    .delete-btn {
+      color: var(--danger);
+      cursor: pointer;
+      padding: 4px;
+      border-radius: 50%;
+      transition: background 0.2s;
+    }
+
+    .delete-btn:hover {
+      background: rgba(255, 107, 107, 0.1);
+    }
+
+    /* List Item */
+    .list-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 12px 16px;
+      margin-bottom: 8px;
+    }
+
+    .list-item-content {
+      flex: 1;
+    }
+
+    .list-item-title {
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .list-item-subtitle {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    /* Log entries */
+    .log-entry {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 12px;
+      margin-bottom: 8px;
+    }
+
+    .log-entry.judi {
+      border-color: rgba(255, 107, 107, 0.4);
+      background: rgba(255, 107, 107, 0.08);
+    }
+
+    .log-time {
+      font-size: 10px;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    .log-app {
+      font-size: 13px;
+      font-weight: 500;
+      margin-bottom: 2px;
+    }
+
+    .log-url {
+      font-size: 11px;
+      color: var(--text-secondary);
+      word-break: break-all;
+    }
+
+    .judi-badge {
+      display: inline-block;
+      background: rgba(255, 107, 107, 0.2);
+      color: var(--danger);
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 4px;
+      margin-left: 6px;
+    }
+
+    /* Alert Card */
+    .alert-card {
+      background: linear-gradient(135deg, rgba(255, 107, 107, 0.15), rgba(255, 107, 107, 0.05));
+      border: 1px solid rgba(255, 107, 107, 0.3);
+      border-radius: 16px;
+      padding: 16px;
+      margin-bottom: 12px;
+    }
+
+    .alert-card .alert-icon {
+      font-size: 32px;
+      margin-bottom: 8px;
+    }
+
+    .alert-card .alert-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--danger);
+      margin-bottom: 4px;
+    }
+
+    .alert-card .alert-detail {
+      font-size: 12px;
+      color: var(--text-secondary);
+    }
+
+    /* Empty state */
+    .empty-state {
+      text-align: center;
+      padding: 48px 16px;
+      color: var(--text-muted);
+    }
+
+    .empty-state .material-icons-round {
+      font-size: 48px;
+      margin-bottom: 12px;
+      opacity: 0.5;
+    }
+
+    /* Loading */
+    .loading {
+      text-align: center;
+      padding: 24px;
+      color: var(--text-muted);
+    }
+
+    .loading::after {
+      content: '';
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border: 2px solid var(--border);
+      border-top-color: var(--accent);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      margin-left: 8px;
+      vertical-align: middle;
+    }
+
+    /* Toast */
+    .toast {
+      position: fixed;
+      bottom: 80px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      padding: 12px 24px;
+      border-radius: 12px;
+      font-size: 13px;
+      z-index: 200;
+      transition: transform 0.3s ease;
+      box-shadow: var(--shadow);
+    }
+
+    .toast.show {
+      transform: translateX(-50%) translateY(0);
+    }
+
+    /* Section title */
+    .section-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-secondary);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Device select */
+    .device-select {
+      width: 100%;
+      padding: 10px 14px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      color: var(--text-primary);
+      font-size: 14px;
+      font-family: inherit;
+      margin-bottom: 16px;
+      appearance: none;
+      -webkit-appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%234ecca3' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+    }
+
+    /* Error cards */
+    .error-card {
+      background: var(--bg-card);
+      border: 1px solid rgba(255, 165, 0, 0.3);
+      border-radius: 12px;
+      padding: 12px;
+      margin-bottom: 8px;
+    }
+
+    .error-card .error-type {
+      font-size: 11px;
+      font-weight: 700;
+      color: #ff9f43;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .error-card .error-msg {
+      font-size: 12px;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+    }
+
+    .error-card .error-stack {
+      font-size: 10px;
+      color: var(--text-muted);
+      font-family: monospace;
+      white-space: pre-wrap;
+      word-break: break-all;
+      max-height: 80px;
+      overflow-y: auto;
+      background: rgba(0, 0, 0, 0.2);
+      padding: 6px;
+      border-radius: 6px;
+      margin-top: 4px;
+    }
+
+    .error-card .error-component {
+      font-size: 10px;
+      color: var(--text-secondary);
+      margin-top: 4px;
+    }
+
+    /* No scrollbar overall */
+    ::-webkit-scrollbar {
+      width: 0;
+      background: transparent;
+    }
+
+    .api-error-banner {
+      margin: 12px 16px 0;
+      padding: 12px 14px;
+      border-radius: 10px;
+      background: rgba(255, 107, 107, 0.15);
+      border: 1px solid rgba(255, 107, 107, 0.4);
+      color: #ffb4b4;
+      font-size: 13px;
+      line-height: 1.45;
+      display: none;
+    }
+
+    .api-error-banner.visible {
+      display: block;
+    }
+
+    .api-error-banner code {
+      font-size: 11px;
+      color: #ffd93d;
+      word-break: break-all;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="apiErrorBanner" class="api-error-banner"></div>
+  <!-- Header -->
+  <div class="header">
+    <div class="header-top">
+      <div>
+        <h1>🛡️ Child Monitor</h1>
+        <div class="header-subtitle">Parent Dashboard</div>
+      </div>
+      <button class="refresh-btn" onclick="refreshAll()">
+        <span class="material-icons-round">refresh</span>
+      </button>
+    </div>
+    <div class="stats-bar" id="statsBar">
+      <div class="stat-chip"><span class="dot online"></span> Loading...</div>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <div class="nav-tabs">
+    <button class="nav-tab active" onclick="showPage('devices')">
+      <span class="material-icons-round">devices</span>
+      Perangkat
+    </button>
+    <button class="nav-tab" onclick="showPage('logs')">
+      <span class="material-icons-round">history</span>
+      Log
+    </button>
+    <button class="nav-tab" onclick="showPage('alerts')">
+      <span class="material-icons-round">warning</span>
+      Alert
+    </button>
+    <button class="nav-tab" onclick="showPage('blocklist')">
+      <span class="material-icons-round">block</span>
+      Blokir
+    </button>
+    <button class="nav-tab" onclick="showPage('errors')">
+      <span class="material-icons-round">bug_report</span>
+      Debug
+    </button>
+  </div>
+
+  <!-- Content -->
+  <div class="content">
+    <!-- Devices Page -->
+    <div class="page active" id="page-devices">
+      <div class="section-title">
+        <span class="material-icons-round">smartphone</span>
+        Perangkat Terdaftar
+      </div>
+      <div id="deviceList">
+        <div class="loading">Memuat perangkat</div>
+      </div>
+    </div>
+
+    <!-- Logs Page -->
+    <div class="page" id="page-logs">
+      <div class="section-title">
+        <span class="material-icons-round">history</span>
+        Log Aktivitas
+      </div>
+      <select class="device-select" id="logDeviceSelect" onchange="loadLogs()">
+        <option value="">-- Pilih Perangkat --</option>
+      </select>
+      <div id="logList">
+        <div class="empty-state"><span class="material-icons-round">search</span><br>Pilih perangkat untuk melihat log
+        </div>
+      </div>
+    </div>
+
+    <!-- Alerts Page -->
+    <div class="page" id="page-alerts">
+      <div class="section-title">
+        <span class="material-icons-round">warning</span>
+        Peringatan Judi
+      </div>
+      <select class="device-select" id="alertDeviceSelect" onchange="loadAlerts()">
+        <option value="">-- Semua Perangkat --</option>
+      </select>
+      <div id="alertList">
+        <div class="loading">Memuat peringatan</div>
+      </div>
+    </div>
+
+    <!-- Blocklist Page -->
+    <div class="page" id="page-blocklist">
+      <div class="section-title">
+        <span class="material-icons-round">block</span>
+        Daftar Blokir Manual
+      </div>
+      <div class="device-card" style="padding: 12px; margin-bottom: 16px; display: flex; gap: 8px;">
+        <input type="text" id="newBlockInput" placeholder="Masukkan domain (contoh: facebook.com)"
+          style="flex:1; background:transparent; border:none; border-bottom:1px solid var(--border); color:white; font-size:13px; outline:none;">
+        <button class="action-btn lock" style="flex:none; width:auto; padding:8px 16px;"
+          onclick="addManualBlock()">Tambah</button>
+      </div>
+      <div id="blocklistContainer">
+        <div class="loading">Memuat daftar blokir</div>
+      </div>
+    </div>
+
+    <!-- Errors Page -->
+    <div class="page" id="page-errors">
+      <div class="section-title">
+        <span class="material-icons-round">bug_report</span>
+        Error & Debug Log
+      </div>
+      <select class="device-select" id="errorDeviceSelect" onchange="loadErrors()">
+        <option value="">-- Semua Perangkat --</option>
+      </select>
+      <div id="errorList">
+        <div class="loading">Memuat error logs</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
+
+  <script>
+    const API = window.location.origin + '/api';
+    let devices = [];
+    let currentPage = 'devices';
+
+    // =============================================
+    // Navigation
+    // =============================================
+    function showPage(page) {
+      currentPage = page;
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+      document.getElementById('page-' + page).classList.add('active');
+      const tabs = ['devices', 'logs', 'alerts', 'blocklist', 'errors'];
+      const tabIdx = tabs.indexOf(page);
+      if (tabIdx !== -1) document.querySelectorAll('.nav-tab')[tabIdx].classList.add('active');
+
+      if (page === 'errors') loadErrors();
+      if (page === 'blocklist') loadBlocklist();
+    }
+
+    // =============================================
+    // Data Fetching
+    // =============================================
+    function showApiErrorBanner(msg) {
+      const el = document.getElementById('apiErrorBanner');
+      if (!msg) {
+        el.classList.remove('visible');
+        el.innerHTML = '';
+        return;
+      }
+      el.innerHTML = '<strong>⚠️ Koneksi database gagal</strong><br>' + msg +
+        '<br><small>Di Hugging Face: Settings → Repository secrets → pastikan <code>SUPABASE_URL</code> dan <code>SUPABASE_SERVICE_ROLE_KEY</code> benar. Cek project Supabase tidak paused.</small>';
+      el.classList.add('visible');
+    }
+
+    async function fetchDevices() {
+      try {
+        const res = await fetch(API + '/devices');
+        const data = await res.json();
+        if (!res.ok || data.error) {
+          showApiErrorBanner((data && data.error) ? String(data.error) : ('HTTP ' + res.status));
+          devices = [];
+          document.getElementById('deviceList').innerHTML =
+            '<div class="empty-state"><span class="material-icons-round">storage</span><br>Data perangkat tidak bisa dimuat (cek banner merah di atas).</div>';
+          renderStats();
+          populateDeviceSelects();
+          return;
+        }
+        showApiErrorBanner(null);
+        devices = data.devices || [];
+        renderDevices();
+        renderStats();
+        populateDeviceSelects();
+      } catch (err) {
+        showApiErrorBanner(err.message || 'fetch gagal');
+        document.getElementById('deviceList').innerHTML =
+          '<div class="empty-state"><span class="material-icons-round">wifi_off</span><br>Tidak bisa terhubung ke server</div>';
+      }
+    }
+
+    async function loadLogs() {
+      const deviceId = document.getElementById('logDeviceSelect').value;
+      const container = document.getElementById('logList');
+      if (!deviceId) {
+        container.innerHTML = '<div class="empty-state"><span class="material-icons-round">search</span><br>Pilih perangkat untuk melihat log</div>';
+        return;
+      }
+      container.innerHTML = '<div class="loading">Memuat log</div>';
+      try {
+        const res = await fetch(API + '/logs/' + deviceId + '?limit=100');
+        const data = await res.json();
+        renderLogs(data.logs || []);
+      } catch (err) {
+        container.innerHTML = '<div class="empty-state"><span class="material-icons-round">error</span><br>Gagal memuat log</div>';
+      }
+    }
+
+    async function loadAlerts() {
+      const deviceId = document.getElementById('alertDeviceSelect').value;
+      const container = document.getElementById('alertList');
+      container.innerHTML = '<div class="loading">Memuat peringatan</div>';
+      try {
+        let url = API + '/logs/' + (deviceId || devices[0]?.device_id || '') + '?limit=200';
+        if (!deviceId && devices.length > 0) {
+          // Load all devices alerts
+          let allAlerts = [];
+          for (const d of devices) {
+            const res = await fetch(API + '/logs/' + d.device_id + '?limit=50');
+            const data = await res.json();
+            const judiLogs = (data.logs || []).filter(l => l.is_judi);
+            judiLogs.forEach(l => l._device = d.device_id);
+            allAlerts = allAlerts.concat(judiLogs);
+          }
+          allAlerts.sort((a, b) => b.timestamp - a.timestamp);
+          renderAlerts(allAlerts);
+        } else if (deviceId) {
+          const res = await fetch(url);
+          const data = await res.json();
+          const judiLogs = (data.logs || []).filter(l => l.is_judi);
+          judiLogs.forEach(l => l._device = deviceId);
+          renderAlerts(judiLogs);
+        } else {
+          container.innerHTML = '<div class="empty-state"><span class="material-icons-round">check_circle</span><br>Belum ada perangkat terdaftar</div>';
+        }
+      } catch (err) {
+        container.innerHTML = '<div class="empty-state"><span class="material-icons-round">error</span><br>Gagal memuat data</div>';
+      }
+    }
+
+    async function lockDevice(deviceId) {
+      try {
+        showToast('🔒 Mengirim perintah lock ke ' + deviceId + '...');
+        const res = await fetch(API + '/lock', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ deviceId })
+        });
+        if (res.ok) {
+          showToast('🔒 Perintah lock berhasil dikirim!');
+        } else {
+          showToast('❌ Gagal mengirim perintah lock');
+        }
+      } catch (err) {
+        showToast('❌ Error: ' + err.message);
+      }
+    }
+
+    async function startQuiz(deviceId) {
+      try {
+        showToast('🧠 Memulai Mode Kuis di ' + deviceId + '...');
+        const res = await fetch(API + '/quiz/start', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ deviceId })
+        });
+        if (res.ok) {
+          showToast('🧠 Perintah Kuis berhasil dikirim!');
+        } else {
+          showToast('❌ Gagal mengirim perintah kuis');
+        }
+      } catch (err) {
+        showToast('❌ Error: ' + err.message);
+      }
+    }
+
+    async function stopQuiz(deviceId) {
+      try {
+        showToast('⏹️ Menghentikan Kuis di ' + deviceId + '...');
+        const res = await fetch(API + '/quiz/stop', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ deviceId })
+        });
+        if (res.ok) {
+          showToast('⏹️ Kuis dihentikan!');
+        } else {
+          showToast('❌ Gagal menghentikan kuis');
+        }
+      } catch (err) {
+        showToast('❌ Error: ' + err.message);
+      }
+    }
+
+    /** Online window: 10 menit (selaras backend ONLINE_WINDOW_MINUTES). */
+    const ONLINE_MS = 10 * 60 * 1000;
+
+    function isDeviceOnline(d) {
+      if (typeof d.online === 'boolean') return d.online;
+      return !!(d.last_heartbeat && (Date.now() - d.last_heartbeat < ONLINE_MS));
+    }
+
+    function adminBadge(d) {
+      if (d.is_device_owner === true || d.is_device_owner === 'true') {
+        return '<span class="status-badge online" style="margin-left:6px">Device Owner</span>';
+      }
+      if (d.admin_active === true || d.admin_active === 'true') {
+        return '<span class="status-badge" style="margin-left:6px;background:#555">Admin saja</span>';
+      }
+      return '<span class="status-badge offline" style="margin-left:6px">No Admin</span>';
+    }
+
+    /** Bangunkan MainService + registrasi (FCM). Hanya efektif jika HP sempat terhubung ke Google. */
+    async function restartMonitoring(deviceId) {
+      try {
+        showToast('🔄 Mengirim restart ke ' + deviceId + '...');
+        const res = await fetch(API + '/restart', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ deviceId })
+        });
+        const data = await res.json().catch(() => ({}));
+        if (res.ok && data.success) {
+          showToast('🔄 Perintah restart dikirim. Jika HP online, layanan akan bangkit.');
+        } else {
+          showToast('❌ ' + (data.message || data.error || 'Gagal kirim restart'));
+        }
+      } catch (err) {
+        showToast('❌ Error: ' + err.message);
+      }
+    }
+
+    async function applyDevicePolicy(deviceId) {
+      try {
+        showToast('Terapkan policy ke ' + deviceId + '...');
+        const res = await fetch(API + '/policy/apply', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ deviceId })
+        });
+        const data = await res.json().catch(() => ({}));
+        if (res.ok && data.success) {
+          showToast('Policy apply dikirim (butuh Device Owner di HP)');
+        } else {
+          showToast(data.message || data.error || 'Gagal policy apply');
+        }
+      } catch (err) {
+        showToast('Error: ' + err.message);
+      }
+    }
+
+    async function removeDeviceRow(deviceId) {
+      if (!confirm('Hapus baris perangkat "' + deviceId + '" dari database? (rapikan duplikat)')) return;
+      try {
+        const res = await fetch(API + '/devices/' + encodeURIComponent(deviceId), { method: 'DELETE' });
+        const data = await res.json().catch(() => ({}));
+        if (res.ok) {
+          showToast('Dihapus: ' + deviceId);
+          loadDevices();
+        } else {
+          showToast(data.error || 'Gagal hapus');
+        }
+      } catch (err) {
+        showToast('Error: ' + err.message);
+      }
+    }
+
+    function renderStats() {
+      const online = devices.filter(isDeviceOnline).length;
+      const offline = devices.length - online;
+      const doCount = devices.filter(d => d.is_device_owner === true || d.is_device_owner === 'true').length;
+
+      let html = `<div class="stat-chip"><span class="dot online"></span> ${online} Online</div>`;
+      if (offline > 0) html += `<div class="stat-chip"><span class="dot offline"></span> ${offline} Offline</div>`;
+      html += `<div class="stat-chip">${devices.length} Total</div>`;
+      html += `<div class="stat-chip">${doCount} Device Owner</div>`;
+      html += `<div class="stat-chip"><span class="dot online"></span> Email Alerts Active</div>`;
+      document.getElementById('statsBar').innerHTML = html;
+    }
+
+    function renderDevices() {
+      const container = document.getElementById('deviceList');
+      if (devices.length === 0) {
+        container.innerHTML = '<div class="empty-state"><span class="material-icons-round">phone_android</span><br>Belum ada perangkat terdaftar.<br><br><small>Install ChildMonitor di HP anak dan registrasi.</small></div>';
+        return;
+      }
+
+      container.innerHTML = devices.map(d => {
+        const isOnline = isDeviceOnline(d);
+        const lastSeen = d.last_heartbeat ? formatTime(d.last_heartbeat) : 'Belum pernah';
+        const ver = d.app_version ? d.app_version : '-';
+        const safeId = String(d.device_id).replace(/'/g, "\\'");
+
+        return `
+          <div class="device-card">
+            <div class="device-header">
+              <div class="device-name">
+                <span class="material-icons-round">phone_android</span>
+                ${d.device_id}
+                ${adminBadge(d)}
+              </div>
+              <span class="status-badge ${isOnline ? 'online' : 'offline'}">${isOnline ? 'Online' : 'Offline'}</span>
+            </div>
+            <div class="device-info">
+              <div class="info-item">
+                <div class="label">Email Target</div>
+                ${d.wa_number}
+              </div>
+              <div class="info-item">
+                <div class="label">Terakhir Aktif</div>
+                ${lastSeen}
+              </div>
+              <div class="info-item">
+                <div class="label">App Version</div>
+                ${ver}
+              </div>
+            </div>
+            <div class="device-actions">
+              <button class="action-btn lock" onclick="event.stopPropagation(); if(confirm('Kunci layar ${safeId}?')) lockDevice('${safeId}')">
+                <span class="material-icons-round" style="font-size:16px">lock</span>
+                Kunci Layar
+              </button>
+              <button class="action-btn logs" onclick="event.stopPropagation(); showPage('logs'); document.getElementById('logDeviceSelect').value='${safeId}'; loadLogs()">
+                <span class="material-icons-round" style="font-size:16px">history</span>
+                Lihat Log
+              </button>
+            </div>
+            <div class="device-actions" style="margin-top: 8px;">
+              <button class="action-btn" style="background:linear-gradient(135deg, #4ecca3, #3db892); color:#0f0f23;" onclick="event.stopPropagation(); restartMonitoring('${safeId}')">
+                <span class="material-icons-round" style="font-size:16px">sync</span>
+                Restart layanan
+              </button>
+              <button class="action-btn" style="background:linear-gradient(135deg, #7c4dff, #651fff); color:white;" onclick="event.stopPropagation(); applyDevicePolicy('${safeId}')">
+                <span class="material-icons-round" style="font-size:16px">shield</span>
+                Terapkan policy
+              </button>
+              <button class="action-btn" style="background:linear-gradient(135deg, #2196F3, #1976D2); color:white;" onclick="event.stopPropagation(); if(confirm('Mulai kuis 3 tahap di ${safeId}? HP akan terkunci.')) startQuiz('${safeId}')">
+                <span class="material-icons-round" style="font-size:16px">psychology</span>
+                Mulai Kuis
+              </button>
+              <button class="action-btn" style="background:linear-gradient(135deg, #757575, #616161); color:white;" onclick="event.stopPropagation(); if(confirm('Hentikan kuis di ${safeId}?')) stopQuiz('${safeId}')">
+                <span class="material-icons-round" style="font-size:16px">stop_circle</span>
+                Stop Kuis
+              </button>
+              <button class="action-btn" style="background:#333;color:#aaa;" onclick="event.stopPropagation(); removeDeviceRow('${safeId}')">
+                <span class="material-icons-round" style="font-size:16px">delete</span>
+                Hapus baris
+              </button>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function renderLogs(logs) {
+      const container = document.getElementById('logList');
+      if (logs.length === 0) {
+        container.innerHTML = '<div class="empty-state"><span class="material-icons-round">check_circle</span><br>Belum ada log aktivitas</div>';
+        return;
+      }
+
+      container.innerHTML = logs.map(l => `
+        <div class="log-entry ${l.is_judi ? 'judi' : ''}">
+          <div class="log-time">${formatTime(l.timestamp)}</div>
+          <div class="log-app">
+            ${l.is_judi ? '🚨' : '📱'} ${l.app_name || l.package_name}
+            ${l.is_judi ? '<span class="judi-badge">JUDI / BLOKIR</span>' : ''}
+            ${(!l.is_judi && l.url) ? `<button class="btn-block-mini" onclick="blockUrl('${l.url}')">BLOKIR</button>` : ''}
+          </div>
+          ${l.url ? `<div class="log-url">🔗 ${l.url}</div>` : ''}
+        </div>
+      `).join('');
+    }
+
+    async function blockUrl(url) {
+      if (!confirm('Blokir domain ini? Anak tidak akan bisa membukanya lagi.')) return;
+      try {
+        const res = await fetch(API + '/blocklist', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ domain: url })
+        });
+        if (res.ok) {
+          showToast('🚫 Domain berhasil diblokir!');
+          loadLogs();
+        }
+      } catch (err) {
+        showToast('❌ Gagal memblokir');
+      }
+    }
+
+    async function loadBlocklist() {
+      const container = document.getElementById('blocklistContainer');
+      container.innerHTML = '<div class="loading">Memuat daftar blokir</div>';
+      try {
+        const res = await fetch(API + '/blocklist');
+        const data = await res.json();
+        renderBlocklist(data.domains || data);
+      } catch (err) {
+        container.innerHTML = '<div class="empty-state">Gagal memuat blocklist</div>';
+      }
+    }
+
+    function renderBlocklist(domains) {
+      const container = document.getElementById('blocklistContainer');
+      if (!domains || domains.length === 0) {
+        container.innerHTML = '<div class="empty-state"><span class="material-icons-round">check_circle</span><br>Belum ada domain yang diblokir manual</div>';
+        return;
+      }
+      container.innerHTML = domains.map(d => `
+        <div class="list-item">
+          <div class="list-item-content">
+            <div class="list-item-title">${d}</div>
+            <div class="list-item-subtitle">Status: Terblokir 🚫</div>
+          </div>
+          <span class="material-icons-round delete-btn" onclick="unblockDomain('${d}')">delete_outline</span>
+        </div>
+      `).join('');
+    }
+
+    async function addManualBlock() {
+      const input = document.getElementById('newBlockInput');
+      const domain = input.value.trim();
+      if (!domain) return;
+
+      try {
+        const res = await fetch(API + '/blocklist', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ domain })
+        });
+        if (res.ok) {
+          input.value = '';
+          showToast('🚫 Berhasil menambahkan ke blocklist');
+          loadBlocklist();
+        }
+      } catch (err) {
+        showToast('❌ Gagal menambahkan');
+      }
+    }
+
+    async function unblockDomain(domain) {
+      if (!confirm('Buka blokir untuk ' + domain + '?')) return;
+      try {
+        const res = await fetch(API + '/blocklist/' + domain, {
+          method: 'DELETE'
+        });
+        if (res.ok) {
+          showToast('✅ Blokir dibuka untuk ' + domain);
+          loadBlocklist();
+        }
+      } catch (err) {
+        showToast('❌ Gagal membuka blokir');
+      }
+    }
+
+    function renderAlerts(alerts) {
+      const container = document.getElementById('alertList');
+      if (alerts.length === 0) {
+        container.innerHTML = '<div class="empty-state"><span class="material-icons-round">check_circle</span><br>🎉 Tidak ada akses judi terdeteksi!<br><br><small>Aman untuk saat ini.</small></div>';
+        return;
+      }
+
+      container.innerHTML = alerts.map(a => `
+        <div class="alert-card">
+          <div class="alert-icon">🚨</div>
+          <div class="alert-title">JUDI TERDETEKSI — ${a._device || 'unknown'}</div>
+          <div class="alert-detail">
+            <strong>${a.app_name || a.package_name}</strong><br>
+            ${a.url ? '🔗 ' + a.url + '<br>' : ''}
+            ⏰ ${formatTime(a.timestamp)}
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function populateDeviceSelects() {
+      const options = devices.map(d => `<option value="${d.device_id}">${d.device_id}</option>`).join('');
+
+      // Preserve current selections
+      const logSelect = document.getElementById('logDeviceSelect');
+      const alertSelect = document.getElementById('alertDeviceSelect');
+      const errorSelect = document.getElementById('errorDeviceSelect');
+      const prevLog = logSelect.value;
+      const prevAlert = alertSelect.value;
+      const prevError = errorSelect.value;
+
+      logSelect.innerHTML = '<option value="">-- Pilih Perangkat --</option>' + options;
+      alertSelect.innerHTML = '<option value="">-- Semua Perangkat --</option>' + options;
+      errorSelect.innerHTML = '<option value="">-- Semua Perangkat --</option>' + options;
+
+      // Restore previous selections
+      if (prevLog) logSelect.value = prevLog;
+      if (prevAlert) alertSelect.value = prevAlert;
+      if (prevError) errorSelect.value = prevError;
+
+      // Auto-select first device for logs if nothing selected yet
+      if (!logSelect.value && devices.length > 0) {
+        logSelect.value = devices[0].device_id;
+        loadLogs();
+      }
+    }
+
+    // =============================================
+    // Helpers
+    // =============================================
+    function formatTime(ts) {
+      return new Date(ts).toLocaleString('id-ID', { day: '2-digit', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' });
+    }
+
+    function formatDate(ts) {
+      return new Date(ts).toLocaleDateString('id-ID', { day: '2-digit', month: 'short', year: 'numeric' });
+    }
+
+    function showToast(msg) {
+      const t = document.getElementById('toast');
+      t.textContent = msg;
+      t.classList.add('show');
+      setTimeout(() => t.classList.remove('show'), 3000);
+    }
+
+    function refreshAll() {
+      const btn = document.querySelector('.refresh-btn');
+      btn.classList.add('spinning');
+      setTimeout(() => btn.classList.remove('spinning'), 800);
+      fetchDevices();
+      if (currentPage === 'logs') loadLogs();
+      if (currentPage === 'alerts') loadAlerts();
+      showToast('🔄 Data diperbarui');
+    }
+
+    async function loadErrors() {
+      const deviceId = document.getElementById('errorDeviceSelect').value;
+      const container = document.getElementById('errorList');
+      container.innerHTML = '<div class="loading">Memuat error logs</div>';
+      try {
+        const url = deviceId ? API + '/error-logs/' + deviceId : API + '/error-logs';
+        const res = await fetch(url + '?limit=100');
+        const data = await res.json();
+        renderErrors(data.errors || []);
+      } catch (err) {
+        container.innerHTML = '<div class="empty-state"><span class="material-icons-round">error</span><br>Gagal memuat error logs</div>';
+      }
+    }
+
+    function renderErrors(errors) {
+      const container = document.getElementById('errorList');
+      if (errors.length === 0) {
+        container.innerHTML = '<div class="empty-state"><span class="material-icons-round">check_circle</span><br>✅ Tidak ada error!<br><br><small>Semua berjalan normal.</small></div>';
+        return;
+      }
+      container.innerHTML = errors.map(e => `
+        <div class="error-card">
+          <div class="log-time">${formatTime(e.timestamp)} — ${e.device_id}</div>
+          <div class="error-type">⚠️ ${e.error_type}</div>
+          <div class="error-msg">${e.error_message}</div>
+          ${e.component ? `<div class="error-component">📦 Component: ${e.component}</div>` : ''}
+          ${e.stack_trace ? `<div class="error-stack">${e.stack_trace}</div>` : ''}
+        </div>
+      `).join('');
+    }
+
+    // =============================================
+    // Init
+    // =============================================
+    fetchDevices();
+    loadAlerts();
+
+    // Real-time auto-polling: refresh active page every 5 seconds
+    setInterval(() => {
+      fetchDevices(); // Always refresh device status
+      if (currentPage === 'logs') loadLogs();
+      if (currentPage === 'alerts') loadAlerts();
+      if (currentPage === 'blocklist') loadBlocklist();
+      if (currentPage === 'errors') loadErrors();
+    }, 5000);
+  </script>
+</body>
+
+</html>

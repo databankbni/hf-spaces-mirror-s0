@@ -1,0 +1,13 @@
+{
+ "lfs_not_stored": [
+  {
+   "oid": "127bcb711ef111aa69f199a9e2191e25e93e27cbb92c623317e8e20939b78068",
+   "path": "word_segmenter_bundle.pth",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6MTI3YmNiNzExZWYxMTFhYTY5ZjE5OWE5ZTIxOTFlMjVlOTNlMjdjYmI5MmM2MjMzMTdlOGUyMDkzOWI3ODA2OApzaXplIDI2ODU2MDkK",
+   "size": 2685609,
+   "url": "https://huggingface.co/spaces/ania3000/ossetic-morph-analyzer/resolve/80e00e2d4d817613d7010573e589ae2fa8614b05/word_segmenter_bundle.pth"
+  }
+ ],
+ "overflow_not_stored": [],
+ "oversize_not_stored": []
+}

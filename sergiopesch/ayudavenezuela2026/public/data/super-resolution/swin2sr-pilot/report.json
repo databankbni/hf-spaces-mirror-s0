@@ -1,0 +1,261 @@
+{
+  "completedAois": 3,
+  "generatedAt": "2026-07-02T14:45:06.138655+00:00",
+  "model": {
+    "hallucinationRisk": "lower than diffusion/GAN, still nonzero",
+    "learned": true,
+    "name": "caidas/swin2SR-realworld-sr-x4-64-bsrgan-psnr",
+    "scale": 4,
+    "source": "https://huggingface.co/caidas/swin2SR-realworld-sr-x4-64-bsrgan-psnr"
+  },
+  "records": [
+    {
+      "afterEnhancedPath": "/tmp/swin2sr-satellite-pilot/verified-hotspot-1/after/deterministic-enhanced-z19-512.jpg",
+      "afterRawPath": "/tmp/swin2sr-satellite-pilot/verified-hotspot-1/after/raw-z19-512.jpg",
+      "afterSrPath": "/tmp/swin2sr-satellite-pilot/verified-hotspot-1/after/swin2sr-x4-z19.jpg",
+      "beforeEnhancedPath": "/tmp/swin2sr-satellite-pilot/verified-hotspot-1/before/deterministic-enhanced-z19-512.jpg",
+      "beforeRawPath": "/tmp/swin2sr-satellite-pilot/verified-hotspot-1/before/raw-z19-512.jpg",
+      "beforeSrPath": "/tmp/swin2sr-satellite-pilot/verified-hotspot-1/before/swin2sr-x4-z19.jpg",
+      "id": "verified-hotspot-1",
+      "interpretive": true,
+      "lat": 10.592425,
+      "lon": -67.007108,
+      "model": "caidas/swin2SR-realworld-sr-x4-64-bsrgan-psnr",
+      "rank": 1,
+      "scenes": {
+        "after": {
+          "available": true,
+          "enhancedPath": "/tmp/swin2sr-satellite-pilot/verified-hotspot-1/after/deterministic-enhanced-z19-512.jpg",
+          "enhancedStats": {
+            "height": 512,
+            "meanGradient": 5.133,
+            "meanLuminance": 125.151,
+            "stddevLuminance": 26.559,
+            "width": 512
+          },
+          "rawPath": "/tmp/swin2sr-satellite-pilot/verified-hotspot-1/after/raw-z19-512.jpg",
+          "rawStats": {
+            "height": 512,
+            "meanGradient": 4.076,
+            "meanLuminance": 126.182,
+            "stddevLuminance": 24.064,
+            "width": 512
+          },
+          "srPath": "/tmp/swin2sr-satellite-pilot/verified-hotspot-1/after/swin2sr-x4-z19.jpg",
+          "srStats": {
+            "height": 2080,
+            "meanGradient": 0.957,
+            "meanLuminance": 126.392,
+            "stddevLuminance": 24.816,
+            "width": 2080
+          }
+        },
+        "before": {
+          "available": true,
+          "enhancedPath": "/tmp/swin2sr-satellite-pilot/verified-hotspot-1/before/deterministic-enhanced-z19-512.jpg",
+          "enhancedStats": {
+            "height": 512,
+            "meanGradient": 8.173,
+            "meanLuminance": 121.257,
+            "stddevLuminance": 39.085,
+            "width": 512
+          },
+          "rawPath": "/tmp/swin2sr-satellite-pilot/verified-hotspot-1/before/raw-z19-512.jpg",
+          "rawStats": {
+            "height": 512,
+            "meanGradient": 5.851,
+            "meanLuminance": 122.298,
+            "stddevLuminance": 35.108,
+            "width": 512
+          },
+          "srPath": "/tmp/swin2sr-satellite-pilot/verified-hotspot-1/before/swin2sr-x4-z19.jpg",
+          "srStats": {
+            "height": 2080,
+            "meanGradient": 1.383,
+            "meanLuminance": 122.583,
+            "stddevLuminance": 36.434,
+            "width": 2080
+          }
+        }
+      },
+      "severity": "high",
+      "tile": {
+        "x": 164557,
+        "y": 246629
+      },
+      "warning": "Swin2SR output is a visual inspection aid; compare against raw source before decisions.",
+      "zoom": 19
+    },
+    {
+      "afterEnhancedPath": "/tmp/swin2sr-satellite-pilot/verified-hotspot-2/after/deterministic-enhanced-z19-512.jpg",
+      "afterRawPath": "/tmp/swin2sr-satellite-pilot/verified-hotspot-2/after/raw-z19-512.jpg",
+      "afterSrPath": "/tmp/swin2sr-satellite-pilot/verified-hotspot-2/after/swin2sr-x4-z19.jpg",
+      "beforeEnhancedPath": "/tmp/swin2sr-satellite-pilot/verified-hotspot-2/before/deterministic-enhanced-z19-512.jpg",
+      "beforeRawPath": "/tmp/swin2sr-satellite-pilot/verified-hotspot-2/before/raw-z19-512.jpg",
+      "beforeSrPath": "/tmp/swin2sr-satellite-pilot/verified-hotspot-2/before/swin2sr-x4-z19.jpg",
+      "id": "verified-hotspot-2",
+      "interpretive": true,
+      "lat": 10.600825,
+      "lon": -67.023908,
+      "model": "caidas/swin2SR-realworld-sr-x4-64-bsrgan-psnr",
+      "rank": 2,
+      "scenes": {
+        "after": {
+          "available": true,
+          "enhancedPath": "/tmp/swin2sr-satellite-pilot/verified-hotspot-2/after/deterministic-enhanced-z19-512.jpg",
+          "enhancedStats": {
+            "height": 512,
+            "meanGradient": 5.222,
+            "meanLuminance": 127.536,
+            "stddevLuminance": 29.888,
+            "width": 512
+          },
+          "rawPath": "/tmp/swin2sr-satellite-pilot/verified-hotspot-2/after/raw-z19-512.jpg",
+          "rawStats": {
+            "height": 512,
+            "meanGradient": 4.116,
+            "meanLuminance": 128.221,
+            "stddevLuminance": 27.058,
+            "width": 512
+          },
+          "srPath": "/tmp/swin2sr-satellite-pilot/verified-hotspot-2/after/swin2sr-x4-z19.jpg",
+          "srStats": {
+            "height": 2080,
+            "meanGradient": 0.965,
+            "meanLuminance": 127.861,
+            "stddevLuminance": 27.849,
+            "width": 2080
+          }
+        },
+        "before": {
+          "available": true,
+          "enhancedPath": "/tmp/swin2sr-satellite-pilot/verified-hotspot-2/before/deterministic-enhanced-z19-512.jpg",
+          "enhancedStats": {
+            "height": 512,
+            "meanGradient": 8.425,
+            "meanLuminance": 135.337,
+            "stddevLuminance": 42.714,
+            "width": 512
+          },
+          "rawPath": "/tmp/swin2sr-satellite-pilot/verified-hotspot-2/before/raw-z19-512.jpg",
+          "rawStats": {
+            "height": 512,
+            "meanGradient": 6.019,
+            "meanLuminance": 136.003,
+            "stddevLuminance": 38.408,
+            "width": 512
+          },
+          "srPath": "/tmp/swin2sr-satellite-pilot/verified-hotspot-2/before/swin2sr-x4-z19.jpg",
+          "srStats": {
+            "height": 2080,
+            "meanGradient": 1.57,
+            "meanLuminance": 136.0,
+            "stddevLuminance": 40.832,
+            "width": 2080
+          }
+        }
+      },
+      "severity": "high",
+      "tile": {
+        "x": 164533,
+        "y": 246616
+      },
+      "warning": "Swin2SR output is a visual inspection aid; compare against raw source before decisions.",
+      "zoom": 19
+    },
+    {
+      "afterEnhancedPath": "/tmp/swin2sr-satellite-pilot/verified-hotspot-3/after/deterministic-enhanced-z19-512.jpg",
+      "afterRawPath": "/tmp/swin2sr-satellite-pilot/verified-hotspot-3/after/raw-z19-512.jpg",
+      "afterSrPath": "/tmp/swin2sr-satellite-pilot/verified-hotspot-3/after/swin2sr-x4-z19.jpg",
+      "beforeEnhancedPath": "/tmp/swin2sr-satellite-pilot/verified-hotspot-3/before/deterministic-enhanced-z19-512.jpg",
+      "beforeRawPath": "/tmp/swin2sr-satellite-pilot/verified-hotspot-3/before/raw-z19-512.jpg",
+      "beforeSrPath": "/tmp/swin2sr-satellite-pilot/verified-hotspot-3/before/swin2sr-x4-z19.jpg",
+      "id": "verified-hotspot-3",
+      "interpretive": true,
+      "lat": 10.596025,
+      "lon": -67.021508,
+      "model": "caidas/swin2SR-realworld-sr-x4-64-bsrgan-psnr",
+      "rank": 3,
+      "scenes": {
+        "after": {
+          "available": true,
+          "enhancedPath": "/tmp/swin2sr-satellite-pilot/verified-hotspot-3/after/deterministic-enhanced-z19-512.jpg",
+          "enhancedStats": {
+            "height": 512,
+            "meanGradient": 4.29,
+            "meanLuminance": 130.388,
+            "stddevLuminance": 29.809,
+            "width": 512
+          },
+          "rawPath": "/tmp/swin2sr-satellite-pilot/verified-hotspot-3/after/raw-z19-512.jpg",
+          "rawStats": {
+            "height": 512,
+            "meanGradient": 3.49,
+            "meanLuminance": 131.013,
+            "stddevLuminance": 27.209,
+            "width": 512
+          },
+          "srPath": "/tmp/swin2sr-satellite-pilot/verified-hotspot-3/after/swin2sr-x4-z19.jpg",
+          "srStats": {
+            "height": 2080,
+            "meanGradient": 0.855,
+            "meanLuminance": 131.149,
+            "stddevLuminance": 28.02,
+            "width": 2080
+          }
+        },
+        "before": {
+          "available": true,
+          "enhancedPath": "/tmp/swin2sr-satellite-pilot/verified-hotspot-3/before/deterministic-enhanced-z19-512.jpg",
+          "enhancedStats": {
+            "height": 512,
+            "meanGradient": 7.067,
+            "meanLuminance": 140.281,
+            "stddevLuminance": 36.352,
+            "width": 512
+          },
+          "rawPath": "/tmp/swin2sr-satellite-pilot/verified-hotspot-3/before/raw-z19-512.jpg",
+          "rawStats": {
+            "height": 512,
+            "meanGradient": 5.161,
+            "meanLuminance": 141.122,
+            "stddevLuminance": 32.684,
+            "width": 512
+          },
+          "srPath": "/tmp/swin2sr-satellite-pilot/verified-hotspot-3/before/swin2sr-x4-z19.jpg",
+          "srStats": {
+            "height": 2080,
+            "meanGradient": 1.328,
+            "meanLuminance": 141.651,
+            "stddevLuminance": 34.66,
+            "width": 2080
+          }
+        }
+      },
+      "severity": "high",
+      "tile": {
+        "x": 164536,
+        "y": 246623
+      },
+      "warning": "Swin2SR output is a visual inspection aid; compare against raw source before decisions.",
+      "zoom": 19
+    }
+  ],
+  "requestedAois": 3,
+  "source": {
+    "after": {
+      "cog_url": "https://oin-hotosm-temp.s3.us-east-1.amazonaws.com/6a428384c460c0251235cc4f/0/6a428384c460c0251235cc50.tif",
+      "key": "after",
+      "label": "Vantor LG05 post-event imagery, 27 Jun 2026"
+    },
+    "before": {
+      "cog_url": "https://oin-hotosm-temp.s3.us-east-1.amazonaws.com/6a3db231ad92c093ebc2cc64/0/6a3db231ad92c093ebc2cc65.tif",
+      "key": "before",
+      "label": "Vantor LG06 pre-event imagery, 21 Mar 2026"
+    },
+    "hotspots": "public/data/worst-damage-hotspots.json"
+  },
+  "type": "swin2sr-super-resolution-pilot",
+  "useGuidance": "Interpretive visual aid only. Use raw and deterministic enhanced imagery as evidence layers.",
+  "zoom": 19
+}

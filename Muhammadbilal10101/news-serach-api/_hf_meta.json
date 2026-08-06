@@ -1,0 +1,84 @@
+{
+ "captured_at": "2026-08-04T14:31:39Z",
+ "hf_metadata": {
+  "_id": "6a4b62a6e2a40af7e280f1bc",
+  "author": "Muhammadbilal10101",
+  "cardData": {
+   "app_port": 8080,
+   "colorFrom": "blue",
+   "colorTo": "indigo",
+   "emoji": "🔍",
+   "license": "mit",
+   "pinned": false,
+   "sdk": "docker",
+   "title": "Halo SearXNG"
+  },
+  "createdAt": "2026-07-06T08:09:10.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://muhammadbilal10101-news-serach-api.hf.space",
+  "id": "Muhammadbilal10101/news-serach-api",
+  "lastModified": "2026-07-06T08:14:05.000Z",
+  "likes": 0,
+  "private": false,
+  "runtime": {
+   "abuse": {
+    "detector": "abuse-handler",
+    "flaggedAt": "2026-07-06T08:20:17.644Z",
+    "reason": "Blocked by abuse-handler by rule: proc_scan: cmdline match: 'searxng' in 'searxng'"
+   },
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "muhammadbilal10101-news-serach-api.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "errorMessage": "Flagged as abusive",
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": null,
+    "requested": "cpu-basic"
+   },
+   "replicas": {
+    "requested": 1
+   },
+   "stage": "PAUSED"
+  },
+  "sdk": "docker",
+  "sha": "79108ae7c1d1b5502f95f73055e3dc5cb0acce47",
+  "siblings": [
+   {
+    "rfilename": ".gitattributes"
+   },
+   {
+    "rfilename": ".gitignore"
+   },
+   {
+    "rfilename": "Dockerfile"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "config/settings.yml"
+   }
+  ],
+  "subdomain": "muhammadbilal10101-news-serach-api",
+  "tags": [
+   "docker",
+   "region:us"
+  ],
+  "usedStorage": 0
+ },
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "Muhammadbilal10101/news-serach-api",
+ "repo_type": "spaces",
+ "sha": "79108ae7c1d1b5502f95f73055e3dc5cb0acce47",
+ "web_url": "https://huggingface.co/spaces/Muhammadbilal10101/news-serach-api"
+}

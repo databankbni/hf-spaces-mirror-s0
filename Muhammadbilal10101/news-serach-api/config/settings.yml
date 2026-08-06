@@ -1,0 +1,19 @@
+# SearXNG config for Hugging Face Spaces.
+# Set SEARXNG_SECRET in Space Settings → Secrets (overrides secret_key at runtime).
+
+use_default_settings: true
+
+general:
+  instance_name: "Halo SearXNG"
+
+server:
+  secret_key: "REPLACE_VIA_SEARXNG_SECRET_IN_HF_SETTINGS"
+  bind_address: "0.0.0.0"
+  port: 8080
+  limiter: false
+  public_instance: false
+
+search:
+  formats:
+    - html
+    - json

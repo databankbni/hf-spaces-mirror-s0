@@ -1,0 +1,72 @@
+{
+  "_note": "세이프드릴이 활용하는(또는 연동 예정인) 실제 재난안전데이터 출처 카탈로그. status는 정직 표기다 — connected(실연동)/integration_ready(설계·연동 준비 완료)/demo_sample(시연용 샘플, 실데이터 아님). 심사·계획서에서 '어떤 데이터를 어떻게 쓰는가'를 즉시 확인하는 용도.",
+  "_disclaimer": "demo_sample로 표기된 값은 시연을 위한 예시이며 실시간 실데이터가 아닙니다. 실데이터처럼 표시하지 않습니다.",
+  "sources": [
+    {
+      "id": "shelter",
+      "name": "전국 대피소 표준데이터 (지진·민방위·이재민 임시주거시설)",
+      "provider": "행정안전부 · 재난안전데이터 공유플랫폼(safetydata.go.kr) / 공공데이터포털 표준데이터",
+      "category": "대피 인프라",
+      "usage": "주소 기준 인근 대피소를 안내하고, 훈련 중 '대피소 개방·이재민 수용' 판단을 평가하는 근거로 사용",
+      "cycle": "수시(지자체 갱신)",
+      "status": "demo_sample",
+      "status_label": "데모 샘플",
+      "last_checked": "2026-07-02"
+    },
+    {
+      "id": "flood_trace",
+      "name": "침수흔적도 / 자연재해위험개선지구 (침수위험지구)",
+      "provider": "행정안전부 · 국립재난안전연구원 / 재난안전데이터 공유플랫폼",
+      "category": "위험지구",
+      "usage": "도시침수 시나리오의 초기 위험도·초기 위험단계를 보정하고, 과거 침수 이력이 있으면 '사전통제 판단'을 더 중요하게 평가",
+      "cycle": "연 1회",
+      "status": "integration_ready",
+      "status_label": "연동 예정",
+      "last_checked": "2026-07-02"
+    },
+    {
+      "id": "underpass",
+      "name": "지하차도 통제 대상 시설 (침수 우려 지하차도)",
+      "provider": "국토교통부 · 행정안전부 / 지자체 통제 대상 목록",
+      "category": "위험지구",
+      "usage": "인근 지하차도 존재 시 '지하차도 사전통제' 이벤트·선택지 우선순위를 강조",
+      "cycle": "연 1회",
+      "status": "integration_ready",
+      "status_label": "연동 예정",
+      "last_checked": "2026-07-02"
+    },
+    {
+      "id": "weather_warning",
+      "name": "기상특보 (호우 주의보·경보) / 특보 발효 현황",
+      "provider": "기상청 (동네예보·특보 오픈 API)",
+      "category": "실시간 기상",
+      "usage": "훈련 상황의 트리거·시각 설정 및 '재난안전대책본부 비상단계 전환' 판단의 근거",
+      "cycle": "실시간",
+      "status": "demo_sample",
+      "status_label": "데모 샘플",
+      "last_checked": "2026-07-02"
+    },
+    {
+      "id": "disaster_sms",
+      "name": "재난문자방송(CBS) 발송 이력",
+      "provider": "행정안전부 / 재난안전데이터 공유플랫폼",
+      "category": "상황전파 이력",
+      "usage": "지역 최근 재난문자 이력을 브리핑에 표시하고, '재난문자·상황전파' 대응요소 평가의 맥락으로 사용",
+      "cycle": "실시간",
+      "status": "demo_sample",
+      "status_label": "데모 샘플",
+      "last_checked": "2026-07-02"
+    },
+    {
+      "id": "river_level",
+      "name": "하천 수위 / 홍수특보 관측소",
+      "provider": "환경부 홍수통제소 (한강·낙동강 등) · 물정보포털",
+      "category": "실시간 관측",
+      "usage": "하천범람 시나리오의 수위 게이지·계획홍수위 근접 판단에 사용",
+      "cycle": "실시간(10분)",
+      "status": "integration_ready",
+      "status_label": "연동 예정",
+      "last_checked": "2026-07-02"
+    }
+  ]
+}

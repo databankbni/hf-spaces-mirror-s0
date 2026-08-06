@@ -1,0 +1,9 @@
+{
+  "Model": "Ctrl-World",
+  "year": "2026",
+  "open_source": "unknown",
+  "Metrics": {
+    "RL Environment(Click Bell)": 69.53,
+    "RL Environment(Adjust Bottle)": 70.70
+  }
+}

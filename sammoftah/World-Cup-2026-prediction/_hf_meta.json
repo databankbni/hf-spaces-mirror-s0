@@ -1,0 +1,1204 @@
+{
+ "captured_at": "2026-08-05T02:52:45Z",
+ "hf_metadata": {
+  "_id": "6a573b4efdcf1297a654bde2",
+  "author": "sammoftah",
+  "cardData": {
+   "app_file": "app.py",
+   "colorFrom": "blue",
+   "colorTo": "red",
+   "emoji": "⚽",
+   "license": "mit",
+   "models": [
+    "HuggingFaceTB/SmolLM2-360M-Instruct"
+   ],
+   "pinned": false,
+   "python_version": 3.12,
+   "sdk": "gradio",
+   "sdk_version": "6.18.0",
+   "title": "World Cup 2026 Forecaster"
+  },
+  "createdAt": "2026-07-15T07:48:30.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://sammoftah-world-cup-2026-prediction.hf.space",
+  "id": "sammoftah/World-Cup-2026-prediction",
+  "lastModified": "2026-08-04T23:02:05.000Z",
+  "likes": 0,
+  "models": [
+   "HuggingFaceTB/SmolLM2-360M-Instruct"
+  ],
+  "private": false,
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "sammoftah-world-cup-2026-prediction.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": "cpu-basic",
+    "requested": "cpu-basic"
+   },
+   "pySpacesVersion": "0.51.1",
+   "replicas": {
+    "current": 1,
+    "requested": 1
+   },
+   "sha": "bc0bbbdfd25b0e50b3110284212ccfdba3f3869c",
+   "stage": "RUNNING"
+  },
+  "sdk": "gradio",
+  "sha": "bc0bbbdfd25b0e50b3110284212ccfdba3f3869c",
+  "siblings": [
+   {
+    "rfilename": ".github/workflows/deploy-space.yml"
+   },
+   {
+    "rfilename": ".github/workflows/result-check.yml"
+   },
+   {
+    "rfilename": ".github/workflows/test.yml"
+   },
+   {
+    "rfilename": ".gitignore"
+   },
+   {
+    "rfilename": ".hfignore"
+   },
+   {
+    "rfilename": "LICENSE"
+   },
+   {
+    "rfilename": "Makefile"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "app.py"
+   },
+   {
+    "rfilename": "data/README.md"
+   },
+   {
+    "rfilename": "data/historical/README.md"
+   },
+   {
+    "rfilename": "data/historical/matches.csv"
+   },
+   {
+    "rfilename": "data/historical/raw/2015_results.tsv"
+   },
+   {
+    "rfilename": "data/historical/raw/2016_results.tsv"
+   },
+   {
+    "rfilename": "data/historical/raw/2017_results.tsv"
+   },
+   {
+    "rfilename": "data/historical/raw/2018_results.tsv"
+   },
+   {
+    "rfilename": "data/historical/raw/2019_results.tsv"
+   },
+   {
+    "rfilename": "data/historical/raw/2020_results.tsv"
+   },
+   {
+    "rfilename": "data/historical/raw/2021_results.tsv"
+   },
+   {
+    "rfilename": "data/historical/raw/2022_results.tsv"
+   },
+   {
+    "rfilename": "data/historical/raw/2023_results.tsv"
+   },
+   {
+    "rfilename": "data/historical/raw/2024_results.tsv"
+   },
+   {
+    "rfilename": "data/historical/raw/2025_results.tsv"
+   },
+   {
+    "rfilename": "data/historical/raw/2026_results.tsv"
+   },
+   {
+    "rfilename": "data/market/README.md"
+   },
+   {
+    "rfilename": "data/processed/matches.json"
+   },
+   {
+    "rfilename": "data/raw/challenge_matches.json"
+   },
+   {
+    "rfilename": "data/scenarios/README.md"
+   },
+   {
+    "rfilename": "data/scenarios/evaluation.json"
+   },
+   {
+    "rfilename": "data/scenarios/evaluation_manifest.json"
+   },
+   {
+    "rfilename": "data/scenarios/test.jsonl"
+   },
+   {
+    "rfilename": "data/scenarios/train.jsonl"
+   },
+   {
+    "rfilename": "data/scenarios/validation.jsonl"
+   },
+   {
+    "rfilename": "data/world_cup_2026/ELO_CORRECTIONS.md"
+   },
+   {
+    "rfilename": "data/world_cup_2026/annex_c_third_place.json"
+   },
+   {
+    "rfilename": "data/world_cup_2026/backups/snapshot-20260613T010216Z.json"
+   },
+   {
+    "rfilename": "data/world_cup_2026/backups/snapshot-20260614T002934Z.json"
+   },
+   {
+    "rfilename": "data/world_cup_2026/backups/snapshot-20260614T002940Z.json"
+   },
+   {
+    "rfilename": "data/world_cup_2026/backups/snapshot-20260614T002950Z.json"
+   },
+   {
+    "rfilename": "data/world_cup_2026/backups/snapshot-20260614T003019Z.json"
+   },
+   {
+    "rfilename": "data/world_cup_2026/backups/snapshot-20260614T004214Z.json"
+   },
+   {
+    "rfilename": "data/world_cup_2026/backups/snapshot-20260614T112430Z.json"
+   },
+   {
+    "rfilename": "data/world_cup_2026/backups/snapshot-20260614T112509Z.json"
+   },
+   {
+    "rfilename": "data/world_cup_2026/backups/snapshot-20260615T090604Z.json"
+   },
+   {
+    "rfilename": "data/world_cup_2026/backups/snapshot-20260715T065218Z.json"
+   },
+   {
+    "rfilename": "data/world_cup_2026/external_forecasts.json"
+   },
+   {
+    "rfilename": "data/world_cup_2026/kickoffs.json"
+   },
+   {
+    "rfilename": "data/world_cup_2026/knockout.json"
+   },
+   {
+    "rfilename": "data/world_cup_2026/player_images.json"
+   },
+   {
+    "rfilename": "data/world_cup_2026/players.json"
+   },
+   {
+    "rfilename": "data/world_cup_2026/provider_mappings/espn.json"
+   },
+   {
+    "rfilename": "data/world_cup_2026/provider_mappings/football_data.json"
+   },
+   {
+    "rfilename": "data/world_cup_2026/result_updates/2026-06-14.json"
+   },
+   {
+    "rfilename": "data/world_cup_2026/result_updates/espn-20260715T065217Z.json"
+   },
+   {
+    "rfilename": "data/world_cup_2026/result_updates/espn-knockout-20260717T232144Z.json"
+   },
+   {
+    "rfilename": "data/world_cup_2026/result_updates/espn-knockout-20260719T084404Z.json"
+   },
+   {
+    "rfilename": "data/world_cup_2026/result_updates/espn-knockout-20260720T111230Z.json"
+   },
+   {
+    "rfilename": "data/world_cup_2026/result_updates/football-data-20260615T090603Z.json"
+   },
+   {
+    "rfilename": "data/world_cup_2026/snapshot.json"
+   },
+   {
+    "rfilename": "data/world_cup_2026/teams.json"
+   },
+   {
+    "rfilename": "docs/dataset-coverage-matrix.md"
+   },
+   {
+    "rfilename": "docs/market-data-source-review.md"
+   },
+   {
+    "rfilename": "docs/research.md"
+   },
+   {
+    "rfilename": "docs/submission-checklist.md"
+   },
+   {
+    "rfilename": "docs/superpowers/plans/2026-07-15-forecast-model-v2.md"
+   },
+   {
+    "rfilename": "docs/superpowers/plans/2026-07-15-live-knockout-final.md"
+   },
+   {
+    "rfilename": "docs/superpowers/plans/2026-07-15-live-results-scorecard-recovery.md"
+   },
+   {
+    "rfilename": "docs/superpowers/plans/2026-07-15-visitor-facing-forecasting-ui.md"
+   },
+   {
+    "rfilename": "docs/superpowers/plans/2026-07-19-research-pages-redesign-brief.md"
+   },
+   {
+    "rfilename": "docs/test-set-review.csv"
+   },
+   {
+    "rfilename": "docs/world-cup-verification-checklist.md"
+   },
+   {
+    "rfilename": "models/README.md"
+   },
+   {
+    "rfilename": "models/backtest_report.json"
+   },
+   {
+    "rfilename": "models/elo_fit_report.json"
+   },
+   {
+    "rfilename": "models/host_adjustment_evaluation.json"
+   },
+   {
+    "rfilename": "models/opener_draw_evaluation.json"
+   },
+   {
+    "rfilename": "models/recalibration_evaluation.json"
+   },
+   {
+    "rfilename": "models/upgrade_evaluation.json"
+   },
+   {
+    "rfilename": "models/vector_calibration_evaluation.json"
+   },
+   {
+    "rfilename": "packages.txt"
+   },
+   {
+    "rfilename": "predictions/2026-06-13/forecast.json"
+   },
+   {
+    "rfilename": "predictions/2026-06-14/forecast.json"
+   },
+   {
+    "rfilename": "predictions/2026-06-15/forecast.json"
+   },
+   {
+    "rfilename": "predictions/2026-06-16/forecast.json"
+   },
+   {
+    "rfilename": "predictions/2026-06-17/forecast.json"
+   },
+   {
+    "rfilename": "predictions/2026-06-18/forecast.json"
+   },
+   {
+    "rfilename": "predictions/2026-06-19/forecast.json"
+   },
+   {
+    "rfilename": "predictions/2026-06-20/forecast.json"
+   },
+   {
+    "rfilename": "predictions/2026-06-21/forecast.json"
+   },
+   {
+    "rfilename": "predictions/2026-06-22/forecast.json"
+   },
+   {
+    "rfilename": "predictions/2026-06-23/forecast.json"
+   },
+   {
+    "rfilename": "predictions/2026-06-24/forecast.json"
+   },
+   {
+    "rfilename": "predictions/2026-06-25/forecast.json"
+   },
+   {
+    "rfilename": "predictions/2026-06-26/forecast.json"
+   },
+   {
+    "rfilename": "predictions/2026-06-27/forecast.json"
+   },
+   {
+    "rfilename": "predictions/INTEGRITY_NOTES.md"
+   },
+   {
+    "rfilename": "predictions/README.md"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-13T190000Z-WC26-008/forecast.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-13T190000Z-WC26-008/manifest.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-14T170000Z-WC26-025/forecast.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-14T170000Z-WC26-025/manifest.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-14T200000Z-WC26-031/forecast.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-14T200000Z-WC26-031/manifest.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-14T230000Z-WC26-026/forecast.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-14T230000Z-WC26-026/manifest.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-15T020000Z-WC26-032/forecast.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-15T020000Z-WC26-032/manifest.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-15T160000Z-WC26-043/forecast.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-15T160000Z-WC26-043/manifest.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-15T190000Z-WC26-037/forecast.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-15T190000Z-WC26-037/manifest.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-15T220000Z-WC26-044/forecast.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-15T220000Z-WC26-044/manifest.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-16T010000Z-WC26-038/forecast.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-16T010000Z-WC26-038/manifest.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-16T190000Z-WC26-049/forecast.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-16T190000Z-WC26-049/manifest.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-16T220000Z-WC26-050/forecast.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-16T220000Z-WC26-050/manifest.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-17T010000Z-WC26-055/forecast.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-17T010000Z-WC26-055/manifest.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-17T040000Z-WC26-056/forecast.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-17T040000Z-WC26-056/manifest.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-17T170000Z-WC26-061/forecast.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-17T170000Z-WC26-061/manifest.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-17T200000Z-WC26-067/forecast.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-17T200000Z-WC26-067/manifest.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-17T230000Z-WC26-068/forecast.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-17T230000Z-WC26-068/manifest.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-18T020000Z-WC26-062/forecast.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-18T020000Z-WC26-062/manifest.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-18T160000Z-WC26-003/forecast.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-18T160000Z-WC26-003/manifest.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-18T190000Z-WC26-009/forecast.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-18T190000Z-WC26-009/manifest.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-18T220000Z-WC26-010/forecast.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-18T220000Z-WC26-010/manifest.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-19T010000Z-WC26-004/forecast.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-19T010000Z-WC26-004/manifest.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-19T190000Z-WC26-022/forecast.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-19T190000Z-WC26-022/manifest.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-19T220000Z-WC26-015/forecast.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-19T220000Z-WC26-015/manifest.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-20T003000Z-WC26-016/forecast.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-20T003000Z-WC26-016/manifest.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-20T030000Z-WC26-021/forecast.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-20T030000Z-WC26-021/manifest.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-20T170000Z-WC26-034/forecast.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-20T170000Z-WC26-034/manifest.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-20T200000Z-WC26-028/forecast.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-20T200000Z-WC26-028/manifest.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-21T000000Z-WC26-027/forecast.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-21T000000Z-WC26-027/manifest.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-21T040000Z-WC26-033/forecast.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-21T040000Z-WC26-033/manifest.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-21T160000Z-WC26-046/forecast.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-21T160000Z-WC26-046/manifest.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-21T190000Z-WC26-040/forecast.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-21T190000Z-WC26-040/manifest.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-21T220000Z-WC26-045/forecast.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-21T220000Z-WC26-045/manifest.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-22T010000Z-WC26-039/forecast.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-22T010000Z-WC26-039/manifest.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-22T170000Z-WC26-058/forecast.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-22T170000Z-WC26-058/manifest.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-22T210000Z-WC26-052/forecast.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-22T210000Z-WC26-052/manifest.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-23T000000Z-WC26-051/forecast.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-23T000000Z-WC26-051/manifest.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-23T030000Z-WC26-057/forecast.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-23T030000Z-WC26-057/manifest.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-23T170000Z-WC26-064/forecast.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-23T170000Z-WC26-064/manifest.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-23T200000Z-WC26-070/forecast.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-23T200000Z-WC26-070/manifest.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-23T230000Z-WC26-069/forecast.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-23T230000Z-WC26-069/manifest.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-24T020000Z-WC26-063/forecast.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-24T020000Z-WC26-063/manifest.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-24T190000Z-WC26-011/forecast.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-24T190000Z-WC26-011/manifest.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-24T190000Z-WC26-012/forecast.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-24T190000Z-WC26-012/manifest.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-24T220000Z-WC26-017/forecast.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-24T220000Z-WC26-017/manifest.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-24T220000Z-WC26-018/forecast.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-24T220000Z-WC26-018/manifest.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-25T010000Z-WC26-005/forecast.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-25T010000Z-WC26-005/manifest.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-25T010000Z-WC26-006/forecast.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-25T010000Z-WC26-006/manifest.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-25T200000Z-WC26-029/forecast.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-25T200000Z-WC26-029/manifest.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-25T200000Z-WC26-030/forecast.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-25T200000Z-WC26-030/manifest.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-25T230000Z-WC26-035/forecast.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-25T230000Z-WC26-035/manifest.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-25T230000Z-WC26-036/forecast.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-25T230000Z-WC26-036/manifest.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-26T020000Z-WC26-023/forecast.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-26T020000Z-WC26-023/manifest.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-26T020000Z-WC26-024/forecast.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-26T020000Z-WC26-024/manifest.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-26T190000Z-WC26-053/forecast.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-26T190000Z-WC26-053/manifest.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-26T190000Z-WC26-054/forecast.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-26T190000Z-WC26-054/manifest.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-27T000000Z-WC26-047/forecast.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-27T000000Z-WC26-047/manifest.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-27T000000Z-WC26-048/forecast.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-27T000000Z-WC26-048/manifest.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-27T030000Z-WC26-041/forecast.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-27T030000Z-WC26-041/manifest.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-27T030000Z-WC26-042/forecast.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-27T030000Z-WC26-042/manifest.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-27T210000Z-WC26-071/forecast.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-27T210000Z-WC26-071/manifest.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-27T210000Z-WC26-072/forecast.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-27T210000Z-WC26-072/manifest.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-27T233000Z-WC26-065/forecast.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-27T233000Z-WC26-065/manifest.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-27T233000Z-WC26-066/forecast.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-27T233000Z-WC26-066/manifest.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-28T020000Z-WC26-059/forecast.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-28T020000Z-WC26-059/manifest.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-28T020000Z-WC26-060/forecast.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-06-28T020000Z-WC26-060/manifest.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-07-18T210000Z-WC26-103/forecast.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-07-18T210000Z-WC26-103/manifest.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-07-19T190000Z-WC26-104/forecast.json"
+   },
+   {
+    "rfilename": "predictions/live/2026-07-19T190000Z-WC26-104/manifest.json"
+   },
+   {
+    "rfilename": "pyproject.toml"
+   },
+   {
+    "rfilename": "release/submission.json"
+   },
+   {
+    "rfilename": "requirements.txt"
+   },
+   {
+    "rfilename": "results/base_q8.json"
+   },
+   {
+    "rfilename": "results/bracket_verification.json"
+   },
+   {
+    "rfilename": "results/qlora_gate_report.json"
+   },
+   {
+    "rfilename": "results/ship_decision.json"
+   },
+   {
+    "rfilename": "results/submission_preflight.json"
+   },
+   {
+    "rfilename": "results/tuned_q8.json"
+   },
+   {
+    "rfilename": "scripts/__init__.py"
+   },
+   {
+    "rfilename": "scripts/audit_dataset.py"
+   },
+   {
+    "rfilename": "scripts/backtest_common.py"
+   },
+   {
+    "rfilename": "scripts/backtest_walk_forward.py"
+   },
+   {
+    "rfilename": "scripts/benchmark_gguf.py"
+   },
+   {
+    "rfilename": "scripts/build_historical_dataset.py"
+   },
+   {
+    "rfilename": "scripts/build_knockout_snapshot.py"
+   },
+   {
+    "rfilename": "scripts/close_qlora_gate.py"
+   },
+   {
+    "rfilename": "scripts/evaluate_extractor.py"
+   },
+   {
+    "rfilename": "scripts/export_gguf.sh"
+   },
+   {
+    "rfilename": "scripts/fetch_wc2026_results.py"
+   },
+   {
+    "rfilename": "scripts/fit_elo_dixon_coles.py"
+   },
+   {
+    "rfilename": "scripts/generate_forecast.py"
+   },
+   {
+    "rfilename": "scripts/generate_gap_fill.py"
+   },
+   {
+    "rfilename": "scripts/generate_live_forecast.py"
+   },
+   {
+    "rfilename": "scripts/generate_synthetic_data.py"
+   },
+   {
+    "rfilename": "scripts/generate_upcoming_forecasts.py"
+   },
+   {
+    "rfilename": "scripts/health_check.py"
+   },
+   {
+    "rfilename": "scripts/host_adjustment_evaluation.py"
+   },
+   {
+    "rfilename": "scripts/market_blend_evaluation.py"
+   },
+   {
+    "rfilename": "scripts/opener_draw_evaluation.py"
+   },
+   {
+    "rfilename": "scripts/prepare_matches.py"
+   },
+   {
+    "rfilename": "scripts/recalibration_evaluation.py"
+   },
+   {
+    "rfilename": "scripts/review_dataset.py"
+   },
+   {
+    "rfilename": "scripts/smoke_test_space.py"
+   },
+   {
+    "rfilename": "scripts/submission_preflight.py"
+   },
+   {
+    "rfilename": "scripts/tournament_experiment_common.py"
+   },
+   {
+    "rfilename": "scripts/track_record_summary.py"
+   },
+   {
+    "rfilename": "scripts/update_snapshot.py"
+   },
+   {
+    "rfilename": "scripts/upgrade_evaluation.py"
+   },
+   {
+    "rfilename": "scripts/vector_calibration_evaluation.py"
+   },
+   {
+    "rfilename": "scripts/verify_space_revision.py"
+   },
+   {
+    "rfilename": "scripts/verify_world_cup_bracket.py"
+   },
+   {
+    "rfilename": "src/underdog_lab/__init__.py"
+   },
+   {
+    "rfilename": "src/underdog_lab/config.py"
+   },
+   {
+    "rfilename": "src/underdog_lab/data/__init__.py"
+   },
+   {
+    "rfilename": "src/underdog_lab/data/audit.py"
+   },
+   {
+    "rfilename": "src/underdog_lab/data/repository.py"
+   },
+   {
+    "rfilename": "src/underdog_lab/domain.py"
+   },
+   {
+    "rfilename": "src/underdog_lab/forecasting/__init__.py"
+   },
+   {
+    "rfilename": "src/underdog_lab/forecasting/calibration.py"
+   },
+   {
+    "rfilename": "src/underdog_lab/forecasting/dixon_coles.py"
+   },
+   {
+    "rfilename": "src/underdog_lab/forecasting/draw_adjustment.py"
+   },
+   {
+    "rfilename": "src/underdog_lab/forecasting/elo_goals.py"
+   },
+   {
+    "rfilename": "src/underdog_lab/forecasting/ensemble.py"
+   },
+   {
+    "rfilename": "src/underdog_lab/forecasting/market.py"
+   },
+   {
+    "rfilename": "src/underdog_lab/forecasting/market_data.py"
+   },
+   {
+    "rfilename": "src/underdog_lab/forecasting/optimization.py"
+   },
+   {
+    "rfilename": "src/underdog_lab/forecasting/poisson.py"
+   },
+   {
+    "rfilename": "src/underdog_lab/forecasting/scoring.py"
+   },
+   {
+    "rfilename": "src/underdog_lab/forecasting/self_elo.py"
+   },
+   {
+    "rfilename": "src/underdog_lab/forecasting/tournament_editions.py"
+   },
+   {
+    "rfilename": "src/underdog_lab/forecasting/vector_calibration.py"
+   },
+   {
+    "rfilename": "src/underdog_lab/release/__init__.py"
+   },
+   {
+    "rfilename": "src/underdog_lab/release/health.py"
+   },
+   {
+    "rfilename": "src/underdog_lab/release/live_forecast.py"
+   },
+   {
+    "rfilename": "src/underdog_lab/release/preflight.py"
+   },
+   {
+    "rfilename": "src/underdog_lab/release/qlora_gate.py"
+   },
+   {
+    "rfilename": "src/underdog_lab/scenarios/__init__.py"
+   },
+   {
+    "rfilename": "src/underdog_lab/scenarios/adjustments.py"
+   },
+   {
+    "rfilename": "src/underdog_lab/scenarios/extractor.py"
+   },
+   {
+    "rfilename": "src/underdog_lab/scenarios/factory.py"
+   },
+   {
+    "rfilename": "src/underdog_lab/scenarios/grammar.gbnf"
+   },
+   {
+    "rfilename": "src/underdog_lab/scenarios/llama_cpp_extractor.py"
+   },
+   {
+    "rfilename": "src/underdog_lab/scenarios/mock_extractor.py"
+   },
+   {
+    "rfilename": "src/underdog_lab/scenarios/prompts.py"
+   },
+   {
+    "rfilename": "src/underdog_lab/scenarios/python_llama_cpp_extractor.py"
+   },
+   {
+    "rfilename": "src/underdog_lab/scenarios/schemas.py"
+   },
+   {
+    "rfilename": "src/underdog_lab/scenarios/taxonomy.py"
+   },
+   {
+    "rfilename": "src/underdog_lab/service.py"
+   },
+   {
+    "rfilename": "src/underdog_lab/telemetry/__init__.py"
+   },
+   {
+    "rfilename": "src/underdog_lab/telemetry/traces.py"
+   },
+   {
+    "rfilename": "src/underdog_lab/ui/__init__.py"
+   },
+   {
+    "rfilename": "src/underdog_lab/ui/app.py"
+   },
+   {
+    "rfilename": "src/underdog_lab/ui/components.py"
+   },
+   {
+    "rfilename": "src/underdog_lab/ui/theme.py"
+   },
+   {
+    "rfilename": "src/underdog_lab/world_cup/__init__.py"
+   },
+   {
+    "rfilename": "src/underdog_lab/world_cup/awards.py"
+   },
+   {
+    "rfilename": "src/underdog_lab/world_cup/bracket.py"
+   },
+   {
+    "rfilename": "src/underdog_lab/world_cup/comparison.py"
+   },
+   {
+    "rfilename": "src/underdog_lab/world_cup/data.py"
+   },
+   {
+    "rfilename": "src/underdog_lab/world_cup/flags.py"
+   },
+   {
+    "rfilename": "src/underdog_lab/world_cup/forecasting.py"
+   },
+   {
+    "rfilename": "src/underdog_lab/world_cup/integrity.py"
+   },
+   {
+    "rfilename": "src/underdog_lab/world_cup/models.py"
+   },
+   {
+    "rfilename": "src/underdog_lab/world_cup/player_images.py"
+   },
+   {
+    "rfilename": "src/underdog_lab/world_cup/predictions.py"
+   },
+   {
+    "rfilename": "src/underdog_lab/world_cup/provenance.py"
+   },
+   {
+    "rfilename": "src/underdog_lab/world_cup/providers.py"
+   },
+   {
+    "rfilename": "src/underdog_lab/world_cup/simulation.py"
+   },
+   {
+    "rfilename": "src/underdog_lab/world_cup/standings.py"
+   },
+   {
+    "rfilename": "src/underdog_lab/world_cup/ui.py"
+   },
+   {
+    "rfilename": "tests/conftest.py"
+   },
+   {
+    "rfilename": "tests/fixtures/espn_knockout_wc2026.json"
+   },
+   {
+    "rfilename": "tests/fixtures/espn_wc2026.json"
+   },
+   {
+    "rfilename": "tests/fixtures/football_data_wc2026.json"
+   },
+   {
+    "rfilename": "tests/fixtures/world_cup/current_snapshot.json"
+   },
+   {
+    "rfilename": "tests/fixtures/world_cup/pre_wc26_008.json"
+   },
+   {
+    "rfilename": "tests/fixtures/world_cup/pre_wc26_013.json"
+   },
+   {
+    "rfilename": "tests/integration/test_challenge_flow.py"
+   },
+   {
+    "rfilename": "tests/property/test_adjustments.py"
+   },
+   {
+    "rfilename": "tests/unit/test_awards.py"
+   },
+   {
+    "rfilename": "tests/unit/test_backend_status.py"
+   },
+   {
+    "rfilename": "tests/unit/test_calibration.py"
+   },
+   {
+    "rfilename": "tests/unit/test_dataset_audit.py"
+   },
+   {
+    "rfilename": "tests/unit/test_dixon_coles.py"
+   },
+   {
+    "rfilename": "tests/unit/test_draw_adjustment.py"
+   },
+   {
+    "rfilename": "tests/unit/test_elo_goals.py"
+   },
+   {
+    "rfilename": "tests/unit/test_ensemble.py"
+   },
+   {
+    "rfilename": "tests/unit/test_fallback_extractor.py"
+   },
+   {
+    "rfilename": "tests/unit/test_fetch_wc2026_results.py"
+   },
+   {
+    "rfilename": "tests/unit/test_health.py"
+   },
+   {
+    "rfilename": "tests/unit/test_live_forecast.py"
+   },
+   {
+    "rfilename": "tests/unit/test_market.py"
+   },
+   {
+    "rfilename": "tests/unit/test_market_evaluation.py"
+   },
+   {
+    "rfilename": "tests/unit/test_mock_extractor.py"
+   },
+   {
+    "rfilename": "tests/unit/test_optimization.py"
+   },
+   {
+    "rfilename": "tests/unit/test_poisson.py"
+   },
+   {
+    "rfilename": "tests/unit/test_prediction_eligibility.py"
+   },
+   {
+    "rfilename": "tests/unit/test_prediction_scorecard.py"
+   },
+   {
+    "rfilename": "tests/unit/test_prompt_alignment.py"
+   },
+   {
+    "rfilename": "tests/unit/test_qlora_gate.py"
+   },
+   {
+    "rfilename": "tests/unit/test_result_workflow.py"
+   },
+   {
+    "rfilename": "tests/unit/test_scoring.py"
+   },
+   {
+    "rfilename": "tests/unit/test_self_elo.py"
+   },
+   {
+    "rfilename": "tests/unit/test_snapshot_update.py"
+   },
+   {
+    "rfilename": "tests/unit/test_submission_preflight.py"
+   },
+   {
+    "rfilename": "tests/unit/test_tournament_editions.py"
+   },
+   {
+    "rfilename": "tests/unit/test_training_guards.py"
+   },
+   {
+    "rfilename": "tests/unit/test_vector_calibration.py"
+   },
+   {
+    "rfilename": "tests/unit/test_world_cup_2026.py"
+   },
+   {
+    "rfilename": "tests/unit/test_world_cup_integrity.py"
+   },
+   {
+    "rfilename": "tests/unit/test_world_cup_knockout.py"
+   },
+   {
+    "rfilename": "training/merge_adapter.py"
+   },
+   {
+    "rfilename": "training/modal_generate_dataset.py"
+   },
+   {
+    "rfilename": "training/modal_train.py"
+   }
+  ],
+  "subdomain": "sammoftah-world-cup-2026-prediction",
+  "tags": [
+   "gradio",
+   "region:us"
+  ],
+  "usedStorage": 0
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitignore",
+   "stored_as": "_gitignore"
+  }
+ ],
+ "renamed_gitattributes": [],
+ "repo_id": "sammoftah/World-Cup-2026-prediction",
+ "repo_type": "spaces",
+ "sha": "bc0bbbdfd25b0e50b3110284212ccfdba3f3869c",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/sammoftah/World-Cup-2026-prediction"
+}

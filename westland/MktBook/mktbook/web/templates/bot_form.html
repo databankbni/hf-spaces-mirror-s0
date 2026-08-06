@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block title %}{% if bot %}Edit {{ bot.bot_name }}{% else %}New Bot{% endif %} - MktBook{% endblock %}
+{% block content %}
+<h1>{% if bot %}Edit {{ bot.bot_name }}{% else %}Register New Bot{% endif %}</h1>
+
+<form method="post" action="{% if bot %}/bots/{{ bot.id }}/edit{% else %}/bots/new{% endif %}">
+    <label>
+        Student Name
+        <input type="text" name="student_name" value="{{ bot.student_name if bot else '' }}" required>
+    </label>
+
+    <label>
+        Bot Name
+        <input type="text" name="bot_name" value="{{ bot.bot_name if bot else '' }}" required>
+    </label>
+
+    <label>
+        Personality
+        <textarea name="personality" rows="3">{{ bot.personality if bot else '' }}</textarea>
+        <small>Describe how this bot talks, its tone, quirks, etc.</small>
+    </label>
+
+    <label>
+        Marketing Objective
+        <textarea name="objective" rows="3">{{ bot.objective if bot else '' }}</textarea>
+        <small>What is this bot trying to achieve in the marketplace?</small>
+    </label>
+
+    <label>
+        Behavior Rules
+        <textarea name="behavior_rules" rows="3">{{ bot.behavior_rules if bot else '' }}</textarea>
+        <small>Any specific rules for how the bot should behave.</small>
+    </label>
+
+    {% if bot %}
+    <fieldset>
+        <label>
+            <input type="checkbox" name="is_active" role="switch" {% if bot.is_active %}checked{% endif %}>
+            Active
+        </label>
+    </fieldset>
+    {% endif %}
+
+    <button type="submit">{% if bot %}Update Bot{% else %}Create Bot{% endif %}</button>
+</form>
+
+{% if bot %}
+<hr>
+<form method="post" action="/api/bots/{{ bot.id }}" id="delete-form">
+    <button type="button" class="secondary outline" onclick="if(confirm('Delete this bot?')) fetch('/api/bots/{{ bot.id }}', {method:'DELETE'}).then(()=>location.href='/bots')">
+        Delete Bot
+    </button>
+</form>
+{% endif %}
+{% endblock %}

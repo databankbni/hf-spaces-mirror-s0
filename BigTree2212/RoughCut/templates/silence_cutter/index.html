@@ -1,0 +1,221 @@
+{% extends "base.html" %}
+{% block title %}Silence Cutter — AI Tools Studio{% endblock %}
+{% block head %}
+<link rel="stylesheet" href="{{ static_url('css/silence_cutter.css') }}">
+{% endblock %}
+{% block content %}
+
+<div class="reel-strip">
+  <span class="reel-strip__dash"></span>
+  <span class="reel-strip__dot"></span>
+  <span class="reel-strip__dash"></span>
+</div>
+
+<div class="tool-intro">
+  <p class="tool-intro__title">Silence Cutter</p>
+  <p class="tool-intro__subtitle">buang bagian sunyi dari rekaman, otomatis</p>
+</div>
+
+<div class="sc-card panel">
+
+  <button type="button" class="stage-close stage--hidden" id="processing-close-btn" aria-label="Tutup">&times;</button>
+
+  <!-- STAGE 1: upload -->
+  <section id="stage-upload" class="stage">
+    <div class="queue-banner stage--hidden" id="queue-banner"></div>
+    <div class="active-job-banner stage--hidden" id="uploading-banner" role="button" tabindex="0">
+      <span class="active-job-banner__info">
+        <span id="uploading-text">Mengunggah video&hellip;</span>
+        <span class="active-job-banner__pct" id="uploading-pct">0%</span>
+      </span>
+      <button type="button" class="active-job-banner__cancel" id="uploading-cancel-btn">Batal</button>
+    </div>
+
+    <label for="file-input" class="slot" id="drop-zone">
+      <div class="slot__reel"></div>
+      <div class="slot__text">
+        <strong>Taruh video di sini</strong>
+        <span>atau klik untuk pilih file — MP4, MOV, MKV (maks {{ max_upload_gb }} GB)</span>
+      </div>
+      <div class="slot__reel"></div>
+    </label>
+    <input type="file" id="file-input" accept="video/*" hidden>
+
+    <div class="mode-switch" id="mode-switch">
+      <button type="button" class="mode-switch__btn" data-mode="normal">Normal Setting</button>
+      <button type="button" class="mode-switch__btn" data-mode="advanced">Advanced Setting</button>
+    </div>
+
+    <!-- NORMAL: the original simple 3-slider setup -->
+    <div class="controls" id="normal-panel">
+      <div class="control">
+        <div class="control__label-row">
+          <label for="silence_db">Sensitivitas sunyi</label>
+          <span class="control__value" id="silence_db_val">-30 dB</span>
+        </div>
+        <input type="range" id="silence_db" min="-50" max="-15" value="-30" step="1">
+        <div class="control__hint">Makin ke kiri, makin ketat (cuma sunyi total yang kepotong)</div>
+      </div>
+
+      <div class="control">
+        <div class="control__label-row">
+          <label for="min_silence">Minimal jeda dianggap sunyi</label>
+          <span class="control__value" id="min_silence_val">0.5s</span>
+        </div>
+        <input type="range" id="min_silence" min="0.2" max="2" value="0.5" step="0.1">
+        <div class="control__hint">Jeda natural yang lebih pendek dari ini nggak dipotong</div>
+      </div>
+
+      <div class="control">
+        <div class="control__label-row">
+          <label for="padding">Napas sebelum/sesudah bicara</label>
+          <span class="control__value" id="padding_val">0.15s</span>
+        </div>
+        <input type="range" id="padding" min="0" max="0.5" value="0.15" step="0.05">
+        <div class="control__hint">Biar potongan nggak kedengeran mendadak</div>
+      </div>
+    </div>
+
+    <!-- ADVANCED: AutoCut-style granular controls -->
+    <div class="advanced-panel stage--hidden" id="advanced-panel">
+
+      <div class="control">
+        <div class="control__label-row">
+          <label for="adv_silence_db">Noise Threshold</label>
+          <span class="control__value" id="adv_silence_db_val">-30dB</span>
+        </div>
+        <div class="control__slider-row">
+          <span class="control__icon" aria-hidden="true">🔈</span>
+          <input type="range" id="adv_silence_db" min="-50" max="-10" value="-30" step="1">
+          <span class="control__icon" aria-hidden="true">🔊</span>
+        </div>
+        <button type="button" class="ai-calc-link" id="ai-calc-btn">Calculate by AI</button>
+      </div>
+
+      <div class="control">
+        <div class="control__label-row"><label>Presets</label></div>
+        <div class="preset-row" id="preset-row"></div>
+      </div>
+
+      <div class="control-grid">
+        <div class="control">
+          <div class="control__label-row">
+            <label for="adv_remove_silence_ms">Remove Silences Longer Than</label>
+            <span class="info-dot" title="Cuma jeda yang lebih panjang dari ini yang bakal dipotong.">ⓘ</span>
+          </div>
+          <div class="ms-input">
+            <input type="number" id="adv_remove_silence_ms" value="350" min="20" max="5000" step="10">
+            <span class="ms-unit">milliseconds</span>
+          </div>
+        </div>
+        <div class="control">
+          <div class="control__label-row">
+            <label for="adv_keep_talk_ms">Keep Talks Longer Than</label>
+            <span class="info-dot" title="Segmen bicara yang lebih pendek dari ini dianggap noise dan ikut kepotong.">ⓘ</span>
+          </div>
+          <div class="ms-input">
+            <input type="number" id="adv_keep_talk_ms" value="250" min="20" max="5000" step="10">
+            <span class="ms-unit">milliseconds</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="control-grid">
+        <div class="control">
+          <div class="control__label-row">
+            <label for="adv_margin_before_ms">Margin before by</label>
+            <span class="info-dot" title="Sisa sunyi yang disisakan sebelum orang mulai bicara lagi, biar transisinya nggak mendadak.">ⓘ</span>
+          </div>
+          <div class="ms-input">
+            <input type="number" id="adv_margin_before_ms" value="220" min="0" max="2000" step="10">
+            <span class="ms-unit">milliseconds</span>
+          </div>
+        </div>
+        <div class="control">
+          <div class="control__label-row">
+            <label for="adv_margin_after_ms">Margin after by</label>
+            <span class="info-dot" title="Sisa sunyi yang disisakan setelah orang selesai bicara.">ⓘ</span>
+          </div>
+          <div class="ms-input">
+            <input type="number" id="adv_margin_after_ms" value="100" min="0" max="2000" step="10">
+            <span class="ms-unit">milliseconds</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="control control--row">
+        <div class="control__label-row" style="margin-bottom:0;">
+          <label for="adv_merge_gap_toggle">Minimum time between cuts</label>
+          <span class="info-dot" title="Kalau nyala, potongan yang jaraknya terlalu deket bakal digabung jadi satu biar video nggak kedip-kedip karena micro-cut.">ⓘ</span>
+        </div>
+        <label class="switch">
+          <input type="checkbox" id="adv_merge_gap_toggle">
+          <span class="switch__track"><span class="switch__thumb"></span></span>
+        </label>
+      </div>
+
+    </div>
+
+    <button class="btn btn--primary" id="process-btn" disabled>Proses Video</button>
+
+    <section class="job-list" id="job-list"></section>
+  </section>
+
+  <!-- STAGE 2: processing -->
+  <section id="stage-processing" class="stage stage--hidden">
+    <div class="tape">
+      <div class="tape__reel tape__reel--left"></div>
+      <div class="tape__window">
+        <div class="tape__bars" id="tape-bars"></div>
+      </div>
+      <div class="tape__reel tape__reel--right"></div>
+    </div>
+    <div class="status-line">
+      <span id="status-text">Membaca file&hellip;</span>
+      <span class="status-line__progress" id="status-progress">5%</span>
+    </div>
+    <div class="meter"><div class="meter__fill" id="meter-fill"></div></div>
+    <div class="stage-hint">Aman ditutup — proses tetap jalan di server. Balik lagi ke halaman ini buat lihat progress atau download hasilnya.</div>
+    <button class="btn btn--ghost" id="cancel-btn" type="button">Batal Proses</button>
+  </section>
+
+  <!-- STAGE 3: done -->
+  <section id="stage-done" class="stage stage--hidden">
+    <div class="readout">
+      <div class="readout__row">
+        <div class="readout__cell">
+          <span class="readout__label">Durasi Awal</span>
+          <span class="readout__value" id="stat-original">00:00</span>
+        </div>
+        <div class="readout__cell">
+          <span class="readout__label">Durasi Baru</span>
+          <span class="readout__value" id="stat-new">00:00</span>
+        </div>
+      </div>
+      <div class="readout__row">
+        <div class="readout__cell readout__cell--accent">
+          <span class="readout__label">Terpotong</span>
+          <span class="readout__value" id="stat-removed">00:00</span>
+        </div>
+        <div class="readout__cell readout__cell--accent">
+          <span class="readout__label">Efisiensi</span>
+          <span class="readout__value" id="stat-percent">0%</span>
+        </div>
+      </div>
+    </div>
+    <button class="btn btn--primary" id="download-btn">Download Hasil</button>
+    <button class="btn btn--ghost" id="reset-btn">Proses Video Lain</button>
+  </section>
+
+  <!-- STAGE: error -->
+  <section id="stage-error" class="stage stage--hidden">
+    <p class="error-text">Gagal proses video: <span id="error-message"></span></p>
+    <button class="btn btn--ghost" id="error-reset-btn">Coba Lagi</button>
+  </section>
+
+</div>
+
+{% endblock %}
+{% block scripts %}
+<script src="{{ static_url('js/silence_cutter.js') }}"></script>
+{% endblock %}

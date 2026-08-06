@@ -1,0 +1,110 @@
+{
+ "captured_at": "2026-08-04T13:24:02Z",
+ "hf_metadata": {
+  "_id": "6a4360e79fddd71b0948bb78",
+  "author": "DARK10KING",
+  "cardData": {
+   "app_port": 7860,
+   "colorFrom": "blue",
+   "colorTo": "indigo",
+   "emoji": "📦",
+   "pinned": false,
+   "sdk": "docker",
+   "title": "MHTML Extractor"
+  },
+  "createdAt": "2026-06-30T06:23:35.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://dark10king-mhtml-extractor-web.hf.space",
+  "id": "DARK10KING/mhtml-extractor-web",
+  "lastModified": "2026-07-12T08:16:00.000Z",
+  "likes": 0,
+  "private": false,
+  "runtime": {
+   "abuse": {
+    "detector": "manual/hub",
+    "flaggedAt": "2026-07-20T23:25:26.201Z",
+    "reason": "[USER-LOCKED-OUT]Locked by abuse-handler by rule: "
+   },
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "dark10king-mhtml-extractor-web.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "errorMessage": "Flagged as abusive",
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": null,
+    "requested": "cpu-basic"
+   },
+   "replicas": {
+    "requested": 1
+   },
+   "stage": "PAUSED"
+  },
+  "sdk": "docker",
+  "sha": "3eb42a6f24ef0af0f2c2fd9c2914a5ae0cd9d154",
+  "siblings": [
+   {
+    "rfilename": ".dockerignore"
+   },
+   {
+    "rfilename": ".gitattributes"
+   },
+   {
+    "rfilename": "Dockerfile"
+   },
+   {
+    "rfilename": "Dockerfile.txt"
+   },
+   {
+    "rfilename": "Procfile"
+   },
+   {
+    "rfilename": "Procfile.txt"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "app.py"
+   },
+   {
+    "rfilename": "core.py"
+   },
+   {
+    "rfilename": "dockerignore.txt"
+   },
+   {
+    "rfilename": "gitattributes.txt"
+   },
+   {
+    "rfilename": "renamer.py"
+   },
+   {
+    "rfilename": "requirements.txt"
+   },
+   {
+    "rfilename": "templates/index.html"
+   }
+  ],
+  "subdomain": "dark10king-mhtml-extractor-web",
+  "tags": [
+   "docker",
+   "region:us"
+  ],
+  "usedStorage": 0
+ },
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "DARK10KING/mhtml-extractor-web",
+ "repo_type": "spaces",
+ "sha": "3eb42a6f24ef0af0f2c2fd9c2914a5ae0cd9d154",
+ "web_url": "https://huggingface.co/spaces/DARK10KING/mhtml-extractor-web"
+}

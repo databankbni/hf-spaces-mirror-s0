@@ -1,0 +1,260 @@
+{
+    "summary": {
+        "total_questions": 30,
+        "retrieval_accuracy": "83.33%",
+        "generation_accuracy": "16.67%"
+    },
+    "details": [
+        {
+            "id": "eval_001",
+            "retrieval": "PASS",
+            "generation": "FAIL",
+            "missing": [
+                "RAG Pipelines",
+                "Autonomous Agents",
+                "Data Scrapers"
+            ]
+        },
+        {
+            "id": "eval_002",
+            "retrieval": "PASS",
+            "generation": "PASS",
+            "missing": []
+        },
+        {
+            "id": "eval_003",
+            "retrieval": "PASS",
+            "generation": "FAIL",
+            "missing": [
+                "Solving High-ROI bottlenecks",
+                "Building scalable AI systems"
+            ]
+        },
+        {
+            "id": "eval_004",
+            "retrieval": "PASS",
+            "generation": "FAIL",
+            "missing": [
+                "Non-linear path",
+                "NEET/JEE background"
+            ]
+        },
+        {
+            "id": "eval_005",
+            "retrieval": "PASS",
+            "generation": "PASS",
+            "missing": []
+        },
+        {
+            "id": "eval_006",
+            "retrieval": "PASS",
+            "generation": "FAIL",
+            "missing": [
+                "Accelerated independent learning",
+                "Build-first execution"
+            ]
+        },
+        {
+            "id": "eval_007",
+            "retrieval": "FAIL",
+            "generation": "FAIL",
+            "missing": [
+                "Exact-reference routing"
+            ]
+        },
+        {
+            "id": "eval_008",
+            "retrieval": "FAIL",
+            "generation": "FAIL",
+            "missing": [
+                "Document-aware structural chunking"
+            ]
+        },
+        {
+            "id": "eval_009",
+            "retrieval": "FAIL",
+            "generation": "FAIL",
+            "missing": [
+                "Destroys structural boundary",
+                "Context loss",
+                "Section integrity"
+            ]
+        },
+        {
+            "id": "eval_010",
+            "retrieval": "PASS",
+            "generation": "FAIL",
+            "missing": [
+                "Data privacy",
+                "No cloud exposure for legal docs"
+            ]
+        },
+        {
+            "id": "eval_011",
+            "retrieval": "PASS",
+            "generation": "FAIL",
+            "missing": [
+                "Structured CSV export"
+            ]
+        },
+        {
+            "id": "eval_012",
+            "retrieval": "PASS",
+            "generation": "PASS",
+            "missing": []
+        },
+        {
+            "id": "eval_013",
+            "retrieval": "PASS",
+            "generation": "FAIL",
+            "missing": [
+                "Obfuscated CSS classes"
+            ]
+        },
+        {
+            "id": "eval_014",
+            "retrieval": "PASS",
+            "generation": "FAIL",
+            "missing": [
+                "asyncio.Semaphore",
+                "Throttling"
+            ]
+        },
+        {
+            "id": "eval_015",
+            "retrieval": "PASS",
+            "generation": "FAIL",
+            "missing": [
+                "Digital twin",
+                "Tool-calling loop"
+            ]
+        },
+        {
+            "id": "eval_016",
+            "retrieval": "FAIL",
+            "generation": "FAIL",
+            "missing": [
+                "Graceful degradation"
+            ]
+        },
+        {
+            "id": "eval_017",
+            "retrieval": "PASS",
+            "generation": "FAIL",
+            "missing": [
+                "No code redeployment needed",
+                "Separation of identity data"
+            ]
+        },
+        {
+            "id": "eval_018",
+            "retrieval": "PASS",
+            "generation": "FAIL",
+            "missing": [
+                "Graceful fallback",
+                "Returns 'I do not have information regarding this'",
+                "Zero hallucination"
+            ]
+        },
+        {
+            "id": "eval_019",
+            "retrieval": "PASS",
+            "generation": "FAIL",
+            "missing": [
+                "Democratizing value"
+            ]
+        },
+        {
+            "id": "eval_020",
+            "retrieval": "FAIL",
+            "generation": "FAIL",
+            "missing": [
+                "Daily-use utility"
+            ]
+        },
+        {
+            "id": "eval_021",
+            "retrieval": "PASS",
+            "generation": "PASS",
+            "missing": []
+        },
+        {
+            "id": "eval_022",
+            "retrieval": "PASS",
+            "generation": "FAIL",
+            "missing": [
+                "Distributed crawler systems"
+            ]
+        },
+        {
+            "id": "eval_023",
+            "retrieval": "PASS",
+            "generation": "FAIL",
+            "missing": [
+                "Avoids brittle wrappers",
+                "Engineers robust solutions",
+                "Systems engineering"
+            ]
+        },
+        {
+            "id": "eval_024",
+            "retrieval": "PASS",
+            "generation": "FAIL",
+            "missing": [
+                "Series-prefix grouping"
+            ]
+        },
+        {
+            "id": "eval_025",
+            "retrieval": "PASS",
+            "generation": "FAIL",
+            "missing": [
+                "High accuracy over OCR"
+            ]
+        },
+        {
+            "id": "eval_026",
+            "retrieval": "PASS",
+            "generation": "PASS",
+            "missing": []
+        },
+        {
+            "id": "eval_027",
+            "retrieval": "PASS",
+            "generation": "FAIL",
+            "missing": [
+                "Strictly minimal"
+            ]
+        },
+        {
+            "id": "eval_028",
+            "retrieval": "PASS",
+            "generation": "FAIL",
+            "missing": [
+                "Polite refusal",
+                "Out of bounds",
+                "No hallucination"
+            ]
+        },
+        {
+            "id": "eval_029",
+            "retrieval": "PASS",
+            "generation": "FAIL",
+            "missing": [
+                "Prayagraj, UP, India",
+                "No exact address provided"
+            ]
+        },
+        {
+            "id": "eval_030",
+            "retrieval": "PASS",
+            "generation": "FAIL",
+            "missing": [
+                "Backend focused",
+                "Python, FastAPI",
+                "AI integrations",
+                "Does not do frontend/Next.js currently"
+            ]
+        }
+    ]
+}

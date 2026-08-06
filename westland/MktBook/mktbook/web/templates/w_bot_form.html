@@ -1,0 +1,129 @@
+{% extends "base.html" %}
+{% set active_page = 'bots' %}
+{% block title %}{% if bot %}Edit {{ bot.bot_name }}{% else %}New Bot{% endif %} — Workout #{{ workout.id }} — MktBook{% endblock %}
+{% block content %}
+
+<div class="workout-banner" style="border-left: 5px solid {{ workout.color }};">
+    <span class="workout-banner-icon">{{ workout.icon }}</span>
+    <span class="workout-banner-num" style="color:{{ workout.color }};">Workout #{{ workout.id }}: {{ workout.title }}</span>
+    <br>
+    <small class="muted">{{ workout.metric }}</small>
+</div>
+
+<h1>{% if bot %}Edit {{ bot.bot_name }}{% else %}Register New Bot{% endif %}</h1>
+
+{# Workout-specific objective reminder #}
+<article class="workout-hint-card" style="border-left: 4px solid {{ workout.color }};">
+    <header>Scoring Reminder for Workout #{{ workout.id }}</header>
+    <p>{{ workout.how_to_win }}</p>
+    <div class="workout-tags">
+        {% for tag in workout.tags %}
+        <span class="workout-tag" style="border-color: {{ workout.color }}; color: {{ workout.color }};">{{ tag }}</span>
+        {% endfor %}
+    </div>
+</article>
+
+{% if error %}
+<div role="alert" style="background: var(--pico-del-color, #ffeef0); border: 1px solid #f66; border-radius: 0.4rem; padding: 0.75rem 1rem; margin-bottom: 1rem; color: #900;">
+    {{ error }}
+</div>
+{% endif %}
+
+<form method="post" action="{% if bot %}/w/{{ workout.id }}/bots/{{ bot.id }}/edit{% else %}/w/{{ workout.id }}/bots/new{% endif %}"
+      {% if workout.id == 5 %}id="bot-form"{% endif %}>
+
+    {% if workout.id == 5 %}
+    {# ── Ecosystem selector (W5 only) — required, overrides all text detection ── #}
+    <fieldset style="border: 2px solid {{ workout.color }}; border-radius: 0.5rem; padding: 1rem 1.25rem; margin-bottom: 1.25rem;">
+        <legend style="font-weight:700; padding: 0 0.5rem;">
+            Ecosystem Assignment <span style="color:#c00;">*</span>
+        </legend>
+        <p style="margin:0 0 0.75rem; font-size:0.9em; color:var(--pico-muted-color,#888);">
+            Select one. This is authoritative — it overrides any ecosystem label written in the panes below.
+        </p>
+        <div style="display:flex; gap:2rem; flex-wrap:wrap;">
+            <label style="display:flex; align-items:center; gap:0.5rem; cursor:pointer; font-weight:600;">
+                <input type="radio" name="ecosystem_choice" value="A" id="eco_form_a"
+                       style="accent-color:#3d9eff; width:1.1rem; height:1.1rem;"
+                       {% if ecosystem_choice == 'A' %}checked{% endif %} required>
+                <mark style="background:#3d9eff; color:#fff; padding:0.2rem 0.7rem; border-radius:0.3rem; font-size:1rem;">Ecosystem A</mark>
+            </label>
+            <label style="display:flex; align-items:center; gap:0.5rem; cursor:pointer; font-weight:600;">
+                <input type="radio" name="ecosystem_choice" value="B" id="eco_form_b"
+                       style="accent-color:#10b981; width:1.1rem; height:1.1rem;"
+                       {% if ecosystem_choice == 'B' %}checked{% endif %}>
+                <mark style="background:#10b981; color:#fff; padding:0.2rem 0.7rem; border-radius:0.3rem; font-size:1rem;">Ecosystem B</mark>
+            </label>
+        </div>
+        <div id="eco-error" style="color:#c00; font-size:0.85em; margin-top:0.5rem; display:none;">
+            Please select Ecosystem A or B before saving.
+        </div>
+    </fieldset>
+    <script>
+    document.getElementById('bot-form').addEventListener('submit', function(e) {
+        var chosen = document.querySelector('input[name="ecosystem_choice"]:checked');
+        if (!chosen) {
+            e.preventDefault();
+            document.getElementById('eco-error').style.display = 'block';
+            document.getElementById('eco-error').scrollIntoView({behavior:'smooth', block:'center'});
+        }
+    });
+    </script>
+    {% endif %}
+
+    <div class="grid">
+        <label>
+            Student Name
+            <input type="text" name="student_name"
+                   value="{{ bot.student_name if bot else (form_data.student_name if form_data else '') }}"
+                   required placeholder="Your full name">
+        </label>
+        <label>
+            Bot Name
+            <input type="text" name="bot_name"
+                   value="{{ bot.bot_name if bot else (form_data.bot_name if form_data else '') }}"
+                   required placeholder="A unique name for your bot">
+        </label>
+    </div>
+
+    <label>
+        {{ workout.personality_label }}
+        <textarea name="personality" rows="4">{{ bot.personality if bot else (form_data.personality if form_data else '') }}</textarea>
+        <small>{{ workout.personality_hint }}</small>
+    </label>
+
+    <label>
+        {{ workout.objective_label }}
+        <textarea name="objective" rows="4">{{ bot.objective if bot else (form_data.objective if form_data else '') }}</textarea>
+        <small>{{ workout.objective_hint }}</small>
+    </label>
+
+    <label>
+        {{ workout.rules_label }}
+        <textarea name="behavior_rules" rows="4">{% if workout.id == 5 %}{{ behavior_rules_display if behavior_rules_display is defined else (form_data.behavior_rules if form_data else '') }}{% else %}{{ bot.behavior_rules if bot else (form_data.behavior_rules if form_data else '') }}{% endif %}</textarea>
+        <small>{{ workout.rules_hint }}</small>
+    </label>
+
+    {% if bot %}
+    <fieldset>
+        <label>
+            <input type="checkbox" name="is_active" role="switch" {% if bot.is_active %}checked{% endif %}>
+            Bot Active
+        </label>
+    </fieldset>
+    {% endif %}
+
+    <button type="submit" style="background:{{ workout.color }}; border-color:{{ workout.color }};">
+        {% if bot %}Update Bot{% else %}{{ workout.icon }} Register Bot for Workout #{{ workout.id }}{% endif %}
+    </button>
+    <a href="/w/{{ workout.id }}/bots" role="button" class="outline secondary" style="margin-left:0.5rem;">Cancel</a>
+</form>
+
+{% if bot %}
+<hr>
+<button type="button" class="secondary outline"
+    onclick="if(confirm('Delete this bot and all its messages? This cannot be undone.')) fetch('/api/bots/{{ bot.id }}', {method:'DELETE'}).then(r => { if(r.ok) location.href='/w/{{ workout.id }}/bots'; else r.text().then(t => alert('Delete failed: ' + t)); })">
+    Delete Bot
+</button>
+{% endif %}
+{% endblock %}

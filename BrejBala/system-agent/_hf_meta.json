@@ -1,0 +1,110 @@
+{
+ "captured_at": "2026-08-04T13:22:26Z",
+ "hf_metadata": {
+  "_id": "6a4d4187026cd4590b6d0c6c",
+  "author": "BrejBala",
+  "cardData": {
+   "app_port": 7860,
+   "colorFrom": "blue",
+   "colorTo": "purple",
+   "emoji": "⚔️",
+   "pinned": false,
+   "sdk": "docker",
+   "title": "The System — Portfolio Agent"
+  },
+  "createdAt": "2026-07-07T18:12:23.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://brejbala-system-agent.hf.space",
+  "id": "BrejBala/system-agent",
+  "lastModified": "2026-07-07T18:13:34.000Z",
+  "likes": 0,
+  "private": false,
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "brejbala-system-agent.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": "cpu-basic",
+    "requested": "cpu-basic"
+   },
+   "pySpacesVersion": "0.50.4",
+   "replicas": {
+    "current": 1,
+    "requested": 1
+   },
+   "sha": "6907e87c589c959a4dd9e3b0f2598fd112758485",
+   "stage": "RUNNING"
+  },
+  "sdk": "docker",
+  "sha": "6907e87c589c959a4dd9e3b0f2598fd112758485",
+  "siblings": [
+   {
+    "rfilename": ".dockerignore"
+   },
+   {
+    "rfilename": ".env.example"
+   },
+   {
+    "rfilename": ".gitattributes"
+   },
+   {
+    "rfilename": ".gitignore"
+   },
+   {
+    "rfilename": "Dockerfile"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "app/__init__.py"
+   },
+   {
+    "rfilename": "app/facts.py"
+   },
+   {
+    "rfilename": "app/guard.py"
+   },
+   {
+    "rfilename": "app/llm.py"
+   },
+   {
+    "rfilename": "app/main.py"
+   },
+   {
+    "rfilename": "pyproject.toml"
+   },
+   {
+    "rfilename": "tests/test_chat.py"
+   },
+   {
+    "rfilename": "tests/test_guard.py"
+   },
+   {
+    "rfilename": "uv.lock"
+   }
+  ],
+  "subdomain": "brejbala-system-agent",
+  "tags": [
+   "docker",
+   "region:us"
+  ],
+  "usedStorage": 0
+ },
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "BrejBala/system-agent",
+ "repo_type": "spaces",
+ "sha": "6907e87c589c959a4dd9e3b0f2598fd112758485",
+ "web_url": "https://huggingface.co/spaces/BrejBala/system-agent"
+}

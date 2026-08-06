@@ -1,0 +1,20 @@
+{
+ "lfs_not_stored": [
+  {
+   "oid": "5c9b4f0af6bdf8a3a2a448de66f72c7f9cae06a951794b4d50c253f6acd1ffb6",
+   "path": "database/index.faiss",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6NWM5YjRmMGFmNmJkZjhhM2EyYTQ0OGRlNjZmNzJjN2Y5Y2FlMDZhOTUxNzk0YjRkNTBjMjUzZjZhY2QxZmZiNgpzaXplIDExOTk5NTQzNwo=",
+   "size": 119995437,
+   "url": "https://huggingface.co/spaces/jcampo/kantor-research/resolve/b5f078fd3410458c8453a97582f33354e7feb090/database/index.faiss"
+  },
+  {
+   "oid": "3b900cac21204e3e0249fb2110aab6dc550a0ff4f7b019e7ce00ba2e4a331534",
+   "path": "database/index_data.pkl",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6M2I5MDBjYWMyMTIwNGUzZTAyNDlmYjIxMTBhYWI2ZGM1NTBhMGZmNGY3YjAxOWU3Y2UwMGJhMmU0YTMzMTUzNApzaXplIDM0NTg2NTcxCg==",
+   "size": 34586571,
+   "url": "https://huggingface.co/spaces/jcampo/kantor-research/resolve/b5f078fd3410458c8453a97582f33354e7feb090/database/index_data.pkl"
+  }
+ ],
+ "overflow_not_stored": [],
+ "oversize_not_stored": []
+}

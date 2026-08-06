@@ -1,0 +1,483 @@
+/* Prelinger moments.
+
+   Grounded in the editing bench rather than in stationery: the cool grey of a
+   grey card, the near-black of film leader, and one amber that stands for light
+   through the film base. Amber is reserved for a single meaning — this is the
+   second your query landed on. Everything else is type and hairlines.
+
+   No framework underneath this, so no !important anywhere. If a rule here
+   doesn't win, it's a bug in this file. */
+
+:root {
+  --paper:  #e6e7e3;
+  --panel:  #dcdeda;
+  --ink:    #16181a;
+  --muted:  #6d726d;
+  --rule:   #c7cbc5;
+  --accent: #9a5a12;
+
+  /* Industrial film spoke in gothic title cards and typewritten continuity
+     sheets, never in a book serif. Falls to Roboto on Android by design. */
+  --display: Futura, "Century Gothic", "Avenir Next", "Segoe UI", Roboto,
+             "Helvetica Neue", Arial, sans-serif;
+  --sans: ui-sans-serif, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Controls inherit nothing useful by default; say it once, here. */
+button, input, select {
+  font: inherit;
+  color: inherit;
+  margin: 0;
+}
+button {
+  background: none;
+  border: none;
+  padding: 0;
+  border-radius: 0;
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer;
+}
+img { display: block; max-width: 100%; }
+
+.shell {
+  max-width: 62rem;
+  margin: 0 auto;
+  padding: 0 1.25rem 4rem;
+  transition: padding-right 180ms ease;
+}
+
+/* --- masthead ------------------------------------------------------------ */
+
+.masthead { padding: 2.6rem 0 0.9rem; }
+.masthead h1 {
+  font-family: var(--display);
+  font-size: 1.9rem;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  margin: 0;
+}
+.masthead p {
+  margin: 0.45rem 0 0;
+  color: var(--muted);
+  font-size: 0.86rem;
+  line-height: 1.55;
+  /* Follow the width of the search interface on larger screens. Balancing a
+     narrow measure here made this read like a separate, unrelated column. */
+  max-width: 58rem;
+  text-wrap: pretty;
+}
+.masthead a { color: var(--muted); text-underline-offset: 2px; }
+/* A hyphen is a legal break point, so "Marlin-2B" was being split across two
+   lines. Short enough to keep whole at any width. */
+.nb { white-space: nowrap; }
+.masthead em { font-style: italic; color: var(--ink); }
+
+/* --- search -------------------------------------------------------------- */
+
+#q {
+  width: 100%;
+  font-family: var(--display);
+  font-size: 1.35rem;
+  line-height: 1.6;
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--ink);
+  border-radius: 0;
+  padding: 0.35rem 0 0.5rem;
+  -webkit-appearance: none;
+  appearance: none;
+}
+#q::placeholder { color: #a4a9a3; }
+#q:focus { outline: none; border-bottom-color: var(--accent); }
+#q::-webkit-search-cancel-button { -webkit-appearance: none; }
+
+.suggest {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2rem 1.2rem;
+  padding: 0.7rem 0 0;
+}
+.chip {
+  font-size: 0.8rem;
+  color: var(--muted);
+  padding: 0.3rem 0;
+  border-bottom: 1px solid var(--rule);
+  white-space: nowrap;
+}
+.chip:hover, .chip:focus-visible { color: var(--accent); border-bottom-color: var(--accent); }
+
+.facets {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem 1.6rem;
+  margin-top: 0.9rem;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+.facets select {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  color: var(--muted);
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--rule);
+  border-radius: 0;
+  padding: 0.25rem 1.2rem 0.25rem 0;
+  -webkit-appearance: none;
+  appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, var(--muted) 50%),
+                    linear-gradient(135deg, var(--muted) 50%, transparent 50%);
+  background-position: right 0.35rem center, right 0.05rem center;
+  background-size: 0.3rem 0.3rem, 0.3rem 0.3rem;
+  background-repeat: no-repeat;
+}
+.check { display: flex; align-items: center; gap: 0.45rem; cursor: pointer; }
+.check input { accent-color: var(--accent); width: 0.9rem; height: 0.9rem; }
+
+/* --- results ------------------------------------------------------------- */
+
+.count {
+  display: flex;
+  gap: 0.7rem;
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  color: var(--muted);
+  margin: 1.6rem 0 0.2rem;
+}
+.count .ms { margin-left: auto; color: #a4a9a3; }
+.empty {
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.65;
+  margin: 2rem 0;
+  max-width: 34rem;
+}
+.empty em { font-style: italic; color: var(--ink); }
+
+.moment {
+  display: grid;
+  grid-template-columns: 14rem 1fr;
+  gap: 1.4rem;
+  padding: 1.3rem 0;
+  border-top: 1px solid var(--rule);
+  align-items: start;
+}
+
+.frame {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background: var(--panel);
+  overflow: hidden;
+  line-height: 0;
+}
+.frame img { width: 100%; height: 100%; object-fit: cover; }
+.frame .cue {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  color: var(--paper);
+  background: rgba(20, 18, 15, 0.74);
+  padding: 0.12rem 0.35rem;
+  line-height: 1.4;
+}
+.frame:hover .cue,
+.moment.playing .frame .cue,
+.tile.playing .frame .cue { background: var(--accent); }
+.moment.playing .frame,
+.tile.playing .frame { outline: 2px solid var(--accent); }
+
+.meta h2 {
+  font-family: var(--display);
+  font-size: 1.08rem;
+  font-weight: 400;
+  line-height: 1.35;
+  text-wrap: balance;
+  overflow-wrap: break-word;
+  margin: -0.15rem 0 0.2rem;
+}
+.stamp {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  color: var(--muted);
+  margin: 0 0 0.6rem;
+}
+.stamp a { color: var(--muted); text-decoration: none; margin-left: 0.7rem; border-bottom: 1px solid var(--rule); }
+.stamp a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+
+.events { list-style: none; margin: 0; padding: 0; }
+.events li {
+  display: grid;
+  grid-template-columns: 3.4rem 1fr;
+  gap: 0.6rem;
+  align-items: baseline;
+  padding: 0.16rem 0;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: var(--muted);
+}
+.events li.hit { color: var(--ink); }
+.events .at {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--muted);
+  text-align: left;
+  padding: 0.1rem 0;
+}
+.events li.hit .at { color: var(--accent); }
+.events .at:hover { text-decoration: underline; text-underline-offset: 2px; }
+
+.scene { margin: 0.55rem 0 0; }
+.scene summary {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  color: var(--muted);
+  cursor: pointer;
+  list-style: none;
+}
+.scene summary::-webkit-details-marker { display: none; }
+.scene summary:hover { color: var(--accent); }
+.scene p {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: var(--muted);
+  margin: 0.4rem 0 0;
+  max-width: 42rem;
+}
+
+/* --- opening: a few moments, at random ----------------------------------- */
+
+.opening {
+  display: grid;
+  /* Explicit column counts rather than auto-fill: the sample size (see
+     search.sample) is a multiple of 2, 3 and 4, so the last row is always
+     full at every breakpoint. auto-fill picks its own column count from the
+     viewport, which stranded 3 orphans in a 5-wide row. */
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.1rem 1rem;
+  margin: 0.4rem 0 0;
+}
+@media (min-width: 38rem) {
+  .opening { grid-template-columns: repeat(3, 1fr); }
+}
+@media (min-width: 64rem) {
+  .opening { grid-template-columns: repeat(4, 1fr); }
+}
+.opening h3 {
+  font-family: var(--display);
+  font-size: 0.82rem;
+  font-weight: 400;
+  line-height: 1.3;
+  margin: 0.4rem 0 0;
+  /* Film titles are long and these columns are narrow: balance the lines and
+     let a pathological token break rather than push the grid wide. */
+  text-wrap: balance;
+  overflow-wrap: break-word;
+}
+.opening .stamp { margin: 0.15rem 0 0; }
+
+/* --- the player ---------------------------------------------------------- */
+
+/* A fixed panel, not a sticky banner: playing the fortieth result must not move
+   the page. Only the shot list scrolls — scrolling the whole panel used to push
+   the video out of view while the audio kept going. */
+.stage {
+  position: fixed;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  z-index: 40;
+  display: flex;
+  flex-direction: column;
+  width: 22rem;
+  max-width: calc(100vw - 3rem);
+  max-height: calc(100vh - 3rem);
+  max-height: calc(100dvh - 3rem);
+  background: var(--paper);
+  border: 1px solid var(--ink);
+  padding: 0.55rem 0.6rem 0.5rem;
+}
+.stage[hidden] { display: none; }
+.stage .screen, .stage .stage-meta { flex: 0 0 auto; }
+
+.screen { position: relative; line-height: 0; }
+/* The source derivatives are 320 px wide; sized so playback is not just
+   magnified grain. */
+.stage video { display: block; width: 100%; max-height: 40vh; background: #12100e; }
+
+#stage-play {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 4.6rem;
+  height: 4.6rem;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--paper);
+  border-radius: 50%;
+  background: rgba(22, 24, 26, 0.78);
+}
+/* Shown only while the video is actually paused — never decoration. */
+.stage.paused #stage-play { display: flex; }
+#stage-play svg { width: 2.2rem; height: 2.2rem; fill: var(--paper); }
+#stage-play:hover { background: var(--accent); }
+
+.stage-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.6rem;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  color: var(--muted);
+  margin: 0.5rem 0 0;
+}
+.stage-meta b {
+  flex: 1 1 100%;
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: 0.85rem;
+  color: var(--ink);
+  line-height: 1.3;
+}
+.stage-meta .cut { color: var(--accent); }
+.stage-meta button {
+  margin-left: auto;
+  border: 1px solid var(--rule);
+  padding: 0.3rem 0.7rem;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--ink);
+}
+.stage-meta button:hover { border-color: var(--accent); color: var(--accent); }
+
+#stage-list {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  min-height: 0;
+  /* Without these, reaching either end of the list hands the gesture to the
+     page behind the fixed panel — Android's default scroll chaining. */
+  overscroll-behavior-y: contain;
+  touch-action: pan-y;
+}
+#stage-list .events { margin-top: 0.6rem; border-top: 1px solid var(--rule); padding-top: 0.5rem; }
+#stage-list .events li { grid-template-columns: 3.1rem 1fr; font-size: 0.82rem; }
+#stage-list .scene-text {
+  font-size: 0.78rem;
+  line-height: 1.55;
+  color: var(--muted);
+  margin: 0.7rem 0 0;
+  border-top: 1px solid var(--rule);
+  padding-top: 0.5rem;
+}
+
+body.has-stage .shell { padding-bottom: 20rem; }
+
+/* --- phones -------------------------------------------------------------- */
+
+@media (max-width: 640px) {
+  .shell { padding: 0 1rem 3rem; }
+  .masthead { padding-top: 1.8rem; }
+  #q { font-size: 1.15rem; }
+  .moment { grid-template-columns: 1fr; gap: 0.7rem; }
+  .frame { max-width: 18rem; }
+  /* Comfortable tap targets, and timestamps that read as tappable. */
+  .events li { padding: 0.2rem 0; }
+  /* Android guidance is a 48dp target; padding on the row does not enlarge the
+     button's own hitbox, so state it on the button. */
+  .events .at {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .stage-meta button { min-height: 44px; padding: 0.5rem 0.9rem; }
+  .chip { min-height: 44px; display: flex; align-items: center; }
+  .facets select { min-height: 44px; }
+  .stage {
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    max-width: 100%;
+    max-height: 76vh;
+    max-height: 76dvh;   /* dvh tracks Android's collapsing browser chrome */
+    border-width: 1px 0 0;
+    padding-bottom: max(0.5rem, env(safe-area-inset-bottom));
+  }
+  .stage video { max-height: 34vh; max-height: 34dvh; }
+  /* Reserve what the panel can actually occupy. A flat 16rem left the last
+     ~350px of results stranded underneath it. */
+  body.has-stage .shell { padding-bottom: 16rem; }
+  body.has-stage .shell { padding-bottom: calc(78dvh + env(safe-area-inset-bottom)); }
+}
+
+/* --- wide: the player gets its own column -------------------------------- */
+
+@media (min-width: 1560px) {
+  .shell { max-width: 94rem; }
+  /* Reserved only while something is playing; an empty reservation is dead
+     space, and the opening grid wants the full width. */
+  body.has-stage .shell { padding-right: 29rem; padding-bottom: 4rem; }
+  .stage {
+    top: 2.2rem;
+    bottom: auto;
+    right: max(1.5rem, calc((100vw - 94rem) / 2));
+    width: 27rem;
+    max-height: calc(100vh - 4.4rem);
+    max-height: calc(100dvh - 4.4rem);
+  }
+  .moment { grid-template-columns: 17rem 1fr; }
+  /* Still a divisor of the sample size — 6 x 2 rather than 4 x 3. */
+  .opening { grid-template-columns: repeat(6, 1fr); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shell { transition: none; }
+}
+
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* --- about ---------------------------------------------------------------
+   Sits after the results: on a first visit the opening sample is short, so
+   it is a scroll away; once you have searched, 60 results push it out of the
+   way. Quieter than body text — it is context, not the product. */
+.about {
+  max-width: 46rem;
+  margin: 4rem auto 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--rule, rgba(0, 0, 0, 0.15));
+  font-size: 0.94rem;
+  line-height: 1.62;
+  color: var(--muted, #55504a);
+}
+.about h2 { font-size: 1rem; letter-spacing: 0.02em; margin: 0 0 1rem; }
+.about p { margin: 0 0 1rem; }
+.about pre {
+  overflow-x: auto;
+  padding: 0.85rem 1rem;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.05);
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+.about .caveat { font-size: 0.88rem; opacity: 0.85; }

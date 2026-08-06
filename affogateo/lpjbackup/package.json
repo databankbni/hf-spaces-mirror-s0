@@ -1,0 +1,17 @@
+{
+  "name": "lpj-universe-backend",
+  "version": "1.0.0",
+  "description": "Universal LPJ API (Reader, Backup LPJ, Backup Surat) - 3 APIs in 1 Deployment",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.49.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "webdav": "^5.10.0",
+    "xlsx": "https://cdn.sheetjs.com/xlsx-0.20.2/xlsx-0.20.2.tgz"
+  }
+}

@@ -1,0 +1,13 @@
+{
+ "lfs_not_stored": [
+  {
+   "oid": "e8b0e660d1622ce44f6008813bcd7fb69b38da5342fa3715a1baa35c67b7dd12",
+   "path": "models/FineTuning_Final_Exp.keras",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6ZThiMGU2NjBkMTYyMmNlNDRmNjAwODgxM2JjZDdmYjY5YjM4ZGE1MzQyZmEzNzE1YTFiYWEzNWM2N2I3ZGQxMgpzaXplIDEyOTk2MjQ5OAo=",
+   "size": 129962498,
+   "url": "https://huggingface.co/spaces/RiolanPratama/Coccinellidae-Species-Classification/resolve/8d4bc5d9e5ae703747c87912076cbb4537e0e4d9/models/FineTuning_Final_Exp.keras"
+  }
+ ],
+ "overflow_not_stored": [],
+ "oversize_not_stored": []
+}

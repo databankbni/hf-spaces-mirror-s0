@@ -1,0 +1,23 @@
+{
+ "captured_at": "2026-08-04T16:55:41Z",
+ "hf_metadata": {
+  "sha": "d1557a615c77e70129d47d9f0bd8175d642d4606"
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "salvoaics/website",
+ "repo_type": "spaces",
+ "sha": "d1557a615c77e70129d47d9f0bd8175d642d4606",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/salvoaics/website"
+}

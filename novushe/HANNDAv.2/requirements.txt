@@ -1,0 +1,9 @@
+gradio
+tensorflow
+folium
+numpy
+pandas
+scikit-learn
+joblib
+matplotlib
+openpyxl

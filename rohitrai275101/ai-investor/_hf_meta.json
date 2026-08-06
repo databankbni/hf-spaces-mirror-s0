@@ -1,0 +1,27 @@
+{
+ "captured_at": "2026-08-04T16:55:35Z",
+ "hf_metadata": {
+  "sha": "621cc37fe26d4c04864354ec13d6976a608cb1fa"
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  },
+  {
+   "original": ".gitignore",
+   "stored_as": "_gitignore"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "rohitrai275101/ai-investor",
+ "repo_type": "spaces",
+ "sha": "621cc37fe26d4c04864354ec13d6976a608cb1fa",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/rohitrai275101/ai-investor"
+}

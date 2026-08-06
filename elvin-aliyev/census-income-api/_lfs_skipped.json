@@ -1,0 +1,13 @@
+{
+ "lfs_not_stored": [
+  {
+   "oid": "11bb747d9aa85f7c911439b2cea6cf5f3e98f0cd02a69784895016534c9227ed",
+   "path": "model.pkl",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6MTFiYjc0N2Q5YWE4NWY3YzkxMTQzOWIyY2VhNmNmNWYzZTk4ZjBjZDAyYTY5Nzg0ODk1MDE2NTM0YzkyMjdlZApzaXplIDIwMTM2MzM0Cg==",
+   "size": 20136334,
+   "url": "https://huggingface.co/spaces/elvin-aliyev/census-income-api/resolve/9d872d91234c214c6951d1b9a752587c156557a0/model.pkl"
+  }
+ ],
+ "overflow_not_stored": [],
+ "oversize_not_stored": []
+}

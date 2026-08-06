@@ -1,0 +1,97 @@
+{
+  "site": {
+    "name": "SraLanh Invites",
+    "tagline": "Beautiful bilingual wedding invitations, ready in minutes."
+  },
+  "nav": {
+    "gallery": "Templates",
+    "dashboard": "My invites",
+    "admin": "Admin",
+    "login": "Sign in",
+    "signout": "Sign out"
+  },
+  "auth": {
+    "title": "Sign in",
+    "subtitle": "We'll email you a magic link — no password needed.",
+    "emailPlaceholder": "you@example.com",
+    "sendLink": "Email me a link",
+    "checkEmail": "Check your inbox for the sign-in link.",
+    "notAuthorized": "You don't have access to this page."
+  },
+  "gallery": {
+    "title": "Choose a template",
+    "subtitle": "Personalize names, date, venue and photos — then share a live link.",
+    "filterStyle": "Style",
+    "filterLanguage": "Language",
+    "filterAll": "All",
+    "preview": "Preview",
+    "from": "from",
+    "tierBasic": "Basic",
+    "tierPremium": "Premium"
+  },
+  "template": {
+    "livePreview": "Live preview",
+    "chooseTier": "Choose your tier",
+    "customize": "Customize this template",
+    "featuresBasic": "Names, date, venue, photo gallery, map, countdown, 3-month hosting",
+    "featuresPremium": "Everything in Basic + RSVP, guestbook, music, custom subdomain, 12-month hosting",
+    "buy": "Buy & customize"
+  },
+  "editor": {
+    "title": "Customize your invitation",
+    "coupleSection": "The couple",
+    "brideNameKm": "Bride's name (Khmer)",
+    "brideNameLatin": "Bride's name (Latin)",
+    "brideParents": "Bride's parents (optional)",
+    "groomNameKm": "Groom's name (Khmer)",
+    "groomNameLatin": "Groom's name (Latin)",
+    "groomParents": "Groom's parents (optional)",
+    "hashtag": "Wedding hashtag (optional)",
+    "eventSection": "The wedding",
+    "date": "Wedding date",
+    "lunarNote": "Lunar / Buddhist-era note (optional)",
+    "lunarNotePlaceholder": "e.g. ថ្ងៃ​ព្រហស្បតិ៍ ១៥ កើត ខែ​មិគសិរ",
+    "time": "Ceremony time",
+    "venueName": "Venue name",
+    "venueAddress": "Venue address",
+    "mapUrl": "Google Maps embed URL",
+    "photosSection": "Photos",
+    "photosHint": "Up to 8 photos. Large images are compressed automatically before upload.",
+    "coverPhoto": "Cover photo",
+    "loveStory": "Your story (optional)",
+    "themeSection": "Colour theme",
+    "save": "Save draft",
+    "saving": "Saving…",
+    "saved": "Draft saved",
+    "publish": "Publish invitation",
+    "published": "Published!",
+    "viewLive": "View live invite",
+    "premiumLocked": "Premium feature — upgrade to unlock"
+  },
+  "invite": {
+    "youAreInvited": "You are invited to the wedding of",
+    "and": "and",
+    "countdownDays": "days",
+    "countdownHours": "hours",
+    "countdownMinutes": "minutes",
+    "countdownSeconds": "seconds",
+    "venue": "Venue",
+    "getDirections": "Get directions",
+    "ourStory": "Our story",
+    "rsvpTitle": "Will you join us?",
+    "expiredTitle": "This invitation has expired",
+    "expiredBody": "Renew hosting to keep this page live."
+  },
+  "checkout": {
+    "successTitle": "Payment received",
+    "successBody": "Let's personalize your invitation.",
+    "continue": "Continue to editor",
+    "cancelTitle": "Checkout cancelled",
+    "cancelBody": "No charge was made. You can try again anytime."
+  },
+  "common": {
+    "language": "Language",
+    "loading": "Loading…",
+    "todo": "Coming soon"
+  }
+}

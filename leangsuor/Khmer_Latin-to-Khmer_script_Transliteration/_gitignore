@@ -1,0 +1,8 @@
+hf_models.zip
+hf_models/*
+!hf_models/README.md
+.DS_Store
+.venv/
+__pycache__/
+*.pyc
+.python-version

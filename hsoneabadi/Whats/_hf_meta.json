@@ -1,0 +1,27 @@
+{
+ "captured_at": "2026-08-04T16:21:04Z",
+ "hf_metadata": {
+  "sha": "1c2e0a36a872585b27b713660316df6ef187b88e"
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  },
+  {
+   "original": ".gitignore",
+   "stored_as": "_gitignore"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "hsoneabadi/Whats",
+ "repo_type": "spaces",
+ "sha": "1c2e0a36a872585b27b713660316df6ef187b88e",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/hsoneabadi/Whats"
+}

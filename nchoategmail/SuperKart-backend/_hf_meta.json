@@ -1,0 +1,23 @@
+{
+ "captured_at": "2026-08-04T16:41:16Z",
+ "hf_metadata": {
+  "sha": "862ac0920a45866fcf360e4a0916a27be9880689"
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "nchoategmail/SuperKart-backend",
+ "repo_type": "spaces",
+ "sha": "862ac0920a45866fcf360e4a0916a27be9880689",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/nchoategmail/SuperKart-backend"
+}

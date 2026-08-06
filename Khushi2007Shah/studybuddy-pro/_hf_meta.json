@@ -1,0 +1,75 @@
+{
+ "captured_at": "2026-08-04T13:53:59Z",
+ "hf_metadata": {
+  "_id": "6a4e0c96144dab5af2351bb3",
+  "author": "Khushi2007Shah",
+  "cardData": {
+   "app_file": "app.py",
+   "colorFrom": "pink",
+   "colorTo": "pink",
+   "emoji": "📚",
+   "pinned": false,
+   "sdk": "gradio",
+   "title": "StudyBuddy Pro"
+  },
+  "createdAt": "2026-07-08T08:38:46.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://khushi2007shah-studybuddy-pro.hf.space",
+  "id": "Khushi2007Shah/studybuddy-pro",
+  "lastModified": "2026-07-08T13:17:37.000Z",
+  "likes": 1,
+  "private": false,
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "khushi2007shah-studybuddy-pro.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": null,
+    "requested": "cpu-basic"
+   },
+   "replicas": {
+    "requested": 1
+   },
+   "stage": "SLEEPING"
+  },
+  "sdk": "gradio",
+  "sha": "13c4805401b7e3f820f7d17a186ba33997b6a5ab",
+  "siblings": [
+   {
+    "rfilename": ".gitignore"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "app.py"
+   },
+   {
+    "rfilename": "quiz_engine.py"
+   },
+   {
+    "rfilename": "rag_engine.py"
+   },
+   {
+    "rfilename": "requirements.txt"
+   }
+  ],
+  "subdomain": "khushi2007shah-studybuddy-pro",
+  "tags": [
+   "gradio",
+   "region:us"
+  ],
+  "usedStorage": 0
+ },
+ "renamed_gitattributes": [],
+ "repo_id": "Khushi2007Shah/studybuddy-pro",
+ "repo_type": "spaces",
+ "sha": "13c4805401b7e3f820f7d17a186ba33997b6a5ab",
+ "web_url": "https://huggingface.co/spaces/Khushi2007Shah/studybuddy-pro"
+}

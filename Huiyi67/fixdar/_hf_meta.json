@@ -1,0 +1,79 @@
+{
+ "captured_at": "2026-08-04T13:40:12Z",
+ "hf_metadata": {
+  "_id": "6a4ddabaff66eb8af8829cb7",
+  "author": "Huiyi67",
+  "cardData": {
+   "colorFrom": "green",
+   "colorTo": "green",
+   "emoji": "🌍",
+   "pinned": false,
+   "sdk": "docker",
+   "title": "Fixdar"
+  },
+  "createdAt": "2026-07-08T05:06:02.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://huiyi67-fixdar.hf.space",
+  "id": "Huiyi67/fixdar",
+  "lastModified": "2026-07-31T07:48:20.000Z",
+  "likes": 0,
+  "private": false,
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "huiyi67-fixdar.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": "cpu-basic",
+    "requested": "cpu-basic"
+   },
+   "pySpacesVersion": "0.51.1",
+   "replicas": {
+    "current": 1,
+    "requested": 1
+   },
+   "sha": "568018508d7e44a13d7046cb35af72c54f9abf32",
+   "stage": "RUNNING"
+  },
+  "sdk": "docker",
+  "sha": "568018508d7e44a13d7046cb35af72c54f9abf32",
+  "siblings": [
+   {
+    "rfilename": ".gitattributes"
+   },
+   {
+    "rfilename": "Dockerfile"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "main.py"
+   },
+   {
+    "rfilename": "requirements.txt"
+   }
+  ],
+  "subdomain": "huiyi67-fixdar",
+  "tags": [
+   "docker",
+   "region:us"
+  ],
+  "usedStorage": 0
+ },
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "Huiyi67/fixdar",
+ "repo_type": "spaces",
+ "sha": "568018508d7e44a13d7046cb35af72c54f9abf32",
+ "web_url": "https://huggingface.co/spaces/Huiyi67/fixdar"
+}

@@ -1,0 +1,75 @@
+{
+ "captured_at": "2026-08-06T02:53:32Z",
+ "hf_metadata": {
+  "_id": "6a73107a5c6d14b965c53d7b",
+  "author": "Eser-Ilgit",
+  "cardData": {
+   "colorFrom": "indigo",
+   "colorTo": "purple",
+   "emoji": "📚",
+   "pinned": false,
+   "sdk": "static",
+   "short_description": "Değişmeceli dil derlem ortamı",
+   "title": "Mecaz Sinas"
+  },
+  "createdAt": "2026-08-05T10:29:14.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://eser-ilgit-mecaz-sinas.static.hf.space",
+  "id": "Eser-Ilgit/Mecaz_Sinas",
+  "lastModified": "2026-08-05T10:44:41.000Z",
+  "likes": 0,
+  "private": false,
+  "region": "us",
+  "runtime": {
+   "hardware": {
+    "current": null,
+    "requested": null
+   },
+   "replicas": {
+    "current": 1,
+    "requested": 1
+   },
+   "stage": "RUNNING"
+  },
+  "sdk": "static",
+  "sha": "da88424475cec57c26ddfc24e6714123be184a8d",
+  "siblings": [
+   {
+    "rfilename": ".gitattributes"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "index.html"
+   },
+   {
+    "rfilename": "style.css"
+   }
+  ],
+  "subdomain": "eser-ilgit-mecaz-sinas",
+  "tags": [
+   "static",
+   "region:us"
+  ],
+  "usedStorage": 0
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "Eser-Ilgit/Mecaz_Sinas",
+ "repo_type": "spaces",
+ "sha": "da88424475cec57c26ddfc24e6714123be184a8d",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/Eser-Ilgit/Mecaz_Sinas"
+}

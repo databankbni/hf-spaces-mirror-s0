@@ -1,0 +1,87 @@
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.100.220:5000
+Press CTRL+C to quit
+127.0.0.1 - - [14/Jun/2026 21:03:30] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [14/Jun/2026 21:03:45] "GET /identify HTTP/1.1" 200 -
+127.0.0.1 - - [14/Jun/2026 21:03:46] "GET /static/img/placeholder.svg HTTP/1.1" 304 -
+127.0.0.1 - - [14/Jun/2026 21:03:46] "GET /static/css/app.css?v=2 HTTP/1.1" 200 -
+127.0.0.1 - - [14/Jun/2026 21:03:46] "GET /static/js/app.js?v=2 HTTP/1.1" 304 -
+127.0.0.1 - - [14/Jun/2026 21:03:46] "GET /assets/fonts/Inter-ExtraBold.woff2 HTTP/1.1" 404 -
+127.0.0.1 - - [14/Jun/2026 21:03:46] "GET /assets/fonts/Inter-Regular.woff2 HTTP/1.1" 404 -
+127.0.0.1 - - [14/Jun/2026 21:03:46] "GET /assets/fonts/Inter-Bold.woff2 HTTP/1.1" 404 -
+127.0.0.1 - - [14/Jun/2026 21:03:51] "GET /identify HTTP/1.1" 200 -
+127.0.0.1 - - [14/Jun/2026 21:03:51] "GET /static/css/app.css?v=2 HTTP/1.1" 304 -
+127.0.0.1 - - [14/Jun/2026 21:03:51] "GET /static/img/placeholder.svg HTTP/1.1" 304 -
+127.0.0.1 - - [14/Jun/2026 21:03:51] "GET /static/js/app.js?v=2 HTTP/1.1" 304 -
+127.0.0.1 - - [14/Jun/2026 21:03:51] "GET /assets/fonts/Inter-ExtraBold.woff2 HTTP/1.1" 404 -
+127.0.0.1 - - [14/Jun/2026 21:03:51] "GET /assets/fonts/Inter-Regular.woff2 HTTP/1.1" 404 -
+127.0.0.1 - - [14/Jun/2026 21:03:51] "GET /assets/fonts/Inter-Bold.woff2 HTTP/1.1" 404 -
+2026-06-14 21:04:48.570259: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: SSE SSE2 SSE3 SSE4.1 SSE4.2 AVX AVX2 AVX512F AVX512_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+127.0.0.1 - - [14/Jun/2026 21:04:51] "POST /identify HTTP/1.1" 200 -
+127.0.0.1 - - [14/Jun/2026 21:04:51] "GET /static/css/app.css?v=2 HTTP/1.1" 304 -
+127.0.0.1 - - [14/Jun/2026 21:04:51] "GET /static/img/placeholder.svg HTTP/1.1" 304 -
+127.0.0.1 - - [14/Jun/2026 21:04:51] "GET /static/js/app.js?v=2 HTTP/1.1" 304 -
+127.0.0.1 - - [14/Jun/2026 21:04:51] "GET /static/uploads/gradcam-c83b2c788b384c269d346027dcb8f2b7-Yellow_Throated_Vireo_0010_795000.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [14/Jun/2026 21:04:51] "GET /static/uploads/c83b2c788b384c269d346027dcb8f2b7-Yellow_Throated_Vireo_0010_795000.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [14/Jun/2026 21:04:51] "GET /bird-image/Green_Jay/Green_Jay_0003_65767.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [14/Jun/2026 21:04:51] "GET /bird-image/Grasshopper_Sparrow/Grasshopper_Sparrow_0001_115938.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [14/Jun/2026 21:04:51] "GET /bird-image/Pied_Kingfisher/Pied_Kingfisher_0004_72135.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [14/Jun/2026 21:04:51] "GET /assets/fonts/Inter-ExtraBold.woff2 HTTP/1.1" 404 -
+127.0.0.1 - - [14/Jun/2026 21:04:51] "GET /assets/fonts/Inter-Regular.woff2 HTTP/1.1" 404 -
+127.0.0.1 - - [14/Jun/2026 21:04:51] "GET /assets/fonts/Inter-Bold.woff2 HTTP/1.1" 404 -
+127.0.0.1 - - [14/Jun/2026 21:04:51] "GET /assets/fonts/Inter-SemiBold.woff2 HTTP/1.1" 404 -
+127.0.0.1 - - [14/Jun/2026 21:06:09] "GET /identify HTTP/1.1" 200 -
+127.0.0.1 - - [14/Jun/2026 21:06:58] "GET /identify HTTP/1.1" 200 -
+127.0.0.1 - - [14/Jun/2026 21:06:58] "GET /static/css/app.css?v=2 HTTP/1.1" 304 -
+127.0.0.1 - - [14/Jun/2026 21:06:58] "GET /static/img/placeholder.svg HTTP/1.1" 304 -
+127.0.0.1 - - [14/Jun/2026 21:06:58] "GET /static/js/app.js?v=2 HTTP/1.1" 304 -
+127.0.0.1 - - [14/Jun/2026 21:06:58] "GET /assets/fonts/Inter-ExtraBold.woff2 HTTP/1.1" 404 -
+127.0.0.1 - - [14/Jun/2026 21:06:58] "GET /assets/fonts/Inter-Regular.woff2 HTTP/1.1" 404 -
+127.0.0.1 - - [14/Jun/2026 21:06:58] "GET /assets/fonts/Inter-Bold.woff2 HTTP/1.1" 404 -
+127.0.0.1 - - [14/Jun/2026 21:07:38] "POST /identify HTTP/1.1" 200 -
+127.0.0.1 - - [14/Jun/2026 21:07:38] "GET /static/uploads/241d5bd04ab94c9287eb600efb51c517-Yellow_Throated_Vireo_0010_795000.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [14/Jun/2026 21:07:38] "GET /static/css/app.css?v=2 HTTP/1.1" 304 -
+127.0.0.1 - - [14/Jun/2026 21:07:38] "GET /static/uploads/gradcam-241d5bd04ab94c9287eb600efb51c517-Yellow_Throated_Vireo_0010_795000.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [14/Jun/2026 21:07:38] "GET /static/img/placeholder.svg HTTP/1.1" 304 -
+127.0.0.1 - - [14/Jun/2026 21:07:38] "GET /static/js/app.js?v=2 HTTP/1.1" 304 -
+127.0.0.1 - - [14/Jun/2026 21:07:38] "GET /bird-image/Grasshopper_Sparrow/Grasshopper_Sparrow_0001_115938.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [14/Jun/2026 21:07:38] "GET /bird-image/Green_Jay/Green_Jay_0003_65767.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [14/Jun/2026 21:07:38] "GET /bird-image/Pied_Kingfisher/Pied_Kingfisher_0004_72135.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [14/Jun/2026 21:07:38] "GET /assets/fonts/Inter-ExtraBold.woff2 HTTP/1.1" 404 -
+127.0.0.1 - - [14/Jun/2026 21:07:38] "GET /assets/fonts/Inter-Regular.woff2 HTTP/1.1" 404 -
+127.0.0.1 - - [14/Jun/2026 21:07:38] "GET /assets/fonts/Inter-Bold.woff2 HTTP/1.1" 404 -
+127.0.0.1 - - [14/Jun/2026 21:07:38] "GET /assets/fonts/Inter-SemiBold.woff2 HTTP/1.1" 404 -
+127.0.0.1 - - [14/Jun/2026 21:48:23] "GET /habitats HTTP/1.1" 200 -
+127.0.0.1 - - [14/Jun/2026 21:48:24] "GET /static/css/app.css?v=2 HTTP/1.1" 304 -
+127.0.0.1 - - [14/Jun/2026 21:48:24] "GET /static/js/app.js?v=2 HTTP/1.1" 304 -
+127.0.0.1 - - [14/Jun/2026 21:48:24] "GET /assets/fonts/Inter-ExtraBold.woff2 HTTP/1.1" 404 -
+127.0.0.1 - - [14/Jun/2026 21:48:24] "GET /assets/fonts/Inter-Regular.woff2 HTTP/1.1" 404 -
+127.0.0.1 - - [14/Jun/2026 21:48:24] "GET /assets/fonts/Inter-Bold.woff2 HTTP/1.1" 404 -
+127.0.0.1 - - [14/Jun/2026 21:49:06] "GET /identify HTTP/1.1" 200 -
+127.0.0.1 - - [14/Jun/2026 21:49:06] "GET /static/css/app.css?v=2 HTTP/1.1" 304 -
+127.0.0.1 - - [14/Jun/2026 21:49:06] "GET /static/js/app.js?v=2 HTTP/1.1" 304 -
+127.0.0.1 - - [14/Jun/2026 21:49:06] "GET /static/img/placeholder.svg HTTP/1.1" 304 -
+127.0.0.1 - - [14/Jun/2026 21:49:06] "GET /assets/fonts/Inter-ExtraBold.woff2 HTTP/1.1" 404 -
+127.0.0.1 - - [14/Jun/2026 21:49:06] "GET /assets/fonts/Inter-Regular.woff2 HTTP/1.1" 404 -
+127.0.0.1 - - [14/Jun/2026 21:49:06] "GET /assets/fonts/Inter-Bold.woff2 HTTP/1.1" 404 -
+127.0.0.1 - - [14/Jun/2026 21:50:22] "GET /species HTTP/1.1" 200 -
+127.0.0.1 - - [14/Jun/2026 21:50:22] "GET /static/css/app.css?v=2 HTTP/1.1" 304 -
+127.0.0.1 - - [14/Jun/2026 21:50:22] "GET /static/js/app.js?v=2 HTTP/1.1" 304 -
+127.0.0.1 - - [14/Jun/2026 21:50:22] "GET /bird-image/White_Pelican/White_Pelican_0003_96691.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [14/Jun/2026 21:50:22] "GET /bird-image/Pied_Kingfisher/Pied_Kingfisher_0004_72135.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [14/Jun/2026 21:50:22] "GET /bird-image/Cape_Glossy_Starling/Cape_Glossy_Starling_0002_129310.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [14/Jun/2026 21:50:22] "GET /bird-image/Grasshopper_Sparrow/Grasshopper_Sparrow_0001_115938.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [14/Jun/2026 21:50:22] "GET /bird-image/Barn_Swallow/Barn_Swallow_0002_130551.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [14/Jun/2026 21:50:22] "GET /assets/fonts/Inter-Regular.woff2 HTTP/1.1" 404 -
+127.0.0.1 - - [14/Jun/2026 21:50:22] "GET /assets/fonts/Inter-ExtraBold.woff2 HTTP/1.1" 404 -
+127.0.0.1 - - [14/Jun/2026 21:50:22] "GET /assets/fonts/Inter-Bold.woff2 HTTP/1.1" 404 -
+127.0.0.1 - - [14/Jun/2026 21:50:22] "GET /assets/fonts/Inter-SemiBold.woff2 HTTP/1.1" 404 -
+127.0.0.1 - - [14/Jun/2026 21:50:22] "GET /bird-image/White_Pelican/White_Pelican_0003_96691.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [14/Jun/2026 21:50:22] "GET /bird-image/Cape_Glossy_Starling/Cape_Glossy_Starling_0002_129310.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [14/Jun/2026 21:50:22] "GET /bird-image/Frigatebird/Frigatebird_0001_43101.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [14/Jun/2026 21:50:35] "GET /bird-image/Common_Tern/Common_Tern_0001_149721.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [14/Jun/2026 21:50:35] "GET /bird-image/Ruby_throated_Hummingbird/Ruby_Throated_Hummingbird_0001_58162.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [14/Jun/2026 21:50:35] "GET /bird-image/Green_Jay/Green_Jay_0003_65767.jpg HTTP/1.1" 304 -

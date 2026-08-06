@@ -1,0 +1,21 @@
+# /etc/systemd/system/mktbook_4.service
+[Unit]
+Description=MktBook 4 (Workout #4) Synthetic Studio Economy Bot Ecosystem
+After=network.target mktbook.service
+Requires=mktbook.service
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/root
+Environment="PATH=/usr/local/bin:/usr/bin:/bin"
+EnvironmentFile=/root/mktbook_4/.env_4
+ExecStart=/usr/bin/python3 -m mktbook_4.main
+Restart=always
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=mktbook_4
+
+[Install]
+WantedBy=multi-user.target

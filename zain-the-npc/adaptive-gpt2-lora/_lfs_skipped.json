@@ -1,0 +1,41 @@
+{
+ "lfs_not_stored": [
+  {
+   "oid": "c048c66dcde5f3d7292f5fbb00a0bc25c60f20bfdafb16e87f507b7c9cb6ad0b",
+   "path": "adapters/genz_sarcastic_lines.pt",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6YzA0OGM2NmRjZGU1ZjNkNzI5MmY1ZmJiMDBhMGJjMjVjNjBmMjBiZmRhZmIxNmU4N2Y1MDdiN2M5Y2I2YWQwYgpzaXplIDExODc5NjIK",
+   "size": 1187962,
+   "url": "https://huggingface.co/spaces/zain-the-npc/adaptive-gpt2-lora/resolve/fd5bff6e09e1248a6ba5af683606d7075770581d/adapters/genz_sarcastic_lines.pt"
+  },
+  {
+   "oid": "be43c79e5bb88b43bef6e1d469c8018e68f4a0eb333fa8ce9ed26f7e4d234ab2",
+   "path": "adapters/motivational_coach.pt",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6YmU0M2M3OWU1YmI4OGI0M2JlZjZlMWQ0NjljODAxOGU2OGY0YTBlYjMzM2ZhOGNlOWVkMjZmN2U0ZDIzNGFiMgpzaXplIDExODc5MDYK",
+   "size": 1187906,
+   "url": "https://huggingface.co/spaces/zain-the-npc/adaptive-gpt2-lora/resolve/fd5bff6e09e1248a6ba5af683606d7075770581d/adapters/motivational_coach.pt"
+  },
+  {
+   "oid": "5006a645165279a30abcfacd7c2f8724652aa04401f8d77a082a6f31a9c6928e",
+   "path": "adapters/noir_detective_lines.pt",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6NTAwNmE2NDUxNjUyNzlhMzBhYmNmYWNkN2MyZjg3MjQ2NTJhYTA0NDAxZjhkNzdhMDgyYTZmMzFhOWM2OTI4ZQpzaXplIDExODc5NjIK",
+   "size": 1187962,
+   "url": "https://huggingface.co/spaces/zain-the-npc/adaptive-gpt2-lora/resolve/fd5bff6e09e1248a6ba5af683606d7075770581d/adapters/noir_detective_lines.pt"
+  },
+  {
+   "oid": "feb936a89cda40e7eea72cc00a9258a42bb53a990ec84c6ac998eb7bcd13daba",
+   "path": "adapters/pirate_speak_lines.pt",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6ZmViOTM2YTg5Y2RhNDBlN2VlYTcyY2MwMGE5MjU4YTQyYmI1M2E5OTBlYzg0YzZhYzk5OGViN2JjZDEzZGFiYQpzaXplIDExODc5MDYK",
+   "size": 1187906,
+   "url": "https://huggingface.co/spaces/zain-the-npc/adaptive-gpt2-lora/resolve/fd5bff6e09e1248a6ba5af683606d7075770581d/adapters/pirate_speak_lines.pt"
+  },
+  {
+   "oid": "6d8492fe779c2a02d1c3d73ce584132798e2eb1dfa5fea3fd7e389dc97093004",
+   "path": "adapters/shakespearean_lines.pt",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6NmQ4NDkyZmU3NzljMmEwMmQxYzNkNzNjZTU4NDEzMjc5OGUyZWIxZGZhNWZlYTNmZDdlMzg5ZGM5NzA5MzAwNApzaXplIDExODc5MzQK",
+   "size": 1187934,
+   "url": "https://huggingface.co/spaces/zain-the-npc/adaptive-gpt2-lora/resolve/fd5bff6e09e1248a6ba5af683606d7075770581d/adapters/shakespearean_lines.pt"
+  }
+ ],
+ "overflow_not_stored": [],
+ "oversize_not_stored": []
+}

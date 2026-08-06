@@ -1,0 +1,37 @@
+{
+  "fitted_at": "2026-06-12",
+  "information_cutoff": "2026-06-12",
+  "training_matches": 11094,
+  "training_date_range": [
+    "2015-01-03",
+    "2026-06-12"
+  ],
+  "half_life_days": 180.0,
+  "optimizer": {
+    "method": "L-BFGS-B",
+    "converged": true,
+    "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "iterations": 26
+  },
+  "starting_params": {
+    "intercept": 0.09531017980432493,
+    "elo_scale": 0.00165,
+    "home_adv_logshift": 0.0,
+    "home_advantage_elo": 0.0,
+    "rho": 0.0,
+    "weighted_nll": 2131.499690134701
+  },
+  "fitted_params": {
+    "intercept": 0.15344112308888175,
+    "elo_scale": 0.0020741972184725598,
+    "home_adv_logshift": 0.13612708288203937,
+    "home_advantage_elo": 65.62880408367505,
+    "rho": -0.09976156493949083,
+    "weighted_nll": 2089.435499362576,
+    "implied_base_goal_rate": 1.1658391440937224
+  },
+  "notes": [
+    "home_advantage_elo is fitted on real matches where the listed home team plays on its own soil (neutral=False). World Cup 2026 group fixtures are all treated as neutral_venue=True in match_forecast. The host's +50 Elo bonus (TournamentTeam.rating) is a separate, transparent heuristic and was not estimated by this fit, so host-specific World Cup forecasts retain that limitation.",
+    "rho is the Dixon-Coles low-score correlation term; rho=0 recovers the independent-Poisson model shipped before this fit."
+  ]
+}

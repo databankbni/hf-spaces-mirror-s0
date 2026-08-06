@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="zh" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>HFSM</title>
+  
+  <!-- 引入 Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+  
+  <!-- 引入 Inter 字体 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ===== 全局变量 & 主题 ===== */
+    :root {
+      /* 深色 (默认) */
+      --bg-primary: #0a0a0a;
+      --bg-secondary: #111111;
+      --bg-card: rgba(30, 30, 30, 0.45); /* 调整透明度以增强毛玻璃质感 */
+      --bg-card-hover: rgba(45, 45, 45, 0.55);
+      --bg-input: rgba(255, 255, 255, 0.06);
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --border-medium: rgba(255, 255, 255, 0.15);
+      --text-primary: #f5f5f5;
+      --text-secondary: #8a8a8a;
+      --text-muted: #5a5a5a;
+      --accent: #0070f3;
+      --accent-glow: rgba(0, 112, 243, 0.35);
+      --accent-hover: #0060d6;
+      --green: #3fb68b;
+      --green-glow: rgba(63, 182, 139, 0.35);
+      --pink: #e06b9a;
+      --pink-glow: rgba(224, 107, 154, 0.30);
+      --red: #e5484d;
+      --red-glow: rgba(229, 72, 77, 0.30);
+      --red-rgb: 229, 72, 77;
+      --accent-rgb: 0, 112, 243;
+      --pink-rgb: 224, 107, 154;
+      --radius: 12px;
+      --radius-sm: 8px;
+      --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.4); /* 强化玻璃悬浮阴影 */
+      --transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --grid-color: rgba(255, 255, 255, 0.04);
+      --grid-size: 30px;
+      --blur-amount: 16px;
+    }
+
+    /* 浅色主题 */
+    [data-theme="light"] {
+      --bg-primary: #f8f9fa;
+      --bg-secondary: #ffffff;
+      --bg-card: rgba(255, 255, 255, 0.6);
+      --bg-card-hover: rgba(255, 255, 255, 0.8);
+      --bg-input: rgba(0, 0, 0, 0.04);
+      --border-subtle: rgba(0, 0, 0, 0.08);
+      --border-medium: rgba(0, 0, 0, 0.15);
+      --text-primary: #1a1a1a;
+      --text-secondary: #5a5a5a;
+      --text-muted: #8a8a8a;
+      --accent: #0060d6;
+      --accent-glow: rgba(0, 96, 214, 0.25);
+      --accent-hover: #004bb5;
+      --green: #2b8f6e;
+      --green-glow: rgba(43, 143, 110, 0.25);
+      --pink: #c24a7a;
+      --pink-glow: rgba(194, 74, 122, 0.20);
+      --red: #c73a3f;
+      --red-glow: rgba(199, 58, 63, 0.20);
+      --red-rgb: 199, 58, 63;
+      --accent-rgb: 0, 96, 214;
+      --pink-rgb: 194, 74, 122;
+      --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+      --grid-color: rgba(0, 0, 0, 0.05);
+      --blur-amount: 16px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      font-family: var(--font);
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      min-height: 100vh;
+      padding: 24px;
+      /* 注入环境光渐变背景，使上层的毛玻璃折射效果显现出来 */
+      background-image:
+        radial-gradient(circle at 15% 0%, rgba(var(--accent-rgb), 0.12) 0%, transparent 45%),
+        radial-gradient(circle at 85% 100%, rgba(var(--pink-rgb), 0.12) 0%, transparent 45%),
+        linear-gradient(var(--grid-color) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, var(--grid-size) var(--grid-size), var(--grid-size) var(--grid-size);
+      background-position: 0 0, 0 0, -1px -1px, -1px -1px;
+      background-attachment: fixed;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: rgba(128, 128, 128, 0.3); border-radius: 10px; }
+    ::-webkit-scrollbar-thumb:hover { background: rgba(128, 128, 128, 0.5); }
+
+    .app-container {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+
+    /* ===== 导航栏 ===== */
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 0 20px;
+      border-bottom: 1px solid var(--border-subtle);
+      margin-bottom: 28px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      font-size: 20px;
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
+      text-decoration: none;
+    }
+    .navbar-brand svg { width: 32px; height: 32px; flex-shrink: 0; }
+
+    .navbar-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .theme-toggle {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 50%;
+      width: 38px;
+      height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: var(--transition);
+      color: var(--text-secondary);
+      font-size: 18px;
+      padding: 0;
+      backdrop-filter: blur(var(--blur-amount));
+    }
+    .theme-toggle:hover {
+      background: var(--bg-card-hover);
+      color: var(--text-primary);
+      border-color: var(--border-medium);
+    }
+
+    /* ===== 统一按钮风格 ===== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 8px 18px;
+      border-radius: var(--radius-sm);
+      font-family: var(--font);
+      font-size: 14px;
+      font-weight: 500;
+      border: none;
+      cursor: pointer;
+      transition: var(--transition);
+      background: var(--bg-card);
+      color: var(--text-secondary);
+      border: 1px solid transparent;
+      text-decoration: none;
+      white-space: nowrap;
+      user-select: none;
+      backdrop-filter: blur(var(--blur-amount));
+    }
+    .btn:hover { background: var(--bg-card-hover); color: var(--text-primary); }
+    .btn-primary { background: rgba(var(--accent-rgb), 0.10); color: var(--accent); border: 1px solid rgba(var(--accent-rgb), 0.20); padding: 8px 20px; }
+    .btn-primary:hover { background: rgba(var(--accent-rgb), 0.18); border-color: rgba(var(--accent-rgb), 0.35); color: var(--accent); }
+    .btn-danger-outline { background: rgba(var(--red-rgb), 0.10); color: var(--red); border: 1px solid rgba(var(--red-rgb), 0.20); padding: 8px 20px; }
+    .btn-danger-outline:hover { background: rgba(var(--red-rgb), 0.18); border-color: rgba(var(--red-rgb), 0.35); color: var(--red); }
+    .btn-outline { background: transparent; border: 1px solid var(--border-medium); color: var(--text-secondary); }
+    .btn-outline:hover { background: var(--bg-card); border-color: rgba(128, 128, 128, 0.2); color: var(--text-primary); }
+    .btn-sm { padding: 5px 14px; font-size: 12px; }
+    .btn-xs { padding: 3px 10px; font-size: 11px; border-radius: 6px; }
+
+    /* ===== 概览卡片 ===== */
+    .overview-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    .overview-stat {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius);
+      padding: 16px 18px;
+      transition: var(--transition);
+      backdrop-filter: blur(var(--blur-amount));
+      -webkit-backdrop-filter: blur(var(--blur-amount));
+      box-shadow: var(--glass-shadow);
+    }
+    .overview-stat:hover { background: var(--bg-card-hover); border-color: var(--border-medium); }
+    .overview-stat .label { font-size: 12px; font-weight: 500; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 6px; }
+    .overview-stat .value { font-size: 26px; font-weight: 700; letter-spacing: -0.02em; color: var(--text-primary); line-height: 1.2; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .overview-stat .value .unit { font-size: 14px; font-weight: 400; color: var(--text-secondary); margin-left: 4px; }
+
+    /* ===== 过滤面板 ===== */
+    .filter-panel {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 14px 20px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius);
+      padding: 14px 20px;
+      margin-bottom: 24px;
+      backdrop-filter: blur(var(--blur-amount));
+      -webkit-backdrop-filter: blur(var(--blur-amount));
+      box-shadow: var(--glass-shadow);
+    }
+    .filter-group { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+    .filter-group label { font-size: 13px; font-weight: 500; color: var(--text-secondary); white-space: nowrap; }
+    .filter-group select {
+      background: var(--bg-card); border: 1px solid var(--border-subtle); color: var(--text-primary); padding: 6px 32px 6px 14px; border-radius: 8px; font-family: var(--font); font-size: 13px; font-weight: 500; cursor: pointer; appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%238a8a8a' d='M6 8L1 3h10z'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 12px center; transition: var(--transition); min-width: 120px; backdrop-filter: blur(var(--blur-amount));
+    }
+    .filter-group select:hover { background-color: var(--bg-card-hover); border-color: var(--border-medium); }
+    .filter-group select:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-glow); background-color: var(--bg-card-hover); }
+    .filter-group select option { background: var(--bg-secondary); color: var(--text-primary); }
+    .filter-spacer { flex: 1; }
+
+    /* ===== 用户分组 (引入毛玻璃效果) ===== */
+    .user-group {
+      margin-bottom: 20px;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--bg-card);
+      transition: var(--transition);
+      backdrop-filter: blur(var(--blur-amount));
+      -webkit-backdrop-filter: blur(var(--blur-amount));
+      box-shadow: var(--glass-shadow);
+    }
+    .user-group:hover { border-color: var(--border-medium); }
+    
+    .user-group > summary {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 20px;
+      background: rgba(128, 128, 128, 0.04);
+      cursor: pointer;
+      user-select: none;
+      transition: var(--transition);
+      border-bottom: 1px solid transparent;
+      list-style: none;
+    }
+    .user-group > summary::-webkit-details-marker { display: none; }
+    .user-group > summary:hover { background: rgba(128, 128, 128, 0.08); }
+    .user-group[open] > summary { border-bottom-color: var(--border-subtle); }
+    
+    .user-group > summary .name { font-weight: 600; font-size: 15px; color: var(--text-primary); display: flex; align-items: center; gap: 10px; }
+    .user-group > summary .name .count { font-weight: 400; font-size: 13px; color: var(--text-secondary); }
+    .user-group > summary .chevron { color: var(--text-secondary); transition: transform 0.25s ease; font-size: 14px; }
+    .user-group[open] > summary .chevron { transform: rotate(180deg); }
+    
+    .user-group-body {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      padding: 16px 20px;
+      align-items: start; 
+    }
+
+    /* ===== 实例卡片 ===== */
+    .server-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      padding: 16px 18px;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+      min-height: 140px;
+      display: flex;
+      flex-direction: column;
+      backdrop-filter: blur(var(--blur-amount));
+      -webkit-backdrop-filter: blur(var(--blur-amount));
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    }
+    .server-card:hover { 
+      background: var(--bg-card-hover); 
+      border-color: var(--border-medium); 
+      box-shadow: var(--glass-shadow); 
+    }
+    .server-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--accent), var(--pink)); opacity: 0.4; }
+    
+    .server-card .card-header { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 12px; }
+    .server-card .card-header .left { display: flex; align-items: center; gap: 10px; min-width: 0; flex: 1; cursor: pointer; }
+    .server-card .card-header .left .name { font-weight: 600; font-size: 14px; color: var(--text-primary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .server-card .card-header .left .flag-icon { flex-shrink: 0; width: 18px; height: 18px; opacity: 0.6; }
+
+    .status-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+    .status-dot.online { background: var(--green); box-shadow: 0 0 12px var(--green-glow); }
+    .status-dot.sleeping { background: var(--pink); box-shadow: 0 0 12px var(--pink-glow); }
+    .status-dot.offline { background: var(--red); box-shadow: 0 0 12px var(--red-glow); }
+
+    .metric-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-top: 4px; }
+    .metric-item { background: rgba(128, 128, 128, 0.03); border-radius: var(--radius-sm); padding: 8px 10px; border: 1px solid var(--border-subtle); transition: var(--transition); backdrop-filter: blur(4px); }
+    .metric-item:hover { background: rgba(128, 128, 128, 0.06); }
+    .metric-item .label { font-size: 10px; font-weight: 500; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.04em; }
+    .metric-item .value { font-size: 14px; font-weight: 600; color: var(--text-primary); margin-top: 2px; font-variant-numeric: tabular-nums; overflow: hidden; text-overflow: ellipsis; }
+    .metric-item .value.na { color: var(--text-muted); font-weight: 400; }
+
+    .info-block { margin-top: 12px; padding: 12px 14px; background: rgba(128, 128, 128, 0.03); border-radius: var(--radius-sm); border: 1px solid var(--border-subtle); display: none; font-size: 13px; line-height: 1.6; backdrop-filter: blur(4px); }
+    .server-card.expanded .info-block { display: block; }
+    .info-block .row { display: flex; gap: 8px; color: var(--text-secondary); margin-bottom: 4px; }
+    .info-block .row:last-child { margin-bottom: 0; }
+    .info-block .row .label { color: var(--text-muted); font-weight: 500; flex-shrink: 0; }
+    .info-block .row .value { color: var(--text-primary); word-break: break-word; }
+
+    .card-actions { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--border-subtle); }
+    .card-actions .btn { font-size: 12px; padding: 4px 14px; }
+
+    /* ===== 图表容器 ===== */
+    /* 强制 display: block 显示图表 */
+    .chart-wrapper { margin-top: 14px; padding: 12px 14px 8px; background: rgba(0, 0, 0, 0.2); border-radius: var(--radius-sm); border: 1px solid var(--border-subtle); display: block; height: 220px; backdrop-filter: blur(4px); }
+    [data-theme="light"] .chart-wrapper { background: rgba(0, 0, 0, 0.03); }
+    .chart-wrapper canvas { width: 100% !important; height: 100% !important; }
+
+    /* ===== 弹窗与加载 ===== */
+    .modal-overlay, .loading-overlay { position: fixed; inset: 0; background: rgba(0, 0, 0, 0.5); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); display: none; align-items: center; justify-content: center; z-index: 9999; padding: 20px; animation: fadeIn 0.2s ease; }
+    .modal-box { background: var(--bg-card); border: 1px solid var(--border-medium); border-radius: var(--radius); padding: 32px 36px; max-width: 400px; width: 100%; box-shadow: var(--glass-shadow); animation: slideUp 0.25s ease; backdrop-filter: blur(12px); }
+    .modal-box h2 { font-size: 20px; font-weight: 600; margin-bottom: 8px; color: var(--text-primary); }
+    .modal-box p { color: var(--text-secondary); font-size: 14px; margin-bottom: 20px; line-height: 1.6; }
+    .modal-box input { width: 100%; padding: 12px 16px; background: var(--bg-input); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); color: var(--text-primary); font-family: var(--font); font-size: 14px; transition: var(--transition); margin-bottom: 12px; }
+    .modal-box input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-glow); }
+    .modal-box input::placeholder { color: var(--text-muted); }
+    .modal-box .error { color: var(--red); font-size: 13px; margin-top: 4px; min-height: 20px; display: none; }
+    .modal-box .actions { display: flex; gap: 10px; margin-top: 10px; }
+    .modal-box .actions .btn { flex: 1; }
+
+    .loading-overlay { z-index: 99999; backdrop-filter: blur(8px); }
+    .spinner { width: 40px; height: 40px; border: 3px solid var(--border-medium); border-top-color: var(--accent); border-radius: 50%; animation: spin 0.8s linear infinite; }
+
+    .empty-state { text-align: center; padding: 60px 20px; color: var(--text-secondary); width: 100%; grid-column: 1 / -1; }
+    .empty-state .icon { font-size: 48px; margin-bottom: 16px; opacity: 0.3; }
+    .empty-state h3 { color: var(--text-primary); font-weight: 600; margin-bottom: 4px; }
+
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes slideUp { from { opacity: 0; transform: translateY(20px) scale(0.97); } to { opacity: 1; transform: translateY(0) scale(1); } }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ===== 响应式 ===== */
+    @media (max-width: 1200px) { .overview-grid { grid-template-columns: repeat(3, 1fr); } }
+    @media (max-width: 992px) { .user-group-body { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 768px) {
+      body { padding: 16px; } .app-container { padding: 0 8px; }
+      .overview-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+      .overview-stat { padding: 12px 14px; } .overview-stat .value { font-size: 22px; }
+      .user-group-body { grid-template-columns: 1fr; padding: 12px 14px; }
+      .filter-panel { padding: 12px 16px; gap: 10px; }
+      .filter-group { width: 100%; } .filter-group select { flex: 1; min-width: 0; }
+      .filter-spacer { display: none; }
+      .navbar-brand { font-size: 17px; } .modal-box { padding: 24px 20px; }
+      .metric-grid { grid-template-columns: repeat(3, 1fr); }
+      .server-card .card-header .left .name { font-size: 13px; }
+    }
+    @media (max-width: 480px) {
+      .overview-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+      .overview-stat { padding: 10px 12px; } .overview-stat .value { font-size: 18px; } .overview-stat .label { font-size: 10px; }
+      .metric-grid { grid-template-columns: repeat(2, 1fr); gap: 6px; } .metric-item { padding: 6px 8px; } .metric-item .value { font-size: 12px; }
+      .server-card { padding: 12px 14px; min-height: 120px; }
+      .card-actions .btn { font-size: 11px; padding: 3px 10px; } .modal-box { padding: 20px 16px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="app-container">
+    
+    <!-- ===== 导航栏 ===== -->
+    <nav class="navbar">
+      <a class="navbar-brand" href="#">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2L2 7l10 5 10-5-10-5z" />
+          <path d="M2 17l10 5 10-5" />
+          <path d="M2 12l10 5 10-5" />
+        </svg>
+        HFSM
+      </a>
+      <div class="navbar-actions">
+        <button class="theme-toggle" id="themeToggleBtn" onclick="toggleTheme()" title="切换主题">☀️</button>
+        <button class="btn btn-primary" id="loginButton" onclick="showLoginForm()">登录</button>
+        <button class="btn btn-danger-outline" id="logoutButton" style="display: none;" onclick="logout()">登出</button>
+      </div>
+    </nav>
+
+    <!-- ===== 概览 ===== -->
+    <div class="overview-grid" id="summary">
+      <div class="overview-stat"><div class="label">总用户</div><div class="value" id="totalUsers">0</div></div>
+      <div class="overview-stat"><div class="label">总实例</div><div class="value" id="totalServers">0</div></div>
+      <div class="overview-stat"><div class="label">在线</div><div class="value" id="onlineServers" style="color:var(--green);">0</div></div>
+      <div class="overview-stat"><div class="label">离线</div><div class="value" id="offlineServers" style="color:var(--red);">0</div></div>
+      <div class="overview-stat"><div class="label">总上传</div><div class="value"><span id="totalUpload">0 B/s</span></div></div>
+      <div class="overview-stat"><div class="label">总下载</div><div class="value"><span id="totalDownload">0 B/s</span></div></div>
+    </div>
+
+    <!-- ===== 过滤 & 排序 ===== -->
+    <div class="filter-panel">
+      <div class="filter-group">
+        <label for="statusFilter">状态</label>
+        <select id="statusFilter" onchange="applyFiltersAndSort()">
+          <option value="all">全部</option>
+          <option value="running">运行中</option>
+          <option value="sleeping">休眠中</option>
+          <option value="stopped">已停止</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label for="userFilter">用户</label>
+        <select id="userFilter" onchange="applyFiltersAndSort()">
+          <option value="all">全部用户</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label for="sortBy">排序</label>
+        <select id="sortBy" onchange="applyFiltersAndSort()">
+          <option value="name-asc">名称 A→Z</option>
+          <option value="name-desc">名称 Z→A</option>
+          <option value="status-asc">状态 运行→停止</option>
+          <option value="status-desc">状态 停止→运行</option>
+        </select>
+      </div>
+      <div class="filter-spacer"></div>
+      <button class="btn btn-outline btn-sm" onclick="refreshData()">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M14 8a6 6 0 11-2.5-4.9" />
+          <path d="M14 2v4h-4" />
+        </svg>
+        刷新
+      </button>
+    </div>
+
+    <!-- ===== 实例列表 ===== -->
+    <div id="servers">
+      <!-- JS 会在这里插入内容 -->
+    </div>
+
+  </div>
+
+  <!-- 登录弹窗 -->
+  <div id="loginOverlay" class="modal-overlay" onclick="handleOverlayClick(event, 'loginOverlay')">
+    <div class="modal-box">
+      <h2>登录</h2>
+      <p>输入管理员账户密码</p>
+      <input type="text" id="username" placeholder="用户名" aria-label="用户名" onkeyup="handleEnter(event, login)">
+      <input type="password" id="password" placeholder="密码" aria-label="密码" onkeyup="handleEnter(event, login)">
+      <div id="loginError" class="error"></div>
+      <div class="actions">
+        <button class="btn btn-primary" onclick="login()">登录</button>
+        <button class="btn btn-outline" onclick="hideLoginForm()">取消</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 确认弹窗 -->
+  <div id="confirmOverlay" class="modal-overlay" onclick="handleOverlayClick(event, 'confirmOverlay')">
+    <div class="modal-box">
+      <h2 id="confirmTitle">确认操作</h2>
+      <p id="confirmMessage"></p>
+      <div class="actions">
+        <button class="btn btn-primary" onclick="confirmAction()">确认</button>
+        <button class="btn btn-outline" onclick="cancelAction()">取消</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 加载状态覆盖层 -->
+  <div id="loadingOverlay" class="loading-overlay">
+    <div class="spinner"></div>
+  </div>
+
+  <script>
+    // ==========================================================
+    // 基础主题初始化与逻辑部分（完全保留原始文件稳定的原生 JS 逻辑）
+    // ==========================================================
+    
+    // 主题切换逻辑
+    let isDark = localStorage.getItem('theme') !== 'light';
+    function applyTheme() {
+      document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
+      document.getElementById('themeToggleBtn').textContent = isDark ? '☀️' : '🌙';
+    }
+    applyTheme();
+
+    function toggleTheme() {
+      isDark = !isDark;
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      applyTheme();
+      // 让现有图表重新渲染以适应主题颜色变化
+      chartInstances.forEach(chart => {
+        chart.update();
+      });
+    }
+
+    // 全局变量
+    let isLoggedIn = false;
+    let pendingAction = null;
+    let pendingRepoId = null;
+
+    // 加载状态控制
+    function showLoading() { document.getElementById('loadingOverlay').style.display = 'flex'; }
+    function hideLoading() { document.getElementById('loadingOverlay').style.display = 'none'; }
+
+    // 弹窗控制与事件协助
+    function handleOverlayClick(event, overlayId) {
+      if (event.target.id === overlayId) {
+        if (overlayId === 'loginOverlay') hideLoginForm();
+        if (overlayId === 'confirmOverlay') cancelAction();
+      }
+    }
+    function handleEnter(event, callback) { if (event.key === 'Enter') callback(); }
+    
+    function showLoginForm() {
+      document.getElementById('loginOverlay').style.display = 'flex';
+      document.getElementById('username').value = '';
+      document.getElementById('password').value = '';
+      document.getElementById('loginError').style.display = 'none';
+      document.getElementById('username').focus();
+    }
+    function hideLoginForm() { document.getElementById('loginOverlay').style.display = 'none'; }
+    
+    function showConfirmDialog(action, repoId, title, message) {
+      pendingAction = action;
+      pendingRepoId = repoId;
+      document.getElementById('confirmTitle').textContent = title;
+      document.getElementById('confirmMessage').textContent = message;
+      document.getElementById('confirmOverlay').style.display = 'flex';
+    }
+    function confirmAction() {
+      if (pendingAction === 'restart') restartSpace(pendingRepoId);
+      else if (pendingAction === 'rebuild') rebuildSpace(pendingRepoId);
+      cancelAction();
+    }
+    function cancelAction() {
+      pendingAction = null;
+      pendingRepoId = null;
+      document.getElementById('confirmOverlay').style.display = 'none';
+    }
+
+    // 登录状态管理
+    function checkLoginStatus() {
+      const token = localStorage.getItem('authToken');
+      const loginBtn = document.getElementById('loginButton');
+      const logoutBtn = document.getElementById('logoutButton');
+
+      if (token) {
+        showLoading();
+        return fetch('/api/verify-token', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ token })
+        }).then(res => res.json()).then(data => {
+          hideLoading();
+          if (data.success) {
+            isLoggedIn = true;
+            loginBtn.style.display = 'none';
+            logoutBtn.style.display = 'inline-flex';
+            updateActionButtons(true);
+          } else {
+            localStorage.removeItem('authToken');
+            isLoggedIn = false;
+            loginBtn.style.display = 'inline-flex';
+            logoutBtn.style.display = 'none';
+            updateActionButtons(false);
+          }
+          return data.success;
+        }).catch(() => {
+          hideLoading();
+          localStorage.removeItem('authToken');
+          isLoggedIn = false;
+          loginBtn.style.display = 'inline-flex';
+          logoutBtn.style.display = 'none';
+          updateActionButtons(false);
+          return false;
+        });
+      } else {
+        isLoggedIn = false;
+        loginBtn.style.display = 'inline-flex';
+        logoutBtn.style.display = 'none';
+        updateActionButtons(false);
+        return Promise.resolve(false);
+      }
+    }
+
+    function login() {
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+      const loginError = document.getElementById('loginError');
+      if (!username || !password) {
+        loginError.textContent = '请填写用户名和密码';
+        loginError.style.display = 'block';
+        return;
+      }
+      showLoading();
+      fetch('/api/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ username, password })
+      }).then(res => res.json()).then(data => {
+        hideLoading();
+        if (data.success) {
+          localStorage.setItem('authToken', data.token);
+          isLoggedIn = true;
+          hideLoginForm();
+          document.getElementById('loginButton').style.display = 'none';
+          document.getElementById('logoutButton').style.display = 'inline-flex';
+          updateActionButtons(true);
+          refreshData(); 
+        } else {
+          loginError.textContent = data.message || '登录失败';
+          loginError.style.display = 'block';
+        }
+      }).catch(() => {
+        hideLoading();
+        loginError.textContent = '登录请求失败，请稍后重试';
+        loginError.style.display = 'block';
+      });
+    }
+
+    function logout() {
+      const token = localStorage.getItem('authToken');
+      if (token) {
+        showLoading();
+        fetch('/api/logout', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ token })
+        }).then(() => {
+          hideLoading();
+          localStorage.removeItem('authToken');
+          isLoggedIn = false;
+          document.getElementById('loginButton').style.display = 'inline-flex';
+          document.getElementById('logoutButton').style.display = 'none';
+          updateActionButtons(false);
+          refreshData();
+        }).catch(() => {
+          hideLoading();
+          localStorage.removeItem('authToken');
+          isLoggedIn = false;
+          document.getElementById('loginButton').style.display = 'inline-flex';
+          document.getElementById('logoutButton').style.display = 'none';
+          updateActionButtons(false);
+          refreshData();
+        });
+      }
+    }
+
+    function updateActionButtons(loggedIn) {
+      isLoggedIn = loggedIn;
+      const cards = document.querySelectorAll('.server-card');
+      cards.forEach(card => {
+        const actions = card.querySelector('.card-actions');
+        if (actions) actions.style.display = loggedIn ? 'flex' : 'none';
+      });
+    }
+
+    // API调用辅助函数
+    async function getUsernames() {
+      try {
+        const token = localStorage.getItem('authToken');
+        const headers = {};
+        if (token) headers['Authorization'] = `Bearer ${token}`;
+        
+        const response = await fetch('/api/config', { headers });
+        const config = await response.json();
+        
+        const usernamesList = config.usernames ? config.usernames.split(',').map(name => name.trim()).filter(Boolean) : [];
+        document.getElementById('totalUsers').textContent = usernamesList.length;
+        
+        const userFilter = document.getElementById('userFilter');
+        userFilter.innerHTML = '<option value="all">全部用户</option>';
+        usernamesList.forEach(username => {
+          const option = document.createElement('option');
+          option.value = username;
+          option.textContent = username;
+          userFilter.appendChild(option);
+        });
+        return usernamesList;
+      } catch (error) {
+        document.getElementById('totalUsers').textContent = 0;
+        return [];
+      }
+    }
+
+    async function fetchInstances() {
+      try {
+        showLoading();
+        const token = localStorage.getItem('authToken');
+        const headers = {};
+        if (token) headers['Authorization'] = `Bearer ${token}`;
+        
+        const response = await fetch('/api/proxy/spaces', { headers });
+        const instances = await response.json();
+        hideLoading();
+        return instances || [];
+      } catch (error) {
+        hideLoading();
+        return [];
+      }
+    }
+
+    // SSE管理类
+    class MetricsStreamManager {
+      constructor() { this.eventSource = null; }
+      connect(subscribedInstances = []) {
+        this.disconnect();
+        if(subscribedInstances.length === 0) return;
+
+        const instancesParam = subscribedInstances.join(',');
+        const token = localStorage.getItem('authToken');
+        const url = `/api/proxy/live-metrics-stream?instances=${encodeURIComponent(instancesParam)}&token=${encodeURIComponent(token || '')}`;
+        
+        this.eventSource = new EventSource(url);
+        this.eventSource.addEventListener("metric", (event) => {
+          try {
+            const data = JSON.parse(event.data);
+            updateServerCard(data.metrics, data.repoId);
+          } catch (e) {}
+        });
+        this.eventSource.onerror = () => {
+          this.disconnect();
+          setTimeout(() => this.connect(subscribedInstances), 5000);
+        };
+      }
+      disconnect() {
+        if (this.eventSource) {
+          this.eventSource.close();
+          this.eventSource = null;
+        }
+      }
+    }
+
+    const metricsStreamManager = new MetricsStreamManager();
+    const instanceMap = new Map();
+    const serverStatus = new Map();
+    let allInstances = [];
+    const chartInstances = new Map();
+    const chartDataBuffer = new Map();
+
+    async function initialize() {
+      await getUsernames();
+      allInstances = await fetchInstances();
+      renderInstances(allInstances);
+      
+      const runningInstances = allInstances
+        .filter(instance => (instance.status || '').toLowerCase() === 'running')
+        .map(instance => instance.repo_id);
+      
+      metricsStreamManager.connect(runningInstances);
+      updateSummary();
+      updateActionButtons(isLoggedIn);
+    }
+
+    async function refreshData() {
+      metricsStreamManager.disconnect();
+      chartInstances.forEach(chart => { if (chart) chart.destroy(); });
+      chartInstances.clear();
+      chartDataBuffer.clear();
+      await initialize();
+      applyFiltersAndSort(); 
+    }
+
+    // 渲染页面 DOM 结构
+    function renderInstances(instances) {
+      const serversContainer = document.getElementById('servers');
+      serversContainer.innerHTML = ''; 
+
+      if (instances.length === 0) {
+        serversContainer.innerHTML = `
+          <div class="empty-state">
+            <div class="icon">📡</div>
+            <h3>暂无实例</h3>
+            <p>没有找到匹配的 Space 实例</p>
+          </div>
+        `;
+        return;
+      }
+
+      const userGroups = {};
+      instances.forEach(instance => {
+        const owner = instance.owner || '未知用户';
+        if (!userGroups[owner]) userGroups[owner] = [];
+        userGroups[owner].push(instance);
+      });
+
+      Object.keys(userGroups).forEach(owner => {
+        let userGroup = document.createElement('details');
+        userGroup.className = 'user-group';
+        userGroup.id = `user-${owner}`;
+        userGroup.setAttribute('open', '');
+        
+        const summary = document.createElement('summary');
+        summary.innerHTML = `
+          <span class="name">${owner} <span class="count">(${userGroups[owner].length})</span></span>
+          <span class="chevron">▾</span>
+        `;
+        userGroup.appendChild(summary);
+        
+        const userServers = document.createElement('div');
+        userServers.className = 'user-group-body';
+        userGroup.appendChild(userServers);
+        
+        serversContainer.appendChild(userGroup);
+
+        userGroups[owner].forEach(instance => {
+          renderInstanceCard(instance, userServers);
+        });
+      });
+    }
+
+    // 辅助格式化
+    function formatBytes(bytes) {
+      if (!bytes || bytes === 0) return '0 B';
+      const k = 1024, sizes = ['B', 'KB', 'MB', 'GB', 'TB'];
+      const i = Math.floor(Math.log(bytes) / Math.log(k));
+      return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+    }
+    function formatRelativeTime(dateStr) {
+      if (!dateStr) return '未知时间';
+      try {
+        const date = new Date(dateStr), now = new Date(), diffMs = now - date;
+        const diffDays = Math.floor(diffMs / 86400000), diffHrs = Math.floor(diffMs / 3600000), diffMins = Math.floor(diffMs / 60000);
+        if (diffDays > 7) return date.toLocaleDateString();
+        if (diffDays > 0) return `${diffDays}天前`;
+        if (diffHrs > 0) return `${diffHrs}小时前`;
+        if (diffMins > 0) return `${diffMins}分钟前`;
+        return '刚刚';
+      } catch { return '未知时间'; }
+    }
+
+    function toggleInfoBlock(instanceId) {
+      const card = document.getElementById(`instance-${instanceId}`);
+      if (card) card.classList.toggle('expanded');
+    }
+
+    function renderInstanceCard(instance, container) {
+      const instanceId = instance.repo_id;
+      instanceMap.set(instanceId, instance);
+
+      const iconSvg = instance.private 
+        ? `<svg class="flag-icon" viewBox="0 0 20 20" fill="currentColor"><path d="M15 7V5a5 5 0 00-10 0v2H3v10h14V7h-2zm-5 8a2 2 0 110-4 2 2 0 010 4zm3-8H7V5a3 3 0 016 0v2z"/></svg>` 
+        : `<svg class="flag-icon" viewBox="0 0 20 20" fill="currentColor"><path d="M18 4H2a1 1 0 00-1 1v10a1 1 0 001 1h16a1 1 0 001-1V5a1 1 0 00-1-1zm-1 10H3V6h14v8z"/></svg>`;
+      
+      const description = instance.short_description && instance.short_description.trim() ? instance.short_description : 'N/A';
+      const lastModified = formatRelativeTime(instance.last_modified);
+      
+      let statusClass = 'offline', statusColor = 'var(--red)';
+      const currentStatus = (instance.status || '').toLowerCase();
+      if (currentStatus === 'running') { statusClass = 'online'; statusColor = 'var(--green)'; }
+      else if (currentStatus === 'sleeping') { statusClass = 'sleeping'; statusColor = 'var(--pink)'; }
+
+      const card = document.createElement('div');
+      card.id = `instance-${instanceId}`;
+      card.className = 'server-card';
+      
+      card.innerHTML = `
+        <div class="card-header">
+          <div class="left" onclick="toggleInfoBlock('${instanceId}')">
+            <span class="status-dot ${statusClass}"></span>
+            ${iconSvg}
+            <span class="name">${instance.name}</span>
+          </div>
+        </div>
+        <div class="metric-grid">
+          <div class="metric-item"><div class="label">状态</div><div class="value status" style="color: ${statusColor}">${instance.status || 'Unknown'}</div></div>
+          <div class="metric-item"><div class="label">CPU</div><div class="value cpu-usage na">N/A</div></div>
+          <div class="metric-item"><div class="label">内存</div><div class="value memory-usage na">N/A</div></div>
+          <div class="metric-item"><div class="label">上传</div><div class="value upload na">N/A</div></div>
+          <div class="metric-item"><div class="label">下载</div><div class="value download na">N/A</div></div>
+        </div>
+        <div class="info-block">
+          <div class="row"><span class="label">描述</span><span class="value" title="${description}">${description}</span></div>
+          <div class="row"><span class="label">最近更新</span><span class="value">${lastModified}</span></div>
+        </div>
+        <div class="card-actions action-buttons" style="display: ${isLoggedIn ? 'flex' : 'none'};">
+          <button class="btn btn-outline btn-xs" onclick="viewInstance('${instance.url}')">查看</button>
+          <button class="btn btn-outline btn-xs" onclick="manageInstance('${instance.repo_id}')">管理</button>
+          <button class="btn btn-outline btn-xs" onclick="showConfirmDialog('restart', '${instance.repo_id}', '确认重启', '确定要重启实例 ${instance.name} 吗？')">重启</button>
+          <button class="btn btn-outline btn-xs" onclick="showConfirmDialog('rebuild', '${instance.repo_id}', '确认重建', '确定要重建实例 ${instance.name} 吗？')">重建</button>
+        </div>
+        <div class="chart-wrapper" id="chart-container-${instanceId}">
+          <canvas id="chart-${instanceId}"></canvas>
+        </div>
+      `;
+      container.appendChild(card);
+      serverStatus.set(instanceId, { lastSeen: Date.now(), isOnline: currentStatus === 'running', isSleep: currentStatus === 'sleeping', data: null, status: instance.status });
+      
+      // 添加到 DOM 后立即进行图表初始化，以强制展示图表
+      setTimeout(() => createChart(instanceId), 0);
+    }
+
+    // Chart 初始化与更新
+    function createChart(instanceId) {
+      const canvas = document.getElementById(`chart-${instanceId}`);
+      if (!canvas) return null;
+
+      const chart = new Chart(canvas.getContext('2d'), {
+        type: 'line',
+        data: {
+          labels: Array(30).fill(''),
+          datasets: [
+            { label: 'CPU %', data: [], borderColor: '#3fb68b', backgroundColor: 'rgba(63,182,139,0.15)', tension: 0.4, fill: true, pointRadius: 0 },
+            { label: '内存 %', data: [], borderColor: '#0070f3', backgroundColor: 'rgba(0,112,243,0.15)', tension: 0.4, fill: true, pointRadius: 0 },
+            { label: '上传 KB/s', data: [], borderColor: '#e06b9a', backgroundColor: 'rgba(224,107,154,0.12)', tension: 0.4, fill: true, pointRadius: 0 },
+            { label: '下载 KB/s', data: [], borderColor: '#f5a623', backgroundColor: 'rgba(245,166,35,0.12)', tension: 0.4, fill: true, pointRadius: 0 }
+          ]
+        },
+        options: {
+          responsive: true, maintainAspectRatio: false, animation: false,
+          plugins: {
+            legend: { labels: { color: '#8a8a8a', font: { size: 10, family: 'Inter' }, boxWidth: 12, padding: 8 } },
+            tooltip: { backgroundColor: '#111111', titleColor: '#f5f5f5', bodyColor: '#8a8a8a', borderColor: 'rgba(128,128,128,0.15)', borderWidth: 1, padding: 10, cornerRadius: 8 }
+          },
+          scales: {
+            y: { beginAtZero: true, grid: { color: 'rgba(128,128,128,0.08)' }, ticks: { color: '#5a5a5a', font: { size: 9, family: 'Inter' } } },
+            x: { grid: { display: false }, ticks: { color: '#5a5a5a', font: { size: 9, family: 'Inter' }, maxRotation: 0, autoSkip: true, autoSkipPadding: 8 } }
+          }
+        }
+      });
+      chartInstances.set(instanceId, chart);
+      return chart;
+    }
+
+    function updateChart(instanceId, data) {
+      let buffer = chartDataBuffer.get(instanceId) || { data: [], count: 0 };
+      buffer.data.push(data);
+      buffer.count++;
+
+      if (buffer.count < 2) {
+        chartDataBuffer.set(instanceId, buffer);
+        return;
+      }
+
+      let chart = chartInstances.get(instanceId);
+      // 如果图表未创建，这里作为防呆机制主动创建
+      if (!chart) {
+        chart = createChart(instanceId);
+        if (!chart) return;
+      }
+
+      const ds = chart.data.datasets;
+      const latest = buffer.data[buffer.data.length - 1];
+      
+      ds[0].data.push(latest.cpu_usage_pct);
+      ds[1].data.push(((latest.memory_used_bytes / (latest.memory_total_bytes || 1)) * 100));
+      ds[2].data.push(latest.tx_bps / 1024);
+      ds[3].data.push(latest.rx_bps / 1024);
+
+      if (ds[0].data.length > 30) {
+        ds.forEach(d => d.data.shift());
+      }
+      chart.update();
+      chartDataBuffer.set(instanceId, { data: [], count: 0 });
+    }
+
+    function updateServerCard(data, instanceId) {
+      const card = document.getElementById(`instance-${instanceId}`);
+      const instance = instanceMap.get(instanceId);
+      
+      if (!card && instance) return;
+      if (card) {
+        const dot = card.querySelector('.status-dot');
+        const sEl = card.querySelector('.status');
+        const cpu = card.querySelector('.cpu-usage');
+        const mem = card.querySelector('.memory-usage');
+        const up = card.querySelector('.upload');
+        const down = card.querySelector('.download');
+        let isOnline = false;
+
+        if (data) {
+          cpu.textContent = `${data.cpu_usage_pct.toFixed(1)}%`;
+          mem.textContent = `${((data.memory_used_bytes / (data.memory_total_bytes||1)) * 100).toFixed(1)}%`;
+          up.textContent = `${formatBytes(data.tx_bps)}/s`;
+          down.textContent = `${formatBytes(data.rx_bps)}/s`;
+          [cpu, mem, up, down].forEach(el => el.classList.remove('na'));
+
+          dot.className = 'status-dot online';
+          sEl.textContent = 'running';
+          sEl.style.color = 'var(--green)';
+          isOnline = true;
+          updateChart(instanceId, data);
+        } else {
+          const cur = (instance?.status || '').toLowerCase();
+          sEl.textContent = instance?.status || 'Unknown';
+          if (cur === 'running') { dot.className = 'status-dot online'; sEl.style.color = 'var(--green)'; isOnline = true; }
+          else if (cur === 'sleeping') { dot.className = 'status-dot sleeping'; sEl.style.color = 'var(--pink)'; }
+          else { dot.className = 'status-dot offline'; sEl.style.color = 'var(--red)'; }
+        }
+        serverStatus.set(instanceId, { lastSeen: Date.now(), isOnline, isSleep: (instance?.status || '').toLowerCase() === 'sleeping', data: data || null, status: instance?.status || 'unknown' });
+        updateSummary();
+      }
+    }
+
+    // 更新概览
+    function updateSummary() {
+      let online = 0, offline = 0, up = 0, down = 0;
+      serverStatus.forEach(status => {
+        if (status.isOnline || (status.status||'').toLowerCase() === 'running') {
+          online++;
+          if (status.data) {
+            up += parseFloat(status.data.tx_bps) || 0;
+            down += parseFloat(status.data.rx_bps) || 0;
+          }
+        } else {
+          offline++;
+        }
+      });
+      document.getElementById('totalServers').textContent = serverStatus.size;
+      document.getElementById('onlineServers').textContent = online;
+      document.getElementById('offlineServers').textContent = offline;
+      document.getElementById('totalUpload').textContent = `${formatBytes(up)}/s`;
+      document.getElementById('totalDownload').textContent = `${formatBytes(down)}/s`;
+    }
+
+    // 实例操作 (管理、重启、重建)
+    function viewInstance(url) { if (url) window.open(url, '_blank'); }
+    function manageInstance(repoId) { window.open(`https://huggingface.co/spaces/${repoId}`, '_blank'); }
+
+    async function restartSpace(repoId) {
+      if (!isLoggedIn) { showLoginForm(); return; }
+      try {
+        showLoading();
+        const res = await fetch(`/api/proxy/restart/${encodeURIComponent(repoId)}`, { method: 'POST', headers: { 'Authorization': `Bearer ${localStorage.getItem('authToken')}` } });
+        const result = await res.json();
+        hideLoading();
+        if (result.success) { alert(`✅ 重启成功: ${repoId}`); refreshData(); }
+        else { alert(`❌ 重启失败: ${result.error || '未知错误'}`); }
+      } catch (e) { hideLoading(); alert(`❌ 重启失败: ${e.message}`); }
+    }
+
+    async function rebuildSpace(repoId) {
+      if (!isLoggedIn) { showLoginForm(); return; }
+      try {
+        showLoading();
+        const res = await fetch(`/api/proxy/rebuild/${encodeURIComponent(repoId)}`, { method: 'POST', headers: { 'Authorization': `Bearer ${localStorage.getItem('authToken')}` } });
+        const result = await res.json();
+        hideLoading();
+        if (result.success) { alert(`✅ 重建成功: ${repoId}`); refreshData(); }
+        else { alert(`❌ 重建失败: ${result.error || '未知错误'}`); }
+      } catch (e) { hideLoading(); alert(`❌ 重建失败: ${e.message}`); }
+    }
+
+    // 过滤与排序
+    function applyFiltersAndSort() {
+      const sFilter = document.getElementById('statusFilter').value;
+      const uFilter = document.getElementById('userFilter').value;
+      const sortBy = document.getElementById('sortBy').value;
+
+      let filtered = allInstances;
+      if (sFilter !== 'all') filtered = filtered.filter(i => (i.status || '').toLowerCase() === sFilter);
+      if (uFilter !== 'all') filtered = filtered.filter(i => i.owner === uFilter);
+
+      filtered.sort((a, b) => {
+        if (sortBy === 'name-asc') return (a.name||'').localeCompare(b.name||'');
+        if (sortBy === 'name-desc') return (b.name||'').localeCompare(a.name||'');
+        const orders = { 'running': 0, 'sleeping': 1, 'stopped': 2, 'running-desc': 2, 'sleeping-desc': 1, 'stopped-desc': 0 };
+        const stA = (a.status||'').toLowerCase(), stB = (b.status||'').toLowerCase();
+        if (sortBy === 'status-asc') return (orders[stA]??99) - (orders[stB]??99);
+        if (sortBy === 'status-desc') return (orders[`${stA}-desc`]??-99) - (orders[`${stB}-desc`]??-99);
+        return 0;
+      });
+
+      instanceMap.clear();
+      serverStatus.clear();
+      metricsStreamManager.disconnect();
+      chartInstances.forEach(ch => ch.destroy());
+      chartInstances.clear();
+      chartDataBuffer.clear();
+      
+      renderInstances(filtered);
+      
+      const runningInstances = filtered.filter(i => (i.status||'').toLowerCase() === 'running').map(i => i.repo_id);
+      metricsStreamManager.connect(runningInstances);
+      
+      updateSummary();
+      updateActionButtons(isLoggedIn);
+    }
+
+    // 自动刷新周期设置
+    setInterval(updateSummary, 5000);
+    setInterval(async () => {
+      metricsStreamManager.disconnect();
+      await initialize();
+    }, 300000);
+
+    window.onload = async function() {
+      await checkLoginStatus();
+      await initialize();
+    };
+  </script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+{
+  "information_cutoff": "2026-06-14T06:30:00Z",
+  "source_note": "Draw positions, June 2026 ranking inputs, fixtures, and results are a checked-in prospective tournament snapshot. Results are appended through audited result-update files without rewriting prior forecasts. The current cutoff includes completed fixtures through Australia-Turkey on June 14, 2026.",
+  "sources": [
+    "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026",
+    "https://inside.fifa.com/fifa-world-ranking/men",
+    "https://eloratings.net/World.tsv",
+    "https://www.espn.com/soccer/match/_/gameId/760416/bosnia-herzegovina-canada",
+    "https://www.espn.com/soccer/match/_/gameId/760417/paraguay-united-states",
+    "https://www.sbnation.com/soccer/1117513/world-cup-schedule-2026-how-to-watch-every-match-scores-and-more",
+    "https://www.theguardian.com/football/live/2026/jun/14/fifa-world-cup-2026-live-socceroos-australia-v-turkey-updates-aus-vs-tur-group-d-match-score-latest"
+  ],
+  "results": [
+    {
+      "group": "A",
+      "home": "Mexico",
+      "away": "South Africa",
+      "home_goals": 2,
+      "away_goals": 0
+    },
+    {
+      "group": "A",
+      "home": "South Korea",
+      "away": "Czechia",
+      "home_goals": 2,
+      "away_goals": 1
+    },
+    {
+      "group": "B",
+      "home": "Canada",
+      "away": "Bosnia and Herzegovina",
+      "home_goals": 1,
+      "away_goals": 1
+    },
+    {
+      "group": "D",
+      "home": "United States",
+      "away": "Paraguay",
+      "home_goals": 4,
+      "away_goals": 1
+    },
+    {
+      "group": "B",
+      "home": "Qatar",
+      "away": "Switzerland",
+      "home_goals": 1,
+      "away_goals": 1
+    },
+    {
+      "group": "C",
+      "home": "Brazil",
+      "away": "Morocco",
+      "home_goals": 1,
+      "away_goals": 1
+    },
+    {
+      "group": "C",
+      "home": "Haiti",
+      "away": "Scotland",
+      "home_goals": 0,
+      "away_goals": 1
+    },
+    {
+      "group": "D",
+      "home": "Australia",
+      "away": "Turkey",
+      "home_goals": 2,
+      "away_goals": 0
+    }
+  ]
+}

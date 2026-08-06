@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-07-07T07:26:01.090Z",
+  "source": "Microsoft AI for Good Lab / HDX Catia La Mar building damage snapshot",
+  "comparisonOverlap": {
+    "west": -67.043108,
+    "south": 10.524025,
+    "east": -66.96,
+    "north": 10.642557
+  },
+  "hotspots": [
+    {
+      "id": "verified-hotspot-1",
+      "rank": 1,
+      "lat": 10.610353,
+      "lng": -67.012348,
+      "labels": {
+        "es": "Edificio Arnedillo / Residencias Marena",
+        "en": "Edificio Arnedillo / Residencias Marena"
+      },
+      "context": {
+        "es": "punto clave seleccionado junto a nombres OSM verificados en Playa Grande",
+        "en": "selected key point beside verified OSM names in Playa Grande"
+      },
+      "total": 70,
+      "high": 34,
+      "moderate": 16,
+      "observed": 20,
+      "uncertain": 0,
+      "score": 196,
+      "method": {
+        "type": "user-selected-key-affected-area",
+        "windowDegrees": 0.0036,
+        "source": "Microsoft AI for Good Lab / HDX Catia La Mar building damage snapshot",
+        "note": "User-selected key affected area inside the Vantor before/after overlap. Area labels use nearby exact OpenStreetMap names; damage metrics are computed from Microsoft/HDX affected-building centroids in the local window and remain source-attributed."
+      }
+    },
+    {
+      "id": "verified-hotspot-2",
+      "rank": 2,
+      "lat": 10.609699,
+      "lng": -67.014644,
+      "labels": {
+        "es": "Residencias Palmilla / Sol Marina Garden 2",
+        "en": "Residencias Palmilla / Sol Marina Garden 2"
+      },
+      "context": {
+        "es": "punto clave seleccionado cerca de residencias y hotel OSM verificados",
+        "en": "selected key point near verified OSM residences and hotel names"
+      },
+      "total": 49,
+      "high": 22,
+      "moderate": 11,
+      "observed": 16,
+      "uncertain": 0,
+      "score": 131,
+      "method": {
+        "type": "user-selected-key-affected-area",
+        "windowDegrees": 0.0036,
+        "source": "Microsoft AI for Good Lab / HDX Catia La Mar building damage snapshot",
+        "note": "User-selected key affected area inside the Vantor before/after overlap. Area labels use nearby exact OpenStreetMap names; damage metrics are computed from Microsoft/HDX affected-building centroids in the local window and remain source-attributed."
+      }
+    },
+    {
+      "id": "verified-hotspot-3",
+      "rank": 3,
+      "lat": 10.612984,
+      "lng": -67.022674,
+      "labels": {
+        "es": "Playa Mar / Playa Grande este",
+        "en": "Playa Mar / East Playa Grande"
+      },
+      "context": {
+        "es": "punto clave seleccionado en edificios residenciales nombrados por OSM",
+        "en": "selected key point in OSM-named residential buildings"
+      },
+      "total": 23,
+      "high": 8,
+      "moderate": 4,
+      "observed": 11,
+      "uncertain": 0,
+      "score": 52.3,
+      "method": {
+        "type": "user-selected-key-affected-area",
+        "windowDegrees": 0.0036,
+        "source": "Microsoft AI for Good Lab / HDX Catia La Mar building damage snapshot",
+        "note": "User-selected key affected area inside the Vantor before/after overlap. Area labels use nearby exact OpenStreetMap names; damage metrics are computed from Microsoft/HDX affected-building centroids in the local window and remain source-attributed."
+      }
+    }
+  ]
+}

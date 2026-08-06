@@ -1,0 +1,20 @@
+{
+ "lfs_not_stored": [
+  {
+   "oid": "986d369af75f6c443aeb4cc3c527a7ba25a22ad7fe0bc3daa355f4720cffdc8a",
+   "path": "brain/chroma.sqlite3",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6OTg2ZDM2OWFmNzVmNmM0NDNhZWI0Y2MzYzUyN2E3YmEyNWEyMmFkN2ZlMGJjM2RhYTM1NWY0NzIwY2ZmZGM4YQpzaXplIDEyOTI2OTc2Cg==",
+   "size": 12926976,
+   "url": "https://huggingface.co/spaces/sayantika-mlsec/RAG-Powered-Threat-Intel-Assistant/resolve/8d5e7f6afd8c6c99a66b372150840197ea84e039/brain/chroma.sqlite3"
+  },
+  {
+   "oid": "8aa6d3777f0b77d968c55bc283ee9765f5b6fdf6b9309ccf9f36e35c238dc7ea",
+   "path": "brain/fcbc21cc-790e-44ba-b707-e52b75a27275/data_level0.bin",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6OGFhNmQzNzc3ZjBiNzdkOTY4YzU1YmMyODNlZTk3NjVmNWI2ZmRmNmI5MzA5Y2NmOWYzNmUzNWMyMzhkYzdlYQpzaXplIDMzNTM2NzYK",
+   "size": 3353676,
+   "url": "https://huggingface.co/spaces/sayantika-mlsec/RAG-Powered-Threat-Intel-Assistant/resolve/8d5e7f6afd8c6c99a66b372150840197ea84e039/brain/fcbc21cc-790e-44ba-b707-e52b75a27275/data_level0.bin"
+  }
+ ],
+ "overflow_not_stored": [],
+ "oversize_not_stored": []
+}

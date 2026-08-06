@@ -1,0 +1,2272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARIA — Biomedical Research Intelligence</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #050505;
+            --surface: #0f172a;
+            --border: #1e293b;
+            --accent: #00f5ff;
+            --accent-dim: #00f5ff15;
+            --text: #c9d1d9;
+            --text-dim: #5a6a7a;
+            --text-bright: #e6edf3;
+            --red: #ff4d6d;
+            --yellow: #f0b429;
+            --mono: 'JetBrains Mono', monospace;
+            --sans: 'Inter', sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--sans);
+            font-size: 15px;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image:
+                linear-gradient(var(--border) 1px, transparent 1px),
+                linear-gradient(90deg, var(--border) 1px, transparent 1px);
+            background-size: 40px 40px;
+            opacity: 0.3;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 24px 80px;
+            position: relative;
+            z-index: 1;
+        }
+
+        header {
+            margin-bottom: 48px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 24px;
+        }
+
+        .logo {
+            font-family: var(--mono);
+            font-size: 11px;
+            letter-spacing: 0.2em;
+            color: var(--accent);
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        h1 {
+            font-family: var(--mono);
+            font-size: 32px;
+            font-weight: 600;
+            color: var(--text-bright);
+            letter-spacing: -0.02em;
+        }
+
+        h1 span { color: var(--accent); }
+
+        .subtitle {
+            font-size: 13px;
+            color: var(--text-dim);
+            font-family: var(--mono);
+            margin-top: 6px;
+        }
+
+        .search-section { margin-bottom: 32px; }
+
+        .input-wrapper {
+            position: relative;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            background: var(--surface);
+            transition: border-color 0.2s;
+        }
+
+        .input-wrapper:focus-within {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 1px var(--accent)40;
+        }
+
+        .input-label {
+            font-family: var(--mono);
+            font-size: 10px;
+            letter-spacing: 0.15em;
+            color: var(--accent);
+            padding: 12px 16px 0;
+            text-transform: uppercase;
+        }
+
+        textarea {
+            width: 100%;
+            background: transparent;
+            border: none;
+            color: var(--text-bright);
+            font-family: var(--sans);
+            font-size: 15px;
+            line-height: 1.6;
+            padding: 8px 16px 12px;
+            resize: none;
+            outline: none;
+        }
+
+        textarea::placeholder { color: var(--text-dim); }
+
+        .search-actions {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 12px;
+            border-top: 1px solid var(--border);
+        }
+
+        .hint {
+            font-family: var(--mono);
+            font-size: 11px;
+            color: var(--text-dim);
+        }
+
+        button#submitBtn {
+            background: var(--accent);
+            color: #000;
+            border: none;
+            border-radius: 3px;
+            padding: 8px 20px;
+            font-family: var(--mono);
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+
+        button#submitBtn:hover { opacity: 0.85; }
+        button#submitBtn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+        .pipeline {
+            display: none;
+            margin-bottom: 32px;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .pipeline.visible { display: block; }
+
+        .pipeline-header {
+            background: var(--surface);
+            padding: 10px 16px;
+            font-family: var(--mono);
+            font-size: 11px;
+            color: var(--text-dim);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .progress-wrap {
+            width: 160px;
+            height: 4px;
+            background: var(--border);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            width: 0%;
+            background: var(--accent);
+            border-radius: 2px;
+            transition: width 0.6s ease;
+            box-shadow: 0 0 8px var(--accent);
+        }
+
+        .progress-pct {
+            font-family: var(--mono);
+            font-size: 11px;
+            color: var(--accent);
+            min-width: 36px;
+            text-align: right;
+        }
+
+        .stage {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 16px;
+            border-bottom: 1px solid var(--border);
+            font-family: var(--mono);
+            font-size: 12px;
+            color: var(--text-dim);
+            transition: color 0.3s;
+        }
+
+        .stage:last-child { border-bottom: none; }
+        .stage.active { color: var(--accent); }
+        .stage.done { color: var(--text); }
+
+        .stage-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--border);
+            flex-shrink: 0;
+            transition: background 0.3s;
+        }
+
+        .stage.active .stage-dot {
+            background: var(--accent);
+            box-shadow: 0 0 8px var(--accent);
+            animation: pulse 1s infinite;
+        }
+
+        .stage.done .stage-dot { background: var(--text-dim); }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        .results { display: none; }
+        .results.visible { display: block; }
+
+        /* ===================================================================
+         * Result shell: persistent toolbar + side-panel tab layout.
+         * Mobile-first: nav is a horizontal top tab bar; the desktop
+         * override below turns it into a vertical left-side panel.
+         * =================================================================== */
+        .result-toolbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .result-toolbar .meta-bar { margin-bottom: 0; flex: 1; }
+
+        .side-tab-layout {
+            display: flex;
+            flex-direction: column;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 32px;
+        }
+
+        .side-tab-nav {
+            display: flex;
+            overflow-x: auto;
+            background: #0a0f18;
+            border-bottom: 1px solid var(--border);
+            flex-shrink: 0;
+        }
+
+        .side-tab-btn {
+            flex: 1 0 auto;
+            background: transparent;
+            border: none;
+            border-bottom: 2px solid transparent;
+            color: var(--text-dim);
+            font-family: var(--mono);
+            font-size: 11px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 12px 14px;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: color 0.2s, border-color 0.2s, background 0.2s;
+        }
+
+        .side-tab-btn:hover { color: var(--text); }
+
+        .side-tab-btn.active {
+            color: var(--accent);
+            border-bottom-color: var(--accent);
+            background: var(--accent-dim);
+        }
+
+        .side-tab-icon { display: none; font-weight: 600; }
+
+        /* Collapse/expand toggle: desktop-only (mobile stays a horizontal
+           top tab bar, where "collapse to icon strip" doesn't apply). */
+        .side-tab-collapse-btn {
+            display: none;
+            width: 100%;
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-dim);
+            font-family: var(--mono);
+            font-size: 12px;
+            padding: 10px;
+            cursor: pointer;
+            transition: color 0.2s, transform 0.2s;
+        }
+
+        .side-tab-collapse-btn:hover { color: var(--accent); }
+
+        .side-tab-content { padding: 18px; min-width: 0; }
+
+        .side-tab-panel { display: none; }
+        .side-tab-panel.active { display: block; }
+
+        .meta-bar {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            font-family: var(--mono);
+            font-size: 11px;
+            padding: 4px 10px;
+            border-radius: 2px;
+            border: 1px solid var(--border);
+            color: var(--text-dim);
+        }
+
+        .badge.green {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: var(--accent-dim);
+        }
+
+        .synthesis { margin-bottom: 32px; }
+
+        .section {
+            margin-bottom: 2px;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 16px;
+            background: var(--surface);
+            cursor: pointer;
+            user-select: none;
+            position: relative;
+        }
+
+        .section-header:hover { background: #111820; }
+
+        .section-tag {
+            font-family: var(--mono);
+            font-size: 10px;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--accent);
+            min-width: 180px;
+        }
+
+        .section-chevron {
+            margin-left: auto;
+            font-size: 10px;
+            color: var(--text-dim);
+            transition: transform 0.2s;
+        }
+
+        .section.open .section-chevron { transform: rotate(180deg); }
+
+        .section-body {
+            display: none;
+            padding: 16px;
+            border-top: 1px solid var(--border);
+            font-size: 14px;
+            line-height: 1.75;
+            color: var(--text);
+        }
+
+        .section.open .section-body { display: block; }
+
+        .citations-block {
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .citations-header {
+            padding: 12px 16px;
+            background: var(--surface);
+            font-family: var(--mono);
+            font-size: 11px;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--text-dim);
+            border-bottom: 1px solid var(--border);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .citations-list {
+            display: none;
+            padding: 16px;
+        }
+
+        .citations-list.open { display: block; }
+
+        .citation-item {
+            font-family: var(--mono);
+            font-size: 12px;
+            color: var(--text-dim);
+            padding: 8px 0;
+            border-bottom: 1px solid var(--border);
+            line-height: 1.6;
+            display: flex;
+            align-items: flex-start;
+            gap: 4px;
+            cursor: pointer;
+        }
+
+        .citation-item:last-child { border-bottom: none; }
+        .citation-item:hover { color: var(--text); }
+
+        .citation-pmid { color: var(--accent); font-weight: 600; }
+
+        .error-box {
+            display: none;
+            padding: 16px;
+            border: 1px solid var(--red);
+            border-radius: 4px;
+            background: #ff4d6d10;
+            font-family: var(--mono);
+            font-size: 13px;
+            color: var(--red);
+            margin-bottom: 24px;
+        }
+
+        .error-box.visible { display: block; }
+
+        footer {
+            margin-top: 64px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
+            font-family: var(--mono);
+            font-size: 11px;
+            color: var(--text-dim);
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .confidence-badge {
+            font-family: var(--mono);
+            font-size: 10px;
+            padding: 2px 8px;
+            border-radius: 2px;
+            margin-left: auto;
+            margin-right: 8px;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+        }
+
+        .conf-strong { background: #00e5a020; color: #00e5a0; border: 1px solid #00e5a0; }
+        .conf-moderate { background: #f0b42920; color: #f0b429; border: 1px solid #f0b429; }
+        .conf-weak { background: #ff4d6d20; color: #ff4d6d; border: 1px solid #ff4d6d; }
+
+        .conf-tooltip {
+            display: none;
+            position: absolute;
+            background: #0d1117;
+            border: 1px solid var(--border);
+            padding: 6px 10px;
+            font-family: var(--mono);
+            font-size: 11px;
+            color: var(--text);
+            border-radius: 3px;
+            max-width: 280px;
+            z-index: 10;
+            top: 100%;
+            right: 0;
+            margin-top: 4px;
+        }
+
+        .confidence-badge:hover .conf-tooltip { display: block; }
+
+        .abstract-body {
+            display: none;
+            margin-top: 8px;
+            padding: 10px 12px;
+            background: #0d1117;
+            border-left: 2px solid var(--accent);
+            font-family: var(--sans);
+            font-size: 12px;
+            line-height: 1.7;
+            color: var(--text);
+            border-radius: 0 3px 3px 0;
+        }
+
+        .citation-item.expanded .abstract-body { display: block; }
+
+        .citation-toggle { color: var(--accent); font-size: 10px; margin-left: 6px; }
+        .citation-text { flex: 1; }
+
+        .citation-checkbox {
+            width: 14px;
+            height: 14px;
+            margin-right: 8px;
+            accent-color: var(--accent);
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        .review-bar {
+            display: none;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 16px;
+            background: var(--accent-dim);
+            border: 1px solid var(--accent);
+            border-radius: 4px;
+            margin-top: 12px;
+            font-family: var(--mono);
+            font-size: 12px;
+            color: var(--accent);
+        }
+
+        .review-bar.visible { display: flex; }
+
+        .review-btn {
+            background: var(--accent);
+            color: #000;
+            border: none;
+            padding: 6px 16px;
+            border-radius: 3px;
+            font-family: var(--mono);
+            font-size: 11px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .review-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+        .review-output {
+            display: none;
+            margin-top: 16px;
+            border: 1px solid var(--accent);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .review-output.visible { display: block; }
+
+        .review-output-header {
+            background: var(--accent-dim);
+            padding: 10px 16px;
+            font-family: var(--mono);
+            font-size: 11px;
+            color: var(--accent);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        .review-output-body {
+            padding: 16px;
+            font-size: 14px;
+            line-height: 1.8;
+            color: var(--text);
+        }
+
+        .prediction-block {
+            display: none;
+            margin-top: 32px;
+            margin-bottom: 32px;
+            border: 1px solid #f0b42940;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .prediction-block.visible { display: block; }
+
+        .prediction-header {
+            background: #f0b42910;
+            padding: 12px 16px;
+            font-family: var(--mono);
+            font-size: 11px;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #f0b429;
+            border-bottom: 1px solid #f0b42940;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .prediction-tag {
+            font-family: var(--mono);
+            font-size: 9px;
+            padding: 2px 8px;
+            border-radius: 2px;
+            border: 1px solid #f0b429;
+            color: #f0b429;
+        }
+
+        .prediction-section {
+            padding: 16px;
+            border-bottom: 1px solid #f0b42920;
+        }
+
+        .prediction-section:last-child { border-bottom: none; }
+
+        .prediction-label {
+            font-family: var(--mono);
+            font-size: 10px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .prediction-label.constructive { color: var(--accent); }
+        .prediction-label.destructive { color: var(--red); }
+
+        .prediction-text { font-size: 14px; line-height: 1.75; color: var(--text); }
+
+        .history-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            color: var(--text-dim);
+            font-family: var(--mono);
+            font-size: 11px;
+            padding: 6px 12px;
+            border-radius: 3px;
+            cursor: pointer;
+            z-index: 100;
+            letter-spacing: 0.08em;
+        }
+
+        .history-toggle:hover { border-color: var(--accent); color: var(--accent); }
+
+        .history-panel {
+            position: fixed;
+            top: 0;
+            right: -320px;
+            width: 300px;
+            height: 100vh;
+            background: var(--surface);
+            border-left: 1px solid var(--border);
+            z-index: 200;
+            transition: right 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .history-panel.open { right: 0; }
+
+        .history-panel-header {
+            padding: 16px;
+            border-bottom: 1px solid var(--border);
+            font-family: var(--mono);
+            font-size: 11px;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--accent);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .history-close { cursor: pointer; color: var(--text-dim); font-size: 14px; }
+        .history-close:hover { color: var(--text); }
+
+        .history-list { overflow-y: auto; flex: 1; padding: 8px; }
+
+        .history-item {
+            padding: 10px 12px;
+            border: 1px solid var(--border);
+            border-radius: 3px;
+            margin-bottom: 6px;
+            cursor: pointer;
+            transition: border-color 0.2s;
+        }
+
+        .history-item:hover { border-color: var(--accent); }
+
+        .history-item-query {
+            font-family: var(--sans);
+            font-size: 12px;
+            color: var(--text);
+            margin-bottom: 4px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .history-item-meta { font-family: var(--mono); font-size: 10px; color: var(--text-dim); }
+
+        .history-empty {
+            padding: 24px 16px;
+            font-family: var(--mono);
+            font-size: 11px;
+            color: var(--text-dim);
+            text-align: center;
+        }
+
+        .table-block {
+            display: none;
+            margin-bottom: 32px;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .table-block.visible { display: block; }
+
+        .table-block-header {
+            background: var(--surface);
+            padding: 12px 16px;
+            font-family: var(--mono);
+            font-size: 11px;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--text-dim);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .table-wrap { overflow-x: auto; }
+
+        table.data-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+
+        table.data-table th {
+            background: var(--surface);
+            padding: 10px 14px;
+            text-align: left;
+            font-family: var(--mono);
+            font-size: 10px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--accent);
+            border-bottom: 1px solid var(--border);
+            white-space: nowrap;
+        }
+
+        table.data-table td {
+            padding: 10px 14px;
+            border-bottom: 1px solid var(--border);
+            color: var(--text);
+            line-height: 1.5;
+            vertical-align: top;
+        }
+
+        table.data-table tr:last-child td { border-bottom: none; }
+        table.data-table tr:hover td { background: #ffffff05; }
+
+        .followup-block {
+            display: none;
+            margin-bottom: 32px;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .followup-block.visible { display: block; }
+
+        .followup-header {
+            background: var(--surface);
+            padding: 10px 16px;
+            font-family: var(--mono);
+            font-size: 11px;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--text-dim);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .followup-input-row {
+            padding: 12px 16px;
+            display: flex;
+            gap: 8px;
+        }
+
+        .followup-input-row input {
+            flex: 1;
+            background: #0d1117;
+            border: 1px solid var(--border);
+            color: var(--text-bright);
+            font-family: var(--sans);
+            font-size: 13px;
+            padding: 8px 12px;
+            border-radius: 3px;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .followup-input-row input:focus { border-color: var(--accent); }
+
+        .followup-ask-btn {
+            background: var(--accent);
+            color: #000;
+            border: none;
+            padding: 8px 16px;
+            font-family: var(--mono);
+            font-size: 11px;
+            font-weight: 600;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+
+        .followup-ask-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+        .followup-answer {
+            display: none;
+            padding: 16px;
+            border-top: 1px solid var(--border);
+            font-size: 14px;
+            line-height: 1.75;
+            color: var(--text);
+        }
+
+        .followup-answer.visible { display: block; }
+
+        .suggestions-block {
+            display: none;
+            margin-bottom: 32px;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .suggestions-block.visible { display: block; }
+        .suggestions-header {
+            background: var(--surface);
+            padding: 10px 16px;
+            font-family: var(--mono);
+            font-size: 11px;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--text-dim);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .suggestions-loading {
+            display: inline-block;
+            width: 8px; height: 8px;
+            border-radius: 50%;
+            border: 1px solid var(--border);
+            border-top-color: var(--accent);
+            animation: spin 0.7s linear infinite;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        .suggestions-list { padding: 12px 16px; display: flex; flex-direction: column; gap: 6px; }
+        .suggestion-btn {
+            background: transparent;
+            border: 1px solid var(--border);
+            border-radius: 3px;
+            padding: 10px 14px;
+            color: var(--text);
+            font-family: var(--sans);
+            font-size: 13px;
+            text-align: left;
+            cursor: pointer;
+            transition: border-color 0.2s, color 0.2s;
+            line-height: 1.5;
+        }
+        .suggestion-btn:hover { border-color: var(--accent); color: var(--accent); }
+        .suggestion-prefix {
+            font-family: var(--mono);
+            font-size: 9px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--accent);
+            display: block;
+            margin-bottom: 3px;
+        }
+
+        button#auditBtn { display: none; }
+        button#auditBtn.visible { display: inline-block; }
+        button#auditBtn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+        .audit-block {
+            display: none;
+            margin-bottom: 32px;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .audit-block.visible { display: block; }
+
+        .audit-header {
+            background: var(--surface);
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .audit-header > span:first-child {
+            font-family: var(--mono);
+            font-size: 11px;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--accent);
+        }
+
+        .audit-header-sub {
+            font-family: var(--mono);
+            font-size: 10px;
+            color: var(--text-dim);
+        }
+
+        .audit-tabs {
+            display: flex;
+            border-bottom: 1px solid var(--border);
+            background: #0a0f18;
+        }
+
+        .audit-tab {
+            flex: 1;
+            background: transparent;
+            border: none;
+            border-bottom: 2px solid transparent;
+            color: var(--text-dim);
+            font-family: var(--mono);
+            font-size: 11px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 10px 12px;
+            cursor: pointer;
+            transition: color 0.2s, border-color 0.2s;
+        }
+
+        .audit-tab:hover { color: var(--text); }
+
+        .audit-tab.active {
+            color: var(--accent);
+            border-bottom-color: var(--accent);
+        }
+
+        .audit-body { padding: 16px; }
+
+        .audit-panel { display: none; }
+        .audit-panel.active { display: block; }
+
+        .audit-subsection { margin-bottom: 20px; }
+        .audit-subsection:last-child { margin-bottom: 0; }
+
+        .audit-subsection-title {
+            font-family: var(--mono);
+            font-size: 10px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--text-dim);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .audit-count {
+            font-family: var(--mono);
+            font-size: 10px;
+            color: var(--accent);
+            border: 1px solid var(--border);
+            border-radius: 2px;
+            padding: 1px 6px;
+        }
+
+        .audit-card {
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            padding: 12px 14px;
+            margin-bottom: 8px;
+            background: #0a0f18;
+        }
+
+        .audit-card:last-child { margin-bottom: 0; }
+
+        .audit-card-top {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+            flex-wrap: wrap;
+        }
+
+        .audit-card-title {
+            font-family: var(--sans);
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-bright);
+        }
+
+        .audit-confidence {
+            margin-left: auto;
+            font-family: var(--mono);
+            font-size: 10px;
+            color: var(--text-dim);
+        }
+
+        .audit-flag-badge {
+            font-family: var(--mono);
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            padding: 2px 8px;
+            border-radius: 2px;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        .audit-green { background: #00e5a020; color: #00e5a0; border: 1px solid #00e5a0; }
+        .audit-yellow { background: #f0b42920; color: #f0b429; border: 1px solid #f0b429; }
+        .audit-red { background: #ff4d6d20; color: #ff4d6d; border: 1px solid #ff4d6d; }
+        .audit-gray { background: #5a6a7a20; color: #5a6a7a; border: 1px solid #5a6a7a; }
+
+        .audit-card-claim {
+            font-size: 12px;
+            font-style: italic;
+            color: var(--text-dim);
+            line-height: 1.6;
+            margin-bottom: 6px;
+        }
+
+        .audit-card-body {
+            font-size: 13px;
+            line-height: 1.65;
+            color: var(--text);
+        }
+
+        .audit-repro-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px 14px;
+            margin-top: 10px;
+        }
+
+        .audit-repro-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-family: var(--mono);
+            font-size: 10px;
+            letter-spacing: 0.04em;
+            color: var(--text-dim);
+        }
+
+        .audit-repro-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--text-dim);
+            flex-shrink: 0;
+        }
+
+        .audit-repro-item.present { color: #00e5a0; }
+        .audit-repro-item.present .audit-repro-dot { background: #00e5a0; }
+        .audit-repro-item.missing { color: #ff4d6d; }
+        .audit-repro-item.missing .audit-repro-dot { background: #ff4d6d; }
+
+        .audit-empty, .audit-error {
+            font-family: var(--mono);
+            font-size: 11px;
+            color: var(--text-dim);
+            padding: 8px 0;
+        }
+
+        .audit-error { color: var(--red); }
+
+        .audit-loading {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: var(--mono);
+            font-size: 12px;
+            color: var(--text-dim);
+            padding: 8px 0;
+        }
+
+        @keyframes hexTrace {
+            0% { stroke-dashoffset: 200; opacity: 0.3; }
+            50% { opacity: 1; }
+            100% { stroke-dashoffset: 0; opacity: 0.3; }
+        }
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(4px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes scaleIn {
+            from { transform: scaleX(0); }
+            to { transform: scaleX(1); }
+        }
+        @keyframes glowPulse {
+            0%, 100% { opacity: 0; transform: scale(0.8); }
+            50% { opacity: 1; transform: scale(1.1); }
+        }
+
+        .aria-logo-hex-trace {
+            stroke-dasharray: 200;
+            stroke-dashoffset: 200;
+            animation: hexTrace 3s ease-in-out infinite;
+        }
+        .aria-logo-a { animation: fadeUp 0.8s ease 0.2s both; }
+        .aria-logo-crossbar { transform-origin: center; animation: scaleIn 0.6s ease 0.8s both; }
+        .aria-logo-glow { animation: glowPulse 3s ease-in-out infinite; }
+
+        /* ===================================================================
+         * Desktop overrides — mobile styles above remain the default/fallback.
+         * =================================================================== */
+        @media (min-width: 1024px) {
+            body { font-size: 16px; }
+
+            .container {
+                max-width: 1100px;
+                padding: 56px 48px 100px;
+            }
+
+            h1 { font-size: 38px; }
+
+            .subtitle { font-size: 14px; }
+
+            textarea { font-size: 16px; }
+
+            .section-body {
+                font-size: 15px;
+                padding: 20px 22px;
+            }
+
+            .review-output-body { font-size: 15px; }
+
+            .prediction-text { font-size: 15px; }
+
+            .followup-answer { font-size: 15px; }
+
+            /* Audit cards: 2-column grid instead of a single stacked column */
+            .audit-subsection {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 10px 16px;
+                align-items: start;
+            }
+
+            .audit-subsection-title,
+            .audit-empty,
+            .audit-error {
+                grid-column: 1 / -1;
+            }
+
+            .audit-card { margin-bottom: 0; }
+
+            .audit-card-body { font-size: 14px; }
+
+            .audit-card-claim { font-size: 13px; }
+
+            /* Comparison table: more breathing room on wider viewports */
+            table.data-table { font-size: 13px; }
+
+            table.data-table th,
+            table.data-table td {
+                padding: 12px 18px;
+            }
+
+            /* Side tabs: vertical left-side panel instead of a top tab bar.
+               Nav stays full-height (stretched to match content, as before)
+               but is pinned via position:sticky so it never scrolls with the
+               outer page; content gets its own bounded, independently-
+               scrolling box so scrolling a long panel (e.g. PRISMA table)
+               never moves the nav. */
+            /* overflow:visible (overriding the mobile default of hidden) so
+               .side-tab-nav's position:sticky is computed against the page's
+               scroll container, not clipped to this box. align-items:stretch
+               is kept on the row for .side-tab-content's benefit, but the
+               nav itself opts out via align-self:flex-start — sticky items
+               that get stretched to fill a flex container's cross size don't
+               reliably clamp to their `top` offset, so nav needs its own
+               natural (unstretched) height for position:sticky to work. */
+            .side-tab-layout { flex-direction: row; align-items: stretch; overflow: visible; }
+
+            .side-tab-nav {
+                flex-direction: column;
+                width: 200px;
+                flex-shrink: 0;
+                overflow-x: visible;
+                border-bottom: 1px solid var(--border);
+                border-radius: 4px 0 0 4px;
+                position: sticky;
+                top: 20px;
+                align-self: flex-start;
+                transition: width 0.25s ease;
+            }
+
+            .side-tab-collapse-btn { display: block; }
+
+            .side-tab-nav.collapsed { width: 56px; }
+            .side-tab-nav.collapsed .side-tab-label { display: none; }
+            .side-tab-nav.collapsed .side-tab-icon { display: inline-block; }
+            .side-tab-nav.collapsed .side-tab-btn { text-align: center; padding: 14px 6px; }
+            .side-tab-nav.collapsed .side-tab-collapse-btn { transform: scaleX(-1); }
+
+            .side-tab-btn {
+                text-align: left;
+                border-bottom: none;
+                border-left: 2px solid transparent;
+                padding: 14px 20px;
+            }
+
+            .side-tab-btn.active {
+                border-left-color: var(--accent);
+                border-bottom-color: transparent;
+            }
+
+            .side-tab-content {
+                flex: 1;
+                padding: 24px 28px;
+                min-height: 320px;
+                max-height: calc(100vh - 180px);
+                overflow-y: auto;
+                border-left: 1px solid var(--border);
+            }
+        }
+    </style>
+</head>
+<body>
+<button class="history-toggle" onclick="toggleHistory()">&#9776; History</button>
+<div class="history-panel" id="historyPanel">
+    <div class="history-panel-header">
+        <span>Query History</span>
+        <span class="history-close" onclick="toggleHistory()">&#10005;</span>
+    </div>
+    <div class="history-list" id="historyList">
+        <div class="history-empty">No history yet</div>
+    </div>
+</div>
+<div class="container">
+    <header>
+        <div style="display:flex;align-items:center;gap:16px;margin-bottom:16px;">
+            <div style="position:relative;width:40px;height:40px;flex-shrink:0;">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20 4L34 12V28L20 36L6 28V12L20 4Z" stroke="#00f5ff" stroke-width="1" stroke-opacity="0.25"/>
+                    <path class="aria-logo-hex-trace" d="M20 4L34 12V28L20 36L6 28V12L20 4Z" stroke="#00f5ff" stroke-width="2" stroke-linecap="round"/>
+                    <path class="aria-logo-a" d="M12 28L20 12L28 28" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path class="aria-logo-crossbar" d="M16 22H24" stroke="#00f5ff" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <div class="aria-logo-glow" style="position:absolute;inset:0;background:#00f5ff;border-radius:50%;filter:blur(16px);opacity:0;pointer-events:none;"></div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:2px;">
+                <span style="font-family:var(--sans);font-weight:900;font-size:24px;letter-spacing:-0.03em;color:#f1f5f9;line-height:1;">ARIA</span>
+                <div style="display:flex;align-items:center;gap:6px;">
+                    <span style="width:6px;height:1px;background:#00f5ff;display:inline-block;"></span>
+                    <span style="font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:0.25em;color:#475569;font-weight:700;">Research</span>
+                </div>
+            </div>
+        </div>
+        <div style="font-family:var(--mono);font-size:10px;letter-spacing:0.15em;color:#00f5ff;text-transform:uppercase;margin-bottom:6px;">AMD Developer Hackathon 2026 &mdash; Glitch Squad</div>
+        <h1>Autonomous Research Intelligence Agent</h1>
+        <div class="subtitle">Multi-agent biomedical literature synthesis &middot; PubMed &middot; Qwen2.5-72B on AMD MI300X &middot; by Azlaan Mohammad</div>
+    </header>
+
+    <div class="search-section">
+        <div class="input-wrapper">
+            <div class="input-label">Clinical Question</div>
+            <textarea id="queryInput" rows="3" placeholder="e.g. What machine learning methods are most effective for epilepsy detection from EEG signals?"></textarea>
+            <div class="search-actions">
+                <span class="hint">Enter to submit &middot; Shift+Enter for new line</span>
+                <button id="submitBtn" onclick="submitQuery()">Run Pipeline</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="pipeline" id="pipeline">
+        <div class="pipeline-header">
+            <span>Pipeline Status</span>
+            <div style="display:flex;align-items:center;gap:10px;">
+                <div class="progress-wrap"><div class="progress-fill" id="progressFill"></div></div>
+                <span class="progress-pct" id="progressPct">0%</span>
+            </div>
+        </div>
+        <div class="stage" id="stage1"><div class="stage-dot"></div>Query Architect &mdash; generating MeSH-optimised PubMed queries</div>
+        <div class="stage" id="stage2"><div class="stage-dot"></div>Literature Scout &mdash; fetching from PubMed and Europe PMC</div>
+        <div class="stage" id="stage3"><div class="stage-dot"></div>PRISMA Filter &mdash; screening papers for relevance</div>
+        <div class="stage" id="stage4"><div class="stage-dot"></div>Evidence Synthesiser &mdash; building structured synthesis</div>
+        <div class="stage" id="stage5"><div class="stage-dot"></div>Citation Builder &mdash; formatting references</div>
+    </div>
+
+    <div class="error-box" id="errorBox"></div>
+
+    <div class="results" id="results">
+        <div class="result-toolbar">
+            <div class="meta-bar" id="metaBar"></div>
+            <button id="exportBtn" onclick="exportPDF()" style="background:transparent;border:1px solid var(--accent);color:var(--accent);padding:7px 18px;font-family:var(--mono);font-size:11px;border-radius:3px;cursor:pointer;letter-spacing:0.08em;flex-shrink:0;">Export PDF</button>
+        </div>
+
+        <div class="side-tab-layout">
+            <div class="side-tab-nav" id="sideTabNav">
+                <button class="side-tab-collapse-btn" id="sideTabCollapseBtn" onclick="toggleSideNav()" title="Collapse sidebar" aria-label="Collapse sidebar">&#9664;</button>
+                <button class="side-tab-btn active" id="sideTabBtnMain" onclick="switchSideTab('main')" title="Main"><span class="side-tab-icon">MA</span><span class="side-tab-label">Main</span></button>
+                <button class="side-tab-btn" id="sideTabBtnAudit" onclick="switchSideTab('audit')" title="Integrity Audit"><span class="side-tab-icon">IA</span><span class="side-tab-label">Integrity Audit</span></button>
+                <button class="side-tab-btn" id="sideTabBtnPrisma" onclick="switchSideTab('prisma')" title="PRISMA"><span class="side-tab-icon">PR</span><span class="side-tab-label">PRISMA</span></button>
+                <button class="side-tab-btn" id="sideTabBtnReferences" onclick="switchSideTab('references')" title="References"><span class="side-tab-icon">RE</span><span class="side-tab-label">References</span></button>
+                <button class="side-tab-btn" id="sideTabBtnComparison" onclick="switchSideTab('comparison')" title="Comparison"><span class="side-tab-icon">CO</span><span class="side-tab-label">Comparison</span></button>
+                <button class="side-tab-btn" id="sideTabBtnFollowup" onclick="switchSideTab('followup')" title="Follow-up"><span class="side-tab-icon">FU</span><span class="side-tab-label">Follow-up</span></button>
+            </div>
+
+            <div class="side-tab-content">
+                <div class="side-tab-panel active" id="sideTabPanelMain">
+                    <div class="synthesis" id="synthesis"></div>
+
+                    <div class="prediction-block" id="predictionBlock">
+                        <div class="prediction-header">
+                            <span>Predictive Model</span>
+                            <span class="prediction-tag">AI FORECAST</span>
+                        </div>
+                        <div class="prediction-section">
+                            <div class="prediction-label constructive">Constructive Forecast</div>
+                            <div class="prediction-text" id="constructiveForecast"></div>
+                        </div>
+                        <div class="prediction-section">
+                            <div class="prediction-label destructive">Destructive Forecast</div>
+                            <div class="prediction-text" id="destructiveForecast"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="side-tab-panel" id="sideTabPanelAudit">
+                    <div style="display:flex;justify-content:flex-end;margin-bottom:12px;">
+                        <button id="auditBtn" onclick="runIntegrityAudit()" style="background:transparent;border:1px solid #00e5a0;color:#00e5a0;padding:7px 18px;font-family:var(--mono);font-size:11px;border-radius:3px;cursor:pointer;letter-spacing:0.08em;">Run Integrity Audit</button>
+                    </div>
+                    <div class="audit-block" id="auditBlock">
+                        <div class="audit-header">
+                            <span>Integrity Audit</span>
+                            <span class="audit-header-sub" id="auditHeaderSub">Citation ghosts &middot; methodology drift &middot; calibration &middot; contradictions &middot; reproducibility</span>
+                        </div>
+                        <div class="audit-tabs">
+                            <button class="audit-tab active" id="auditTabInternal" onclick="switchAuditTab('internal')">Internal Consistency</button>
+                            <button class="audit-tab" id="auditTabExternal" onclick="switchAuditTab('external')">External Validity</button>
+                        </div>
+                        <div class="audit-body" id="auditBody"></div>
+                    </div>
+                </div>
+
+                <div class="side-tab-panel" id="sideTabPanelPrisma">
+                    <div id="prismaTabContent"><div class="audit-empty">No PRISMA exclusions recorded for this search.</div></div>
+                </div>
+
+                <div class="side-tab-panel" id="sideTabPanelReferences">
+                    <div class="citations-block">
+                        <div class="citations-header" onclick="toggleCitations()">
+                            <span>References</span><span id="citChevron">&#9660;</span>
+                        </div>
+                        <div class="citations-list" id="citationsList"></div>
+                    </div>
+
+                    <div class="review-bar" id="reviewBar">
+                        <span id="reviewBarText">0 papers selected</span>
+                        <button class="review-btn" id="reviewBtn" onclick="generateReview()" disabled>Generate Literature Review</button>
+                    </div>
+                    <div class="review-output" id="reviewOutput">
+                        <div class="review-output-header">Generated Literature Review</div>
+                        <div class="review-output-body" id="reviewText"></div>
+                    </div>
+                </div>
+
+                <div class="side-tab-panel" id="sideTabPanelComparison">
+                    <div class="table-block" id="tableBlock">
+                        <div class="table-block-header" id="tableTitle">Evidence Comparison Table</div>
+                        <div class="table-wrap">
+                            <table class="data-table" id="dataTable">
+                                <thead id="tableHead"></thead>
+                                <tbody id="tableBody"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="side-tab-panel" id="sideTabPanelFollowup">
+                    <div class="followup-block" id="followupBlock">
+                        <div class="followup-header">Ask a Follow-up</div>
+                        <div class="followup-input-row">
+                            <input id="followupInput" type="text" placeholder="e.g. What are the side effects of these treatments?" onkeydown="if(event.key==='Enter') askFollowup()">
+                            <button class="followup-ask-btn" id="followupBtn" onclick="askFollowup()">Ask</button>
+                        </div>
+                        <div class="followup-answer" id="followupAnswer"></div>
+                    </div>
+
+                    <div class="suggestions-block" id="suggestionsBlock">
+                        <div class="suggestions-header">
+                            <span id="suggestionsSpinner" class="suggestions-loading"></span>
+                            Suggested Follow-up Queries
+                        </div>
+                        <div class="suggestions-list" id="suggestionsList"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <span id="footerBackend">Powered by LangGraph &middot; PubMed NCBI</span>
+        <span>AI-generated synthesis &mdash; verify against primary sources</span>
+        <span style="color:var(--text-dim);font-family:var(--mono);font-size:10px;">Azlaan Mohammad &middot; 2026</span>
+    </footer>
+</div>
+
+<script>
+let currentBackendLabel = null;
+const SECTIONS = [
+    { key: "## Background", label: "Background" },
+    { key: "## Key Findings", label: "Key Findings" },
+    { key: "## Level of Evidence", label: "Level of Evidence" },
+    { key: "## Conflicting Evidence", label: "Conflicting Evidence" },
+    { key: "## Research Gaps", label: "Research Gaps" },
+    { key: "## Clinical Implications", label: "Clinical Implications" },
+];
+
+function parseSynthesis(text) {
+    const result = {};
+    for (let i = 0; i < SECTIONS.length; i++) {
+        const start = text.indexOf(SECTIONS[i].key);
+        if (start === -1) continue;
+        const contentStart = start + SECTIONS[i].key.length;
+        const nextSection = i + 1 < SECTIONS.length ? text.indexOf(SECTIONS[i + 1].key) : -1;
+        result[SECTIONS[i].label] = nextSection === -1
+            ? text.slice(contentStart).trim()
+            : text.slice(contentStart, nextSection).trim();
+    }
+    return result;
+}
+
+const STAGE_PCT = { 1: 10, 2: 35, 3: 70, 4: 90, 5: 100 };
+
+function setStage(n) {
+    for (let i = 1; i <= 5; i++) {
+        const el = document.getElementById("stage" + i);
+        el.classList.remove("active", "done");
+        if (i < n) el.classList.add("done");
+        else if (i === n) el.classList.add("active");
+    }
+    const pct = STAGE_PCT[n] || 0;
+    document.getElementById("progressFill").style.width = pct + "%";
+    document.getElementById("progressPct").textContent = pct + "%";
+}
+
+function toggleSection(el) { el.classList.toggle("open"); }
+
+function toggleCitations() {
+    document.getElementById("citationsList").classList.toggle("open");
+    document.getElementById("citChevron").textContent =
+        document.getElementById("citationsList").classList.contains("open") ? "▲" : "▼";
+}
+
+const SIDE_TABS = [
+    { tab: "main", btn: "sideTabBtnMain", panel: "sideTabPanelMain" },
+    { tab: "audit", btn: "sideTabBtnAudit", panel: "sideTabPanelAudit" },
+    { tab: "prisma", btn: "sideTabBtnPrisma", panel: "sideTabPanelPrisma" },
+    { tab: "references", btn: "sideTabBtnReferences", panel: "sideTabPanelReferences" },
+    { tab: "comparison", btn: "sideTabBtnComparison", panel: "sideTabPanelComparison" },
+    { tab: "followup", btn: "sideTabBtnFollowup", panel: "sideTabPanelFollowup" },
+];
+
+function switchSideTab(tab) {
+    SIDE_TABS.forEach(t => {
+        document.getElementById(t.btn).classList.toggle("active", t.tab === tab);
+        document.getElementById(t.panel).classList.toggle("active", t.tab === tab);
+    });
+}
+
+function toggleSideNav() {
+    const nav = document.getElementById("sideTabNav");
+    const collapsed = nav.classList.toggle("collapsed");
+    const btn = document.getElementById("sideTabCollapseBtn");
+    btn.title = collapsed ? "Expand sidebar" : "Collapse sidebar";
+    btn.setAttribute("aria-label", btn.title);
+}
+
+function setBackendLabel(label) {
+    if (!label) return;
+    currentBackendLabel = label;
+    document.getElementById("footerBackend").textContent = "Powered by LangGraph · " + label.replace(/^Powered by /, "") + " · PubMed NCBI";
+}
+
+async function loadBackendStatus() {
+    try {
+        const res = await fetch("/backend-status");
+        const data = await res.json();
+        setBackendLabel(data.label);
+    } catch (err) { /* leave default footer text */ }
+}
+loadBackendStatus();
+
+async function renderResults(data) {
+    switchSideTab("main");
+    const meta = document.getElementById("metaBar");
+    const backendBadge = currentBackendLabel ? currentBackendLabel.replace(/^Powered by /, "") : "Qwen2.5-72B on AMD MI300X";
+    meta.innerHTML = `<div class="badge green">${data.paper_count} papers retrieved</div><div class="badge">${data.queries ? data.queries.length : 0} PubMed queries</div><div class="badge">${backendBadge}</div>`;
+    const sections = parseSynthesis(data.synthesis);
+    const synthEl = document.getElementById("synthesis");
+    synthEl.innerHTML = "";
+
+    SECTIONS.forEach(s => {
+        if (!sections[s.label]) return;
+        const div = document.createElement("div");
+        div.className = "section open";
+        div.innerHTML = `<div class="section-header" onclick="toggleSection(this.parentElement)"><span class="section-tag">${s.label}</span><span class="section-chevron">▲</span></div><div class="section-body">${sections[s.label].replace(/\n/g, "<br>")}</div>`;
+        synthEl.appendChild(div);
+    });
+
+    const citList = document.getElementById("citationsList");
+    citList.innerHTML = "";
+    citList.classList.add("open");
+    const papersMap = data.papers || {};
+    selectedPapers = {};
+    updateReviewBar();
+    data.citations.split("\n").forEach(line => {
+        if (!line.trim()) return;
+        const pmidMatch = line.match(/PMID:\s*(\d+)/);
+        const pmid = pmidMatch ? pmidMatch[1] : null;
+        const paper = pmid ? papersMap[pmid] : null;
+        const div = document.createElement("div");
+        div.className = "citation-item";
+        const citText = pmid ? line.replace(/PMID:\s*\d+/, `<span class="citation-pmid">PMID: ${pmid}</span>`) : line;
+        const inner = document.createElement("div");
+        inner.className = "citation-text";
+        inner.innerHTML = citText + (paper ? `<span class="citation-toggle">▶ abstract</span><div class="abstract-body">${paper.abstract ? paper.abstract.replace(/\n/g,"<br>") : "Abstract not available"}</div>` : "");
+        if (paper) {
+            inner.addEventListener("click", (e) => {
+                if (e.target.type === "checkbox") return;
+                inner.parentElement.classList.toggle("expanded");
+                const tog = inner.querySelector(".citation-toggle");
+                if (tog) tog.textContent = inner.parentElement.classList.contains("expanded") ? "▼ abstract" : "▶ abstract";
+            });
+        }
+        if (pmid && paper) {
+            const cb = document.createElement("input");
+            cb.type = "checkbox";
+            cb.className = "citation-checkbox";
+            cb.addEventListener("change", () => {
+                if (cb.checked) selectedPapers[pmid] = paper;
+                else delete selectedPapers[pmid];
+                updateReviewBar();
+            });
+            div.appendChild(cb);
+        }
+        div.appendChild(inner);
+        citList.appendChild(div);
+    });
+
+    document.getElementById("results").classList.add("visible");
+    document.getElementById("followupBlock").classList.add("visible");
+    document.getElementById("followupAnswer").classList.remove("visible");
+    document.getElementById("followupAnswer").innerHTML = "";
+    document.getElementById("followupInput").value = "";
+
+    document.getElementById("auditBtn").classList.add("visible");
+    document.getElementById("auditBtn").disabled = false;
+    document.getElementById("auditBtn").textContent = "Run Integrity Audit";
+    document.getElementById("auditBlock").classList.remove("visible");
+    document.getElementById("auditBody").innerHTML = "";
+
+    if (window._pendingPrismaBlock) {
+        const prismaContainer = document.getElementById('prismaTabContent');
+        if (prismaContainer) {
+            prismaContainer.innerHTML = '';
+            prismaContainer.appendChild(window._pendingPrismaBlock);
+        }
+        window._pendingPrismaBlock = null;
+    }
+}
+
+function updateProgress(pct) {
+    document.getElementById("progressFill").style.width = pct + "%";
+    document.getElementById("progressPct").textContent = pct + "%";
+}
+
+async function submitQuery() {
+    const q = document.getElementById("queryInput").value.trim();
+    if (!q) return;
+    const btn = document.getElementById("submitBtn");
+    btn.disabled = true;
+    document.getElementById("results").classList.remove("visible");
+    document.getElementById("errorBox").classList.remove("visible");
+    document.getElementById("predictionBlock").classList.remove("visible");
+    document.getElementById("constructiveForecast").textContent = "";
+    document.getElementById("destructiveForecast").textContent = "";
+    document.getElementById("tableBlock").classList.remove("visible");
+    document.getElementById("suggestionsBlock").classList.remove("visible");
+    document.getElementById("suggestionsList").innerHTML = "";
+    document.getElementById("auditBtn").classList.remove("visible");
+    document.getElementById("auditBlock").classList.remove("visible");
+    document.getElementById("auditBody").innerHTML = "";
+    lastPrismaExcluded = [];
+    lastComparisonTable = null;
+    lastAuditResults = null;
+    document.getElementById("pipeline").classList.add("visible");
+    setStage(1);
+    updateProgress(5);
+    lastQuery = q;
+
+    const es = new EventSource("/stream?query=" + encodeURIComponent(q));
+
+    es.addEventListener("backend", e => { setBackendLabel(JSON.parse(e.data).label); });
+    es.addEventListener("stage", e => { const d = JSON.parse(e.data); setStage(d.stage); updateProgress(d.pct); });
+    es.addEventListener("queries", e => { updateProgress(JSON.parse(e.data).pct); });
+    es.addEventListener("papers", e => { updateProgress(JSON.parse(e.data).pct); });
+    es.addEventListener("synthesis", e => { updateProgress(JSON.parse(e.data).pct); });
+    es.addEventListener("done", async e => {
+        const data = JSON.parse(e.data);
+        lastResult = data;
+        updateProgress(100);
+        setStage(5);
+        es.close();
+        await renderResults(data);
+        setTimeout(() => scoreResults(data.synthesis), 2000);
+        setTimeout(() => runPredictiveModel(lastQuery, data.synthesis), 20000);
+        setTimeout(() => buildTable(lastQuery, data.synthesis, data.papers || {}), 38000);
+        setTimeout(() => fetchQuerySuggestions(lastQuery, data.synthesis), 56000);
+        saveSession(data, q);
+        btn.disabled = false;
+    });
+    es.addEventListener("prisma", e => {
+        const d = JSON.parse(e.data);
+        const filtered = d.filtered;
+        if (!filtered) return;
+        const excluded = Object.entries(filtered).filter(([, p]) => !p.included);
+        lastPrismaExcluded = excluded;
+        renderPrismaExclusions(excluded);
+    });
+    es.addEventListener("error", e => {
+        es.close();
+        let msg = "Pipeline error";
+        try { msg = JSON.parse(e.data).message; } catch(err) {}
+        document.getElementById("errorBox").textContent = "Error: " + msg;
+        document.getElementById("errorBox").classList.add("visible");
+        btn.disabled = false;
+    });
+}
+
+document.getElementById("queryInput").addEventListener("keydown", e => {
+    if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); submitQuery(); }
+});
+
+let lastResult = null;
+let lastQuery = '';
+let lastPrismaExcluded = [];
+let lastComparisonTable = null;
+let lastAuditResults = null;
+
+async function fetchQuerySuggestions(query, synthesis) {
+    const block = document.getElementById('suggestionsBlock');
+    const list = document.getElementById('suggestionsList');
+    const spinner = document.getElementById('suggestionsSpinner');
+    block.classList.add('visible');
+    spinner.style.display = 'inline-block';
+    list.innerHTML = '';
+    try {
+        const res = await fetch('/suggest-queries', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ query, synthesis })
+        });
+        const data = await res.json();
+        spinner.style.display = 'none';
+        if (data.error || !data.suggestions || data.suggestions.length === 0) {
+            list.innerHTML = '<span style="font-family:var(--mono);font-size:11px;color:var(--text-dim);">Could not generate suggestions.</span>';
+            return;
+        }
+        data.suggestions.forEach((s, i) => {
+            const btn = document.createElement('button');
+            btn.className = 'suggestion-btn';
+            btn.innerHTML = `<span class="suggestion-prefix">Suggestion ${i + 1}</span>${s}`;
+            btn.addEventListener('click', () => {
+                document.getElementById('queryInput').value = s;
+                submitQuery();
+            });
+            list.appendChild(btn);
+        });
+    } catch(e) {
+        spinner.style.display = 'none';
+        list.innerHTML = '<span style="font-family:var(--mono);font-size:11px;color:var(--text-dim);">Could not generate suggestions.</span>';
+    }
+}
+
+async function exportPDF() {
+    const btn = document.getElementById('exportBtn');
+    btn.textContent = 'Generating...';
+    btn.disabled = true;
+    try {
+        const res = await fetch('/export-pdf', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+                synthesis: lastResult.synthesis,
+                citations: lastResult.citations,
+                query: lastQuery,
+                paper_count: lastResult.paper_count,
+                comparison_table: lastComparisonTable,
+                prisma_excluded: lastPrismaExcluded.map(([pmid, p]) => ({
+                    pmid, title: p.title, reason: p.reason
+                })),
+                audit_results: lastAuditResults
+            })
+        });
+        const blob = await res.blob();
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url; a.download = 'ARIA_report.pdf'; a.click();
+        URL.revokeObjectURL(url);
+    } finally {
+        btn.textContent = 'Export PDF';
+        btn.disabled = false;
+    }
+}
+
+async function askFollowup() {
+    const q = document.getElementById('followupInput').value.trim();
+    if (!q || !lastResult) return;
+    const btn = document.getElementById('followupBtn');
+    const answerEl = document.getElementById('followupAnswer');
+    btn.disabled = true;
+    btn.textContent = 'Thinking...';
+    answerEl.classList.add('visible');
+    answerEl.innerHTML = '<span style="color:var(--text-dim);font-family:var(--mono);font-size:12px;">Analysing papers...</span>';
+    try {
+        const res = await fetch('/followup', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+                question: q,
+                original_question: lastQuery,
+                synthesis: lastResult.synthesis,
+                papers: lastResult.papers || {}
+            })
+        });
+        const data = await res.json();
+        if (data.error) throw new Error(data.error);
+        answerEl.innerHTML = data.answer.replace(/\n/g, '<br>');
+    } catch(e) {
+        answerEl.innerHTML = '<span style="color:var(--red);">Error: ' + e.message + '</span>';
+    } finally {
+        btn.disabled = false;
+        btn.textContent = 'Ask';
+    }
+}
+
+async function scoreResults(synthesis) {
+    try {
+        const res = await fetch('/score', { method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({synthesis}) });
+        const data = await res.json();
+        if (data.error || !data.scores) return;
+        const scores = data.scores;
+        document.querySelectorAll('.section').forEach(sec => {
+            const tag = sec.querySelector('.section-tag');
+            if (!tag) return;
+            const s = scores[tag.textContent.trim()];
+            if (!s) return;
+            const cls = s.score >= 8 ? 'conf-strong' : s.score >= 5 ? 'conf-moderate' : 'conf-weak';
+            const text = s.score >= 8 ? 'Strong' : s.score >= 5 ? 'Moderate' : 'Weak';
+            const badge = document.createElement('div');
+            badge.className = 'confidence-badge ' + cls;
+            badge.innerHTML = text + ' ' + s.score + '/10<div class="conf-tooltip">' + s.rationale + '</div>';
+            sec.querySelector('.section-header').insertBefore(badge, sec.querySelector('.section-chevron'));
+        });
+    } catch(e) { console.warn('Scoring failed:', e); }
+}
+
+let selectedPapers = {};
+
+function updateReviewBar() {
+    const count = Object.keys(selectedPapers).length;
+    document.getElementById('reviewBar').classList.toggle('visible', count > 0);
+    document.getElementById('reviewBarText').textContent = count + ' paper' + (count !== 1 ? 's' : '') + ' selected';
+    document.getElementById('reviewBtn').disabled = count < 2;
+}
+
+async function generateReview() {
+    const btn = document.getElementById('reviewBtn');
+    btn.disabled = true;
+    btn.textContent = 'Generating...';
+    try {
+        const res = await fetch('/selective-review', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({ question: lastQuery, papers: selectedPapers })
+        });
+        const data = await res.json();
+        if (data.error) throw new Error(data.error);
+        document.getElementById('reviewText').textContent = data.review;
+        document.getElementById('reviewOutput').classList.add('visible');
+        document.getElementById('reviewOutput').scrollIntoView({behavior: 'smooth'});
+    } catch(e) {
+        alert('Error: ' + e.message);
+    } finally {
+        btn.disabled = false;
+        btn.textContent = 'Generate Literature Review';
+        updateReviewBar();
+    }
+}
+
+// Parses prediction text regardless of whether headers use ## or ** formatting
+function parsePrediction(text) {
+    let constructive = '';
+    let destructive = '';
+
+    // Try ## style first
+    let cm = text.match(/##\s*Constructive Forecast\s*([\s\S]*?)(?=##\s*Destructive Forecast)/i);
+    let dm = text.match(/##\s*Destructive Forecast\s*([\s\S]*?)$/i);
+
+    // Fall back to ** bold style
+    if (!cm) cm = text.match(/\*\*Constructive Forecast\*\*\s*([\s\S]*?)(?=\*\*Destructive Forecast\*\*)/i);
+    if (!dm) dm = text.match(/\*\*Destructive Forecast\*\*\s*([\s\S]*?)$/i);
+
+    // Fall back to plain header style
+    if (!cm) cm = text.match(/Constructive Forecast[:\s]*([\s\S]*?)(?=Destructive Forecast)/i);
+    if (!dm) dm = text.match(/Destructive Forecast[:\s]*([\s\S]*?)$/i);
+
+    constructive = cm ? cm[1].trim() : '';
+    destructive = dm ? dm[1].trim() : '';
+
+    // Last resort: split in half
+    if (!constructive && !destructive && text.trim()) {
+        const half = Math.floor(text.length / 2);
+        constructive = text.slice(0, half).trim();
+        destructive = text.slice(half).trim();
+    }
+
+    return { constructive, destructive };
+}
+
+async function runPredictiveModel(question, synthesis) {
+    try {
+        const res = await fetch('/predict', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({question, synthesis})
+        });
+        const data = await res.json();
+        if (data.error || !data.prediction) return;
+        const { constructive, destructive } = parsePrediction(data.prediction);
+        document.getElementById('constructiveForecast').textContent = constructive;
+        document.getElementById('destructiveForecast').textContent = destructive;
+        document.getElementById('predictionBlock').classList.add('visible');
+    } catch(e) { console.warn('Prediction failed:', e); }
+}
+
+function toggleHistory() {
+    document.getElementById('historyPanel').classList.toggle('open');
+    if (document.getElementById('historyPanel').classList.contains('open')) loadHistory();
+}
+
+async function loadHistory() {
+    try {
+        const res = await fetch('/sessions');
+        const data = await res.json();
+        const list = document.getElementById('historyList');
+        if (!data.sessions || data.sessions.length === 0) {
+            list.innerHTML = '<div class="history-empty">No history yet</div>';
+            return;
+        }
+        list.innerHTML = '';
+        data.sessions.forEach(s => {
+            const div = document.createElement('div');
+            div.className = 'history-item';
+            div.innerHTML = `<div class="history-item-query">${s.query}</div><div class="history-item-meta">${s.timestamp} &middot; ${s.paper_count} papers</div>`;
+            div.addEventListener('click', () => {
+                lastResult = s; lastQuery = s.query;
+                document.getElementById('queryInput').value = s.query;
+                document.getElementById('results').classList.remove('visible');
+                document.getElementById('predictionBlock').classList.remove('visible');
+                document.getElementById('reviewOutput').classList.remove('visible');
+                document.getElementById('errorBox').classList.remove('visible');
+                document.getElementById('suggestionsBlock').classList.remove('visible');
+                renderResults(s);
+                document.getElementById('historyPanel').classList.remove('open');
+                document.getElementById('results').scrollIntoView({behavior: 'smooth'});
+            });
+            list.appendChild(div);
+        });
+    } catch(e) { console.warn('History load failed:', e); }
+}
+
+async function saveSession(data, query) {
+    try {
+        await fetch('/sessions/save', { method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({...data, query}) });
+    } catch(e) { console.warn('Session save failed:', e); }
+}
+
+function renderPrismaExclusions(excluded) {
+    const old = document.getElementById('prismaBlock');
+    if (old) old.remove();
+    const prismaContainer = document.getElementById('prismaTabContent');
+    if (!excluded || excluded.length === 0) {
+        if (prismaContainer) prismaContainer.innerHTML = '<div class="audit-empty">No PRISMA exclusions recorded for this search.</div>';
+        return;
+    }
+
+    const block = document.createElement('div');
+    block.id = 'prismaBlock';
+    block.style.cssText = 'margin-bottom:32px;border:1px solid #ff4d6d40;border-radius:4px;overflow:hidden;';
+
+    block.innerHTML = `
+        <div style="background:#ff4d6d08;padding:12px 16px;font-family:var(--mono);font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(--red);border-bottom:1px solid #ff4d6d40;cursor:pointer;display:flex;justify-content:space-between;align-items:center;" onclick="const b=this.nextElementSibling;b.style.display=b.style.display==='none'?'block':'none';this.querySelector('.pchev').textContent=b.style.display==='none'?'▼':'▲';">
+            <span>PRISMA Exclusions <span style="background:#ff4d6d20;border:1px solid var(--red);border-radius:2px;padding:1px 8px;margin-left:8px;font-size:10px;">${excluded.length} excluded</span></span>
+            <span class="pchev">▲</span>
+        </div>
+        <div>
+            <table style="width:100%;border-collapse:collapse;font-size:12px;">
+                <thead>
+                    <tr>
+                        <th style="background:var(--surface);padding:10px 14px;text-align:left;font-family:var(--mono);font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);border-bottom:1px solid var(--border);white-space:nowrap;">PMID</th>
+                        <th style="background:var(--surface);padding:10px 14px;text-align:left;font-family:var(--mono);font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);border-bottom:1px solid var(--border);">Title</th>
+                        <th style="background:var(--surface);padding:10px 14px;text-align:left;font-family:var(--mono);font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);border-bottom:1px solid var(--border);">Reason Excluded</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    ${excluded.map(([pmid, p]) => `
+                        <tr>
+                            <td style="padding:10px 14px;border-bottom:1px solid var(--border);color:var(--accent);font-family:var(--mono);font-size:11px;vertical-align:top;white-space:nowrap;">${pmid}</td>
+                            <td style="padding:10px 14px;border-bottom:1px solid var(--border);color:var(--text);font-size:12px;line-height:1.5;vertical-align:top;">${p.title || '—'}</td>
+                            <td style="padding:10px 14px;border-bottom:1px solid var(--border);color:var(--red);font-family:var(--mono);font-size:11px;vertical-align:top;">${p.reason || 'Not specified'}</td>
+                        </tr>
+                    `).join('')}
+                </tbody>
+            </table>
+        </div>
+    `;
+
+    if (prismaContainer) {
+        prismaContainer.innerHTML = '';
+        prismaContainer.appendChild(block);
+    } else {
+        window._pendingPrismaBlock = block;
+    }
+}
+
+async function buildTable(question, synthesis, papers) {
+    try {
+        const res = await fetch('/extract-table', { method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({question, synthesis, papers}) });
+        const data = await res.json();
+        if (data.error || !data.table) return;
+        const t = data.table;
+        if (!t.rows || t.rows.length === 0) return;
+        lastComparisonTable = t;
+        document.getElementById('tableTitle').textContent = t.title || 'Evidence Comparison Table';
+        document.getElementById('tableHead').innerHTML = '<tr>' + (t.columns || []).map(c => `<th>${c}</th>`).join('') + '</tr>';
+        document.getElementById('tableBody').innerHTML = t.rows.map(row => '<tr>' + row.map(cell => `<td>${cell}</td>`).join('') + '</tr>').join('');
+        document.getElementById('tableBlock').classList.add('visible');
+    } catch(e) { console.warn('Table extraction failed:', e); }
+}
+
+/* ---------------------------------------------------------------------
+ * Integrity Audit
+ * Reuses claims/papers already in `lastResult` (no refetching from
+ * PubMed or the synthesis pipeline) to build inputs for the 5 audit
+ * routes, then runs them in parallel and renders the verdicts.
+ * ------------------------------------------------------------------- */
+
+function splitAbstractSections(abstract) {
+    const headerRe = /\b(BACKGROUND|OBJECTIVES?|METHODS?|METHODOLOGY|RESULTS?|CONCLUSIONS?|DISCUSSION)\s*:\s*/gi;
+    const parts = [];
+    let match, lastIndex = 0, lastLabel = null;
+    while ((match = headerRe.exec(abstract)) !== null) {
+        if (lastLabel) parts.push({ label: lastLabel, text: abstract.slice(lastIndex, match.index).trim() });
+        lastLabel = match[1].toUpperCase();
+        lastIndex = headerRe.lastIndex;
+    }
+    if (lastLabel) parts.push({ label: lastLabel, text: abstract.slice(lastIndex).trim() });
+    const sections = {};
+    parts.forEach(p => {
+        if (/^METHOD/.test(p.label)) sections.methods = (sections.methods ? sections.methods + ' ' : '') + p.text;
+        else if (/^RESULT/.test(p.label)) sections.results = (sections.results ? sections.results + ' ' : '') + p.text;
+        else if (/^CONCLUSION/.test(p.label)) sections.conclusion = (sections.conclusion ? sections.conclusion + ' ' : '') + p.text;
+    });
+    return sections;
+}
+
+function extractMethodologyResults(paper) {
+    const abstract = paper.abstract || '';
+    const sections = splitAbstractSections(abstract);
+    if (sections.methods && sections.results) {
+        return { methodology: sections.methods, results: sections.results };
+    }
+    const mid = Math.floor(abstract.length / 2);
+    return {
+        methodology: sections.methods || abstract.slice(0, mid) || abstract,
+        results: sections.results || abstract.slice(mid) || abstract
+    };
+}
+
+function extractFinding(paper) {
+    const sections = splitAbstractSections(paper.abstract || '');
+    if (sections.conclusion) return sections.conclusion;
+    if (sections.results) return sections.results;
+    const sentences = (paper.abstract || '').split(/(?<=[.!?])\s+/).filter(Boolean);
+    return sentences.slice(-2).join(' ') || paper.abstract || '';
+}
+
+function extractSynthesisClaims(papersMap, maxClaims) {
+    const sections = parseSynthesis((lastResult && lastResult.synthesis) || '');
+    const text = ['Key Findings', 'Conflicting Evidence', 'Level of Evidence', 'Clinical Implications']
+        .map(k => sections[k]).filter(Boolean).join(' ');
+    const sentences = text.split(/(?<=[.!?])\s+/).map(s => s.trim()).filter(Boolean);
+    const claims = [];
+    const seen = new Set();
+    sentences.forEach(sentence => {
+        const matches = [...sentence.matchAll(/PMID:?\s*(\d+)/gi)];
+        matches.forEach(m => {
+            const pmid = m[1];
+            const paper = papersMap[pmid];
+            const key = pmid + '|' + sentence;
+            if (paper && paper.abstract && !seen.has(key) && claims.length < maxClaims) {
+                seen.add(key);
+                claims.push({ claim: sentence, citation: 'PMID ' + pmid, source_text: paper.abstract, pmid, paper_title: paper.title });
+            }
+        });
+    });
+    return claims;
+}
+
+function buildAuditPayloads() {
+    const papersMap = (lastResult && lastResult.papers) || {};
+    const papersArr = Object.entries(papersMap).slice(0, 6);
+
+    const claims = extractSynthesisClaims(papersMap, 8);
+
+    const methodologyPapers = papersArr
+        .map(([pmid, p]) => {
+            const mr = extractMethodologyResults(p);
+            return { pmid, title: p.title, methodology: mr.methodology, results: mr.results };
+        })
+        .filter(p => p.methodology && p.results);
+
+    const reproPapers = papersArr
+        .map(([pmid, p]) => {
+            const mr = extractMethodologyResults(p);
+            return { pmid, title: p.title, methodology: mr.methodology };
+        })
+        .filter(p => p.methodology);
+
+    const calibrationItems = claims.map(c => ({ claim: c.claim, data: c.source_text, pmid: c.pmid, paper_title: c.paper_title }));
+
+    const findingsArr = papersArr
+        .map(([pmid, p]) => ({
+            pmid,
+            label: (p.authors ? p.authors.split(',')[0] : 'PMID ' + pmid) + ' (' + (p.year || 'n.d.') + ')',
+            finding: extractFinding(p)
+        }))
+        .filter(f => f.finding);
+
+    const pairs = [];
+    for (let i = 0; i < findingsArr.length && pairs.length < 6; i++) {
+        for (let j = i + 1; j < findingsArr.length && pairs.length < 6; j++) {
+            pairs.push({
+                paper_a: findingsArr[i].label, finding_a: findingsArr[i].finding, pmid_a: findingsArr[i].pmid,
+                paper_b: findingsArr[j].label, finding_b: findingsArr[j].finding, pmid_b: findingsArr[j].pmid
+            });
+        }
+    }
+
+    return { claims, methodologyPapers, calibrationItems, reproPapers, pairs };
+}
+
+async function callAuditRoute(url, bodyObj, arr) {
+    if (!arr || arr.length === 0) return { results: [], skipped: true };
+    try {
+        const res = await fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(bodyObj) });
+        const data = await res.json();
+        if (data.error) return { results: [], error: data.error };
+        return { results: data.results || [] };
+    } catch (e) {
+        return { results: [], error: e.message };
+    }
+}
+
+function delay(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function staggeredAuditRoute(url, bodyObj, arr, startDelayMs) {
+    if (startDelayMs) await delay(startDelayMs);
+    return callAuditRoute(url, bodyObj, arr);
+}
+
+function esc(s) {
+    const d = document.createElement('div');
+    d.textContent = s == null ? '' : String(s);
+    return d.innerHTML;
+}
+
+function truncateText(s, n) {
+    if (!s) return '';
+    return s.length > n ? s.slice(0, n).trim() + '…' : s;
+}
+
+function humanizeFlag(flag) {
+    if (!flag) return 'Unknown';
+    return flag.split('_').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+}
+
+function auditFlagBadgeClass(flag) {
+    const map = {
+        supported: 'audit-green', consistent: 'audit-green', calibrated: 'audit-green',
+        partial: 'audit-yellow', minor_drift: 'audit-yellow', partial_conflict: 'audit-yellow', understated: 'audit-yellow',
+        ghost: 'audit-red', major_drift: 'audit-red', direct_contradiction: 'audit-red', overstated: 'audit-red',
+    };
+    return map[flag] || 'audit-gray';
+}
+
+function auditScoreBadgeClass(score) {
+    if (score >= 80) return 'audit-green';
+    if (score >= 40) return 'audit-yellow';
+    return 'audit-red';
+}
+
+function auditCardShell(badgeHtml, titleText, confidence, claimText, bodyText, extraHtml) {
+    return `<div class="audit-card">
+        <div class="audit-card-top">
+            ${badgeHtml}
+            <span class="audit-card-title">${esc(titleText)}</span>
+            ${confidence != null ? `<span class="audit-confidence">${esc(confidence)}% conf.</span>` : ''}
+        </div>
+        ${claimText ? `<div class="audit-card-claim">&ldquo;${esc(truncateText(claimText, 220))}&rdquo;</div>` : ''}
+        <div class="audit-card-body">${esc(bodyText || '')}</div>
+        ${extraHtml || ''}
+    </div>`;
+}
+
+function renderCitationGhostCards(items) {
+    if (!items.length) return '<div class="audit-empty">No inline PMID-cited claims were found in the synthesis to audit.</div>';
+    return items.map(r => auditCardShell(
+        `<span class="audit-flag-badge ${auditFlagBadgeClass(r.flag)}">${humanizeFlag(r.flag)}</span>`,
+        r.paper_title ? truncateText(r.paper_title, 60) : ('PMID ' + r.pmid),
+        r.confidence, r.claim, r.explanation
+    )).join('');
+}
+
+function renderDriftCards(items) {
+    if (!items.length) return '<div class="audit-empty">No methodology/results text available to audit.</div>';
+    return items.map(r => auditCardShell(
+        `<span class="audit-flag-badge ${auditFlagBadgeClass(r.flag)}">${humanizeFlag(r.flag)}</span>`,
+        r.title ? truncateText(r.title, 60) : ('PMID ' + r.pmid),
+        r.confidence, null, r.explanation
+    )).join('');
+}
+
+function renderCalibrationCards(items) {
+    if (!items.length) return '<div class="audit-empty">No inline PMID-cited claims were found in the synthesis to audit.</div>';
+    return items.map(r => auditCardShell(
+        `<span class="audit-flag-badge ${auditFlagBadgeClass(r.flag)}">${humanizeFlag(r.flag)}</span>`,
+        r.paper_title ? truncateText(r.paper_title, 60) : ('PMID ' + r.pmid),
+        r.confidence, r.claim, r.explanation
+    )).join('');
+}
+
+function renderContradictionCards(items) {
+    if (!items.length) return '<div class="audit-empty">Not enough distinct papers with extractable findings to compare.</div>';
+    return items.map(r => auditCardShell(
+        `<span class="audit-flag-badge ${auditFlagBadgeClass(r.flag)}">${humanizeFlag(r.flag)}</span>`,
+        r.paper_a + ' ↔ ' + r.paper_b,
+        r.confidence, null, r.explanation
+    )).join('');
+}
+
+function renderReproCards(items) {
+    if (!items.length) return '<div class="audit-empty">No methodology text available to audit.</div>';
+    return items.map(r => {
+        const grid = `<div class="audit-repro-grid">${Object.entries(r.breakdown || {}).map(([k, v]) =>
+            `<div class="audit-repro-item ${v.present ? 'present' : 'missing'}"><span class="audit-repro-dot"></span>${esc(humanizeFlag(k))}</div>`
+        ).join('')}</div>`;
+        return auditCardShell(
+            `<span class="audit-flag-badge ${auditScoreBadgeClass(r.score)}">${r.score}/100</span>`,
+            r.title ? truncateText(r.title, 60) : ('PMID ' + r.pmid),
+            null, null, r.explanation, grid
+        );
+    }).join('');
+}
+
+function auditSectionBlock(label, resultObj, renderFn) {
+    if (resultObj.error) {
+        return `<div class="audit-subsection"><div class="audit-subsection-title">${label}</div><div class="audit-error">Check failed: ${esc(resultObj.error)}</div></div>`;
+    }
+    return `<div class="audit-subsection"><div class="audit-subsection-title">${label} <span class="audit-count">${resultObj.results.length}</span></div>${renderFn(resultObj.results)}</div>`;
+}
+
+function renderAuditResults(r) {
+    const internal = auditSectionBlock('Methodology Drift', r.drift, renderDriftCards) +
+                      auditSectionBlock('Confidence Calibration', r.calibration, renderCalibrationCards);
+    const external = auditSectionBlock('Citation Ghost Check', r.ghost, renderCitationGhostCards) +
+                      auditSectionBlock('Cross-Paper Contradiction', r.contradiction, renderContradictionCards) +
+                      auditSectionBlock('Reproducibility Score', r.repro, renderReproCards);
+
+    document.getElementById('auditBody').innerHTML =
+        `<div class="audit-panel active" id="auditPanelInternal">${internal}</div>` +
+        `<div class="audit-panel" id="auditPanelExternal">${external}</div>`;
+
+    switchAuditTab('internal');
+}
+
+function switchAuditTab(tab) {
+    document.getElementById('auditTabInternal').classList.toggle('active', tab === 'internal');
+    document.getElementById('auditTabExternal').classList.toggle('active', tab === 'external');
+    const pi = document.getElementById('auditPanelInternal');
+    const pe = document.getElementById('auditPanelExternal');
+    if (pi) pi.classList.toggle('active', tab === 'internal');
+    if (pe) pe.classList.toggle('active', tab === 'external');
+}
+
+async function runIntegrityAudit() {
+    if (!lastResult) return;
+    const btn = document.getElementById('auditBtn');
+    const block = document.getElementById('auditBlock');
+    const body = document.getElementById('auditBody');
+
+    btn.disabled = true;
+    btn.textContent = 'Running Audit...';
+    block.classList.add('visible');
+    body.innerHTML = '<div class="audit-loading"><span class="suggestions-loading"></span>Running 5 integrity checks in parallel&hellip;</div>';
+
+    const { claims, methodologyPapers, calibrationItems, reproPapers, pairs } = buildAuditPayloads();
+
+    // Stagger the 5 route calls' start times so they don't all hit Groq's
+    // rate limit in the same instant — each still runs concurrently with
+    // the others, just offset by STAGGER_MS from the previous one.
+    const STAGGER_MS = 1500;
+    try {
+        const [ghost, drift, calibration, contradiction, repro] = await Promise.all([
+            staggeredAuditRoute('/citation-ghost-check', { claims }, claims, 0 * STAGGER_MS),
+            staggeredAuditRoute('/methodology-drift-check', { papers: methodologyPapers }, methodologyPapers, 1 * STAGGER_MS),
+            staggeredAuditRoute('/confidence-calibration-check', { items: calibrationItems }, calibrationItems, 2 * STAGGER_MS),
+            staggeredAuditRoute('/cross-paper-contradiction-check', { pairs }, pairs, 3 * STAGGER_MS),
+            staggeredAuditRoute('/reproducibility-score', { papers: reproPapers }, reproPapers, 4 * STAGGER_MS),
+        ]);
+        lastAuditResults = { ghost, drift, calibration, contradiction, repro };
+        renderAuditResults(lastAuditResults);
+    } catch (e) {
+        body.innerHTML = '<div class="audit-error">Audit failed: ' + esc(e.message) + '</div>';
+    } finally {
+        btn.disabled = false;
+        btn.textContent = 'Run Integrity Audit';
+    }
+}
+</script>
+</body>
+</html>

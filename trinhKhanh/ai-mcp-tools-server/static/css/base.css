@@ -1,0 +1,14 @@
+/* Reset + body + layout gốc */
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #0a0a18;
+  color: #fff;
+  min-height: 100vh;
+  /* column: tabbar trên cùng, rồi tới .tab-page.
+     Bố cục 2 cột (panel trái/phải) nằm trong #page-tools, không phải ở body. */
+  display: flex;
+  flex-direction: column;
+}

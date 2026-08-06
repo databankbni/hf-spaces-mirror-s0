@@ -1,0 +1,169 @@
+{
+ "captured_at": "2026-08-04T14:31:37Z",
+ "hf_metadata": {
+  "_id": "6a3a825209d5e5f730a809de",
+  "author": "MohsinEli",
+  "cardData": {
+   "app_file": "app.py",
+   "colorFrom": "gray",
+   "colorTo": "blue",
+   "emoji": "⚡",
+   "license": "mit",
+   "pinned": false,
+   "python_version": "3.13",
+   "sdk": "gradio",
+   "sdk_version": "6.19.0",
+   "short_description": "Paraphrase-robust, cross-domain detector for AI-generation",
+   "title": "Paraphrase Robust Ai Detector"
+  },
+  "createdAt": "2026-06-23T12:55:46.000Z",
+  "datasets": [
+   "Hello-SimpleAI/HC3",
+   "liamdugan/raid"
+  ],
+  "disabled": false,
+  "gated": false,
+  "host": "https://mohsineli-paraphrase-robust-ai-detector.hf.space",
+  "id": "MohsinEli/paraphrase-robust-ai-detector",
+  "lastModified": "2026-07-05T12:04:31.000Z",
+  "likes": 1,
+  "models": [
+   "EleutherAI/gpt-neo-1.3B",
+   "humarin/chatgpt_paraphraser_on_T5_base",
+   "Qwen/Qwen2.5-1.5B-Instruct",
+   "tiiuae/falcon-7b",
+   "distilbert/distilgpt2",
+   "openai-community/gpt2",
+   "FacebookAI/roberta-base"
+  ],
+  "private": false,
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "mohsineli-paraphrase-robust-ai-detector.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": "cpu-basic",
+    "requested": "cpu-basic"
+   },
+   "pySpacesVersion": "0.50.4",
+   "replicas": {
+    "current": 1,
+    "requested": 1
+   },
+   "sha": "140722c18741bafc1bdf48ca67a69628a5dbdcf1",
+   "stage": "RUNNING"
+  },
+  "sdk": "gradio",
+  "sha": "140722c18741bafc1bdf48ca67a69628a5dbdcf1",
+  "siblings": [
+   {
+    "rfilename": ".gitattributes"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "app.py"
+   },
+   {
+    "rfilename": "favicon.ico"
+   },
+   {
+    "rfilename": "pird/__init__.py"
+   },
+   {
+    "rfilename": "pird/attacks/__init__.py"
+   },
+   {
+    "rfilename": "pird/attacks/llm.py"
+   },
+   {
+    "rfilename": "pird/attacks/paraphrase.py"
+   },
+   {
+    "rfilename": "pird/data/__init__.py"
+   },
+   {
+    "rfilename": "pird/data/hc3.py"
+   },
+   {
+    "rfilename": "pird/data/raid.py"
+   },
+   {
+    "rfilename": "pird/data/wilocness.py"
+   },
+   {
+    "rfilename": "pird/detectors/__init__.py"
+   },
+   {
+    "rfilename": "pird/detectors/base.py"
+   },
+   {
+    "rfilename": "pird/detectors/binoculars.py"
+   },
+   {
+    "rfilename": "pird/detectors/fast_detectgpt.py"
+   },
+   {
+    "rfilename": "pird/detectors/perplexity.py"
+   },
+   {
+    "rfilename": "pird/detectors/pird.py"
+   },
+   {
+    "rfilename": "pird/eval/__init__.py"
+   },
+   {
+    "rfilename": "pird/eval/metrics.py"
+   },
+   {
+    "rfilename": "pird/features/__init__.py"
+   },
+   {
+    "rfilename": "pird/features/combined.py"
+   },
+   {
+    "rfilename": "pird/features/statistical.py"
+   },
+   {
+    "rfilename": "pird/features/stylometric.py"
+   },
+   {
+    "rfilename": "pird/model.py"
+   },
+   {
+    "rfilename": "pird/train.py"
+   },
+   {
+    "rfilename": "pird_deploy/config.json"
+   },
+   {
+    "rfilename": "pird_deploy/pird.pt"
+   },
+   {
+    "rfilename": "requirements.txt"
+   }
+  ],
+  "subdomain": "mohsineli-paraphrase-robust-ai-detector",
+  "tags": [
+   "gradio",
+   "region:us"
+  ],
+  "usedStorage": 499441462
+ },
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "MohsinEli/paraphrase-robust-ai-detector",
+ "repo_type": "spaces",
+ "sha": "140722c18741bafc1bdf48ca67a69628a5dbdcf1",
+ "web_url": "https://huggingface.co/spaces/MohsinEli/paraphrase-robust-ai-detector"
+}

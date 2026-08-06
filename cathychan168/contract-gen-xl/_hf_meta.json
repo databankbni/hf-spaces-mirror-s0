@@ -1,0 +1,23 @@
+{
+ "captured_at": "2026-08-04T16:01:59Z",
+ "hf_metadata": {
+  "sha": "5605e870f55ca862557a165aa56dbb68d31bd37e"
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "cathychan168/contract-gen-xl",
+ "repo_type": "spaces",
+ "sha": "5605e870f55ca862557a165aa56dbb68d31bd37e",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/cathychan168/contract-gen-xl"
+}

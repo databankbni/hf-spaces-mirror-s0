@@ -1,0 +1,22 @@
+{
+    "Model": "Wan2.2",
+    "year": "2026",
+    "open_source": "no",
+    "Metrics": {
+        "Image Quality": 0.4618,
+        "Aesthetic Quality": 0.4287,
+        "JEPA Similarity": 0.5961,
+        "Dynamic Degree": 0.2094,
+        "Flow Score": 0.0972,
+        "Motion Smoothness": 0.6064,
+        "Subject Consistency": 0.6204,
+        "Background Consistency": 0.7339,
+        "Photometric Consistency": 0.1911,
+        "Interaction Quality": 0.4432,
+        "Trajectory Accuracy": 0.1415,
+        "Depth Accuracy": 0.8673,
+        "Perspectivity": 0.7588,
+        "Instruction Following": 0.4552,
+        "Semantic Alignment": 0.8761
+    }
+}

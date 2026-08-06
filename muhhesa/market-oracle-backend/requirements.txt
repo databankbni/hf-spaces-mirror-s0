@@ -1,0 +1,13 @@
+fastapi
+uvicorn
+requests
+pandas
+beautifulsoup4
+yfinance
+openpyxl
+fredapi
+telebot
+python-telegram-bot
+curl_cffi
+numpy
+python-dotenv  

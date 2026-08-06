@@ -1,0 +1,27 @@
+{
+ "captured_at": "2026-08-04T16:55:49Z",
+ "hf_metadata": {
+  "sha": "c0325b6e884907e05c98daea2c91b6b69ebde0be"
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  },
+  {
+   "original": ".gitignore",
+   "stored_as": "_gitignore"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "sanduniiiiii/sala-ai",
+ "repo_type": "spaces",
+ "sha": "c0325b6e884907e05c98daea2c91b6b69ebde0be",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/sanduniiiiii/sala-ai"
+}

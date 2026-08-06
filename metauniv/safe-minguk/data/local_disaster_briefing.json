@@ -1,0 +1,107 @@
+{
+  "_note": "지역별 재난안전데이터 브리핑. region.resolve의 key로 조회한다(gwanak/gangnam/cheongju/pohang/gyeongju/haeundae/default). risk_flags는 시나리오 강조·평가 가중의 근거이며, briefing 항목은 화면 '내 지역 재난안전데이터 브리핑' 패널에 표시된다. 각 항목의 source_id는 safety_sources.json과 연결된다.",
+  "_honesty": "과거 재난 이력(침수·지진)은 실제 사실이다. 대피소 수·수위 등 수치는 demo_sample 출처로 라벨링된 시연값이며 실시간 실데이터가 아니다.",
+  "default": {
+    "risk_flags": {
+      "flood_history": false,
+      "near_underpass": false,
+      "low_lying": false,
+      "semi_basement": false,
+      "shelter_available": true,
+      "weather_warning": "heavy_rain_watch"
+    },
+    "briefing": [
+      {"type": "weather_warning", "title": "호우 주의보 발효(가정)", "value": "시간당 30mm 내외", "description": "훈련 상황은 호우 특보 발효를 가정합니다. 실제 특보는 기상청 API 연동 시 실시간 반영됩니다.", "source_id": "weather_warning"},
+      {"type": "shelter", "title": "인근 대피소 확인 필요", "value": "주소 기준 조회 예정", "description": "주소 기준 인근 대피소 정보를 확인해 주민 안내 문안에 반영해야 합니다.", "source_id": "shelter"}
+    ]
+  },
+  "gwanak": {
+    "risk_flags": {
+      "flood_history": true,
+      "near_underpass": true,
+      "low_lying": true,
+      "semi_basement": true,
+      "shelter_available": true,
+      "weather_warning": "heavy_rain_warning"
+    },
+    "briefing": [
+      {"type": "flood_trace", "title": "과거 침수 이력 기반 고위험 지역", "value": "2022.8 신림동 반지하 침수 인명피해", "description": "침수흔적·저지대·반지하 밀집으로 도시침수 최고위험 등급입니다. 지하차도·저지대 선제 통제와 반지하 대피를 초기 대응 우선순위로 두어야 합니다.", "source_id": "flood_trace"},
+      {"type": "underpass", "title": "관내 침수 우려 지하차도", "value": "신림동 일대 지하차도 통제 대상", "description": "강우특보 발효 시 선제 통제 기준을 미리 정해두어야 합니다.", "source_id": "underpass"},
+      {"type": "shelter", "title": "인근 지정 대피소", "value": "신림초 체육관 등 (수용 여력 있음, 데모 샘플)", "description": "이재민 발생 시 즉시 개방·수용할 대피소를 사전 확인합니다.", "source_id": "shelter"},
+      {"type": "weather_warning", "title": "호우 경보 발효(가정)", "value": "시간당 60mm 집중호우", "description": "비상 2단계 전환 판단이 필요한 강우 강도입니다.", "source_id": "weather_warning"}
+    ]
+  },
+  "gangnam": {
+    "risk_flags": {
+      "flood_history": true,
+      "near_underpass": true,
+      "low_lying": true,
+      "semi_basement": false,
+      "shelter_available": true,
+      "weather_warning": "heavy_rain_warning"
+    },
+    "briefing": [
+      {"type": "flood_trace", "title": "강남역 일대 상습 침수 구역", "value": "저지대·지하상가 집중", "description": "양재천 범람·내수 침수가 반복된 구역으로, 지하공간·저지대 상가 침수 대비가 핵심입니다.", "source_id": "flood_trace"},
+      {"type": "underpass", "title": "지하상가·지하공간 밀집", "value": "강남역 지하상가 통제 대상", "description": "지하공간 침수 시 대규모 인명 위험이 있어 조기 출입통제가 중요합니다.", "source_id": "underpass"},
+      {"type": "shelter", "title": "인근 지정 대피소", "value": "대치중 체육관 등 (데모 샘플)", "description": "이재민 수용 대피소를 사전 확인합니다.", "source_id": "shelter"}
+    ]
+  },
+  "cheongju": {
+    "risk_flags": {
+      "flood_history": true,
+      "near_underpass": true,
+      "low_lying": true,
+      "semi_basement": false,
+      "shelter_available": true,
+      "weather_warning": "heavy_rain_warning"
+    },
+    "briefing": [
+      {"type": "flood_trace", "title": "하천범람·지하차도 침수 이력", "value": "2023.7 오송 궁평2지하차도 침수 참사", "description": "미호강 범람과 지하차도 통제 실패가 대형 인명피해로 이어진 지역입니다. 지하차도 선제 통제와 진입 차단이 최우선 대응요소입니다.", "source_id": "flood_trace"},
+      {"type": "underpass", "title": "관내 침수 우려 지하차도", "value": "오송 궁평2지하차도 등 통제 대상", "description": "월류·범람 예측 시 인명이 진입하기 전 선제 통제해야 합니다.", "source_id": "underpass"},
+      {"type": "river_level", "title": "미호강 수위 감시", "value": "계획홍수위 근접 시 통제(연동 예정)", "description": "하천 수위가 계획홍수위에 근접하면 제방 월류 감시·저지대 대피를 병행합니다.", "source_id": "river_level"},
+      {"type": "shelter", "title": "인근 지정 대피소", "value": "오송중 체육관 등 (데모 샘플)", "description": "이재민 수용 대피소를 사전 확인합니다.", "source_id": "shelter"}
+    ]
+  },
+  "pohang": {
+    "risk_flags": {
+      "flood_history": false,
+      "near_underpass": true,
+      "low_lying": true,
+      "semi_basement": false,
+      "shelter_available": true,
+      "weather_warning": "heavy_rain_watch"
+    },
+    "briefing": [
+      {"type": "flood_trace", "title": "형산강 하류 저지대 침수 위험", "value": "2022 태풍 힌남노 냉천 범람 피해", "description": "태풍 동반 하천범람·저지대 침수 이력이 있습니다. 하천변·저지대 선제 대피가 중요합니다.", "source_id": "flood_trace"},
+      {"type": "shelter", "title": "인근 지정 대피소", "value": "흥해실내체육관 등 (데모 샘플)", "description": "지진·침수 이재민 수용 경험이 있는 대피 인프라입니다.", "source_id": "shelter"}
+    ]
+  },
+  "gyeongju": {
+    "risk_flags": {
+      "flood_history": false,
+      "near_underpass": false,
+      "low_lying": true,
+      "semi_basement": false,
+      "shelter_available": true,
+      "weather_warning": "heavy_rain_watch"
+    },
+    "briefing": [
+      {"type": "flood_trace", "title": "북천 하류 저지대 침수 주의", "value": "저지대 주거지 침수 우려", "description": "집중호우 시 저지대 주택 침수에 대비한 선제 대피가 필요합니다.", "source_id": "flood_trace"},
+      {"type": "shelter", "title": "인근 지정 대피소", "value": "경주실내체육관 등 (데모 샘플)", "description": "이재민 수용 대피소를 사전 확인합니다.", "source_id": "shelter"}
+    ]
+  },
+  "haeundae": {
+    "risk_flags": {
+      "flood_history": true,
+      "near_underpass": true,
+      "low_lying": true,
+      "semi_basement": false,
+      "shelter_available": true,
+      "weather_warning": "heavy_rain_warning"
+    },
+    "briefing": [
+      {"type": "flood_trace", "title": "해안 저지대·온천천 범람 이력", "value": "만조 겹칠 시 침수 가중", "description": "해안 저지대와 온천천 범람이 만조와 겹치면 침수가 가중됩니다. 저지대·지하공간 선제 대피가 핵심입니다.", "source_id": "flood_trace"},
+      {"type": "shelter", "title": "인근 지정 대피소", "value": "해운대구민체육센터 등 (데모 샘플)", "description": "이재민 수용 대피소를 사전 확인합니다.", "source_id": "shelter"}
+    ]
+  }
+}

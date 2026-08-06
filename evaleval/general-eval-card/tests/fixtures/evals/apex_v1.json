@@ -1,0 +1,1929 @@
+{
+  "eval_summary_id": "apex_v1",
+  "benchmark": "APEX v1",
+  "benchmark_family_key": "apex_v1",
+  "benchmark_family_name": "APEX v1",
+  "benchmark_parent_key": "apex_v1",
+  "benchmark_parent_name": "APEX v1",
+  "benchmark_leaf_key": "apex_v1",
+  "benchmark_leaf_name": "APEX v1",
+  "benchmark_component_key": "medicine_md",
+  "benchmark_component_name": "Medicine (MD)",
+  "evaluation_name": "APEX v1",
+  "display_name": "APEX v1",
+  "canonical_display_name": "APEX v1",
+  "is_summary_score": false,
+  "category": "knowledge",
+  "source_data": {
+    "dataset_name": "apex-v1",
+    "source_type": "hf_dataset",
+    "hf_repo": "Mercor/APEX-v1"
+  },
+  "benchmark_card": {
+    "benchmark_details": {
+      "name": "APEX-v1",
+      "overview": "APEX-Agents (AI Productivity Index for Agents) measures the ability of AI agents to execute long-horizon, cross-application tasks created by investment banking analysts, management consultants, and corporate lawyers. The benchmark contains 480 tasks and requires agents to navigate realistic work environments with files and tools.",
+      "data_type": "text",
+      "domains": [
+        "investment banking",
+        "management consulting",
+        "corporate law",
+        "finance",
+        "legal",
+        "consulting"
+      ],
+      "languages": [
+        "English"
+      ],
+      "similar_benchmarks": [
+        "Not specified"
+      ],
+      "resources": [
+        "https://arxiv.org/abs/2601.14242",
+        "https://huggingface.co/datasets/Mercor/APEX-v1"
+      ],
+      "benchmark_type": "single"
+    },
+    "purpose_and_intended_users": {
+      "goal": "To assess whether AI agents can reliably execute highly complex professional services work, bridging the gap between existing agentic evaluations and real-world professional workflows.",
+      "audience": [
+        "AI researchers",
+        "Developers working on agentic systems"
+      ],
+      "tasks": [
+        "Text generation",
+        "Question answering",
+        "Reasoning",
+        "Demonstrating advanced knowledge",
+        "Using multiple applications",
+        "Planning over long horizons within realistic project scenarios"
+      ],
+      "limitations": "Differences in benchmark scores below 1 percentage point should be interpreted cautiously due to a small error rate in the automated grading system (1.9% false negative rate and 1.3% false positive rate).",
+      "out_of_scope_uses": [
+        "Not specified"
+      ]
+    },
+    "data": {
+      "source": "The benchmark data was created by industry professionals including investment banking analysts, management consultants, and corporate lawyers. These professionals were organized into teams, assigned specific roles, and tasked with delivering complete projects over 5-10 day periods, producing high-quality customer-ready deliverables from scratch.",
+      "size": "480 tasks",
+      "format": "The specific structure of individual data instances is not described",
+      "annotation": "Tasks were created by professionals using files from within each project environment. A baselining study was conducted where independent experts executed 20% of tasks (96 tasks) to verify task feasibility, rubric fairness, and time estimates."
+    },
+    "methodology": {
+      "methods": [
+        "Models are evaluated using agent execution in realistic environments",
+        "Eight trajectories are collected for each agent-task pair, with each trajectory scored as pass or fail"
+      ],
+      "metrics": [
+        "Pass@1 (task-uniform mean of per-task pass rates)",
+        "Pass@8 (passing at least once in eight attempts)",
+        "Pass^8 (passing consistently on all eight attempts)"
+      ],
+      "calculation": "The overall Pass@1 score is computed as the task-uniform mean of per-task pass rates across all 480 tasks. Confidence intervals are calculated using task-level bootstrapping with 10,000 resamples",
+      "interpretation": "Higher Pass@1 scores indicate better performance",
+      "baseline_results": "Gemini 3 Flash (Thinking=High): 24.0%, GPT-5.2 (Thinking=High): 23.0%, Claude Opus 4.5 (Thinking=High): [score not specified], Gemini 3 Pro (Thinking=High): [score not specified], GPT-OSS-120B (High): 15.2%, Grok 4: 0%",
+      "validation": "Automated evaluation used a judge model with 98.5% accuracy against human-labeled ground truth. A baselining study with experts validated task feasibility and rubric fairness"
+    },
+    "ethical_and_legal_considerations": {
+      "privacy_and_anonymity": "Not specified",
+      "data_licensing": "Creative Commons Attribution 4.0",
+      "consent_procedures": "Not specified",
+      "compliance_with_regulations": "Not specified"
+    },
+    "possible_risks": [
+      {
+        "category": "Over- or under-reliance",
+        "description": [
+          "In AI-assisted decision-making tasks, reliance measures how much a person trusts (and potentially acts on) a model's output. Over-reliance occurs when a person puts too much trust in a model, accepting a model's output when the model's output is likely incorrect. Under-reliance is the opposite, where the person doesn't trust the model but should."
+        ],
+        "url": "https://www.ibm.com/docs/en/watsonx/saas?topic=SSYOK8/wsj/ai-risk-atlas/over-or-under-reliance.html"
+      },
+      {
+        "category": "Unrepresentative data",
+        "description": [
+          "Unrepresentative data occurs when the training or fine-tuning data is not sufficiently representative of the underlying population or does not measure the phenomenon of interest. Synthetic data might not fully capture the complexity and nuances of real-world data. Causes include possible limitations in the seed data quality, biases in generation methods, or inadequate domain knowledge. Thus, AI models might struggle to generalize effectively to real-world scenarios."
+        ],
+        "url": "https://www.ibm.com/docs/en/watsonx/saas?topic=SSYOK8/wsj/ai-risk-atlas/unrepresentative-data.html"
+      },
+      {
+        "category": "Incomplete AI agent evaluation",
+        "description": [
+          "Evaluating the performance or accuracy or an agent is difficult because of system complexity and open-endedness."
+        ],
+        "url": "https://www.ibm.com/docs/en/watsonx/saas?topic=SSYOK8/wsj/ai-risk-atlas/incomplete-ai-agent-evaluation-agentic.html"
+      },
+      {
+        "category": "Reproducibility",
+        "description": [
+          "Replicating agent behavior or output can be impacted by changes or updates made to external services and tools. This impact is increased if the agent is built with generative AI."
+        ],
+        "url": "https://www.ibm.com/docs/en/watsonx/saas?topic=SSYOK8/wsj/ai-risk-atlas/reproducibility-agentic.html"
+      },
+      {
+        "category": "Improper usage",
+        "description": [
+          "Improper usage occurs when a model is used for a purpose that it was not originally designed for."
+        ],
+        "url": "https://www.ibm.com/docs/en/watsonx/saas?topic=SSYOK8/wsj/ai-risk-atlas/improper-usage.html"
+      }
+    ],
+    "flagged_fields": {},
+    "missing_fields": [
+      "benchmark_details.similar_benchmarks",
+      "purpose_and_intended_users.out_of_scope_uses",
+      "ethical_and_legal_considerations.privacy_and_anonymity",
+      "ethical_and_legal_considerations.consent_procedures",
+      "ethical_and_legal_considerations.compliance_with_regulations"
+    ],
+    "card_info": {
+      "created_at": "2026-04-14T14:28:12.501639",
+      "llm": "deepseek-ai/DeepSeek-V3.1"
+    }
+  },
+  "tags": {
+    "domains": [
+      "investment banking",
+      "management consulting",
+      "corporate law",
+      "finance",
+      "legal",
+      "consulting"
+    ],
+    "languages": [
+      "English"
+    ],
+    "tasks": [
+      "Text generation",
+      "Question answering",
+      "Reasoning",
+      "Demonstrating advanced knowledge",
+      "Using multiple applications",
+      "Planning over long horizons within realistic project scenarios"
+    ]
+  },
+  "subtasks": [
+    {
+      "subtask_key": "big_law",
+      "subtask_name": "Big Law",
+      "display_name": "Big Law",
+      "metrics": [
+        {
+          "metric_summary_id": "apex_v1_big_law_score",
+          "legacy_eval_summary_id": "apex_v1_big_law",
+          "evaluation_name": "Big Law",
+          "display_name": "APEX v1 / Big Law / Score",
+          "canonical_display_name": "APEX v1 / Big Law / Score",
+          "benchmark_leaf_key": "apex_v1",
+          "benchmark_leaf_name": "APEX v1",
+          "slice_key": "big_law",
+          "slice_name": "Big Law",
+          "lower_is_better": false,
+          "metric_name": "Score",
+          "metric_id": "apex_v1.score",
+          "metric_key": "score",
+          "metric_source": "metric_config",
+          "metric_config": {
+            "evaluation_description": "Big law associate score.",
+            "lower_is_better": false,
+            "score_type": "continuous",
+            "min_score": 0,
+            "max_score": 1,
+            "additional_details": {
+              "raw_evaluation_name": "Big Law Score"
+            },
+            "metric_id": "apex_v1.score",
+            "metric_name": "Score",
+            "metric_kind": "score",
+            "metric_unit": "proportion"
+          },
+          "model_results": [
+            {
+              "model_id": "openai/gpt-5",
+              "model_route_id": "openai__gpt-5",
+              "model_name": "GPT 5",
+              "developer": "openai",
+              "variant_key": "default",
+              "raw_model_id": "openai/GPT 5",
+              "score": 0.78,
+              "evaluation_id": "apex-v1/openai_gpt-5/1773260200",
+              "retrieved_timestamp": "1773260200",
+              "source_metadata": {
+                "source_name": "Mercor APEX-v1 Leaderboard",
+                "source_type": "evaluation_run",
+                "source_organization_name": "Mercor",
+                "source_organization_url": "https://www.mercor.com",
+                "evaluator_relationship": "first_party"
+              },
+              "source_data": {
+                "dataset_name": "apex-v1",
+                "source_type": "hf_dataset",
+                "hf_repo": "Mercor/APEX-v1"
+              },
+              "source_record_url": "https://huggingface.co/datasets/evaleval/card_backend/resolve/main/records/openai__gpt-5/apex_v1_openai_gpt_5_1773260200.json",
+              "detailed_evaluation_results": null,
+              "detailed_evaluation_results_meta": null,
+              "passthrough_top_level_fields": null,
+              "instance_level_data": null,
+              "normalized_result": {
+                "benchmark_family_key": "apex_v1",
+                "benchmark_family_name": "APEX v1",
+                "benchmark_parent_key": "apex_v1",
+                "benchmark_parent_name": "APEX v1",
+                "benchmark_component_key": "big_law",
+                "benchmark_component_name": "Big Law",
+                "benchmark_leaf_key": "apex_v1",
+                "benchmark_leaf_name": "APEX v1",
+                "slice_key": "big_law",
+                "slice_name": "Big Law",
+                "metric_name": "Score",
+                "metric_id": "apex_v1.score",
+                "metric_key": "score",
+                "metric_source": "metric_config",
+                "display_name": "Big Law / Score",
+                "canonical_display_name": "APEX v1 / Big Law / Score",
+                "raw_evaluation_name": "Big Law",
+                "is_summary_score": false
+              },
+              "evalcards": {
+                "annotations": {
+                  "reproducibility_gap": {
+                    "has_reproducibility_gap": true,
+                    "missing_fields": [
+                      "temperature",
+                      "max_tokens"
+                    ],
+                    "required_field_count": 2,
+                    "populated_field_count": 0,
+                    "signal_version": "1.0"
+                  },
+                  "provenance": {
+                    "source_type": "first_party",
+                    "is_multi_source": false,
+                    "first_party_only": true,
+                    "distinct_reporting_organizations": 1,
+                    "signal_version": "1.0"
+                  },
+                  "variant_divergence": null,
+                  "cross_party_divergence": null
+                }
+              }
+            },
+            {
+              "model_id": "openai/gpt-5-1",
+              "model_route_id": "openai__gpt-5-1",
+              "model_name": "GPT 5.1",
+              "developer": "openai",
+              "variant_key": "default",
+              "raw_model_id": "openai/GPT 5.1",
+              "score": 0.77,
+              "evaluation_id": "apex-v1/openai_gpt-5.1/1773260200",
+              "retrieved_timestamp": "1773260200",
+              "source_metadata": {
+                "source_name": "Mercor APEX-v1 Leaderboard",
+                "source_type": "evaluation_run",
+                "source_organization_name": "Mercor",
+                "source_organization_url": "https://www.mercor.com",
+                "evaluator_relationship": "first_party"
+              },
+              "source_data": {
+                "dataset_name": "apex-v1",
+                "source_type": "hf_dataset",
+                "hf_repo": "Mercor/APEX-v1"
+              },
+              "source_record_url": "https://huggingface.co/datasets/evaleval/card_backend/resolve/main/records/openai__gpt-5-1/apex_v1_openai_gpt_5_1_1773260200.json",
+              "detailed_evaluation_results": null,
+              "detailed_evaluation_results_meta": null,
+              "passthrough_top_level_fields": null,
+              "instance_level_data": null,
+              "normalized_result": {
+                "benchmark_family_key": "apex_v1",
+                "benchmark_family_name": "APEX v1",
+                "benchmark_parent_key": "apex_v1",
+                "benchmark_parent_name": "APEX v1",
+                "benchmark_component_key": "big_law",
+                "benchmark_component_name": "Big Law",
+                "benchmark_leaf_key": "apex_v1",
+                "benchmark_leaf_name": "APEX v1",
+                "slice_key": "big_law",
+                "slice_name": "Big Law",
+                "metric_name": "Score",
+                "metric_id": "apex_v1.score",
+                "metric_key": "score",
+                "metric_source": "metric_config",
+                "display_name": "Big Law / Score",
+                "canonical_display_name": "APEX v1 / Big Law / Score",
+                "raw_evaluation_name": "Big Law",
+                "is_summary_score": false
+              },
+              "evalcards": {
+                "annotations": {
+                  "reproducibility_gap": {
+                    "has_reproducibility_gap": true,
+                    "missing_fields": [
+                      "temperature",
+                      "max_tokens"
+                    ],
+                    "required_field_count": 2,
+                    "populated_field_count": 0,
+                    "signal_version": "1.0"
+                  },
+                  "provenance": {
+                    "source_type": "first_party",
+                    "is_multi_source": false,
+                    "first_party_only": true,
+                    "distinct_reporting_organizations": 1,
+                    "signal_version": "1.0"
+                  },
+                  "variant_divergence": null,
+                  "cross_party_divergence": null
+                }
+              }
+            },
+            {
+              "model_id": "openai/o3",
+              "model_route_id": "openai__o3",
+              "model_name": "o3",
+              "developer": "openai",
+              "variant_key": "default",
+              "raw_model_id": "openai/o3",
+              "score": 0.76,
+              "evaluation_id": "apex-v1/openai_o3/1773260200",
+              "retrieved_timestamp": "1773260200",
+              "source_metadata": {
+                "source_name": "Mercor APEX-v1 Leaderboard",
+                "source_type": "evaluation_run",
+                "source_organization_name": "Mercor",
+                "source_organization_url": "https://www.mercor.com",
+                "evaluator_relationship": "first_party"
+              },
+              "source_data": {
+                "dataset_name": "apex-v1",
+                "source_type": "hf_dataset",
+                "hf_repo": "Mercor/APEX-v1"
+              },
+              "source_record_url": "https://huggingface.co/datasets/evaleval/card_backend/resolve/main/records/openai__o3/apex_v1_openai_o3_1773260200.json",
+              "detailed_evaluation_results": null,
+              "detailed_evaluation_results_meta": null,
+              "passthrough_top_level_fields": null,
+              "instance_level_data": null,
+              "normalized_result": {
+                "benchmark_family_key": "apex_v1",
+                "benchmark_family_name": "APEX v1",
+                "benchmark_parent_key": "apex_v1",
+                "benchmark_parent_name": "APEX v1",
+                "benchmark_component_key": "big_law",
+                "benchmark_component_name": "Big Law",
+                "benchmark_leaf_key": "apex_v1",
+                "benchmark_leaf_name": "APEX v1",
+                "slice_key": "big_law",
+                "slice_name": "Big Law",
+                "metric_name": "Score",
+                "metric_id": "apex_v1.score",
+                "metric_key": "score",
+                "metric_source": "metric_config",
+                "display_name": "Big Law / Score",
+                "canonical_display_name": "APEX v1 / Big Law / Score",
+                "raw_evaluation_name": "Big Law",
+                "is_summary_score": false
+              },
+              "evalcards": {
+                "annotations": {
+                  "reproducibility_gap": {
+                    "has_reproducibility_gap": true,
+                    "missing_fields": [
+                      "temperature",
+                      "max_tokens"
+                    ],
+                    "required_field_count": 2,
+                    "populated_field_count": 0,
+                    "signal_version": "1.0"
+                  },
+                  "provenance": {
+                    "source_type": "first_party",
+                    "is_multi_source": false,
+                    "first_party_only": true,
+                    "distinct_reporting_organizations": 1,
+                    "signal_version": "1.0"
+                  },
+                  "variant_divergence": null,
+                  "cross_party_divergence": null
+                }
+              }
+            }
+          ],
+          "models_count": 3,
+          "top_score": 0.78
+        }
+      ],
+      "metrics_count": 1,
+      "metric_names": [
+        "Score"
+      ]
+    },
+    {
+      "subtask_key": "consulting",
+      "subtask_name": "Consulting",
+      "display_name": "Consulting",
+      "metrics": [
+        {
+          "metric_summary_id": "apex_v1_consulting_score",
+          "legacy_eval_summary_id": "apex_v1_consulting",
+          "evaluation_name": "Consulting",
+          "display_name": "APEX v1 / Consulting / Score",
+          "canonical_display_name": "APEX v1 / Consulting / Score",
+          "benchmark_leaf_key": "apex_v1",
+          "benchmark_leaf_name": "APEX v1",
+          "slice_key": "consulting",
+          "slice_name": "Consulting",
+          "lower_is_better": false,
+          "metric_name": "Score",
+          "metric_id": "apex_v1.score",
+          "metric_key": "score",
+          "metric_source": "metric_config",
+          "metric_config": {
+            "evaluation_description": "Management consulting score.",
+            "lower_is_better": false,
+            "score_type": "continuous",
+            "min_score": 0,
+            "max_score": 1,
+            "additional_details": {
+              "raw_evaluation_name": "Consulting Score"
+            },
+            "metric_id": "apex_v1.score",
+            "metric_name": "Score",
+            "metric_kind": "score",
+            "metric_unit": "proportion"
+          },
+          "model_results": [
+            {
+              "model_id": "openai/gpt-5-2-pro",
+              "model_route_id": "openai__gpt-5-2-pro",
+              "model_name": "GPT 5.2 Pro",
+              "developer": "openai",
+              "variant_key": "default",
+              "raw_model_id": "openai/GPT 5.2 Pro",
+              "score": 0.64,
+              "evaluation_id": "apex-v1/openai_gpt-5.2-pro/1773260200",
+              "retrieved_timestamp": "1773260200",
+              "source_metadata": {
+                "source_name": "Mercor APEX-v1 Leaderboard",
+                "source_type": "evaluation_run",
+                "source_organization_name": "Mercor",
+                "source_organization_url": "https://www.mercor.com",
+                "evaluator_relationship": "first_party"
+              },
+              "source_data": {
+                "dataset_name": "apex-v1",
+                "source_type": "hf_dataset",
+                "hf_repo": "Mercor/APEX-v1"
+              },
+              "source_record_url": "https://huggingface.co/datasets/evaleval/card_backend/resolve/main/records/openai__gpt-5-2-pro/apex_v1_openai_gpt_5_2_pro_1773260200.json",
+              "detailed_evaluation_results": null,
+              "detailed_evaluation_results_meta": null,
+              "passthrough_top_level_fields": null,
+              "instance_level_data": null,
+              "normalized_result": {
+                "benchmark_family_key": "apex_v1",
+                "benchmark_family_name": "APEX v1",
+                "benchmark_parent_key": "apex_v1",
+                "benchmark_parent_name": "APEX v1",
+                "benchmark_component_key": "consulting",
+                "benchmark_component_name": "Consulting",
+                "benchmark_leaf_key": "apex_v1",
+                "benchmark_leaf_name": "APEX v1",
+                "slice_key": "consulting",
+                "slice_name": "Consulting",
+                "metric_name": "Score",
+                "metric_id": "apex_v1.score",
+                "metric_key": "score",
+                "metric_source": "metric_config",
+                "display_name": "Consulting / Score",
+                "canonical_display_name": "APEX v1 / Consulting / Score",
+                "raw_evaluation_name": "Consulting",
+                "is_summary_score": false
+              },
+              "evalcards": {
+                "annotations": {
+                  "reproducibility_gap": {
+                    "has_reproducibility_gap": true,
+                    "missing_fields": [
+                      "temperature",
+                      "max_tokens"
+                    ],
+                    "required_field_count": 2,
+                    "populated_field_count": 0,
+                    "signal_version": "1.0"
+                  },
+                  "provenance": {
+                    "source_type": "first_party",
+                    "is_multi_source": false,
+                    "first_party_only": true,
+                    "distinct_reporting_organizations": 1,
+                    "signal_version": "1.0"
+                  },
+                  "variant_divergence": null,
+                  "cross_party_divergence": null
+                }
+              }
+            },
+            {
+              "model_id": "google/gemini-3-pro",
+              "model_route_id": "google__gemini-3-pro",
+              "model_name": "Gemini 3 Pro",
+              "developer": "google",
+              "variant_key": "default",
+              "raw_model_id": "google/Gemini 3 Pro",
+              "score": 0.64,
+              "evaluation_id": "apex-v1/google_gemini-3-pro/1773260200",
+              "retrieved_timestamp": "1773260200",
+              "source_metadata": {
+                "source_name": "Mercor APEX-v1 Leaderboard",
+                "source_type": "evaluation_run",
+                "source_organization_name": "Mercor",
+                "source_organization_url": "https://www.mercor.com",
+                "evaluator_relationship": "first_party"
+              },
+              "source_data": {
+                "dataset_name": "apex-v1",
+                "source_type": "hf_dataset",
+                "hf_repo": "Mercor/APEX-v1"
+              },
+              "source_record_url": "https://huggingface.co/datasets/evaleval/card_backend/resolve/main/records/google__gemini-3-pro/apex_v1_google_gemini_3_pro_1773260200.json",
+              "detailed_evaluation_results": null,
+              "detailed_evaluation_results_meta": null,
+              "passthrough_top_level_fields": null,
+              "instance_level_data": null,
+              "normalized_result": {
+                "benchmark_family_key": "apex_v1",
+                "benchmark_family_name": "APEX v1",
+                "benchmark_parent_key": "apex_v1",
+                "benchmark_parent_name": "APEX v1",
+                "benchmark_component_key": "consulting",
+                "benchmark_component_name": "Consulting",
+                "benchmark_leaf_key": "apex_v1",
+                "benchmark_leaf_name": "APEX v1",
+                "slice_key": "consulting",
+                "slice_name": "Consulting",
+                "metric_name": "Score",
+                "metric_id": "apex_v1.score",
+                "metric_key": "score",
+                "metric_source": "metric_config",
+                "display_name": "Consulting / Score",
+                "canonical_display_name": "APEX v1 / Consulting / Score",
+                "raw_evaluation_name": "Consulting",
+                "is_summary_score": false
+              },
+              "evalcards": {
+                "annotations": {
+                  "reproducibility_gap": {
+                    "has_reproducibility_gap": true,
+                    "missing_fields": [
+                      "temperature",
+                      "max_tokens"
+                    ],
+                    "required_field_count": 2,
+                    "populated_field_count": 0,
+                    "signal_version": "1.0"
+                  },
+                  "provenance": {
+                    "source_type": "first_party",
+                    "is_multi_source": false,
+                    "first_party_only": true,
+                    "distinct_reporting_organizations": 1,
+                    "signal_version": "1.0"
+                  },
+                  "variant_divergence": null,
+                  "cross_party_divergence": null
+                }
+              }
+            },
+            {
+              "model_id": "google/gemini-3-flash",
+              "model_route_id": "google__gemini-3-flash",
+              "model_name": "Gemini 3 Flash",
+              "developer": "google",
+              "variant_key": "default",
+              "raw_model_id": "google/Gemini 3 Flash",
+              "score": 0.64,
+              "evaluation_id": "apex-v1/google_gemini-3-flash/1773260200",
+              "retrieved_timestamp": "1773260200",
+              "source_metadata": {
+                "source_name": "Mercor APEX-v1 Leaderboard",
+                "source_type": "evaluation_run",
+                "source_organization_name": "Mercor",
+                "source_organization_url": "https://www.mercor.com",
+                "evaluator_relationship": "first_party"
+              },
+              "source_data": {
+                "dataset_name": "apex-v1",
+                "source_type": "hf_dataset",
+                "hf_repo": "Mercor/APEX-v1"
+              },
+              "source_record_url": "https://huggingface.co/datasets/evaleval/card_backend/resolve/main/records/google__gemini-3-flash/apex_v1_google_gemini_3_flash_1773260200.json",
+              "detailed_evaluation_results": null,
+              "detailed_evaluation_results_meta": null,
+              "passthrough_top_level_fields": null,
+              "instance_level_data": null,
+              "normalized_result": {
+                "benchmark_family_key": "apex_v1",
+                "benchmark_family_name": "APEX v1",
+                "benchmark_parent_key": "apex_v1",
+                "benchmark_parent_name": "APEX v1",
+                "benchmark_component_key": "consulting",
+                "benchmark_component_name": "Consulting",
+                "benchmark_leaf_key": "apex_v1",
+                "benchmark_leaf_name": "APEX v1",
+                "slice_key": "consulting",
+                "slice_name": "Consulting",
+                "metric_name": "Score",
+                "metric_id": "apex_v1.score",
+                "metric_key": "score",
+                "metric_source": "metric_config",
+                "display_name": "Consulting / Score",
+                "canonical_display_name": "APEX v1 / Consulting / Score",
+                "raw_evaluation_name": "Consulting",
+                "is_summary_score": false
+              },
+              "evalcards": {
+                "annotations": {
+                  "reproducibility_gap": {
+                    "has_reproducibility_gap": true,
+                    "missing_fields": [
+                      "temperature",
+                      "max_tokens"
+                    ],
+                    "required_field_count": 2,
+                    "populated_field_count": 0,
+                    "signal_version": "1.0"
+                  },
+                  "provenance": {
+                    "source_type": "first_party",
+                    "is_multi_source": false,
+                    "first_party_only": true,
+                    "distinct_reporting_organizations": 1,
+                    "signal_version": "1.0"
+                  },
+                  "variant_divergence": null,
+                  "cross_party_divergence": null
+                }
+              }
+            }
+          ],
+          "models_count": 3,
+          "top_score": 0.64
+        }
+      ],
+      "metrics_count": 1,
+      "metric_names": [
+        "Score"
+      ]
+    },
+    {
+      "subtask_key": "investment_banking",
+      "subtask_name": "Investment Banking",
+      "display_name": "Investment Banking",
+      "metrics": [
+        {
+          "metric_summary_id": "apex_v1_investment_banking_score",
+          "legacy_eval_summary_id": "apex_v1_investment_banking",
+          "evaluation_name": "Investment Banking",
+          "display_name": "APEX v1 / Investment Banking / Score",
+          "canonical_display_name": "APEX v1 / Investment Banking / Score",
+          "benchmark_leaf_key": "apex_v1",
+          "benchmark_leaf_name": "APEX v1",
+          "slice_key": "investment_banking",
+          "slice_name": "Investment Banking",
+          "lower_is_better": false,
+          "metric_name": "Score",
+          "metric_id": "apex_v1.score",
+          "metric_key": "score",
+          "metric_source": "metric_config",
+          "metric_config": {
+            "evaluation_description": "Investment banking associate score.",
+            "lower_is_better": false,
+            "score_type": "continuous",
+            "min_score": 0,
+            "max_score": 1,
+            "additional_details": {
+              "raw_evaluation_name": "Investment Banking Score"
+            },
+            "metric_id": "apex_v1.score",
+            "metric_name": "Score",
+            "metric_kind": "score",
+            "metric_unit": "proportion"
+          },
+          "model_results": [
+            {
+              "model_id": "openai/gpt-5-2-pro",
+              "model_route_id": "openai__gpt-5-2-pro",
+              "model_name": "GPT 5.2 Pro",
+              "developer": "openai",
+              "variant_key": "default",
+              "raw_model_id": "openai/GPT 5.2 Pro",
+              "score": 0.64,
+              "evaluation_id": "apex-v1/openai_gpt-5.2-pro/1773260200",
+              "retrieved_timestamp": "1773260200",
+              "source_metadata": {
+                "source_name": "Mercor APEX-v1 Leaderboard",
+                "source_type": "evaluation_run",
+                "source_organization_name": "Mercor",
+                "source_organization_url": "https://www.mercor.com",
+                "evaluator_relationship": "first_party"
+              },
+              "source_data": {
+                "dataset_name": "apex-v1",
+                "source_type": "hf_dataset",
+                "hf_repo": "Mercor/APEX-v1"
+              },
+              "source_record_url": "https://huggingface.co/datasets/evaleval/card_backend/resolve/main/records/openai__gpt-5-2-pro/apex_v1_openai_gpt_5_2_pro_1773260200.json",
+              "detailed_evaluation_results": null,
+              "detailed_evaluation_results_meta": null,
+              "passthrough_top_level_fields": null,
+              "instance_level_data": null,
+              "normalized_result": {
+                "benchmark_family_key": "apex_v1",
+                "benchmark_family_name": "APEX v1",
+                "benchmark_parent_key": "apex_v1",
+                "benchmark_parent_name": "APEX v1",
+                "benchmark_component_key": "investment_banking",
+                "benchmark_component_name": "Investment Banking",
+                "benchmark_leaf_key": "apex_v1",
+                "benchmark_leaf_name": "APEX v1",
+                "slice_key": "investment_banking",
+                "slice_name": "Investment Banking",
+                "metric_name": "Score",
+                "metric_id": "apex_v1.score",
+                "metric_key": "score",
+                "metric_source": "metric_config",
+                "display_name": "Investment Banking / Score",
+                "canonical_display_name": "APEX v1 / Investment Banking / Score",
+                "raw_evaluation_name": "Investment Banking",
+                "is_summary_score": false
+              },
+              "evalcards": {
+                "annotations": {
+                  "reproducibility_gap": {
+                    "has_reproducibility_gap": true,
+                    "missing_fields": [
+                      "temperature",
+                      "max_tokens"
+                    ],
+                    "required_field_count": 2,
+                    "populated_field_count": 0,
+                    "signal_version": "1.0"
+                  },
+                  "provenance": {
+                    "source_type": "first_party",
+                    "is_multi_source": false,
+                    "first_party_only": true,
+                    "distinct_reporting_organizations": 1,
+                    "signal_version": "1.0"
+                  },
+                  "variant_divergence": null,
+                  "cross_party_divergence": null
+                }
+              }
+            },
+            {
+              "model_id": "google/gemini-3-pro",
+              "model_route_id": "google__gemini-3-pro",
+              "model_name": "Gemini 3 Pro",
+              "developer": "google",
+              "variant_key": "default",
+              "raw_model_id": "google/Gemini 3 Pro",
+              "score": 0.63,
+              "evaluation_id": "apex-v1/google_gemini-3-pro/1773260200",
+              "retrieved_timestamp": "1773260200",
+              "source_metadata": {
+                "source_name": "Mercor APEX-v1 Leaderboard",
+                "source_type": "evaluation_run",
+                "source_organization_name": "Mercor",
+                "source_organization_url": "https://www.mercor.com",
+                "evaluator_relationship": "first_party"
+              },
+              "source_data": {
+                "dataset_name": "apex-v1",
+                "source_type": "hf_dataset",
+                "hf_repo": "Mercor/APEX-v1"
+              },
+              "source_record_url": "https://huggingface.co/datasets/evaleval/card_backend/resolve/main/records/google__gemini-3-pro/apex_v1_google_gemini_3_pro_1773260200.json",
+              "detailed_evaluation_results": null,
+              "detailed_evaluation_results_meta": null,
+              "passthrough_top_level_fields": null,
+              "instance_level_data": null,
+              "normalized_result": {
+                "benchmark_family_key": "apex_v1",
+                "benchmark_family_name": "APEX v1",
+                "benchmark_parent_key": "apex_v1",
+                "benchmark_parent_name": "APEX v1",
+                "benchmark_component_key": "investment_banking",
+                "benchmark_component_name": "Investment Banking",
+                "benchmark_leaf_key": "apex_v1",
+                "benchmark_leaf_name": "APEX v1",
+                "slice_key": "investment_banking",
+                "slice_name": "Investment Banking",
+                "metric_name": "Score",
+                "metric_id": "apex_v1.score",
+                "metric_key": "score",
+                "metric_source": "metric_config",
+                "display_name": "Investment Banking / Score",
+                "canonical_display_name": "APEX v1 / Investment Banking / Score",
+                "raw_evaluation_name": "Investment Banking",
+                "is_summary_score": false
+              },
+              "evalcards": {
+                "annotations": {
+                  "reproducibility_gap": {
+                    "has_reproducibility_gap": true,
+                    "missing_fields": [
+                      "temperature",
+                      "max_tokens"
+                    ],
+                    "required_field_count": 2,
+                    "populated_field_count": 0,
+                    "signal_version": "1.0"
+                  },
+                  "provenance": {
+                    "source_type": "first_party",
+                    "is_multi_source": false,
+                    "first_party_only": true,
+                    "distinct_reporting_organizations": 1,
+                    "signal_version": "1.0"
+                  },
+                  "variant_divergence": null,
+                  "cross_party_divergence": null
+                }
+              }
+            },
+            {
+              "model_id": "openai/gpt-5",
+              "model_route_id": "openai__gpt-5",
+              "model_name": "GPT 5",
+              "developer": "openai",
+              "variant_key": "default",
+              "raw_model_id": "openai/GPT 5",
+              "score": 0.61,
+              "evaluation_id": "apex-v1/openai_gpt-5/1773260200",
+              "retrieved_timestamp": "1773260200",
+              "source_metadata": {
+                "source_name": "Mercor APEX-v1 Leaderboard",
+                "source_type": "evaluation_run",
+                "source_organization_name": "Mercor",
+                "source_organization_url": "https://www.mercor.com",
+                "evaluator_relationship": "first_party"
+              },
+              "source_data": {
+                "dataset_name": "apex-v1",
+                "source_type": "hf_dataset",
+                "hf_repo": "Mercor/APEX-v1"
+              },
+              "source_record_url": "https://huggingface.co/datasets/evaleval/card_backend/resolve/main/records/openai__gpt-5/apex_v1_openai_gpt_5_1773260200.json",
+              "detailed_evaluation_results": null,
+              "detailed_evaluation_results_meta": null,
+              "passthrough_top_level_fields": null,
+              "instance_level_data": null,
+              "normalized_result": {
+                "benchmark_family_key": "apex_v1",
+                "benchmark_family_name": "APEX v1",
+                "benchmark_parent_key": "apex_v1",
+                "benchmark_parent_name": "APEX v1",
+                "benchmark_component_key": "investment_banking",
+                "benchmark_component_name": "Investment Banking",
+                "benchmark_leaf_key": "apex_v1",
+                "benchmark_leaf_name": "APEX v1",
+                "slice_key": "investment_banking",
+                "slice_name": "Investment Banking",
+                "metric_name": "Score",
+                "metric_id": "apex_v1.score",
+                "metric_key": "score",
+                "metric_source": "metric_config",
+                "display_name": "Investment Banking / Score",
+                "canonical_display_name": "APEX v1 / Investment Banking / Score",
+                "raw_evaluation_name": "Investment Banking",
+                "is_summary_score": false
+              },
+              "evalcards": {
+                "annotations": {
+                  "reproducibility_gap": {
+                    "has_reproducibility_gap": true,
+                    "missing_fields": [
+                      "temperature",
+                      "max_tokens"
+                    ],
+                    "required_field_count": 2,
+                    "populated_field_count": 0,
+                    "signal_version": "1.0"
+                  },
+                  "provenance": {
+                    "source_type": "first_party",
+                    "is_multi_source": false,
+                    "first_party_only": true,
+                    "distinct_reporting_organizations": 1,
+                    "signal_version": "1.0"
+                  },
+                  "variant_divergence": null,
+                  "cross_party_divergence": null
+                }
+              }
+            }
+          ],
+          "models_count": 3,
+          "top_score": 0.64
+        }
+      ],
+      "metrics_count": 1,
+      "metric_names": [
+        "Score"
+      ]
+    },
+    {
+      "subtask_key": "medicine_md",
+      "subtask_name": "Medicine (MD)",
+      "display_name": "Medicine (MD)",
+      "metrics": [
+        {
+          "metric_summary_id": "apex_v1_medicine_md_score",
+          "legacy_eval_summary_id": "apex_v1_medicine_md",
+          "evaluation_name": "Medicine (MD)",
+          "display_name": "APEX v1 / Medicine (MD) / Score",
+          "canonical_display_name": "APEX v1 / Medicine (MD) / Score",
+          "benchmark_leaf_key": "apex_v1",
+          "benchmark_leaf_name": "APEX v1",
+          "slice_key": "medicine_md",
+          "slice_name": "Medicine (MD)",
+          "lower_is_better": false,
+          "metric_name": "Score",
+          "metric_id": "apex_v1.score",
+          "metric_key": "score",
+          "metric_source": "metric_config",
+          "metric_config": {
+            "evaluation_description": "Primary care physician (MD) score.",
+            "lower_is_better": false,
+            "score_type": "continuous",
+            "min_score": 0,
+            "max_score": 1,
+            "additional_details": {
+              "raw_evaluation_name": "Medicine (MD) Score"
+            },
+            "metric_id": "apex_v1.score",
+            "metric_name": "Score",
+            "metric_kind": "score",
+            "metric_unit": "proportion"
+          },
+          "model_results": [
+            {
+              "model_id": "openai/gpt-5",
+              "model_route_id": "openai__gpt-5",
+              "model_name": "GPT 5",
+              "developer": "openai",
+              "variant_key": "default",
+              "raw_model_id": "openai/GPT 5",
+              "score": 0.66,
+              "evaluation_id": "apex-v1/openai_gpt-5/1773260200",
+              "retrieved_timestamp": "1773260200",
+              "source_metadata": {
+                "source_name": "Mercor APEX-v1 Leaderboard",
+                "source_type": "evaluation_run",
+                "source_organization_name": "Mercor",
+                "source_organization_url": "https://www.mercor.com",
+                "evaluator_relationship": "first_party"
+              },
+              "source_data": {
+                "dataset_name": "apex-v1",
+                "source_type": "hf_dataset",
+                "hf_repo": "Mercor/APEX-v1"
+              },
+              "source_record_url": "https://huggingface.co/datasets/evaleval/card_backend/resolve/main/records/openai__gpt-5/apex_v1_openai_gpt_5_1773260200.json",
+              "detailed_evaluation_results": null,
+              "detailed_evaluation_results_meta": null,
+              "passthrough_top_level_fields": null,
+              "instance_level_data": null,
+              "normalized_result": {
+                "benchmark_family_key": "apex_v1",
+                "benchmark_family_name": "APEX v1",
+                "benchmark_parent_key": "apex_v1",
+                "benchmark_parent_name": "APEX v1",
+                "benchmark_component_key": "medicine_md",
+                "benchmark_component_name": "Medicine (MD)",
+                "benchmark_leaf_key": "apex_v1",
+                "benchmark_leaf_name": "APEX v1",
+                "slice_key": "medicine_md",
+                "slice_name": "Medicine (MD)",
+                "metric_name": "Score",
+                "metric_id": "apex_v1.score",
+                "metric_key": "score",
+                "metric_source": "metric_config",
+                "display_name": "Medicine (MD) / Score",
+                "canonical_display_name": "APEX v1 / Medicine (MD) / Score",
+                "raw_evaluation_name": "Medicine (MD)",
+                "is_summary_score": false
+              },
+              "evalcards": {
+                "annotations": {
+                  "reproducibility_gap": {
+                    "has_reproducibility_gap": true,
+                    "missing_fields": [
+                      "temperature",
+                      "max_tokens"
+                    ],
+                    "required_field_count": 2,
+                    "populated_field_count": 0,
+                    "signal_version": "1.0"
+                  },
+                  "provenance": {
+                    "source_type": "first_party",
+                    "is_multi_source": false,
+                    "first_party_only": true,
+                    "distinct_reporting_organizations": 1,
+                    "signal_version": "1.0"
+                  },
+                  "variant_divergence": null,
+                  "cross_party_divergence": null
+                }
+              }
+            },
+            {
+              "model_id": "openai/gpt-5-2-pro",
+              "model_route_id": "openai__gpt-5-2-pro",
+              "model_name": "GPT 5.2 Pro",
+              "developer": "openai",
+              "variant_key": "default",
+              "raw_model_id": "openai/GPT 5.2 Pro",
+              "score": 0.65,
+              "evaluation_id": "apex-v1/openai_gpt-5.2-pro/1773260200",
+              "retrieved_timestamp": "1773260200",
+              "source_metadata": {
+                "source_name": "Mercor APEX-v1 Leaderboard",
+                "source_type": "evaluation_run",
+                "source_organization_name": "Mercor",
+                "source_organization_url": "https://www.mercor.com",
+                "evaluator_relationship": "first_party"
+              },
+              "source_data": {
+                "dataset_name": "apex-v1",
+                "source_type": "hf_dataset",
+                "hf_repo": "Mercor/APEX-v1"
+              },
+              "source_record_url": "https://huggingface.co/datasets/evaleval/card_backend/resolve/main/records/openai__gpt-5-2-pro/apex_v1_openai_gpt_5_2_pro_1773260200.json",
+              "detailed_evaluation_results": null,
+              "detailed_evaluation_results_meta": null,
+              "passthrough_top_level_fields": null,
+              "instance_level_data": null,
+              "normalized_result": {
+                "benchmark_family_key": "apex_v1",
+                "benchmark_family_name": "APEX v1",
+                "benchmark_parent_key": "apex_v1",
+                "benchmark_parent_name": "APEX v1",
+                "benchmark_component_key": "medicine_md",
+                "benchmark_component_name": "Medicine (MD)",
+                "benchmark_leaf_key": "apex_v1",
+                "benchmark_leaf_name": "APEX v1",
+                "slice_key": "medicine_md",
+                "slice_name": "Medicine (MD)",
+                "metric_name": "Score",
+                "metric_id": "apex_v1.score",
+                "metric_key": "score",
+                "metric_source": "metric_config",
+                "display_name": "Medicine (MD) / Score",
+                "canonical_display_name": "APEX v1 / Medicine (MD) / Score",
+                "raw_evaluation_name": "Medicine (MD)",
+                "is_summary_score": false
+              },
+              "evalcards": {
+                "annotations": {
+                  "reproducibility_gap": {
+                    "has_reproducibility_gap": true,
+                    "missing_fields": [
+                      "temperature",
+                      "max_tokens"
+                    ],
+                    "required_field_count": 2,
+                    "populated_field_count": 0,
+                    "signal_version": "1.0"
+                  },
+                  "provenance": {
+                    "source_type": "first_party",
+                    "is_multi_source": false,
+                    "first_party_only": true,
+                    "distinct_reporting_organizations": 1,
+                    "signal_version": "1.0"
+                  },
+                  "variant_divergence": null,
+                  "cross_party_divergence": null
+                }
+              }
+            },
+            {
+              "model_id": "anthropic/opus-4-5",
+              "model_route_id": "anthropic__opus-4-5",
+              "model_name": "Opus 4.5",
+              "developer": "anthropic",
+              "variant_key": "default",
+              "raw_model_id": "anthropic/Opus 4.5",
+              "score": 0.65,
+              "evaluation_id": "apex-v1/anthropic_opus-4.5/1773260200",
+              "retrieved_timestamp": "1773260200",
+              "source_metadata": {
+                "source_name": "Mercor APEX-v1 Leaderboard",
+                "source_type": "evaluation_run",
+                "source_organization_name": "Mercor",
+                "source_organization_url": "https://www.mercor.com",
+                "evaluator_relationship": "first_party"
+              },
+              "source_data": {
+                "dataset_name": "apex-v1",
+                "source_type": "hf_dataset",
+                "hf_repo": "Mercor/APEX-v1"
+              },
+              "source_record_url": "https://huggingface.co/datasets/evaleval/card_backend/resolve/main/records/anthropic__opus-4-5/apex_v1_anthropic_opus_4_5_1773260200.json",
+              "detailed_evaluation_results": null,
+              "detailed_evaluation_results_meta": null,
+              "passthrough_top_level_fields": null,
+              "instance_level_data": null,
+              "normalized_result": {
+                "benchmark_family_key": "apex_v1",
+                "benchmark_family_name": "APEX v1",
+                "benchmark_parent_key": "apex_v1",
+                "benchmark_parent_name": "APEX v1",
+                "benchmark_component_key": "medicine_md",
+                "benchmark_component_name": "Medicine (MD)",
+                "benchmark_leaf_key": "apex_v1",
+                "benchmark_leaf_name": "APEX v1",
+                "slice_key": "medicine_md",
+                "slice_name": "Medicine (MD)",
+                "metric_name": "Score",
+                "metric_id": "apex_v1.score",
+                "metric_key": "score",
+                "metric_source": "metric_config",
+                "display_name": "Medicine (MD) / Score",
+                "canonical_display_name": "APEX v1 / Medicine (MD) / Score",
+                "raw_evaluation_name": "Medicine (MD)",
+                "is_summary_score": false
+              },
+              "evalcards": {
+                "annotations": {
+                  "reproducibility_gap": {
+                    "has_reproducibility_gap": true,
+                    "missing_fields": [
+                      "temperature",
+                      "max_tokens"
+                    ],
+                    "required_field_count": 2,
+                    "populated_field_count": 0,
+                    "signal_version": "1.0"
+                  },
+                  "provenance": {
+                    "source_type": "first_party",
+                    "is_multi_source": false,
+                    "first_party_only": true,
+                    "distinct_reporting_organizations": 1,
+                    "signal_version": "1.0"
+                  },
+                  "variant_divergence": null,
+                  "cross_party_divergence": null
+                }
+              }
+            }
+          ],
+          "models_count": 3,
+          "top_score": 0.66
+        }
+      ],
+      "metrics_count": 1,
+      "metric_names": [
+        "Score"
+      ]
+    }
+  ],
+  "metrics": [
+    {
+      "metric_summary_id": "apex_v1_score",
+      "legacy_eval_summary_id": "apex_v1_apex_v1",
+      "evaluation_name": "apex-v1",
+      "display_name": "APEX v1 / Score",
+      "canonical_display_name": "APEX v1 / Score",
+      "benchmark_leaf_key": "apex_v1",
+      "benchmark_leaf_name": "APEX v1",
+      "slice_key": null,
+      "slice_name": null,
+      "lower_is_better": false,
+      "metric_name": "Score",
+      "metric_id": "apex_v1.score",
+      "metric_key": "score",
+      "metric_source": "metric_config",
+      "metric_config": {
+        "evaluation_description": "Overall APEX-v1 mean score (paper snapshot).",
+        "lower_is_better": false,
+        "score_type": "continuous",
+        "min_score": 0,
+        "max_score": 1,
+        "additional_details": {
+          "raw_evaluation_name": "Overall Score"
+        },
+        "metric_id": "apex_v1.score",
+        "metric_name": "Score",
+        "metric_kind": "score",
+        "metric_unit": "proportion"
+      },
+      "model_results": [
+        {
+          "model_id": "openai/gpt-5",
+          "model_route_id": "openai__gpt-5",
+          "model_name": "GPT 5",
+          "developer": "openai",
+          "variant_key": "default",
+          "raw_model_id": "openai/GPT 5",
+          "score": 0.67,
+          "evaluation_id": "apex-v1/openai_gpt-5/1773260200",
+          "retrieved_timestamp": "1773260200",
+          "source_metadata": {
+            "source_name": "Mercor APEX-v1 Leaderboard",
+            "source_type": "evaluation_run",
+            "source_organization_name": "Mercor",
+            "source_organization_url": "https://www.mercor.com",
+            "evaluator_relationship": "first_party"
+          },
+          "source_data": {
+            "dataset_name": "apex-v1",
+            "source_type": "hf_dataset",
+            "hf_repo": "Mercor/APEX-v1"
+          },
+          "source_record_url": "https://huggingface.co/datasets/evaleval/card_backend/resolve/main/records/openai__gpt-5/apex_v1_openai_gpt_5_1773260200.json",
+          "detailed_evaluation_results": null,
+          "detailed_evaluation_results_meta": null,
+          "passthrough_top_level_fields": null,
+          "instance_level_data": null,
+          "normalized_result": {
+            "benchmark_family_key": "apex_v1",
+            "benchmark_family_name": "APEX v1",
+            "benchmark_parent_key": "apex_v1",
+            "benchmark_parent_name": "APEX v1",
+            "benchmark_component_key": null,
+            "benchmark_component_name": null,
+            "benchmark_leaf_key": "apex_v1",
+            "benchmark_leaf_name": "APEX v1",
+            "slice_key": null,
+            "slice_name": null,
+            "metric_name": "Score",
+            "metric_id": "apex_v1.score",
+            "metric_key": "score",
+            "metric_source": "metric_config",
+            "display_name": "Score",
+            "canonical_display_name": "APEX v1 / Score",
+            "raw_evaluation_name": "apex-v1",
+            "is_summary_score": false
+          },
+          "evalcards": {
+            "annotations": {
+              "reproducibility_gap": {
+                "has_reproducibility_gap": true,
+                "missing_fields": [
+                  "temperature",
+                  "max_tokens"
+                ],
+                "required_field_count": 2,
+                "populated_field_count": 0,
+                "signal_version": "1.0"
+              },
+              "provenance": {
+                "source_type": "first_party",
+                "is_multi_source": false,
+                "first_party_only": true,
+                "distinct_reporting_organizations": 1,
+                "signal_version": "1.0"
+              },
+              "variant_divergence": null,
+              "cross_party_divergence": null
+            }
+          }
+        },
+        {
+          "model_id": "openai/gpt-5-2-pro",
+          "model_route_id": "openai__gpt-5-2-pro",
+          "model_name": "GPT 5.2 Pro",
+          "developer": "openai",
+          "variant_key": "default",
+          "raw_model_id": "openai/GPT 5.2 Pro",
+          "score": 0.668,
+          "evaluation_id": "apex-v1/openai_gpt-5.2-pro/1773260200",
+          "retrieved_timestamp": "1773260200",
+          "source_metadata": {
+            "source_name": "Mercor APEX-v1 Leaderboard",
+            "source_type": "evaluation_run",
+            "source_organization_name": "Mercor",
+            "source_organization_url": "https://www.mercor.com",
+            "evaluator_relationship": "first_party"
+          },
+          "source_data": {
+            "dataset_name": "apex-v1",
+            "source_type": "hf_dataset",
+            "hf_repo": "Mercor/APEX-v1"
+          },
+          "source_record_url": "https://huggingface.co/datasets/evaleval/card_backend/resolve/main/records/openai__gpt-5-2-pro/apex_v1_openai_gpt_5_2_pro_1773260200.json",
+          "detailed_evaluation_results": null,
+          "detailed_evaluation_results_meta": null,
+          "passthrough_top_level_fields": null,
+          "instance_level_data": null,
+          "normalized_result": {
+            "benchmark_family_key": "apex_v1",
+            "benchmark_family_name": "APEX v1",
+            "benchmark_parent_key": "apex_v1",
+            "benchmark_parent_name": "APEX v1",
+            "benchmark_component_key": null,
+            "benchmark_component_name": null,
+            "benchmark_leaf_key": "apex_v1",
+            "benchmark_leaf_name": "APEX v1",
+            "slice_key": null,
+            "slice_name": null,
+            "metric_name": "Score",
+            "metric_id": "apex_v1.score",
+            "metric_key": "score",
+            "metric_source": "metric_config",
+            "display_name": "Score",
+            "canonical_display_name": "APEX v1 / Score",
+            "raw_evaluation_name": "apex-v1",
+            "is_summary_score": false
+          },
+          "evalcards": {
+            "annotations": {
+              "reproducibility_gap": {
+                "has_reproducibility_gap": true,
+                "missing_fields": [
+                  "temperature",
+                  "max_tokens"
+                ],
+                "required_field_count": 2,
+                "populated_field_count": 0,
+                "signal_version": "1.0"
+              },
+              "provenance": {
+                "source_type": "first_party",
+                "is_multi_source": false,
+                "first_party_only": true,
+                "distinct_reporting_organizations": 1,
+                "signal_version": "1.0"
+              },
+              "variant_divergence": null,
+              "cross_party_divergence": null
+            }
+          }
+        },
+        {
+          "model_id": "google/gemini-3-pro",
+          "model_route_id": "google__gemini-3-pro",
+          "model_name": "Gemini 3 Pro",
+          "developer": "google",
+          "variant_key": "default",
+          "raw_model_id": "google/Gemini 3 Pro",
+          "score": 0.643,
+          "evaluation_id": "apex-v1/google_gemini-3-pro/1773260200",
+          "retrieved_timestamp": "1773260200",
+          "source_metadata": {
+            "source_name": "Mercor APEX-v1 Leaderboard",
+            "source_type": "evaluation_run",
+            "source_organization_name": "Mercor",
+            "source_organization_url": "https://www.mercor.com",
+            "evaluator_relationship": "first_party"
+          },
+          "source_data": {
+            "dataset_name": "apex-v1",
+            "source_type": "hf_dataset",
+            "hf_repo": "Mercor/APEX-v1"
+          },
+          "source_record_url": "https://huggingface.co/datasets/evaleval/card_backend/resolve/main/records/google__gemini-3-pro/apex_v1_google_gemini_3_pro_1773260200.json",
+          "detailed_evaluation_results": null,
+          "detailed_evaluation_results_meta": null,
+          "passthrough_top_level_fields": null,
+          "instance_level_data": null,
+          "normalized_result": {
+            "benchmark_family_key": "apex_v1",
+            "benchmark_family_name": "APEX v1",
+            "benchmark_parent_key": "apex_v1",
+            "benchmark_parent_name": "APEX v1",
+            "benchmark_component_key": null,
+            "benchmark_component_name": null,
+            "benchmark_leaf_key": "apex_v1",
+            "benchmark_leaf_name": "APEX v1",
+            "slice_key": null,
+            "slice_name": null,
+            "metric_name": "Score",
+            "metric_id": "apex_v1.score",
+            "metric_key": "score",
+            "metric_source": "metric_config",
+            "display_name": "Score",
+            "canonical_display_name": "APEX v1 / Score",
+            "raw_evaluation_name": "apex-v1",
+            "is_summary_score": false
+          },
+          "evalcards": {
+            "annotations": {
+              "reproducibility_gap": {
+                "has_reproducibility_gap": true,
+                "missing_fields": [
+                  "temperature",
+                  "max_tokens"
+                ],
+                "required_field_count": 2,
+                "populated_field_count": 0,
+                "signal_version": "1.0"
+              },
+              "provenance": {
+                "source_type": "first_party",
+                "is_multi_source": false,
+                "first_party_only": true,
+                "distinct_reporting_organizations": 1,
+                "signal_version": "1.0"
+              },
+              "variant_divergence": null,
+              "cross_party_divergence": null
+            }
+          }
+        },
+        {
+          "model_id": "google/gemini-3-flash",
+          "model_route_id": "google__gemini-3-flash",
+          "model_name": "Gemini 3 Flash",
+          "developer": "google",
+          "variant_key": "default",
+          "raw_model_id": "google/Gemini 3 Flash",
+          "score": 0.64,
+          "evaluation_id": "apex-v1/google_gemini-3-flash/1773260200",
+          "retrieved_timestamp": "1773260200",
+          "source_metadata": {
+            "source_name": "Mercor APEX-v1 Leaderboard",
+            "source_type": "evaluation_run",
+            "source_organization_name": "Mercor",
+            "source_organization_url": "https://www.mercor.com",
+            "evaluator_relationship": "first_party"
+          },
+          "source_data": {
+            "dataset_name": "apex-v1",
+            "source_type": "hf_dataset",
+            "hf_repo": "Mercor/APEX-v1"
+          },
+          "source_record_url": "https://huggingface.co/datasets/evaleval/card_backend/resolve/main/records/google__gemini-3-flash/apex_v1_google_gemini_3_flash_1773260200.json",
+          "detailed_evaluation_results": null,
+          "detailed_evaluation_results_meta": null,
+          "passthrough_top_level_fields": null,
+          "instance_level_data": null,
+          "normalized_result": {
+            "benchmark_family_key": "apex_v1",
+            "benchmark_family_name": "APEX v1",
+            "benchmark_parent_key": "apex_v1",
+            "benchmark_parent_name": "APEX v1",
+            "benchmark_component_key": null,
+            "benchmark_component_name": null,
+            "benchmark_leaf_key": "apex_v1",
+            "benchmark_leaf_name": "APEX v1",
+            "slice_key": null,
+            "slice_name": null,
+            "metric_name": "Score",
+            "metric_id": "apex_v1.score",
+            "metric_key": "score",
+            "metric_source": "metric_config",
+            "display_name": "Score",
+            "canonical_display_name": "APEX v1 / Score",
+            "raw_evaluation_name": "apex-v1",
+            "is_summary_score": false
+          },
+          "evalcards": {
+            "annotations": {
+              "reproducibility_gap": {
+                "has_reproducibility_gap": true,
+                "missing_fields": [
+                  "temperature",
+                  "max_tokens"
+                ],
+                "required_field_count": 2,
+                "populated_field_count": 0,
+                "signal_version": "1.0"
+              },
+              "provenance": {
+                "source_type": "first_party",
+                "is_multi_source": false,
+                "first_party_only": true,
+                "distinct_reporting_organizations": 1,
+                "signal_version": "1.0"
+              },
+              "variant_divergence": null,
+              "cross_party_divergence": null
+            }
+          }
+        },
+        {
+          "model_id": "xai/grok-4",
+          "model_route_id": "xai__grok-4",
+          "model_name": "Grok 4",
+          "developer": "xai",
+          "variant_key": "default",
+          "raw_model_id": "xai/Grok 4",
+          "score": 0.635,
+          "evaluation_id": "apex-v1/xai_grok-4/1773260200",
+          "retrieved_timestamp": "1773260200",
+          "source_metadata": {
+            "source_name": "Mercor APEX-v1 Leaderboard",
+            "source_type": "evaluation_run",
+            "source_organization_name": "Mercor",
+            "source_organization_url": "https://www.mercor.com",
+            "evaluator_relationship": "first_party"
+          },
+          "source_data": {
+            "dataset_name": "apex-v1",
+            "source_type": "hf_dataset",
+            "hf_repo": "Mercor/APEX-v1"
+          },
+          "source_record_url": "https://huggingface.co/datasets/evaleval/card_backend/resolve/main/records/xai__grok-4/apex_v1_xai_grok_4_1773260200.json",
+          "detailed_evaluation_results": null,
+          "detailed_evaluation_results_meta": null,
+          "passthrough_top_level_fields": null,
+          "instance_level_data": null,
+          "normalized_result": {
+            "benchmark_family_key": "apex_v1",
+            "benchmark_family_name": "APEX v1",
+            "benchmark_parent_key": "apex_v1",
+            "benchmark_parent_name": "APEX v1",
+            "benchmark_component_key": null,
+            "benchmark_component_name": null,
+            "benchmark_leaf_key": "apex_v1",
+            "benchmark_leaf_name": "APEX v1",
+            "slice_key": null,
+            "slice_name": null,
+            "metric_name": "Score",
+            "metric_id": "apex_v1.score",
+            "metric_key": "score",
+            "metric_source": "metric_config",
+            "display_name": "Score",
+            "canonical_display_name": "APEX v1 / Score",
+            "raw_evaluation_name": "apex-v1",
+            "is_summary_score": false
+          },
+          "evalcards": {
+            "annotations": {
+              "reproducibility_gap": {
+                "has_reproducibility_gap": true,
+                "missing_fields": [
+                  "temperature",
+                  "max_tokens"
+                ],
+                "required_field_count": 2,
+                "populated_field_count": 0,
+                "signal_version": "1.0"
+              },
+              "provenance": {
+                "source_type": "first_party",
+                "is_multi_source": false,
+                "first_party_only": true,
+                "distinct_reporting_organizations": 1,
+                "signal_version": "1.0"
+              },
+              "variant_divergence": null,
+              "cross_party_divergence": null
+            }
+          }
+        },
+        {
+          "model_id": "google/gemini-2-5-flash",
+          "model_route_id": "google__gemini-2-5-flash",
+          "model_name": "Gemini 2.5 Flash",
+          "developer": "google",
+          "variant_key": "default",
+          "raw_model_id": "google/Gemini 2.5 Flash",
+          "score": 0.604,
+          "evaluation_id": "apex-v1/google_gemini-2.5-flash/1773260200",
+          "retrieved_timestamp": "1773260200",
+          "source_metadata": {
+            "source_name": "Mercor APEX-v1 Leaderboard",
+            "source_type": "evaluation_run",
+            "source_organization_name": "Mercor",
+            "source_organization_url": "https://www.mercor.com",
+            "evaluator_relationship": "first_party"
+          },
+          "source_data": {
+            "dataset_name": "apex-v1",
+            "source_type": "hf_dataset",
+            "hf_repo": "Mercor/APEX-v1"
+          },
+          "source_record_url": "https://huggingface.co/datasets/evaleval/card_backend/resolve/main/records/google__gemini-2-5-flash/apex_v1_google_gemini_2_5_flash_1773260200.json",
+          "detailed_evaluation_results": null,
+          "detailed_evaluation_results_meta": null,
+          "passthrough_top_level_fields": null,
+          "instance_level_data": null,
+          "normalized_result": {
+            "benchmark_family_key": "apex_v1",
+            "benchmark_family_name": "APEX v1",
+            "benchmark_parent_key": "apex_v1",
+            "benchmark_parent_name": "APEX v1",
+            "benchmark_component_key": null,
+            "benchmark_component_name": null,
+            "benchmark_leaf_key": "apex_v1",
+            "benchmark_leaf_name": "APEX v1",
+            "slice_key": null,
+            "slice_name": null,
+            "metric_name": "Score",
+            "metric_id": "apex_v1.score",
+            "metric_key": "score",
+            "metric_source": "metric_config",
+            "display_name": "Score",
+            "canonical_display_name": "APEX v1 / Score",
+            "raw_evaluation_name": "apex-v1",
+            "is_summary_score": false
+          },
+          "evalcards": {
+            "annotations": {
+              "reproducibility_gap": {
+                "has_reproducibility_gap": true,
+                "missing_fields": [
+                  "temperature",
+                  "max_tokens"
+                ],
+                "required_field_count": 2,
+                "populated_field_count": 0,
+                "signal_version": "1.0"
+              },
+              "provenance": {
+                "source_type": "first_party",
+                "is_multi_source": false,
+                "first_party_only": true,
+                "distinct_reporting_organizations": 1,
+                "signal_version": "1.0"
+              },
+              "variant_divergence": null,
+              "cross_party_divergence": null
+            }
+          }
+        },
+        {
+          "model_id": "openai/gpt-4o",
+          "model_route_id": "openai__gpt-4o",
+          "model_name": "GPT 4o",
+          "developer": "openai",
+          "variant_key": "default",
+          "raw_model_id": "openai/GPT 4o",
+          "score": 0.359,
+          "evaluation_id": "apex-v1/openai_gpt-4o/1773260200",
+          "retrieved_timestamp": "1773260200",
+          "source_metadata": {
+            "source_name": "Mercor APEX-v1 Leaderboard",
+            "source_type": "evaluation_run",
+            "source_organization_name": "Mercor",
+            "source_organization_url": "https://www.mercor.com",
+            "evaluator_relationship": "first_party"
+          },
+          "source_data": {
+            "dataset_name": "apex-v1",
+            "source_type": "hf_dataset",
+            "hf_repo": "Mercor/APEX-v1"
+          },
+          "source_record_url": "https://huggingface.co/datasets/evaleval/card_backend/resolve/main/records/openai__gpt-4o/apex_v1_openai_gpt_4o_1773260200.json",
+          "detailed_evaluation_results": null,
+          "detailed_evaluation_results_meta": null,
+          "passthrough_top_level_fields": null,
+          "instance_level_data": null,
+          "normalized_result": {
+            "benchmark_family_key": "apex_v1",
+            "benchmark_family_name": "APEX v1",
+            "benchmark_parent_key": "apex_v1",
+            "benchmark_parent_name": "APEX v1",
+            "benchmark_component_key": null,
+            "benchmark_component_name": null,
+            "benchmark_leaf_key": "apex_v1",
+            "benchmark_leaf_name": "APEX v1",
+            "slice_key": null,
+            "slice_name": null,
+            "metric_name": "Score",
+            "metric_id": "apex_v1.score",
+            "metric_key": "score",
+            "metric_source": "metric_config",
+            "display_name": "Score",
+            "canonical_display_name": "APEX v1 / Score",
+            "raw_evaluation_name": "apex-v1",
+            "is_summary_score": false
+          },
+          "evalcards": {
+            "annotations": {
+              "reproducibility_gap": {
+                "has_reproducibility_gap": true,
+                "missing_fields": [
+                  "temperature",
+                  "max_tokens"
+                ],
+                "required_field_count": 2,
+                "populated_field_count": 0,
+                "signal_version": "1.0"
+              },
+              "provenance": {
+                "source_type": "first_party",
+                "is_multi_source": false,
+                "first_party_only": true,
+                "distinct_reporting_organizations": 1,
+                "signal_version": "1.0"
+              },
+              "variant_divergence": null,
+              "cross_party_divergence": null
+            }
+          }
+        }
+      ],
+      "models_count": 7,
+      "top_score": 0.67
+    }
+  ],
+  "subtasks_count": 4,
+  "metrics_count": 5,
+  "models_count": 10,
+  "metric_names": [
+    "Score"
+  ],
+  "primary_metric_name": "Score",
+  "top_score": null,
+  "instance_data": {
+    "available": false,
+    "url_count": 0,
+    "sample_urls": [],
+    "models_with_loaded_instances": 0
+  },
+  "evalcards": {
+    "annotations": {
+      "reporting_completeness": {
+        "completeness_score": 0.9285714285714286,
+        "total_fields_evaluated": 28,
+        "missing_required_fields": [
+          "evalcards.lifecycle_status",
+          "evalcards.preregistration_url"
+        ],
+        "partial_fields": [],
+        "field_scores": [
+          {
+            "field_path": "autobenchmarkcard.benchmark_details.name",
+            "coverage_type": "full",
+            "score": 1.0
+          },
+          {
+            "field_path": "autobenchmarkcard.benchmark_details.overview",
+            "coverage_type": "full",
+            "score": 1.0
+          },
+          {
+            "field_path": "autobenchmarkcard.benchmark_details.data_type",
+            "coverage_type": "full",
+            "score": 1.0
+          },
+          {
+            "field_path": "autobenchmarkcard.benchmark_details.domains",
+            "coverage_type": "full",
+            "score": 1.0
+          },
+          {
+            "field_path": "autobenchmarkcard.benchmark_details.languages",
+            "coverage_type": "full",
+            "score": 1.0
+          },
+          {
+            "field_path": "autobenchmarkcard.benchmark_details.similar_benchmarks",
+            "coverage_type": "full",
+            "score": 1.0
+          },
+          {
+            "field_path": "autobenchmarkcard.benchmark_details.resources",
+            "coverage_type": "full",
+            "score": 1.0
+          },
+          {
+            "field_path": "autobenchmarkcard.purpose_and_intended_users.goal",
+            "coverage_type": "full",
+            "score": 1.0
+          },
+          {
+            "field_path": "autobenchmarkcard.purpose_and_intended_users.audience",
+            "coverage_type": "full",
+            "score": 1.0
+          },
+          {
+            "field_path": "autobenchmarkcard.purpose_and_intended_users.tasks",
+            "coverage_type": "full",
+            "score": 1.0
+          },
+          {
+            "field_path": "autobenchmarkcard.purpose_and_intended_users.limitations",
+            "coverage_type": "full",
+            "score": 1.0
+          },
+          {
+            "field_path": "autobenchmarkcard.purpose_and_intended_users.out_of_scope_uses",
+            "coverage_type": "full",
+            "score": 1.0
+          },
+          {
+            "field_path": "autobenchmarkcard.methodology.methods",
+            "coverage_type": "full",
+            "score": 1.0
+          },
+          {
+            "field_path": "autobenchmarkcard.methodology.metrics",
+            "coverage_type": "full",
+            "score": 1.0
+          },
+          {
+            "field_path": "autobenchmarkcard.methodology.calculation",
+            "coverage_type": "full",
+            "score": 1.0
+          },
+          {
+            "field_path": "autobenchmarkcard.methodology.interpretation",
+            "coverage_type": "full",
+            "score": 1.0
+          },
+          {
+            "field_path": "autobenchmarkcard.methodology.baseline_results",
+            "coverage_type": "full",
+            "score": 1.0
+          },
+          {
+            "field_path": "autobenchmarkcard.methodology.validation",
+            "coverage_type": "full",
+            "score": 1.0
+          },
+          {
+            "field_path": "autobenchmarkcard.ethical_and_legal_considerations.privacy_and_anonymity",
+            "coverage_type": "full",
+            "score": 1.0
+          },
+          {
+            "field_path": "autobenchmarkcard.ethical_and_legal_considerations.data_licensing",
+            "coverage_type": "full",
+            "score": 1.0
+          },
+          {
+            "field_path": "autobenchmarkcard.ethical_and_legal_considerations.consent_procedures",
+            "coverage_type": "full",
+            "score": 1.0
+          },
+          {
+            "field_path": "autobenchmarkcard.ethical_and_legal_considerations.compliance_with_regulations",
+            "coverage_type": "full",
+            "score": 1.0
+          },
+          {
+            "field_path": "autobenchmarkcard.data",
+            "coverage_type": "partial",
+            "score": 1.0
+          },
+          {
+            "field_path": "eee_eval.source_metadata.source_type",
+            "coverage_type": "full",
+            "score": 1.0
+          },
+          {
+            "field_path": "eee_eval.source_metadata.source_organization_name",
+            "coverage_type": "full",
+            "score": 1.0
+          },
+          {
+            "field_path": "eee_eval.source_metadata.evaluator_relationship",
+            "coverage_type": "full",
+            "score": 1.0
+          },
+          {
+            "field_path": "evalcards.lifecycle_status",
+            "coverage_type": "reserved",
+            "score": 0.0
+          },
+          {
+            "field_path": "evalcards.preregistration_url",
+            "coverage_type": "reserved",
+            "score": 0.0
+          }
+        ],
+        "signal_version": "1.0"
+      },
+      "benchmark_comparability": {
+        "variant_divergence_groups": [],
+        "cross_party_divergence_groups": []
+      }
+    }
+  },
+  "reproducibility_summary": {
+    "results_total": 19,
+    "has_reproducibility_gap_count": 19,
+    "populated_ratio_avg": 0.0
+  },
+  "provenance_summary": {
+    "total_results": 19,
+    "total_groups": 19,
+    "multi_source_groups": 0,
+    "first_party_only_groups": 19,
+    "source_type_distribution": {
+      "first_party": 19,
+      "third_party": 0,
+      "collaborative": 0,
+      "unspecified": 0
+    }
+  },
+  "comparability_summary": {
+    "total_groups": 19,
+    "groups_with_variant_check": 0,
+    "groups_with_cross_party_check": 0,
+    "variant_divergent_count": 0,
+    "cross_party_divergent_count": 0
+  }
+}

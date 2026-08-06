@@ -1,0 +1,245 @@
+version: selection_strategy_ablation_v1
+
+paths:
+  business_90d_csv: /Users/bytedance/Downloads/训练1 （90天）-2026-07-09 15-02-35.csv
+  policy_new_car_xlsx: /Users/bytedance/Downloads/政策和新车最新表_2026-07-09_AI补充版.xlsx
+  ranking_signals_csv: data/external/dongchedi_rankings/current/normalized_ranking_signals.csv
+
+thresholds:
+  min_selection_rate: 0.15
+  min_selected_count: 30
+  min_profit_retention_rate: 0.30
+  min_avoid_rate: 0.05
+  min_avoid_count: 20
+
+selection:
+  group_grain: [city, brand, series, price_band, energy_type, vehicle_category]
+  target_selection_rate: 0.40163988626595254
+  active_followup_target_rate: 0.21
+  target_avoid_rate: 0.20
+  ablation_min_group_sold_count: 0
+  min_group_sold_count: 3
+  topk_rates: [0.10, 0.20, 0.30]
+  daily_capacity_k: 100
+
+strategy_weights:
+  market_only:
+    market: 1.00
+  dsi_only:
+    dsi: 1.00
+  ranking_only:
+    ranking: 1.00
+  market_daily_only:
+    market: 0.82
+    event: 0.18
+  market_daily_dsi:
+    market: 0.64
+    event: 0.12
+    dsi: 0.24
+  market_daily_ranking:
+    market: 0.64
+    event: 0.12
+    ranking: 0.24
+  full_signal:
+    market: 0.50
+    event: 0.10
+    dsi: 0.20
+    ranking: 0.20
+  outcome_guarded_full:
+    market: 0.22
+    event: 0.044
+    dsi: 0.088
+    ranking: 0.088
+    acquisition_guard: 0.44
+    sales_guard: 0.12
+
+avoid_strategy_weights:
+  outcome_guarded_full:
+    market: 0.40
+    event: 0.08
+    dsi: 0.16
+    ranking: 0.16
+    acquisition_guard: 0.15
+    sales_guard: 0.05
+
+score_weights:
+  normalized_profit_lift: 0.25
+  normalized_total_profit_retention: 0.20
+  normalized_acquisition_conversion_lift: 0.20
+  normalized_sales_conversion_lift: 0.20
+  normalized_turnover_lift: 0.15
+
+selection_score_version: selection_score_time_aware_unique_unit_v3
+
+sample_confidence:
+  levels:
+    - name: very_low
+      max_sold_count: 2
+      confidence_cap: 0.25
+      note: 有效经营证据很少，只能作为观察依据
+    - name: low
+      min_sold_count: 3
+      max_sold_count: 4
+      confidence_cap: 0.40
+      note: 有效经营证据偏少，结论需保守
+    - name: limited
+      min_sold_count: 5
+      max_sold_count: 9
+      confidence_cap: 0.55
+      note: 有效经营证据有限，不宜仅凭单项指标主动补库
+    - name: medium
+      min_sold_count: 10
+      max_sold_count: 19
+      confidence_cap: 0.75
+      note: 经营证据覆盖中等，可结合利润和周转判断
+    - name: high
+      min_sold_count: 20
+      max_sold_count: 29
+      confidence_cap: 0.90
+      note: 经营证据覆盖较高，结论稳定性较好
+    - name: strong
+      min_sold_count: 30
+      min_acquired_count: 50
+      confidence_cap: 1.00
+      note: 经营证据覆盖充分，结论稳定性高
+  coverage_floor: 0.45
+  acquired_support_reference: 50
+  candidate_support_reference: 80
+
+metric_smoothing:
+  strength: 20
+  fields:
+    - avg_gross_profit
+    - avg_turnover_days
+    - turnover_efficiency_index
+    - sale_conversion_rate
+    - acquisition_conversion_rate
+    - sold_from_acquired_rate
+    - loss_rate
+    - median_gross_profit
+
+score_weights_online:
+  demand: 0.00
+  supply: 0.00
+  turnover: 0.00
+  price_stability: 0.00
+  market_state: 0.20
+  dsi: 0.05
+  value: 0.55
+  total_profit: 0.20
+
+selection_policy:
+  strategy_id: three_layer_non_overlapping_v1_cv5
+  strategy_mode: three_layer
+  target_selection_rate: 0.40163988626595254
+  active_followup_target_rate: 0.21
+  target_avoid_rate: 0.20
+  ranking_components:
+    acquisition: 0.10
+    sales: 0.30
+    turnover: 0.10
+    profit: 0.30
+    ranking: 0.20
+  external_full_signal_weight: 0.70
+  acquisition_conversion_guard_weight: 0.00
+  listed_sell_through_guard_weight: 0.30
+  conversion_guard_smoothing_strength: 20
+  external_components:
+    market_state: 0.60
+    policy_event: 0.00
+    dsi: 0.10
+    ranking: 0.00
+  avoid_policy:
+    external_risk_weight: 0.80
+    acquisition_conversion_risk_weight: 0.15
+    listed_sell_through_risk_weight: 0.05
+  portfolio_qualification:
+    enabled: true
+    role: active_followup_validation_only
+    does_not_change_leadership_qualification_pool: true
+    grain: brand_series
+    observation_min_sold_count: 1
+    min_sold_count: 3
+    max_loss_rate: 0.40
+    min_profit_per_candidate: 0
+    allowed_market_categories: [流动行情, 结构性行情, 上涨行情, 常规行情]
+    allowed_dsi_labels: [供不应求, 供需平衡]
+    require_positive_total_profit: true
+    avoid_negative_total_profit: true
+    city_signals_are_ordering_only: true
+  leadership_qualification_baseline:
+    snapshot_date: '2026-07-14'
+    rule_id: market_state_dsi_40pct_v1
+    rule_description: 行情状态四类且DSI为供不应求或供需平衡
+    allowed_market_categories: [流动行情, 结构性行情, 上涨行情, 常规行情]
+    allowed_dsi_labels: [供不应求, 供需平衡]
+    baseline_unique_vehicle_count: 30246
+    qualified_unique_vehicle_count: 12148
+    qualification_rate: 0.40163988626595254
+    operating_metrics_are_validation_only: true
+    active_followup_is_ordering_only: true
+  backtest_report: results/evals/selection_three_layer_policy_champion_20260715.json
+  stress_report: results/evals/selection_profit_frontier_leave_one_brand_out_20260713.csv
+
+label_gate:
+  strong_recommend:
+    min_final_score: 72
+    min_business_score: 78
+    min_sold_count: 10
+    min_acquired_count: 10
+    min_confidence_score: 0.60
+    min_total_profit_contribution: 0.05
+    min_acquisition_conversion_rate: 0.24
+    min_sale_conversion_rate: 0.34
+    min_sold_from_acquired_rate: 0.35
+    min_listed_conversion_denominator: 20
+    min_acquired_conversion_denominator: 20
+    max_loss_rate: 0.15
+    min_median_gross_profit: 2500
+    require_leader_metrics: true
+    min_risk_score: 55
+  recommend:
+    min_final_score: 50
+    min_business_score: 50
+    min_sold_count: 3
+    min_acquired_count: 0
+    min_confidence_score: 0.35
+    min_total_profit_contribution: 0
+    min_acquisition_conversion_rate: 0
+    min_sale_conversion_rate: 0
+    min_sold_from_acquired_rate: 0
+    min_listed_conversion_denominator: 0
+    min_acquired_conversion_denominator: 0
+    max_loss_rate: 0.40
+    min_median_gross_profit: 0
+    require_leader_metrics: false
+    min_risk_score: 0
+  watch:
+    min_final_score: 38
+  insufficient:
+    max_sold_count: 9
+    max_label: WATCH
+  avoid:
+    min_sold_count: 10
+    require_leader_metrics: true
+
+parameter_search:
+  max_parameter_sets: 180
+  group_grain: [brand, series]
+  min_selection_rate: 0.08
+  max_selection_rate: 0.45
+  min_profit_retention_rate: 0.12
+  target_selection_rate: [0.10, 0.15, 0.20, 0.25, 0.30]
+  min_recommend_sold_count: [5, 10, 15, 20]
+  min_strong_recommend_sold_count: [15, 20, 25, 30]
+  min_recommend_acquired_count: [10, 20, 30]
+  min_strong_recommend_acquired_count: [20, 30, 50]
+  smoothing_strength: [10, 20, 30, 50]
+  min_profit_contribution_for_recommend: [0.005, 0.01, 0.02, 0.03]
+  min_profit_contribution_for_strong: [0.02, 0.03, 0.05, 0.08]
+  confidence_weight_mode: [linear, sqrt, log]
+  total_profit_weight: [0.10, 0.15, 0.20, 0.25]
+  average_profit_weight: [0.15, 0.20, 0.25]
+  turnover_weight: [0.10, 0.15, 0.20]
+  acquisition_conversion_weight: [0.15, 0.20, 0.25]
+  sales_conversion_weight: [0.15, 0.20, 0.25]

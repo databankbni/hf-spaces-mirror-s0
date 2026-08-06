@@ -1,0 +1,27 @@
+{
+ "lfs_not_stored": [
+  {
+   "oid": "cd8426623ef783d9328205c70dce12319fcbfaee21db75c8390c4180ea4a76b1",
+   "path": "cyp_models-2.joblib",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6Y2Q4NDI2NjIzZWY3ODNkOTMyODIwNWM3MGRjZTEyMzE5ZmNiZmFlZTIxZGI3NWM4MzkwYzQxODBlYTRhNzZiMQpzaXplIDM4NzczODcK",
+   "size": 3877387,
+   "url": "https://huggingface.co/spaces/hrishikeshhemadri/ClinSift/resolve/cae7deb2d55a485a3f2a6ac7787ab5f2a42de4c2/cyp_models-2.joblib"
+  },
+  {
+   "oid": "54fa4726b496732930bcc62643aa6c41c3c39090bcf1306fcfc78b87af74e528",
+   "path": "data/molformer_embeddings.npz",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6NTRmYTQ3MjZiNDk2NzMyOTMwYmNjNjI2NDNhYTZjNDFjM2MzOTA5MGJjZjEzMDZmY2ZjNzhiODdhZjc0ZTUyOApzaXplIDEyNjI1MjYK",
+   "size": 1262526,
+   "url": "https://huggingface.co/spaces/hrishikeshhemadri/ClinSift/resolve/cae7deb2d55a485a3f2a6ac7787ab5f2a42de4c2/data/molformer_embeddings.npz"
+  },
+  {
+   "oid": "22e9d0ce0d22a92bbd47532caab62e07581472364de36a5bb11b67ce6bcbe6ff",
+   "path": "data/ssiddi_best.pth",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6MjJlOWQwY2UwZDIyYTkyYmJkNDc1MzJjYWFiNjJlMDc1ODE0NzIzNjRkZTM2YTViYjExYjY3Y2U2YmNiZTZmZgpzaXplIDExNzA2NDUK",
+   "size": 1170645,
+   "url": "https://huggingface.co/spaces/hrishikeshhemadri/ClinSift/resolve/cae7deb2d55a485a3f2a6ac7787ab5f2a42de4c2/data/ssiddi_best.pth"
+  }
+ ],
+ "overflow_not_stored": [],
+ "oversize_not_stored": []
+}

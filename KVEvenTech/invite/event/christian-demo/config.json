@@ -1,0 +1,66 @@
+{
+  "brideName": "Sarah & David",
+  "familyName": "The D'Souza & Fernandes Families",
+
+  "intro": {
+    "tagline": "Joined in Holy Matrimony",
+    "buttonText": "Open Invitation",
+    "sequenceInvite": "Under the Grace of Almighty God",
+    "sequenceTo": "You are cordially invited to witness"
+  },
+
+  "hero": {
+    "badge": "The Holy Matrimony"
+  },
+
+  "scratchReveal": {
+    "teaser": "✦ A Sacred Covenant ✦",
+    "heading": "Reveal the Wedding Day",
+    "revealLabel": "Save the Date"
+  },
+
+  "countdown": {
+    "label": "The Nuptial Mass Begins In",
+    "heading": "The Nuptial Countdown",
+    "doneMessage": "The Ceremony Has Commenced!"
+  },
+
+  "celebrations": {
+    "sectionTag": "✦ The Wedding Programme ✦",
+    "sectionHeading": "Nuptial Ceremonies"
+  },
+
+  "venue": {
+    "sectionHeading": "Cathedral Venue & Reception",
+    "locationLabel": "Vows & Celebrations",
+    "directionsLabel": "Get Directions"
+  },
+
+  "blessings": {
+    "heading": "With the Blessings of our Lord",
+    "suffix": "— The D'Souza & Fernandes Families"
+  },
+
+  "events": {
+    "haldi": {
+      "title": "The Roce Ceremony",
+      "badge": "PRE-WEDDING",
+      "blessing": "Join us as we anoint our couple with coconut milk, prayers, and pure love",
+      "date": "05 June 2027",
+      "time": "04:30 PM",
+      "venue": "D'Souza Homestead Gardens",
+      "address": "Verna, Salcete, South Goa"
+    },
+    "halfSaree": {
+      "title": "Holy Matrimony & Reception",
+      "badge": "THE WEDDING DAY",
+      "blessing": "Witness our sacred union as we take our vows before God and family",
+      "date": "06 June 2027",
+      "time": "10:30 AM",
+      "dateISO": "2027-06-06T10:30:00+05:30",
+      "venue": "St. Andrew's Church",
+      "address": "Vasco da Gama, Goa, followed by the Grand Reception at Golden Orchid Ballroom",
+      "mapLink": "https://maps.google.com"
+    }
+  }
+}

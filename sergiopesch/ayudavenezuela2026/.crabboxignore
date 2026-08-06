@@ -1,0 +1,11 @@
+# Local-only generated output and caches. Git-ignored paths already stay out of
+# normal sync, but these keep Crabbox runs tidy when files are temporarily local.
+.crabbox-artifacts
+.crabbox
+.cache
+.vite
+coverage
+playwright-report
+test-results
+*.tsbuildinfo
+*.log

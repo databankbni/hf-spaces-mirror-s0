@@ -1,0 +1,27 @@
+{
+ "lfs_not_stored": [
+  {
+   "oid": "0aec75976c56eb6f26dfb274c430620ec65137915ff1ae47c3a48c7af8afb7b2",
+   "path": "plate.pt",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6MGFlYzc1OTc2YzU2ZWI2ZjI2ZGZiMjc0YzQzMDYyMGVjNjUxMzc5MTVmZjFhZTQ3YzNhNDhjN2FmOGFmYjdiMgpzaXplIDU0NjUyMzUK",
+   "size": 5465235,
+   "url": "https://huggingface.co/spaces/alexwa012/Yolo_Service/resolve/22cc45b685c6bc354fe159630d972f43e11ed37f/plate.pt"
+  },
+  {
+   "oid": "b9b3d6e327bc8688afaee435e17f202220b57f973cfb9fe6721b698eb27817b0",
+   "path": "weapon.pt",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6YjliM2Q2ZTMyN2JjODY4OGFmYWVlNDM1ZTE3ZjIwMjIyMGI1N2Y5NzNjZmI5ZmU2NzIxYjY5OGViMjc4MTdiMApzaXplIDE1NTI2OTQ0Cg==",
+   "size": 15526944,
+   "url": "https://huggingface.co/spaces/alexwa012/Yolo_Service/resolve/22cc45b685c6bc354fe159630d972f43e11ed37f/weapon.pt"
+  },
+  {
+   "oid": "31e20dde3def09e2cf938c7be6fe23d9150bbbe503982af13345706515f2ef95",
+   "path": "yolov8n.pt",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6MzFlMjBkZGUzZGVmMDllMmNmOTM4YzdiZTZmZTIzZDkxNTBiYmJlNTAzOTgyYWYxMzM0NTcwNjUxNWYyZWY5NQpzaXplIDY1MzQzODcK",
+   "size": 6534387,
+   "url": "https://huggingface.co/spaces/alexwa012/Yolo_Service/resolve/22cc45b685c6bc354fe159630d972f43e11ed37f/yolov8n.pt"
+  }
+ ],
+ "overflow_not_stored": [],
+ "oversize_not_stored": []
+}

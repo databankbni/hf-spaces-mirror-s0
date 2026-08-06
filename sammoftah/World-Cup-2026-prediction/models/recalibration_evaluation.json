@@ -1,0 +1,76 @@
+{
+  "half_life_days": 180.0,
+  "selection_years": [
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "confirmation_year": 2026,
+  "n_selection": 7914,
+  "n_confirmation": 351,
+  "n_confirmation_neutral": 143,
+  "fitted_temperature": 0.8857253661047012,
+  "selection": {
+    "baseline_t1": {
+      "log_loss": 0.7941679584341065,
+      "brier": 0.4648972361602622,
+      "rps": 0.14771386811569864
+    },
+    "fitted_t": {
+      "log_loss": 0.7917934118271126,
+      "brier": 0.4641057448243247,
+      "rps": 0.1471617663399526
+    }
+  },
+  "confirmation": {
+    "baseline_t1": {
+      "log_loss": 0.8010975523248702,
+      "brier": 0.46545804008130004,
+      "rps": 0.14724905524780943
+    },
+    "fitted_t": {
+      "log_loss": 0.7931215868621929,
+      "brier": 0.4611974951824844,
+      "rps": 0.1453477516943904
+    }
+  },
+  "confirmation_neutral": {
+    "baseline_t1": {
+      "log_loss": 0.8038171175434251,
+      "brier": 0.46573230600770044,
+      "rps": 0.15013688009902199
+    },
+    "fitted_t": {
+      "log_loss": 0.7916431257734953,
+      "brier": 0.459206897498391,
+      "rps": 0.14746304391537243
+    }
+  },
+  "paired_log_loss_difference_bootstrap_95": {
+    "selection": [
+      -0.0038583129937194783,
+      -0.0008827543780393013
+    ],
+    "confirmation": [
+      -0.01373690052362908,
+      -0.0013363040102218667
+    ],
+    "confirmation_neutral": [
+      -0.019584154644394433,
+      -0.0040892765050528955
+    ]
+  },
+  "gate": {
+    "beats_baseline_on_selection": true,
+    "beats_baseline_on_confirmation": true,
+    "beats_baseline_on_confirmation_neutral": true,
+    "all_paired_bootstrap_intervals_below_zero": true
+  },
+  "adopted": true,
+  "criterion": "The fitted temperature must differ from 1.0 and produce a lower mean log loss than the T=1 (no-op) baseline on the pooled 2018-2025 selection folds AND on the held-out 2026 confirmation fold, both overall and on its neutral-venue subset. Paired 95% bootstrap intervals for all three reported slices must remain below zero. The neutral subset overlaps the overall 2026 fold and is not an independent confirmation sample."
+}

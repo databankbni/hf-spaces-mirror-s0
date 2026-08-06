@@ -1,0 +1,96 @@
+{
+ "captured_at": "2026-08-04T15:34:53Z",
+ "hf_metadata": {
+  "_id": "6a1fa9d2ef3a388114e9ead8",
+  "author": "affogateo",
+  "cardData": {
+   "colorFrom": "green",
+   "colorTo": "blue",
+   "emoji": "🚀",
+   "pinned": false,
+   "sdk": "docker",
+   "title": "LPJ Universe"
+  },
+  "createdAt": "2026-06-03T04:13:06.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://affogateo-lpjbackup.hf.space",
+  "id": "affogateo/lpjbackup",
+  "lastModified": "2026-07-31T08:13:32.000Z",
+  "likes": 0,
+  "private": false,
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "affogateo-lpjbackup.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": null,
+    "requested": "cpu-basic"
+   },
+   "replicas": {
+    "requested": 1
+   },
+   "stage": "SLEEPING"
+  },
+  "sdk": "docker",
+  "sha": "a17418dc4a30a17435592f3072fdf2814a2e29a5",
+  "siblings": [
+   {
+    "rfilename": ".gitattributes"
+   },
+   {
+    "rfilename": ".gitignore"
+   },
+   {
+    "rfilename": "Dockerfile"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "app.js"
+   },
+   {
+    "rfilename": "app.py"
+   },
+   {
+    "rfilename": "package-lock.json"
+   },
+   {
+    "rfilename": "package.json"
+   }
+  ],
+  "subdomain": "affogateo-lpjbackup",
+  "tags": [
+   "docker",
+   "region:us"
+  ],
+  "usedStorage": 0
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  },
+  {
+   "original": ".gitignore",
+   "stored_as": "_gitignore"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "affogateo/lpjbackup",
+ "repo_type": "spaces",
+ "sha": "a17418dc4a30a17435592f3072fdf2814a2e29a5",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/affogateo/lpjbackup"
+}

@@ -1,0 +1,99 @@
+{
+ "captured_at": "2026-08-05T05:35:19Z",
+ "hf_metadata": {
+  "_id": "696ad071d7b41b1cf63109a1",
+  "author": "DAGroup-PKU",
+  "cardData": {
+   "app_file": "app.py",
+   "colorFrom": "yellow",
+   "colorTo": "green",
+   "emoji": "🦾",
+   "license": "mit",
+   "pinned": false,
+   "sdk": "gradio",
+   "sdk_version": "6.0.2",
+   "title": "RBench Leaderboard"
+  },
+  "createdAt": "2026-01-16T23:57:37.000Z",
+  "datasets": [
+   "DAGroup-PKU/RBench",
+   "DAGroup-PKU/RoVid-X"
+  ],
+  "disabled": false,
+  "gated": false,
+  "host": "https://dagroup-pku-rbench-leaderboard.hf.space",
+  "id": "DAGroup-PKU/RBench-Leaderboard",
+  "lastModified": "2026-08-05T03:00:10.000Z",
+  "likes": 9,
+  "private": false,
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "dagroup-pku-rbench-leaderboard.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": "cpu-basic",
+    "requested": "cpu-basic"
+   },
+   "pySpacesVersion": "0.51.1",
+   "replicas": {
+    "current": 1,
+    "requested": 1
+   },
+   "sha": "dfa90c6007e9b5580f5ca07f68dad6f8818e123e",
+   "stage": "RUNNING"
+  },
+  "sdk": "gradio",
+  "sha": "dfa90c6007e9b5580f5ca07f68dad6f8818e123e",
+  "siblings": [
+   {
+    "rfilename": ".gitattributes"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "app.py"
+   },
+   {
+    "rfilename": "leaderboard.json"
+   },
+   {
+    "rfilename": "leaderboard_qwen.json"
+   },
+   {
+    "rfilename": "requirements.txt"
+   },
+   {
+    "rfilename": "utils.py"
+   }
+  ],
+  "subdomain": "dagroup-pku-rbench-leaderboard",
+  "tags": [
+   "gradio",
+   "region:us"
+  ],
+  "usedStorage": 0
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "DAGroup-PKU/RBench-Leaderboard",
+ "repo_type": "spaces",
+ "sha": "dfa90c6007e9b5580f5ca07f68dad6f8818e123e",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/DAGroup-PKU/RBench-Leaderboard"
+}

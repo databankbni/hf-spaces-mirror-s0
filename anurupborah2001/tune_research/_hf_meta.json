@@ -1,0 +1,130 @@
+{
+ "captured_at": "2026-08-04T15:51:44Z",
+ "hf_metadata": {
+  "_id": "6a4d1df8212c7bb59cba35c8",
+  "author": "anurupborah2001",
+  "cardData": {
+   "app_file": "app.py",
+   "sdk": "gradio",
+   "sdk_version": "5.49.1",
+   "title": "tune_research"
+  },
+  "createdAt": "2026-07-07T15:40:40.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://anurupborah2001-tune-research.hf.space",
+  "id": "anurupborah2001/tune_research",
+  "lastModified": "2026-07-07T15:54:44.000Z",
+  "likes": 0,
+  "private": false,
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "anurupborah2001-tune-research.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": null,
+    "requested": "cpu-basic"
+   },
+   "replicas": {
+    "requested": 1
+   },
+   "stage": "SLEEPING"
+  },
+  "sdk": "gradio",
+  "sha": "6a5c5f0154e694f89c23fffa30f8f14d1b41e1f5",
+  "siblings": [
+   {
+    "rfilename": ".gitattributes"
+   },
+   {
+    "rfilename": ".gitignore"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "__pycache__/research_manager.cpython-312.pyc"
+   },
+   {
+    "rfilename": "app.py"
+   },
+   {
+    "rfilename": "lib/__pycache__/env_var.cpython-312.pyc"
+   },
+   {
+    "rfilename": "lib/env_var.py"
+   },
+   {
+    "rfilename": "pyproject.toml"
+   },
+   {
+    "rfilename": "requirements.txt"
+   },
+   {
+    "rfilename": "research_agents/__pycache__/notification_agent.cpython-312.pyc"
+   },
+   {
+    "rfilename": "research_agents/__pycache__/planning_agent.cpython-312.pyc"
+   },
+   {
+    "rfilename": "research_agents/__pycache__/search_agent.cpython-312.pyc"
+   },
+   {
+    "rfilename": "research_agents/__pycache__/search_qna_agent.cpython-312.pyc"
+   },
+   {
+    "rfilename": "research_agents/__pycache__/writer_agent.cpython-312.pyc"
+   },
+   {
+    "rfilename": "research_agents/notification_agent.py"
+   },
+   {
+    "rfilename": "research_agents/planning_agent.py"
+   },
+   {
+    "rfilename": "research_agents/search_agent.py"
+   },
+   {
+    "rfilename": "research_agents/search_qna_agent.py"
+   },
+   {
+    "rfilename": "research_agents/writer_agent.py"
+   },
+   {
+    "rfilename": "research_manager.py"
+   }
+  ],
+  "subdomain": "anurupborah2001-tune-research",
+  "tags": [
+   "gradio",
+   "region:us"
+  ],
+  "usedStorage": 0
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  },
+  {
+   "original": ".gitignore",
+   "stored_as": "_gitignore"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "anurupborah2001/tune_research",
+ "repo_type": "spaces",
+ "sha": "6a5c5f0154e694f89c23fffa30f8f14d1b41e1f5",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/anurupborah2001/tune_research"
+}

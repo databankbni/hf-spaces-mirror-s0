@@ -1,0 +1,19 @@
+{
+ "lfs_not_stored": [
+  {
+   "oid": "4ecff9df69961349b9e02086a59592d69c381df961720774c46976281174232b",
+   "path": "CommonBodyLogRegTFIDF.pth",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6NGVjZmY5ZGY2OTk2MTM0OWI5ZTAyMDg2YTU5NTkyZDY5YzM4MWRmOTYxNzIwNzc0YzQ2OTc2MjgxMTc0MjMyYgpzaXplIDU3MDQzMDIwCg==",
+   "size": 57043020,
+   "url": "https://huggingface.co/spaces/AnnonymousAuthor/Turkish_Constitutional_Court_Decision_Prediction/resolve/0939c946dddfc709ccdef070c9d65989ff8d9f05/CommonBodyLogRegTFIDF.pth"
+  },
+  {
+   "oid": "301278c8800bbffb928c1dac1b700a31c75b822f8058e13dbcf2c2ac8667db60",
+   "path": "qdrant_db/collection/aym_rag/storage.sqlite",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6MzAxMjc4Yzg4MDBiYmZmYjkyOGMxZGFjMWI3MDBhMzFjNzViODIyZjgwNThlMTNkYmNmMmMyYWM4NjY3ZGI2MApzaXplIDE3MDY4ODUxMgo=",
+   "size": 170688512,
+   "url": "https://huggingface.co/spaces/AnnonymousAuthor/Turkish_Constitutional_Court_Decision_Prediction/resolve/0939c946dddfc709ccdef070c9d65989ff8d9f05/qdrant_db/collection/aym_rag/storage.sqlite"
+  }
+ ],
+ "oversize_not_stored": []
+}

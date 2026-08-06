@@ -1,0 +1,213 @@
+{
+  "model_group_id": "01-ai/yi-34b",
+  "model_route_id": "01-ai__yi-34b",
+  "model_family_name": "Yi 34B",
+  "developer": "01-ai",
+  "params_billions": 34,
+  "total_evaluations": 3,
+  "benchmark_count": 3,
+  "benchmark_family_count": 3,
+  "categories_covered": [
+    "general",
+    "knowledge",
+    "reasoning"
+  ],
+  "last_updated": "2026-03-21T12:31:52.005480Z",
+  "variants": [
+    {
+      "variant_key": "default",
+      "variant_label": "Default",
+      "evaluation_count": 3,
+      "raw_model_ids": [
+        "01-ai/yi-34b",
+        "01-ai/Yi-34B"
+      ],
+      "last_updated": "2026-03-21T12:31:52.005480Z"
+    }
+  ],
+  "score_summary": {
+    "count": 52,
+    "min": 0.0514,
+    "max": 0.936,
+    "average": 0.6793153846153845
+  },
+  "reproducibility_summary": {
+    "results_total": 52,
+    "has_reproducibility_gap_count": 52,
+    "populated_ratio_avg": 0
+  },
+  "provenance_summary": {
+    "total_results": 52,
+    "total_groups": 52,
+    "multi_source_groups": 0,
+    "first_party_only_groups": 0,
+    "source_type_distribution": {
+      "first_party": 0,
+      "third_party": 52,
+      "collaborative": 0,
+      "unspecified": 0
+    }
+  },
+  "comparability_summary": {
+    "total_groups": 52,
+    "groups_with_variant_check": 0,
+    "groups_with_cross_party_check": 0,
+    "variant_divergent_count": 0,
+    "cross_party_divergent_count": 0
+  },
+  "benchmark_names": [
+    "BBH",
+    "GPQA",
+    "GSM8K",
+    "Helm lite",
+    "IFEval",
+    "LegalBench",
+    "MATH",
+    "MATH Level 5",
+    "MMLU",
+    "MMLU-PRO",
+    "MUSR",
+    "MedQA",
+    "NarrativeQA",
+    "NaturalQuestions (closed-book)",
+    "OpenbookQA",
+    "WMT 2014"
+  ],
+  "top_benchmark_scores": [
+    {
+      "benchmark": "MMLU",
+      "benchmarkKey": "helm_mmlu",
+      "canonical_display_name": "Mmlu / Marketing / Exact Match",
+      "evaluation_name": "Marketing",
+      "score": 0.936,
+      "metric": "EM on Marketing",
+      "lower_is_better": false
+    },
+    {
+      "benchmark": "OpenbookQA",
+      "benchmarkKey": "helm_lite_openbookqa",
+      "canonical_display_name": "OpenbookQA / Exact Match",
+      "evaluation_name": "OpenbookQA",
+      "score": 0.92,
+      "metric": "EM on OpenbookQA",
+      "lower_is_better": false
+    },
+    {
+      "benchmark": "NarrativeQA",
+      "benchmarkKey": "helm_lite_narrativeqa",
+      "canonical_display_name": "NarrativeQA / F1",
+      "evaluation_name": "NarrativeQA",
+      "score": 0.782,
+      "metric": "F1 on NarrativeQA",
+      "lower_is_better": false
+    },
+    {
+      "benchmark": "MedQA",
+      "benchmarkKey": "helm_lite_medqa",
+      "canonical_display_name": "MedQA / Exact Match",
+      "evaluation_name": "MedQA",
+      "score": 0.656,
+      "metric": "EM on MedQA",
+      "lower_is_better": false
+    },
+    {
+      "benchmark": "MMLU",
+      "benchmarkKey": "helm_lite_mmlu",
+      "canonical_display_name": "MMLU / Exact Match",
+      "evaluation_name": "MMLU",
+      "score": 0.65,
+      "metric": "EM on MMLU",
+      "lower_is_better": false
+    },
+    {
+      "benchmark": "GSM8K",
+      "benchmarkKey": "helm_lite_gsm8k",
+      "canonical_display_name": "GSM8K / Exact Match",
+      "evaluation_name": "GSM8K",
+      "score": 0.648,
+      "metric": "EM on GSM8K",
+      "lower_is_better": false
+    },
+    {
+      "benchmark": "LegalBench",
+      "benchmarkKey": "helm_lite_legalbench",
+      "canonical_display_name": "LegalBench / Exact Match",
+      "evaluation_name": "LegalBench",
+      "score": 0.618,
+      "metric": "EM on LegalBench",
+      "lower_is_better": false
+    },
+    {
+      "benchmark": "Helm lite",
+      "benchmarkKey": "helm_lite",
+      "canonical_display_name": "Helm lite / Win Rate",
+      "evaluation_name": "helm_lite",
+      "score": 0.57,
+      "metric": "How many models this model outperforms on average (over columns).",
+      "lower_is_better": false
+    },
+    {
+      "benchmark": "BBH",
+      "benchmarkKey": "hfopenllm_v2_bbh",
+      "canonical_display_name": "BBH / Accuracy",
+      "evaluation_name": "BBH",
+      "score": 0.5457,
+      "metric": "Accuracy on BBH",
+      "lower_is_better": false
+    },
+    {
+      "benchmark": "NaturalQuestions (closed-book)",
+      "benchmarkKey": "helm_lite_naturalquestions_closed_book",
+      "canonical_display_name": "NaturalQuestions (closed-book) / F1",
+      "evaluation_name": "NaturalQuestions (closed-book)",
+      "score": 0.443,
+      "metric": "F1 on NaturalQuestions (closed-book)",
+      "lower_is_better": false
+    },
+    {
+      "benchmark": "MMLU-PRO",
+      "benchmarkKey": "hfopenllm_v2_mmlu_pro",
+      "canonical_display_name": "MMLU-PRO / Accuracy",
+      "evaluation_name": "MMLU-PRO",
+      "score": 0.4412,
+      "metric": "Accuracy on MMLU-PRO",
+      "lower_is_better": false
+    },
+    {
+      "benchmark": "MUSR",
+      "benchmarkKey": "hfopenllm_v2_musr",
+      "canonical_display_name": "MUSR / Accuracy",
+      "evaluation_name": "MUSR",
+      "score": 0.4119,
+      "metric": "Accuracy on MUSR",
+      "lower_is_better": false
+    },
+    {
+      "benchmark": "MATH",
+      "benchmarkKey": "helm_lite_math",
+      "canonical_display_name": "MATH / Equivalent (CoT)",
+      "evaluation_name": "MATH",
+      "score": 0.375,
+      "metric": "Equivalent (CoT) on MATH",
+      "lower_is_better": false
+    },
+    {
+      "benchmark": "GPQA",
+      "benchmarkKey": "hfopenllm_v2_gpqa",
+      "canonical_display_name": "GPQA / Accuracy",
+      "evaluation_name": "GPQA",
+      "score": 0.3666,
+      "metric": "Accuracy on GPQA",
+      "lower_is_better": false
+    },
+    {
+      "benchmark": "IFEval",
+      "benchmarkKey": "hfopenllm_v2_ifeval",
+      "canonical_display_name": "IFEval / Accuracy",
+      "evaluation_name": "IFEval",
+      "score": 0.3046,
+      "metric": "Accuracy on IFEval",
+      "lower_is_better": false
+    }
+  ]
+}

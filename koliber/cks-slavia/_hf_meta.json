@@ -1,0 +1,223 @@
+{
+ "captured_at": "2026-08-06T03:14:26Z",
+ "hf_metadata": {
+  "_id": "6a312bd59c93d3859cfc9a89",
+  "author": "koliber",
+  "cardData": {
+   "app_port": 8080,
+   "colorFrom": "green",
+   "colorTo": "green",
+   "emoji": "🏋️",
+   "license": "mit",
+   "pinned": false,
+   "sdk": "docker",
+   "title": "Slavia Backend"
+  },
+  "createdAt": "2026-06-16T10:56:21.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://koliber-cks-slavia.hf.space",
+  "id": "koliber/cks-slavia",
+  "lastModified": "2026-08-05T11:10:15.000Z",
+  "likes": 1,
+  "private": false,
+  "region": "us",
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "koliber-cks-slavia.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": "cpu-basic",
+    "requested": "cpu-basic"
+   },
+   "pySpacesVersion": "0.51.1",
+   "replicas": {
+    "current": 1,
+    "requested": 1
+   },
+   "sha": "11128bf1245d74604885291dff8ee802865a7925",
+   "stage": "RUNNING"
+  },
+  "sdk": "docker",
+  "sha": "11128bf1245d74604885291dff8ee802865a7925",
+  "siblings": [
+   {
+    "rfilename": ".dockerignore"
+   },
+   {
+    "rfilename": ".env.example"
+   },
+   {
+    "rfilename": "CHANGELOG.md"
+   },
+   {
+    "rfilename": "Cargo.lock"
+   },
+   {
+    "rfilename": "Cargo.toml"
+   },
+   {
+    "rfilename": "Dockerfile"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "deploy.md"
+   },
+   {
+    "rfilename": "render.yaml"
+   },
+   {
+    "rfilename": "src/auth/extractor.rs"
+   },
+   {
+    "rfilename": "src/auth/handlers.rs"
+   },
+   {
+    "rfilename": "src/auth/jwt.rs"
+   },
+   {
+    "rfilename": "src/auth/mod.rs"
+   },
+   {
+    "rfilename": "src/auth/password.rs"
+   },
+   {
+    "rfilename": "src/auth/tokens.rs"
+   },
+   {
+    "rfilename": "src/config.rs"
+   },
+   {
+    "rfilename": "src/db.rs"
+   },
+   {
+    "rfilename": "src/error.rs"
+   },
+   {
+    "rfilename": "src/handlers/athlete.rs"
+   },
+   {
+    "rfilename": "src/handlers/attendance.rs"
+   },
+   {
+    "rfilename": "src/handlers/cms.rs"
+   },
+   {
+    "rfilename": "src/handlers/contact.rs"
+   },
+   {
+    "rfilename": "src/handlers/db_admin.rs"
+   },
+   {
+    "rfilename": "src/handlers/debug.rs"
+   },
+   {
+    "rfilename": "src/handlers/devices.rs"
+   },
+   {
+    "rfilename": "src/handlers/events.rs"
+   },
+   {
+    "rfilename": "src/handlers/flags.rs"
+   },
+   {
+    "rfilename": "src/handlers/logs.rs"
+   },
+   {
+    "rfilename": "src/handlers/mod.rs"
+   },
+   {
+    "rfilename": "src/handlers/notifications.rs"
+   },
+   {
+    "rfilename": "src/handlers/plans.rs"
+   },
+   {
+    "rfilename": "src/handlers/preview.rs"
+   },
+   {
+    "rfilename": "src/handlers/profiles.rs"
+   },
+   {
+    "rfilename": "src/handlers/results.rs"
+   },
+   {
+    "rfilename": "src/handlers/stats.rs"
+   },
+   {
+    "rfilename": "src/handlers/uploads.rs"
+   },
+   {
+    "rfilename": "src/handlers/users.rs"
+   },
+   {
+    "rfilename": "src/images/imagekit.rs"
+   },
+   {
+    "rfilename": "src/images/mod.rs"
+   },
+   {
+    "rfilename": "src/mail/brevo.rs"
+   },
+   {
+    "rfilename": "src/mail/mod.rs"
+   },
+   {
+    "rfilename": "src/mail/notify.rs"
+   },
+   {
+    "rfilename": "src/mail/templates.rs"
+   },
+   {
+    "rfilename": "src/main.rs"
+   },
+   {
+    "rfilename": "src/models/club.rs"
+   },
+   {
+    "rfilename": "src/models/mod.rs"
+   },
+   {
+    "rfilename": "src/models/role.rs"
+   },
+   {
+    "rfilename": "src/models/user.rs"
+   },
+   {
+    "rfilename": "src/openapi.rs"
+   },
+   {
+    "rfilename": "src/push.rs"
+   },
+   {
+    "rfilename": "src/routes.rs"
+   },
+   {
+    "rfilename": "src/state.rs"
+   },
+   {
+    "rfilename": "src/weightlifting_categories.rs"
+   }
+  ],
+  "subdomain": "koliber-cks-slavia",
+  "tags": [
+   "docker",
+   "region:us"
+  ],
+  "usedStorage": 0
+ },
+ "renamed_git_metadata": [],
+ "renamed_gitattributes": [],
+ "repo_id": "koliber/cks-slavia",
+ "repo_type": "spaces",
+ "sha": "11128bf1245d74604885291dff8ee802865a7925",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/koliber/cks-slavia"
+}

@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Scam Detector — Technical Specifications & Documentation</title>
+  <meta name="description" content="Technical documentation and architectural specifications for the AI Scam Detector ecosystem. Details tech stack, platform integrations, security safeguards, and feature maps.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      mermaid.initialize({
+        startOnLoad: true,
+        theme: 'dark',
+        themeVariables: {
+          background: '#05070c',
+          primaryColor: '#090d16',
+          primaryTextColor: '#f3f4f6',
+          lineColor: 'rgba(6, 182, 212, 0.4)'
+        }
+      });
+    });
+  </script>
+  <style>
+    :root {
+      --bg-dark: #090d16;
+      --bg-card: rgba(17, 25, 40, 0.75);
+      --border-color: rgba(255, 255, 255, 0.08);
+      --accent-cyan: #06b6d4;
+      --accent-cyan-glow: rgba(6, 182, 212, 0.15);
+      --accent-green: #10b981;
+      --accent-green-glow: rgba(16, 185, 129, 0.15);
+      --accent-purple: #8b5cf6;
+      --text-main: #f3f4f6;
+      --text-muted: #9ca3af;
+      --text-dim: #6b7280;
+      --font-family: 'Plus Jakarta Sans', sans-serif;
+      --font-title: 'Space Grotesk', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: var(--font-family);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* Modern Background Gradients */
+    .bg-glow-1 {
+      position: absolute;
+      top: -200px;
+      left: -200px;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(6, 182, 212, 0.08) 0%, transparent 70%);
+      filter: blur(100px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .bg-glow-2 {
+      position: absolute;
+      top: 500px;
+      right: -200px;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(139, 92, 246, 0.05) 0%, transparent 70%);
+      filter: blur(100px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Container & Layout */
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      gap: 40px;
+      padding: 40px 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Sidebar Navigation */
+    .sidebar {
+      width: 320px;
+      position: sticky;
+      top: 40px;
+      height: calc(100vh - 80px);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      padding: 30px 20px;
+      backdrop-filter: blur(16px);
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .logo-icon {
+      width: 32px;
+      height: 32px;
+      background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: #fff;
+      font-family: var(--font-title);
+    }
+
+    .logo-img {
+      width: 32px;
+      height: 32px;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+
+    .logo-text {
+      font-family: var(--font-title);
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      background: linear-gradient(to right, #fff, #9ca3af);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .nav-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      overflow-y: auto;
+      flex-grow: 1;
+    }
+
+    .nav-item a {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 16px;
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      border-radius: 10px;
+      transition: all 0.2s ease;
+    }
+
+    .nav-item a:hover {
+      color: var(--text-main);
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .nav-item.active a {
+      color: #fff;
+      background: var(--accent-cyan-glow);
+      border: 1px solid rgba(6, 182, 212, 0.25);
+    }
+
+    .sidebar-footer {
+      font-size: 0.75rem;
+      color: var(--text-dim);
+      text-align: center;
+      padding-top: 15px;
+      border-top: 1px solid var(--border-color);
+    }
+
+    /* Main Content Area */
+    .content-area {
+      flex-grow: 1;
+      max-width: 980px;
+      display: flex;
+      flex-direction: column;
+      gap: 60px;
+    }
+
+    /* Typography & Sections */
+    section {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 24px;
+      padding: 40px;
+      backdrop-filter: blur(16px);
+      scroll-margin-top: 40px;
+    }
+
+    h1 {
+      font-family: var(--font-title);
+      font-size: 2.5rem;
+      font-weight: 700;
+      letter-spacing: -1px;
+      line-height: 1.2;
+      margin-bottom: 10px;
+      background: linear-gradient(135deg, #fff 30%, var(--text-muted) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .doc-meta {
+      font-size: 0.85rem;
+      color: var(--text-dim);
+      display: flex;
+      gap: 20px;
+      margin-bottom: 30px;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 20px;
+    }
+
+    h2 {
+      font-family: var(--font-title);
+      font-size: 1.75rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #fff;
+    }
+
+    h2::before {
+      content: '';
+      display: block;
+      width: 4px;
+      height: 24px;
+      background: linear-gradient(to bottom, var(--accent-cyan), var(--accent-purple));
+      border-radius: 2px;
+    }
+
+    h3 {
+      font-family: var(--font-title);
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-top: 30px;
+      margin-bottom: 12px;
+      color: #f3f4f6;
+    }
+
+    p {
+      color: var(--text-muted);
+      margin-bottom: 20px;
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    /* Key Value Grid list */
+    .spec-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin: 25px 0;
+    }
+
+    .spec-card {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 20px;
+      transition: all 0.2s ease;
+    }
+
+    .spec-card:hover {
+      border-color: rgba(6, 182, 212, 0.3);
+      transform: translateY(-2px);
+    }
+
+    .spec-card-title {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--accent-cyan);
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .spec-card-value {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    /* Alerts / Highlights */
+    .alert-block {
+      background: rgba(6, 182, 212, 0.05);
+      border-left: 4px solid var(--accent-cyan);
+      border-radius: 0 12px 12px 0;
+      padding: 20px;
+      margin: 25px 0;
+    }
+
+    .alert-block-title {
+      font-weight: 700;
+      color: var(--accent-cyan);
+      margin-bottom: 6px;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .alert-block p {
+      margin-bottom: 0;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    /* Tables */
+    .table-container {
+      width: 100%;
+      overflow-x: auto;
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      margin: 25px 0;
+      background: rgba(0, 0, 0, 0.2);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.95rem;
+    }
+
+    th {
+      background-color: rgba(255, 255, 255, 0.02);
+      padding: 16px 20px;
+      font-weight: 600;
+      color: #fff;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    td {
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--border-color);
+      color: var(--text-muted);
+      vertical-align: middle;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* Code Blocks */
+    code {
+      font-family: var(--font-mono);
+      font-size: 0.9rem;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 2px 6px;
+      border-radius: 4px;
+      color: #f43f5e;
+    }
+
+    pre {
+      background: #05070c;
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 24px;
+      overflow-x: auto;
+      margin: 25px 0;
+    }
+
+    pre code {
+      background: none;
+      padding: 0;
+      border-radius: 0;
+      color: #e2e8f0;
+      font-size: 0.85rem;
+    }
+
+    /* Visual Topology Map */
+    .topology-container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin: 30px 0;
+      background: #05070c;
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      padding: 30px;
+    }
+
+    .topo-row {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      position: relative;
+    }
+
+    .topo-node {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 15px 25px;
+      text-align: center;
+      min-width: 180px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .topo-node:hover {
+      border-color: var(--accent-cyan);
+      box-shadow: 0 0 15px var(--accent-cyan-glow);
+    }
+
+    .topo-node-title {
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: #fff;
+    }
+
+    .topo-node-desc {
+      font-size: 0.75rem;
+      color: var(--text-dim);
+      margin-top: 4px;
+    }
+
+    .topo-arrow-down {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: var(--text-dim);
+      font-size: 1.5rem;
+      height: 30px;
+    }
+
+    /* Lists */
+    ul {
+      list-style-position: inside;
+      margin-left: 10px;
+      margin-bottom: 20px;
+      color: var(--text-muted);
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    strong {
+      color: #fff;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .container {
+        flex-direction: column;
+      }
+
+      .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        top: 0;
+      }
+
+      .nav-list {
+        flex-direction: row;
+        overflow-x: auto;
+        padding-bottom: 10px;
+      }
+
+      .nav-item {
+        white-space: nowrap;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="bg-glow-1"></div>
+  <div class="bg-glow-2"></div>
+
+  <div class="container">
+    
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="logo-container">
+        <img src="../public/images/logo.png" alt="Logo" class="logo-img">
+        <div class="logo-text">AI Scam Detector</div>
+      </div>
+      <ul class="nav-list">
+        <li class="nav-item active"><a href="#executive-summary">Executive Summary</a></li>
+        <li class="nav-item"><a href="#feature-map">Capability Map</a></li>
+        <li class="nav-item"><a href="#tech-stack">Tech Stack</a></li>
+        <li class="nav-item"><a href="#topology">Platform Topology</a></li>
+        <li class="nav-item"><a href="#resilience">Resiliency & Limits</a></li>
+        <li class="nav-item"><a href="#security">Security & Privacy</a></li>
+        <li class="nav-item"><a href="#optimization">Free-Tier Optimizations</a></li>
+      </ul>
+      <div class="sidebar-footer">
+        v1.3.0 • Local Spec
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="content-area">
+      
+      <!-- Executive Summary -->
+      <section id="executive-summary">
+        <h1>AI Scam Detector</h1>
+        <p class="subtitle">Ecosystem Architecture & Technical Documentation</p>
+        <div class="doc-meta">
+          <span>Author: Dev Team</span>
+          <span>Last Updated: June 2026</span>
+          <span>Status: Production</span>
+        </div>
+
+        <h2>1. Executive Summary & Brand Identity</h2>
+        <p>
+          The <strong>AI Scam Detector</strong> is a secure, state-of-the-art system designed to protect individuals from financial cyber-scams directly over WhatsApp. Supported by a conversion-optimized landing page, a secure dashboard, and a robust admin control panel, the ecosystem aims to prevent UPI frauds, job scams, and phishing attacks before they occur.
+        </p>
+        
+        <div class="spec-grid">
+          <div class="spec-card">
+            <div class="spec-card-title">Brand Name</div>
+            <div class="spec-card-value">AI Scam Detector</div>
+          </div>
+          <div class="spec-card">
+            <div class="spec-card-title">Core Channel</div>
+            <div class="spec-card-value">WhatsApp Cloud API</div>
+          </div>
+          <div class="spec-card">
+            <div class="spec-card-title">Pricing Model</div>
+            <div class="spec-card-value">Freemium (₹199/month Premium)</div>
+          </div>
+        </div>
+
+        <div class="alert-block">
+          <div class="alert-block-title">Key Target</div>
+          <p>
+            Protecting basic to intermediate internet users in India from daily scam campaigns. The freemium model offers 3 free checks on WhatsApp, locking subsequent scans behind premium checkout links.
+          </p>
+        </div>
+      </section>
+
+      <!-- Feature Map -->
+      <section id="feature-map">
+        <h2>2. Product Features & Capability Map</h2>
+        <p>
+          The platform operates across three main integrated layers: the Automated WhatsApp Bot, the Web Landing Page and User Dashboard, and the Admin Control Suite.
+        </p>
+
+        <h3>A. WhatsApp Bot Layer</h3>
+        <ul>
+          <li><strong>Link & URL Analysis:</strong> Extracts URLs from messages and checks them against OpenPhish blacklists.</li>
+          <li><strong>PDF & Screenshot Scanner:</strong> Users can upload or forward images/PDFs. The bot uses Gemini 2.5 Flash Vision to analyze visual markers (e.g. fake electricity letters or QR code "Receive" cash scams).</li>
+          <li><strong>Contextual Thread Replies:</strong> Binds outgoing replies to the user's specific forwarded message using Meta Context API.</li>
+        </ul>
+
+        <h3>B. Web Funnel & History Layer</h3>
+        <ul>
+          <li><strong>Free Scanner Card:</strong> Permits anonymous users to run 1 free scan on the web every 24 hours (enforced via IP rate limits).</li>
+          <li><strong>Conversion Bridge:</strong> Automatically prefills phone numbers and triggers checkout modals when redirected from WhatsApp commands.</li>
+          <li><strong>Secure History Timeline:</strong> Paid users request OTP codes via WhatsApp to log in and decrypt their historical scans list.</li>
+        </ul>
+
+        <h3>C. Admin Control Panel</h3>
+        <ul>
+          <li><strong>Interactive Charts:</strong> Visualizes daily scans and scam distribution statistics using Chart.js.</li>
+          <li><strong>Kill Switch & Controls:</strong> Includes quick toggles to pause bot listening or edit heuristic regex rules in real time.</li>
+          <li><strong>Test Users (QA Whitelist):</strong> Admin dashboard tool to add or delete whitelisted phone numbers, granting them unlimited scans bypass.</li>
+        </ul>
+      </section>
+
+      <!-- Tech Stack -->
+      <section id="tech-stack">
+        <h2>3. Technology Stack & Rationale</h2>
+        <p>
+          The chosen technologies optimize for high processing speeds, cost efficiency, and absolute payload security.
+        </p>
+
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Layer</th>
+                <th>Technology</th>
+                <th>Rationale</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Backend Engine</strong></td>
+                <td>Node.js (Express)</td>
+                <td>Asynchronous runtime loop suited for routing concurrent incoming webhooks.</td>
+              </tr>
+              <tr>
+                <td><strong>Database Node</strong></td>
+                <td>Firebase Realtime DB</td>
+                <td>Sub-millisecond reads/writes, hierarchical tree schemas, and zero maintenance overheads.</td>
+              </tr>
+              <tr>
+                <td><strong>AI Engine</strong></td>
+                <td>Gemini 2.5 Flash</td>
+                <td>State-of-the-art context processing speed, multimodal capabilities (image & PDF), and cost-efficient API.</td>
+              </tr>
+              <tr>
+                <td><strong>Dashboard Charts</strong></td>
+                <td>Chart.js</td>
+                <td>Interactive HTML5 canvas charts for clean analytics rendering.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Topology Map -->
+      <section id="topology">
+        <h2>4. Platform Topology & Integrations</h2>
+        <p>
+          Hugging Face container spaces enforce strict egress firewalls blocking direct outbound connections to <code>graph.facebook.com</code> and <code>api.telegram.org</code>. To resolve this egress blockade, the server utilizes a custom proxy server topology:
+        </p>
+
+        <div class="topology-container">
+          <div class="topo-row">
+            <div class="topo-node">
+              <div class="topo-node-title">Hugging Face Container</div>
+              <div class="topo-node-desc">Express App Host</div>
+            </div>
+          </div>
+          <div class="topo-arrow-down">⬇️</div>
+          <div class="topo-row">
+            <div class="topo-node" style="border-color: var(--accent-purple);">
+              <div class="topo-node-title">Google Apps Script Web App</div>
+              <div class="topo-node-desc">Secure Egress Tunnel Proxy</div>
+            </div>
+          </div>
+          <div class="topo-arrow-down">⬇️</div>
+          <div class="topo-row">
+            <div class="topo-node">
+              <div class="topo-node-title">Meta Graph API</div>
+              <div class="topo-node-desc">WhatsApp Gateway</div>
+            </div>
+            <div class="topo-node">
+              <div class="topo-node-title">Telegram API</div>
+              <div class="topo-node-desc">Admin Alert Feeds</div>
+            </div>
+          </div>
+        </div>
+
+        <p>
+          <strong>Outbound Messaging:</strong> Outgoing WhatsApp replies and Telegram admin notifications are relayed to the Google Apps Script Web App (passing credentials as query parameters). The proxy fetches the destination API via Google's firewall-free network.
+        </p>
+        <p>
+          <strong>Binary File Downloads:</strong> Because Meta's media CDN endpoints (e.g. <code>lookaside.fbsbx.com</code>) are hosted outside the restricted API domains, the Hugging Face container bypasses the proxy to download images and PDFs directly. This prevents string encoding corruption and ensures 100% file integrity.
+        </p>
+
+        <h3>End-to-End Message Journey & State Lifecycle</h3>
+        <p>
+          This diagram traces the lifecycle of a message from the user's phone, through all security audits, queues, classification models, fallback loops, and outbound gateways until the contextual reply is received back on the client's device:
+        </p>
+
+        <div style="background: #05070c; border: 1px solid var(--border-color); border-radius: 16px; padding: 25px; margin: 25px 0; overflow-x: auto;">
+          <div class="mermaid">
+            graph TD
+              User["User Sends WhatsApp Message"] --> MetaWebhook["Meta Cloud API Webhook"]
+              MetaWebhook --> ExpressApp["Hugging Face Express App"]:::highlight
+              
+              ExpressApp --> TokenCheck{"Webhook Handshake Token Check"}
+              TokenCheck -->|"Verify Failed"| Code403["403 Forbidden Response"]:::alert
+              TokenCheck -->|"Verified"| MsgQueue{"FIFO Concurrency Queue"}
+              
+              MsgQueue -->|"Queue Full"| LimitWarning["Send Too-Many-Requests Contextual Warning"]:::alert
+              MsgQueue -->|"Slots Available"| QuotaCheck{"Check Daily Scan Limit"}
+              
+              QuotaCheck -->|"Standard Limit Expired"| UpgradePrompt["Send Razorpay Premium Checkout Redirect link"]
+              QuotaCheck -->|"Premium or Test User"| MediaInspect{"Inspect Message Type"}
+              
+              MediaInspect -->|"Text Payload"| UrlExtract["Extract Domains"]
+              MediaInspect -->|"Image/PDF Payload"| DirectCdn["Direct Download Binary from Meta CDN"]
+              
+              UrlExtract --> ResolvesRedirects["Follow Redirect Chains up to 3 hops"]
+              ResolvesRedirects --> OpenPhish{"Match OpenPhish DB or Local Heuristics"}
+              DirectCdn --> GeminiFlash{"Gemini Flash Vision Scan"}:::highlight
+              
+              OpenPhish -->|"Blacklisted Domain Found"| FlagScam["Flag Scam Result & Set High Risk"]
+              OpenPhish -->|"Clean Domain"| GeminiFlash
+              
+              GeminiFlash -->|"Success Response"| ClassifyResult["Assign Risk Scores & Explanations"]
+              GeminiFlash -->|"API Error Attempts Under 3"| RetryLoop["Attempt API Retry Logic up to 3 times"]
+              GeminiFlash -->|"Total API Failure"| LocalHeuristicFallback["Activate Local Keyword Fallback Classifier"]
+              
+              ClassifyResult --> LogDatabase["Non-Blocking db.logCheck write"]
+              LocalHeuristicFallback --> LogDatabase
+              FlagScam --> LogDatabase
+              
+              LogDatabase --> GASProxy["Google Apps Script Egress Proxy"]:::highlight
+              GASProxy --> OutboundMeta["Meta Graph API Send Outbound"]
+              
+              OutboundMeta --> ClientReceive["User receives contextual thread reply"]:::success
+              OutboundMeta -->|"Auth Expired Code 190"| TGAlert["Telegram Admin Alert Bot"]:::alert
+              TGAlert --> AdminReceive["Admin receives urgent OAuth Renewal notification"]:::success
+
+              classDef default fill:#090d16,stroke:#1f2937,color:#f3f4f6
+              classDef highlight fill:#083344,stroke:#06b6d4,color:#fff
+              classDef alert fill:#450a0a,stroke:#ef4444,color:#fff
+              classDef success fill:#064e3b,stroke:#10b981,color:#fff
+          </div>
+        </div>
+
+        <h3>Platform Rationale & Choice Justifications</h3>
+        <p>
+          Each component in this platform topology was selected to optimize performance, minimize operational costs (targeting a true $0/month hosting bill), and bypass container firewall constraints:
+        </p>
+        <ul>
+          <li><strong>Hugging Face Spaces (Hosting):</strong> Selected over alternatives like Render or Heroku because it offers a permanently active, free Docker-ready container hosting environment that <em>does not go to sleep</em> after periods of inactivity. This prevents cold start delay lags on incoming WhatsApp webhook messages.</li>
+          <li><strong>Meta Developer Dashboard (WhatsApp API):</strong> Leverages the direct official WhatsApp Cloud API rather than high-cost resellers (like Twilio or Gupshup). This yields the fastest delivery latency, supports native context replies, and avoids message markup fees.</li>
+          <li><strong>Google Apps Script (Egress Tunnel):</strong> Used as a serverless, zero-cost proxy to bypass Hugging Face's container-level firewall which blocks direct egress connections to <code>api.telegram.org</code> and <code>graph.facebook.com</code>. It routes requests via Google's whitelisted serverless CDN.</li>
+          <li><strong>Firebase Realtime Database (Data Store):</strong> Provides a hierarchical, ultra-low latency NoSQL key-value store. Its free tier covers up to 10GB of storage and millions of read/write actions, making it ideal for tracking real-time API quotas and whitelists.</li>
+          <li><strong>Razorpay (Payment Gateway):</strong> Offers deep UPI mobile application intent integrations for the Indian market, enabling seamless checkout redirects from WhatsApp parameters to active local UPI wallets.</li>
+        </ul>
+
+        <h3>Monitoring & Keep-Alive Systems</h3>
+        <ul>
+          <li><strong>Telegram Alert Bot:</strong> Used for instant out-of-band system logging and security auditing notifications. Configured via <code>TELEGRAM_BOT_TOKEN</code> and <code>TELEGRAM_CHAT_ID</code>. When critical events occur (such as Meta API token expiration code 190, Razorpay payment signature verification failures, or high-confidence user-submitted crowdsourced scam reports), the server formats a clean HTML notification and dispatches it immediately to the administrator's Telegram chat via the Google Apps Script proxy.</li>
+          <li><strong>UptimeRobot Integration:</strong> Implements a 24/7 automated keep-alive system. By pinging the Express server's <code>/health</code> status endpoint once every 5 minutes, UptimeRobot ensures that the Hugging Face container remains awake, prevents routing latency on incoming WhatsApp webhook pulses, and provides immediate email/SMS warnings if the container encounters downtime.</li>
+        </ul>
+      </section>
+
+      <!-- Resiliency & Limits -->
+      <section id="resilience">
+        <h2>5. Webhook Resiliency & Concurrency Controls</h2>
+        <p>
+          To safeguard against server floods, duplicate payments, and API outages, the bot implements several core limits:
+        </p>
+
+        <div class="spec-grid">
+          <div class="spec-card">
+            <div class="spec-card-title">FIFO Concurrency Queue</div>
+            <div class="spec-card-value">Max 3 tasks per user</div>
+            <p style="font-size: 0.8rem; margin: 8px 0 0 0; color: var(--text-muted);">
+              Incoming messages are serialized sequentially. Spammers exceeding the queue limit get instantly rejected.
+            </p>
+          </div>
+          <div class="spec-card">
+            <div class="spec-card-title">OTP rate limiting</div>
+            <div class="spec-card-value">1 req/3 mins per phone</div>
+            <p style="font-size: 0.8rem; margin: 8px 0 0 0; color: var(--text-muted);">
+              Caps IP verification requests (max 3/hour per IP) to prevent wallet-drain attacks.
+            </p>
+          </div>
+          <div class="spec-card">
+            <div class="spec-card-title">Gemini API Failover</div>
+            <div class="spec-card-value">3-try retry with fallbacks</div>
+            <p style="font-size: 0.8rem; margin: 8px 0 0 0; color: var(--text-muted);">
+              Retries transient connections, falling back to local heuristics if Gemini is offline.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Security -->
+      <section id="security">
+        <h2>6. Security & Privacy Safeguards</h2>
+        <p>
+          To maintain user privacy, comply with data guidelines, and prevent system vulnerabilities, the platform enforces the following protocols:
+        </p>
+        <ul>
+          <li><strong>PII Hashing:</strong> User phone numbers are converted to secure <code>SHA-256</code> hashes before being saved in logs, preventing plain-text phone exposures.</li>
+          <li><strong>Log Encryption:</strong> Checked messages and threat text elements are encrypted via <code>AES-256-CBC</code> symmetric encryption before writing to database collections.</li>
+          <li><strong>Redirect URL Resolver:</strong> Shortened links (like <code>bit.ly</code>) are followed up to 3 hops via HTTP HEAD redirects to resolve and blacklist final destination domains.</li>
+          <li><strong>Memory Leaks Sweep:</strong> An automated background sweep daemon runs hourly in the container, deleting visitor rate-limit IP records older than 24 hours.</li>
+          <li><strong>Silent Log Fault Tolerance:</strong> Database history checks logging is isolated inside independent <code>try-catch</code> blocks. A database crash never blocks sending scan reports to users.</li>
+        </ul>
+      </section>
+
+      <!-- Free-Tier Optimization -->
+      <section id="optimization">
+        <h2>7. Free-Tier Optimization & Scaling Safeguards</h2>
+        <p>
+          To operate a production-ready system indefinitely within the free tiers of Hugging Face, Gemini 2.5 Flash, and the Firebase Spark plan, the platform employs several architectural optimizations:
+        </p>
+        <ul>
+          <li><strong>Cloudflare Workers Egress Proxy:</strong> Routes the custom domain <code>aiscamdetector.in</code> to Hugging Face space containers for free (bypassing the $9/month HF Pro requirement). The worker dynamically rewrites virtual host headers and modifies location redirects in real-time.</li>
+          <li><strong>Real-Time Sync Caching:</strong> Maintains a persistent database sync cache via a single WebSocket <code>.on('value')</code> listener on startup, reducing subsequent scan lookup read queries to exactly zero network costs.</li>
+          <li><strong>Transactional Batch Operations:</strong> Group up to 40 scraped OpenPhish threat intelligence links in a single transactional database update (utilizing client-side generated push keys) to avoid duplicate network transfers and listener trigger recursion.</li>
+          <li><strong>Twin In-Memory Caching:</strong> Intercepts incoming scans using a 1-hour TTL Gemini analysis cache (composite SHA-256 hashed keys) and a 6-hour TTL URL redirect resolution cache to prevent redundant API/network overhead.</li>
+          <li><strong>Outbound warning rate-limiting:</strong> Cooldown maps restrict daily quota warnings to once every 4 hours per user, preventing message loops and saving Meta WhatsApp outbound messaging credits.</li>
+          <li><strong>Post-Sanitization Validation:</strong> Enforces strict phone parameter presence checks after digits-only normalization to prevent empty string queries from leaking into database lookups.</li>
+        </ul>
+      </section>
+
+    </main>
+  </div>
+
+  <script>
+    // Highlight sidebar active tabs on scroll
+    const sections = document.querySelectorAll('section');
+    const navItems = document.querySelectorAll('.nav-item');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        if (pageYOffset >= sectionTop - 120) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navItems.forEach(item => {
+        item.classList.remove('active');
+        if (item.querySelector('a').getAttribute('href') === `#${current}`) {
+          item.classList.add('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

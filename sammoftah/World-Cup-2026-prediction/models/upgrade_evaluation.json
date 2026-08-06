@@ -1,0 +1,133 @@
+{
+  "selection_years": [
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "confirmation_year": 2026,
+  "half_life_sweep": {
+    "current_half_life": 1095.0,
+    "candidates": [
+      180.0,
+      365.0,
+      547.0,
+      730.0,
+      1095.0,
+      1460.0,
+      2190.0
+    ],
+    "selection_mean_log_loss": {
+      "180.0": 0.7941679584341036,
+      "365.0": 0.7957675905126934,
+      "547.0": 0.7947290255893448,
+      "730.0": 0.7948890295856609,
+      "1095.0": 0.7945444827642638,
+      "1460.0": 0.794369008612718,
+      "2190.0": 0.7949784862860374
+    },
+    "best_half_life_by_selection": 180.0,
+    "confirmation": {
+      "current": {
+        "mean_scores": {
+          "log_loss": 0.80405720030283,
+          "brier": 0.46705325588960855,
+          "rps": 0.14775477308115065
+        },
+        "neutral_mean_scores": {
+          "log_loss": 0.8046449098110636,
+          "brier": 0.46571522983874347,
+          "rps": 0.15013294806454702
+        },
+        "n": 351,
+        "n_neutral": 143
+      },
+      "best_candidate": {
+        "mean_scores": {
+          "log_loss": 0.8010975523248702,
+          "brier": 0.46545804008130004,
+          "rps": 0.14724905524780943
+        },
+        "neutral_mean_scores": {
+          "log_loss": 0.8038171175434251,
+          "brier": 0.46573230600770044,
+          "rps": 0.15013688009902199
+        },
+        "n": 351,
+        "n_neutral": 143
+      }
+    },
+    "gate": {
+      "beats_current_on_selection": true,
+      "beats_current_on_confirmation": true,
+      "beats_current_on_confirmation_neutral": true
+    },
+    "winner": 180.0,
+    "adopted": true
+  },
+  "ensemble": {
+    "half_life_used": 180.0,
+    "weights": [
+      0.3,
+      0.4,
+      0.5,
+      0.6,
+      0.7,
+      0.8,
+      0.9,
+      1.0
+    ],
+    "weight_is_share_on_eloratings_model": true,
+    "selection_mean_log_loss": {
+      "0.3": 0.8597173263110706,
+      "0.4": 0.8471404514331762,
+      "0.5": 0.8357378763537884,
+      "0.6": 0.8254464956361319,
+      "0.7": 0.8162033767410193,
+      "0.8": 0.8079475135613438,
+      "0.9": 0.8006207159775787,
+      "1.0": 0.7941679584341036
+    },
+    "best_weight_by_selection": 1.0,
+    "confirmation": {
+      "eloratings_only": {
+        "mean_scores": {
+          "log_loss": 0.8010975523248702,
+          "brier": 0.46545804008130004,
+          "rps": 0.14724905524780943
+        },
+        "neutral_mean_scores": {
+          "log_loss": 0.8038171175434251,
+          "brier": 0.46573230600770044,
+          "rps": 0.15013688009902199
+        },
+        "n": 351,
+        "n_neutral": 143
+      },
+      "best_ensemble": {
+        "mean_scores": {
+          "log_loss": 0.8010975523248702,
+          "brier": 0.46545804008130004,
+          "rps": 0.14724905524780943
+        },
+        "neutral_mean_scores": {
+          "log_loss": 0.8038171175434251,
+          "brier": 0.46573230600770044,
+          "rps": 0.15013688009902199
+        },
+        "n": 351,
+        "n_neutral": 143
+      }
+    },
+    "gate": {
+      "beats_eloratings_only_on_selection": false,
+      "beats_eloratings_only_on_confirmation": false,
+      "beats_eloratings_only_on_confirmation_neutral": false
+    },
+    "adopted": false
+  }
+}

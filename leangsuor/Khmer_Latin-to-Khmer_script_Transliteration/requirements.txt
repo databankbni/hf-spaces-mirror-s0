@@ -1,0 +1,6 @@
+gradio
+tensorflow
+numpy
+scikit-learn
+pyyaml
+huggingface_hub

@@ -1,0 +1,529 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ClinSift — Real-World Safety Filter</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F5F7F8;--panel:#FFFFFF;--paper:#EDF1F3;--inset:#F2F5F6;
+    --ink:#0E1B2A;--ink-soft:#51637A;--ink-faint:#8497AB;
+    --line:#DCE3E9;--line-soft:#E8EDF1;
+    --signal:#0C9C94;--signal-deep:#087F79;--signal-wash:#E2F3F1;
+    --ok:#1E9E6A;--ok-wash:#E4F4EC;--mod:#D9922B;--mod-wash:#FBF0DC;
+    --high:#DC6031;--high-wash:#FBE8DE;--crit:#C22B44;--crit-wash:#FADFE3;
+    --shadow:0 1px 2px rgba(14,27,42,.04),0 8px 24px rgba(14,27,42,.06);--radius:14px;
+  }
+  *{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:"Inter",system-ui,sans-serif;
+    font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+  header{position:sticky;top:0;z-index:50;background:rgba(245,247,248,.82);
+    backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid var(--line)}
+  .head-in{display:flex;align-items:center;gap:16px;height:58px}
+  .logo{display:flex;align-items:center;gap:10px;font-family:"Space Grotesk";font-weight:700;
+    letter-spacing:-.02em;font-size:17px}
+  .mark{width:24px;height:24px;border-radius:7px;background:conic-gradient(from 210deg,var(--signal),var(--signal-deep) 55%,#0b6f6a);
+    position:relative;flex:none;box-shadow:inset 0 0 0 1px rgba(255,255,255,.25)}
+  .mark::after{content:"";position:absolute;inset:6px;border-radius:3px;border:1.5px solid rgba(255,255,255,.9);
+    border-right-color:transparent;animation:spin 3.4s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .tagword{color:var(--ink-faint);font-size:12.5px;font-weight:500;margin-left:2px}
+  .head-spacer{flex:1}
+  .conn{display:flex;align-items:center;gap:8px;font-family:"IBM Plex Mono";font-size:11.5px;color:var(--ink-soft)}
+  .conn input{font-family:"IBM Plex Mono";font-size:11.5px;border:1px solid var(--line);border-radius:7px;
+    padding:5px 8px;width:170px;color:var(--ink);background:var(--panel)}
+  .cdotH{width:7px;height:7px;border-radius:50%;background:var(--ink-faint);flex:none}
+  .cdotH.up{background:var(--ok);box-shadow:0 0 0 3px var(--ok-wash)}
+  .cdotH.down{background:var(--crit);box-shadow:0 0 0 3px var(--crit-wash)}
+
+  .hero{padding:44px 0 24px}
+  .eyebrow{font-family:"IBM Plex Mono";font-size:12px;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--signal-deep);margin:0 0 14px}
+  h1{font-family:"Space Grotesk";font-weight:600;font-size:clamp(28px,4.4vw,46px);line-height:1.04;
+    letter-spacing:-.025em;margin:0 0 16px;max-width:16.5ch}
+  h1 em{font-style:normal;color:var(--signal-deep)}
+  .sub{font-size:16.5px;color:var(--ink-soft);max-width:60ch;margin:0 0 26px}
+
+  .modebar{display:inline-flex;background:var(--paper);border:1px solid var(--line);border-radius:10px;
+    padding:3px;margin-bottom:14px;gap:2px}
+  .modebtn{font-family:"Space Grotesk";font-weight:600;font-size:12.5px;color:var(--ink-soft);
+    background:transparent;border:0;padding:7px 15px;border-radius:8px;cursor:pointer}
+  .modebtn.on{background:var(--panel);color:var(--signal-deep);box-shadow:var(--shadow)}
+  .query{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+    box-shadow:var(--shadow);padding:8px;display:flex;gap:8px;align-items:center;max-width:760px}
+  .query input{flex:1;border:0;outline:0;background:transparent;font-family:"IBM Plex Mono";
+    font-size:15px;color:var(--ink);padding:12px}
+  .query input::placeholder{color:var(--ink-faint)}
+  .screen-btn{font-family:"Space Grotesk";font-weight:600;font-size:14.5px;color:#fff;
+    background:var(--signal-deep);border:0;border-radius:9px;padding:12px 20px;cursor:pointer;
+    display:inline-flex;align-items:center;gap:8px}
+  .screen-btn:hover{background:#0b6f6a}.screen-btn svg{width:15px;height:15px}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;max-width:760px}
+  .chip{font-family:"IBM Plex Mono";font-size:12.5px;color:var(--ink-soft);background:var(--panel);
+    border:1px solid var(--line);border-radius:20px;padding:7px 13px;cursor:pointer;transition:.14s}
+  .chip:hover{border-color:var(--signal);color:var(--signal-deep);background:var(--signal-wash)}
+  .chip .op{color:var(--ink-faint)}
+  .chip.smiles{border-style:dashed}
+
+  .result{padding:6px 0 60px;opacity:0;transform:translateY(8px);transition:.4s}
+  .result.show{opacity:1;transform:none}
+  .banner{background:var(--mod-wash);border:1px solid #F0DEB8;color:#8a5b18;border-radius:11px;
+    padding:11px 15px;font-size:13px;margin-bottom:16px;display:flex;gap:9px;align-items:flex-start}
+  .banner svg{width:16px;height:16px;flex:none;margin-top:1px}
+
+  .gate{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);
+    padding:22px 24px;margin-bottom:22px;position:relative;overflow:hidden}
+  .gate-grid{display:grid;grid-template-columns:auto 1fr auto;gap:26px;align-items:center}
+  .compound{min-width:150px;max-width:210px}
+  .field-label{font-family:"IBM Plex Mono";font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--ink-faint);margin-bottom:7px}
+  .compound-name{font-family:"Space Grotesk";font-weight:600;font-size:20px;letter-spacing:-.02em;
+    line-height:1.15;word-break:break-word}
+  .compound-meta{font-size:12.5px;color:var(--ink-soft);margin-top:3px}
+  .channels{display:flex;gap:10px;position:relative}
+  .channels::before{content:"";position:absolute;left:0;right:0;top:50%;height:1px;
+    background:repeating-linear-gradient(90deg,var(--line) 0 6px,transparent 6px 12px)}
+  .chan{flex:1;background:var(--inset);border:1px solid var(--line-soft);border-radius:11px;
+    padding:11px 10px 10px;text-align:center;position:relative;z-index:1;min-width:0}
+  .chan .cdot{width:11px;height:11px;border-radius:50%;margin:0 auto 8px;background:var(--ink-faint)}
+  .chan.s-none .cdot{background:var(--ok);box-shadow:0 0 0 4px var(--ok-wash)}
+  .chan.s-mod .cdot{background:var(--mod);box-shadow:0 0 0 4px var(--mod-wash)}
+  .chan.s-high .cdot{background:var(--high);box-shadow:0 0 0 4px var(--high-wash)}
+  .chan.s-crit .cdot{background:var(--crit);box-shadow:0 0 0 4px var(--crit-wash)}
+  .chan.s-off .cdot{background:var(--ink-faint);opacity:.4}
+  .chan-name{font-size:11px;font-weight:600;color:var(--ink);line-height:1.2}
+  .chan-val{font-family:"IBM Plex Mono";font-size:10.5px;color:var(--ink-soft);margin-top:3px}
+  .verdict{min-width:150px;text-align:center}
+  .stamp{display:inline-block;font-family:"Space Grotesk";font-weight:700;font-size:22px;letter-spacing:.02em;
+    padding:12px 20px;border-radius:11px;border:2px solid currentColor}
+  .stamp small{display:block;font-family:"IBM Plex Mono";font-weight:400;font-size:10px;letter-spacing:.06em;
+    margin-top:4px;opacity:.75}
+  .v-pass{color:var(--ok);background:var(--ok-wash)}.v-flag{color:var(--high);background:var(--high-wash)}
+  .v-hold{color:var(--crit);background:var(--crit-wash)}
+  .verdict-reason{font-size:12.5px;color:var(--ink-soft);margin-top:10px;max-width:180px;margin-left:auto;margin-right:auto}
+
+  .cols{display:grid;grid-template-columns:1fr 380px;gap:22px;align-items:start}
+  .sec-title{font-family:"Space Grotesk";font-weight:600;font-size:13px;color:var(--ink);margin:0 0 12px;
+    display:flex;align-items:center;gap:9px}
+  .sec-title .n{font-family:"IBM Plex Mono";font-size:11px;color:var(--ink-faint)}
+  .signals{display:flex;flex-direction:column;gap:12px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
+  .card-h{display:flex;align-items:center;gap:11px;padding:14px 16px;border-bottom:1px solid var(--line-soft)}
+  .cat-ic{width:30px;height:30px;border-radius:8px;flex:none;display:grid;place-items:center;
+    background:var(--signal-wash);color:var(--signal-deep)}
+  .cat-ic svg{width:16px;height:16px}
+  .cat-name{font-family:"Space Grotesk";font-weight:600;font-size:14.5px}
+  .cat-sub{font-size:12px;color:var(--ink-faint);margin-top:1px}
+  .sev-tag{margin-left:auto;font-family:"IBM Plex Mono";font-size:10.5px;font-weight:500;padding:4px 9px;
+    border-radius:6px;text-transform:uppercase;white-space:nowrap}
+  .t-none{color:var(--ok);background:var(--ok-wash)}.t-mod{color:var(--mod);background:var(--mod-wash)}
+  .t-high{color:var(--high);background:var(--high-wash)}.t-crit{color:var(--crit);background:var(--crit-wash)}
+  .t-na{color:var(--ink-faint);background:var(--inset)}
+  .findings{padding:6px 16px 14px}
+  .finding{display:flex;gap:12px;padding:11px 0;border-bottom:1px dashed var(--line-soft)}
+  .finding:last-child{border-bottom:0}
+  .f-bar{width:3px;border-radius:2px;flex:none;background:var(--ink-faint)}
+  .finding.f-none .f-bar{background:var(--ok)}.finding.f-mod .f-bar{background:var(--mod)}
+  .finding.f-high .f-bar{background:var(--high)}.finding.f-crit .f-bar{background:var(--crit)}
+  .f-title{font-size:13.5px;font-weight:600}.f-title .arrow{color:var(--ink-faint);margin:0 5px}
+  .f-note{font-size:12.5px;color:var(--ink-soft);margin-top:2px}
+  .f-meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+  .meta{font-family:"IBM Plex Mono";font-size:10.5px;padding:3px 8px;border-radius:5px;background:var(--inset);
+    color:var(--ink-soft);border:1px solid var(--line-soft)}
+  .meta.obs{color:var(--signal-deep);background:var(--signal-wash);border-color:#C6E7E4}
+  .meta.pred{color:var(--mod);background:var(--mod-wash);border-color:#F0DEB8}
+  .card-empty{padding:18px 16px;font-size:13px;color:var(--ink-faint);display:flex;gap:9px;align-items:center}
+  .card-empty svg{width:16px;height:16px;color:var(--ok)}
+
+  .aside{position:sticky;top:74px;display:flex;flex-direction:column;gap:14px}
+  .api{background:#0d1a29;border:1px solid #16263a;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+  .api-h{display:flex;align-items:center;gap:9px;padding:11px 14px;border-bottom:1px solid #16263a}
+  .api-h .dotrow{display:flex;gap:6px}.api-h .dotrow i{width:9px;height:9px;border-radius:50%;display:block}
+  .api-h .dotrow i:nth-child(1){background:#e05f52}.api-h .dotrow i:nth-child(2){background:#e0b23a}.api-h .dotrow i:nth-child(3){background:#3ab06a}
+  .api-h .path{font-family:"IBM Plex Mono";font-size:11.5px;color:#7d96b1;margin-left:4px}
+  .api-h .verb{font-family:"IBM Plex Mono";font-size:10px;color:#0d1a29;background:var(--signal);padding:2px 6px;border-radius:4px;margin-left:auto}
+  .api pre{margin:0;padding:15px 16px;font-family:"IBM Plex Mono";font-size:11.5px;line-height:1.65;color:#c7d6e6;overflow-x:auto;max-height:330px}
+  .api .k{color:#6fd1c9}.api .s{color:#9fd0a0}.api .n{color:#e0b26a}.api .b{color:#d98f6a}.api .c{color:#5a7891}
+  .snippet{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
+  .snip-h{padding:11px 14px;border-bottom:1px solid var(--line-soft);font-family:"Space Grotesk";font-weight:600;
+    font-size:12.5px;display:flex;align-items:center;gap:8px}
+  .snip-h svg{width:14px;height:14px;color:var(--signal-deep)}
+  .snippet pre{margin:0;padding:14px 16px;font-family:"IBM Plex Mono";font-size:11.5px;line-height:1.7;color:var(--ink);overflow-x:auto}
+  .snippet .kw{color:var(--crit)}.snippet .fn{color:var(--signal-deep)}.snippet .st{color:var(--ok)}.snippet .cm{color:var(--ink-faint)}
+  .provenance{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:15px 16px}
+  .provenance h4{font-family:"Space Grotesk";font-size:12.5px;margin:0 0 10px;font-weight:600}
+  .prov-row{display:flex;justify-content:space-between;font-size:12px;padding:5px 0;border-bottom:1px dashed var(--line);color:var(--ink-soft)}
+  .prov-row:last-child{border-bottom:0}.prov-row b{font-family:"IBM Plex Mono";color:var(--ink);font-weight:500}
+
+  .attrib{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);
+    overflow:hidden;margin-top:12px}
+  .attrib-h{display:flex;align-items:center;gap:11px;padding:14px 16px;border-bottom:1px solid var(--line-soft)}
+  .attrib-body{display:grid;grid-template-columns:auto 1fr;gap:16px;padding:16px;align-items:center}
+  .mol{background:var(--inset);border:1px solid var(--line-soft);border-radius:11px;padding:6px;width:340px;max-width:100%}
+  .mol svg{display:block;width:100%;height:auto}
+  .attrib-legend{min-width:0}
+  .heat{display:flex;align-items:center;gap:8px;font-family:"IBM Plex Mono";font-size:10.5px;color:var(--ink-faint);margin-bottom:10px}
+  .heat i{flex:1;height:8px;border-radius:4px;background:linear-gradient(90deg,#E6F2F0,#FF9E5E,#F04E37)}
+  .attrib-atoms{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
+  .attrib-note{font-size:12px;color:var(--ink-soft);margin:0;line-height:1.5}
+  @media (max-width:560px){.attrib-body{grid-template-columns:1fr}.mol{width:100%}}
+
+  footer{border-top:1px solid var(--line);padding:26px 0 46px;color:var(--ink-faint);font-size:12.5px}
+  footer .wrap{display:flex;flex-wrap:wrap;gap:22px;justify-content:space-between}
+  footer p{margin:0;max-width:62ch;line-height:1.6}footer b{color:var(--ink-soft);font-weight:600}
+  .legend{display:flex;gap:14px;flex-wrap:wrap}
+  .legend span{display:inline-flex;align-items:center;gap:6px;font-family:"IBM Plex Mono";font-size:11px}
+  .lg{width:9px;height:9px;border-radius:50%}
+  @media (max-width:920px){.cols{grid-template-columns:1fr}.aside{position:static}
+    .gate-grid{grid-template-columns:1fr;gap:18px}.channels{order:3}.verdict{order:2;text-align:left}.verdict-reason{margin-left:0}}
+  @media (max-width:560px){.channels{flex-wrap:wrap}.chan{flex:1 1 44%}.query{flex-wrap:wrap}.query input{flex:1 1 100%}.screen-btn{flex:1}
+    .conn input{width:120px}}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+  :focus-visible{outline:2px solid var(--signal);outline-offset:2px;border-radius:6px}
+</style>
+</head>
+<body>
+<header><div class="wrap head-in">
+  <div class="logo"><span class="mark"></span>ClinSift<span class="tagword">/ real-world safety filter</span></div>
+  <div class="head-spacer"></div>
+  <div class="conn"><span class="cdotH" id="hdot"></span>
+    <input id="backend" value="http://localhost:8000" aria-label="Backend URL" spellcheck="false"></div>
+</div></header>
+
+<main class="wrap">
+  <section class="hero">
+    <p class="eyebrow">Pre-clinical &amp; clinical safety screening</p>
+    <h1>Screen any drug against <em>patient-level</em> adverse-event signals.</h1>
+    <p class="sub">ClinSift mines reactions, allergies, cross-reactivity and interactions from real clinical
+      notes and returns one gate decision your pipeline can act on. Screen a known drug for observed evidence,
+      or a novel compound by structure — the models run live.</p>
+
+    <div class="modebar" role="tablist">
+      <button class="modebtn on" id="m-name" role="tab">By name</button>
+      <button class="modebtn" id="m-smiles" role="tab">By structure (SMILES)</button>
+      <button class="modebtn" id="m-pair" role="tab">Pairwise</button>
+    </div>
+    <div class="query" role="search">
+      <input id="q" type="text" autocomplete="off" spellcheck="false"
+        placeholder="drug name   —or—   drug A + drug B" aria-label="Query" />
+      <input id="q2" type="text" autocomplete="off" spellcheck="false" style="display:none"
+        placeholder="compound B (SMILES or drug name)" aria-label="Compound B" />
+      <button class="screen-btn" id="run">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+        Screen</button>
+    </div>
+    <div class="chips" id="chips"></div>
+  </section>
+  <section class="result" id="result" aria-live="polite"></section>
+</main>
+
+<footer><div class="wrap">
+  <p><b>How to read this.</b> Signals marked <b>observed</b> come from documented reactions in real EHR notes —
+    the differentiator over structure-only databases. Signals marked <b>predicted</b> come from the models
+    (MoLFormer structural similarity + the SSI-DDI interaction model) and apply to compounds not in the record.
+    Allergy cross-reactivity is patient-anchored and unavailable for novel compounds. Tuned for specificity:
+    chemically unrelated co-occurrences are reported low, not as warnings.</p>
+  <div class="legend">
+    <span><i class="lg" style="background:var(--ok)"></i>clear</span>
+    <span><i class="lg" style="background:var(--mod)"></i>monitor</span>
+    <span><i class="lg" style="background:var(--high)"></i>warning</span>
+    <span><i class="lg" style="background:var(--crit)"></i>contraindication</span>
+  </div>
+</div></footer>
+
+<script>
+let MODE="name";
+const $=id=>document.getElementById(id);
+const backend=()=>$("backend").value.replace(/\/+$/,"");
+const esc=s=>String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const SEV={none:"Clear",mod:"Monitor",high:"Warning",crit:"Contraindication"};
+const RANK={none:0,mod:1,high:2,crit:3};
+const CAT_ICON={
+  ddi:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 6a4 4 0 0 0 0 8h1"/><path d="M16 18a4 4 0 0 0 0-8h-1"/><path d="M9 10h6"/></svg>',
+  xreact:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="7" cy="7" r="3"/><circle cx="17" cy="17" r="3"/><path d="M9.5 9.5l5 5"/></svg>',
+  side:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l9 16H3z"/><path d="M12 10v4"/><circle cx="12" cy="17" r=".5" fill="currentColor"/></svg>',
+  allergy:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-4.6-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.4-7 10-7 10z"/></svg>'};
+
+/* ---- health check ---- */
+async function health(){
+  try{const r=await fetch(backend()+"/health");const j=await r.json();
+    $("hdot").className="cdotH up";$("hdot").title=`connected · ${j.drugs} drugs · MoLFormer ${j.molformer?'on':'off'}`;
+    return j;
+  }catch(e){$("hdot").className="cdotH down";$("hdot").title="backend not reachable";return null;}
+}
+
+/* ---- query dispatch ---- */
+async function go(){
+  const raw=$("q").value.trim();if(!raw)return;
+  const el=$("result");el.innerHTML=loading();el.classList.add("show");
+  let url,payload;
+  if(MODE==="smiles"){url="/screen_smiles";payload={smiles:raw};}
+  else if(MODE==="pair"){
+    const b=$("q2").value.trim();
+    if(!b){el.innerHTML=errCard("Enter compound B as well.");return;}
+    url="/screen_pair";payload={a:raw,b:b};}
+  else{const parts=raw.split("+").map(s=>s.trim()).filter(Boolean);
+    url="/screen";payload=parts.length>=2?{drug_a:parts[0],drug_b:parts[1]}:{drug:parts[0]};}
+  try{
+    const r=await fetch(backend()+url,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)});
+    const j=await r.json();
+    if(j.error){el.innerHTML=errCard(j.error);return;}
+    if(url==="/screen_pair"){renderPair(j,payload);return;}
+    render(j,url,payload);
+  }catch(e){el.innerHTML=errCard("Can’t reach the backend at "+backend()+". Start it with: uvicorn app:app --port 8000");}
+}
+function loading(){return `<div class="gate"><div class="card-empty">Screening…</div></div>`;}
+function renderPair(res,payload){
+  const el=$("result");
+  const vclass={PASS:"v-pass",FLAG:"v-flag",HOLD:"v-hold"}[res.verdict];
+  const vsub={PASS:"gate · clear",FLAG:"gate · warn",HOLD:"gate · block"}[res.verdict];
+  const tagA=res.a_known?'<span class="meta obs">known drug</span>':'<span class="meta pred">novel</span>';
+  const tagB=res.b_known?'<span class="meta obs">known drug</span>':'<span class="meta pred">novel</span>';
+  const st=res.structural, cyp=res.cyp_interactions||[];
+  const sevClass=s=>({none:"f-none",mod:"f-mod",high:"f-high",crit:"f-crit"}[s]||"f-none");
+  // structural finding row
+  let rows="";
+  if(st){rows+=`<div class="finding ${sevClass(st.severity)}"><div class="f-bar"></div><div class="f-body">
+      <div class="f-title">Structural interaction <span class="arrow">·</span> SSI-DDI</div>
+      <div class="f-note">${esc(st.note)}</div>
+      <div class="f-meta"><span class="meta pred">predicted</span><span class="meta">prob ${Number(st.prob).toFixed(2)}</span><span class="meta">${st.severity}</span></div>
+    </div></div>`;}
+  else{rows+=`<div class="finding f-none"><div class="f-bar"></div><div class="f-body">
+      <div class="f-title">Structural interaction <span class="arrow">·</span> SSI-DDI</div>
+      <div class="f-note">Not scored — a compound had no structure available.</div></div></div>`;}
+  // CYP mechanism rows
+  cyp.forEach(h=>{rows+=`<div class="finding ${sevClass(h.severity)}"><div class="f-bar"></div><div class="f-body">
+      <div class="f-title">${esc(h.enzyme)} <span class="arrow">·</span> ${esc(h.mechanism)}</div>
+      <div class="f-note">${esc(h.effect)}</div>
+      <div class="f-meta"><span class="meta obs">pharmacokinetic</span><span class="meta">${h.severity}</span></div>
+    </div></div>`;});
+  // CYP predicted (QSAR) rows -- visibly separate from curated ("predicted" tag + p + AUC)
+  (res.predicted_cyp_interactions||[]).forEach(h=>{rows+=`<div class="finding ${sevClass(h.severity)}"><div class="f-bar"></div><div class="f-body">
+      <div class="f-title">${esc(h.enzyme)} <span class="arrow">&middot;</span> ${esc(h.mechanism)}</div>
+      <div class="f-note">${esc(h.effect)}</div>
+      <div class="f-meta"><span class="meta pred">predicted</span><span class="meta">p ${Number(h.prob).toFixed(2)}</span><span class="meta">model AUC ${Number(h.auc).toFixed(2)}</span><span class="meta">${h.severity}</span></div>
+      ${h.note?`<div class="f-note" style="opacity:.72;font-size:12px;margin-top:4px">${esc(h.note)}</div>`:""}
+    </div></div>`;});
+  const attr=res.attribution;
+  const attrPanel=attr?`<div class="attrib"><div class="attrib-h"><div class="cat-ic">${CAT_ICON.xreact}</div>
+      <div><div class="cat-name">Substructure attribution</div>
+        <div class="cat-sub">atoms of ${esc(res.compound_a)} driving the structural interaction</div></div>
+      <span class="sev-tag t-high">p ${Number(attr.prob).toFixed(2)}</span></div>
+    <div class="attrib-body"><div class="mol">${attr.svg}</div>
+      <div class="attrib-legend"><div class="heat"><span>low</span><i></i><span>high</span></div>
+        <div class="attrib-atoms">${(attr.top_atoms||[]).map(a=>`<span class="meta">${a.symbol} · ${Number(a.importance).toFixed(2)}</span>`).join("")}</div>
+        <p class="attrib-note">The model attends to these atoms when predicting the interaction.</p></div></div></div>`:"";
+  const mechTags=(res.mechanisms||[]).map(x=>`<span class="meta">${esc(x)}</span>`).join(" ");
+  el.innerHTML=`<div class="gate"><div class="gate-grid">
+      <div class="compound"><div class="field-label">Compound A</div>
+        <div class="compound-name">${esc(res.compound_a)}</div><div class="compound-meta">${tagA}</div></div>
+      <div class="channels" style="justify-content:center">
+        <div class="chan s-${res.max_severity==='none'?'off':res.max_severity}"><div class="cdot"></div>
+          <div class="chan-name">Interaction</div><div class="chan-val">${esc(res.max_severity)}</div></div></div>
+      <div class="verdict"><div class="field-label">Compound B</div>
+        <div class="compound-name" style="font-size:16px">${esc(res.compound_b)}</div><div class="compound-meta">${tagB}</div></div>
+    </div></div>
+    <div class="cols"><div>
+      <div class="sec-title"><span class="n">01</span>Interaction mechanisms &nbsp; ${mechTags}</div>
+      <div class="card"><div class="card-h"><div class="cat-ic">${CAT_ICON.ddi}</div>
+        <div><div class="cat-name">${esc(res.compound_a)} × ${esc(res.compound_b)}</div><div class="cat-sub">${esc(res.model)}</div></div>
+        <span class="stamp ${vclass}" style="font-size:15px;padding:6px 12px">${res.verdict}<small>${vsub}</small></span></div>
+        <div class="findings">${rows}</div></div>
+      ${attrPanel}</div>
+      <div class="aside"><div class="sec-title"><span class="n">02</span>Pipeline output</div>
+        <div class="api"><div class="api-h"><div class="dotrow"><i></i><i></i><i></i></div>
+          <span class="path">POST /screen_pair</span><span class="verb">200 OK</span></div>
+          <pre><span class="b">{</span>
+  <span class="k">"compound_a"</span>: <span class="s">"${esc(res.compound_a)}"</span>,
+  <span class="k">"compound_b"</span>: <span class="s">"${esc(res.compound_b)}"</span>,
+  <span class="k">"verdict"</span>: <span class="s">"${res.verdict}"</span>,
+  <span class="k">"mechanisms"</span>: <span class="s">${esc(JSON.stringify(res.mechanisms))}</span>,
+  <span class="k">"cyp_interactions"</span>: <span class="n">${cyp.length}</span>,
+  <span class="k">"predicted_cyp"</span>: <span class="n">${(res.predicted_cyp_interactions||[]).length}</span>
+<span class="b">}</span></pre></div></div>
+    </div>`;
+  el.classList.remove("show");void el.offsetWidth;el.classList.add("show");
+}
+
+/* ---- render ---- */
+
+function render(res,url,payload){
+  const el=$("result");
+  const vclass={PASS:"v-pass",FLAG:"v-flag",HOLD:"v-hold"}[res.verdict];
+  const vsub={PASS:"gate · clear",FLAG:"gate · warn",HOLD:"gate · block"}[res.verdict];
+
+  const channels=res.categories.map(c=>{
+    const r=Math.max(0,...c.items.map(i=>RANK[i.sev]));
+    const has=c.items.some(i=>i.sev!=="none");
+    const sv=has?["none","mod","high","crit"][r]:"off";
+    const short={ddi:"DDI",xreact:"X-react",side:"Adverse",allergy:"Allergy"}[c.key];
+    const val=has?SEV[["none","mod","high","crit"][r]]:"—";
+    return `<div class="chan s-${sv}"><div class="cdot"></div><div class="chan-name">${short}</div><div class="chan-val">${val}</div></div>`;
+  }).join("");
+
+  const cards=res.categories.map(c=>{
+    const real=c.items.filter(i=>i.sev!=="none");
+    const r=Math.max(0,...real.map(i=>RANK[i.sev]));
+    const sv=["none","mod","high","crit"][r];
+    let tag,body;
+    const naAllergy=((res.mode==="novel"||res.allergy_available===false)&&c.key==="allergy");
+    if(naAllergy){
+      const why = res.mode==="novel"
+        ? "Patient-anchored — unavailable for a compound not yet in the clinical record."
+        : "Patient-anchored allergy data isn’t loaded in this deployment (excluded from the public build for data-use compliance).";
+      tag=`<span class="sev-tag t-na">N/A · needs patient data</span>`;
+      body=`<div class="card-empty" style="color:var(--ink-faint)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="var(--ink-faint)" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v4"/></svg>
+        ${why}</div>`;
+    }else if(res.mode==="novel"&&res.molformer_available===false&&(c.key==="xreact"||c.key==="side")){
+      tag=`<span class="sev-tag t-na">N/A · model offline</span>`;
+      body=`<div class="card-empty" style="color:var(--ink-faint)"><svg viewBox="0 0 24 24" fill="none" stroke="var(--ink-faint)" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v4"/></svg>Structural model not loaded in this runtime — screen locally or on GPU hardware for this signal.</div>`;
+    }else if(!real.length){
+      tag=`<span class="sev-tag t-none">Clear</span>`;
+      body=`<div class="card-empty"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>No signal in this category.</div>`;
+    }else{
+      tag=`<span class="sev-tag t-${sv}">${SEV[sv]}</span>`;
+      body=`<div class="findings">`+real.map(f=>{
+        const ev=f.ev==="observed"?`<span class="meta obs">observed${f.pt?` · ${f.pt} pt`:''}</span>`:`<span class="meta pred">predicted</span>`;
+        return `<div class="finding f-${f.sev}"><div class="f-bar"></div><div class="f-body">
+          <div class="f-title">${esc(f.find)}${f.to?`<span class="arrow">→</span>${esc(f.to)}`:""}</div>
+          <div class="f-note">${esc(f.note)}</div>
+          <div class="f-meta">${ev}<span class="meta">conf ${Number(f.conf).toFixed(2)}</span>${f.src?`<span class="meta">${esc(f.src)}</span>`:""}</div>
+        </div></div>`;}).join("")+`</div>`;
+    }
+    return `<div class="card"><div class="card-h"><div class="cat-ic">${CAT_ICON[c.key]}</div>
+      <div><div class="cat-name">${c.name}</div><div class="cat-sub">${c.sub}</div></div>${tag}</div>${body}</div>`;
+  }).join("");
+
+  const mfBanner=(res.mode==="novel"&&res.molformer_available===false)?
+    `<div class="banner"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16v.5"/></svg>
+     <span>MoLFormer isn’t loaded in this runtime, so structural cross-reactivity/side-effect prediction is limited to the interaction model. Start the backend in an environment with model access to enable the full novel-compound screen.</span></div>`:"";
+
+  const attr=res.attribution;
+  const attrPanel=attr?`<div class="attrib">
+      <div class="attrib-h"><div class="cat-ic">${CAT_ICON.xreact}</div>
+        <div><div class="cat-name">Substructure attribution</div>
+          <div class="cat-sub">atoms driving the predicted interaction with ${esc(attr.partner)}</div></div>
+        <span class="sev-tag t-high">p ${Number(attr.prob).toFixed(2)}</span></div>
+      <div class="attrib-body">
+        <div class="mol">${attr.svg}</div>
+        <div class="attrib-legend">
+          <div class="heat"><span>low</span><i></i><span>high</span></div>
+          <div class="attrib-atoms">${attr.top_atoms.map(a=>`<span class="meta">${a.symbol} · ${Number(a.importance).toFixed(2)}</span>`).join("")}</div>
+          <p class="attrib-note">The model attends to these atoms when predicting the interaction — a substructure-level explanation, not just a score.</p>
+        </div></div></div>`:"";
+
+  el.innerHTML=`${mfBanner}
+    <div class="gate"><div class="gate-grid">
+      <div class="compound"><div class="field-label">${res.subject.pair?"Compound pair":(res.mode==="novel"?"Novel compound":"Compound")}</div>
+        <div class="compound-name">${esc(res.subject.name)}</div><div class="compound-meta">${esc(res.subject.meta)}</div></div>
+      <div class="channels">${channels}</div>
+      <div class="verdict"><div class="field-label">Gate decision</div>
+        <div class="stamp ${vclass}">${res.verdict}<small>${vsub}</small></div>
+        <div class="verdict-reason">${esc(res.reason)}</div></div>
+    </div></div>
+    <div class="cols">
+      <div><div class="sec-title"><span class="n">01</span>Signal breakdown</div><div class="signals">${cards}</div>${attrPanel}</div>
+      <div class="aside">
+        <div class="sec-title"><span class="n">02</span>Pipeline output</div>
+        ${apiPanel(res,url,payload)}${snippetPanel(res,url,payload)}${provPanel(res)}
+      </div>
+    </div>`;
+  el.classList.remove("show");void el.offsetWidth;el.classList.add("show");
+}
+
+function apiPanel(res,url,payload){
+  const sig=res.signals.map(s=>
+`    <span class="b">{</span> <span class="k">"category"</span>:<span class="s">"${s.category}"</span>, <span class="k">"severity"</span>:<span class="s">"${s.severity}"</span>,
+      <span class="k">"finding"</span>:<span class="s">"${esc(s.finding)}"</span>, <span class="k">"evidence"</span>:<span class="s">"${s.evidence}"</span>,
+      <span class="k">"patient_support"</span>:<span class="n">${s.patient_support}</span>, <span class="k">"confidence"</span>:<span class="n">${Number(s.confidence).toFixed(2)}</span> <span class="b">}</span>`).join(",\n");
+  const body=`<span class="b">{</span>
+  <span class="k">"query"</span>: <span class="s">"${esc(res.query)}"</span>,
+  <span class="k">"verdict"</span>: <span class="s">"${res.verdict}"</span>,
+  <span class="k">"gate_action"</span>: <span class="s">"${res.gate_action}"</span>,
+  <span class="k">"max_severity"</span>: <span class="s">"${res.max_severity}"</span>,
+  <span class="k">"signals"</span>: <span class="b">[</span>
+${sig||'    <span class="c">/* none above threshold */</span>'}
+  <span class="b">]</span>,
+  <span class="k">"provenance"</span>: <span class="s">"${esc(res.provenance)}"</span>
+<span class="b">}</span>`;
+  return `<div class="api"><div class="api-h"><div class="dotrow"><i></i><i></i><i></i></div>
+    <span class="path">POST ${url}</span><span class="verb">200 OK</span></div><pre>${body}</pre></div>`;
+}
+function snippetPanel(res,url,payload){
+  const call=url==="/screen_smiles"
+    ?`clinsift.<span class="fn">screen_smiles</span>(smiles=<span class="st">"${esc(payload.smiles).slice(0,22)}…"</span>)`
+    :(payload.drug_a?`clinsift.<span class="fn">screen</span>(drug_a=<span class="st">"${payload.drug_a}"</span>, drug_b=<span class="st">"${payload.drug_b}"</span>)`
+      :`clinsift.<span class="fn">screen</span>(drug=<span class="st">"${payload.drug}"</span>)`);
+  return `<div class="snippet"><div class="snip-h">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 9l-4 3 4 3M16 9l4 3-4 3"/></svg>
+    Gate it in your pipeline</div><pre><span class="cm"># drop-in screening step</span>
+r = ${call}
+<span class="kw">if</span> r.verdict == <span class="st">"HOLD"</span>:
+    pipeline.<span class="fn">block</span>(candidate, r.signals)
+<span class="kw">elif</span> r.verdict == <span class="st">"FLAG"</span>:
+    pipeline.<span class="fn">review</span>(candidate, r.signals)
+<span class="kw">else</span>:
+    pipeline.<span class="fn">advance</span>(candidate)</pre></div>`;
+}
+function provPanel(res){
+  let obs=0,pred=0,pts=0;
+  res.categories.forEach(c=>c.items.forEach(f=>{if(f.sev==="none")return;f.ev==="observed"?(obs++,pts+=f.pt||0):pred++;}));
+  return `<div class="provenance"><h4>Evidence provenance</h4>
+    <div class="prov-row"><span>Observed signals (EHR)</span><b>${obs}</b></div>
+    <div class="prov-row"><span>Predicted signals (models)</span><b>${pred}</b></div>
+    <div class="prov-row"><span>Patients supporting</span><b>${pts}</b></div>
+    <div class="prov-row"><span>Source</span><b>MIMIC notes</b></div></div>`;
+}
+
+/* ---- examples ---- */
+const NAME_EX=[["penicillin"],["metoprolol"],["warfarin","clopidogrel"],["penicillin","ceftriaxone"],["metformin","simvastatin"]];
+const SMILES_EX="CC1=C(C=C(C=C1)NC(=O)C2=CC=C(C=C2)CN3CCN(CC3)C)NC4=NC=CC(=N4)C5=CN=CC=C5";
+function buildChips(){
+  const c=$("chips");c.innerHTML="";
+  if(MODE==="name"){
+    NAME_EX.forEach(ex=>{const b=document.createElement("button");b.className="chip";
+      b.innerHTML=ex.length>1?`${ex[0]} <span class="op">+</span> ${ex[1]}`:ex[0];
+      b.onclick=()=>{$("q").value=ex.join(" + ");go();};c.appendChild(b);});
+  }else if(MODE==="pair"){
+    const ex=[["warfarin × amiodarone (PK)","warfarin","amiodarone"],
+              ["novel compound × warfarin",SMILES_EX,"warfarin"],
+              ["novel × novel",SMILES_EX,"CC(C)c1c(C(=O)Nc2ccccc2)c(-c2ccccc2)c(-c2ccc(F)cc2)n1CCC(O)CC(O)CC(=O)O"]];
+    ex.forEach(([label,a,b])=>{const btn=document.createElement("button");btn.className="chip smiles";
+      btn.innerHTML=label;btn.onclick=()=>{$("q").value=a;$("q2").value=b;go();};c.appendChild(btn);});
+  }else{
+    const b=document.createElement("button");b.className="chip smiles";
+    b.innerHTML='sample novel compound (imatinib-like)';
+    b.onclick=()=>{$("q").value=SMILES_EX;go();};c.appendChild(b);
+  }
+}
+function setMode(m){MODE=m;
+  $("m-name").classList.toggle("on",m==="name");
+  $("m-smiles").classList.toggle("on",m==="smiles");
+  $("m-pair").classList.toggle("on",m==="pair");
+  $("q").value="";$("q2").value="";
+  $("q2").style.display = m==="pair" ? "block" : "none";
+  $("q").placeholder = m==="smiles" ? "paste a SMILES string"
+                     : m==="pair"   ? "compound A (SMILES or drug name)"
+                     : "drug name   —or—   drug A + drug B";
+  buildChips();}
+$("m-name").onclick=()=>setMode("name");
+$("m-smiles").onclick=()=>setMode("smiles");
+$("m-pair").onclick=()=>setMode("pair");
+$("run").onclick=go;
+$("q").addEventListener("keydown",e=>{if(e.key==="Enter")go();});
+$("backend").addEventListener("change",health);
+
+/* init */
+buildChips();
+// when served over http(s) (e.g. on HuggingFace), talk to the same origin;
+// when opened as a local file, default to localhost:8000
+if(location.protocol==="http:"||location.protocol==="https:"){$("backend").value=location.origin;}
+health().then(j=>{if(j){$("q").value="penicillin";go();}});
+</script>
+</body>
+</html>

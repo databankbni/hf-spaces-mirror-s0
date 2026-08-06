@@ -1,0 +1,10 @@
+.git
+.auth
+.env
+node_modules
+npm-debug.log
+*.log
+prediction-audit.jsonl
+match-audit.jsonl
+tracker-check
+onewin-tracker-probe.png

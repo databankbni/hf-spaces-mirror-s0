@@ -1,0 +1,78 @@
+agent:
+  max_iterations: 3
+  temperature: 0.0
+
+provider:
+  default: anthropic
+  models:
+    gpt-4o-mini:
+      input_cost_per_mtok: 0.15
+      output_cost_per_mtok: 0.60
+    claude-haiku-4-5-20251001:
+      input_cost_per_mtok: 0.80
+      output_cost_per_mtok: 4.0
+
+rag:
+  chunking:
+    strategy: recursive
+    chunk_size: 512
+    chunk_overlap: 64
+  retrieval:
+    strategy: hybrid
+    rrf_k: 60
+    candidates_per_system: 10
+    top_k: 5
+  reranker:
+    enabled: true
+    model_name: cross-encoder/ms-marco-MiniLM-L-6-v2
+    top_k: 5
+  refusal_threshold: 0.02
+  store_path: .cache/store
+
+retry:
+  max_retries: 3
+  base_delay: 1.0
+  max_delay: 8.0
+
+memory:
+  enabled: false
+  db_path: data/conversations.db
+  max_turns: 10
+
+embedding:
+  model: all-MiniLM-L6-v2
+  cache_dir: .cache/embeddings
+
+serving:
+  host: 0.0.0.0
+  port: 8000
+  request_timeout_seconds: 30
+  rate_limit_rpm: 10
+
+evaluation:
+  judge_provider: openai
+  golden_dataset: agent_bench/evaluation/datasets/tech_docs_golden.json
+
+# Mirrors configs/default.yaml so the custom-anthropic registry entry can run
+# `evaluate.py --corpus fastapi`. Without this block load_config leaves corpora
+# empty and the corpus lookup exits 1 mid-campaign (paid-path audit finding #1).
+default_corpus: fastapi
+
+corpora:
+  fastapi:
+    label: "FastAPI Docs"
+    store_path: .cache/store
+    data_path: data/tech_docs
+    refusal_threshold: 0.02
+    top_k: 5
+    max_iterations: 3
+    golden_dataset: agent_bench/evaluation/datasets/tech_docs_golden.json
+  k8s:
+    label: "Kubernetes"
+    store_path: .cache/store_k8s
+    data_path: data/k8s_docs
+    refusal_threshold: 0.015
+    top_k: 5
+    max_iterations: 3
+    golden_dataset: agent_bench/evaluation/datasets/k8s_golden.json
+    available: true

@@ -1,0 +1,86 @@
+{
+ "captured_at": "2026-08-04T15:31:42Z",
+ "hf_metadata": {
+  "_id": "6a6d11abf45f7a003fbb0a6f",
+  "author": "Tripty89",
+  "cardData": {
+   "colorFrom": "blue",
+   "colorTo": "blue",
+   "emoji": "🏢",
+   "pinned": false,
+   "sdk": "docker",
+   "title": "Superkart Backend"
+  },
+  "createdAt": "2026-07-31T21:20:43.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://tripty89-superkart-backend.hf.space",
+  "id": "Tripty89/superkart-backend",
+  "lastModified": "2026-07-31T21:25:18.000Z",
+  "likes": 0,
+  "private": false,
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "tripty89-superkart-backend.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": null,
+    "requested": "cpu-basic"
+   },
+   "replicas": {
+    "requested": 1
+   },
+   "stage": "PAUSED"
+  },
+  "sdk": "docker",
+  "sha": "9f9aee2153b378d3782d1b317c58cc42020ea684",
+  "siblings": [
+   {
+    "rfilename": ".gitattributes"
+   },
+   {
+    "rfilename": "Dockerfile"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "app.py"
+   },
+   {
+    "rfilename": "model.joblib"
+   },
+   {
+    "rfilename": "requirements.txt"
+   }
+  ],
+  "subdomain": "tripty89-superkart-backend",
+  "tags": [
+   "docker",
+   "region:us"
+  ],
+  "usedStorage": 628603
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "Tripty89/superkart-backend",
+ "repo_type": "spaces",
+ "sha": "9f9aee2153b378d3782d1b317c58cc42020ea684",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/Tripty89/superkart-backend"
+}

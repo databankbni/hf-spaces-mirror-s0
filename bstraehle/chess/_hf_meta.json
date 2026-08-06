@@ -1,0 +1,23 @@
+{
+ "captured_at": "2026-08-04T16:01:54Z",
+ "hf_metadata": {
+  "sha": "c5e02e9d2801683faa3eec3043633a05089e0451"
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "bstraehle/chess",
+ "repo_type": "spaces",
+ "sha": "c5e02e9d2801683faa3eec3043633a05089e0451",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/bstraehle/chess"
+}

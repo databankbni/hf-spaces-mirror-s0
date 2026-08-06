@@ -1,0 +1,670 @@
+# -*- coding: utf-8 -*-
+"""
+app.py
+Interfaz de usuario mística (Frontend) basada en Gradio para Fénix Aprendiz.
+
+Incluye el Bot de Inquietudes Humanas: una "preparación del oráculo" que sube
+automáticamente +1 nivel por día (tope 100) y genera 10 inquietudes diarias,
+rotando entre categorías (miedos existenciales, crisis de fe, propósito de vida,
+debates bíblicos, consejo espiritual, alma y más allá) con profundidad creciente
+según el nivel, sin repetir temas recientes.
+
+Compatible con todas las versiones de Gradio (sin type="messages" ni parámetros experimentales).
+"""
+
+import os
+import time
+import threading
+from datetime import datetime, timedelta
+import gradio as gr
+import fenix_core  # Importamos para inyectar voces místicas de forma dinámica
+from fenix_core import (
+    ciclo_completo,
+    procesar_pdf,
+    generar_voz,
+    guardar_conversacion,
+    cargar_conversaciones,
+    revisar_conversaciones_pendientes,
+    actualizar_claves_dinamicas,
+    llamar_cerebras_directo,
+    rotar_clave_cerebras_fallida,
+    CEREBRAS_KEYS_POOL,
+    NVIDIA_KEYS_POOL,
+    describir_imagen,
+    generar_imagen_ia,
+    cargar_galeria_imagenes,
+    texto_biblioteca,
+    borrar_libro,
+    listar_libros,
+)
+from fenix_progreso import obtener_progreso, registrar_pregunta
+from gradio_theme_fenix import apply_fenix_theme, FENIX_CSS, fenix_header, fenix_footer
+
+SUFIJO_MAESTRO = "\n\n_(maestro:"
+
+# El orbe se acelera al enviar y vuelve solo a su ritmo normal a los 14s.
+# FIX CRÍTICO: cuando 'js' y 'fn' van en el MISMO evento con 'inputs' definidos,
+# Gradio pasa esos inputs como argumentos a la función JS y usa lo que ELLA
+# devuelva como los valores reales que llegan a 'fn'. La versión anterior no
+# aceptaba ni devolvía nada, así que Gradio mandaba 'undefined' (-> None) en
+# vez del mensaje real, y por eso 'responder()' recibía mensaje=None y petaba.
+# Ahora la JS recibe (mensaje, historial, voz) y los devuelve TAL CUAL, usando
+# la función solo para el efecto visual como efecto secundario.
+JS_ORBE_PENSANDO = """
+(mensaje, historial, voz) => {
+    const orbe = document.querySelector('.orbe-luz');
+    if (orbe) {
+        orbe.classList.add('orbe-pensando');
+        setTimeout(() => orbe.classList.remove('orbe-pensando'), 14000);
+    }
+    return [mensaje, historial, voz];
+}
+"""
+
+# Analizador de volumen real de la voz de Fénix (Web Audio API), inyectado UNA
+# vez en <head> con demo.launch(head=...) para que sobreviva a que Gradio
+# reemplace el <audio> en cada respuesta nueva. Engancha un AnalyserNode al
+# elemento de audio y, mientras suena, traduce el volumen instantáneo en la
+# escala/brillo del orbe. Nota: los navegadores exigen un gesto del usuario
+# para arrancar el AudioContext; como esto se dispara tras pulsar "Enviar",
+# ese requisito ya queda cubierto.
+SCRIPT_ANALIZADOR_VOZ = """
+<script>
+(function () {
+    function iniciarAnalizadorVoz() {
+        const audioEl = document.querySelector('#audio_voz_fenix audio');
+        const orbe = document.querySelector('.orbe-luz');
+        if (!audioEl || !orbe || audioEl._fenixConectado) return;
+        audioEl._fenixConectado = true;
+
+        try {
+            if (!window._fenixAudioCtx) {
+                window._fenixAudioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            }
+            const ctx = window._fenixAudioCtx;
+            const source = ctx.createMediaElementSource(audioEl);
+            const analyser = ctx.createAnalyser();
+            analyser.fftSize = 64;
+            source.connect(analyser);
+            analyser.connect(ctx.destination);
+            const datos = new Uint8Array(analyser.frequencyBinCount);
+
+            function animar() {
+                if (audioEl.paused || audioEl.ended) return;
+                analyser.getByteFrequencyData(datos);
+                const promedio = datos.reduce((a, b) => a + b, 0) / datos.length;
+                const escala = 1 + (promedio / 255) * 0.6;
+                const halo = 15 + (promedio / 255) * 60;
+                orbe.style.transform = `scale(${escala})`;
+                orbe.style.boxShadow = `0 0 ${halo}px ${halo / 2}px rgba(212,175,55,0.85)`;
+                requestAnimationFrame(animar);
+            }
+
+            const limpiar = () => {
+                orbe.classList.remove('orbe-hablando');
+                orbe.style.transform = '';
+                orbe.style.boxShadow = '';
+            };
+
+            audioEl.addEventListener('play', () => {
+                if (ctx.state === 'suspended') ctx.resume();
+                orbe.classList.add('orbe-hablando');
+                animar();
+            });
+            audioEl.addEventListener('pause', limpiar);
+            audioEl.addEventListener('ended', limpiar);
+        } catch (e) {
+            console.warn('Analizador de voz de Fénix no disponible:', e);
+        }
+    }
+
+    // El <audio> de Gradio se crea/renueva de forma asíncrona; se observa el
+    // DOM para engancharse en cuanto aparezca, en esta carga y en las siguientes.
+    const obs = new MutationObserver(iniciarAnalizadorVoz);
+    obs.observe(document.body, { childList: true, subtree: true });
+    iniciarAnalizadorVoz();
+})();
+</script>
+"""
+
+BOT_ID = "espiritual"
+PREGUNTAS_POR_DIA = 10
+INTERVALO_SEGUNDOS = 86400 // PREGUNTAS_POR_DIA  # 8640s ≈ cada 2h24min
+
+# Categorías por las que rota el oráculo. Con 10 preguntas/día y 6 categorías,
+# ninguna se queda sin cubrir: en pocos días ya hay cobertura completa y el
+# ciclo empieza de nuevo, ahora con más profundidad (según el nivel).
+CATEGORIAS_ORACULO = [
+    "miedos e inquietudes existenciales (muerte, vacío, soledad, sufrimiento)",
+    "crisis de fe y dudas religiosas",
+    "búsqueda de propósito y sentido de la vida",
+    "debates y controversias de interpretación bíblica (pasajes concretos, "
+    "aparentes contradicciones, contexto histórico y teológico)",
+    "consejo práctico y consuelo espiritual ante situaciones difíciles de la vida real",
+    "preguntas sobre el alma, la reencarnación, el juicio y el más allá",
+]
+
+# Mapa de nivel (0-100) -> profundidad esperada. Es la "preparación del oráculo":
+# según el nivel actual, las inquietudes generadas ganan matiz y especificidad.
+NIVELES_ORACULO = [
+    (20, "preguntas introductorias y generales, propias de alguien que recién "
+         "empieza a hacerse preguntas grandes sobre la vida"),
+    (40, "preguntas más personales e íntimas sobre crisis de fe, pérdida, dolor "
+         "y búsqueda de propósito"),
+    (60, "debates teológicos con referencias a pasajes bíblicos concretos y sus "
+         "posibles contradicciones, matices de traducción o interpretaciones distintas"),
+    (80, "dilemas existenciales profundos: el problema del mal, el sufrimiento "
+         "injusto, el libre albedrío frente a la voluntad divina, la naturaleza de Dios"),
+    (100, "preguntas de altísima profundidad teológica y filosófica, comparando "
+          "tradiciones espirituales distintas, cuestionando dogmas asumidos, y "
+          "buscando consuelo genuino ante circunstancias extremas de la vida"),
+]
+
+
+def _descripcion_nivel_oraculo(nivel: int) -> str:
+    for tope, descripcion in NIVELES_ORACULO:
+        if nivel <= tope:
+            return descripcion
+    return NIVELES_ORACULO[-1][1]
+
+
+def _categoria_del_turno(nivel: int, preguntas_hoy: int) -> str:
+    """Rotación determinista: cada pregunta del día avanza a la siguiente
+    categoría, y el nivel desplaza el punto de partida para no caer siempre
+    en el mismo orden entre días."""
+    indice = (nivel + preguntas_hoy) % len(CATEGORIAS_ORACULO)
+    return CATEGORIAS_ORACULO[indice]
+
+
+def _segundos_hasta_manana() -> int:
+    ahora = datetime.now()
+    manana = (ahora + timedelta(days=1)).replace(hour=0, minute=5, second=0, microsecond=0)
+    return max(60, int((manana - ahora).total_seconds()))
+
+
+def responder(mensaje, historial, voz_seleccionada):
+    if not mensaje.strip():
+        return historial, "", None, cargar_conversaciones(limite=300)
+
+    historial = historial or []
+
+    # 🧹 Purificación del historial para evitar Error 400 en la API de Cerebras
+    # FIX DOBLE MAESTRO: ademas de normalizar el formato, se limpia el sufijo
+    # "_(maestro: ...)" de los mensajes del asistente ANTES de enviarlos a Cerebras.
+    historial_limpio = []
+    for msg in historial:
+        if isinstance(msg, dict) and "role" in msg and "content" in msg:
+            contenido = msg["content"]
+            if msg["role"] == "assistant" and isinstance(contenido, str):
+                contenido = contenido.split(SUFIJO_MAESTRO)[0].strip()
+            historial_limpio.append({
+                "role": msg["role"],
+                "content": contenido
+            })
+
+    config_voces = {
+        "Anciano Sabio (Hombre Místico)": {
+            "voice": "es-ES-AlvaroNeural", "rate": "-14%", "pitch": "-12Hz", "eco_filtro": None
+        },
+        "Eco del Anciano (Voz Serena)": {
+            "voice": "es-ES-AlvaroNeural", "rate": "-10%", "pitch": "-16Hz", "eco_filtro": fenix_core.ECO_CAVERNA
+        },
+        "Voz de Teshuá (El Retorno)": {
+            "voice": "es-ES-AlvaroNeural", "rate": "-17%", "pitch": "-19Hz", "eco_filtro": fenix_core.ECO_TESHUA
+        },
+        "Guía Solemne (Hombre Profundo)": {
+            "voice": "es-ES-AlvaroNeural", "rate": "-6%", "pitch": "-22Hz", "eco_filtro": None
+        },
+        "Oráculo Celestial (Mujer Sacra)": {
+            "voice": "es-ES-ElviraNeural", "rate": "-10%", "pitch": "-6Hz", "eco_filtro": None
+        },
+        "Esencia Cálida (Voz Pausada)": {
+            "voice": "es-MX-DaliaNeural", "rate": "-9%", "pitch": "-3Hz", "eco_filtro": None
+        }
+    }
+
+    cfg = config_voces.get(voz_seleccionada, config_voces["Anciano Sabio (Hombre Místico)"])
+
+    fenix_core.VOZ_FENIX = cfg["voice"]
+    fenix_core.VOZ_RATE = cfg["rate"]
+    fenix_core.VOZ_PITCH = cfg["pitch"]
+    fenix_core.VOZ_ECO_FILTRO = cfg.get("eco_filtro")
+
+    respuesta, evaluacion = ciclo_completo(mensaje, historial_limpio)
+    respuesta = respuesta.split(SUFIJO_MAESTRO)[0].strip()
+    texto_final = f"{respuesta}\n\n_(maestro: {evaluacion['veredicto']} · {evaluacion['categoria']})_"
+
+    historial.append({"role": "user", "content": mensaje})
+    historial.append({"role": "assistant", "content": texto_final})
+
+    guardar_conversacion(mensaje, texto_final)
+
+    audio_path = generar_voz(respuesta)
+    historial_actualizado = cargar_conversaciones(limite=300)
+
+    return historial, "", audio_path, historial_actualizado
+
+def subir_pdf(archivo):
+    if archivo is None:
+        return "Por favor, selecciona un archivo PDF válido.", gr.update()
+    resultado = procesar_pdf(archivo)
+    # Refresca la lista de la biblioteca y el desplegable tras subir
+    nombres = [n for n, _ in listar_libros()]
+    return resultado + "\n\n" + texto_biblioteca(), gr.update(choices=nombres, value=None)
+
+def refrescar_biblioteca():
+    nombres = [n for n, _ in listar_libros()]
+    return texto_biblioteca(), gr.update(choices=nombres, value=None)
+
+def borrar_libro_ui(nombre):
+    estado = borrar_libro(nombre)
+    nombres = [n for n, _ in listar_libros()]
+    return estado + "\n\n" + texto_biblioteca(), gr.update(choices=nombres, value=None)
+
+def responder_vision(ruta_imagen, pregunta_imagen):
+    if ruta_imagen is None:
+        return "Sube o pega una imagen primero para que Fénix pueda describirla."
+    return describir_imagen(ruta_imagen, pregunta_imagen or "")
+
+
+def responder_creacion_imagen(prompt_imagen):
+    ruta_local, url_publica, estado = generar_imagen_ia(prompt_imagen)
+    galeria = cargar_galeria_imagenes()
+    return ruta_local, estado, galeria
+
+
+def refrescar_galeria():
+    return cargar_galeria_imagenes()
+
+
+def controlar_musica(seleccion):
+    mapeo_canciones = {
+        "Canción 1 (Espiritual)": "cancion_1.mp3",
+        "Canción 2 (Meditación)": "cancion_2.mp3",
+        "Canción 3 (Sacra)": "cancion_3.mp3",
+        "Canción 4 (Armonía)": "cancion_4.mp3",
+        "Canción 5 (Celestial)": "cancion_5.mp3",
+        "Canción 6 (Mística)": "cancion_6.mp3"
+    }
+
+    if seleccion == "Silencio":
+        return None, "_Atmósfera en silencio._"
+
+    archivo_objetivo = mapeo_canciones.get(seleccion)
+    if archivo_objetivo and os.path.exists(archivo_objetivo):
+        return archivo_objetivo, f"🎵 **Sonando ahora:** {seleccion}"
+    else:
+        return None, f"⚠️ El archivo `{archivo_objetivo}` no está en el Space. Súbelo para escucharlo."
+
+def guardar_claves_usuario(pin_admin, c1, c2, c3, c4, n1, n2, n3, n4):
+    pin_real = os.environ.get("FENIX_ADMIN_PIN", "")
+    if not pin_real:
+        return "🔒 Panel bloqueado: define el secret FENIX_ADMIN_PIN en los Settings del Space para habilitarlo."
+    if (pin_admin or "").strip() != pin_real.strip():
+        return "🔒 Código de administrador incorrecto."
+
+    cerebras_list = [c1, c2, c3, c4]
+    nvidia_list = [n1, n2, n3, n4]
+    if not any(k and k.strip() for k in cerebras_list + nvidia_list):
+        return "⚠️ No se aplicó nada: todas las casillas están vacías."
+    actualizar_claves_dinamicas(cerebras_list, nvidia_list)
+    return "✅ ¡Pool de claves actualizado en caliente! Los modelos ahora rotarán entre estas credenciales."
+
+
+def estado_progreso_oraculo() -> str:
+    """Muestra en la pestaña de configuración cómo va la preparación del oráculo."""
+    progreso = obtener_progreso(BOT_ID)
+    nivel = progreso.get("nivel", 0)
+    preguntas_hoy = progreso.get("preguntas_hoy", 0)
+    descripcion = _descripcion_nivel_oraculo(nivel)
+    categoria_actual = _categoria_del_turno(nivel, preguntas_hoy)
+    return (
+        f"🔮 **Nivel de preparación:** {nivel}/100\n\n"
+        f"**Profundidad de hoy:** {descripcion}\n\n"
+        f"**Próxima categoría:** {categoria_actual}\n\n"
+        f"**Inquietudes generadas hoy:** {preguntas_hoy}/{PREGUNTAS_POR_DIA}"
+    )
+
+
+# =====================================================================
+# BOT DE INQUIETUDES HUMANAS INTEGRADO (BACKGROUND THREAD)
+# Preparación del oráculo: sube +1 nivel por día, 10 inquietudes/día,
+# rotando categorías y con profundidad creciente segun el nivel.
+# =====================================================================
+def bucle_inquietudes_espirituales():
+    time.sleep(5)
+    print("✨ [Nube] Iniciando el Bot de Inquietudes Existenciales (preparación del oráculo)...")
+
+    historial_simulado = []
+
+    while True:
+        try:
+            progreso = obtener_progreso(BOT_ID)
+            nivel = progreso.get("nivel", 0)
+            preguntas_hoy = progreso.get("preguntas_hoy", 0)
+
+            if preguntas_hoy >= PREGUNTAS_POR_DIA:
+                print(f"💤 [Bot Oráculo] Meta diaria cumplida (nivel {nivel}/100). Esperando al día siguiente...")
+                time.sleep(_segundos_hasta_manana())
+                continue
+
+            c_key = fenix_core.CEREBRAS_KEYS_POOL[0] if fenix_core.CEREBRAS_KEYS_POOL else (os.environ.get("CEREBRAS_KEY") or os.environ.get("CEREBRAS_API_KEY"))
+            if not c_key:
+                print("⚠️ [Bot Nube] Esperando configuración de la clave de Cerebras...")
+                time.sleep(30)
+                continue
+
+            categoria = _categoria_del_turno(nivel, preguntas_hoy)
+            descripcion_nivel = _descripcion_nivel_oraculo(nivel)
+
+            temas_previos = progreso.get("temas_recientes") or []
+            evitar = ""
+            if temas_previos:
+                lista = "\n".join(f"- {t[:100]}" for t in temas_previos[-10:])
+                evitar = f"\n\nNO repitas ni parafrasees estas inquietudes ya usadas recientemente:\n{lista}"
+
+            prompt_generador_crisis = (
+                f"Eres un simulador de la psique humana real, atrapada en el sufrimiento, la duda "
+                f"existencial y la búsqueda de la verdad. Estás generando la inquietud del nivel "
+                f"{nivel} de 100 en la preparación progresiva de un oráculo espiritual. "
+                f"Hoy debes enfocarte en esta categoría concreta: {categoria}. "
+                f"El grado de profundidad correspondiente a este nivel es: {descripcion_nivel}. "
+                "Redacta UNA pregunta o inquietud extremadamente profunda, sincera y de la mejor "
+                "calidad posible para ese nivel y esa categoría. Escribe en primera persona, como un "
+                "buscador desesperado, un filósofo atormentado, alguien con miedo genuino, o alguien "
+                "cuestionando un pasaje concreto de la Biblia." + evitar +
+                "\nDevuelve ÚNICAMENTE la inquietud mística cruda, sin introducciones corporativas, "
+                "saludos ni preámbulos."
+            )
+
+            try:
+                inquietud_generada = llamar_cerebras_directo(
+                    api_key=c_key,
+                    model=fenix_core.MODELO_FENIX,
+                    messages=[{"role": "system", "content": prompt_generador_crisis},
+                              {"role": "user", "content": "Genera la inquietud ahora."}],
+                    temperature=0.95,
+                    # gpt-oss-120b es un modelo razonador: con 220 tokens se los
+                    # gastaba TODOS "pensando" y nunca escribía la respuesta
+                    # (llegaba 'reasoning' sin 'content'). reasoning_effort=low
+                    # recorta el pensamiento interno y max_tokens=700 deja
+                    # presupuesto de sobra para la pregunta final.
+                    max_tokens=700,
+                    reasoning_effort="low"
+                ).strip()
+            except Exception:
+                rotar_clave_cerebras_fallida()
+                raise
+
+            respuesta, evaluacion = ciclo_completo(inquietud_generada, historial_simulado)
+
+            texto_persistido = f"{respuesta}\n\n_(maestro: {evaluacion['veredicto']} · {evaluacion['categoria']})_"
+            guardar_conversacion(f"[Bot Autónomo · Nivel {nivel}/100 · {categoria}] {inquietud_generada}", texto_persistido)
+            registrar_pregunta(BOT_ID, inquietud_generada)
+
+            historial_simulado.append({"role": "user", "content": inquietud_generada})
+            historial_simulado.append({"role": "assistant", "content": respuesta})
+            if len(historial_simulado) > 6:
+                historial_simulado = historial_simulado[-6:]
+
+            print(f"✅ [Bot Oráculo] Inquietud {preguntas_hoy + 1}/{PREGUNTAS_POR_DIA} del nivel {nivel}/100 ({categoria}) registrada.")
+
+        except Exception as e:
+            print(f"⚠️ [Bot Nube] Error en el ciclo de meditación continua: {e}")
+
+        time.sleep(INTERVALO_SEGUNDOS)
+
+# Lanzar hilo en segundo plano
+threading.Thread(target=bucle_inquietudes_espirituales, daemon=True).start()
+# =====================================================================
+
+
+with gr.Blocks(title="Fénix Aprendiz") as demo:
+    fenix_header("Fénix Aprendiz", "Una experiencia mística e inmersiva gobernada por Inteligencia Artificial.")
+
+    with gr.Tabs():
+        # --- PESTAÑA 1: EL ORÁCULO ---
+        with gr.TabItem("🔮 El Oráculo"):
+            gr.HTML(
+                '<div class="orbe-contenedor">'
+                '<div class="brasa"></div><div class="brasa"></div>'
+                '<div class="brasa"></div><div class="brasa"></div>'
+                '<span class="letra-hebrea letra-1">ת</span>'
+                '<span class="letra-hebrea letra-2">ש</span>'
+                '<span class="letra-hebrea letra-3">ו</span>'
+                '<span class="letra-hebrea letra-4">ע</span>'
+                '<span class="letra-hebrea letra-5">ה</span>'
+                '<div class="orbe-luz"></div>'
+                '</div>'
+            )
+            with gr.Row():
+                with gr.Column(scale=3):
+                    chatbot = gr.Chatbot(
+                        label="Canal de Comunicación Sagrada",
+                        height=520,
+                        value=cargar_conversaciones(limite=40),
+                    )
+                    with gr.Row():
+                        txt = gr.Textbox(
+                            placeholder="Escríbele a Fénix...",
+                            show_label=False,
+                            scale=4,
+                            lines=1
+                        )
+                        send_btn = gr.Button("Enviar 🔥", scale=1)
+
+                    audio_respuesta = gr.Audio(
+                        label="🔊 Voz de Fénix",
+                        autoplay=True,
+                        elem_id="audio_voz_fenix"
+                    )
+
+                with gr.Column(scale=1):
+                    gr.Markdown("### 🗣️ Identidad Vocal")
+                    selector_voz = gr.Dropdown(
+                        choices=[
+                            "Anciano Sabio (Hombre Místico)",
+                            "Eco del Anciano (Voz Serena)",
+                            "Voz de Teshuá (El Retorno)",
+                            "Guía Solemne (Hombre Profundo)",
+                            "Oráculo Celestial (Mujer Sacra)",
+                            "Esencia Cálida (Voz Pausada)"
+                        ],
+                        value="Oráculo Celestial (Mujer Sacra)",
+                        label="Selecciona la voz de Fénix",
+                        interactive=True
+                    )
+
+                    gr.Markdown("### 🎶 Ambiente Musical")
+                    selector_musica = gr.Dropdown(
+                        choices=[
+                            "Silencio",
+                            "Canción 1 (Espiritual)",
+                            "Canción 2 (Meditación)",
+                            "Canción 3 (Sacra)",
+                            "Canción 4 (Armonía)",
+                            "Canción 5 (Celestial)",
+                            "Canción 6 (Mística)"
+                        ],
+                        value="Silencio",
+                        label="Elige la melodía de fondo",
+                        interactive=True
+                    )
+                    musica_status = gr.Markdown("_Atmósfera en silencio._")
+                    musica_player = gr.Audio(
+                        label="Reproductor en Bucle",
+                        loop=True,
+                        autoplay=True
+                    )
+
+        # --- PESTAÑA 2: MEMORIA DOCUMENTAL (SUBIDA DE PDF) ---
+        with gr.TabItem("📄 Memoria Documental"):
+            gr.Markdown("### 📚 Enseña nuevos conocimientos a Fénix")
+            gr.Markdown("Al subir un manuscrito en PDF, el sistema lo segmentará y guardará en Supabase. Fénix recurrirá a él en cada dilema.")
+            with gr.Row():
+                with gr.Column():
+                    pdf_input = gr.File(label="Carga tu archivo PDF", file_types=[".pdf"])
+                with gr.Column():
+                    pdf_status = gr.Markdown("_Esperando un documento sagrado..._")
+
+            gr.Markdown("---")
+            gr.Markdown("### 🗂️ Biblioteca de Fénix")
+            gr.Markdown("Aquí ves todos los libros cargados. Si alguno no encaja con el mensaje de Teshuá, puedes borrarlo (es reversible: vuelves a subir el PDF cuando quieras).")
+            biblioteca_estado = gr.Markdown("_Pulsa actualizar para ver los libros..._")
+            with gr.Row():
+                selector_libro = gr.Dropdown(label="Elige un libro para borrar", choices=[], value=None, interactive=True)
+                btn_actualizar_biblioteca = gr.Button("🔄 Actualizar lista")
+                btn_borrar_libro = gr.Button("🗑️ Borrar libro elegido", variant="stop")
+
+        # --- PESTAÑA 2.5: VISIÓN Y CREACIÓN DE IMÁGENES (IA GRATUITA) ---
+        with gr.TabItem("🖼️ Visión & Creación"):
+            gr.Markdown("### 👁️ Ojo de Fénix — describir imágenes")
+            gr.Markdown("Sube una imagen y Fénix la describirá usando visión gratuita (NVIDIA NIM).")
+            with gr.Row():
+                with gr.Column():
+                    vision_input = gr.Image(label="Sube una imagen", type="filepath")
+                    vision_pregunta = gr.Textbox(
+                        label="¿Qué quieres preguntar sobre la imagen? (opcional)",
+                        placeholder="Ej: ¿Qué simbolismo espiritual ves aquí?"
+                    )
+                    vision_btn = gr.Button("👁️ Describir imagen", variant="primary")
+                with gr.Column():
+                    vision_output = gr.Textbox(label="Descripción de Fénix", lines=10, interactive=False)
+
+            gr.Markdown("---")
+            gr.Markdown("### 🎨 Fragua de Imágenes — creación con IA (gratis)")
+            gr.Markdown("Describe la imagen que quieres crear. Se genera gratis y queda guardada en tu galería de Supabase.")
+            with gr.Row():
+                with gr.Column():
+                    crear_prompt = gr.Textbox(
+                        label="Describe la imagen especial que quieres crear",
+                        placeholder="Ej: un ave fénix dorada renaciendo de las cenizas, estilo místico, fondo negro"
+                    )
+                    crear_btn = gr.Button("🔥 Crear imagen", variant="primary")
+                    crear_status = gr.Markdown("_Esperando tu visión..._")
+                with gr.Column():
+                    crear_output = gr.Image(label="Imagen creada", type="filepath")
+
+            gr.Markdown("#### 🗂️ Galería guardada en Supabase")
+            btn_refrescar_galeria = gr.Button("🔄 Refrescar galería")
+            galeria_imagenes = gr.Gallery(label="Imágenes especiales creadas", columns=4, height="auto")
+
+        # --- PESTAÑA 3: HISTORIAL ---
+        with gr.TabItem("🕰️ Historial"):
+            gr.Markdown("### 🕰️ Conversaciones pasadas con Fénix")
+            gr.Markdown("Conversaciones unificadas en Supabase. Haz clic en actualizar para traer los últimos retos del bot de fondo.")
+            historial_view = gr.Chatbot(
+                label="Historial completo",
+                height=600,
+                value=cargar_conversaciones(limite=300),
+            )
+            with gr.Row():
+                btn_refrescar_historial = gr.Button("🔄 Actualizar historial")
+                btn_revisar_lecciones = gr.Button("🎓 Revisar historial y aprender")
+            estado_revision = gr.Markdown("_Fénix aprende en tiempo real de cada turno._")
+
+        # --- PESTAÑA 4: MULTI-API KEYS Y PROGRESO ---
+        with gr.TabItem("⚙️ Configuración"):
+            gr.Markdown("### 🔮 Preparación del Oráculo (0 a 100)")
+            gr.Markdown("El bot de fondo sube +1 nivel automáticamente cada día, rota entre 6 categorías (miedos, crisis de fe, propósito, debates bíblicos, consejo, alma/más allá) y genera 10 inquietudes diarias, sin repetir temas.")
+            progreso_view = gr.Markdown(estado_progreso_oraculo())
+            btn_refrescar_progreso = gr.Button("🔄 Actualizar progreso")
+
+            gr.Markdown("---")
+            gr.Markdown("### 🔑 Panel de Multi-API Keys en Caliente")
+            gr.Markdown("Configura credenciales alternativas. Requiere el código de administrador (secret `FENIX_ADMIN_PIN` del Space). El sistema rotará automáticamente ante cualquier error de red.")
+            admin_pin = gr.Textbox(label="🔐 Código de administrador", type="password")
+            with gr.Row():
+                with gr.Column():
+                    gr.Markdown("#### 🟢 API Keys de Cerebras (Hasta 4)")
+                    g_key_1 = gr.Textbox(label="Cerebras Key 1 (Principal)", type="password")
+                    g_key_2 = gr.Textbox(label="Cerebras Key 2", type="password")
+                    g_key_3 = gr.Textbox(label="Cerebras Key 3", type="password")
+                    g_key_4 = gr.Textbox(label="Cerebras Key 4", type="password")
+
+                with gr.Column():
+                    gr.Markdown("#### 🟢 API Keys de NVIDIA (Hasta 4)")
+                    n_key_1 = gr.Textbox(label="NVIDIA Key 1 (Principal)", type="password")
+                    n_key_2 = gr.Textbox(label="NVIDIA Key 2", type="password")
+                    n_key_3 = gr.Textbox(label="NVIDIA Key 3", type="password")
+                    n_key_4 = gr.Textbox(label="NVIDIA Key 4", type="password")
+
+            btn_guardar_claves = gr.Button("💾 Aplicar y Registrar Claves", variant="primary")
+            estado_claves = gr.Markdown("_Pool de claves activo y listo._")
+
+    # Gestión de Eventos
+    txt.submit(
+        fn=responder,
+        inputs=[txt, chatbot, selector_voz],
+        outputs=[chatbot, txt, audio_respuesta, historial_view],
+        js=JS_ORBE_PENSANDO
+    )
+    send_btn.click(
+        fn=responder,
+        inputs=[txt, chatbot, selector_voz],
+        outputs=[chatbot, txt, audio_respuesta, historial_view],
+        js=JS_ORBE_PENSANDO
+    )
+    btn_refrescar_historial.click(
+        fn=lambda: cargar_conversaciones(limite=300),
+        outputs=historial_view
+    )
+    btn_revisar_lecciones.click(
+        fn=revisar_conversaciones_pendientes,
+        outputs=estado_revision
+    )
+    vision_btn.click(
+        fn=responder_vision,
+        inputs=[vision_input, vision_pregunta],
+        outputs=[vision_output]
+    )
+    crear_btn.click(
+        fn=responder_creacion_imagen,
+        inputs=[crear_prompt],
+        outputs=[crear_output, crear_status, galeria_imagenes]
+    )
+    btn_refrescar_galeria.click(
+        fn=refrescar_galeria,
+        inputs=[],
+        outputs=[galeria_imagenes]
+    )
+    demo.load(
+        fn=refrescar_galeria,
+        inputs=[],
+        outputs=[galeria_imagenes]
+    )
+
+    pdf_input.change(
+        fn=subir_pdf,
+        inputs=pdf_input,
+        outputs=[pdf_status, selector_libro]
+    )
+    btn_actualizar_biblioteca.click(
+        fn=refrescar_biblioteca,
+        inputs=None,
+        outputs=[biblioteca_estado, selector_libro]
+    )
+    btn_borrar_libro.click(
+        fn=borrar_libro_ui,
+        inputs=selector_libro,
+        outputs=[biblioteca_estado, selector_libro]
+    )
+    selector_musica.change(
+        fn=controlar_musica,
+        inputs=selector_musica,
+        outputs=[musica_player, musica_status]
+    )
+    btn_guardar_claves.click(
+        fn=guardar_claves_usuario,
+        inputs=[admin_pin, g_key_1, g_key_2, g_key_3, g_key_4, n_key_1, n_key_2, n_key_3, n_key_4],
+        outputs=estado_claves
+    )
+    btn_refrescar_progreso.click(
+        fn=estado_progreso_oraculo,
+        outputs=progreso_view
+    )
+
+    fenix_footer()
+
+if __name__ == "__main__":
+    demo.launch(theme=apply_fenix_theme(), css=FENIX_CSS, head=SCRIPT_ANALIZADOR_VOZ)

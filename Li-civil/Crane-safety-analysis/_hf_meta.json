@@ -1,0 +1,89 @@
+{
+ "captured_at": "2026-08-04T13:54:07Z",
+ "hf_metadata": {
+  "_id": "6a3f3f810571791d91f1f6a3",
+  "author": "Li-civil",
+  "cardData": {
+   "colorFrom": "pink",
+   "colorTo": "red",
+   "emoji": "🐢",
+   "license": "mit",
+   "pinned": false,
+   "sdk": "docker",
+   "title": "Crane Safety Analysis"
+  },
+  "createdAt": "2026-06-27T03:12:01.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://li-civil-crane-safety-analysis.hf.space",
+  "id": "Li-civil/Crane-safety-analysis",
+  "lastModified": "2026-07-13T11:38:15.000Z",
+  "likes": 0,
+  "private": false,
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "li-civil-crane-safety-analysis.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": null,
+    "requested": "cpu-basic"
+   },
+   "replicas": {
+    "requested": 1
+   },
+   "stage": "SLEEPING"
+  },
+  "sdk": "docker",
+  "sha": "9e28e618e11cfe03039a6f54451e3afcf8acbb05",
+  "siblings": [
+   {
+    "rfilename": ".gitattributes"
+   },
+   {
+    "rfilename": "Crane_working_1.mp4"
+   },
+   {
+    "rfilename": "Crane_working_2.mp4"
+   },
+   {
+    "rfilename": "Dockerfile"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "app.py"
+   },
+   {
+    "rfilename": "boom_detector.py"
+   },
+   {
+    "rfilename": "index.html"
+   },
+   {
+    "rfilename": "requirements.txt"
+   }
+  ],
+  "subdomain": "li-civil-crane-safety-analysis",
+  "tags": [
+   "docker",
+   "region:us"
+  ],
+  "usedStorage": 50801605
+ },
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "Li-civil/Crane-safety-analysis",
+ "repo_type": "spaces",
+ "sha": "9e28e618e11cfe03039a6f54451e3afcf8acbb05",
+ "web_url": "https://huggingface.co/spaces/Li-civil/Crane-safety-analysis"
+}

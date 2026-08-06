@@ -1,0 +1,9 @@
+{
+  "Model": "Vidar",
+  "year": "2026",
+  "open_source": "unknown",
+  "Metrics": {
+    "Real Action Planner(Wipe Table)": 30,
+    "Real Action Planner(Pour Water)": 10
+  }
+}

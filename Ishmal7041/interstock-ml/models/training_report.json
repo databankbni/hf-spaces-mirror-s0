@@ -1,0 +1,38 @@
+{
+  "trained_at": "2026-05-09T23:24:29.904374",
+  "symbols": [
+    "AAPL",
+    "MSFT",
+    "GOOGL",
+    "AMZN",
+    "TSLA",
+    "META",
+    "NVDA",
+    "AMD",
+    "NFLX",
+    "ABNB"
+  ],
+  "lookback_days": 60,
+  "epochs": 50,
+  "features": [
+    "Open",
+    "High",
+    "Low",
+    "Close",
+    "Volume",
+    "MA_7",
+    "MA_21",
+    "RSI",
+    "MACD",
+    "MACD_Signal",
+    "Price_Change",
+    "Volume_Change",
+    "Volatility"
+  ],
+  "metrics": {
+    "rmse": 4.2727,
+    "mae": 3.056,
+    "mape": 2.2559,
+    "r2_score": 0.9766
+  }
+}

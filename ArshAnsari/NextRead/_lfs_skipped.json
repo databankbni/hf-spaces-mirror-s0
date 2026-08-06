@@ -1,0 +1,26 @@
+{
+ "lfs_not_stored": [
+  {
+   "oid": "3fef5ae2e5b2d31e13701c3e5faed7d133fb5db11f7c47b0ec62d0c8a8d383e7",
+   "path": "DEMO/DEMO.gif",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6M2ZlZjVhZTJlNWIyZDMxZTEzNzAxYzNlNWZhZWQ3ZDEzM2ZiNWRiMTFmN2M0N2IwZWM2MmQwYzhhOGQzODNlNwpzaXplIDQ3OTY3OTM4Cg==",
+   "size": 47967938,
+   "url": "https://huggingface.co/spaces/ArshAnsari/NextRead/resolve/f8505e7b04ce330365e9606f0462e717274e6396/DEMO/DEMO.gif"
+  },
+  {
+   "oid": "34c94a12ca57450fdce0e5526895b9e13142809a4cc2407cb4833d072bd71881",
+   "path": "chroma_db/b33ef57d-c001-4522-901f-68629192fd6c/data_level0.bin",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6MzRjOTRhMTJjYTU3NDUwZmRjZTBlNTUyNjg5NWI5ZTEzMTQyODA5YTRjYzI0MDdjYjQ4MzNkMDcyYmQ3MTg4MQpzaXplIDE2NzYwMDAwCg==",
+   "size": 16760000,
+   "url": "https://huggingface.co/spaces/ArshAnsari/NextRead/resolve/f8505e7b04ce330365e9606f0462e717274e6396/chroma_db/b33ef57d-c001-4522-901f-68629192fd6c/data_level0.bin"
+  },
+  {
+   "oid": "0ef1d71b37b6ee95647d437d6dd6e681f9119cbe5e74ea83614245cebe799ae4",
+   "path": "chroma_db/chroma.sqlite3",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6MGVmMWQ3MWIzN2I2ZWU5NTY0N2Q0MzdkNmRkNmU2ODFmOTExOWNiZTVlNzRlYTgzNjE0MjQ1Y2ViZTc5OWFlNApzaXplIDQ2NDI0MDY0Cg==",
+   "size": 46424064,
+   "url": "https://huggingface.co/spaces/ArshAnsari/NextRead/resolve/f8505e7b04ce330365e9606f0462e717274e6396/chroma_db/chroma.sqlite3"
+  }
+ ],
+ "oversize_not_stored": []
+}

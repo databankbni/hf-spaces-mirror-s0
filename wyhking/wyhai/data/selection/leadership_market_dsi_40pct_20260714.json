@@ -1,0 +1,52 @@
+{
+  "snapshot_id": "leadership_market_dsi_true_buyer_conversion_v1_20260714",
+  "source_workbook": "行情状态_DSI选品与避免回测明细_20260710_收车转化率修正版_20260714.xlsx",
+  "data_window": "2026-04-10 14:38:32 至 2026-07-09 14:38:32",
+  "baseline_unique_vehicle_count": 30246,
+  "qualified_unique_vehicle_count": 12148,
+  "qualification_rate": 0.40163988626595254,
+  "market_states": [
+    "流动行情",
+    "结构性行情",
+    "上涨行情",
+    "常规行情"
+  ],
+  "dsi_labels": [
+    "供不应求",
+    "供需平衡"
+  ],
+  "qualification_rule": "四类行情 AND DSI供不应求/供需平衡",
+  "ranking_rule": "内部90天经营结果仅用于回测验证，不反向决定40%底池入选",
+  "true_buyer_conversion": {
+    "baseline": 0.17882408612326983,
+    "qualified": 0.2424611050643447,
+    "relative_lift": 1.3558638006806734
+  },
+  "sales_conversion_45d": {
+    "baseline": 0.265262,
+    "qualified": 0.330254,
+    "relative_lift": 1.245010593300209
+  },
+  "avg_profit": {
+    "baseline": 3018.346107,
+    "qualified": 4295.585863,
+    "relative_lift": 1.4231588130459554
+  },
+  "avg_turnover_days": {
+    "baseline": 30.558656,
+    "qualified": 26.355092,
+    "relative_ratio": 0.8624427723522919
+  },
+  "loss_rate": {
+    "baseline": 0.236851,
+    "qualified": 0.175578
+  },
+  "sanitization": {
+    "omitted_categories": [
+      "内部流程日期",
+      "内部交易价格与毛利",
+      "内部经营结果标记"
+    ],
+    "purpose": "用户下载仅保留40%准入底池与行情/DSI判定字段"
+  }
+}

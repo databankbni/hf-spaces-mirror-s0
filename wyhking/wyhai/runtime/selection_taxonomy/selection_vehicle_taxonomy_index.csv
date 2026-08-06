@@ -1,0 +1,3172 @@
+series_key,brand,series,body_type,energy_type,vehicle_categories,energy_subtypes,manufacturer_attributes,taxonomy_source,taxonomy_confidence
+01概念车,领克,01概念车,,燃油车,,燃油,,internal_90d,0.88
+212,北汽制造,212,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+212t01,212,212 T01,SUV,燃油车,SUV,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+212经典,北京汽车制造厂,212经典,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+4runner,丰田,4Runner,,燃油车,,燃油,,internal_90d,0.88
+918spyder,保时捷,918 Spyder,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+919hybrid,保时捷,919 Hybrid,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+abtrs3,ABT,ABT RS 3,,燃油车,,燃油,,internal_90d,0.88
+aioni60,埃安,AION i60,SUV,新能源,SUV,新能源,,dcd_ranking+internal_90d,0.96
+aionlx,埃安,AION LX,SUV,新能源,SUV,新能源,,dcd_ranking+internal_90d,0.96
+aionn60,埃安,AION N60,,新能源,,新能源,,internal_90d,0.88
+aionrt,埃安,AION RT,轿车,新能源,轿车,新能源,,dcd_ranking+internal_90d,0.96
+aions,埃安,AION S,轿车,新能源,轿车,新能源,,dcd_ranking+internal_90d,0.96
+aionut,埃安,AION UT,轿车,新能源,轿车,新能源,,dcd_ranking+internal_90d,0.96
+aionutsuper,埃安,AION UT super,,新能源,,新能源,,internal_90d,0.88
+aionv,埃安,AION V,SUV,新能源,SUV,新能源,,dcd_ranking+internal_90d,0.96
+aiony,埃安,AION Y,SUV,新能源,SUV,新能源,,dcd_ranking+internal_90d,0.96
+alfa147,阿尔法·罗密欧,ALFA 147,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+alfa156,阿尔法·罗密欧,ALFA 156,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+alfa159,阿尔法·罗密欧,ALFA 159,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+alfa166,阿尔法·罗密欧,ALFA 166,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+alfa2uettottanta,阿尔法·罗密欧,ALFA 2uettottanta,,燃油车,,燃油,,internal_90d,0.88
+alfa4c,阿尔法·罗密欧,ALFA 4C,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+alfa8c,阿尔法·罗密欧,ALFA 8C,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+alpinab4,ALPINA,ALPINA B4,,燃油车,,燃油,,internal_90d,0.88
+alpinab5,ALPINA,ALPINA B5,,燃油车,,燃油,,internal_90d,0.88
+alpinab7,ALPINA,ALPINA B7,,燃油车,,燃油,,internal_90d,0.88
+altima,日产,Altima,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+amarok,大众,Amarok,,燃油车,,燃油,,internal_90d,0.88
+amggt,奔驰,AMG GT,轿车,燃油车,轿车,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+ariya艾睿雅,日产,ARIYA 艾睿雅,,新能源,,新能源,,internal_90d,0.88
+arteon,大众,Arteon,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+atenza,马自达,ATENZA,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+aventador,兰博基尼,Aventador,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+boxster,保时捷,Boxster,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+broncosport海外,福特,Bronco Sport(海外),,燃油车,,燃油,,internal_90d,0.88
+bronco海外,福特,Bronco(海外),,燃油车,,燃油,,internal_90d,0.88
+c4世嘉,雪铁龙,C4世嘉,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+c4毕加索,雪铁龙,C4毕加索,MPV,燃油车,MPV,燃油,,heuristic_body+internal_90d,0.88
+c520系列,宇通,C520系列,,燃油车,,燃油,,internal_90d,0.88
+c535系列,宇通,C535系列,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+californiat,法拉利,California T,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+cayenne,保时捷,Cayenne,,燃油车,,燃油,,internal_90d,0.88
+cayennecoupé,保时捷,Cayenne Coupé,,燃油车,,燃油,,internal_90d,0.88
+cayennecoupéehybrid,保时捷,Cayenne Coupé E-Hybrid,,新能源,,新能源,,internal_90d,0.88
+cayenneehybrid,保时捷,Cayenne E-Hybrid,,新能源,,新能源,,internal_90d,0.88
+cayman,保时捷,Cayman,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+cinturx,长安,CINTURX,,燃油车,,燃油,,internal_90d,0.88
+clever,荣威,CLEVER,轿车,新能源,轿车,新能源,,heuristic_body+internal_90d,0.88
+cmaxphev,福特,C-MAX PHEV,轿车,新能源,轿车,新能源,,heuristic_body+internal_90d,0.88
+conceptv,本田,CONCEPT V,,燃油车,,燃油,,internal_90d,0.88
+connecteddrive,宝马,ConnectedDrive,,燃油车,,燃油,,internal_90d,0.88
+cosmosports,马自达,Cosmo Sports,,燃油车,,燃油,,internal_90d,0.88
+crosstrek旭豹,斯巴鲁,CROSSTREK旭豹,SUV,燃油车,SUV,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+cs55erock,长安,CS55 E-Rock,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+ctrek蔚领,大众,C-TREK蔚领,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+cygnet,阿斯顿·马丁,Cygnet,,燃油车,,燃油,,internal_90d,0.88
+c型系列,爱旅房车,C型系列,,燃油车,,燃油,,internal_90d,0.88
+daily,依维柯,Daily,,燃油车,,燃油,,internal_90d,0.88
+dmax,五十铃,D-MAX,其他,燃油车,皮卡,燃油,,heuristic_body+internal_90d,0.88
+ds3经典,DS,DS 3经典,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+ds4,DS,DS 4,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+ds4s,DS,DS 4S,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+ds5,DS,DS 5,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+ds5ls,DS,DS 5LS,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+ds5进口,DS,DS 5(进口),轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+ds6,DS,DS 6,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+ds7,DS,DS 7,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+ds9,DS,DS 9,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+egolf,大众,e-Golf,轿车,新能源,轿车,新能源,,heuristic_body+internal_90d,0.88
+eletre,莲花跑车,Eletre,,新能源,,新能源,,internal_90d,0.88
+emeya,莲花跑车,Emeya,,新能源,,新能源,,internal_90d,0.88
+emira,莲花跑车,Emira,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+enp1极湃1,本田,e:NP1 极湃1,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+enp2极湃2,本田,e:NP2 极湃2,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+eo羿欧,现代,EO 羿欧,,新能源,,新能源,,internal_90d,0.88
+espace经典,雷诺,Espace经典,,燃油车,,燃油,,internal_90d,0.88
+evora,莲花跑车,Evora,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+evos,福特,EVOS,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+evsport01,AIM,EV Sport 01,,燃油车,,燃油,,internal_90d,0.88
+ex3功夫牛,吉利几何,EX3 功夫牛,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+eπ007,东风奕派,eπ007,轿车,新能源,轿车,新能源,,heuristic_body+internal_90d,0.88
+eπ008,东风奕派,eπ008,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+eπs08,东风奕派,eπS08,,新能源,,新能源,,internal_90d,0.88
+e全顺,福特,E全顺,其他,新能源,轻客,新能源,,heuristic_body+internal_90d,0.88
+e爱丽舍,东风富康,e爱丽舍,,,,,,unknown,0.0
+e福顺,江铃,E福顺,其他,新能源,轻客,新能源,,heuristic_body+internal_90d,0.88
+e顺达,江铃,E顺达,其他,,,,,heuristic_body,0.72
+firefly萤火虫,firefly萤火虫,firefly萤火虫,,新能源,,新能源,,internal_90d,0.88
+fj酷路泽,丰田,FJ 酷路泽,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+forester森林人,斯巴鲁,FORESTER森林人,SUV,燃油车,SUV,燃油,,dcd_ranking+internal_90d,0.96
+fortuner,丰田,Fortuner,,燃油车,,燃油,,internal_90d,0.88
+freed,本田,Freed,,燃油车,,燃油,,internal_90d,0.88
+gallardo,兰博基尼,Gallardo,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+ghibli,玛莎拉蒂,Ghibli,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+giulia,阿尔法·罗密欧,Giulia,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+giulia朱丽叶,阿尔法·罗密欧,Giulia朱丽叶,轿车,燃油车,轿车,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+grancabrio,玛莎拉蒂,GranCabrio,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+gransport,玛莎拉蒂,GranSport,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+granturismo,玛莎拉蒂,GranTurismo,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+grecale,玛莎拉蒂,Grecale,,燃油车,,燃油,,internal_90d,0.88
+grecalefolgore,玛莎拉蒂,Grecale Folgore,,新能源,,新能源,,internal_90d,0.88
+h1辉翼,现代,H-1辉翼,,燃油车,,燃油,,internal_90d,0.88
+harrier海外,丰田,Harrier(海外),,燃油车,,燃油,,internal_90d,0.88
+hiace,丰田,Hiace,其他,燃油车,,燃油,,heuristic_body+internal_90d,0.88
+hilux,丰田,Hilux,其他,燃油车,皮卡,燃油,,heuristic_body+internal_90d,0.88
+huracán,兰博基尼,Huracán,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+icar03,iCAR,iCAR 03,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+icar03t,iCAR,iCAR 03T,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+icarv23,iCAR,iCAR V23,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+icarv27,iCAR,iCAR V27,SUV,新能源,SUV,新能源,,dcd_ranking+internal_90d,0.96
+icar超级v23,iCAR,iCAR超级V23,SUV,新能源,SUV,新能源,,dcd_ranking+internal_90d,0.96
+id4crozz,大众,ID.4 CROZZ,SUV,新能源,SUV,新能源,,dcd_ranking+internal_90d,0.96
+id4x,大众,ID.4 X,SUV,新能源,SUV,新能源,,dcd_ranking+internal_90d,0.96
+id6crozz,大众,ID.6 CROZZ,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+id6x,大众,ID.6 X,SUV,新能源,SUV,新能源,,dcd_ranking+internal_90d,0.96
+id7vizzion,大众,ID.7 VIZZION,轿车,新能源,轿车,新能源,,dcd_ranking+internal_90d,0.96
+idera9x,大众,ID. ERA 9X,SUV,新能源,SUV,新能源,,dcd_ranking+internal_90d,0.96
+ilounge朗智,广汽传祺,i-lounge朗智,,燃油车,,燃油,,internal_90d,0.88
+impreza翼豹,斯巴鲁,IMPREZA翼豹,,燃油车,,燃油,,internal_90d,0.88
+imsas级,英飒,IMSA S级,,燃油车,,燃油,,internal_90d,0.88
+insight,本田,INSIGHT,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+ioniq5n艾尼氪5n,现代,IONIQ 5 N(艾尼氪5N),SUV,新能源,SUV,新能源,,dcd_ranking+internal_90d,0.96
+ioniq5艾尼氪5,现代,IONIQ 5(艾尼氪 5),,燃油车,,燃油,,internal_90d,0.88
+iq傲歌,凯迪拉克,IQ傲歌,,新能源,,新能源,,internal_90d,0.88
+iq锐歌,凯迪拉克,IQ锐歌,,新能源,,新能源,,internal_90d,0.88
+kite,现代,KITE,,燃油车,,燃油,,internal_90d,0.88
+kxcross,起亚,KX CROSS,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+l7h,北京汽车制造厂,L7H,,新能源,,新能源,,internal_90d,0.88
+legacy力狮,斯巴鲁,LEGACY力狮,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+leon,西雅特,LEON,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+levante,玛莎拉蒂,Levante,其他,燃油车,,燃油,,heuristic_body+internal_90d,0.88
+levctx,吉利银河,LEVC TX,,新能源,,新能源,,internal_90d,0.88
+lionpeugeottypeva,Lion-Peugeot,Lion-Peugeot Type VA,,燃油车,,燃油,,internal_90d,0.88
+lite,北汽新能源,LITE,轿车,新能源,轿车,新能源,,heuristic_body+internal_90d,0.88
+lorinserls系列,Lorinser,Lorinser LS系列,,燃油车,,燃油,,internal_90d,0.88
+lorinserlw系列,Lorinser,Lorinser LW系列,,燃油车,,燃油,,internal_90d,0.88
+lorinservs系列,Lorinser,Lorinser VS系列,,燃油车,,燃油,,internal_90d,0.88
+lummaclrx7,LUMMA,LUMMA CLR X7,,燃油车,,燃油,,internal_90d,0.88
+macan,保时捷,Macan,,燃油车,,燃油,,internal_90d,0.88
+macanev,保时捷,Macan EV,,新能源,,新能源,,internal_90d,0.88
+masterceo,纳智捷,MASTER CEO,,燃油车,,燃油,,internal_90d,0.88
+mattu,猎豹汽车,Mattu,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+metris,奔驰,Metris,,燃油车,,燃油,,internal_90d,0.88
+metrisms500,Lorinser,Metris MS500,,燃油车,,燃油,,internal_90d,0.88
+mg3,名爵,MG 3,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+mg4,名爵,MG4,轿车,新能源,轿车,新能源,,dcd_ranking+internal_90d,0.96
+mg4ev,名爵,MG4 EV,轿车,新能源,轿车,新能源,,heuristic_body+internal_90d,0.88
+mg4x,名爵,MG 4X,SUV,新能源,SUV,新能源,,dcd_ranking,0.96
+mg5,名爵,MG5,轿车,燃油车,轿车,燃油,,dcd_ranking+internal_90d,0.96
+mg5天蝎座,名爵,MG5天蝎座,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+mg6,名爵,MG6,轿车,燃油车,轿车,燃油,,dcd_ranking+internal_90d,0.96
+mg6phev,名爵,MG6 PHEV,轿车,新能源,轿车,新能源,,heuristic_body+internal_90d,0.88
+mg7,名爵,MG7,轿车,燃油车,轿车,燃油,,dcd_ranking+internal_90d,0.96
+mgcyberster,名爵,MG Cyberster,轿车,新能源,轿车,新能源,,heuristic_body+internal_90d,0.88
+mges5,名爵,MG ES5,SUV,新能源,SUV,新能源,,dcd_ranking+internal_90d,0.96
+mghs,名爵,MG HS,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+mghsphev,名爵,MG HS PHEV,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+mgone,名爵,MG ONE,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+mgzs,名爵,MG ZS,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+mg领航,名爵,MG领航,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+mg领航phev,名爵,MG领航PHEV,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+mini,MINI,MINI,轿车,燃油车,轿车,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+minibeachcomber,MINI,MINI BEACHCOMBER,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+miniclubman,MINI,MINI CLUBMAN,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+minicooperev进口,MINI,MINI COOPER EV(进口),轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+minicountryman,MINI,MINI COUNTRYMAN,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+minicountrymanelectric,MINI,MINI COUNTRYMAN ELECTRIC,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+minicoupe,MINI,MINI COUPE,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+minijcw,MINI,MINI JCW,轿车,燃油车,轿车,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+minijcwclubman,MINI,MINI JCW CLUBMAN,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+minijcwcountryman,MINI,MINI JCW COUNTRYMAN,轿车,燃油车,轿车,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+minimo,西雅特,Minimo,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+minipaceman,MINI,MINI PACEMAN,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+miniroadster,MINI,MINI ROADSTER,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+mirai,丰田,Mirai,轿车,燃油车,轿车,燃油,,dcd_ranking,0.96
+model3,特斯拉,Model 3,轿车,新能源,轿车,新能源,,heuristic_body+internal_90d,0.88
+model3进口,特斯拉,Model 3(进口),轿车,新能源,轿车,新能源,,heuristic_body+internal_90d,0.88
+models,特斯拉,Model S,轿车,新能源,轿车,新能源,,heuristic_body+internal_90d,0.88
+modelx,特斯拉,Model X,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+modely,特斯拉,Model Y,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+modelyl,特斯拉,Model Y L,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+mustang,福特,Mustang,轿车,燃油车,轿车,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+mux牧游侠,五十铃,mu-X牧游侠,,燃油车,,燃油,,internal_90d,0.88
+mvision,极氪,M-Vision,,燃油车,,燃油,,internal_90d,0.88
+nan,nan,nan,,燃油车,,燃油,,internal_90d,0.88
+omega,欧宝,Omega,MPV,燃油车,MPV,燃油,,heuristic_body+internal_90d,0.88
+outback傲虎,斯巴鲁,OUTBACK傲虎,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+panamera,保时捷,Panamera,,燃油车,,燃油,,internal_90d,0.88
+panameraehybrid,保时捷,Panamera E-Hybrid,,新能源,,新能源,,internal_90d,0.88
+passat,大众,Passat,,燃油车,,燃油,,internal_90d,0.88
+passat领驭,大众,Passat领驭,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+pathfinder,日产,Pathfinder,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+pn货车,五菱汽车,PN货车,其他,燃油车,,燃油,,heuristic_body+internal_90d,0.88
+polestar2,Polestar极星,Polestar 2,,新能源,,新能源,,internal_90d,0.88
+polestar4,Polestar极星,Polestar 4,,新能源,,新能源,,internal_90d,0.88
+polo,大众,Polo,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+polo海外,大众,Polo(海外),轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+portofino,法拉利,Portofino,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+pt漫步者,克莱斯勒,PT 漫步者,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+purosangue,法拉利,Purosangue,,燃油车,,燃油,,internal_90d,0.88
+qq3ev,奇瑞QQ,QQ3 EV,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+qq冰淇淋,奇瑞,QQ冰淇淋,轿车,新能源,轿车,新能源,,heuristic_body+internal_90d,0.88
+quattro,奥迪,quattro,,燃油车,,燃油,,internal_90d,0.88
+ram1500rev,RAM,RAM 1500 Rev,其他,燃油车,,燃油,,heuristic_body+internal_90d,0.88
+rampage,道奇,Rampage,其他,燃油车,,燃油,,heuristic_body+internal_90d,0.88
+ramtrucks,RAM,RAM Trucks,其他,燃油车,,燃油,,heuristic_body+internal_90d,0.88
+rapide,阿斯顿·马丁,Rapide,,燃油车,,燃油,,internal_90d,0.88
+rav4荣放,丰田,RAV4荣放,SUV,燃油车,SUV,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+rav4荣放phev,丰田,RAV4荣放PHEV,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+rav4荣放双擎e+,丰田,RAV4荣放双擎E+,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+remax瑞迈,五十铃,RE-MAX 瑞迈,其他,燃油车,皮卡,燃油,,heuristic_body+internal_90d,0.88
+s5turbo,纳智捷,S5 TURBO,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+saab93,萨博,Saab 9-3,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+saab95,萨博,Saab 9-5,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+savana,GMC,SAVANA,其他,燃油车,,燃油,,heuristic_body+internal_90d,0.88
+sienna,丰田,Sienna,,燃油车,,燃油,,internal_90d,0.88
+sitechdev1,新特汽车,SITECH DEV 1,,新能源,,新能源,,internal_90d,0.88
+skyev01,东风风神,SKY EV01,,新能源,,新能源,,internal_90d,0.88
+sls赛威,凯迪拉克,SLS赛威,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+smarteqfortwo,smart,Smart EQ Fortwo,轿车,新能源,轿车,新能源,,heuristic_body+internal_90d,0.88
+smartforfour,smart,smart forfour,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+smartforjeremy,smart,Smart Forjeremy,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+smartfortwo,smart,smart fortwo,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+smart精灵#1,smart,smart精灵#1,轿车,新能源,轿车,新能源,,dcd_ranking+heuristic_body+internal_90d,0.96
+smart精灵#3,smart,smart精灵#3,轿车,新能源,轿车,新能源,,dcd_ranking+heuristic_body+internal_90d,0.96
+smart精灵#5,smart,smart精灵#5,轿车,新能源,轿车,新能源,,dcd_ranking+heuristic_body+internal_90d,0.96
+smart精灵#5ehd超级电混,smart,smart精灵#5 EHD超级电混,轿车,新能源,轿车,新能源,,dcd_ranking+heuristic_body+internal_90d,0.96
+smart精灵#6ehd超级电混,smart,smart精灵#6 EHD超级电混,轿车,新能源,轿车,新能源,,dcd_ranking,0.96
+sportage,起亚,SPORTAGE,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+sprinter,奔驰,Sprinter,其他,燃油车,,燃油,,heuristic_body+internal_90d,0.88
+sprinterls500,Lorinser,Sprinter LS500,其他,燃油车,,燃油,,heuristic_body+internal_90d,0.88
+ssdolphin,松散机车,SS DOLPHIN,,新能源,,新能源,,internal_90d,0.88
+stelvio,阿尔法·罗密欧,Stelvio,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+stelvio斯坦维,阿尔法·罗密欧,Stelvio斯坦维,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+supra,丰田,Supra,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+taga达咖,五十铃,TAGA达咖,,燃油车,,燃油,,internal_90d,0.88
+taycan,保时捷,Taycan,,新能源,,新能源,,internal_90d,0.88
+tiguan,大众,Tiguan,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+tonale托纳利,阿尔法·罗密欧,Tonale托纳利,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+tribeca驰鹏,斯巴鲁,TRIBECA驰鹏,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+troc探歌,大众,T-ROC探歌,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+u5ev,纳智捷,U5 EV,,新能源,,新能源,,internal_90d,0.88
+u5suv,纳智捷,U5 SUV,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+u6turbo,纳智捷,U6 TURBO,,燃油车,,燃油,,internal_90d,0.88
+u7turbo,纳智捷,U7 TURBO,,燃油车,,燃油,,internal_90d,0.88
+ulster,阿斯顿·马丁,Ulster,,燃油车,,燃油,,internal_90d,0.88
+urus,兰博基尼,Urus,,燃油车,,燃油,,internal_90d,0.88
+v12speedster,阿斯顿·马丁,V12 SPEEDSTER,,燃油车,,燃油,,internal_90d,0.88
+v12vantage,阿斯顿·马丁,V12 Vantage,其他,燃油车,,燃油,,heuristic_body+internal_90d,0.88
+v3菱悦,东南,V3菱悦,,燃油车,,燃油,,internal_90d,0.88
+v5菱致,东南,V5菱致,,燃油车,,燃油,,internal_90d,0.88
+v6菱仕,东南,V6菱仕,,燃油车,,燃油,,internal_90d,0.88
+valhalla,阿斯顿·马丁,Valhalla,,新能源,,新能源,,internal_90d,0.88
+vanlife系列,威尔特芬,Vanlife系列,其他,燃油车,,燃油,,heuristic_body+internal_90d,0.88
+vantage,阿斯顿·马丁,Vantage,其他,燃油车,,燃油,,heuristic_body+internal_90d,0.88
+velite5,别克,VELITE 5,轿车,新能源,轿车,新能源,,heuristic_body+internal_90d,0.88
+veloster飞思,现代,Veloster飞思,,燃油车,,燃油,,internal_90d,0.88
+vgvtx7,中国重汽VGV,VGV TX7,,燃油车,,燃油,,internal_90d,0.88
+vgvu70,中国重汽VGV,VGV U70,,燃油车,,燃油,,internal_90d,0.88
+vgvu70pro,中国重汽VGV,VGV U70Pro,,燃油车,,燃油,,internal_90d,0.88
+vgvu75plus,中国重汽VGV,VGV U75PLUS,,燃油车,,燃油,,internal_90d,0.88
+wish,丰田,WISH,,燃油车,,燃油,,internal_90d,0.88
+xcclassic,沃尔沃,XC Classic,,燃油车,,燃油,,internal_90d,0.88
+yarisl致享,丰田,YARIS L 致享,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+yarisl致炫,丰田,YARIS L 致炫,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+yaris进口,丰田,YARIS(进口),轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+yeti,斯柯达,Yeti,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+yeti进口,斯柯达,Yeti(进口),SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+young光小新,电动屋,YOUNG光小新,,新能源,,新能源,,internal_90d,0.88
+yukon育空,GMC,YUKON育空,,燃油车,,燃油,,internal_90d,0.88
+zeekr001,极氪,ZEEKR 001,轿车,新能源,轿车,新能源,,heuristic_body+internal_90d,0.88
+zeekr001fr,极氪,ZEEKR 001 FR,轿车,新能源,轿车,新能源,,heuristic_body+internal_90d,0.88
+zeekr007,极氪,ZEEKR 007,轿车,新能源,轿车,新能源,,dcd_ranking+heuristic_body+internal_90d,0.96
+zeekr007gt,极氪,ZEEKR 007GT,轿车,新能源,轿车,新能源,,dcd_ranking+heuristic_body+internal_90d,0.96
+zeekr009,极氪,ZEEKR 009,MPV,新能源,MPV,新能源,,heuristic_body+internal_90d,0.88
+zeekr7x,极氪,ZEEKR 7X,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+zeekr8x,极氪,ZEEKR 8X,,新能源,,新能源,,internal_90d,0.88
+zeekr9x,极氪,ZEEKR 9X,,新能源,,新能源,,internal_90d,0.88
+zeekrmix,极氪,ZEEKR MIX,,新能源,,新能源,,internal_90d,0.88
+zeekrx,极氪,ZEEKR X,,新能源,,新能源,,internal_90d,0.88
+zrv致在,本田,ZR-V 致在,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+一汽nh2,一汽,一汽NH2,,燃油车,,燃油,,internal_90d,0.88
+一汽丰田bz4x,丰田,一汽丰田bZ4X,轿车,新能源,轿车,新能源,,heuristic_body+internal_90d,0.88
+万象t01,万象汽车,万象T01,,新能源,,新能源,,internal_90d,0.88
+三菱l200,三菱,三菱L200,,燃油车,,燃油,,internal_90d,0.88
+三菱戈蓝,三菱,三菱戈蓝,,燃油车,,燃油,,internal_90d,0.88
+上喆v级,上喆,上喆V级,,燃油车,,燃油,,internal_90d,0.88
+上汽大通maxusd60,上汽大通MAXUS,上汽大通MAXUS D60,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+上汽大通maxusd90,上汽大通MAXUS,上汽大通MAXUS D90,MPV,燃油车,MPV,燃油,,heuristic_body+internal_90d,0.88
+上汽大通maxusd90pro,上汽大通MAXUS,上汽大通MAXUS D90 Pro,MPV,燃油车,MPV,燃油,,heuristic_body+internal_90d,0.88
+上汽大通maxusev30,上汽大通MAXUS,上汽大通MAXUS EV30,轿车,新能源,轿车,新能源,,heuristic_body+internal_90d,0.88
+上汽大通maxusg10,上汽大通MAXUS,上汽大通MAXUS G10,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+上汽大通maxusg20,上汽大通MAXUS,上汽大通MAXUS G20,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+上汽大通maxusg50,上汽大通MAXUS,上汽大通MAXUS G50,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+上汽大通maxusg90,上汽大通MAXUS,上汽大通MAXUS G90,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+上汽大通maxusv80,上汽大通MAXUS,上汽大通MAXUS V80,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+上汽大通maxusv80房车,上汽大通MAXUS,上汽大通MAXUS V80房车,其他,燃油车,,燃油,,heuristic_body+internal_90d,0.88
+上汽大通maxusv90,上汽大通MAXUS,上汽大通MAXUS V90,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+上汽大通maxus新途v80,上汽大通MAXUS,上汽大通MAXUS 新途V80,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+上汽牛魔王,大通,上汽牛•魔王,,燃油车,,燃油,,internal_90d,0.88
+与众06,大众,与众06,,新能源,,新能源,,internal_90d,0.88
+与众07,大众,与众07,轿车,新能源,轿车,新能源,,heuristic_body+internal_90d,0.88
+与众08,大众,与众08,,,,,,unknown,0.0
+世嘉,雪铁龙,世嘉,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+世极,世极,世极,,燃油车,,燃油,,internal_90d,0.88
+世纪,别克,世纪,,燃油车,,燃油,,internal_90d,0.88
+世纪星,红旗,世纪星,,燃油车,,燃油,,internal_90d,0.88
+世锐phev,广汽集团,世锐PHEV,,新能源,,新能源,,internal_90d,0.88
+丘比特,海马,丘比特,,燃油车,,燃油,,internal_90d,0.88
+东南a5翼舞,东南,东南A5翼舞,,燃油车,,燃油,,internal_90d,0.88
+东南dx3,东南,东南DX3,,燃油车,,燃油,,internal_90d,0.88
+东南dx3ev,东南,东南DX3 EV,,新能源,,新能源,,internal_90d,0.88
+东南dx5,东南,东南DX5,,燃油车,,燃油,,internal_90d,0.88
+东南dx7,东南,东南DX7,,燃油车,,燃油,,internal_90d,0.88
+东南dx8,东南,东南DX8,,燃油车,,燃油,,internal_90d,0.88
+东南dx8s,东南,东南DX8S,,燃油车,,燃油,,internal_90d,0.88
+东方之子,奇瑞,东方之子,,燃油车,,燃油,,internal_90d,0.88
+东风a9,东风风神,东风A9,,燃油车,,燃油,,internal_90d,0.88
+东风小康c31,东风小康,东风小康C31,,燃油车,微面,燃油,,internal_90d,0.88
+东风小康c35,东风小康,东风小康C35,,燃油车,微面,燃油,,internal_90d,0.88
+东风小康c36,东风小康,东风小康C36,,燃油车,微面,燃油,,internal_90d,0.88
+东风小康c36ⅱ,东风小康,东风小康C36Ⅱ,,燃油车,微面,燃油,,internal_90d,0.88
+东风小康c37,东风小康,东风小康C37,,燃油车,微面,燃油,,internal_90d,0.88
+东风小康c51,东风小康,东风小康C51,,燃油车,微面,燃油,,internal_90d,0.88
+东风小康c52,东风小康,东风小康C52,,燃油车,微面,燃油,,internal_90d,0.88
+东风小康c56,东风小康,东风小康C56,,燃油车,微面,燃油,,internal_90d,0.88
+东风小康c71,东风小康,东风小康C71,,燃油车,微面,燃油,,internal_90d,0.88
+东风小康d52,东风小康,东风小康D52,,燃油车,微面,燃油,,internal_90d,0.88
+东风小康d71,东风小康,东风小康D71,,燃油车,微面,燃油,,internal_90d,0.88
+东风小康ec36,东风小康,东风小康EC36,,新能源,微面,新能源,,internal_90d,0.88
+东风小康ec36ⅱ,东风小康,东风小康EC36Ⅱ,,新能源,微面,新能源,,internal_90d,0.88
+东风小康k01,东风小康,东风小康K01,,燃油车,微面,燃油,,internal_90d,0.88
+东风小康k05s,东风小康,东风小康K05S,,燃油车,微面,燃油,,internal_90d,0.88
+东风小康k07,东风小康,东风小康K07,轿车,燃油车,微面,燃油,,heuristic_body+internal_90d,0.88
+东风小康k07ii,东风小康,东风小康K07II,轿车,燃油车,微面,燃油,,heuristic_body+internal_90d,0.88
+东风小康k07s,东风小康,东风小康K07S,轿车,燃油车,微面,燃油,,heuristic_body+internal_90d,0.88
+东风小康k17,东风小康,东风小康K17,,燃油车,微面,燃油,,internal_90d,0.88
+东风小康v07s,东风小康,东风小康V07S,轿车,燃油车,微面,燃油,,heuristic_body+internal_90d,0.88
+东风小康v27,东风小康,东风小康V27,,燃油车,微面,燃油,,internal_90d,0.88
+东风小康v29,东风小康,东风小康V29,,燃油车,微面,燃油,,internal_90d,0.88
+东风本田mnv,思铭,东风本田M-NV,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+东风本田s7,本田,东风本田S7,SUV,新能源,SUV,新能源,,dcd_ranking+internal_90d,0.96
+东风本田xnv,思铭,东风本田X-NV,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+东风瑞泰特em10,东风·瑞泰特,东风·瑞泰特EM10,,新能源,,新能源,,internal_90d,0.88
+东风皮卡,东风,东风皮卡,其他,燃油车,皮卡,燃油,,heuristic_body+internal_90d,0.88
+东风纳米ex1,东风纳米,东风纳米EX1,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+东风风度mx5,东风风度,东风风度MX5,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+东风风度mx6,东风风度,东风风度MX6,,燃油车,,燃油,,internal_90d,0.88
+东风风神a30,东风风神,东风风神A30,,燃油车,,燃油,,internal_90d,0.88
+东风风神a60,东风风神,东风风神A60,,燃油车,,燃油,,internal_90d,0.88
+东风风神ax3,东风风神,东风风神AX3,,燃油车,,燃油,,internal_90d,0.88
+东风风神ax4,东风风神,东风风神AX4,,燃油车,,燃油,,internal_90d,0.88
+东风风神ax5,东风风神,东风风神AX5,,燃油车,,燃油,,internal_90d,0.88
+东风风神ax7,东风风神,东风风神AX7,,燃油车,,燃油,,internal_90d,0.88
+东风风神e30,东风风神,东风风神E30,,新能源,,新能源,,internal_90d,0.88
+东风风神e70,东风风神,东风风神E70,,新能源,,新能源,,internal_90d,0.88
+东风风神h30,东风风神,东风风神H30,,燃油车,,燃油,,internal_90d,0.88
+东风风神l60,东风风神,东风风神L60,,燃油车,,燃油,,internal_90d,0.88
+东风风神l8phev,东风风神,东风风神L8 PHEV,SUV,新能源,SUV,新能源,,dcd_ranking+internal_90d,0.96
+东风风神s30,东风风神,东风风神S30,,燃油车,,燃油,,internal_90d,0.88
+中兴1949,中兴,中兴1949,,燃油车,,燃油,,internal_90d,0.88
+中兴1986,中兴,中兴1986,,燃油车,,燃油,,internal_90d,0.88
+中兴c3,中兴,中兴C3,,燃油车,,燃油,,internal_90d,0.88
+中兴gx3,中兴,中兴GX3,,燃油车,,燃油,,internal_90d,0.88
+中华h220,中华,中华H220,,燃油车,,燃油,,internal_90d,0.88
+中华h230,中华,中华H230,,燃油车,,燃油,,internal_90d,0.88
+中华h230ev,中华,中华H230 EV,,新能源,,新能源,,internal_90d,0.88
+中华h3,中华,中华H3,,燃油车,,燃油,,internal_90d,0.88
+中华h320,中华,中华H320,,燃油车,,燃油,,internal_90d,0.88
+中华h330,中华,中华H330,,燃油车,,燃油,,internal_90d,0.88
+中华h530,中华,中华H530,,燃油车,,燃油,,internal_90d,0.88
+中华v3,中华,中华V3,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+中华v5,中华,中华V5,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+中华v6,中华,中华V6,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+中华v7,中华,中华V7,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+中华尊驰,中华,中华尊驰,,燃油车,,燃油,,internal_90d,0.88
+中华骏捷,中华,中华骏捷,,燃油车,,燃油,,internal_90d,0.88
+中华骏捷cross,中华,中华骏捷Cross,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+中华骏捷frv,中华,中华骏捷FRV,,燃油车,,燃油,,internal_90d,0.88
+中华骏捷fsv,中华,中华骏捷FSV,,燃油车,,燃油,,internal_90d,0.88
+中国龙,吉利汽车,中国龙,,燃油车,,燃油,,internal_90d,0.88
+中房之星系列,中房房车,中房之星系列,,新能源,,新能源,,internal_90d,0.88
+丰田86,丰田,丰田86,,燃油车,,燃油,,internal_90d,0.88
+丰田bz3,丰田,丰田bZ3,轿车,新能源,轿车,新能源,,dcd_ranking+internal_90d,0.96
+丰田bz5,丰田,丰田bZ5,SUV,新能源,SUV,新能源,,dcd_ranking+internal_90d,0.96
+丰田chr,丰田,丰田C-HR,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+丰田chrev,丰田,丰田C-HR EV,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+丰田rav4进口,丰田,丰田RAV4(进口),SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+丰田世纪,丰田,丰田世纪,,燃油车,,燃油,,internal_90d,0.88
+丰顺,力帆汽车,丰顺,,燃油车,,燃油,,internal_90d,0.88
+乐福,卡文汽车,乐福,,新能源,,新能源,,internal_90d,0.88
+乐途,力帆汽车,乐途,,燃油车,,燃油,,internal_90d,0.88
+乐道l60,乐道,乐道L60,,新能源,,新能源,,internal_90d,0.88
+乐道l80,乐道,乐道L80,,新能源,,新能源,,internal_90d,0.88
+乐道l90,乐道,乐道L90,,新能源,,新能源,,internal_90d,0.88
+乐道纯电轿车,乐道,乐道纯电轿车,,燃油车,,燃油,,internal_90d,0.88
+乐风,雪佛兰,乐风,,燃油车,,燃油,,internal_90d,0.88
+乐风rv,雪佛兰,乐风RV,,燃油车,,燃油,,internal_90d,0.88
+乐驰,宝骏,乐驰,,燃油车,,燃油,,internal_90d,0.88
+乐骋,雪佛兰,乐骋,,燃油车,,燃油,,internal_90d,0.88
+九龙a4,九龙,九龙A4,,燃油车,,燃油,,internal_90d,0.88
+九龙a5,九龙,九龙A5,,燃油车,,燃油,,internal_90d,0.88
+九龙a6,九龙,九龙A6,,燃油车,,燃油,,internal_90d,0.88
+九龙em3,九龙,九龙EM3,,新能源,,新能源,,internal_90d,0.88
+予风ev50客运版,予风汽车,予风EV50客运版,,新能源,,新能源,,internal_90d,0.88
+予风黄金仓,予风汽车,予风黄金仓,,新能源,,新能源,,internal_90d,0.88
+予风黄金仓plus,予风汽车,予风黄金仓PLUS,,新能源,,新能源,,internal_90d,0.88
+云100,众泰,云100,,新能源,,新能源,,internal_90d,0.88
+云兔,云度,云兔,,新能源,,新能源,,internal_90d,0.88
+云度π1,云度,云度π1,,新能源,,新能源,,internal_90d,0.88
+云度π3,云度,云度π3,,新能源,,新能源,,internal_90d,0.88
+云朵,宝骏,云朵,,新能源,,新能源,,internal_90d,0.88
+云逸c4aircross,雪铁龙,云逸 C4 AIRCROSS,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+五十铃皮卡,五十铃,五十铃皮卡,其他,燃油车,皮卡,燃油,,heuristic_body+internal_90d,0.88
+五菱730,五菱汽车,五菱730,,燃油车,,燃油,,internal_90d,0.88
+五菱airev晴空,五菱汽车,五菱Air ev晴空,,新能源,,新能源,,internal_90d,0.88
+五菱e10,五菱汽车,五菱E10,,新能源,,新能源,,internal_90d,0.88
+五菱e5,五菱汽车,五菱E5,,新能源,,新能源,,internal_90d,0.88
+五菱ev50,五菱汽车,五菱EV50,,新能源,,新能源,,internal_90d,0.88
+五菱ev80,五菱汽车,五菱EV80,,新能源,,新能源,,internal_90d,0.88
+五菱nanoev,五菱汽车,五菱Nano EV,,新能源,,新能源,,internal_90d,0.88
+五菱之光,五菱汽车,五菱之光,,燃油车,微面,燃油,,internal_90d,0.88
+五菱之光ev,五菱汽车,五菱之光EV,其他,新能源,微面,新能源,,dcd_ranking+heuristic_body+internal_90d,0.96
+五菱之光v,五菱汽车,五菱之光V,,燃油车,微面,燃油,,internal_90d,0.88
+五菱之光小卡,五菱汽车,五菱之光小卡,,燃油车,微卡,燃油,,dcd_ranking+internal_90d,0.96
+五菱佳辰,五菱汽车,五菱佳辰,MPV,燃油车,MPV,燃油,,dcd_ranking+internal_90d,0.96
+五菱兴旺,五菱汽车,五菱兴旺,,燃油车,,燃油,,internal_90d,0.88
+五菱宏光,五菱汽车,五菱宏光,其他,燃油车,微面,燃油,,heuristic_body+internal_90d,0.88
+五菱宏光miniev,五菱汽车,五菱宏光MINIEV,轿车,新能源,轿车,新能源,,dcd_ranking+heuristic_body+internal_90d,0.96
+五菱宏光plus,五菱汽车,五菱宏光PLUS,其他,燃油车,微面,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+五菱宏光s3,五菱汽车,五菱宏光S3,其他,燃油车,微面,燃油,,heuristic_body+internal_90d,0.88
+五菱宏光v,五菱汽车,五菱宏光V,其他,燃油车,微面,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+五菱宏光增程版,五菱汽车,五菱宏光增程版,其他,新能源,微面,新能源,,dcd_ranking+heuristic_body+internal_90d,0.96
+五菱宏光纯电版,五菱汽车,五菱宏光纯电版,其他,新能源,微面,新能源,,dcd_ranking+heuristic_body+internal_90d,0.96
+五菱征程,五菱汽车,五菱征程,MPV,燃油车,MPV,燃油,,dcd_ranking+internal_90d,0.96
+五菱征程ev,五菱汽车,五菱征程EV,,新能源,,新能源,,internal_90d,0.88
+五菱征程经典,五菱汽车,五菱征程经典,,燃油车,,燃油,,internal_90d,0.88
+五菱征途,五菱汽车,五菱征途,,燃油车,,燃油,,internal_90d,0.88
+五菱扬光,五菱汽车,五菱扬光,其他,新能源,,新能源,,dcd_ranking+heuristic_body+internal_90d,0.96
+五菱扬光电卡,五菱汽车,五菱扬光电卡,其他,,,,,heuristic_body,0.72
+五菱星云,五菱汽车,五菱星云,,燃油车,,燃油,,internal_90d,0.88
+五菱星光ev,五菱汽车,五菱星光EV,轿车,新能源,轿车,新能源,,dcd_ranking+heuristic_body+internal_90d,0.96
+五菱星光phev,五菱汽车,五菱星光PHEV,轿车,新能源,轿车,新能源,,dcd_ranking+heuristic_body+internal_90d,0.96
+五菱星光sev,五菱汽车,五菱星光S EV,轿车,新能源,轿车,新能源,,dcd_ranking+heuristic_body+internal_90d,0.96
+五菱星光sphev,五菱汽车,五菱星光S PHEV,轿车,新能源,轿车,新能源,,dcd_ranking+heuristic_body+internal_90d,0.96
+五菱星辰,五菱汽车,五菱星辰,,燃油车,,燃油,,internal_90d,0.88
+五菱星驰,五菱汽车,五菱星驰,SUV,燃油车,SUV,燃油,,dcd_ranking+internal_90d,0.96
+五菱电卡,五菱汽车,五菱电卡,,新能源,,新能源,,internal_90d,0.88
+五菱缤果,五菱汽车,五菱缤果,轿车,新能源,轿车,新能源,,dcd_ranking+internal_90d,0.96
+五菱缤果plus,五菱汽车,五菱缤果PLUS,SUV,新能源,SUV,新能源,,dcd_ranking+internal_90d,0.96
+五菱荣光,五菱汽车,五菱荣光,,燃油车,微面,燃油,,internal_90d,0.88
+五菱荣光ev,五菱汽车,五菱荣光EV,,新能源,微面,新能源,,dcd_ranking+internal_90d,0.96
+五菱荣光v,五菱汽车,五菱荣光V,,燃油车,微面,燃油,,internal_90d,0.88
+五菱荣光小卡,五菱汽车,五菱荣光小卡,,燃油车,微卡,燃油,,dcd_ranking+internal_90d,0.96
+五菱荣光小卡ev,五菱汽车,五菱荣光小卡EV,,,微卡,,,unknown,0.0
+五菱荣光小卡专用车,五菱汽车,五菱荣光小卡专用车,,燃油车,微卡,燃油,,internal_90d,0.88
+五菱荣光新卡,五菱汽车,五菱荣光新卡,,燃油车,微卡,燃油,,dcd_ranking+internal_90d,0.96
+五菱荣光新卡专用车,五菱汽车,五菱荣光新卡专用车,,,微卡,,,unknown,0.0
+五菱龙卡,五菱汽车,五菱龙卡,,燃油车,,燃油,,internal_90d,0.88
+亚洲狮,丰田,亚洲狮,,燃油车,,燃油,,internal_90d,0.88
+亚洲龙,丰田,亚洲龙,轿车,燃油车,轿车,燃油,,dcd_ranking+internal_90d,0.96
+亚洲龙海外,丰田,亚洲龙(海外),,燃油车,,燃油,,internal_90d,0.88
+享域,本田,享域,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+享御,双龙,享御,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+享界s9,享界,享界S9,,新能源,,新能源,,internal_90d,0.88
+享界s9t,享界,享界S9T,,新能源,,新能源,,internal_90d,0.88
+仰望u7ev,仰望,仰望U7 EV,,新能源,,新能源,,internal_90d,0.88
+仰望u7phev,仰望,仰望U7 PHEV,,新能源,,新能源,,internal_90d,0.88
+仰望u8,仰望,仰望U8,,新能源,,新能源,,internal_90d,0.88
+仰望u8l,仰望,仰望U8L,,新能源,,新能源,,internal_90d,0.88
+伊兰特,现代,伊兰特,轿车,燃油车,轿车,燃油,,dcd_ranking+internal_90d,0.96
+伊兰特elantran,现代,伊兰特Elantra N,轿车,燃油车,轿车,燃油,,dcd_ranking+internal_90d,0.96
+伊兰特ev,现代,伊兰特EV,,新能源,,新能源,,internal_90d,0.88
+伊比飒,西雅特,伊比飒,,燃油车,,燃油,,internal_90d,0.88
+众泰2008,众泰,众泰2008,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+众泰5008,众泰,众泰5008,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+众泰e200,众泰,众泰E200,,新能源,,新能源,,internal_90d,0.88
+众泰sr7,众泰,众泰SR7,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+众泰sr9,众泰,众泰SR9,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+众泰sr9phev,众泰,众泰SR9 PHEV,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+众泰t200,众泰,众泰T200,,燃油车,,燃油,,internal_90d,0.88
+众泰t300,众泰,众泰T300,,燃油车,,燃油,,internal_90d,0.88
+众泰t500,众泰,众泰T500,,燃油车,,燃油,,internal_90d,0.88
+众泰t600,众泰,众泰T600,,燃油车,,燃油,,internal_90d,0.88
+众泰t600coupe,众泰,众泰T600 Coupe,,燃油车,,燃油,,internal_90d,0.88
+众泰t700,众泰,众泰T700,,燃油车,,燃油,,internal_90d,0.88
+众泰t800,众泰,众泰T800,,燃油车,,燃油,,internal_90d,0.88
+众泰v10,众泰,众泰V10,,燃油车,,燃油,,internal_90d,0.88
+众泰z200hb,众泰,众泰Z200HB,,燃油车,,燃油,,internal_90d,0.88
+众泰z300,众泰,众泰Z300,,燃油车,,燃油,,internal_90d,0.88
+众泰z360,众泰,众泰Z360,,燃油车,,燃油,,internal_90d,0.88
+众泰z500,众泰,众泰Z500,,燃油车,,燃油,,internal_90d,0.88
+众泰z500ev,众泰,众泰Z500 EV,,新能源,,新能源,,internal_90d,0.88
+众泰z560,众泰,众泰Z560,,燃油车,,燃油,,internal_90d,0.88
+众泰z700,众泰,众泰Z700,,燃油车,,燃油,,internal_90d,0.88
+优6suv,纳智捷,优6 SUV,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+优优,开瑞,优优,,燃油车,微面,燃油,,internal_90d,0.88
+优优2代,开瑞,优优2代,,燃油车,微面,燃油,,internal_90d,0.88
+优优ev,开瑞,优优EV,,新能源,微面,新能源,,internal_90d,0.88
+优利欧,吉利汽车,优利欧,,燃油车,,燃油,,internal_90d,0.88
+优劲,开瑞,优劲,,燃油车,,燃油,,internal_90d,0.88
+优劲ev,开瑞,优劲EV,,新能源,,新能源,,internal_90d,0.88
+优胜2代,开瑞,优胜2代,,燃油车,,燃油,,internal_90d,0.88
+优雅,开瑞,优雅,,燃油车,,燃油,,internal_90d,0.88
+优雅2代,开瑞,优雅2代,,燃油车,,燃油,,internal_90d,0.88
+传奇,福田,传奇,,燃油车,,燃油,,internal_90d,0.88
+传祺e8,广汽传祺,传祺E8,MPV,燃油车,MPV,燃油,,dcd_ranking+internal_90d,0.96
+传祺e8phev,广汽传祺,传祺E8 PHEV,MPV,新能源,MPV,新能源,,dcd_ranking+internal_90d,0.96
+传祺e9phev,广汽传祺,传祺E9 PHEV,MPV,新能源,MPV,新能源,,dcd_ranking+internal_90d,0.96
+传祺es9phev,广汽传祺,传祺ES9 PHEV,,新能源,,新能源,,internal_90d,0.88
+传祺ga3,广汽传祺,传祺GA3,,燃油车,,燃油,,internal_90d,0.88
+传祺ga3sphev,埃安,传祺GA3S PHEV,,新能源,,新能源,,internal_90d,0.88
+传祺ga3s视界,广汽传祺,传祺GA3S视界,,燃油车,,燃油,,internal_90d,0.88
+传祺ga4,广汽传祺,传祺GA4,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+传祺ga5,广汽传祺,传祺GA5,,燃油车,,燃油,,internal_90d,0.88
+传祺ga5phev,广汽传祺,传祺GA5 PHEV,,新能源,,新能源,,internal_90d,0.88
+传祺ga6,广汽传祺,传祺GA6,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+传祺ga8,广汽传祺,传祺GA8,,燃油车,,燃油,,internal_90d,0.88
+传祺ge3,埃安,传祺GE3,,新能源,,新能源,,internal_90d,0.88
+传祺gs3,广汽传祺,传祺GS3,SUV,燃油车,SUV,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+传祺gs4,广汽传祺,传祺GS4,SUV,燃油车,SUV,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+传祺gs4coupe,广汽传祺,传祺GS4 Coupe,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+传祺gs4phev,广汽传祺,传祺GS4 PHEV,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+传祺gs4plus,广汽传祺,传祺GS4 PLUS,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+传祺gs5,广汽传祺,传祺GS5,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+传祺gs5super,广汽传祺,传祺GS5 Super,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+传祺gs7,广汽传祺,传祺GS7,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+传祺gs8,广汽传祺,传祺GS8,SUV,燃油车,SUV,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+传祺m6,广汽传祺,传祺M6,MPV,燃油车,MPV,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+传祺m8,广汽传祺,传祺M8,MPV,燃油车,MPV,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+传祺向往m8,广汽传祺,传祺向往M8,MPV,新能源,MPV,新能源,,dcd_ranking+heuristic_body+internal_90d,0.96
+传祺向往s7,广汽传祺,传祺向往S7,SUV,新能源,SUV,新能源,,dcd_ranking+internal_90d,0.96
+传祺向往s9,广汽传祺,传祺向往S9,SUV,新能源,SUV,新能源,,dcd_ranking+internal_90d,0.96
+伽途gt,福田,伽途GT,,燃油车,,燃油,,internal_90d,0.88
+伽途im6,福田,伽途im6,MPV,燃油车,MPV,燃油,,heuristic_body+internal_90d,0.88
+伽途im8,福田,伽途im8,MPV,燃油车,MPV,燃油,,heuristic_body+internal_90d,0.88
+伽途ix5,福田,伽途ix5,,燃油车,,燃油,,internal_90d,0.88
+伽途ix7,福田,伽途ix7,,燃油车,,燃油,,internal_90d,0.88
+佳乐,起亚,佳乐,,燃油车,,燃油,,internal_90d,0.88
+佳宝v52,一汽,佳宝V52,,燃油车,微面,燃油,,internal_90d,0.88
+佳宝v70ii代,一汽,佳宝V70 II代,,燃油车,微面,燃油,,internal_90d,0.88
+佳宝v75,一汽,佳宝V75,,燃油车,微面,燃油,,internal_90d,0.88
+佳宝v77,一汽,佳宝V77,,燃油车,微面,燃油,,internal_90d,0.88
+依维柯得意,依维柯,依维柯得意,其他,燃油车,轻客,燃油,,heuristic_body+internal_90d,0.88
+依维柯得意ev,依维柯,依维柯得意EV,其他,新能源,轻客,新能源,,heuristic_body+internal_90d,0.88
+依维柯欧胜,依维柯,依维柯欧胜,其他,燃油车,轻客,燃油,,heuristic_body+internal_90d,0.88
+依维柯欧霸,依维柯,依维柯欧霸,其他,燃油车,轻客,燃油,,heuristic_body+internal_90d,0.88
+依维柯聚星,依维柯,依维柯聚星,其他,燃油车,轻客,燃油,,heuristic_body+internal_90d,0.88
+依维柯褒迪,依维柯,依维柯褒迪,其他,燃油车,轻客,燃油,,heuristic_body+internal_90d,0.88
+依维柯褒迪ev,依维柯,依维柯褒迪EV,其他,新能源,轻客,新能源,,heuristic_body+internal_90d,0.88
+俊风,东风,俊风,,燃油车,,燃油,,internal_90d,0.88
+俊风e11k,东风,俊风E11K,,新能源,,新能源,,internal_90d,0.88
+俊风e17,东风,俊风E17,,新能源,,新能源,,internal_90d,0.88
+俊风er30,东风,俊风ER30,,新能源,,新能源,,internal_90d,0.88
+保时捷718,保时捷,保时捷718,,燃油车,,燃油,,internal_90d,0.88
+保时捷904,保时捷,保时捷904,,燃油车,,燃油,,internal_90d,0.88
+保时捷911,保时捷,保时捷911,,燃油车,,燃油,,internal_90d,0.88
+傲旋,AUXUN傲旋,傲旋,,燃油车,,燃油,,internal_90d,0.88
+傲旋vclass,AUXUN傲旋,傲旋V-Class,,燃油车,,燃油,,internal_90d,0.88
+傲旋乘风,AUXUN傲旋,傲旋乘风,,燃油车,,燃油,,internal_90d,0.88
+傲虎,斯巴鲁,傲虎,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+傲跑,起亚,傲跑,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+元,比亚迪,元,,燃油车,,燃油,,internal_90d,0.88
+元dm,比亚迪,元DM,,新能源,,新能源,,internal_90d,0.88
+元ev,比亚迪,元EV,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+元plus,比亚迪,元PLUS,SUV,新能源,SUV,新能源,,dcd_ranking+heuristic_body+internal_90d,0.96
+元pro,比亚迪,元Pro,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+元up,比亚迪,元UP,SUV,新能源,SUV,新能源,,dcd_ranking+heuristic_body+internal_90d,0.96
+元宝,北京汽车制造厂,元宝,,新能源,,新能源,,internal_90d,0.88
+先锋官,阿莫迪罗,先锋官,,燃油车,,燃油,,internal_90d,0.88
+先锋官l,中国重汽,先锋官L,,燃油车,,燃油,,internal_90d,0.88
+先锋官v,中国重汽,先锋官V,,燃油车,,燃油,,internal_90d,0.88
+先锋官vev,中国重汽,先锋官V EV,,新能源,,新能源,,internal_90d,0.88
+克慕勒阿尔法,克慕勒,克慕勒阿尔法,,燃油车,,燃油,,internal_90d,0.88
+克莱斯勒300c,克莱斯勒,克莱斯勒300C,,燃油车,,燃油,,internal_90d,0.88
+克莱斯勒300c进口,克莱斯勒,克莱斯勒300C(进口),,燃油车,,燃油,,internal_90d,0.88
+克蒂wald,克蒂汽车,克蒂WALD,,燃油车,,燃油,,internal_90d,0.88
+克蒂圣姆峰,克蒂汽车,克蒂圣姆峰,,燃油车,,燃油,,internal_90d,0.88
+克蒂巴赫,克蒂汽车,克蒂巴赫,,燃油车,,燃油,,internal_90d,0.88
+克蒂帝亚,克蒂汽车,克蒂帝亚,,燃油车,,燃油,,internal_90d,0.88
+全球鹰ex3,全球鹰,全球鹰EX3,,新能源,,新能源,,internal_90d,0.88
+全球鹰k10,全球鹰,全球鹰K10,,新能源,,新能源,,internal_90d,0.88
+全球鹰k11,全球鹰,全球鹰K11,,新能源,,新能源,,internal_90d,0.88
+全球鹰k17,全球鹰,全球鹰K17,,新能源,,新能源,,internal_90d,0.88
+全界q1,云雀汽车,全界Q1,,燃油车,,燃油,,internal_90d,0.88
+全顺,福特,全顺,其他,燃油车,轻客,燃油,,heuristic_body+internal_90d,0.88
+全顺海外,福特,全顺(海外),其他,燃油车,轻客,燃油,,heuristic_body+internal_90d,0.88
+兰德酷路泽,丰田,兰德酷路泽,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+兰德酷路泽70系列,丰田,兰德酷路泽70系列,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+兰德酷路泽进口,丰田,兰德酷路泽(进口),SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+兴顺,力帆汽车,兴顺,,燃油车,,燃油,,internal_90d,0.88
+冒险家,林肯,冒险家,SUV,燃油车,SUV,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+冒险家phev,林肯,冒险家PHEV,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+冠道,本田,冠道,SUV,燃油车,SUV,燃油,,dcd_ranking+internal_90d,0.96
+冰淇淋,奇瑞QQ,冰淇淋,轿车,新能源,轿车,新能源,,dcd_ranking+heuristic_body+internal_90d,0.96
+凌傲,长城,凌傲,,燃油车,,燃油,,internal_90d,0.88
+凌宝box,凌宝汽车,凌宝BOX,,新能源,,新能源,,internal_90d,0.88
+凌宝coco,凌宝汽车,凌宝COCO,,新能源,,新能源,,internal_90d,0.88
+凌宝uni,凌宝汽车,凌宝Uni,,新能源,,新能源,,internal_90d,0.88
+凌尚,丰田,凌尚,,燃油车,,燃油,,internal_90d,0.88
+凌放harrier,丰田,凌放HARRIER,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+凌派,本田,凌派,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+凌渡,大众,凌渡,轿车,燃油车,轿车,燃油,,dcd_ranking+internal_90d,0.96
+凌特,奔驰,凌特,,燃油车,,燃油,,internal_90d,0.88
+凌轩,长安,凌轩,,燃油车,,燃油,,internal_90d,0.88
+凡尔赛c5x,雪铁龙,凡尔赛C5 X,轿车,燃油车,轿车,燃油,,dcd_ranking+internal_90d,0.96
+凯威德,凯迪拉克,凯威德,SUV,新能源,SUV,新能源,,dcd_ranking,0.96
+凯尊,起亚,凯尊,,燃油车,,燃油,,internal_90d,0.88
+凯捷victory,五菱汽车,凯捷Victory,,燃油车,,燃油,,internal_90d,0.88
+凯旋,雪铁龙,凯旋,,燃油车,,燃油,,internal_90d,0.88
+凯泽西,铃木,凯泽西,,燃油车,,燃油,,internal_90d,0.88
+凯绅,起亚,凯绅,,燃油车,,燃油,,internal_90d,0.88
+凯美瑞,丰田,凯美瑞,轿车,燃油车,轿车,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+凯美瑞海外,丰田,凯美瑞(海外),轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+凯翼c3,凯翼,凯翼C3,,燃油车,,燃油,,internal_90d,0.88
+凯翼c3r,凯翼,凯翼C3R,,燃油车,,燃油,,internal_90d,0.88
+凯翼e3,凯翼,凯翼E3,,燃油车,,燃油,,internal_90d,0.88
+凯翼v3,凯翼,凯翼V3,,燃油车,,燃油,,internal_90d,0.88
+凯翼x3,凯翼,凯翼X3,,燃油车,,燃油,,internal_90d,0.88
+凯翼x5,凯翼,凯翼X5,,燃油车,,燃油,,internal_90d,0.88
+凯翼拾月,凯翼,凯翼拾月,,新能源,,新能源,,internal_90d,0.88
+凯翼昆仑,凯翼,凯翼昆仑,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+凯翼昆仑ihd,凯翼,凯翼昆仑iHD,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+凯越,别克,凯越,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+凯路威,大众,凯路威,,燃油车,,燃油,,internal_90d,0.88
+凯运,江铃,凯运,,燃油车,,燃油,,internal_90d,0.88
+凯迪拉克atsl,凯迪拉克,凯迪拉克ATS-L,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+凯迪拉克ats进口,凯迪拉克,凯迪拉克ATS(进口),,燃油车,,燃油,,internal_90d,0.88
+凯迪拉克ct4,凯迪拉克,凯迪拉克CT4,轿车,燃油车,轿车,燃油,,dcd_ranking+internal_90d,0.96
+凯迪拉克ct5,凯迪拉克,凯迪拉克CT5,轿车,燃油车,轿车,燃油,,dcd_ranking+internal_90d,0.96
+凯迪拉克ct6,凯迪拉克,凯迪拉克CT6,轿车,燃油车,轿车,燃油,,dcd_ranking+internal_90d,0.96
+凯迪拉克ct6plugin,凯迪拉克,凯迪拉克CT6 PLUG-IN,,新能源,,新能源,,internal_90d,0.88
+凯迪拉克cts,凯迪拉克,凯迪拉克CTS,,燃油车,,燃油,,internal_90d,0.88
+凯迪拉克cts进口,凯迪拉克,凯迪拉克CTS(进口),,燃油车,,燃油,,internal_90d,0.88
+凯迪拉克ev,凯迪拉克,凯迪拉克EV,,燃油车,,燃油,,internal_90d,0.88
+凯迪拉克gt4,凯迪拉克,凯迪拉克GT4,SUV,燃油车,SUV,燃油,,dcd_ranking+internal_90d,0.96
+凯迪拉克series61,凯迪拉克,凯迪拉克Series 61,,燃油车,,燃油,,internal_90d,0.88
+凯迪拉克sls海外,凯迪拉克,凯迪拉克SLS(海外),,燃油车,,燃油,,internal_90d,0.88
+凯迪拉克srx,凯迪拉克,凯迪拉克SRX,,燃油车,,燃油,,internal_90d,0.88
+凯迪拉克sts,凯迪拉克,凯迪拉克STS,,燃油车,,燃油,,internal_90d,0.88
+凯迪拉克xt4,凯迪拉克,凯迪拉克XT4,SUV,燃油车,SUV,燃油,,dcd_ranking+internal_90d,0.96
+凯迪拉克xt5,凯迪拉克,凯迪拉克XT5,SUV,燃油车,SUV,燃油,,dcd_ranking+internal_90d,0.96
+凯迪拉克xt6,凯迪拉克,凯迪拉克XT6,SUV,燃油车,SUV,燃油,,dcd_ranking+internal_90d,0.96
+凯迪拉克xts,凯迪拉克,凯迪拉克XTS,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+凯锐浩克,金龙,凯锐浩克,,燃油车,,燃油,,internal_90d,0.88
+凯雷德escalade,凯迪拉克,凯雷德ESCALADE,,燃油车,,燃油,,internal_90d,0.88
+凯领,道奇,凯领,,燃油车,,燃油,,internal_90d,0.88
+创界,雪佛兰,创界,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+创维ev6,创维汽车,创维EV6,,新能源,,新能源,,internal_90d,0.88
+创维hti,创维汽车,创维HT-i,,新能源,,新能源,,internal_90d,0.88
+创酷,雪佛兰,创酷,,燃油车,,燃油,,internal_90d,0.88
+利亚纳,铃木,利亚纳,,燃油车,,燃油,,internal_90d,0.88
+利亚纳a6,铃木,利亚纳A6,,燃油车,,燃油,,internal_90d,0.88
+别克e4,别克,别克E4,,新能源,,新能源,,internal_90d,0.88
+别克e5,别克,别克E5,SUV,新能源,SUV,新能源,,dcd_ranking+internal_90d,0.96
+别克gl6,别克,别克GL6,MPV,燃油车,MPV,燃油,,heuristic_body+internal_90d,0.88
+别克gl8,别克,别克GL8,MPV,燃油车,MPV,燃油,,heuristic_body+internal_90d,0.88
+别克gl8phev,别克,别克GL8 PHEV,MPV,新能源,MPV,新能源,,dcd_ranking+heuristic_body+internal_90d,0.96
+别克seriesb,别克,别克Series B,,燃油车,,燃油,,internal_90d,0.88
+别克至境e7,别克,别克至境E7,SUV,新能源,SUV,新能源,,dcd_ranking,0.96
+别克至境l7,别克,别克至境L7,轿车,新能源,轿车,新能源,,dcd_ranking+internal_90d,0.96
+别克至境世家,别克,别克至境世家,,新能源,,新能源,,internal_90d,0.88
+前途k50,前途,前途K50,,新能源,,新能源,,internal_90d,0.88
+力帆320,力帆汽车,力帆320,,燃油车,,燃油,,internal_90d,0.88
+力帆330,力帆汽车,力帆330,,燃油车,,燃油,,internal_90d,0.88
+力帆520,力帆汽车,力帆520,,燃油车,,燃油,,internal_90d,0.88
+力帆530,力帆汽车,力帆530,,燃油车,,燃油,,internal_90d,0.88
+力帆620,力帆汽车,力帆620,,燃油车,,燃油,,internal_90d,0.88
+力帆630,力帆汽车,力帆630,,燃油车,,燃油,,internal_90d,0.88
+力帆650ev,力帆汽车,力帆650 EV,,新能源,,新能源,,internal_90d,0.88
+力帆720,力帆汽车,力帆720,,燃油车,,燃油,,internal_90d,0.88
+力帆820,力帆汽车,力帆820,,燃油车,,燃油,,internal_90d,0.88
+力帆x50,力帆汽车,力帆X50,,燃油车,,燃油,,internal_90d,0.88
+力帆x60,力帆汽车,力帆X60,,燃油车,,燃油,,internal_90d,0.88
+力帆x80,力帆汽车,力帆X80,,燃油车,,燃油,,internal_90d,0.88
+力帆枫叶80v,力帆汽车,力帆枫叶80V,,新能源,,新能源,,internal_90d,0.88
+力狮,斯巴鲁,力狮,,燃油车,,燃油,,internal_90d,0.88
+劲客,日产,劲客,SUV,燃油车,SUV,燃油,,dcd_ranking+internal_90d,0.96
+劲炫asx,三菱,劲炫ASX,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+劲炫asx进口,三菱,劲炫ASX(进口),SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+劳恩斯,现代,劳恩斯,,燃油车,,燃油,,internal_90d,0.88
+劳恩斯酷派,现代,劳恩斯-酷派,,燃油车,,燃油,,internal_90d,0.88
+勇士,北京汽车制造厂,勇士,,燃油车,,燃油,,internal_90d,0.88
+勇士皮卡,北京汽车制造厂,勇士皮卡,其他,燃油车,皮卡,燃油,,heuristic_body+internal_90d,0.88
+北京bj20,北京越野,北京BJ20,,燃油车,,燃油,,internal_90d,0.88
+北京bj30,北京,北京BJ30,,燃油车,,燃油,,internal_90d,0.88
+北京bj40,北京,北京BJ40,,燃油车,,燃油,,internal_90d,0.88
+北京bj60,北京,北京BJ60,,燃油车,,燃油,,internal_90d,0.88
+北京bj60雷霆,北京,北京BJ60雷霆,,新能源,,新能源,,internal_90d,0.88
+北京bj80,北京,北京BJ80,,燃油车,,燃油,,internal_90d,0.88
+北京bj90,北京,北京BJ90,,燃油车,,燃油,,internal_90d,0.88
+北京bw007,北京汽车制造厂,北京BW007,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+北京eu5,北京汽车,北京EU5,,新能源,,新能源,,internal_90d,0.88
+北京eu5plus,北京汽车,北京EU5 PLUS,,新能源,,新能源,,internal_90d,0.88
+北京eu7,北京汽车,北京EU7,,新能源,,新能源,,internal_90d,0.88
+北京ex3,北京汽车,北京EX3,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+北京ex5,北京汽车,北京EX5,,新能源,,新能源,,internal_90d,0.88
+北京f40,北京,北京F40,,燃油车,,燃油,,internal_90d,0.88
+北京u5,北京汽车,北京U5,,燃油车,,燃油,,internal_90d,0.88
+北京u5plus,北京汽车,北京U5 PLUS,,燃油车,,燃油,,internal_90d,0.88
+北京u7,北京汽车,北京U7,,燃油车,,燃油,,internal_90d,0.88
+北京x3,北京汽车,北京X3,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+北京x5,北京汽车,北京X5,,燃油车,,燃油,,internal_90d,0.88
+北京x7,北京汽车,北京X7,SUV,燃油车,SUV,燃油,,dcd_ranking+internal_90d,0.96
+北京x7phev,北京汽车,北京X7 PHEV,,新能源,,新能源,,internal_90d,0.88
+北京汽车e系列,北京汽车,北京汽车E系列,,燃油车,,燃油,,internal_90d,0.88
+北京越野bj30,北京越野,北京越野BJ30,SUV,燃油车,SUV,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+北京越野bj40,北京越野,北京越野BJ40,SUV,燃油车,SUV,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+北京越野bj40增程,北京越野,北京越野BJ40增程,SUV,新能源,SUV,新能源,,dcd_ranking+heuristic_body+internal_90d,0.96
+北京越野bj60,北京越野,北京越野BJ60,SUV,燃油车,SUV,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+北京越野bj60增程,北京越野,北京越野BJ60增程,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+北京越野bj60雷霆,北京越野,北京越野BJ60雷霆,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+北京越野bj80,北京越野,北京越野BJ80,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+北京越野bj90,北京越野,北京越野BJ90,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+北斗星,铃木,北斗星,,燃油车,,燃油,,internal_90d,0.88
+北斗星x5,北汽昌河,北斗星X5,,燃油车,,燃油,,internal_90d,0.88
+北斗星x5e,北汽昌河,北斗星X5E,,新能源,,新能源,,internal_90d,0.88
+北汽007,北京汽车制造厂,北汽007,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+北汽ec100,北汽昌河,北汽EC100,,新能源,,新能源,,internal_90d,0.88
+北汽ev2,北汽昌河,北汽EV2,,新能源,,新能源,,internal_90d,0.88
+北汽ev5,北汽昌河,北汽EV5,,新能源,,新能源,,internal_90d,0.88
+北汽威旺205,北汽威旺,北汽威旺205,,燃油车,,燃油,,internal_90d,0.88
+北汽威旺306,北汽威旺,北汽威旺306,,燃油车,,燃油,,internal_90d,0.88
+北汽威旺307,北汽威旺,北汽威旺307,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+北汽威旺m20,北汽威旺,北汽威旺M20,,燃油车,,燃油,,internal_90d,0.88
+北汽威旺m30,北汽威旺,北汽威旺M30,,燃油车,,燃油,,internal_90d,0.88
+北汽威旺m35,北汽威旺,北汽威旺M35,,燃油车,,燃油,,internal_90d,0.88
+北汽威旺m50f,北汽威旺,北汽威旺M50F,,燃油车,,燃油,,internal_90d,0.88
+北汽威旺s50,北汽威旺,北汽威旺S50,,燃油车,,燃油,,internal_90d,0.88
+北汽小河马,北京汽车制造厂,北汽小河马,,新能源,,新能源,,internal_90d,0.88
+北汽幻速h2,北汽幻速,北汽幻速H2,,燃油车,,燃油,,internal_90d,0.88
+北汽幻速h2v,北汽幻速,北汽幻速H2V,,燃油车,,燃油,,internal_90d,0.88
+北汽幻速h3,北汽幻速,北汽幻速H3,,燃油车,,燃油,,internal_90d,0.88
+北汽幻速h5,北汽幻速,北汽幻速H5,,燃油车,,燃油,,internal_90d,0.88
+北汽幻速h6,北汽幻速,北汽幻速H6,,燃油车,,燃油,,internal_90d,0.88
+北汽幻速s2,北汽幻速,北汽幻速S2,,燃油车,,燃油,,internal_90d,0.88
+北汽幻速s3,北汽幻速,北汽幻速S3,,燃油车,,燃油,,internal_90d,0.88
+北汽幻速s5,北汽幻速,北汽幻速S5,,燃油车,,燃油,,internal_90d,0.88
+北汽幻速s6,北汽幻速,北汽幻速S6,,燃油车,,燃油,,internal_90d,0.88
+北汽幻速s7,北汽幻速,北汽幻速S7,,燃油车,,燃油,,internal_90d,0.88
+北汽新能源d80ev,北汽新能源,北汽新能源D80 EV,,新能源,,新能源,,internal_90d,0.88
+北汽新能源ec,北汽新能源,北汽新能源EC,,新能源,,新能源,,internal_90d,0.88
+北汽新能源ec5,北汽新能源,北汽新能源EC5,,新能源,,新能源,,internal_90d,0.88
+北汽新能源es210,北汽新能源,北汽新能源ES210,,新能源,,新能源,,internal_90d,0.88
+北汽新能源eu,北汽新能源,北汽新能源EU,,新能源,,新能源,,internal_90d,0.88
+北汽新能源ev,北汽新能源,北汽新能源EV,,新能源,,新能源,,internal_90d,0.88
+北汽新能源ex,北汽新能源,北汽新能源EX,,新能源,,新能源,,internal_90d,0.88
+北汽昌河a6,北汽昌河,北汽昌河A6,,燃油车,,燃油,,internal_90d,0.88
+北汽昌河m50s,北汽昌河,北汽昌河M50S,,燃油车,,燃油,,internal_90d,0.88
+北汽昌河m60,北汽昌河,北汽昌河M60,MPV,燃油车,MPV,燃油,,heuristic_body+internal_90d,0.88
+北汽昌河m70,北汽昌河,北汽昌河M70,,燃油车,,燃油,,internal_90d,0.88
+北汽昌河q25,北汽昌河,北汽昌河Q25,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+北汽昌河q35,北汽昌河,北汽昌河Q35,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+北汽昌河q7,北汽昌河,北汽昌河Q7,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+北汽瑞翔x5,北汽瑞翔,北汽瑞翔X5,,燃油车,,燃油,,internal_90d,0.88
+千里马,起亚,千里马,,燃油车,,燃油,,internal_90d,0.88
+华境s,华境,华境S,SUV,新能源,SUV,新能源,,dcd_ranking,0.96
+华晨新日i03,华晨新日,华晨新日i03,,新能源,,新能源,,internal_90d,0.88
+华晨新日i03a,华晨新日,华晨新日i03A,,新能源,,新能源,,internal_90d,0.88
+华晨金杯750,金杯,华晨金杯750,,燃油车,,燃油,,internal_90d,0.88
+华泰iev230,华泰新能源,华泰iEV230,,新能源,,新能源,,internal_90d,0.88
+华泰xev260,华泰新能源,华泰XEV260,,新能源,,新能源,,internal_90d,0.88
+华颂7,华颂,华颂7,,燃油车,,燃油,,internal_90d,0.88
+博悦,菲亚特,博悦,,燃油车,,燃油,,internal_90d,0.88
+博瑞,吉利汽车,博瑞,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+博瑞epro,吉利汽车,博瑞ePro,轿车,新能源,轿车,新能源,,heuristic_body+internal_90d,0.88
+博越,吉利汽车,博越,SUV,燃油车,SUV,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+博越l,吉利汽车,博越L,SUV,燃油车,SUV,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+博越rev,吉利汽车,博越REV,SUV,新能源,SUV,新能源,,dcd_ranking+heuristic_body+internal_90d,0.96
+博速g级,博速,博速 G级,,燃油车,,燃油,,internal_90d,0.88
+博速m级,博速,博速 M级,,燃油车,,燃油,,internal_90d,0.88
+博速s级,博速,博速 S级,,燃油车,,燃油,,internal_90d,0.88
+博骏,野马汽车,博骏,,燃油车,,燃油,,internal_90d,0.88
+卡威suv,卡威,卡威SUV,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+卡尔森cca22,卡尔森,卡尔森 CCA22,,燃油车,,燃油,,internal_90d,0.88
+卡缤进口,雷诺,卡缤(进口),,燃油车,,燃油,,internal_90d,0.88
+卡罗拉,丰田,卡罗拉,轿车,燃油车,轿车,燃油,,dcd_ranking+internal_90d,0.96
+卡罗拉双擎e+,丰田,卡罗拉双擎E+,,新能源,,新能源,,internal_90d,0.88
+卡罗拉进口,丰田,卡罗拉(进口),,燃油车,,燃油,,internal_90d,0.88
+卡罗拉锐放,丰田,卡罗拉锐放,SUV,燃油车,SUV,燃油,,dcd_ranking+internal_90d,0.96
+卡路里,北京汽车制造厂,卡路里,,燃油车,,燃油,,internal_90d,0.88
+卡路里f7,北京汽车制造厂,卡路里F7,,燃油车,,燃油,,internal_90d,0.88
+卫士,路虎,卫士,SUV,燃油车,SUV,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+双环sceo,双环,双环SCEO,,燃油车,,燃油,,internal_90d,0.88
+双龙c200,双龙,双龙C200,,燃油车,,燃油,,internal_90d,0.88
+发现,路虎,发现,SUV,燃油车,SUV,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+发现神行,路虎,发现神行,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+发现神行进口,路虎,发现神行(进口),SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+发现运动,路虎,发现运动,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+发现运动phev,路虎,发现运动PHEV,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+发现运动版,路虎,发现运动版,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+发现运动版phev,路虎,发现运动版PHEV,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+古思特,劳斯莱斯,古思特,,燃油车,,燃油,,internal_90d,0.88
+合创007,合创汽车,合创007,轿车,新能源,轿车,新能源,,heuristic_body+internal_90d,0.88
+合创a06,合创汽车,合创A06,,新能源,,新能源,,internal_90d,0.88
+合创v09,合创汽车,合创V09,,新能源,,新能源,,internal_90d,0.88
+合创z03,合创汽车,合创Z03,,新能源,,新能源,,internal_90d,0.88
+吉利ec8,吉利汽车,吉利EC8,,燃油车,,燃油,,internal_90d,0.88
+吉利gc7,吉利汽车,吉利GC7,,燃油车,,燃油,,internal_90d,0.88
+吉利ge,吉利汽车,吉利GE,,燃油车,,燃油,,internal_90d,0.88
+吉利gs,吉利汽车,吉利GS,,燃油车,,燃油,,internal_90d,0.88
+吉利gx2,吉利汽车,吉利GX2,,燃油车,,燃油,,internal_90d,0.88
+吉利gx6,吉利汽车,吉利GX6,,燃油车,,燃油,,internal_90d,0.88
+吉利gx7,吉利汽车,吉利GX7,,燃油车,,燃油,,internal_90d,0.88
+吉利icon,吉利汽车,吉利ICON,SUV,燃油车,SUV,燃油,,dcd_ranking+internal_90d,0.96
+吉利sc3,吉利汽车,吉利SC3,,燃油车,,燃油,,internal_90d,0.88
+吉利sc5,吉利汽车,吉利SC5,,燃油车,,燃油,,internal_90d,0.88
+吉利sx7,吉利汽车,吉利SX7,,燃油车,,燃油,,internal_90d,0.88
+吉利几何a,吉利几何,吉利几何A,轿车,新能源,轿车,新能源,,dcd_ranking+internal_90d,0.96
+吉利几何c,吉利几何,吉利几何C,,新能源,,新能源,,internal_90d,0.88
+吉利几何e萤火虫,吉利几何,吉利几何E萤火虫,SUV,新能源,SUV,新能源,,dcd_ranking+internal_90d,0.96
+吉利几何g6,吉利几何,吉利几何G6,,新能源,,新能源,,internal_90d,0.88
+吉利几何m6,吉利几何,吉利几何M6,MPV,新能源,MPV,新能源,,dcd_ranking+heuristic_body+internal_90d,0.96
+吉利远程fx,远程汽车,吉利远程FX,,燃油车,,燃油,,internal_90d,0.88
+吉奥吉瑞,新吉奥汽车,吉奥吉瑞,,燃油车,,燃油,,internal_90d,0.88
+吉奥奥腾,新吉奥汽车,吉奥奥腾,,新能源,,新能源,,internal_90d,0.88
+吉奥帅凌,新吉奥汽车,吉奥帅凌,,新能源,,新能源,,internal_90d,0.88
+吉奥睿征l,新吉奥汽车,吉奥睿征L,,新能源,,新能源,,internal_90d,0.88
+吉姆尼,铃木,吉姆尼,,燃油车,,燃油,,internal_90d,0.88
+吉姆尼进口,铃木,吉姆尼(进口),,燃油车,,燃油,,internal_90d,0.88
+吉运e6,金杯,吉运E6,,燃油车,,燃油,,dcd_ranking,0.96
+同悦,江汽集团,同悦,,燃油车,,燃油,,internal_90d,0.88
+同悦rs,江汽集团,同悦RS,,燃油车,,燃油,,internal_90d,0.88
+名图,现代,名图,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+名爵3,名爵,名爵3,,燃油车,,燃油,,internal_90d,0.88
+名爵3sw,名爵,名爵3SW,,燃油车,,燃油,,internal_90d,0.88
+名爵5,名爵,名爵5,,燃油车,,燃油,,internal_90d,0.88
+名爵6,名爵,名爵6,,燃油车,,燃油,,internal_90d,0.88
+名爵6phev,名爵,名爵6 PHEV,,新能源,,新能源,,internal_90d,0.88
+名爵ezs纯电动,名爵,名爵EZS纯电动,,新能源,,新能源,,internal_90d,0.88
+名爵hs,名爵,名爵HS,,燃油车,,燃油,,internal_90d,0.88
+名爵hsphev,名爵,名爵HS PHEV,,新能源,,新能源,,internal_90d,0.88
+名爵zs,名爵,名爵ZS,,燃油车,,燃油,,internal_90d,0.88
+名驭,现代,名驭,,燃油车,,燃油,,internal_90d,0.88
+君威,别克,君威,轿车,燃油车,轿车,燃油,,dcd_ranking+internal_90d,0.96
+君威海外,别克,君威(海外),,燃油车,,燃油,,internal_90d,0.88
+君越,别克,君越,轿车,燃油车,轿车,燃油,,dcd_ranking+internal_90d,0.96
+君阁,三菱,君阁,,燃油车,,燃油,,internal_90d,0.88
+君马meet3美图3,君马汽车,君马MEET 3(美图3),,燃油车,,燃油,,internal_90d,0.88
+君马s70,君马汽车,君马S70,,燃油车,,燃油,,internal_90d,0.88
+君马seek5赛克5,君马汽车,君马SEEK 5(赛克5),,燃油车,,燃油,,internal_90d,0.88
+启悦,铃木,启悦,,燃油车,,燃油,,internal_90d,0.88
+启界,瑞弗,启界,,燃油车,,燃油,,internal_90d,0.88
+启辰d50,启辰,启辰D50,,燃油车,,燃油,,internal_90d,0.88
+启辰d60,启辰,启辰D60,,燃油车,,燃油,,internal_90d,0.88
+启辰d60ev,启辰,启辰D60 EV,,新能源,,新能源,,internal_90d,0.88
+启辰e30,启辰,启辰e30,,新能源,,新能源,,internal_90d,0.88
+启辰m50v,启辰,启辰M50V,,燃油车,,燃油,,internal_90d,0.88
+启辰r30,启辰,启辰R30,,燃油车,,燃油,,internal_90d,0.88
+启辰r50,启辰,启辰R50,,燃油车,,燃油,,internal_90d,0.88
+启辰r50x,启辰,启辰R50X,,燃油车,,燃油,,internal_90d,0.88
+启辰t60,启辰,启辰T60,,燃油车,,燃油,,internal_90d,0.88
+启辰t60ev,启辰,启辰T60 EV,,新能源,,新能源,,internal_90d,0.88
+启辰t70,启辰,启辰T70,,燃油车,,燃油,,internal_90d,0.88
+启辰t70x,启辰,启辰T70X,,燃油车,,燃油,,internal_90d,0.88
+启辰t90,启辰,启辰T90,,燃油车,,燃油,,internal_90d,0.88
+启辰vx6,启辰,启辰VX6,,新能源,,新能源,,internal_90d,0.88
+启辰大v,启辰,启辰大V,,燃油车,,燃油,,internal_90d,0.88
+启辰大vddi,启辰,启辰大V DD-i,,新能源,,新能源,,internal_90d,0.88
+启辰大vddi超混动,启辰,启辰大V DD-i超混动,,新能源,,新能源,,internal_90d,0.88
+启辰星,启辰,启辰星,,燃油车,,燃油,,internal_90d,0.88
+和悦,江汽集团,和悦,,燃油车,,燃油,,internal_90d,0.88
+和悦a13rs,江汽集团,和悦A13RS,,燃油车,,燃油,,internal_90d,0.88
+和悦a30,江汽集团,和悦A30,,燃油车,,燃油,,internal_90d,0.88
+哈弗e,哈弗,哈弗E,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+哈弗f5,哈弗,哈弗F5,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+哈弗f7,哈弗,哈弗F7,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+哈弗f7x,哈弗,哈弗F7x,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+哈弗h1,哈弗,哈弗H1,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+哈弗h2,哈弗,哈弗H2,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+哈弗h2s,哈弗,哈弗H2s,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+哈弗h3,哈弗,哈弗H3,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+哈弗h4,哈弗,哈弗H4,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+哈弗h5,哈弗,哈弗H5,SUV,燃油车,SUV,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+哈弗h5经典,哈弗,哈弗H5经典,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+哈弗h6,哈弗,哈弗H6,SUV,燃油车,SUV,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+哈弗h6coupe,哈弗,哈弗H6 Coupe,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+哈弗h6l,哈弗,哈弗H6L,SUV,燃油车,SUV,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+哈弗h6phev,哈弗,哈弗H6 PHEV,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+哈弗h6s,哈弗,哈弗H6S,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+哈弗h6新能源,哈弗,哈弗H6新能源,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+哈弗h7,哈弗,哈弗H7,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+哈弗h8,哈弗,哈弗H8,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+哈弗h9,哈弗,哈弗H9,SUV,燃油车,SUV,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+哈弗m6,哈弗,哈弗M6,MPV,燃油车,MPV,燃油,,heuristic_body+internal_90d,0.88
+哈弗二代大狗,哈弗,哈弗二代大狗,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+哈弗二代大狗phev,哈弗,哈弗二代大狗PHEV,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+哈弗初恋,哈弗,哈弗初恋,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+哈弗大狗,哈弗,哈弗大狗,SUV,燃油车,SUV,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+哈弗大狗plus,哈弗,哈弗大狗PLUS,SUV,燃油车,SUV,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+哈弗大狗plusphev,哈弗,哈弗大狗PLUS PHEV,SUV,新能源,SUV,新能源,,dcd_ranking+heuristic_body+internal_90d,0.96
+哈弗枭龙,哈弗,哈弗枭龙,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+哈弗枭龙max,哈弗,哈弗枭龙MAX,SUV,新能源,SUV,新能源,,dcd_ranking+heuristic_body+internal_90d,0.96
+哈弗枭龙maxphev,哈弗,哈弗枭龙MAX PHEV,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+哈弗猛龙,哈弗,哈弗猛龙,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+哈弗猛龙phev,哈弗,哈弗猛龙PHEV,SUV,新能源,SUV,新能源,,dcd_ranking+heuristic_body+internal_90d,0.96
+哈弗猛龙燃油版,哈弗,哈弗猛龙燃油版,SUV,燃油车,SUV,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+哈弗神兽,哈弗,哈弗神兽,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+哈弗赤兔,哈弗,哈弗赤兔,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+哈弗酷狗,哈弗,哈弗酷狗,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+哈飞小霸王,哈飞,哈飞小霸王,,燃油车,,燃油,,internal_90d,0.88
+哥瑞,本田,哥瑞,,燃油车,,燃油,,internal_90d,0.88
+哪吒aya,哪吒汽车,哪吒AYA,,新能源,,新能源,,internal_90d,0.88
+哪吒gt,哪吒汽车,哪吒GT,轿车,新能源,轿车,新能源,,heuristic_body+internal_90d,0.88
+哪吒l,哪吒汽车,哪吒L,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+哪吒n01,哪吒汽车,哪吒N01,,新能源,,新能源,,internal_90d,0.88
+哪吒s,哪吒汽车,哪吒S,,新能源,,新能源,,internal_90d,0.88
+哪吒s猎装,哪吒汽车,哪吒S猎装,,新能源,,新能源,,internal_90d,0.88
+哪吒u,哪吒汽车,哪吒U,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+哪吒v,哪吒汽车,哪吒V,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+哪吒x,哪吒汽车,哪吒X,,新能源,,新能源,,internal_90d,0.88
+唐,比亚迪,唐,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+唐dm,比亚迪,唐DM,SUV,新能源,SUV,新能源,,dcd_ranking+heuristic_body+internal_90d,0.96
+唐dmi,比亚迪,唐DM-i,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+唐ev,比亚迪,唐EV,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+唐ldm,比亚迪,唐L DM,SUV,新能源,SUV,新能源,,dcd_ranking+heuristic_body+internal_90d,0.96
+唐lev,比亚迪,唐L EV,SUV,新能源,SUV,新能源,,dcd_ranking+heuristic_body+internal_90d,0.96
+唯雅诺,奔驰,唯雅诺,,燃油车,,燃油,,internal_90d,0.88
+唯雅诺进口,奔驰,唯雅诺(进口),,燃油车,,燃油,,internal_90d,0.88
+嘉华,起亚,嘉华,MPV,燃油车,MPV,燃油,,dcd_ranking+internal_90d,0.96
+嘉华进口,起亚,嘉华(进口),,燃油车,,燃油,,internal_90d,0.88
+嘉年华,福特,嘉年华,,燃油车,,燃油,,internal_90d,0.88
+嘉年华进口,福特,嘉年华(进口),,燃油车,,燃油,,internal_90d,0.88
+嘉悦a5,江汽集团,嘉悦A5,,燃油车,,燃油,,internal_90d,0.88
+嘉悦x4,江汽集团,嘉悦X4,,燃油车,,燃油,,internal_90d,0.88
+嘉悦x7,江汽集团,嘉悦X7,,燃油车,,燃油,,internal_90d,0.88
+嘉誉,长城,嘉誉,,燃油车,,燃油,,internal_90d,0.88
+嘉际,吉利汽车,嘉际,MPV,燃油车,MPV,燃油,,heuristic_body+internal_90d,0.88
+嘉际phev,吉利汽车,嘉际PHEV,MPV,新能源,MPV,新能源,,heuristic_body+internal_90d,0.88
+国机智骏gc1,国机智骏,国机智骏GC1,,新能源,,新能源,,internal_90d,0.88
+国机智骏gc2,国机智骏,国机智骏GC2,,新能源,,新能源,,internal_90d,0.88
+国机智骏gx5,国机智骏,国机智骏GX5,,新能源,,新能源,,internal_90d,0.88
+国金gm3,国金汽车,国金GM3,,新能源,,新能源,,internal_90d,0.88
+图雅诺,福田,图雅诺,,燃油车,轻客,燃油,,internal_90d,0.88
+图雅诺x5,福田,图雅诺X5,,燃油车,轻客,燃油,,internal_90d,0.88
+图雅诺x6,福田,图雅诺X6,,燃油车,轻客,燃油,,internal_90d,0.88
+图雅诺x7,福田,图雅诺X7,,燃油车,轻客,燃油,,internal_90d,0.88
+图雅诺x8,福田,图雅诺X8,,燃油车,轻客,燃油,,internal_90d,0.88
+圣达菲,华泰,圣达菲,,燃油车,,燃油,,internal_90d,0.88
+圣达菲5,华泰,圣达菲5,,燃油车,,燃油,,internal_90d,0.88
+圣达菲经典,华泰,圣达菲经典,,燃油车,,燃油,,internal_90d,0.88
+坦克300,坦克,坦克300,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+坦克300hi4t,坦克,坦克300 Hi4-T,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+坦克400,坦克,坦克400,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+坦克400hi4t,坦克,坦克400 Hi4-T,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+坦克400hi4z,坦克,坦克400 Hi4-Z,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+坦克500,坦克,坦克500,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+坦克500hi4,坦克,坦克500 Hi4,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+坦克500hi4t,坦克,坦克500 Hi4-T,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+坦克500hi4z,坦克,坦克500 Hi4-Z,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+坦克700hi4t,坦克,坦克700 Hi4-T,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+坦途,丰田,坦途,,燃油车,,燃油,,internal_90d,0.88
+型格,本田,型格,轿车,燃油车,轿车,燃油,,dcd_ranking+internal_90d,0.96
+埃尔法,丰田,埃尔法,,燃油车,,燃油,,internal_90d,0.88
+埃尔法phev,丰田,埃尔法PHEV,,燃油车,,燃油,,internal_90d,0.88
+埃尚,埃尚,埃尚,,新能源,,新能源,,internal_90d,0.88
+域虎,江铃,域虎,其他,燃油车,皮卡,燃油,,heuristic_body+internal_90d,0.88
+域虎3,江铃,域虎3,其他,燃油车,皮卡,燃油,,heuristic_body+internal_90d,0.88
+域虎5,江铃,域虎5,其他,燃油车,皮卡,燃油,,heuristic_body+internal_90d,0.88
+域虎7,江铃,域虎7,其他,燃油车,皮卡,燃油,,heuristic_body+internal_90d,0.88
+域虎9,江铃,域虎9,其他,燃油车,皮卡,燃油,,heuristic_body+internal_90d,0.88
+域虎ev,江铃,域虎EV,其他,,皮卡,,,heuristic_body,0.72
+塔利斯曼,雷诺,塔利斯曼,,燃油车,,燃油,,internal_90d,0.88
+夏,比亚迪,夏,MPV,新能源,MPV,新能源,,dcd_ranking+internal_90d,0.96
+夏利,一汽,夏利,,燃油车,,燃油,,internal_90d,0.88
+夏利n5,一汽,夏利N5,,燃油车,,燃油,,internal_90d,0.88
+夏利n7,一汽,夏利N7,,燃油车,,燃油,,internal_90d,0.88
+夏朗,大众,夏朗,,燃油车,,燃油,,internal_90d,0.88
+多利卡载货车,东风,多利卡载货车,其他,燃油车,,燃油,,heuristic_body+internal_90d,0.88
+多拉大面,货拉拉多拉,多拉大面,,新能源,,新能源,,internal_90d,0.88
+多米,奇瑞QQ,多米,轿车,新能源,轿车,新能源,,dcd_ranking+internal_90d,0.96
+大7mpv,纳智捷,大7 MPV,MPV,燃油车,MPV,燃油,,heuristic_body+internal_90d,0.88
+大7suv,纳智捷,大7 SUV,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+大mpv,九龙,大MPV,MPV,燃油车,MPV,燃油,,heuristic_body+internal_90d,0.88
+大乘g60s,大乘汽车,大乘G60S,,燃油车,,燃油,,internal_90d,0.88
+大乘g70s,大乘汽车,大乘G70s,,燃油车,,燃油,,internal_90d,0.88
+大众cc,大众,大众CC,轿车,燃油车,轿车,燃油,,dcd_ranking+internal_90d,0.96
+大众cc进口,大众,大众CC(进口),,燃油车,,燃油,,internal_90d,0.88
+大众eos,大众,大众Eos,,燃油车,,燃油,,internal_90d,0.88
+大众fox,大众,大众Fox,,燃油车,,燃油,,internal_90d,0.88
+大众id3,大众,大众ID.3,轿车,新能源,轿车,新能源,,dcd_ranking+internal_90d,0.96
+大众tera,大众,大众Tera,,燃油车,,燃油,,internal_90d,0.88
+大众up!,大众,大众up!,,燃油车,,燃油,,internal_90d,0.88
+大切诺基,Jeep,大切诺基,,燃油车,,燃油,,internal_90d,0.88
+大切诺基4xe进口,Jeep,大切诺基4xe(进口),SUV,新能源,SUV,新能源,,dcd_ranking+internal_90d,0.96
+大切诺基srt,Jeep,大切诺基 SRT,,燃油车,,燃油,,internal_90d,0.88
+大切诺基进口,Jeep,大切诺基(进口),,燃油车,,燃油,,internal_90d,0.88
+大家5ev,大通,大家5 EV,,新能源,,新能源,,internal_90d,0.88
+大家5plugin,大通,大家5 PLUG IN,,新能源,,新能源,,internal_90d,0.88
+大家6,大通,大家6,,新能源,,新能源,,internal_90d,0.88
+大家7ev,大通,大家7 EV,MPV,新能源,MPV,新能源,,dcd_ranking+internal_90d,0.96
+大家7超混,大通,大家7超混,MPV,新能源,MPV,新能源,,dcd_ranking+internal_90d,0.96
+大家9ev,大通,大家9 EV,MPV,新能源,MPV,新能源,,dcd_ranking+internal_90d,0.96
+大家9超混,大通,大家9超混,MPV,新能源,MPV,新能源,,dcd_ranking+internal_90d,0.96
+大将军ev皮卡,福田,大将军EV皮卡,其他,新能源,皮卡,新能源,,heuristic_body+internal_90d,0.88
+大将军f9,福田,大将军F9,,燃油车,,燃油,,internal_90d,0.88
+大将军f9ev,福田,大将军F9 EV,,新能源,,新能源,,internal_90d,0.88
+大将军g7,福田,大将军G7,,燃油车,,燃油,,internal_90d,0.88
+大将军g9,福田,大将军G9,,燃油车,,燃油,,internal_90d,0.88
+大拿m1,大通,大拿M1,,,,,,unknown,0.0
+大拿t1,大通,大拿T1,,燃油车,,燃油,,internal_90d,0.88
+大拿v1,大通,大拿V1,,新能源,,新能源,,dcd_ranking+internal_90d,0.96
+大拿v1l,大通,大拿V1 L,,新能源,,新能源,,dcd_ranking+internal_90d,0.96
+大指挥官,Jeep,大指挥官,,燃油车,,燃油,,internal_90d,0.88
+大指挥官phev,Jeep,大指挥官PHEV,,新能源,,新能源,,internal_90d,0.88
+大捷龙,克莱斯勒,大捷龙,,燃油车,,燃油,,internal_90d,0.88
+大捷龙phev进口,克莱斯勒,大捷龙PHEV(进口),,新能源,,新能源,,internal_90d,0.88
+大捷龙进口,克莱斯勒,大捷龙(进口),,燃油车,,燃油,,internal_90d,0.88
+大蚂蚁,奇瑞新能源,大蚂蚁,,新能源,,新能源,,internal_90d,0.88
+大迈x5,众泰,大迈X5,,燃油车,,燃油,,internal_90d,0.88
+大迈x7,众泰,大迈X7,,燃油车,,燃油,,internal_90d,0.88
+大运星p30,大运,大运星P30,,燃油车,,燃油,,internal_90d,0.88
+大通d60,大通,大通D60,,燃油车,,燃油,,internal_90d,0.88
+大通d90,大通,大通D90,MPV,燃油车,MPV,燃油,,heuristic_body+internal_90d,0.88
+大通d90pro,大通,大通D90 Pro,MPV,燃油车,MPV,燃油,,heuristic_body+internal_90d,0.88
+大通eg10,大通,大通EG10,,新能源,,新能源,,internal_90d,0.88
+大通euniq5,大通,大通EUNIQ 5,,新能源,,新能源,,internal_90d,0.88
+大通euniq5plugin,大通,大通EUNIQ 5 PLUG IN,,新能源,,新能源,,internal_90d,0.88
+大通ev30,大通,大通EV30,,新能源,,新能源,,internal_90d,0.88
+大通g10,大通,大通G10,MPV,燃油车,MPV,燃油,,dcd_ranking+internal_90d,0.96
+大通g20,大通,大通G20,,燃油车,,燃油,,internal_90d,0.88
+大通g50,大通,大通G50,MPV,燃油车,MPV,燃油,,dcd_ranking+internal_90d,0.96
+大通g50phev,大通,大通G50 PHEV,MPV,新能源,MPV,新能源,,dcd_ranking+internal_90d,0.96
+大通g70,大通,大通G70,MPV,燃油车,MPV,燃油,,dcd_ranking+internal_90d,0.96
+大通g90,大通,大通G90,MPV,燃油车,MPV,燃油,,dcd_ranking+internal_90d,0.96
+大通rg10,大通,大通RG10,,燃油车,,燃油,,internal_90d,0.88
+大通t60,大通,大通T60,,燃油车,,燃油,,dcd_ranking+internal_90d,0.96
+大通t70,大通,大通T70,,燃油车,,燃油,,internal_90d,0.88
+大通t90,大通,大通T90,,燃油车,,燃油,,internal_90d,0.88
+大通v100,大通,大通V100,,燃油车,轻客,燃油,,internal_90d,0.88
+大通v80房车,大通,大通V80房车,其他,燃油车,轻客,燃油,,heuristic_body+internal_90d,0.88
+大通v90房车,大通,大通V90房车,其他,燃油车,轻客,燃油,,heuristic_body+internal_90d,0.88
+大道,江铃,大道,,燃油车,,燃油,,internal_90d,0.88
+大道ev,江铃,大道EV,,,,,,unknown,0.0
+大领主,中兴,大领主,,燃油车,,燃油,,internal_90d,0.88
+天籁,日产,天籁,轿车,燃油车,轿车,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+天美et5,创维汽车,天美ET5,,新能源,,新能源,,internal_90d,0.88
+天语sx4,铃木,天语 SX4,,燃油车,,燃油,,internal_90d,0.88
+天语尚悦,铃木,天语 尚悦,,燃油车,,燃油,,internal_90d,0.88
+天逸c5aircross,雪铁龙,天逸 C5 AIRCROSS,SUV,燃油车,SUV,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+天逸c5aircrossphev,雪铁龙,天逸 C5 AIRCROSS PHEV,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+天际me5,天际汽车,天际ME5,,新能源,,新能源,,internal_90d,0.88
+天际me7,天际汽车,天际ME7,,新能源,,新能源,,internal_90d,0.88
+天龙旗舰kx牵引车,东风,天龙旗舰KX牵引车,,燃油车,,燃油,,internal_90d,0.88
+奇域,旅美房车,奇域,,燃油车,,燃油,,internal_90d,0.88
+奇瑞a1,奇瑞,奇瑞A1,,燃油车,,燃油,,internal_90d,0.88
+奇瑞a3,奇瑞,奇瑞A3,,燃油车,,燃油,,internal_90d,0.88
+奇瑞a5,奇瑞,奇瑞A5,,燃油车,,燃油,,internal_90d,0.88
+奇瑞e3,奇瑞,奇瑞E3,,燃油车,,燃油,,internal_90d,0.88
+奇瑞e5,奇瑞,奇瑞E5,,燃油车,,燃油,,internal_90d,0.88
+奇瑞eq,奇瑞新能源,奇瑞eQ,,新能源,,新能源,,internal_90d,0.88
+奇瑞eq2,奇瑞新能源,奇瑞eQ2,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+奇瑞gene,奇瑞,奇瑞GENE,,燃油车,,燃油,,internal_90d,0.88
+奇瑞qq,奇瑞,奇瑞QQ,,燃油车,,燃油,,internal_90d,0.88
+奇瑞qq3,奇瑞,奇瑞QQ3,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+奇瑞qq6,奇瑞,奇瑞QQ6,,燃油车,,燃油,,internal_90d,0.88
+奇瑞x1,奇瑞,奇瑞X1,,燃油车,,燃油,,internal_90d,0.88
+奇瑞舒享家,奇瑞新能源,奇瑞舒享家,,新能源,,新能源,,internal_90d,0.88
+奇骏,日产,奇骏,SUV,燃油车,SUV,燃油,,dcd_ranking+internal_90d,0.96
+奇骏荣耀,日产,奇骏·荣耀,,燃油车,,燃油,,internal_90d,0.88
+奇骏进口,日产,奇骏(进口),,燃油车,,燃油,,internal_90d,0.88
+奔奔,长安,奔奔,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+奔奔estar,长安欧尚,奔奔E-Star,轿车,新能源,轿车,新能源,,heuristic_body+internal_90d,0.88
+奔奔ev,长安,奔奔EV,轿车,新能源,轿车,新能源,,heuristic_body+internal_90d,0.88
+奔奔love,长安,奔奔LOVE,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+奔奔mini,长安,奔奔MINI,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+奔奔minie,长安欧尚,奔奔mini-e,轿车,新能源,轿车,新能源,,heuristic_body+internal_90d,0.88
+奔腾b30,奔腾,奔腾B30,,燃油车,,燃油,,internal_90d,0.88
+奔腾b30ev,奔腾,奔腾B30 EV,,新能源,,新能源,,internal_90d,0.88
+奔腾b50,奔腾,奔腾B50,,燃油车,,燃油,,internal_90d,0.88
+奔腾b70,奔腾,奔腾B70,,燃油车,,燃油,,internal_90d,0.88
+奔腾b70s,奔腾,奔腾B70S,,燃油车,,燃油,,internal_90d,0.88
+奔腾b90,奔腾,奔腾B90,,燃油车,,燃油,,internal_90d,0.88
+奔腾m9,奔腾,奔腾M9,,燃油车,,燃油,,internal_90d,0.88
+奔腾nat,奔腾,奔腾NAT,,新能源,,新能源,,internal_90d,0.88
+奔腾t33,奔腾,奔腾T33,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+奔腾t55,奔腾,奔腾T55,,燃油车,,燃油,,internal_90d,0.88
+奔腾t77,奔腾,奔腾T77,,燃油车,,燃油,,internal_90d,0.88
+奔腾t90,奔腾,奔腾T90,,燃油车,,燃油,,internal_90d,0.88
+奔腾t99,奔腾,奔腾T99,,燃油车,,燃油,,internal_90d,0.88
+奔腾x40,奔腾,奔腾X40,,燃油车,,燃油,,internal_90d,0.88
+奔腾x40ev,奔腾,奔腾X40 EV,,新能源,,新能源,,internal_90d,0.88
+奔腾x80,奔腾,奔腾X80,,燃油车,,燃油,,internal_90d,0.88
+奔腾全新概念轿车,奔腾,奔腾全新概念轿车,,燃油车,,燃油,,internal_90d,0.88
+奔腾小马,奔腾,奔腾小马,轿车,新能源,轿车,新能源,,dcd_ranking+heuristic_body+internal_90d,0.96
+奔驰300e,奔驰,奔驰300 E,,燃油车,,燃油,,internal_90d,0.88
+奔驰actros国产牵引车,奔驰,奔驰Actros(国产)牵引车,,燃油车,,燃油,,internal_90d,0.88
+奔驰a级,奔驰,奔驰A级,轿车,燃油车,轿车,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+奔驰a级amg,奔驰,奔驰A级AMG,轿车,燃油车,轿车,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+奔驰a级amg进口,奔驰,奔驰A级AMG(进口),轿车,燃油车,轿车,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+奔驰a级进口,奔驰,奔驰A级(进口),轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+奔驰b级,奔驰,奔驰B级,MPV,燃油车,MPV,燃油,,heuristic_body+internal_90d,0.88
+奔驰cla,奔驰,奔驰CLA,,燃油车,,燃油,,internal_90d,0.88
+奔驰claamg,奔驰,奔驰CLA AMG,轿车,燃油车,轿车,燃油,,dcd_ranking+internal_90d,0.96
+奔驰claev,奔驰,奔驰CLA EV,,新能源,,新能源,,internal_90d,0.88
+奔驰claphev,奔驰,奔驰CLA PHEV,,燃油车,,燃油,,internal_90d,0.88
+奔驰cla级,奔驰,奔驰CLA级,,燃油车,,燃油,,internal_90d,0.88
+奔驰cla级amg,奔驰,奔驰CLA级AMG,,燃油车,,燃油,,internal_90d,0.88
+奔驰cla进口,奔驰,奔驰CLA(进口),轿车,燃油车,轿车,燃油,,dcd_ranking+internal_90d,0.96
+奔驰cle级,奔驰,奔驰CLE级,轿车,燃油车,轿车,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+奔驰cle级amg,奔驰,奔驰CLE级AMG,轿车,燃油车,轿车,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+奔驰clk级,奔驰,奔驰CLK级,,燃油车,,燃油,,internal_90d,0.88
+奔驰cls,奔驰,奔驰CLS,,燃油车,,燃油,,internal_90d,0.88
+奔驰cls级amg,奔驰,奔驰CLS级AMG,,燃油车,,燃油,,internal_90d,0.88
+奔驰cl级,奔驰,奔驰CL级,,燃油车,,燃油,,internal_90d,0.88
+奔驰c级,奔驰,奔驰C级,轿车,燃油车,轿车,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+奔驰c级amg,奔驰,奔驰C级AMG,轿车,燃油车,轿车,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+奔驰c级amgphev,奔驰,奔驰C级AMG PHEV,轿车,新能源,轿车,新能源,,heuristic_body+internal_90d,0.88
+奔驰c级phev,奔驰,奔驰C级PHEV,轿车,新能源,轿车,新能源,,dcd_ranking+heuristic_body+internal_90d,0.96
+奔驰c级进口,奔驰,奔驰C级(进口),轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+奔驰eqa,奔驰,奔驰EQA,SUV,新能源,SUV,新能源,,dcd_ranking+internal_90d,0.96
+奔驰eqb,奔驰,奔驰EQB,SUV,新能源,SUV,新能源,,dcd_ranking+internal_90d,0.96
+奔驰eqc,奔驰,奔驰EQC,,新能源,,新能源,,internal_90d,0.88
+奔驰eqe,奔驰,奔驰EQE,轿车,新能源,轿车,新能源,,dcd_ranking+internal_90d,0.96
+奔驰eqeamg,奔驰,奔驰EQE AMG,轿车,新能源,轿车,新能源,,dcd_ranking+internal_90d,0.96
+奔驰eqesuv,奔驰,奔驰EQE SUV,SUV,新能源,SUV,新能源,,dcd_ranking+heuristic_body+internal_90d,0.96
+奔驰eqs,奔驰,奔驰EQS,轿车,新能源,轿车,新能源,,dcd_ranking+internal_90d,0.96
+奔驰eqsamg,奔驰,奔驰EQS AMG,轿车,新能源,轿车,新能源,,dcd_ranking,0.96
+奔驰eqssuv,奔驰,奔驰EQS SUV,SUV,新能源,SUV,新能源,,dcd_ranking+heuristic_body+internal_90d,0.96
+奔驰e级,奔驰,奔驰E级,轿车,燃油车,轿车,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+奔驰e级amg,奔驰,奔驰E级AMG,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+奔驰e级phev,奔驰,奔驰E级PHEV,轿车,新能源,轿车,新能源,,dcd_ranking+heuristic_body+internal_90d,0.96
+奔驰e级进口,奔驰,奔驰E级(进口),轿车,燃油车,轿车,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+奔驰gla,奔驰,奔驰GLA,SUV,燃油车,SUV,燃油,,dcd_ranking+internal_90d,0.96
+奔驰glaamg,奔驰,奔驰GLA AMG,SUV,燃油车,SUV,燃油,,dcd_ranking+internal_90d,0.96
+奔驰glaphev,奔驰,奔驰GLA PHEV,,新能源,,新能源,,internal_90d,0.88
+奔驰gla进口,奔驰,奔驰GLA(进口),,燃油车,,燃油,,internal_90d,0.88
+奔驰glb,奔驰,奔驰GLB,SUV,燃油车,SUV,燃油,,dcd_ranking+internal_90d,0.96
+奔驰glbamg,奔驰,奔驰GLB AMG,SUV,燃油车,SUV,燃油,,dcd_ranking+internal_90d,0.96
+奔驰glc,奔驰,奔驰GLC,SUV,燃油车,SUV,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+奔驰glcamg,奔驰,奔驰GLC AMG,SUV,燃油车,SUV,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+奔驰glcphev,奔驰,奔驰GLC PHEV,SUV,新能源,SUV,新能源,,dcd_ranking+heuristic_body+internal_90d,0.96
+奔驰glcphev进口,奔驰,奔驰GLC PHEV(进口),SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+奔驰glc海外,奔驰,奔驰GLC(海外),SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+奔驰glc轿跑,奔驰,奔驰GLC轿跑,SUV,燃油车,SUV,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+奔驰glc轿跑amg,奔驰,奔驰GLC轿跑 AMG,SUV,燃油车,SUV,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+奔驰gle,奔驰,奔驰GLE,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+奔驰gleamg,奔驰,奔驰GLE AMG,SUV,燃油车,SUV,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+奔驰glephev,奔驰,奔驰GLE PHEV,SUV,新能源,SUV,新能源,,dcd_ranking+heuristic_body+internal_90d,0.96
+奔驰gle轿跑,奔驰,奔驰GLE轿跑,SUV,燃油车,SUV,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+奔驰gle轿跑amg,奔驰,奔驰GLE轿跑 AMG,SUV,燃油车,SUV,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+奔驰gle轿跑phev,奔驰,奔驰GLE轿跑 PHEV,SUV,新能源,SUV,新能源,,dcd_ranking+heuristic_body+internal_90d,0.96
+奔驰gle进口,奔驰,奔驰GLE(进口),SUV,燃油车,SUV,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+奔驰glk级,奔驰,奔驰GLK级,,燃油车,,燃油,,internal_90d,0.88
+奔驰glk级进口,奔驰,奔驰GLK级(进口),,燃油车,,燃油,,internal_90d,0.88
+奔驰gls,奔驰,奔驰GLS,SUV,燃油车,SUV,燃油,,dcd_ranking+internal_90d,0.96
+奔驰glsamg,奔驰,奔驰GLS AMG,SUV,燃油车,SUV,燃油,,dcd_ranking+internal_90d,0.96
+奔驰gl级,奔驰,奔驰GL级,,燃油车,,燃油,,internal_90d,0.88
+奔驰gl级amg,奔驰,奔驰GL级AMG,,燃油车,,燃油,,internal_90d,0.88
+奔驰g级,奔驰,奔驰G级,,燃油车,,燃油,,internal_90d,0.88
+奔驰g级amg,奔驰,奔驰G级AMG,,燃油车,,燃油,,internal_90d,0.88
+奔驰m级,奔驰,奔驰M级,,燃油车,,燃油,,internal_90d,0.88
+奔驰m级amg,奔驰,奔驰M级AMG,,燃油车,,燃油,,internal_90d,0.88
+奔驰r级,奔驰,奔驰R级,,燃油车,,燃油,,internal_90d,0.88
+奔驰slc级,奔驰,奔驰SLC级,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+奔驰slk级,奔驰,奔驰SLK级,,燃油车,,燃油,,internal_90d,0.88
+奔驰sls级amg,奔驰,奔驰SLS级AMG,,燃油车,,燃油,,internal_90d,0.88
+奔驰sl级,奔驰,奔驰SL级,,燃油车,,燃油,,internal_90d,0.88
+奔驰sl级amg,奔驰,奔驰SL级AMG,,燃油车,,燃油,,dcd_ranking,0.96
+奔驰s级,奔驰,奔驰S级,轿车,燃油车,轿车,燃油,,dcd_ranking+internal_90d,0.96
+奔驰s级amg,奔驰,奔驰S级AMG,,燃油车,,燃油,,internal_90d,0.88
+奔驰s级phev,奔驰,奔驰S级PHEV,轿车,新能源,轿车,新能源,,dcd_ranking+internal_90d,0.96
+奔驰v级,奔驰,奔驰V级,MPV,燃油车,MPV,燃油,,dcd_ranking+internal_90d,0.96
+奔驰v级海外,奔驰,奔驰V级(海外),,燃油车,,燃油,,internal_90d,0.88
+奕歌,三菱,奕歌,,燃油车,,燃油,,internal_90d,0.88
+奕泽e进擎,丰田,奕泽E进擎,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+奕泽izoa,丰田,奕泽IZOA,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+奕派007,东风奕派,奕派007,轿车,新能源,轿车,新能源,,dcd_ranking+heuristic_body+internal_90d,0.96
+奕派008,东风奕派,奕派008,SUV,新能源,SUV,新能源,,dcd_ranking+internal_90d,0.96
+奕炫,东风风神,奕炫,轿车,燃油车,轿车,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+奕炫ev,东风风神,奕炫EV,轿车,新能源,轿车,新能源,,heuristic_body+internal_90d,0.88
+奕炫gs,东风风神,奕炫GS,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+奕炫max,东风风神,奕炫MAX,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+奕跑,起亚,奕跑,SUV,燃油车,SUV,燃油,,dcd_ranking+internal_90d,0.96
+奥丁,东风,奥丁,,燃油车,,燃油,,internal_90d,0.88
+奥德赛,本田,奥德赛,MPV,燃油车,MPV,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+奥德赛海外,本田,奥德赛(海外),MPV,燃油车,MPV,燃油,,heuristic_body+internal_90d,0.88
+奥拓,铃木,奥拓,,燃油车,,燃油,,internal_90d,0.88
+奥轩g5,广汽吉奥,奥轩G5,,燃油车,,燃油,,internal_90d,0.88
+奥轩gx5,广汽吉奥,奥轩GX5,,燃油车,,燃油,,internal_90d,0.88
+奥迪a1,奥迪,奥迪A1,,燃油车,,燃油,,internal_90d,0.88
+奥迪a3,奥迪,奥迪A3,轿车,燃油车,轿车,燃油,,dcd_ranking+internal_90d,0.96
+奥迪a3进口,奥迪,奥迪A3(进口),,燃油车,,燃油,,internal_90d,0.88
+奥迪a4,奥迪,奥迪A4,,燃油车,,燃油,,internal_90d,0.88
+奥迪a4l,奥迪,奥迪A4L,轿车,燃油车,轿车,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+奥迪a4进口,奥迪,奥迪A4(进口),轿车,燃油车,轿车,燃油,,dcd_ranking+internal_90d,0.96
+奥迪a5,奥迪,奥迪A5,轿车,燃油车,轿车,燃油,,dcd_ranking+internal_90d,0.96
+奥迪a5l,奥迪,奥迪A5L,轿车,燃油车,轿车,燃油,,dcd_ranking+internal_90d,0.96
+奥迪a5lsportback,奥迪,奥迪A5L Sportback,轿车,燃油车,轿车,燃油,,dcd_ranking+internal_90d,0.96
+奥迪a6,奥迪,奥迪A6,,燃油车,,燃油,,internal_90d,0.88
+奥迪a6l,奥迪,奥迪A6L,轿车,燃油车,轿车,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+奥迪a6letron,奥迪,奥迪A6L e-tron,轿车,新能源,轿车,新能源,,heuristic_body+internal_90d,0.88
+奥迪a6lphev,奥迪,奥迪A6L PHEV,轿车,新能源,轿车,新能源,,heuristic_body+internal_90d,0.88
+奥迪a6进口,奥迪,奥迪A6(进口),轿车,燃油车,轿车,燃油,,dcd_ranking+internal_90d,0.96
+奥迪a7,奥迪,奥迪A7,轿车,燃油车,轿车,燃油,,dcd_ranking+internal_90d,0.96
+奥迪a7l,奥迪,奥迪A7L,轿车,燃油车,轿车,燃油,,dcd_ranking+internal_90d,0.96
+奥迪a8,奥迪,奥迪A8,轿车,燃油车,轿车,燃油,,dcd_ranking+internal_90d,0.96
+奥迪a8phev,奥迪,奥迪A8 PHEV,,新能源,,新能源,,internal_90d,0.88
+奥迪e5sportback,奥迪AUDI,奥迪E5 Sportback,轿车,新能源,轿车,新能源,,dcd_ranking+internal_90d,0.96
+奥迪e7x,奥迪AUDI,奥迪E7X,,新能源,,新能源,,internal_90d,0.88
+奥迪etron,奥迪,奥迪e-tron,,新能源,,新能源,,internal_90d,0.88
+奥迪etrongt,奥迪,奥迪e-tron GT,,新能源,,新能源,,internal_90d,0.88
+奥迪etronsportback进口,奥迪,奥迪e-tron Sportback(进口),,新能源,,新能源,,internal_90d,0.88
+奥迪etron进口,奥迪,奥迪e-tron(进口),,新能源,,新能源,,internal_90d,0.88
+奥迪q2,奥迪,奥迪Q2,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+奥迪q2l,奥迪,奥迪Q2L,SUV,燃油车,SUV,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+奥迪q2letron,奥迪,奥迪Q2L e-tron,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+奥迪q3,奥迪,奥迪Q3,SUV,燃油车,SUV,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+奥迪q3sportback,奥迪,奥迪Q3 Sportback,SUV,燃油车,SUV,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+奥迪q3进口,奥迪,奥迪Q3(进口),SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+奥迪q4,奥迪,奥迪Q4,,燃油车,,燃油,,internal_90d,0.88
+奥迪q4etron,奥迪,奥迪Q4 e-tron,SUV,新能源,SUV,新能源,,dcd_ranking+internal_90d,0.96
+奥迪q5,奥迪,奥迪Q5,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+奥迪q5etron,奥迪,奥迪Q5 e-tron,SUV,新能源,SUV,新能源,,dcd_ranking+heuristic_body+internal_90d,0.96
+奥迪q5l,奥迪,奥迪Q5L,SUV,燃油车,SUV,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+奥迪q5lsportback,奥迪,奥迪Q5L Sportback,SUV,燃油车,SUV,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+奥迪q5进口,奥迪,奥迪Q5(进口),SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+奥迪q6,奥迪,奥迪Q6,SUV,燃油车,SUV,燃油,,dcd_ranking+internal_90d,0.96
+奥迪q6letron,奥迪,奥迪Q6L e-tron,SUV,新能源,SUV,新能源,,dcd_ranking+internal_90d,0.96
+奥迪q6lsportbacketron,奥迪,奥迪Q6L Sportback e-tron,SUV,新能源,SUV,新能源,,dcd_ranking,0.96
+奥迪q7,奥迪,奥迪Q7,SUV,燃油车,SUV,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+奥迪q7phev,奥迪,奥迪Q7 PHEV,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+奥迪q8,奥迪,奥迪Q8,SUV,燃油车,SUV,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+奥迪r8,奥迪,奥迪R8,,燃油车,,燃油,,internal_90d,0.88
+奥迪rs3,奥迪,奥迪RS 3,,燃油车,,燃油,,internal_90d,0.88
+奥迪rs4,奥迪,奥迪RS 4,轿车,燃油车,轿车,燃油,,dcd_ranking+internal_90d,0.96
+奥迪rs5,奥迪,奥迪RS 5,轿车,燃油车,轿车,燃油,,dcd_ranking+internal_90d,0.96
+奥迪rs6,奥迪,奥迪RS 6,轿车,燃油车,轿车,燃油,,dcd_ranking+internal_90d,0.96
+奥迪rs7,奥迪,奥迪RS 7,轿车,燃油车,轿车,燃油,,dcd_ranking+internal_90d,0.96
+奥迪rsetrongt,奥迪,奥迪RS e-tron GT,,新能源,,新能源,,internal_90d,0.88
+奥迪rsq8,奥迪,奥迪RS Q8,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+奥迪s3,奥迪,奥迪S3,,燃油车,,燃油,,internal_90d,0.88
+奥迪s4,奥迪,奥迪S4,轿车,燃油车,轿车,燃油,,dcd_ranking+internal_90d,0.96
+奥迪s5,奥迪,奥迪S5,轿车,燃油车,轿车,燃油,,dcd_ranking+internal_90d,0.96
+奥迪s6,奥迪,奥迪S6,轿车,燃油车,轿车,燃油,,dcd_ranking+internal_90d,0.96
+奥迪s7,奥迪,奥迪S7,轿车,燃油车,轿车,燃油,,dcd_ranking+internal_90d,0.96
+奥迪s8,奥迪,奥迪S8,,燃油车,,燃油,,internal_90d,0.88
+奥迪sq5,奥迪,奥迪SQ5,SUV,燃油车,SUV,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+奥迪sq5sportback,奥迪,奥迪SQ5 Sportback,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+奥迪sq7,奥迪,奥迪SQ7,SUV,燃油车,SUV,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+奥迪tt,奥迪,奥迪TT,,燃油车,,燃油,,internal_90d,0.88
+奥迪tts,奥迪,奥迪TTS,,燃油车,,燃油,,internal_90d,0.88
+好运,SRM鑫源,好运,,新能源,,新能源,,internal_90d,0.88
+好运1号,鑫源汽车,好运1号,,新能源,,新能源,,internal_90d,0.88
+威乐,一汽,威乐,,燃油车,,燃油,,internal_90d,0.88
+威兰达,丰田,威兰达,SUV,燃油车,SUV,燃油,,dcd_ranking+internal_90d,0.96
+威兰达phev,丰田,威兰达PHEV,,新能源,,新能源,,internal_90d,0.88
+威兰达高性能版,丰田,威兰达高性能版,,新能源,,新能源,,internal_90d,0.88
+威姿,一汽,威姿,,燃油车,,燃油,,internal_90d,0.88
+威尔法,丰田,威尔法,,燃油车,,燃油,,internal_90d,0.88
+威志,一汽,威志,,燃油车,,燃油,,internal_90d,0.88
+威志v2,一汽,威志V2,,燃油车,,燃油,,internal_90d,0.88
+威志v5,一汽,威志V5,,燃油车,,燃油,,internal_90d,0.88
+威朗,别克,威朗,轿车,燃油车,轿车,燃油,,dcd_ranking+internal_90d,0.96
+威然,大众,威然,MPV,燃油车,MPV,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+威虎,中兴,威虎,,燃油车,,燃油,,internal_90d,0.88
+威虎g3,中兴,威虎G3,,燃油车,,燃油,,internal_90d,0.88
+威铃载货车,江淮,威铃载货车,其他,燃油车,,燃油,,heuristic_body+internal_90d,0.88
+威霆,奔驰,威霆,MPV,燃油车,MPV,燃油,,dcd_ranking+internal_90d,0.96
+威霆进口,奔驰,威霆(进口),,燃油车,,燃油,,internal_90d,0.88
+威飒,丰田,威飒,SUV,燃油车,SUV,燃油,,dcd_ranking+internal_90d,0.96
+威飒进口,丰田,威飒(进口),,燃油车,,燃油,,internal_90d,0.88
+威马e5,威马汽车,威马E.5,,新能源,,新能源,,internal_90d,0.88
+威马ex5,威马汽车,威马EX5,,新能源,,新能源,,internal_90d,0.88
+威马ex6,威马汽车,威马EX6,,新能源,,新能源,,internal_90d,0.88
+威马w6,威马汽车,威马W6,,新能源,,新能源,,internal_90d,0.88
+威马冠军,威马汽车,威马冠军,,燃油车,,燃油,,internal_90d,0.88
+威驰,丰田,威驰,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+威驰fs,丰田,威驰FS,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+威麟h5,威麟,威麟H5,,燃油车,,燃油,,internal_90d,0.88
+威麟r08,威麟,威麟R08,,燃油车,,燃油,,internal_90d,0.88
+威麟r08ev,威麟,威麟R08 EV,,新能源,,新能源,,internal_90d,0.88
+威麟v5,威麟,威麟V5,,燃油车,,燃油,,internal_90d,0.88
+威麟v8,奇瑞,威麟V8,,燃油车,,燃油,,internal_90d,0.88
+威麟x5,威麟,威麟X5,,燃油车,,燃油,,internal_90d,0.88
+宇通房车,宇通客车,宇通房车,其他,燃油车,,燃油,,heuristic_body+internal_90d,0.88
+安凯q5,安凯客车,安凯Q5,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+安凯快乐运,安凯客车,安凯快乐运,,新能源,,新能源,,internal_90d,0.88
+安德拉,欧宝,安德拉,,燃油车,,燃油,,internal_90d,0.88
+宋,比亚迪,宋,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+宋dm,比亚迪,宋DM,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+宋ev,比亚迪,宋EV,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+宋l,比亚迪,宋L,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+宋ldm,比亚迪,宋L DM,SUV,新能源,SUV,新能源,,dcd_ranking+heuristic_body+internal_90d,0.96
+宋lev,比亚迪,宋L EV,SUV,新能源,SUV,新能源,,dcd_ranking+heuristic_body+internal_90d,0.96
+宋max,比亚迪,宋MAX,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+宋maxdm,比亚迪,宋MAX DM,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+宋maxdmi,比亚迪,宋MAX DM-i,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+宋plus,比亚迪,宋PLUS,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+宋plusdm,比亚迪,宋PLUS DM,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+宋plusdmi,比亚迪,宋PLUS DM-i,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+宋plusev,比亚迪,宋PLUS EV,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+宋pro,比亚迪,宋Pro,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+宋prodm,比亚迪,宋Pro DM,SUV,新能源,SUV,新能源,,dcd_ranking+heuristic_body+internal_90d,0.96
+宋prodmi,比亚迪,宋Pro DM-i,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+宋proev,比亚迪,宋Pro EV,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+宋ultraev,比亚迪,宋Ultra EV,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+宝典,江铃,宝典,其他,燃油车,皮卡,燃油,,heuristic_body+internal_90d,0.88
+宝利格,华泰,宝利格,,燃油车,,燃油,,internal_90d,0.88
+宝威,江铃,宝威,,燃油车,,燃油,,internal_90d,0.88
+宝斯通,安凯客车,宝斯通,,新能源,,新能源,,internal_90d,0.88
+宝来,大众,宝来,轿车,燃油车,轿车,燃油,,dcd_ranking+internal_90d,0.96
+宝来纯电,大众,宝来·纯电,,新能源,,新能源,,internal_90d,0.88
+宝来经典,大众,宝来经典,,燃油车,,燃油,,internal_90d,0.88
+宝沃bx5,宝沃,宝沃BX5,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+宝沃bx6,宝沃,宝沃BX6,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+宝沃bx7,宝沃,宝沃BX7,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+宝马1系,宝马,宝马1系,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+宝马1系m,宝马,宝马1系M,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+宝马1系进口,宝马,宝马1系(进口),轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+宝马2系,宝马,宝马2系,轿车,燃油车,轿车,燃油,,dcd_ranking+internal_90d,0.96
+宝马2系多功能旅行车,宝马,宝马2系多功能旅行车,,燃油车,,燃油,,internal_90d,0.88
+宝马2系旅行车,宝马,宝马2系旅行车,,燃油车,,燃油,,internal_90d,0.88
+宝马2系旅行车进口,宝马,宝马2系旅行车(进口),,燃油车,,燃油,,internal_90d,0.88
+宝马2系进口,宝马,宝马2系(进口),轿车,燃油车,轿车,燃油,,dcd_ranking+internal_90d,0.96
+宝马328,宝马,宝马328,,燃油车,,燃油,,internal_90d,0.88
+宝马3系,宝马,宝马3系,轿车,燃油车,轿车,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+宝马3系gt,宝马,宝马3系GT,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+宝马3系进口,宝马,宝马3系(进口),轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+宝马4系,宝马,宝马4系,轿车,燃油车,轿车,燃油,,dcd_ranking+internal_90d,0.96
+宝马502,宝马,宝马502,,燃油车,,燃油,,internal_90d,0.88
+宝马5系,宝马,宝马5系,轿车,燃油车,轿车,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+宝马5系gt,宝马,宝马5系GT,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+宝马5系phev,宝马,宝马5系PHEV,轿车,新能源,轿车,新能源,,heuristic_body+internal_90d,0.88
+宝马5系进口,宝马,宝马5系(进口),轿车,燃油车,轿车,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+宝马6系,宝马,宝马6系,,燃油车,,燃油,,internal_90d,0.88
+宝马6系gt,宝马,宝马6系GT,,燃油车,,燃油,,internal_90d,0.88
+宝马7系,宝马,宝马7系,轿车,燃油车,轿车,燃油,,dcd_ranking+internal_90d,0.96
+宝马7系phev,宝马,宝马7系PHEV,,新能源,,新能源,,internal_90d,0.88
+宝马8系,宝马,宝马8系,轿车,燃油车,轿车,燃油,,dcd_ranking+internal_90d,0.96
+宝马i3,宝马,宝马i3,轿车,新能源,轿车,新能源,,dcd_ranking+internal_90d,0.96
+宝马i3进口,宝马,宝马i3(进口),,新能源,,新能源,,internal_90d,0.88
+宝马i4,宝马,宝马i4,轿车,新能源,轿车,新能源,,dcd_ranking+internal_90d,0.96
+宝马i5,宝马,宝马i5,轿车,新能源,轿车,新能源,,dcd_ranking+internal_90d,0.96
+宝马i5进口,宝马,宝马i5(进口),,新能源,,新能源,,internal_90d,0.88
+宝马i7,宝马,宝马i7,轿车,新能源,轿车,新能源,,dcd_ranking+internal_90d,0.96
+宝马i8,宝马,宝马i8,,新能源,,新能源,,internal_90d,0.88
+宝马ix,宝马,宝马iX,SUV,新能源,SUV,新能源,,dcd_ranking+internal_90d,0.96
+宝马ix1,宝马,宝马iX1,SUV,新能源,SUV,新能源,,dcd_ranking+internal_90d,0.96
+宝马ix3,宝马,宝马iX3,,新能源,,新能源,,internal_90d,0.88
+宝马m2,宝马,宝马M2,,燃油车,,燃油,,dcd_ranking+internal_90d,0.96
+宝马m3,宝马,宝马M3,轿车,燃油车,轿车,燃油,,dcd_ranking+internal_90d,0.96
+宝马m4,宝马,宝马M4,轿车,燃油车,轿车,燃油,,dcd_ranking+internal_90d,0.96
+宝马m5,宝马,宝马M5,,燃油车,,燃油,,internal_90d,0.88
+宝马m5phev,宝马,宝马M5 PHEV,,,,,,unknown,0.0
+宝马m6,宝马,宝马M6,MPV,燃油车,MPV,燃油,,heuristic_body+internal_90d,0.88
+宝马x1,宝马,宝马X1,SUV,燃油车,SUV,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+宝马x1phev,宝马,宝马X1 PHEV,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+宝马x1进口,宝马,宝马X1(进口),SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+宝马x2,宝马,宝马X2,,燃油车,,燃油,,internal_90d,0.88
+宝马x2进口,宝马,宝马X2(进口),SUV,燃油车,SUV,燃油,,dcd_ranking+internal_90d,0.96
+宝马x3,宝马,宝马X3,SUV,燃油车,SUV,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+宝马x3m,宝马,宝马X3 M,SUV,燃油车,SUV,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+宝马x3进口,宝马,宝马X3(进口),SUV,燃油车,SUV,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+宝马x4,宝马,宝马X4,SUV,燃油车,SUV,燃油,,dcd_ranking+internal_90d,0.96
+宝马x4m,宝马,宝马X4 M,SUV,燃油车,SUV,燃油,,dcd_ranking+internal_90d,0.96
+宝马x5,宝马,宝马X5,SUV,燃油车,SUV,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+宝马x5m,宝马,宝马X5 M,SUV,燃油车,SUV,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+宝马x5phev,宝马,宝马X5 PHEV,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+宝马x5进口,宝马,宝马X5(进口),SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+宝马x6,宝马,宝马X6,SUV,燃油车,SUV,燃油,,dcd_ranking+internal_90d,0.96
+宝马x6m,宝马,宝马X6 M,SUV,燃油车,SUV,燃油,,dcd_ranking+internal_90d,0.96
+宝马x7,宝马,宝马X7,SUV,燃油车,SUV,燃油,,dcd_ranking+internal_90d,0.96
+宝马xm,宝马,宝马XM,SUV,新能源,SUV,新能源,,dcd_ranking+internal_90d,0.96
+宝马z4,宝马,宝马Z4,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+宝骏310,宝骏,宝骏310,,燃油车,,燃油,,internal_90d,0.88
+宝骏310w,宝骏,宝骏310W,,燃油车,,燃油,,internal_90d,0.88
+宝骏330,宝骏,宝骏330,,燃油车,,燃油,,internal_90d,0.88
+宝骏360,宝骏,宝骏360,,燃油车,,燃油,,internal_90d,0.88
+宝骏510,宝骏,宝骏510,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+宝骏530,宝骏,宝骏530,,燃油车,,燃油,,internal_90d,0.88
+宝骏560,宝骏,宝骏560,,燃油车,,燃油,,internal_90d,0.88
+宝骏610,宝骏,宝骏610,,燃油车,,燃油,,internal_90d,0.88
+宝骏630,宝骏,宝骏630,,燃油车,,燃油,,internal_90d,0.88
+宝骏730,宝骏,宝骏730,,燃油车,,燃油,,internal_90d,0.88
+宝骏e100,宝骏,宝骏E100,,新能源,,新能源,,internal_90d,0.88
+宝骏e200,宝骏,宝骏E200,,新能源,,新能源,,internal_90d,0.88
+宝骏e300,宝骏,宝骏E300,,新能源,,新能源,,internal_90d,0.88
+宝骏kiwiev,宝骏,宝骏KiWi EV,轿车,新能源,轿车,新能源,,heuristic_body+internal_90d,0.88
+宝骏rc5,宝骏,宝骏RC-5,,燃油车,,燃油,,internal_90d,0.88
+宝骏rc6,宝骏,宝骏RC-6,,燃油车,,燃油,,internal_90d,0.88
+宝骏rm5,宝骏,宝骏RM-5,,燃油车,,燃油,,internal_90d,0.88
+宝骏rs3,宝骏,宝骏RS-3,,燃油车,,燃油,,internal_90d,0.88
+宝骏rs5,宝骏,宝骏RS-5,,燃油车,,燃油,,internal_90d,0.88
+宝骏valli,宝骏,宝骏Valli,,燃油车,,燃油,,internal_90d,0.88
+宝骏云海ev,宝骏,宝骏云海EV,SUV,新能源,SUV,新能源,,dcd_ranking+internal_90d,0.96
+宝骏云海phev,宝骏,宝骏云海PHEV,,新能源,,新能源,,internal_90d,0.88
+宝骏享境ev,宝骏,宝骏享境EV,轿车,新能源,轿车,新能源,,dcd_ranking+internal_90d,0.96
+宝骏享境phev,宝骏,宝骏享境PHEV,轿车,新能源,轿车,新能源,,dcd_ranking+internal_90d,0.96
+富康,雪铁龙,富康,,燃油车,,燃油,,internal_90d,0.88
+富康es600,东风富康,富康ES600,,新能源,,新能源,,internal_90d,0.88
+尊界s800,尊界,尊界S800,,新能源,,新能源,,internal_90d,0.88
+尊行,长安凯程,尊行,,燃油车,,燃油,,internal_90d,0.88
+小泰迪,恒润汽车,小泰迪,,新能源,,新能源,,internal_90d,0.88
+小海狮ev,SRM鑫源,小海狮 EV,,新能源,微面,新能源,,internal_90d,0.88
+小海狮x30,金杯,小海狮X30,,燃油车,微面,燃油,,internal_90d,0.88
+小米su7,小米汽车,小米SU7,轿车,新能源,轿车,新能源,,heuristic_body+internal_90d,0.88
+小米su7ultra,小米汽车,小米SU7 Ultra,轿车,新能源,轿车,新能源,,heuristic_body+internal_90d,0.88
+小米yu7,小米汽车,小米YU7,,新能源,,新能源,,internal_90d,0.88
+小老虎,中兴,小老虎,,燃油车,,燃油,,internal_90d,0.88
+小虎fev,小虎,小虎FEV,,新能源,,新能源,,internal_90d,0.88
+小蚂蚁,奇瑞QQ,小蚂蚁,轿车,新能源,轿车,新能源,,dcd_ranking+heuristic_body+internal_90d,0.96
+小象ev,开瑞,小象EV,,新能源,,新能源,,internal_90d,0.88
+小象x3,开瑞,小象X3,,新能源,,新能源,,internal_90d,0.88
+小象x5,开瑞,小象X5,,新能源,,新能源,,internal_90d,0.88
+小贵族,双环,小贵族,,燃油车,,燃油,,internal_90d,0.88
+小超人,福迪,小超人,,燃油车,,燃油,,internal_90d,0.88
+小鹏g3,小鹏汽车,小鹏G3,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+小鹏g6,小鹏汽车,小鹏G6,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+小鹏g7,小鹏汽车,小鹏G7,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+小鹏g9,小鹏汽车,小鹏G9,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+小鹏gx,小鹏汽车,小鹏GX,SUV,新能源,SUV,新能源,,dcd_ranking+heuristic_body+internal_90d,0.96
+小鹏monam03,小鹏汽车,小鹏MONA M03,轿车,新能源,轿车,新能源,,heuristic_body+internal_90d,0.88
+小鹏p5,小鹏汽车,小鹏P5,轿车,新能源,轿车,新能源,,heuristic_body+internal_90d,0.88
+小鹏p7,小鹏汽车,小鹏P7,轿车,新能源,轿车,新能源,,heuristic_body+internal_90d,0.88
+小鹏p7+,小鹏汽车,小鹏P7+,轿车,新能源,轿车,新能源,,heuristic_body+internal_90d,0.88
+小鹏x9,小鹏汽车,小鹏X9,,新能源,,新能源,,internal_90d,0.88
+小鹏汽车g3,小鹏汽车,小鹏汽车G3,,新能源,,新能源,,internal_90d,0.88
+小鹏汽车p7,小鹏汽车,小鹏汽车P7,轿车,新能源,轿车,新能源,,heuristic_body+internal_90d,0.88
+尚界h5,尚界,尚界H5,,新能源,,新能源,,internal_90d,0.88
+尚界z7,尚界,尚界Z7,,新能源,,新能源,,internal_90d,0.88
+尚界z7t,尚界,尚界Z7T,,新能源,,新能源,,internal_90d,0.88
+尚酷,大众,尚酷,,燃油车,,燃油,,internal_90d,0.88
+山海炮,长城,山海炮,其他,燃油车,皮卡,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+山海炮hi4t,长城,山海炮Hi4-T,其他,燃油车,皮卡,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+岚图free,岚图,岚图FREE,SUV,新能源,SUV,新能源,,dcd_ranking+heuristic_body+internal_90d,0.96
+岚图梦想家ev,岚图,岚图梦想家 EV,MPV,新能源,MPV,新能源,,heuristic_body+internal_90d,0.88
+岚图梦想家phev,岚图,岚图梦想家 PHEV,MPV,新能源,MPV,新能源,,heuristic_body+internal_90d,0.88
+岚图泰山,岚图,岚图泰山,,新能源,,新能源,,internal_90d,0.88
+岚图泰山phev,岚图,岚图泰山 PHEV,,新能源,,新能源,,internal_90d,0.88
+岚图泰山x8phev,岚图,岚图泰山X8 PHEV,,新能源,,新能源,,internal_90d,0.88
+岚图知音,岚图,岚图知音,,新能源,,新能源,,internal_90d,0.88
+岚图追光,岚图,岚图追光,,新能源,,新能源,,internal_90d,0.88
+岚图追光ev,岚图,岚图追光 EV,,新能源,,新能源,,internal_90d,0.88
+岚图追光l,岚图,岚图追光L,,新能源,,新能源,,internal_90d,0.88
+岚图追光phev,岚图,岚图追光 PHEV,,新能源,,新能源,,internal_90d,0.88
+巡领者,雪佛兰,巡领者,,燃油车,,燃油,,internal_90d,0.88
+巴菲特s,巴菲特,巴菲特S,,燃油车,,燃油,,internal_90d,0.88
+帅威,广汽吉奥,帅威,,新能源,,新能源,,internal_90d,0.88
+帅客,东风,帅客,,燃油车,,燃油,,internal_90d,0.88
+帅客ev,东风,帅客EV,,新能源,,新能源,,internal_90d,0.88
+帕拉丁,日产,帕拉丁,,燃油车,,燃油,,internal_90d,0.88
+帕拉索,东风,帕拉索,,燃油车,,燃油,,internal_90d,0.88
+帕杰罗,三菱,帕杰罗,,燃油车,,燃油,,internal_90d,0.88
+帕杰罗劲畅,三菱,帕杰罗·劲畅,,燃油车,,燃油,,internal_90d,0.88
+帕杰罗劲畅进口,三菱,帕杰罗·劲畅(进口),,燃油车,,燃油,,internal_90d,0.88
+帕杰罗进口,三菱,帕杰罗(进口),,燃油车,,燃油,,internal_90d,0.88
+帕杰罗速跑,三菱,帕杰罗速跑,,燃油车,,燃油,,internal_90d,0.88
+帕萨特,大众,帕萨特,轿车,燃油车,轿车,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+帕萨特phev,大众,帕萨特PHEV,轿车,新能源,轿车,新能源,,dcd_ranking+heuristic_body+internal_90d,0.96
+帕里斯帝,现代,帕里斯帝,SUV,燃油车,SUV,燃油,,dcd_ranking+internal_90d,0.96
+帝豪,吉利汽车,帝豪,轿车,燃油车,轿车,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+帝豪ev,吉利几何,帝豪EV,轿车,新能源,轿车,新能源,,heuristic_body+internal_90d,0.88
+帝豪gl,吉利汽车,帝豪GL,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+帝豪glphev,吉利汽车,帝豪GL PHEV,轿车,新能源,轿车,新能源,,heuristic_body+internal_90d,0.88
+帝豪gs,吉利汽车,帝豪GS,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+帝豪gse,吉利几何,帝豪GSe,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+帝豪l,吉利汽车,帝豪L,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+帝豪lhip,吉利汽车,帝豪L HiP,轿车,新能源,轿车,新能源,,heuristic_body+internal_90d,0.88
+帝豪phev,吉利汽车,帝豪PHEV,轿车,新能源,轿车,新能源,,heuristic_body+internal_90d,0.88
+帝豪s,吉利汽车,帝豪S,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+帝豪甲醇,吉利汽车,帝豪甲醇,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+幻影,劳斯莱斯,幻影,,燃油车,,燃油,,internal_90d,0.88
+广汽丰田bz4x,丰田,广汽丰田bZ4X,轿车,新能源,轿车,新能源,,heuristic_body+internal_90d,0.88
+广汽丰田ia5,广汽集团,广汽丰田iA5,,新能源,,新能源,,internal_90d,0.88
+广汽丰田ix4,广汽集团,广汽丰田ix4,,新能源,,新能源,,internal_90d,0.88
+广汽丰田铂智3x,丰田,广汽丰田铂智3X,,新能源,,新能源,,internal_90d,0.88
+广汽丰田铂智4x,丰田,广汽丰田铂智4X,,新能源,,新能源,,internal_90d,0.88
+广汽新能源2all,埃安,广汽新能源2ALL,,燃油车,,燃油,,internal_90d,0.88
+广汽新能源2u,埃安,广汽新能源2U,,燃油车,,燃油,,internal_90d,0.88
+广汽新能源2us,埃安,广汽新能源2US,,燃油车,,燃油,,internal_90d,0.88
+广汽本田p7,本田,广汽本田P7,轿车,新能源,轿车,新能源,,dcd_ranking+heuristic_body+internal_90d,0.96
+广汽本田ve1,理念,广汽本田VE-1,,新能源,,新能源,,internal_90d,0.88
+广通艾菲,广通客车,广通艾菲,,燃油车,,燃油,,internal_90d,0.88
+庆铃五十铃t17,五十铃,庆铃五十铃T17,,燃油车,,燃油,,internal_90d,0.88
+库斯途,现代,库斯途,MPV,燃油车,MPV,燃油,,dcd_ranking+internal_90d,0.96
+库里南,劳斯莱斯,库里南,,燃油车,,燃油,,internal_90d,0.88
+开拓者,雪佛兰,开拓者,,燃油车,,燃油,,internal_90d,0.88
+开瑞k50,开瑞,开瑞K50,,燃油车,,燃油,,internal_90d,0.88
+开瑞k60,开瑞,开瑞K60,,燃油车,,燃油,,internal_90d,0.88
+开瑞k60ev,开瑞,开瑞K60 EV,,新能源,,新能源,,internal_90d,0.88
+开瑞x6,开瑞,开瑞X6,,燃油车,,燃油,,internal_90d,0.88
+开迪,大众,开迪,,燃油车,,燃油,,internal_90d,0.88
+影豹,广汽传祺,影豹,轿车,燃油车,轿车,燃油,,dcd_ranking+internal_90d,0.96
+影酷,广汽传祺,影酷,SUV,燃油车,SUV,燃油,,dcd_ranking+internal_90d,0.96
+征服者,阿莫迪罗,征服者,,燃油车,,燃油,,internal_90d,0.88
+得利卡,东南,得利卡,,燃油车,,燃油,,internal_90d,0.88
+御捷e驰,御捷,御捷E驰,,新能源,,新能源,,internal_90d,0.88
+御翔,现代,御翔,,燃油车,,燃油,,internal_90d,0.88
+御轩,东风,御轩,,燃油车,,燃油,,internal_90d,0.88
+御风,东风,御风,,燃油车,轻客,燃油,,internal_90d,0.88
+御风em26,东风,御风EM26,,新能源,轻客,新能源,,internal_90d,0.88
+御风em27,东风,御风EM27,,新能源,轻客,新能源,,internal_90d,0.88
+御风s16,东风,御风S16,,燃油车,轻客,燃油,,internal_90d,0.88
+御风房车,东风,御风房车,其他,燃油车,轻客,燃油,,heuristic_body+internal_90d,0.88
+微蓝6,别克,微蓝6,轿车,新能源,轿车,新能源,,dcd_ranking+heuristic_body+internal_90d,0.96
+微蓝6phev,别克,微蓝6 PHEV,轿车,新能源,轿车,新能源,,heuristic_body+internal_90d,0.88
+微蓝7,别克,微蓝7,,新能源,,新能源,,internal_90d,0.88
+志翔,长安,志翔,,燃油车,,燃油,,internal_90d,0.88
+快运王,星海狮,快运王,,新能源,,新能源,,internal_90d,0.88
+思域,本田,思域,轿车,燃油车,轿车,燃油,,dcd_ranking+internal_90d,0.96
+思域进口,本田,思域(进口),,燃油车,,燃油,,internal_90d,0.88
+思皓a5,思皓,思皓A5,,燃油车,,燃油,,internal_90d,0.88
+思皓e20x,思皓,思皓E20X,,新能源,,新能源,,internal_90d,0.88
+思皓e40x,思皓,思皓E40X,,新能源,,新能源,,internal_90d,0.88
+思皓e50a,思皓,思皓E50A,,新能源,,新能源,,internal_90d,0.88
+思皓qx,思皓,思皓QX,,燃油车,,燃油,,internal_90d,0.88
+思皓x4,思皓,思皓X4,,燃油车,,燃油,,internal_90d,0.88
+思皓x6,思皓,思皓X6,,燃油车,,燃油,,internal_90d,0.88
+思皓x7,思皓,思皓X7,,燃油车,,燃油,,internal_90d,0.88
+思皓x8,思皓,思皓X8,,燃油车,,燃油,,internal_90d,0.88
+思皓x8plus,思皓,思皓X8 PLUS,,燃油车,,燃油,,internal_90d,0.88
+思皓曜,思皓,思皓曜,,燃油车,,燃油,,internal_90d,0.88
+思皓爱跑,思皓,思皓爱跑,,新能源,,新能源,,internal_90d,0.88
+思皓花仙子,思皓,思皓花仙子,,新能源,,新能源,,internal_90d,0.88
+思迪,本田,思迪,,燃油车,,燃油,,internal_90d,0.88
+思铂睿,本田,思铂睿,,燃油车,,燃油,,internal_90d,0.88
+思铭,思铭,思铭,,燃油车,,燃油,,internal_90d,0.88
+思锐,比亚迪,思锐,,燃油车,,燃油,,internal_90d,0.88
+总裁,玛莎拉蒂,总裁,,燃油车,,燃油,,internal_90d,0.88
+恒驰5,恒驰,恒驰5,,新能源,,新能源,,internal_90d,0.88
+悍途,江汽集团,悍途,,燃油车,,燃油,,internal_90d,0.88
+悍途ev,江汽集团,悍途EV,,,,,,unknown,0.0
+悍途phev,江汽集团,悍途PHEV,,新能源,,新能源,,internal_90d,0.88
+悍马h2,悍马,悍马H2,,燃油车,,燃油,,internal_90d,0.88
+悍马h3,悍马,悍马H3,,燃油车,,燃油,,internal_90d,0.88
+悦01,电动屋,悦01,,新能源,,新能源,,internal_90d,0.88
+悦也,宝骏,悦也,SUV,新能源,SUV,新能源,,dcd_ranking+internal_90d,0.96
+悦也plus,宝骏,悦也Plus,SUV,新能源,SUV,新能源,,dcd_ranking+internal_90d,0.96
+悦动,现代,悦动,,燃油车,,燃油,,internal_90d,0.88
+悦悦,江汽集团,悦悦,,燃油车,,燃油,,internal_90d,0.88
+悦意03,奔腾,悦意03,SUV,新能源,SUV,新能源,,dcd_ranking+internal_90d,0.96
+悦意07,奔腾,悦意07,轿车,新能源,轿车,新能源,,dcd_ranking+heuristic_body+internal_90d,0.96
+悦纳,现代,悦纳,,燃油车,,燃油,,internal_90d,0.88
+悦纳rv,现代,悦纳RV,,燃油车,,燃油,,internal_90d,0.88
+悦翔,长安,悦翔,,燃油车,,燃油,,internal_90d,0.88
+悦翔v3,长安,悦翔V3,,燃油车,,燃油,,internal_90d,0.88
+悦翔v5,长安,悦翔V5,,燃油车,,燃油,,internal_90d,0.88
+悦翔v7,长安,悦翔V7,,燃油车,,燃油,,internal_90d,0.88
+悦虎,大运,悦虎,,新能源,,新能源,,internal_90d,0.88
+意路达ev,依维柯,意路达EV,,新能源,,新能源,,internal_90d,0.88
+慕尚,宾利,慕尚,,燃油车,,燃油,,internal_90d,0.88
+成功v1,成功汽车,成功V1,,燃油车,,燃油,,internal_90d,0.88
+战旗,北京汽车制造厂,战旗,,燃油车,,燃油,,internal_90d,0.88
+战神,阿斯顿·马丁,战神,,燃油车,,燃油,,internal_90d,0.88
+战车,乔治·巴顿,战车,,燃油车,,燃油,,internal_90d,0.88
+护卫舰07,比亚迪,护卫舰07,轿车,新能源,轿车,新能源,,heuristic_body+internal_90d,0.88
+拉古那,雷诺,拉古那,,燃油车,,燃油,,internal_90d,0.88
+拓陆者,福田,拓陆者,,燃油车,皮卡,燃油,,internal_90d,0.88
+拓陆者胜途,福田,拓陆者胜途,,燃油车,皮卡,燃油,,internal_90d,0.88
+拓陆者驭途,福田,拓陆者驭途,,燃油车,皮卡,燃油,,internal_90d,0.88
+拾月,凯翼,拾月,,新能源,,新能源,,internal_90d,0.88
+拿铁dht,魏牌,拿铁DHT,,燃油车,,燃油,,internal_90d,0.88
+拿铁dhtphev,魏牌,拿铁DHT-PHEV,,新能源,,新能源,,internal_90d,0.88
+拿铁phev,魏牌,拿铁PHEV,,新能源,,新能源,,internal_90d,0.88
+指南者,Jeep,指南者,,燃油车,,燃油,,internal_90d,0.88
+指南者4xe,Jeep,指南者4xe,,燃油车,,燃油,,internal_90d,0.88
+指南者进口,Jeep,指南者(进口),,燃油车,,燃油,,internal_90d,0.88
+指挥官,Jeep,指挥官,,燃油车,,燃油,,internal_90d,0.88
+指挥官经典,Jeep,指挥官经典,,燃油车,,燃油,,internal_90d,0.88
+挑战者,道奇,挑战者,,燃油车,,燃油,,internal_90d,0.88
+挑战者suv,黄海,挑战者SUV,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+捷尼赛思g70,捷尼赛思,捷尼赛思G70,,燃油车,,燃油,,internal_90d,0.88
+捷尼赛思g80,捷尼赛思,捷尼赛思G80,,燃油车,,燃油,,internal_90d,0.88
+捷尼赛思gv60,捷尼赛思,捷尼赛思GV60,,新能源,,新能源,,internal_90d,0.88
+捷尼赛思gv70,捷尼赛思,捷尼赛思GV70,,燃油车,,燃油,,internal_90d,0.88
+捷尼赛思gv80,捷尼赛思,捷尼赛思GV80,,燃油车,,燃油,,internal_90d,0.88
+捷尼赛思纯电g80,捷尼赛思,捷尼赛思纯电G80,,新能源,,新能源,,internal_90d,0.88
+捷恩斯,现代,捷恩斯,,燃油车,,燃油,,internal_90d,0.88
+捷豹ctype,捷豹,捷豹C-Type,,燃油车,,燃油,,internal_90d,0.88
+捷豹epace,捷豹,捷豹E-PACE,,燃油车,,燃油,,internal_90d,0.88
+捷豹epacephev,捷豹,捷豹E-PACE PHEV,,燃油车,,燃油,,internal_90d,0.88
+捷豹fpace,捷豹,捷豹F-PACE,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+捷豹ftype,捷豹,捷豹F-TYPE,,燃油车,,燃油,,internal_90d,0.88
+捷豹ipace,捷豹,捷豹I-PACE,,新能源,,新能源,,internal_90d,0.88
+捷豹stype,捷豹,捷豹S-Type,,燃油车,,燃油,,internal_90d,0.88
+捷豹xe,捷豹,捷豹XE,,燃油车,,燃油,,internal_90d,0.88
+捷豹xel,捷豹,捷豹XEL,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+捷豹xf,捷豹,捷豹XF,,燃油车,,燃油,,internal_90d,0.88
+捷豹xfl,捷豹,捷豹XFL,,燃油车,,燃油,,internal_90d,0.88
+捷豹xj,捷豹,捷豹XJ,,燃油车,,燃油,,internal_90d,0.88
+捷达,大众,捷达,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+捷达va3,捷达,捷达VA3,轿车,燃油车,轿车,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+捷达va7,捷达,捷达VA7,轿车,燃油车,轿车,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+捷达vs5,捷达,捷达VS5,轿车,燃油车,轿车,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+捷达vs7,捷达,捷达VS7,轿车,燃油车,轿车,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+捷达vs8,捷达,捷达VS8,轿车,燃油车,轿车,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+捷途x70,捷途,捷途X70,SUV,燃油车,SUV,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+捷途x70cdm,捷途,捷途X70 C-DM,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+捷途x70coupe,捷途,捷途X70 Coupe,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+捷途x70l,捷途,捷途X70L,SUV,燃油车,SUV,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+捷途x70m,捷途,捷途X70M,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+捷途x70plus,捷途,捷途X70 PLUS,SUV,燃油车,SUV,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+捷途x70pluscdm,捷途,捷途X70 PLUS C-DM,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+捷途x70pro,捷途,捷途X70 PRO,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+捷途x70s,捷途,捷途X70S,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+捷途x70sev,捷途,捷途X70S EV,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+捷途x90,捷途,捷途X90,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+捷途x90cdm,捷途,捷途X90 C-DM,SUV,新能源,SUV,新能源,,dcd_ranking,0.96
+捷途x90plus,捷途,捷途X90 PLUS,SUV,燃油车,SUV,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+捷途x90pro,捷途,捷途X90 PRO,SUV,燃油车,SUV,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+捷途x95,捷途,捷途X95,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+捷途大圣,捷途,捷途大圣,SUV,燃油车,SUV,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+捷途大圣idm,捷途,捷途大圣i-DM,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+捷途山海l6,捷途山海,捷途山海L6,SUV,新能源,SUV,新能源,,dcd_ranking+heuristic_body+internal_90d,0.96
+捷途山海l7,捷途山海,捷途山海L7,SUV,新能源,SUV,新能源,,dcd_ranking+heuristic_body+internal_90d,0.96
+捷途山海l7plus,捷途山海,捷途山海L7 PLUS,SUV,新能源,SUV,新能源,,dcd_ranking+heuristic_body+internal_90d,0.96
+捷途山海l9,捷途山海,捷途山海L9,SUV,新能源,SUV,新能源,,dcd_ranking+heuristic_body+internal_90d,0.96
+捷途山海t1,捷途山海,捷途山海T1,SUV,新能源,SUV,新能源,,dcd_ranking+heuristic_body+internal_90d,0.96
+捷途山海t2,捷途山海,捷途山海T2,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+捷途旅行者,捷途,捷途旅行者,SUV,燃油车,SUV,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+捷途旅行者cdm,捷途山海,捷途旅行者C-DM,SUV,新能源,SUV,新能源,,dcd_ranking+heuristic_body+internal_90d,0.96
+捷途自由者,捷途,捷途自由者,SUV,燃油车,SUV,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+捷途自由者7plus,捷途,捷途自由者7 PLUS,SUV,燃油车,SUV,燃油,,dcd_ranking,0.96
+探岳,大众,探岳,SUV,燃油车,SUV,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+探岳gte,大众,探岳GTE,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+探岳lphev,大众,探岳L PHEV,SUV,新能源,SUV,新能源,,dcd_ranking,0.96
+探岳phev,大众,探岳PHEV,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+探岳x,大众,探岳X,SUV,燃油车,SUV,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+探影,大众,探影,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+探歌,大众,探歌,SUV,燃油车,SUV,燃油,,dcd_ranking+internal_90d,0.96
+探界者,雪佛兰,探界者,,燃油车,,燃油,,internal_90d,0.88
+探界者plus,雪佛兰,探界者Plus,,新能源,,新能源,,internal_90d,0.88
+探索06,奇瑞,探索06,,燃油车,,燃油,,internal_90d,0.88
+探索06cdm,奇瑞,探索06 C-DM,,新能源,,新能源,,internal_90d,0.88
+探索家星际h,大通,探索家星际H,,,,,,unknown,0.0
+探索者6,福迪,探索者6,,燃油车,,燃油,,internal_90d,0.88
+探索者ⅲ,福迪,探索者Ⅲ,,燃油车,,燃油,,internal_90d,0.88
+探陆,日产,探陆,SUV,燃油车,SUV,燃油,,dcd_ranking+internal_90d,0.96
+探险者,福特,探险者,,燃油车,,燃油,,internal_90d,0.88
+探险者进口,福特,探险者(进口),,燃油车,,燃油,,internal_90d,0.88
+揽境,大众,揽境,,燃油车,,燃油,,internal_90d,0.88
+揽巡,大众,揽巡,SUV,燃油车,SUV,燃油,,dcd_ranking+internal_90d,0.96
+揽福,福迪,揽福,,燃油车,,燃油,,internal_90d,0.88
+揽胜,路虎,揽胜,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+揽胜星脉,路虎,揽胜星脉,SUV,燃油车,SUV,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+揽胜极光,路虎,揽胜极光,SUV,燃油车,SUV,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+揽胜极光phev,路虎,揽胜极光PHEV,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+揽胜极光进口,路虎,揽胜极光(进口),SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+揽胜运动,路虎,揽胜运动,SUV,燃油车,SUV,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+揽胜运动phev,路虎,揽胜运动PHEV,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+揽胜运动版,路虎,揽胜运动版,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+揽胜运动版phev,路虎,揽胜运动版PHEV,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+摩卡,魏牌,摩卡,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+摩卡dhtphev,魏牌,摩卡DHT-PHEV,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+摩卡phev,魏牌,摩卡PHEV,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+撼路者,福特,撼路者,,燃油车,,燃油,,internal_90d,0.88
+斑马,成功汽车,斑马,,燃油车,,燃油,,internal_90d,0.88
+斯威g01,SWM斯威汽车,斯威G01,,燃油车,,燃油,,internal_90d,0.88
+斯威g01ff,SWM斯威汽车,斯威G01FF,,燃油车,,燃油,,internal_90d,0.88
+斯威g05,SWM斯威汽车,斯威G05,,燃油车,,燃油,,internal_90d,0.88
+斯威x2,SWM斯威汽车,斯威X2,,燃油车,,燃油,,internal_90d,0.88
+斯威x3,SWM斯威汽车,斯威X3,,燃油车,,燃油,,internal_90d,0.88
+斯威x7,SWM斯威汽车,斯威X7,,燃油车,,燃油,,internal_90d,0.88
+斯威大虎,SWM斯威汽车,斯威大虎,,燃油车,,燃油,,internal_90d,0.88
+斯威大虎edi,SWM斯威汽车,斯威大虎EDi,,新能源,,新能源,,internal_90d,0.88
+斯巴鲁brz,斯巴鲁,斯巴鲁BRZ,,燃油车,,燃油,,dcd_ranking+internal_90d,0.96
+斯巴鲁wrx,斯巴鲁,斯巴鲁WRX,,燃油车,,燃油,,internal_90d,0.88
+斯巴鲁xv,斯巴鲁,斯巴鲁XV,,燃油车,,燃油,,internal_90d,0.88
+斯帕可,雪佛兰,斯帕可,,燃油车,,燃油,,internal_90d,0.88
+斯派卡,野马汽车,斯派卡,,燃油车,,燃油,,internal_90d,0.88
+新世代全顺,福特,新世代全顺,其他,燃油车,轻客,燃油,,heuristic_body+internal_90d,0.88
+新凯威霆,新凯,新凯威霆,,燃油车,,燃油,,internal_90d,0.88
+新海狮,金杯,新海狮,,燃油车,,燃油,,internal_90d,0.88
+新海狮ev,金杯新能源,新海狮 EV,,新能源,,新能源,,internal_90d,0.88
+新海狮s,金杯,新海狮S,,燃油车,,燃油,,internal_90d,0.88
+新海狮x30l,金杯,新海狮X30L,,燃油车,,燃油,,internal_90d,0.88
+新豹mini,长安跨越,新豹MINI,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+新豹t3,长安跨越,新豹T3,,燃油车,,燃油,,internal_90d,0.88
+新豹t3ev,长安跨越,新豹T3 EV,,新能源,,新能源,,internal_90d,0.88
+新途ev80,大通,新途EV80,,燃油车,,燃油,,dcd_ranking+internal_90d,0.96
+新途ev90,大通,新途EV90,,,,,,unknown,0.0
+新途v70,大通,新途V70,,燃油车,,燃油,,internal_90d,0.88
+新途v80,大通,新途V80,,燃油车,,燃油,,dcd_ranking+internal_90d,0.96
+新途v90,大通,新途V90,,燃油车,,燃油,,dcd_ranking+internal_90d,0.96
+新龙马汽车启腾ex80,新龙马汽车,新龙马汽车启腾EX80,,燃油车,,燃油,,internal_90d,0.88
+新龙马汽车启腾m70,新龙马汽车,新龙马汽车启腾M70,,燃油车,,燃油,,internal_90d,0.88
+新龙马汽车启腾m70ev,新龙马汽车,新龙马汽车启腾M70 EV,,新能源,,新能源,,internal_90d,0.88
+旗云,奇瑞,旗云,,燃油车,,燃油,,internal_90d,0.88
+旗云1,奇瑞,旗云1,,燃油车,,燃油,,internal_90d,0.88
+旗云2,奇瑞,旗云2,,燃油车,,燃油,,internal_90d,0.88
+旗云3,奇瑞,旗云3,,燃油车,,燃油,,internal_90d,0.88
+旗胜f1,黄海,旗胜F1,,燃油车,,燃油,,internal_90d,0.88
+旗胜v3,黄海,旗胜V3,,燃油车,,燃油,,internal_90d,0.88
+无界pro,奇瑞新能源,无界Pro,,新能源,,新能源,,internal_90d,0.88
+无限v3,中兴,无限V3,,燃油车,,燃油,,internal_90d,0.88
+日产370z,日产,日产370Z,,燃油车,,燃油,,internal_90d,0.88
+日产gtr,日产,日产GT-R,,燃油车,,燃油,,internal_90d,0.88
+日产n6,日产,日产N6,轿车,新能源,轿车,新能源,,dcd_ranking+internal_90d,0.96
+日产n7,日产,日产N7,轿车,新能源,轿车,新能源,,dcd_ranking+internal_90d,0.96
+日产nv200,日产,日产NV200,,燃油车,,燃油,,internal_90d,0.88
+日产nx8,日产,日产NX8,SUV,新能源,SUV,新能源,,dcd_ranking,0.96
+日产z,日产,日产Z,,燃油车,,燃油,,internal_90d,0.88
+日产zn厢式车,日产,日产ZN厢式车,,燃油车,,燃油,,internal_90d,0.88
+时代ev6,福田,时代EV6,,新能源,,新能源,,internal_90d,0.88
+旷世,汉龙汽车,旷世,,燃油车,,燃油,,internal_90d,0.88
+昂希诺,现代,昂希诺,,燃油车,,燃油,,internal_90d,0.88
+昂希诺纯电动,现代,昂希诺 纯电动,,新能源,,新能源,,internal_90d,0.88
+昂扬,别克,昂扬,,燃油车,,燃油,,internal_90d,0.88
+昂科威,别克,昂科威,SUV,燃油车,SUV,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+昂科威s,别克,昂科威S,SUV,燃油车,SUV,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+昂科拉,别克,昂科拉,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+昂科拉gx,别克,昂科拉GX,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+昂科拉plus,别克,昂科拉Plus,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+昂科旗,别克,昂科旗,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+昂科雷,别克,昂科雷,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+昆仑,凯翼,昆仑,,燃油车,,燃油,,internal_90d,0.88
+昆仑ihd,凯翼,昆仑iHD,,新能源,,新能源,,internal_90d,0.88
+昊铂a800,广汽昊铂,昊铂A800,轿车,新能源,轿车,新能源,,dcd_ranking+internal_90d,0.96
+昊铂gt,广汽昊铂,昊铂GT,轿车,新能源,轿车,新能源,,dcd_ranking+internal_90d,0.96
+昊铂hl,广汽昊铂,昊铂HL,SUV,新能源,SUV,新能源,,dcd_ranking+internal_90d,0.96
+昊铂ht,广汽昊铂,昊铂HT,SUV,新能源,SUV,新能源,,dcd_ranking+internal_90d,0.96
+昊铂s600,广汽昊铂,昊铂S600,SUV,新能源,SUV,新能源,,dcd_ranking,0.96
+昊铂ssr,广汽昊铂,昊铂SSR,,新能源,,新能源,,internal_90d,0.88
+昊锐,斯柯达,昊锐,,燃油车,,燃油,,internal_90d,0.88
+昌河北斗星,北汽昌河,昌河北斗星,,燃油车,,燃油,,internal_90d,0.88
+明锐,斯柯达,明锐,轿车,燃油车,轿车,燃油,,dcd_ranking+internal_90d,0.96
+明锐进口,斯柯达,明锐(进口),,燃油车,,燃油,,internal_90d,0.88
+易至ev2,江铃集团新能源,易至EV2,,新能源,,新能源,,internal_90d,0.88
+易至ev3,江铃集团新能源,易至EV3,,新能源,,新能源,,internal_90d,0.88
+易至ex5,江铃集团新能源,易至EX5,,新能源,,新能源,,internal_90d,0.88
+昕动,斯柯达,昕动,,燃油车,,燃油,,internal_90d,0.88
+昕锐,斯柯达,昕锐,,燃油车,,燃油,,internal_90d,0.88
+星光560,五菱汽车,星光560,SUV,燃油车,SUV,燃油,,dcd_ranking+internal_90d,0.96
+星光560ev,五菱汽车,星光560 EV,SUV,新能源,SUV,新能源,,dcd_ranking+internal_90d,0.96
+星光560phev,五菱汽车,星光560 PHEV,SUV,新能源,SUV,新能源,,dcd_ranking+internal_90d,0.96
+星光730,五菱汽车,星光730,MPV,燃油车,MPV,燃油,,dcd_ranking+internal_90d,0.96
+星光730ev,五菱汽车,星光730 EV,MPV,新能源,MPV,新能源,,dcd_ranking+internal_90d,0.96
+星光730phev,五菱汽车,星光730 PHEV,MPV,新能源,MPV,新能源,,dcd_ranking+internal_90d,0.96
+星塔ev,长安跨越,星塔EV,,新能源,,新能源,,internal_90d,0.88
+星影vls,焜驰,星影VLS,,燃油车,,燃油,,internal_90d,0.88
+星愿,吉利银河,星愿,轿车,新能源,轿车,新能源,,dcd_ranking+heuristic_body+internal_90d,0.96
+星旺cl,广汽吉奥,星旺CL,,燃油车,,燃油,,internal_90d,0.88
+星朗,广汽吉奥,星朗,,燃油车,,燃油,,internal_90d,0.88
+星海s7,东风风行,星海S7,轿车,新能源,轿车,新能源,,dcd_ranking+internal_90d,0.96
+星海t5,东风风行,星海T5,,新能源,,新能源,,internal_90d,0.88
+星海v9,东风风行,星海V9,MPV,新能源,MPV,新能源,,dcd_ranking+internal_90d,0.96
+星瑞,吉利汽车,星瑞,轿车,燃油车,轿车,燃油,,dcd_ranking+internal_90d,0.96
+星瑞l,吉利汽车,星瑞L,,燃油车,,燃油,,internal_90d,0.88
+星纪元es,星途,星纪元ES,轿车,新能源,轿车,新能源,,heuristic_body+internal_90d,0.88
+星纪元et,星途,星纪元ET,SUV,新能源,SUV,新能源,,dcd_ranking+internal_90d,0.96
+星越,吉利汽车,星越,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+星越l,吉利汽车,星越L,SUV,燃油车,SUV,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+星越l增程电动版,吉利汽车,星越L 增程电动版,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+星越l智擎,吉利汽车,星越L 智擎,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+星越phev,吉利汽车,星越PHEV,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+星越s,吉利汽车,星越S,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+星迈罗,雪佛兰,星迈罗,,燃油车,,燃油,,internal_90d,0.88
+星途es,星途,星途ES,轿车,新能源,轿车,新能源,,dcd_ranking+internal_90d,0.96
+星途et5,星途,星途ET5,SUV,新能源,SUV,新能源,,dcd_ranking+internal_90d,0.96
+星途ex7,星途,星途EX7,,,,,,unknown,0.0
+星途tx,星途,星途TX,,燃油车,,燃油,,internal_90d,0.88
+星途凌云,星途,星途凌云,SUV,燃油车,SUV,燃油,,dcd_ranking+internal_90d,0.96
+星途揽月,星途,星途揽月,SUV,燃油车,SUV,燃油,,dcd_ranking+internal_90d,0.96
+星途揽月cdm,星途,星途揽月C-DM,SUV,新能源,SUV,新能源,,dcd_ranking+internal_90d,0.96
+星途瑶光,星途,星途瑶光,SUV,燃油车,SUV,燃油,,dcd_ranking+internal_90d,0.96
+星途瑶光cdm,星途,星途瑶光C-DM,SUV,新能源,SUV,新能源,,dcd_ranking+internal_90d,0.96
+星途追风,星途,星途追风,,燃油车,,燃油,,internal_90d,0.88
+星途追风cdm,星途,星途追风C-DM,,新能源,,新能源,,internal_90d,0.88
+星锐,江汽集团,星锐,,燃油车,轻客,燃油,,internal_90d,0.88
+星际,大通,星际,,燃油车,,燃油,,dcd_ranking+internal_90d,0.96
+星际ev,大通,星际EV,,,,,,unknown,0.0
+星际xev,大通,星际X EV,,,,,,unknown,0.0
+星际xsuv,大通,星际X SUV,SUV,,SUV,,,heuristic_body,0.72
+晓澳vclass,晓澳汽车,晓澳V-Class,,燃油车,,燃油,,internal_90d,0.88
+晨风,启辰,晨风,,新能源,,新能源,,internal_90d,0.88
+普力马,海马,普力马,,燃油车,,燃油,,internal_90d,0.88
+普拉多,丰田,普拉多,SUV,燃油车,SUV,燃油,,dcd_ranking+internal_90d,0.96
+普拉多进口,丰田,普拉多(进口),,燃油车,,燃油,,internal_90d,0.88
+普瑞维亚,丰田,普瑞维亚,,燃油车,,燃油,,internal_90d,0.88
+普锐斯,丰田,普锐斯,,燃油车,,燃油,,internal_90d,0.88
+景程,雪佛兰,景程,,燃油车,,燃油,,internal_90d,0.88
+景逸,东风风行,景逸,,燃油车,,燃油,,internal_90d,0.88
+景逸s50,东风风行,景逸S50,,燃油车,,燃油,,internal_90d,0.88
+景逸suv,东风风行,景逸SUV,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+景逸x3,东风风行,景逸X3,,燃油车,,燃油,,internal_90d,0.88
+景逸x5,东风风行,景逸X5,,燃油车,,燃油,,internal_90d,0.88
+景逸x6,东风风行,景逸X6,,燃油车,,燃油,,internal_90d,0.88
+景逸xv,东风风行,景逸XV,,燃油车,,燃油,,internal_90d,0.88
+晶锐,斯柯达,晶锐,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+智尚s30,金杯,智尚S30,,燃油车,,燃油,,internal_90d,0.88
+智尚s35,金杯,智尚S35,,燃油车,,燃油,,internal_90d,0.88
+智己l6,智己汽车,智己L6,轿车,新能源,轿车,新能源,,dcd_ranking+internal_90d,0.96
+智己l7,智己汽车,智己L7,轿车,新能源,轿车,新能源,,dcd_ranking+internal_90d,0.96
+智己ls6,智己汽车,智己LS6,SUV,新能源,SUV,新能源,,dcd_ranking+internal_90d,0.96
+智己ls7,智己汽车,智己LS7,SUV,新能源,SUV,新能源,,dcd_ranking+internal_90d,0.96
+智己ls8,智己汽车,智己LS8,SUV,新能源,SUV,新能源,,dcd_ranking+internal_90d,0.96
+智己ls9,智己汽车,智己LS9,SUV,新能源,SUV,新能源,,dcd_ranking+internal_90d,0.96
+智界r7,智界,智界R7,,新能源,,新能源,,internal_90d,0.88
+智界s7,智界,智界S7,,新能源,,新能源,,internal_90d,0.88
+智行,北京汽车,智行,,燃油车,,燃油,,internal_90d,0.88
+智跑,起亚,智跑,SUV,燃油车,SUV,燃油,,dcd_ranking+internal_90d,0.96
+曹操60,曹操汽车,曹操60,,新能源,,新能源,,internal_90d,0.88
+朋克多多,朋克汽车,朋克多多,,新能源,,新能源,,internal_90d,0.88
+朗动,现代,朗动,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+朗境,大众,朗境,,燃油车,,燃油,,internal_90d,0.88
+朗行,大众,朗行,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+朗逸,大众,朗逸,轿车,燃油车,轿车,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+朗逸纯电,大众,朗逸纯电,轿车,新能源,轿车,新能源,,heuristic_body+internal_90d,0.88
+未来,旌航房车,未来,,燃油车,,燃油,,internal_90d,0.88
+本田c,本田,本田C,,燃油车,,燃油,,internal_90d,0.88
+本田crv,本田,本田CR-V,SUV,燃油车,SUV,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+本田crvphev,本田,本田CR-V PHEV,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+本田crz,本田,本田CR-Z,,燃油车,,燃油,,internal_90d,0.88
+本田ens1,本田,本田e:NS1,,新能源,,新能源,,internal_90d,0.88
+本田fcv,本田,本田FCV,,燃油车,,燃油,,internal_90d,0.88
+本田hrv,本田,本田HR-V,,燃油车,,燃油,,internal_90d,0.88
+本田life,本田,本田LIFE,轿车,燃油车,轿车,燃油,,dcd_ranking+internal_90d,0.96
+本田nsx,本田,本田NSX,,燃油车,,燃油,,internal_90d,0.88
+本田suvrs,本田,本田SUV RS,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+本田urv,本田,本田UR-V,SUV,燃油车,SUV,燃油,,dcd_ranking+internal_90d,0.96
+本田xrv,本田,本田XR-V,SUV,燃油车,SUV,燃油,,dcd_ranking+internal_90d,0.96
+杰德,本田,杰德,MPV,燃油车,MPV,燃油,,heuristic_body+internal_90d,0.88
+杰路驰,丰田,杰路驰,,燃油车,,燃油,,internal_90d,0.88
+极狐t1,ARCFOX极狐,极狐T1,轿车,新能源,轿车,新能源,,heuristic_body+internal_90d,0.88
+极狐考拉,ARCFOX极狐,极狐 考拉,,新能源,,新能源,,internal_90d,0.88
+极狐考拉s,ARCFOX极狐,极狐 考拉S,SUV,新能源,SUV,新能源,,dcd_ranking+internal_90d,0.96
+极狐贝塔s3,ARCFOX极狐,极狐 贝塔S3,轿车,新能源,轿车,新能源,,dcd_ranking+internal_90d,0.96
+极狐贝塔t1,ARCFOX极狐,极狐 贝塔T1,轿车,新能源,轿车,新能源,,dcd_ranking+internal_90d,0.96
+极狐问道v9,ARCFOX极狐,极狐 问道V9,MPV,新能源,MPV,新能源,,dcd_ranking,0.96
+极狐阿尔法s,ARCFOX极狐,极狐 阿尔法S,,新能源,,新能源,,internal_90d,0.88
+极狐阿尔法s5,ARCFOX极狐,极狐 阿尔法S5,轿车,新能源,轿车,新能源,,dcd_ranking+internal_90d,0.96
+极狐阿尔法s6,ARCFOX极狐,极狐 阿尔法S6,轿车,新能源,轿车,新能源,,dcd_ranking+internal_90d,0.96
+极狐阿尔法t,ARCFOX极狐,极狐 阿尔法T,,新能源,,新能源,,internal_90d,0.88
+极狐阿尔法t5,ARCFOX极狐,极狐 阿尔法T5,SUV,新能源,SUV,新能源,,dcd_ranking+internal_90d,0.96
+极狐阿尔法t6,ARCFOX极狐,极狐 阿尔法T6,SUV,新能源,SUV,新能源,,dcd_ranking+internal_90d,0.96
+极睿,起亚,极睿,,燃油车,,燃油,,internal_90d,0.88
+极石01,ROX极石,极石01,,新能源,,新能源,,internal_90d,0.88
+极越01,极越,极越01,,新能源,,新能源,,internal_90d,0.88
+极越07,极越,极越07,轿车,新能源,轿车,新能源,,heuristic_body+internal_90d,0.88
+林肯c,林肯,林肯C,,燃油车,,燃油,,internal_90d,0.88
+林肯mkc,林肯,林肯MKC,,燃油车,,燃油,,internal_90d,0.88
+林肯mkt,林肯,林肯MKT,,燃油车,,燃油,,internal_90d,0.88
+林肯mkx,林肯,林肯MKX,,燃油车,,燃油,,internal_90d,0.88
+林肯mkz,林肯,林肯MKZ,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+林肯z,林肯,林肯Z,轿车,燃油车,轿车,燃油,,dcd_ranking+internal_90d,0.96
+林肯大陆,林肯,林肯大陆,,燃油车,,燃油,,internal_90d,0.88
+林荫大道,别克,林荫大道,,燃油车,,燃油,,internal_90d,0.88
+枫叶30x,睿蓝汽车,枫叶30X,,新能源,,新能源,,internal_90d,0.88
+枫叶60s,睿蓝汽车,枫叶60s,,新能源,,新能源,,internal_90d,0.88
+枫叶80v,睿蓝汽车,枫叶80v,,新能源,,新能源,,internal_90d,0.88
+枫叶80vpro,睿蓝汽车,枫叶80v PRO,,新能源,,新能源,,internal_90d,0.88
+柯兰多,双龙,柯兰多,,燃油车,,燃油,,internal_90d,0.88
+柯斯达,丰田,柯斯达,,燃油车,,燃油,,dcd_ranking+internal_90d,0.96
+柯珞克,斯柯达,柯珞克,SUV,燃油车,SUV,燃油,,dcd_ranking+internal_90d,0.96
+柯米克,斯柯达,柯米克,SUV,燃油车,SUV,燃油,,dcd_ranking+internal_90d,0.96
+柯米克gt,斯柯达,柯米克GT,SUV,燃油车,SUV,燃油,,dcd_ranking+internal_90d,0.96
+柯迪亚克,斯柯达,柯迪亚克,SUV,燃油车,SUV,燃油,,dcd_ranking+internal_90d,0.96
+柯迪亚克gt,斯柯达,柯迪亚克GT,SUV,燃油车,SUV,燃油,,dcd_ranking+internal_90d,0.96
+标致2008,标致,标致2008,,燃油车,,燃油,,internal_90d,0.88
+标致206,标致,标致206,,燃油车,,燃油,,internal_90d,0.88
+标致207,标致,标致207,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+标致207进口,标致,标致207(进口),轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+标致3008,标致,标致3008,,燃油车,,燃油,,internal_90d,0.88
+标致3008进口,标致,标致3008(进口),,燃油车,,燃油,,internal_90d,0.88
+标致301,标致,标致301,,燃油车,,燃油,,internal_90d,0.88
+标致307,标致,标致307,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+标致307进口,标致,标致307(进口),轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+标致308,标致,标致308,,燃油车,,燃油,,internal_90d,0.88
+标致308s,标致,标致308S,,燃油车,,燃油,,internal_90d,0.88
+标致308进口,标致,标致308(进口),,燃油车,,燃油,,internal_90d,0.88
+标致4008,标致,标致4008,SUV,燃油车,SUV,燃油,,dcd_ranking+internal_90d,0.96
+标致4008phev,标致,标致4008 PHEV,,新能源,,新能源,,internal_90d,0.88
+标致4008进口,标致,标致4008(进口),,燃油车,,燃油,,internal_90d,0.88
+标致407,标致,标致407,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+标致408,标致,标致408,轿车,燃油车,轿车,燃油,,dcd_ranking+internal_90d,0.96
+标致408x,标致,标致408X,轿车,燃油车,轿车,燃油,,dcd_ranking+internal_90d,0.96
+标致5008,标致,标致5008,SUV,燃油车,SUV,燃油,,dcd_ranking+internal_90d,0.96
+标致508,标致,标致508,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+标致508l,标致,标致508L,轿车,燃油车,轿车,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+标致508lphev,标致,标致508L PHEV,轿车,新能源,轿车,新能源,,heuristic_body+internal_90d,0.88
+标致607,标致,标致607,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+标致e408,标致,标致e408,,新能源,,新能源,,internal_90d,0.88
+标致rcz,标致,标致RCZ,,燃油车,,燃油,,internal_90d,0.88
+格瑞维亚,丰田,格瑞维亚,MPV,燃油车,MPV,燃油,,dcd_ranking+internal_90d,0.96
+格蓝迪,三菱,格蓝迪,,燃油车,,燃油,,internal_90d,0.88
+格越,现代,格越,,燃油车,,燃油,,internal_90d,0.88
+桑塔纳,大众,桑塔纳,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+桑塔纳志俊,大众,桑塔纳志俊,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+桑塔纳经典,大众,桑塔纳经典,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+梅甘娜,雷诺,梅甘娜,,燃油车,,燃油,,internal_90d,0.88
+梦想家phev,岚图,梦想家 PHEV,MPV,新能源,MPV,新能源,,heuristic_body+internal_90d,0.88
+森林人,斯巴鲁,森林人,,燃油车,,燃油,,internal_90d,0.88
+森雅,一汽,森雅,,燃油车,,燃油,,internal_90d,0.88
+森雅m80,一汽,森雅M80,MPV,燃油车,MPV,燃油,,heuristic_body+internal_90d,0.88
+森雅r7,一汽,森雅R7,,燃油车,,燃油,,internal_90d,0.88
+森雅r9,一汽,森雅R9,,燃油车,,燃油,,internal_90d,0.88
+森雅s80,一汽,森雅S80,,燃油车,,燃油,,internal_90d,0.88
+楼兰,日产,楼兰,,燃油车,,燃油,,internal_90d,0.88
+橙仕01,橙仕,橙仕01,,新能源,,新能源,,internal_90d,0.88
+欢动,海马,欢动,,燃油车,,燃油,,internal_90d,0.88
+欧力威,长安欧尚,欧力威,,燃油车,,燃油,,internal_90d,0.88
+欧力威ev,长安欧尚,欧力威EV,,新能源,,新能源,,internal_90d,0.88
+欧悦搏,西雅特,欧悦搏,,燃油车,,燃油,,internal_90d,0.88
+欧拉5ev,欧拉,欧拉5 EV,,新能源,,新能源,,internal_90d,0.88
+欧拉5燃油版,欧拉,欧拉5燃油版,SUV,燃油车,SUV,燃油,,dcd_ranking,0.96
+欧拉5纯电版,欧拉,欧拉5纯电版,SUV,新能源,SUV,新能源,,dcd_ranking,0.96
+欧拉iq,欧拉,欧拉iQ,,新能源,,新能源,,internal_90d,0.88
+欧拉好猫,欧拉,欧拉好猫,轿车,新能源,轿车,新能源,,dcd_ranking+internal_90d,0.96
+欧拉好猫gt,欧拉,欧拉好猫GT,轿车,新能源,轿车,新能源,,dcd_ranking+internal_90d,0.96
+欧拉白猫,欧拉,欧拉白猫,,新能源,,新能源,,internal_90d,0.88
+欧拉芭蕾猫,欧拉,欧拉芭蕾猫,轿车,新能源,轿车,新能源,,dcd_ranking+internal_90d,0.96
+欧拉闪电猫,欧拉,欧拉闪电猫,轿车,新能源,轿车,新能源,,dcd_ranking+internal_90d,0.96
+欧拉黑猫,欧拉,欧拉黑猫,轿车,新能源,轿车,新能源,,heuristic_body+internal_90d,0.88
+欧朗,欧朗,欧朗,,燃油车,,燃油,,internal_90d,0.88
+欧菲莱斯,起亚,欧菲莱斯,,燃油车,,燃油,,internal_90d,0.88
+欧萌达,奇瑞,欧萌达,,燃油车,,燃油,,internal_90d,0.88
+欧蓝德,三菱,欧蓝德,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+欧蓝德经典,三菱,欧蓝德经典,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+欧蓝德进口,三菱,欧蓝德(进口),SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+欧诺ev,长安欧尚,欧诺EV,,燃油车,,燃油,,internal_90d,0.88
+欧诺s,长安凯程,欧诺S,,燃油车,,燃油,,internal_90d,0.88
+欧陆,宾利,欧陆,,燃油车,,燃油,,internal_90d,0.88
+歌诗图,本田,歌诗图,,燃油车,,燃油,,internal_90d,0.88
+比亚迪d1,比亚迪,比亚迪D1,,新能源,,新能源,,internal_90d,0.88
+比亚迪e1,比亚迪,比亚迪e1,,新能源,,新能源,,internal_90d,0.88
+比亚迪e2,比亚迪,比亚迪e2,,新能源,,新能源,,internal_90d,0.88
+比亚迪e3,比亚迪,比亚迪e3,,新能源,,新能源,,internal_90d,0.88
+比亚迪e5,比亚迪,比亚迪e5,,新能源,,新能源,,internal_90d,0.88
+比亚迪e6,比亚迪,比亚迪e6,,新能源,,新能源,,internal_90d,0.88
+比亚迪e7,比亚迪,比亚迪e7,,新能源,,新能源,,internal_90d,0.88
+比亚迪e9,比亚迪,比亚迪e9,,新能源,,新能源,,internal_90d,0.88
+比亚迪f0,比亚迪,比亚迪F0,,燃油车,,燃油,,internal_90d,0.88
+比亚迪f3,比亚迪,比亚迪F3,,燃油车,,燃油,,internal_90d,0.88
+比亚迪f3dm,比亚迪,比亚迪F3 DM,,燃油车,,燃油,,internal_90d,0.88
+比亚迪f3r,比亚迪,比亚迪F3R,,燃油车,,燃油,,internal_90d,0.88
+比亚迪f6,比亚迪,比亚迪F6,,燃油车,,燃油,,internal_90d,0.88
+比亚迪g3,比亚迪,比亚迪G3,,燃油车,,燃油,,internal_90d,0.88
+比亚迪g3r,比亚迪,比亚迪G3R,,燃油车,,燃油,,internal_90d,0.88
+比亚迪g5,比亚迪,比亚迪G5,,燃油车,,燃油,,internal_90d,0.88
+比亚迪g6,比亚迪,比亚迪G6,,燃油车,,燃油,,internal_90d,0.88
+比亚迪l3,比亚迪,比亚迪L3,,燃油车,,燃油,,internal_90d,0.88
+比亚迪m6,比亚迪,比亚迪M6,MPV,燃油车,MPV,燃油,,heuristic_body+internal_90d,0.88
+比亚迪m6ev,比亚迪,比亚迪M6 EV,MPV,燃油车,MPV,燃油,,heuristic_body+internal_90d,0.88
+比亚迪m9,比亚迪,比亚迪M9,,,,,,unknown,0.0
+比亚迪s2,比亚迪,比亚迪S2,,新能源,,新能源,,internal_90d,0.88
+比亚迪s6,比亚迪,比亚迪S6,,燃油车,,燃油,,internal_90d,0.88
+比亚迪s7,比亚迪,比亚迪S7,,燃油车,,燃油,,internal_90d,0.88
+比亚迪t5dm,比亚迪,比亚迪T5DM,,新能源,,新能源,,internal_90d,0.88
+比克兴熠,比克汽车,比克兴熠,,新能源,,新能源,,internal_90d,0.88
+比德文e3,比德文汽车,比德文E3,,新能源,,新能源,,internal_90d,0.88
+比速m3,比速汽车,比速M3,,燃油车,,燃油,,internal_90d,0.88
+比速t3,比速汽车,比速T3,,燃油车,,燃油,,internal_90d,0.88
+比速t5,比速汽车,比速T5,,燃油车,,燃油,,internal_90d,0.88
+毕加索,雪铁龙,毕加索,,燃油车,,燃油,,internal_90d,0.88
+民意,哈飞,民意,,燃油车,,燃油,,internal_90d,0.88
+永源a380,永源,永源A380,,燃油车,,燃油,,internal_90d,0.88
+汉dm,比亚迪,汉DM,轿车,新能源,轿车,新能源,,dcd_ranking+heuristic_body+internal_90d,0.96
+汉dmi,比亚迪,汉DM-i,轿车,新能源,轿车,新能源,,heuristic_body+internal_90d,0.88
+汉ev,比亚迪,汉EV,轿车,新能源,轿车,新能源,,dcd_ranking+heuristic_body+internal_90d,0.96
+汉ldm,比亚迪,汉L DM,轿车,新能源,轿车,新能源,,dcd_ranking+heuristic_body+internal_90d,0.96
+汉lev,比亚迪,汉L EV,轿车,新能源,轿车,新能源,,dcd_ranking+heuristic_body+internal_90d,0.96
+汉兰达,丰田,汉兰达,SUV,燃油车,SUV,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+汉兰达进口,丰田,汉兰达(进口),SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+汉腾v7,汉腾汽车,汉腾V7,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+汉腾x5,汉腾汽车,汉腾X5,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+汉腾x5ev,汉腾汽车,汉腾X5 EV,轿车,新能源,轿车,新能源,,heuristic_body+internal_90d,0.88
+汉腾x7,汉腾汽车,汉腾X7,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+江南tt,众泰,江南TT,,燃油车,,燃油,,internal_90d,0.88
+江淮a5plus,江淮汽车,江淮A5 PLUS,,燃油车,,燃油,,internal_90d,0.88
+江淮ic5,江汽集团,江淮iC5,,新能源,,新能源,,internal_90d,0.88
+江淮iev,江汽集团,江淮iEV,,新能源,,新能源,,internal_90d,0.88
+江淮iev6e,江汽集团,江淮iEV6E,,新能源,,新能源,,internal_90d,0.88
+江淮iev6s,江汽集团,江淮iEV6S,,新能源,,新能源,,internal_90d,0.88
+江淮iev7,江汽集团,江淮iEV7,,新能源,,新能源,,internal_90d,0.88
+江淮iev7s,江汽集团,江淮iEV7S,,新能源,,新能源,,internal_90d,0.88
+江淮ieva50,江汽集团,江淮iEVA50,,新能源,,新能源,,internal_90d,0.88
+江淮ieva60,江汽集团,江淮iEVA60,,新能源,,新能源,,internal_90d,0.88
+江淮ievs4,江汽集团,江淮iEVS4,,新能源,,新能源,,internal_90d,0.88
+江淮qxphev,江淮汽车,江淮QX PHEV,,新能源,,新能源,,internal_90d,0.88
+江淮t6,江汽集团,江淮T6,,燃油车,,燃油,,internal_90d,0.88
+江淮t8,江汽集团,江淮T8,,燃油车,,燃油,,internal_90d,0.88
+江淮van宝路,江汽集团,江淮Van宝路,其他,新能源,,新能源,,heuristic_body+internal_90d,0.88
+江淮x8e家,江淮汽车,江淮X8 E家,,新能源,,新能源,,internal_90d,0.88
+江淮x8plus,江淮汽车,江淮X8 PLUS,,燃油车,,燃油,,internal_90d,0.88
+江淮轿卡x5售货车,江汽集团,江淮轿卡X5售货车,其他,燃油车,,燃油,,heuristic_body+internal_90d,0.88
+江豚,开瑞,江豚,,新能源,,新能源,,internal_90d,0.88
+江豚e5,开瑞,江豚E5,,新能源,,新能源,,internal_90d,0.88
+江豚e7,开瑞,江豚E7,,新能源,,新能源,,internal_90d,0.88
+江铃e100b,江铃集团新能源,江铃E100B,,新能源,,新能源,,internal_90d,0.88
+江铃e160,江铃集团新能源,江铃E160,,新能源,,新能源,,internal_90d,0.88
+江铃e200l,江铃集团新能源,江铃E200L,,新能源,,新能源,,internal_90d,0.88
+江铃e200n,江铃集团新能源,江铃E200N,,新能源,,新能源,,internal_90d,0.88
+沃兰多,雪佛兰,沃兰多,,燃油车,,燃油,,internal_90d,0.88
+沃尔沃c30,沃尔沃,沃尔沃C30,,燃油车,,燃油,,internal_90d,0.88
+沃尔沃c40ev,沃尔沃,沃尔沃C40 EV,,新能源,,新能源,,internal_90d,0.88
+沃尔沃c40recharge,沃尔沃,沃尔沃C40 RECHARGE,,新能源,,新能源,,internal_90d,0.88
+沃尔沃c70,沃尔沃,沃尔沃C70,,燃油车,,燃油,,internal_90d,0.88
+沃尔沃coupe,沃尔沃,沃尔沃Coupe,,燃油车,,燃油,,internal_90d,0.88
+沃尔沃em90,沃尔沃,沃尔沃EM90,MPV,新能源,MPV,新能源,,dcd_ranking+internal_90d,0.96
+沃尔沃es90,沃尔沃,沃尔沃ES90,轿车,新能源,轿车,新能源,,dcd_ranking,0.96
+沃尔沃ex30,沃尔沃,沃尔沃EX30,SUV,新能源,SUV,新能源,,dcd_ranking+internal_90d,0.96
+沃尔沃ex90,沃尔沃,沃尔沃EX90,SUV,新能源,SUV,新能源,,dcd_ranking,0.96
+沃尔沃s40,沃尔沃,沃尔沃S40,,燃油车,,燃油,,internal_90d,0.88
+沃尔沃s40进口,沃尔沃,沃尔沃S40(进口),,燃油车,,燃油,,internal_90d,0.88
+沃尔沃s60,沃尔沃,沃尔沃S60,轿车,燃油车,轿车,燃油,,dcd_ranking+internal_90d,0.96
+沃尔沃s60phev,沃尔沃,沃尔沃S60 PHEV,,新能源,,新能源,,internal_90d,0.88
+沃尔沃s60recharge,沃尔沃,沃尔沃S60 RECHARGE,,新能源,,新能源,,internal_90d,0.88
+沃尔沃s60进口,沃尔沃,沃尔沃S60(进口),,燃油车,,燃油,,internal_90d,0.88
+沃尔沃s80,沃尔沃,沃尔沃S80,,燃油车,,燃油,,internal_90d,0.88
+沃尔沃s80l,沃尔沃,沃尔沃S80L,,燃油车,,燃油,,internal_90d,0.88
+沃尔沃s90,沃尔沃,沃尔沃S90,轿车,燃油车,轿车,燃油,,dcd_ranking+internal_90d,0.96
+沃尔沃s90phev,沃尔沃,沃尔沃S90 PHEV,轿车,新能源,轿车,新能源,,dcd_ranking+internal_90d,0.96
+沃尔沃s90recharge,沃尔沃,沃尔沃S90 RECHARGE,,新能源,,新能源,,internal_90d,0.88
+沃尔沃s90进口,沃尔沃,沃尔沃S90(进口),,燃油车,,燃油,,internal_90d,0.88
+沃尔沃v40,沃尔沃,沃尔沃V40,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+沃尔沃v60,沃尔沃,沃尔沃V60,轿车,燃油车,轿车,燃油,,dcd_ranking+internal_90d,0.96
+沃尔沃v90,沃尔沃,沃尔沃V90,轿车,燃油车,轿车,燃油,,dcd_ranking+internal_90d,0.96
+沃尔沃xc40,沃尔沃,沃尔沃XC40,SUV,燃油车,SUV,燃油,,dcd_ranking+internal_90d,0.96
+沃尔沃xc40ev,沃尔沃,沃尔沃XC40 EV,,新能源,,新能源,,internal_90d,0.88
+沃尔沃xc40recharge,沃尔沃,沃尔沃XC40 RECHARGE,,新能源,,新能源,,internal_90d,0.88
+沃尔沃xc40进口,沃尔沃,沃尔沃XC40(进口),,燃油车,,燃油,,internal_90d,0.88
+沃尔沃xc60,沃尔沃,沃尔沃XC60,SUV,燃油车,SUV,燃油,,dcd_ranking+internal_90d,0.96
+沃尔沃xc60phev,沃尔沃,沃尔沃XC60 PHEV,SUV,新能源,SUV,新能源,,dcd_ranking+internal_90d,0.96
+沃尔沃xc60recharge,沃尔沃,沃尔沃XC60 RECHARGE,,新能源,,新能源,,internal_90d,0.88
+沃尔沃xc60进口,沃尔沃,沃尔沃XC60(进口),,燃油车,,燃油,,internal_90d,0.88
+沃尔沃xc70,沃尔沃,沃尔沃XC70,SUV,新能源,SUV,新能源,,dcd_ranking+internal_90d,0.96
+沃尔沃xc90,沃尔沃,沃尔沃XC90,SUV,燃油车,SUV,燃油,,dcd_ranking+internal_90d,0.96
+沃尔沃xc90phev,沃尔沃,沃尔沃XC90 PHEV,SUV,新能源,SUV,新能源,,dcd_ranking+internal_90d,0.96
+沃尔沃xc90recharge,沃尔沃,沃尔沃XC90 RECHARGE,,新能源,,新能源,,internal_90d,0.88
+法拉利12cilindri,法拉利,法拉利12Cilindri,,燃油车,,燃油,,internal_90d,0.88
+法拉利296,法拉利,法拉利296,,新能源,,新能源,,internal_90d,0.88
+法拉利458,法拉利,法拉利458,,燃油车,,燃油,,internal_90d,0.88
+法拉利488,法拉利,法拉利488,,燃油车,,燃油,,internal_90d,0.88
+法拉利f8,法拉利,法拉利F8,,燃油车,,燃油,,internal_90d,0.88
+法拉利ff,法拉利,法拉利FF,,燃油车,,燃油,,internal_90d,0.88
+法拉利roma,法拉利,法拉利Roma,,燃油车,,燃油,,internal_90d,0.88
+泥瓦,拉达,泥瓦,,燃油车,,燃油,,internal_90d,0.88
+派力奥,菲亚特,派力奥,,燃油车,,燃油,,internal_90d,0.88
+派喜,铃木,派喜,,燃油车,,燃油,,internal_90d,0.88
+派朗,菲亚特,派朗,,燃油车,,燃油,,internal_90d,0.88
+浪迪,铃木,浪迪,,燃油车,,燃油,,internal_90d,0.88
+海星a7,金杯,海星A7,,燃油车,,燃油,,internal_90d,0.88
+海星a9,金杯,海星A9,,燃油车,,燃油,,internal_90d,0.88
+海景,吉利汽车,海景,,燃油车,,燃油,,internal_90d,0.88
+海狮05dm,比亚迪,海狮05DM,SUV,新能源,SUV,新能源,,dcd_ranking+internal_90d,0.96
+海狮05ev,比亚迪,海狮05EV,,新能源,,新能源,,internal_90d,0.88
+海狮06dm,比亚迪,海狮06DM,,新能源,,新能源,,internal_90d,0.88
+海狮06ev,比亚迪,海狮06EV,,新能源,,新能源,,internal_90d,0.88
+海狮07dm,比亚迪,海狮07DM,轿车,新能源,轿车,新能源,,heuristic_body+internal_90d,0.88
+海狮07ev,比亚迪,海狮07EV,轿车,新能源,轿车,新能源,,dcd_ranking+heuristic_body+internal_90d,0.96
+海狮ev,鑫源汽车,海狮 EV,,新能源,,新能源,,internal_90d,0.88
+海狮z系列,金旅,海狮Z系列,,燃油车,,燃油,,internal_90d,0.88
+海福星,海马,海福星,,燃油车,,燃油,,internal_90d,0.88
+海豚,比亚迪,海豚,轿车,新能源,轿车,新能源,,dcd_ranking+heuristic_body+internal_90d,0.96
+海豚ev,开瑞,海豚EV,轿车,新能源,轿车,新能源,,heuristic_body+internal_90d,0.88
+海豹,比亚迪,海豹,轿车,新能源,轿车,新能源,,dcd_ranking+heuristic_body+internal_90d,0.96
+海豹05dm,比亚迪,海豹05DM,轿车,新能源,轿车,新能源,,dcd_ranking+heuristic_body+internal_90d,0.96
+海豹06,比亚迪,海豹06,轿车,新能源,轿车,新能源,,heuristic_body+internal_90d,0.88
+海豹06dm,比亚迪,海豹06DM,轿车,新能源,轿车,新能源,,dcd_ranking+heuristic_body+internal_90d,0.96
+海豹06dm旅行版,比亚迪,海豹06DM旅行版,轿车,新能源,轿车,新能源,,heuristic_body+internal_90d,0.88
+海豹06ev,比亚迪,海豹06EV,轿车,新能源,轿车,新能源,,heuristic_body+internal_90d,0.88
+海豹06gt,比亚迪,海豹06GT,轿车,新能源,轿车,新能源,,dcd_ranking+heuristic_body+internal_90d,0.96
+海豹07dm,比亚迪,海豹07DM,轿车,新能源,轿车,新能源,,heuristic_body+internal_90d,0.88
+海豹07ev,比亚迪,海豹07EV,轿车,新能源,轿车,新能源,,heuristic_body+internal_90d,0.88
+海豹dm,比亚迪,海豹DM,轿车,新能源,轿车,新能源,,heuristic_body+internal_90d,0.88
+海豹dmi,比亚迪,海豹DM-i,轿车,新能源,轿车,新能源,,heuristic_body+internal_90d,0.88
+海锋,华普,海锋,,燃油车,,燃油,,internal_90d,0.88
+海马3,海马,海马3,,燃油车,,燃油,,internal_90d,0.88
+海马6p,海马,海马6P,,新能源,,新能源,,internal_90d,0.88
+海马7x,海马,海马7X,,燃油车,,燃油,,internal_90d,0.88
+海马8s,海马,海马8S,,燃油车,,燃油,,internal_90d,0.88
+海马e3,海马,海马E3,,新能源,,新能源,,internal_90d,0.88
+海马m3,海马,海马M3,,燃油车,,燃油,,internal_90d,0.88
+海马m6,海马,海马M6,MPV,燃油车,MPV,燃油,,heuristic_body+internal_90d,0.88
+海马m8,海马,海马M8,MPV,燃油车,MPV,燃油,,heuristic_body+internal_90d,0.88
+海马me,海马,海马Me,,燃油车,,燃油,,internal_90d,0.88
+海马s5,海马,海马S5,,燃油车,,燃油,,internal_90d,0.88
+海马s5青春版,海马,海马S5青春版,,燃油车,,燃油,,internal_90d,0.88
+海马s7,海马,海马S7,,燃油车,,燃油,,internal_90d,0.88
+海马v70,海马,海马V70,,燃油车,,燃油,,internal_90d,0.88
+海马爱尚,海马,海马爱尚,,燃油车,,燃油,,internal_90d,0.88
+海马爱尚ev,海马,海马爱尚EV,,新能源,,新能源,,internal_90d,0.88
+海马王子,海马,海马王子,,燃油车,,燃油,,internal_90d,0.88
+海马骑士,海马,海马骑士,,燃油车,,燃油,,internal_90d,0.88
+海鸥,比亚迪,海鸥,轿车,新能源,轿车,新能源,,dcd_ranking+internal_90d,0.96
+深蓝g318,深蓝汽车,深蓝G318,SUV,新能源,SUV,新能源,,dcd_ranking+internal_90d,0.96
+深蓝l06,深蓝汽车,深蓝L06,轿车,新能源,轿车,新能源,,dcd_ranking+internal_90d,0.96
+深蓝l07,深蓝汽车,深蓝L07,轿车,新能源,轿车,新能源,,dcd_ranking+heuristic_body+internal_90d,0.96
+深蓝s05,深蓝汽车,深蓝S05,SUV,新能源,SUV,新能源,,dcd_ranking+internal_90d,0.96
+深蓝s07,深蓝汽车,深蓝S07,轿车,新能源,轿车,新能源,,dcd_ranking+heuristic_body+internal_90d,0.96
+深蓝s09,深蓝汽车,深蓝S09,SUV,新能源,SUV,新能源,,dcd_ranking+internal_90d,0.96
+深蓝s7,深蓝汽车,深蓝S7,,新能源,,新能源,,internal_90d,0.88
+深蓝sl03,深蓝汽车,深蓝SL03,轿车,新能源,轿车,新能源,,dcd_ranking+internal_90d,0.96
+添越,宾利,添越,,燃油车,,燃油,,internal_90d,0.88
+添越phev,宾利,添越PHEV,,新能源,,新能源,,internal_90d,0.88
+清行400,北京清行,清行400,,新能源,,新能源,,internal_90d,0.88
+游骑侠ranger,福特,游骑侠Ranger,其他,燃油车,皮卡,燃油,,heuristic_body+internal_90d,0.88
+火星7,福田,火星7,,燃油车,,燃油,,internal_90d,0.88
+灵悉l,灵悉,灵悉L,轿车,新能源,轿车,新能源,,dcd_ranking+internal_90d,0.96
+炫丽,长城,炫丽,,燃油车,,燃油,,internal_90d,0.88
+炫界,凯翼,炫界,,燃油车,,燃油,,internal_90d,0.88
+炫界proev,凯翼,炫界Pro EV,,新能源,,新能源,,internal_90d,0.88
+炮,长城,炮,其他,燃油车,皮卡,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+炮phev,长城,炮PHEV,其他,燃油车,皮卡,燃油,,dcd_ranking+heuristic_body,0.96
+焕驰,起亚,焕驰,,燃油车,,燃油,,internal_90d,0.88
+熊猫,吉利银河,熊猫,轿车,新能源,轿车,新能源,,dcd_ranking+heuristic_body+internal_90d,0.96
+爱丽舍,雪铁龙,爱丽舍,,燃油车,,燃油,,internal_90d,0.88
+爱唯欧,雪佛兰,爱唯欧,,燃油车,,燃油,,internal_90d,0.88
+爱腾,双龙,爱腾,,燃油车,,燃油,,internal_90d,0.88
+爱跑,江淮钇为,爱跑,,新能源,,新能源,,internal_90d,0.88
+爱迪尔,北汽昌河,爱迪尔,,燃油车,,燃油,,internal_90d,0.88
+爱驰u5,爱驰,爱驰U5,,新能源,,新能源,,internal_90d,0.88
+爱驰u6,爱驰,爱驰U6,,新能源,,新能源,,internal_90d,0.88
+牛仔,吉利汽车,牛仔,SUV,燃油车,SUV,燃油,,dcd_ranking+internal_90d,0.96
+牧马人,Jeep,牧马人,SUV,燃油车,SUV,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+牧马人4xeev,Jeep,牧马人4xe EV,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+牧马人4xephev,Jeep,牧马人4xe PHEV,SUV,新能源,SUV,新能源,,dcd_ranking+heuristic_body+internal_90d,0.96
+特拉卡,华泰,特拉卡,,燃油车,,燃油,,internal_90d,0.88
+特顺,江铃,特顺,,燃油车,轻客,燃油,,internal_90d,0.88
+狙击手,212,狙击手,,燃油车,,燃油,,internal_90d,0.88
+狮跑,起亚,狮跑,,燃油车,,燃油,,internal_90d,0.88
+狮铂拓界,起亚,狮铂拓界,SUV,燃油车,SUV,燃油,,dcd_ranking+internal_90d,0.96
+猎光ens2,本田,猎光e:NS2,SUV,新能源,SUV,新能源,,dcd_ranking+internal_90d,0.96
+猎手,长安,猎手,,新能源,,新能源,,internal_90d,0.88
+猎豹6481,猎豹汽车,猎豹6481,,燃油车,,燃油,,internal_90d,0.88
+猎豹cs01,猎豹汽车,猎豹CS01,,新能源,,新能源,,internal_90d,0.88
+猎豹cs10,猎豹汽车,猎豹CS10,,燃油车,,燃油,,internal_90d,0.88
+猎豹cs6,猎豹汽车,猎豹CS6,,燃油车,,燃油,,internal_90d,0.88
+猎豹cs7,猎豹汽车,猎豹CS7,,燃油车,,燃油,,internal_90d,0.88
+猎豹cs9,猎豹汽车,猎豹CS9,,燃油车,,燃油,,internal_90d,0.88
+猎豹cs9ev,猎豹汽车,猎豹CS9 EV,,新能源,,新能源,,internal_90d,0.88
+猎豹q6,猎豹汽车,猎豹Q6,,燃油车,,燃油,,internal_90d,0.88
+猛士917,猛士,猛士917,,新能源,,新能源,,internal_90d,0.88
+猛士m50,东风,猛士M50,,燃油车,,燃油,,internal_90d,0.88
+猛士m817,猛士,猛士M817,MPV,新能源,MPV,新能源,,heuristic_body+internal_90d,0.88
+玛奇朵dht,魏牌,玛奇朵DHT,,燃油车,,燃油,,internal_90d,0.88
+玛奇朵dhtphev,魏牌,玛奇朵DHT-PHEV,,新能源,,新能源,,internal_90d,0.88
+玛驰,日产,玛驰,,燃油车,,燃油,,internal_90d,0.88
+玛驰海外,日产,玛驰(海外),,燃油车,,燃油,,internal_90d,0.88
+现代i30,现代,现代i30,,燃油车,,燃油,,internal_90d,0.88
+现代ix25,现代,现代ix25,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+现代ix35,现代,现代ix35,SUV,燃油车,SUV,燃油,,dcd_ranking+internal_90d,0.96
+理念s1,理念,理念S1,,燃油车,,燃油,,internal_90d,0.88
+理想i6,理想汽车,理想i6,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+理想i8,理想汽车,理想i8,,新能源,,新能源,,internal_90d,0.88
+理想l6,理想汽车,理想L6,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+理想l7,理想汽车,理想L7,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+理想l8,理想汽车,理想L8,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+理想l9,理想汽车,理想L9,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+理想mega,理想汽车,理想MEGA,MPV,新能源,MPV,新能源,,heuristic_body+internal_90d,0.88
+理想one,理想汽车,理想ONE,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+理想家,科发房车,理想家,,燃油车,,燃油,,internal_90d,0.88
+瑞奕,现代,瑞奕,,燃油车,,燃油,,internal_90d,0.88
+瑞纳,现代,瑞纳,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+瑞纳海外,现代,瑞纳(海外),轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+瑞虎,奇瑞,瑞虎,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+瑞虎3,奇瑞,瑞虎3,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+瑞虎3x,奇瑞,瑞虎3x,SUV,燃油车,SUV,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+瑞虎3xe,奇瑞新能源,瑞虎3xe,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+瑞虎5,奇瑞,瑞虎5,SUV,燃油车,SUV,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+瑞虎5x,奇瑞,瑞虎5x,SUV,燃油车,SUV,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+瑞虎7,奇瑞,瑞虎7,SUV,燃油车,SUV,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+瑞虎7cdm,奇瑞,瑞虎7 C-DM,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+瑞虎7l,奇瑞,瑞虎7L,SUV,燃油车,SUV,燃油,,dcd_ranking,0.96
+瑞虎7plus,奇瑞,瑞虎7 PLUS,SUV,燃油车,SUV,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+瑞虎7plusphev,奇瑞,瑞虎7 PLUS PHEV,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+瑞虎8,奇瑞,瑞虎8,SUV,燃油车,SUV,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+瑞虎8l,奇瑞,瑞虎8L,SUV,燃油车,SUV,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+瑞虎8plus,奇瑞,瑞虎8 PLUS,SUV,燃油车,SUV,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+瑞虎8pluscdm,奇瑞,瑞虎8 PLUS C-DM,SUV,新能源,SUV,新能源,,dcd_ranking+heuristic_body+internal_90d,0.96
+瑞虎8plus鲲鹏e+,奇瑞,瑞虎8 PLUS鲲鹏e+,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+瑞虎8pro,奇瑞,瑞虎8 PRO,SUV,燃油车,SUV,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+瑞虎8prophev,奇瑞,瑞虎8 PRO PHEV,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+瑞虎9,奇瑞,瑞虎9,SUV,燃油车,SUV,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+瑞虎9cdm,奇瑞,瑞虎9 C-DM,SUV,新能源,SUV,新能源,,dcd_ranking+heuristic_body+internal_90d,0.96
+瑞虎e,奇瑞新能源,瑞虎e,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+瑞迈ev,五十铃,瑞迈EV,其他,燃油车,皮卡,燃油,,heuristic_body+internal_90d,0.88
+瑞铃,江汽集团,瑞铃,,燃油车,,燃油,,internal_90d,0.88
+瑞风,江汽集团,瑞风,,燃油车,,燃油,,internal_90d,0.88
+瑞风a60,江汽集团,瑞风A60,,燃油车,,燃油,,internal_90d,0.88
+瑞风e3,江淮瑞风,瑞风E3,MPV,新能源,MPV,新能源,,dcd_ranking+internal_90d,0.96
+瑞风e4,江淮瑞风,瑞风E4,MPV,新能源,MPV,新能源,,dcd_ranking,0.96
+瑞风l6max,江淮瑞风,瑞风L6 MAX,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+瑞风m2,江汽集团,瑞风M2,,燃油车,,燃油,,internal_90d,0.88
+瑞风m3,江淮瑞风,瑞风M3,MPV,燃油车,MPV,燃油,,dcd_ranking+internal_90d,0.96
+瑞风m3phev,江淮瑞风,瑞风M3 PHEV,MPV,新能源,MPV,新能源,,dcd_ranking,0.96
+瑞风m4,江淮瑞风,瑞风M4,MPV,燃油车,MPV,燃油,,dcd_ranking+internal_90d,0.96
+瑞风m5,江汽集团,瑞风M5,,燃油车,,燃油,,internal_90d,0.88
+瑞风r3,江汽集团,瑞风R3,,燃油车,,燃油,,internal_90d,0.88
+瑞风rf8,江淮瑞风,瑞风RF8,MPV,燃油车,MPV,燃油,,dcd_ranking+internal_90d,0.96
+瑞风rf8phev,江淮瑞风,瑞风RF8 PHEV,MPV,新能源,MPV,新能源,,dcd_ranking+internal_90d,0.96
+瑞风s2,江汽集团,瑞风S2,,燃油车,,燃油,,internal_90d,0.88
+瑞风s2mini,江汽集团,瑞风S2mini,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+瑞风s3,江汽集团,瑞风S3,,燃油车,,燃油,,internal_90d,0.88
+瑞风s4,江汽集团,瑞风S4,,燃油车,,燃油,,internal_90d,0.88
+瑞风s5,江汽集团,瑞风S5,,燃油车,,燃油,,internal_90d,0.88
+瑞风s7,江汽集团,瑞风S7,,燃油车,,燃油,,internal_90d,0.88
+瑞驰ec31,瑞驰,瑞驰EC31,,新能源,,新能源,,internal_90d,0.88
+瑞驰ec35,瑞驰,瑞驰EC35,,新能源,,新能源,,internal_90d,0.88
+瑞驰ec75,瑞驰,瑞驰EC75,,新能源,,新能源,,internal_90d,0.88
+瑞驰ed71,瑞驰,瑞驰ED71,,新能源,,新能源,,internal_90d,0.88
+瑞驰ed75,瑞驰,瑞驰ED75,,新能源,,新能源,,internal_90d,0.88
+瑞驰ek07s,瑞驰,瑞驰EK07S,轿车,新能源,轿车,新能源,,heuristic_body+internal_90d,0.88
+瑞驰r5,瑞驰,瑞驰R5,,新能源,,新能源,,internal_90d,0.88
+瑞驰s513,瑞驰,瑞驰S513,,新能源,,新能源,,internal_90d,0.88
+瑞鹰,江汽集团,瑞鹰,,燃油车,,燃油,,internal_90d,0.88
+瑞麒g3,瑞麒,瑞麒G3,,燃油车,,燃油,,internal_90d,0.88
+瑞麒g5,瑞麒,瑞麒G5,,燃油车,,燃油,,internal_90d,0.88
+瑞麒m3,瑞麒,瑞麒M3,,燃油车,,燃油,,internal_90d,0.88
+甲壳虫,大众,甲壳虫,,燃油车,,燃油,,internal_90d,0.88
+申龙地上铁510,申龙客车,申龙地上铁510,,新能源,,新能源,,internal_90d,0.88
+电动miniaceman,MINI,电动MINI ACEMAN,轿车,新能源,轿车,新能源,,dcd_ranking+heuristic_body+internal_90d,0.96
+电动minicooper,MINI,电动MINI COOPER,轿车,新能源,轿车,新能源,,dcd_ranking+heuristic_body+internal_90d,0.96
+电动minijcw,MINI,电动MINI JCW,轿车,新能源,轿车,新能源,,dcd_ranking+heuristic_body+internal_90d,0.96
+电动minijcwaceman,MINI,电动MINI JCW ACEMAN,SUV,新能源,SUV,新能源,,dcd_ranking+heuristic_body+internal_90d,0.96
+电咖ev10,电咖,电咖·EV10,,新能源,,新能源,,internal_90d,0.88
+电牛2号,陕汽通家,电牛2号,,新能源,,新能源,,internal_90d,0.88
+百智大熊,百智新能源,百智大熊,,新能源,,新能源,,internal_90d,0.88
+皇冠,丰田,皇冠,,燃油车,,燃油,,internal_90d,0.88
+皇冠sportcross,丰田,皇冠SportCross,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+皇冠进口,丰田,皇冠(进口),,燃油车,,燃油,,internal_90d,0.88
+皇冠陆放,丰田,皇冠陆放,SUV,燃油车,SUV,燃油,,dcd_ranking+internal_90d,0.96
+皓影,本田,皓影,SUV,燃油车,SUV,燃油,,dcd_ranking+internal_90d,0.96
+皓影phev,本田,皓影 PHEV,SUV,新能源,SUV,新能源,,dcd_ranking+internal_90d,0.96
+皓极,东风风神,皓极,SUV,燃油车,SUV,燃油,,dcd_ranking+internal_90d,0.96
+皓瀚,东风风神,皓瀚,SUV,燃油车,SUV,燃油,,dcd_ranking+internal_90d,0.96
+睿立达v5,东风,睿立达V5,,新能源,,新能源,,internal_90d,0.88
+睿立达v7,东风,睿立达V7,,新能源,,新能源,,internal_90d,0.88
+睿翼,马自达,睿翼,,燃油车,,燃油,,internal_90d,0.88
+睿蓝7,睿蓝汽车,睿蓝7,,新能源,,新能源,,internal_90d,0.88
+睿蓝8,睿蓝汽车,睿蓝8,,新能源,,新能源,,internal_90d,0.88
+睿蓝9,睿蓝汽车,睿蓝9,,新能源,,新能源,,internal_90d,0.88
+睿蓝x3pro,睿蓝汽车,睿蓝X3 PRO,,燃油车,,燃油,,internal_90d,0.88
+睿行em60,长安凯程,睿行EM60,MPV,新能源,MPV,新能源,,heuristic_body+internal_90d,0.88
+睿行em80,长安凯程,睿行EM80,MPV,新能源,MPV,新能源,,heuristic_body+internal_90d,0.88
+睿行m60,长安凯程,睿行M60,MPV,燃油车,MPV,燃油,,heuristic_body+internal_90d,0.88
+睿行m70,长安凯程,睿行M70,,燃油车,,燃油,,internal_90d,0.88
+睿行m80,长安凯程,睿行M80,MPV,燃油车,MPV,燃油,,heuristic_body+internal_90d,0.88
+睿行m90,长安凯程,睿行M90,,燃油车,,燃油,,internal_90d,0.88
+睿行s50,长安凯程,睿行S50,,燃油车,,燃油,,internal_90d,0.88
+睿行s50t,长安凯程,睿行S50T,,燃油车,,燃油,,internal_90d,0.88
+睿骋,长安,睿骋,,燃油车,,燃油,,internal_90d,0.88
+睿骋cc,长安,睿骋CC,,燃油车,,燃油,,internal_90d,0.88
+知豆,知豆,知豆,,新能源,,新能源,,internal_90d,0.88
+知豆d1,知豆,知豆D1,,新能源,,新能源,,internal_90d,0.88
+知豆d2,知豆,知豆D2,,新能源,,新能源,,internal_90d,0.88
+知豆彩虹,知豆,知豆彩虹,,新能源,,新能源,,internal_90d,0.88
+示界06,示界,示界06,SUV,新能源,SUV,新能源,,dcd_ranking+internal_90d,0.96
+神行者,路虎,神行者,,燃油车,,燃油,,internal_90d,0.88
+神行者2,路虎,神行者2,,燃油车,,燃油,,internal_90d,0.88
+神骐f30,长安凯程,神骐F30,,燃油车,,燃油,,internal_90d,0.88
+神骐t20,长安凯程,神骐T20,,燃油车,,燃油,,internal_90d,0.88
+神骐t30,长安凯程,神骐T30,,,,,,unknown,0.0
+神骐t30ev,长安凯程,神骐T30 EV,,,,,,unknown,0.0
+祥菱m,福田,祥菱M,,燃油车,微卡,燃油,,internal_90d,0.88
+祥菱mev,福田,祥菱M EV,,新能源,微卡,新能源,,internal_90d,0.88
+祥菱q,福田,祥菱Q,,燃油车,微卡,燃油,,internal_90d,0.88
+祥菱qev,福田,祥菱Q EV,,新能源,微卡,新能源,,internal_90d,0.88
+祥菱v,福田,祥菱V,,燃油车,微卡,燃油,,internal_90d,0.88
+祥菱v5,福田,祥菱V5,,燃油车,微卡,燃油,,internal_90d,0.88
+祥菱vev,福田,祥菱V EV,,新能源,微卡,新能源,,internal_90d,0.88
+祺智ev,广汽集团,祺智EV,,新能源,,新能源,,internal_90d,0.88
+祺智phev,广汽集团,祺智PHEV,,新能源,,新能源,,internal_90d,0.88
+福仕达荣达,海马,福仕达荣达,,燃油车,,燃油,,internal_90d,0.88
+福仕达鸿达,海马,福仕达鸿达,,燃油车,,燃油,,internal_90d,0.88
+福克斯,福特,福克斯,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+福克斯active,福特,福克斯Active,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+福克斯ev海外,福特,福克斯EV(海外),轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+福克斯进口,福特,福克斯(进口),轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+福家,陕汽通家,福家,,燃油车,,燃油,,internal_90d,0.88
+福特,旌航房车,福特,,燃油车,,燃油,,internal_90d,0.88
+福特e350,福特,福特E350,,燃油车,,燃油,,internal_90d,0.88
+福特f150,福特,福特F-150,其他,燃油车,皮卡,燃油,,heuristic_body+internal_90d,0.88
+福特f150raptor,福特,福特F-150 Raptor,其他,燃油车,皮卡,燃油,,heuristic_body+internal_90d,0.88
+福特ka,福特,福特Ka,,燃油车,,燃油,,internal_90d,0.88
+福特t型车,福特,福特T型车,,燃油车,,燃油,,internal_90d,0.88
+福特智趣烈马,福特,福特智趣烈马,,,,,,unknown,0.0
+福特烈马,福特,福特烈马,SUV,燃油车,SUV,燃油,,dcd_ranking+internal_90d,0.96
+福特电马,福特,福特电马,,新能源,,新能源,,internal_90d,0.88
+福特黑武士,沃森威尔,福特黑武士,,燃油车,,燃油,,internal_90d,0.88
+福瑞达,北汽昌河,福瑞达,,燃油车,,燃油,,internal_90d,0.88
+福瑞迪,起亚,福瑞迪,,燃油车,,燃油,,internal_90d,0.88
+福田风景,福田,福田风景,,燃油车,,燃油,,internal_90d,0.88
+福睿斯,福特,福睿斯,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+福美来,海马,福美来,,燃油车,,燃油,,internal_90d,0.88
+福美来f5,海马,福美来F5,,燃油车,,燃油,,internal_90d,0.88
+福美来f7,海马,福美来F7,,燃油车,,燃油,,internal_90d,0.88
+福美来mpv,海马,福美来MPV,MPV,燃油车,MPV,燃油,,heuristic_body+internal_90d,0.88
+福顺,江铃,福顺,其他,燃油车,轻客,燃油,,heuristic_body+internal_90d,0.88
+秀尔,起亚,秀尔,,燃油车,,燃油,,internal_90d,0.88
+科尔维特,雪佛兰,科尔维特,,燃油车,,燃油,,internal_90d,0.88
+科帕奇,雪佛兰,科帕奇,,燃油车,,燃油,,internal_90d,0.88
+科帕奇经典进口,雪佛兰,科帕奇经典(进口),,燃油车,,燃油,,internal_90d,0.88
+科帕奇进口,雪佛兰,科帕奇(进口),,燃油车,,燃油,,internal_90d,0.88
+科沃兹,雪佛兰,科沃兹,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+科莱威clever,荣威,科莱威CLEVER,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+科迈罗,雪佛兰,科迈罗,,燃油车,,燃油,,internal_90d,0.88
+科雷傲,雷诺,科雷傲,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+科雷傲进口,雷诺,科雷傲(进口),SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+科雷嘉,雷诺,科雷嘉,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+科雷缤,雷诺,科雷缤,,燃油车,,燃油,,internal_90d,0.88
+科鲁兹,雪佛兰,科鲁兹,,燃油车,,燃油,,internal_90d,0.88
+科鲁泽,雪佛兰,科鲁泽,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+秦,比亚迪,秦,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+秦dm,比亚迪,秦DM,轿车,新能源,轿车,新能源,,heuristic_body+internal_90d,0.88
+秦ev,比亚迪,秦EV,轿车,新能源,轿车,新能源,,heuristic_body+internal_90d,0.88
+秦ldm,比亚迪,秦L DM,轿车,新能源,轿车,新能源,,dcd_ranking+heuristic_body+internal_90d,0.96
+秦lev,比亚迪,秦L EV,轿车,新能源,轿车,新能源,,dcd_ranking+heuristic_body+internal_90d,0.96
+秦plusdm,比亚迪,秦PLUS DM,轿车,新能源,轿车,新能源,,dcd_ranking+heuristic_body+internal_90d,0.96
+秦plusdmi,比亚迪,秦PLUS DM-i,轿车,新能源,轿车,新能源,,heuristic_body+internal_90d,0.88
+秦plusev,比亚迪,秦PLUS EV,轿车,新能源,轿车,新能源,,dcd_ranking+heuristic_body+internal_90d,0.96
+秦pro,比亚迪,秦Pro,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+秦prodm,比亚迪,秦Pro DM,轿车,新能源,轿车,新能源,,heuristic_body+internal_90d,0.88
+秦proev,比亚迪,秦Pro EV,轿车,新能源,轿车,新能源,,heuristic_body+internal_90d,0.88
+竞悦,莲花汽车,竞悦,,燃油车,,燃油,,internal_90d,0.88
+竞技者,五十铃,竞技者,,燃油车,,燃油,,internal_90d,0.88
+竞瑞,本田,竞瑞,,燃油车,,燃油,,internal_90d,0.88
+精灵智蓝,福田,精灵智蓝,,新能源,,新能源,,internal_90d,0.88
+索兰托,起亚,索兰托,,燃油车,,燃油,,internal_90d,0.88
+索奈,起亚,索奈,SUV,燃油车,SUV,燃油,,dcd_ranking,0.96
+索纳塔,现代,索纳塔,轿车,燃油车,轿车,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+索纳塔phev,现代,索纳塔PHEV,轿车,新能源,轿车,新能源,,heuristic_body+internal_90d,0.88
+索纳塔九,现代,索纳塔九,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+索纳塔八,现代,索纳塔八,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+索纳塔进口,现代,索纳塔(进口),轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+索罗德,雪佛兰,索罗德,,燃油车,,燃油,,internal_90d,0.88
+红旗ca770,红旗,红旗CA770,,燃油车,,燃油,,internal_90d,0.88
+红旗ca771,红旗,红旗CA771,,燃油车,,燃油,,internal_90d,0.88
+红旗ca773,红旗,红旗CA773,,燃油车,,燃油,,internal_90d,0.88
+红旗eh7,红旗,红旗EH7,轿车,新能源,轿车,新能源,,dcd_ranking+internal_90d,0.96
+红旗ehs3,红旗,红旗E-HS3,,新能源,,新能源,,internal_90d,0.88
+红旗ehs9,红旗,红旗E-HS9,SUV,新能源,SUV,新能源,,dcd_ranking+internal_90d,0.96
+红旗eqm5,红旗,红旗E-QM5,,新能源,,新能源,,internal_90d,0.88
+红旗e境,红旗,红旗E·境,,燃油车,,燃油,,internal_90d,0.88
+红旗h5,红旗,红旗H5,轿车,燃油车,轿车,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+红旗h5phev,红旗,红旗H5 PHEV,轿车,新能源,轿车,新能源,,dcd_ranking+heuristic_body+internal_90d,0.96
+红旗h5经典,红旗,红旗H5经典,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+红旗h6,红旗,红旗H6,轿车,燃油车,轿车,燃油,,dcd_ranking+internal_90d,0.96
+红旗h7,红旗,红旗H7,,燃油车,,燃油,,internal_90d,0.88
+红旗h7phev,红旗,红旗H7 PHEV,,新能源,,新能源,,internal_90d,0.88
+红旗h9,红旗,红旗H9,轿车,燃油车,轿车,燃油,,dcd_ranking+internal_90d,0.96
+红旗hq9,红旗,红旗HQ9,MPV,燃油车,MPV,燃油,,dcd_ranking+internal_90d,0.96
+红旗hq9phev,红旗,红旗HQ9 PHEV,MPV,新能源,MPV,新能源,,dcd_ranking+internal_90d,0.96
+红旗hs3,红旗,红旗HS3,SUV,燃油车,SUV,燃油,,dcd_ranking+internal_90d,0.96
+红旗hs3phev,红旗,红旗HS3 PHEV,SUV,新能源,SUV,新能源,,dcd_ranking+internal_90d,0.96
+红旗hs5,红旗,红旗HS5,SUV,燃油车,SUV,燃油,,dcd_ranking+internal_90d,0.96
+红旗hs6phev,红旗,红旗HS6 PHEV,SUV,新能源,SUV,新能源,,dcd_ranking+internal_90d,0.96
+红旗hs7,红旗,红旗HS7,SUV,燃油车,SUV,燃油,,dcd_ranking+internal_90d,0.96
+红旗hs7phev,红旗,红旗HS7 PHEV,SUV,新能源,SUV,新能源,,dcd_ranking+internal_90d,0.96
+红旗国悦reev,红旗,红旗国悦REEV,,新能源,,新能源,,internal_90d,0.88
+红旗天工05,红旗,红旗天工05,轿车,新能源,轿车,新能源,,dcd_ranking+internal_90d,0.96
+红旗天工06,红旗,红旗天工06,SUV,新能源,SUV,新能源,,dcd_ranking+internal_90d,0.96
+红旗天工08,红旗,红旗天工08,,新能源,,新能源,,internal_90d,0.88
+红旗盛世,红旗,红旗盛世,,燃油车,,燃油,,internal_90d,0.88
+红旗金葵花国耀,红旗,红旗金葵花国耀,,燃油车,,燃油,,internal_90d,0.88
+红旗金葵花国雅,红旗,红旗金葵花国雅,,燃油车,,燃油,,internal_90d,0.88
+红杉,丰田,红杉,,燃油车,,燃油,,internal_90d,0.88
+纬度,雷诺,纬度,,燃油车,,燃油,,internal_90d,0.88
+纳5,纳智捷,纳5,,燃油车,,燃油,,internal_90d,0.88
+纳智捷urx,纳智捷,纳智捷URX,,燃油车,,燃油,,internal_90d,0.88
+纳瓦拉,日产,纳瓦拉,,燃油车,皮卡,燃油,,internal_90d,0.88
+纳米01,东风奕派,纳米01,轿车,新能源,轿车,新能源,,dcd_ranking+internal_90d,0.96
+纳米06,东风奕派,纳米06,SUV,新能源,SUV,新能源,,dcd_ranking+internal_90d,0.96
+纳米box,东风纳米,纳米BOX,,新能源,,新能源,,internal_90d,0.88
+纵横g700,纵横,纵横G700,SUV,新能源,SUV,新能源,,dcd_ranking+internal_90d,0.96
+绅宝cc,北京汽车,绅宝CC,,燃油车,,燃油,,internal_90d,0.88
+绅宝d20,北京汽车,绅宝D20,,燃油车,,燃油,,internal_90d,0.88
+绅宝d50,北京汽车,绅宝D50,,燃油车,,燃油,,internal_90d,0.88
+绅宝d60,北京汽车,绅宝D60,,燃油车,,燃油,,internal_90d,0.88
+绅宝d70,北京汽车,绅宝D70,,燃油车,,燃油,,internal_90d,0.88
+绅宝x25,北京汽车,绅宝X25,,燃油车,,燃油,,internal_90d,0.88
+绅宝x35,北京汽车,绅宝X35,,燃油车,,燃油,,internal_90d,0.88
+绅宝x55,北京汽车,绅宝X55,,燃油车,,燃油,,internal_90d,0.88
+绅宝x65,北京汽车,绅宝X65,,燃油车,,燃油,,internal_90d,0.88
+绎乐,广汽集团,绎乐,,新能源,,新能源,,internal_90d,0.88
+经典全顺,福特,经典全顺,其他,燃油车,轻客,燃油,,heuristic_body+internal_90d,0.88
+经典帝豪,吉利汽车,经典帝豪,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+经典熊猫,吉利汽车,经典熊猫,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+维拉克斯,现代,维拉克斯,,燃油车,,燃油,,internal_90d,0.88
+维特拉,铃木,维特拉,,燃油车,,燃油,,internal_90d,0.88
+缔途ef3,飞碟汽车,缔途EF3,,新能源,微卡,新能源,,internal_90d,0.88
+缤智,本田,缤智,SUV,燃油车,SUV,燃油,,dcd_ranking+internal_90d,0.96
+缤果s,五菱汽车,缤果S,轿车,新能源,轿车,新能源,,dcd_ranking+internal_90d,0.96
+缤瑞,吉利汽车,缤瑞,,燃油车,,燃油,,internal_90d,0.88
+缤越,吉利汽车,缤越,SUV,燃油车,SUV,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+缤越phev,吉利汽车,缤越PHEV,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+美佳,现代,美佳,,燃油车,,燃油,,internal_90d,0.88
+羚羊,铃木,羚羊,,燃油车,,燃油,,internal_90d,0.88
+羿,江铃集团新能源,羿,,新能源,,新能源,,internal_90d,0.88
+翼搏,福特,翼搏,,燃油车,,燃油,,internal_90d,0.88
+翼放ec5,五十铃,翼放EC5,,燃油车,,燃油,,internal_90d,0.88
+翼放es5,五十铃,翼放ES5,,燃油车,,燃油,,internal_90d,0.88
+翼真l380,吉利银河,翼真L380,MPV,新能源,MPV,新能源,,dcd_ranking+internal_90d,0.96
+翼神,三菱,翼神,,燃油车,,燃油,,internal_90d,0.88
+翼虎,福特,翼虎,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+胜达,现代,胜达,SUV,燃油车,SUV,燃油,,dcd_ranking+internal_90d,0.96
+胜达经典,现代,胜达经典,,燃油车,,燃油,,internal_90d,0.88
+胜达进口,现代,胜达(进口),,燃油车,,燃油,,internal_90d,0.88
+腾势,腾势,腾势,,新能源,,新能源,,internal_90d,0.88
+腾势d9dm,腾势,腾势D9 DM,MPV,新能源,MPV,新能源,,heuristic_body+internal_90d,0.88
+腾势d9dmi,腾势,腾势D9 DM-i,MPV,新能源,MPV,新能源,,heuristic_body+internal_90d,0.88
+腾势d9ev,腾势,腾势D9 EV,MPV,新能源,MPV,新能源,,heuristic_body+internal_90d,0.88
+腾势n7,腾势,腾势N7,,新能源,,新能源,,internal_90d,0.88
+腾势n8dm,腾势,腾势N8 DM,,新能源,,新能源,,internal_90d,0.88
+腾势n8ldm,腾势,腾势N8L DM,,新能源,,新能源,,internal_90d,0.88
+腾势n9dm,腾势,腾势N9 DM,,新能源,,新能源,,internal_90d,0.88
+腾势xbev,腾势,腾势X BEV,,新能源,,新能源,,internal_90d,0.88
+腾势xphev,腾势,腾势X PHEV,,新能源,,新能源,,internal_90d,0.88
+腾势z9dm,腾势,腾势Z9 DM,,新能源,,新能源,,internal_90d,0.88
+腾势z9ev,腾势,腾势Z9 EV,,,,,,unknown,0.0
+腾势z9gtdm,腾势,腾势Z9GT DM,,新能源,,新能源,,internal_90d,0.88
+腾势z9gtev,腾势,腾势Z9GT EV,,新能源,,新能源,,internal_90d,0.88
+自游家nv,自游家,自游家NV,,新能源,,新能源,,internal_90d,0.88
+自由侠,Jeep,自由侠,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+自由光,Jeep,自由光,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+自由光进口,Jeep,自由光(进口),SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+自由客,Jeep,自由客,,燃油车,,燃油,,internal_90d,0.88
+自由王国vala,北京汽车制造厂,自由王国vala,,新能源,,新能源,,internal_90d,0.88
+自由舰,吉利汽车,自由舰,,燃油车,,燃油,,internal_90d,0.88
+至境l7,别克,至境L7,,新能源,,新能源,,internal_90d,0.88
+至境世家,别克,至境世家,,新能源,,新能源,,internal_90d,0.88
+致悦,菲亚特,致悦,,燃油车,,燃油,,internal_90d,0.88
+致胜,福特,致胜,,燃油车,,燃油,,internal_90d,0.88
+航海家,林肯,航海家,SUV,燃油车,SUV,燃油,,dcd_ranking+internal_90d,0.96
+航海家进口,林肯,航海家(进口),,燃油车,,燃油,,internal_90d,0.88
+艾力绅,本田,艾力绅,MPV,燃油车,MPV,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+艾瑞泽3,奇瑞,艾瑞泽3,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+艾瑞泽5,奇瑞,艾瑞泽5,轿车,燃油车,轿车,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+艾瑞泽5e,奇瑞新能源,艾瑞泽5e,轿车,新能源,轿车,新能源,,heuristic_body+internal_90d,0.88
+艾瑞泽5gt,奇瑞,艾瑞泽5 GT,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+艾瑞泽5plus,奇瑞,艾瑞泽5 PLUS,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+艾瑞泽7,奇瑞,艾瑞泽7,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+艾瑞泽7e,奇瑞新能源,艾瑞泽7e,轿车,新能源,轿车,新能源,,heuristic_body+internal_90d,0.88
+艾瑞泽8,奇瑞,艾瑞泽8,轿车,燃油车,轿车,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+艾瑞泽8pro,奇瑞,艾瑞泽8 PRO,轿车,燃油车,轿车,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+艾瑞泽e,奇瑞新能源,艾瑞泽e,轿车,新能源,轿车,新能源,,heuristic_body+internal_90d,0.88
+艾瑞泽gx,奇瑞,艾瑞泽GX,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+艾瑞泽m7,奇瑞,艾瑞泽M7,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+艾菲,九龙,艾菲,,燃油车,,燃油,,internal_90d,0.88
+芒果,雷丁,芒果,,新能源,,新能源,,internal_90d,0.88
+芒果pro,雷丁,芒果Pro,,新能源,,新能源,,internal_90d,0.88
+芝麻,众泰,芝麻,,新能源,,新能源,,internal_90d,0.88
+花仙子,江淮钇为,花仙子,,新能源,,新能源,,internal_90d,0.88
+花冠,丰田,花冠,,燃油车,,燃油,,internal_90d,0.88
+英仕派,本田,英仕派,轿车,燃油车,轿车,燃油,,dcd_ranking+internal_90d,0.96
+英仕派phev,本田,英仕派 PHEV,轿车,新能源,轿车,新能源,,dcd_ranking+internal_90d,0.96
+英伦c5,吉利汽车,英伦C5,,燃油车,,燃油,,internal_90d,0.88
+英伦tx4,吉利汽车,英伦TX4,,燃油车,,燃油,,internal_90d,0.88
+英伦tx4phev,吉利汽车,英伦TX4 PHEV,,燃油车,,燃油,,internal_90d,0.88
+英力士掷弹兵,英力士,英力士掷弹兵,,燃油车,,燃油,,internal_90d,0.88
+英朗,别克,英朗,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+英致727,英致汽车,英致727,,燃油车,,燃油,,internal_90d,0.88
+英致737,英致汽车,英致737,,燃油车,,燃油,,internal_90d,0.88
+英致737ev,英致汽车,英致737 EV,,新能源,,新能源,,internal_90d,0.88
+英致g3,英致汽车,英致G3,,燃油车,,燃油,,internal_90d,0.88
+英致g5,英致汽车,英致G5,,燃油车,,燃油,,internal_90d,0.88
+英菲尼迪esq,英菲尼迪,英菲尼迪ESQ,,燃油车,,燃油,,internal_90d,0.88
+英菲尼迪ex,英菲尼迪,英菲尼迪EX,,燃油车,,燃油,,internal_90d,0.88
+英菲尼迪fx,英菲尼迪,英菲尼迪FX,,燃油车,,燃油,,internal_90d,0.88
+英菲尼迪g系,英菲尼迪,英菲尼迪G系,,燃油车,,燃油,,internal_90d,0.88
+英菲尼迪jx,英菲尼迪,英菲尼迪JX,,燃油车,,燃油,,internal_90d,0.88
+英菲尼迪m系,英菲尼迪,英菲尼迪M系,,燃油车,,燃油,,internal_90d,0.88
+英菲尼迪q50,英菲尼迪,英菲尼迪Q50,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+英菲尼迪q50l,英菲尼迪,英菲尼迪Q50L,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+英菲尼迪q60,英菲尼迪,英菲尼迪Q60,,燃油车,,燃油,,internal_90d,0.88
+英菲尼迪q60s,英菲尼迪,英菲尼迪Q60S,,燃油车,,燃油,,internal_90d,0.88
+英菲尼迪q70,英菲尼迪,英菲尼迪Q70,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+英菲尼迪qx,英菲尼迪,英菲尼迪QX,,燃油车,,燃油,,internal_90d,0.88
+英菲尼迪qx30,英菲尼迪,英菲尼迪QX30,,燃油车,,燃油,,internal_90d,0.88
+英菲尼迪qx50,英菲尼迪,英菲尼迪QX50,,燃油车,,燃油,,internal_90d,0.88
+英菲尼迪qx50进口,英菲尼迪,英菲尼迪QX50(进口),,燃油车,,燃油,,internal_90d,0.88
+英菲尼迪qx55,英菲尼迪,英菲尼迪QX55,,燃油车,,燃油,,internal_90d,0.88
+英菲尼迪qx60,英菲尼迪,英菲尼迪QX60,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+英菲尼迪qx60进口,英菲尼迪,英菲尼迪QX60(进口）,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+英菲尼迪qx70,英菲尼迪,英菲尼迪QX70,,燃油车,,燃油,,internal_90d,0.88
+英菲尼迪qx80,英菲尼迪,英菲尼迪QX80,,燃油车,,燃油,,internal_90d,0.88
+英速亚,欧宝,英速亚,,燃油车,,燃油,,internal_90d,0.88
+荣威350,荣威,荣威350,,燃油车,,燃油,,internal_90d,0.88
+荣威360,荣威,荣威360,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+荣威550,荣威,荣威550,,燃油车,,燃油,,internal_90d,0.88
+荣威750,荣威,荣威750,,燃油车,,燃油,,internal_90d,0.88
+荣威950,荣威,荣威950,,燃油车,,燃油,,internal_90d,0.88
+荣威d5xdmh,荣威,荣威D5X DMH,SUV,新能源,SUV,新能源,,dcd_ranking+internal_90d,0.96
+荣威d6,荣威,荣威D6,轿车,新能源,轿车,新能源,,dcd_ranking+internal_90d,0.96
+荣威d7dmh,荣威,荣威D7 DMH,轿车,新能源,轿车,新能源,,dcd_ranking+internal_90d,0.96
+荣威d7ev,荣威,荣威D7 EV,轿车,新能源,轿车,新能源,,dcd_ranking+internal_90d,0.96
+荣威e50,荣威,荣威e50,,新能源,,新能源,,internal_90d,0.88
+荣威e550,荣威,荣威e550,,新能源,,新能源,,internal_90d,0.88
+荣威e950,荣威,荣威e950,,新能源,,新能源,,internal_90d,0.88
+荣威ei5,荣威,荣威Ei5,轿车,新能源,轿车,新能源,,heuristic_body+internal_90d,0.88
+荣威ei6,荣威,荣威ei6,,新能源,,新能源,,internal_90d,0.88
+荣威ei6max,荣威,荣威ei6 MAX,轿车,新能源,轿车,新能源,,heuristic_body+internal_90d,0.88
+荣威erx5,荣威,荣威eRX5,SUV,新能源,SUV,新能源,,dcd_ranking+heuristic_body+internal_90d,0.96
+荣威i5,荣威,荣威i5,轿车,燃油车,轿车,燃油,,dcd_ranking+internal_90d,0.96
+荣威i6,荣威,荣威i6,轿车,燃油车,轿车,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+荣威i6max,荣威,荣威i6 MAX,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+荣威i6maxev,荣威,荣威i6 MAX EV,轿车,新能源,轿车,新能源,,heuristic_body+internal_90d,0.88
+荣威i6经典,荣威,荣威i6经典,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+荣威imax8,荣威,荣威iMAX8,轿车,燃油车,轿车,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+荣威imax8dmh,荣威,荣威iMAX8 DMH,轿车,新能源,轿车,新能源,,dcd_ranking+heuristic_body+internal_90d,0.96
+荣威imax8ev,荣威,荣威iMAX8 EV,轿车,新能源,轿车,新能源,,heuristic_body+internal_90d,0.88
+荣威m7dmh,荣威,荣威M7 DMH,轿车,新能源,轿车,新能源,,dcd_ranking+internal_90d,0.96
+荣威marvelx,荣威,荣威Marvel X,,新能源,,新能源,,internal_90d,0.88
+荣威rx3,荣威,荣威RX3,,燃油车,,燃油,,internal_90d,0.88
+荣威rx5,荣威,荣威RX5,SUV,燃油车,SUV,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+荣威rx5emax,荣威,荣威RX5 eMAX,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+荣威rx5max,荣威,荣威RX5 MAX,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+荣威rx8,荣威,荣威RX8,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+荣威rx9,荣威,荣威RX9,,燃油车,,燃油,,internal_90d,0.88
+荣威w5,荣威,荣威W5,,燃油车,,燃油,,internal_90d,0.88
+荣御,别克,荣御,,燃油车,,燃油,,internal_90d,0.88
+莲花l3,莲花汽车,莲花L3,,燃油车,,燃油,,internal_90d,0.88
+莲花l5,莲花汽车,莲花L5,,燃油车,,燃油,,internal_90d,0.88
+菱势黄金仓,菱势汽车,菱势黄金仓,,新能源,,新能源,,internal_90d,0.88
+菱势黄金仓plus,菱势汽车,菱势黄金仓PLUS,,新能源,,新能源,,internal_90d,0.88
+菱势黄金卡,菱势汽车,菱势黄金卡,,新能源,,新能源,,internal_90d,0.88
+菱帅,东南,菱帅,,燃油车,,燃油,,internal_90d,0.88
+菱智,东风风行,菱智,MPV,燃油车,MPV,燃油,,dcd_ranking+internal_90d,0.96
+菱智plus,东风风行,菱智PLUS,MPV,燃油车,MPV,燃油,,dcd_ranking+internal_90d,0.96
+菱智新能源,东风风行,菱智新能源,MPV,新能源,MPV,新能源,,dcd_ranking+internal_90d,0.96
+菱绅,东南,菱绅,,燃油车,,燃油,,internal_90d,0.88
+菲亚特500,菲亚特,菲亚特500,,燃油车,,燃油,,internal_90d,0.88
+菲斯塔,现代,菲斯塔,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+菲斯塔纯电动,现代,菲斯塔 纯电动,轿车,新能源,轿车,新能源,,heuristic_body+internal_90d,0.88
+菲翔,菲亚特,菲翔,,燃油车,,燃油,,internal_90d,0.88
+菲跃,菲亚特,菲跃,,燃油车,,燃油,,internal_90d,0.88
+萨普,福田,萨普,,燃油车,,燃油,,internal_90d,0.88
+萨瓦纳,福田,萨瓦纳,,燃油车,,燃油,,internal_90d,0.88
+蒂维拉,双龙,蒂维拉,,燃油车,,燃油,,internal_90d,0.88
+蒙派克e,福田,蒙派克E,,燃油车,,燃油,,internal_90d,0.88
+蒙迪欧,福特,蒙迪欧,轿车,燃油车,轿车,燃油,,dcd_ranking+internal_90d,0.96
+蒙迪欧phev,福特,蒙迪欧PHEV,,新能源,,新能源,,internal_90d,0.88
+蒙迪欧致胜,福特,蒙迪欧-致胜,,燃油车,,燃油,,internal_90d,0.88
+蓝山,魏牌,蓝山,SUV,新能源,SUV,新能源,,dcd_ranking+internal_90d,0.96
+蓝山dhtphev,魏牌,蓝山DHT-PHEV,,新能源,,新能源,,internal_90d,0.88
+蓝气球,睿蓝汽车,蓝气球,,新能源,,新能源,,internal_90d,0.88
+蓝猫,江汽集团,蓝猫,,新能源,,新能源,,internal_90d,0.88
+蓝瑟,三菱,蓝瑟,,燃油车,,燃油,,internal_90d,0.88
+蓝电e5,蓝电,蓝电E5,,新能源,,新能源,,internal_90d,0.88
+蓝电e5plus,蓝电,蓝电E5 PLUS,,新能源,,新能源,,internal_90d,0.88
+蓝鸟,日产,蓝鸟,,燃油车,,燃油,,internal_90d,0.88
+蓝鸟印象,日产,蓝鸟·印象,,燃油车,,燃油,,internal_90d,0.88
+蔚揽,大众,蔚揽,,燃油车,,燃油,,internal_90d,0.88
+蔚揽phev,大众,蔚揽PHEV,,新能源,,新能源,,internal_90d,0.88
+蔚来ec6,蔚来,蔚来EC6,,新能源,,新能源,,internal_90d,0.88
+蔚来ec7,蔚来,蔚来EC7,,新能源,,新能源,,internal_90d,0.88
+蔚来es6,蔚来,蔚来ES6,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+蔚来es7,蔚来,蔚来ES7,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+蔚来es8,蔚来,蔚来ES8,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+蔚来es9,蔚来,蔚来ES9,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+蔚来et5,蔚来,蔚来ET5,,新能源,,新能源,,internal_90d,0.88
+蔚来et5t,蔚来,蔚来ET5T,,新能源,,新能源,,internal_90d,0.88
+蔚来et7,蔚来,蔚来ET7,,新能源,,新能源,,internal_90d,0.88
+蔚来et9,蔚来,蔚来ET9,,新能源,,新能源,,internal_90d,0.88
+蝰蛇,道奇,蝰蛇,,燃油车,,燃油,,internal_90d,0.88
+裕隆汽车u5,纳智捷,裕隆汽车U5,,燃油车,,燃油,,internal_90d,0.88
+西玛,日产,西玛,,燃油车,,燃油,,internal_90d,0.88
+观境,金杯,观境,,燃油车,,燃油,,internal_90d,0.88
+观致3,观致,观致3,,燃油车,,燃油,,internal_90d,0.88
+观致5,观致,观致5,,燃油车,,燃油,,internal_90d,0.88
+观致7,观致,观致7,,燃油车,,燃油,,internal_90d,0.88
+览拓者,长安,览拓者,,燃油车,,燃油,,internal_90d,0.88
+角斗士,Jeep,角斗士,,燃油车,,燃油,,dcd_ranking+internal_90d,0.96
+解放t90,一汽,解放T90,,燃油车,,燃油,,internal_90d,0.88
+讴歌cdx,讴歌,讴歌CDX,,燃油车,,燃油,,internal_90d,0.88
+讴歌ilx,讴歌,讴歌ILX,,燃油车,,燃油,,internal_90d,0.88
+讴歌mdx,讴歌,讴歌MDX,,燃油车,,燃油,,internal_90d,0.88
+讴歌rdx,讴歌,讴歌RDX,,燃油车,,燃油,,internal_90d,0.88
+讴歌rdx进口,讴歌,讴歌RDX(进口),,燃油车,,燃油,,internal_90d,0.88
+讴歌rl,讴歌,讴歌RL,,燃油车,,燃油,,internal_90d,0.88
+讴歌tl,讴歌,讴歌TL,,燃油车,,燃油,,internal_90d,0.88
+讴歌tlx,讴歌,讴歌TLX,,燃油车,,燃油,,internal_90d,0.88
+讴歌tlxl,讴歌,讴歌TLX-L,,燃油车,,燃油,,internal_90d,0.88
+讴歌tsx,讴歌,讴歌TSX,,燃油车,,燃油,,internal_90d,0.88
+讴歌zdx,讴歌,讴歌ZDX,,燃油车,,燃油,,internal_90d,0.88
+谢尔比gte,谢尔比,谢尔比GTE,,燃油车,,燃油,,internal_90d,0.88
+豪情,吉利汽车,豪情,,燃油车,,燃油,,internal_90d,0.88
+豪情suv,吉利汽车,豪情SUV,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+豪越,吉利汽车,豪越,,燃油车,,燃油,,internal_90d,0.88
+豪越l,吉利汽车,豪越L,SUV,燃油车,SUV,燃油,,dcd_ranking+internal_90d,0.96
+豪越pro,吉利汽车,豪越PRO,,燃油车,,燃油,,internal_90d,0.88
+豹5,方程豹,豹5,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+豹8,方程豹,豹8,,新能源,,新能源,,internal_90d,0.88
+贵士,日产,贵士,,燃油车,,燃油,,internal_90d,0.88
+赛力斯7,SERES赛力斯,赛力斯7,,燃油车,,燃油,,internal_90d,0.88
+赛力斯ix3,SERES赛力斯,赛力斯iX3,,新能源,,新能源,,internal_90d,0.88
+赛力斯sf5,SERES赛力斯,赛力斯SF5,,新能源,,新能源,,internal_90d,0.88
+赛博坦克300,坦克,赛博坦克300,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+赛博越野旅行车,特斯拉,赛博越野旅行车,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+赛图斯,起亚,赛图斯,SUV,燃油车,SUV,燃油,,dcd_ranking+internal_90d,0.96
+赛影,长城,赛影,,燃油车,,燃油,,internal_90d,0.88
+赛拉图,起亚,赛拉图,,燃油车,,燃油,,internal_90d,0.88
+赛欧,雪佛兰,赛欧,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+赛纳,雪铁龙,赛纳,,燃油车,,燃油,,internal_90d,0.88
+赛那,丰田,赛那,MPV,燃油车,MPV,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+赛飞利,欧宝,赛飞利,,燃油车,,燃油,,internal_90d,0.88
+赛马,哈飞,赛马,,燃油车,,燃油,,internal_90d,0.88
+起亚ev5,起亚,起亚EV5,SUV,新能源,SUV,新能源,,dcd_ranking+internal_90d,0.96
+起亚ev6,起亚,起亚EV6,,新能源,,新能源,,internal_90d,0.88
+起亚k2,起亚,起亚K2,,燃油车,,燃油,,internal_90d,0.88
+起亚k3,起亚,起亚K3,轿车,燃油车,轿车,燃油,,dcd_ranking+internal_90d,0.96
+起亚k3phev,起亚,起亚K3 PHEV,,新能源,,新能源,,internal_90d,0.88
+起亚k3s,起亚,起亚K3S,,燃油车,,燃油,,internal_90d,0.88
+起亚k4,起亚,起亚K4,,燃油车,,燃油,,internal_90d,0.88
+起亚k5,起亚,起亚K5,轿车,燃油车,轿车,燃油,,dcd_ranking+internal_90d,0.96
+起亚k5phev,起亚,起亚K5 PHEV,,新能源,,新能源,,internal_90d,0.88
+起亚kx5,起亚,起亚KX5,,燃油车,,燃油,,internal_90d,0.88
+起亚kx7,起亚,起亚KX7,,燃油车,,燃油,,internal_90d,0.88
+起亚vq,起亚,起亚VQ,,燃油车,,燃油,,internal_90d,0.88
+超级van,远程汽车,超级VAN,其他,新能源,,新能源,,heuristic_body+internal_90d,0.88
+超级维特拉,铃木,超级维特拉,,燃油车,,燃油,,internal_90d,0.88
+跨越星v3,长安跨越,跨越星V3,,燃油车,,燃油,,internal_90d,0.88
+跨越星v5,长安跨越,跨越星V5,,燃油车,,燃油,,internal_90d,0.88
+跨越星v5ev,长安跨越,跨越星V5 EV,,新能源,,新能源,,internal_90d,0.88
+跨越星v7,长安跨越,跨越星V7,,燃油车,,燃油,,internal_90d,0.88
+跨越星v7ev,长安跨越,跨越星V7 EV,,新能源,,新能源,,internal_90d,0.88
+跨越星光ev,长安跨越,跨越星光 EV,,新能源,,新能源,,internal_90d,0.88
+跨越王f3,长安跨越,跨越王F3,,燃油车,,燃油,,internal_90d,0.88
+跨越王x1,长安跨越,跨越王X1,,燃油车,,燃油,,internal_90d,0.88
+跨越王x3,长安跨越,跨越王X3,,燃油车,,燃油,,internal_90d,0.88
+跨越王x3ev,长安跨越,跨越王X3 EV,,新能源,,新能源,,internal_90d,0.88
+跨越王x5,长安跨越,跨越王X5,,燃油车,,燃油,,internal_90d,0.88
+跨越王x7,长安跨越,跨越王X7,,燃油车,,燃油,,internal_90d,0.88
+跨越者d5,长安跨越,跨越者D5,,燃油车,,燃油,,internal_90d,0.88
+路盛e80,华泰,路盛E80,,燃油车,,燃油,,internal_90d,0.88
+车驰sprinter,车驰汽车,车驰Sprinter,其他,燃油车,,燃油,,heuristic_body+internal_90d,0.88
+车驰vclass,车驰汽车,车驰V-Class,,燃油车,,燃油,,internal_90d,0.88
+轩度,凯翼,轩度,,燃油车,,燃油,,internal_90d,0.88
+轩朗,力帆汽车,轩朗,,燃油车,,燃油,,internal_90d,0.88
+轩逸,日产,轩逸,轿车,燃油车,轿车,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+轩逸纯电,日产,轩逸·纯电,轿车,新能源,轿车,新能源,,heuristic_body+internal_90d,0.88
+辉昂,大众,辉昂,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+辉腾,大众,辉腾,,燃油车,,燃油,,internal_90d,0.88
+迈凯伦540c,迈凯伦,迈凯伦540C,,燃油车,,燃油,,internal_90d,0.88
+迈凯伦570gt,迈凯伦,迈凯伦570GT,,燃油车,,燃油,,internal_90d,0.88
+迈凯伦570s,迈凯伦,迈凯伦570S,,燃油车,,燃油,,internal_90d,0.88
+迈凯伦625c,迈凯伦,迈凯伦625C,,燃油车,,燃油,,internal_90d,0.88
+迈凯伦650s,迈凯伦,迈凯伦650S,,燃油车,,燃油,,internal_90d,0.88
+迈凯伦720s,迈凯伦,迈凯伦720S,,燃油车,,燃油,,internal_90d,0.88
+迈凯伦artura,迈凯伦,迈凯伦Artura,,新能源,,新能源,,internal_90d,0.88
+迈凯伦gt,迈凯伦,迈凯伦GT,,燃油车,,燃油,,internal_90d,0.88
+迈威,力帆汽车,迈威,,燃油车,,燃油,,internal_90d,0.88
+迈巴赫,迈巴赫,迈巴赫,,燃油车,,燃油,,internal_90d,0.88
+迈巴赫gls,奔驰,迈巴赫GLS,,燃油车,,燃油,,internal_90d,0.88
+迈巴赫s级,奔驰,迈巴赫S级,轿车,燃油车,轿车,燃油,,dcd_ranking+internal_90d,0.96
+迈巴赫s级phev,奔驰,迈巴赫S级 PHEV,,新能源,,新能源,,internal_90d,0.88
+迈特威,大众,迈特威,,燃油车,,燃油,,internal_90d,0.88
+迈腾,大众,迈腾,轿车,燃油车,轿车,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+迈腾gte,大众,迈腾GTE,轿车,新能源,轿车,新能源,,heuristic_body+internal_90d,0.88
+迈腾phev,大众,迈腾PHEV,轿车,新能源,轿车,新能源,,dcd_ranking+heuristic_body+internal_90d,0.96
+迈腾进口,大众,迈腾(进口),轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+迈莎锐v级,迈莎锐,迈莎锐V级,,燃油车,,燃油,,internal_90d,0.88
+迈莎锐保时捷911,迈莎锐,迈莎锐保时捷911,,燃油车,,燃油,,internal_90d,0.88
+迈迈,迈迈,迈迈,,新能源,,新能源,,internal_90d,0.88
+迈锐宝,雪佛兰,迈锐宝,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+迈锐宝xl,雪佛兰,迈锐宝XL,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+远志m1,大运,远志M1,,新能源,,新能源,,internal_90d,0.88
+远景,吉利汽车,远景,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+远景s1,吉利汽车,远景S1,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+远景x1,吉利汽车,远景X1,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+远景x3,吉利汽车,远景X3,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+远景x6,吉利汽车,远景X6,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+远程e5,远程汽车,远程E5,,新能源,,新能源,,internal_90d,0.88
+远程e6,远程汽车,远程E6,,新能源,,新能源,,internal_90d,0.88
+远程星享f1e,远程汽车,远程星享F1E,,新能源,,新能源,,internal_90d,0.88
+远程星享v,远程汽车,远程星享V,,新能源,,新能源,,internal_90d,0.88
+远程星智h,远程汽车,远程星智H,,新能源,,新能源,,internal_90d,0.88
+远航y6,远航汽车,远航Y6,,新能源,,新能源,,internal_90d,0.88
+迷迪,福田,迷迪,,燃油车,,燃油,,internal_90d,0.88
+逍客,日产,逍客,SUV,燃油车,SUV,燃油,,dcd_ranking+internal_90d,0.96
+途乐,日产,途乐,,燃油车,,燃油,,internal_90d,0.88
+途乐y61,日产,途乐Y61,,燃油车,,燃油,,internal_90d,0.88
+途安,大众,途安,,燃油车,,燃油,,internal_90d,0.88
+途安l,大众,途安L,MPV,燃油车,MPV,燃油,,dcd_ranking+internal_90d,0.96
+途岳,大众,途岳,SUV,燃油车,SUV,燃油,,dcd_ranking+internal_90d,0.96
+途岳ev,大众,途岳EV,,新能源,,新能源,,internal_90d,0.88
+途昂,大众,途昂,SUV,燃油车,SUV,燃油,,dcd_ranking+internal_90d,0.96
+途昂x,大众,途昂X,,燃油车,,燃油,,internal_90d,0.88
+途睿欧,福特,途睿欧,,燃油车,,燃油,,internal_90d,0.88
+途胜,现代,途胜,SUV,燃油车,SUV,燃油,,dcd_ranking+internal_90d,0.96
+途观,大众,途观,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+途观l,大众,途观L,SUV,燃油车,SUV,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+途观lphev,大众,途观L PHEV,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+途观x,大众,途观X,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+途达,日产,途达,,燃油车,,燃油,,internal_90d,0.88
+途逸,东风,途逸,,燃油车,微卡,燃油,,internal_90d,0.88
+途铠,大众,途铠,,燃油车,,燃油,,internal_90d,0.88
+途锐,大众,途锐,,燃油车,,燃油,,internal_90d,0.88
+途锐phev,大众,途锐PHEV,,新能源,,新能源,,internal_90d,0.88
+速尊,斯柯达,速尊,,燃油车,,燃油,,internal_90d,0.88
+速派,斯柯达,速派,轿车,燃油车,轿车,燃油,,dcd_ranking+internal_90d,0.96
+速派进口,斯柯达,速派(进口),,燃油车,,燃油,,internal_90d,0.88
+速翼特,铃木,速翼特,,燃油车,,燃油,,internal_90d,0.88
+速腾,大众,速腾,轿车,燃油车,轿车,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+速达sa01,速达,速达SA01,,新能源,,新能源,,internal_90d,0.88
+速迈,起亚,速迈,,燃油车,,燃油,,internal_90d,0.88
+速锐,比亚迪,速锐,,燃油车,,燃油,,internal_90d,0.88
+逸动,长安,逸动,轿车,燃油车,轿车,燃油,,dcd_ranking+internal_90d,0.96
+逸动dt,长安,逸动DT,,燃油车,,燃油,,internal_90d,0.88
+逸动et,长安,逸动ET,,新能源,,新能源,,internal_90d,0.88
+逸动ev,长安,逸动EV,,新能源,,新能源,,internal_90d,0.88
+逸动phev,长安,逸动PHEV,轿车,新能源,轿车,新能源,,dcd_ranking+internal_90d,0.96
+逸动xt,长安,逸动XT,,燃油车,,燃油,,internal_90d,0.88
+逸致,丰田,逸致,,燃油车,,燃油,,internal_90d,0.88
+逸行,现代,逸行,,燃油车,,燃油,,internal_90d,0.88
+逸达,长安,逸达,,燃油车,,燃油,,internal_90d,0.88
+郑州日产z9,东风,郑州日产Z9,,燃油车,,燃油,,internal_90d,0.88
+都灵,依维柯,都灵,,燃油车,,燃油,,internal_90d,0.88
+酷威,道奇,酷威,,燃油车,,燃油,,internal_90d,0.88
+酷搏,道奇,酷搏,,燃油车,,燃油,,internal_90d,0.88
+酷派,现代,酷派,,燃油车,,燃油,,internal_90d,0.88
+酷熊,长城,酷熊,,燃油车,,燃油,,internal_90d,0.88
+重卡系列,阿娜亚,重卡系列,,燃油车,,燃油,,internal_90d,0.88
+野马ec70,野马汽车,野马EC70,,新能源,,新能源,,internal_90d,0.88
+野马f10,野马汽车,野马F10,,燃油车,,燃油,,internal_90d,0.88
+野马f12,野马汽车,野马F12,,燃油车,,燃油,,internal_90d,0.88
+野马f16,野马汽车,野马F16,,燃油车,,燃油,,internal_90d,0.88
+野马f99,野马汽车,野马F99,,燃油车,,燃油,,internal_90d,0.88
+野马t70,野马汽车,野马T70,,燃油车,,燃油,,internal_90d,0.88
+野马t80,野马汽车,野马T80,,燃油车,,燃油,,internal_90d,0.88
+金冠vclass,金冠汽车,金冠V-Class,,燃油车,,燃油,,internal_90d,0.88
+金刚,吉利汽车,金刚,,燃油车,,燃油,,internal_90d,0.88
+金刚炮,长城,金刚炮,其他,燃油车,皮卡,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+金刚财富,吉利汽车,金刚财富,,燃油车,,燃油,,internal_90d,0.88
+金卡s3,金杯,金卡S3,,燃油车,,燃油,,internal_90d,0.88
+金威,金龙,金威,,燃油车,,燃油,,internal_90d,0.88
+金旅大海狮,金旅,金旅大海狮,,燃油车,,燃油,,internal_90d,0.88
+金旅海狮,金旅,金旅海狮,,燃油车,,燃油,,internal_90d,0.88
+金旅海狮ev,金旅,金旅海狮EV,,新能源,,新能源,,internal_90d,0.88
+金杯f50,金杯,金杯F50,,燃油车,,燃油,,internal_90d,0.88
+金杯s50,金杯,金杯S50,,燃油车,,燃油,,internal_90d,0.88
+金杯s70,金杯,金杯S70,,燃油车,,燃油,,internal_90d,0.88
+金杯t3,金杯,金杯T3,,燃油车,,燃油,,internal_90d,0.88
+金杯t5,金杯,金杯T5,,燃油车,,燃油,,internal_90d,0.88
+金杯t52s,金杯,金杯T52S,,燃油车,,燃油,,internal_90d,0.88
+金杯大海狮,金杯,金杯大海狮,,燃油车,,燃油,,internal_90d,0.88
+金杯快运,金杯,金杯快运,,燃油车,,燃油,,internal_90d,0.88
+金杯海狮,金杯,金杯海狮,,燃油车,,燃油,,internal_90d,0.88
+金杯海狮王,金杯,金杯海狮王,,燃油车,,燃油,,internal_90d,0.88
+金海狮,鑫源汽车,金海狮,,燃油车,,燃油,,internal_90d,0.88
+金海狮m,鑫源汽车,金海狮M,,燃油车,,燃油,,internal_90d,0.88
+金牛座,福特,金牛座,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+金牛星,长安凯程,金牛星,,燃油车,,燃油,,internal_90d,0.88
+金琥ev48,金琥新能源,金琥EV48,,新能源,,新能源,,internal_90d,0.88
+金鹰,吉利汽车,金鹰,,燃油车,,燃油,,internal_90d,0.88
+金龙赛那,金龙,金龙赛那,MPV,燃油车,MPV,燃油,,heuristic_body+internal_90d,0.88
+鑫源e3,SRM鑫源,鑫源E3,,新能源,,新能源,,internal_90d,0.88
+鑫源e3l,鑫源汽车,鑫源E3L,,新能源,,新能源,,internal_90d,0.88
+鑫源t5lev,鑫源汽车,鑫源T5L EV,,新能源,,新能源,,internal_90d,0.88
+鑫源x30l,SRM鑫源,鑫源X30L,,燃油车,,燃油,,internal_90d,0.88
+钇为3,江淮钇为,钇为3,轿车,新能源,轿车,新能源,,dcd_ranking+internal_90d,0.96
+钛3,方程豹,钛3,,新能源,,新能源,,internal_90d,0.88
+钛7,方程豹,钛7,,新能源,,新能源,,internal_90d,0.88
+钛7phev,方程豹,钛7 PHEV,,新能源,,新能源,,internal_90d,0.88
+钧天黑武士youth,钧天汽车,钧天黑武士Youth,,燃油车,,燃油,,internal_90d,0.88
+钱多多,福田,钱多多,,新能源,,新能源,,internal_90d,0.88
+铂智3x,丰田,铂智3X,SUV,新能源,SUV,新能源,,dcd_ranking+internal_90d,0.96
+铂智4x,丰田,铂智4X,SUV,新能源,SUV,新能源,,dcd_ranking+internal_90d,0.96
+铂智7,丰田,铂智7,轿车,新能源,轿车,新能源,,dcd_ranking+internal_90d,0.96
+铂锐,克莱斯勒,铂锐,,燃油车,,燃油,,internal_90d,0.88
+铂驰nv系列,星驰,铂驰NV系列,,燃油车,,燃油,,internal_90d,0.88
+铂驰t系列,星驰,铂驰T系列,,燃油车,,燃油,,internal_90d,0.88
+铃拓,五十铃,铃拓,,燃油车,,燃油,,internal_90d,0.88
+铃木北斗星x5,铃木,铃木北斗星X5,,燃油车,,燃油,,internal_90d,0.88
+银河a7,吉利银河,银河A7,,新能源,,新能源,,internal_90d,0.88
+银河a7em,吉利银河,银河A7 EM,轿车,新能源,轿车,新能源,,dcd_ranking+internal_90d,0.96
+银河a7ev,吉利银河,银河A7 EV,轿车,新能源,轿车,新能源,,dcd_ranking,0.96
+银河a7phev,吉利银河,银河A7 PHEV,,新能源,,新能源,,internal_90d,0.88
+银河e5,吉利银河,银河E5,SUV,新能源,SUV,新能源,,dcd_ranking+internal_90d,0.96
+银河e8,吉利银河,银河E8,轿车,新能源,轿车,新能源,,dcd_ranking+internal_90d,0.96
+银河l6,吉利银河,银河L6,轿车,新能源,轿车,新能源,,dcd_ranking+internal_90d,0.96
+银河l7,吉利银河,银河L7,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+银河m7,吉利银河,银河M7,SUV,新能源,SUV,新能源,,dcd_ranking+internal_90d,0.96
+银河m9,吉利银河,银河M9,SUV,新能源,SUV,新能源,,dcd_ranking+internal_90d,0.96
+银河v900,吉利银河,银河V900,MPV,新能源,MPV,新能源,,dcd_ranking+internal_90d,0.96
+银河星耀6,吉利银河,银河星耀6,轿车,新能源,轿车,新能源,,dcd_ranking+internal_90d,0.96
+银河星耀7,吉利银河,银河星耀7,轿车,新能源,轿车,新能源,,dcd_ranking,0.96
+银河星耀8phev,吉利银河,银河星耀8 PHEV,轿车,新能源,轿车,新能源,,dcd_ranking+internal_90d,0.96
+银河星舰7emi,吉利银河,银河星舰7 EM-i,SUV,新能源,SUV,新能源,,dcd_ranking+internal_90d,0.96
+银河星舰7ev,吉利银河,银河星舰7 EV,SUV,新能源,SUV,新能源,,dcd_ranking,0.96
+锋兰达,丰田,锋兰达,SUV,燃油车,SUV,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+锋哲,道奇,锋哲,,燃油车,,燃油,,internal_90d,0.88
+锋范,本田,锋范,,燃油车,,燃油,,internal_90d,0.88
+锋范经典,本田,锋范经典,,燃油车,,燃油,,internal_90d,0.88
+锋驭,铃木,锋驭,,燃油车,,燃油,,internal_90d,0.88
+锐3,纳智捷,锐3,,燃油车,,燃油,,internal_90d,0.88
+锐志,丰田,锐志,,燃油车,,燃油,,internal_90d,0.88
+锐欧,起亚,锐欧,,燃油车,,燃油,,internal_90d,0.88
+锐界,福特,锐界,SUV,燃油车,SUV,燃油,,dcd_ranking+internal_90d,0.96
+锐界进口,福特,锐界(进口),,燃油车,,燃油,,internal_90d,0.88
+锐程cc,长安,锐程CC,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+锐程plus,长安,锐程PLUS,,燃油车,,燃油,,internal_90d,0.88
+锐胜王牌em7,北京汽车制造厂,锐胜王牌EM7,,新能源,,新能源,,internal_90d,0.88
+锐胜王牌m7,北京汽车制造厂,锐胜王牌M7,,燃油车,,燃油,,internal_90d,0.88
+锐腾,名爵,锐腾,,燃油车,,燃油,,internal_90d,0.88
+锐行,名爵,锐行,,燃油车,,燃油,,internal_90d,0.88
+锐际,福特,锐际,SUV,燃油车,SUV,燃油,,dcd_ranking+internal_90d,0.96
+锐际phev,福特,锐际PHEV,,新能源,,新能源,,internal_90d,0.88
+锐骐,东风,锐骐,其他,燃油车,皮卡,燃油,,heuristic_body+internal_90d,0.88
+锐骐6,东风,锐骐6,其他,燃油车,皮卡,燃油,,heuristic_body+internal_90d,0.88
+锐骐6ev,东风,锐骐6 EV,其他,新能源,皮卡,新能源,,heuristic_body+internal_90d,0.88
+锐骐7,东风,锐骐7,其他,燃油车,皮卡,燃油,,heuristic_body+internal_90d,0.88
+锐骐7ev,东风,锐骐7 EV,其他,新能源,皮卡,新能源,,heuristic_body+internal_90d,0.88
+锐骐多功能车,东风,锐骐多功能车,其他,燃油车,皮卡,燃油,,heuristic_body+internal_90d,0.88
+长城c20r,长城,长城C20R,,燃油车,,燃油,,internal_90d,0.88
+长城c30,长城,长城C30,,燃油车,,燃油,,internal_90d,0.88
+长城c30ev,长城,长城C30 EV,,新能源,,新能源,,internal_90d,0.88
+长城c50,长城,长城C50,,燃油车,,燃油,,internal_90d,0.88
+长城m1,长城,长城M1,,燃油车,,燃油,,internal_90d,0.88
+长城m2,长城,长城M2,,燃油车,,燃油,,internal_90d,0.88
+长城m4,长城,长城M4,,燃油车,,燃油,,internal_90d,0.88
+长城v80,长城,长城V80,MPV,燃油车,MPV,燃油,,heuristic_body+internal_90d,0.88
+长城猛龙plus,哈弗,长城猛龙PLUS,SUV,新能源,SUV,新能源,,dcd_ranking+internal_90d,0.96
+长城精灵,长城,长城精灵,,燃油车,,燃油,,internal_90d,0.88
+长安cs15,长安,长安CS15,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+长安cs15epro,长安,长安CS15 E-Pro,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+长安cs15ev,长安,长安CS15 EV,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+长安cs35,长安,长安CS35,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+长安cs35plus,长安,长安CS35 PLUS,SUV,燃油车,SUV,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+长安cs55,长安,长安CS55,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+长安cs55plus,长安,长安CS55 PLUS,SUV,燃油车,SUV,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+长安cs55plusphev,长安,长安CS55 PLUS PHEV,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+长安cs75,长安,长安CS75,SUV,燃油车,SUV,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+长安cs75phev,长安,长安CS75 PHEV,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+长安cs75plus,长安,长安CS75 PLUS,SUV,燃油车,SUV,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+长安cs75plus智电idd,长安,长安CS75 PLUS 智电iDD,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+长安cs85coupe,长安,长安CS85 COUPE,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+长安cs95,长安,长安CS95,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+长安cx20,长安,长安CX20,,燃油车,,燃油,,internal_90d,0.88
+长安f70,长安,长安F70,,,,,,unknown,0.0
+长安lumin,长安启源,长安Lumin,轿车,新能源,轿车,新能源,,dcd_ranking+heuristic_body+internal_90d,0.96
+长安unik,长安,长安UNI-K,SUV,燃油车,SUV,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+长安unikidd,长安,长安UNI-K iDD,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+长安unik智电idd,长安,长安UNI-K 智电iDD,SUV,新能源,SUV,新能源,,dcd_ranking+heuristic_body+internal_90d,0.96
+长安unit,长安,长安UNI-T,SUV,燃油车,SUV,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+长安univ,长安,长安UNI-V,轿车,燃油车,轿车,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+长安univ智电idd,长安,长安UNI-V 智电iDD,轿车,新能源,轿车,新能源,,dcd_ranking+heuristic_body+internal_90d,0.96
+长安uniz,长安,长安UNI-Z,SUV,燃油车,SUV,燃油,,dcd_ranking+internal_90d,0.96
+长安unizphev,长安,长安UNI-Z PHEV,SUV,新能源,SUV,新能源,,dcd_ranking+internal_90d,0.96
+长安v3,长安跨越,长安V3,,燃油车,,燃油,,internal_90d,0.88
+长安v5,长安跨越,长安V5,,燃油车,,燃油,,internal_90d,0.88
+长安x5plus,长安,长安X5 PLUS,SUV,燃油车,SUV,燃油,,dcd_ranking+internal_90d,0.96
+长安x7plus,长安,长安X7 PLUS,SUV,燃油车,SUV,燃油,,dcd_ranking+internal_90d,0.96
+长安之星,长安凯程,长安之星,,燃油车,微面,燃油,,internal_90d,0.88
+长安之星2,长安凯程,长安之星2,,燃油车,微面,燃油,,internal_90d,0.88
+长安之星3,长安凯程,长安之星3,,燃油车,微面,燃油,,internal_90d,0.88
+长安之星5,长安凯程,长安之星5,,燃油车,微面,燃油,,internal_90d,0.88
+长安之星7,长安凯程,长安之星7,,燃油车,微面,燃油,,internal_90d,0.88
+长安之星9,长安凯程,长安之星9,,燃油车,微面,燃油,,internal_90d,0.88
+长安之星9ev,长安凯程,长安之星9 EV,,新能源,微面,新能源,,internal_90d,0.88
+长安之星s460,长安凯程,长安之星S460,,燃油车,微面,燃油,,internal_90d,0.88
+长安凯程f300,长安凯程,长安凯程F300,,燃油车,,燃油,,internal_90d,0.88
+长安凯程f70,长安凯程,长安凯程F70,,燃油车,,燃油,,internal_90d,0.88
+长安凯程v919,长安凯程,长安凯程V919,,新能源,,新能源,,internal_90d,0.88
+长安启源a05,长安启源,长安启源A05,,新能源,,新能源,,internal_90d,0.88
+长安启源a05经典,长安启源,长安启源A05经典,,新能源,,新能源,,internal_90d,0.88
+长安启源a06,长安启源,长安启源A06,,新能源,,新能源,,internal_90d,0.88
+长安启源a06经典,长安启源,长安启源A06经典,,新能源,,新能源,,internal_90d,0.88
+长安启源a07,长安启源,长安启源A07,轿车,新能源,轿车,新能源,,dcd_ranking+heuristic_body+internal_90d,0.96
+长安启源e07,长安启源,长安启源E07,轿车,新能源,轿车,新能源,,heuristic_body+internal_90d,0.88
+长安启源q05,长安启源,长安启源Q05,SUV,新能源,SUV,新能源,,dcd_ranking+internal_90d,0.96
+长安启源q05经典,长安启源,长安启源Q05经典,,新能源,,新能源,,internal_90d,0.88
+长安启源q07,长安启源,长安启源Q07,轿车,新能源,轿车,新能源,,dcd_ranking+heuristic_body+internal_90d,0.96
+长安星光,长安凯程,长安星光,,燃油车,,燃油,,internal_90d,0.88
+长安星光4500,长安凯程,长安星光4500,,燃油车,,燃油,,internal_90d,0.88
+长安星卡,长安凯程,长安星卡,,燃油车,微卡,燃油,,internal_90d,0.88
+长安星卡c系,长安凯程,长安星卡C系,,燃油车,微卡,燃油,,internal_90d,0.88
+长安星卡ev,长安凯程,长安星卡EV,,新能源,微卡,新能源,,internal_90d,0.88
+长安星卡plus,长安凯程,长安星卡PLUS,,燃油车,微卡,燃油,,internal_90d,0.88
+长安星卡载货车,长安,长安星卡载货车,其他,燃油车,微卡,燃油,,heuristic_body+internal_90d,0.88
+长安欧尚a600,长安凯程,长安欧尚A600,MPV,燃油车,MPV,燃油,,heuristic_body+internal_90d,0.88
+长安欧尚a600ev,长安凯程,长安欧尚A600 EV,MPV,新能源,MPV,新能源,,heuristic_body+internal_90d,0.88
+长安欧尚a800,长安欧尚,长安欧尚A800,MPV,燃油车,MPV,燃油,,heuristic_body+internal_90d,0.88
+长安欧尚cx70,长安欧尚,长安欧尚CX70,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+长安欧尚x5,长安欧尚,长安欧尚X5,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+长安欧尚x5plus,长安欧尚,长安欧尚X5 PLUS,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+长安欧尚x7,长安欧尚,长安欧尚X7,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+长安欧尚x70a,长安欧尚,长安欧尚X70A,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+长安欧尚x7ev,长安欧尚,长安欧尚X7 EV,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+长安欧尚x7plus,长安欧尚,长安欧尚X7 PLUS,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+长安欧尚z6,长安欧尚,长安欧尚Z6,,燃油车,,燃油,,internal_90d,0.88
+长安欧尚z6idd新能源,长安欧尚,长安欧尚Z6 iDD新能源,,新能源,,新能源,,internal_90d,0.88
+长安欧尚科尚,长安欧尚,长安欧尚科尚,MPV,燃油车,MPV,燃油,,heuristic_body+internal_90d,0.88
+长安欧尚科尚ev,长安欧尚,长安欧尚科尚EV,MPV,新能源,MPV,新能源,,heuristic_body+internal_90d,0.88
+长安欧尚科赛,长安欧尚,长安欧尚科赛,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+长安欧尚科赛3,长安欧尚,长安欧尚科赛3,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+长安欧尚科赛5,长安欧尚,长安欧尚科赛5,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+长安欧尚科赛pro,长安欧尚,长安欧尚科赛Pro,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+长安欧尚长行,长安凯程,长安欧尚长行,MPV,燃油车,MPV,燃油,,heuristic_body+internal_90d,0.88
+长安深蓝sl03,长安深蓝,长安深蓝SL03,,新能源,,新能源,,internal_90d,0.88
+长安猎手k50,长安启源,长安猎手K50,,,,,,unknown,0.0
+长安神骐plus,长安凯程,长安神骐PLUS,,燃油车,,燃油,,internal_90d,0.88
+长江7号,骐蔚汽车,长江7号,,新能源,,新能源,,internal_90d,0.88
+闪闪x2,红星汽车,闪闪X2,,新能源,,新能源,,internal_90d,0.88
+问界m5,AITO,问界M5,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+问界m6,AITO,问界M6,MPV,新能源,MPV,新能源,,heuristic_body+internal_90d,0.88
+问界m7,AITO,问界M7,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+问界m8,AITO,问界M8,MPV,新能源,MPV,新能源,,heuristic_body+internal_90d,0.88
+问界m9,AITO,问界M9,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+阁瑞斯,金杯,阁瑞斯,MPV,燃油车,MPV,燃油,,heuristic_body+internal_90d,0.88
+阅朗,别克,阅朗,,燃油车,,燃油,,internal_90d,0.88
+阳光,日产,阳光,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+阿图柯airtrek,三菱,阿图柯AIRTREK,,新能源,,新能源,,internal_90d,0.88
+阿斯顿马丁db11,阿斯顿·马丁,阿斯顿·马丁DB11,,燃油车,,燃油,,internal_90d,0.88
+阿斯顿马丁db6,阿斯顿·马丁,阿斯顿·马丁DB6,,燃油车,,燃油,,internal_90d,0.88
+阿斯顿马丁db9,阿斯顿·马丁,阿斯顿·马丁DB9,,燃油车,,燃油,,internal_90d,0.88
+阿斯顿马丁dbx,阿斯顿·马丁,阿斯顿·马丁DBX,,燃油车,,燃油,,internal_90d,0.88
+阿特兹,马自达,阿特兹,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+阿维塔06,阿维塔,阿维塔 06,轿车,新能源,轿车,新能源,,dcd_ranking+internal_90d,0.96
+阿维塔06t,阿维塔,阿维塔 06T,轿车,新能源,轿车,新能源,,dcd_ranking+internal_90d,0.96
+阿维塔07,阿维塔,阿维塔 07,轿车,新能源,轿车,新能源,,dcd_ranking+heuristic_body+internal_90d,0.96
+阿维塔11,阿维塔,阿维塔 11,SUV,新能源,SUV,新能源,,dcd_ranking+internal_90d,0.96
+阿维塔12,阿维塔,阿维塔 12,轿车,新能源,轿车,新能源,,dcd_ranking+internal_90d,0.96
+阿维塔visionxpectra概念车,阿维塔,阿维塔VISION XPECTRA概念车,,燃油车,,燃油,,internal_90d,0.88
+陆霸,北京汽车制造厂,陆霸,,燃油车,,燃油,,internal_90d,0.88
+陆风x2,陆风,陆风X2,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+陆风x5,陆风,陆风X5,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+陆风x6,陆风,陆风X6,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+陆风x7,陆风,陆风X7,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+陆风x8,陆风,陆风X8,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+陆风x9,陆风,陆风X9,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+陆风荣曜,陆风,陆风荣曜,,燃油车,,燃油,,internal_90d,0.88
+陆风逍遥,陆风,陆风逍遥,,燃油车,,燃油,,internal_90d,0.88
+雄师f16,福迪,雄师F16,,燃油车,,燃油,,internal_90d,0.88
+雄师f22,福迪,雄师F22,,燃油车,,燃油,,internal_90d,0.88
+雅力士,丰田,雅力士,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+雅尊,现代,雅尊,,燃油车,,燃油,,internal_90d,0.88
+雅特,欧宝,雅特,,燃油车,,燃油,,internal_90d,0.88
+雅科仕,现代,雅科仕,,燃油车,,燃油,,internal_90d,0.88
+雅绅特,现代,雅绅特,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+雅阁,本田,雅阁,轿车,燃油车,轿车,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+雅阁phev,本田,雅阁 PHEV,轿车,新能源,轿车,新能源,,heuristic_body+internal_90d,0.88
+雅阁进口,本田,雅阁(进口),轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+雅阁齐孟龙,超境汽车,雅阁（齐孟龙）,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+雨燕,铃木,雨燕,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+雪佛兰畅巡,雪佛兰,雪佛兰畅巡,,新能源,,新能源,,internal_90d,0.88
+雪铁龙c2,雪铁龙,雪铁龙C2,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+雪铁龙c3l,雪铁龙,雪铁龙C3L,,燃油车,,燃油,,internal_90d,0.88
+雪铁龙c3xr,雪铁龙,雪铁龙C3-XR,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+雪铁龙c4,雪铁龙,雪铁龙C4,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+雪铁龙c4aircross进口,雪铁龙,雪铁龙C4 AIRCROSS(进口),SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+雪铁龙c4l,雪铁龙,雪铁龙C4L,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+雪铁龙c5,雪铁龙,雪铁龙C5,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+雪铁龙c5进口,雪铁龙,雪铁龙C5(进口),轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+雪铁龙c6,雪铁龙,雪铁龙C6,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+零跑a10,零跑汽车,零跑A10,轿车,新能源,轿车,新能源,,heuristic_body+internal_90d,0.88
+零跑b01,零跑汽车,零跑B01,轿车,新能源,轿车,新能源,,dcd_ranking+internal_90d,0.96
+零跑b10,零跑汽车,零跑B10,SUV,新能源,SUV,新能源,,dcd_ranking+internal_90d,0.96
+零跑c01,零跑汽车,零跑C01,轿车,新能源,轿车,新能源,,heuristic_body+internal_90d,0.88
+零跑c10,零跑汽车,零跑C10,SUV,新能源,SUV,新能源,,dcd_ranking+internal_90d,0.96
+零跑c11,零跑汽车,零跑C11,SUV,新能源,SUV,新能源,,dcd_ranking+internal_90d,0.96
+零跑c16,零跑汽车,零跑C16,SUV,新能源,SUV,新能源,,dcd_ranking+internal_90d,0.96
+零跑d19,零跑汽车,零跑D19,,新能源,,新能源,,internal_90d,0.88
+零跑lafa5,零跑汽车,零跑Lafa5,轿车,新能源,轿车,新能源,,dcd_ranking+internal_90d,0.96
+零跑s01,零跑汽车,零跑S01,,新能源,,新能源,,internal_90d,0.88
+零跑t03,零跑汽车,零跑T03,轿车,新能源,轿车,新能源,,heuristic_body+internal_90d,0.88
+雷丁i3,雷丁,雷丁i3,,新能源,,新能源,,internal_90d,0.88
+雷克萨斯ct,雷克萨斯,雷克萨斯CT,,燃油车,,燃油,,internal_90d,0.88
+雷克萨斯es,雷克萨斯,雷克萨斯ES,轿车,燃油车,轿车,燃油,,dcd_ranking+internal_90d,0.96
+雷克萨斯gs,雷克萨斯,雷克萨斯GS,,燃油车,,燃油,,internal_90d,0.88
+雷克萨斯gx,雷克萨斯,雷克萨斯GX,,燃油车,,燃油,,internal_90d,0.88
+雷克萨斯is,雷克萨斯,雷克萨斯IS,,燃油车,,燃油,,internal_90d,0.88
+雷克萨斯lc,雷克萨斯,雷克萨斯LC,,燃油车,,燃油,,internal_90d,0.88
+雷克萨斯lm,雷克萨斯,雷克萨斯LM,,燃油车,,燃油,,internal_90d,0.88
+雷克萨斯ls,雷克萨斯,雷克萨斯LS,轿车,燃油车,轿车,燃油,,dcd_ranking+internal_90d,0.96
+雷克萨斯lx,雷克萨斯,雷克萨斯LX,,燃油车,,燃油,,internal_90d,0.88
+雷克萨斯nx,雷克萨斯,雷克萨斯NX,SUV,燃油车,SUV,燃油,,dcd_ranking+internal_90d,0.96
+雷克萨斯nxphev,雷克萨斯,雷克萨斯NX PHEV,,新能源,,新能源,,internal_90d,0.88
+雷克萨斯rc,雷克萨斯,雷克萨斯RC,,燃油车,,燃油,,internal_90d,0.88
+雷克萨斯rx,雷克萨斯,雷克萨斯RX,SUV,燃油车,SUV,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+雷克萨斯rxphev,雷克萨斯,雷克萨斯RX PHEV,SUV,新能源,SUV,新能源,,dcd_ranking+heuristic_body+internal_90d,0.96
+雷克萨斯rx经典,雷克萨斯,雷克萨斯RX经典,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+雷克萨斯rz,雷克萨斯,雷克萨斯RZ,SUV,新能源,SUV,新能源,,dcd_ranking+internal_90d,0.96
+雷克萨斯sc,雷克萨斯,雷克萨斯SC,,燃油车,,燃油,,internal_90d,0.88
+雷克萨斯ux,雷克萨斯,雷克萨斯UX,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+雷克萨斯uxev,雷克萨斯,雷克萨斯UX EV,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+雷凌,丰田,雷凌,轿车,燃油车,轿车,燃油,,dcd_ranking+internal_90d,0.96
+雷凌双擎e+,丰田,雷凌双擎E+,,新能源,,新能源,,internal_90d,0.88
+雷斯特,双龙,雷斯特,,燃油车,,燃油,,internal_90d,0.88
+雷斯特w,双龙,雷斯特W,,燃油车,,燃油,,internal_90d,0.88
+雷诺duster,雷诺,雷诺Duster,,燃油车,,燃油,,internal_90d,0.88
+雷诺e诺,雷诺,雷诺 e诺,,新能源,,新能源,,internal_90d,0.88
+雷达rd6,雷达汽车,雷达RD6,,新能源,,新能源,,internal_90d,0.88
+雷达地平线ev,吉利汽车,雷达地平线EV,,新能源,,新能源,,internal_90d,0.88
+雷达金刚ev,吉利雷达,雷达金刚EV,,新能源,,新能源,,internal_90d,0.88
+雷达金刚phev,吉利雷达,雷达金刚PHEV,,,,,,unknown,0.0
+雷驰信v70,雷驰汽车,雷驰·信V70,,新能源,,新能源,,internal_90d,0.88
+露营大师,越界,露营大师,,燃油车,,燃油,,internal_90d,0.88
+霸锐,起亚,霸锐,,燃油车,,燃油,,internal_90d,0.88
+顺达,江铃,顺达,其他,燃油车,,燃油,,heuristic_body+internal_90d,0.88
+领克01,领克,领克01,SUV,燃油车,SUV,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+领克01emp,领克,领克01 EM-P,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+领克01phev,领克,领克01 PHEV,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+领克02,领克,领克02,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+领克02hatchback,领克,领克02 Hatchback,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+领克02phev,领克,领克02 PHEV,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+领克03,领克,领克03,轿车,燃油车,轿车,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+领克03cyan概念车,领克,领克03 Cyan概念车,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+领克03phev,领克,领克03 PHEV,轿车,新能源,轿车,新能源,,heuristic_body+internal_90d,0.88
+领克05,领克,领克05,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+领克05emp,领克,领克05 EM-P,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+领克05phev,领克,领克05 PHEV,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+领克06,领克,领克06,SUV,燃油车,SUV,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+领克06emp,领克,领克06 EM-P,SUV,新能源,SUV,新能源,,dcd_ranking+heuristic_body+internal_90d,0.96
+领克06phev,领克,领克06 PHEV,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+领克07emp,领克,领克07 EM-P,轿车,新能源,轿车,新能源,,dcd_ranking+heuristic_body+internal_90d,0.96
+领克08emp,领克,领克08 EM-P,SUV,新能源,SUV,新能源,,dcd_ranking+internal_90d,0.96
+领克09,领克,领克09,SUV,燃油车,SUV,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+领克09emp,领克,领克09 EM-P,SUV,新能源,SUV,新能源,,dcd_ranking+heuristic_body+internal_90d,0.96
+领克09phev,领克,领克09 PHEV,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+领克10,领克,领克10,轿车,新能源,轿车,新能源,,dcd_ranking,0.96
+领克10emp,领克,领克10 EM-P,轿车,新能源,轿车,新能源,,dcd_ranking+internal_90d,0.96
+领克900,领克,领克900,SUV,新能源,SUV,新能源,,dcd_ranking+internal_90d,0.96
+领克z10,领克,领克Z10,轿车,新能源,轿车,新能源,,heuristic_body+internal_90d,0.88
+领克z20,领克,领克Z20,SUV,新能源,SUV,新能源,,dcd_ranking+internal_90d,0.96
+领动,现代,领动,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+领地,大通,领地,SUV,燃油车,SUV,燃油,,dcd_ranking+internal_90d,0.96
+领汇e5ev,领汇,领汇e5 EV,,,,,,unknown,0.0
+领汇e7ev,领汇,领汇e7 EV,,新能源,,新能源,,internal_90d,0.88
+领汇e9ev,领汇,领汇e9 EV,,,,,,unknown,0.0
+领界,福特,领界,,燃油车,,燃油,,internal_90d,0.88
+领界ev,福特,领界EV,,新能源,,新能源,,internal_90d,0.88
+领睿,福特,领睿,SUV,燃油车,SUV,燃油,,dcd_ranking+internal_90d,0.96
+领睿phev,福特,领睿 PHEV,SUV,新能源,SUV,新能源,,dcd_ranking+internal_90d,0.96
+领翔,现代,领翔,,燃油车,,燃油,,internal_90d,0.88
+领航员,林肯,领航员,,燃油车,,燃油,,internal_90d,0.88
+领裕,福特,领裕,SUV,燃油车,SUV,燃油,,dcd_ranking+internal_90d,0.96
+领裕phev,福特,领裕 PHEV,SUV,新能源,SUV,新能源,,dcd_ranking+internal_90d,0.96
+领途e行,领途汽车,领途E行,,新能源,,新能源,,internal_90d,0.88
+领途kone,领途汽车,领途K-ONE,,新能源,,新能源,,internal_90d,0.88
+领途m8,领途汽车,领途M8,MPV,燃油车,MPV,燃油,,heuristic_body+internal_90d,0.88
+颐达,日产,颐达,,燃油车,,燃油,,internal_90d,0.88
+风云2,奇瑞,风云2,,燃油车,,燃油,,internal_90d,0.88
+风云a8,奇瑞风云,风云A8,,新能源,,新能源,,internal_90d,0.88
+风云a8l,奇瑞风云,风云A8L,轿车,新能源,轿车,新能源,,dcd_ranking+internal_90d,0.96
+风云a9l,奇瑞风云,风云A9L,轿车,新能源,轿车,新能源,,dcd_ranking+internal_90d,0.96
+风云t10,奇瑞风云,风云T10,SUV,新能源,SUV,新能源,,dcd_ranking+internal_90d,0.96
+风云t11,奇瑞风云,风云T11,SUV,新能源,SUV,新能源,,dcd_ranking+internal_90d,0.96
+风云t6,奇瑞风云,风云T6,,新能源,,新能源,,internal_90d,0.88
+风云t8,奇瑞风云,风云T8,SUV,新能源,SUV,新能源,,dcd_ranking+internal_90d,0.96
+风云t9,奇瑞风云,风云T9,SUV,新能源,SUV,新能源,,dcd_ranking+internal_90d,0.96
+风云t9l,奇瑞风云,风云T9L,,新能源,,新能源,,internal_90d,0.88
+风云x3,奇瑞风云,风云X3,,新能源,,新能源,,internal_90d,0.88
+风云x3l,奇瑞风云,风云X3L,SUV,新能源,SUV,新能源,,dcd_ranking+internal_90d,0.96
+风云x3plus,奇瑞风云,风云X3 PLUS,,新能源,,新能源,,internal_90d,0.88
+风光,东风风光,风光,,燃油车,,燃油,,internal_90d,0.88
+风光330,东风风光,风光330,,燃油车,,燃油,,internal_90d,0.88
+风光360,东风风光,风光360,,燃油车,,燃油,,internal_90d,0.88
+风光370,东风风光,风光370,,燃油车,,燃油,,internal_90d,0.88
+风光380,东风风光,风光380,,燃油车,,燃油,,internal_90d,0.88
+风光500,东风风光,风光500,,燃油车,,燃油,,internal_90d,0.88
+风光580,东风风光,风光580,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+风光580pro,东风风光,风光580Pro,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+风光e1,东风风光,风光E1,,新能源,,新能源,,internal_90d,0.88
+风光e3,东风风光,风光E3,,新能源,,新能源,,internal_90d,0.88
+风光ix5,东风风光,风光ix5,,燃油车,,燃油,,internal_90d,0.88
+风光ix7,东风风光,风光ix7,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+风光miniev,东风风光,风光MINIEV,轿车,新能源,轿车,新能源,,heuristic_body+internal_90d,0.88
+风光s560,东风风光,风光S560,,燃油车,,燃油,,internal_90d,0.88
+风光s580,东风风光,风光S580,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+风尚,陆风,风尚,,燃油车,,燃油,,internal_90d,0.88
+风度,日产,风度,,燃油车,,燃油,,internal_90d,0.88
+风景g5,福田,风景G5,,燃油车,,燃油,,internal_90d,0.88
+风景g7,福田,风景G7,,燃油车,,燃油,,internal_90d,0.88
+风景g9,福田,风景G9,,燃油车,,燃油,,internal_90d,0.88
+风景i,福田,风景i,,新能源,,新能源,,internal_90d,0.88
+风景v3,福田,风景V3,,燃油车,,燃油,,internal_90d,0.88
+风景v5,福田,风景V5,,燃油车,,燃油,,internal_90d,0.88
+风景智蓝g7,福田,风景智蓝G7,,新能源,,新能源,,internal_90d,0.88
+风景经典,雷诺,风景经典,,燃油车,,燃油,,internal_90d,0.88
+风朗,雷诺,风朗,,燃油车,,燃油,,internal_90d,0.88
+风神l7ev,东风风神,风神L7 EV,SUV,新能源,SUV,新能源,,dcd_ranking+internal_90d,0.96
+风神l7phev,东风风神,风神L7 PHEV,SUV,新能源,SUV,新能源,,dcd_ranking+internal_90d,0.96
+风行cm7,东风风行,风行CM7,MPV,燃油车,MPV,燃油,,heuristic_body+internal_90d,0.88
+风行f600,东风风行,风行F600,MPV,燃油车,MPV,燃油,,heuristic_body+internal_90d,0.88
+风行m6,东风风行,风行M6,MPV,燃油车,MPV,燃油,,heuristic_body+internal_90d,0.88
+风行m7,东风风行,风行M7,MPV,燃油车,MPV,燃油,,dcd_ranking+internal_90d,0.96
+风行s500,东风风行,风行S500,MPV,燃油车,MPV,燃油,,heuristic_body+internal_90d,0.88
+风行s50ev,东风风行,风行S50 EV,轿车,新能源,轿车,新能源,,dcd_ranking+internal_90d,0.96
+风行s60ev,东风风行,风行S60 EV,,新能源,,新能源,,internal_90d,0.88
+风行sx6,东风风行,风行SX6,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+风行t5,东风风行,风行T5,SUV,燃油车,SUV,燃油,,dcd_ranking+internal_90d,0.96
+风行t5evo,东风风行,风行T5 EVO,SUV,燃油车,SUV,燃油,,dcd_ranking+internal_90d,0.96
+风行t5l,东风风行,风行T5L,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+风行游艇,东风风行,风行游艇,MPV,燃油车,MPV,燃油,,heuristic_body+internal_90d,0.88
+风行雷霆,东风风行,风行雷霆,SUV,新能源,SUV,新能源,,dcd_ranking+internal_90d,0.96
+风迪思,三菱,风迪思,,燃油车,,燃油,,internal_90d,0.88
+风雅,日产,风雅,,燃油车,,燃油,,internal_90d,0.88
+风骏5,长城,风骏5,,燃油车,皮卡,燃油,,dcd_ranking+internal_90d,0.96
+风骏6,长城,风骏6,,燃油车,皮卡,燃油,,internal_90d,0.88
+风骏7,长城,风骏7,,燃油车,皮卡,燃油,,dcd_ranking+internal_90d,0.96
+风骏ev,长城,风骏EV,,燃油车,皮卡,燃油,,internal_90d,0.88
+飞凡er6,飞凡汽车,飞凡ER6,,新能源,,新能源,,internal_90d,0.88
+飞凡f7,飞凡汽车,飞凡F7,轿车,新能源,轿车,新能源,,dcd_ranking+internal_90d,0.96
+飞凡marvelr,飞凡汽车,飞凡MARVEL R,,新能源,,新能源,,internal_90d,0.88
+飞凡r7,飞凡汽车,飞凡R7,SUV,新能源,SUV,新能源,,dcd_ranking+internal_90d,0.96
+飞度,本田,飞度,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+飞度进口,本田,飞度(进口),轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+飞碟q2v,飞碟汽车,飞碟Q2V,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+飞腾,猎豹汽车,飞腾,,燃油车,,燃油,,internal_90d,0.88
+飞行家,林肯,飞行家,SUV,燃油车,SUV,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+飞行家phev,林肯,飞行家PHEV,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+飞行家进口,林肯,飞行家(进口),SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+飞驰,宾利,飞驰,,燃油车,,燃油,,internal_90d,0.88
+飞驰phev,宾利,飞驰PHEV,,新能源,,新能源,,internal_90d,0.88
+马自达2,马自达,马自达2,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+马自达2劲翔,马自达,马自达2劲翔,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+马自达3,马自达,马自达3,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+马自达3昂克赛拉,马自达,马自达3 昂克赛拉,轿车,燃油车,轿车,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+马自达3星骋,马自达,马自达3星骋,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+马自达3进口,马自达,马自达3(进口),轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+马自达5,马自达,马自达5,MPV,燃油车,MPV,燃油,,heuristic_body+internal_90d,0.88
+马自达6,马自达,马自达6,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+马自达6进口,马自达,马自达6(进口),轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+马自达8,马自达,马自达8,MPV,燃油车,MPV,燃油,,heuristic_body+internal_90d,0.88
+马自达cx3,马自达,马自达CX-3,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+马自达cx30,马自达,马自达CX-30,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+马自达cx30ev,马自达,马自达CX-30 EV,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+马自达cx4,马自达,马自达CX-4,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+马自达cx5,马自达,马自达CX-5,SUV,燃油车,SUV,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+马自达cx50行也,马自达,马自达CX-50行也,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+马自达cx5进口,马自达,马自达CX-5(进口),SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+马自达cx7,马自达,马自达CX-7,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+马自达cx7进口,马自达,马自达CX-7(进口),SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+马自达cx8,马自达,马自达CX-8,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+马自达cx9,马自达,马自达CX-9,,燃油车,,燃油,,internal_90d,0.88
+马自达ez6,马自达,马自达EZ-6,轿车,新能源,轿车,新能源,,dcd_ranking+internal_90d,0.96
+马自达ez60,马自达,马自达EZ-60,SUV,新能源,SUV,新能源,,dcd_ranking+internal_90d,0.96
+马自达mx5,马自达,马自达MX-5,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+马自达rx8,马自达,马自达RX-8,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+驭胜s330,驭胜,驭胜S330,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+驭胜s350,驭胜,驭胜S350,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+驱逐舰05,比亚迪,驱逐舰05,轿车,新能源,轿车,新能源,,dcd_ranking+internal_90d,0.96
+骁途,铃木,骁途,,燃油车,,燃油,,internal_90d,0.88
+骊威,日产,骊威,,燃油车,,燃油,,internal_90d,0.88
+骏意,哈飞,骏意,,燃油车,,燃油,,internal_90d,0.88
+骏派a50,一汽,骏派A50,,燃油车,,燃油,,internal_90d,0.88
+骏派a70,一汽,骏派A70,,燃油车,,燃油,,internal_90d,0.88
+骏派cx65,一汽,骏派CX65,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+骏派d60,一汽,骏派D60,,燃油车,,燃油,,internal_90d,0.88
+骏派d80,一汽,骏派D80,,燃油车,,燃油,,internal_90d,0.88
+骏航,凯马汽车,骏航,,新能源,,新能源,,internal_90d,0.88
+骏航es,凯马汽车,骏航ES,,燃油车,,燃油,,internal_90d,0.88
+骏行,国金汽车,骏行,,新能源,,新能源,,internal_90d,0.88
+骏逸,日产,骏逸,,燃油车,,燃油,,internal_90d,0.88
+骏驰ea,骏驰,骏驰EA,,新能源,,新能源,,internal_90d,0.88
+骐达tiida,日产,骐达TIIDA,轿车,燃油车,轿车,燃油,,dcd_ranking+internal_90d,0.96
+骐铃t3,骐铃汽车,骐铃T3,,燃油车,,燃油,,internal_90d,0.88
+骐铃t5,骐铃汽车,骐铃T5,,燃油车,,燃油,,internal_90d,0.88
+骐铃t7,骐铃汽车,骐铃T7,,燃油车,,燃油,,internal_90d,0.88
+高合hiphix,高合,高合HiPhi X,,新能源,,新能源,,internal_90d,0.88
+高合hiphiy,高合,高合HiPhi Y,,新能源,,新能源,,internal_90d,0.88
+高合hiphiz,高合,高合HiPhi Z,,新能源,,新能源,,internal_90d,0.88
+高尔,大众,高尔,,燃油车,,燃油,,internal_90d,0.88
+高尔夫,大众,高尔夫,轿车,燃油车,轿车,燃油,,dcd_ranking+heuristic_body+internal_90d,0.96
+高尔夫gti,大众,高尔夫GTI,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+高尔夫phev进口,大众,高尔夫PHEV(进口),轿车,新能源,轿车,新能源,,heuristic_body+internal_90d,0.88
+高尔夫嘉旅,大众,高尔夫·嘉旅,轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+高尔夫纯电,大众,高尔夫·纯电,轿车,新能源,轿车,新能源,,heuristic_body+internal_90d,0.88
+高尔夫进口,大众,高尔夫(进口),轿车,燃油车,轿车,燃油,,heuristic_body+internal_90d,0.88
+高山,魏牌,高山,MPV,新能源,MPV,新能源,,dcd_ranking+internal_90d,0.96
+魏牌p8,魏牌,魏牌 P8,,新能源,,新能源,,internal_90d,0.88
+魏牌vv5,魏牌,魏牌 VV5,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+魏牌vv6,魏牌,魏牌 VV6,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+魏牌vv7,魏牌,魏牌 VV7,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+魏牌vv7gt,魏牌,魏牌 VV7 GT,SUV,燃油车,SUV,燃油,,heuristic_body+internal_90d,0.88
+魏牌vv7gtphev,魏牌,魏牌 VV7 GT PHEV,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+魏牌vv7phev,魏牌,魏牌 VV7 PHEV,SUV,新能源,SUV,新能源,,heuristic_body+internal_90d,0.88
+魔方,北京汽车,魔方,,燃油车,,燃油,,internal_90d,0.88
+鲸,荣威,鲸,,燃油车,,燃油,,internal_90d,0.88
+鲸卡t7,北京汽车制造厂,鲸卡T7,,燃油车,,燃油,,internal_90d,0.88
+麦柯斯,福特,麦柯斯,,燃油车,,燃油,,internal_90d,0.88
+黄海n2,黄海,黄海N2,,燃油车,,燃油,,internal_90d,0.88
+黄海n3,黄海,黄海N3,,燃油车,,燃油,,internal_90d,0.88
+黄海威龙,黄海,黄海·威龙,,燃油车,,燃油,,internal_90d,0.88
+黄海蛟龙,黄海,黄海·蛟龙,,燃油车,,燃油,,internal_90d,0.88
+黑金刚,猎豹汽车,黑金刚,,燃油车,,燃油,,internal_90d,0.88
+龙威,海格,龙威,,燃油车,,燃油,,internal_90d,0.88
+龙耀6s,金龙,龙耀6S,,新能源,,新能源,,internal_90d,0.88

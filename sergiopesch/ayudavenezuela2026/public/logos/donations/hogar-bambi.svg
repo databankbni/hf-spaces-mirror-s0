@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 80" role="img" aria-labelledby="title">
+  <title id="title">Hogar Bambi</title>
+  <rect width="180" height="80" rx="12" fill="#fff7ed"/>
+  <circle cx="38" cy="39" r="18" fill="#f97316"/>
+  <path d="M29 40c5 8 13 8 18 0" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round"/>
+  <path d="M74 25h13v12h16V25h13v32h-13V46H87v11H74V25zm52 0h33v10h-20v4h17v9h-17v9h-13V25z" fill="#0f766e"/>
+  <text x="74" y="70" fill="#9a3412" font-family="Arial, sans-serif" font-size="10" font-weight="700">HOGAR BAMBI</text>
+</svg>

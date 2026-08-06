@@ -1,0 +1,330 @@
+ATHENA RAG KNOWLEDGE BASE
+College Navigation & Student Success Assistant
+________________
+
+
+1. Improving GPA & Academic Performance
+User asks:
+* "How can I raise my GPA?"
+* "How do I become a better student?"
+* "My grades are dropping, what should I do?"
+* "How can I get better study habits?"
+* "How do I balance difficult classes?"
+* "How do I recover from a bad semester?"
+Athena retrieves:
+* GPA improvement strategies
+* Study habit improvement
+* Time management techniques
+* Course planning strategies
+* Office hours and teacher communication
+* Academic resources
+* Balancing challenging courses
+* Building consistent routines
+Athena response approach:
+* Identify current struggles
+* Create realistic improvement steps
+* Focus on habits rather than quick fixes
+Example:
+"Instead of trying to completely change your routine overnight, start by identifying your two hardest classes and creating a weekly plan for them."
+________________
+
+
+2. Course Selection & Academic Planning
+User asks:
+* "What classes should I take?"
+* "Should I take harder classes?"
+* "How many advanced classes should I take?"
+* "What classes look good for college?"
+Athena retrieves:
+* Importance of course rigor
+* Balancing challenge and success
+* Understanding honors/AP/IB options
+* Aligning classes with interests
+* Planning high school years strategically
+Athena considers:
+* Student goals
+* Intended major
+* Current workload
+* Academic strengths
+________________
+
+
+3. Extracurricular Activities
+User asks:
+* "What extracurriculars should I do?"
+* "I don't have many activities."
+* "How do I make my college application stronger?"
+* "Do clubs matter?"
+* "How do I show leadership?"
+Athena retrieves:
+* Quality over quantity approach
+* Building meaningful involvement
+* Leadership opportunities
+* Community involvement
+* Personal projects
+* Research opportunities
+* Volunteering
+* Work experience
+* Passion projects
+Athena explains:
+Strong applications usually show:
+* Commitment
+* Growth
+* Impact
+* Leadership
+* Personal interests
+________________
+
+
+4. Building a Strong College Application
+User asks:
+* "How do I stand out?"
+* "What makes a good applicant?"
+* "My application feels boring."
+* "How do I improve my chances?"
+Athena retrieves:
+Application components:
+* GPA
+* Course rigor
+* Activities
+* Essays
+* Recommendations
+* Awards
+* Personal story
+* Demonstrated interests
+Athena helps students:
+* Identify strengths
+* Find areas to improve
+* Create an application strategy
+________________
+
+
+5. College Essay Assistance
+User asks:
+* "How do I write my Common App essay?"
+* "What should my essay be about?"
+* "Is my essay good?"
+* "How do I make my essay memorable?"
+Athena retrieves:
+Essay principles:
+* Authentic storytelling
+* Personal reflection
+* Showing growth
+* Specific details
+* Avoiding clichés
+* Strong openings
+* Clear themes
+Athena helps with:
+* Brainstorming topics
+* Outlining
+* Revising
+* Improving clarity
+Athena avoids:
+* Writing the student's entire essay for them
+* Making their voice disappear
+________________
+
+
+6. College Search & Finding the Right Fit
+User asks:
+* "What colleges should I apply to?"
+* "How do I choose a college?"
+* "What school fits me?"
+* "Should I go to a big or small college?"
+Athena retrieves:
+College factors:
+* Location
+* Size
+* Campus culture
+* Majors
+* Cost
+* Research opportunities
+* Student life
+* Career outcomes
+Athena asks:
+* Academic interests
+* Preferred environment
+* Financial needs
+* Career goals
+________________
+
+
+7. Career & Major Exploration
+User asks:
+* "What should I major in?"
+* "I don't know what career I want."
+* "What jobs fit my interests?"
+Athena retrieves:
+* Career exploration methods
+* Major comparisons
+* Required skills
+* Possible career paths
+* Related extracurriculars
+Athena helps students explore instead of forcing one decision.
+________________
+
+
+8. Scholarships & Financial Aid
+User asks:
+* "How do I pay for college?"
+* "Where can I find scholarships?"
+* "What financial aid exists?"
+Athena retrieves:
+* FAFSA information
+* Scholarship searching
+* Merit scholarships
+* Need-based aid
+* Financial planning
+* Application deadlines
+________________
+
+
+9. Recommendation Letters
+User asks:
+* "Who should write my recommendation?"
+* "How do I get a strong recommendation?"
+Athena retrieves:
+* Building teacher relationships
+* Choosing recommenders
+* Providing useful information
+* Asking early
+* Creating a student profile/resume
+________________
+
+
+10. College Interviews
+User asks:
+* "How do I prepare for a college interview?"
+* "What questions will they ask?"
+Athena retrieves:
+* Common interview questions
+* Communication tips
+* Researching colleges
+* Showing personality
+* Preparing questions
+________________
+
+
+11. Freshman-Senior College Timeline
+User asks:
+* "What should I do freshman year?"
+* "When should I apply?"
+* "What should seniors be doing?"
+Athena retrieves:
+Freshman:
+* Explore interests
+* Build habits
+* Join activities
+Sophomore:
+* Increase involvement
+* Explore careers
+Junior:
+* Testing
+* College research
+* Leadership
+* Essays
+Senior:
+* Applications
+* Scholarships
+* Decisions
+________________
+
+
+12. Student Profile Personalization
+Athena remembers:
+* Grade level
+* GPA goals
+* Interests
+* Intended majors
+* Extracurriculars
+* Strengths
+* Weaknesses
+* College preferences
+Example:
+User:
+"How do I improve my application?"
+Athena retrieves:
+Student likes engineering, has robotics experience, wants selective colleges.
+Response:
+"Since you already have robotics involvement, focus on showing leadership and impact rather than adding random clubs."
+________________
+
+
+13. Productivity & Student Life
+User asks:
+* "How do I stop procrastinating?"
+* "How do I manage school and activities?"
+* "How do I stay organized?"
+Athena retrieves:
+* Calendar systems
+* Goal setting
+* Assignment tracking
+* Habit formation
+* Time management
+________________
+
+
+14. Personal Growth & Confidence
+User asks:
+* "How do I become more confident?"
+* "I feel behind other students."
+* "Everyone has better activities than me."
+Athena retrieves:
+* Growth mindset
+* Self-reflection
+* Finding unique strengths
+* Building meaningful experiences
+________________
+
+
+15. College Application Review
+User asks:
+* "Can you review my activities?"
+* "Is my application strong?"
+* "What am I missing?"
+Athena retrieves:
+Application evaluation criteria:
+* Academic preparation
+* Activities
+* Leadership
+* Essays
+* Personal narrative
+* Fit
+________________
+
+
+Athena RAG Website Sources (15)
+Official College Resources
+1. Common App
+ Application guidance, essays, deadlines, requirements
+2. College Board BigFuture
+ College search, planning, scholarships
+3. College Board
+ Testing, AP information, college planning
+4. Federal Student Aid
+ FAFSA and financial aid
+5. U.S. Department of Education College Scorecard
+ College cost, outcomes, statistics
+Writing & Application Help
+   6. Purdue Online Writing Lab (OWL)
+ Essay writing and citations
+   7. The Princeton Review
+ Admissions guidance and test preparation
+   8. Niche
+ College reviews and student perspectives
+   9. CollegeVine
+ Admissions advice and application strategy
+Career & Academic Exploration
+      10. O*NET Online
+ Career exploration
+      11. U.S. Bureau of Labor Statistics Occupational Outlook Handbook
+ Career information
+      12. Khan Academy
+ Academic skill support
+Student Success & Wellness
+         13. American Psychological Association
+ Student psychology and wellness resources
+         14. Learning Scientists
+ Evidence-based learning strategies
+         15. National Association for College Admission Counseling (NACAC)
+ Professional college counseling resources

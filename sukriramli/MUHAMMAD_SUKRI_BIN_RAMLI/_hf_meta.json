@@ -1,0 +1,253 @@
+{
+ "captured_at": "2026-08-06T03:16:11Z",
+ "hf_metadata": {
+  "_id": "69f30544deb4c59e047dc5dc",
+  "author": "sukriramli",
+  "cardData": {
+   "colorFrom": "purple",
+   "colorTo": "green",
+   "emoji": "📊",
+   "license": "mit",
+   "pinned": false,
+   "sdk": "static",
+   "short_description": "MUHAMMAD SUKRI BIN RAMLI RESEARCH REPOSITORY",
+   "title": "MUHAMMAD SUKRI BIN RAMLI"
+  },
+  "createdAt": "2026-04-30T07:31:16.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://sukriramli-muhammad-sukri-bin-ramli.static.hf.space",
+  "id": "sukriramli/MUHAMMAD_SUKRI_BIN_RAMLI",
+  "lastModified": "2026-08-06T01:54:39.000Z",
+  "likes": 0,
+  "private": false,
+  "region": "us",
+  "runtime": {
+   "hardware": {
+    "current": null,
+    "requested": null
+   },
+   "replicas": {
+    "current": 1,
+    "requested": 1
+   },
+   "stage": "RUNNING"
+  },
+  "sdk": "static",
+  "sha": "cd17ac46c3b28518aa543f365058289addead55b",
+  "siblings": [
+   {
+    "rfilename": ".gitattributes"
+   },
+   {
+    "rfilename": "1276054 (2).md"
+   },
+   {
+    "rfilename": "1276054 (2).pdf"
+   },
+   {
+    "rfilename": "1279727 (2).md"
+   },
+   {
+    "rfilename": "1279727 (2).pdf"
+   },
+   {
+    "rfilename": "1307043 (2).md"
+   },
+   {
+    "rfilename": "1307043 (2).pdf"
+   },
+   {
+    "rfilename": "133-144.Malaysia_MuhammadSukriBinRamli_AIAssistedTaxAuthorities (1) (2).md"
+   },
+   {
+    "rfilename": "133-144.Malaysia_MuhammadSukriBinRamli_AIAssistedTaxAuthorities (1) (2).pdf"
+   },
+   {
+    "rfilename": "1finalmercuryformat2jan1 (2).md"
+   },
+   {
+    "rfilename": "1finalmercuryformat2jan1 (2).pdf"
+   },
+   {
+    "rfilename": "2501.18868v1 (1) (2).md"
+   },
+   {
+    "rfilename": "2501.18868v1 (1) (2).pdf"
+   },
+   {
+    "rfilename": "2504.02915v1 (1) (2).md"
+   },
+   {
+    "rfilename": "2504.02915v1 (1) (2).pdf"
+   },
+   {
+    "rfilename": "2506.12093v1 (1) (2).md"
+   },
+   {
+    "rfilename": "2506.12093v1 (1) (2).pdf"
+   },
+   {
+    "rfilename": "2511.08638v1 (2).md"
+   },
+   {
+    "rfilename": "2511.08638v1 (2).pdf"
+   },
+   {
+    "rfilename": "2512.14410v1 (2).md"
+   },
+   {
+    "rfilename": "2512.14410v1 (2).pdf"
+   },
+   {
+    "rfilename": "5130409 (2).md"
+   },
+   {
+    "rfilename": "5130409 (2).pdf"
+   },
+   {
+    "rfilename": "AIHARDWARERESEARCH.md"
+   },
+   {
+    "rfilename": "AIHARDWARERESEARCH.pdf"
+   },
+   {
+    "rfilename": "BACUDALITEDATE (1).md"
+   },
+   {
+    "rfilename": "BACUDALITEDATE (1).pdf"
+   },
+   {
+    "rfilename": "CITATION (1).cff"
+   },
+   {
+    "rfilename": "DRAFT1 (3).md"
+   },
+   {
+    "rfilename": "DRAFT1 (3).pdf"
+   },
+   {
+    "rfilename": "FINALillicitewaste30092025 (2).md"
+   },
+   {
+    "rfilename": "FINALillicitewaste30092025 (2).pdf"
+   },
+   {
+    "rfilename": "OPEN_DATA_AND_MACHINE_LEARNING_FOR_BIRTH (2).md"
+   },
+   {
+    "rfilename": "OPEN_DATA_AND_MACHINE_LEARNING_FOR_BIRTH (2).pdf"
+   },
+   {
+    "rfilename": "PRIVATELABELPURCHASEINTENTION2018 (1) (2).md"
+   },
+   {
+    "rfilename": "PRIVATELABELPURCHASEINTENTION2018 (1) (2).pdf"
+   },
+   {
+    "rfilename": "Pattern Recognition of Ozone-Depleting Substance Exports in Global Trade Data (2).md"
+   },
+   {
+    "rfilename": "Pattern Recognition of Ozone-Depleting Substance Exports in Global Trade Data (2).pdf"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "basecoat1 (1) (2).md"
+   },
+   {
+    "rfilename": "basecoat1 (1) (2).pdf"
+   },
+   {
+    "rfilename": "carbontaxmalaysia1 (1).md"
+   },
+   {
+    "rfilename": "carbontaxmalaysia1 (1).pdf"
+   },
+   {
+    "rfilename": "google226d66422d9b05d6.html"
+   },
+   {
+    "rfilename": "index.html"
+   },
+   {
+    "rfilename": "jobrotationllm (3).md"
+   },
+   {
+    "rfilename": "jobrotationllm (3).pdf"
+   },
+   {
+    "rfilename": "llms (1).txt"
+   },
+   {
+    "rfilename": "main (14).pdf"
+   },
+   {
+    "rfilename": "main (21).pdf"
+   },
+   {
+    "rfilename": "marriageresearch1 (2).md"
+   },
+   {
+    "rfilename": "marriageresearch1 (2).pdf"
+   },
+   {
+    "rfilename": "preprints202504.1407.v1 (2).md"
+   },
+   {
+    "rfilename": "preprints202504.1407.v1 (2).pdf"
+   },
+   {
+    "rfilename": "preprints202504.2009.v1.md"
+   },
+   {
+    "rfilename": "preprints202504.2009.v1.pdf"
+   },
+   {
+    "rfilename": "profile.jpg"
+   },
+   {
+    "rfilename": "publications.md"
+   },
+   {
+    "rfilename": "ssrn-5340012 (2) (2).md"
+   },
+   {
+    "rfilename": "ssrn-5340012 (2) (2).pdf"
+   },
+   {
+    "rfilename": "ssrn-6549078.md"
+   },
+   {
+    "rfilename": "ssrn-6549078.pdf"
+   },
+   {
+    "rfilename": "style.css"
+   }
+  ],
+  "subdomain": "sukriramli-muhammad-sukri-bin-ramli",
+  "tags": [
+   "static",
+   "region:us"
+  ],
+  "usedStorage": 45780633
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "sukriramli/MUHAMMAD_SUKRI_BIN_RAMLI",
+ "repo_type": "spaces",
+ "sha": "cd17ac46c3b28518aa543f365058289addead55b",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/sukriramli/MUHAMMAD_SUKRI_BIN_RAMLI"
+}

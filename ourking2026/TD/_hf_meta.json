@@ -1,0 +1,23 @@
+{
+ "captured_at": "2026-08-04T16:44:57Z",
+ "hf_metadata": {
+  "sha": "6651986fb0555009ce1339d1a7109177b3ccac1e"
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "ourking2026/TD",
+ "repo_type": "spaces",
+ "sha": "6651986fb0555009ce1339d1a7109177b3ccac1e",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/ourking2026/TD"
+}

@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name"> Tanzania Bird Finder</string>
+    <string name="title_activity_main"> Tanzania Bird Finder</string>
+    <string name="package_name">tz.birdfinder.app</string>
+    <string name="custom_url_scheme">tz.birdfinder.app</string>
+</resources>

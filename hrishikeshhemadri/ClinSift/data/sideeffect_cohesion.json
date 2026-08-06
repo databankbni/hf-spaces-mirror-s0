@@ -1,0 +1,936 @@
+[
+  {
+    "cohesion": 0.921,
+    "reaction": "hematuria",
+    "n_drugs": 3,
+    "drugs": [
+      "asa",
+      "aspirin",
+      "warfarin"
+    ]
+  },
+  {
+    "cohesion": 0.92,
+    "reaction": "they have their own set of side effects",
+    "n_drugs": 5,
+    "drugs": [
+      "advil",
+      "aleve",
+      "ibuprofen",
+      "motrin",
+      "naprosyn"
+    ]
+  },
+  {
+    "cohesion": 0.92,
+    "reaction": "bleeding and ulcers in your digestive system",
+    "n_drugs": 5,
+    "drugs": [
+      "aleve",
+      "ibuprofen",
+      "motrin",
+      "naproxen",
+      "nuprin"
+    ]
+  },
+  {
+    "cohesion": 0.849,
+    "reaction": "disrupted sleep",
+    "n_drugs": 3,
+    "drugs": [
+      "clonidine",
+      "seroquel",
+      "vistaril"
+    ]
+  },
+  {
+    "cohesion": 0.849,
+    "reaction": "rhabdomyolysis",
+    "n_drugs": 3,
+    "drugs": [
+      "oxycodone",
+      "simvastatin",
+      "statin"
+    ]
+  },
+  {
+    "cohesion": 0.843,
+    "reaction": "gi bleed",
+    "n_drugs": 4,
+    "drugs": [
+      "clopidogrel",
+      "ibrutinib",
+      "plavix",
+      "rivaroxaban"
+    ]
+  },
+  {
+    "cohesion": 0.839,
+    "reaction": "lightheaded",
+    "n_drugs": 3,
+    "drugs": [
+      "atenolol",
+      "labetalol",
+      "reglan"
+    ]
+  },
+  {
+    "cohesion": 0.834,
+    "reaction": "bradycardia",
+    "n_drugs": 6,
+    "drugs": [
+      "amiodarone",
+      "atenolol",
+      "carvedilol",
+      "labetalol",
+      "metoprolol",
+      "metoprolol succinate"
+    ]
+  },
+  {
+    "cohesion": 0.811,
+    "reaction": "bradycardic",
+    "n_drugs": 4,
+    "drugs": [
+      "atenolol",
+      "dilaudid",
+      "metoprolol",
+      "propanolol"
+    ]
+  },
+  {
+    "cohesion": 0.804,
+    "reaction": "morphine and oxycodone and ambien and ativan can cause sleepiness",
+    "n_drugs": 4,
+    "drugs": [
+      "ambien",
+      "ativan",
+      "morphine",
+      "oxycodone"
+    ]
+  },
+  {
+    "cohesion": 0.804,
+    "reaction": "n/v",
+    "n_drugs": 4,
+    "drugs": [
+      "doxorubicin",
+      "levaquin",
+      "methotrexate",
+      "pazopanib"
+    ]
+  },
+  {
+    "cohesion": 0.803,
+    "reaction": "brbpr",
+    "n_drugs": 3,
+    "drugs": [
+      "apixaban",
+      "rivaroxaban",
+      "warfarin"
+    ]
+  },
+  {
+    "cohesion": 0.802,
+    "reaction": "lightheadedness",
+    "n_drugs": 6,
+    "drugs": [
+      "amlodipine",
+      "hydrochlorothiazide",
+      "labetalol",
+      "losartan",
+      "metoprolol",
+      "tramadol"
+    ]
+  },
+  {
+    "cohesion": 0.796,
+    "reaction": "exacerbating falls",
+    "n_drugs": 3,
+    "drugs": [
+      "ativan",
+      "benadryl",
+      "tizanidine"
+    ]
+  },
+  {
+    "cohesion": 0.793,
+    "reaction": "mild nausea",
+    "n_drugs": 3,
+    "drugs": [
+      "dilaudid",
+      "methotrexate",
+      "oxycontin"
+    ]
+  },
+  {
+    "cohesion": 0.793,
+    "reaction": "abdominal pain",
+    "n_drugs": 3,
+    "drugs": [
+      "acetaminophen",
+      "asa",
+      "bactrim"
+    ]
+  },
+  {
+    "cohesion": 0.779,
+    "reaction": "gi bleeding",
+    "n_drugs": 3,
+    "drugs": [
+      "aspirin",
+      "ibrutinib",
+      "warfarin"
+    ]
+  },
+  {
+    "cohesion": 0.777,
+    "reaction": "constipation",
+    "n_drugs": 13,
+    "drugs": [
+      "amlodipine",
+      "codeine",
+      "dilaudid",
+      "hydrocodone",
+      "hydromorphone",
+      "lactulose",
+      "morphine",
+      "opioid",
+      "oxycodone",
+      "percocet",
+      "tramadol",
+      "vicodin",
+      "zofran"
+    ]
+  },
+  {
+    "cohesion": 0.771,
+    "reaction": "hematemesis",
+    "n_drugs": 3,
+    "drugs": [
+      "apixaban",
+      "ibuprofen",
+      "rivaroxaban"
+    ]
+  },
+  {
+    "cohesion": 0.77,
+    "reaction": "acute kidney injury",
+    "n_drugs": 3,
+    "drugs": [
+      "chlorthalidone",
+      "lasix",
+      "lisinopril"
+    ]
+  },
+  {
+    "cohesion": 0.764,
+    "reaction": "anemia",
+    "n_drugs": 7,
+    "drugs": [
+      "decitabine",
+      "doxorubicin",
+      "gemcitabine",
+      "imuran",
+      "methotrexate",
+      "rifaximin",
+      "xeloda"
+    ]
+  },
+  {
+    "cohesion": 0.762,
+    "reaction": "sedation",
+    "n_drugs": 7,
+    "drugs": [
+      "ativan",
+      "dilaudid",
+      "ketamine",
+      "methadone",
+      "olanzapine",
+      "seroquel",
+      "tramadol"
+    ]
+  },
+  {
+    "cohesion": 0.761,
+    "reaction": "drug reaction",
+    "n_drugs": 4,
+    "drugs": [
+      "amlodipine",
+      "furosemide",
+      "olmesartan",
+      "zosyn"
+    ]
+  },
+  {
+    "cohesion": 0.758,
+    "reaction": "melena",
+    "n_drugs": 3,
+    "drugs": [
+      "ibuprofen",
+      "rivaroxaban",
+      "warfarin"
+    ]
+  },
+  {
+    "cohesion": 0.756,
+    "reaction": "fatigue",
+    "n_drugs": 5,
+    "drugs": [
+      "gemcitabine",
+      "imuran",
+      "jardiance",
+      "methotrexate",
+      "sorafenib"
+    ]
+  },
+  {
+    "cohesion": 0.754,
+    "reaction": "lethargic",
+    "n_drugs": 5,
+    "drugs": [
+      "ativan",
+      "benzatropine",
+      "dilaudid",
+      "reglan",
+      "roxicet"
+    ]
+  },
+  {
+    "cohesion": 0.751,
+    "reaction": "dizziness",
+    "n_drugs": 10,
+    "drugs": [
+      "lisinopril",
+      "losartan",
+      "metoprolol",
+      "mirapex",
+      "oxycodone",
+      "plavix",
+      "tramadol",
+      "velcade",
+      "voriconazole",
+      "zonegran"
+    ]
+  },
+  {
+    "cohesion": 0.751,
+    "reaction": "ams",
+    "n_drugs": 3,
+    "drugs": [
+      "oxycodone",
+      "roxicet",
+      "tacrolimus"
+    ]
+  },
+  {
+    "cohesion": 0.744,
+    "reaction": "malaise",
+    "n_drugs": 3,
+    "drugs": [
+      "gemcitabine",
+      "macrobid",
+      "pemetrexed"
+    ]
+  },
+  {
+    "cohesion": 0.744,
+    "reaction": "neutropenia",
+    "n_drugs": 8,
+    "drugs": [
+      "5-fu",
+      "folfirinox",
+      "folfox",
+      "gemcitabine",
+      "idelalisib",
+      "methotrexate",
+      "pemetrexed",
+      "revlimid"
+    ]
+  },
+  {
+    "cohesion": 0.741,
+    "reaction": "thrombocytopenia",
+    "n_drugs": 7,
+    "drugs": [
+      "ceftriaxone",
+      "decitabine",
+      "folfox",
+      "methotrexate",
+      "pradaxa",
+      "probenecid",
+      "sunitinib"
+    ]
+  },
+  {
+    "cohesion": 0.741,
+    "reaction": "elevated lfts",
+    "n_drugs": 3,
+    "drugs": [
+      "augmentin",
+      "minocycline",
+      "posaconazole"
+    ]
+  },
+  {
+    "cohesion": 0.732,
+    "reaction": "itching",
+    "n_drugs": 7,
+    "drugs": [
+      "cipro",
+      "codeine",
+      "cyclosporin",
+      "dilaudid",
+      "minocycline",
+      "morphine",
+      "percocet"
+    ]
+  },
+  {
+    "cohesion": 0.729,
+    "reaction": "altered mental status",
+    "n_drugs": 16,
+    "drugs": [
+      "citalopram",
+      "dacarbazine",
+      "gabapentin",
+      "librium",
+      "methadone",
+      "neurontin",
+      "oxycodone",
+      "oxycontin",
+      "percocet",
+      "quetiapine",
+      "roxicet",
+      "seroquel",
+      "sertraline",
+      "tizanidine",
+      "vicodin",
+      "zosyn"
+    ]
+  },
+  {
+    "cohesion": 0.725,
+    "reaction": "chills",
+    "n_drugs": 3,
+    "drugs": [
+      "gemcitabine",
+      "macrobid",
+      "zosyn"
+    ]
+  },
+  {
+    "cohesion": 0.723,
+    "reaction": "orthostatic hypotension",
+    "n_drugs": 4,
+    "drugs": [
+      "chlorthalidone",
+      "lisinopril",
+      "metoprolol",
+      "seroquel"
+    ]
+  },
+  {
+    "cohesion": 0.723,
+    "reaction": "vomiting",
+    "n_drugs": 5,
+    "drugs": [
+      "codeine",
+      "dilaudid",
+      "gemcitabine",
+      "morphine",
+      "sln"
+    ]
+  },
+  {
+    "cohesion": 0.717,
+    "reaction": "confusion",
+    "n_drugs": 9,
+    "drugs": [
+      "clonazepam",
+      "dilaudid",
+      "isosorbide dinitrate",
+      "mirapex",
+      "oxycodone",
+      "oxycontin",
+      "prednisone",
+      "roxicet",
+      "steroids"
+    ]
+  },
+  {
+    "cohesion": 0.717,
+    "reaction": "visual hallucinations",
+    "n_drugs": 3,
+    "drugs": [
+      "mirapex",
+      "oxycodone",
+      "sertraline"
+    ]
+  },
+  {
+    "cohesion": 0.714,
+    "reaction": "prolonged qtc",
+    "n_drugs": 3,
+    "drugs": [
+      "oxycodone",
+      "quetiapine",
+      "venlafaxine"
+    ]
+  },
+  {
+    "cohesion": 0.714,
+    "reaction": "fever",
+    "n_drugs": 4,
+    "drugs": [
+      "dextromethorphan",
+      "gemcitabine",
+      "macrobid",
+      "zosyn"
+    ]
+  },
+  {
+    "cohesion": 0.711,
+    "reaction": "mucositis",
+    "n_drugs": 4,
+    "drugs": [
+      "epoch",
+      "folfox",
+      "melphalan",
+      "sutent"
+    ]
+  },
+  {
+    "cohesion": 0.709,
+    "reaction": "transaminitis",
+    "n_drugs": 10,
+    "drugs": [
+      "atorvastatin",
+      "augmentin",
+      "cephalosporins",
+      "lipitor",
+      "metformin",
+      "methotrexate",
+      "seroquel",
+      "simvastatin",
+      "statin",
+      "voriconazole"
+    ]
+  },
+  {
+    "cohesion": 0.708,
+    "reaction": "leukopenia",
+    "n_drugs": 9,
+    "drugs": [
+      "azathioprine",
+      "ceftriaxone",
+      "imuran",
+      "probenecid",
+      "revlimid",
+      "rifaximin",
+      "sunitinib",
+      "valgancyclovir",
+      "vancomycin"
+    ]
+  },
+  {
+    "cohesion": 0.708,
+    "reaction": "lethargy",
+    "n_drugs": 4,
+    "drugs": [
+      "dilaudid",
+      "klonopin",
+      "procrit",
+      "roxicet"
+    ]
+  },
+  {
+    "cohesion": 0.705,
+    "reaction": "urinary retention",
+    "n_drugs": 6,
+    "drugs": [
+      "benztropine",
+      "dilaudid",
+      "morphine",
+      "opioids",
+      "oxycodone",
+      "ziconotide"
+    ]
+  },
+  {
+    "cohesion": 0.702,
+    "reaction": "pruritis",
+    "n_drugs": 4,
+    "drugs": [
+      "ceftriaxone",
+      "morphine",
+      "plavix",
+      "telaprevir"
+    ]
+  },
+  {
+    "cohesion": 0.699,
+    "reaction": "hypotension",
+    "n_drugs": 14,
+    "drugs": [
+      "amlodipine",
+      "apixaban",
+      "atenolol",
+      "clonazepam",
+      "clonidine",
+      "gabapentin",
+      "isosorbide dinitrate",
+      "lisinopril",
+      "losartan",
+      "metoprolol",
+      "procrit",
+      "spironolactone",
+      "sunitinib",
+      "velcade"
+    ]
+  },
+  {
+    "cohesion": 0.697,
+    "reaction": "cholestatic liver injury",
+    "n_drugs": 3,
+    "drugs": [
+      "ciprofloxacin",
+      "clindamycin",
+      "diltiazem"
+    ]
+  },
+  {
+    "cohesion": 0.695,
+    "reaction": "nausea",
+    "n_drugs": 33,
+    "drugs": [
+      "antibiotics",
+      "apixaban",
+      "atovaquone",
+      "augmentin",
+      "cephalexin",
+      "cladribine",
+      "codeine",
+      "cytoxan",
+      "dilaudid",
+      "dipyridamole",
+      "dobutamine",
+      "doxycycline",
+      "folfirinox",
+      "gemcitabine",
+      "iron supplement",
+      "jardiance",
+      "macrobid",
+      "magnesium citrate",
+      "metformin",
+      "morphine",
+      "mtx",
+      "omeprazole",
+      "ondansetron",
+      "oxycodone",
+      "oxycontin",
+      "prednisone",
+      "prevpac",
+      "sunitinib",
+      "sutent",
+      "tace",
+      "verapamil",
+      "zofran",
+      "zonegran"
+    ]
+  },
+  {
+    "cohesion": 0.693,
+    "reaction": "acute renal failure",
+    "n_drugs": 6,
+    "drugs": [
+      "allopurinol",
+      "chlorthalidone",
+      "cytoxan",
+      "ibuprofen",
+      "lisinopril",
+      "metformin"
+    ]
+  },
+  {
+    "cohesion": 0.691,
+    "reaction": "pancytopenia",
+    "n_drugs": 10,
+    "drugs": [
+      "azacytidine",
+      "bactrim",
+      "bendamustine",
+      "cellcept",
+      "cyclosporine",
+      "decitabine",
+      "ibrance",
+      "methotrexate",
+      "probenecid",
+      "tmp-smx"
+    ]
+  },
+  {
+    "cohesion": 0.689,
+    "reaction": "hyponatremia",
+    "n_drugs": 6,
+    "drugs": [
+      "chlorthalidone",
+      "cytoxan",
+      "hydrochlorothiazide",
+      "olanzapine",
+      "spironolactone",
+      "trileptal"
+    ]
+  },
+  {
+    "cohesion": 0.688,
+    "reaction": "somnolence",
+    "n_drugs": 5,
+    "drugs": [
+      "benzatropine",
+      "gabapentin",
+      "heroin",
+      "morphine",
+      "zyprexa"
+    ]
+  },
+  {
+    "cohesion": 0.684,
+    "reaction": "edema",
+    "n_drugs": 3,
+    "drugs": [
+      "casodex",
+      "lupron",
+      "nifedipine"
+    ]
+  },
+  {
+    "cohesion": 0.682,
+    "reaction": "hypotensive",
+    "n_drugs": 4,
+    "drugs": [
+      "amiodarone",
+      "antibiotics",
+      "lisinopril",
+      "propofol"
+    ]
+  },
+  {
+    "cohesion": 0.674,
+    "reaction": "diarrhea",
+    "n_drugs": 18,
+    "drugs": [
+      "allopurinol",
+      "antibiotics",
+      "augmentin",
+      "bactrim",
+      "cefpodoxime",
+      "cefuroxime",
+      "colace",
+      "dronabinol",
+      "erythromycin",
+      "folfirinox",
+      "folfox",
+      "irinotecan",
+      "lactulose",
+      "melphalan",
+      "oxaliplatin",
+      "prevpac",
+      "tamiflu",
+      "velcade"
+    ]
+  },
+  {
+    "cohesion": 0.671,
+    "reaction": "peripheral neuropathy",
+    "n_drugs": 3,
+    "drugs": [
+      "epoch",
+      "oxaliplatin",
+      "vincristine"
+    ]
+  },
+  {
+    "cohesion": 0.66,
+    "reaction": "hyperglycemia",
+    "n_drugs": 3,
+    "drugs": [
+      "prednisone",
+      "steroids",
+      "tpn"
+    ]
+  },
+  {
+    "cohesion": 0.653,
+    "reaction": "somnolent",
+    "n_drugs": 5,
+    "drugs": [
+      "gabapentin",
+      "morphine",
+      "oxycodone",
+      "quetiapine fumarate",
+      "vicodin"
+    ]
+  },
+  {
+    "cohesion": 0.639,
+    "reaction": "nausea and vomiting",
+    "n_drugs": 3,
+    "drugs": [
+      "antibiotics",
+      "opioids",
+      "prednisone"
+    ]
+  },
+  {
+    "cohesion": 0.635,
+    "reaction": "mental status changes",
+    "n_drugs": 3,
+    "drugs": [
+      "ambien",
+      "neurontin",
+      "oxycontin"
+    ]
+  },
+  {
+    "cohesion": 0.631,
+    "reaction": "jittery",
+    "n_drugs": 3,
+    "drugs": [
+      "prednisone",
+      "risperidone",
+      "wellbutrin xr"
+    ]
+  },
+  {
+    "cohesion": 0.627,
+    "reaction": "nauseous",
+    "n_drugs": 4,
+    "drugs": [
+      "levaquin",
+      "macrobid",
+      "nitroglycerin",
+      "percocet"
+    ]
+  },
+  {
+    "cohesion": 0.61,
+    "reaction": "gi upset",
+    "n_drugs": 6,
+    "drugs": [
+      "aspirin",
+      "doxycycline",
+      "flagyl",
+      "ibrance",
+      "iron supplement",
+      "metformin"
+    ]
+  },
+  {
+    "cohesion": 0.591,
+    "reaction": "increased confusion and somnolence",
+    "n_drugs": 3,
+    "drugs": [
+      "ativan",
+      "dicyclomine",
+      "gabapentin"
+    ]
+  },
+  {
+    "cohesion": 0.566,
+    "reaction": "loose stools",
+    "n_drugs": 4,
+    "drugs": [
+      "doxycycline",
+      "magnesium oxide",
+      "naproxen",
+      "sunitinib"
+    ]
+  },
+  {
+    "cohesion": 0.551,
+    "reaction": "hyperkalemia",
+    "n_drugs": 3,
+    "drugs": [
+      "kcl",
+      "lisinopril",
+      "potassium chloride"
+    ]
+  },
+  {
+    "cohesion": 0.502,
+    "reaction": "delirium",
+    "n_drugs": 5,
+    "drugs": [
+      "ambien",
+      "benzodiazepine",
+      "lithium",
+      "oxycodone",
+      "prednisone"
+    ]
+  },
+  {
+    "cohesion": 0.483,
+    "reaction": "nausea/vomiting",
+    "n_drugs": 3,
+    "drugs": [
+      "antibiotics",
+      "cisplatin",
+      "folfirinox"
+    ]
+  },
+  {
+    "cohesion": 0.453,
+    "reaction": "dizzy",
+    "n_drugs": 5,
+    "drugs": [
+      "atenolol",
+      "coumadin",
+      "insulin",
+      "procrit",
+      "spironolactone"
+    ]
+  },
+  {
+    "cohesion": 0.411,
+    "reaction": "hypoglycemia",
+    "n_drugs": 5,
+    "drugs": [
+      "glipizide",
+      "glyburide",
+      "insulin",
+      "metformin",
+      "nph"
+    ]
+  },
+  {
+    "cohesion": 0.335,
+    "reaction": "hypothyroidism",
+    "n_drugs": 3,
+    "drugs": [
+      "amiodarone",
+      "lithium",
+      "sunitinib"
+    ]
+  },
+  {
+    "cohesion": 0.317,
+    "reaction": "unresponsive",
+    "n_drugs": 3,
+    "drugs": [
+      "fentanyl",
+      "heroin",
+      "insulin"
+    ]
+  },
+  {
+    "cohesion": 0.226,
+    "reaction": "diaphoretic",
+    "n_drugs": 3,
+    "drugs": [
+      "insulin",
+      "nitroglycerin",
+      "vancomycin"
+    ]
+  }
+]

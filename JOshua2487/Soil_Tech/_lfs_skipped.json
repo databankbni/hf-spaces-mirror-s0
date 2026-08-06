@@ -1,0 +1,13 @@
+{
+ "lfs_not_stored": [
+  {
+   "oid": "2d8d6b7f753d63f36c72ba6f85dca2d9dc3d014959c8aeb57048c429a8aa3936",
+   "path": "soil_model_v7_efficientb3.weights.h5",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6MmQ4ZDZiN2Y3NTNkNjNmMzZjNzJiYTZmODVkY2EyZDlkYzNkMDE0OTU5YzhhZWI1NzA0OGM0MjlhOGFhMzkzNgpzaXplIDc0OTQ2MjQwCg==",
+   "size": 74946240,
+   "url": "https://huggingface.co/spaces/JOshua2487/Soil_Tech/resolve/5d22149a69ac2d08d1a4946cc82aeee8cc1f4d28/soil_model_v7_efficientb3.weights.h5"
+  }
+ ],
+ "overflow_not_stored": [],
+ "oversize_not_stored": []
+}

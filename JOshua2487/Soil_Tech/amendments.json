@@ -1,0 +1,59 @@
+{
+  "low_om": {
+    "amendments": [
+      "Apply compost (2-3 kg per sq meter)",
+      "Add rice hull or carbonized rice hull",
+      "Incorporate dried leaves or crop residue"
+    ],
+    "source": "PCARRD Series No. 93 (2007)"
+  },
+  "poor_drainage": {
+    "amendments": [
+      "Construct drainage canals around plot",
+      "Raise planting beds",
+      "Mix coarse sand to improve drainage"
+    ],
+    "source": "FAO (1994)"
+  },
+  "excessive_drainage": {
+    "amendments": [
+      "Add clay or silt to slow drainage",
+      "Apply thick organic mulch",
+      "Increase organic matter with compost"
+    ],
+    "source": "PCARRD Series No. 93 (2007)"
+  },
+  "high_moisture": {
+    "amendments": [
+      "Improve field drainage",
+      "Use raised bed farming technique",
+      "Avoid irrigation until soil dries"
+    ],
+    "source": "PhilRice (2022)"
+  },
+  "low_moisture": {
+    "amendments": [
+      "Apply organic mulch to retain moisture",
+      "Use drip irrigation if available",
+      "Add compost to improve water retention"
+    ],
+    "source": "FAO (1994)"
+  },
+  "unsuitable_soil_type": {
+    "amendments": [
+      "Consider soil mixing with suitable soil type",
+      "Use raised bed with imported loamy soil",
+      "Select a more suitable crop for this soil"
+    ],
+    "source": "FAO (1976)"
+  },
+  "suitable": {
+    "tips": [
+      "Maintain compost application to keep organic matter stable",
+      "Continue current irrigation practices",
+      "Apply balanced fertilizer before planting",
+      "Practice crop rotation after harvest"
+    ],
+    "source": "Sanchez (1976); FAO (1985); Fageria et al. (2011)"
+  }
+}

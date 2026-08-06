@@ -1,0 +1,289 @@
+{
+ "captured_at": "2026-08-04T15:14:28Z",
+ "hf_metadata": {
+  "_id": "6a47a766f3bbc70c724d159e",
+  "author": "Alialdlfy1",
+  "cardData": {
+   "app_port": 7860,
+   "colorFrom": "blue",
+   "colorTo": "indigo",
+   "emoji": "📚",
+   "pinned": false,
+   "sdk": "docker",
+   "title": "Arabic Books Publisher"
+  },
+  "createdAt": "2026-07-03T12:13:26.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://alialdlfy1-arabic-books.hf.space",
+  "id": "Alialdlfy1/arabic-books",
+  "lastModified": "2026-07-18T08:56:52.000Z",
+  "likes": 1,
+  "models": [
+   "meta-llama/Llama-3.2-11B-Vision-Instruct",
+   "meta-llama/Llama-3.3-70B-Instruct"
+  ],
+  "private": false,
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "alialdlfy1-arabic-books.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": null,
+    "requested": "cpu-basic"
+   },
+   "replicas": {
+    "requested": 1
+   },
+   "stage": "SLEEPING"
+  },
+  "sdk": "docker",
+  "sha": "bbe59bddec14d507c9cf9ecf9651288ddfa393ba",
+  "siblings": [
+   {
+    "rfilename": ".gitattributes"
+   },
+   {
+    "rfilename": "CHANGELOG.md"
+   },
+   {
+    "rfilename": "Dockerfile"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "VERSION"
+   },
+   {
+    "rfilename": "ai/__init__.py"
+   },
+   {
+    "rfilename": "ai/__pycache__/__init__.cpython-314.pyc"
+   },
+   {
+    "rfilename": "ai/__pycache__/prompt_manager.cpython-314.pyc"
+   },
+   {
+    "rfilename": "ai/__pycache__/service.cpython-314.pyc"
+   },
+   {
+    "rfilename": "ai/prompt_manager.py"
+   },
+   {
+    "rfilename": "ai/service.py"
+   },
+   {
+    "rfilename": "app.py"
+   },
+   {
+    "rfilename": "book_queue/__init__.py"
+   },
+   {
+    "rfilename": "book_queue/__pycache__/__init__.cpython-314.pyc"
+   },
+   {
+    "rfilename": "book_queue/__pycache__/manager.cpython-314.pyc"
+   },
+   {
+    "rfilename": "book_queue/manager.py"
+   },
+   {
+    "rfilename": "books/__init__.py"
+   },
+   {
+    "rfilename": "books/__pycache__/__init__.cpython-314.pyc"
+   },
+   {
+    "rfilename": "books/__pycache__/downloader.cpython-314.pyc"
+   },
+   {
+    "rfilename": "books/__pycache__/fingerprint.cpython-314.pyc"
+   },
+   {
+    "rfilename": "books/__pycache__/validator.cpython-314.pyc"
+   },
+   {
+    "rfilename": "books/downloader.py"
+   },
+   {
+    "rfilename": "books/fingerprint.py"
+   },
+   {
+    "rfilename": "books/metadata_resolver.py"
+   },
+   {
+    "rfilename": "books/validator.py"
+   },
+   {
+    "rfilename": "config.py"
+   },
+   {
+    "rfilename": "core/__init__.py"
+   },
+   {
+    "rfilename": "core/__pycache__/__init__.cpython-314.pyc"
+   },
+   {
+    "rfilename": "core/__pycache__/interfaces.cpython-314.pyc"
+   },
+   {
+    "rfilename": "core/__pycache__/models.cpython-314.pyc"
+   },
+   {
+    "rfilename": "core/interfaces.py"
+   },
+   {
+    "rfilename": "core/models.py"
+   },
+   {
+    "rfilename": "database/__init__.py"
+   },
+   {
+    "rfilename": "database/__pycache__/__init__.cpython-314.pyc"
+   },
+   {
+    "rfilename": "database/__pycache__/connection.cpython-314.pyc"
+   },
+   {
+    "rfilename": "database/__pycache__/firestore_repo.cpython-314.pyc"
+   },
+   {
+    "rfilename": "database/connection.py"
+   },
+   {
+    "rfilename": "database/firestore_repo.py"
+   },
+   {
+    "rfilename": "docs/Architecture.md"
+   },
+   {
+    "rfilename": "docs/Deployment.md"
+   },
+   {
+    "rfilename": "docs/Installation.md"
+   },
+   {
+    "rfilename": "docs/Maintenance.md"
+   },
+   {
+    "rfilename": "monitoring/__init__.py"
+   },
+   {
+    "rfilename": "monitoring/__pycache__/__init__.cpython-314.pyc"
+   },
+   {
+    "rfilename": "monitoring/__pycache__/logger.cpython-314.pyc"
+   },
+   {
+    "rfilename": "monitoring/logger.py"
+   },
+   {
+    "rfilename": "requirements.txt"
+   },
+   {
+    "rfilename": "scheduler/__init__.py"
+   },
+   {
+    "rfilename": "scheduler/__pycache__/__init__.cpython-314.pyc"
+   },
+   {
+    "rfilename": "scheduler/__pycache__/runner.cpython-314.pyc"
+   },
+   {
+    "rfilename": "scheduler/runner.py"
+   },
+   {
+    "rfilename": "sources/__init__.py"
+   },
+   {
+    "rfilename": "sources/__pycache__/__init__.cpython-314.pyc"
+   },
+   {
+    "rfilename": "sources/__pycache__/archive.cpython-314.pyc"
+   },
+   {
+    "rfilename": "sources/__pycache__/hindawi.cpython-314.pyc"
+   },
+   {
+    "rfilename": "sources/__pycache__/manager.cpython-314.pyc"
+   },
+   {
+    "rfilename": "sources/__pycache__/openlibrary.cpython-314.pyc"
+   },
+   {
+    "rfilename": "sources/archive.py"
+   },
+   {
+    "rfilename": "sources/hindawi.py"
+   },
+   {
+    "rfilename": "sources/manager.py"
+   },
+   {
+    "rfilename": "sources/openlibrary.py"
+   },
+   {
+    "rfilename": "telegram/__init__.py"
+   },
+   {
+    "rfilename": "telegram/__pycache__/__init__.cpython-314.pyc"
+   },
+   {
+    "rfilename": "telegram/__pycache__/client_manager.cpython-314.pyc"
+   },
+   {
+    "rfilename": "telegram/__pycache__/publisher.cpython-314.pyc"
+   },
+   {
+    "rfilename": "telegram/client_manager.py"
+   },
+   {
+    "rfilename": "telegram/publisher.py"
+   },
+   {
+    "rfilename": "utils/__init__.py"
+   },
+   {
+    "rfilename": "utils/__pycache__/__init__.cpython-314.pyc"
+   },
+   {
+    "rfilename": "utils/__pycache__/credentials.cpython-314.pyc"
+   },
+   {
+    "rfilename": "utils/credentials.py"
+   },
+   {
+    "rfilename": "verify.py"
+   }
+  ],
+  "subdomain": "alialdlfy1-arabic-books",
+  "tags": [
+   "docker",
+   "region:us"
+  ],
+  "usedStorage": 0
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "Alialdlfy1/arabic-books",
+ "repo_type": "spaces",
+ "sha": "bbe59bddec14d507c9cf9ecf9651288ddfa393ba",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/Alialdlfy1/arabic-books"
+}

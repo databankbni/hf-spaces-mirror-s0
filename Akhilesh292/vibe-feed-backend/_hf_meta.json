@@ -1,0 +1,81 @@
+{
+ "captured_at": "2026-08-04T13:17:15Z",
+ "hf_metadata": {
+  "_id": "6a4be9d63b10bcc9ff4f77fb",
+  "author": "Akhilesh292",
+  "cardData": {
+   "app_port": 7860,
+   "colorFrom": "purple",
+   "colorTo": "indigo",
+   "emoji": "🎥",
+   "pinned": false,
+   "sdk": "docker",
+   "title": "Vibe Feed Backend"
+  },
+  "createdAt": "2026-07-06T17:45:58.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://akhilesh292-vibe-feed-backend.hf.space",
+  "id": "Akhilesh292/vibe-feed-backend",
+  "lastModified": "2026-07-06T18:13:16.000Z",
+  "likes": 0,
+  "private": false,
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "akhilesh292-vibe-feed-backend.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": null,
+    "requested": "cpu-basic"
+   },
+   "replicas": {
+    "requested": 1
+   },
+   "stage": "SLEEPING"
+  },
+  "sdk": "docker",
+  "sha": "ca13e0e63e2cecc75b41adc6f13bba5932327463",
+  "siblings": [
+   {
+    "rfilename": ".gitignore"
+   },
+   {
+    "rfilename": "Dockerfile"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "add_drive_video.py"
+   },
+   {
+    "rfilename": "deploy.ps1"
+   },
+   {
+    "rfilename": "main.py"
+   },
+   {
+    "rfilename": "requirements.txt"
+   },
+   {
+    "rfilename": "videos.json"
+   }
+  ],
+  "subdomain": "akhilesh292-vibe-feed-backend",
+  "tags": [
+   "docker",
+   "region:us"
+  ],
+  "usedStorage": 0
+ },
+ "renamed_gitattributes": [],
+ "repo_id": "Akhilesh292/vibe-feed-backend",
+ "repo_type": "spaces",
+ "sha": "ca13e0e63e2cecc75b41adc6f13bba5932327463",
+ "web_url": "https://huggingface.co/spaces/Akhilesh292/vibe-feed-backend"
+}

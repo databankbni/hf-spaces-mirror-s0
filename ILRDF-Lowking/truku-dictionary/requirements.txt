@@ -1,0 +1,6 @@
+Flask==2.3.3
+gunicorn==21.2.0
+huggingface_hub
+python-dotenv
+google-genai
+python-docx

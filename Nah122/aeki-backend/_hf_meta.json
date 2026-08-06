@@ -1,0 +1,216 @@
+{
+ "captured_at": "2026-08-04T14:32:11Z",
+ "hf_metadata": {
+  "_id": "6a20efdcd9aee1d0ebb6e013",
+  "author": "Nah122",
+  "cardData": {
+   "colorFrom": "blue",
+   "colorTo": "green",
+   "emoji": "📊",
+   "license": "mit",
+   "pinned": false,
+   "sdk": "docker",
+   "title": "News Dashboard Analytics API"
+  },
+  "createdAt": "2026-06-04T03:24:12.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://nah122-aeki-backend.hf.space",
+  "id": "Nah122/aeki-backend",
+  "lastModified": "2026-07-19T13:30:44.000Z",
+  "likes": 0,
+  "models": [
+   "BAAI/bge-m3"
+  ],
+  "private": false,
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "nah122-aeki-backend.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": null,
+    "requested": "cpu-basic"
+   },
+   "replicas": {
+    "requested": 1
+   },
+   "stage": "SLEEPING"
+  },
+  "sdk": "docker",
+  "sha": "1ebc2a555825fdad584f978d32b7b03eebdc2de8",
+  "siblings": [
+   {
+    "rfilename": ".dockerignore"
+   },
+   {
+    "rfilename": ".gitignore"
+   },
+   {
+    "rfilename": ".gitkeep"
+   },
+   {
+    "rfilename": "Dockerfile"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "certs/service.cert"
+   },
+   {
+    "rfilename": "database/__init__.py"
+   },
+   {
+    "rfilename": "database/clickhouse_client.py"
+   },
+   {
+    "rfilename": "gdelt_theme_labels.py"
+   },
+   {
+    "rfilename": "libs/__init__.py"
+   },
+   {
+    "rfilename": "libs/libs/__init__.py"
+   },
+   {
+    "rfilename": "libs/libs/python/__init__.py"
+   },
+   {
+    "rfilename": "libs/libs/python/kafka/__init__.py"
+   },
+   {
+    "rfilename": "libs/libs/python/kafka/consumer.py"
+   },
+   {
+    "rfilename": "libs/libs/python/kafka/producer.py"
+   },
+   {
+    "rfilename": "libs/libs/python/models/.gitkeep"
+   },
+   {
+    "rfilename": "libs/libs/python/schemas/__init__.py"
+   },
+   {
+    "rfilename": "libs/libs/python/schemas/news_embedding.py"
+   },
+   {
+    "rfilename": "libs/libs/python/schemas/news_processed.py"
+   },
+   {
+    "rfilename": "libs/libs/python/schemas/news_raw.py"
+   },
+   {
+    "rfilename": "libs/libs/python/schemas/sentiment_result.py"
+   },
+   {
+    "rfilename": "libs/libs/python/storage/__init__.py"
+   },
+   {
+    "rfilename": "libs/libs/python/storage/minio.py"
+   },
+   {
+    "rfilename": "libs/libs/python/utils/.gitkeep"
+   },
+   {
+    "rfilename": "libs/libs/python/utils/__init__.py"
+   },
+   {
+    "rfilename": "libs/python/__init__.py"
+   },
+   {
+    "rfilename": "libs/python/kafka/__init__.py"
+   },
+   {
+    "rfilename": "libs/python/kafka/consumer.py"
+   },
+   {
+    "rfilename": "libs/python/kafka/producer.py"
+   },
+   {
+    "rfilename": "libs/python/models/.gitkeep"
+   },
+   {
+    "rfilename": "libs/python/schemas/__init__.py"
+   },
+   {
+    "rfilename": "libs/python/schemas/news_embedding.py"
+   },
+   {
+    "rfilename": "libs/python/schemas/news_processed.py"
+   },
+   {
+    "rfilename": "libs/python/schemas/news_raw.py"
+   },
+   {
+    "rfilename": "libs/python/schemas/sentiment_result.py"
+   },
+   {
+    "rfilename": "libs/python/storage/__init__.py"
+   },
+   {
+    "rfilename": "libs/python/storage/minio.py"
+   },
+   {
+    "rfilename": "libs/python/utils/.gitkeep"
+   },
+   {
+    "rfilename": "libs/python/utils/__init__.py"
+   },
+   {
+    "rfilename": "main.py"
+   },
+   {
+    "rfilename": "requirements.txt"
+   },
+   {
+    "rfilename": "routes/__init__.py"
+   },
+   {
+    "rfilename": "routes/analytics.py"
+   },
+   {
+    "rfilename": "routes/conflict.py"
+   },
+   {
+    "rfilename": "routes/currency.py"
+   },
+   {
+    "rfilename": "routes/economy.py"
+   },
+   {
+    "rfilename": "routes/environment.py"
+   },
+   {
+    "rfilename": "routes/ethiopia360.py"
+   },
+   {
+    "rfilename": "routes/global_perspective.py"
+   },
+   {
+    "rfilename": "routes/infrastructure.py"
+   },
+   {
+    "rfilename": "routes/trade_economy.py"
+   },
+   {
+    "rfilename": "routes/weather.py"
+   }
+  ],
+  "subdomain": "nah122-aeki-backend",
+  "tags": [
+   "docker",
+   "region:us"
+  ],
+  "usedStorage": 0
+ },
+ "renamed_gitattributes": [],
+ "repo_id": "Nah122/aeki-backend",
+ "repo_type": "spaces",
+ "sha": "1ebc2a555825fdad584f978d32b7b03eebdc2de8",
+ "web_url": "https://huggingface.co/spaces/Nah122/aeki-backend"
+}

@@ -1,0 +1,23 @@
+{
+ "captured_at": "2026-08-04T16:21:02Z",
+ "hf_metadata": {
+  "sha": "c0c1b83699633d1ad2ad43b0cd958eadb225d540"
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "hen2k4/roda-ai-api",
+ "repo_type": "spaces",
+ "sha": "c0c1b83699633d1ad2ad43b0cd958eadb225d540",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/hen2k4/roda-ai-api"
+}

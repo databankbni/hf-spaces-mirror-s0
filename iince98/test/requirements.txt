@@ -1,0 +1,7 @@
+gradio>=5.0,<7
+pandas>=2.2,<3
+requests>=2.32,<3
+beautifulsoup4>=4.12,<5
+gspread>=6.1,<7
+google-auth>=2.30,<3
+anthropic

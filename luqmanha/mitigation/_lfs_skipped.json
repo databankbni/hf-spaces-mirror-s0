@@ -1,0 +1,13 @@
+{
+ "lfs_not_stored": [
+  {
+   "oid": "1549f83fddc5a250f8b388416bcf1146d3f8404984bb905e7ed20381c8ace549",
+   "path": "model/model_regresi.pkl",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6MTU0OWY4M2ZkZGM1YTI1MGY4YjM4ODQxNmJjZjExNDZkM2Y4NDA0OTg0YmI5MDVlN2VkMjAzODFjOGFjZTU0OQpzaXplIDM0MDE5MzcK",
+   "size": 3401937,
+   "url": "https://huggingface.co/spaces/luqmanha/mitigation/resolve/e848534e3873dd7e6503424b8877b68b0894c623/model/model_regresi.pkl"
+  }
+ ],
+ "overflow_not_stored": [],
+ "oversize_not_stored": []
+}

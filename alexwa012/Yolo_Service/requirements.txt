@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+ultralytics
+opencv-python-headless
+requests
+pydantic
+numpy
+face_recognition
+rapidocr-onnxruntime

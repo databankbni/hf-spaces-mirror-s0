@@ -1,0 +1,18 @@
+{
+ "captured_at": "2026-08-04T16:55:42Z",
+ "hf_metadata": {
+  "sha": "722d4ae9c0b2ddfbd56c557d8c1c61634e295ff8"
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitignore",
+   "stored_as": "_gitignore"
+  }
+ ],
+ "renamed_gitattributes": [],
+ "repo_id": "sammygh/Godena",
+ "repo_type": "spaces",
+ "sha": "722d4ae9c0b2ddfbd56c557d8c1c61634e295ff8",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/sammygh/Godena"
+}

@@ -1,0 +1,13 @@
+{
+  "observation_path": "data/knowledge/v185_market_price/vehicle_source_price_observation.parquet",
+  "output_root": "results/v192_1",
+  "model_root": "models/v192_1",
+  "latest_complete_day": "2026-06-07",
+  "test_days": 30,
+  "calibration_days": 30,
+  "rolling_months": 6,
+  "top_k_recall": 100,
+  "top_k_pricing_min": 5,
+  "top_k_pricing_max": 15,
+  "random_seed": 1921
+}

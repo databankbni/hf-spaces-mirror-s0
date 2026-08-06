@@ -1,0 +1,23 @@
+{
+ "captured_at": "2026-08-04T16:23:56Z",
+ "hf_metadata": {
+  "sha": "95349c42c2951b03782a84e89f9536ad78a78d22"
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "infinitymatter/garbhini-iitm-portal",
+ "repo_type": "spaces",
+ "sha": "95349c42c2951b03782a84e89f9536ad78a78d22",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/infinitymatter/garbhini-iitm-portal"
+}

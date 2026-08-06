@@ -1,0 +1,12 @@
+node_modules
+.next
+.git
+.gitignore
+Dockerfile
+README.md
+out
+.env
+.vscode
+.idea
+*.log
+.cache

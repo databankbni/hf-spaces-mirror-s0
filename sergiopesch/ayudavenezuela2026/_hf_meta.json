@@ -1,0 +1,27 @@
+{
+ "captured_at": "2026-08-04T16:59:41Z",
+ "hf_metadata": {
+  "sha": "5ba79a36150670b89bd5edf945faf507a48b8021"
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  },
+  {
+   "original": ".gitignore",
+   "stored_as": "_gitignore"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "sergiopesch/ayudavenezuela2026",
+ "repo_type": "spaces",
+ "sha": "5ba79a36150670b89bd5edf945faf507a48b8021",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/sergiopesch/ayudavenezuela2026"
+}

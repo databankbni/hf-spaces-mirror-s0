@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CameraAnything vs 1.3B sandbox vs 14B champion — same clips, same frames</title>
+<style>
+body{margin:0;background:#0d1117;color:#e6edf3;font:15px/1.6 -apple-system,"Segoe UI",Roboto,sans-serif;padding:28px 3vw 80px}
+h1{font-size:24px;margin:0 0 6px}.sub{color:#8b949e;margin-bottom:16px}
+table{border-collapse:collapse;font-size:13.5px;margin:12px 0;min-width:700px}
+th,td{border:1px solid #30363d;padding:6px 10px;text-align:center}th{background:#161b22;color:#8b949e}
+td.n{text-align:left;font-weight:700}.best{color:#63c98a;font-weight:800}.bad{color:#f85149}
+figure{margin:12px 0 24px;background:#161b22;border:1px solid #30363d;border-radius:10px;padding:10px}
+figcaption{color:#8b949e;font-size:13px;padding:4px 2px;font-weight:600}
+img{width:100%;display:block;border-radius:5px}a{color:#58a6ff;text-decoration:none}
+.wrap{overflow-x:auto}
+</style></head><body>
+<h1>External baseline vs sandbox vs champion — one board</h1>
+<div class="sub">Rows per example: GT · CameraAnything (ECCV'26, ran on OUR dev clips via the ctx18 adapter) · expL_uni · expL_nk · expK (T2V-1.3B sandbox @5-6k) · expE_sync (14B champion @1500). Same clips, same frames (0/20/40/60/80), same fwd18-k metrics. 2026-07-29</div>
+<div class="wrap"><table>
+<tr><th>model</th><th>avg seen-PSNR</th><th>avg unseen-gray</th><th>note</th></tr>
+<tr><td class="n best">expE_sync (14B) @1500</td><td class="best">13.20</td><td>−22.3</td><td>fleet champion</td></tr>
+<tr><td class="n">expL_nk (1.3B) @6000</td><td>12.88</td><td>−22.1</td><td>seq-ctx + narrow k-field — best sandbox line</td></tr>
+<tr><td class="n">expK (1.3B) @5000</td><td>12.60</td><td>−13.5</td><td>17-ch channel + SYNC</td></tr>
+<tr><td class="n">expL_uni (1.3B) @6000</td><td>11.08</td><td>−39.4</td><td>no k-field: rich but wrong (texture soup)</td></tr>
+<tr><td class="n bad">CameraAnything (14B)</td><td class="bad">9.75</td><td>−31.9</td><td>sharp imagery, invents its own room; weak trajectory obedience</td></tr>
+</table></div>
+<figure><figcaption>TEST 111b656f</figcaption><img src="combo_111b656f.png" loading="lazy"></figure>
+<figure><figcaption>TEST 2501f488</figcaption><img src="combo_2501f488.png" loading="lazy"></figure>
+<figure><figcaption>TRAIN 00534f58</figcaption><img src="combo_00534f58.png" loading="lazy"></figure>
+<figure><figcaption>TRAIN 0003dc82</figcaption><img src="combo_0003dc82.png" loading="lazy"></figure>
+<div class="sub">CameraAnything on the official ctx18 20-clip set: psnr_extrap 11.35 (last of 12), FID 77.3, MEt3R 0.107, rot-err 43.8° (worst) — <a href="https://luuuulinnnn-scene-extrapolation-ctx18.static.hf.space/">ctx18 leaderboard</a>. Caveat: translation similarity-scale 2.0 (their training range) may under-drive motion on our large-baseline clips; a trans_scale sweep is the fair-shake follow-up. Links: <a href="project.html">project</a> · <a href="latestall.html">parade</a> · <a href="pipelines.html">atlas</a></div>
+</body></html>

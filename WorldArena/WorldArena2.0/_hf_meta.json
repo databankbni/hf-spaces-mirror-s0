@@ -1,0 +1,231 @@
+{
+ "captured_at": "2026-08-04T15:34:23Z",
+ "hf_metadata": {
+  "_id": "6a2ff59f507baca30556ddbe",
+  "author": "WorldArena",
+  "cardData": {
+   "app_file": "app.py",
+   "colorFrom": "purple",
+   "colorTo": "green",
+   "emoji": "🏆",
+   "license": "mit",
+   "pinned": false,
+   "sdk": "gradio",
+   "sdk_version": "5.23.0",
+   "short_description": "Three-track leaderboard for embodied world model evaluation",
+   "title": "WorldArena 2.0 Leaderboard"
+  },
+  "createdAt": "2026-06-15T12:52:47.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://worldarena-worldarena2-0.hf.space",
+  "id": "WorldArena/WorldArena2.0",
+  "lastModified": "2026-07-15T11:06:39.000Z",
+  "likes": 2,
+  "private": false,
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "worldarena-worldarena2-0.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": "cpu-basic",
+    "requested": "cpu-basic"
+   },
+   "pySpacesVersion": "0.51.0",
+   "replicas": {
+    "current": 1,
+    "requested": 1
+   },
+   "sha": "ad3235b8a26cc3ea6a713ee32fa222cb7eac549b",
+   "stage": "RUNNING"
+  },
+  "sdk": "gradio",
+  "sha": "ad3235b8a26cc3ea6a713ee32fa222cb7eac549b",
+  "siblings": [
+   {
+    "rfilename": ".gitattributes"
+   },
+   {
+    "rfilename": ".pre-commit-config.yaml"
+   },
+   {
+    "rfilename": "Makefile"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "app.py"
+   },
+   {
+    "rfilename": "models/readme.md"
+   },
+   {
+    "rfilename": "pyproject.toml"
+   },
+   {
+    "rfilename": "requirements.txt"
+   },
+   {
+    "rfilename": "src/__init__.py"
+   },
+   {
+    "rfilename": "src/__pycache__/__init__.cpython-313.pyc"
+   },
+   {
+    "rfilename": "src/__pycache__/__init__.cpython-314.pyc"
+   },
+   {
+    "rfilename": "src/__pycache__/data_loader.cpython-313.pyc"
+   },
+   {
+    "rfilename": "src/__pycache__/data_loader.cpython-314.pyc"
+   },
+   {
+    "rfilename": "src/__pycache__/leaderboard.cpython-313.pyc"
+   },
+   {
+    "rfilename": "src/__pycache__/leaderboard.cpython-314.pyc"
+   },
+   {
+    "rfilename": "src/__pycache__/plotter.cpython-313.pyc"
+   },
+   {
+    "rfilename": "src/__pycache__/plotter.cpython-314.pyc"
+   },
+   {
+    "rfilename": "src/__pycache__/radar_plotter.cpython-313.pyc"
+   },
+   {
+    "rfilename": "src/__pycache__/radar_plotter.cpython-314.pyc"
+   },
+   {
+    "rfilename": "src/__pycache__/styling.cpython-313.pyc"
+   },
+   {
+    "rfilename": "src/__pycache__/styling.cpython-314.pyc"
+   },
+   {
+    "rfilename": "src/__pycache__/utils.cpython-313.pyc"
+   },
+   {
+    "rfilename": "src/__pycache__/utils.cpython-314.pyc"
+   },
+   {
+    "rfilename": "src/data_loader.py"
+   },
+   {
+    "rfilename": "src/leaderboard.py"
+   },
+   {
+    "rfilename": "src/plotter.py"
+   },
+   {
+    "rfilename": "src/radar_plotter.py"
+   },
+   {
+    "rfilename": "src/styling.py"
+   },
+   {
+    "rfilename": "src/utils.py"
+   },
+   {
+    "rfilename": "worldarena-results(track1)/Ctrl-World.json"
+   },
+   {
+    "rfilename": "worldarena-results(track1)/GigaWorld-0.json"
+   },
+   {
+    "rfilename": "worldarena-results(track1)/IRASim.json"
+   },
+   {
+    "rfilename": "worldarena-results(track1)/Vidar.json"
+   },
+   {
+    "rfilename": "worldarena-results(track1)/Wan2.2.json"
+   },
+   {
+    "rfilename": "worldarena-results(track1)/WoW.json"
+   },
+   {
+    "rfilename": "worldarena-results(track1)/WorldScape-0.2(Moe).json"
+   },
+   {
+    "rfilename": "worldarena-results(track2)/Cosmos-Predict-2.5(action).json"
+   },
+   {
+    "rfilename": "worldarena-results(track2)/Ctrl-World.json"
+   },
+   {
+    "rfilename": "worldarena-results(track2)/IRASim.json"
+   },
+   {
+    "rfilename": "worldarena-results(track2)/OpenSora.json"
+   },
+   {
+    "rfilename": "worldarena-results(track2)/RoboScape.json"
+   },
+   {
+    "rfilename": "worldarena-results(track2)/WoVR.json"
+   },
+   {
+    "rfilename": "worldarena-results(track2)/iVideoGPT.json"
+   },
+   {
+    "rfilename": "worldarena-results(track3.1)/Genie Envisioner.json"
+   },
+   {
+    "rfilename": "worldarena-results(track3.1)/Vidar.json"
+   },
+   {
+    "rfilename": "worldarena-results(track3.1)/Wan2.2.json"
+   },
+   {
+    "rfilename": "worldarena-results(track3.2)/CogVideoX.json"
+   },
+   {
+    "rfilename": "worldarena-results(track3.2)/Genie Envisioner.json"
+   },
+   {
+    "rfilename": "worldarena-results(track3.2)/GigaWorld.json"
+   },
+   {
+    "rfilename": "worldarena-results(track3.2)/TesserAct.json"
+   },
+   {
+    "rfilename": "worldarena-results(track3.2)/Vidar.json"
+   },
+   {
+    "rfilename": "worldarena-results(track3.2)/Wan 2.2.json"
+   }
+  ],
+  "subdomain": "worldarena-worldarena2-0",
+  "tags": [
+   "gradio",
+   "region:us"
+  ],
+  "usedStorage": 0
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "WorldArena/WorldArena2.0",
+ "repo_type": "spaces",
+ "sha": "ad3235b8a26cc3ea6a713ee32fa222cb7eac549b",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/WorldArena/WorldArena2.0"
+}

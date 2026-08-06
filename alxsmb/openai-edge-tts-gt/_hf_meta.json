@@ -1,0 +1,97 @@
+{
+ "captured_at": "2026-08-04T15:51:34Z",
+ "hf_metadata": {
+  "_id": "6a4db7629f3e9144fd09defe",
+  "author": "alxsmb",
+  "cardData": {
+   "app_port": 7860,
+   "colorFrom": "blue",
+   "colorTo": "purple",
+   "emoji": "🔊",
+   "license": "gpl-3.0",
+   "pinned": false,
+   "sdk": "docker",
+   "title": "OpenAI Edge TTS"
+  },
+  "createdAt": "2026-07-08T02:35:14.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://alxsmb-openai-edge-tts-gt.hf.space",
+  "id": "alxsmb/openai-edge-tts-gt",
+  "lastModified": "2026-07-08T12:25:53.000Z",
+  "likes": 0,
+  "private": false,
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "alxsmb-openai-edge-tts-gt.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": null,
+    "requested": "cpu-basic"
+   },
+   "replicas": {
+    "requested": 1
+   },
+   "stage": "SLEEPING"
+  },
+  "sdk": "docker",
+  "sha": "6a61bbb079279f28b48b8302e7596fc99afe0aee",
+  "siblings": [
+   {
+    "rfilename": ".gitattributes"
+   },
+   {
+    "rfilename": "Dockerfile"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "app/config.py"
+   },
+   {
+    "rfilename": "app/handle_text.py"
+   },
+   {
+    "rfilename": "app/server.py"
+   },
+   {
+    "rfilename": "app/tts_handler.py"
+   },
+   {
+    "rfilename": "app/utils.py"
+   },
+   {
+    "rfilename": "requirements.txt"
+   }
+  ],
+  "subdomain": "alxsmb-openai-edge-tts-gt",
+  "tags": [
+   "docker",
+   "region:us"
+  ],
+  "usedStorage": 0
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "alxsmb/openai-edge-tts-gt",
+ "repo_type": "spaces",
+ "sha": "6a61bbb079279f28b48b8302e7596fc99afe0aee",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/alxsmb/openai-edge-tts-gt"
+}

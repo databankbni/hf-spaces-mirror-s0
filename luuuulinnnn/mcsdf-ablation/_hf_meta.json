@@ -1,0 +1,422 @@
+{
+ "captured_at": "2026-08-06T03:14:48Z",
+ "hf_metadata": {
+  "_id": "6a66a6d4a9417230c30d98c0",
+  "author": "luuuulinnnn",
+  "cardData": {
+   "colorFrom": "pink",
+   "colorTo": "yellow",
+   "emoji": "🐨",
+   "pinned": false,
+   "sdk": "static",
+   "title": "Mcsdf Ablation"
+  },
+  "createdAt": "2026-07-27T00:31:16.000Z",
+  "datasets": [
+   "luuuulinnnn/mcsdf-videos"
+  ],
+  "disabled": false,
+  "gated": false,
+  "host": "https://luuuulinnnn-mcsdf-ablation.static.hf.space",
+  "id": "luuuulinnnn/mcsdf-ablation",
+  "lastModified": "2026-08-06T01:32:42.000Z",
+  "likes": 0,
+  "private": false,
+  "region": "us",
+  "runtime": {
+   "hardware": {
+    "current": null,
+    "requested": null
+   },
+   "replicas": {
+    "current": 1,
+    "requested": 1
+   },
+   "stage": "RUNNING"
+  },
+  "sdk": "static",
+  "sha": "7c2f14b593e31f46b942390230c815c688093c5e",
+  "siblings": [
+   {
+    "rfilename": ".gitattributes"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "all_in_one.html"
+   },
+   {
+    "rfilename": "atlas.html"
+   },
+   {
+    "rfilename": "combo.html"
+   },
+   {
+    "rfilename": "combo_0003dc82.png"
+   },
+   {
+    "rfilename": "combo_00534f58.png"
+   },
+   {
+    "rfilename": "combo_111b656f.png"
+   },
+   {
+    "rfilename": "combo_2501f488.png"
+   },
+   {
+    "rfilename": "eval20.html"
+   },
+   {
+    "rfilename": "everything_111b656f.mp4"
+   },
+   {
+    "rfilename": "everything_2501f488.mp4"
+   },
+   {
+    "rfilename": "expE_arch_noise.png"
+   },
+   {
+    "rfilename": "expE_architecture.png"
+   },
+   {
+    "rfilename": "expE_first.png"
+   },
+   {
+    "rfilename": "expE_geo_pipeline.png"
+   },
+   {
+    "rfilename": "expFvs_0003dc82.png"
+   },
+   {
+    "rfilename": "expFvs_00534f58.png"
+   },
+   {
+    "rfilename": "expFvs_111b656f.png"
+   },
+   {
+    "rfilename": "expFvs_2501f488.png"
+   },
+   {
+    "rfilename": "expH_0003dc82.png"
+   },
+   {
+    "rfilename": "expH_00534f58.png"
+   },
+   {
+    "rfilename": "expH_111b656f.png"
+   },
+   {
+    "rfilename": "expH_2501f488.png"
+   },
+   {
+    "rfilename": "expR_A_progress.html"
+   },
+   {
+    "rfilename": "expR_architecture.html"
+   },
+   {
+    "rfilename": "expR_family.html"
+   },
+   {
+    "rfilename": "expS_ck_progress.html"
+   },
+   {
+    "rfilename": "expe_arch.html"
+   },
+   {
+    "rfilename": "expe_first.html"
+   },
+   {
+    "rfilename": "expe_geo.html"
+   },
+   {
+    "rfilename": "expe_latest.html"
+   },
+   {
+    "rfilename": "expe_live.html"
+   },
+   {
+    "rfilename": "expe_scratch.html"
+   },
+   {
+    "rfilename": "experiments.html"
+   },
+   {
+    "rfilename": "experiments_diagram.png"
+   },
+   {
+    "rfilename": "exph.html"
+   },
+   {
+    "rfilename": "expjpipe.html"
+   },
+   {
+    "rfilename": "expm.html"
+   },
+   {
+    "rfilename": "expp.html"
+   },
+   {
+    "rfilename": "f50_0003dc82.png"
+   },
+   {
+    "rfilename": "f50_00534f58.png"
+   },
+   {
+    "rfilename": "f50_111b656f.png"
+   },
+   {
+    "rfilename": "f50_2501f488.png"
+   },
+   {
+    "rfilename": "f50b_0003dc82.png"
+   },
+   {
+    "rfilename": "f50b_00534f58.png"
+   },
+   {
+    "rfilename": "f50b_111b656f.png"
+   },
+   {
+    "rfilename": "f50b_2501f488.png"
+   },
+   {
+    "rfilename": "fc24_0003dc82.png"
+   },
+   {
+    "rfilename": "fc24_00534f58.png"
+   },
+   {
+    "rfilename": "fc24_111b656f.png"
+   },
+   {
+    "rfilename": "fc24_2501f488.png"
+   },
+   {
+    "rfilename": "fc50_0003dc82.png"
+   },
+   {
+    "rfilename": "fc50_00534f58.png"
+   },
+   {
+    "rfilename": "fc50_111b656f.png"
+   },
+   {
+    "rfilename": "fc50_2501f488.png"
+   },
+   {
+    "rfilename": "fleet.html"
+   },
+   {
+    "rfilename": "frame_dist.png"
+   },
+   {
+    "rfilename": "framedist.html"
+   },
+   {
+    "rfilename": "fullcompare.html"
+   },
+   {
+    "rfilename": "fullcompare50.html"
+   },
+   {
+    "rfilename": "index.html"
+   },
+   {
+    "rfilename": "infer_latest.html"
+   },
+   {
+    "rfilename": "init_canvas.png"
+   },
+   {
+    "rfilename": "latest2_0003dc82.png"
+   },
+   {
+    "rfilename": "latest2_00534f58.png"
+   },
+   {
+    "rfilename": "latest2_111b656f.png"
+   },
+   {
+    "rfilename": "latest2_2501f488.png"
+   },
+   {
+    "rfilename": "latest_0003dc82.png"
+   },
+   {
+    "rfilename": "latest_00534f58.png"
+   },
+   {
+    "rfilename": "latest_111b656f.png"
+   },
+   {
+    "rfilename": "latest_2501f488.png"
+   },
+   {
+    "rfilename": "latestall.html"
+   },
+   {
+    "rfilename": "map_ablation.html"
+   },
+   {
+    "rfilename": "matrix.html"
+   },
+   {
+    "rfilename": "nd_expJ_pipeline.png"
+   },
+   {
+    "rfilename": "nd_fig1.png"
+   },
+   {
+    "rfilename": "nd_fig2_expF.png"
+   },
+   {
+    "rfilename": "nd_fig2_expJ.png"
+   },
+   {
+    "rfilename": "nd_fig2_expM.png"
+   },
+   {
+    "rfilename": "nd_fig3.png"
+   },
+   {
+    "rfilename": "nd_fig3b.png"
+   },
+   {
+    "rfilename": "nd_fig4.png"
+   },
+   {
+    "rfilename": "nd_fig4b.png"
+   },
+   {
+    "rfilename": "nd_lvl1_collapse.png"
+   },
+   {
+    "rfilename": "nd_lvl1_heat_pop.png"
+   },
+   {
+    "rfilename": "nd_lvl1_mismatch.png"
+   },
+   {
+    "rfilename": "nd_lvl2_c_bars.png"
+   },
+   {
+    "rfilename": "nd_lvl3_plane.png"
+   },
+   {
+    "rfilename": "nd_lvl3_spaghetti.png"
+   },
+   {
+    "rfilename": "nd_lvl4_teff.png"
+   },
+   {
+    "rfilename": "noisedist.html"
+   },
+   {
+    "rfilename": "pipelines.html"
+   },
+   {
+    "rfilename": "probe_sampler.html"
+   },
+   {
+    "rfilename": "project.html"
+   },
+   {
+    "rfilename": "project_io.png"
+   },
+   {
+    "rfilename": "reinfer3k.html"
+   },
+   {
+    "rfilename": "s50_0003dc82.png"
+   },
+   {
+    "rfilename": "s50_00534f58.png"
+   },
+   {
+    "rfilename": "s50_111b656f.png"
+   },
+   {
+    "rfilename": "s50_2501f488.png"
+   },
+   {
+    "rfilename": "signals.html"
+   },
+   {
+    "rfilename": "signals_111b656f.mp4"
+   },
+   {
+    "rfilename": "signals_2501f488.mp4"
+   },
+   {
+    "rfilename": "slow_111b656f.mp4"
+   },
+   {
+    "rfilename": "slow_2501f488.mp4"
+   },
+   {
+    "rfilename": "slow_35ebb843.mp4"
+   },
+   {
+    "rfilename": "slow_3605ab74.mp4"
+   },
+   {
+    "rfilename": "slow_56daa9fd.mp4"
+   },
+   {
+    "rfilename": "slow_64d76920.mp4"
+   },
+   {
+    "rfilename": "snapshots.html"
+   },
+   {
+    "rfilename": "sota_0003dc82.png"
+   },
+   {
+    "rfilename": "sota_00534f58.png"
+   },
+   {
+    "rfilename": "sota_111b656f.png"
+   },
+   {
+    "rfilename": "sota_2501f488.png"
+   },
+   {
+    "rfilename": "style.css"
+   },
+   {
+    "rfilename": "tausweep.html"
+   },
+   {
+    "rfilename": "videos.html"
+   },
+   {
+    "rfilename": "vis.html"
+   }
+  ],
+  "subdomain": "luuuulinnnn-mcsdf-ablation",
+  "tags": [
+   "static",
+   "region:us"
+  ],
+  "usedStorage": 1000381349
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "luuuulinnnn/mcsdf-ablation",
+ "repo_type": "spaces",
+ "sha": "7c2f14b593e31f46b942390230c815c688093c5e",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/luuuulinnnn/mcsdf-ablation"
+}

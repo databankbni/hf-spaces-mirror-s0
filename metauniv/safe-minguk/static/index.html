@@ -1,0 +1,222 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>안전민국 · 국민과 기관이 함께 연습하는 AI 재난안전 훈련 플랫폼</title>
+<link rel="icon" type="image/png" href="/static/favicon.png">
+<link rel="stylesheet" href="/static/styles.css">
+</head><body>
+<div class="ambient" aria-hidden="true"><span class="a1"></span><span class="a2"></span><span class="a3"></span><span class="agrid"></span></div>
+<div id="loadov" class="loadov" aria-hidden="true" role="status">
+  <div class="loadbox">
+    <div class="spinner"></div>
+    <div class="loadt">지역 데이터를 불러오는 중…</div>
+    <div class="loads" id="loads">기상청·행안부 실시간 재난안전데이터 조회 중</div>
+  </div>
+</div>
+<div class="wrap">
+ <header>
+   <div class="brand" onclick="goHome()" title="처음으로">
+     <img class="logo-mark" src="/static/logo_mark.png" alt="안전민국 로고">
+     <span class="brand-tx">안전<b>민국</b><span class="tag">· 국민과 기관이 함께 연습하는 AI 재난안전 훈련 플랫폼</span></span>
+   </div>
+   <span class="pill live">제4회 재난안전데이터 활용 창업경진대회 · 시제품</span>
+ </header>
+
+ <!-- 0) 주소 입력 -->
+ <div id="sc-addr" class="scene on">
+   <div class="hero-main">
+     <h1 class="big">예고 없이 오는 <span class="glitch" data-t="재난">재난</span>,<br><b>미리 <span class="glow">준비</span>하면 피해는<br>줄일 수 있습니다.</b></h1>
+     <p class="hero-sub">주소를 넣으면 그 지역의 재난 위험에 맞춰 시나리오가 만들어집니다.<br>
+        의사가 가상환자로 임상추론을 훈련하듯, 재난 대응 의사결정을 미리 훈련합니다.</p>
+     <div class="addrbox">
+       <label for="addr">내 지역으로 시작 <span class="lbl-sub">시·군·구 또는 동</span></label>
+       <div class="addrrow">
+         <input id="addr" placeholder="예) 서울 관악구 신림동 / 충북 청주시 오송 / 경북 포항시" autocomplete="off"
+            oninput="clearAddrErr()" onkeydown="if(event.key==='Enter')go()">
+         <button onclick="go()">시작 →</button>
+       </div>
+       <div id="addr-err" class="addr-err" role="alert" aria-live="polite"></div>
+       <button class="skip" onclick="goEmpty()">주소 없이 둘러보기 →</button>
+     </div>
+     <p class="privacy">🔒 입력한 주소는 지역 매칭에만 쓰이며 어디에도 저장·전송되지 않습니다(브라우저 내 처리).</p>
+   </div>
+ </div>
+
+ <!-- 1) 재난 선택 -->
+ <div id="sc-cat" class="scene">
+   <div class="dloc" id="dloc"></div>
+
+   <div class="drow">
+     <div class="dstep"><span class="dnum">1</span><div class="dst-t">내 지역<br>위험 한눈에 보기</div>
+       <div class="dst-s">우리 지역의 현재 상황과 주요 위험을 확인하세요.</div></div>
+     <div class="dbody" id="d-risk"></div>
+   </div>
+
+   <div class="drow">
+     <div class="dstep"><span class="dnum">2</span><div class="dst-t">추천 훈련 선택</div>
+       <div class="dst-s">목적에 맞는 훈련 방식을 선택하세요.</div></div>
+     <div class="dbody">
+       <div class="train3">
+         <img class="tbanner" src="/static/banner_citizen.jpg" loading="lazy" onclick="goCitizen()"
+              alt="실시간 대응 체험 — 재난 대응 흐름을 쉽게 익히는 실전형 체험. 눌러서 바로 시작">
+         <img class="tbanner" src="/static/banner_ttx.jpg" loading="lazy" onclick="goAgency()"
+              alt="기관 도상훈련 TTX — 안전한국훈련·을지연습 방식, 표준매뉴얼 채점·강평. 눌러서 훈련 설계">
+         <img class="tbanner" src="/static/banner_ai.jpg" loading="lazy" onclick="openGen()"
+              alt="AI 맞춤 시나리오 — 기관 성격·재난 컨셉만 적으면 AI가 즉석 생성. 눌러서 생성">
+       </div>
+     </div>
+   </div>
+
+   <div class="dcta" id="dcta" onclick="startTop()">
+     <div class="dcta-tx"><div class="dcta-t">🛡 지금 가장 적합한 훈련 시작하기</div>
+       <div class="dcta-s" id="dcta-s">우리 지역·기관에 최적화된 훈련을 지금 바로 시작해 보세요.</div></div>
+     <button class="dcta-btn">추천 훈련 시작하기 →</button>
+   </div>
+ </div>
+
+ <!-- 1-P) 대상 선택 후 재난 선택 -->
+ <div id="sc-pick" class="scene">
+   <a class="back" onclick="toCat()">← 뒤로</a>
+   <h2 id="pick-title" style="margin-top:6px"></h2>
+   <p class="lead" id="pick-sub"></p>
+   <div id="pick-cat" class="cat"></div>
+ </div>
+
+ <!-- 1-E) 실시간 체험 방식 선택 (국민 개인 / 상황실 지휘) -->
+ <div id="sc-exp" class="scene">
+   <a class="back" onclick="toCat()">← 뒤로</a>
+   <h2 style="margin-top:6px">👥 실시간 대응 체험 — 방식 선택</h2>
+   <p class="lead">누구나 재난 대응을 실시간으로 체험합니다. <b>내 목숨을 지키는 개인 대응</b>과 <b>상황실 지휘</b> 중 선택하세요.</p>
+   <div class="cat">
+     <div class="dcard" onclick="expPick('citizen')">
+       <div class="ic">👤</div><h3>국민 대응 체험</h3>
+       <p>1인칭으로 <b>내 목숨을 지키는 개인 대응</b>을 연습합니다. 채점 기준 = 행정안전부 <b>국민행동요령</b>.</p>
+       <div class="ft"><span class="pill play">개인 · 생존</span></div></div>
+     <div class="dcard" onclick="expPick('sim')">
+       <div class="ic">🎮</div><h3>실시간 상황실 시뮬</h3>
+       <p>재난대책본부에서 <b>실시간 무전·신고를 받으며 지휘 결정</b>을 체험합니다. 선택이 다음 위기를 바꾸는 분기형 전개.</p>
+       <div class="ft"><span class="pill play">지휘 · 상황실</span></div></div>
+   </div>
+ </div>
+
+ <!-- 1-C) 국민 대응 체험 (1인칭 개인 생존) -->
+ <div id="sc-citizen" class="scene">
+   <a class="back" onclick="goCitizen()">← 방식 선택</a>
+   <div id="cit-body"></div>
+ </div>
+
+ <!-- 1-G) AI 맞춤 시나리오 생성 -->
+ <div id="sc-gen" class="scene">
+   <a class="back" onclick="toCat()">← 재난 선택</a>
+   <h2 style="margin-top:6px">🤖 우리 기관 맞춤 시나리오</h2>
+   <p class="lead">기관의 성격과 겪을 수 있는 재난·컨셉을 입력하면, 그 기관의 자산·취약요소를 반영한 <b>맞춤 도상훈련 시나리오</b>를 생성합니다. <span id="gen-aitag"></span></p>
+   <div class="genform">
+     <label>기관 성격 <span class="req">*</span></label>
+     <input id="g-inst" placeholder="예) ○○연구원(연구장비·화학약품 보유), 시립요양원, ○○초등학교, ○○화학공장">
+     <label>재난 유형 <span class="req">*</span></label>
+     <input id="g-dis" placeholder="예) 화재 / 화학물질 누출 / 지진 / 침수 / 정전 / 다중밀집">
+     <label>구체 컨셉·상황 (선택)</label>
+     <input id="g-con" placeholder="예) 야간 실험실에서 발화 / 행사 중 인파 급증 / 지하 기계실 침수">
+     <button class="subt" id="g-btn" onclick="generateScenario()">✨ 맞춤 시나리오 생성</button>
+   </div>
+   <div id="g-out"></div>
+ </div>
+
+
+ <!-- 1-M) 훈련 대상 선택(국민/기관) -->
+ <div id="sc-mode" class="scene">
+   <a class="back" onclick="toCat()">← 재난 선택</a>
+   <h2 id="m-title" style="margin-top:6px"></h2>
+   <p class="lead">같은 재난을 <b>두 대상</b>이 각자의 방식으로 연습합니다. <b>서사·강도·부가상황 조합으로 매번 다른 상황(60여 조합)</b>이 부여되며(+ AI 맞춤 생성은 무제한), 훈련 중 <b>🎲 다른 상황으로</b> 버튼으로 즉시 바꿀 수 있습니다.</p>
+   <div class="modes">
+     <div class="mcard" id="m-sim">
+       <div class="ic">👥</div><h3>실시간 대응 체험</h3>
+       <p>실시간 무전·신고를 받으며 즉시 선택하는 인터랙티브 체험. 전문 지식이 없어도 재난 대응의 흐름과 판단을 쉽게 익힙니다. 선택에 따라 상황이 분기합니다.</p>
+       <span class="badge">실시간 · 선택형 · 누구나 쉽게</span>
+     </div>
+     <div class="mcard" id="m-ttx">
+       <div class="ic">🏛</div><h3>기관 도상훈련 (TTX)</h3>
+       <p>실제 <b>안전한국훈련·을지연습</b>에서 쓰는 도상훈련 방식입니다. 상황을 부여받고 대응방안을 직접 서술하면, AI 평가관이 행정안전부 표준매뉴얼의 표준 대응요소와 대조해 채점·강평합니다.</p>
+       <span class="badge">재난담당 공무원 · 서술형 · 표준매뉴얼 채점</span>
+     </div>
+   </div>
+   <p class="small" style="color:var(--faint);margin-top:12px;text-align:center">🏛 도상훈련(TTX)이 안전한국훈련·을지연습의 실제 훈련 형태입니다. 👥 실시간 대응 체험는 이를 누구나 쉽게 연습하도록 만든 실시간 버전입니다.</p>
+ </div>
+
+ <!-- 1-T) 도상훈련 TTX -->
+ <div id="sc-ttx" class="scene">
+   <div class="scrow"><a class="back" onclick="toCat()">← 재난 선택</a>
+     <button class="reroll" onclick="rerollTTX()">🎲 다른 상황으로</button></div>
+   <h2 id="x-title" style="margin-top:6px"></h2>
+   <div class="ttx-intro"><div class="role" id="x-role"></div><p id="x-intro"></p></div>
+   <div id="x-scenreq"></div>
+   <div id="x-rolepick"></div>
+   <div id="x-resources"></div>
+   <div id="x-stage"></div>
+ </div>
+
+ <!-- 2) 훈련 진행 -->
+ <div id="sc-train" class="scene">
+   <a class="back" onclick="toCat()">← 재난 선택</a>
+   <h2 id="t-title" style="margin-top:6px"></h2>
+   <p class="small" id="t-context" style="margin:2px 0 0"></p>
+   <div class="grid">
+     <div class="panel">
+       <div class="hd"><span>상황 부여 (Inject)</span><span class="clock" id="t-clock"></span></div>
+       <div class="bd" id="t-body"></div>
+     </div>
+     <div class="panel">
+       <div class="hd"><span>현장 상태</span><span class="small" id="t-progress"></span></div>
+       <div class="bd"><div id="t-meters"></div>
+         <div class="steps" id="t-steps"></div>
+         <p class="small" style="margin-top:12px" id="t-manual"></p>
+       </div>
+     </div>
+   </div>
+ </div>
+
+ <!-- 2-S) 재난안전상황실 시뮬(침수) -->
+ <div id="sc-sim" class="scene">
+   <div class="scrow"><a class="back" onclick="toCat()">← 재난 선택</a>
+     <button class="reroll" onclick="rerollSim()">🎲 다른 상황으로</button></div>
+   <div class="ops-top">
+     <span class="nm"><span class="ic">🛰</span><span id="s-room"></span></span>
+     <span class="clk" id="s-clock"></span>
+     <span class="dn" id="s-prog"></span>
+     <span class="sig"><span class="dot" id="s-dot"></span><span id="s-danger"></span></span>
+   </div>
+   <div class="grid">
+     <div class="panel">
+       <div class="hd"><span>📟 무전·신고 피드</span><span class="small" id="s-ctx"></span></div>
+       <div class="bd"><div class="feed" id="s-feed"></div></div>
+     </div>
+     <div class="panel">
+       <div class="hd"><span>🖥 실시간 상황 모니터</span></div>
+       <div class="bd"><div class="mon" id="s-mon"></div></div>
+     </div>
+   </div>
+   <div class="dec" id="s-dec"></div>
+   <p class="small" id="s-manual" style="margin-top:10px"></p>
+ </div>
+
+ <!-- 3) 강평 -->
+ <div id="sc-debrief" class="scene">
+   <h2 id="d-title">훈련 강평</h2>
+   <div class="scores">
+     <div class="sc"><div class="big" id="d-dec"></div><div class="lab">의사결정 (절차)</div></div>
+     <div class="sc"><div class="big" id="d-out"></div><div class="lab">피해 최소화 (결과)</div></div>
+     <div class="sc"><div class="big" id="d-tot" style="color:var(--accent2)"></div><div class="lab">종합</div></div>
+   </div>
+   <div style="text-align:center;margin-bottom:14px"><span class="grade" id="d-grade"></span></div>
+   <div class="dbrief">
+     <div style="display:flex;justify-content:space-between;align-items:center">
+       <h4 style="margin:0">🎓 AI 평가관 강평</h4><span class="eng" id="d-eng"></span></div>
+     <p class="vd" id="d-verdict"></p>
+     <h4 style="color:var(--good)">잘한 결정</h4><ul id="d-did"></ul>
+     <h4 style="color:var(--bad)">놓친·아쉬운 결정</h4><ul id="d-missed"></ul>
+     <div class="coach" id="d-coach"></div>
+   </div>
+   <div class="guide" id="d-guide"></div>
+   <div class="btnrow"><button class="pri" onclick="openReport('sim')">📄 훈련 결과보고서</button><button onclick="rerollSim()">🎲 다른 상황</button><button onclick="restart()">↻ 같은 상황 재훈련</button><button onclick="toCat()">다른 재난 선택</button></div>
+ </div>
+</div>
+<script src="/static/app.js"></script></body></html>

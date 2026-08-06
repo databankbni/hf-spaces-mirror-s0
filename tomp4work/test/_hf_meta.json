@@ -1,0 +1,23 @@
+{
+ "captured_at": "2026-08-04T17:09:05Z",
+ "hf_metadata": {
+  "sha": "3dd426655125d6749953ff49d3554efc174f4b03"
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "tomp4work/test",
+ "repo_type": "spaces",
+ "sha": "3dd426655125d6749953ff49d3554efc174f4b03",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/tomp4work/test"
+}

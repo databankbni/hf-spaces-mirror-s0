@@ -1,0 +1,14 @@
+chromadb>=0.4.24
+langchain>=0.1.13
+langchain-openai>=0.1.1
+langchain-community>=0.0.29
+tiktoken>=0.6.0
+python-dotenv>=1.0.1
+pydantic>=2.6.4
+langchain-groq>=0.1.0
+cohere>=5.1.8
+langchain-cohere>=0.1.0
+rank_bm25>=0.2.2
+fastapi==0.110.0
+uvicorn==0.29.0
+python-telegram-bot==21.0.1

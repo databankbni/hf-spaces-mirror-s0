@@ -1,0 +1,44 @@
+# Ignored files for Child Monitor project
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.env
+server.log
+backend/server.log
+
+# SQLite & Session
+*.sqlite
+*.sqlite-journal
+*.sqlite-shm
+*.sqlite-wal
+backend/database.sqlite*
+backend/wa-session/
+.wwebjs_cache/
+.wwebjs_auth/
+
+# Android build files
+.gradle/
+build/
+*/build/
+*.apk
+*.ap_
+*.dex
+*.class
+bin/
+gen/
+out/
+.idea/
+*.iml
+local.properties
+captures/
+.externalNativeBuild/
+.cxx/
+cmake/
+
+# OS files
+.DS_Store
+Thumbs.db
+*.png

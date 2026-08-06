@@ -1,0 +1,1597 @@
+"""FastAPI server for the challenge dashboard.
+
+Routes that do real work:
+
+  GET  /api/config      → challenge branding + scoring config for the SPA
+  GET  /api/messages    → JSON: {"items": [{"filename": "...", "content": "..."}]}
+                          One round-trip for the whole message_board folder.
+  POST /api/messages    → create a human-authored user message.
+  GET  /api/results, /api/agents, /api/verification → same shape, other folders.
+
+A small static mount serves the SPA from `./static/`.
+
+All challenge identity (org, bucket, title, score field/label/order) arrives
+through environment variables — written as Space variables by
+`bootstrap/init_challenge.py` from the repo's challenge.yaml.
+
+Two operating modes, picked from environment variables:
+
+  • Production (deployed Space):
+      HF_TOKEN=hf_xxx               # Secret with read/write access to the bucket
+      → fetches from huggingface.co with Authorization: Bearer
+
+  • Local development:
+      LOCAL_BUCKET_DIR=/path/to/main-bucket
+      → reads directly from disk, no network, no auth
+
+When neither is set, the API endpoints return 401 with a helpful message.
+"""
+
+from __future__ import annotations
+
+import asyncio
+import logging
+import os
+import re
+import secrets
+import time
+from contextlib import asynccontextmanager
+from datetime import datetime, timezone
+from pathlib import Path
+from typing import Any
+from urllib.parse import urlencode
+from uuid import uuid4
+
+import httpx
+from fastapi import FastAPI, HTTPException, Request
+from fastapi.responses import RedirectResponse, Response
+from fastapi.staticfiles import StaticFiles
+from pydantic import BaseModel, Field
+from starlette.middleware.sessions import SessionMiddleware
+
+logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
+log = logging.getLogger("collab-dashboard")
+# httpx logs every request at INFO — that's hundreds of signed CDN URLs per
+# cold listing refresh, which drowns out the application logs.
+logging.getLogger("httpx").setLevel(logging.WARNING)
+
+# ── Challenge identity & branding (set by bootstrap from challenge.yaml) ──
+ORG = os.environ.get("ORG", "")
+BUCKET = os.environ.get("BUCKET", "") or os.environ.get("CENTRAL_BUCKET", "")
+CHALLENGE_TITLE = os.environ.get("CHALLENGE_TITLE", "Agent Collab Challenge")
+CHALLENGE_TAGLINE = os.environ.get("CHALLENGE_TAGLINE", "")
+SCORE_FIELD = os.environ.get("SCORE_FIELD", "score")
+SCORE_LABEL = os.environ.get("SCORE_LABEL", "Score")
+SCORE_UNIT = os.environ.get("SCORE_UNIT", "points")
+SCORE_ORDER = os.environ.get("SCORE_ORDER", "desc")  # desc = higher is better
+SECONDARY_FIELD = os.environ.get("SECONDARY_FIELD", "")
+SECONDARY_LABEL = os.environ.get("SECONDARY_LABEL", "")
+INVITE_URL = os.environ.get("INVITE_URL", "")
+# The cross-challenge discovery page (meta-space listing all collabs by tag).
+# Same for every challenge by default; set to "" to hide the button.
+DIRECTORY_URL = os.environ.get(
+    "DIRECTORY_URL",
+    "https://huggingface.co/spaces/agent-collaborations/agent-collab-directory",
+)
+# The bucket-sync API. Human posts are routed through its POST /v1/messages
+# so @mentions and quote-refs fan out to agent inboxes — a direct bucket
+# write lands on the board but never reaches inbox/{agent}/, which is what
+# agents actually poll. Empty → direct writes only.
+BACKEND_API_URL = os.environ.get("BACKEND_API_URL", "").rstrip("/")
+
+# Per-channel notification levels (backend DESIGN.md §13); the backend is the
+# authority, this mirrors the vocabulary for a friendly client-side rejection.
+NOTIFY_LEVELS = ("mentions", "all")
+
+PREFIX = os.environ.get("PREFIX", "message_board")
+RESULTS_PREFIX = os.environ.get("RESULTS_PREFIX", "results")
+AGENTS_PREFIX = os.environ.get("AGENTS_PREFIX", "agents")
+HUB = "https://huggingface.co"
+
+LOCAL_BUCKET_DIR = os.environ.get("LOCAL_BUCKET_DIR")
+HF_TOKEN = os.environ.get("HF_TOKEN") or os.environ.get("HUGGING_FACE_HUB_TOKEN")
+HUB_FETCH_TIMEOUT = float(os.environ.get("HUB_FETCH_TIMEOUT", "30.0"))
+
+# OAuth (auto-injected on HF Spaces when `hf_oauth: true` is set in
+# README.md). When unset (e.g. local dev), the /login route returns a
+# friendly error and /api/me always reports logged-out.
+OAUTH_CLIENT_ID = os.environ.get("OAUTH_CLIENT_ID")
+OAUTH_CLIENT_SECRET = os.environ.get("OAUTH_CLIENT_SECRET")
+# Local test environment ONLY (testenv/): /login mints a fake session as this
+# user without OAuth, so the composer works against the local dev backend.
+# Honored solely when OAuth is NOT configured — a deployed Space with
+# hf_oauth: true always has OAUTH_CLIENT_ID injected, which disables this
+# path entirely regardless of the env var.
+DEV_FAKE_LOGIN = os.environ.get("DEV_FAKE_LOGIN", "")
+OAUTH_SCOPES = os.environ.get("OAUTH_SCOPES", "openid profile email write-repos")
+OAUTH_REQUIRED_ORG = os.environ.get("OAUTH_REQUIRED_ORG", ORG)
+SESSION_SECRET = (
+    os.environ.get("SESSION_SECRET")
+    or os.environ.get("OAUTH_CLIENT_SECRET")  # stable across restarts on HF
+    or secrets.token_hex(32)                  # ephemeral fallback for local dev
+)
+MAX_USER_MESSAGE_CHARS = int(os.environ.get("MAX_USER_MESSAGE_CHARS", "4000"))
+HANDLE_RE = re.compile(r"^[A-Za-z0-9][A-Za-z0-9_.-]{0,31}$")
+REF_FILENAME_RE = re.compile(r"^[A-Za-z0-9_.-]+\.md$")
+# Mirrors the backend's channel-name rule (CHANNELS_DESIGN.md §2) for friendly
+# client-side errors; the backend remains the authority.
+CHANNEL_NAME_RE = re.compile(r"^[a-z0-9](?:[a-z0-9-]{0,38}[a-z0-9])?$")
+
+
+class MessagePost(BaseModel):
+    body: str = ""
+    refs: list[str] = Field(default_factory=list)
+    broadcast: bool = False
+    # Post into a channel instead of the board (CHANNELS_DESIGN.md §8.2).
+    channel: str | None = None
+
+
+class ChannelCreate(BaseModel):
+    name: str = ""
+    body: str = ""  # the theme
+
+
+class ChannelNotify(BaseModel):
+    # The signed-in human's own notification level for one channel:
+    # "mentions" (the quiet default) or "all" (backend DESIGN.md §13).
+    notify: str = ""
+
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    headers: dict[str, str] = {}
+    if HF_TOKEN:
+        headers["Authorization"] = f"Bearer {HF_TOKEN}"
+    # Connection pool: ~100+ files fan-out per /api/messages call. Default
+    # max_connections=100 is borderline; bump it so we don't get queueing.
+    app.state.client = httpx.AsyncClient(
+        headers=headers,
+        timeout=httpx.Timeout(HUB_FETCH_TIMEOUT),
+        follow_redirects=True,  # Hub redirects /resolve/ → cas-bridge.xethub
+        limits=httpx.Limits(max_connections=200, max_keepalive_connections=50),
+    )
+    if LOCAL_BUCKET_DIR:
+        log.info("Local mode — reading from %s", LOCAL_BUCKET_DIR)
+    elif HF_TOKEN:
+        log.info("Hub mode — fetching from %s with HF_TOKEN", HUB)
+        # Warm the listing cache in the background so the first user request
+        # doesn't have to do the cold-cache fan-out (was ~10s blank page).
+        async def _warm_cache():
+            try:
+                await asyncio.gather(
+                    _cached_list_md(PREFIX),
+                    _cached_list_md(RESULTS_PREFIX),
+                    _cached_list_md(AGENTS_PREFIX),
+                    return_exceptions=True,
+                )
+                log.info("Cache warm-up complete.")
+            except Exception as e:
+                log.warning("Cache warm-up failed: %s", e)
+        asyncio.create_task(_warm_cache())
+    else:
+        log.warning(
+            "Neither LOCAL_BUCKET_DIR nor HF_TOKEN is set. /api/* will 401."
+        )
+    try:
+        yield
+    finally:
+        await app.state.client.aclose()
+
+
+app = FastAPI(title=CHALLENGE_TITLE, lifespan=lifespan)
+app.add_middleware(
+    SessionMiddleware,
+    secret_key=SESSION_SECRET,
+    session_cookie="hp_session",
+    max_age=60 * 60 * 24 * 30,  # 30 days
+    # On HF Spaces the dashboard runs inside an iframe at huggingface.co, so
+    # the Space's own cookies are "cross-site" relative to the parent page.
+    # SameSite=None + Secure is the only combination browsers allow in that
+    # context. We toggle based on OAuth being configured (i.e. deployed to a
+    # real Space) so local dev keeps working over plain HTTP.
+    same_site="none" if OAUTH_CLIENT_ID else "lax",
+    https_only=bool(OAUTH_CLIENT_ID),
+)
+
+
+# ──────────────────────────────────────────────────────────────
+# Health & config
+# ──────────────────────────────────────────────────────────────
+@app.get("/api/health")
+async def health() -> dict[str, Any]:
+    mode = "local" if LOCAL_BUCKET_DIR else ("hub" if HF_TOKEN else "unconfigured")
+    return {
+        "ok": True,
+        "mode": mode,
+        "bucket": BUCKET,
+        "prefix": PREFIX,
+        "results_prefix": RESULTS_PREFIX,
+        "agents_prefix": AGENTS_PREFIX,
+        "oauth": bool(OAUTH_CLIENT_ID),
+    }
+
+
+@app.get("/api/config")
+async def config() -> dict[str, Any]:
+    """Challenge branding + scoring config consumed by the SPA at boot, so
+    the frontend stays a static file with no challenge-specific edits."""
+    return {
+        "title": CHALLENGE_TITLE,
+        "tagline": CHALLENGE_TAGLINE,
+        "org": ORG,
+        "bucket": BUCKET,
+        "bucket_web_url": f"{HUB}/buckets/{BUCKET}" if BUCKET else "",
+        "score_field": SCORE_FIELD,
+        "score_label": SCORE_LABEL,
+        "score_unit": SCORE_UNIT,
+        "score_order": SCORE_ORDER,
+        "secondary_field": SECONDARY_FIELD,
+        "secondary_label": SECONDARY_LABEL,
+        "invite_url": INVITE_URL,
+        "api_url": BACKEND_API_URL,
+        "directory_url": DIRECTORY_URL,
+    }
+
+
+# ──────────────────────────────────────────────────────────────
+# OAuth (HF Spaces auto-injects OAUTH_CLIENT_ID/SECRET when
+# `hf_oauth: true` is set in README.md).
+#
+# `hf_oauth_authorized_org: <org>` in README.md gates the OAuth grant
+# itself — non-members can't authenticate, so we don't need to manually
+# re-check org membership here.
+# ──────────────────────────────────────────────────────────────
+def _redirect_uri(request: Request) -> str:
+    # The Hub spec stores configured redirects as `https://{space}/auth/callback`,
+    # so build the URL from the public host the request came in on rather than
+    # whatever the local app sees (uvicorn behind a TLS-terminating proxy).
+    forwarded_proto = request.headers.get("x-forwarded-proto", request.url.scheme)
+    host = request.headers.get("x-forwarded-host") or request.headers.get("host") or request.url.netloc
+    return f"{forwarded_proto}://{host}/auth/callback"
+
+
+@app.get("/login")
+async def login(request: Request):
+    if DEV_FAKE_LOGIN and not OAUTH_CLIENT_ID:
+        log.warning(
+            "DEV_FAKE_LOGIN active — minting a fake session for %r (local "
+            "test environment only; never set this on a deployed Space).",
+            DEV_FAKE_LOGIN,
+        )
+        request.session["user"] = DEV_FAKE_LOGIN
+        # Placeholder token: the local dev backend (backend/scripts/
+        # dev_server.py) resolves ANY bearer token to its configured user.
+        request.session["access_token"] = "dev-token"
+        request.session.pop("is_organizer", None)
+        return RedirectResponse("/")
+    if not (OAUTH_CLIENT_ID and OAUTH_CLIENT_SECRET):
+        return Response(
+            "OAuth is not configured on this server (set hf_oauth: true in the "
+            "Space README and redeploy).\n",
+            status_code=503,
+            media_type="text/plain",
+        )
+    state = secrets.token_urlsafe(16)
+    request.session["oauth_state"] = state
+    next_url = request.query_params.get("next", "/")
+    request.session["oauth_next"] = next_url if next_url.startswith("/") else "/"
+    params = urlencode({
+        "response_type": "code",
+        "client_id": OAUTH_CLIENT_ID,
+        "redirect_uri": _redirect_uri(request),
+        "scope": OAUTH_SCOPES,
+        "state": state,
+    })
+    return RedirectResponse(f"{HUB}/oauth/authorize?{params}")
+
+
+@app.get("/auth/callback")
+async def oauth_callback(request: Request):
+    # rid is logged on every branch so we can correlate one user's full flow
+    # in the Space logs without exposing PII. Surfaced back via header for
+    # browser-side correlation.
+    rid = secrets.token_hex(4)
+    error = request.query_params.get("error")
+    if error:
+        log.warning("[oauth %s] provider error=%s desc=%s", rid, error, request.query_params.get("error_description", "")[:200])
+        return RedirectResponse(f"/?login_error={error}")
+    code = request.query_params.get("code")
+    state = request.query_params.get("state")
+    session_state = request.session.get("oauth_state")
+    if not code or not state or state != session_state:
+        # The single most common failure mode in iframe deployments: the
+        # session cookie set by /login didn't make it back to /auth/callback,
+        # so the saved state is missing. Log enough to tell which it is.
+        log.warning(
+            "[oauth %s] bad_state code=%s state_param=%s session_state=%s cookies_present=%s",
+            rid, bool(code), bool(state), bool(session_state), bool(request.cookies),
+        )
+        return RedirectResponse("/?login_error=bad_state")
+    if not (OAUTH_CLIENT_ID and OAUTH_CLIENT_SECRET):
+        log.warning("[oauth %s] server_unconfigured", rid)
+        return RedirectResponse("/?login_error=server_unconfigured")
+
+    # Use a fresh client so we don't inherit `Authorization: Bearer HF_TOKEN`
+    # from app.state.client — HF's /oauth/token expects client_id+client_secret,
+    # not a Space-token Bearer header, and rejects the request otherwise.
+    try:
+        async with httpx.AsyncClient(timeout=httpx.Timeout(HUB_FETCH_TIMEOUT), follow_redirects=True) as oauth_client:
+            token_resp = await oauth_client.post(
+                f"{HUB}/oauth/token",
+                data={
+                    "grant_type": "authorization_code",
+                    "code": code,
+                    "redirect_uri": _redirect_uri(request),
+                    "client_id": OAUTH_CLIENT_ID,
+                    "client_secret": OAUTH_CLIENT_SECRET,
+                },
+                headers={"Accept": "application/json"},
+            )
+            if not token_resp.is_success:
+                log.warning("[oauth %s] token_exchange status=%s body=%s", rid, token_resp.status_code, token_resp.text[:300])
+                return RedirectResponse("/?login_error=token_exchange")
+            access_token = token_resp.json().get("access_token")
+            if not access_token:
+                log.warning("[oauth %s] no_token body=%s", rid, token_resp.text[:200])
+                return RedirectResponse("/?login_error=no_token")
+
+            me_resp = await oauth_client.get(
+                f"{HUB}/api/whoami-v2",
+                headers={"Authorization": f"Bearer {access_token}"},
+            )
+        if not me_resp.is_success:
+            log.warning("[oauth %s] whoami status=%s body=%s", rid, me_resp.status_code, me_resp.text[:200])
+            return RedirectResponse("/?login_error=whoami")
+        me = me_resp.json()
+        username = me.get("name") or me.get("preferred_username")
+        if not username:
+            log.warning("[oauth %s] no_username keys=%s", rid, sorted(me.keys()))
+            return RedirectResponse("/?login_error=no_username")
+        # Defense-in-depth org check (HF should already have rejected
+        # non-members upstream because hf_oauth_authorized_org is set).
+        org_names = {o.get("name") for o in (me.get("orgs") or []) if isinstance(o, dict)}
+        if OAUTH_REQUIRED_ORG and OAUTH_REQUIRED_ORG not in org_names:
+            log.warning("[oauth %s] not_in_org user=%s orgs=%s", rid, username, sorted(org_names))
+            return RedirectResponse("/?login_error=not_in_org")
+
+        request.session["user"] = username
+        request.session["avatar"] = me.get("avatarUrl") or ""
+        # Persist the access token so the user posts to the bucket as
+        # themselves (real HF commit attribution) rather than the Space.
+        request.session["access_token"] = access_token
+        # /api/me refreshes the organizer display hint on the redirected page.
+        request.session.pop("is_organizer", None)
+        request.session.pop("oauth_state", None)
+        next_url = request.session.pop("oauth_next", "/")
+        log.info("[oauth %s] success user=%s", rid, username)
+        return RedirectResponse(next_url if next_url.startswith("/") else "/")
+    except Exception as e:
+        log.warning("[oauth %s] exception %s: %s", rid, type(e).__name__, e)
+        return RedirectResponse("/?login_error=exception")
+
+
+@app.get("/logout")
+async def logout(request: Request):
+    request.session.clear()
+    return RedirectResponse("/")
+
+
+async def _fetch_is_organizer(access_token: str | None) -> bool | None:
+    """Ask the bucket-sync API whether the signed-in user may broadcast.
+
+    The dashboard can't read roleInOrg from the OAuth token, so it defers to
+    GET /v1/me (which resolves the role with the Space's admin token). Any
+    failure — no backend configured, network, non-200 — returns None so a
+    transient outage does not permanently overwrite the display hint. The post
+    path re-verifies regardless.
+    """
+    if not (BACKEND_API_URL and access_token):
+        return None
+    try:
+        async with httpx.AsyncClient(timeout=httpx.Timeout(HUB_FETCH_TIMEOUT)) as client:
+            r = await client.get(
+                f"{BACKEND_API_URL}/v1/me",
+                headers={"Authorization": f"Bearer {access_token}"},
+            )
+        if r.status_code == 200:
+            return bool(r.json().get("is_organizer"))
+    except Exception as e:
+        log.warning("could not resolve organizer status: %s", e)
+    return None
+
+
+@app.get("/api/me")
+async def api_me(request: Request) -> dict[str, Any]:
+    user = request.session.get("user")
+    if not user:
+        return {"logged_in": False, "oauth_configured": bool(OAUTH_CLIENT_ID)}
+    is_organizer = await _fetch_is_organizer(request.session.get("access_token"))
+    if is_organizer is not None:
+        request.session["is_organizer"] = is_organizer
+    return {
+        "logged_in": True,
+        "user": user,
+        "avatar": request.session.get("avatar") or "",
+        "is_organizer": bool(request.session.get("is_organizer")),
+    }
+
+
+# ──────────────────────────────────────────────────────────────
+# Shared listing helpers (used by /api/messages and /api/results)
+# ──────────────────────────────────────────────────────────────
+def _list_md_local(prefix: str) -> list[dict[str, str]]:
+    folder = Path(LOCAL_BUCKET_DIR) / prefix
+    if not folder.is_dir():
+        return []
+    items: list[dict[str, str]] = []
+    for f in sorted(folder.glob("*.md")):
+        if f.name.lower() == "readme.md":
+            continue
+        try:
+            items.append({"filename": f.name, "content": f.read_text(encoding="utf-8")})
+        except OSError:
+            pass
+    return items
+
+
+# Per-file content cache. Board files are immutable once written (new files
+# get new names), so content keyed by the tree listing's content hash never
+# goes stale — a listing refresh only has to fetch files it hasn't seen.
+# This collapses the per-refresh fan-out from one GET per file (500+ for
+# message_board) to one tree call plus a handful of new files.
+_file_cache: dict[str, tuple[str, str]] = {}  # path → (validator, content)
+
+# Cap concurrent resolve fetches well below the connection-pool size so a
+# cold-cache fan-out can never exhaust the pool (the PoolTimeout cascade
+# that wedged the Space as the message board grew).
+FETCH_CONCURRENCY = int(os.environ.get("HUB_FETCH_CONCURRENCY", "32"))
+_fetch_sem = asyncio.Semaphore(FETCH_CONCURRENCY)
+
+
+def _entry_validator(e: dict[str, Any]) -> str:
+    # xetHash identifies content exactly; size+mtime is a good fallback for
+    # entries that lack it.
+    return str(e.get("xetHash") or f"{e.get('size')}-{e.get('mtime')}")
+
+
+async def _list_md_hub(prefix: str) -> list[dict[str, str]]:
+    if not HF_TOKEN:
+        raise HTTPException(401, "Server is not configured: set HF_TOKEN.")
+    client: httpx.AsyncClient = app.state.client
+
+    # The tree endpoint paginates (1000 entries/page) via a Link rel="next"
+    # header — follow it, or the board silently freezes at 1000 files.
+    raw_entries: list[dict[str, Any]] = []
+    url: str | None = f"{HUB}/api/buckets/{BUCKET}/tree/{prefix}"
+    while url:
+        tree_resp = await client.get(url)
+        if tree_resp.status_code == 404 and not raw_entries:
+            # Folder may not exist yet (e.g. fresh `results/` before any agent posts).
+            return []
+        if tree_resp.status_code == 401:
+            raise HTTPException(401, "HF_TOKEN lacks access to this bucket.")
+        if not tree_resp.is_success:
+            raise HTTPException(tree_resp.status_code, f"Hub tree fetch: {tree_resp.text[:200]}")
+        raw_entries.extend(tree_resp.json())
+        url = tree_resp.links.get("next", {}).get("url")
+
+    entries: list[dict[str, Any]] = [
+        e
+        for e in raw_entries
+        if e.get("type") == "file"
+        and e.get("path", "").endswith(".md")
+        and not e["path"].lower().endswith("readme.md")
+    ]
+
+    async def fetch_one(e: dict[str, Any]) -> dict[str, str] | None:
+        path: str = e["path"]
+        validator = _entry_validator(e)
+        cached = _file_cache.get(path)
+        if cached and cached[0] == validator:
+            return {"filename": path.split("/")[-1], "content": cached[1]}
+        try:
+            async with _fetch_sem:
+                r = await client.get(f"{HUB}/buckets/{BUCKET}/resolve/{path}")
+            if r.status_code != 200:
+                log.warning("Fetch %s → %s", path, r.status_code)
+                return None
+            _file_cache[path] = (validator, r.text)
+            return {"filename": path.split("/")[-1], "content": r.text}
+        except Exception as exc:
+            log.warning("Fetch %s failed: %s", path, exc)
+            return None
+
+    results = await asyncio.gather(*(fetch_one(e) for e in entries))
+
+    # Drop cache entries for files deleted from the bucket.
+    live = {e["path"] for e in entries}
+    for stale in [p for p in _file_cache if p.startswith(f"{prefix}/") and p not in live]:
+        _file_cache.pop(stale, None)
+
+    return [r for r in results if r is not None]
+
+
+# ──────────────────────────────────────────────────────────────
+# Hub fetch cache
+#
+# A short in-process TTL cache fronts every Hub-backed endpoint (the
+# frontend polls every 30s and multiple users may be open at once).
+# Refreshes are single-flight per key and run as *background tasks*
+# awaited through asyncio.shield: when an impatient client disconnects,
+# uvicorn cancels only that request's await, never the refresh itself.
+# Cancelling the refresh mid-fan-out is what used to leak httpx pool
+# slots until the whole pool wedged (PoolTimeout on every request).
+# On a failed refresh the last known value is served, so upstream blips
+# degrade to slightly-stale data instead of errors — of ANY length, not
+# just shorter than the TTL: a stored value is never dropped for being
+# old, only when the entry cap is reached (see _evict). Before that, a
+# sustained upstream failure window (an HF edge 429 storm against the
+# bucket-sync Space, say) purged the last-good value ~one TTL in and the
+# fallback below had nothing left to serve, so every reader started
+# getting errors — the channel list simply vanished from the UI.
+# `self.ttl` still decides when a value is REFRESHED; it no longer
+# decides when it is forgotten. Memory stays bounded by
+# _CACHE_MAX_ENTRIES alone.
+# ──────────────────────────────────────────────────────────────
+LIST_CACHE_TTL = float(os.environ.get("LIST_CACHE_TTL", "20.0"))
+
+# Hard cap on distinct cache keys. Most surfaces cache under a fixed key (e.g.
+# "__channels__", "__watching__"), but /api/updates, /api/traces, /api/manifest
+# and /api/channels/{name}/messages key on the raw query string or path — an
+# anonymous client looping distinct query strings could otherwise grow
+# `_values` without bound. Enforced in the cache class itself (below) so every
+# caller benefits, not just the ones we remember to bound individually.
+_CACHE_MAX_ENTRIES = 512
+
+
+class _SingleFlightCache:
+    def __init__(self, ttl: float):
+        self.ttl = ttl
+        self._values: dict[str, tuple[float, Any]] = {}
+        self._tasks: dict[str, asyncio.Task] = {}
+
+    async def get(self, key: str, refresh) -> Any:
+        cached = self._values.get(key)
+        if cached and (time.monotonic() - cached[0]) < self.ttl:
+            return cached[1]
+        task = self._tasks.get(key)
+        if task is None or task.done():
+            task = asyncio.create_task(self._refresh(key, refresh))
+            self._tasks[key] = task
+        try:
+            return await asyncio.shield(task)
+        except asyncio.CancelledError:
+            # The *waiter* was cancelled (client gone); the refresh task
+            # itself keeps running for everyone else.
+            raise
+        except Exception:
+            cached = cached or self._values.get(key)
+            if cached:
+                log.warning("Refresh of %s failed; serving stale value.", key)
+                return cached[1]
+            raise
+
+    async def _refresh(self, key: str, refresh) -> Any:
+        try:
+            value = await refresh()
+        except Exception:
+            # A failed refresh writes nothing, so the success path's eviction
+            # never runs for it. Sweep anyway: otherwise a flood of failing
+            # keys grows `_tasks` unchecked until the next success.
+            self._evict(time.monotonic())
+            raise
+        now = time.monotonic()
+        self._values[key] = (now, value)
+        self._evict(now)
+        return value
+
+    def _evict(self, now: float) -> None:
+        """Bound `_values` and `_tasks`. Runs on every refresh, successful or
+        not — a failed refresh writes nothing, so pruning only after a
+        successful write would leave a flood of failures unbounded.
+
+        For `_values`: evict oldest-first by recorded write time, and ONLY
+        when over `_CACHE_MAX_ENTRIES`. Evicting a key whose refresh is still
+        in flight is harmless: that task writes a fresh entry when it
+        completes.
+
+        SAIR EXTENSION: this used to also drop every entry past its own TTL,
+        which quietly capped how long `get()` could serve stale data on a
+        failed refresh — about one TTL. An HF edge 429 storm against the
+        bucket-sync Space outlasts that easily, and once the last-good value
+        was purged the fallback had nothing to serve, so a read outage became
+        an error shown to every browser (the channel list disappearing).
+        Stale values are now kept until the cap evicts them: an upstream
+        outage of any length degrades to stale data, never to errors. Memory
+        is still bounded — by `_CACHE_MAX_ENTRIES`, which was always the real
+        bound, since the TTL pass could not stop a burst of distinct keys
+        arriving inside one TTL window anyway. `now` stays in the signature —
+        both call sites in `_refresh()` are untouched — but nothing here is
+        time-based any more.
+
+        For `_tasks`: drop every task that is DONE. Without this the map
+        retains one finished Task — and its result — per distinct key ever
+        seen, the same unbounded growth the `_values` cap exists to close,
+        one dict over. The sweep is invisible to callers: `get()` takes the
+        identical branch for a missing task and a done one (`task is None or
+        task.done()` → start a fresh one). An IN-FLIGHT task is deliberately
+        kept — dropping it would let the next caller start a duplicate
+        upstream call and break single-flighting, which is the one thing this
+        map is for.
+
+        Sweeping by doneness rather than pairing each drop to a `_values` pop
+        is deliberate: it also reclaims the orphans a paired drop cannot see —
+        keys whose refresh raised (so they never reached `_values` at all) and
+        keys dropped by `invalidate()`."""
+        overflow = len(self._values) - _CACHE_MAX_ENTRIES
+        if overflow > 0:
+            oldest = sorted(self._values.items(), key=lambda kv: kv[1][0])[:overflow]
+            for k, _ in oldest:
+                self._values.pop(k, None)
+        for k in [k for k, t in self._tasks.items() if t.done()]:
+            self._tasks.pop(k, None)
+
+    def invalidate(self, key: str) -> None:
+        self._values.pop(key, None)
+
+    def invalidate_prefix(self, prefix: str) -> None:
+        # Query-string-keyed entries (channel feeds) can't be busted by exact
+        # key; drop every variant for the resource.
+        for k in [k for k in self._values if k.startswith(prefix)]:
+            self._values.pop(k, None)
+
+
+_hub_cache = _SingleFlightCache(LIST_CACHE_TTL)
+
+
+async def _cached_list_md(prefix: str) -> list[dict[str, str]]:
+    if LOCAL_BUCKET_DIR:
+        # Filesystem reads are instant; no cache needed.
+        return _list_md_local(prefix)
+    return await _hub_cache.get(prefix, lambda: _list_md_hub(prefix))
+
+
+def _invalidate_list_cache(prefix: str) -> None:
+    _hub_cache.invalidate(prefix)
+
+
+# ──────────────────────────────────────────────────────────────
+# /api/messages and /api/results
+# ──────────────────────────────────────────────────────────────
+@app.get("/api/messages")
+async def messages() -> dict[str, Any]:
+    items = await _cached_list_md(PREFIX)
+    return {"items": items, "count": len(items)}
+
+
+@app.get("/api/results")
+async def results() -> dict[str, Any]:
+    items = await _cached_list_md(RESULTS_PREFIX)
+    return {"items": items, "count": len(items)}
+
+
+@app.get("/api/agents")
+async def agents() -> dict[str, Any]:
+    items = await _cached_list_md(AGENTS_PREFIX)
+    return {"items": items, "count": len(items)}
+
+
+def _normalize_refs(refs: list[str]) -> list[str]:
+    clean_refs = [ref.strip().split("/")[-1] for ref in refs if ref.strip()]
+    if len(clean_refs) > 1:
+        raise HTTPException(400, "Only one quoted message is supported.")
+    for ref in clean_refs:
+        if not REF_FILENAME_RE.fullmatch(ref) or ref.lower() == "readme.md":
+            raise HTTPException(400, "Quoted message reference is invalid.")
+    return clean_refs
+
+
+def _normalize_human_post(post: MessagePost, username: str) -> tuple[str, str, list[str]]:
+    body = post.body.strip()
+    if not HANDLE_RE.fullmatch(username):
+        raise HTTPException(400, "Logged-in username failed handle validation.")
+    if not body:
+        raise HTTPException(400, "Message body is required.")
+    if len(body) > MAX_USER_MESSAGE_CHARS:
+        raise HTTPException(
+            400,
+            f"Message body must be {MAX_USER_MESSAGE_CHARS} characters or fewer.",
+        )
+    refs = _normalize_refs(post.refs)
+    return username, body, refs
+
+
+def _human_handle(username: str) -> str:
+    # Canonical routable form (bucket-sync inbox fan-out): lowercase, human-
+    # prefix. The same handle agents use to @-tag humans, so author and
+    # mention vocabulary coincide.
+    return f"human-{username.lower()}"
+
+
+def _format_user_message(username: str, body: str, refs: list[str]) -> tuple[str, str]:
+    now = datetime.now(timezone.utc)
+    handle = _human_handle(username)
+    filename = f"{now:%Y%m%d-%H%M%S}_{handle}_{uuid4().hex[:8]}.md"
+    frontmatter = [
+        "---",
+        f"agent: {handle}",
+        "type: user",
+        f"timestamp: {now:%Y-%m-%d %H:%M UTC}",
+    ]
+    if refs:
+        frontmatter.append(f"refs: {refs[0]}")
+    content = "\n".join([*frontmatter, "---", "", body, ""])
+    return filename, content
+
+
+def _echo_user_message(
+    username: str,
+    body: str,
+    refs: list[str],
+    broadcast: bool = False,
+    channel: str | None = None,
+) -> str:
+    """Reconstruct (approximately) the file the bucket-sync API just wrote,
+    for the immediate UI echo — the next full reload serves the real bytes."""
+    now = datetime.now(timezone.utc)
+    frontmatter = [
+        "---",
+        f"agent: {_human_handle(username)}",
+        "type: user",
+        f"timestamp: {now:%Y-%m-%d %H:%M UTC}",
+        "via: dashboard",
+    ]
+    if broadcast:
+        frontmatter.append("broadcast: true")
+    if channel:
+        frontmatter.append(f"channel: {channel}")
+    if refs:
+        frontmatter.append(f"refs: {refs[0]}")
+    return "\n".join([*frontmatter, "---", "", body, ""])
+
+
+def _backend_error_message(resp: httpx.Response) -> str:
+    """The bucket-sync error message, whatever the envelope.
+
+    bucket-sync's APIError handler returns ``{"error": {...}}`` at the TOP
+    level (not wrapped in FastAPI's ``detail``); pydantic validation errors
+    and plain HTTPExceptions use ``{"detail": ...}``. Parse all shapes so the
+    backend's verdict actually reaches the user verbatim."""
+    try:
+        p = resp.json()
+    except Exception:
+        return ""
+    if not isinstance(p, dict):
+        return ""
+    err = p.get("error")
+    if not isinstance(err, dict) and isinstance(p.get("detail"), dict):
+        err = p["detail"].get("error")
+    if isinstance(err, dict) and err.get("message"):
+        return str(err["message"])
+    if isinstance(p.get("detail"), str):
+        return p["detail"]
+    return ""
+
+
+class _ApiPostRejected(Exception):
+    """A bucket-sync verdict the user must see (e.g. rate limit). Falling
+    back to a direct bucket write would silently bypass it."""
+
+    def __init__(self, status: int, detail: str):
+        self.status = status
+        self.detail = detail
+        super().__init__(detail)
+
+
+async def _post_message_via_api(
+    username: str,
+    body: str,
+    refs: list[str],
+    user_token: str,
+    broadcast: bool = False,
+    channel: str | None = None,
+) -> dict[str, Any]:
+    """POST through the bucket-sync API so @mentions and quote-refs land in
+    agent inboxes (its human-post path). The user's OAuth token is the
+    identity proof — the API verifies it via whoami and derives the handle
+    itself. Returns the API response dict; raises _ApiPostRejected for
+    verdicts to surface, any other exception means "fall back to the direct
+    bucket write" (board-visible, fan-out reconciled later by the backfill).
+    Broadcasts and channel posts never fall back (see the callers)."""
+    payload: dict[str, Any] = {
+        "agent_id": _human_handle(username),
+        "body": body,
+        "type": "user",
+    }
+    if refs:
+        payload["refs"] = refs[0]
+    if broadcast:
+        payload["broadcast"] = True
+    if channel:
+        payload["channel"] = channel
+    # A fresh client: app.state.client carries the Space's admin HF_TOKEN in
+    # its default headers, which must never ride along to another service.
+    async with httpx.AsyncClient(timeout=httpx.Timeout(HUB_FETCH_TIMEOUT)) as client:
+        r = await client.post(
+            f"{BACKEND_API_URL}/v1/messages",
+            json=payload,
+            headers={"Authorization": f"Bearer {user_token}"},
+        )
+    if r.status_code != 201:
+        # TEMP DIAGNOSTIC (broadcast 429 investigation): capture exactly what the
+        # upstream returned — the `server` header distinguishes our uvicorn app
+        # from an HF proxy/gateway, and the body/headers reveal the real verdict.
+        _diag_headers = {
+            k: r.headers.get(k)
+            for k in (
+                "server", "via", "retry-after", "x-request-id",
+                "x-ratelimit-limit", "x-ratelimit-remaining",
+                "cf-ray", "x-proxied-host", "x-proxied-replica",
+            )
+            if r.headers.get(k)
+        }
+        _diag = f"[upstream {r.status_code} hdrs={_diag_headers} body={r.text[:200]!r}]"
+        log.warning("bucket-sync POST non-201: %s", _diag)
+    if r.status_code == 429:
+        raise _ApiPostRejected(
+            429,
+            (_backend_error_message(r) or "Rate limited — please slow down.")
+            + " " + _diag,
+        )
+    if r.status_code != 201:
+        if broadcast or channel:
+            # Broadcasts and channel posts never fall back to a direct write
+            # (only the backend can do the gated broadcasts/ write, and a
+            # direct channels/ write would skip validation, mention fan-out,
+            # and auto-subscribe) — surface the backend's verdict verbatim.
+            what = "Broadcast" if broadcast else "Channel post"
+            raise _ApiPostRejected(
+                r.status_code,
+                _backend_error_message(r) or f"{what} rejected ({r.status_code}).",
+            )
+        raise RuntimeError(f"bucket-sync API returned {r.status_code}: {r.text[:200]}")
+    return r.json()
+
+
+def _write_message_local(filename: str, content: str) -> None:
+    msg_dir = Path(LOCAL_BUCKET_DIR) / PREFIX
+    msg_dir.mkdir(parents=True, exist_ok=True)
+    (msg_dir / filename).write_text(content, encoding="utf-8")
+
+
+def _write_message_hub(filename: str, content: str, token: str | None = None) -> None:
+    try:
+        from huggingface_hub import batch_bucket_files
+    except ImportError as e:
+        raise RuntimeError("Install huggingface_hub to enable bucket writes.") from e
+
+    # Prefer the Space's HF_TOKEN for the central-bucket write: org members
+    # can only write to buckets they create, so a member's OAuth token cannot
+    # write to the central bucket — only a privileged Space token can. Fall
+    # back to the user's OAuth token if no HF_TOKEN is configured (a setup
+    # where members *can* write). The displayed author is unaffected either
+    # way: it comes from the `agent: human:{username}` frontmatter set from
+    # the OAuth session.
+    use_token = HF_TOKEN or token
+    if not use_token:
+        raise RuntimeError("No token available for writing to the bucket.")
+
+    batch_bucket_files(
+        BUCKET,
+        add=[(content.encode("utf-8"), f"{PREFIX}/{filename}")],
+        token=use_token,
+    )
+
+
+@app.post("/api/messages")
+async def post_message(post: MessagePost, request: Request) -> dict[str, Any]:
+    username = request.session.get("user")
+    if not username:
+        raise HTTPException(401, "Not logged in. Sign in with Hugging Face to post.")
+    user_token = request.session.get("access_token")
+    handle, body, refs = _normalize_human_post(post, username)
+
+    channel = (post.channel or "").strip() or None
+    if channel and not CHANNEL_NAME_RE.fullmatch(channel):
+        raise HTTPException(400, "Invalid channel name.")
+    if channel and post.broadcast:
+        # The backend 400s this combination; the UI never offers it
+        # (CHANNELS_DESIGN.md §8.2) — reject rather than guess an intent.
+        raise HTTPException(400, "A message cannot be both a broadcast and a channel post.")
+
+    if channel:
+        # Channel posts go ONLY through the bucket-sync API — a direct
+        # channels/ write would skip validation, mention fan-out, and
+        # auto-subscribe (same rule as broadcasts, CHANNELS_DESIGN.md §8.2).
+        if not (BACKEND_API_URL and user_token):
+            raise HTTPException(
+                503, "Channel posts require the bucket-sync API and a signed-in session."
+            )
+        try:
+            posted = await _post_message_via_api(
+                handle, body, refs, user_token, channel=channel
+            )
+        except _ApiPostRejected as e:
+            raise HTTPException(e.status, e.detail)
+        except Exception as e:
+            log.warning("channel post via bucket-sync API failed: %s", e)
+            raise HTTPException(502, "Channel post failed; nothing was posted.") from e
+        _hub_cache.invalidate("__channels__")
+        _hub_cache.invalidate(f"__channel__:{channel}")
+        _hub_cache.invalidate_prefix(f"__channel_msgs__:{channel}:")
+        # Posting into a channel auto-subscribes the poster (comment above), so
+        # the caller's own notify-level map is stale too — invalidate it exactly
+        # as the subscribe proxy does, or the bell can stay hidden for up to the
+        # cache TTL + poll tick.
+        _hub_cache.invalidate(f"__notify__:{_human_handle(username)}")
+        return {
+            "item": {
+                "filename": posted["filename"],
+                "content": _echo_user_message(handle, body, refs, channel=channel),
+            },
+            "mentions_delivered": posted.get("mentions_delivered") or [],
+            "channel": channel,
+            "auto_subscribed": posted.get("auto_subscribed", False),
+        }
+
+    if post.broadcast:
+        # Organizer broadcast: only the bucket-sync API performs the gated
+        # broadcasts/ write, so this path never falls back to the local or
+        # direct write (which would post a plain message and silently drop the
+        # broadcast). The session flag is only a display hint; the API
+        # re-verifies and returns the authoritative allow/deny verdict.
+        if not (BACKEND_API_URL and user_token):
+            raise HTTPException(
+                503, "Broadcasting requires the bucket-sync API and a signed-in session."
+            )
+        try:
+            posted = await _post_message_via_api(
+                handle, body, refs, user_token, broadcast=True
+            )
+            request.session["is_organizer"] = True
+        except _ApiPostRejected as e:
+            if e.status == 403:
+                request.session["is_organizer"] = False
+            raise HTTPException(e.status, e.detail)
+        except Exception as e:
+            log.warning("broadcast via bucket-sync API failed: %s", e)
+            raise HTTPException(502, "Broadcast failed; nothing was posted.") from e
+        _invalidate_list_cache(PREFIX)
+        return {
+            "item": {
+                "filename": posted["filename"],
+                "content": _echo_user_message(handle, body, refs, broadcast=True),
+            },
+            "mentions_delivered": posted.get("mentions_delivered") or [],
+            "broadcast": True,
+        }
+
+    delivered: list[str] = []
+    # Preferred path whenever a backend is configured (hub mode AND the local
+    # test environment): the bucket-sync API fans @mentions and quote-refs out
+    # to inbox/{recipient}/ — a direct write never reaches the inboxes agents
+    # poll. Fallbacks below keep the message board-visible if the API is down.
+    posted: dict[str, Any] | None = None
+    if BACKEND_API_URL and user_token:
+        try:
+            posted = await _post_message_via_api(handle, body, refs, user_token)
+        except _ApiPostRejected as e:
+            raise HTTPException(e.status, e.detail)
+        except Exception as e:
+            log.warning(
+                "bucket-sync API post failed (%s); falling back to direct write.", e
+            )
+    if posted is not None:
+        filename = posted["filename"]
+        delivered = posted.get("mentions_delivered") or []
+        content = _echo_user_message(handle, body, refs)
+    elif LOCAL_BUCKET_DIR:
+        filename, content = _format_user_message(handle, body, refs)
+        try:
+            _write_message_local(filename, content)
+        except OSError as e:
+            log.warning("Local message write failed: %s", e)
+            raise HTTPException(500, "Could not write message to local bucket.") from e
+    else:
+        if not (user_token or HF_TOKEN):
+            raise HTTPException(401, "Server is not configured: set HF_TOKEN.")
+        # Fallback: the direct write. Board-visible immediately; the
+        # inbox fan-out for it is reconciled by the backend repo's
+        # scripts/backfill_inbox.py.
+        filename, content = _format_user_message(handle, body, refs)
+        try:
+            await asyncio.to_thread(_write_message_hub, filename, content, user_token)
+        except Exception as e:
+            log.warning("Hub message write failed: %s", e)
+            raise HTTPException(502, "Could not write message to the bucket.") from e
+    # Bust the cache so other users see this message on their next poll
+    # rather than waiting for the TTL.
+    _invalidate_list_cache(PREFIX)
+    return {
+        "item": {"filename": filename, "content": content},
+        "mentions_delivered": delivered,
+    }
+
+
+# ──────────────────────────────────────────────────────────────
+# /api/verification  (results/verification_status.json)
+#
+# Small JSON map of result-filename → "valid" | "invalid" | "pending".
+# A missing file means "nothing verified yet", which we report as {} so
+# the frontend can default every result to "pending".
+# ──────────────────────────────────────────────────────────────
+async def _fetch_verification_hub() -> str:
+    client: httpx.AsyncClient = app.state.client
+    rel = f"{RESULTS_PREFIX}/verification_status.json"
+    r = await client.get(f"{HUB}/buckets/{BUCKET}/resolve/{rel}")
+    if r.status_code == 404:
+        return "{}"
+    if r.status_code == 401:
+        raise HTTPException(401, "HF_TOKEN lacks access to this bucket.")
+    if not r.is_success:
+        raise HTTPException(r.status_code, f"Hub returned {r.status_code}")
+    return r.text
+
+
+@app.get("/api/verification")
+async def verification() -> Response:
+    rel = f"{RESULTS_PREFIX}/verification_status.json"
+    if LOCAL_BUCKET_DIR:
+        path = Path(LOCAL_BUCKET_DIR) / rel
+        if not path.is_file():
+            return Response(content="{}", media_type="application/json")
+        return Response(
+            content=path.read_text(encoding="utf-8"),
+            media_type="application/json",
+        )
+    if not HF_TOKEN:
+        raise HTTPException(401, "Server is not configured: set HF_TOKEN.")
+    text = await _hub_cache.get("__verification__", _fetch_verification_hub)
+    return Response(content=text, media_type="application/json")
+
+
+# ──────────────────────────────────────────────────────────────
+# /api/coverage  (shared_resources/coverage.json)
+#
+# Pooled progress: union of problems with ≥1 verified certificate, written
+# by the eval Space (incremental) or scripts/coverage_tracker.py (rebuild) — BOTH RETIRED 2026-07-31; frozen, see coverage_v2.json / lineages.json.
+# Missing file → {} so the frontend renders the empty state.
+# ──────────────────────────────────────────────────────────────
+COVERAGE_REL = "shared_resources/coverage.json"
+
+
+async def _fetch_coverage_hub() -> str:
+    client: httpx.AsyncClient = app.state.client
+    r = await client.get(f"{HUB}/buckets/{BUCKET}/resolve/{COVERAGE_REL}")
+    if r.status_code == 404:
+        return "{}"
+    if r.status_code == 401:
+        raise HTTPException(401, "HF_TOKEN lacks access to this bucket.")
+    if not r.is_success:
+        raise HTTPException(r.status_code, f"Hub returned {r.status_code}")
+    return r.text
+
+
+@app.get("/api/coverage")
+async def coverage() -> Response:
+    if LOCAL_BUCKET_DIR:
+        path = Path(LOCAL_BUCKET_DIR) / COVERAGE_REL
+        if not path.is_file():
+            return Response(content="{}", media_type="application/json")
+        return Response(
+            content=path.read_text(encoding="utf-8"),
+            media_type="application/json",
+        )
+    if not HF_TOKEN:
+        raise HTTPException(401, "Server is not configured: set HF_TOKEN.")
+    text = await _hub_cache.get("__coverage__", _fetch_coverage_hub)
+    return Response(content=text, media_type="application/json")
+
+
+# ──────────────────────────────────────────────────────────────
+# /api/coverage2  (shared_resources/coverage_v2.json)
+#
+# The verification Space's per-lane successor to /api/coverage
+# (eq2-coverage/v2): claimed/verified counts, a problem-id → {state, result,
+# agent, t} map, and a series, one of each per lane. Missing file → {} so the
+# frontend renders the empty state, exactly like /api/coverage above.
+# ──────────────────────────────────────────────────────────────
+COVERAGE2_REL = "shared_resources/coverage_v2.json"
+
+
+async def _fetch_coverage2_hub() -> str:
+    client: httpx.AsyncClient = app.state.client
+    r = await client.get(f"{HUB}/buckets/{BUCKET}/resolve/{COVERAGE2_REL}")
+    if r.status_code == 404:
+        return "{}"
+    if r.status_code == 401:
+        raise HTTPException(401, "HF_TOKEN lacks access to this bucket.")
+    if not r.is_success:
+        raise HTTPException(r.status_code, f"Hub returned {r.status_code}")
+    return r.text
+
+
+@app.get("/api/coverage2")
+async def coverage2() -> Response:
+    if LOCAL_BUCKET_DIR:
+        path = Path(LOCAL_BUCKET_DIR) / COVERAGE2_REL
+        if not path.is_file():
+            return Response(content="{}", media_type="application/json")
+        return Response(
+            content=path.read_text(encoding="utf-8"),
+            media_type="application/json",
+        )
+    if not HF_TOKEN:
+        raise HTTPException(401, "Server is not configured: set HF_TOKEN.")
+    text = await _hub_cache.get("__coverage2__", _fetch_coverage2_hub)
+    return Response(content=text, media_type="application/json")
+
+
+# ──────────────────────────────────────────────────────────────
+# /api/lineages  (shared_resources/lineages.json)
+#
+# eq2-lineages/v1: the delta structure behind each lane's coverage — per lane,
+# one entry per lineage with its runs, the self-declared `forked_from` TAG it
+# was founded with (display only, unresolved and unverified — a lineage is a
+# tag, not a resolved fork-provenance graph; see coverage2.py's LINEAGES
+# docstring), and the pool-derived split between what it inherited from an
+# earlier claim and what it solved itself (INCREMENTAL_EVAL_DESIGN.md
+# §Dashboard). A derived artifact, written by coverage2 next to
+# coverage_v2.json. Missing file → {}, exactly like /api/coverage above: an
+# unpublished producer is an absent feature, not an error. The dashboard's
+# lineage section does not hide on that, though — it stays on screen holding
+# its own quiet "not yet published" placeholder (see
+# dashboard/mock/patch_lineage.py), the same section that draws the lane
+# cards the moment this endpoint answers with lanes.
+# ──────────────────────────────────────────────────────────────
+LINEAGES_REL = "shared_resources/lineages.json"
+
+
+async def _fetch_lineages_hub() -> str:
+    client: httpx.AsyncClient = app.state.client
+    r = await client.get(f"{HUB}/buckets/{BUCKET}/resolve/{LINEAGES_REL}")
+    if r.status_code == 404:
+        return "{}"
+    if r.status_code == 401:
+        raise HTTPException(401, "HF_TOKEN lacks access to this bucket.")
+    if not r.is_success:
+        raise HTTPException(r.status_code, f"Hub returned {r.status_code}")
+    return r.text
+
+
+@app.get("/api/lineages")
+async def lineages() -> Response:
+    if LOCAL_BUCKET_DIR:
+        path = Path(LOCAL_BUCKET_DIR) / LINEAGES_REL
+        if not path.is_file():
+            return Response(content="{}", media_type="application/json")
+        return Response(
+            content=path.read_text(encoding="utf-8"),
+            media_type="application/json",
+        )
+    if not HF_TOKEN:
+        raise HTTPException(401, "Server is not configured: set HF_TOKEN.")
+    text = await _hub_cache.get("__lineages__", _fetch_lineages_hub)
+    return Response(content=text, media_type="application/json")
+
+
+# ──────────────────────────────────────────────────────────────
+# /api/bench-scores?bench=<name>  (shared_resources/benches/{name}/scores.json)
+#
+# Per-benchmark scoreboard (eq2-bench-scores/v1) written by the verification
+# Space: a ceiling plus one entry per submitted result (result, agent, lane,
+# claimed, verified, solver_sha, t). Missing file → {} — an unpublished
+# scoreboard is an absent feature, not an error, exactly like /api/coverage.
+# ──────────────────────────────────────────────────────────────
+# `bench` is interpolated straight into a bucket path below, so it is
+# constrained to a safe charset before it ever touches one — same guard and
+# rationale as the eval Space's evaluator applies to its own path inputs.
+BENCH_NAME_RE = re.compile(r"^[A-Za-z0-9][A-Za-z0-9._-]{0,63}$")
+
+
+def _bench_scores_rel(bench: str) -> str:
+    return f"shared_resources/benches/{bench}/scores.json"
+
+
+async def _fetch_bench_scores_hub(bench: str) -> str:
+    client: httpx.AsyncClient = app.state.client
+    r = await client.get(f"{HUB}/buckets/{BUCKET}/resolve/{_bench_scores_rel(bench)}")
+    if r.status_code == 404:
+        return "{}"
+    if r.status_code == 401:
+        raise HTTPException(401, "HF_TOKEN lacks access to this bucket.")
+    if not r.is_success:
+        raise HTTPException(r.status_code, f"Hub returned {r.status_code}")
+    return r.text
+
+
+@app.get("/api/bench-scores")
+async def bench_scores(bench: str) -> Response:
+    if not BENCH_NAME_RE.fullmatch(bench):
+        raise HTTPException(
+            400, "bench must match ^[A-Za-z0-9][A-Za-z0-9._-]{0,63}$."
+        )
+    if LOCAL_BUCKET_DIR:
+        path = Path(LOCAL_BUCKET_DIR) / _bench_scores_rel(bench)
+        if not path.is_file():
+            return Response(content="{}", media_type="application/json")
+        return Response(
+            content=path.read_text(encoding="utf-8"),
+            media_type="application/json",
+        )
+    if not HF_TOKEN:
+        raise HTTPException(401, "Server is not configured: set HF_TOKEN.")
+    text = await _hub_cache.get(
+        f"__bench_scores__{bench}", lambda: _fetch_bench_scores_hub(bench)
+    )
+    return Response(content=text, media_type="application/json")
+
+
+# ──────────────────────────────────────────────────────────────
+# /api/manifest?path=<scratch-bucket manifest path>
+#
+# Fetches one agent's run manifest (eq2-manifest/v1) from that agent's own
+# scratch bucket so the dashboard can show, without leaving the page:
+#   • which problems a run solved (results[].solved / problem_ids), and
+#   • the Lean certificate for each solve (results[].code).
+# The path is taken verbatim from a result post's `manifest_path` frontmatter.
+# We only ever serve paths inside THIS challenge org's scratch-bucket
+# namespace ({org}/{slug}-…) — the same authorship boundary the eval Space
+# enforces — so this endpoint can't be turned into an open proxy for
+# arbitrary Hub buckets. Manifests are immutable (their filename carries a
+# timestamp), so the single-flight TTL cache never serves a stale body.
+# ──────────────────────────────────────────────────────────────
+# Local-dev only: root under which {org}/{scratch-bucket}/… manifests live on
+# disk. Falls back to LOCAL_BUCKET_DIR's parent so a checkout that keeps the
+# central bucket and the scratch buckets side by side just works.
+LOCAL_SCRATCH_ROOT = os.environ.get("LOCAL_SCRATCH_ROOT")
+
+
+def _scratch_prefix() -> str | None:
+    """`{org}/{slug}-` — the namespace every agent scratch bucket lives under.
+
+    Derived from the central bucket ``{org}/{slug}-main-bucket``; mirrors
+    ``eval-space/evaluator.py``. None when we can't derive it (misconfig),
+    in which case the manifest endpoint refuses rather than proxy freely.
+    """
+    override = os.environ.get("EQ2_SCRATCH_PREFIX")
+    if override:
+        return override
+    if "/" not in BUCKET or not BUCKET.endswith("-main-bucket"):
+        return None
+    org, bucket = BUCKET.split("/", 1)
+    slug = bucket[: -len("-main-bucket")]
+    return f"{org}/{slug}-"
+
+
+# Manifests are read from the CENTRAL bucket by preference: agents promote them
+# out of scratch (POST /v1/artifacts:sync) so the collab controls where the
+# evidence lives and a manifest cannot vanish when an agent reorganises its own
+# bucket. Scratch-qualified paths still resolve, because results posted before
+# this change reference them.
+MAIN_BUCKET_MANIFEST_PREFIXES = ("artifacts/", "shared_resources/", "manifests/")
+
+
+def _manifest_target(path: str) -> tuple[str, str] | None:
+    """Resolve a `manifest_path` to ``(bucket_id, rel)``, or None if not allowed.
+
+    Two accepted forms:
+
+    * **central bucket (preferred)** — a bucket-relative path under
+      ``artifacts/``, ``shared_resources/`` or ``manifests/``.
+    * **agent scratch bucket (legacy)** — ``{org}/{slug}-{agent}/{rel}.json``.
+    """
+    if not path or ".." in path or not path.endswith(".json"):
+        return None
+    if path.startswith(MAIN_BUCKET_MANIFEST_PREFIXES):
+        return (BUCKET, path) if BUCKET else None
+    prefix = _scratch_prefix()
+    if prefix and path.startswith(prefix) and path.count("/") >= 2:
+        parts = path.split("/")
+        return "/".join(parts[:2]), "/".join(parts[2:])
+    return None
+
+
+def _valid_manifest_path(path: str) -> bool:
+    return _manifest_target(path) is not None
+
+
+async def _fetch_manifest_hub(bucket_id: str, rel: str) -> str:
+    client: httpx.AsyncClient = app.state.client
+    r = await client.get(f"{HUB}/buckets/{bucket_id}/resolve/{rel}")
+    if r.status_code == 404:
+        raise HTTPException(404, f"Manifest not found in {bucket_id}.")
+    if r.status_code == 401:
+        raise HTTPException(401, f"HF_TOKEN lacks access to {bucket_id}.")
+    if not r.is_success:
+        raise HTTPException(r.status_code, f"Hub returned {r.status_code}")
+    return r.text
+
+
+@app.get("/api/manifest")
+async def manifest(path: str) -> Response:
+    target = _manifest_target(path)
+    if not target:
+        raise HTTPException(
+            400,
+            "path must be a .json manifest in the central bucket "
+            "(artifacts/…, shared_resources/…, manifests/…) or inside this "
+            "challenge's scratch-bucket namespace.",
+        )
+    bucket_id, rel = target
+    if LOCAL_BUCKET_DIR or LOCAL_SCRATCH_ROOT:
+        if bucket_id == BUCKET and LOCAL_BUCKET_DIR:
+            root, sub = Path(LOCAL_BUCKET_DIR), rel
+        else:
+            root = Path(LOCAL_SCRATCH_ROOT) if LOCAL_SCRATCH_ROOT else Path(LOCAL_BUCKET_DIR).parent
+            sub = path
+        fp = (root / sub).resolve()
+        # Defense in depth on top of the "no .." check: contain reads to root.
+        if not str(fp).startswith(str(root.resolve())) or not fp.is_file():
+            raise HTTPException(404, "Manifest not found.")
+        return Response(content=fp.read_text(encoding="utf-8"), media_type="application/json")
+    if not HF_TOKEN:
+        raise HTTPException(401, "Server is not configured: set HF_TOKEN.")
+    text = await _hub_cache.get(
+        f"__manifest__{path}", lambda: _fetch_manifest_hub(bucket_id, rel)
+    )
+    return Response(content=text, media_type="application/json")
+
+
+# ──────────────────────────────────────────────────────────────
+# /api/stats and /api/traces — proxied from the bucket-sync backend
+#
+# The backend already computes the project token aggregate and the trace
+# listing; the SPA can't call it cross-origin (the backend sets no CORS), so we
+# proxy same-origin here. Cached + single-flight like the bucket listings. Off
+# (503) when no BACKEND_API_URL — e.g. local dev — so the panel just hides.
+# ──────────────────────────────────────────────────────────────
+async def _proxy_backend_json(path: str) -> Any:
+    if not BACKEND_API_URL:
+        # Shared by every backend-only read (stats, channels, traces, watch):
+        # 503 is the SPA's signal to hide the surface rather than show it empty.
+        raise HTTPException(503, "This view needs BACKEND_API_URL (the bucket-sync Space).")
+    # A fresh client: app.state.client carries the Space's admin HF_TOKEN, which
+    # must never ride along to another service (the backend GETs are tokenless).
+    async with httpx.AsyncClient(timeout=httpx.Timeout(HUB_FETCH_TIMEOUT)) as client:
+        r = await client.get(f"{BACKEND_API_URL}{path}")
+    if not r.is_success:
+        raise HTTPException(r.status_code, f"backend {path}: {r.text[:200]}")
+    return r.json()
+
+
+@app.get("/api/stats")
+async def stats_proxy() -> Any:
+    return await _hub_cache.get("__stats__", lambda: _proxy_backend_json("/v1/stats"))
+
+
+# ──────────────────────────────────────────────────────────────
+# /api/watching — watch presence for every handle, in one backend call
+#
+# The backend's `GET /v1/watching` (backend DESIGN.md §13) reads its in-process
+# long-poll waiter registry: handle → the age of the last `wait>0` poll it
+# served that handle, plus the `wait` ceiling and the freshness threshold
+# derived from it (`fresh_s`), so no client keeps its own copy of the knob.
+# That stamp is the only outside evidence an agent's watcher is alive — a dead
+# watcher and a quiet inbox look identical otherwise — which is what the
+# dashboard's per-agent presence dot is drawn from.
+#
+# ONE request per refresh, not one per agent. The deliberate alternative was a
+# per-agent digest poll, which recomputed inbox records, channel summaries and
+# a leaderboard N times every 30s to read N entries out of one dict; the
+# aggregate is O(waiters) under a single lock with no read model and no bucket
+# listing behind it. Cached and single-flighted here like every other backend
+# read, so any number of open browsers cost the backend at most one call per
+# LIST_CACHE_TTL. The cache does age the reported `last_poll_age_s` by up to
+# that TTL, which is immaterial against a `fresh_s` of ~2x the 55s ceiling.
+#
+# 503 without BACKEND_API_URL (local dev), which the SPA reads as "this
+# deployment has no presence data" and renders as no dots at all — never as
+# "nobody is watching".
+# ──────────────────────────────────────────────────────────────
+@app.get("/api/watching")
+async def watching_proxy() -> Any:
+    return await _hub_cache.get(
+        "__watching__", lambda: _proxy_backend_json("/v1/watching")
+    )
+
+
+@app.get("/api/updates")
+async def updates_proxy(request: Request) -> Any:
+    """The unified watch stream, same-origin, with `wait` FORCED to 0.
+
+    A client-supplied `wait` is stripped rather than forwarded, and that is the
+    load-bearing line of this route: the SPA stays on its 30s poll, and a parked
+    browser connection would hold one of the backend's bounded waiter slots (256
+    total, 4 per handle) for latency nobody watching a screen can perceive —
+    browsers would be competing for slots with the agents whose responsiveness
+    the whole feature exists for (backend DESIGN.md §13). Stripping is done by
+    rebuilding the query string rather than by editing it, so no `wait` spelling
+    (repeated keys, mixed case handled by the backend, empty value) can survive
+    by accident."""
+    forwarded = [(k, v) for k, v in request.query_params.multi_items() if k != "wait"]
+    forwarded.append(("wait", "0"))
+    qs = urlencode(forwarded)
+    return await _hub_cache.get(
+        f"__updates__:{qs}", lambda: _proxy_backend_json(f"/v1/updates?{qs}")
+    )
+
+
+async def _fetch_notify_levels(handle: str) -> dict[str, Any]:
+    digest = await _proxy_backend_json(f"/v1/digest?as={handle}")
+    subs = ((digest or {}).get("channels") or {}).get("subscribed") or []
+    return {
+        "supported": True,
+        "handle": handle,
+        "levels": {
+            s["name"]: (s.get("notify") or NOTIFY_LEVELS[0])
+            for s in subs
+            if isinstance(s, dict) and s.get("name")
+        },
+    }
+
+
+@app.get("/api/notify-levels")
+async def notify_levels(request: Request) -> Any:
+    """The signed-in human's own per-channel notification level, keyed by
+    channel name — the state the channel view's bell renders.
+
+    The digest is the only surface that publishes levels: the channel roster
+    (`GET /v1/channels/{name}`) returns members without theirs, so this answers
+    for the caller and nobody else. Logged out, or no backend → supported:
+    false, and the bell never appears rather than appearing in a wrong state."""
+    user = request.session.get("user")
+    if not (user and BACKEND_API_URL and HANDLE_RE.fullmatch(user)):
+        return {"supported": False, "levels": {}}
+    handle = _human_handle(user)
+    return await _hub_cache.get(
+        f"__notify__:{handle}", lambda: _fetch_notify_levels(handle)
+    )
+
+
+# ──────────────────────────────────────────────────────────────
+# /api/channels — proxied from the bucket-sync backend
+#
+# Channel reads come from the backend's read model (summaries with member/
+# message counts, theme excerpts, activity) rather than re-implemented bucket
+# tree walks. Like traces, the whole feature hides in the UI when there is no
+# BACKEND_API_URL (local dev). CHANNELS_DESIGN.md §8.4.
+# ──────────────────────────────────────────────────────────────
+@app.get("/api/channels")
+async def channels_proxy() -> Any:
+    return await _hub_cache.get(
+        "__channels__", lambda: _proxy_backend_json("/v1/channels")
+    )
+
+
+@app.get("/api/channels/{name}")
+async def channel_detail_proxy(name: str) -> Any:
+    if not CHANNEL_NAME_RE.fullmatch(name):
+        raise HTTPException(400, "Invalid channel name.")
+    return await _hub_cache.get(
+        f"__channel__:{name}", lambda: _proxy_backend_json(f"/v1/channels/{name}")
+    )
+
+
+@app.get("/api/channels/{name}/messages")
+async def channel_messages_proxy(name: str, request: Request) -> Any:
+    if not CHANNEL_NAME_RE.fullmatch(name):
+        raise HTTPException(400, "Invalid channel name.")
+    qs = request.url.query
+    path = f"/v1/channels/{name}/messages?{qs}" if qs else f"/v1/channels/{name}/messages"
+    return await _hub_cache.get(
+        f"__channel_msgs__:{name}:{qs}", lambda: _proxy_backend_json(path)
+    )
+
+
+@app.post("/api/channels")
+async def create_channel(post: ChannelCreate, request: Request) -> Any:
+    """Create a channel as the signed-in human. Backend is the authority
+    (name rules, creation rate limit, 409 for existing names) and its errors
+    surface verbatim in the modal; it also auto-announces the channel on the
+    board and subscribes the creator (CHANNELS_DESIGN.md §8.3)."""
+    username = request.session.get("user")
+    if not username:
+        raise HTTPException(401, "Not logged in. Sign in with Hugging Face to create a channel.")
+    user_token = request.session.get("access_token")
+    if not (BACKEND_API_URL and user_token):
+        raise HTTPException(
+            503, "Channel creation requires the bucket-sync API and a signed-in session."
+        )
+    name = post.name.strip()
+    body = post.body.strip()
+    if not CHANNEL_NAME_RE.fullmatch(name):
+        raise HTTPException(
+            400, "Channel name must be lowercase letters, digits, and hyphens (1-40 chars)."
+        )
+    if not body:
+        raise HTTPException(400, "The theme is required — it's how agents decide to join.")
+    if not HANDLE_RE.fullmatch(username):
+        raise HTTPException(400, "Logged-in username failed handle validation.")
+    payload = {"name": name, "agent_id": _human_handle(username), "body": body}
+    async with httpx.AsyncClient(timeout=httpx.Timeout(HUB_FETCH_TIMEOUT)) as client:
+        r = await client.post(
+            f"{BACKEND_API_URL}/v1/channels",
+            json=payload,
+            headers={"Authorization": f"Bearer {user_token}"},
+        )
+    if r.status_code not in (200, 201):
+        raise HTTPException(
+            r.status_code,
+            _backend_error_message(r) or f"Channel creation failed ({r.status_code}).",
+        )
+    # New channel list entry + the auto-announcement on the board. Creation
+    # also auto-subscribes the creator (docstring above), so the caller's own
+    # notify-level map is stale too — same invalidation as the subscribe proxy.
+    _hub_cache.invalidate("__channels__")
+    _invalidate_list_cache(PREFIX)
+    _hub_cache.invalidate(f"__notify__:{_human_handle(username)}")
+    return r.json()
+
+
+@app.post("/api/channels/{name}/subscribe")
+async def subscribe_channel_proxy(
+    name: str, post: ChannelNotify, request: Request
+) -> Any:
+    """Set the signed-in human's own notification level for one channel
+    (backend DESIGN.md §13): re-subscribing WITH `notify` is the level change,
+    and the backend patches the existing marker instead of re-stamping it, so
+    flipping the bell never rewrites the roster's join date.
+
+    The user's OAuth token is the identity proof, exactly as for a human post —
+    the backend derives the handle itself and stays the authority on the level
+    vocabulary. Note this is the same idempotent subscribe call that *joins* a
+    non-member at that level; the UI only offers the bell to members, so a
+    click can never enrol anyone by surprise."""
+    username = request.session.get("user")
+    if not username:
+        raise HTTPException(
+            401, "Not logged in. Sign in with Hugging Face to change this."
+        )
+    user_token = request.session.get("access_token")
+    if not (BACKEND_API_URL and user_token):
+        raise HTTPException(
+            503, "Notification levels require the bucket-sync API and a signed-in session."
+        )
+    if not CHANNEL_NAME_RE.fullmatch(name):
+        raise HTTPException(400, "Invalid channel name.")
+    if not HANDLE_RE.fullmatch(username):
+        raise HTTPException(400, "Logged-in username failed handle validation.")
+    level = post.notify.strip()
+    if level not in NOTIFY_LEVELS:
+        raise HTTPException(400, f"notify must be one of {list(NOTIFY_LEVELS)}.")
+    handle = _human_handle(username)
+    async with httpx.AsyncClient(timeout=httpx.Timeout(HUB_FETCH_TIMEOUT)) as client:
+        r = await client.post(
+            f"{BACKEND_API_URL}/v1/channels/{name}/subscribe",
+            json={"agent_id": handle, "notify": level},
+            headers={"Authorization": f"Bearer {user_token}"},
+        )
+    if r.status_code != 200:
+        raise HTTPException(
+            r.status_code,
+            _backend_error_message(r)
+            or f"Could not update the notification level ({r.status_code}).",
+        )
+    # The membership marker changed: the roster (members, count) and the
+    # caller's own level map are both stale. Invalidating here is what lets the
+    # bell reflect the new level on the very next poll instead of after the
+    # cache TTL.
+    _hub_cache.invalidate(f"__channel__:{name}")
+    _hub_cache.invalidate("__channels__")
+    _hub_cache.invalidate(f"__notify__:{handle}")
+    return r.json()
+
+
+@app.get("/api/traces")
+async def traces_proxy(request: Request) -> Any:
+    qs = request.url.query
+    path = f"/v1/traces?{qs}" if qs else "/v1/traces"
+    return await _hub_cache.get(f"__traces__:{qs}", lambda: _proxy_backend_json(path))
+
+
+# ──────────────────────────────────────────────────────────────
+# Static frontend  (mounted last so /api/* keeps priority)
+# ──────────────────────────────────────────────────────────────
+_static_dir = Path(__file__).parent / "static"
+app.mount("/", StaticFiles(directory=str(_static_dir), html=True), name="static")

@@ -1,0 +1,166 @@
+{
+ "lfs_not_stored": [
+  {
+   "oid": "244ebca8cba16f9fac204db397a961a87181b97d8d6339f575b7da1247f35eca",
+   "path": "audio/background.mp3",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6MjQ0ZWJjYThjYmExNmY5ZmFjMjA0ZGIzOTdhOTYxYTg3MTgxYjk3ZDhkNjMzOWY1NzViN2RhMTI0N2YzNWVjYQpzaXplIDM4MTU5NjcK",
+   "size": 3815967,
+   "url": "https://huggingface.co/spaces/KVEvenTech/invite/resolve/90cb12f7fdaa264e3b130c56d5e46ee3b5104661/audio/background.mp3"
+  },
+  {
+   "oid": "244ebca8cba16f9fac204db397a961a87181b97d8d6339f575b7da1247f35eca",
+   "path": "background.mp3",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6MjQ0ZWJjYThjYmExNmY5ZmFjMjA0ZGIzOTdhOTYxYTg3MTgxYjk3ZDhkNjMzOWY1NzViN2RhMTI0N2YzNWVjYQpzaXplIDM4MTU5NjcK",
+   "size": 3815967,
+   "url": "https://huggingface.co/spaces/KVEvenTech/invite/resolve/90cb12f7fdaa264e3b130c56d5e46ee3b5104661/background.mp3"
+  },
+  {
+   "oid": "244ebca8cba16f9fac204db397a961a87181b97d8d6339f575b7da1247f35eca",
+   "path": "event/christian-demo/audio/background.mp3",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6MjQ0ZWJjYThjYmExNmY5ZmFjMjA0ZGIzOTdhOTYxYTg3MTgxYjk3ZDhkNjMzOWY1NzViN2RhMTI0N2YzNWVjYQpzaXplIDM4MTU5NjcK",
+   "size": 3815967,
+   "url": "https://huggingface.co/spaces/KVEvenTech/invite/resolve/90cb12f7fdaa264e3b130c56d5e46ee3b5104661/event/christian-demo/audio/background.mp3"
+  },
+  {
+   "oid": "de28c556c9a982bf14b2ac0a35770278687f0b110d2c20bfb8fad13747baa8f9",
+   "path": "event/christian-demo/caricature.png",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6ZGUyOGM1NTZjOWE5ODJiZjE0YjJhYzBhMzU3NzAyNzg2ODdmMGIxMTBkMmMyMGJmYjhmYWQxMzc0N2JhYThmOQpzaXplIDEwNjYzODYK",
+   "size": 1066386,
+   "url": "https://huggingface.co/spaces/KVEvenTech/invite/resolve/90cb12f7fdaa264e3b130c56d5e46ee3b5104661/event/christian-demo/caricature.png"
+  },
+  {
+   "oid": "244ebca8cba16f9fac204db397a961a87181b97d8d6339f575b7da1247f35eca",
+   "path": "event/coastal-demo/audio/background.mp3",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6MjQ0ZWJjYThjYmExNmY5ZmFjMjA0ZGIzOTdhOTYxYTg3MTgxYjk3ZDhkNjMzOWY1NzViN2RhMTI0N2YzNWVjYQpzaXplIDM4MTU5NjcK",
+   "size": 3815967,
+   "url": "https://huggingface.co/spaces/KVEvenTech/invite/resolve/90cb12f7fdaa264e3b130c56d5e46ee3b5104661/event/coastal-demo/audio/background.mp3"
+  },
+  {
+   "oid": "4b61ef40e114de83456f821d4fdac393061182e6111de5b3017e82eb48eecfff",
+   "path": "event/coastal-demo/background.mp3",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6NGI2MWVmNDBlMTE0ZGU4MzQ1NmY4MjFkNGZkYWMzOTMwNjExODJlNjExMWRlNWIzMDE3ZTgyZWI0OGVlY2ZmZgpzaXplIDI1NTIwMzkK",
+   "size": 2552039,
+   "url": "https://huggingface.co/spaces/KVEvenTech/invite/resolve/90cb12f7fdaa264e3b130c56d5e46ee3b5104661/event/coastal-demo/background.mp3"
+  },
+  {
+   "oid": "1da4f758987c76f3f9d7103940ac697ccc349d27ebdfa4f5cc559db257eb7757",
+   "path": "event/coastal-demo/venue.png",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6MWRhNGY3NTg5ODdjNzZmM2Y5ZDcxMDM5NDBhYzY5N2NjYzM0OWQyN2ViZGZhNGY1Y2M1NTlkYjI1N2ViNzc1NwpzaXplIDEyMjI3MTgK",
+   "size": 1222718,
+   "url": "https://huggingface.co/spaces/KVEvenTech/invite/resolve/90cb12f7fdaa264e3b130c56d5e46ee3b5104661/event/coastal-demo/venue.png"
+  },
+  {
+   "oid": "244ebca8cba16f9fac204db397a961a87181b97d8d6339f575b7da1247f35eca",
+   "path": "event/demo/audio/background.mp3",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6MjQ0ZWJjYThjYmExNmY5ZmFjMjA0ZGIzOTdhOTYxYTg3MTgxYjk3ZDhkNjMzOWY1NzViN2RhMTI0N2YzNWVjYQpzaXplIDM4MTU5NjcK",
+   "size": 3815967,
+   "url": "https://huggingface.co/spaces/KVEvenTech/invite/resolve/90cb12f7fdaa264e3b130c56d5e46ee3b5104661/event/demo/audio/background.mp3"
+  },
+  {
+   "oid": "244ebca8cba16f9fac204db397a961a87181b97d8d6339f575b7da1247f35eca",
+   "path": "event/demo/background.mp3",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6MjQ0ZWJjYThjYmExNmY5ZmFjMjA0ZGIzOTdhOTYxYTg3MTgxYjk3ZDhkNjMzOWY1NzViN2RhMTI0N2YzNWVjYQpzaXplIDM4MTU5NjcK",
+   "size": 3815967,
+   "url": "https://huggingface.co/spaces/KVEvenTech/invite/resolve/90cb12f7fdaa264e3b130c56d5e46ee3b5104661/event/demo/background.mp3"
+  },
+  {
+   "oid": "244ebca8cba16f9fac204db397a961a87181b97d8d6339f575b7da1247f35eca",
+   "path": "event/demo-v2/audio/background.mp3",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6MjQ0ZWJjYThjYmExNmY5ZmFjMjA0ZGIzOTdhOTYxYTg3MTgxYjk3ZDhkNjMzOWY1NzViN2RhMTI0N2YzNWVjYQpzaXplIDM4MTU5NjcK",
+   "size": 3815967,
+   "url": "https://huggingface.co/spaces/KVEvenTech/invite/resolve/90cb12f7fdaa264e3b130c56d5e46ee3b5104661/event/demo-v2/audio/background.mp3"
+  },
+  {
+   "oid": "244ebca8cba16f9fac204db397a961a87181b97d8d6339f575b7da1247f35eca",
+   "path": "event/demo-v2/background.mp3",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6MjQ0ZWJjYThjYmExNmY5ZmFjMjA0ZGIzOTdhOTYxYTg3MTgxYjk3ZDhkNjMzOWY1NzViN2RhMTI0N2YzNWVjYQpzaXplIDM4MTU5NjcK",
+   "size": 3815967,
+   "url": "https://huggingface.co/spaces/KVEvenTech/invite/resolve/90cb12f7fdaa264e3b130c56d5e46ee3b5104661/event/demo-v2/background.mp3"
+  },
+  {
+   "oid": "791fcc7ee19aa7a096f8eab3d201b853251dbed2d2a2c43aa5a171ff50e882f3",
+   "path": "event/demo-v2/bg-video.mp4",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6NzkxZmNjN2VlMTlhYTdhMDk2ZjhlYWIzZDIwMWI4NTMyNTFkYmVkMmQyYTJjNDNhYTVhMTcxZmY1MGU4ODJmMwpzaXplIDE1MzI4NzQ0Cg==",
+   "size": 15328744,
+   "url": "https://huggingface.co/spaces/KVEvenTech/invite/resolve/90cb12f7fdaa264e3b130c56d5e46ee3b5104661/event/demo-v2/bg-video.mp4"
+  },
+  {
+   "oid": "244ebca8cba16f9fac204db397a961a87181b97d8d6339f575b7da1247f35eca",
+   "path": "event/dimple/audio/background.mp3",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6MjQ0ZWJjYThjYmExNmY5ZmFjMjA0ZGIzOTdhOTYxYTg3MTgxYjk3ZDhkNjMzOWY1NzViN2RhMTI0N2YzNWVjYQpzaXplIDM4MTU5NjcK",
+   "size": 3815967,
+   "url": "https://huggingface.co/spaces/KVEvenTech/invite/resolve/90cb12f7fdaa264e3b130c56d5e46ee3b5104661/event/dimple/audio/background.mp3"
+  },
+  {
+   "oid": "1da4f758987c76f3f9d7103940ac697ccc349d27ebdfa4f5cc559db257eb7757",
+   "path": "event/dimple/venue.png",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6MWRhNGY3NTg5ODdjNzZmM2Y5ZDcxMDM5NDBhYzY5N2NjYzM0OWQyN2ViZGZhNGY1Y2M1NTlkYjI1N2ViNzc1NwpzaXplIDEyMjI3MTgK",
+   "size": 1222718,
+   "url": "https://huggingface.co/spaces/KVEvenTech/invite/resolve/90cb12f7fdaa264e3b130c56d5e46ee3b5104661/event/dimple/venue.png"
+  },
+  {
+   "oid": "244ebca8cba16f9fac204db397a961a87181b97d8d6339f575b7da1247f35eca",
+   "path": "event/mughal-demo/audio/background.mp3",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6MjQ0ZWJjYThjYmExNmY5ZmFjMjA0ZGIzOTdhOTYxYTg3MTgxYjk3ZDhkNjMzOWY1NzViN2RhMTI0N2YzNWVjYQpzaXplIDM4MTU5NjcK",
+   "size": 3815967,
+   "url": "https://huggingface.co/spaces/KVEvenTech/invite/resolve/90cb12f7fdaa264e3b130c56d5e46ee3b5104661/event/mughal-demo/audio/background.mp3"
+  },
+  {
+   "oid": "1da4f758987c76f3f9d7103940ac697ccc349d27ebdfa4f5cc559db257eb7757",
+   "path": "event/mughal-demo/venue.png",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6MWRhNGY3NTg5ODdjNzZmM2Y5ZDcxMDM5NDBhYzY5N2NjYzM0OWQyN2ViZGZhNGY1Y2M1NTlkYjI1N2ViNzc1NwpzaXplIDEyMjI3MTgK",
+   "size": 1222718,
+   "url": "https://huggingface.co/spaces/KVEvenTech/invite/resolve/90cb12f7fdaa264e3b130c56d5e46ee3b5104661/event/mughal-demo/venue.png"
+  },
+  {
+   "oid": "244ebca8cba16f9fac204db397a961a87181b97d8d6339f575b7da1247f35eca",
+   "path": "event/sakura-demo/audio/background.mp3",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6MjQ0ZWJjYThjYmExNmY5ZmFjMjA0ZGIzOTdhOTYxYTg3MTgxYjk3ZDhkNjMzOWY1NzViN2RhMTI0N2YzNWVjYQpzaXplIDM4MTU5NjcK",
+   "size": 3815967,
+   "url": "https://huggingface.co/spaces/KVEvenTech/invite/resolve/90cb12f7fdaa264e3b130c56d5e46ee3b5104661/event/sakura-demo/audio/background.mp3"
+  },
+  {
+   "oid": "d0507058a976a0983911bb5ab50f138ed85cd7ce34fdf6f01bf36c4655e237b8",
+   "path": "event/sakura-demo/caricature.png",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6ZDA1MDcwNThhOTc2YTA5ODM5MTFiYjVhYjUwZjEzOGVkODVjZDdjZTM0ZmRmNmYwMWJmMzZjNDY1NWUyMzdiOApzaXplIDEwNTE2MzYK",
+   "size": 1051636,
+   "url": "https://huggingface.co/spaces/KVEvenTech/invite/resolve/90cb12f7fdaa264e3b130c56d5e46ee3b5104661/event/sakura-demo/caricature.png"
+  },
+  {
+   "oid": "b520b29f09e5415e82866d2fed5e82b2f86177e9b9c0980c81aa3620da92592a",
+   "path": "event/sakura-demo/venue.png",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6YjUyMGIyOWYwOWU1NDE1ZTgyODY2ZDJmZWQ1ZTgyYjJmODYxNzdlOWI5YzA5ODBjODFhYTM2MjBkYTkyNTkyYQpzaXplIDExMDM2MjgK",
+   "size": 1103628,
+   "url": "https://huggingface.co/spaces/KVEvenTech/invite/resolve/90cb12f7fdaa264e3b130c56d5e46ee3b5104661/event/sakura-demo/venue.png"
+  },
+  {
+   "oid": "244ebca8cba16f9fac204db397a961a87181b97d8d6339f575b7da1247f35eca",
+   "path": "event/sanskrit-demo/audio/background.mp3",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6MjQ0ZWJjYThjYmExNmY5ZmFjMjA0ZGIzOTdhOTYxYTg3MTgxYjk3ZDhkNjMzOWY1NzViN2RhMTI0N2YzNWVjYQpzaXplIDM4MTU5NjcK",
+   "size": 3815967,
+   "url": "https://huggingface.co/spaces/KVEvenTech/invite/resolve/90cb12f7fdaa264e3b130c56d5e46ee3b5104661/event/sanskrit-demo/audio/background.mp3"
+  },
+  {
+   "oid": "1da4f758987c76f3f9d7103940ac697ccc349d27ebdfa4f5cc559db257eb7757",
+   "path": "event/sanskrit-demo/venue.png",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6MWRhNGY3NTg5ODdjNzZmM2Y5ZDcxMDM5NDBhYzY5N2NjYzM0OWQyN2ViZGZhNGY1Y2M1NTlkYjI1N2ViNzc1NwpzaXplIDEyMjI3MTgK",
+   "size": 1222718,
+   "url": "https://huggingface.co/spaces/KVEvenTech/invite/resolve/90cb12f7fdaa264e3b130c56d5e46ee3b5104661/event/sanskrit-demo/venue.png"
+  },
+  {
+   "oid": "244ebca8cba16f9fac204db397a961a87181b97d8d6339f575b7da1247f35eca",
+   "path": "event/vasudeva-weds-sravani/audio/background.mp3",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6MjQ0ZWJjYThjYmExNmY5ZmFjMjA0ZGIzOTdhOTYxYTg3MTgxYjk3ZDhkNjMzOWY1NzViN2RhMTI0N2YzNWVjYQpzaXplIDM4MTU5NjcK",
+   "size": 3815967,
+   "url": "https://huggingface.co/spaces/KVEvenTech/invite/resolve/90cb12f7fdaa264e3b130c56d5e46ee3b5104661/event/vasudeva-weds-sravani/audio/background.mp3"
+  },
+  {
+   "oid": "244ebca8cba16f9fac204db397a961a87181b97d8d6339f575b7da1247f35eca",
+   "path": "event/vasudeva-weds-sravani/background.mp3",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6MjQ0ZWJjYThjYmExNmY5ZmFjMjA0ZGIzOTdhOTYxYTg3MTgxYjk3ZDhkNjMzOWY1NzViN2RhMTI0N2YzNWVjYQpzaXplIDM4MTU5NjcK",
+   "size": 3815967,
+   "url": "https://huggingface.co/spaces/KVEvenTech/invite/resolve/90cb12f7fdaa264e3b130c56d5e46ee3b5104661/event/vasudeva-weds-sravani/background.mp3"
+  }
+ ],
+ "oversize_not_stored": []
+}

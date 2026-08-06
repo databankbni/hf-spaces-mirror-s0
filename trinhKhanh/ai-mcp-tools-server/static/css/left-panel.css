@@ -1,0 +1,140 @@
+/* Panel trái: form kết nối, xoá thiết bị, danh sách thiết bị */
+
+/* ===== LEFT PANEL ===== */
+.left-panel {
+  width: 370px;
+  min-width: 370px;
+  background: linear-gradient(180deg, #1c0040 0%, #0d001e 100%);
+  padding: 28px 22px;
+  border-right: 1px solid #3a0060;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo-wrap {
+  width: 140px;
+  height: 140px;
+  margin-bottom: 14px;
+}
+
+.logo-wrap svg { width: 100%; height: 100%; }
+
+.panel-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #cc66ff;
+  text-align: center;
+  margin-bottom: 6px;
+}
+
+.panel-sub {
+  font-size: 12px;
+  color: #999;
+  text-align: center;
+  margin-bottom: 22px;
+  line-height: 1.6;
+}
+
+.form-group { width: 100%; margin-bottom: 14px; }
+
+.form-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #ccc;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.form-input {
+  width: 100%;
+  padding: 11px 13px;
+  background: #0c001c;
+  border: 1px solid #4a0088;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 13px;
+  outline: none;
+  transition: border-color .2s;
+}
+
+.form-input:focus { border-color: #cc66ff; }
+.form-input::placeholder { color: #555; }
+
+.btn-connect {
+  width: 100%;
+  padding: 13px;
+  background: linear-gradient(90deg, #7700bb, #cc00ff);
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: .8px;
+  cursor: pointer;
+  margin-top: 6px;
+  transition: opacity .2s;
+}
+
+.btn-connect:hover { opacity: .82; }
+.btn-connect:disabled { opacity: .5; cursor: not-allowed; }
+
+.delete-box {
+  width: 100%;
+  margin-top: 22px;
+  border: 1px solid #660000;
+  border-radius: 8px;
+  padding: 14px;
+  background: rgba(80,0,0,.25);
+}
+
+.delete-title { font-size: 13px; font-weight: 700; color: #ff6060; margin-bottom: 6px; }
+.delete-desc { font-size: 11px; color: #888; margin-bottom: 10px; line-height: 1.5; }
+
+.devices-box {
+  width: 100%;
+  margin-top: 22px;
+  border: 1px solid #3a0060;
+  border-radius: 8px;
+  padding: 14px;
+  background: rgba(30,0,70,.25);
+}
+
+.devices-title { font-size: 13px; font-weight: 700; color: #cc66ff; margin-bottom: 10px; }
+
+.device-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 0;
+  border-bottom: 1px solid #2a0050;
+}
+.device-item:last-child { border-bottom: none; }
+
+.device-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; background: #555; }
+.device-dot.online { background: #00ffaa; box-shadow: 0 0 6px #00ffaa; }
+.device-dot.checking { background: #ffcc00; }
+
+.device-info { min-width: 0; }
+.device-name {
+  font-size: 12px; font-weight: 600; color: #ddd;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.device-date { font-size: 10px; color: #777; margin-top: 2px; }
+
+.devices-empty { font-size: 11px; color: #777; }
+
+.btn-delete {
+  width: 100%;
+  padding: 10px;
+  background: transparent;
+  border: 1px solid #aa0000;
+  border-radius: 6px;
+  color: #ff4444;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background .2s;
+}
+
+.btn-delete:hover { background: rgba(120,0,0,.35); }

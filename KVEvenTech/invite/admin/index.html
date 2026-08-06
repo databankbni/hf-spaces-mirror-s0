@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitation Maker Portal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body class="bg-gray-900 text-white font-sans antialiased">
+    <div id="app" class="min-h-screen flex flex-col items-center justify-center p-6">
+        <div v-if="!authenticated" class="bg-gray-800 p-8 rounded-2xl shadow-2xl max-w-sm w-full">
+            <h1 class="text-3xl font-bold mb-6 text-yellow-500 text-center">Maker Portal</h1>
+            <input type="password" v-model="password" placeholder="Admin Password" class="w-full p-3 mb-4 bg-gray-700 rounded text-white border border-gray-600 focus:border-yellow-500 outline-none">
+            <button @click="login" class="w-full bg-yellow-600 hover:bg-yellow-500 text-white font-bold py-3 rounded transition-colors">Login</button>
+            <p v-if="error" class="text-red-400 mt-4 text-center">{{ error }}</p>
+        </div>
+
+        <div v-else class="w-full max-w-5xl grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bg-gray-800 p-8 rounded-2xl shadow-2xl">
+                <h1 class="text-3xl font-bold mb-6 text-yellow-500">Create New Invitation</h1>
+                
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm text-gray-400 mb-1">URL / Client ID (e.g. rohit)</label>
+                        <input type="text" v-model="config.clientId" class="w-full p-2 bg-gray-700 rounded border border-gray-600 focus:border-yellow-500 outline-none">
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm text-gray-400 mb-1">Bride/Groom Name</label>
+                            <input type="text" v-model="config.brideName" class="w-full p-2 bg-gray-700 rounded border border-gray-600">
+                        </div>
+                        <div>
+                            <label class="block text-sm text-gray-400 mb-1">Family Name</label>
+                            <input type="text" v-model="config.familyName" class="w-full p-2 bg-gray-700 rounded border border-gray-600">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm text-gray-400 mb-1">Theme Color</label>
+                        <select v-model="config.theme" class="w-full p-2 bg-gray-700 rounded border border-gray-600">
+                            <option value="gold">Luxury Gold</option>
+                            <option value="rose">Rose Gold</option>
+                            <option value="blue">Royal Blue</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm text-gray-400 mb-1">Upload Caricature (PNG)</label>
+                        <input type="file" @change="handleFile('caricature', $event)" accept="image/png" class="w-full p-2 bg-gray-700 rounded border border-gray-600">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm text-gray-400 mb-1">Background Music (MP3)</label>
+                        <input type="file" @change="handleFile('music', $event)" accept="audio/mpeg" class="w-full p-2 bg-gray-700 rounded border border-gray-600">
+                    </div>
+
+                    <button @click="publish" :disabled="publishing" class="w-full bg-yellow-600 hover:bg-yellow-500 text-white font-bold py-3 rounded mt-6 transition-colors disabled:opacity-50">
+                        {{ publishing ? 'Deploying to Cloud...' : 'Publish Invitation' }}
+                    </button>
+                    
+                    <p v-if="successUrl" class="text-green-400 mt-4 p-4 bg-green-900/30 rounded border border-green-800">
+                        Success! Live at: <a :href="successUrl" target="_blank" class="underline font-bold">{{ successUrl }}</a>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Live Preview Placeholder -->
+            <div class="bg-black border-4 border-gray-800 rounded-3xl h-[800px] flex items-center justify-center overflow-hidden relative shadow-2xl">
+                <div class="absolute inset-0 bg-gradient-to-b from-[#2d0010]/50 to-[#110005]/80"></div>
+                <div class="z-10 text-center space-y-4">
+                    <p class="text-yellow-500 tracking-[0.4em] uppercase text-xs">{{ config.familyName || 'The Family' }}</p>
+                    <h2 class="text-6xl text-yellow-300 font-serif">{{ config.brideName || 'Name' }}</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const { createApp } = Vue;
+
+        createApp({
+            data() {
+                return {
+                    authenticated: false,
+                    password: '',
+                    token: '',
+                    error: '',
+                    publishing: false,
+                    successUrl: '',
+                    config: {
+                        clientId: '',
+                        brideName: 'Jane Doe',
+                        familyName: 'The Doe Family',
+                        theme: 'gold',
+                        eventDate: '01 Jan 2027',
+                        eventTime: '10:00 AM'
+                    },
+                    files: {
+                        caricature: null,
+                        music: null
+                    }
+                }
+            },
+            methods: {
+                async login() {
+                    try {
+                        const res = await fetch('/api/auth', {
+                            method: 'POST',
+                            headers: {'Content-Type': 'application/json'},
+                            body: JSON.stringify({ password: this.password })
+                        });
+                        const data = await res.json();
+                        if (data.success) {
+                            this.authenticated = true;
+                            this.token = data.token;
+                        } else {
+                            this.error = data.error;
+                        }
+                    } catch (e) {
+                        this.error = 'Connection failed';
+                    }
+                },
+                handleFile(type, event) {
+                    this.files[type] = event.target.files[0];
+                },
+                async publish() {
+                    if (!this.config.clientId) return alert("Client ID is required!");
+                    
+                    this.publishing = true;
+                    this.successUrl = '';
+                    
+                    const formData = new FormData();
+                    formData.append('clientName', this.config.clientId);
+                    
+                    // Generate full config JSON
+                    const fullConfig = {
+                        brideName: this.config.brideName,
+                        familyName: this.config.familyName,
+                        theme: this.config.theme,
+                        events: {
+                            main: {
+                                date: this.config.eventDate,
+                                time: this.config.eventTime
+                            }
+                        }
+                    };
+                    
+                    formData.append('configJson', JSON.stringify(fullConfig, null, 2));
+                    
+                    if (this.files.caricature) formData.append('caricature', this.files.caricature);
+                    if (this.files.music) formData.append('backgroundMusic', this.files.music);
+
+                    try {
+                        const res = await fetch('/api/publish', {
+                            method: 'POST',
+                            headers: { 'Authorization': `Bearer ${this.token}` },
+                            body: formData
+                        });
+                        const data = await res.json();
+                        if (data.success) {
+                            this.successUrl = window.location.origin + data.url;
+                        } else {
+                            alert("Error: " + data.error);
+                        }
+                    } catch (e) {
+                        alert("Failed to publish: " + e.message);
+                    } finally {
+                        this.publishing = false;
+                    }
+                }
+            }
+        }).mount('#app')
+    </script>
+</body>
+</html>

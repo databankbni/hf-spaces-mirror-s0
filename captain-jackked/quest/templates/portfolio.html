@@ -1,0 +1,327 @@
+{% extends "base.html" %}
+
+{% block title %}Portfolio — Anand Kesavan{% endblock %}
+{% block description %}Quantitative Engineer, Software Developer, Agentic AI Explorer{% endblock %}
+
+{% block content %}
+<!-- Hero / Intro -->
+<section class="portfolio-hero">
+    <div class="container">
+        <div class="portfolio-hero-row">
+            <img src="{{ url_for('static', filename='dp.jpg') }}" alt="Anand Kesavan" class="portfolio-dp">
+            <div class="portfolio-hero-text">
+                <div class="portfolio-name-row">
+                    <h1>Anand Kesavan</h1>
+                    <a href="mailto:anand.kesavan.ak@gmail.com" class="portfolio-icon" aria-label="Email">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                    </a>
+                    <a href="https://linkedin.com/in/anand-kesavan" target="_blank" class="portfolio-icon" aria-label="LinkedIn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    </a>
+                </div>
+                <p class="portfolio-tagline">CTO at Multibagg AI | Ex-Goldman Sachs | IIT Bombay</p>
+                <p class="portfolio-tagline">10+ years in Quantitative Finance and Software Engineering</p>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Timeline -->
+<section class="container timeline-section">
+    <div class="timeline" id="timeline">
+        <!-- Central line (visible at rest) -->
+        <div class="timeline-line"></div>
+        <!-- 3 topic tracks (hidden at rest, emerge on hover) -->
+        <div class="timeline-tracks" id="timeline-tracks">
+            <div class="timeline-track" data-track="qf"></div>
+            <div class="timeline-track" data-track="tps"></div>
+            <div class="timeline-track" data-track="ssd"></div>
+        </div>
+
+        <!-- Entry 1: Multibagg AI -->
+        <div class="timeline-entry" data-topics="tps,ssd">
+            <div class="timeline-node"></div>
+            <div class="timeline-card">
+                <span class="timeline-card-chevron"></span>
+                <span class="timeline-year">Bangalore, 2026–</span>
+                <h3 class="timeline-card-title">CTO at Multibagg AI</h3>
+                <p class="timeline-card-desc">Institutional-grade AI research for retail investors.<br>RAG pipelines, Agentic workflows, LLM features at scale.</p>
+            </div>
+        </div>
+
+        <!-- Entry 2: Quest -->
+        <div class="timeline-entry" data-topics="tps">
+            <div class="timeline-node"></div>
+            <div class="timeline-card">
+                <span class="timeline-card-chevron"></span>
+                <span class="timeline-year">2025–26</span>
+                <h3 class="timeline-card-title">Solo-Builder at Quest</h3>
+                <p class="timeline-card-desc">Mobile apps released on iOS and Android.<br>Workouts from strength models.<br>Highly personalized LeetCode path.</p>
+            </div>
+        </div>
+
+        <!-- Entry 3: Goldman Sachs ALM -->
+        <div class="timeline-entry" data-topics="qf,ssd">
+            <div class="timeline-node"></div>
+            <div class="timeline-card">
+                <span class="timeline-card-chevron"></span>
+                <span class="timeline-year">Bangalore, 2022–25</span>
+                <h3 class="timeline-card-title">ALM Quant Lead at Goldman Sachs</h3>
+                <p class="timeline-card-desc">As a VP, built and led a team of 11 Strats.<br>Remodelled liquidity transfer to reduce Treasury PnL.</p>
+            </div>
+        </div>
+
+        <!-- Entry 4: JP Morgan -->
+        <div class="timeline-entry" data-topics="qf">
+            <div class="timeline-node"></div>
+            <div class="timeline-card">
+                <span class="timeline-card-chevron"></span>
+                <span class="timeline-year">Mumbai, 2021–22</span>
+                <h3 class="timeline-card-title">Rates Quant at JP Morgan Chase</h3>
+                <p class="timeline-card-desc">Constructed Rate-Curves within Athena, the firm's pricing and risk platform.</p>
+            </div>
+        </div>
+
+        <!-- Entry 5: Goldman Sachs Treasury -->
+        <div class="timeline-entry" data-topics="qf,tps">
+            <div class="timeline-node"></div>
+            <div class="timeline-card">
+                <span class="timeline-card-chevron"></span>
+                <span class="timeline-year">Bangalore, 2019–21</span>
+                <h3 class="timeline-card-title">Treasury Quant at Goldman Sachs</h3>
+                <p class="timeline-card-desc">Built PnL projection tools for CCAR and business planning.</p>
+            </div>
+        </div>
+
+        <!-- Entry 6: MSCI Analytical QA -->
+        <div class="timeline-entry" data-topics="tps">
+            <div class="timeline-node"></div>
+            <div class="timeline-card">
+                <span class="timeline-card-chevron"></span>
+                <span class="timeline-year">Mumbai, 2017–19</span>
+                <h3 class="timeline-card-title">Barra Quant Validator at MSCI</h3>
+                <p class="timeline-card-desc">Rebuilt Barra's analytical testing framework.<br>MATLAB and Python based number crunching.</p>
+            </div>
+        </div>
+
+        <!-- Entry 7: MSCI App Dev -->
+        <div class="timeline-entry" data-topics="tps,qf">
+            <div class="timeline-node"></div>
+            <div class="timeline-card">
+                <span class="timeline-card-chevron"></span>
+                <span class="timeline-year">Mumbai, 2015–18</span>
+                <h3 class="timeline-card-title">BarraOne SDE at MSCI</h3>
+                <p class="timeline-card-desc">Published Performance Attribution as a service.<br>Built Production plant queueing simulator.</p>
+            </div>
+        </div>
+
+        <!-- Entry 8: Internships -->
+        <div class="timeline-entry" data-topics="ssd">
+            <div class="timeline-node"></div>
+            <div class="timeline-card">
+                <span class="timeline-card-chevron"></span>
+                <span class="timeline-year">2013–14</span>
+                <h3 class="timeline-card-title">College Internships (IIT-B)</h3>
+                <p class="timeline-card-desc">Network Design at InDSP, Bangalore<br>Audio Consultant at ACPAD, Mumbai<br>Lecturer at Plancess, Mumbai</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Legend (fixed, visible on hover) -->
+    <div class="timeline-legend" id="timeline-legend">
+        <div class="timeline-legend-item" data-legend="qf">
+            <span class="timeline-legend-dot" data-topic="qf"></span>
+            <span>Finance</span>
+        </div>
+        <div class="timeline-legend-item" data-legend="tps">
+            <span class="timeline-legend-dot" data-topic="tps"></span>
+            <span>Engineering</span>
+        </div>
+        <div class="timeline-legend-item" data-legend="ssd">
+            <span class="timeline-legend-dot" data-topic="ssd"></span>
+            <span>Calibre</span>
+        </div>
+    </div>
+</section>
+
+<section class="container portfolio-section beyond-section">
+    <h2>Beyond the Timeline</h2>
+    <div class="beyond-grid">
+        <div class="beyond-card">
+            <span class="beyond-icon">🎵</span>
+            <h4>Music</h4>
+            <ul class="beyond-list">
+                <li>Composer, <a href="https://soundcloud.com/anand-k-anand-k" target="_blank">producer</a>, multi-instrumentalist</li>
+                <li>Co-founded IIT Bombay's contingent band</li>
+                <li>Won Inter-IIT, played for 10,000 at Mood Indigo</li>
+                <li>Hostel Cultural Colour three years running</li>
+            </ul>
+        </div>
+        <div class="beyond-card">
+            <span class="beyond-icon">🏋️</span>
+            <h4>Strength Training</h4>
+            <ul class="beyond-list">
+                <li>Lifter, built math models for body recomposition</li>
+                <li>Refined, articulated and <a href="https://jackked.medium.com" target="_blank">published to thousands</a></li>
+                <li>'Math-into-everything' led to the <a href="https://captain-jackked-quest.hf.space/" target="_blank">Quest project</a></li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- Resume Download -->
+<section class="container" style="text-align: center; margin-bottom: 3rem;">
+    <a href="{{ url_for('static', filename='resume.pdf') }}" class="btn btn-secondary" download>
+        Download Resume (PDF)
+    </a>
+</section>
+
+<script>
+(function() {
+    const TOPICS = ['qf', 'tps', 'ssd'];
+
+    const timeline = document.getElementById('timeline');
+    const entries = timeline.querySelectorAll('.timeline-entry');
+    const trackEls = timeline.querySelectorAll('.timeline-track');
+    const legend = document.getElementById('timeline-legend');
+    const legendItems = legend.querySelectorAll('.timeline-legend-item');
+
+    var activeEntry = null;
+
+    function setActiveEntry(entry) {
+        if (activeEntry === entry) return;
+
+        if (activeEntry) {
+            var card = activeEntry.querySelector('.timeline-card');
+            if (card) card.classList.remove('expanded');
+        }
+
+        activeEntry = entry;
+
+        if (activeEntry) {
+            var card = activeEntry.querySelector('.timeline-card');
+            if (card) card.classList.add('expanded');
+            handleHover(activeEntry);
+        } else {
+            handleLeave();
+        }
+    }
+
+    const hasHover = window.matchMedia('(hover: hover)').matches;
+
+    if (hasHover) {
+        entries.forEach(function(entry) {
+            entry.addEventListener('mouseenter', function() { setActiveEntry(entry); });
+            entry.addEventListener('mouseleave', function() { setActiveEntry(null); });
+        });
+    } else {
+        entries.forEach(function(entry) {
+            var card = entry.querySelector('.timeline-card');
+            if (card) {
+                card.addEventListener('click', function(e) {
+                    if (e.target.tagName.toLowerCase() === 'a') return;
+                    setActiveEntry(activeEntry === entry ? null : entry);
+                    e.stopPropagation();
+                });
+            }
+        });
+
+        document.addEventListener('click', function() {
+            setActiveEntry(null);
+        });
+    }
+
+    function handleHover(hoveredEntry) {
+        var hoveredTopics = hoveredEntry.dataset.topics.split(',');
+
+        // Activate the timeline split
+        timeline.classList.add('tracks-active');
+
+        // Show floating legend
+        legend.classList.add('visible');
+
+        // Show only relevant tracks
+        trackEls.forEach(function(track) {
+            if (hoveredTopics.includes(track.dataset.track)) {
+                track.classList.add('active');
+            } else {
+                track.classList.remove('active');
+            }
+        });
+
+        // Highlight active legend items
+        legendItems.forEach(function(item) {
+            if (hoveredTopics.includes(item.dataset.legend)) {
+                item.classList.add('active');
+            } else {
+                item.classList.remove('active');
+            }
+        });
+
+        // Process each entry
+        entries.forEach(function(entry) {
+            var entryTopics = entry.dataset.topics.split(',');
+            var shared = entryTopics.filter(function(t) { return hoveredTopics.includes(t); });
+            var node = entry.querySelector('.timeline-node');
+
+            if (entry === hoveredEntry) {
+                entry.classList.add('hovered');
+                entry.classList.remove('irrelevant', 'relevant');
+                applyNodeColors(node, hoveredTopics);
+            } else if (shared.length > 0) {
+                entry.classList.add('relevant');
+                entry.classList.remove('hovered', 'irrelevant');
+                applyNodeColors(node, shared);
+            } else {
+                entry.classList.add('irrelevant');
+                entry.classList.remove('hovered', 'relevant');
+                clearNodeColors(node);
+            }
+        });
+    }
+
+    function handleLeave() {
+        timeline.classList.remove('tracks-active');
+        trackEls.forEach(function(track) { track.classList.remove('active'); });
+
+        // Hide legend
+        legend.classList.remove('visible');
+        legendItems.forEach(function(item) { item.classList.remove('active'); });
+
+        entries.forEach(function(entry) {
+            entry.classList.remove('hovered', 'relevant', 'irrelevant');
+            var node = entry.querySelector('.timeline-node');
+            clearNodeColors(node);
+        });
+    }
+
+    function applyNodeColors(node, topics) {
+        if (topics.length === 1) {
+            node.style.background = 'var(--topic-' + topics[0] + ')';
+        } else {
+            var segAngle = 360 / topics.length;
+            var blurDeg = 20;
+            var stops = [];
+            topics.forEach(function(topic, i) {
+                var color = 'var(--topic-' + topic + ')';
+                var start = i * segAngle;
+                var end = (i + 1) * segAngle;
+                if (i === 0) {
+                    stops.push(color + ' ' + start + 'deg');
+                    stops.push(color + ' ' + (end - blurDeg) + 'deg');
+                } else {
+                    stops.push(color + ' ' + (start + blurDeg) + 'deg');
+                    stops.push(color + ' ' + (end - blurDeg) + 'deg');
+                }
+            });
+            node.style.background = 'conic-gradient(' + stops.join(', ') + ')';
+        }
+    }
+
+    function clearNodeColors(node) {
+        node.style.background = '';
+    }
+})();
+</script>
+{% endblock %}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Login — Wedding Invitation</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%92%8D%3C/text%3E%3C/svg%3E">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Hanuman:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Playfair Display', 'Hanuman', serif;
+      background: linear-gradient(160deg, #f6ecd9 0%, #f7e8ea 60%, #f2e4c8 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+    .box {
+      background: #fff;
+      border: 1px solid #efe3c8;
+      border-radius: 18px;
+      padding: 2.5rem 2rem;
+      width: 100%;
+      max-width: 380px;
+      text-align: center;
+      box-shadow: 0 8px 32px rgba(160, 130, 60, 0.16);
+    }
+    h1 { color: #a8873a; font-size: 1.4rem; margin-bottom: 0.4rem; }
+    p { color: #777; font-size: 0.92rem; margin-bottom: 1.5rem; }
+    input {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-family: inherit;
+      margin-bottom: 1rem;
+    }
+    button {
+      width: 100%;
+      padding: 0.8rem;
+      border: none;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #c9a84c, #a8873a);
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 700;
+      font-family: inherit;
+      cursor: pointer;
+    }
+    .flash { color: #b94e48; margin-bottom: 1rem; font-size: 0.9rem; }
+    .back { display: inline-block; margin-top: 1.2rem; color: #a8873a; font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h1>💍 Admin Login</h1>
+    <p>Wedding Invitation Dashboard</p>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% for category, message in messages %}
+        <div class="flash">{{ message }}</div>
+      {% endfor %}
+    {% endwith %}
+    <form method="post">
+      <input type="password" name="password" placeholder="Password" required autofocus>
+      <button type="submit">Login</button>
+    </form>
+    <a class="back" href="{{ url_for('index') }}">← Back to invitation</a>
+  </div>
+</body>
+</html>

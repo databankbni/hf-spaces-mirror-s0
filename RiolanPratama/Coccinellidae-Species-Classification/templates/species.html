@@ -1,0 +1,173 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>{{ t["species_page_title"] }}</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- NAVBAR -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark shadow-sm">
+      <div class="container">
+        <a class="navbar-brand brand-logo" href="/?lang={{ lang }}">
+          <span class="brand-text">CocciNet</span>
+          <span class="ai-badge">AI</span>
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/?lang={{ lang }}"> {{ t["home"] }} </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link active" href="/species?lang={{ lang }}">
+                {{ t["supported_species"] }}
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/about?lang={{ lang }}">
+                {{ t["about"] }}
+              </a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+              >
+                🌐 {{ t["language"] }}
+              </a>
+
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li>
+                  <a class="dropdown-item" href="?lang=en"> 🇺🇸 English </a>
+                </li>
+
+                <li>
+                  <a class="dropdown-item" href="?lang=id"> 🇮🇩 Indonesia </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- CONTENT -->
+
+    <div class="container py-5">
+      <div class="hero-section text-center mb-5">
+        <div class="hero-content">
+          <h1 class="hero-title">{{ t["supported_species"] }}</h1>
+
+          <p class="hero-subtitle">{{ t["species_subtitle"] }}</p>
+
+          <div class="hero-badge">
+            {{ species_list|length }} {{ t["species_available"] }}
+          </div>
+        </div>
+      </div>
+
+      <div class="row g-4 align-items-start">
+        {% for species in species_list %}
+
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card shadow-sm border-0 species-card">
+            <img src="{{ species.image }}" class="card-img-top species-image" />
+
+            <div class="card-body d-flex flex-column">
+              <div class="flex-grow-1">
+                <h5 class="fw-bold text-center mb-3">{{ species.name }}</h5>
+
+                <p class="text-muted small text-center mb-4 species-short-desc">
+                  {{ species.short_description[lang] }}
+                </p>
+
+                <div class="mb-2">
+                  <strong>{{ t["distribution"] }}</strong><br />
+                  <span class="text-muted">
+                    {{ species.distribution[lang] }}
+                  </span>
+                </div>
+
+                <div class="mb-2">
+                  <strong>{{ t["habitat"] }}</strong><br />
+                  <span class="text-muted"> {{ species.habitat[lang] }} </span>
+                </div>
+
+                <div class="mb-4">
+                  <strong>{{ t["size"] }}</strong><br />
+                  <span class="text-muted"> {{ species.size }} </span>
+                </div>
+              </div>
+
+              <div class="d-grid">
+                <button
+                  class="btn btn-outline-primary w-100"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#detail{{ loop.index }}"
+                  aria-expanded="false"
+                >
+                  {{ t["view_details"] }}
+                </button>
+                <div class="collapse mt-3" id="detail{{ loop.index }}">
+                  <hr />
+
+                  <h6 class="fw-bold">{{ t["description"] }}</h6>
+
+                  <p class="text-muted species-description">
+                    {{ species.description[lang] }}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {% endfor %}
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <footer class="text-center mt-5 py-4">
+      <hr />
+
+      <h6 class="fw-bold">{{ t["footer_title"] }}</h6>
+
+      <p class="text-muted mb-1">{{ t["footer_subtitle"] }}</p>
+
+      <p class="text-muted">Riolan Pratama • EfficientNetV2</p>
+    </footer>
+  </body>
+</html>

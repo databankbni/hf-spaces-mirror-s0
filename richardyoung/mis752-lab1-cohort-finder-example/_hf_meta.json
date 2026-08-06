@@ -1,0 +1,89 @@
+{
+ "captured_at": "2026-08-05T02:52:44Z",
+ "hf_metadata": {
+  "_id": "6a725bc85b218e2575246580",
+  "author": "richardyoung",
+  "cardData": {
+   "app_file": "app.py",
+   "colorFrom": "blue",
+   "colorTo": "purple",
+   "emoji": "😻",
+   "pinned": false,
+   "python_version": "3.13",
+   "sdk": "gradio",
+   "sdk_version": "6.22.0",
+   "title": "Mis752 Lab1 Cohort Finder Example"
+  },
+  "createdAt": "2026-08-04T21:38:16.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://richardyoung-mis752-lab1-cohort-finder-example.hf.space",
+  "id": "richardyoung/mis752-lab1-cohort-finder-example",
+  "lastModified": "2026-08-04T21:38:17.000Z",
+  "likes": 0,
+  "private": false,
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "richardyoung-mis752-lab1-cohort-finder-example.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": "cpu-basic",
+    "requested": "cpu-basic"
+   },
+   "pySpacesVersion": "0.51.1",
+   "replicas": {
+    "current": 1,
+    "requested": 1
+   },
+   "sha": "e83734f7f8fcbfd2e29a12916584036c15941297",
+   "stage": "RUNNING"
+  },
+  "sdk": "gradio",
+  "sha": "e83734f7f8fcbfd2e29a12916584036c15941297",
+  "siblings": [
+   {
+    "rfilename": ".gitattributes"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "app.py"
+   },
+   {
+    "rfilename": "lab1_cohort.csv"
+   },
+   {
+    "rfilename": "requirements.txt"
+   }
+  ],
+  "subdomain": "richardyoung-mis752-lab1-cohort-finder-example",
+  "tags": [
+   "gradio",
+   "region:us"
+  ],
+  "usedStorage": 0
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "richardyoung/mis752-lab1-cohort-finder-example",
+ "repo_type": "spaces",
+ "sha": "e83734f7f8fcbfd2e29a12916584036c15941297",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/richardyoung/mis752-lab1-cohort-finder-example"
+}

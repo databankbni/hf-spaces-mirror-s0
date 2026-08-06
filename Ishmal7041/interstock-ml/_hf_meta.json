@@ -1,0 +1,89 @@
+{
+ "captured_at": "2026-08-04T13:40:23Z",
+ "hf_metadata": {
+  "_id": "6a0addba3e85c948e2ffcdc6",
+  "author": "Ishmal7041",
+  "cardData": {
+   "app_port": 7860,
+   "colorFrom": "blue",
+   "colorTo": "green",
+   "emoji": "📈",
+   "pinned": false,
+   "sdk": "docker",
+   "title": "InterStock ML"
+  },
+  "createdAt": "2026-05-18T09:36:58.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://ishmal7041-interstock-ml.hf.space",
+  "id": "Ishmal7041/interstock-ml",
+  "lastModified": "2026-07-07T10:37:10.000Z",
+  "likes": 0,
+  "private": false,
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "ishmal7041-interstock-ml.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": null,
+    "requested": "cpu-basic"
+   },
+   "replicas": {
+    "requested": 1
+   },
+   "stage": "SLEEPING"
+  },
+  "sdk": "docker",
+  "sha": "d2cfbef3c27fea1a473e8ff0fe1a360c2b1e3898",
+  "siblings": [
+   {
+    "rfilename": ".gitattributes"
+   },
+   {
+    "rfilename": "Dockerfile"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "models/scaler.pkl"
+   },
+   {
+    "rfilename": "models/stock_model.h5"
+   },
+   {
+    "rfilename": "models/training_report.json"
+   },
+   {
+    "rfilename": "requirements.txt"
+   },
+   {
+    "rfilename": "server.py"
+   },
+   {
+    "rfilename": "train.py"
+   }
+  ],
+  "subdomain": "ishmal7041-interstock-ml",
+  "tags": [
+   "docker",
+   "region:us"
+  ],
+  "usedStorage": 456591
+ },
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "Ishmal7041/interstock-ml",
+ "repo_type": "spaces",
+ "sha": "d2cfbef3c27fea1a473e8ff0fe1a360c2b1e3898",
+ "web_url": "https://huggingface.co/spaces/Ishmal7041/interstock-ml"
+}

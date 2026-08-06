@@ -1,0 +1,91 @@
+{
+ "captured_at": "2026-08-04T13:54:06Z",
+ "hf_metadata": {
+  "_id": "6a37849518e0c158e87bac1a",
+  "author": "Lemonjuice45",
+  "cardData": {
+   "app_file": "app.py",
+   "colorFrom": "pink",
+   "colorTo": "yellow",
+   "emoji": "⚡",
+   "pinned": false,
+   "python_version": "3.13",
+   "sdk": "gradio",
+   "sdk_version": "6.17.3",
+   "title": "Remote Transfer"
+  },
+  "createdAt": "2026-06-21T06:28:37.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://lemonjuice45-remote-transfer.hf.space",
+  "id": "Lemonjuice45/Remote-transfer",
+  "lastModified": "2026-07-14T14:11:45.000Z",
+  "likes": 0,
+  "private": false,
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "lemonjuice45-remote-transfer.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": null,
+    "requested": "cpu-basic"
+   },
+   "replicas": {
+    "requested": 1
+   },
+   "stage": "SLEEPING"
+  },
+  "sdk": "gradio",
+  "sha": "eaea698dbdb3f38c80422db112ec116b08d929ec",
+  "siblings": [
+   {
+    "rfilename": ".gitattributes"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "X2app.py"
+   },
+   {
+    "rfilename": "X3app.py"
+   },
+   {
+    "rfilename": "Xapp.py"
+   },
+   {
+    "rfilename": "app.py"
+   },
+   {
+    "rfilename": "packages.txt"
+   },
+   {
+    "rfilename": "rclone.conf"
+   },
+   {
+    "rfilename": "requirements.txt"
+   }
+  ],
+  "subdomain": "lemonjuice45-remote-transfer",
+  "tags": [
+   "gradio",
+   "region:us"
+  ],
+  "usedStorage": 0
+ },
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "Lemonjuice45/Remote-transfer",
+ "repo_type": "spaces",
+ "sha": "eaea698dbdb3f38c80422db112ec116b08d929ec",
+ "web_url": "https://huggingface.co/spaces/Lemonjuice45/Remote-transfer"
+}

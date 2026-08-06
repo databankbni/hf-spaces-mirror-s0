@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 80" role="img" aria-labelledby="title">
+  <title id="title">We Love Foundation</title>
+  <rect width="180" height="80" rx="12" fill="#fdf2f8"/>
+  <path d="M45 58S19 43 19 27c0-9 7-15 15-15 5 0 9 2 11 6 3-4 7-6 12-6 8 0 15 6 15 15 0 16-27 31-27 31z" fill="#e11d48"/>
+  <text x="82" y="35" fill="#111827" font-family="Arial, sans-serif" font-size="20" font-weight="800">We Love</text>
+  <text x="83" y="52" fill="#be123c" font-family="Arial, sans-serif" font-size="10" font-weight="700">FOUNDATION</text>
+</svg>

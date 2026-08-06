@@ -1,0 +1,82 @@
+{
+ "captured_at": "2026-08-04T14:37:50Z",
+ "hf_metadata": {
+  "_id": "6a4b8b9d1c5fc6899c4fd7ba",
+  "author": "Sanjana001",
+  "cardData": {
+   "app_file": "app.py",
+   "colorFrom": "gray",
+   "colorTo": "red",
+   "emoji": "🐨",
+   "license": "mit",
+   "pinned": false,
+   "python_version": "3.13",
+   "sdk": "gradio",
+   "sdk_version": "6.19.0",
+   "short_description": "this bot takes ytb video url as input and address questions",
+   "title": "Youtube Bot"
+  },
+  "createdAt": "2026-07-06T11:03:57.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://sanjana001-youtube-bot.hf.space",
+  "id": "Sanjana001/youtube_bot",
+  "lastModified": "2026-07-06T14:32:32.000Z",
+  "likes": 0,
+  "models": [
+   "meta-llama/Meta-Llama-3-8B-Instruct",
+   "sentence-transformers/all-MiniLM-L6-v2"
+  ],
+  "private": false,
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "sanjana001-youtube-bot.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": null,
+    "requested": "cpu-basic"
+   },
+   "replicas": {
+    "requested": 1
+   },
+   "stage": "SLEEPING"
+  },
+  "sdk": "gradio",
+  "sha": "97d96721ef8b4b7488c73055911b75d574f9ddd4",
+  "siblings": [
+   {
+    "rfilename": ".gitattributes"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "app.py"
+   },
+   {
+    "rfilename": "requirements.txt"
+   }
+  ],
+  "subdomain": "sanjana001-youtube-bot",
+  "tags": [
+   "gradio",
+   "region:us"
+  ],
+  "usedStorage": 0
+ },
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "Sanjana001/youtube_bot",
+ "repo_type": "spaces",
+ "sha": "97d96721ef8b4b7488c73055911b75d574f9ddd4",
+ "web_url": "https://huggingface.co/spaces/Sanjana001/youtube_bot"
+}

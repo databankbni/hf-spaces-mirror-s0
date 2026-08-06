@@ -1,0 +1,13 @@
+{
+ "lfs_not_stored": [
+  {
+   "oid": "6910f4b81843775f7aeab86481af2b0d01b41d39a0b7805be1f774eba468485a",
+   "path": "model_bundle.pkl",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6NjkxMGY0YjgxODQzNzc1ZjdhZWFiODY0ODFhZjJiMGQwMWI0MWQzOWEwYjc4MDViZTFmNzc0ZWJhNDY4NDg1YQpzaXplIDM4NTgzNDAyCg==",
+   "size": 38583402,
+   "url": "https://huggingface.co/spaces/zakram23/CanadianFlightFarePredictor/resolve/17a6d2c1c8ff4a5a8af5afb9b97f104f7a4d2ad6/model_bundle.pkl"
+  }
+ ],
+ "overflow_not_stored": [],
+ "oversize_not_stored": []
+}

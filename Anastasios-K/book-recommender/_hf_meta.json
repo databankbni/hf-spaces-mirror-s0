@@ -1,0 +1,83 @@
+{
+ "captured_at": "2026-08-04T13:17:19Z",
+ "hf_metadata": {
+  "_id": "6a4d426334fd55c4f6c80fe1",
+  "author": "Anastasios-K",
+  "cardData": {
+   "app_file": "app.py",
+   "colorFrom": "blue",
+   "colorTo": "gray",
+   "emoji": "😻",
+   "pinned": false,
+   "python_version": "3.13",
+   "sdk": "gradio",
+   "sdk_version": "6.19.0",
+   "short_description": "Semantic Book Recommender",
+   "title": "Book Recommender"
+  },
+  "createdAt": "2026-07-07T18:16:03.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://anastasios-k-book-recommender.hf.space",
+  "id": "Anastasios-K/book-recommender",
+  "lastModified": "2026-07-10T02:42:14.000Z",
+  "likes": 0,
+  "private": false,
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "anastasios-k-book-recommender.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": null,
+    "requested": "cpu-basic"
+   },
+   "replicas": {
+    "requested": 1
+   },
+   "stage": "SLEEPING"
+  },
+  "sdk": "gradio",
+  "sha": "e2ca5d4fc81c9373c526020da83615b9eee95081",
+  "siblings": [
+   {
+    "rfilename": ".gitattributes"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "app.py"
+   },
+   {
+    "rfilename": "catalog.parquet"
+   },
+   {
+    "rfilename": "embeddings.npy"
+   },
+   {
+    "rfilename": "requirements_app.txt"
+   }
+  ],
+  "subdomain": "anastasios-k-book-recommender",
+  "tags": [
+   "gradio",
+   "region:us"
+  ],
+  "usedStorage": 26261066
+ },
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "Anastasios-K/book-recommender",
+ "repo_type": "spaces",
+ "sha": "e2ca5d4fc81c9373c526020da83615b9eee95081",
+ "web_url": "https://huggingface.co/spaces/Anastasios-K/book-recommender"
+}

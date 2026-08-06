@@ -1,0 +1,6 @@
+kociemba
+transformers
+torch
+datasets
+accelerate>=1.1.0
+gradio>=4.44.0

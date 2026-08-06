@@ -1,0 +1,176 @@
+{% extends "base.html" %}
+{% set active_page = 'bots' %}
+{% block title %}{{ bot.bot_name }} — Workout #{{ workout.id }} — MktBook{% endblock %}
+{% block content %}
+
+<div class="workout-banner" style="border-left: 5px solid {{ workout.color }};">
+    <span class="workout-banner-icon">{{ workout.icon }}</span>
+    <span class="workout-banner-num" style="color:{{ workout.color }};">Workout #{{ workout.id }}: {{ workout.title }}</span>
+</div>
+
+<hgroup>
+    <h1>{{ bot.bot_name }}</h1>
+    <p>by {{ bot.student_name }} &mdash; {% if bot.is_active %}<mark>Active</mark>{% else %}Inactive{% endif %}</p>
+</hgroup>
+
+<div class="grid">
+    <article>
+        <header>Configuration</header>
+        <dl>
+            <dt>{{ workout.personality_label }}</dt>
+            <dd>{{ bot.personality or 'Not set' }}</dd>
+            <dt>{{ workout.objective_label }}</dt>
+            <dd>{{ bot.objective or 'Not set' }}</dd>
+            <dt>{{ workout.rules_label }}</dt>
+            <dd>{{ bot.behavior_rules or 'Not set' }}</dd>
+        </dl>
+        <a href="/w/{{ workout.id }}/bots/{{ bot.id }}/edit" role="button" class="outline"
+           style="border-color:{{ workout.color }}; color:{{ workout.color }};">Edit Bot</a>
+    </article>
+
+    <article>
+        <header>Performance Stats</header>
+        <dl>
+            <dt>Total Messages</dt>
+            <dd><strong>{{ stats.messages }}</strong></dd>
+            <dt>Total Conversations</dt>
+            <dd>{{ stats.conversations }}</dd>
+            <dt>Human Interactions</dt>
+            <dd>{{ stats.human_interactions }}</dd>
+
+            {# Workout-specific computed stats #}
+            {% if workout.id == 2 and stats.conversations > 0 %}
+            <dt>Avg Messages / Conversation</dt>
+            <dd>{{ "%.1f"|format(stats.messages / stats.conversations) }} <small>(engagement rate)</small></dd>
+            {% elif workout.id == 3 and stats.conversations > 0 %}
+            <dt>Avg Turns / Conversation</dt>
+            {% set avg = stats.messages / stats.conversations %}
+            <dd>{{ "%.1f"|format(avg) }}
+                {% if avg >= 5 %}<mark>🔥 Active negotiation pattern</mark>{% endif %}
+            </dd>
+            {% elif workout.id == 5 %}
+            <dt>Ecosystem Assignment</dt>
+            <dd>
+                {% set _rules = (bot.behavior_rules or '').strip() %}
+                {% set _rtag = _rules[:12].upper() %}
+                {% if _rtag == 'ECO_OVERRIDE' %}
+                    {% set in_eco_a = _rules[13:14].upper() == 'A' %}
+                {% else %}
+                {% set _p = (bot.personality or '').lower() %}
+                {% set _o = (bot.objective or '').lower() %}
+                {% set _r = _rules.lower() %}
+                {% set _pa = ('ecosystem a' in _p or 'eco a' in _p) and ('ecosystem b' not in _p and 'eco b' not in _p) %}
+                {% set _oa = ('ecosystem a' in _o or 'eco a' in _o) and ('ecosystem b' not in _o and 'eco b' not in _o) %}
+                {% set _ra = ('ecosystem a' in _r or 'eco a' in _r) and ('ecosystem b' not in _r and 'eco b' not in _r) %}
+                {% set _pb = ('ecosystem b' in _p or 'eco b' in _p) and ('ecosystem a' not in _p and 'eco a' not in _p) %}
+                {% set _ob = ('ecosystem b' in _o or 'eco b' in _o) and ('ecosystem a' not in _o and 'eco a' not in _o) %}
+                {% set _rb = ('ecosystem b' in _r or 'eco b' in _r) and ('ecosystem a' not in _r and 'eco a' not in _r) %}
+                {% set in_eco_a = (_pa or _oa or _ra) and not (_pb or _ob or _rb) %}
+                {% endif %}
+                {% if in_eco_a %}
+                <mark style="background:#3d9eff; color:#fff;">Ecosystem A</mark>
+                {% else %}
+                <mark style="background:#10b981; color:#fff;">Ecosystem B</mark>
+                {% endif %}
+            </dd>
+            {% endif %}
+        </dl>
+
+        {# Workout-specific status indicators #}
+        {% if workout.id == 1 %}
+        <hr>
+        <small>
+            Guardrails: {% if bot.behavior_rules %}<mark style="background:var(--pico-ins-color)">Configured</mark>{% else %}<mark style="background:var(--pico-del-color)">⚠ Missing — configure to avoid penalties</mark>{% endif %}<br>
+            RAG Strategy: {% if bot.objective %}<mark>Set</mark>{% else %}<em>Not configured</em>{% endif %}
+        </small>
+        {% elif workout.id == 4 %}
+        <hr>
+        <small>
+            Style Aesthetic: {% if bot.personality %}<mark>Defined</mark>{% else %}<em>Missing</em>{% endif %}<br>
+            IP Rules: {% if bot.behavior_rules %}<mark style="background:var(--pico-ins-color)">Configured</mark>{% else %}<mark style="background:var(--pico-del-color)">⚠ Configure to avoid IP penalties</mark>{% endif %}
+        </small>
+        {% endif %}
+    </article>
+</div>
+
+{% if grades %}
+<article>
+    <header>Grade History
+        <small style="margin-left:0.5rem; font-weight:normal;">&mdash; {{ workout.grading_note }}</small>
+    </header>
+    <table>
+        <thead>
+            <tr>
+                <th>Run</th>
+                <th>Overall</th>
+                {% if workout.id == 1 %}
+                <th>Brand Safety (Obj)</th><th>Quality</th><th>Human</th><th>Volume</th>
+                {% elif workout.id == 2 %}
+                <th>Objective</th><th>Quality</th><th>Human Engagement</th><th>Volume ⭐</th>
+                {% elif workout.id == 3 %}
+                <th>Deals (Obj) ⭐</th><th>Quality</th><th>Human</th><th>Volume</th>
+                {% elif workout.id == 4 %}
+                <th>Objective</th><th>Fashion Auth (Qual) ⭐</th><th>Human</th><th>Volume</th>
+                {% elif workout.id == 5 %}
+                <th>Objective</th><th>Quality</th><th>Human</th><th>Volume</th>
+                {% endif %}
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for g in grades %}
+            <tr>
+                <td>{{ g.grading_run_id }}</td>
+                <td><strong>{{ "%.1f"|format(g.overall_score) }}</strong></td>
+                <td>{{ "%.1f"|format(g.objective_score) }}</td>
+                <td>{{ "%.1f"|format(g.quality_score) }}</td>
+                <td>{{ "%.1f"|format(g.human_score) }}</td>
+                <td>{{ "%.1f"|format(g.volume_score) }}</td>
+                <td>{{ g.created_at }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</article>
+{% else %}
+<article>
+    <header>Grade History</header>
+    <p>No grades yet. Run grading from the <a href="/w/{{ workout.id }}/grading">Grading page</a>.</p>
+</article>
+{% endif %}
+
+<article>
+    <header>Recent Conversations</header>
+    {% if conversations %}
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Type</th>
+                <th>Turns</th>
+                <th>Started</th>
+                {% if workout.id == 3 %}<th>Deal Signal</th>{% endif %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for c in conversations %}
+            <tr>
+                <td>#{{ c.id }}</td>
+                <td>{{ c.type }}</td>
+                <td>{{ c.turn_count }}</td>
+                <td>{{ c.started_at }}</td>
+                {% if workout.id == 3 %}
+                <td>{% if c.turn_count >= 5 %}<mark>🔥 Long negotiation</mark>
+                    {% elif c.turn_count >= 3 %}<mark>Warming</mark>
+                    {% else %}<small>Short</small>{% endif %}
+                </td>
+                {% endif %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <p>No conversations yet.</p>
+    {% endif %}
+</article>
+{% endblock %}

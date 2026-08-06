@@ -1,0 +1,23 @@
+{
+ "captured_at": "2026-08-04T16:30:39Z",
+ "hf_metadata": {
+  "sha": "f60c5493b675b211c6c57f4aafec614f8812af9a"
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "manohar2026-dev/Heart-Disease-Predictor1",
+ "repo_type": "spaces",
+ "sha": "f60c5493b675b211c6c57f4aafec614f8812af9a",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/manohar2026-dev/Heart-Disease-Predictor1"
+}

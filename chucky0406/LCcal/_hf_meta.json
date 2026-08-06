@@ -1,0 +1,23 @@
+{
+ "captured_at": "2026-08-04T16:02:05Z",
+ "hf_metadata": {
+  "sha": "91d2ac25abf31a5cc0f5cdeab4b08f7227a82c8a"
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "chucky0406/LCcal",
+ "repo_type": "spaces",
+ "sha": "91d2ac25abf31a5cc0f5cdeab4b08f7227a82c8a",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/chucky0406/LCcal"
+}

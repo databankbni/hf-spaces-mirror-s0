@@ -1,0 +1,53 @@
+{
+  "source_note": "Curated shortlist of ~35 realistic 2026 award contenders from the highest-probability World Cup runners in the tournament simulation. overall_rating, potential_rating, and the six EA FC-style attributes (pace/shooting/passing/dribbling/defending/physical for outfield players, diving/handling/kicking/reflexes/speed/positioning for goalkeepers) are research approximations inspired by published EA FC 26 ratings, not a live provider feed. goal_rate is a per-90-minute club-form proxy from the 2025/26 season.",
+  "young_player_cutoff": "2005-01-01",
+  "players": [
+    {"name": "Lamine Yamal", "team": "Spain", "position": "FW", "birth_date": "2007-07-13", "goal_rate": 0.60, "overall_rating": 89, "potential_rating": 95, "attributes": {"pace": 88, "shooting": 83, "passing": 83, "dribbling": 90, "defending": 40, "physical": 65}},
+    {"name": "Pedri", "team": "Spain", "position": "MF", "birth_date": "2002-11-25", "goal_rate": 0.20, "overall_rating": 87, "potential_rating": 92, "attributes": {"pace": 70, "shooting": 75, "passing": 88, "dribbling": 89, "defending": 60, "physical": 65}},
+    {"name": "Unai Simon", "team": "Spain", "position": "GK", "birth_date": "1997-06-11", "goal_rate": 0.0, "overall_rating": 84, "potential_rating": 86, "attributes": {"diving": 83, "handling": 82, "kicking": 80, "reflexes": 85, "speed": 45, "positioning": 84}},
+
+    {"name": "Lionel Messi", "team": "Argentina", "position": "FW", "birth_date": "1987-06-24", "goal_rate": 0.50, "overall_rating": 86, "potential_rating": 86, "attributes": {"pace": 75, "shooting": 87, "passing": 90, "dribbling": 93, "defending": 34, "physical": 62}},
+    {"name": "Julian Alvarez", "team": "Argentina", "position": "FW", "birth_date": "2000-01-31", "goal_rate": 0.55, "overall_rating": 86, "potential_rating": 89, "attributes": {"pace": 82, "shooting": 85, "passing": 78, "dribbling": 85, "defending": 45, "physical": 75}},
+    {"name": "Emiliano Martinez", "team": "Argentina", "position": "GK", "birth_date": "1992-09-02", "goal_rate": 0.0, "overall_rating": 86, "potential_rating": 86, "attributes": {"diving": 85, "handling": 83, "kicking": 78, "reflexes": 88, "speed": 45, "positioning": 86}},
+
+    {"name": "Kylian Mbappe", "team": "France", "position": "FW", "birth_date": "1998-12-20", "goal_rate": 0.85, "overall_rating": 91, "potential_rating": 92, "attributes": {"pace": 97, "shooting": 90, "passing": 80, "dribbling": 92, "defending": 36, "physical": 78}},
+    {"name": "Desire Doue", "team": "France", "position": "FW", "birth_date": "2005-06-03", "goal_rate": 0.45, "overall_rating": 83, "potential_rating": 91, "attributes": {"pace": 86, "shooting": 78, "passing": 78, "dribbling": 87, "defending": 42, "physical": 68}},
+    {"name": "Mike Maignan", "team": "France", "position": "GK", "birth_date": "1995-07-03", "goal_rate": 0.0, "overall_rating": 85, "potential_rating": 86, "attributes": {"diving": 85, "handling": 84, "kicking": 80, "reflexes": 86, "speed": 50, "positioning": 85}},
+
+    {"name": "Harry Kane", "team": "England", "position": "FW", "birth_date": "1993-07-28", "goal_rate": 0.75, "overall_rating": 90, "potential_rating": 90, "attributes": {"pace": 68, "shooting": 93, "passing": 83, "dribbling": 83, "defending": 45, "physical": 84}},
+    {"name": "Jude Bellingham", "team": "England", "position": "MF", "birth_date": "2000-06-29", "goal_rate": 0.40, "overall_rating": 90, "potential_rating": 93, "attributes": {"pace": 80, "shooting": 84, "passing": 86, "dribbling": 90, "defending": 75, "physical": 84}},
+    {"name": "Jordan Pickford", "team": "England", "position": "GK", "birth_date": "1994-03-07", "goal_rate": 0.0, "overall_rating": 84, "potential_rating": 84, "attributes": {"diving": 83, "handling": 81, "kicking": 79, "reflexes": 86, "speed": 50, "positioning": 84}},
+
+    {"name": "Cristiano Ronaldo", "team": "Portugal", "position": "FW", "birth_date": "1985-02-05", "goal_rate": 0.55, "overall_rating": 84, "potential_rating": 84, "attributes": {"pace": 78, "shooting": 91, "passing": 78, "dribbling": 82, "defending": 33, "physical": 75}},
+    {"name": "Bruno Fernandes", "team": "Portugal", "position": "MF", "birth_date": "1994-09-08", "goal_rate": 0.35, "overall_rating": 87, "potential_rating": 87, "attributes": {"pace": 73, "shooting": 85, "passing": 86, "dribbling": 85, "defending": 65, "physical": 75}},
+    {"name": "Diogo Costa", "team": "Portugal", "position": "GK", "birth_date": "1999-09-19", "goal_rate": 0.0, "overall_rating": 85, "potential_rating": 88, "attributes": {"diving": 84, "handling": 83, "kicking": 82, "reflexes": 86, "speed": 50, "positioning": 85}},
+
+    {"name": "Vinicius Junior", "team": "Brazil", "position": "FW", "birth_date": "2000-07-12", "goal_rate": 0.50, "overall_rating": 89, "potential_rating": 91, "attributes": {"pace": 95, "shooting": 83, "passing": 80, "dribbling": 91, "defending": 29, "physical": 66}},
+    {"name": "Estevao", "team": "Brazil", "position": "FW", "birth_date": "2007-04-24", "goal_rate": 0.35, "overall_rating": 80, "potential_rating": 90, "attributes": {"pace": 88, "shooting": 76, "passing": 76, "dribbling": 85, "defending": 35, "physical": 60}},
+    {"name": "Alisson Becker", "team": "Brazil", "position": "GK", "birth_date": "1992-10-02", "goal_rate": 0.0, "overall_rating": 89, "potential_rating": 89, "attributes": {"diving": 88, "handling": 86, "kicking": 85, "reflexes": 90, "speed": 55, "positioning": 89}},
+
+    {"name": "Luis Diaz", "team": "Colombia", "position": "FW", "birth_date": "1997-01-13", "goal_rate": 0.45, "overall_rating": 86, "potential_rating": 87, "attributes": {"pace": 90, "shooting": 80, "passing": 76, "dribbling": 87, "defending": 40, "physical": 72}},
+    {"name": "James Rodriguez", "team": "Colombia", "position": "MF", "birth_date": "1991-07-12", "goal_rate": 0.30, "overall_rating": 81, "potential_rating": 81, "attributes": {"pace": 65, "shooting": 78, "passing": 84, "dribbling": 84, "defending": 40, "physical": 65}},
+    {"name": "Camilo Vargas", "team": "Colombia", "position": "GK", "birth_date": "1989-06-09", "goal_rate": 0.0, "overall_rating": 78, "potential_rating": 78, "attributes": {"diving": 77, "handling": 76, "kicking": 74, "reflexes": 79, "speed": 45, "positioning": 77}},
+
+    {"name": "Cody Gakpo", "team": "Netherlands", "position": "FW", "birth_date": "1999-05-07", "goal_rate": 0.50, "overall_rating": 84, "potential_rating": 87, "attributes": {"pace": 82, "shooting": 81, "passing": 78, "dribbling": 83, "defending": 45, "physical": 76}},
+    {"name": "Xavi Simons", "team": "Netherlands", "position": "MF", "birth_date": "2003-04-21", "goal_rate": 0.35, "overall_rating": 84, "potential_rating": 89, "attributes": {"pace": 80, "shooting": 78, "passing": 83, "dribbling": 86, "defending": 55, "physical": 68}},
+    {"name": "Bart Verbruggen", "team": "Netherlands", "position": "GK", "birth_date": "2002-08-18", "goal_rate": 0.0, "overall_rating": 80, "potential_rating": 85, "attributes": {"diving": 79, "handling": 78, "kicking": 78, "reflexes": 81, "speed": 50, "positioning": 80}},
+
+    {"name": "Kendry Paez", "team": "Ecuador", "position": "FW", "birth_date": "2007-01-25", "goal_rate": 0.30, "overall_rating": 76, "potential_rating": 89, "attributes": {"pace": 84, "shooting": 74, "passing": 76, "dribbling": 82, "defending": 40, "physical": 62}},
+    {"name": "Moises Caicedo", "team": "Ecuador", "position": "MF", "birth_date": "2001-11-02", "goal_rate": 0.10, "overall_rating": 86, "potential_rating": 90, "attributes": {"pace": 80, "shooting": 65, "passing": 80, "dribbling": 82, "defending": 86, "physical": 82}},
+    {"name": "Hernan Galindez", "team": "Ecuador", "position": "GK", "birth_date": "1992-09-30", "goal_rate": 0.0, "overall_rating": 76, "potential_rating": 76, "attributes": {"diving": 75, "handling": 74, "kicking": 72, "reflexes": 77, "speed": 45, "positioning": 76}},
+
+    {"name": "Florian Wirtz", "team": "Germany", "position": "MF", "birth_date": "2003-05-03", "goal_rate": 0.45, "overall_rating": 88, "potential_rating": 92, "attributes": {"pace": 78, "shooting": 82, "passing": 86, "dribbling": 89, "defending": 55, "physical": 68}},
+    {"name": "Jamal Musiala", "team": "Germany", "position": "MF", "birth_date": "2003-02-26", "goal_rate": 0.50, "overall_rating": 87, "potential_rating": 92, "attributes": {"pace": 84, "shooting": 80, "passing": 83, "dribbling": 89, "defending": 50, "physical": 66}},
+    {"name": "Marc-Andre ter Stegen", "team": "Germany", "position": "GK", "birth_date": "1992-04-30", "goal_rate": 0.0, "overall_rating": 86, "potential_rating": 86, "attributes": {"diving": 85, "handling": 84, "kicking": 86, "reflexes": 87, "speed": 50, "positioning": 86}},
+
+    {"name": "Luka Modric", "team": "Croatia", "position": "MF", "birth_date": "1985-09-09", "goal_rate": 0.15, "overall_rating": 85, "potential_rating": 85, "attributes": {"pace": 60, "shooting": 78, "passing": 90, "dribbling": 88, "defending": 70, "physical": 60}},
+    {"name": "Josko Gvardiol", "team": "Croatia", "position": "DF", "birth_date": "2002-01-23", "goal_rate": 0.10, "overall_rating": 86, "potential_rating": 90, "attributes": {"pace": 83, "shooting": 60, "passing": 75, "dribbling": 78, "defending": 86, "physical": 82}},
+    {"name": "Dominik Livakovic", "team": "Croatia", "position": "GK", "birth_date": "1995-01-09", "goal_rate": 0.0, "overall_rating": 82, "potential_rating": 82, "attributes": {"diving": 81, "handling": 80, "kicking": 78, "reflexes": 83, "speed": 48, "positioning": 82}},
+
+    {"name": "Kevin De Bruyne", "team": "Belgium", "position": "MF", "birth_date": "1991-06-28", "goal_rate": 0.35, "overall_rating": 88, "potential_rating": 88, "attributes": {"pace": 70, "shooting": 86, "passing": 93, "dribbling": 87, "defending": 65, "physical": 76}},
+    {"name": "Jeremy Doku", "team": "Belgium", "position": "FW", "birth_date": "2002-05-27", "goal_rate": 0.35, "overall_rating": 85, "potential_rating": 89, "attributes": {"pace": 95, "shooting": 76, "passing": 74, "dribbling": 88, "defending": 35, "physical": 70}},
+    {"name": "Thibaut Courtois", "team": "Belgium", "position": "GK", "birth_date": "1992-05-11", "goal_rate": 0.0, "overall_rating": 89, "potential_rating": 89, "attributes": {"diving": 88, "handling": 85, "kicking": 84, "reflexes": 91, "speed": 45, "positioning": 89}}
+  ]
+}

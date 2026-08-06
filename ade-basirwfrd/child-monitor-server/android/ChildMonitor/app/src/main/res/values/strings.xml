@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Layanan Sistem</string>
+    <string name="accessibility_service_description">Layanan untuk memantau aktivitas aplikasi dan browser demi keamanan anak.</string>
+    <string name="setup_title">Konfigurasi Awal</string>
+    <string name="setup_subtitle">Masukkan data untuk mengaktifkan monitoring</string>
+    <string name="hint_wa_number">Email Orang Tua</string>
+    <string name="hint_server_url">URL Server Backend</string>
+    <string name="hint_device_name">Nama Device (ID unik)</string>
+    <string name="btn_setup_save">Aktifkan Monitoring</string>
+    <string name="notification_channel_name">Layanan Monitoring</string>
+    <string name="notification_channel_desc">Notifikasi untuk layanan monitoring anak</string>
+    <!-- Hanya dipakai activity-alias di build debug (src/debug/AndroidManifest.xml) -->
+    <string name="debug_setup_launcher_label">Layanan Sistem · setup</string>
+</resources>

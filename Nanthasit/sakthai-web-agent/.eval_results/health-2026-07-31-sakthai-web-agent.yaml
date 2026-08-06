@@ -1,0 +1,15 @@
+health:
+  asset: Nanthasit/sakthai-web-agent
+  type: space
+  checked_at: 2026-07-31T21:27:47.024730Z
+  status: pass
+  findings:
+    - readme: valid
+    - files: readable
+    - broken_links: 0
+    - metadata:
+        sdk: gradio
+        hardware: null
+  issues:
+    - hardware metadata not set
+    - all sibling file sizes returned 0, repo is sparse

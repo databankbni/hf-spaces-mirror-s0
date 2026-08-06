@@ -1,0 +1,956 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-07-02T22:23:18.366Z",
+  "generatedBy": "scripts/build-trusted-data.mjs",
+  "incident": {
+    "id": "ven-2026-earthquake",
+    "name": "Venezuela June 2026 earthquake",
+    "admin0": "Venezuela",
+    "startDate": "2026-06-24",
+    "bbox": [
+      -73.45,
+      0.45,
+      -59.75,
+      12.35
+    ]
+  },
+  "policy": {
+    "publicRule": "Only publish source-approved public operational information, aggregate needs, and redacted outputs.",
+    "privateRule": "Use exact reports, partner operational data, and sensitive context only in role-gated coordination views.",
+    "aiRule": "AI-derived labels, geocodes, summaries, and urgency scores are advisory metadata requiring human validation."
+  },
+  "summary": {
+    "okSourceCount": 17,
+    "errorSourceCount": 0,
+    "hdxPackageCount": 7,
+    "googleDatasetCount": 2,
+    "satelliteImageryCount": 5,
+    "resourceCount": 57,
+    "trustedAssetLayers": 11,
+    "microsoftDamageFootprints": 9128,
+    "averageDamage0m": 0.5681546514234352,
+    "usgsEventCount": 7,
+    "usgsMaxMagnitude": 7.5
+  },
+  "sources": [
+    {
+      "id": "hdx-hot-earthquake-ven",
+      "name": "Venezuela - M 7.5 Earthquake - June 2026 - OSM & Overture Data",
+      "owner": "Humanitarian OpenStreetMap Team (HOT)",
+      "tier": "reference",
+      "kind": "hdx_package",
+      "visibility": "public_reference",
+      "recommendedUse": "Roads, buildings, emergency facilities, ports, airports, POIs, and data-quality context.",
+      "licenseReview": "Check package resource licenses before derivative publication.",
+      "url": "https://data.humdata.org/dataset/hot_eq_ven",
+      "refreshCadenceHours": 6,
+      "status": "ok",
+      "title": "Venezuela - M 7.5 Earthquake - June 2026 - OSM & Overture Data",
+      "organization": "Humanitarian OpenStreetMap Team (HOT)",
+      "license": "Other",
+      "metadataModified": "2026-07-02T09:31:02.453262",
+      "datasetDate": "[2026-06-25T00:00:00 TO 2026-07-01T23:59:59]",
+      "resourceCount": 21,
+      "formats": [
+        "GeoJSON",
+        "Geopackage",
+        "HTML",
+        "SHP"
+      ],
+      "resources": [
+        {
+          "name": "Buildings (OSM)",
+          "format": "Geopackage",
+          "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/VEN/buildings/hot_eq_osm_ven_buildings_osm_gpkg.zip",
+          "lastModified": "2026-07-02T04:47:16",
+          "size": 20591146
+        },
+        {
+          "name": "Buildings (OSM)",
+          "format": "SHP",
+          "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/VEN/buildings/hot_eq_osm_ven_buildings_osm_shp.zip",
+          "lastModified": "2026-07-02T04:47:25",
+          "size": 19880960
+        },
+        {
+          "name": "Roads (OSM)",
+          "format": "Geopackage",
+          "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/VEN/roads/hot_eq_osm_ven_roads_osm_gpkg.zip",
+          "lastModified": "2026-07-02T04:47:34",
+          "size": 33567300
+        },
+        {
+          "name": "Roads (OSM)",
+          "format": "SHP",
+          "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/VEN/roads/hot_eq_osm_ven_roads_osm_shp.zip",
+          "lastModified": "2026-07-02T04:47:43",
+          "size": 32132653
+        },
+        {
+          "name": "Points of Interest (OSM)",
+          "format": "Geopackage",
+          "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/VEN/points_of_interest/hot_eq_osm_ven_points_of_interest_osm_gpkg.zip",
+          "lastModified": "2026-07-02T04:47:51",
+          "size": 2770056
+        },
+        {
+          "name": "Points of Interest (OSM)",
+          "format": "SHP",
+          "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/VEN/points_of_interest/hot_eq_osm_ven_points_of_interest_osm_shp.zip",
+          "lastModified": "2026-07-02T04:47:59",
+          "size": 2787036
+        },
+        {
+          "name": "Health Facilities (OSM)",
+          "format": "Geopackage",
+          "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/VEN/health_facilities/hot_eq_osm_ven_health_facilities_osm_gpkg.zip",
+          "lastModified": "2026-07-02T04:48:07",
+          "size": 217455
+        },
+        {
+          "name": "Health Facilities (OSM)",
+          "format": "SHP",
+          "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/VEN/health_facilities/hot_eq_osm_ven_health_facilities_osm_shp.zip",
+          "lastModified": "2026-07-02T04:48:15",
+          "size": 205055
+        },
+        {
+          "name": "Education Facilities (OSM)",
+          "format": "Geopackage",
+          "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/VEN/education_facilities/hot_eq_osm_ven_education_facilities_osm_gpkg.zip",
+          "lastModified": "2026-07-02T04:48:22",
+          "size": 498276
+        },
+        {
+          "name": "Education Facilities (OSM)",
+          "format": "SHP",
+          "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/VEN/education_facilities/hot_eq_osm_ven_education_facilities_osm_shp.zip",
+          "lastModified": "2026-07-02T04:48:30",
+          "size": 468967
+        },
+        {
+          "name": "Airports (OSM)",
+          "format": "Geopackage",
+          "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/VEN/airports/hot_eq_osm_ven_airports_osm_gpkg.zip",
+          "lastModified": "2026-07-02T04:48:38",
+          "size": 200372
+        },
+        {
+          "name": "Airports (OSM)",
+          "format": "SHP",
+          "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/VEN/airports/hot_eq_osm_ven_airports_osm_shp.zip",
+          "lastModified": "2026-07-02T04:48:45",
+          "size": 186389
+        },
+        {
+          "name": "Sea Ports (OSM)",
+          "format": "Geopackage",
+          "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/VEN/sea_ports/hot_eq_osm_ven_sea_ports_osm_gpkg.zip",
+          "lastModified": "2026-07-02T04:48:52",
+          "size": 9152
+        },
+        {
+          "name": "Sea Ports (OSM)",
+          "format": "SHP",
+          "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/VEN/sea_ports/hot_eq_osm_ven_sea_ports_osm_shp.zip",
+          "lastModified": "2026-07-02T04:48:59",
+          "size": 4878
+        },
+        {
+          "name": "Buildings (Overture)",
+          "format": "Geopackage",
+          "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/VEN/buildings/hot_eq_overture_ven_buildings_overture_gpkg.zip",
+          "lastModified": "2026-06-26T11:52:13.598339",
+          "size": 454487299
+        },
+        {
+          "name": "Buildings (Overture)",
+          "format": "SHP",
+          "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/VEN/buildings/hot_eq_overture_ven_buildings_overture_shp.zip",
+          "lastModified": "2026-06-26T11:52:13.598490",
+          "size": 425320399
+        },
+        {
+          "name": "Emergency Facilities (Overture)",
+          "format": "Geopackage",
+          "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/VEN/emergency_facilities/hot_eq_overture_ven_emergency_facilities_overture_gpkg.zip",
+          "lastModified": "2026-06-26T11:52:13.598646",
+          "size": 197926
+        },
+        {
+          "name": "Emergency Facilities (Overture)",
+          "format": "SHP",
+          "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/VEN/emergency_facilities/hot_eq_overture_ven_emergency_facilities_overture_shp.zip",
+          "lastModified": "2026-06-26T11:52:13.598798",
+          "size": 202608
+        },
+        {
+          "name": "Data Quality Report and Interactive Map",
+          "format": "HTML",
+          "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/VEN/earthquake/VEN_EQ_Data_Quality_Report.html",
+          "lastModified": "2026-07-02T04:49:18",
+          "size": 48922
+        },
+        {
+          "name": "Building Predictions (fAIr)",
+          "format": "Geopackage",
+          "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/VEN/earthquake/VEN_EQ_fAIr_building_predictions_gpkg.zip",
+          "lastModified": "2026-06-26T16:19:29.660716",
+          "size": 51524072
+        },
+        {
+          "name": "Building Density (fAIr, H3 res 8)",
+          "format": "GeoJSON",
+          "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/VEN/earthquake/VEN_EQ_BuildingDensity_h3r8.geojson",
+          "lastModified": "2026-06-26T16:32:20.408487",
+          "size": 6185697
+        }
+      ]
+    },
+    {
+      "id": "google-open-buildings-v3",
+      "name": "Google Open Buildings V3 Polygons",
+      "owner": "Google Research - Open Buildings",
+      "tier": "reference",
+      "kind": "google_public_dataset",
+      "visibility": "public_reference",
+      "recommendedUse": "Baseline building-footprint exposure, settlement density, and cross-checking Microsoft damage footprints in public aggregate outputs.",
+      "licenseReview": "CC BY 4.0 in Earth Engine; Google Open Buildings also offers ODbL. Attribute Google Research and do not treat AI-derived footprints as verified household records.",
+      "url": "https://developers.google.com/earth-engine/datasets/catalog/GOOGLE_Research_open-buildings_v3_polygons",
+      "refreshCadenceHours": 720,
+      "status": "ok",
+      "datasetId": "GOOGLE/Research/open-buildings/v3/polygons",
+      "coverage": "Africa, South Asia, South-East Asia, Latin America, and the Caribbean, including Venezuela.",
+      "access": "Earth Engine FeatureCollection and downloadable S2-sharded CSV files.",
+      "note": "Public Google dataset registered for trusted context. Area-specific Earth Engine export is a downstream pipeline step."
+    },
+    {
+      "id": "google-open-buildings-temporal",
+      "name": "Google Open Buildings 2.5D Temporal Dataset",
+      "owner": "Google Research - Open Buildings",
+      "tier": "reference",
+      "kind": "google_public_dataset",
+      "visibility": "public_reference",
+      "recommendedUse": "Annual 2016-2023 building presence, fractional count, and height context for exposure estimates and public aggregate needs maps.",
+      "licenseReview": "CC BY 4.0 and ODbL options; includes Copernicus Sentinel-2-derived data. Attribute Google Research and respect Earth Engine/Cloud export limits.",
+      "url": "https://developers.google.com/earth-engine/datasets/catalog/GOOGLE_Research_open-buildings-temporal_v1",
+      "refreshCadenceHours": 720,
+      "status": "ok",
+      "datasetId": "GOOGLE/Research/open-buildings-temporal/v1",
+      "coverage": "Africa, South Asia, South-East Asia, Latin America, and the Caribbean, including Venezuela.",
+      "access": "Earth Engine ImageCollection and Google Cloud Storage export workflow for selected areas of interest.",
+      "note": "Public Google dataset registered for trusted context. Area-specific Earth Engine export is a downstream pipeline step."
+    },
+    {
+      "id": "eox-sentinel-2-cloudless-venezuela-national",
+      "name": "EOX Sentinel-2 Cloudless 2024 national imagery for Venezuela",
+      "owner": "EOX IT Services GmbH / Copernicus Sentinel-2",
+      "tier": "reference",
+      "kind": "public_satellite_imagery",
+      "visibility": "public_reference",
+      "recommendedUse": "Open, shareable Venezuela-wide optical context for the default map. Use for regional and city-scale visual orientation only; 10 m Sentinel-2 imagery cannot confirm individual building damage and must not be upscaled into evidence claims.",
+      "licenseReview": "EOxCloudless requires attribution to EOxCloudless / EOX IT Services GmbH and notes that it contains modified Copernicus Sentinel data 2024. Review the current EOX terms before redistribution beyond public map visualization.",
+      "url": "https://s2maps.eu/",
+      "refreshCadenceHours": 720,
+      "status": "ok",
+      "beforeScene": "Annual 2024 Sentinel-2 cloudless mosaic, not a pre-earthquake event scene.",
+      "afterScene": "Annual 2024 Sentinel-2 cloudless mosaic, not a post-earthquake event scene.",
+      "access": "Public EOX WMTS tiles in Web Mercator, used as the default national satellite context. Maximum native visual zoom is 14 for the Sentinel-2 cloudless layer; Leaflet overzooms above that for continuity.",
+      "note": "Public satellite imagery or derived public remote-sensing layer registered for visualization. Individual building damage is interpreted from the Microsoft/HDX damage assessment and human validation, not directly from context imagery."
+    },
+    {
+      "id": "hotosm-venezuela-eq-2026-damage-areas",
+      "name": "2026 Venezuela earthquake: AI building and damage assessment",
+      "owner": "Humanitarian OpenStreetMap Team (HOTOSM)",
+      "tier": "hazard",
+      "kind": "hf_dataset",
+      "visibility": "public_reference",
+      "recommendedUse": "Multi-area AI-derived and human-validated damage context for Caracas, Caraballeda, Catia La Mar, La Guaira, Moron, and Naiguata. Use for prioritization and visualization, not as verified household-level damage.",
+      "licenseReview": "Review the dataset card and per-area source files before redistribution. Damage comes from HOTOSM fAIr, Microsoft AI for Good Lab, OSU/CUNY Sentinel-1, and MapSwipe validation depending on area.",
+      "url": "https://huggingface.co/datasets/hotosm/venezuela_eq_2026",
+      "refreshCadenceHours": 12,
+      "status": "ok",
+      "datasetId": "hotosm/venezuela_eq_2026",
+      "coverage": "Six affected-area AOIs plus validated overview files for the 24 June 2026 Venezuela earthquake.",
+      "access": "Public Hugging Face dataset. The app caches a small AOI/count summary into public/data/hotosm-venezuela-damage-areas.geojson.",
+      "note": "Hugging Face dataset registered for public visualization and local static cache generation. Verify source-specific limitations before operational use."
+    },
+    {
+      "id": "oam-vantor-catia-la-mar-high-res",
+      "name": "Vantor high-resolution pre/post imagery for Catia La Mar",
+      "owner": "Vantor Open Data STAC, cataloged by NASA Earthdata GIS",
+      "tier": "reference",
+      "kind": "public_satellite_imagery",
+      "visibility": "public_reference",
+      "recommendedUse": "Building-scale before/after source context for the Catia La Mar damage viewer. Use one LG02 7 Apr 2026 pre-event Vantor Open Data STAC COG and one LG05 27 Jun 2026 post-event Vantor Open Data STAC COG in a strict shared footprint. Do not stack LG02/LG04/LG06 fill scenes in the public slider because mixed optical footprints can create repeated-looking buildings, scale changes, and tone seams. Do not infer individual damage labels without Microsoft/HDX assessment and human validation.",
+      "licenseReview": "NASA Earthdata GIS item points to the external Vantor STAC catalog. Vantor Open Data event imagery is attributed in-app as CC BY-NC 4.0. Attribute Vantor and NASA catalog context; avoid commercial derivative use without separate review.",
+      "url": "https://gis.earthdata.nasa.gov/portal/home/item.html?id=8cd8a093c4334a28838a42c963b9659c",
+      "refreshCadenceHours": 720,
+      "status": "ok",
+      "beforeScene": "Pre-event imagery: Vantor LG02 Image B120001100513B10, acquired 2026-04-07, bbox [-67.085575, 10.518145, -66.967422, 10.679827].",
+      "afterScene": "Post-event imagery: Vantor LG05 Image B15000110186C610, acquired 2026-06-27, approximately 0.349 m GSD, bbox [-67.043108, 10.524025, -66.942944, 10.642557].",
+      "access": "NASA Earthdata GIS catalog record with external Vantor STAC. The public slider loads one LG02 7 Apr 2026 pre-event COG and one LG05 27 Jun 2026 post-event COG through HOTOSM TiTiler only when the comparison is enabled, clips both layers to their strict shared footprint, and keeps EOX Sentinel-2 Cloudless underneath as a low-priority open national visual underlay outside the true pre/post overlap.",
+      "note": "Public satellite imagery or derived public remote-sensing layer registered for visualization. Individual building damage is interpreted from the Microsoft/HDX damage assessment and human validation, not directly from context imagery."
+    },
+    {
+      "id": "nasa-nisar-venezuela-los-displacement",
+      "name": "Line of Sight Surface Displacement Map on 6/25/2026 (NISAR) for the Venezuela Earthquakes",
+      "owner": "NASA-JPL/Caltech Team, NISAR Operations Science Team",
+      "tier": "hazard",
+      "kind": "public_satellite_imagery",
+      "visibility": "public_reference",
+      "recommendedUse": "Public surface-displacement context for the earthquake response. Use to understand broad deformation patterns; do not interpret as building-level structural damage or calibrated ground truth.",
+      "licenseReview": "NASA Earth Science data are generally open, but this item is experimental/research-grade. Use with NASA-JPL/Caltech attribution and include the item's modified Copernicus Sentinel data notice where applicable.",
+      "url": "https://gis.earthdata.nasa.gov/portal/home/item.html?id=9244f7b07fa64d45ae7cb66c34d1696a",
+      "refreshCadenceHours": 720,
+      "status": "ok",
+      "beforeScene": "NISAR pre-event image acquired 2026-06-13",
+      "afterScene": "NISAR post-event image acquired 2026-06-25; line-of-sight displacement map at 80 m posting",
+      "access": "NASA Earthdata GIS ArcGIS ImageServer exportImage overlay loaded only when the NASA/NISAR layer is enabled.",
+      "note": "Public satellite imagery or derived public remote-sensing layer registered for visualization. Individual building damage is interpreted from the Microsoft/HDX damage assessment and human validation, not directly from context imagery."
+    },
+    {
+      "id": "nasa-osu-sentinel1-damaged-structures",
+      "name": "Sentinel-1 Likelihood of Damaged Structures (Experimental) for the Venezuela Earthquake June 2026",
+      "owner": "NASA Disasters Response Coordination System / Oregon State University",
+      "tier": "hazard",
+      "kind": "public_satellite_imagery",
+      "visibility": "public_reference",
+      "recommendedUse": "Experimental Sentinel-1 coherent-change damage-likelihood context across the affected region. Use for situational awareness and review prioritization only; do not publish as a verified building-by-building census.",
+      "licenseReview": "Preliminary, unvalidated rapid assessment. Attribute the Sentinel-1 damage analysis authors and Overture Maps building footprints; preserve NASA item caveats.",
+      "url": "https://gis.earthdata.nasa.gov/portal/home/item.html?id=0c3d77dd5aae46e4829d9a282477615c",
+      "refreshCadenceHours": 720,
+      "status": "ok",
+      "beforeScene": "65 Sentinel-1 reference acquisitions from 2025-06-17 through 2026-06-23",
+      "afterScene": "Sentinel-1 post-event swaths from 2026-06-24 22:49 UTC and 2026-06-25 10:16 UTC",
+      "access": "NASA Earthdata GIS web map and public ArcGIS FeatureServer; not loaded by default in the public viewer to avoid rendering millions of building polygons.",
+      "note": "Public satellite imagery or derived public remote-sensing layer registered for visualization. Individual building damage is interpreted from the Microsoft/HDX damage assessment and human validation, not directly from context imagery."
+    },
+    {
+      "id": "sentinel-2-earth-search-catia-la-mar",
+      "name": "Sentinel-2 before/after satellite imagery for Catia La Mar",
+      "owner": "ESA Copernicus Sentinel-2 via Element 84 Earth Search / AWS Open Data",
+      "tier": "reference",
+      "kind": "public_satellite_imagery",
+      "visibility": "public_reference",
+      "recommendedUse": "Public before/after satellite context for the Catia La Mar damage map. Use alongside Microsoft/HDX damage assessment because 10 m Sentinel-2 imagery cannot confirm individual building damage.",
+      "licenseReview": "Contains modified Copernicus Sentinel data. Attribute ESA Copernicus Sentinel-2, Element 84 Earth Search, AWS Open Data, and TiTiler rendering.",
+      "url": "https://earth-search.aws.element84.com/v1",
+      "refreshCadenceHours": 720,
+      "status": "ok",
+      "beforeScene": "S2A_T19PGM_20260622T150938_L2A and S2A_T19PFM_20260622T150938_L2A",
+      "afterScene": "S2C_T19PGM_20260627T145723_L2A and S2C_T19PFM_20260627T145723_L2A",
+      "access": "Cloud-Optimized GeoTIFF visual assets rendered as map tiles through TiTiler.",
+      "note": "Public satellite imagery or derived public remote-sensing layer registered for visualization. Individual building damage is interpreted from the Microsoft/HDX damage assessment and human validation, not directly from context imagery."
+    },
+    {
+      "id": "hdx-microsoft-catia-damage",
+      "name": "Venezuela Earthquakes: Building Damage Assessment in Catia La Mar",
+      "owner": "Microsoft AI for Good Lab",
+      "tier": "hazard",
+      "kind": "hdx_package",
+      "visibility": "private_context_public_attributed",
+      "recommendedUse": "Damage context, route planning, and prioritization support. Never use as an automated rescue decision.",
+      "licenseReview": "CC BY attribution required.",
+      "url": "https://data.humdata.org/dataset/venezuela-earthquakes-catia-la-mar",
+      "refreshCadenceHours": 6,
+      "status": "ok",
+      "title": "Venezuela Earthquakes: Building Damage Assessment in Catia La Mar",
+      "organization": "Microsoft AI for Good Lab",
+      "license": "Creative Commons Attribution International (CC BY)",
+      "metadataModified": "2026-06-27T23:02:34.874516",
+      "datasetDate": "[2026-06-25T00:00:00 TO 2026-06-25T23:59:59]",
+      "resourceCount": 3,
+      "formats": [
+        "GeoJSON",
+        "Geopackage",
+        "JPEG"
+      ],
+      "resources": [
+        {
+          "name": "venezuela-2026-page-2-updated (Large).jpg",
+          "format": "JPEG",
+          "url": "https://data.humdata.org/dataset/029efb88-3a8a-40d9-8aea-65477e6eb744/resource/ac4ec923-02c2-43c2-92b9-50c439608e90/download/venezuela-2026-page-2-updated-large.jpg",
+          "lastModified": "2026-06-27T15:03:50.342248",
+          "size": 442032
+        },
+        {
+          "name": "valid_area_mask_be30d955-2b80-4354-9418-5b9123117843_39cc9d50-43cb-4384-92c3-ce40455392aa.geojson",
+          "format": "GeoJSON",
+          "url": "https://data.humdata.org/dataset/029efb88-3a8a-40d9-8aea-65477e6eb744/resource/d7c889f0-4a3f-4f93-b35c-55b539e11b95/download/valid_area_mask_be30d955-2b80-4354-9418-5b9123117843_39cc9d50-43cb-4384-92c3-ce40455392aa.geojson",
+          "lastModified": "2026-06-26T22:16:40.048145",
+          "size": 840
+        },
+        {
+          "name": "predicted_damage_catia_la_mar_footprints.gpkg",
+          "format": "Geopackage",
+          "url": "https://data.humdata.org/dataset/029efb88-3a8a-40d9-8aea-65477e6eb744/resource/684fdeab-e4ac-4029-9ec9-891676b2ebfc/download/predicted_damage_catia_la_mar_footprints.gpkg",
+          "lastModified": "2026-06-26T05:16:28.651374",
+          "size": 7553024
+        }
+      ]
+    },
+    {
+      "id": "arcgis-microsoft-catia-damage",
+      "name": "Edificios_Afectados FeatureServer",
+      "owner": "Microsoft AI for Good Lab / ArcGIS",
+      "tier": "hazard",
+      "kind": "arcgis_feature_layer",
+      "visibility": "private_context_public_attributed",
+      "recommendedUse": "Interactive Catia La Mar affected-building polygons with damage probability fields.",
+      "licenseReview": "Use with HDX source attribution.",
+      "url": "https://services8.arcgis.com/w0z3NDBGLWwOLx2y/arcgis/rest/services/Catia_La_Mar_3D_WFL1/FeatureServer/0",
+      "refreshCadenceHours": 6,
+      "status": "ok",
+      "title": "Edificios_Afectados",
+      "geometryType": "esriGeometryPolygon",
+      "capabilities": "Query",
+      "maxRecordCount": 2000,
+      "fields": [
+        {
+          "name": "OBJECTID",
+          "type": "esriFieldTypeOID",
+          "alias": "OBJECTID"
+        },
+        {
+          "name": "id",
+          "type": "esriFieldTypeBigInteger",
+          "alias": "id"
+        },
+        {
+          "name": "damage_pct_0m",
+          "type": "esriFieldTypeDouble",
+          "alias": "damage_pct_0m"
+        },
+        {
+          "name": "damage_pct_10m",
+          "type": "esriFieldTypeDouble",
+          "alias": "damage_pct_10m"
+        },
+        {
+          "name": "damage_pct_20m",
+          "type": "esriFieldTypeDouble",
+          "alias": "damage_pct_20m"
+        },
+        {
+          "name": "damaged",
+          "type": "esriFieldTypeBigInteger",
+          "alias": "damaged"
+        },
+        {
+          "name": "unknown_pct",
+          "type": "esriFieldTypeDouble",
+          "alias": "unknown_pct"
+        },
+        {
+          "name": "Shape__Area",
+          "type": "esriFieldTypeDouble",
+          "alias": "Shape__Area"
+        },
+        {
+          "name": "Shape__Length",
+          "type": "esriFieldTypeDouble",
+          "alias": "Shape__Length"
+        }
+      ],
+      "extent": {
+        "xmin": -67.10980339914647,
+        "ymin": 10.559121041784461,
+        "xmax": -66.99643859034485,
+        "ymax": 10.614546090577116,
+        "spatialReference": {
+          "wkid": 4326,
+          "latestWkid": 4326
+        }
+      },
+      "stats": {
+        "footprintCount": 9128,
+        "averageDamage0m": 0.5681546514234352,
+        "averageUnknownPct": 0.009446749834923463
+      }
+    },
+    {
+      "id": "hdx-hazardous-facilities",
+      "name": "Venezuela - Earthquake Hazardous Facilities",
+      "owner": "UNEP/OCHA Joint Environment Unit",
+      "tier": "hazard",
+      "kind": "hdx_package",
+      "visibility": "role_gated_context",
+      "recommendedUse": "Identify hazardous facilities, dams, airports, and power generation sites near reported damage or access constraints.",
+      "licenseReview": "CC BY attribution required.",
+      "url": "https://data.humdata.org/dataset/venezuela-earthquake-hazardous-facilities",
+      "refreshCadenceHours": 12,
+      "status": "ok",
+      "title": "Venezuela - Earthquake Hazardous Facilities",
+      "organization": "UNEP/OCHA Joint Environment Unit",
+      "license": "Creative Commons Attribution International (CC BY)",
+      "metadataModified": "2026-06-26T14:30:00.700345",
+      "datasetDate": "[2026-06-25T00:00:00 TO 2026-06-25T23:59:59]",
+      "resourceCount": 8,
+      "formats": [
+        "SHP",
+        "XLSX"
+      ],
+      "resources": [
+        {
+          "name": "Hazardous facilities.xlsx",
+          "format": "XLSX",
+          "url": "https://data.humdata.org/dataset/776fb083-4e19-42d6-98bc-7e0df8fbde17/resource/b5e39671-02b0-4f52-871f-63df9af1ecb7/download/hazardous-facilities.xlsx",
+          "lastModified": "2026-06-26T13:25:14.945630",
+          "size": 23855
+        },
+        {
+          "name": "Hazardous Facilities.zip",
+          "format": "SHP",
+          "url": "https://data.humdata.org/dataset/776fb083-4e19-42d6-98bc-7e0df8fbde17/resource/f707039f-e869-4c9a-b1be-a23071a89cf0/download/hazardous-facilities.zip",
+          "lastModified": "2026-06-26T14:03:21.927522",
+          "size": 28260
+        },
+        {
+          "name": "Airports.xlsx",
+          "format": "XLSX",
+          "url": "https://data.humdata.org/dataset/776fb083-4e19-42d6-98bc-7e0df8fbde17/resource/fd258049-cbb9-48dd-80d9-09820d5b79ae/download/airports.xlsx",
+          "lastModified": "2026-06-26T14:03:22.963592",
+          "size": 3872
+        },
+        {
+          "name": "Airports.zip",
+          "format": "SHP",
+          "url": "https://data.humdata.org/dataset/776fb083-4e19-42d6-98bc-7e0df8fbde17/resource/44ded7ce-dafd-46b2-b8a0-b80993e8e235/download/airports.zip",
+          "lastModified": "2026-06-26T14:03:23.872859",
+          "size": 3300
+        },
+        {
+          "name": "Dams.xlsx",
+          "format": "XLSX",
+          "url": "https://data.humdata.org/dataset/776fb083-4e19-42d6-98bc-7e0df8fbde17/resource/635048f4-3119-483e-9678-ec46d9102f70/download/dams.xlsx",
+          "lastModified": "2026-06-26T14:03:24.993249",
+          "size": 3760
+        },
+        {
+          "name": "Dams.zip",
+          "format": "SHP",
+          "url": "https://data.humdata.org/dataset/776fb083-4e19-42d6-98bc-7e0df8fbde17/resource/3bf04e94-6274-4a4d-a6ce-34cc22f87d48/download/dams.zip",
+          "lastModified": "2026-06-26T14:03:25.998871",
+          "size": 3142
+        },
+        {
+          "name": "Power generation.xlsx",
+          "format": "XLSX",
+          "url": "https://data.humdata.org/dataset/776fb083-4e19-42d6-98bc-7e0df8fbde17/resource/d8494674-b3a4-4277-92bd-030168e84f5c/download/power-generation.xlsx",
+          "lastModified": "2026-06-26T14:03:28.428900",
+          "size": 11396
+        },
+        {
+          "name": "Power Generation.zip",
+          "format": "SHP",
+          "url": "https://data.humdata.org/dataset/776fb083-4e19-42d6-98bc-7e0df8fbde17/resource/70ab82d2-6a75-4f5c-bdbe-4334c619c324/download/power-generation.zip",
+          "lastModified": "2026-06-26T14:03:29.531615",
+          "size": 12533
+        }
+      ]
+    },
+    {
+      "id": "hdx-accessibility",
+      "name": "Venezuela - Accessibility Indicators",
+      "owner": "HeiGIT",
+      "tier": "logistics",
+      "kind": "hdx_package",
+      "visibility": "public_reference",
+      "recommendedUse": "Prioritize hard-to-reach communities and compare reported needs against access constraints.",
+      "licenseReview": "CC BY-SA attribution/share-alike obligations may apply.",
+      "url": "https://data.humdata.org/dataset/venezuela-accessibility-indicators",
+      "refreshCadenceHours": 24,
+      "status": "ok",
+      "title": "Venezuela - Accessibility Indicators",
+      "organization": "HeiGIT (Heidelberg Institute for Geoinformation Technology)",
+      "license": "Creative Commons Attribution Share-Alike (CC BY-SA)",
+      "metadataModified": "2026-06-26T06:52:45.541052",
+      "datasetDate": "[2026-02-25T00:00:00 TO 2026-02-25T23:59:59]",
+      "resourceCount": 9,
+      "formats": [
+        "CSV",
+        "Geopackage"
+      ],
+      "resources": [
+        {
+          "name": "VEN_education_access.gpkg",
+          "format": "Geopackage",
+          "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/ven/VEN_education_access.gpkg",
+          "lastModified": "2026-02-25T18:42:56.683233",
+          "size": 295034880
+        },
+        {
+          "name": "VEN_education_access_long.csv",
+          "format": "CSV",
+          "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/ven/VEN_education_access_long.csv",
+          "lastModified": "2026-02-25T18:42:56.693233",
+          "size": 670817
+        },
+        {
+          "name": "VEN_education_access_wide.csv",
+          "format": "CSV",
+          "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/ven/VEN_education_access_wide.csv",
+          "lastModified": "2026-02-25T18:42:56.703604",
+          "size": 375283
+        },
+        {
+          "name": "VEN_hospitals_access.gpkg",
+          "format": "Geopackage",
+          "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/ven/VEN_hospitals_access.gpkg",
+          "lastModified": "2026-02-25T18:42:56.713989",
+          "size": 173096960
+        },
+        {
+          "name": "VEN_hospitals_access_long.csv",
+          "format": "CSV",
+          "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/ven/VEN_hospitals_access_long.csv",
+          "lastModified": "2026-02-25T18:42:56.724385",
+          "size": 2355846
+        },
+        {
+          "name": "VEN_hospitals_access_wide.csv",
+          "format": "CSV",
+          "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/ven/VEN_hospitals_access_wide.csv",
+          "lastModified": "2026-02-25T18:42:56.734575",
+          "size": 762396
+        },
+        {
+          "name": "VEN_primary_healthcare_access.gpkg",
+          "format": "Geopackage",
+          "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/ven/VEN_primary_healthcare_access.gpkg",
+          "lastModified": "2026-02-25T18:42:56.745872",
+          "size": 118984704
+        },
+        {
+          "name": "VEN_primary_healthcare_access_long.csv",
+          "format": "CSV",
+          "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/ven/VEN_primary_healthcare_access_long.csv",
+          "lastModified": "2026-02-25T18:42:56.758131",
+          "size": 2333991
+        },
+        {
+          "name": "VEN_primary_healthcare_access_wide.csv",
+          "format": "CSV",
+          "url": "https://hot.storage.heigit.org/heigit-hdx-public/access/ven/VEN_primary_healthcare_access_wide.csv",
+          "lastModified": "2026-02-25T18:42:56.768859",
+          "size": 723745
+        }
+      ]
+    },
+    {
+      "id": "hdx-health-facilities",
+      "name": "Health Facilities of Venezuela",
+      "owner": "Humanitarian OpenStreetMap Team (HOT)",
+      "tier": "reference",
+      "kind": "hdx_package",
+      "visibility": "public_reference",
+      "recommendedUse": "Base health facility layer for routing medical reports and partner verification.",
+      "licenseReview": "ODbL obligations apply.",
+      "url": "https://data.humdata.org/dataset/hotosm_ven_health_facilities",
+      "refreshCadenceHours": 24,
+      "status": "ok",
+      "title": "Health Facilities of Venezuela",
+      "organization": "Humanitarian OpenStreetMap Team (HOT)",
+      "license": "Open Database License (ODC-ODbL)",
+      "metadataModified": "2026-06-26T09:51:48.868781",
+      "datasetDate": "[2026-06-25T00:00:00 TO 2026-06-25T23:59:59]",
+      "resourceCount": 6,
+      "formats": [
+        "GeoJSON",
+        "Geopackage",
+        "HTML",
+        "JSON",
+        "KML",
+        "SHP"
+      ],
+      "resources": [
+        {
+          "name": "hotosm_ven_health_facilities_osm_gpkg.zip",
+          "format": "Geopackage",
+          "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/VEN/health_facilities/hotosm_ven_health_facilities_osm_gpkg.zip",
+          "lastModified": "2026-06-25T08:08:04.810498",
+          "size": 453819
+        },
+        {
+          "name": "hotosm_ven_health_facilities_osm_shp.zip",
+          "format": "SHP",
+          "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/VEN/health_facilities/hotosm_ven_health_facilities_osm_shp.zip",
+          "lastModified": "2026-06-25T08:08:04.810538",
+          "size": 433174
+        },
+        {
+          "name": "hotosm_ven_health_facilities_osm_kml.zip",
+          "format": "KML",
+          "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/VEN/health_facilities/hotosm_ven_health_facilities_osm_kml.zip",
+          "lastModified": "2026-06-25T08:08:04.810558",
+          "size": 352180
+        },
+        {
+          "name": "hotosm_ven_health_facilities_osm_geojson.zip",
+          "format": "GeoJSON",
+          "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/VEN/health_facilities/hotosm_ven_health_facilities_osm_geojson.zip",
+          "lastModified": "2026-06-25T08:08:04.810576",
+          "size": 329362
+        },
+        {
+          "name": "hotosm_ven_health_facilities_osm_metadata.json",
+          "format": "JSON",
+          "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/VEN/health_facilities/hotosm_ven_health_facilities_osm_metadata.json",
+          "lastModified": "2026-06-25T08:08:05",
+          "size": 12154
+        },
+        {
+          "name": "hotosm_ven_health_facilities_report.html",
+          "format": "HTML",
+          "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/VEN/health_facilities/hotosm_ven_health_facilities_report.html",
+          "lastModified": "2026-06-25T08:08:08.449262",
+          "size": 18872
+        }
+      ]
+    },
+    {
+      "id": "hdx-roads",
+      "name": "Roads of Venezuela",
+      "owner": "Humanitarian OpenStreetMap Team (HOT)",
+      "tier": "reference",
+      "kind": "hdx_package",
+      "visibility": "public_reference",
+      "recommendedUse": "Routing context and access checks for field teams.",
+      "licenseReview": "ODbL obligations apply.",
+      "url": "https://data.humdata.org/dataset/hotosm_ven_roads",
+      "refreshCadenceHours": 24,
+      "status": "ok",
+      "title": "Roads of Venezuela",
+      "organization": "Humanitarian OpenStreetMap Team (HOT)",
+      "license": "Open Database License (ODC-ODbL)",
+      "metadataModified": "2026-06-26T10:31:45.706919",
+      "datasetDate": "[2026-06-25T00:00:00 TO 2026-06-25T23:59:59]",
+      "resourceCount": 4,
+      "formats": [
+        "Geopackage",
+        "HTML",
+        "JSON",
+        "SHP"
+      ],
+      "resources": [
+        {
+          "name": "hotosm_ven_roads_osm_gpkg.zip",
+          "format": "Geopackage",
+          "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/VEN/roads/hotosm_ven_roads_osm_gpkg.zip",
+          "lastModified": "2026-06-25T08:06:32.357355",
+          "size": 103117717
+        },
+        {
+          "name": "hotosm_ven_roads_osm_shp.zip",
+          "format": "SHP",
+          "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/VEN/roads/hotosm_ven_roads_osm_shp.zip",
+          "lastModified": "2026-06-25T08:06:32.357386",
+          "size": 98766622
+        },
+        {
+          "name": "hotosm_ven_roads_osm_metadata.json",
+          "format": "JSON",
+          "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/VEN/roads/hotosm_ven_roads_osm_metadata.json",
+          "lastModified": "2026-06-25T08:06:32.357400",
+          "size": 11864
+        },
+        {
+          "name": "hotosm_ven_roads_report.html",
+          "format": "HTML",
+          "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/VEN/roads/hotosm_ven_roads_report.html",
+          "lastModified": "2026-06-25T08:06:37",
+          "size": 18859
+        }
+      ]
+    },
+    {
+      "id": "hdx-populated-places",
+      "name": "Populated Places of Venezuela",
+      "owner": "Humanitarian OpenStreetMap Team (HOT)",
+      "tier": "reference",
+      "kind": "hdx_package",
+      "visibility": "public_reference",
+      "recommendedUse": "Gazetteer support for geocoding community reports and ambiguous landmarks.",
+      "licenseReview": "ODbL obligations apply.",
+      "url": "https://data.humdata.org/dataset/hotosm_ven_populated_places",
+      "refreshCadenceHours": 24,
+      "status": "ok",
+      "title": "Populated Places of Venezuela",
+      "organization": "Humanitarian OpenStreetMap Team (HOT)",
+      "license": "Open Database License (ODC-ODbL)",
+      "metadataModified": "2026-06-26T11:07:35.632777",
+      "datasetDate": "[2026-06-25T00:00:00 TO 2026-06-25T23:59:59]",
+      "resourceCount": 6,
+      "formats": [
+        "GeoJSON",
+        "Geopackage",
+        "HTML",
+        "JSON",
+        "KML",
+        "SHP"
+      ],
+      "resources": [
+        {
+          "name": "hotosm_ven_populated_places_osm_gpkg.zip",
+          "format": "Geopackage",
+          "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/VEN/populated_places/hotosm_ven_populated_places_osm_gpkg.zip",
+          "lastModified": "2026-06-25T08:08:26.252153",
+          "size": 9006737
+        },
+        {
+          "name": "hotosm_ven_populated_places_osm_shp.zip",
+          "format": "SHP",
+          "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/VEN/populated_places/hotosm_ven_populated_places_osm_shp.zip",
+          "lastModified": "2026-06-25T08:08:26.252188",
+          "size": 8574735
+        },
+        {
+          "name": "hotosm_ven_populated_places_osm_kml.zip",
+          "format": "KML",
+          "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/VEN/populated_places/hotosm_ven_populated_places_osm_kml.zip",
+          "lastModified": "2026-06-25T08:08:26.252207",
+          "size": 6585303
+        },
+        {
+          "name": "hotosm_ven_populated_places_osm_geojson.zip",
+          "format": "GeoJSON",
+          "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/VEN/populated_places/hotosm_ven_populated_places_osm_geojson.zip",
+          "lastModified": "2026-06-25T08:08:26.252224",
+          "size": 6559304
+        },
+        {
+          "name": "hotosm_ven_populated_places_osm_metadata.json",
+          "format": "JSON",
+          "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/VEN/populated_places/hotosm_ven_populated_places_osm_metadata.json",
+          "lastModified": "2026-06-25T08:08:26.252239",
+          "size": 9309
+        },
+        {
+          "name": "hotosm_ven_populated_places_report.html",
+          "format": "HTML",
+          "url": "https://production-raw-data-api.s3.amazonaws.com/ISO3/VEN/populated_places/hotosm_ven_populated_places_report.html",
+          "lastModified": "2026-06-25T08:08:29.759909",
+          "size": 16644
+        }
+      ]
+    },
+    {
+      "id": "usgs-earthquake-events",
+      "name": "USGS earthquake event feed",
+      "owner": "USGS",
+      "tier": "hazard",
+      "kind": "usgs_geojson",
+      "visibility": "public_reference",
+      "recommendedUse": "Authoritative earthquake event IDs, magnitudes, places, timestamps, and aftershock context.",
+      "licenseReview": "USGS public-domain attribution recommended.",
+      "url": "https://earthquake.usgs.gov/fdsnws/event/1/",
+      "refreshCadenceHours": 1,
+      "status": "ok",
+      "queryUrl": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=2026-06-24&endtime=2026-07-03&minlatitude=0.45&maxlatitude=12.35&minlongitude=-73.45&maxlongitude=-59.75&minmagnitude=4.5&orderby=time",
+      "generated": "2026-07-02T22:23:19.000Z",
+      "eventCount": 7,
+      "maxMagnitude": 7.5,
+      "events": [
+        {
+          "id": "us6000t8yf",
+          "magnitude": 4.6,
+          "place": "27 km N of Caraballeda, Venezuela",
+          "time": "2026-06-29T11:01:03.516Z",
+          "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t8yf",
+          "coordinates": [
+            -66.8435,
+            10.8601,
+            10
+          ]
+        },
+        {
+          "id": "us6000t8su",
+          "magnitude": 4.5,
+          "place": "20 km W of Boca de Aroa, Venezuela",
+          "time": "2026-06-28T08:46:10.376Z",
+          "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t8su",
+          "coordinates": [
+            -68.4901,
+            10.6806,
+            10
+          ]
+        },
+        {
+          "id": "us6000t8q8",
+          "magnitude": 4.8,
+          "place": "35 km NNE of El Limón, Venezuela",
+          "time": "2026-06-27T19:20:36.606Z",
+          "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t8q8",
+          "coordinates": [
+            -67.5112,
+            10.6023,
+            10
+          ]
+        },
+        {
+          "id": "us6000t8k6",
+          "magnitude": 4.7,
+          "place": "54 km N of El Limón, Venezuela",
+          "time": "2026-06-26T22:16:11.931Z",
+          "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t8k6",
+          "coordinates": [
+            -67.5993,
+            10.8,
+            10
+          ]
+        },
+        {
+          "id": "us6000t80d",
+          "magnitude": 4.5,
+          "place": "12 km NNE of Caucagüito, Venezuela",
+          "time": "2026-06-24T22:23:53.774Z",
+          "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t80d",
+          "coordinates": [
+            -66.6976,
+            10.5911,
+            10
+          ]
+        },
+        {
+          "id": "us6000t7zp",
+          "magnitude": 7.5,
+          "place": "28 km SE of Yumare, Venezuela",
+          "time": "2026-06-24T22:05:11.566Z",
+          "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t7zp",
+          "coordinates": [
+            -68.4716,
+            10.4351,
+            10
+          ]
+        },
+        {
+          "id": "us6000t7zc",
+          "magnitude": 7.2,
+          "place": "23 km SE of Yumare, Venezuela",
+          "time": "2026-06-24T22:04:33.389Z",
+          "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t7zc",
+          "coordinates": [
+            -68.5277,
+            10.436,
+            20.294
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reliefweb-reports",
+      "name": "ReliefWeb reports monitor",
+      "owner": "OCHA ReliefWeb",
+      "tier": "situation",
+      "kind": "reliefweb_reports",
+      "visibility": "public_reference",
+      "recommendedUse": "Human-reviewed situation updates, appeals, and public source monitoring.",
+      "licenseReview": "Respect source-level terms on linked reports.",
+      "url": "https://api.reliefweb.int/v1/reports",
+      "refreshCadenceHours": 3,
+      "status": "manual_review",
+      "note": "Configured for situation monitoring. Automated ingestion is disabled until an event-specific ReliefWeb query is validated."
+    }
+  ]
+}

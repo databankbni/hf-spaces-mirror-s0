@@ -1,0 +1,95 @@
+{
+ "captured_at": "2026-08-04T15:34:21Z",
+ "hf_metadata": {
+  "_id": "67f97161d0fa623b41ae0c74",
+  "author": "Vusal3242134",
+  "cardData": {
+   "app_file": "app.py",
+   "colorFrom": "green",
+   "colorTo": "indigo",
+   "emoji": "📚",
+   "pinned": false,
+   "sdk": "gradio",
+   "sdk_version": "5.21.0",
+   "title": "Movie Recommendation Based On Emotions"
+  },
+  "createdAt": "2025-04-11T19:45:37.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://vusal3242134-movie-recommendation-chatbot.hf.space",
+  "id": "Vusal3242134/Movie_Recommendation_Chatbot",
+  "lastModified": "2026-07-18T09:10:16.000Z",
+  "likes": 1,
+  "models": [
+   "sentence-transformers/all-MiniLM-L6-v2",
+   "Vusal3242134/Classify_Emotions_NEW"
+  ],
+  "private": false,
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "vusal3242134-movie-recommendation-chatbot.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": null,
+    "requested": "cpu-basic"
+   },
+   "replicas": {
+    "requested": 1
+   },
+   "stage": "SLEEPING"
+  },
+  "sdk": "gradio",
+  "sha": "67b543a5468592769e5f9c7627b935e46e75e59a",
+  "siblings": [
+   {
+    "rfilename": ".gitattributes"
+   },
+   {
+    "rfilename": ".python-version"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "app.py"
+   },
+   {
+    "rfilename": "requirements.txt"
+   },
+   {
+    "rfilename": "runtime.txt"
+   },
+   {
+    "rfilename": "tmdb_movies.csv"
+   }
+  ],
+  "subdomain": "vusal3242134-movie-recommendation-chatbot",
+  "tags": [
+   "gradio",
+   "region:us"
+  ],
+  "usedStorage": 0
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "Vusal3242134/Movie_Recommendation_Chatbot",
+ "repo_type": "spaces",
+ "sha": "67b543a5468592769e5f9c7627b935e46e75e59a",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/Vusal3242134/Movie_Recommendation_Chatbot"
+}

@@ -1,0 +1,65 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+.cache/
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+*.faiss
+*.pkl
+.env
+.env.*
+.env*
+.venv/
+venv/
+.worktrees/
+*.db
+
+# Runtime audit / telemetry logs — contain hashed IPs, raw prompts,
+# security verdicts. Never commit these.
+logs/
+*.jsonl
+
+# Evidence-bearing measurement artifacts referenced from DECISIONS.md.
+# Narrow exception to the *.jsonl ignore above. Add new measurement files
+# explicitly here so the audit-trail intent stays opt-in.
+!measurements/*.jsonl
+# Calibration jury/permute sidecars (per-member detail for κ ablation table).
+!results/*.jsonl
+
+# Opaque binary artifacts — no PDFs in the repo today, and any that
+# appear here are almost always local reference material (downloaded
+# papers, vendor docs) that should not be committed. If a PDF ever
+# needs to be tracked for real, add it with an explicit force-add and
+# a targeted gitignore exception next to it.
+*.pdf
+docs/DESIGN.md
+# Internal planning and design docs (not published)
+docs/plans/
+docs/superpowers/
+# Generated statistics report (make evaluate-stats). Regenerable on demand
+# from results/long/; the committed artifacts are the test goldens under
+# tests/stats/fixtures/, not this live output.
+docs/_generated/
+terraform.tfvars
+.terraform/
+*.tfstate
+*.tfstate.backup
+.DS_Store
+
+# Epoch-runner outputs from `make epochs` (PAID, human-run): raw per-config
+# outputs and run-id envelope dirs. Real-run results must not be accidentally
+# committed or git-clean'd; convert them to results/long/ via the adapter.
+results/epochs/
+
+# Claude Code local state: machine-local settings and transient runtime
+# locks. settings.local.json is per-machine; a shareable settings.json,
+# if ever added, stays committable. The scheduler lock is runtime state.
+# Neither belongs in version control.
+.claude/settings.local.json
+.claude/*.lock
+.venv-phase2/

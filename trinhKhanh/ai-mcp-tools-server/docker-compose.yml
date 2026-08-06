@@ -1,0 +1,53 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: ${DB_USER:-postgres}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-chaidim}
+      POSTGRES_DB: ${DB_NAME:-postgres}
+    ports:
+      - "5434:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  searxng:
+    image: searxng/searxng:latest
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./searxng:/etc/searxng
+    restart: unless-stopped
+
+  main:
+    build: .
+    command: uvicorn main:app --host 0.0.0.0 --port 8000
+    environment:
+      - DB_HOST=db
+      - DB_PORT=5432
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+      - SEARXNG_URL=http://searxng:8080
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+      - gateway
+      - searxng
+
+  gateway:
+    build: .
+    command: uvicorn gateway:app --host 0.0.0.0 --port 8001
+    ports:
+      - "8001:8001"
+    depends_on:
+      - math_server
+
+  math_server:
+    build: .
+    command: uvicorn mcp_math_server:app --host 0.0.0.0 --port 8002
+    ports:
+      - "8002:8002"
+
+volumes:
+  pgdata:

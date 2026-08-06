@@ -1,0 +1,148 @@
+{
+ "captured_at": "2026-08-04T13:17:13Z",
+ "hf_metadata": {
+  "_id": "6a319699af25718c4da0b0c9",
+  "author": "AgentSuite",
+  "cardData": {
+   "app_file": "app.py",
+   "colorFrom": "indigo",
+   "colorTo": "blue",
+   "emoji": "🛠️",
+   "license": "mit",
+   "pinned": false,
+   "sdk": "gradio",
+   "sdk_version": "5.49.1",
+   "title": "AgentSuite Leaderboard"
+  },
+  "createdAt": "2026-06-16T18:31:53.000Z",
+  "datasets": [
+   "nvidia/ProfBench"
+  ],
+  "disabled": false,
+  "gated": false,
+  "host": "https://agentsuite-agentsuite.hf.space",
+  "id": "AgentSuite/AgentSuite",
+  "lastModified": "2026-07-05T22:07:24.000Z",
+  "likes": 0,
+  "private": false,
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "agentsuite-agentsuite.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": null,
+    "requested": "cpu-basic"
+   },
+   "replicas": {
+    "requested": 1
+   },
+   "stage": "SLEEPING"
+  },
+  "sdk": "gradio",
+  "sha": "32aea8677aa4d3b7d425643746cf26bced03583a",
+  "siblings": [
+   {
+    "rfilename": ".gitattributes"
+   },
+   {
+    "rfilename": ".gitignore"
+   },
+   {
+    "rfilename": ".pre-commit-config.yaml"
+   },
+   {
+    "rfilename": "Makefile"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "app.py"
+   },
+   {
+    "rfilename": "data/ACEBench_split_scores.csv"
+   },
+   {
+    "rfilename": "data/BFCL_V4_split_scores.csv"
+   },
+   {
+    "rfilename": "data/BFCL_split_scores.csv"
+   },
+   {
+    "rfilename": "data/DrafterBench_split_scores.csv"
+   },
+   {
+    "rfilename": "data/NexusBench_split_scores.csv"
+   },
+   {
+    "rfilename": "data/complex-func-bench_split_scores.csv"
+   },
+   {
+    "rfilename": "data/overall_leaderboard.csv"
+   },
+   {
+    "rfilename": "data/overall_partial_models.csv"
+   },
+   {
+    "rfilename": "data/tau-bench_split_scores.csv"
+   },
+   {
+    "rfilename": "data/tau2-bench_split_scores.csv"
+   },
+   {
+    "rfilename": "pyproject.toml"
+   },
+   {
+    "rfilename": "requirements.txt"
+   },
+   {
+    "rfilename": "src/about.py"
+   },
+   {
+    "rfilename": "src/display/css_html_js.py"
+   },
+   {
+    "rfilename": "src/display/formatting.py"
+   },
+   {
+    "rfilename": "src/display/utils.py"
+   },
+   {
+    "rfilename": "src/envs.py"
+   },
+   {
+    "rfilename": "src/leaderboard/read_evals.py"
+   },
+   {
+    "rfilename": "src/populate.py"
+   },
+   {
+    "rfilename": "src/submission/check_validity.py"
+   },
+   {
+    "rfilename": "src/submission/submit.py"
+   }
+  ],
+  "subdomain": "agentsuite-agentsuite",
+  "tags": [
+   "gradio",
+   "region:us"
+  ],
+  "usedStorage": 0
+ },
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "AgentSuite/AgentSuite",
+ "repo_type": "spaces",
+ "sha": "32aea8677aa4d3b7d425643746cf26bced03583a",
+ "web_url": "https://huggingface.co/spaces/AgentSuite/AgentSuite"
+}

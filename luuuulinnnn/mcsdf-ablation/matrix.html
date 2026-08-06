@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MCSDF Component Matrix — what every experiment has and hasn't</title>
+<style>
+:root{--bg:#0d1117;--card:#161b22;--line:#30363d;--tx:#e6edf3;--dim:#8b949e;--acc:#63c98a;--warn:#e3b341;--bad:#f85149;--blu:#58a6ff;--pur:#bc8cff}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:14.5px/1.6 -apple-system,"Segoe UI",Roboto,sans-serif;padding:26px 2vw 80px}
+h1{font-size:24px;margin:0 0 6px}h2{font-size:18px;margin:32px 0 10px;border-bottom:1px solid var(--line);padding-bottom:5px}
+.sub{color:var(--dim);margin-bottom:14px}
+.wrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px}
+table{border-collapse:collapse;font-size:12.5px;min-width:1500px;width:100%}
+th,td{border:1px solid #21262d;padding:5px 7px;text-align:center;white-space:nowrap}
+th{background:#161b22;color:var(--dim);font-weight:600;position:sticky;top:0}
+td:first-child,th:first-child{position:sticky;left:0;background:#161b22;text-align:left;font-weight:700;z-index:2}
+.y{color:var(--acc);font-weight:800}.n{color:#f8514966;font-weight:600}.del{color:var(--bad);text-decoration:line-through}
+.v{color:var(--warn);font-weight:600}.b{color:var(--blu)}.p{color:var(--pur)}
+.best{background:#12261a}
+.grp td{background:#0a0e14;color:var(--dim);font-size:11.5px;text-align:left;font-style:italic}
+.note{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--blu);border-radius:8px;padding:10px 14px;margin:12px 0;color:var(--dim);font-size:13px}
+a{color:var(--blu);text-decoration:none}
+.leg span{display:inline-block;margin-right:16px;font-size:13px}
+</style>
+</head>
+<body>
+<h1>Component Matrix — every experiment, ✓ / ✗ audited from its sbatch</h1>
+<div class="sub">2026-07-29 · every row verified against the actual training command (not memory) · columns = the pipeline ingredients · <span class="leg"><span class="y">✓ has</span><span class="n">✗ doesn't</span><span class="del">✓ had, then removed</span><span class="v">value</span></span></div>
+
+<div class="wrap"><table>
+<tr>
+<th>experiment</th><th>backbone</th><th>lineage</th><th>trainable</th>
+<th>warp ch<br>(z_mem+k)</th><th>+Plücker<br>ray</th><th>VACE<br>native</th><th>seq-ctx<br>(attn cond)</th><th>mem<br>slot</th>
+<th>k→τ field</th><th>τ mapping</th>
+<th>z_mem<br>anchor</th><th>per-tok<br>AdaLN✎</th><th>rehearsal</th><th>lift</th><th>patch<br>fields</th><th>sync<br>slices</th><th>rand<br>(AsyncP)</th>
+<th>SYNC<br>infer</th><th>cluster-τ</th>
+<th>steps / state</th><th>dev avg<br>PSNR</th>
+</tr>
+
+<tr class="grp"><td colspan="22">— retired / control arms (I2V-14B) —</td></tr>
+<tr><td>baseline r128</td><td class="b">I2V-14B</td><td>scratch</td><td class="v">LoRA-128</td>
+<td class="n">✗</td><td class="n">✗</td><td class="n">✗</td><td class="n">✗</td><td class="n">✗</td>
+<td class="n">✗ uniform</td><td class="v">flat (mean)</td>
+<td class="y">✓</td><td class="y">✓</td><td class="n">✗</td><td class="n">✗</td><td class="n">✗</td><td class="n">✗</td><td class="n">✗</td>
+<td class="n">✗</td><td class="n">✗</td><td class="v">3000 / chain</td><td>12.88</td></tr>
+<tr><td>expA</td><td class="b">I2V-14B</td><td>scratch</td><td class="v">LoRA-64</td>
+<td class="n">✗</td><td class="n">✗</td><td class="n">✗</td><td class="n">✗</td><td class="n">✗</td>
+<td class="y">✓</td><td class="v">Ⓑ .45 floor</td>
+<td class="y">✓</td><td class="y">✓</td><td class="n">✗</td><td class="n">✗</td><td class="n">✗</td><td class="n">✗</td><td class="y">✓</td>
+<td class="n">✗</td><td class="n">✗</td><td class="v">7500+ / c3</td><td>12.62</td></tr>
+<tr><td>expB</td><td class="b">I2V-14B</td><td>scratch</td><td class="v">LoRA-64</td>
+<td class="n">✗</td><td class="n">✗</td><td class="n">✗</td><td class="n">✗</td><td class="n">✗</td>
+<td class="y">✓</td><td class="v">Ⓑ .45 floor</td>
+<td class="y">✓</td><td class="y">✓</td><td class="n">✗</td><td class="n">✗</td><td class="n">✗</td><td class="n">✗</td><td class="n">✗</td>
+<td class="n">✗</td><td class="n">✗</td><td class="v">7500+ / c3</td><td>12.60</td></tr>
+<tr><td>expC</td><td class="b">I2V-14B</td><td class="v">warm(B@1500)</td><td class="v">LoRA-64</td>
+<td class="y">✓17</td><td class="n">✗</td><td class="n">✗</td><td class="n">✗</td><td class="del">✓→del</td>
+<td class="y">✓</td><td class="v">Ⓒ .85 clamp</td>
+<td class="y">✓</td><td class="y">✓</td><td class="y">✓.15</td><td class="n">✗</td><td class="n">✗</td><td class="n">✗</td><td class="n">✗</td>
+<td class="n">✗ legacy</td><td class="y">✓</td><td class="v">4500 / frozen</td><td>12.25</td></tr>
+<tr><td>expE-geo</td><td class="b">I2V-14B</td><td class="v">warm(C@3500)</td><td class="v">LoRA-64</td>
+<td class="y">✓17</td><td class="n">✗</td><td class="n">✗</td><td class="n">✗</td><td class="n">✗</td>
+<td class="y">✓</td><td class="v">Ⓒ .85</td>
+<td class="y">✓</td><td class="y">✓</td><td class="y">✓.10</td><td class="y">✓.35</td><td class="y">✓</td><td class="n">✗</td><td class="n">✗</td>
+<td class="y">✓</td><td class="y">✓</td><td class="v">own~3200 / c2</td><td>12.95</td></tr>
+<tr><td>expE-rand</td><td class="b">I2V-14B</td><td class="v">warm(C@3500)</td><td class="v">LoRA-64</td>
+<td class="y">✓17</td><td class="n">✗</td><td class="n">✗</td><td class="n">✗</td><td class="n">✗</td>
+<td class="y">✓</td><td class="v">Ⓒ .85</td>
+<td class="y">✓</td><td class="y">✓</td><td class="y">✓.10</td><td class="n">✗</td><td class="n">✗</td><td class="n">✗</td><td class="y">✓</td>
+<td class="y">✓</td><td class="y">✓</td><td class="v">own~3200 / c2</td><td>12.93</td></tr>
+
+<tr class="grp"><td colspan="22">— main line (I2V-14B, clean lineage) —</td></tr>
+<tr><td>expE-scratch</td><td class="b">I2V-14B</td><td class="y">scratch</td><td class="v">LoRA-64</td>
+<td class="y">✓17</td><td class="n">✗</td><td class="n">✗</td><td class="n">✗</td><td class="n">✗</td>
+<td class="y">✓</td><td class="v">Ⓒ .85</td>
+<td class="y">✓</td><td class="y">✓</td><td class="y">✓.10</td><td class="y">✓.35</td><td class="y">✓</td><td class="n">✗</td><td class="n">✗</td>
+<td class="y">✓</td><td class="y">✓</td><td class="v">4800+ / c2</td><td>13.15</td></tr>
+<tr class="best"><td>expE_sync 🏆</td><td class="b">I2V-14B</td><td class="y">scratch</td><td class="v">LoRA-64</td>
+<td class="y">✓17</td><td class="n">✗</td><td class="n">✗</td><td class="n">✗</td><td class="n">✗</td>
+<td class="y">✓</td><td class="v">Ⓒ .85</td>
+<td class="y">✓</td><td class="y">✓</td><td class="y">✓.10</td><td class="y">✓.35</td><td class="y">✓</td><td class="y">✓</td><td class="n">✗</td>
+<td class="y">✓</td><td class="y">✓</td><td class="v">3100+ / run</td><td class="y">13.20</td></tr>
+<tr><td>expF (+ray)</td><td class="b">I2V-14B</td><td class="y">scratch</td><td class="v">LoRA-64</td>
+<td class="y">✓17</td><td class="y">✓6</td><td class="n">✗</td><td class="n">✗</td><td class="n">✗</td>
+<td class="y">✓</td><td class="v">Ⓒ .85</td>
+<td class="y">✓</td><td class="y">✓</td><td class="y">✓.10</td><td class="y">✓.35</td><td class="y">✓</td><td class="n">✗</td><td class="n">✗</td>
+<td class="y">✓</td><td class="y">✓</td><td class="v">3200+ / run</td><td>13.05</td></tr>
+<tr><td>expF_sync</td><td class="b">I2V-14B</td><td class="y">scratch</td><td class="v">LoRA-64</td>
+<td class="y">✓17</td><td class="y">✓6</td><td class="n">✗</td><td class="n">✗</td><td class="n">✗</td>
+<td class="y">✓</td><td class="v">Ⓒ .85</td>
+<td class="y">✓</td><td class="y">✓</td><td class="y">✓.10</td><td class="y">✓.35</td><td class="y">✓</td><td class="y">✓</td><td class="n">✗</td>
+<td class="y">✓</td><td class="y">✓</td><td class="v">3100+ / run</td><td>13.07</td></tr>
+<tr><td>expJ_narrow</td><td class="b">I2V-14B</td><td class="y">scratch</td><td class="v">LoRA-64</td>
+<td class="y">✓17</td><td class="n">✗</td><td class="n">✗</td><td class="n">✗</td><td class="n">✗</td>
+<td class="y">✓</td><td class="v y">Ⓓ 1−0.2k</td>
+<td class="y">✓</td><td class="y">✓</td><td class="y">✓.10</td><td class="y">✓.35</td><td class="y">✓</td><td class="y">✓</td><td class="n">✗</td>
+<td class="y">✓</td><td class="y">✓</td><td class="v">1700+ / run</td><td>—</td></tr>
+<tr><td>expJ_ray</td><td class="b">I2V-14B</td><td class="y">scratch</td><td class="v">LoRA-64</td>
+<td class="y">✓17</td><td class="y">✓6</td><td class="n">✗</td><td class="n">✗</td><td class="n">✗</td>
+<td class="y">✓</td><td class="v y">Ⓓ 1−0.2k</td>
+<td class="y">✓</td><td class="y">✓</td><td class="y">✓.10</td><td class="y">✓.35</td><td class="y">✓</td><td class="y">✓</td><td class="n">✗</td>
+<td class="y">✓</td><td class="y">✓</td><td class="v">1700+ / run</td><td>—</td></tr>
+
+<tr class="grp"><td colspan="22">— VACE arm —</td></tr>
+<tr><td>expG</td><td class="p">VACE-14B</td><td class="y">scratch</td><td class="v">LoRA-64 + vace-full</td>
+<td class="n">✗</td><td class="n">✗</td><td class="y">✓96</td><td class="n">✗</td><td class="n">✗</td>
+<td class="y">✓</td><td class="v">Ⓒ .85</td>
+<td class="y">✓</td><td class="y">✓</td><td class="y">✓.10 null_vace</td><td class="y">✓.35</td><td class="y">✓</td><td class="n">✗</td><td class="n">✗</td>
+<td class="y">✓</td><td class="y">✓</td><td class="v">2600+ / relaunch lr1e-5</td><td>13.13@1.5k*</td></tr>
+<tr><td>expG0 (clean ctrl)</td><td class="p">VACE-14B</td><td class="y">scratch</td><td class="v">LoRA-64 + vace-full ⚠5e-5</td>
+<td class="n">✗</td><td class="n">✗</td><td class="y">✓96</td><td class="n">✗</td><td class="n">✗</td>
+<td class="n">✗ global t</td><td class="v">none (τ≡1)</td>
+<td class="n">✗ x0 only</td><td class="n">✗ frozen</td><td class="n">—</td><td class="n">✗</td><td class="n">✗</td><td class="n">✗</td><td class="n">✗</td>
+<td class="n">✗ full denoise</td><td class="n">✗</td><td class="v">1700+ / run</td><td>—</td></tr>
+
+<tr class="grp"><td colspan="22">— 1.3B sandbox (T2V, full-FT) —</td></tr>
+<tr><td>expK</td><td class="v">T2V-1.3B</td><td class="y">scratch</td><td class="y">full-FT</td>
+<td class="y">✓17</td><td class="n">✗</td><td class="n">✗</td><td class="n">✗</td><td class="n">✗</td>
+<td class="y">✓</td><td class="v">Ⓒ .85</td>
+<td class="y">✓</td><td class="y">✓(full)</td><td class="y">✓.10</td><td class="y">✓.35</td><td class="y">✓</td><td class="y">✓</td><td class="n">✗</td>
+<td class="y">✓</td><td class="y">✓</td><td class="v">5700+ / run</td><td>12.60@5k</td></tr>
+<tr><td>expL_uni</td><td class="v">T2V-1.3B</td><td class="y">scratch</td><td class="y">full-FT</td>
+<td class="n">✗</td><td class="n">✗</td><td class="n">✗</td><td class="y">✓ ctx→attn</td><td class="n">✗</td>
+<td class="n">✗ global t</td><td class="v">none</td>
+<td class="n">✗ x0 only</td><td class="y">✓(full)</td><td class="n">✗</td><td class="n">✗</td><td class="n">✗</td><td class="n">✗</td><td class="n">✗</td>
+<td class="v">ctx-pinned</td><td class="n">✗</td><td class="v">6800+ / run</td><td>11.08@6k</td></tr>
+<tr><td>expL_nk</td><td class="v">T2V-1.3B</td><td class="y">scratch</td><td class="y">full-FT</td>
+<td class="n">✗</td><td class="n">✗</td><td class="n">✗</td><td class="y">✓ ctx→attn</td><td class="n">✗</td>
+<td class="y">✓</td><td class="v y">Ⓓ 1−0.2k</td>
+<td class="y">✓</td><td class="y">✓(full)</td><td class="n">✗</td><td class="n">✗</td><td class="y">✓(b2 mix)</td><td class="y">✓(slice mix)</td><td class="n">✗</td>
+<td class="v">ctx-pinned</td><td class="y">✓</td><td class="v">6800+ / run</td><td class="y">12.88@6k</td></tr>
+
+<tr class="grp"><td colspan="22">— external reference —</td></tr>
+<tr><td>CameraAnything</td><td class="p">Wan T2V-14B</td><td>—</td><td>—</td>
+<td class="n">✗</td><td class="v">✓(their pluc-adaln)</td><td class="n">✗</td><td class="v">source video</td><td class="n">✗</td>
+<td class="n">✗</td><td class="v">none</td>
+<td class="n">✗</td><td class="v">theirs</td><td class="n">—</td><td class="n">—</td><td class="n">—</td><td class="n">—</td><td class="n">—</td>
+<td class="n">✗ 50-step std</td><td class="n">✗</td><td class="v">frozen release</td><td class="n">9.75</td></tr>
+</table></div>
+
+<div class="note">✎ per-tok AdaLN column = the time-modulation path is trained (--train_modulation, or subsumed by full-FT). * expG score is its pre-crash best @1500; relaunched from s1500 at lr 1e-5. ⚠ expG0 trains the full vace branch at lr 5e-5 — the same config that fried expG; on the @2000–2500 watch list.</div>
+
+<h2>Inference-side decisions (apply fleet-wide, not per-experiment)</h2>
+<div class="wrap"><table style="min-width:900px">
+<tr><th>knob</th><th>verdict</th><th>evidence page</th></tr>
+<tr><td style="text-align:left">denoise steps</td><td class="y">24 forwards everywhere (audited; only deliberate sweeps differ)</td><td><a href="fullcompare50.html">24-vs-50</a></td></tr>
+<tr><td style="text-align:left">calendar</td><td class="y">SYNC synchronized-start (τ.85, no lower)</td><td><a href="exph.html">expH</a></td></tr>
+<tr><td style="text-align:left">trust regions</td><td class="y">cluster-128</td><td>tausweep</td></tr>
+<tr><td style="text-align:left">shift</td><td class="v">1 for metrics comparability; 5 for viz deliverables</td><td>shift sweep</td></tr>
+<tr><td style="text-align:left">CFG</td><td class="v">sweep incomplete (3 shards queued); cfg5 costs 2× forwards</td><td>pending</td></tr>
+<tr><td style="text-align:left">mem slot</td><td class="del">removed everywhere</td><td>reinfer3k</td></tr>
+</table></div>
+
+<div class="sub">Links: <a href="project.html">project</a> · <a href="pipelines.html">atlas (k→τ curves)</a> · <a href="latestall.html">parade</a> · <a href="combo.html">external-vs-sandbox board</a> · <a href="fleet.html">fleet</a></div>
+</body>
+</html>

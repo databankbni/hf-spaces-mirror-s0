@@ -1,0 +1,23 @@
+{
+ "captured_at": "2026-08-04T17:08:58Z",
+ "hf_metadata": {
+  "sha": "573ce749b7183faf1bf155df9f7fb7a6370b7e17"
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "theDavidGuy/atmos-c051-support",
+ "repo_type": "spaces",
+ "sha": "573ce749b7183faf1bf155df9f7fb7a6370b7e17",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/theDavidGuy/atmos-c051-support"
+}

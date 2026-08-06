@@ -1,0 +1,7 @@
+streamlit>=1.39
+pandas
+numpy
+plotly
+yfinance
+finance-datareader
+openpyxl

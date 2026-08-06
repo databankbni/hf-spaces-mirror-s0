@@ -1,0 +1,8 @@
+{
+  "leagues": [{"slug":"fifa.world","season":{"year":2026}}],
+  "events": [
+    {"id":"760514","date":"2026-07-14T19:00Z","season":{"slug":"semifinals"},"competitions":[{"status":{"type":{"name":"STATUS_FULL_TIME","completed":true}},"competitors":[{"homeAway":"home","winner":true,"score":"2","team":{"id":"164","displayName":"Spain"}},{"homeAway":"away","winner":false,"score":"0","team":{"id":"478","displayName":"France"}}]}]},
+    {"id":"760515","date":"2026-07-15T19:00Z","season":{"slug":"semifinals"},"competitions":[{"status":{"type":{"name":"STATUS_SCHEDULED","completed":false}},"competitors":[{"homeAway":"home","score":"0","team":{"id":"448","displayName":"England"}},{"homeAway":"away","score":"0","team":{"id":"202","displayName":"Argentina"}}]}]},
+    {"id":"760517","date":"2026-07-19T19:00Z","season":{"slug":"final"},"competitions":[{"status":{"type":{"name":"STATUS_SCHEDULED","completed":false}},"competitors":[{"homeAway":"home","score":"0","team":{"id":"164","displayName":"Spain"}},{"homeAway":"away","score":"0","team":{"id":"5961","displayName":"Semifinal 2 Winner"}}]}]}
+  ]
+}

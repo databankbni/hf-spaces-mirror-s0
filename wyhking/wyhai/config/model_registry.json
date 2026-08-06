@@ -1,0 +1,54 @@
+{
+  "active_version": "v7_layered_2026",
+  "fallback_version": "old_online",
+  "models": {
+    "main_c2b": {
+      "version": "v7.1",
+      "task": "c2b",
+      "price_band": ">=30000",
+      "artifact_path": "artifacts/models/v7_1/main_c2b_lightgbm_f3_rag.joblib.b64",
+      "feature_manifest": "data/processed/feature_manifest_v7_1.json",
+      "notes": "v7.1 LightGBM F3_rag main artifact. The full Top3 ensemble includes a very large ExtraTrees member and is kept for offline evaluation."
+    },
+    "main_b2c": {
+      "version": "v7.1",
+      "task": "b2c",
+      "price_band": ">=30000",
+      "artifact_path": "artifacts/models/v7_1/main_b2c_lightgbm_f3_rag.joblib.b64",
+      "feature_manifest": "data/processed/feature_manifest_v7_1.json",
+      "notes": "v7.1 LightGBM F3_rag main artifact. The full Top3 ensemble includes a very large ExtraTrees member and is kept for offline evaluation."
+    },
+    "low_price_c2b": {
+      "version": "v7.2",
+      "task": "c2b",
+      "price_band": "10000-30000",
+      "artifact_path": "artifacts/models/v7_2_c2b_specialist_LightGBM_F2_stats.joblib.b64",
+      "feature_manifest": "data/processed/feature_manifest_v7_2.json",
+      "notes": "Deployable low-price C2B specialist. Offline ExtraTrees is larger and retained for offline evaluation."
+    },
+    "low_price_b2c": {
+      "version": "v7.2",
+      "task": "b2c",
+      "price_band": "10000-30000",
+      "artifact_path": "artifacts/models/v7_2_b2c_low_price_specialist.joblib.b64",
+      "feature_manifest": "data/processed/feature_manifest_v7_2.json"
+    }
+  },
+  "rag": {
+    "c2b_index": "data/processed/v7_layered_c2b_comparable_index.csv.gz.b64",
+    "b2c_index": "data/processed/v7_layered_b2c_comparable_index.csv.gz.b64",
+    "train_only": true
+  },
+  "vehicle_catalog": {
+    "brand": "results/vehicle_catalog/vehicle_brand.csv",
+    "series": "results/vehicle_catalog/vehicle_series.csv",
+    "model": "results/vehicle_catalog/vehicle_model.csv",
+    "alias": "results/vehicle_catalog/vehicle_model_alias.csv"
+  },
+  "routing": {
+    "manual_review_upper_exclusive": 10000,
+    "low_price_upper_exclusive": 30000,
+    "min_auto_model_match_confidence": 0.85,
+    "rag_review_confidences": ["low", "no_match"]
+  }
+}

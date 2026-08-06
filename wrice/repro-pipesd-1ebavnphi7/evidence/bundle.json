@@ -1,0 +1,122 @@
+{
+  "artifact_access": "pinned GitHub raw files",
+  "attempt_id": "b14aa81b-94e3-44ef-9348-6b07ea0b5a5c",
+  "claims": [
+    {
+      "challenge_claim": "PipeSD overlaps draft-token generation and communication using token-batch pipeline scheduling optimized by dynamic programming (Section 3.2)",
+      "challenge_claim_sha256": "19a23e4cc1dfac8ce0e14f60a54e7e0936077f6a149691b73bd82ab72db5672e",
+      "claim_id": "dynamic_token_batch_pipeline_scheduling",
+      "evidence": [
+        "edge/src/merge.py defines dynamic_token_scheduling_dp with DP/P tables and backtracked batches.",
+        "edge/src/engine.py imports dynamic_token_scheduling_dp and resolves dp merge plans into batch lengths."
+      ],
+      "limitations": [
+        "This verifies released implementation structure, not cloud-edge throughput measurements."
+      ],
+      "status": "verified"
+    },
+    {
+      "challenge_claim": "PipeSD uses a dual-threshold NAV triggering mechanism that jointly considers cumulative sequence confidence and single-token confidence (Section 3.3)",
+      "challenge_claim_sha256": "ef7fc12943849e199ae46aa7e3e68b0392afb74ad1d465c887bcb3a9b645066b",
+      "claim_id": "dual_threshold_nav_trigger",
+      "evidence": [
+        "edge/src/util.py exposes verify_thresh_single and verify_thresh_multi parser controls.",
+        "edge/src/engine.py hybrid verification triggers on either single-token or cumulative probability thresholds."
+      ],
+      "limitations": [
+        "This verifies NAV trigger implementation, not ablation or speedup values."
+      ],
+      "status": "verified"
+    },
+    {
+      "challenge_claim": "On a real-world cloud-edge testbed, PipeSD achieves 1.16x-2.16x average TPT speedups over Vanilla, HSL, and EdgeLLM baselines across evaluated scenarios (Table 1)",
+      "challenge_claim_sha256": "651f5398d2c1c126833b744194616b752fc60b9cef263682a222b6249f70abc6",
+      "claim_id": "cloud_edge_tpt_speedup",
+      "evidence": [
+        "No independent CPU-only reproduction of this measurement is available in the released source-inspection artifact."
+      ],
+      "limitations": [
+        "The released artifact inspection does not recreate the reported cloud-edge hardware testbed.",
+        "Paper table values are not counted as reproduced measurements."
+      ],
+      "status": "unavailable"
+    },
+    {
+      "challenge_claim": "PipeSD reduces cloud-side energy consumption per 100 accepted tokens by 14.3%-25.3% in Scenario 1 compared with baselines (Table 2)",
+      "challenge_claim_sha256": "3c511c720fbd513d61ff2a39da8ca826396895a24df8c3aa298a2dcee8ab1c5e",
+      "claim_id": "cloud_energy_reduction",
+      "evidence": [
+        "No independent CPU-only reproduction of this measurement is available in the released source-inspection artifact."
+      ],
+      "limitations": [
+        "The released artifact inspection does not recreate the reported cloud-edge hardware testbed.",
+        "Paper table values are not counted as reproduced measurements."
+      ],
+      "status": "unavailable"
+    },
+    {
+      "challenge_claim": "PipeSD maintains speedup advantages across tested bandwidth levels on HumanEval in Scenario 1 (Figure 5)",
+      "challenge_claim_sha256": "37e3fa7419bffd7cac19378b322436bf0441863e6280dfe7cb474032731b5981",
+      "claim_id": "bandwidth_speedup_robustness",
+      "evidence": [
+        "No independent CPU-only reproduction of this measurement is available in the released source-inspection artifact."
+      ],
+      "limitations": [
+        "The released artifact inspection does not recreate the reported cloud-edge hardware testbed.",
+        "Paper table values are not counted as reproduced measurements."
+      ],
+      "status": "unavailable"
+    },
+    {
+      "challenge_claim": "Ablation results attribute performance improvements to token-batch pipeline scheduling and dual-threshold NAV triggering (Table 6)",
+      "challenge_claim_sha256": "bcac47ee366ac75226729fc824ae41974abea417562e27947dddfa93d85e184d",
+      "claim_id": "ablation_attribution",
+      "evidence": [
+        "No independent CPU-only reproduction of this measurement is available in the released source-inspection artifact."
+      ],
+      "limitations": [
+        "The released artifact inspection does not recreate the reported cloud-edge hardware testbed.",
+        "Paper table values are not counted as reproduced measurements."
+      ],
+      "status": "unavailable"
+    }
+  ],
+  "estimated_api_cost_usd": 0.0,
+  "file_hashes": [
+    {
+      "path": "edge/src/engine.py",
+      "sha256": "2120bbea3e05ffc76d36fb55ca9a1e41c244fb4e4f545d76167cf3e021fa642c",
+      "source": "https://raw.githubusercontent.com/Ghanyunhe/PipeSD/dac0f52eae7ba55e5def2d82003d8413cb58340c/edge/src/engine.py"
+    },
+    {
+      "path": "edge/src/merge.py",
+      "sha256": "ed597adab3173c54f25f72b2572e10e6de77d228140e4d073f17bb4b708f0237",
+      "source": "https://raw.githubusercontent.com/Ghanyunhe/PipeSD/dac0f52eae7ba55e5def2d82003d8413cb58340c/edge/src/merge.py"
+    },
+    {
+      "path": "edge/src/util.py",
+      "sha256": "a88c3df4b2d4e11cf4551ce8a4f5057b8859ef352cff555202a6b8a801776c2e",
+      "source": "https://raw.githubusercontent.com/Ghanyunhe/PipeSD/dac0f52eae7ba55e5def2d82003d8413cb58340c/edge/src/util.py"
+    }
+  ],
+  "generated_at": "2026-07-31T22:10:00+00:00",
+  "implementation_summary": {
+    "dynamic_token_scheduling_dp": true,
+    "engine_uses_dp_merge_plan": true,
+    "hybrid_strategy_sets_dual_thresholds": true,
+    "single_and_multi_threshold_args": true
+  },
+  "licensing": {
+    "observation": "No explicit license file was identified in the pinned repository assessment.",
+    "status": "unclear"
+  },
+  "paper_id": "1ebAvNphi7",
+  "title": "PipeSD: An Efficient Cloud-Edge Collaborative Pipeline Inference Framework with Speculative Decoding",
+  "unreplicated_claims": [
+    "1.16x-2.16x average TPT speedups over baselines",
+    "14.3%-25.3% cloud-side energy reductions",
+    "bandwidth-level speedup and ablation-result claims"
+  ],
+  "upstream_commit": "dac0f52eae7ba55e5def2d82003d8413cb58340c",
+  "upstream_revision": "arxiv:2605.13319+github:Ghanyunhe/PipeSD@dac0f52eae7ba55e5def2d82003d8413cb58340c"
+}

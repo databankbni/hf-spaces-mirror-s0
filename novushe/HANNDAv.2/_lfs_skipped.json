@@ -1,0 +1,20 @@
+{
+ "lfs_not_stored": [
+  {
+   "oid": "76a04b94ea149d635b8393e3536302b34b7ddcd9cb65d53c2f2a6cbd5f97b291",
+   "path": "TESTING.xlsx",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6NzZhMDRiOTRlYTE0OWQ2MzViODM5M2UzNTM2MzAyYjM0YjdkZGNkOWNiNjVkNTNjMmYyYTZjYmQ1Zjk3YjI5MQpzaXplIDEzNjQzNDcK",
+   "size": 1364347,
+   "url": "https://huggingface.co/spaces/novushe/HANNDAv.2/resolve/576b43f44671b00d128e587dcd9059235fd7a4f3/TESTING.xlsx"
+  },
+  {
+   "oid": "dcb731ace4dd733fcb3a569ee9706c69d7f44b21d2efaabcdaf57431e878fb10",
+   "path": "mandulog_bridge_1.png",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6ZGNiNzMxYWNlNGRkNzMzZmNiM2E1NjllZTk3MDZjNjlkN2Y0NGIyMWQyZWZhYWJjZGFmNTc0MzFlODc4ZmIxMApzaXplIDM4NTE3ODMK",
+   "size": 3851783,
+   "url": "https://huggingface.co/spaces/novushe/HANNDAv.2/resolve/576b43f44671b00d128e587dcd9059235fd7a4f3/mandulog_bridge_1.png"
+  }
+ ],
+ "overflow_not_stored": [],
+ "oversize_not_stored": []
+}

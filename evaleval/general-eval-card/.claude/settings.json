@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git checkout:*)",
+      "Bash(git fetch:*)",
+      "Bash(git ls-tree:*)",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\(''''model:'''', d[''''model_info''''][''''name'''']\\); print\\(''''evals:'''', [r[''''evaluation_name''''] for r in d[''''evaluation_results''''][:5]]\\); print\\(''''source:'''', d.get\\(''''source_metadata'''',{}\\).get\\(''''source_organization_name''''\\)\\)\")",
+      "Read(//Users/avijit/Documents/general-eval-card/**)",
+      "Bash(python3:*)",
+      "Bash(for f:*)",
+      "Bash(do)",
+      "Bash(done)",
+      "Bash(npx tsc:*)"
+    ],
+    "additionalDirectories": [
+      "/Users/avijit/Documents/general-eval-card/app/evals"
+    ]
+  }
+}

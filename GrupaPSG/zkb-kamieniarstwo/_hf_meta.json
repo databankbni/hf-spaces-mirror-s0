@@ -1,0 +1,75 @@
+{
+ "captured_at": "2026-08-06T02:53:36Z",
+ "hf_metadata": {
+  "_id": "6a73a78f2540983bfc166181",
+  "author": "GrupaPSG",
+  "cardData": {
+   "colorFrom": "indigo",
+   "colorTo": "blue",
+   "emoji": "⚡",
+   "pinned": false,
+   "sdk": "static",
+   "short_description": "Landing page ZKB: blaty, schody, parapety i kamień.",
+   "title": "Zkb Kamieniarstwo"
+  },
+  "createdAt": "2026-08-05T21:13:51.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://grupapsg-zkb-kamieniarstwo.static.hf.space",
+  "id": "GrupaPSG/zkb-kamieniarstwo",
+  "lastModified": "2026-08-05T21:48:16.000Z",
+  "likes": 0,
+  "private": false,
+  "region": "us",
+  "runtime": {
+   "hardware": {
+    "current": null,
+    "requested": null
+   },
+   "replicas": {
+    "current": 1,
+    "requested": 1
+   },
+   "stage": "RUNNING"
+  },
+  "sdk": "static",
+  "sha": "02dfa6423182f475ebac056479073ded84dfbc8a",
+  "siblings": [
+   {
+    "rfilename": ".gitattributes"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "index.html"
+   },
+   {
+    "rfilename": "style.css"
+   }
+  ],
+  "subdomain": "grupapsg-zkb-kamieniarstwo",
+  "tags": [
+   "static",
+   "region:us"
+  ],
+  "usedStorage": 0
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "GrupaPSG/zkb-kamieniarstwo",
+ "repo_type": "spaces",
+ "sha": "02dfa6423182f475ebac056479073ded84dfbc8a",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/GrupaPSG/zkb-kamieniarstwo"
+}

@@ -1,0 +1,39 @@
+{
+  "version": "v195_business_cost_config_v1",
+  "currency": "CNY",
+  "refurbishment_cost_by_condition": {
+    "A": 1200.0,
+    "B": 3000.0,
+    "C": 6000.0,
+    "UNKNOWN": 4500.0
+  },
+  "inspection_and_logistics_cost": 1200.0,
+  "capital_annual_rate": 0.08,
+  "target_turnover_days": 30,
+  "selling_cost_ratio": 0.01,
+  "risk_reserve_ratio_by_confidence": {
+    "HIGH": 0.008,
+    "MEDIUM": 0.015,
+    "LOW": 0.025
+  },
+  "minimum_gross_profit_ratio_by_price_band": {
+    "LE_30K": 0.08,
+    "30_50K": 0.07,
+    "50_80K": 0.065,
+    "80_120K": 0.06,
+    "120_200K": 0.055,
+    "GT_200K": 0.05
+  },
+  "minimum_gross_profit_floor": 3000.0,
+  "listing_negotiation_ratio": 0.035,
+  "first_offer_negotiation_ratio": 0.025,
+  "minimum_b2c_to_max_c2b_gap": 100.0,
+  "interval_calibration": {
+    "coverage_level": 0.5,
+    "b2c_half_width_ratio": 0.03463203297034827,
+    "c2b_half_width_ratio": 0.04272213420773242,
+    "listing_min_half_width_ratio": 0.02,
+    "listing_max_half_width_ratio": 0.08
+  },
+  "status": "DEFAULT_CONFIG_REQUIRES_BUSINESS_OWNER_REVIEW"
+}

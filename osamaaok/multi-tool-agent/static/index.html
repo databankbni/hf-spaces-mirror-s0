@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Multi-Tool Agent</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --page: #0f1117;
+    --paper: #1a1d27;
+    --ink: #e8e6e0;
+    --ink-soft: #2a3650;
+    --line: #2a2d3a;
+    --text-dim: #8b95ad;
+
+    /* Tool colors */
+    --calc-bg: #1a2e1a;
+    --calc-accent: #5fa985;
+    --calc-bright: #7ec8a0;
+
+    --search-bg: #1a1f2e;
+    --search-accent: #5a7fd4;
+    --search-bright: #7a9de8;
+
+    --rag-bg: #2a1a2e;
+    --rag-accent: #9b6bb5;
+    --rag-bright: #b88fd0;
+
+    --none-bg: #1c2230;
+    --none-accent: #8b95ad;
+    --none-bright: #b0bac8;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--page);
+    font-family: 'Inter', sans-serif;
+    color: var(--ink);
+    min-height: 100vh;
+  }
+
+  .wrap {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 56px 24px 80px;
+  }
+
+  .eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 18px;
+  }
+
+  .live-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--calc-accent);
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(95,169,133,0.4); }
+    70% { box-shadow: 0 0 0 7px rgba(95,169,133,0); }
+    100% { box-shadow: 0 0 0 0 rgba(95,169,133,0); }
+  }
+
+  h1 {
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    margin: 0 0 12px;
+    line-height: 1.1;
+  }
+
+  h1 em {
+    font-style: italic;
+    font-weight: 600;
+    color: var(--search-accent);
+  }
+
+  .sub {
+    font-size: 15px;
+    color: var(--text-dim);
+    line-height: 1.6;
+    margin: 0 0 32px;
+    max-width: 520px;
+  }
+
+  /* Tool pills legend */
+  .tools-legend {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 32px;
+  }
+
+  .tool-pill {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    padding: 5px 12px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 500;
+  }
+
+  .tool-pill.calc { background: rgba(95,169,133,0.12); color: var(--calc-accent); border: 1px solid rgba(95,169,133,0.25); }
+  .tool-pill.search { background: rgba(90,127,212,0.12); color: var(--search-accent); border: 1px solid rgba(90,127,212,0.25); }
+  .tool-pill.rag { background: rgba(155,107,181,0.12); color: var(--rag-accent); border: 1px solid rgba(155,107,181,0.25); }
+
+  /* Input panel */
+  .panel {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: 8px;
+    box-shadow: 0 1px 4px rgba(20,20,10,0.04);
+  }
+
+  textarea {
+    width: 100%;
+    min-height: 60px;
+    resize: none;
+    border: none;
+    outline: none;
+    padding: 16px 18px 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    color: #e8e6e0;
+    background: transparent;
+    line-height: 1.5;
+  }
+
+  textarea::placeholder { color: #4a4f5e; }
+
+  .panel-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 12px 10px 18px;
+    border-top: 1px solid var(--line);
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .examples { display: flex; gap: 6px; flex-wrap: wrap; }
+
+  .chip {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    padding: 5px 10px;
+    border-radius: 7px;
+    background: #1e2130;
+    color: #6b7280;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: all 0.15s ease;
+  }
+
+  .chip:hover { background: #252840; color: #e8e6e0; }
+
+  button.ask {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 11px 22px;
+    border-radius: 10px;
+    border: none;
+    background: #e8e6e0;
+    color: #0f1117;
+    cursor: pointer;
+    transition: transform 0.12s ease, background 0.15s;
+    white-space: nowrap;
+  }
+
+  button.ask:hover:not(:disabled) { background: #ffffff; transform: translateY(-1px); }
+  button.ask:disabled { opacity: 0.4; cursor: default; transform: none; }
+
+  /* Result area */
+  .result-area {
+    margin-top: 24px;
+  }
+
+  /* Tool badge */
+  .tool-badge {
+    display: none;
+    align-items: center;
+    gap: 10px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 8px 14px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    width: fit-content;
+    animation: badgeIn 0.3s ease;
+  }
+
+  .tool-badge.show { display: flex; }
+
+  @keyframes badgeIn {
+    from { opacity: 0; transform: translateY(-4px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .tool-badge.calc { background: rgba(95,169,133,0.1); color: var(--calc-bright); border: 1px solid rgba(95,169,133,0.2); }
+  .tool-badge.search { background: rgba(90,127,212,0.1); color: var(--search-bright); border: 1px solid rgba(90,127,212,0.2); }
+  .tool-badge.rag { background: rgba(155,107,181,0.1); color: var(--rag-bright); border: 1px solid rgba(155,107,181,0.2); }
+  .tool-badge.none { background: rgba(139,149,173,0.1); color: var(--none-bright); border: 1px solid rgba(139,149,173,0.2); }
+
+  /* Console panel */
+  .console {
+    border-radius: 16px;
+    overflow: hidden;
+    display: none;
+    animation: rise 0.35s ease;
+  }
+
+  .console.show { display: block; }
+
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .console-header {
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .console-body {
+    padding: 20px 22px 24px;
+  }
+
+  /* Thinking state */
+  .thinking {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+  }
+
+  .spinner {
+    width: 12px; height: 12px;
+    border: 1.5px solid rgba(255,255,255,0.15);
+    border-top-color: currentColor;
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+  }
+
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* Answer display */
+  .answer-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    opacity: 0.5;
+    margin-bottom: 8px;
+  }
+
+  .answer-text {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #d7dce5;
+    white-space: pre-wrap;
+  }
+
+  /* Error */
+  .error-box {
+    background: #fdf1ef;
+    border: 1px solid #f0c8c0;
+    color: #a3402c;
+    border-radius: 12px;
+    padding: 14px 18px;
+    font-size: 13.5px;
+    display: none;
+    margin-top: 20px;
+  }
+
+  .error-box.show { display: block; }
+
+  .footer-tag {
+    margin-top: 44px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: #3a3f50;
+    text-align: center;
+  }
+
+  @media (max-width: 600px) {
+    h1 { font-size: 30px; }
+    .panel-footer { flex-direction: column; align-items: stretch; }
+    button.ask { text-align: center; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="eyebrow"><span class="live-dot"></span>multi-tool agent · live</div>
+  <h1>Ask anything.<br><em>The agent decides how.</em></h1>
+  <p class="sub">Routes each question to the right tool — calculator for math, web search for current info, or knowledge base retrieval for AI concepts. Automatically.</p>
+
+  <div class="tools-legend">
+    <span class="tool-pill calc">⟨ ⟩ calculator</span>
+    <span class="tool-pill search">⊕ web search</span>
+    <span class="tool-pill rag">◈ knowledge base</span>
+  </div>
+
+  <div class="panel">
+    <textarea id="question" placeholder="e.g. Weather in Lahore?" rows="2"></textarea>
+    <div class="panel-footer">
+      <button class="ask" id="askBtn" onclick="askQuestion()">Ask agent →</button>
+    </div>
+  </div>
+
+  <div class="result-area">
+    <div class="tool-badge" id="toolBadge"></div>
+    <div class="console" id="console">
+      <div class="console-header" id="consoleHeader">
+        <span id="consoleTitle">agent.reasoning</span>
+        <span id="consoleStatus"></span>
+      </div>
+      <div class="console-body" id="consoleBody"></div>
+    </div>
+  </div>
+
+  <div class="error-box" id="errorBox"></div>
+
+  <div class="footer-tag">calculator · web_search · rag_retrieval · routed automatically</div>
+</div>
+
+<script>
+  const TOOL_CONFIG = {
+    calculator: {
+      label: '⟨ ⟩ calculator',
+      cls: 'calc',
+      bg: '#1a2e1a',
+      headerColor: '#2a4a2a',
+      accent: '#5fa985',
+    },
+    web_search: {
+      label: '⊕ web search',
+      cls: 'search',
+      bg: '#1a1f2e',
+      headerColor: '#1e2a4a',
+      accent: '#5a7fd4',
+    },
+    rag_retrieval: {
+      label: '◈ knowledge base',
+      cls: 'rag',
+      bg: '#2a1a2e',
+      headerColor: '#3a1a4a',
+      accent: '#9b6bb5',
+    },
+    none: {
+      label: '◇ direct answer',
+      cls: 'none',
+      bg: '#1c2230',
+      headerColor: '#252d40',
+      accent: '#8b95ad',
+    }
+  };
+
+  function useExample(el) {
+    document.getElementById('question').value = el.textContent;
+    document.getElementById('question').focus();
+  }
+
+  function setThinking(tool) {
+    const cfg = TOOL_CONFIG[tool] || TOOL_CONFIG.none;
+    const consoleEl = document.getElementById('console');
+    const header = document.getElementById('consoleHeader');
+    const body = document.getElementById('consoleBody');
+    const title = document.getElementById('consoleTitle');
+    const status = document.getElementById('consoleStatus');
+
+    consoleEl.style.background = cfg.bg;
+    header.style.background = cfg.headerColor;
+    header.style.color = cfg.accent;
+    title.textContent = `tool: ${tool === 'none' ? 'direct' : tool}`;
+    status.innerHTML = `<span class="spinner" style="color:${cfg.accent}"></span>`;
+    body.innerHTML = `<div class="thinking" style="color:${cfg.accent}"><span class="spinner" style="color:${cfg.accent}"></span><span>running ${tool === 'none' ? 'direct response' : tool}…</span></div>`;
+    consoleEl.classList.add('show');
+  }
+
+  function setResult(tool, answer) {
+    const cfg = TOOL_CONFIG[tool] || TOOL_CONFIG.none;
+    const badge = document.getElementById('toolBadge');
+    const body = document.getElementById('consoleBody');
+    const status = document.getElementById('consoleStatus');
+
+    badge.className = `tool-badge show ${cfg.cls}`;
+    badge.textContent = cfg.label;
+
+    status.textContent = 'done';
+
+    body.innerHTML = `
+      <div class="answer-label">Answer</div>
+      <div class="answer-text">${escapeHtml(answer)}</div>
+    `;
+  }
+
+  function escapeHtml(text) {
+    return text
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  }
+
+  async function askQuestion() {
+    const question = document.getElementById('question').value.trim();
+    if (!question) return;
+
+    const btn = document.getElementById('askBtn');
+    const consoleEl = document.getElementById('console');
+    const badge = document.getElementById('toolBadge');
+    const errorBox = document.getElementById('errorBox');
+
+    btn.disabled = true;
+    btn.textContent = 'Thinking…';
+    errorBox.classList.remove('show');
+    badge.classList.remove('show');
+
+    // Show initial thinking state before tool is known
+    const consoleHeader = document.getElementById('consoleHeader');
+    const consoleBody = document.getElementById('consoleBody');
+    const consoleTitle = document.getElementById('consoleTitle');
+    const consoleStatus = document.getElementById('consoleStatus');
+
+    consoleEl.style.background = '#1c2230';
+    consoleHeader.style.background = '#252d40';
+    consoleHeader.style.color = '#8b95ad';
+    consoleTitle.textContent = 'agent.routing';
+    consoleStatus.innerHTML = `<span class="spinner" style="color:#8b95ad"></span>`;
+    consoleBody.innerHTML = `<div class="thinking" style="color:#8b95ad"><span class="spinner" style="color:#8b95ad"></span><span>deciding which tool to use…</span></div>`;
+    consoleEl.classList.add('show');
+
+    try {
+      const response = await fetch('/ask', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ question })
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        errorBox.textContent = 'Error: ' + (data.detail || JSON.stringify(data));
+        errorBox.classList.add('show');
+        consoleEl.classList.remove('show');
+        return;
+      }
+
+      const tool = data.tool_used || 'none';
+
+      // Brief pause so user sees the routing moment before result
+      setThinking(tool);
+      await new Promise(r => setTimeout(r, 600));
+      setResult(tool, data.answer);
+
+    } catch (err) {
+      errorBox.textContent = 'Request failed: ' + err;
+      errorBox.classList.add('show');
+      consoleEl.classList.remove('show');
+    } finally {
+      btn.disabled = false;
+      btn.textContent = 'Ask agent →';
+    }
+  }
+
+  document.getElementById('question').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      askQuestion();
+    }
+  });
+</script>
+</body>
+</html>

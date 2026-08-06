@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>VOMEBOOK Search</title>
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#1a1c1e">
+<link rel="apple-touch-icon" href="/icons/icon-192.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/icons/icon-192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/icons/icon-512.png">
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body class="dark">
+
+<header id="header">
+  <div class="header-left">
+    <button id="hamburger-btn" class="icon-btn" aria-label="菜单"><span class="ui-icon ui-icon-menu" aria-hidden="true"></span></button>
+    <a id="header-logo" class="header-logo" href="https://huggingface.co/VOMEBOOK" title="VOMEBOOK">
+      <span id="header-title">VOMEBOOK</span>
+    </a>
+  </div>
+  <div class="header-center">
+    <div class="search-box">
+      <span class="search-icon"><span class="ui-icon ui-icon-search" aria-hidden="true"></span></span>
+      <input type="search" id="search-input" class="search-input" placeholder="全文搜索 TXT 正文..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+      <kbd class="search-kbd">/</kbd>
+      <div id="search-history-dropdown" class="search-history-dropdown" style="display:none"></div>
+    </div>
+  </div>
+  <div class="header-right">
+    <button id="settings-btn" class="icon-btn" aria-label="搜索设置"><span class="ui-icon ui-icon-sliders" aria-hidden="true"></span></button>
+    <button id="mobile-toggle-btn" class="icon-btn" aria-label="切换手机或电脑模式" title="手机/电脑模式切换"><span id="mobile-toggle-icon" class="ui-icon ui-icon-devices" aria-hidden="true"></span></button>
+    <button id="theme-btn" class="icon-btn" aria-label="切换到白天模式" title="白天模式"><svg class="theme-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 15.5A8 8 0 1 1 8.5 4 6.5 6.5 0 0 0 20 15.5Z"/></svg></button>
+  </div>
+
+</header>
+<div id="app-body" class="app-body">
+
+  <aside id="left-sidebar" class="sidebar left-sidebar">
+    <div class="sidebar-header"><span id="sidebar-title">数据包</span><button id="sidebar-expand-btn" class="icon-btn-sm" title="展开/收起侧边栏" style="display:none">↔</button></div>
+    <div id="sidebar-content" class="sidebar-content"><div class="sidebar-loading">加载中...</div></div>
+
+  </aside>
+
+  <main id="main-content" class="main-content">
+    <div id="status-bar" class="status-bar">
+      <div class="status-left">
+        <span id="result-count" class="result-count"></span>
+        <label class="multi-toggle" id="multi-toggle-label" style="display:none"><input type="checkbox" id="multi-select-toggle"><span>多选</span></label>
+      </div>
+      <div class="status-right">
+        <button id="clear-filters-btn" class="text-btn" style="display:none">清空筛选</button>
+        <div class="sort-group">
+          <span class="sort-label">排序:</span>
+          <select id="sort-select" class="sort-select">
+            <option value="relevance">相关度</option>
+            <option value="name">文件名</option>
+            <option value="size">文件大小</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div id="multi-action-bar" class="multi-action-bar" style="display:none">
+      <button id="multi-select-all" class="multi-action-btn">全选</button>
+      <button id="multi-deselect" class="multi-action-btn">取消选择</button>
+      <button id="multi-batch-download" class="multi-action-btn primary">批量下载</button>
+      <button id="multi-zip-download" class="multi-action-btn primary">合并下载</button>
+      <span id="multi-selected-count" class="multi-selected-count"></span>
+    </div>
+    <div id="results-container" class="results-container">
+      <div id="results-list" class="results-list"></div>
+      <div id="results-loading" class="loading-spinner" style="display:none"><div class="spinner"></div></div>
+      <div id="empty-state" class="empty-state" style="display:none">
+        <div class="empty-title">没有找到结果</div>
+        <div id="empty-desc" class="empty-desc">试试其他关键词</div>
+        <button id="empty-random-btn" class="random-big-btn">随机来一篇</button>
+      </div>
+    </div>
+    <div id="load-info" class="load-info" style="display:none">已加载 <span id="loaded-count">0</span> / <span id="total-count">0</span> 条</div>
+    <div id="preview-panel" class="preview-panel" style="display:none"></div>
+
+  </main>
+
+  <aside id="right-sidebar" class="sidebar right-sidebar">
+    <div class="sidebar-header"><span>搜索过滤</span><button id="close-filters-btn" class="icon-btn-sm" aria-label="关闭过滤">×</button></div>
+    <div class="sidebar-content">
+      <div class="filter-section" id="fulltext-toggle-section">
+        <label class="toggle-row">
+          <span class="toggle-label">全文搜索</span>
+          <input type="checkbox" id="fulltext-toggle" checked>
+          <span class="toggle-switch"></span>
+        </label>
+      </div>
+      <div class="filter-section" id="search-paths-toggle-section">
+        <label class="toggle-row">
+          <span class="toggle-label">搜索文件夹名</span>
+          <input type="checkbox" id="search-paths-toggle" checked>
+          <span class="toggle-switch"></span>
+        </label>
+      </div>
+      <div class="filter-section" id="history-toggle-section">
+        <label class="toggle-row">
+          <span class="toggle-label">记录搜索历史</span>
+          <input type="checkbox" id="history-toggle" checked>
+          <span class="toggle-switch"></span>
+        </label>
+      </div>
+      <div class="filter-section" id="exact-search-section">
+        <label class="toggle-row">
+          <span class="toggle-label">精准搜索</span>
+          <input type="checkbox" id="exact-search-toggle" checked>
+          <span class="toggle-switch"></span>
+        </label>
+      </div>
+      <div id="filter-source-section" class="filter-section">
+        <div class="filter-section-title">数据包过滤</div>
+        <div id="filter-source-list" class="filter-checkbox-list"></div>
+      </div>
+      <div id="filter-folder-section" class="filter-section">
+        <div class="filter-section-title"><span>路径过滤</span><span class="filter-actions"><button id="folder-select-all" class="text-btn-sm">全选</button><button id="folder-deselect-all" class="text-btn-sm">反选</button></span></div>
+        <div id="filter-folder-tree" class="filter-folder-tree"></div>
+      </div>
+      <div class="filter-section">
+        <div class="filter-section-title">文件大小</div>
+        <div class="filter-size-row">
+          <input type="number" id="filter-min-size" class="size-input" placeholder="最小" min="0" step="0.1">
+          <select id="filter-min-unit" class="size-unit"><option value="B">B</option><option value="KB">KB</option><option value="MB" selected>MB</option><option value="GB">GB</option></select>
+          <span class="size-sep">—</span>
+          <input type="number" id="filter-max-size" class="size-input" placeholder="最大" min="0" step="0.1">
+          <select id="filter-max-unit" class="size-unit"><option value="B">B</option><option value="KB">KB</option><option value="MB" selected>MB</option><option value="GB">GB</option></select>
+        </div>
+      </div>
+    </div>
+
+  </aside>
+</div>
+
+<footer class="footer">
+  <div class="hitokoto"></div>
+  <button id="random-book-btn" class="random-book-btn" title="随机来一篇">
+    <span class="ui-icon ui-icon-book" aria-hidden="true"></span>
+    <span>随机来一篇</span>
+  </button>
+
+</footer>
+<div id="overlay" class="overlay" style="display:none"></div>
+<div id="toast" class="toast" style="display:none"></div>
+
+<script>if ("serviceWorker" in navigator) { navigator.serviceWorker.register("/sw.js", { scope: "/" }); }</script>
+<script src="/static/app.js"></script>
+</body>
+</html>

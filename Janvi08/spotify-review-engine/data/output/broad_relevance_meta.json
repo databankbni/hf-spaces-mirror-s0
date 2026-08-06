@@ -1,0 +1,24 @@
+{
+  "processed_at": "2026-06-22T10:21:51Z",
+  "mode": "full",
+  "input": "data/output/reviews_clean.jsonl",
+  "output": "data\\output\\reviews_broad.jsonl",
+  "quota_exhausted_mid_run": true,
+  "duration_seconds": 18.12,
+  "candidate_pool_size": 1345,
+  "newly_relevant_broad_true": 2,
+  "newly_relevant_broad_true_by_source": {
+    "trustpilot": 1,
+    "play_store": 1
+  },
+  "relevant_broad_status_distribution": {
+    "classified": 45,
+    "quota_exhausted": 1300
+  },
+  "relevant_broad_value_distribution": {
+    "true": 2,
+    "false": 43,
+    "null": 1300
+  },
+  "quota_exhausted_remaining": 1300
+}

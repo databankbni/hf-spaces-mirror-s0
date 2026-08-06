@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}Conservation Notes | Tanzania Bird Finder{% endblock %}
+{% block content %}
+<section class="page-hero">
+  <span class="eyebrow">Conservation</span>
+  <h1>Research notes and field ethics</h1>
+  <p>Practical context for protecting habitats, reading migration change, and birding responsibly.</p>
+</section>
+
+<section class="section">
+  <div class="grid article-grid">
+    {% for article in articles %}
+      <article class="article-card">
+        <img src="{{ article.image_url }}" alt="{{ article.title }}">
+        <div class="card-body">
+          <span class="status">{{ article.category }} | {{ article.read_time }} min read</span>
+          <h2>{{ article.title }}</h2>
+          <p>{{ article.content }}</p>
+        </div>
+      </article>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

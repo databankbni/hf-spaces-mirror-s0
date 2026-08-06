@@ -1,0 +1,12 @@
+{
+  "built_at": "2026-07-08T21:14:45+08:00",
+  "job_count": 2601,
+  "series_with_image": 2601,
+  "series_with_ranking_car_ids": 732,
+  "car_alias_count": 21368,
+  "ranking_raw": "data/external/dongchedi_rankings/current/raw_ranking_records.csv",
+  "usedcar_series": "data/external/dongchedi_all_usedcar_series.csv",
+  "photo_jobs": "data/external/dongchedi_official_photos/current/photo_jobs.json",
+  "series_index": "data/external/dongchedi_official_photos/current/series_photo_seed_index.csv",
+  "car_aliases": "data/external/dongchedi_official_photos/current/car_photo_aliases.csv"
+}

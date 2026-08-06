@@ -1,0 +1,91 @@
+{
+ "captured_at": "2026-08-04T15:31:40Z",
+ "hf_metadata": {
+  "_id": "68f1779bfacf422c1177c764",
+  "author": "TomiChapo",
+  "cardData": {
+   "app_file": "app_gradio.py",
+   "colorFrom": "blue",
+   "colorTo": "green",
+   "emoji": "😊",
+   "pinned": false,
+   "sdk": "gradio",
+   "sdk_version": "4.44.0",
+   "title": "Emotion Detector Api"
+  },
+  "createdAt": "2025-10-16T22:54:19.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://tomichapo-emotion-detector-api.hf.space",
+  "id": "TomiChapo/emotion-detector-api",
+  "lastModified": "2026-07-23T00:36:53.000Z",
+  "likes": 0,
+  "models": [
+   "TomiChapo/emotion-detector-spanish"
+  ],
+  "private": false,
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "tomichapo-emotion-detector-api.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": null,
+    "requested": "cpu-basic"
+   },
+   "replicas": {
+    "requested": 1
+   },
+   "stage": "SLEEPING"
+  },
+  "sdk": "gradio",
+  "sha": "bebea06b6e415ac3559c3b3b0450001adab070a8",
+  "siblings": [
+   {
+    "rfilename": ".gitattributes"
+   },
+   {
+    "rfilename": "Dockerfile"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "app.py"
+   },
+   {
+    "rfilename": "app_gradio.py"
+   },
+   {
+    "rfilename": "requirements.txt"
+   }
+  ],
+  "subdomain": "tomichapo-emotion-detector-api",
+  "tags": [
+   "gradio",
+   "region:us"
+  ],
+  "usedStorage": 0
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "TomiChapo/emotion-detector-api",
+ "repo_type": "spaces",
+ "sha": "bebea06b6e415ac3559c3b3b0450001adab070a8",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/TomiChapo/emotion-detector-api"
+}

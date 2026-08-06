@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang=en>
+  <head>
+    <title>tensorflow.python.framework.errors_impl.InvalidArgumentError: {{function_node __wrapped__Mul_device_/job:localhost/replica:0/task:0/device:CPU:0}} Incompatible shapes: [1,1280] vs. [1,4200] [Op:Mul] name: 
+ // Werkzeug Debugger</title>
+    <link rel="stylesheet" href="?__debugger__=yes&amp;cmd=resource&amp;f=style.css">
+    <link rel="shortcut icon"
+        href="?__debugger__=yes&amp;cmd=resource&amp;f=console.png">
+    <script src="?__debugger__=yes&amp;cmd=resource&amp;f=debugger.js"></script>
+    <script>
+      var CONSOLE_MODE = false,
+          EVALEX = true,
+          EVALEX_TRUSTED = false,
+          SECRET = "Rs1rz2xCSVHSnthAFPTn";
+    </script>
+  </head>
+  <body style="background-color: #fff">
+    <div class="debugger">
+<h1>InvalidArgumentError</h1>
+<div class="detail">
+  <p class="errormsg">tensorflow.python.framework.errors_impl.InvalidArgumentError: {{function_node __wrapped__Mul_device_/job:localhost/replica:0/task:0/device:CPU:0}} Incompatible shapes: [1,1280] vs. [1,4200] [Op:Mul] name: 
+</p>
+</div>
+<h2 class="traceback">Traceback <em>(most recent call last)</em></h2>
+<div class="traceback">
+  <h3></h3>
+  <ul><li><div class="frame" id="frame-1480369092560">
+  <h4>File <cite class="filename">"C:\Users\M I C R O S P A C E\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py"</cite>,
+      line <em class="line">2213</em>,
+      in <code class="function">__call__</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">    </span>def __call__(self, environ: dict, start_response: t.Callable) -&gt; t.Any:</pre>
+<pre class="line before"><span class="ws">        </span>&#34;&#34;&#34;The WSGI server calls the Flask application object as the</pre>
+<pre class="line before"><span class="ws">        </span>WSGI application. This calls :meth:`wsgi_app`, which can be</pre>
+<pre class="line before"><span class="ws">        </span>wrapped to apply middleware.</pre>
+<pre class="line before"><span class="ws">        </span>&#34;&#34;&#34;</pre>
+<pre class="line current"><span class="ws">        </span>return self.wsgi_app(environ, start_response)</pre></div>
+</div>
+
+<li><div class="frame" id="frame-1480371172320">
+  <h4>File <cite class="filename">"C:\Users\M I C R O S P A C E\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py"</cite>,
+      line <em class="line">2193</em>,
+      in <code class="function">wsgi_app</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">            </span>try:</pre>
+<pre class="line before"><span class="ws">                </span>ctx.push()</pre>
+<pre class="line before"><span class="ws">                </span>response = self.full_dispatch_request()</pre>
+<pre class="line before"><span class="ws">            </span>except Exception as e:</pre>
+<pre class="line before"><span class="ws">                </span>error = e</pre>
+<pre class="line current"><span class="ws">                </span>response = self.handle_exception(e)</pre>
+<pre class="line after"><span class="ws">            </span>except:  # noqa: B001</pre>
+<pre class="line after"><span class="ws">                </span>error = sys.exc_info()[1]</pre>
+<pre class="line after"><span class="ws">                </span>raise</pre>
+<pre class="line after"><span class="ws">            </span>return response(environ, start_response)</pre>
+<pre class="line after"><span class="ws">        </span>finally:</pre></div>
+</div>
+
+<li><div class="frame" id="frame-1480371172432">
+  <h4>File <cite class="filename">"C:\Users\M I C R O S P A C E\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_cors\extension.py"</cite>,
+      line <em class="line">176</em>,
+      in <code class="function">wrapped_function</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">        </span># Wrap exception handlers with cross_origin</pre>
+<pre class="line before"><span class="ws">        </span># These error handlers will still respect the behavior of the route</pre>
+<pre class="line before"><span class="ws">        </span>if options.get(&#39;intercept_exceptions&#39;, True):</pre>
+<pre class="line before"><span class="ws">            </span>def _after_request_decorator(f):</pre>
+<pre class="line before"><span class="ws">                </span>def wrapped_function(*args, **kwargs):</pre>
+<pre class="line current"><span class="ws">                    </span>return cors_after_request(app.make_response(f(*args, **kwargs)))</pre>
+<pre class="line after"><span class="ws">                </span>return wrapped_function</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">            </span>if hasattr(app, &#39;handle_exception&#39;):</pre>
+<pre class="line after"><span class="ws">                </span>app.handle_exception = _after_request_decorator(</pre>
+<pre class="line after"><span class="ws">                    </span>app.handle_exception)</pre></div>
+</div>
+
+<li><div class="frame" id="frame-1480371257408">
+  <h4>File <cite class="filename">"C:\Users\M I C R O S P A C E\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py"</cite>,
+      line <em class="line">2190</em>,
+      in <code class="function">wsgi_app</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">        </span>ctx = self.request_context(environ)</pre>
+<pre class="line before"><span class="ws">        </span>error: BaseException | None = None</pre>
+<pre class="line before"><span class="ws">        </span>try:</pre>
+<pre class="line before"><span class="ws">            </span>try:</pre>
+<pre class="line before"><span class="ws">                </span>ctx.push()</pre>
+<pre class="line current"><span class="ws">                </span>response = self.full_dispatch_request()</pre>
+<pre class="line after"><span class="ws">            </span>except Exception as e:</pre>
+<pre class="line after"><span class="ws">                </span>error = e</pre>
+<pre class="line after"><span class="ws">                </span>response = self.handle_exception(e)</pre>
+<pre class="line after"><span class="ws">            </span>except:  # noqa: B001</pre>
+<pre class="line after"><span class="ws">                </span>error = sys.exc_info()[1]</pre></div>
+</div>
+
+<li><div class="frame" id="frame-1480371257520">
+  <h4>File <cite class="filename">"C:\Users\M I C R O S P A C E\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py"</cite>,
+      line <em class="line">1486</em>,
+      in <code class="function">full_dispatch_request</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">            </span>request_started.send(self, _async_wrapper=self.ensure_sync)</pre>
+<pre class="line before"><span class="ws">            </span>rv = self.preprocess_request()</pre>
+<pre class="line before"><span class="ws">            </span>if rv is None:</pre>
+<pre class="line before"><span class="ws">                </span>rv = self.dispatch_request()</pre>
+<pre class="line before"><span class="ws">        </span>except Exception as e:</pre>
+<pre class="line current"><span class="ws">            </span>rv = self.handle_user_exception(e)</pre>
+<pre class="line after"><span class="ws">        </span>return self.finalize_request(rv)</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">    </span>def finalize_request(</pre>
+<pre class="line after"><span class="ws">        </span>self,</pre>
+<pre class="line after"><span class="ws">        </span>rv: ft.ResponseReturnValue | HTTPException,</pre></div>
+</div>
+
+<li><div class="frame" id="frame-1480371257632">
+  <h4>File <cite class="filename">"C:\Users\M I C R O S P A C E\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_cors\extension.py"</cite>,
+      line <em class="line">176</em>,
+      in <code class="function">wrapped_function</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">        </span># Wrap exception handlers with cross_origin</pre>
+<pre class="line before"><span class="ws">        </span># These error handlers will still respect the behavior of the route</pre>
+<pre class="line before"><span class="ws">        </span>if options.get(&#39;intercept_exceptions&#39;, True):</pre>
+<pre class="line before"><span class="ws">            </span>def _after_request_decorator(f):</pre>
+<pre class="line before"><span class="ws">                </span>def wrapped_function(*args, **kwargs):</pre>
+<pre class="line current"><span class="ws">                    </span>return cors_after_request(app.make_response(f(*args, **kwargs)))</pre>
+<pre class="line after"><span class="ws">                </span>return wrapped_function</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">            </span>if hasattr(app, &#39;handle_exception&#39;):</pre>
+<pre class="line after"><span class="ws">                </span>app.handle_exception = _after_request_decorator(</pre>
+<pre class="line after"><span class="ws">                    </span>app.handle_exception)</pre></div>
+</div>
+
+<li><div class="frame" id="frame-1480371257744">
+  <h4>File <cite class="filename">"C:\Users\M I C R O S P A C E\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py"</cite>,
+      line <em class="line">1484</em>,
+      in <code class="function">full_dispatch_request</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws"></span> </pre>
+<pre class="line before"><span class="ws">        </span>try:</pre>
+<pre class="line before"><span class="ws">            </span>request_started.send(self, _async_wrapper=self.ensure_sync)</pre>
+<pre class="line before"><span class="ws">            </span>rv = self.preprocess_request()</pre>
+<pre class="line before"><span class="ws">            </span>if rv is None:</pre>
+<pre class="line current"><span class="ws">                </span>rv = self.dispatch_request()</pre>
+<pre class="line after"><span class="ws">        </span>except Exception as e:</pre>
+<pre class="line after"><span class="ws">            </span>rv = self.handle_user_exception(e)</pre>
+<pre class="line after"><span class="ws">        </span>return self.finalize_request(rv)</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">    </span>def finalize_request(</pre></div>
+</div>
+
+<li><div class="frame" id="frame-1480371257856">
+  <h4>File <cite class="filename">"C:\Users\M I C R O S P A C E\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py"</cite>,
+      line <em class="line">1469</em>,
+      in <code class="function">dispatch_request</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">            </span>and req.method == &#34;OPTIONS&#34;</pre>
+<pre class="line before"><span class="ws">        </span>):</pre>
+<pre class="line before"><span class="ws">            </span>return self.make_default_options_response()</pre>
+<pre class="line before"><span class="ws">        </span># otherwise dispatch to the handler for that endpoint</pre>
+<pre class="line before"><span class="ws">        </span>view_args: dict[str, t.Any] = req.view_args  # type: ignore[assignment]</pre>
+<pre class="line current"><span class="ws">        </span>return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">    </span>def full_dispatch_request(self) -&gt; Response:</pre>
+<pre class="line after"><span class="ws">        </span>&#34;&#34;&#34;Dispatches the request and on top of that performs request</pre>
+<pre class="line after"><span class="ws">        </span>pre and postprocessing as well as HTTP exception catching and</pre>
+<pre class="line after"><span class="ws">        </span>error handling.</pre></div>
+</div>
+
+<li><div class="frame" id="frame-1480371257968">
+  <h4>File <cite class="filename">"C:\Users\M I C R O S P A C E\Desktop\jack project\app.py"</cite>,
+      line <em class="line">142</em>,
+      in <code class="function">identify</code></h4>
+  <div class="source "><pre class="line before"><span class="ws">        </span>gradcam_url = None</pre>
+<pre class="line before"><span class="ws">        </span>ref_emb = getattr(app, &#34;reference_embeddings&#34;, None)</pre>
+<pre class="line before"><span class="ws">        </span>if ref_emb and bird.id in ref_emb:</pre>
+<pre class="line before"><span class="ws">            </span>gradcam_name = f&#34;gradcam-{output_name}&#34;</pre>
+<pre class="line before"><span class="ws">            </span>gradcam_path = os.path.join(UPLOAD_PATH, gradcam_name)</pre>
+<pre class="line current"><span class="ws">            </span>gradcam_result = generate_gradcam_heatmap(</pre>
+<pre class="line after"><span class="ws">                </span>output_path, gradcam_path, reference_embedding=ref_emb[bird.id]</pre>
+<pre class="line after"><span class="ws">            </span>)</pre>
+<pre class="line after"><span class="ws">            </span>if gradcam_result:</pre>
+<pre class="line after"><span class="ws">                </span>gradcam_url = f&#34;/static/uploads/{gradcam_name}&#34;</pre>
+<pre class="line after"><span class="ws"></span> </pre></div>
+</div>
+
+<li><div class="frame" id="frame-1480371272192">
+  <h4>File <cite class="filename">"C:\Users\M I C R O S P A C E\Desktop\jack project\ai_engine.py"</cite>,
+      line <em class="line">304</em>,
+      in <code class="function">generate_gradcam_heatmap</code></h4>
+  <div class="source "><pre class="line before"><span class="ws">        </span>heatmap = (heatmap - hmin) / (hmax - hmin)</pre>
+<pre class="line before"><span class="ws">    </span>return heatmap</pre>
+<pre class="line before"><span class="ws"></span> </pre>
+<pre class="line before"><span class="ws"></span> </pre>
+<pre class="line before"><span class="ws"></span>def generate_gradcam_heatmap(image_path, output_path, reference_embedding=None, alpha=0.4):</pre>
+<pre class="line current"><span class="ws">    </span>heatmap = _gradcam_heatmap(image_path, reference_embedding)</pre>
+<pre class="line after"><span class="ws">    </span>if heatmap is None:</pre>
+<pre class="line after"><span class="ws">        </span>return None</pre>
+<pre class="line after"><span class="ws">    </span>try:</pre>
+<pre class="line after"><span class="ws">        </span>import matplotlib.pyplot as plt</pre>
+<pre class="line after"><span class="ws">    </span>except Exception:</pre></div>
+</div>
+
+<li><div class="frame" id="frame-1480371342800">
+  <h4>File <cite class="filename">"C:\Users\M I C R O S P A C E\Desktop\jack project\ai_engine.py"</cite>,
+      line <em class="line">289</em>,
+      in <code class="function">_gradcam_heatmap</code></h4>
+  <div class="source "><pre class="line before"><span class="ws"></span> </pre>
+<pre class="line before"><span class="ws">    </span>with tf.GradientTape() as tape:</pre>
+<pre class="line before"><span class="ws">        </span>conv_out, emb = grad_model(img_array)</pre>
+<pre class="line before"><span class="ws">        </span>if reference_embedding is not None:</pre>
+<pre class="line before"><span class="ws">            </span>ref = tf.constant(reference_embedding.reshape(1, -1), dtype=tf.float32)</pre>
+<pre class="line current"><span class="ws">            </span>loss = tf.reduce_sum(tf.nn.l2_normalize(emb, axis=1) * tf.nn.l2_normalize(ref, axis=1))</pre>
+<pre class="line after"><span class="ws">        </span>else:</pre>
+<pre class="line after"><span class="ws">            </span>loss = tf.reduce_sum(emb ** 2)</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">    </span>grads = tape.gradient(loss, conv_out)</pre>
+<pre class="line after"><span class="ws">    </span>pooled = tf.reduce_mean(grads, axis=(0, 1, 2))</pre></div>
+</div>
+
+<li><div class="frame" id="frame-1480371342912">
+  <h4>File <cite class="filename">"C:\Users\M I C R O S P A C E\AppData\Local\Programs\Python\Python310\lib\site-packages\tensorflow\python\util\traceback_utils.py"</cite>,
+      line <em class="line">153</em>,
+      in <code class="function">error_handler</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">    </span>filtered_tb = None</pre>
+<pre class="line before"><span class="ws">    </span>try:</pre>
+<pre class="line before"><span class="ws">      </span>return fn(*args, **kwargs)</pre>
+<pre class="line before"><span class="ws">    </span>except Exception as e:</pre>
+<pre class="line before"><span class="ws">      </span>filtered_tb = _process_traceback_frames(e.__traceback__)</pre>
+<pre class="line current"><span class="ws">      </span>raise e.with_traceback(filtered_tb) from None</pre>
+<pre class="line after"><span class="ws">    </span>finally:</pre>
+<pre class="line after"><span class="ws">      </span>del filtered_tb</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">  </span>return tf_decorator.make_decorator(fn, error_handler)</pre></div>
+</div>
+
+<li><div class="frame" id="frame-1480371345264">
+  <h4>File <cite class="filename">"C:\Users\M I C R O S P A C E\AppData\Local\Programs\Python\Python310\lib\site-packages\tensorflow\python\framework\ops.py"</cite>,
+      line <em class="line">6656</em>,
+      in <code class="function">raise_from_not_ok_status</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">  </span>return kwarg_only(f)</pre>
+<pre class="line before"><span class="ws"></span> </pre>
+<pre class="line before"><span class="ws"></span> </pre>
+<pre class="line before"><span class="ws"></span>def raise_from_not_ok_status(e, name):</pre>
+<pre class="line before"><span class="ws">  </span>e.message += (&#34; name: &#34; + str(name if name is not None else &#34;&#34;))</pre>
+<pre class="line current"><span class="ws">  </span>raise core._status_to_exception(e) from None  # pylint: disable=protected-access</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws"></span>def add_exit_callback_to_default_func_graph(fn):</pre>
+<pre class="line after"><span class="ws">  </span>&#34;&#34;&#34;Add a callback to run when the default function graph goes out of scope.</pre>
+<pre class="line after"><span class="ws"></span> </pre></div>
+</div>
+</ul>
+  <blockquote>tensorflow.python.framework.errors_impl.InvalidArgumentError: {{function_node __wrapped__Mul_device_/job:localhost/replica:0/task:0/device:CPU:0}} Incompatible shapes: [1,1280] vs. [1,4200] [Op:Mul] name: 
+</blockquote>
+</div>
+
+<div class="plain">
+    <p>
+      This is the Copy/Paste friendly version of the traceback.
+    </p>
+    <textarea cols="50" rows="10" name="code" readonly>Traceback (most recent call last):
+  File &#34;C:\Users\M I C R O S P A C E\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py&#34;, line 2213, in __call__
+    return self.wsgi_app(environ, start_response)
+  File &#34;C:\Users\M I C R O S P A C E\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py&#34;, line 2193, in wsgi_app
+    response = self.handle_exception(e)
+  File &#34;C:\Users\M I C R O S P A C E\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_cors\extension.py&#34;, line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File &#34;C:\Users\M I C R O S P A C E\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py&#34;, line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File &#34;C:\Users\M I C R O S P A C E\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py&#34;, line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File &#34;C:\Users\M I C R O S P A C E\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_cors\extension.py&#34;, line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File &#34;C:\Users\M I C R O S P A C E\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py&#34;, line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File &#34;C:\Users\M I C R O S P A C E\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py&#34;, line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File &#34;C:\Users\M I C R O S P A C E\Desktop\jack project\app.py&#34;, line 142, in identify
+    gradcam_result = generate_gradcam_heatmap(
+  File &#34;C:\Users\M I C R O S P A C E\Desktop\jack project\ai_engine.py&#34;, line 304, in generate_gradcam_heatmap
+    heatmap = _gradcam_heatmap(image_path, reference_embedding)
+  File &#34;C:\Users\M I C R O S P A C E\Desktop\jack project\ai_engine.py&#34;, line 289, in _gradcam_heatmap
+    loss = tf.reduce_sum(tf.nn.l2_normalize(emb, axis=1) * tf.nn.l2_normalize(ref, axis=1))
+  File &#34;C:\Users\M I C R O S P A C E\AppData\Local\Programs\Python\Python310\lib\site-packages\tensorflow\python\util\traceback_utils.py&#34;, line 153, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File &#34;C:\Users\M I C R O S P A C E\AppData\Local\Programs\Python\Python310\lib\site-packages\tensorflow\python\framework\ops.py&#34;, line 6656, in raise_from_not_ok_status
+    raise core._status_to_exception(e) from None  # pylint: disable=protected-access
+tensorflow.python.framework.errors_impl.InvalidArgumentError: {{function_node __wrapped__Mul_device_/job:localhost/replica:0/task:0/device:CPU:0}} Incompatible shapes: [1,1280] vs. [1,4200] [Op:Mul] name: 
+</textarea>
+</div>
+<div class="explanation">
+  The debugger caught an exception in your WSGI application.  You can now
+  look at the traceback which led to the error.  <span class="nojavascript">
+  If you enable JavaScript you can also use additional features such as code
+  execution (if the evalex feature is enabled), automatic pasting of the
+  exceptions and much more.</span>
+</div>
+      <div class="footer">
+        Brought to you by <strong class="arthur">DON'T PANIC</strong>, your
+        friendly Werkzeug powered traceback interpreter.
+      </div>
+    </div>
+
+    <div class="pin-prompt">
+      <div class="inner">
+        <h3>Console Locked</h3>
+        <p>
+          The console is locked and needs to be unlocked by entering the PIN.
+          You can find the PIN printed out on the standard output of your
+          shell that runs the server.
+        <form>
+          <p>PIN:
+            <input type=text name=pin size=14>
+            <input type=submit name=btn value="Confirm Pin">
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
+
+<!--
+
+Traceback (most recent call last):
+  File "C:\Users\M I C R O S P A C E\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 2213, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "C:\Users\M I C R O S P A C E\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 2193, in wsgi_app
+    response = self.handle_exception(e)
+  File "C:\Users\M I C R O S P A C E\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\M I C R O S P A C E\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\M I C R O S P A C E\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\M I C R O S P A C E\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\M I C R O S P A C E\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\M I C R O S P A C E\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\M I C R O S P A C E\Desktop\jack project\app.py", line 142, in identify
+    gradcam_result = generate_gradcam_heatmap(
+  File "C:\Users\M I C R O S P A C E\Desktop\jack project\ai_engine.py", line 304, in generate_gradcam_heatmap
+    heatmap = _gradcam_heatmap(image_path, reference_embedding)
+  File "C:\Users\M I C R O S P A C E\Desktop\jack project\ai_engine.py", line 289, in _gradcam_heatmap
+    loss = tf.reduce_sum(tf.nn.l2_normalize(emb, axis=1) * tf.nn.l2_normalize(ref, axis=1))
+  File "C:\Users\M I C R O S P A C E\AppData\Local\Programs\Python\Python310\lib\site-packages\tensorflow\python\util\traceback_utils.py", line 153, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "C:\Users\M I C R O S P A C E\AppData\Local\Programs\Python\Python310\lib\site-packages\tensorflow\python\framework\ops.py", line 6656, in raise_from_not_ok_status
+    raise core._status_to_exception(e) from None  # pylint: disable=protected-access
+tensorflow.python.framework.errors_impl.InvalidArgumentError: {{function_node __wrapped__Mul_device_/job:localhost/replica:0/task:0/device:CPU:0}} Incompatible shapes: [1,1280] vs. [1,4200] [Op:Mul] name: 
+
+
+-->

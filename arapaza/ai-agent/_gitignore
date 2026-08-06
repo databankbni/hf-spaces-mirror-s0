@@ -1,0 +1,18 @@
+.env
+
+# File berisi kredensial (app password, dll) — JANGAN di-upload
+agent-seo/appscriptsheetlama.txt
+agent-seo/appscript-baru.txt
+agent-seo/App Password web baru.txt
+
+# Cegah gambar nyasar di root folder konten IG (referensi/aset ada di subfolder)
+/agent-konten-ig/*.png
+/agent-konten-ig/*.jpg
+/agent-konten-ig/*.jpeg
+/agent-konten-ig/*.webp
+
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/

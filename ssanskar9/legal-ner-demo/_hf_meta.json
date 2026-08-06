@@ -1,0 +1,23 @@
+{
+ "captured_at": "2026-08-04T16:59:49Z",
+ "hf_metadata": {
+  "sha": "83102024afaaf6f20fbd5e08aa3e0a50688e326b"
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "ssanskar9/legal-ner-demo",
+ "repo_type": "spaces",
+ "sha": "83102024afaaf6f20fbd5e08aa3e0a50688e326b",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/ssanskar9/legal-ner-demo"
+}

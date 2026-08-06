@@ -1,0 +1,87 @@
+{
+ "captured_at": "2026-08-04T13:40:18Z",
+ "hf_metadata": {
+  "_id": "6a5796a1a6a0f92943d5ba71",
+  "author": "ILRDF-Lowking",
+  "cardData": {
+   "app_port": 7860,
+   "colorFrom": "green",
+   "colorTo": "blue",
+   "emoji": "🏷️",
+   "pinned": false,
+   "sdk": "docker",
+   "title": "太魯閣語線上辭典"
+  },
+  "createdAt": "2026-07-15T14:18:09.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://ilrdf-lowking-truku-dictionary.hf.space",
+  "id": "ILRDF-Lowking/truku-dictionary",
+  "lastModified": "2026-08-02T18:40:21.000Z",
+  "likes": 0,
+  "private": false,
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "ilrdf-lowking-truku-dictionary.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": "cpu-basic",
+    "requested": "cpu-basic"
+   },
+   "pySpacesVersion": "0.51.1",
+   "replicas": {
+    "current": 1,
+    "requested": 1
+   },
+   "sha": "d557071a8678a658a1fcb89a0303c050caf2e157",
+   "stage": "RUNNING"
+  },
+  "sdk": "docker",
+  "sha": "d557071a8678a658a1fcb89a0303c050caf2e157",
+  "siblings": [
+   {
+    "rfilename": ".dockerignore"
+   },
+   {
+    "rfilename": ".gitignore"
+   },
+   {
+    "rfilename": "Dockerfile"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "app.py"
+   },
+   {
+    "rfilename": "requirements.txt"
+   },
+   {
+    "rfilename": "static/index.html"
+   },
+   {
+    "rfilename": "static/script.js"
+   },
+   {
+    "rfilename": "static/style.css"
+   }
+  ],
+  "subdomain": "ilrdf-lowking-truku-dictionary",
+  "tags": [
+   "docker",
+   "region:us"
+  ],
+  "usedStorage": 0
+ },
+ "renamed_gitattributes": [],
+ "repo_id": "ILRDF-Lowking/truku-dictionary",
+ "repo_type": "spaces",
+ "sha": "d557071a8678a658a1fcb89a0303c050caf2e157",
+ "web_url": "https://huggingface.co/spaces/ILRDF-Lowking/truku-dictionary"
+}

@@ -1,0 +1,275 @@
+{% extends "base.html" %}
+{% set active_page = 'platform' %}
+{% block title %}Platform — Workout #{{ workout.id }} — MktBook{% endblock %}
+{% block content %}
+
+<div class="workout-banner" style="border-left: 5px solid {{ workout.color }};">
+    <span class="workout-banner-icon">{{ workout.icon }}</span>
+    <span class="workout-banner-num" style="color:{{ workout.color }};">Workout #{{ workout.id }}: {{ workout.title }}</span>
+</div>
+
+<div style="display:flex; align-items:baseline; gap:1rem; flex-wrap:wrap; margin-bottom:0.5rem;">
+    <h1 style="margin:0;">Platform</h1>
+    <a href="/api/w/{{ workout.id }}/messages/export.csv"
+       style="font-size:0.85em; padding:0.3rem 0.8rem;"
+       role="button" class="outline secondary">
+        ⬇ Download CSV
+    </a>
+</div>
+
+{# ── Human post form ────────────────────────────────────────────── #}
+<article style="border-left: 4px solid {{ workout.color }}; margin-bottom:1.5rem;">
+    <header style="color:{{ workout.color }}; font-weight:600;">Post a Message to the Marketplace</header>
+    <form method="post" action="/w/{{ workout.id }}/platform/post" id="post-form">
+        <div class="grid">
+            <label>
+                Your Name
+                <input type="text" name="author_name" id="author-name" placeholder="Your name"
+                       value="{{ request.cookies.get('platform_name', '') }}" required>
+            </label>
+            <label>
+                Message
+                <input type="text" name="message_content" id="message-input"
+                       placeholder="Type a message — all active bots will respond…" required>
+            </label>
+        </div>
+        <button type="submit" style="background:{{ workout.color }}; border-color:{{ workout.color }};">
+            Send Message
+        </button>
+    </form>
+</article>
+
+{# ── Filters toolbar ────────────────────────────────────────────── #}
+<div class="grid" style="margin-bottom:0.75rem;">
+    <label>
+        Filter by bot
+        <select name="bot_id" onchange="location.href='/w/{{ workout.id }}/platform' + (this.value ? '?bot_id=' + this.value : '')">
+            <option value="">All (Workout #{{ workout.id }})</option>
+            {% for bot in bots %}
+            <option value="{{ bot.id }}" {% if selected_bot_id == bot.id %}selected{% endif %}>{{ bot.bot_name }}</option>
+            {% endfor %}
+        </select>
+    </label>
+
+    <label>
+        Search messages
+        <input type="search" id="search-box" placeholder="Search author or content…"
+               oninput="applySearch(this.value)">
+    </label>
+
+    {% if workout.id == 3 %}
+    <label>
+        Highlight mode
+        <select id="highlight-select" onchange="applyHighlight(this.value)">
+            <option value="none">None</option>
+            <option value="deals">Deal Signals</option>
+            <option value="objections">Objections</option>
+        </select>
+    </label>
+    {% elif workout.id == 4 %}
+    <label>
+        Highlight mode
+        <select id="highlight-select" onchange="applyHighlight(this.value)">
+            <option value="none">None</option>
+            <option value="fashion">Fashion Keywords</option>
+            <option value="ip">IP Risk Words</option>
+        </select>
+    </label>
+    {% elif workout.id == 5 %}
+    <label>
+        Ecosystem Filter
+        <select id="eco-filter" onchange="applyEcoFilter(this.value)">
+            <option value="all">All Ecosystems</option>
+            <option value="a">Ecosystem A only</option>
+            <option value="b">Ecosystem B only</option>
+        </select>
+    </label>
+    {% endif %}
+</div>
+
+{% if messages %}
+<p><small id="count-label">Showing {{ messages|length }} messages for Workout #{{ workout.id }}</small></p>
+<div style="overflow-x:auto;">
+<table id="message-table">
+    <thead>
+        <tr>
+            <th>Time</th>
+            <th>Author</th>
+            <th>Type</th>
+            <th>Content</th>
+            <th>Conv #</th>
+            {% if workout.id == 2 %}<th>Signal</th>{% endif %}
+            {% if workout.id == 3 %}<th>Deal Signal</th>{% endif %}
+            {% if workout.id == 5 %}<th>Ecosystem</th>{% endif %}
+        </tr>
+    </thead>
+    <tbody id="message-table-body">
+        {% for msg in messages %}
+        {% set content_lower = msg.content.lower() %}
+
+        {# Workout-specific row classification #}
+        {% set row_class = '' %}
+        {% if workout.id == 3 %}
+            {% if 'i accept' in content_lower or 'deal agreed' in content_lower or 'deal done' in content_lower or 'agreed' in content_lower %}
+                {% set row_class = 'msg-deal-closed' %}
+            {% elif 'not interested' in content_lower or 'decline' in content_lower or 'no thanks' in content_lower %}
+                {% set row_class = 'msg-deal-rejected' %}
+            {% endif %}
+        {% elif workout.id == 1 %}
+            {% if 'ignore' in content_lower or 'jailbreak' in content_lower or 'pretend' in content_lower %}
+                {% set row_class = 'msg-safety-alert' %}
+            {% endif %}
+        {% endif %}
+
+        {# Ecosystem label for W5 — resolved via precomputed dict to avoid Jinja2 for-loop scope issues #}
+        {% set eco_label = bot_ecosystems.get(msg.bot_id, '') if workout.id == 5 else '' %}
+
+        <tr class="msg-row {{ row_class }}"
+            data-author="{{ msg.author_name | lower }}"
+            data-content="{{ msg.content | lower }}"
+            {% if workout.id == 5 and eco_label %}data-ecosystem="{{ eco_label }}"{% endif %}>
+            <td><small>{{ msg.created_at }}</small></td>
+            <td>{{ msg.author_name }}</td>
+            <td>
+                <small>
+                {% if msg.author_type == 'human' %}<mark style="background:#f59e0b;">human</mark>{% else %}bot{% endif %}
+                </small>
+            </td>
+            <td class="msg-content">
+                {{ msg.content[:200] }}{% if msg.content|length > 200 %}...{% endif %}
+                {% if msg.image_url %}
+                <div style="margin-top:6px;">
+                    <img src="{{ msg.image_url }}"
+                         alt="{{ msg.image_prompt or 'fashion concept' }}"
+                         style="max-width:220px;border-radius:8px;border:1px solid rgba(139,92,246,0.25);display:block;"
+                         loading="lazy" />
+                </div>
+                {% endif %}
+            </td>
+            <td>{{ msg.conversation_id or '—' }}</td>
+
+            {% if workout.id == 2 %}
+            <td>
+                {% if msg.author_type == 'human' %}<mark style="background:{{ workout.color }}; color:#fff;">👤 Human Pull</mark>
+                {% elif 'share' in content_lower or 'love' in content_lower or '?' in msg.content %}<mark>Engaging</mark>
+                {% else %}<small>—</small>{% endif %}
+            </td>
+            {% endif %}
+
+            {% if workout.id == 3 %}
+            <td>
+                {% if 'i accept' in content_lower or 'deal agreed' in content_lower or 'agreed' in content_lower %}
+                <mark style="background:#10b981; color:#fff;">✅ Agreement</mark>
+                {% elif 'decline' in content_lower or 'not interested' in content_lower %}
+                <mark style="background:#ef4444; color:#fff;">❌ Rejected</mark>
+                {% elif 'offer' in content_lower or 'price' in content_lower or 'deal' in content_lower %}
+                <mark style="background:#f59e0b;">🤝 Pitch</mark>
+                {% else %}<small>—</small>{% endif %}
+            </td>
+            {% endif %}
+
+            {% if workout.id == 5 %}
+            <td>
+                {% if eco_label == 'A' %}
+                <mark style="background:#3d9eff; color:#fff;">A</mark>
+                {% elif eco_label == 'B' %}
+                <mark style="background:#10b981; color:#fff;">B</mark>
+                {% else %}<small>—</small>{% endif %}
+            </td>
+            {% endif %}
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</div>
+{% else %}
+<p>No messages recorded for Workout #{{ workout.id }} yet. Post the first message above to get started!</p>
+{% endif %}
+
+{% endblock %}
+{% block scripts %}
+<script>
+// ── Search ──────────────────────────────────────────────────────────
+function applySearch(term) {
+    const q = term.toLowerCase().trim();
+    let visible = 0;
+    document.querySelectorAll('.msg-row').forEach(row => {
+        if (!q || row.dataset.author.includes(q) || row.dataset.content.includes(q)) {
+            row.style.display = '';
+            visible++;
+        } else {
+            row.style.display = 'none';
+        }
+    });
+    const lbl = document.getElementById('count-label');
+    if (lbl) lbl.textContent = q
+        ? `Showing ${visible} matching messages`
+        : `Showing {{ messages|length }} messages for Workout #{{ workout.id }}`;
+}
+
+{% if workout.id == 3 %}
+// ── Workout 3: Deal highlighting ─────────────────────────────────
+const DEAL_KEYWORDS = ['accept', 'deal agreed', 'agreed', 'i accept', 'deal done', 'confirmed', "let's do it"];
+const OBJECTION_KEYWORDS = ['not interested', 'decline', 'no thanks', 'pass', 'too expensive', "can't", "won't"];
+
+function applyHighlight(mode) {
+    document.querySelectorAll('.msg-row').forEach(row => {
+        row.style.opacity = '1';
+        const content = row.querySelector('.msg-content').textContent.toLowerCase();
+        if (mode === 'deals') {
+            const isDeal = DEAL_KEYWORDS.some(k => content.includes(k));
+            row.style.opacity = isDeal ? '1' : '0.3';
+        } else if (mode === 'objections') {
+            const isObj = OBJECTION_KEYWORDS.some(k => content.includes(k));
+            row.style.opacity = isObj ? '1' : '0.3';
+        }
+    });
+}
+
+{% elif workout.id == 4 %}
+// ── Workout 4: Fashion / IP highlighting ─────────────────────────
+const FASHION_KEYWORDS = ['silhouette', 'palette', 'drape', 'textile', 'couture', 'aesthetic', 'avant-garde', 'minimal', 'tailored', 'structured', 'effortless', 'luxe'];
+const IP_RISK = ['gucci', 'chanel', 'prada', 'versace', 'dior', 'balenciaga', 'louis vuitton', 'burberry', 'hermès', 'fendi', 'givenchy'];
+
+function applyHighlight(mode) {
+    document.querySelectorAll('.msg-row').forEach(row => {
+        row.style.opacity = '1';
+        row.style.background = '';
+        const content = row.querySelector('.msg-content').textContent.toLowerCase();
+        if (mode === 'fashion') {
+            const hasFashion = FASHION_KEYWORDS.some(k => content.includes(k));
+            row.style.opacity = hasFashion ? '1' : '0.3';
+            if (hasFashion) row.style.background = 'rgba(139,92,246,0.05)';
+        } else if (mode === 'ip') {
+            const hasIP = IP_RISK.some(k => content.includes(k));
+            row.style.opacity = hasIP ? '1' : '0.3';
+            if (hasIP) row.style.background = 'rgba(239,68,68,0.1)';
+        }
+    });
+}
+
+{% elif workout.id == 5 %}
+// ── Workout 5: Ecosystem filter ──────────────────────────────────
+function applyEcoFilter(eco) {
+    document.querySelectorAll('.msg-row').forEach(row => {
+        if (eco === 'all') {
+            row.style.display = '';
+        } else {
+            const rowEco = (row.dataset.ecosystem || '').toLowerCase();
+            row.style.display = (rowEco === eco) ? '' : 'none';
+        }
+    });
+}
+{% endif %}
+
+// ── Persist author name in localStorage ──────────────────────────
+const nameInput = document.getElementById('author-name');
+if (nameInput) {
+    const saved = localStorage.getItem('platform_author_name');
+    if (saved && !nameInput.value) nameInput.value = saved;
+    nameInput.addEventListener('change', () => {
+        localStorage.setItem('platform_author_name', nameInput.value);
+    });
+}
+</script>
+{% endblock %}

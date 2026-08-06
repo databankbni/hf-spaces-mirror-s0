@@ -1,0 +1,1295 @@
+{
+  "restaurant": {
+    "name": "Demo Grand Restaurant",
+    "slug": "demo-grand-restaurant",
+    "description": "A sample restaurant for testing the AI Waiter."
+  },
+  "menuItems": [
+    {
+      "id": "item-001",
+      "name": "Mandazi",
+      "description": "Soft East African fried doughnuts",
+      "price": 2000,
+      "calories": 250,
+      "ingredients": "Wheat flour, coconut milk, sugar",
+      "allergens": "gluten",
+      "tags": [
+        "breakfast",
+        "popular"
+      ],
+      "is_available": true,
+      "category": {
+        "name": "Breakfast"
+      },
+      "image": "https://picsum.photos/seed/Mandazi/240/160"
+    },
+    {
+      "id": "item-002",
+      "name": "Chai ya Tangawizi",
+      "description": "Spiced ginger tea with milk",
+      "price": 1500,
+      "calories": 90,
+      "ingredients": "Tea, ginger, milk, sugar",
+      "allergens": "dairy",
+      "tags": [
+        "breakfast"
+      ],
+      "is_available": true,
+      "category": {
+        "name": "Breakfast"
+      },
+      "image": "https://picsum.photos/seed/Chai%20ya%20Tangawizi/240/160"
+    },
+    {
+      "id": "item-003",
+      "name": "Uji wa Ulezi",
+      "description": "Warm millet porridge",
+      "price": 2500,
+      "calories": 180,
+      "ingredients": "Millet flour, water, sugar",
+      "allergens": "",
+      "tags": [
+        "breakfast",
+        "healthy"
+      ],
+      "is_available": true,
+      "category": {
+        "name": "Breakfast"
+      },
+      "image": "https://picsum.photos/seed/Uji%20wa%20Ulezi/240/160"
+    },
+    {
+      "id": "item-004",
+      "name": "Spanish Omelette",
+      "description": "Fluffy omelette with peppers and onions",
+      "price": 6000,
+      "calories": 320,
+      "ingredients": "Eggs, peppers, onions",
+      "allergens": "eggs",
+      "tags": [
+        "breakfast"
+      ],
+      "is_available": true,
+      "category": {
+        "name": "Breakfast"
+      },
+      "image": "https://picsum.photos/seed/Spanish%20Omelette/240/160"
+    },
+    {
+      "id": "item-005",
+      "name": "Pancakes with Honey",
+      "description": "Stack of pancakes drizzled with honey",
+      "price": 7000,
+      "calories": 450,
+      "ingredients": "Flour, eggs, milk, honey",
+      "allergens": "gluten, eggs, dairy",
+      "tags": [
+        "breakfast",
+        "popular"
+      ],
+      "is_available": true,
+      "category": {
+        "name": "Breakfast"
+      },
+      "image": "https://picsum.photos/seed/Pancakes%20with%20Honey/240/160"
+    },
+    {
+      "id": "item-006",
+      "name": "Vitumbua",
+      "description": "Sweet coconut rice cakes",
+      "price": 3000,
+      "calories": 210,
+      "ingredients": "Rice flour, coconut, sugar",
+      "allergens": "eggs",
+      "tags": [
+        "breakfast",
+        "vegetarian"
+      ],
+      "is_available": true,
+      "category": {
+        "name": "Breakfast"
+      },
+      "image": "https://picsum.photos/seed/Vitumbua/240/160"
+    },
+    {
+      "id": "item-007",
+      "name": "Beef Samosa",
+      "description": "Crispy pastry filled with spiced minced beef",
+      "price": 3500,
+      "calories": 280,
+      "ingredients": "Wheat pastry, beef, spices",
+      "allergens": "gluten",
+      "tags": [
+        "popular"
+      ],
+      "is_available": true,
+      "category": {
+        "name": "Starters"
+      },
+      "image": "https://picsum.photos/seed/Beef%20Samosa/240/160"
+    },
+    {
+      "id": "item-008",
+      "name": "Vegetable Samosa",
+      "description": "Crispy pastry filled with spiced vegetables",
+      "price": 3000,
+      "calories": 240,
+      "ingredients": "Wheat pastry, potato, peas",
+      "allergens": "gluten",
+      "tags": [
+        "vegetarian"
+      ],
+      "is_available": true,
+      "category": {
+        "name": "Starters"
+      },
+      "image": "https://picsum.photos/seed/Vegetable%20Samosa/240/160"
+    },
+    {
+      "id": "item-009",
+      "name": "Bhajia",
+      "description": "Spiced potato fritters",
+      "price": 4000,
+      "calories": 300,
+      "ingredients": "Potato, gram flour, chili",
+      "allergens": "",
+      "tags": [
+        "vegetarian",
+        "vegan",
+        "spicy"
+      ],
+      "is_available": true,
+      "category": {
+        "name": "Starters"
+      },
+      "image": "https://picsum.photos/seed/Bhajia/240/160"
+    },
+    {
+      "id": "item-010",
+      "name": "Spring Rolls",
+      "description": "Crispy rolls with vegetable filling",
+      "price": 4500,
+      "calories": 260,
+      "ingredients": "Wheat wrapper, cabbage, carrot",
+      "allergens": "gluten, soy",
+      "tags": [
+        "vegetarian"
+      ],
+      "is_available": true,
+      "category": {
+        "name": "Starters"
+      },
+      "image": "https://picsum.photos/seed/Spring%20Rolls/240/160"
+    },
+    {
+      "id": "item-011",
+      "name": "Chicken Wings",
+      "description": "Grilled wings tossed in hot sauce",
+      "price": 8000,
+      "calories": 430,
+      "ingredients": "Chicken, chili, garlic",
+      "allergens": "",
+      "tags": [
+        "popular",
+        "spicy"
+      ],
+      "is_available": true,
+      "category": {
+        "name": "Starters"
+      },
+      "image": "https://picsum.photos/seed/Chicken%20Wings/240/160"
+    },
+    {
+      "id": "item-012",
+      "name": "Garlic Bread",
+      "description": "Toasted bread with garlic butter",
+      "price": 4000,
+      "calories": 350,
+      "ingredients": "Bread, garlic, butter",
+      "allergens": "gluten, dairy",
+      "tags": [
+        "vegetarian"
+      ],
+      "is_available": true,
+      "category": {
+        "name": "Starters"
+      },
+      "image": "https://picsum.photos/seed/Garlic%20Bread/240/160"
+    },
+    {
+      "id": "item-013",
+      "name": "Vegetable Soup",
+      "description": "Light garden vegetable soup",
+      "price": 5000,
+      "calories": 150,
+      "ingredients": "Carrots, peas, celery, herbs",
+      "allergens": "",
+      "tags": [
+        "vegetarian",
+        "vegan",
+        "low-calorie",
+        "healthy"
+      ],
+      "is_available": true,
+      "category": {
+        "name": "Soups"
+      },
+      "image": "https://picsum.photos/seed/Vegetable%20Soup/240/160"
+    },
+    {
+      "id": "item-014",
+      "name": "Chicken Soup",
+      "description": "Clear chicken broth with vegetables",
+      "price": 6000,
+      "calories": 220,
+      "ingredients": "Chicken, carrots, onions",
+      "allergens": "",
+      "tags": [
+        "healthy"
+      ],
+      "is_available": true,
+      "category": {
+        "name": "Soups"
+      },
+      "image": "https://picsum.photos/seed/Chicken%20Soup/240/160"
+    },
+    {
+      "id": "item-015",
+      "name": "Pumpkin Soup",
+      "description": "Creamy roasted pumpkin soup",
+      "price": 5500,
+      "calories": 180,
+      "ingredients": "Pumpkin, cream, onion",
+      "allergens": "dairy",
+      "tags": [
+        "vegetarian",
+        "low-calorie",
+        "healthy"
+      ],
+      "is_available": true,
+      "category": {
+        "name": "Soups"
+      },
+      "image": "https://picsum.photos/seed/Pumpkin%20Soup/240/160"
+    },
+    {
+      "id": "item-016",
+      "name": "Supu ya Ndizi",
+      "description": "Traditional green banana soup",
+      "price": 5000,
+      "calories": 200,
+      "ingredients": "Green banana, beef broth, herbs",
+      "allergens": "",
+      "tags": [
+        "healthy"
+      ],
+      "is_available": true,
+      "category": {
+        "name": "Soups"
+      },
+      "image": "https://picsum.photos/seed/Supu%20ya%20Ndizi/240/160"
+    },
+    {
+      "id": "item-017",
+      "name": "Tomato Soup",
+      "description": "Rich roasted tomato soup",
+      "price": 5000,
+      "calories": 160,
+      "ingredients": "Tomato, basil, onion",
+      "allergens": "",
+      "tags": [
+        "vegetarian",
+        "vegan",
+        "low-calorie"
+      ],
+      "is_available": true,
+      "category": {
+        "name": "Soups"
+      },
+      "image": "https://picsum.photos/seed/Tomato%20Soup/240/160"
+    },
+    {
+      "id": "item-018",
+      "name": "Kachumbari",
+      "description": "Fresh tomato and onion salad",
+      "price": 3000,
+      "calories": 90,
+      "ingredients": "Tomato, onion, chili, lime",
+      "allergens": "",
+      "tags": [
+        "vegetarian",
+        "vegan",
+        "low-calorie",
+        "healthy"
+      ],
+      "is_available": true,
+      "category": {
+        "name": "Salads"
+      },
+      "image": "https://picsum.photos/seed/Kachumbari/240/160"
+    },
+    {
+      "id": "item-019",
+      "name": "Garden Salad",
+      "description": "Mixed greens with light dressing",
+      "price": 5000,
+      "calories": 120,
+      "ingredients": "Lettuce, cucumber, tomato",
+      "allergens": "",
+      "tags": [
+        "vegetarian",
+        "vegan",
+        "low-calorie",
+        "healthy"
+      ],
+      "is_available": true,
+      "category": {
+        "name": "Salads"
+      },
+      "image": "https://picsum.photos/seed/Garden%20Salad/240/160"
+    },
+    {
+      "id": "item-020",
+      "name": "Greek Salad",
+      "description": "Salad with feta and olives",
+      "price": 7000,
+      "calories": 280,
+      "ingredients": "Cucumber, tomato, feta, olives",
+      "allergens": "dairy",
+      "tags": [
+        "vegetarian",
+        "healthy"
+      ],
+      "is_available": true,
+      "category": {
+        "name": "Salads"
+      },
+      "image": "https://picsum.photos/seed/Greek%20Salad/240/160"
+    },
+    {
+      "id": "item-021",
+      "name": "Avocado Salad",
+      "description": "Creamy avocado with greens",
+      "price": 7500,
+      "calories": 320,
+      "ingredients": "Avocado, lettuce, lime",
+      "allergens": "",
+      "tags": [
+        "vegetarian",
+        "vegan",
+        "healthy"
+      ],
+      "is_available": true,
+      "category": {
+        "name": "Salads"
+      },
+      "image": "https://picsum.photos/seed/Avocado%20Salad/240/160"
+    },
+    {
+      "id": "item-022",
+      "name": "Fruit Salad",
+      "description": "Fresh seasonal fruit medley",
+      "price": 6000,
+      "calories": 220,
+      "ingredients": "Mango, pineapple, banana, watermelon",
+      "allergens": "",
+      "tags": [
+        "vegetarian",
+        "vegan",
+        "low-calorie",
+        "healthy"
+      ],
+      "is_available": true,
+      "category": {
+        "name": "Salads"
+      },
+      "image": "https://picsum.photos/seed/Fruit%20Salad/240/160"
+    },
+    {
+      "id": "item-023",
+      "name": "Pilau",
+      "description": "Fragrant spiced rice cooked with tender beef",
+      "price": 15000,
+      "calories": 650,
+      "ingredients": "Rice, beef, pilau masala, onions",
+      "allergens": "",
+      "tags": [
+        "popular",
+        "lunch"
+      ],
+      "is_available": true,
+      "category": {
+        "name": "Swahili Specials"
+      },
+      "image": "https://picsum.photos/seed/Pilau/240/160"
+    },
+    {
+      "id": "item-024",
+      "name": "Beef Biryani",
+      "description": "Layered spiced rice with beef",
+      "price": 16000,
+      "calories": 700,
+      "ingredients": "Rice, beef, biryani spices",
+      "allergens": "dairy",
+      "tags": [
+        "popular",
+        "spicy"
+      ],
+      "is_available": true,
+      "category": {
+        "name": "Swahili Specials"
+      },
+      "image": "https://picsum.photos/seed/Beef%20Biryani/240/160"
+    },
+    {
+      "id": "item-025",
+      "name": "Wali wa Nazi",
+      "description": "Coconut rice",
+      "price": 8000,
+      "calories": 400,
+      "ingredients": "Rice, coconut milk",
+      "allergens": "",
+      "tags": [
+        "vegetarian",
+        "vegan"
+      ],
+      "is_available": true,
+      "category": {
+        "name": "Swahili Specials"
+      },
+      "image": "https://picsum.photos/seed/Wali%20wa%20Nazi/240/160"
+    },
+    {
+      "id": "item-026",
+      "name": "Mchuzi wa Samaki",
+      "description": "Coastal fish curry",
+      "price": 14000,
+      "calories": 480,
+      "ingredients": "Fish, coconut, tamarind, chili",
+      "allergens": "fish",
+      "tags": [
+        "spicy",
+        "healthy"
+      ],
+      "is_available": true,
+      "category": {
+        "name": "Swahili Specials"
+      },
+      "image": "https://picsum.photos/seed/Mchuzi%20wa%20Samaki/240/160"
+    },
+    {
+      "id": "item-027",
+      "name": "Ugali na Maharage",
+      "description": "Maize meal with stewed beans",
+      "price": 7000,
+      "calories": 520,
+      "ingredients": "Maize flour, kidney beans",
+      "allergens": "",
+      "tags": [
+        "vegetarian",
+        "vegan"
+      ],
+      "is_available": true,
+      "category": {
+        "name": "Swahili Specials"
+      },
+      "image": "https://picsum.photos/seed/Ugali%20na%20Maharage/240/160"
+    },
+    {
+      "id": "item-028",
+      "name": "Mishkaki",
+      "description": "Grilled marinated beef skewers",
+      "price": 9000,
+      "calories": 380,
+      "ingredients": "Beef, garlic, chili, spices",
+      "allergens": "",
+      "tags": [
+        "popular",
+        "spicy"
+      ],
+      "is_available": true,
+      "category": {
+        "name": "Swahili Specials"
+      },
+      "image": "https://picsum.photos/seed/Mishkaki/240/160"
+    },
+    {
+      "id": "item-029",
+      "name": "Beef Stew",
+      "description": "Slow-cooked beef in rich gravy",
+      "price": 12000,
+      "calories": 560,
+      "ingredients": "Beef, tomato, onion, potato",
+      "allergens": "",
+      "tags": [
+        "lunch"
+      ],
+      "is_available": true,
+      "category": {
+        "name": "Main Dishes"
+      },
+      "image": "https://picsum.photos/seed/Beef%20Stew/240/160"
+    },
+    {
+      "id": "item-030",
+      "name": "Chicken Curry",
+      "description": "Tender chicken in spiced curry sauce",
+      "price": 13000,
+      "calories": 540,
+      "ingredients": "Chicken, curry spices, tomato",
+      "allergens": "",
+      "tags": [
+        "popular",
+        "spicy"
+      ],
+      "is_available": true,
+      "category": {
+        "name": "Main Dishes"
+      },
+      "image": "https://picsum.photos/seed/Chicken%20Curry/240/160"
+    },
+    {
+      "id": "item-031",
+      "name": "Butter Chicken",
+      "description": "Creamy tomato butter chicken",
+      "price": 15000,
+      "calories": 720,
+      "ingredients": "Chicken, butter, cream, tomato",
+      "allergens": "dairy",
+      "tags": [
+        "popular"
+      ],
+      "is_available": true,
+      "category": {
+        "name": "Main Dishes"
+      },
+      "image": "https://picsum.photos/seed/Butter%20Chicken/240/160"
+    },
+    {
+      "id": "item-032",
+      "name": "Beef Burger",
+      "description": "Juicy beef patty with cheese",
+      "price": 11000,
+      "calories": 780,
+      "ingredients": "Beef, bun, cheese, lettuce",
+      "allergens": "gluten, dairy",
+      "tags": [
+        "popular"
+      ],
+      "is_available": true,
+      "category": {
+        "name": "Main Dishes"
+      },
+      "image": "https://picsum.photos/seed/Beef%20Burger/240/160"
+    },
+    {
+      "id": "item-033",
+      "name": "Spaghetti Bolognese",
+      "description": "Pasta in rich beef and tomato sauce",
+      "price": 12000,
+      "calories": 650,
+      "ingredients": "Pasta, beef, tomato",
+      "allergens": "gluten",
+      "tags": [],
+      "is_available": true,
+      "category": {
+        "name": "Main Dishes"
+      },
+      "image": "https://picsum.photos/seed/Spaghetti%20Bolognese/240/160"
+    },
+    {
+      "id": "item-034",
+      "name": "Chicken Biryani",
+      "description": "Spiced layered rice with chicken",
+      "price": 14000,
+      "calories": 680,
+      "ingredients": "Rice, chicken, biryani spices",
+      "allergens": "dairy",
+      "tags": [
+        "popular",
+        "spicy"
+      ],
+      "is_available": true,
+      "category": {
+        "name": "Main Dishes"
+      },
+      "image": "https://picsum.photos/seed/Chicken%20Biryani/240/160"
+    },
+    {
+      "id": "item-035",
+      "name": "Pilau na Kuku",
+      "description": "Spiced pilau rice served with chicken",
+      "price": 14000,
+      "calories": 620,
+      "ingredients": "Rice, chicken, pilau masala",
+      "allergens": "",
+      "tags": [
+        "popular"
+      ],
+      "is_available": true,
+      "category": {
+        "name": "Main Dishes"
+      },
+      "image": "https://picsum.photos/seed/Pilau%20na%20Kuku/240/160"
+    },
+    {
+      "id": "item-036",
+      "name": "Chips Mayai",
+      "description": "Tanzanian chips omelette",
+      "price": 6000,
+      "calories": 480,
+      "ingredients": "Potato, eggs, onion",
+      "allergens": "eggs",
+      "tags": [
+        "popular"
+      ],
+      "is_available": true,
+      "category": {
+        "name": "Main Dishes"
+      },
+      "image": "https://picsum.photos/seed/Chips%20Mayai/240/160"
+    },
+    {
+      "id": "item-037",
+      "name": "Nyama Choma",
+      "description": "Charcoal-grilled spiced beef",
+      "price": 20000,
+      "calories": 800,
+      "ingredients": "Beef, chili, salt",
+      "allergens": "",
+      "tags": [
+        "popular",
+        "spicy"
+      ],
+      "is_available": true,
+      "category": {
+        "name": "Grills & BBQ"
+      },
+      "image": "https://picsum.photos/seed/Nyama%20Choma/240/160"
+    },
+    {
+      "id": "item-038",
+      "name": "Kuku Choma",
+      "description": "Grilled marinated chicken",
+      "price": 18000,
+      "calories": 650,
+      "ingredients": "Chicken, garlic, lemon",
+      "allergens": "",
+      "tags": [
+        "popular"
+      ],
+      "is_available": true,
+      "category": {
+        "name": "Grills & BBQ"
+      },
+      "image": "https://picsum.photos/seed/Kuku%20Choma/240/160"
+    },
+    {
+      "id": "item-039",
+      "name": "Mbuzi Choma",
+      "description": "Grilled goat meat",
+      "price": 22000,
+      "calories": 720,
+      "ingredients": "Goat, spices, chili",
+      "allergens": "",
+      "tags": [
+        "spicy"
+      ],
+      "is_available": true,
+      "category": {
+        "name": "Grills & BBQ"
+      },
+      "image": "https://picsum.photos/seed/Mbuzi%20Choma/240/160"
+    },
+    {
+      "id": "item-040",
+      "name": "Grilled Pork Ribs",
+      "description": "BBQ-glazed pork ribs",
+      "price": 19000,
+      "calories": 850,
+      "ingredients": "Pork, bbq sauce",
+      "allergens": "",
+      "tags": [],
+      "is_available": true,
+      "category": {
+        "name": "Grills & BBQ"
+      },
+      "image": "https://picsum.photos/seed/Grilled%20Pork%20Ribs/240/160"
+    },
+    {
+      "id": "item-041",
+      "name": "Mixed Grill Platter",
+      "description": "Beef, chicken and sausages platter",
+      "price": 30000,
+      "calories": 1100,
+      "ingredients": "Beef, chicken, sausage",
+      "allergens": "",
+      "tags": [
+        "popular"
+      ],
+      "is_available": true,
+      "category": {
+        "name": "Grills & BBQ"
+      },
+      "image": "https://picsum.photos/seed/Mixed%20Grill%20Platter/240/160"
+    },
+    {
+      "id": "item-042",
+      "name": "Mishkaki ya Nyama",
+      "description": "Grilled beef skewers",
+      "price": 9000,
+      "calories": 400,
+      "ingredients": "Beef, chili, garlic",
+      "allergens": "",
+      "tags": [
+        "spicy"
+      ],
+      "is_available": true,
+      "category": {
+        "name": "Grills & BBQ"
+      },
+      "image": "https://picsum.photos/seed/Mishkaki%20ya%20Nyama/240/160"
+    },
+    {
+      "id": "item-043",
+      "name": "Grilled Tilapia",
+      "description": "Whole tilapia grilled with lemon",
+      "price": 18000,
+      "calories": 420,
+      "ingredients": "Tilapia, lemon, garlic",
+      "allergens": "fish",
+      "tags": [
+        "healthy"
+      ],
+      "is_available": true,
+      "category": {
+        "name": "Seafood"
+      },
+      "image": "https://picsum.photos/seed/Grilled%20Tilapia/240/160"
+    },
+    {
+      "id": "item-044",
+      "name": "Fish & Chips",
+      "description": "Battered fish fillet with fries",
+      "price": 15000,
+      "calories": 620,
+      "ingredients": "Fish, batter, potato",
+      "allergens": "fish, gluten",
+      "tags": [
+        "popular"
+      ],
+      "is_available": true,
+      "category": {
+        "name": "Seafood"
+      },
+      "image": "https://picsum.photos/seed/Fish%20%26%20Chips/240/160"
+    },
+    {
+      "id": "item-045",
+      "name": "Prawns Masala",
+      "description": "Prawns in spiced masala sauce",
+      "price": 24000,
+      "calories": 480,
+      "ingredients": "Prawns, masala, tomato",
+      "allergens": "shellfish",
+      "tags": [
+        "spicy"
+      ],
+      "is_available": true,
+      "category": {
+        "name": "Seafood"
+      },
+      "image": "https://picsum.photos/seed/Prawns%20Masala/240/160"
+    },
+    {
+      "id": "item-046",
+      "name": "Coconut Fish Curry",
+      "description": "Fish simmered in coconut curry",
+      "price": 17000,
+      "calories": 520,
+      "ingredients": "Fish, coconut milk, spices",
+      "allergens": "fish",
+      "tags": [
+        "spicy",
+        "healthy"
+      ],
+      "is_available": true,
+      "category": {
+        "name": "Seafood"
+      },
+      "image": "https://picsum.photos/seed/Coconut%20Fish%20Curry/240/160"
+    },
+    {
+      "id": "item-047",
+      "name": "Calamari",
+      "description": "Lightly fried squid rings",
+      "price": 16000,
+      "calories": 380,
+      "ingredients": "Squid, flour, lemon",
+      "allergens": "shellfish, gluten",
+      "tags": [],
+      "is_available": true,
+      "category": {
+        "name": "Seafood"
+      },
+      "image": "https://picsum.photos/seed/Calamari/240/160"
+    },
+    {
+      "id": "item-048",
+      "name": "Pweza wa Nazi",
+      "description": "Octopus in coconut sauce",
+      "price": 21000,
+      "calories": 460,
+      "ingredients": "Octopus, coconut, chili",
+      "allergens": "shellfish",
+      "tags": [
+        "spicy",
+        "healthy"
+      ],
+      "is_available": true,
+      "category": {
+        "name": "Seafood"
+      },
+      "image": "https://picsum.photos/seed/Pweza%20wa%20Nazi/240/160"
+    },
+    {
+      "id": "item-049",
+      "name": "Ugali na Mboga",
+      "description": "Maize meal with sautéed greens",
+      "price": 7000,
+      "calories": 450,
+      "ingredients": "Maize flour, spinach, tomato",
+      "allergens": "",
+      "tags": [
+        "vegetarian",
+        "vegan",
+        "healthy"
+      ],
+      "is_available": true,
+      "category": {
+        "name": "Vegetarian & Vegan"
+      },
+      "image": "https://picsum.photos/seed/Ugali%20na%20Mboga/240/160"
+    },
+    {
+      "id": "item-050",
+      "name": "Vegetable Curry",
+      "description": "Mixed vegetables in curry sauce",
+      "price": 9000,
+      "calories": 380,
+      "ingredients": "Vegetables, curry spices, coconut",
+      "allergens": "",
+      "tags": [
+        "vegetarian",
+        "vegan",
+        "spicy",
+        "healthy"
+      ],
+      "is_available": true,
+      "category": {
+        "name": "Vegetarian & Vegan"
+      },
+      "image": "https://picsum.photos/seed/Vegetable%20Curry/240/160"
+    },
+    {
+      "id": "item-051",
+      "name": "Chickpea Stew",
+      "description": "Hearty spiced chickpea stew",
+      "price": 8500,
+      "calories": 420,
+      "ingredients": "Chickpeas, tomato, onion",
+      "allergens": "",
+      "tags": [
+        "vegetarian",
+        "vegan",
+        "healthy"
+      ],
+      "is_available": true,
+      "category": {
+        "name": "Vegetarian & Vegan"
+      },
+      "image": "https://picsum.photos/seed/Chickpea%20Stew/240/160"
+    },
+    {
+      "id": "item-052",
+      "name": "Lentil Dahl",
+      "description": "Spiced red lentil dahl",
+      "price": 8000,
+      "calories": 360,
+      "ingredients": "Lentils, turmeric, garlic",
+      "allergens": "",
+      "tags": [
+        "vegetarian",
+        "vegan",
+        "healthy",
+        "low-calorie"
+      ],
+      "is_available": true,
+      "category": {
+        "name": "Vegetarian & Vegan"
+      },
+      "image": "https://picsum.photos/seed/Lentil%20Dahl/240/160"
+    },
+    {
+      "id": "item-053",
+      "name": "Grilled Vegetable Skewers",
+      "description": "Char-grilled seasonal vegetables",
+      "price": 9000,
+      "calories": 280,
+      "ingredients": "Peppers, zucchini, mushroom",
+      "allergens": "",
+      "tags": [
+        "vegetarian",
+        "vegan",
+        "low-calorie",
+        "healthy"
+      ],
+      "is_available": true,
+      "category": {
+        "name": "Vegetarian & Vegan"
+      },
+      "image": "https://picsum.photos/seed/Grilled%20Vegetable%20Skewers/240/160"
+    },
+    {
+      "id": "item-054",
+      "name": "Tofu Stir Fry",
+      "description": "Tofu and vegetables in soy glaze",
+      "price": 10000,
+      "calories": 400,
+      "ingredients": "Tofu, vegetables, soy sauce",
+      "allergens": "soy",
+      "tags": [
+        "vegetarian",
+        "vegan",
+        "healthy"
+      ],
+      "is_available": true,
+      "category": {
+        "name": "Vegetarian & Vegan"
+      },
+      "image": "https://picsum.photos/seed/Tofu%20Stir%20Fry/240/160"
+    },
+    {
+      "id": "item-055",
+      "name": "Chapati",
+      "description": "Soft layered flatbread",
+      "price": 2000,
+      "calories": 300,
+      "ingredients": "Wheat flour, oil",
+      "allergens": "gluten",
+      "tags": [
+        "popular",
+        "vegetarian"
+      ],
+      "is_available": true,
+      "category": {
+        "name": "Sides"
+      },
+      "image": "https://picsum.photos/seed/Chapati/240/160"
+    },
+    {
+      "id": "item-056",
+      "name": "French Fries",
+      "description": "Crispy golden potato fries",
+      "price": 5000,
+      "calories": 380,
+      "ingredients": "Potato, salt",
+      "allergens": "",
+      "tags": [
+        "popular",
+        "vegetarian",
+        "vegan"
+      ],
+      "is_available": true,
+      "category": {
+        "name": "Sides"
+      },
+      "image": "https://picsum.photos/seed/French%20Fries/240/160"
+    },
+    {
+      "id": "item-057",
+      "name": "Plain Rice",
+      "description": "Steamed white rice",
+      "price": 4000,
+      "calories": 350,
+      "ingredients": "Rice",
+      "allergens": "",
+      "tags": [
+        "vegetarian",
+        "vegan"
+      ],
+      "is_available": true,
+      "category": {
+        "name": "Sides"
+      },
+      "image": "https://picsum.photos/seed/Plain%20Rice/240/160"
+    },
+    {
+      "id": "item-058",
+      "name": "Ndizi Kaanga",
+      "description": "Fried sweet plantain",
+      "price": 4000,
+      "calories": 320,
+      "ingredients": "Plantain, oil",
+      "allergens": "",
+      "tags": [
+        "vegetarian",
+        "vegan"
+      ],
+      "is_available": true,
+      "category": {
+        "name": "Sides"
+      },
+      "image": "https://picsum.photos/seed/Ndizi%20Kaanga/240/160"
+    },
+    {
+      "id": "item-059",
+      "name": "Naan Bread",
+      "description": "Soft oven-baked flatbread",
+      "price": 3500,
+      "calories": 290,
+      "ingredients": "Flour, yogurt",
+      "allergens": "gluten, dairy",
+      "tags": [
+        "vegetarian"
+      ],
+      "is_available": true,
+      "category": {
+        "name": "Sides"
+      },
+      "image": "https://picsum.photos/seed/Naan%20Bread/240/160"
+    },
+    {
+      "id": "item-060",
+      "name": "Fruit Bowl",
+      "description": "Fresh seasonal fruit, chilled",
+      "price": 6000,
+      "calories": 220,
+      "ingredients": "Mango, watermelon, pineapple",
+      "allergens": "",
+      "tags": [
+        "vegetarian",
+        "vegan",
+        "low-calorie",
+        "healthy"
+      ],
+      "is_available": true,
+      "category": {
+        "name": "Desserts"
+      },
+      "image": "https://picsum.photos/seed/Fruit%20Bowl/240/160"
+    },
+    {
+      "id": "item-061",
+      "name": "Ice Cream",
+      "description": "Vanilla ice cream scoops",
+      "price": 5000,
+      "calories": 300,
+      "ingredients": "Milk, cream, sugar",
+      "allergens": "dairy",
+      "tags": [
+        "vegetarian",
+        "popular"
+      ],
+      "is_available": true,
+      "category": {
+        "name": "Desserts"
+      },
+      "image": "https://picsum.photos/seed/Ice%20Cream/240/160"
+    },
+    {
+      "id": "item-062",
+      "name": "Chocolate Cake",
+      "description": "Rich moist chocolate cake",
+      "price": 7000,
+      "calories": 480,
+      "ingredients": "Flour, cocoa, eggs, butter",
+      "allergens": "gluten, eggs, dairy",
+      "tags": [
+        "vegetarian",
+        "popular"
+      ],
+      "is_available": true,
+      "category": {
+        "name": "Desserts"
+      },
+      "image": "https://picsum.photos/seed/Chocolate%20Cake/240/160"
+    },
+    {
+      "id": "item-063",
+      "name": "Kashata",
+      "description": "Coconut and peanut candy",
+      "price": 4000,
+      "calories": 260,
+      "ingredients": "Coconut, peanuts, sugar",
+      "allergens": "nuts",
+      "tags": [
+        "vegetarian",
+        "vegan"
+      ],
+      "is_available": true,
+      "category": {
+        "name": "Desserts"
+      },
+      "image": "https://picsum.photos/seed/Kashata/240/160"
+    },
+    {
+      "id": "item-064",
+      "name": "Mango Mousse",
+      "description": "Light whipped mango dessert",
+      "price": 6500,
+      "calories": 310,
+      "ingredients": "Mango, cream, sugar",
+      "allergens": "dairy",
+      "tags": [
+        "vegetarian"
+      ],
+      "is_available": true,
+      "category": {
+        "name": "Desserts"
+      },
+      "image": "https://picsum.photos/seed/Mango%20Mousse/240/160"
+    },
+    {
+      "id": "item-065",
+      "name": "Fresh Mango Juice",
+      "description": "Freshly blended mango juice",
+      "price": 4000,
+      "calories": 160,
+      "ingredients": "Mango, water",
+      "allergens": "",
+      "tags": [
+        "vegetarian",
+        "vegan",
+        "healthy"
+      ],
+      "is_available": true,
+      "category": {
+        "name": "Beverages"
+      },
+      "image": "https://picsum.photos/seed/Fresh%20Mango%20Juice/240/160"
+    },
+    {
+      "id": "item-066",
+      "name": "Passion Juice",
+      "description": "Tangy fresh passion fruit juice",
+      "price": 4000,
+      "calories": 140,
+      "ingredients": "Passion fruit, water, sugar",
+      "allergens": "",
+      "tags": [
+        "vegetarian",
+        "vegan",
+        "healthy"
+      ],
+      "is_available": true,
+      "category": {
+        "name": "Beverages"
+      },
+      "image": "https://picsum.photos/seed/Passion%20Juice/240/160"
+    },
+    {
+      "id": "item-067",
+      "name": "Soda",
+      "description": "Assorted soft drinks",
+      "price": 2000,
+      "calories": 150,
+      "ingredients": "Carbonated water, sugar",
+      "allergens": "",
+      "tags": [],
+      "is_available": true,
+      "category": {
+        "name": "Beverages"
+      },
+      "image": "https://picsum.photos/seed/Soda/240/160"
+    },
+    {
+      "id": "item-068",
+      "name": "Bottled Water",
+      "description": "500ml mineral water",
+      "price": 1500,
+      "calories": 0,
+      "ingredients": "Water",
+      "allergens": "",
+      "tags": [
+        "low-calorie",
+        "healthy",
+        "vegan"
+      ],
+      "is_available": true,
+      "category": {
+        "name": "Beverages"
+      },
+      "image": "https://picsum.photos/seed/Bottled%20Water/240/160"
+    },
+    {
+      "id": "item-069",
+      "name": "Coffee",
+      "description": "Freshly brewed coffee",
+      "price": 3000,
+      "calories": 60,
+      "ingredients": "Coffee, milk",
+      "allergens": "dairy",
+      "tags": [
+        "vegetarian"
+      ],
+      "is_available": true,
+      "category": {
+        "name": "Beverages"
+      },
+      "image": "https://picsum.photos/seed/Coffee/240/160"
+    },
+    {
+      "id": "item-070",
+      "name": "Masala Tea",
+      "description": "Spiced milk tea",
+      "price": 2500,
+      "calories": 90,
+      "ingredients": "Tea, milk, spices",
+      "allergens": "dairy",
+      "tags": [
+        "vegetarian",
+        "popular"
+      ],
+      "is_available": true,
+      "category": {
+        "name": "Beverages"
+      },
+      "image": "https://picsum.photos/seed/Masala%20Tea/240/160"
+    },
+    {
+      "id": "item-071",
+      "name": "Lobster Thermidor",
+      "description": "Grilled lobster in creamy sauce",
+      "price": 45000,
+      "calories": 600,
+      "ingredients": "Lobster, cream, cheese",
+      "allergens": "shellfish, dairy",
+      "tags": [
+        "popular"
+      ],
+      "is_available": false,
+      "category": {
+        "name": "Seafood"
+      },
+      "image": "https://picsum.photos/seed/Lobster%20Thermidor/240/160"
+    },
+    {
+      "id": "item-072",
+      "name": "Seasonal Special",
+      "description": "Chef's seasonal creation (currently unavailable)",
+      "price": 18000,
+      "calories": 700,
+      "ingredients": "Varies",
+      "allergens": "",
+      "tags": [
+        "popular"
+      ],
+      "is_available": false,
+      "category": {
+        "name": "Main Dishes"
+      },
+      "image": "https://picsum.photos/seed/Seasonal%20Special/240/160"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+ "captured_at": "2026-08-04T16:24:24Z",
+ "hf_metadata": {
+  "sha": "6545d3a3ffeaca3294e160e84f8b9b3d7e809e9c"
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "kode-with-klossy/3.4-groupB1-capstone",
+ "repo_type": "spaces",
+ "sha": "6545d3a3ffeaca3294e160e84f8b9b3d7e809e9c",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/kode-with-klossy/3.4-groupB1-capstone"
+}

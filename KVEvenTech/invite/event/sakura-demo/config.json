@@ -1,0 +1,56 @@
+{
+  "brideName": "Sakura & Aiden",
+  "familyName": "The Tanaka Family",
+  "intro": {
+    "tagline": "A Bloom in Spring",
+    "buttonText": "Enter the Garden",
+    "sequenceInvite": "With petals of joy and hearts full of love",
+    "sequenceTo": "We invite you to witness the blossoming of"
+  },
+  "hero": { "badge": "A Spring Celebration" },
+  "scratchReveal": {
+    "teaser": "A petal holds a secret...",
+    "heading": "Your Invitation Blooms",
+    "revealLabel": "Peel away the petals"
+  },
+  "countdown": {
+    "label": "Until Our Garden Ceremony",
+    "heading": "The Bloom is Near",
+    "doneMessage": "We have blossomed together!"
+  },
+  "celebrations": {
+    "sectionTag": "The Celebrations",
+    "sectionHeading": "Days of Bloom"
+  },
+  "venue": {
+    "sectionHeading": "Where Petals Fall",
+    "locationLabel": "The Garden Venue",
+    "directionsLabel": "Get Directions"
+  },
+  "blessings": {
+    "heading": "Like Cherry Blossoms, May Your Love Always Bloom",
+    "suffix": "\u2014 Sakura & Aiden"
+  },
+  "events": {
+    "haldi": {
+      "title": "Garden Tea Ceremony",
+      "badge": "Day One",
+      "blessing": "Begin with grace and serenity",
+      "date": "05 Apr 2027",
+      "time": "03:00 PM",
+      "venue": "The Petal Garden Club",
+      "address": "Bandra, Mumbai"
+    },
+    "halfSaree": {
+      "title": "Wedding Ceremony",
+      "badge": "The Day",
+      "blessing": "Two blossoms, one branch",
+      "date": "06 Apr 2027",
+      "time": "11:00 AM",
+      "dateISO": "2027-04-06T11:00:00",
+      "venue": "Taj Lands End",
+      "address": "Bandstand, Bandra, Mumbai",
+      "mapLink": "https://maps.google.com"
+    }
+  }
+}

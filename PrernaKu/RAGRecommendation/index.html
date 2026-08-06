@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HDFC Banking Support Assistant</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header class="hero">
+        <h1>HDFC Banking Support Assistant</h1>
+        <p>
+          Ask HDFC-related banking questions. This static app answers using a
+          local HDFC-focused FAQ set and shares public links (including Google)
+          for verification.
+        </p>
+      </header>
+
+      <section class="examples" aria-label="Banking FAQs">
+        <div id="faq-buttons"></div>
+      </section>
+
+      <section class="chat" aria-label="Chat window">
+        <div id="messages" class="messages" role="log" aria-live="polite"></div>
+
+        <form id="chat-form" class="composer">
+          <input
+            id="chat-input"
+            type="text"
+            placeholder="Type your HDFC banking question..."
+            autocomplete="off"
+            required
+          />
+          <button type="submit">Send</button>
+        </form>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

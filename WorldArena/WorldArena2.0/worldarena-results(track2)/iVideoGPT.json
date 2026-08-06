@@ -1,0 +1,9 @@
+{
+  "Model": "iVideoGPT",
+  "year": "2026",
+  "open_source": "unknown",
+  "Metrics": {
+    "RL Environment(Click Bell)": 52.53,
+    "RL Environment(Adjust Bottle)": 56.25
+  }
+}

@@ -1,0 +1,336 @@
+{
+ "captured_at": "2026-08-04T13:40:29Z",
+ "hf_metadata": {
+  "_id": "6a4aaee20ef1d556bb602cab",
+  "author": "Janvi08",
+  "cardData": {
+   "app_port": 7860,
+   "colorFrom": "green",
+   "colorTo": "gray",
+   "emoji": "🎵",
+   "pinned": false,
+   "sdk": "docker",
+   "title": "Spotify Review Discovery Engine"
+  },
+  "createdAt": "2026-07-05T19:22:10.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://janvi08-spotify-review-engine.hf.space",
+  "id": "Janvi08/spotify-review-engine",
+  "lastModified": "2026-07-06T04:06:13.000Z",
+  "likes": 0,
+  "models": [
+   "BAAI/bge-small-en-v1.5",
+   "cross-encoder/ms-marco-MiniLM-L6-v2"
+  ],
+  "private": false,
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "janvi08-spotify-review-engine.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": null,
+    "requested": "cpu-basic"
+   },
+   "replicas": {
+    "requested": 1
+   },
+   "stage": "SLEEPING"
+  },
+  "sdk": "docker",
+  "sha": "36e519f04077edd784295ec27d5fd492ab95360a",
+  "siblings": [
+   {
+    "rfilename": ".env.example"
+   },
+   {
+    "rfilename": ".gitattributes"
+   },
+   {
+    "rfilename": ".gitignore"
+   },
+   {
+    "rfilename": "Dockerfile"
+   },
+   {
+    "rfilename": "Procfile"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "data/output/broad_relevance_meta.json"
+   },
+   {
+    "rfilename": "data/output/meta.json"
+   },
+   {
+    "rfilename": "data/output/phase2_meta.json"
+   },
+   {
+    "rfilename": "data/output/phase3_meta.json"
+   },
+   {
+    "rfilename": "data/output/themes.json"
+   },
+   {
+    "rfilename": "docs/architecture.md"
+   },
+   {
+    "rfilename": "docs/decisions.md"
+   },
+   {
+    "rfilename": "docs/edge-cases/1.1-fetcher.md"
+   },
+   {
+    "rfilename": "docs/edge-cases/1.2-extractor.md"
+   },
+   {
+    "rfilename": "docs/edge-cases/1.3-cleaner.md"
+   },
+   {
+    "rfilename": "docs/edge-cases/1.4-chunker.md"
+   },
+   {
+    "rfilename": "docs/edge-cases/1.5-pipeline.md"
+   },
+   {
+    "rfilename": "docs/edge-cases/1.6-output-writer.md"
+   },
+   {
+    "rfilename": "docs/edge-cases/1.7-scheduler.md"
+   },
+   {
+    "rfilename": "docs/phase-1.1/README.md"
+   },
+   {
+    "rfilename": "docs/phase-1.1/sample-output.md"
+   },
+   {
+    "rfilename": "docs/problemstatement.md"
+   },
+   {
+    "rfilename": "frontend/.gitignore"
+   },
+   {
+    "rfilename": "frontend/app/globals.css"
+   },
+   {
+    "rfilename": "frontend/app/layout.tsx"
+   },
+   {
+    "rfilename": "frontend/app/page.tsx"
+   },
+   {
+    "rfilename": "frontend/next.config.mjs"
+   },
+   {
+    "rfilename": "frontend/package-lock.json"
+   },
+   {
+    "rfilename": "frontend/package.json"
+   },
+   {
+    "rfilename": "frontend/postcss.config.mjs"
+   },
+   {
+    "rfilename": "frontend/tailwind.config.ts"
+   },
+   {
+    "rfilename": "frontend/tsconfig.json"
+   },
+   {
+    "rfilename": "requirements.txt"
+   },
+   {
+    "rfilename": "src/__init__.py"
+   },
+   {
+    "rfilename": "src/api/__init__.py"
+   },
+   {
+    "rfilename": "src/api/main.py"
+   },
+   {
+    "rfilename": "src/chatbot/__init__.py"
+   },
+   {
+    "rfilename": "src/chatbot/rag.py"
+   },
+   {
+    "rfilename": "src/chatbot/run_phase5_test.py"
+   },
+   {
+    "rfilename": "src/chatbot/themes.py"
+   },
+   {
+    "rfilename": "src/embedding/__init__.py"
+   },
+   {
+    "rfilename": "src/embedding/config.py"
+   },
+   {
+    "rfilename": "src/embedding/embedder.py"
+   },
+   {
+    "rfilename": "src/embedding/run_phase3.py"
+   },
+   {
+    "rfilename": "src/embedding/text_chunker.py"
+   },
+   {
+    "rfilename": "src/embedding/vector_store.py"
+   },
+   {
+    "rfilename": "src/ingestion/__init__.py"
+   },
+   {
+    "rfilename": "src/ingestion/config.py"
+   },
+   {
+    "rfilename": "src/ingestion/extractors/__init__.py"
+   },
+   {
+    "rfilename": "src/ingestion/extractors/app_store.py"
+   },
+   {
+    "rfilename": "src/ingestion/extractors/base_extractor.py"
+   },
+   {
+    "rfilename": "src/ingestion/extractors/play_store.py"
+   },
+   {
+    "rfilename": "src/ingestion/extractors/reddit.py"
+   },
+   {
+    "rfilename": "src/ingestion/extractors/spotify_community.py"
+   },
+   {
+    "rfilename": "src/ingestion/extractors/trustpilot.py"
+   },
+   {
+    "rfilename": "src/ingestion/extractors/youtube.py"
+   },
+   {
+    "rfilename": "src/ingestion/fetchers/__init__.py"
+   },
+   {
+    "rfilename": "src/ingestion/fetchers/app_store.py"
+   },
+   {
+    "rfilename": "src/ingestion/fetchers/base_fetcher.py"
+   },
+   {
+    "rfilename": "src/ingestion/fetchers/play_store.py"
+   },
+   {
+    "rfilename": "src/ingestion/fetchers/reddit.py"
+   },
+   {
+    "rfilename": "src/ingestion/fetchers/spotify_community.py"
+   },
+   {
+    "rfilename": "src/ingestion/fetchers/trustpilot.py"
+   },
+   {
+    "rfilename": "src/ingestion/fetchers/trustpilot_playwright.py"
+   },
+   {
+    "rfilename": "src/ingestion/fetchers/youtube.py"
+   },
+   {
+    "rfilename": "src/ingestion/run_extractor.py"
+   },
+   {
+    "rfilename": "src/ingestion/run_fetcher.py"
+   },
+   {
+    "rfilename": "src/processing/__init__.py"
+   },
+   {
+    "rfilename": "src/processing/broad_relevance_filter.py"
+   },
+   {
+    "rfilename": "src/processing/language_detector.py"
+   },
+   {
+    "rfilename": "src/processing/pii_scrubber.py"
+   },
+   {
+    "rfilename": "src/processing/relevance_filter.py"
+   },
+   {
+    "rfilename": "src/processing/run_broad_relevance.py"
+   },
+   {
+    "rfilename": "src/processing/run_phase2.py"
+   },
+   {
+    "rfilename": "src/retrieval/__init__.py"
+   },
+   {
+    "rfilename": "src/retrieval/config.py"
+   },
+   {
+    "rfilename": "src/retrieval/dense_retriever.py"
+   },
+   {
+    "rfilename": "src/retrieval/fusion.py"
+   },
+   {
+    "rfilename": "src/retrieval/reranker.py"
+   },
+   {
+    "rfilename": "src/retrieval/retriever.py"
+   },
+   {
+    "rfilename": "src/retrieval/run_phase4_test.py"
+   },
+   {
+    "rfilename": "src/retrieval/sparse_retriever.py"
+   },
+   {
+    "rfilename": "tests/embedding/test_text_chunker.py"
+   },
+   {
+    "rfilename": "tests/fixtures/trustpilot/README_TEST_ONLY.md"
+   },
+   {
+    "rfilename": "tests/fixtures/trustpilot/curated.json"
+   },
+   {
+    "rfilename": "tests/fixtures/youtube/README_TEST_ONLY.md"
+   },
+   {
+    "rfilename": "tests/fixtures/youtube/comments_sample_p1.json"
+   },
+   {
+    "rfilename": "tests/retrieval/test_fusion.py"
+   },
+   {
+    "rfilename": "validate_raw.py"
+   }
+  ],
+  "subdomain": "janvi08-spotify-review-engine",
+  "tags": [
+   "docker",
+   "region:us"
+  ],
+  "usedStorage": 0
+ },
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "Janvi08/spotify-review-engine",
+ "repo_type": "spaces",
+ "sha": "36e519f04077edd784295ec27d5fd492ab95360a",
+ "web_url": "https://huggingface.co/spaces/Janvi08/spotify-review-engine"
+}

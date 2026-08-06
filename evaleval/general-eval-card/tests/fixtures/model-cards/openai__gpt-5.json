@@ -1,0 +1,307 @@
+{
+  "model_group_id": "openai/gpt-5",
+  "model_route_id": "openai__gpt-5",
+  "model_family_name": "GPT 5",
+  "developer": "openai",
+  "params_billions": null,
+  "total_evaluations": 30,
+  "benchmark_count": 18,
+  "benchmark_family_count": 18,
+  "categories_covered": [
+    "agentic",
+    "coding",
+    "general",
+    "knowledge",
+    "other",
+    "reasoning"
+  ],
+  "last_updated": "2026-04-25T09:07:44.422824Z",
+  "variants": [
+    {
+      "variant_key": "default",
+      "variant_label": "Default",
+      "evaluation_count": 17,
+      "raw_model_ids": [
+        "openai/GPT 5",
+        "openai/gpt-5",
+        "openai/GPT-5"
+      ],
+      "last_updated": "2026-04-20T17:00:36.089462Z"
+    },
+    {
+      "variant_key": "2025-08-07",
+      "variant_label": "2025-08-07",
+      "evaluation_count": 9,
+      "raw_model_ids": [
+        "openai/gpt-5-2025-08-07"
+      ],
+      "last_updated": "2026-04-25T09:07:44.422824Z"
+    },
+    {
+      "variant_key": "2025-08-07-low",
+      "variant_label": "2025-08-07 low",
+      "evaluation_count": 1,
+      "raw_model_ids": [
+        "openai/gpt-5-2025-08-07-low"
+      ],
+      "last_updated": "2026-04-07T08:15:57.602168Z"
+    },
+    {
+      "variant_key": "2025-08-07-medium",
+      "variant_label": "2025-08-07 medium",
+      "evaluation_count": 1,
+      "raw_model_ids": [
+        "openai/gpt-5-2025-08-07-medium"
+      ],
+      "last_updated": "2026-04-07T08:15:57.602461Z"
+    },
+    {
+      "variant_key": "2025-08-07-minimal",
+      "variant_label": "2025-08-07 minimal",
+      "evaluation_count": 1,
+      "raw_model_ids": [
+        "openai/gpt-5-2025-08-07-minimal"
+      ],
+      "last_updated": "2026-04-07T08:15:57.602750Z"
+    },
+    {
+      "variant_key": "2025-08-07-high",
+      "variant_label": "2025-08-07 high",
+      "evaluation_count": 1,
+      "raw_model_ids": [
+        "openai/gpt-5-2025-08-07-high"
+      ],
+      "last_updated": "2026-04-07T08:15:57.601872Z"
+    }
+  ],
+  "score_summary": {
+    "count": 559,
+    "min": 0,
+    "max": 73320,
+    "average": 673.8712930083715
+  },
+  "reproducibility_summary": {
+    "results_total": 559,
+    "has_reproducibility_gap_count": 541,
+    "populated_ratio_avg": 0.03220035778175313
+  },
+  "provenance_summary": {
+    "total_results": 559,
+    "total_groups": 508,
+    "multi_source_groups": 0,
+    "first_party_only_groups": 43,
+    "source_type_distribution": {
+      "first_party": 44,
+      "third_party": 515,
+      "collaborative": 0,
+      "unspecified": 0
+    }
+  },
+  "comparability_summary": {
+    "total_groups": 508,
+    "groups_with_variant_check": 0,
+    "groups_with_cross_party_check": 0,
+    "variant_divergent_count": 0,
+    "cross_party_divergent_count": 0
+  },
+  "benchmark_names": [
+    "ACE",
+    "APEX Agents",
+    "APEX v1",
+    "ARC Prize evaluations leaderboard JSON",
+    "Aider-Polyglot",
+    "Anthropic Red Team",
+    "Artificial Analysis LLM API",
+    "BBQ",
+    "BrowseComp Long Context 128k",
+    "BrowseComp Long Context 256k",
+    "COLLIE",
+    "CharXiv-R",
+    "ERQA",
+    "Easy Problems",
+    "FActScore",
+    "Fibble arena",
+    "FrontierMath",
+    "GPQA",
+    "Global-MMLU Lite",
+    "Graphwalks BFS <128k",
+    "Graphwalks parents <128k",
+    "HMMT 2025",
+    "Hard Problems",
+    "HarmBench",
+    "HealthBench Hard",
+    "Helm air bench",
+    "Helm safety",
+    "Holistic Evaluation of Language Models (HELM)",
+    "HumanEval",
+    "IFEval",
+    "Internal API instruction following (hard)",
+    "LongFact Concepts",
+    "LongFact Objects",
+    "MATH",
+    "MMLU",
+    "MMLU-Pro",
+    "MMMU",
+    "MMMU-Pro",
+    "Medium Problems",
+    "Multi-Challenge",
+    "Multi-SWE-bench (c++)",
+    "Omni-MATH",
+    "OpenAI-MRCR: 2 needle 128k",
+    "OpenAI-MRCR: 2 needle 256k",
+    "SWE-Lancer (IC-Diamond subset)",
+    "SWE-PolyBench Verified (Java)",
+    "SWE-PolyBench Verified (JavaScript)",
+    "SWE-PolyBench Verified (Python)",
+    "SWE-PolyBench Verified (TypeScript)",
+    "SWE-bench Verified",
+    "SciArena leaderboard API",
+    "SimpleSafetyTests",
+    "Tau2 Airline",
+    "Tau2 Retail",
+    "Tau2 Telecom",
+    "Terminal Bench 2 0",
+    "VideoMME w sub.",
+    "VideoMMMU",
+    "WildBench",
+    "Wordle Arena",
+    "XSTest"
+  ],
+  "top_benchmark_scores": [
+    {
+      "benchmark": "Artificial Analysis LLM API",
+      "benchmarkKey": "artificial_analysis_llms_artificial_analysis_median_output_tokens_per_second",
+      "canonical_display_name": "artificial_analysis.median_output_tokens_per_second / Median output tokens per second",
+      "evaluation_name": "artificial_analysis.median_output_tokens_per_second",
+      "score": 95.722,
+      "metric": "Median output generation speed reported by Artificial Analysis.",
+      "lower_is_better": false
+    },
+    {
+      "benchmark": "Artificial Analysis LLM API",
+      "benchmarkKey": "artificial_analysis_llms_artificial_analysis_artificial_analysis_math_index",
+      "canonical_display_name": "artificial_analysis.artificial_analysis_math_index / Artificial Analysis Math Index",
+      "evaluation_name": "artificial_analysis.artificial_analysis_math_index",
+      "score": 94.3,
+      "metric": "Artificial Analysis composite math index.",
+      "lower_is_better": false
+    },
+    {
+      "benchmark": "Artificial Analysis LLM API",
+      "benchmarkKey": "artificial_analysis_llms_artificial_analysis_median_time_to_first_token_seconds",
+      "canonical_display_name": "artificial_analysis.median_time_to_first_token_seconds / Median Time To First Token Seconds",
+      "evaluation_name": "artificial_analysis.median_time_to_first_token_seconds",
+      "score": 82.082,
+      "metric": "Median time to first token reported by Artificial Analysis.",
+      "lower_is_better": true
+    },
+    {
+      "benchmark": "Artificial Analysis LLM API",
+      "benchmarkKey": "artificial_analysis_llms_artificial_analysis_median_time_to_first_answer_token",
+      "canonical_display_name": "artificial_analysis.median_time_to_first_answer_token / Median time to first answer token",
+      "evaluation_name": "artificial_analysis.median_time_to_first_answer_token",
+      "score": 82.082,
+      "metric": "Median time to first answer token reported by Artificial Analysis.",
+      "lower_is_better": true
+    },
+    {
+      "benchmark": "Terminal Bench 2 0",
+      "benchmarkKey": "terminal_bench_2_0",
+      "canonical_display_name": "Terminal bench 2 0 / Accuracy",
+      "evaluation_name": "terminal-bench-2.0",
+      "score": 49.6,
+      "metric": "Task resolution accuracy across 87 terminal tasks with 5 trials each",
+      "lower_is_better": false
+    },
+    {
+      "benchmark": "Artificial Analysis LLM API",
+      "benchmarkKey": "artificial_analysis_llms_artificial_analysis_artificial_analysis_intelligence_index",
+      "canonical_display_name": "artificial_analysis.artificial_analysis_intelligence_index / Artificial Analysis Intelligence Index",
+      "evaluation_name": "artificial_analysis.artificial_analysis_intelligence_index",
+      "score": 44.6,
+      "metric": "Artificial Analysis composite intelligence index.",
+      "lower_is_better": false
+    },
+    {
+      "benchmark": "Artificial Analysis LLM API",
+      "benchmarkKey": "artificial_analysis_llms_artificial_analysis_artificial_analysis_coding_index",
+      "canonical_display_name": "artificial_analysis.artificial_analysis_coding_index / Artificial Analysis Coding Index",
+      "evaluation_name": "artificial_analysis.artificial_analysis_coding_index",
+      "score": 36,
+      "metric": "Artificial Analysis composite coding index.",
+      "lower_is_better": false
+    },
+    {
+      "benchmark": "Artificial Analysis LLM API",
+      "benchmarkKey": "artificial_analysis_llms_artificial_analysis_price_1m_output_tokens",
+      "canonical_display_name": "artificial_analysis.price_1m_output_tokens / Price 1m Output Tokens",
+      "evaluation_name": "artificial_analysis.price_1m_output_tokens",
+      "score": 10,
+      "metric": "Price per 1M output tokens in USD.",
+      "lower_is_better": true
+    },
+    {
+      "benchmark": "Artificial Analysis LLM API",
+      "benchmarkKey": "artificial_analysis_llms_artificial_analysis_price_1m_blended_3_to_1",
+      "canonical_display_name": "artificial_analysis.price_1m_blended_3_to_1 / Price 1m Blended 3 To 1",
+      "evaluation_name": "artificial_analysis.price_1m_blended_3_to_1",
+      "score": 3.438,
+      "metric": "Blended price per 1M tokens using a 3:1 input-to-output ratio.",
+      "lower_is_better": true
+    },
+    {
+      "benchmark": "SciArena leaderboard API",
+      "benchmarkKey": "sciarena",
+      "canonical_display_name": "SciArena / Cost per 100 Calls",
+      "evaluation_name": "overall_cost_per_100_calls_usd",
+      "score": 2.9752,
+      "metric": "overall_cost_per_100_calls_usd",
+      "lower_is_better": true
+    },
+    {
+      "benchmark": "Artificial Analysis LLM API",
+      "benchmarkKey": "artificial_analysis_llms_artificial_analysis_price_1m_input_tokens",
+      "canonical_display_name": "artificial_analysis.price_1m_input_tokens / Price 1m Input Tokens",
+      "evaluation_name": "artificial_analysis.price_1m_input_tokens",
+      "score": 1.25,
+      "metric": "Price per 1M input tokens in USD.",
+      "lower_is_better": true
+    },
+    {
+      "benchmark": "Helm air bench",
+      "benchmarkKey": "helm_air_bench",
+      "canonical_display_name": "Air bench / AIRBench 2024 - Self-harm / Refusal Rate",
+      "evaluation_name": "AIRBench 2024 - Self-harm",
+      "score": 1,
+      "metric": "Refusal Rate on AIRBench 2024 - Self-harm",
+      "lower_is_better": false
+    },
+    {
+      "benchmark": "SWE-Lancer (IC-Diamond subset)",
+      "benchmarkKey": "llm_stats_swe_lancer_ic_diamond_subset",
+      "canonical_display_name": "Swe Lancer Ic Diamond Subset / Score",
+      "evaluation_name": "llm_stats.swe-lancer-ic-diamond-subset",
+      "score": 1,
+      "metric": "SWE-Lancer (IC-Diamond subset) is a benchmark of real-world freelance software engineering tasks from Upwork, ranging from $50 bug fixes to $32,000 feature implementations. It evaluates AI models on independent engineering tasks using end-to-end tests triple-verified by experienced software engineers, and includes managerial tasks where models choose between technical implementation proposals.",
+      "lower_is_better": false
+    },
+    {
+      "benchmark": "SimpleSafetyTests",
+      "benchmarkKey": "helm_safety_simplesafetytests",
+      "canonical_display_name": "SimpleSafetyTests / LM Evaluated Safety score",
+      "evaluation_name": "SimpleSafetyTests",
+      "score": 0.998,
+      "metric": "LM Evaluated Safety score on SimpleSafetyTests",
+      "lower_is_better": false
+    },
+    {
+      "benchmark": "Artificial Analysis LLM API",
+      "benchmarkKey": "artificial_analysis_llms_artificial_analysis_math_500",
+      "canonical_display_name": "artificial_analysis.math_500 / MATH-500",
+      "evaluation_name": "artificial_analysis.math_500",
+      "score": 0.994,
+      "metric": "Benchmark score on MATH-500.",
+      "lower_is_better": false
+    }
+  ]
+}

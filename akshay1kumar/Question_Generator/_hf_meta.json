@@ -1,0 +1,84 @@
+{
+ "captured_at": "2026-08-04T15:51:30Z",
+ "hf_metadata": {
+  "_id": "6a4cba6334fd55c4f6b51870",
+  "author": "akshay1kumar",
+  "cardData": {
+   "app_file": "app.py",
+   "colorFrom": "blue",
+   "colorTo": "indigo",
+   "emoji": "⚡",
+   "license": "mit",
+   "pinned": false,
+   "python_version": "3.13",
+   "sdk": "gradio",
+   "sdk_version": "6.19.0",
+   "title": "Question Generator"
+  },
+  "createdAt": "2026-07-07T08:35:47.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://akshay1kumar-question-generator.hf.space",
+  "id": "akshay1kumar/Question_Generator",
+  "lastModified": "2026-07-07T08:40:44.000Z",
+  "likes": 0,
+  "private": false,
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "akshay1kumar-question-generator.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": null,
+    "requested": "cpu-basic"
+   },
+   "replicas": {
+    "requested": 1
+   },
+   "stage": "SLEEPING"
+  },
+  "sdk": "gradio",
+  "sha": "2f9327ec1c73aa72f76d63deb5e421e4ed164412",
+  "siblings": [
+   {
+    "rfilename": ".gitattributes"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "app.py"
+   },
+   {
+    "rfilename": "requirements.txt"
+   }
+  ],
+  "subdomain": "akshay1kumar-question-generator",
+  "tags": [
+   "gradio",
+   "region:us"
+  ],
+  "usedStorage": 0
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "akshay1kumar/Question_Generator",
+ "repo_type": "spaces",
+ "sha": "2f9327ec1c73aa72f76d63deb5e421e4ed164412",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/akshay1kumar/Question_Generator"
+}

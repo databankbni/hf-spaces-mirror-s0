@@ -1,0 +1,45 @@
+# Stage 1: Build using Go 1.19
+FROM golang:1.19-alpine AS builder
+
+# Install build dependencies
+RUN apk add --no-cache git build-base linux-headers
+
+# Clone the repository
+RUN git clone https://github.com/boypt/cloud-torrent.git /build
+WORKDIR /build
+
+# Patch the C header conflict before building
+RUN find /go/pkg/mod -name "utp_types.h" -exec sed -i 's/typedef uint8 bool;//g' {} + || true
+
+# Build the binary with CGO enabled
+RUN CGO_ENABLED=1 GOOS=linux go build -v -o /cloud-torrent .
+
+# Stage 2: Final lightweight image
+FROM alpine:latest
+
+# Install runtime libraries required for the CGO binary
+RUN apk add --no-cache ca-certificates tzdata libstdc++ libgcc
+
+# Create directories in the Hugging Face user space
+RUN mkdir -p /home/user/app/downloads /home/user/app/torrents && \
+    chown -R 1000:1000 /home/user/app
+
+# Copy the binary from the builder stage
+COPY --from=builder /cloud-torrent /usr/local/bin/cloud-torrent
+
+# Switch to Hugging Face user (UID 1000)
+USER 1000
+WORKDIR /home/user/app
+
+# Create the configuration file to set the download directory natively
+RUN echo "DownloadDirectory: /home/user/app/downloads" > /home/user/app/torrents/cloud-torrent.yaml && \
+    echo "AutoStart: true" >> /home/user/app/torrents/cloud-torrent.yaml
+
+# Expose the mandatory Hugging Face port
+EXPOSE 7860
+
+# Start the application with your specified Basic Authentication
+CMD ["cloud-torrent", \
+     "--listen", "0.0.0.0:7860", \
+     "--config-path", "/home/user/app/torrents/cloud-torrent.yaml", \
+     "--auth", "afsal:afsal@123"]

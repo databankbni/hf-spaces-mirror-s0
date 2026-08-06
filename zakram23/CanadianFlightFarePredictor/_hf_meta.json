@@ -1,0 +1,23 @@
+{
+ "captured_at": "2026-08-04T17:15:15Z",
+ "hf_metadata": {
+  "sha": "17a6d2c1c8ff4a5a8af5afb9b97f104f7a4d2ad6"
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "zakram23/CanadianFlightFarePredictor",
+ "repo_type": "spaces",
+ "sha": "17a6d2c1c8ff4a5a8af5afb9b97f104f7a4d2ad6",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/zakram23/CanadianFlightFarePredictor"
+}

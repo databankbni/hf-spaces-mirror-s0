@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin — AI Robot MCP Server</title>
+  <link rel="stylesheet" href="/static/css/base.css">
+  <link rel="stylesheet" href="/static/css/admin.css">
+</head>
+<body>
+
+<div class="admin-bar">
+  <div class="admin-brand">🛠 ADMIN CONTROL</div>
+  <div class="admin-meta" id="adminMeta">Đang tải...</div>
+  <div class="admin-actions">
+    <button class="btn-admin" onclick="loadAdminDevices()">↻ Làm mới</button>
+    <a class="btn-admin ghost" href="/">← Trang khách</a>
+  </div>
+</div>
+
+<div class="admin-body">
+
+  <!-- Cột trái: danh sách thiết bị -->
+  <div class="admin-list">
+    <div class="admin-section-title">📡 THIẾT BỊ ĐÃ ĐĂNG KÝ</div>
+    <div id="adminDevices">
+      <div class="admin-empty">Đang tải danh sách...</div>
+    </div>
+  </div>
+
+  <!-- Cột phải: chi tiết thiết bị -->
+  <div class="admin-detail" id="adminDetail">
+    <div class="admin-placeholder">
+      <div class="admin-placeholder-icon">👈</div>
+      Chọn một thiết bị để xem tools và các chức năng đã mở khoá.
+    </div>
+  </div>
+
+</div>
+
+<script defer src="/static/js/utils.js"></script>
+<script defer src="/static/js/admin.js"></script>
+</body>
+</html>

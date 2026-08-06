@@ -1,0 +1,23 @@
+{
+ "captured_at": "2026-08-04T16:31:09Z",
+ "hf_metadata": {
+  "sha": "da07048dceb13b2696cef5cff02c3ebd430b4591"
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "mayankchugh-learning/Term-Deposit",
+ "repo_type": "spaces",
+ "sha": "da07048dceb13b2696cef5cff02c3ebd430b4591",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/mayankchugh-learning/Term-Deposit"
+}

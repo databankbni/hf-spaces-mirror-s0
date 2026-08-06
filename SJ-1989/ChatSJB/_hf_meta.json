@@ -1,0 +1,104 @@
+{
+ "captured_at": "2026-08-04T14:33:17Z",
+ "hf_metadata": {
+  "_id": "6582e6034bd14fb0805af328",
+  "author": "SJ-1989",
+  "cardData": {
+   "app_file": "app.py",
+   "colorFrom": "purple",
+   "colorTo": "red",
+   "emoji": "💬",
+   "license": "apache-2.0",
+   "pinned": false,
+   "sdk": "gradio",
+   "sdk_version": "6.20.0",
+   "title": "ChatSJB"
+  },
+  "createdAt": "2023-12-20T13:02:59.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://sj-1989-chatsjb.hf.space",
+  "id": "SJ-1989/ChatSJB",
+  "lastModified": "2026-08-02T23:20:05.000Z",
+  "likes": 1,
+  "private": false,
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "sj-1989-chatsjb.hf.space",
+     "stage": "READY"
+    },
+    {
+     "domain": "sj-1989-chatsjb-v1.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": "cpu-basic",
+    "requested": "cpu-basic"
+   },
+   "pySpacesVersion": "0.51.1",
+   "replicas": {
+    "current": 1,
+    "requested": 1
+   },
+   "sha": "fd5461151a04867fbbd0ad90ca95b6973bdfdffb",
+   "stage": "RUNNING"
+  },
+  "sdk": "gradio",
+  "sha": "fd5461151a04867fbbd0ad90ca95b6973bdfdffb",
+  "siblings": [
+   {
+    "rfilename": ".gitattributes"
+   },
+   {
+    "rfilename": "Logo.png"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "app.py"
+   },
+   {
+    "rfilename": "chatbot/chatbot.py"
+   },
+   {
+    "rfilename": "chatbot/parse_notion_text.py"
+   },
+   {
+    "rfilename": "chatbot/prompts/v1.py"
+   },
+   {
+    "rfilename": "chatbot/update_knowledge_base.py"
+   },
+   {
+    "rfilename": "config.py"
+   },
+   {
+    "rfilename": "requirements.txt"
+   },
+   {
+    "rfilename": "styles.css"
+   }
+  ],
+  "subdomain": "sj-1989-chatsjb",
+  "tags": [
+   "gradio",
+   "region:us"
+  ],
+  "usedStorage": 64724218
+ },
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "SJ-1989/ChatSJB",
+ "repo_type": "spaces",
+ "sha": "fd5461151a04867fbbd0ad90ca95b6973bdfdffb",
+ "web_url": "https://huggingface.co/spaces/SJ-1989/ChatSJB"
+}

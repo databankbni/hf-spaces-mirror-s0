@@ -1,0 +1,27 @@
+{
+ "captured_at": "2026-08-04T17:15:15Z",
+ "hf_metadata": {
+  "sha": "fd5bff6e09e1248a6ba5af683606d7075770581d"
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  },
+  {
+   "original": ".gitignore",
+   "stored_as": "_gitignore"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "zain-the-npc/adaptive-gpt2-lora",
+ "repo_type": "spaces",
+ "sha": "fd5bff6e09e1248a6ba5af683606d7075770581d",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/zain-the-npc/adaptive-gpt2-lora"
+}

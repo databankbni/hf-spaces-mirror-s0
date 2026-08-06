@@ -1,0 +1,88 @@
+{
+ "captured_at": "2026-08-04T15:31:28Z",
+ "hf_metadata": {
+  "_id": "6a4bb4165a2b652440bc803b",
+  "author": "SHEONG",
+  "cardData": {
+   "app_file": "app.py",
+   "colorFrom": "green",
+   "colorTo": "yellow",
+   "emoji": "🍚",
+   "pinned": false,
+   "sdk": "gradio",
+   "sdk_version": "5.9.1",
+   "title": "주간 식단표 중복 검사기"
+  },
+  "createdAt": "2026-07-06T13:56:38.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://sheong-menuduplicatechecker.hf.space",
+  "id": "SHEONG/MenuDuplicateChecker",
+  "lastModified": "2026-07-19T15:55:55.000Z",
+  "likes": 0,
+  "private": false,
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "sheong-menuduplicatechecker.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": null,
+    "requested": "cpu-basic"
+   },
+   "replicas": {
+    "requested": 1
+   },
+   "stage": "SLEEPING"
+  },
+  "sdk": "gradio",
+  "sha": "97394f9978d5f15dcc2a86e6409fe1be39aaf921",
+  "siblings": [
+   {
+    "rfilename": ".gitattributes"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "__pycache__/app.cpython-312.pyc"
+   },
+   {
+    "rfilename": "app.cpython-312.pyc"
+   },
+   {
+    "rfilename": "app.py"
+   },
+   {
+    "rfilename": "requirements.txt"
+   }
+  ],
+  "subdomain": "sheong-menuduplicatechecker",
+  "tags": [
+   "gradio",
+   "region:us"
+  ],
+  "usedStorage": 0
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "SHEONG/MenuDuplicateChecker",
+ "repo_type": "spaces",
+ "sha": "97394f9978d5f15dcc2a86e6409fe1be39aaf921",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/SHEONG/MenuDuplicateChecker"
+}

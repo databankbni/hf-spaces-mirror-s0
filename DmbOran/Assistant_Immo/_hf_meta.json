@@ -1,0 +1,84 @@
+{
+ "captured_at": "2026-08-04T13:34:18Z",
+ "hf_metadata": {
+  "_id": "68629e77f07a1c689261774f",
+  "author": "DmbOran",
+  "cardData": {
+   "app_file": "app.py",
+   "colorFrom": "indigo",
+   "colorTo": "yellow",
+   "emoji": "🐨",
+   "license": "apache-2.0",
+   "sdk": "gradio",
+   "short_description": "Assistant Immobilier JEA",
+   "title": "Assistant Immo"
+  },
+  "createdAt": "2025-06-30T14:25:59.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://dmboran-assistant-immo.hf.space",
+  "id": "DmbOran/Assistant_Immo",
+  "lastModified": "2026-07-22T14:49:00.000Z",
+  "likes": 0,
+  "models": [
+   "openai/gpt-oss-safeguard-20b"
+  ],
+  "private": false,
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "dmboran-assistant-immo.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": "cpu-basic",
+    "requested": "cpu-basic"
+   },
+   "pySpacesVersion": "0.51.1",
+   "replicas": {
+    "current": 1,
+    "requested": 1
+   },
+   "sha": "450bd47bdd8b84f5f7ac5f1edba329410dadf3e0",
+   "stage": "RUNNING"
+  },
+  "sdk": "gradio",
+  "sha": "450bd47bdd8b84f5f7ac5f1edba329410dadf3e0",
+  "siblings": [
+   {
+    "rfilename": ".gitattributes"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "app.py"
+   },
+   {
+    "rfilename": "requirements.txt"
+   },
+   {
+    "rfilename": "runtime.txt"
+   }
+  ],
+  "subdomain": "dmboran-assistant-immo",
+  "tags": [
+   "gradio",
+   "region:us"
+  ],
+  "usedStorage": 0
+ },
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "DmbOran/Assistant_Immo",
+ "repo_type": "spaces",
+ "sha": "450bd47bdd8b84f5f7ac5f1edba329410dadf3e0",
+ "web_url": "https://huggingface.co/spaces/DmbOran/Assistant_Immo"
+}

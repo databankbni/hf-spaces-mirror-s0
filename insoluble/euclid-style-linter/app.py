@@ -1,0 +1,193 @@
+"""
+Gradio web app for the Euclid Consortium Editorial Board (ECEB) style linter.
+Deploy on Hugging Face Spaces (SDK: Gradio).
+"""
+
+import html
+import tempfile
+from pathlib import Path
+
+import gradio as gr
+
+from lint_euclid_style import __version__, lint_file, _CATEGORY_MAP
+
+ALL_CATS = list(_CATEGORY_MAP.keys())
+SEVERITY_ICON = {"error": "🔴", "warning": "🟡", "suggestion": "🔵"}
+SEVERITY_LABEL = {"error": "Errors", "warning": "Warnings", "suggestion": "Suggestions"}
+SEVERITY_ORDER = ("error", "warning", "suggestion")
+
+
+def _render_context_html(src_lines: list[str], lineno: int, col: int) -> str:
+    """Render ±1 line of source context as an HTML <pre> block with the
+    offending column highlighted via <mark>.  Returns "" when there's
+    nothing to show (document-level findings or out-of-range lines).
+    """
+    if lineno <= 0 or not src_lines:
+        return ""
+    out: list[str] = []
+    for ln in (lineno - 1, lineno, lineno + 1):
+        if not (1 <= ln <= len(src_lines)):
+            continue
+        raw = src_lines[ln - 1].rstrip("\n").expandtabs(4)
+        is_target = ln == lineno
+        gutter = f"<span style='color:#888'>{ln:>4}</span> │ "
+        if is_target and 0 <= col < len(raw):
+            before = html.escape(raw[:col])
+            hit    = html.escape(raw[col:col + 1]) or " "
+            after  = html.escape(raw[col + 1:])
+            body = (
+                f"{before}<mark style='background:#ffec99;"
+                f"padding:0 1px'>{hit}</mark>{after}"
+            )
+        else:
+            body = html.escape(raw)
+        prefix = "→ " if is_target else "  "
+        weight = "bold" if is_target else "normal"
+        out.append(
+            f"<span style='font-weight:{weight}'>{prefix}{gutter}{body}</span>"
+        )
+    if not out:
+        return ""
+    return (
+        "<pre style='background:#f6f8fa;padding:8px;border-radius:4px;"
+        "font-size:0.85em;line-height:1.4;overflow-x:auto;"
+        "margin:4px 0 12px 0'>"
+        + "\n".join(out)
+        + "</pre>"
+    )
+
+
+def run_linter(latex_source: str, min_severity: str, categories: list[str],
+               dialect: str = "gb", release: str = "dr1") -> str:
+    if not latex_source.strip():
+        return "Paste some LaTeX source and click **Check style**."
+
+    cats = categories if categories else ALL_CATS
+
+    with tempfile.NamedTemporaryFile(
+        mode="w", suffix=".tex", encoding="utf-8", delete=False
+    ) as tmp:
+        tmp.write(latex_source)
+        tmp_path = Path(tmp.name)
+
+    violations = lint_file(tmp_path, categories=cats, min_severity=min_severity,
+                           dialect=dialect, release=release)
+    tmp_path.unlink(missing_ok=True)
+
+    if not violations:
+        return "✅ No violations found."
+
+    n_err  = sum(1 for v in violations if v.severity == "error")
+    n_warn = sum(1 for v in violations if v.severity == "warning")
+    n_sugg = sum(1 for v in violations if v.severity == "suggestion")
+
+    # Rule-frequency table (top offenders first)
+    rule_counts: dict[str, int] = {}
+    for v in violations:
+        rule_counts[v.rule_id] = rule_counts.get(v.rule_id, 0) + 1
+    top_rules = sorted(rule_counts.items(), key=lambda kv: (-kv[1], kv[0]))
+    freq_str = " · ".join(f"`{rid}` ×{n}" for rid, n in top_rules)
+
+    src_lines = latex_source.splitlines()
+    parts: list[str] = [
+        f"**{len(violations)} violation(s)** — "
+        f"🔴 {n_err} error(s) · 🟡 {n_warn} warning(s) · 🔵 {n_sugg} suggestion(s)\n\n"
+        f"**By rule:** {freq_str}\n\n---\n"
+    ]
+
+    for sev in SEVERITY_ORDER:
+        group = [v for v in violations if v.severity == sev]
+        if not group:
+            continue
+        icon = SEVERITY_ICON[sev]
+        label = SEVERITY_LABEL[sev]
+        parts.append(f"### {icon} {label} ({len(group)})\n")
+        for v in sorted(group, key=lambda x: (x.line, x.col)):
+            sg = f" · §{v.sg_section}" if v.sg_section else ""
+            location = f"Line {v.line}" if v.line > 0 else "Document"
+            parts.append(
+                f"**{location}** · `{v.rule_id}`{sg}  \n"
+                f"{v.message}\n\n"
+                + _render_context_html(src_lines, v.line, v.col)
+            )
+
+    return "\n".join(parts)
+
+
+with gr.Blocks(title="ECEB Style Linter", analytics_enabled=False) as demo:
+    gr.Markdown(
+        f"# 🔭 Euclid Style Linter  \n"
+        f"*Linter version `v{__version__}`*\n\n"
+        f"Check your LaTeX source against the **ECEB Style Guide V5** — "
+        f"58 rules covering naming, British English, units, typesetting, references, and style."
+    )
+
+    with gr.Row():
+        with gr.Column(scale=3):
+            file_input = gr.File(
+                label="Upload a .tex file (or paste below)",
+                file_types=[".tex", ".txt"],
+                type="binary",
+            )
+            latex_input = gr.Textbox(
+                label="LaTeX source",
+                placeholder="\\documentclass{aa}\n\\begin{document}\n...\n\\end{document}",
+                lines=20,
+            )
+            check_btn = gr.Button("Check style", variant="primary")
+
+        with gr.Column(scale=1):
+            severity = gr.Radio(
+                label="Minimum severity",
+                choices=["suggestion", "warning", "error"],
+                value="suggestion",
+            )
+            dialect = gr.Radio(
+                label="English dialect",
+                choices=[("British (ECEB)", "gb"), ("American", "us")],
+                value="gb",
+                info="American skips the British-English rules (E01–E08) "
+                     "for non-ECEB papers.",
+            )
+            release = gr.Radio(
+                label="Data-release checks",
+                choices=[("DR1", "dr1"), ("none", "none")],
+                value="dr1",
+                info="DR1 requires the \\AckDRone acknowledgement and "
+                     "\\cite{DR1cite} in the document (rule R06).",
+            )
+            cats = gr.CheckboxGroup(
+                label="Categories",
+                choices=ALL_CATS,
+                value=ALL_CATS,
+            )
+
+    output = gr.Markdown(label="Results")
+
+    gr.Markdown(
+        "---\n"
+        "**Privacy**: submitted text is sent over HTTPS to this Space, "
+        "written to a temporary file, linted, and the file deleted "
+        "immediately. Nothing is stored or logged by this app, and Gradio "
+        "telemetry is disabled. The text does, however, transit Hugging "
+        "Face infrastructure. For unpublished consortium drafts, prefer "
+        "running the linter locally (it is a single stdlib-only Python "
+        "file): `git clone https://github.com/hjmcc/euclid-style-linter`"
+    )
+
+    def _load_file(data: bytes | None) -> str:
+        if not data:
+            return ""
+        try:
+            return data.decode("utf-8")
+        except UnicodeDecodeError:
+            return data.decode("latin-1", errors="replace")
+
+    file_input.change(fn=_load_file, inputs=file_input, outputs=latex_input)
+
+    check_btn.click(fn=run_linter,
+                    inputs=[latex_input, severity, cats, dialect, release],
+                    outputs=output)
+
+if __name__ == "__main__":
+    demo.launch()

@@ -1,0 +1,40 @@
+{
+  "commit": "761e5d5fef10f239472f17919c8f26e804af6009",
+  "fixtures": [
+    {
+      "away": "Egypt",
+      "date": "2026-06-15",
+      "fixture_id": "WC26-037",
+      "group": "G",
+      "home": "Belgium",
+      "kickoff_utc": "2026-06-15T19:00:00+00:00",
+      "lambda_away": 0.77317495,
+      "lambda_home": 1.75792155,
+      "p_away": 0.1323177,
+      "p_draw": 0.23769086,
+      "p_home": 0.62999144
+    }
+  ],
+  "forecast_date": "2026-06-15",
+  "forecast_horizon_seconds": 113272,
+  "generated_at": "2026-06-14T11:32:07.372220+00:00",
+  "information_cutoff": "2026-06-14T06:30:00Z",
+  "model": "Elo-to-goals Dixon-Coles fitted model",
+  "provenance": {
+    "calibration_temperature": 0.8857253661047012,
+    "model_version": "elo-dixon-coles-180d-temperature-v1",
+    "scoreline_probability_note": "Exact-score probabilities come from the fitted Dixon-Coles score matrix; temperature scaling applies only to the displayed 1X2 probabilities.",
+    "snapshot_sha256": "d6eaf92b18dbf82ebce0a97485dbafedb9f8674f71f48bce249e2f8e92a18365",
+    "team_ratings_sha256": "4ca724c50acba5a72eadcb343ac928c3473185bbba02e4983c3b2a331bd8dc4c"
+  },
+  "schema_version": "live-forecast-v2",
+  "sources": [
+    "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026",
+    "https://inside.fifa.com/fifa-world-ranking/men",
+    "https://eloratings.net/World.tsv",
+    "https://www.espn.com/soccer/match/_/gameId/760416/bosnia-herzegovina-canada",
+    "https://www.espn.com/soccer/match/_/gameId/760417/paraguay-united-states",
+    "https://www.sbnation.com/soccer/1117513/world-cup-schedule-2026-how-to-watch-every-match-scores-and-more",
+    "https://www.theguardian.com/football/live/2026/jun/14/fifa-world-cup-2026-live-socceroos-australia-v-turkey-updates-aus-vs-tur-group-d-match-score-latest"
+  ]
+}

@@ -1,0 +1,12 @@
+fastapi
+uvicorn[standard]
+
+pydantic
+python-multipart
+python-dotenv
+email-validator
+
+kokoro
+soundfile
+numpy
+edge-tts

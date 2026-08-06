@@ -1,0 +1,51 @@
+name: Deploy Hugging Face Space
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-hugging-face-space
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      HF_TOKEN: ${{ secrets.HF_TOKEN }}
+      HF_SPACE: sammoftah/World-Cup-2026-prediction
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+          lfs: true
+      - name: Validate deployment configuration
+        run: |
+          if [ -z "$HF_TOKEN" ]; then
+            echo "::error::HF_TOKEN is not configured."
+            echo "deployment_status=blocked_missing_token" >> "$GITHUB_STEP_SUMMARY"
+            exit 1
+          fi
+      - name: Push exact revision to Space
+        run: |
+          git fetch \
+            "https://sammoftah:${HF_TOKEN}@huggingface.co/spaces/${HF_SPACE}" \
+            main:refs/remotes/hugging-face/main
+          git merge-base --is-ancestor \
+            refs/remotes/hugging-face/main HEAD
+          git push "https://sammoftah:${HF_TOKEN}@huggingface.co/spaces/${HF_SPACE}" \
+            HEAD:main
+      - name: Verify deployed runtime revision
+        run: |
+          python scripts/verify_space_revision.py \
+            --space "$HF_SPACE" \
+            --expected "$(git rev-parse HEAD)" \
+            --url https://sammoftah-world-cup-2026-prediction.hf.space \
+            --timeout 600

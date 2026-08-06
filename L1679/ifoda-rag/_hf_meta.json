@@ -1,0 +1,345 @@
+{
+ "captured_at": "2026-08-04T13:54:06Z",
+ "hf_metadata": {
+  "_id": "6a4a69cae2ff4ace90f31966",
+  "author": "L1679",
+  "cardData": {
+   "app_port": 7860,
+   "colorFrom": "green",
+   "colorTo": "green",
+   "emoji": "🌱",
+   "license": "mit",
+   "pinned": false,
+   "sdk": "docker",
+   "short_description": "Agro-chemical knowledge base (RU/EN/UZ)",
+   "title": "IFODA RAG"
+  },
+  "createdAt": "2026-07-05T14:27:22.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://l1679-ifoda-rag.hf.space",
+  "id": "L1679/ifoda-rag",
+  "lastModified": "2026-07-05T15:27:39.000Z",
+  "likes": 0,
+  "models": [
+   "BAAI/bge-reranker-v2-m3",
+   "intfloat/multilingual-e5-large-instruct",
+   "cross-encoder/ms-marco-MiniLM-L6-v2"
+  ],
+  "private": false,
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "l1679-ifoda-rag.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": null,
+    "requested": "cpu-basic"
+   },
+   "replicas": {
+    "requested": 1
+   },
+   "stage": "SLEEPING"
+  },
+  "sdk": "docker",
+  "sha": "b505c17187ffe41aa047ce42bbcf4efe1759d80f",
+  "siblings": [
+   {
+    "rfilename": ".env.example"
+   },
+   {
+    "rfilename": ".gitattributes"
+   },
+   {
+    "rfilename": ".gitignore"
+   },
+   {
+    "rfilename": "Dockerfile"
+   },
+   {
+    "rfilename": "EN.pdf"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "[RE-1]_Full_pages_Product-Catalog.pdf"
+   },
+   {
+    "rfilename": "[RE]RU УДАБРЕНИЯ (2).pdf"
+   },
+   {
+    "rfilename": "_inspect.json"
+   },
+   {
+    "rfilename": "_inspect_iframe.json"
+   },
+   {
+    "rfilename": "_nav.json"
+   },
+   {
+    "rfilename": "_nav2.json"
+   },
+   {
+    "rfilename": "_nav3.json"
+   },
+   {
+    "rfilename": "_nav4.json"
+   },
+   {
+    "rfilename": "_resize.json"
+   },
+   {
+    "rfilename": "_resize2.json"
+   },
+   {
+    "rfilename": "_shot1.json"
+   },
+   {
+    "rfilename": "_wait.json"
+   },
+   {
+    "rfilename": "_wait15.json"
+   },
+   {
+    "rfilename": "_wait3s.json"
+   },
+   {
+    "rfilename": "_wait8.json"
+   },
+   {
+    "rfilename": "app.py"
+   },
+   {
+    "rfilename": "chroma_db/chroma.sqlite3"
+   },
+   {
+    "rfilename": "chroma_db/e9258fbd-ad69-479e-9501-f22a1ff9805d/data_level0.bin"
+   },
+   {
+    "rfilename": "chroma_db/e9258fbd-ad69-479e-9501-f22a1ff9805d/header.bin"
+   },
+   {
+    "rfilename": "chroma_db/e9258fbd-ad69-479e-9501-f22a1ff9805d/length.bin"
+   },
+   {
+    "rfilename": "chroma_db/e9258fbd-ad69-479e-9501-f22a1ff9805d/link_lists.bin"
+   },
+   {
+    "rfilename": "config.py"
+   },
+   {
+    "rfilename": "evaluate.py"
+   },
+   {
+    "rfilename": "frontend_src/.env.example"
+   },
+   {
+    "rfilename": "frontend_src/index.html"
+   },
+   {
+    "rfilename": "frontend_src/package-lock.json"
+   },
+   {
+    "rfilename": "frontend_src/package.json"
+   },
+   {
+    "rfilename": "frontend_src/postcss.config.mjs"
+   },
+   {
+    "rfilename": "frontend_src/public/favicon.svg"
+   },
+   {
+    "rfilename": "frontend_src/public/icons.svg"
+   },
+   {
+    "rfilename": "frontend_src/public/models/city.glb"
+   },
+   {
+    "rfilename": "frontend_src/src/App.jsx"
+   },
+   {
+    "rfilename": "frontend_src/src/api/client.js"
+   },
+   {
+    "rfilename": "frontend_src/src/assets/react.svg"
+   },
+   {
+    "rfilename": "frontend_src/src/assets/vite.svg"
+   },
+   {
+    "rfilename": "frontend_src/src/components/background/Buildings.jsx"
+   },
+   {
+    "rfilename": "frontend_src/src/components/background/CityModel.jsx"
+   },
+   {
+    "rfilename": "frontend_src/src/components/background/NightCity.jsx"
+   },
+   {
+    "rfilename": "frontend_src/src/components/chat/ChatMode.jsx"
+   },
+   {
+    "rfilename": "frontend_src/src/components/chat/CitationList.jsx"
+   },
+   {
+    "rfilename": "frontend_src/src/components/layout/BottomHUD.jsx"
+   },
+   {
+    "rfilename": "frontend_src/src/components/layout/TopBar.jsx"
+   },
+   {
+    "rfilename": "frontend_src/src/components/search/SearchMode.jsx"
+   },
+   {
+    "rfilename": "frontend_src/src/components/ui/ConfidenceBadge.jsx"
+   },
+   {
+    "rfilename": "frontend_src/src/components/ui/ConfidenceBar.jsx"
+   },
+   {
+    "rfilename": "frontend_src/src/components/ui/DigitalRain.jsx"
+   },
+   {
+    "rfilename": "frontend_src/src/components/ui/ErrorBoundary.jsx"
+   },
+   {
+    "rfilename": "frontend_src/src/components/ui/FontScaleToggle.jsx"
+   },
+   {
+    "rfilename": "frontend_src/src/components/ui/GlitchText.jsx"
+   },
+   {
+    "rfilename": "frontend_src/src/components/ui/HoloPanel.jsx"
+   },
+   {
+    "rfilename": "frontend_src/src/components/ui/LoadingGlitch.jsx"
+   },
+   {
+    "rfilename": "frontend_src/src/components/ui/NeonButton.jsx"
+   },
+   {
+    "rfilename": "frontend_src/src/components/ui/NeonInput.jsx"
+   },
+   {
+    "rfilename": "frontend_src/src/components/ui/RainGlass.jsx"
+   },
+   {
+    "rfilename": "frontend_src/src/components/ui/Scanlines.jsx"
+   },
+   {
+    "rfilename": "frontend_src/src/components/ui/Typewriter.jsx"
+   },
+   {
+    "rfilename": "frontend_src/src/hooks/useClock.js"
+   },
+   {
+    "rfilename": "frontend_src/src/hooks/useFontScale.js"
+   },
+   {
+    "rfilename": "frontend_src/src/hooks/useLanguage.js"
+   },
+   {
+    "rfilename": "frontend_src/src/hooks/useTelegram.js"
+   },
+   {
+    "rfilename": "frontend_src/src/hooks/useTypewriter.js"
+   },
+   {
+    "rfilename": "frontend_src/src/i18n/en.json"
+   },
+   {
+    "rfilename": "frontend_src/src/i18n/index.js"
+   },
+   {
+    "rfilename": "frontend_src/src/i18n/ru.json"
+   },
+   {
+    "rfilename": "frontend_src/src/i18n/uz.json"
+   },
+   {
+    "rfilename": "frontend_src/src/index.css"
+   },
+   {
+    "rfilename": "frontend_src/src/main.jsx"
+   },
+   {
+    "rfilename": "frontend_src/vite.config.js"
+   },
+   {
+    "rfilename": "ifoda EN.pdf"
+   },
+   {
+    "rfilename": "ingest.py"
+   },
+   {
+    "rfilename": "main.py"
+   },
+   {
+    "rfilename": "query.py"
+   },
+   {
+    "rfilename": "requirements.txt"
+   },
+   {
+    "rfilename": "retriever.py"
+   },
+   {
+    "rfilename": "server.py"
+   },
+   {
+    "rfilename": "static/assets/ChatMode-D60_af8P.js"
+   },
+   {
+    "rfilename": "static/assets/CitationList-CXEViaPh.js"
+   },
+   {
+    "rfilename": "static/assets/SearchMode-Cad0-1tD.js"
+   },
+   {
+    "rfilename": "static/assets/index-B26HipBZ.js"
+   },
+   {
+    "rfilename": "static/assets/index-f09zMuQ5.css"
+   },
+   {
+    "rfilename": "static/favicon.svg"
+   },
+   {
+    "rfilename": "static/icons.svg"
+   },
+   {
+    "rfilename": "static/index.html"
+   },
+   {
+    "rfilename": "static/models/city.glb"
+   },
+   {
+    "rfilename": "Б-2024 - названия_товаров.xlsx"
+   },
+   {
+    "rfilename": "КАТАЛОГ ПРЕПАРАТОВ (2)(en) (2).docx"
+   }
+  ],
+  "subdomain": "l1679-ifoda-rag",
+  "tags": [
+   "docker",
+   "region:us"
+  ],
+  "usedStorage": 213305720
+ },
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "L1679/ifoda-rag",
+ "repo_type": "spaces",
+ "sha": "b505c17187ffe41aa047ce42bbcf4efe1759d80f",
+ "web_url": "https://huggingface.co/spaces/L1679/ifoda-rag"
+}

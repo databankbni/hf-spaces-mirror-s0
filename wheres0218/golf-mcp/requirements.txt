@@ -1,0 +1,19 @@
+# Runtime dependencies for the hosted Golf Swing Coach MCP server.
+# (yt-dlp was only used by the local data-build scripts and is intentionally
+# omitted to keep the deployed image small.)
+mcp[cli]>=1.27.2
+chromadb>=1.5.9
+rank-bm25>=0.2.2
+# Added for the analyze_swing_video tool:
+anthropic>=0.39
+imageio-ffmpeg>=0.5.1
+# Free on-server swing analysis (pose detection + rules). mediapipe pinned to a
+# jax-free release to keep the image light enough for a 512MB host.
+mediapipe==0.10.9
+numpy>=1.24,<2.0
+# Added for the mobile-app /analyze route (Starlette multipart file uploads):
+python-multipart>=0.0.9
+# Optional: upgrades /analyze from the free MediaPipe rule engine above to full
+# Gemini vision analysis when GEMINI_API_KEY is set (falls back automatically
+# if it isn't). Free tier, rate-limited, from Google AI Studio.
+google-genai>=1.0.0

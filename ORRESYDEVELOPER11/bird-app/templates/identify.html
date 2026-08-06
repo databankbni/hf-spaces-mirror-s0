@@ -1,0 +1,691 @@
+{% extends "base.html" %}
+{% block title %}AI Bird Image Recognition | Tanzania Bird Finder{% endblock %}
+{% block content %}
+<section class="page-hero">
+  <span class="eyebrow">Computer vision</span>
+  <h1>AI bird image recognition</h1>
+  <p>Upload a real bird photo. The system preprocesses the image, extracts visual features, and predicts against Tanzania-only bird records.</p>
+</section>
+
+<section class="section ai-layout">
+  <div class="upload-multi-source">
+    <div class="upload-source-card">
+      <div class="upload-tabs">
+        <button class="upload-tab active" data-tab="upload" type="button">
+          <i data-lucide="image-up"></i>
+          <span>Upload photo</span>
+        </button>
+        <button class="upload-tab" data-tab="camera" type="button">
+          <i data-lucide="camera"></i>
+          <span>Capture camera</span>
+        </button>
+      </div>
+
+      <form id="identify-form" class="upload-card" method="post" enctype="multipart/form-data">
+        <input id="bird-image-input" type="file" name="bird_image" accept="image/jpeg,image/png,image/webp" required style="display:none;" />
+
+        <div id="upload-panel" class="upload-panel active">
+          <div class="upload-drop" id="upload-drop-zone">
+            <div class="upload-drop-content">
+              <i data-lucide="image-up"></i>
+              <strong>Drop your bird photo here</strong>
+              <span>or click to browse files</span>
+              <span class="upload-hint">JPG, PNG, or WEBP &middot; Max 8 MB</span>
+            </div>
+            <div class="upload-drop-preview" id="upload-preview-area" style="display:none;">
+              <img id="upload-preview-img" alt="Preview">
+              <div class="upload-preview-overlay">
+                <button id="change-file-btn" class="button secondary" type="button">
+                  <i data-lucide="rotate-cw"></i> Change
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="ai-steps">
+            <span><strong>1</strong> Validate upload</span>
+            <span><strong>2</strong> Resize and normalize</span>
+            <span><strong>3</strong> Extract visual features</span>
+            <span><strong>4</strong> Match Tanzania bird species</span>
+          </div>
+        </div>
+
+        <div id="camera-panel" class="upload-panel">
+          <div class="camera-wrapper">
+            <div class="camera-viewport" id="camera-viewport">
+              <video id="camera-video" autoplay playsinline muted></video>
+              <div class="camera-start-overlay" id="camera-start-overlay">
+                <i data-lucide="camera"></i>
+                <strong>Tap to start camera</strong>
+              </div>
+              <div id="camera-error" class="camera-error" role="alert" style="display:none;"></div>
+            </div>
+            <div class="camera-actions">
+              <button id="capture-btn" class="button primary" type="button" disabled>
+                <i data-lucide="scan-search"></i>
+                Capture
+              </button>
+              <button id="stop-camera-btn" class="button secondary" type="button" disabled>
+                <i data-lucide="square"></i>
+                Stop
+              </button>
+            </div>
+            <p class="hint">Hold steady, keep the bird centered, and ensure good light.</p>
+          </div>
+        </div>
+
+        <div class="review-bar">
+          <div class="review-media">
+            <img id="preview-image" src="{{ url_for('static', filename='img/placeholder.svg') }}" alt="Preview" />
+          </div>
+          <div class="review-info">
+            <span class="review-label">Preview</span>
+            <span id="file-name-display" class="review-filename">No file selected</span>
+            <button id="confirm-btn" class="button primary full" type="button" disabled>
+              <i data-lucide="scan-search"></i>
+              Confirm & Analyze
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div>
+    {% if result %}
+    <div class="result-report">
+      <!-- === HEADER === -->
+      <div class="report-hero">
+        <div class="report-hero-media">
+          <img src="{{ upload_url }}" alt="Uploaded bird image">
+          <div class="report-hero-badges">
+            <span class="r-badge r-badge-model">{{ result.model_name }}</span>
+            <span class="r-badge r-badge-conf">{{ result.confidence }}% confidence</span>
+          </div>
+        </div>
+        <div class="report-hero-body">
+          <span class="eyebrow">Identified species</span>
+          <h1>{{ result.bird.common_name }}</h1>
+          <p class="latin">{{ result.bird.scientific_name }}</p>
+
+          <div class="hero-stats">
+            <div class="hero-stat">
+              <i data-lucide="scan-search"></i>
+              <div>
+                <span>AI confidence</span>
+                <div class="mini-bar">
+                  <div class="mini-bar-fill" style="width:{{ result.confidence }}%;"></div>
+                </div>
+                <strong>{{ result.confidence }}%</strong>
+              </div>
+            </div>
+            <div class="hero-stat">
+              <i data-lucide="leaf"></i>
+              <div>
+                <span>Habitat</span>
+                <strong>{{ result.bird.habitat.name }}</strong>
+              </div>
+            </div>
+            <div class="hero-stat">
+              <i data-lucide="map-pin"></i>
+              <div>
+                <span>Region</span>
+                <strong>{{ result.bird.region }}</strong>
+              </div>
+            </div>
+            <div class="hero-stat">
+              <i data-lucide="shield-check"></i>
+              <div>
+                <span>Status</span>
+                {% set status = result.bird.conservation_status %}
+                {% if "Endangered" in status %}
+                  <strong class="status-danger">{{ status }}</strong>
+                {% elif "Near Threatened" in status or "Vulnerable" in status %}
+                  <strong class="status-warning">{{ status }}</strong>
+                {% else %}
+                  <strong class="status-safe">{{ status }}</strong>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- === TWO-COLUMN DETAIL === -->
+      <div class="report-two-col">
+        <!-- LEFT: Image analysis -->
+        <div class="report-left">
+          {% if result.gradcam_url %}
+          <div class="report-card">
+            <div class="report-card-header">
+              <i data-lucide="brain"></i>
+              <div>
+                <span class="eyebrow">Explainable AI</span>
+                <h3>Why this prediction?</h3>
+              </div>
+            </div>
+            <div class="xai-comparison">
+              <div class="xai-image">
+                <img src="{{ upload_url }}" alt="Original">
+                <span>Uploaded</span>
+              </div>
+              <div class="xai-arrow">
+                <i data-lucide="arrow-right"></i>
+              </div>
+              <div class="xai-image">
+                <img src="{{ result.gradcam_url }}" alt="Grad-CAM">
+                <span>AI attention</span>
+              </div>
+            </div>
+            <p class="report-hint">Red regions show where the AI focused — wing shape, beak, feather patterns, or body contours.</p>
+          </div>
+          {% endif %}
+
+          <div class="report-card">
+            <div class="report-card-header">
+              <i data-lucide="book-open"></i>
+              <div>
+                <span class="eyebrow">Profile</span>
+                <h3>Species notes</h3>
+              </div>
+            </div>
+            <p class="report-text">{{ result.bird.description }}</p>
+          </div>
+
+          {% if result.exif and result.exif.gps %}
+          <div class="report-card">
+            <div class="report-card-header">
+              <i data-lucide="map-pinned"></i>
+              <div>
+                <span class="eyebrow">Metadata</span>
+                <h3>Photo location</h3>
+              </div>
+            </div>
+            <div class="exif-grid">
+              <div class="exif-row">
+                <i data-lucide="map-pin"></i>
+                <span class="exif-label">GPS</span>
+                <span class="exif-value">{{ result.exif.gps.lat }}, {{ result.exif.gps.lon }}</span>
+              </div>
+              {% if result.exif.timestamp %}
+              <div class="exif-row">
+                <i data-lucide="calendar"></i>
+                <span class="exif-label">Captured</span>
+                <span class="exif-value">{{ result.exif.timestamp }}</span>
+              </div>
+              {% endif %}
+              {% if result.exif.camera %}
+              <div class="exif-row">
+                <i data-lucide="camera"></i>
+                <span class="exif-label">Device</span>
+                <span class="exif-value">{{ result.exif.camera.get('make','') }} {{ result.exif.camera.get('model','') }}</span>
+              </div>
+              {% endif %}
+            </div>
+            <div class="exif-sighting">
+              <i data-lucide="{{ 'check-circle' if result.sighting_created else 'circle' }}"></i>
+              <span>{% if result.sighting_created %}This sighting has been added to the biodiversity map{% else %}No GPS coordinates embedded in photo{% endif %}</span>
+            </div>
+          </div>
+          {% endif %}
+        </div>
+
+        <!-- RIGHT: Ecology & behavior -->
+        <div class="report-right">
+          <div class="report-card">
+            <div class="report-card-header">
+              <i data-lucide="trees"></i>
+              <div>
+                <span class="eyebrow">Ecology</span>
+                <h3>Habitat details</h3>
+              </div>
+            </div>
+            <div class="eco-grid">
+              <div class="eco-item">
+                <i data-lucide="info"></i>
+                <span>Description</span>
+                <p>{{ result.bird.habitat.description }}</p>
+              </div>
+              <div class="eco-item">
+                <i data-lucide="thermometer"></i>
+                <span>Climate</span>
+                <p>{{ result.bird.habitat.climate }}</p>
+              </div>
+              <div class="eco-item">
+                <i data-lucide="tree-pine"></i>
+                <span>Ecosystem</span>
+                <p>{{ result.bird.habitat.ecosystem_data }}</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="report-card">
+            <div class="report-card-header">
+              <i data-lucide="footprints"></i>
+              <div>
+                <span class="eyebrow">Behavior</span>
+                <h3>Tabia / Habits</h3>
+              </div>
+            </div>
+            <div class="eco-grid">
+              <div class="eco-item">
+                <i data-lucide="navigation"></i>
+                <span>Migration pattern</span>
+                <p>{{ result.bird.migration_pattern }}</p>
+              </div>
+              <div class="eco-item">
+                <i data-lucide="map-pin"></i>
+                <span>Region in Tanzania</span>
+                <p>{{ result.bird.region }}</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- PARKS -->
+          <div class="report-card">
+            <div class="report-card-header">
+              <i data-lucide="map"></i>
+              <div>
+                <span class="eyebrow">Found in Tanzania</span>
+                <h3>Linked parks</h3>
+              </div>
+            </div>
+            <div class="park-strip-vertical">
+              {% for park in result.parks %}
+                <a class="park-row" href="{{ url_for('park_detail', park_id=park.id) }}">
+                  <div class="park-row-img">
+                    <img src="{{ park.image_url }}" alt="{{ park.name }}">
+                  </div>
+                  <div class="park-row-body">
+                    <strong>{{ park.name }}</strong>
+                    <span>{{ park.region }} &middot; {{ park.habitat_type }}</span>
+                  </div>
+                  <i data-lucide="chevron-right" class="park-row-arrow"></i>
+                </a>
+              {% else %}
+                <p class="empty-state-sm">No linked park records yet for this species.</p>
+              {% endfor %}
+            </div>
+          </div>
+
+          <!-- ACTIONS -->
+          <div class="report-actions">
+            <form method="post" action="{{ url_for('favorite', item_type='bird', item_id=result.bird.id) }}">
+              <button class="button secondary" type="submit"><i data-lucide="bookmark"></i>Save to favorites</button>
+            </form>
+            {% if current_user and current_user.role in ('contributor', 'admin') %}
+            <form method="post" action="{{ url_for('verify_prediction', prediction_id=result.record.id) }}">
+              <input type="hidden" name="action" value="verify">
+              <button class="button primary" type="submit"><i data-lucide="check-circle"></i>Verify identification</button>
+            </form>
+            <form method="post" action="{{ url_for('verify_prediction', prediction_id=result.record.id) }}">
+              <input type="hidden" name="action" value="flag">
+              <button class="button secondary" type="submit"><i data-lucide="flag"></i>Flag for review</button>
+            </form>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+
+      <!-- === ALTERNATIVES === -->
+      <section class="report-alt-section">
+        <div class="section-heading">
+          <span class="eyebrow">Model alternatives</span>
+          <h2>Next closest Tanzania matches</h2>
+        </div>
+        <div class="alt-scroll">
+          {% for item in result.alternatives %}
+            {% set bird = item.bird %}
+            <a class="alt-card" href="{{ url_for('species_detail', bird_id=bird.id) }}">
+              <div class="alt-card-img">
+                <img src="{{ bird.image_url }}" alt="{{ bird.common_name }}">
+                <span class="alt-card-conf">{{ item.confidence }}%</span>
+              </div>
+              <div class="alt-card-body">
+                <strong>{{ bird.common_name }}</strong>
+                <span class="latin-sm">{{ bird.scientific_name }}</span>
+              </div>
+            </a>
+          {% endfor %}
+        </div>
+      </section>
+    </div>
+    {% else %}
+    <aside class="ai-info">
+      <i data-lucide="cpu"></i>
+      <h2>Tanzania-only AI boundary</h2>
+      <p>The recognition module compares uploads only against birds in the Tanzania database. It does not return non-Tanzanian park or species records.</p>
+      <p>For production, connect a fine-tuned CNN or TensorFlow Lite model trained on validated Tanzania bird images. This implementation already follows the same upload, preprocessing, feature extraction, prediction, and result workflow.</p>
+    </aside>
+    {% endif %}
+  </div>
+</section>
+
+<div id="loading-overlay" class="loading-overlay" style="display:none;">
+  <div class="loading-card">
+    <div class="spinner spinner-lg"></div>
+    <strong>Analyzing your image...</strong>
+    <div class="loading-steps">
+      <span id="ls-1" class="loading-step">Validating and preprocessing image</span>
+      <span id="ls-2" class="loading-step">Extracting visual features</span>
+      <span id="ls-3" class="loading-step">Matching against Tanzania species</span>
+      <span id="ls-4" class="loading-step">Generating results</span>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function () {
+    const form = document.getElementById('identify-form');
+    const fileInput = document.getElementById('bird-image-input');
+    const chooseFileBtn = document.getElementById('change-file-btn');
+    const uploadDropZone = document.getElementById('upload-drop-zone');
+    const uploadPreviewArea = document.getElementById('upload-preview-area');
+    const uploadPreviewImg = document.getElementById('upload-preview-img');
+    const uploadDropContent = document.querySelector('.upload-drop-content');
+    const stopCameraBtn = document.getElementById('stop-camera-btn');
+    const captureBtn = document.getElementById('capture-btn');
+    const confirmBtn = document.getElementById('confirm-btn');
+    const previewImage = document.getElementById('preview-image');
+    const fileNameDisplay = document.getElementById('file-name-display');
+    const video = document.getElementById('camera-video');
+    const cameraError = document.getElementById('camera-error');
+    const cameraOverlay = document.getElementById('camera-start-overlay');
+    const cameraViewport = document.getElementById('camera-viewport');
+    const loadingOverlay = document.getElementById('loading-overlay');
+    const tabs = document.querySelectorAll('.upload-tab');
+    const uploadPanel = document.getElementById('upload-panel');
+    const cameraPanel = document.getElementById('camera-panel');
+
+    let stream = null;
+    let selectedFile = null;
+    let _starting = false;
+
+    function setError(msg) {
+      if (!cameraError) return;
+      if (!msg) {
+        cameraError.style.display = 'none';
+        cameraError.textContent = '';
+        return;
+      }
+      cameraError.style.display = 'block';
+      cameraError.textContent = msg;
+    }
+
+    function setConfirmEnabled(enabled) {
+      confirmBtn.disabled = !enabled;
+    }
+
+    function setCaptureEnabled(enabled) {
+      captureBtn.disabled = !enabled;
+    }
+
+    function setStopEnabled(enabled) {
+      stopCameraBtn.disabled = !enabled;
+    }
+
+    function updatePreview(file) {
+      if (!file) return;
+      selectedFile = file;
+      const url = URL.createObjectURL(file);
+      previewImage.src = url;
+      fileNameDisplay.textContent = file.name;
+      setConfirmEnabled(true);
+
+      if (uploadDropZone && uploadDropContent && uploadPreviewArea) {
+        uploadDropContent.style.display = 'none';
+        uploadPreviewArea.style.display = 'flex';
+        uploadPreviewImg.src = url;
+      }
+    }
+
+    function resetUploadZone() {
+      if (uploadDropContent && uploadPreviewArea) {
+        uploadDropContent.style.display = '';
+        uploadPreviewArea.style.display = 'none';
+      }
+      uploadPreviewImg.src = '';
+    }
+
+    chooseFileBtn?.addEventListener('click', (e) => {
+      e.stopPropagation();
+      fileInput?.click();
+    });
+
+    uploadDropZone?.addEventListener('click', () => {
+      fileInput?.click();
+    });
+
+    uploadDropZone?.addEventListener('dragover', (e) => {
+      e.preventDefault();
+      uploadDropZone.classList.add('drag-over');
+    });
+
+    uploadDropZone?.addEventListener('dragleave', () => {
+      uploadDropZone.classList.remove('drag-over');
+    });
+
+    uploadDropZone?.addEventListener('drop', (e) => {
+      e.preventDefault();
+      uploadDropZone.classList.remove('drag-over');
+      const files = e.dataTransfer.files;
+      if (files.length > 0) {
+        fileInput.files = files;
+        handleFileSelect(files[0]);
+      }
+    });
+
+    function handleFileSelect(file) {
+      if (!file) return;
+      const ok = ['image/jpeg', 'image/png', 'image/webp'].includes(file.type) || /\.(jpe?g|png|webp)$/i.test(file.name);
+      if (!ok) {
+        setError('Please choose a JPG, PNG, or WEBP image.');
+        setConfirmEnabled(false);
+        selectedFile = null;
+        fileInput.value = '';
+        previewImage.src = '{{ url_for("static", filename="img/placeholder.svg") }}';
+        resetUploadZone();
+        return;
+      }
+      setError('');
+      updatePreview(file);
+    }
+
+    fileInput?.addEventListener('change', () => {
+      const file = fileInput.files && fileInput.files[0];
+      handleFileSelect(file);
+    });
+
+    // Overlay tap starts camera
+    cameraViewport?.addEventListener('click', () => {
+      if (!stream) startCamera();
+    });
+
+    // Tab switching
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        const target = tab.dataset.tab;
+        if (target === 'upload') {
+          uploadPanel.classList.add('active');
+          cameraPanel.classList.remove('active');
+          stopCamera();
+        } else {
+          cameraPanel.classList.add('active');
+          uploadPanel.classList.remove('active');
+        }
+      });
+    });
+
+    function isCameraSupported() {
+      return !!(navigator.mediaDevices && navigator.mediaDevices.getUserMedia);
+    }
+
+    async function startCamera() {
+      if (_starting || stream) return;
+      _starting = true;
+      setError('');
+      if (!isCameraSupported()) {
+        setError('Camera is not supported on this device/browser. Use upload instead.');
+        _starting = false;
+        return;
+      }
+      try {
+        stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' }, audio: false });
+        video.srcObject = stream;
+        await video.play();
+        if (cameraOverlay) cameraOverlay.classList.add('hidden');
+        setStopEnabled(true);
+        setCaptureEnabled(true);
+      } catch (e) {
+        if (cameraOverlay) cameraOverlay.classList.remove('hidden');
+        const isHttp = window.location.protocol === 'http:' && window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1';
+        const msg = isHttp
+          ? 'Camera requires HTTPS on mobile. Access this page via HTTPS or switch to Upload.'
+          : 'Camera permission denied or unavailable. Use upload instead.';
+        setError(msg);
+      } finally {
+        _starting = false;
+      }
+    }
+
+    function stopCamera() {
+      try {
+        if (stream) {
+          stream.getTracks().forEach((t) => t.stop());
+        }
+      } finally {
+        stream = null;
+        if (video) video.srcObject = null;
+        if (cameraOverlay) cameraOverlay.classList.remove('hidden');
+        setStopEnabled(false);
+        setCaptureEnabled(false);
+      }
+    }
+
+    function submitFormWithFile(file) {
+      const formData = new FormData(form);
+      formData.set('bird_image', file, file.name);
+      loadingOverlay.style.display = 'flex';
+      resetLoadingSteps();
+      animateLoadingSteps();
+      const xhr = new XMLHttpRequest();
+      xhr.open('POST', form.action, true);
+      xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+      xhr.onload = function () {
+        if (xhr.status === 200) {
+          document.open();
+          document.write(xhr.responseText);
+          document.close();
+        } else {
+          loadingOverlay.style.display = 'none';
+          try {
+            const data = JSON.parse(xhr.responseText);
+            if (data.error) window.showToast && window.showToast(data.error, 'error');
+          } catch (_) {
+            setError('Server error. Please try again.');
+          }
+        }
+      };
+      xhr.onerror = function () {
+        loadingOverlay.style.display = 'none';
+        setError('Network error. Please try again.');
+      };
+      xhr.send(formData);
+    }
+
+    stopCameraBtn?.addEventListener('click', stopCamera);
+
+    function dataURLToFile(dataUrl, filename) {
+      const arr = dataUrl.split(',');
+      const mime = arr[0].match(/:(.*?);/)?.[1] || 'image/jpeg';
+      const bstr = atob(arr[1]);
+      let n = bstr.length;
+      const u8arr = new Uint8Array(n);
+      while (n--) u8arr[n] = bstr.charCodeAt(n);
+      return new File([u8arr], filename, { type: mime });
+    }
+
+    captureBtn?.addEventListener('click', async () => {
+      setError('');
+      if (!video || !video.videoWidth || !video.videoHeight) {
+        setError('Camera is not ready yet. Try again in a moment.');
+        return;
+      }
+      const canvas = document.createElement('canvas');
+      canvas.width = video.videoWidth;
+      canvas.height = video.videoHeight;
+      const ctx = canvas.getContext('2d');
+      ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+      canvas.toBlob((blob) => {
+        if (!blob) {
+          setError('Could not capture photo. Please try again.');
+          return;
+        }
+        const blobUrl = URL.createObjectURL(blob);
+        previewImage.src = blobUrl;
+        const file = new File([blob], `captured-bird-${Date.now()}.jpg`, { type: blob.type || 'image/jpeg' });
+        const dt = new DataTransfer();
+        dt.items.add(file);
+        fileInput.files = dt.files;
+        selectedFile = file;
+        fileNameDisplay.textContent = file.name;
+        setConfirmEnabled(true);
+        // Switch to upload tab to show preview
+        tabs.forEach(t => t.classList.remove('active'));
+        document.querySelector('[data-tab="upload"]')?.classList.add('active');
+        uploadPanel.classList.add('active');
+        cameraPanel.classList.remove('active');
+        stopCamera();
+        // Show in upload preview
+        if (uploadDropContent && uploadPreviewArea) {
+          uploadDropContent.style.display = 'none';
+          uploadPreviewArea.style.display = 'flex';
+          uploadPreviewImg.src = blobUrl;
+        }
+      }, 'image/jpeg', 0.88);
+    });
+
+    function animateLoadingSteps() {
+      const steps = [
+        document.getElementById('ls-1'),
+        document.getElementById('ls-2'),
+        document.getElementById('ls-3'),
+        document.getElementById('ls-4'),
+      ];
+      steps.forEach((s, i) => {
+        if (!s) return;
+        setTimeout(() => s.classList.add('active'), (i + 1) * 800);
+      });
+    }
+
+    function resetLoadingSteps() {
+      ['ls-1', 'ls-2', 'ls-3', 'ls-4'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.classList.remove('active');
+      });
+    }
+
+    confirmBtn?.addEventListener('click', () => {
+      const file = selectedFile || (fileInput.files && fileInput.files[0]);
+      if (!file) {
+        setError('Please select or capture a photo first.');
+        return;
+      }
+      submitFormWithFile(file);
+    });
+
+    if (isCameraSupported()) {
+      // show camera panel by default with tap-to-start overlay
+      tabs.forEach(t => t.classList.remove('active'));
+      document.querySelector('[data-tab="camera"]')?.classList.add('active');
+      cameraPanel.classList.add('active');
+      uploadPanel.classList.remove('active');
+      if (cameraOverlay) cameraOverlay.classList.remove('hidden');
+    }
+    setConfirmEnabled(false);
+    setCaptureEnabled(false);
+    setStopEnabled(false);
+  })();
+</script>
+{% endblock %}

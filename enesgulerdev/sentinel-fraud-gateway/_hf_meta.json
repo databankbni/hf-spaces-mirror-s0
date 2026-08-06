@@ -1,0 +1,88 @@
+{
+ "captured_at": "2026-08-06T03:14:12Z",
+ "hf_metadata": {
+  "_id": "6a2e74358af4ee2501cf1f79",
+  "author": "enesgulerdev",
+  "cardData": {
+   "app_file": "app.py",
+   "colorFrom": "yellow",
+   "colorTo": "pink",
+   "emoji": "👁",
+   "license": "mit",
+   "pinned": false,
+   "python_version": "3.13",
+   "sdk": "gradio",
+   "sdk_version": "6.18.0",
+   "title": "Sentinel Fraud Gateway"
+  },
+  "createdAt": "2026-06-14T09:28:21.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://enesgulerdev-sentinel-fraud-gateway.hf.space",
+  "id": "enesgulerdev/sentinel-fraud-gateway",
+  "lastModified": "2026-08-05T09:35:11.000Z",
+  "likes": 0,
+  "private": false,
+  "region": "us",
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "enesgulerdev-sentinel-fraud-gateway.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": "cpu-basic",
+    "requested": "cpu-basic"
+   },
+   "pySpacesVersion": "0.51.1",
+   "replicas": {
+    "current": 1,
+    "requested": 1
+   },
+   "sha": "3e7e0a8d16c3a09c307e4f1028f43211d34eb758",
+   "stage": "RUNNING"
+  },
+  "sdk": "gradio",
+  "sha": "3e7e0a8d16c3a09c307e4f1028f43211d34eb758",
+  "siblings": [
+   {
+    "rfilename": ".gitattributes"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "app.py"
+   },
+   {
+    "rfilename": "requirements.txt"
+   }
+  ],
+  "subdomain": "enesgulerdev-sentinel-fraud-gateway",
+  "tags": [
+   "gradio",
+   "region:us"
+  ],
+  "usedStorage": 0
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "enesgulerdev/sentinel-fraud-gateway",
+ "repo_type": "spaces",
+ "sha": "3e7e0a8d16c3a09c307e4f1028f43211d34eb758",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/enesgulerdev/sentinel-fraud-gateway"
+}

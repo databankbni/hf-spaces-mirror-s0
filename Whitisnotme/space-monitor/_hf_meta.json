@@ -1,0 +1,91 @@
+{
+ "captured_at": "2026-08-04T15:34:22Z",
+ "hf_metadata": {
+  "_id": "6a49851788bc7c29b6cb660a",
+  "author": "Whitisnotme",
+  "cardData": {
+   "app_port": 8080,
+   "colorFrom": "red",
+   "colorTo": "green",
+   "emoji": "🚀",
+   "pinned": false,
+   "sdk": "docker",
+   "title": "Space Monitor"
+  },
+  "createdAt": "2026-07-04T22:11:35.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://whitisnotme-space-00.hf.space",
+  "id": "Whitisnotme/space-00",
+  "lastModified": "2026-07-05T00:40:19.000Z",
+  "likes": 0,
+  "private": false,
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "whitisnotme-space-monitor.hf.space",
+     "stage": "READY"
+    },
+    {
+     "domain": "whitisnotme-space-00.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": null,
+    "requested": "cpu-basic"
+   },
+   "replicas": {
+    "requested": 1
+   },
+   "stage": "SLEEPING"
+  },
+  "sdk": "docker",
+  "sha": "0e05af6c886bc6dac43c5e9303a56ef2efdcec9a",
+  "siblings": [
+   {
+    "rfilename": ".gitattributes"
+   },
+   {
+    "rfilename": "Dockerfile"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "package.json"
+   },
+   {
+    "rfilename": "public/index.html"
+   },
+   {
+    "rfilename": "server.js"
+   }
+  ],
+  "subdomain": "whitisnotme-space-00",
+  "tags": [
+   "docker",
+   "region:us"
+  ],
+  "usedStorage": 0
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "Whitisnotme/space-monitor",
+ "repo_type": "spaces",
+ "sha": "0e05af6c886bc6dac43c5e9303a56ef2efdcec9a",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/Whitisnotme/space-monitor"
+}

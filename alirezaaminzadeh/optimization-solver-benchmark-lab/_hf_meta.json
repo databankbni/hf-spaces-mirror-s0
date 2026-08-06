@@ -1,0 +1,125 @@
+{
+ "captured_at": "2026-08-04T15:51:32Z",
+ "hf_metadata": {
+  "_id": "697cbae37b4ea8733c84ae5e",
+  "author": "alirezaaminzadeh",
+  "cardData": {
+   "app_file": "app.py",
+   "colorFrom": "indigo",
+   "colorTo": "blue",
+   "emoji": "⚖️",
+   "license": "mit",
+   "pinned": false,
+   "python_version": "3.12",
+   "sdk": "gradio",
+   "sdk_version": "5.50.0",
+   "short_description": "Benchmark OR solvers with meta-model advisor",
+   "title": "Optimization Solver Benchmark Lab"
+  },
+  "createdAt": "2026-01-30T14:06:27.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://alirezaaminzadeh-optimization-solver-benchmark-lab.hf.space",
+  "id": "alirezaaminzadeh/optimization-solver-benchmark-lab",
+  "lastModified": "2026-07-31T21:33:11.000Z",
+  "likes": 0,
+  "private": false,
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "syeedalireza-optillm-neural-optimization-solver.hf.space",
+     "stage": "READY"
+    },
+    {
+     "domain": "alirezaaminzadeh-optillm-neural-optimization-solver.hf.space",
+     "stage": "READY"
+    },
+    {
+     "domain": "alirezaaminzadeh-optimization-solver-benchmark-lab.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": null,
+    "requested": "cpu-basic"
+   },
+   "replicas": {
+    "requested": 1
+   },
+   "stage": "SLEEPING"
+  },
+  "sdk": "gradio",
+  "sha": "0273d47882d69611d575c13d2dbf3dbf27dd6ca3",
+  "siblings": [
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "app.py"
+   },
+   {
+    "rfilename": "assets/demo/benchmarks.json"
+   },
+   {
+    "rfilename": "assets/demo/comparisons.json"
+   },
+   {
+    "rfilename": "assets/demo/scalability.json"
+   },
+   {
+    "rfilename": "assets/demo/summary.json"
+   },
+   {
+    "rfilename": "assets/model/metamodel_weights.json"
+   },
+   {
+    "rfilename": "requirements.txt"
+   },
+   {
+    "rfilename": "src/solvbench/__init__.py"
+   },
+   {
+    "rfilename": "src/solvbench/constants.py"
+   },
+   {
+    "rfilename": "src/solvbench/engine.py"
+   },
+   {
+    "rfilename": "src/solvbench/features.py"
+   },
+   {
+    "rfilename": "src/solvbench/generators.py"
+   },
+   {
+    "rfilename": "src/solvbench/metamodel.py"
+   },
+   {
+    "rfilename": "src/solvbench/models.py"
+   },
+   {
+    "rfilename": "src/solvbench/pipeline.py"
+   },
+   {
+    "rfilename": "src/solvbench/solvers.py"
+   },
+   {
+    "rfilename": "src/solvbench/visualization.py"
+   }
+  ],
+  "subdomain": "alirezaaminzadeh-optimization-solver-benchmark-lab",
+  "tags": [
+   "gradio",
+   "region:us"
+  ],
+  "usedStorage": 0
+ },
+ "renamed_git_metadata": [],
+ "renamed_gitattributes": [],
+ "repo_id": "alirezaaminzadeh/optimization-solver-benchmark-lab",
+ "repo_type": "spaces",
+ "sha": "0273d47882d69611d575c13d2dbf3dbf27dd6ca3",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/alirezaaminzadeh/optimization-solver-benchmark-lab"
+}

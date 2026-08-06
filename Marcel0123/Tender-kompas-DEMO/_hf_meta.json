@@ -1,0 +1,80 @@
+{
+ "captured_at": "2026-08-04T14:31:28Z",
+ "hf_metadata": {
+  "_id": "6a4bb4f042f0a5effc5d9ef3",
+  "author": "Marcel0123",
+  "cardData": {
+   "app_file": "app.py",
+   "colorFrom": "yellow",
+   "colorTo": "indigo",
+   "emoji": "👁",
+   "license": "mit",
+   "pinned": false,
+   "python_version": "3.13",
+   "sdk": "gradio",
+   "sdk_version": "6.19.0",
+   "title": "Tender Kompas DEMO"
+  },
+  "createdAt": "2026-07-06T14:00:16.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://marcel0123-tender-kompas-demo.hf.space",
+  "id": "Marcel0123/Tender-kompas-DEMO",
+  "lastModified": "2026-07-07T13:38:31.000Z",
+  "likes": 0,
+  "private": false,
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "marcel0123-tender-kompas-demo.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": null,
+    "requested": "cpu-basic"
+   },
+   "replicas": {
+    "requested": 1
+   },
+   "stage": "SLEEPING"
+  },
+  "sdk": "gradio",
+  "sha": "29fb077c8ca25379d929ed6dc0f780f5c3933fd4",
+  "siblings": [
+   {
+    "rfilename": ".gitattributes"
+   },
+   {
+    "rfilename": "1.0 Inkoopdocument Wmo dienstverlening - v1.0.pdf"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "app.py"
+   },
+   {
+    "rfilename": "requirements.txt"
+   }
+  ],
+  "subdomain": "marcel0123-tender-kompas-demo",
+  "tags": [
+   "gradio",
+   "region:us"
+  ],
+  "usedStorage": 423846
+ },
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "Marcel0123/Tender-kompas-DEMO",
+ "repo_type": "spaces",
+ "sha": "29fb077c8ca25379d929ed6dc0f780f5c3933fd4",
+ "web_url": "https://huggingface.co/spaces/Marcel0123/Tender-kompas-DEMO"
+}

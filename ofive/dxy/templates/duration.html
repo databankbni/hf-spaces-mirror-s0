@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>通勤时间趋势图</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/echarts/5.4.3/echarts.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .chart-container {
+            width: 100%;
+            height: 500px;
+        }
+        .info-card {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+        .stat-item {
+            text-align: center;
+            padding: 10px;
+            background-color: #e9ecef;
+            border-radius: 5px;
+            flex: 1;
+            margin: 0 10px;
+        }
+        .stat-value {
+            font-size: 24px;
+            font-weight: bold;
+            color: #007bff;
+        }
+        .stat-label {
+            font-size: 14px;
+            color: #666;
+        }
+        .date-selector {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .date-input {
+            padding: 8px 12px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-right: 10px;
+        }
+        .date-btn {
+            padding: 8px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .date-btn:hover {
+            background-color: #0056b3;
+        }
+        .no-data {
+            text-align: center;
+            padding: 50px;
+            color: #666;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>通勤时间趋势图</h1>
+
+        <div class="date-selector">
+            <label for="date-picker">选择日期：</label>
+            <input type="date" id="date-picker" class="date-input" value="{{ selected_date }}">
+            <button id="load-data" class="date-btn">加载数据</button>
+        </div>
+
+        <div class="info-card">
+            <h3>📅 数据日期：{{ today }}</h3>
+            <p>本图表展示通勤时间（分钟）随时间的变化趋势</p>
+        </div>
+
+        {% if record_count > 0 %}
+        <div class="stats">
+            <div class="stat-item">
+                <div class="stat-value">{{ avg_duration }}分钟</div>
+                <div class="stat-label">平均通勤时间</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value">{{ min_duration }}分钟</div>
+                <div class="stat-label">最短通勤时间</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value">{{ max_duration }}分钟</div>
+                <div class="stat-label">最长通勤时间</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value">{{ record_count }}条</div>
+                <div class="stat-label">记录数</div>
+            </div>
+        </div>
+
+        <div id="chart" class="chart-container"></div>
+
+        <div style="margin-top: 20px; text-align: center; color: #666;">
+            <p>📊 数据更新时间: {{ last_update }}</p>
+        </div>
+        {% else %}
+        <div class="no-data">
+            <p>📭 没有找到 {{ today }} 的通勤记录</p>
+            <p>请选择其他日期查看</p>
+        </div>
+        {% endif %}
+    </div>
+
+    <script type="text/javascript">
+        {% if record_count > 0 %}
+        // 基于准备好的dom，初始化echarts实例
+        var chartDom = document.getElementById('chart');
+        var myChart = echarts.init(chartDom);
+
+        // 从后端获取的数据
+        var timeData = {{ time_data|tojson }};
+        var durationData = {{ duration_data|tojson }};
+
+        // 配置项和数据
+        var option = {
+            title: {
+                text: '通勤时间趋势',
+                left: 'center',
+                textStyle: {
+                    fontSize: 18,
+                    fontWeight: 'bold'
+                }
+            },
+            tooltip: {
+                trigger: 'axis',
+                formatter: function(params) {
+                    var date = new Date(params[0].name);
+                    var timeStr = date.toLocaleTimeString('zh-CN', {
+                        hour: '2-digit',
+                        minute: '2-digit',
+                        hour12: false
+                    });
+                    return '时间: ' + timeStr + '<br/>' +
+                           '通勤时间: ' + params[0].value + ' 分钟';
+                }
+            },
+            grid: {
+                left: '1%',
+                right: '8%',
+                bottom: '3%',
+                containLabel: true
+            },
+            xAxis: {
+                type: 'category',
+                boundaryGap: false,
+                data: timeData,
+                name: '时间',
+                nameLocation: 'middle',
+                nameGap: 30,
+                axisLabel: {
+                    formatter: function(value) {
+                        var date = new Date(value);
+                        return date.toLocaleTimeString('zh-CN', {
+                            hour: '2-digit',
+                            minute: '2-digit',
+                            hour12: false
+                        });
+                    },
+                    rotate: 45
+                }
+            },
+            yAxis: {
+                type: 'value',
+                name: '通勤时间（分钟）',
+                min: 0
+            },
+            series: [
+                {
+                    name: '通勤时间',
+                    type: 'line',
+                    smooth: true,
+                    data: durationData,
+                    lineStyle: {
+                        width: 3
+                    },
+                    itemStyle: {
+                        color: '#5470c6'
+                    },
+                    areaStyle: {
+                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                            { offset: 0, color: 'rgba(84, 112, 198, 0.6)' },
+                            { offset: 1, color: 'rgba(84, 112, 198, 0.1)' }
+                        ])
+                    },
+                    markPoint: {
+                        data: [
+                            { type: 'max', name: '最大值' },
+                            { type: 'min', name: '最小值' }
+                        ],
+                        symbolSize: 50
+                    },
+                    markLine: {
+                        data: [
+                            { type: 'average', name: '平均值' }
+                        ],
+                        lineStyle: {
+                            type: 'dashed',
+                            color: '#91cc75'
+                        },
+                        label: {
+                            formatter: '平均: {c}分钟'
+                        }
+                    }
+                }
+            ],
+            dataZoom: [
+                {
+                    type: 'inside',
+                    xAxisIndex: 0,
+                    start: 0,
+                    end: 100
+                },
+                {
+                    show: true,
+                    xAxisIndex: 0,
+                    type: 'slider',
+                    top: '90%',
+                    start: 0,
+                    end: 100
+                }
+            ]
+        };
+
+        // 使用刚指定的配置项和数据显示图表
+        myChart.setOption(option);
+
+        // 响应窗口大小变化
+        window.addEventListener('resize', function() {
+            myChart.resize();
+        });
+        {% endif %}
+
+        // 日期选择器功能
+        document.getElementById('load-data').addEventListener('click', function() {
+            var selectedDate = document.getElementById('date-picker').value;
+            if (selectedDate) {
+                window.location.href = '/duration?date=' + selectedDate;
+            }
+        });
+
+        // 按Enter键也可以触发加载
+        document.getElementById('date-picker').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                document.getElementById('load-data').click();
+            }
+        });
+    </script>
+</body>
+</html>

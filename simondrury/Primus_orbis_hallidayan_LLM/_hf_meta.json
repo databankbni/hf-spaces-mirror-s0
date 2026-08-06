@@ -1,0 +1,27 @@
+{
+ "captured_at": "2026-08-04T16:59:41Z",
+ "hf_metadata": {
+  "sha": "a367fa7e7deef62aa8933c7752a0d8f11c1457a9"
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  },
+  {
+   "original": ".gitignore",
+   "stored_as": "_gitignore"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "simondrury/Primus_orbis_hallidayan_LLM",
+ "repo_type": "spaces",
+ "sha": "a367fa7e7deef62aa8933c7752a0d8f11c1457a9",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/simondrury/Primus_orbis_hallidayan_LLM"
+}

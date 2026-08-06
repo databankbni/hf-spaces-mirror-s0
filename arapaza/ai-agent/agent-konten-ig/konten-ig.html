@@ -1,0 +1,278 @@
+<!-- ============================================================
+     KONTEN INSTAGRAM 4:5 — multi-agent (tempel ke Elementor: widget HTML)
+     Render slide 1080x1350 lalu export PNG (html2canvas).
+     Aset & referensi diambil dari folder GitHub (lihat CARA-UPLOAD-GAMBAR.md).
+     ============================================================ -->
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+<div id="kig">
+  <div class="kig-head">
+    <h2 class="kig-title">🎨 Konten Instagram Generator (4:5)</h2>
+    <p class="kig-sub">Tulis brief kontennya. Agent Detailing → Layouting → Checker → Checker Visual akan menyusun 1–5 slide siap-unduh. Aset & referensi diambil dari folder GitHub.</p>
+  </div>
+
+  <div class="kig-panel">
+    <label class="kig-label">Brief Konten</label>
+    <textarea id="kig-brief" placeholder="Contoh: Konten edukasi 4 slide tentang cara kalibrasi timbangan lab. Audiens: laboran. Nada: informatif & ramah. Ada CTA hubungi kami di slide terakhir."></textarea>
+    <div class="kig-row">
+      <label class="kig-label" style="margin:0;">Jumlah slide</label>
+      <select id="kig-jumlah">
+        <option value="0">Otomatis (agent yang tentukan)</option>
+        <option value="1">1</option><option value="2">2</option><option value="3">3</option>
+        <option value="4">4</option><option value="5">5</option>
+      </select>
+    </div>
+    <div class="kig-file-row">
+      <label class="kig-file-label">📎 Foto Produk (opsional)<input type="file" id="kig-produk" accept="image/*" hidden></label>
+      <img id="kig-produk-prev" class="kig-produk-prev" alt="">
+      <span id="kig-produk-name" class="kig-file-name"></span>
+      <span class="kig-file-hint">Foto produk khusus untuk konten ini — dipakai sebagai foto di layout, atau bahan generate AI (bila aktif).</span>
+    </div>
+    <button id="kig-submit" class="kig-btn" type="button">✨ Buat Konten</button>
+    <div id="kig-status" class="kig-status"></div>
+  </div>
+
+  <div id="kig-slides" class="kig-slides"></div>
+  <div id="kig-extra"></div>
+</div>
+
+<style>
+html, body { background:#0f1420 !important; }
+#kig { font-family:'Poppins', system-ui, sans-serif; max-width:920px; margin:0 auto; color:#e5e7eb; padding:28px 20px; }
+#kig * { box-sizing:border-box; }
+.kig-head { margin-bottom:20px; }
+.kig-title { font-size:26px; font-weight:800; margin:0; color:#f8fafc; }
+.kig-sub { margin:6px 0 0; color:#94a3b8; font-size:14px; line-height:1.6; }
+.kig-panel { background:#161c2a; border:1px solid #273044; border-radius:16px; padding:22px; }
+.kig-label { display:block; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.5px; color:#94a3b8; margin-bottom:8px; }
+#kig-brief { width:100%; min-height:130px; background:#0f1420; border:1px solid #2a3344; border-radius:10px; color:#e5e7eb; padding:13px; font-family:inherit; font-size:14px; line-height:1.6; resize:vertical; }
+#kig-brief:focus { outline:none; border-color:#ec4899; }
+.kig-row { display:flex; align-items:center; gap:12px; margin:14px 0; }
+#kig-jumlah { background:#0f1420; border:1px solid #2a3344; border-radius:10px; color:#e5e7eb; padding:9px 12px; font-family:inherit; font-size:14px; }
+.kig-file-row { display:flex; align-items:center; gap:10px; margin:0 0 14px; flex-wrap:wrap; }
+.kig-file-label { display:inline-flex; align-items:center; gap:6px; background:#1f2737; border:1px solid #3b4860; color:#cbd5e1; padding:10px 16px; border-radius:10px; cursor:pointer; font-size:13px; transition:background .15s; }
+.kig-file-label:hover { background:#273044; }
+.kig-file-name { font-size:12.5px; color:#94a3b8; }
+.kig-file-hint { font-size:11px; color:#64748b; width:100%; }
+.kig-produk-prev { height:38px; width:38px; object-fit:cover; border-radius:8px; border:1px solid #3b4860; display:none; }
+.kig-btn { width:100%; background:#ec4899; color:#fff; border:none; font-family:inherit; font-weight:700; font-size:15px; padding:13px 16px; border-radius:10px; cursor:pointer; transition:background .15s; }
+.kig-btn:hover { background:#db2777; }
+.kig-btn:disabled { opacity:.6; cursor:default; }
+.kig-status { font-size:13px; color:#fcd34d; margin-top:12px; text-align:center; line-height:1.6; }
+.kig-info { font-size:12.5px; color:#94a3b8; background:#0f1420; border:1px solid #273044; border-radius:10px; padding:10px 14px; margin:16px 0; line-height:1.6; }
+.kig-info b { color:#cbd5e1; }
+.kig-slides { margin-top:18px; display:grid; grid-template-columns:repeat(auto-fill,minmax(270px,1fr)); gap:18px; }
+.kig-card { background:#161c2a; border:1px solid #273044; border-radius:14px; padding:14px; display:flex; flex-direction:column; align-items:center; gap:10px; }
+.kig-thumb { width:259px; height:324px; overflow:hidden; border-radius:8px; border:1px solid #2a3344; position:relative; }
+
+/* SLIDE ASLI 1080x1350 (di-scale untuk preview) — TEMPLATE BER-BRAND */
+.kig-slide { width:1080px; height:1350px; position:relative; overflow:hidden; transform:scale(.24); transform-origin:top left; font-family:'Poppins', system-ui, sans-serif; }
+.kig-bg { position:absolute; inset:0; z-index:0; }
+.kig-bg img { width:100%; height:100%; object-fit:cover; display:block; }
+.kig-ov { position:absolute; inset:0; z-index:1; }
+/* Logo badge atas */
+.kig-logo { position:absolute; top:54px; left:0; right:0; z-index:3; display:flex; justify-content:center; }
+.kig-logo .badge { background:#fff; border-radius:18px; padding:16px 30px; display:flex; align-items:center; box-shadow:0 8px 24px rgba(0,0,0,.28); }
+.kig-logo img { height:76px; display:block; }
+.kig-logo .txt { font-weight:900; font-size:46px; letter-spacing:1px; }
+/* Konten teks (tengah-atas) */
+.kig-content { position:absolute; top:290px; left:0; right:0; z-index:3; padding:0 84px; text-align:center; }
+.kig-eyebrow { font-size:42px; font-weight:700; color:#fff; margin:0 0 6px; text-shadow:0 2px 10px rgba(0,0,0,.5); }
+.kig-headline { font-size:96px; font-weight:900; line-height:1.04; letter-spacing:-1px; margin:0; text-shadow:0 3px 16px rgba(0,0,0,.55); }
+.kig-subtitle { font-size:48px; font-weight:600; color:#f1f5f9; margin:14px 0 0; text-shadow:0 2px 10px rgba(0,0,0,.5); }
+.kig-body { font-size:36px; font-weight:500; color:#f1f5f9; line-height:1.4; margin:22px 0 0; text-shadow:0 2px 8px rgba(0,0,0,.5); }
+/* CTA pill */
+.kig-cta { position:absolute; left:0; right:0; bottom:196px; z-index:3; display:flex; justify-content:center; }
+.kig-cta span { font-size:40px; font-weight:800; padding:26px 54px; border-radius:70px; box-shadow:0 10px 26px rgba(0,0,0,.35); }
+/* Footer kontak */
+.kig-footer { position:absolute; left:0; right:0; bottom:0; z-index:3; height:132px; display:flex; align-items:center; justify-content:center; gap:44px; padding:0 60px; }
+.kig-footer .item { display:flex; align-items:center; gap:12px; color:#fff; font-size:28px; font-weight:600; }
+.kig-footer .item .ic { font-size:30px; }
+/* Dots halaman */
+.kig-dots { position:absolute; left:0; right:0; bottom:158px; z-index:3; display:flex; justify-content:center; gap:14px; }
+.kig-dots i { width:16px; height:16px; border-radius:50%; background:rgba(255,255,255,.45); display:block; }
+.kig-dots i.on { background:#fff; width:44px; border-radius:10px; }
+
+.kig-cap { font-size:12px; color:#94a3b8; text-align:center; }
+.kig-dl { background:#ec4899; color:#fff; border:none; font-family:inherit; font-weight:600; font-size:13px; padding:9px 16px; border-radius:9px; cursor:pointer; }
+.kig-dl:hover { background:#db2777; }
+.kig-dlall { display:block; width:100%; margin:16px 0 0; background:#8b5cf6; color:#fff; border:none; font-family:inherit; font-weight:700; font-size:14px; padding:12px; border-radius:10px; cursor:pointer; }
+.kig-dlall:hover { background:#7c3aed; }
+.kig-steps { margin-top:16px; }
+.kig-steps summary { cursor:pointer; color:#f9a8d4; font-size:13px; font-weight:600; padding:10px 0; }
+.kig-step { background:#161c2a; border:1px solid #273044; border-radius:12px; padding:14px 16px; margin-top:10px; }
+.kig-step h4 { margin:0 0 6px; font-size:13px; color:#f9a8d4; }
+.kig-step pre { margin:0; white-space:pre-wrap; word-break:break-word; font-size:12px; color:#cbd5e1; font-family:ui-monospace,monospace; line-height:1.5; }
+</style>
+
+<script>
+(function () {
+  var BACKEND_URL = "https://arapaza-ai-agent.hf.space";
+
+  // ===== BRAND (edit sesuai brand kamu) — dipakai template konten =====
+  var BRAND = {
+    name: "LOGGERINDO",
+    logoUrl: "",                       // isi URL logo PNG transparan (mis. GitHub raw). Kosong = pakai teks nama.
+    navy: "#12294d",                   // warna utama (dark)
+    gold: "#f2b705",                   // warna highlight & tombol CTA
+    textOnGold: "#12294d",             // warna teks di atas tombol CTA
+    contact: { phone:"0852-8571-1081", email:"sales@taharica.com", web:"loggerindo.com" }
+  };
+
+  var produkB64="", produkMime="", produkDataUrl="";
+  function esc(s){ return (s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;"); }
+
+  document.getElementById("kig-produk").addEventListener("change", function(e){
+    var f=e.target.files[0], nameEl=document.getElementById("kig-produk-name"), prev=document.getElementById("kig-produk-prev");
+    if(!f){ produkB64=""; produkMime=""; produkDataUrl=""; nameEl.textContent=""; prev.style.display="none"; return; }
+    produkMime=f.type||"image/png"; nameEl.textContent="📎 "+f.name;
+    var reader=new FileReader();
+    reader.onload=function(){ produkDataUrl=(reader.result||"").toString(); produkB64=produkDataUrl.split(",")[1]||""; prev.src=produkDataUrl; prev.style.display="inline-block"; };
+    reader.readAsDataURL(f);
+  });
+  function hexA(h,a){ h=(h||"#000").replace("#",""); if(h.length===3){h=h[0]+h[0]+h[1]+h[1]+h[2]+h[2];}
+    var r=parseInt(h.substr(0,2),16)||0,g=parseInt(h.substr(2,2),16)||0,b=parseInt(h.substr(4,2),16)||0;
+    return "rgba("+r+","+g+","+b+","+a+")"; }
+
+  function bgStyle(s){
+    if (s.bg_tipe==="warna") return "background:"+(s.bg_warna||BRAND.navy)+";";
+    if (s.bg_tipe==="gradient"){ var g=s.bg_gradient||[]; return "background:linear-gradient(160deg,"+(g[0]||BRAND.navy)+","+(g[1]||"#1e3a8a")+");"; }
+    return "background:"+BRAND.navy+";";
+  }
+  function bgImgSrc(s){
+    if (s.bg_generate_b64) return "data:image/png;base64,"+s.bg_generate_b64;
+    if (s.bg_pakai_produk && produkDataUrl) return produkDataUrl;
+    if (s.tempel_pakai_produk && produkDataUrl) return produkDataUrl;
+    if (s.bg_aset_url) return s.bg_aset_url;
+    if (s.aset_tempel_url) return s.aset_tempel_url;
+    return "";
+  }
+
+  function brandOverlay(){
+    return "background:linear-gradient(180deg,"+hexA(BRAND.navy,.62)+" 0%,"+hexA(BRAND.navy,.12)+" 34%,"
+      +hexA(BRAND.navy,.12)+" 50%,"+hexA(BRAND.navy,.86)+" 100%);";
+  }
+  function logoHTML(){
+    var inner = BRAND.logoUrl
+      ? '<img crossorigin="anonymous" src="'+BRAND.logoUrl+'">'
+      : '<span class="txt" style="color:'+BRAND.navy+'">'+esc(BRAND.name)+'</span>';
+    return '<div class="kig-logo"><div class="badge">'+inner+'</div></div>';
+  }
+  function footerHTML(){
+    var c=BRAND.contact||{}, items="";
+    if(c.phone) items+='<div class="item"><span class="ic">📞</span>'+esc(c.phone)+'</div>';
+    if(c.email) items+='<div class="item"><span class="ic">✉️</span>'+esc(c.email)+'</div>';
+    if(c.web)   items+='<div class="item"><span class="ic">🌐</span>'+esc(c.web)+'</div>';
+    return '<div class="kig-footer" style="background:'+hexA(BRAND.navy,.92)+'">'+items+'</div>';
+  }
+  function dotsHTML(i,total){
+    if(!total || total<=1) return "";
+    var d=""; for(var k=0;k<total;k++){ d+='<i class="'+(k===i?"on":"")+'"></i>'; }
+    return '<div class="kig-dots">'+d+'</div>';
+  }
+
+  function slideHTML(s, i, total){
+    var headline=[], sub=[], body=[], cta="";
+    (s.teks||[]).forEach(function(t){
+      var p=(t.peran||"body").toLowerCase(), isi=esc(t.isi);
+      if(!isi) return;
+      if(p.indexOf("headline")===0) headline.push(isi);
+      else if(p.indexOf("sub")===0) sub.push(isi);
+      else if(p.indexOf("cta")===0) cta=isi;
+      else body.push(isi);
+    });
+    var content='<div class="kig-content">';
+    if(headline.length) content+='<div class="kig-headline" style="color:'+BRAND.gold+'">'+headline.join("<br>")+'</div>';
+    if(sub.length)      content+='<div class="kig-subtitle">'+sub.join("<br>")+'</div>';
+    if(body.length)     content+='<div class="kig-body">'+body.join("<br>")+'</div>';
+    content+='</div>';
+    var ctaHTML = cta ? '<div class="kig-cta"><span style="background:'+BRAND.gold+';color:'+BRAND.textOnGold+'">'+cta+'</span></div>' : "";
+
+    var src = bgImgSrc(s);
+    var bg = src ? '<div class="kig-bg"><img crossorigin="anonymous" src="'+src+'"></div>'
+                 : '<div class="kig-bg" style="'+bgStyle(s)+'"></div>';
+    return '<div class="kig-slide" id="slide-'+i+'">'
+      + bg + '<div class="kig-ov" style="'+brandOverlay()+'"></div>'
+      + logoHTML() + content + ctaHTML + dotsHTML(i,total) + footerHTML()
+      + '</div>';
+  }
+
+  function capture(el){
+    return new Promise(function(resolve,reject){
+      var clone = el.cloneNode(true);
+      clone.style.transform="none";
+      clone.style.position="fixed"; clone.style.left="-99999px"; clone.style.top="0";
+      document.body.appendChild(clone);
+      html2canvas(clone,{useCORS:true, allowTaint:false, backgroundColor:null, scale:1, width:1080, height:1350})
+        .then(function(c){ document.body.removeChild(clone); resolve(c); })
+        .catch(function(e){ try{document.body.removeChild(clone);}catch(_){} reject(e); });
+    });
+  }
+  function download(canvas, name){
+    canvas.toBlob(function(b){
+      var a=document.createElement("a"); a.href=URL.createObjectURL(b); a.download=name; a.click();
+      setTimeout(function(){ URL.revokeObjectURL(a.href); },2000);
+    },"image/png");
+  }
+
+  document.getElementById("kig-submit").addEventListener("click", function(){
+    var brief=document.getElementById("kig-brief").value.trim();
+    if(!brief){ alert("Tulis brief kontennya dulu."); return; }
+    var jumlah=parseInt(document.getElementById("kig-jumlah").value,10)||0;
+    var btn=document.getElementById("kig-submit"), st=document.getElementById("kig-status");
+    var slidesEl=document.getElementById("kig-slides"), extraEl=document.getElementById("kig-extra");
+    btn.disabled=true; btn.textContent="⏳ Membuat konten...";
+    st.textContent="Agent bekerja (detailing → layouting → checker → checker visual)... ± 1-2 menit.";
+    slidesEl.innerHTML=""; extraEl.innerHTML="";
+
+    fetch(BACKEND_URL+"/konten-ig",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({brief:brief,jumlah:jumlah,produk_base64:produkB64,produk_mime:produkMime})})
+    .then(function(r){ if(!r.ok) throw new Error("HTTP "+r.status); return r.json(); })
+    .then(function(data){
+      st.textContent="";
+      var slides=data.slides||[];
+      var genlabel = data.generative_aktif ? ("aktif ("+(data.generative_sumber||"ai")+")") : "nonaktif (template only)";
+      var info='<div class="kig-info">📦 Aset GitHub: <b>'+data.jumlah_aset+'</b> · 🎨 Referensi: <b>'+data.jumlah_referensi
+        +'</b> · 🧷 Foto produk: <b>'+(data.ada_produk?"terlampir":"tidak")+'</b> · 🖼️ Generative: <b>'+genlabel+'</b>'
+        +((data.jumlah_aset===0 && !data.ada_produk && !data.generative_aktif)?'<br>⚠️ Belum ada aset & foto produk — slide pakai warna/gradient. Upload aset ke GitHub atau lampirkan foto produk.':'')
+        +(data.generative_sumber==="pollinations"?'<br>ℹ️ Background di-generate gratis via Pollinations (produk asli tetap ditempel akurat). Untuk hasil paling menyatu, aktifkan Gemini image (butuh billing) via Secret GEMINI_IMAGE_MODEL.':'')
+        +'</div>';
+      if(!slides.length){ extraEl.innerHTML=info+'<div class="kig-info">Tidak ada slide dihasilkan. Coba perjelas brief.</div>'; return; }
+
+      slidesEl.insertAdjacentHTML("beforebegin", info);
+      slidesEl.innerHTML = slides.map(function(s,i){
+        return '<div class="kig-card"><div class="kig-thumb">'+slideHTML(s,i,slides.length)+'</div>'
+          + '<div class="kig-cap">Slide '+(i+1)+' / '+slides.length+'</div>'
+          + '<button class="kig-dl" data-i="'+i+'" type="button">⬇️ Unduh PNG</button></div>';
+      }).join("");
+
+      slidesEl.querySelectorAll(".kig-dl").forEach(function(b){
+        b.addEventListener("click", function(){
+          var i=b.getAttribute("data-i"); b.textContent="⏳...";
+          capture(document.getElementById("slide-"+i)).then(function(c){ download(c,"konten-slide-"+(parseInt(i)+1)+".png"); b.textContent="⬇️ Unduh PNG"; })
+            .catch(function(){ b.textContent="❌ gagal"; });
+        });
+      });
+
+      // Tombol unduh semua + proses agent
+      var steps='<details class="kig-steps"><summary>🔍 Lihat proses tiap agent</summary>'
+        + '<div class="kig-step"><h4>🅰️ Detailing</h4><pre>'+esc(JSON.stringify(data.detailing,null,2))+'</pre></div>'
+        + '<div class="kig-step"><h4>🅱️ Layouting</h4><pre>'+esc(JSON.stringify(data.layout,null,2))+'</pre></div>'
+        + '<div class="kig-step"><h4>✅ Checker (koordinator)</h4><pre>'+esc(JSON.stringify(data.checker,null,2))+'</pre></div>'
+        + '<div class="kig-step"><h4>👁️ Checker Visual</h4><pre>'+esc(JSON.stringify(data.checker_visual,null,2))+'</pre></div>'
+        + '</details>';
+      extraEl.innerHTML = '<button class="kig-dlall" id="kig-dlall" type="button">⬇️ Unduh Semua ('+slides.length+' gambar)</button>'+steps;
+
+      document.getElementById("kig-dlall").addEventListener("click", function(){
+        var btnAll=this; btnAll.disabled=true; btnAll.textContent="⏳ Mengunduh...";
+        var i=0;
+        (function next(){
+          if(i>=slides.length){ btnAll.disabled=false; btnAll.textContent="⬇️ Unduh Semua ("+slides.length+" gambar)"; return; }
+          capture(document.getElementById("slide-"+i)).then(function(c){ download(c,"konten-slide-"+(i+1)+".png"); i++; setTimeout(next,700); })
+            .catch(function(){ i++; next(); });
+        })();
+      });
+    })
+    .catch(function(err){ st.textContent="❌ Gagal: "+err.message; })
+    .finally(function(){ btn.disabled=false; btn.textContent="✨ Buat Konten"; });
+  });
+})();
+</script>

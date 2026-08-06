@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Birds Habitat & National Park Finder System - Tanzania{% endblock %}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}?v=7">
+</head>
+<body class="{% block body_class %}{% endblock %}">
+  <header class="site-header">
+    <a class="brand" href="{{ url_for('index') }}" aria-label="Tanzania Bird Finder home">
+      <span class="brand-mark"><i data-lucide="feather"></i></span>
+      <span>Tanzania Bird Finder</span>
+    </a>
+    <div class="header-actions">
+      <button class="icon-button dark-toggle" type="button" data-dark-toggle aria-label="Toggle dark mode">
+        <i data-lucide="moon"></i>
+      </button>
+      <button class="menu-button" type="button" data-nav-open aria-controls="side-navigation" aria-expanded="false">
+        <i data-lucide="menu"></i>
+      </button>
+    </div>
+  </header>
+
+  <div class="nav-overlay" data-nav-overlay hidden></div>
+  <aside class="side-nav" id="side-navigation" data-side-nav aria-hidden="true">
+    <div class="side-nav-header">
+      <a class="brand" href="{{ url_for('index') }}" aria-label="Tanzania Bird Finder home">
+        <span class="brand-mark"><i data-lucide="feather"></i></span>
+        <span>Tanzania Bird Finder</span>
+      </a>
+      <button class="icon-button" type="button" data-nav-close aria-label="Close navigation">
+        <i data-lucide="x"></i>
+      </button>
+    </div>
+    <nav class="side-nav-links" aria-label="Primary navigation">
+      <a href="{{ url_for('habitats') }}" class="{{ 'active' if request.endpoint in ['habitats', 'habitat_detail'] else '' }}"><i data-lucide="leaf"></i>Habitats</a>
+      <a href="{{ url_for('identify') }}" class="{{ 'active' if request.endpoint == 'identify' else '' }}"><i data-lucide="scan-search"></i>AI Identify</a>
+      <a href="{{ url_for('species') }}" class="{{ 'active' if request.endpoint in ['species', 'species_detail'] else '' }}"><i data-lucide="feather"></i>Species</a>
+      <a href="{{ url_for('parks') }}" class="{{ 'active' if request.endpoint in ['parks', 'park_detail'] else '' }}"><i data-lucide="trees"></i>Parks</a>
+      <a href="{{ url_for('map_view') }}" class="{{ 'active' if request.endpoint == 'map_view' else '' }}"><i data-lucide="map"></i>Map</a>
+      <a href="{{ url_for('conservation') }}" class="{{ 'active' if request.endpoint == 'conservation' else '' }}"><i data-lucide="shield-check"></i>Conservation</a>
+      {% if current_user %}
+        <a href="{{ url_for('dashboard') }}" class="{{ 'active' if request.endpoint == 'dashboard' else '' }}"><i data-lucide="bookmark"></i>My Trip</a>
+        {% if current_user.role == 'admin' %}
+          <a href="{{ url_for('admin') }}" class="{{ 'active' if request.endpoint == 'admin' else '' }}"><i data-lucide="layout-dashboard"></i>Admin</a>
+        {% endif %}
+        <a href="{{ url_for('logout') }}"><i data-lucide="log-out"></i>Logout</a>
+      {% else %}
+        <a href="{{ url_for('login') }}" class="{{ 'active' if request.endpoint in ['login', 'register'] else '' }}"><i data-lucide="log-in"></i>Login</a>
+      {% endif %}
+    </nav>
+  </aside>
+
+  <main class="page-transition">
+    <div class="toast-container" id="toast-container" aria-live="polite"></div>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <script>
+          document.addEventListener('DOMContentLoaded', function() {
+            {% for message in messages %}
+              window.showToast && window.showToast('{{ message|e }}', 'info');
+            {% endfor %}
+          });
+        </script>
+      {% endif %}
+    {% endwith %}
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="site-footer">
+    <div>
+      <strong>Birds Habitat & National Park Finder System - Tanzania</strong>
+      <p>Eco-tourism, conservation awareness, and research support for Tanzanian bird habitats.</p>
+    </div>
+    <div class="footer-links">
+      <a href="{{ url_for('species') }}">Species Library</a>
+      <a href="{{ url_for('parks') }}">Protected Areas</a>
+      <a href="{{ url_for('map_view') }}">GIS Map</a>
+      <a href="{{ url_for('conservation') }}">Research Notes</a>
+    </div>
+  </footer>
+
+  <nav class="bottom-nav" aria-label="Main navigation">
+    <a href="{{ url_for('index') }}" class="bottom-nav-item {{ 'active' if request.endpoint == 'index' else '' }}">
+      <i data-lucide="feather"></i>
+      <span>Home</span>
+    </a>
+    <a href="{{ url_for('identify') }}" class="bottom-nav-item {{ 'active' if request.endpoint == 'identify' else '' }}">
+      <i data-lucide="scan-search"></i>
+      <span>Identify</span>
+    </a>
+    <a href="{{ url_for('species') }}" class="bottom-nav-item {{ 'active' if request.endpoint in ['species', 'species_detail'] else '' }}">
+      <i data-lucide="trees"></i>
+      <span>Explore</span>
+    </a>
+    {% if current_user %}
+      <a href="{{ url_for('dashboard') }}" class="bottom-nav-item {{ 'active' if request.endpoint == 'dashboard' else '' }}">
+        <i data-lucide="bookmark"></i>
+        <span>My Trip</span>
+      </a>
+    {% else %}
+      <a href="{{ url_for('login') }}" class="bottom-nav-item {{ 'active' if request.endpoint in ['login', 'register'] else '' }}">
+        <i data-lucide="map-pin"></i>
+        <span>Profile</span>
+      </a>
+    {% endif %}
+  </nav>
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script src="{{ url_for('static', filename='js/app.js') }}?v=2"></script>
+</body>
+</html>

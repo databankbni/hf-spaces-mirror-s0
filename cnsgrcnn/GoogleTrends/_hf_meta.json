@@ -1,0 +1,23 @@
+{
+ "captured_at": "2026-08-04T16:02:07Z",
+ "hf_metadata": {
+  "sha": "5c2f72e2551aa8449c6ea41b12033e38858e8218"
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "cnsgrcnn/GoogleTrends",
+ "repo_type": "spaces",
+ "sha": "5c2f72e2551aa8449c6ea41b12033e38858e8218",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/cnsgrcnn/GoogleTrends"
+}

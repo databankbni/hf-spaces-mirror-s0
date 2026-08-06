@@ -1,0 +1,127 @@
+{% extends "base.html" %}
+{% block title %}Global Admin — MktBook{% endblock %}
+{% block content %}
+
+<div style="display:flex; align-items:baseline; gap:0.8rem; flex-wrap:wrap; margin-bottom:0.5rem;">
+    <h1 style="margin:0;">Global Admin &amp; Reset</h1>
+    <a href="/admin/lti" role="button" class="outline" style="font-size:0.85em; padding:0.3rem 0.8rem; border-color:#3d9eff; color:#3d9eff;">
+        LTI 1.3
+    </a>
+    <a href="/admin/password" role="button" class="outline secondary" style="font-size:0.85em; padding:0.3rem 0.8rem;">
+        Change Password
+    </a>
+    <form method="post" action="/logout" style="margin:0;">
+        <button type="submit" class="outline secondary" style="font-size:0.85em; padding:0.3rem 0.8rem;">
+            Log Out
+        </button>
+    </form>
+</div>
+<p style="color:#888;">Manage all workouts from one place. Use per-workout pages for targeted resets.</p>
+
+{% if done %}
+<article style="border-left:4px solid #2ecc71; background:#f0fff4; margin-bottom:1rem;">
+    <p style="margin:0;">
+    {% if done == 'conversations' %}
+        All conversations reset globally —
+        {{ request.query_params.get('msgs', 0) }} messages,
+        {{ request.query_params.get('convs', 0) }} conversations,
+        {{ request.query_params.get('grades', 0) }} grades deleted.
+    {% elif done == 'all' %}
+        Full nuclear reset complete —
+        {{ request.query_params.get('bots', 0) }} bots,
+        {{ request.query_params.get('msgs', 0) }} messages,
+        {{ request.query_params.get('convs', 0) }} conversations deleted.
+    {% endif %}
+    </p>
+</article>
+{% endif %}
+
+{# ── Global totals ─────────────────────────────────────────────────── #}
+<article>
+    <header><strong>Platform-Wide Totals</strong></header>
+    <div class="grid" style="grid-template-columns:repeat(3,1fr); gap:1rem; text-align:center;">
+        <div>
+            <p style="font-size:2.5rem; margin:0; font-weight:700;">{{ global_stats.bots }}</p>
+            <p style="margin:0; color:#888; font-size:0.9em;">Total Bots</p>
+        </div>
+        <div>
+            <p style="font-size:2.5rem; margin:0; font-weight:700;">{{ global_stats.messages }}</p>
+            <p style="margin:0; color:#888; font-size:0.9em;">Total Messages</p>
+        </div>
+        <div>
+            <p style="font-size:2.5rem; margin:0; font-weight:700;">{{ global_stats.conversations }}</p>
+            <p style="margin:0; color:#888; font-size:0.9em;">Total Conversations</p>
+        </div>
+    </div>
+</article>
+
+{# ── Per-workout breakdown ─────────────────────────────────────────── #}
+<article>
+    <header><strong>Per-Workout Breakdown</strong></header>
+    <table>
+        <thead>
+            <tr>
+                <th>Workout</th>
+                <th style="text-align:center;">Bots</th>
+                <th style="text-align:center;">Messages</th>
+                <th style="text-align:center;">Conversations</th>
+                <th>Actions</th>
+                <th>Grade History</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for w in workouts %}
+        {% set s = per_workout[w.id] %}
+        <tr>
+            <td>
+                <span style="color:{{ w.color }}; font-weight:600;">{{ w.icon }} W{{ w.id }}</span>
+                <small style="color:#888;"> — {{ w.short_title }}</small>
+            </td>
+            <td style="text-align:center;">{{ s.bots }}</td>
+            <td style="text-align:center;">{{ s.messages }}</td>
+            <td style="text-align:center;">{{ s.conversations }}</td>
+            <td>
+                <a href="/w/{{ w.id }}/admin" role="button" class="outline secondary"
+                   style="font-size:0.8em; padding:0.2rem 0.6rem; margin:0;">
+                    Manage W{{ w.id }}
+                </a>
+            </td>
+            <td>
+                <a href="/api/w/{{ w.id }}/grades/history.csv"
+                   style="font-size:0.85em;">
+                    ↓ W{{ w.id }} CSV
+                </a>
+            </td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</article>
+
+{# ── Global reset: conversations only ─────────────────────────────── #}
+<article>
+    <header><strong>Reset All Conversations (All Workouts)</strong></header>
+    <p>Delete every message, conversation, and grade across all 5 workouts.
+       All bots remain registered and will resume immediately after reset.</p>
+    <form method="post" action="/admin/reset/conversations"
+          onsubmit="return confirm('Delete ALL conversations across every workout? This cannot be undone.');">
+        <button type="submit" class="outline" style="border-color:#e67e22; color:#e67e22;">
+            Reset All Conversations (keep bots)
+        </button>
+    </form>
+</article>
+
+{# ── Nuclear reset ─────────────────────────────────────────────────── #}
+<article style="border:2px solid #c0392b;">
+    <header style="color:#c0392b;"><strong>Nuclear Reset — Remove Everything</strong></header>
+    <p>Delete <strong>every bot and all data</strong> across all 5 workouts.
+       Students will need to re-register their bots from scratch. Use only between cohorts.</p>
+    <form method="post" action="/admin/reset/all"
+          onsubmit="return confirm('NUCLEAR RESET: Remove ALL bots and ALL data from every workout?\n\nThis cannot be undone. Are you absolutely sure?');">
+        <button type="submit" style="background:#c0392b; border-color:#c0392b;">
+            Nuclear Reset — Wipe Everything
+        </button>
+    </form>
+</article>
+
+{% endblock %}

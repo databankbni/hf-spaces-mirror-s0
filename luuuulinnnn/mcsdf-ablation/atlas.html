@@ -1,0 +1,42 @@
+<!DOCTYPE html><html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>warp / knownness 数据图鉴 — density-k 的系统性乐观偏差</title><style>
+:root{--bg:#0d1117;--card:#161b22;--line:#30363d;--tx:#e6edf3;--dim:#8b949e;--acc:#63c98a;--warn:#e3b341;--bad:#f85149;--blu:#58a6ff}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:15px/1.6 -apple-system,"Segoe UI",Roboto,"Noto Sans SC",sans-serif;padding:28px 3vw 90px}
+h1{font-size:25px;margin:0 0 6px}h2{font-size:18px;margin:32px 0 8px;border-bottom:1px solid var(--line);padding-bottom:6px}
+.sub{color:var(--dim);margin-bottom:14px;font-size:14px}
+.finding{background:linear-gradient(135deg,#2a1416,#161b22);border:1px solid var(--bad);border-radius:10px;padding:15px 19px;margin:16px 0;font-size:15px}
+.finding b{color:var(--bad)}
+.note{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--blu);border-radius:8px;padding:11px 15px;margin:12px 0;color:var(--dim);font-size:13.5px}
+.note b{color:var(--tx)}
+table{border-collapse:collapse;font-size:13.5px;margin:12px 0;min-width:480px}
+th,td{border:1px solid var(--line);padding:6px 12px;text-align:center}th{background:var(--card);color:var(--dim)}
+td:first-child{text-align:left;font-weight:600}
+figure{margin:12px 0 24px;background:var(--card);border:1px solid var(--line);border-radius:9px;padding:8px}
+figcaption{color:var(--dim);font-size:13px;padding:4px 2px;font-weight:600}
+img{width:100%;display:block;border-radius:4px}.wrap{overflow-x:auto}a{color:var(--blu);text-decoration:none}
+code{font-size:12.5px;color:var(--blu);background:#0a0e14;padding:1px 4px;border-radius:3px}
+</style></head><body>
+<h1>warp / knownness 数据图鉴 <span style="color:var(--dim);font-size:15px">8 clips × 4 行</span></h1>
+<div class="sub">每 clip:GT / z_mem(前向 warp 画布)/ knownness k 热力图 / z_mem 被 k&gt;.5 门控。帧 0/20/40/60/80。2026-07-29</div>
+
+<div class="finding">🔴 <b>发现:density-k 有系统性乐观偏差 —— 它量的是"有多少源像素落在这里",不是"落得对不对"。</b><br>
+看 clip <code>111b656f</code> 帧 60/80:z_mem 里石墙已经被拉成一团模糊、货架严重变形,但同位置的 k 图<b>是纯红(k≈1,"完全可信")</b>。
+同样在 <code>00e3fa12</code> 帧 40-80:地面在 z_mem 里是一片糊掉的灰白,k 却给了一整块红色三角。<br>
+<b>机理:</b>掠射角(grazing angle)表面在前向 splat 时会有大量源像素堆积到少数目标像素上 → <b>密度很高,保真度很低</b>。density-k 对"拉丝"完全盲。<br>
+<b>后果:</b>τ₀ = 1−λk 会给这些拉丝区一个<b>低噪声上限</b>(expF 降到 .45)= 告诉模型"这里基本对了,抛光即可" —— 可那里根本没有能抛的东西。这为我们长期看到的拉丝伪影提供了一个具体机制。</div>
+
+<div class="note"><b>k 做对的部分:</b>从未观察的区域判得很准 —— 天空、视锥外、被遮挡后露出的新区域都干净地判成蓝色(见 <code>00e3fa12</code> 的天空、<code>111b656f</code> 帧 60/80 的右侧新墙)。所以问题不是"k 没用",而是<b>k 只有覆盖维度,缺保真维度</b>。</div>
+
+<div class="note"><b>可落地的修法(候选 expN):</b>给 k 乘一个抗拉丝因子 —— ① warp 雅可比行列式(表面前缩比)② 深度梯度幅值(掠射面 = 大梯度)③ 多源帧投到同一目标像素的<b>互相矛盾度</b>(拉丝区不同源帧会给出不一致颜色)。三者都能从现有 cache 离线算出来,不需重跑 VGGT。</div>
+
+<h2>覆盖率分布(8 clips)</h2>
+<div class="wrap"><table>
+<tr><th>clip</th><th>mean k</th><th>coverage frac(k&gt;.5)</th><th>split</th></tr>
+<tr><td>0130348e</td><td>0.783</td><td>0.787</td><td>held-out</td></tr><tr><td>111b656f</td><td>0.755</td><td>0.751</td><td>TEST</td></tr><tr><td>00534f58</td><td>0.713</td><td>0.707</td><td>TRAIN</td></tr><tr><td>2501f488</td><td>0.677</td><td>0.678</td><td>TEST</td></tr><tr><td>010533f2</td><td>0.645</td><td>0.643</td><td>held-out</td></tr><tr><td>0003dc82</td><td>0.521</td><td>0.516</td><td>TRAIN</td></tr><tr><td>0194be61</td><td>0.445</td><td>0.449</td><td>held-out</td></tr><tr><td>00e3fa12</td><td>0.438</td><td>0.436</td><td>held-out</td></tr>
+</table></div>
+<div class="note">覆盖率跨 clip 差了<b>近 1.8 倍</b>(0.438 ~ 0.783)。这直接解释了为什么各 clip 的 PSNR 差这么多(<code>2501f488</code> 只有 10.5dB 而 <code>111b656f</code> 有 16-17dB)—— 难度主要由几何覆盖决定,而不是模型好坏。<b>这也说明 4-clip dev 集的平均值对覆盖率分布很敏感</b>,又一条"终判必须上 20-clip"的理由。</div>
+
+<h2>逐 clip 大图</h2>
+<figure><figcaption>clip 0130348e &nbsp;|&nbsp; mean k = 0.783, coverage = 0.787</figcaption><img src="atlas_0130348e_s.png" loading="lazy"></figure><figure><figcaption>clip 111b656f &nbsp;|&nbsp; mean k = 0.755, coverage = 0.751</figcaption><img src="atlas_111b656f_s.png" loading="lazy"></figure><figure><figcaption>clip 00534f58 &nbsp;|&nbsp; mean k = 0.713, coverage = 0.707</figcaption><img src="atlas_00534f58_s.png" loading="lazy"></figure><figure><figcaption>clip 2501f488 &nbsp;|&nbsp; mean k = 0.677, coverage = 0.678</figcaption><img src="atlas_2501f488_s.png" loading="lazy"></figure><figure><figcaption>clip 010533f2 &nbsp;|&nbsp; mean k = 0.645, coverage = 0.643</figcaption><img src="atlas_010533f2_s.png" loading="lazy"></figure><figure><figcaption>clip 0003dc82 &nbsp;|&nbsp; mean k = 0.521, coverage = 0.516</figcaption><img src="atlas_0003dc82_s.png" loading="lazy"></figure><figure><figcaption>clip 0194be61 &nbsp;|&nbsp; mean k = 0.445, coverage = 0.449</figcaption><img src="atlas_0194be61_s.png" loading="lazy"></figure><figure><figcaption>clip 00e3fa12 &nbsp;|&nbsp; mean k = 0.438, coverage = 0.436</figcaption><img src="atlas_00e3fa12_s.png" loading="lazy"></figure>
+<div class="sub">相关:<a href="expjpipe.html">expJ pipeline</a> · <a href="noisedist.html#canvas">第 0 步画布实拍</a> · <a href="latestall.html">50 步终榜</a> · <a href="matrix.html">组件矩阵</a></div>
+</body></html>

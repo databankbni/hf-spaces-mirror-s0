@@ -1,0 +1,36 @@
+services:
+  # ── Service 1: SearXNG (Search Engine) ──────────────────────────────────────
+  - type: web
+    name: ai-robot-searxng
+    runtime: docker
+    dockerfilePath: ./Dockerfile.searxng
+    plan: free
+    healthCheckPath: /
+    envVars:
+      - key: PORT
+        value: "8080"
+
+  # ── Service 2: MCP Tools Server (Main App) ──────────────────────────────────
+  - type: web
+    name: ai-robot-mcp-tools-server-dev
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    plan: free
+    healthCheckPath: /health
+    envVars:
+      - key: SEARXNG_URL
+        value: https://ai-robot-searxng.onrender.com
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: DB_USER
+        sync: false
+      - key: DB_PASSWORD
+        sync: false
+      - key: DB_HOST
+        sync: false
+      - key: DB_PORT
+        sync: false
+      - key: DB_NAME
+        sync: false
+      - key: SMARTLIGHT_API_URL
+        sync: false

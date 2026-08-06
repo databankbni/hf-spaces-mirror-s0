@@ -1,0 +1,22 @@
+{
+ "captured_at": "2026-08-04T17:09:53Z",
+ "hf_metadata": {
+  "sha": "f121b9bcdee4c2786c069ba970361a515e3e5b7e"
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitignore",
+   "stored_as": "_gitignore"
+  },
+  {
+   "original": "mktbook/.gitignore",
+   "stored_as": "mktbook/_gitignore"
+  }
+ ],
+ "renamed_gitattributes": [],
+ "repo_id": "westland/MktBook",
+ "repo_type": "spaces",
+ "sha": "f121b9bcdee4c2786c069ba970361a515e3e5b7e",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/westland/MktBook"
+}

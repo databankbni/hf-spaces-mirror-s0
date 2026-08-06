@@ -1,0 +1,73 @@
+{
+ "captured_at": "2026-08-04T13:34:33Z",
+ "hf_metadata": {
+  "_id": "6a3a0ae717d353fdef7946f6",
+  "author": "GeoSemantica",
+  "cardData": {
+   "app_file": "app.py",
+   "colorFrom": "blue",
+   "colorTo": "green",
+   "emoji": "📊",
+   "pinned": false,
+   "sdk": "gradio",
+   "sdk_version": "6.19.0",
+   "title": "Semantic Density Monitor"
+  },
+  "createdAt": "2026-06-23T04:26:15.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://geosemantica-semantic-density-demo.hf.space",
+  "id": "GeoSemantica/semantic-density-demo",
+  "lastModified": "2026-07-16T12:54:25.000Z",
+  "likes": 0,
+  "models": [
+   "distilbert/distilbert-base-uncased"
+  ],
+  "private": false,
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "geosemantica-semantic-density-demo.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": null,
+    "requested": "cpu-basic"
+   },
+   "replicas": {
+    "requested": 1
+   },
+   "stage": "SLEEPING"
+  },
+  "sdk": "gradio",
+  "sha": "2327e60757d750564426ec79b4942a7e5dd5662b",
+  "siblings": [
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "app.py"
+   },
+   {
+    "rfilename": "requirements.txt"
+   },
+   {
+    "rfilename": "stats.json"
+   }
+  ],
+  "subdomain": "geosemantica-semantic-density-demo",
+  "tags": [
+   "gradio",
+   "region:us"
+  ],
+  "usedStorage": 0
+ },
+ "renamed_gitattributes": [],
+ "repo_id": "GeoSemantica/semantic-density-demo",
+ "repo_type": "spaces",
+ "sha": "2327e60757d750564426ec79b4942a7e5dd5662b",
+ "web_url": "https://huggingface.co/spaces/GeoSemantica/semantic-density-demo"
+}

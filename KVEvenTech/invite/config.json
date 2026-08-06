@@ -1,0 +1,116 @@
+{
+  "brideName": "Dimple",
+  "groomName": "Karthik",
+  "familyName": "Bhupathi & Madan Families",
+  "brideParents": "D/o Mr. & Mrs. Bhupathi",
+  "groomParents": "S/o Mr. & Mrs. Madan Mohan",
+  "bridePhoto": "bride.png",
+  "groomPhoto": "groom.png",
+  "scrollHint": "Scroll down / swipe up to continue &darr;",
+
+  "intro": {
+    "title": "Royal Invitation",
+    "tagline": "Invites You",
+    "buttonText": "Open Invitation",
+    "sequenceInvite": "We cordially invite you",
+    "sequenceTo": "To celebrate"
+  },
+
+  "hero": {
+    "badge": "You Are Invited"
+  },
+
+  "introduce": {
+    "brideTitle": "The Bride",
+    "groomTitle": "The Groom",
+    "introduceTag": "Introducing the Couple",
+    "introduceHeading": "Meet the Bride & Groom",
+    "brideBio": "A graceful daughter whose presence brings endless warmth and delight. Her steps are guided by love, kindness, and family blessings as she embarks on this holy covenant of marriage.",
+    "groomBio": "An honorable son ready to lead with strength, loyalty, and dedication. Supported by the virtues of his parents, he welcomes his new life partner with a heart full of respect and devotion."
+  },
+
+  "scratchReveal": {
+    "teaser": "✦ For You ✦",
+    "heading": "A Little Secret",
+    "revealLabel": "Save The Date",
+    "scratchText": "✦ Scratch to Reveal ✦"
+  },
+
+  "countdown": {
+    "label": "Celebration Begins In",
+    "heading": "Counting Down",
+    "doneMessage": "The Celebration Is Here!",
+    "daysLabel": "Days",
+    "hoursLabel": "Hours",
+    "minutesLabel": "Minutes",
+    "secondsLabel": "Seconds"
+  },
+
+  "timeline": {
+    "addToCalendarLabel": "Add to Calendar",
+    "calendarDetails": "We cordially invite you to celebrate this beautiful milestone with us."
+  },
+
+  "celebrations": {
+    "sectionTag": "✦ The Celebrations ✦",
+    "sectionHeading": "Joyous Events"
+  },
+
+  "venue": {
+    "sectionHeading": "Venue & Reception",
+    "locationLabel": "Main Event Location",
+    "directionsLabel": "Get Directions"
+  },
+
+  "gallery": {
+    "tag": "Moments of Togetherness",
+    "heading": "Love Gallery",
+    "preWeddingLabel": "Pre-Wedding",
+    "swipeLabel": "Swipe Left / Right to Browse"
+  },
+
+  "wishes": {
+    "tag": "Social Blessings Feed",
+    "heading": "Wishes Wall",
+    "formHeading": "Tweet a Blessing",
+    "nameLabel": "Your Name",
+    "namePlaceholder": "e.g. Rohan & Preeti",
+    "messageLabel": "Your Blessing",
+    "messagePlaceholder": "Write your loving blessings...",
+    "themeLabel": "Card Theme Style",
+    "submitLabel": "Tweet Blessing",
+    "submittingLabel": "Tweeting...",
+    "emptyLabel": "No blessings in the feed yet. Write the first tweet!",
+    "validationError": "Please fill in both your name and blessing.",
+    "successMessage": "Your blessing has been posted to the wall! 🐦"
+  },
+
+  "blessings": {
+    "heading": "With Best Compliments",
+    "suffix": "& Family & Friends"
+  },
+
+  "events": {
+    "haldi": {
+      "title": "Welcome Dinner",
+      "badge": "PRE-EVENT",
+      "blessing": "Join us for an evening of joy and laughter",
+      "date": "14 Nov 2026",
+      "time": "06:00 PM",
+      "dateISO": "2026-11-14T18:00:00+05:30",
+      "venue": "The Grand Hotel",
+      "address": "123 Event Street, City Center"
+    },
+    "halfSaree": {
+      "title": "Wedding Ceremony",
+      "badge": "WEDDING",
+      "blessing": "Witness a beautiful milestone in {brideName}'s life",
+      "date": "15 Nov 2026",
+      "time": "11:00 AM",
+      "dateISO": "2026-11-15T11:00:00+05:30",
+      "venue": "Convention Hall",
+      "address": "456 Celebration Ave, Downtown",
+      "mapLink": "https://maps.google.com"
+    }
+  }
+}

@@ -1,0 +1,162 @@
+{
+ "captured_at": "2026-08-04T13:17:11Z",
+ "hf_metadata": {
+  "_id": "6a4a40298721ee2bea94790e",
+  "author": "Aditya501gupta",
+  "cardData": {
+   "app_port": 7860,
+   "colorFrom": "indigo",
+   "colorTo": "blue",
+   "emoji": "🛡️",
+   "pinned": false,
+   "sdk": "docker",
+   "short_description": "Real-time AI shield against digital-arrest and UPI scams",
+   "title": "DHAAL API"
+  },
+  "createdAt": "2026-07-05T11:29:45.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://aditya501gupta-dhaal-api.hf.space",
+  "id": "Aditya501gupta/dhaal-api",
+  "lastModified": "2026-07-05T11:29:46.000Z",
+  "likes": 0,
+  "private": false,
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "aditya501gupta-dhaal-api.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": null,
+    "requested": "cpu-basic"
+   },
+   "replicas": {
+    "requested": 1
+   },
+   "stage": "SLEEPING"
+  },
+  "sdk": "docker",
+  "sha": "f069f9c9f84cdf45a04a195b173add6ccf6e0da8",
+  "siblings": [
+   {
+    "rfilename": ".env.example"
+   },
+   {
+    "rfilename": ".gitattributes"
+   },
+   {
+    "rfilename": "DEPLOY.md"
+   },
+   {
+    "rfilename": "Dockerfile"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "backend/app/__init__.py"
+   },
+   {
+    "rfilename": "backend/app/engine/__init__.py"
+   },
+   {
+    "rfilename": "backend/app/engine/forensic.py"
+   },
+   {
+    "rfilename": "backend/app/engine/fusion.py"
+   },
+   {
+    "rfilename": "backend/app/engine/llm.py"
+   },
+   {
+    "rfilename": "backend/app/engine/rules.py"
+   },
+   {
+    "rfilename": "backend/app/main.py"
+   },
+   {
+    "rfilename": "backend/requirements.txt"
+   },
+   {
+    "rfilename": "backend/tests/test_forensic.py"
+   },
+   {
+    "rfilename": "backend/tests/test_fusion.py"
+   },
+   {
+    "rfilename": "backend/tests/test_rules.py"
+   },
+   {
+    "rfilename": "data/samples.jsonl"
+   },
+   {
+    "rfilename": "data/sources.md"
+   },
+   {
+    "rfilename": "data/validate.py"
+   },
+   {
+    "rfilename": "eval/harness.py"
+   },
+   {
+    "rfilename": "eval/report_hybrid.md"
+   },
+   {
+    "rfilename": "eval/report_rules.md"
+   },
+   {
+    "rfilename": "eval/report_v0.md"
+   },
+   {
+    "rfilename": "eval/report_v1.md"
+   },
+   {
+    "rfilename": "frontend/app/globals.css"
+   },
+   {
+    "rfilename": "frontend/app/layout.jsx"
+   },
+   {
+    "rfilename": "frontend/app/page.jsx"
+   },
+   {
+    "rfilename": "frontend/demo.html"
+   },
+   {
+    "rfilename": "frontend/next.config.mjs"
+   },
+   {
+    "rfilename": "frontend/package.json"
+   },
+   {
+    "rfilename": "frontend/public/icon-192.png"
+   },
+   {
+    "rfilename": "frontend/public/icon-512.png"
+   },
+   {
+    "rfilename": "frontend/public/manifest.json"
+   }
+  ],
+  "subdomain": "aditya501gupta-dhaal-api",
+  "tags": [
+   "docker",
+   "region:us"
+  ],
+  "usedStorage": 0
+ },
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "Aditya501gupta/dhaal-api",
+ "repo_type": "spaces",
+ "sha": "f069f9c9f84cdf45a04a195b173add6ccf6e0da8",
+ "web_url": "https://huggingface.co/spaces/Aditya501gupta/dhaal-api"
+}

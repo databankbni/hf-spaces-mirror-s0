@@ -1,0 +1,26 @@
+{
+  "name": "ai-scam-detector",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node --max-old-space-size=256 src/server.js",
+    "test": "node scratch/test_scam_detector.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "adm-zip": "^0.5.17",
+    "axios": "^1.18.1",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "firebase-admin": "^14.0.0",
+    "qrcode-terminal": "^0.12.0",
+    "razorpay": "^2.9.6",
+    "whatsapp-web.js": "^1.34.7"
+  }
+}

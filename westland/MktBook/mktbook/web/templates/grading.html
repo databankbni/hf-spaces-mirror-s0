@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% block title %}Grading - MktBook{% endblock %}
+{% block content %}
+<h1>Grading</h1>
+
+<article>
+    <header>Run Grading</header>
+    <p>Grade all active bots based on their conversation history, objective achievement, and interaction quality.</p>
+    <button id="run-grading-btn" onclick="runGrading()">Run Grading Now</button>
+    <div id="grading-status"></div>
+</article>
+
+{% if grades %}
+<article>
+    <header>Latest Results</header>
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Bot</th>
+                <th>Student</th>
+                <th>Overall</th>
+                <th>Objective (35%)</th>
+                <th>Quality (30%)</th>
+                <th>Human (20%)</th>
+                <th>Volume (15%)</th>
+                <th>Reasoning</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in grades %}
+            <tr>
+                <td>{{ loop.index }}</td>
+                <td><a href="/bots/{{ item.grade.bot_id }}">{{ item.bot.bot_name if item.bot else 'Unknown' }}</a></td>
+                <td>{{ item.bot.student_name if item.bot else 'Unknown' }}</td>
+                <td><strong>{{ "%.1f"|format(item.grade.overall_score) }}</strong></td>
+                <td>{{ "%.1f"|format(item.grade.objective_score) }}</td>
+                <td>{{ "%.1f"|format(item.grade.quality_score) }}</td>
+                <td>{{ "%.1f"|format(item.grade.human_score) }}</td>
+                <td>{{ "%.1f"|format(item.grade.volume_score) }}</td>
+                <td><details><summary>View</summary>{{ item.grade.llm_reasoning }}</details></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="/api/grading/export" role="button" class="outline" target="_blank">Export CSV</a>
+</article>
+{% else %}
+<p>No grading results yet. Click "Run Grading Now" to grade all bots.</p>
+{% endif %}
+
+{% endblock %}
+{% block scripts %}
+<script>
+async function runGrading() {
+    const btn = document.getElementById('run-grading-btn');
+    const status = document.getElementById('grading-status');
+    btn.disabled = true;
+    btn.setAttribute('aria-busy', 'true');
+    status.textContent = 'Grading in progress...';
+    try {
+        const resp = await fetch('/api/grading/run', { method: 'POST' });
+        const data = await resp.json();
+        if (data.error) {
+            status.textContent = 'Error: ' + data.error;
+        } else {
+            status.textContent = `Grading complete! Run ${data.run_id}: ${data.grades.length} bots graded.`;
+            setTimeout(() => location.reload(), 1500);
+        }
+    } catch (e) {
+        status.textContent = 'Error: ' + e.message;
+    }
+    btn.disabled = false;
+    btn.removeAttribute('aria-busy');
+}
+</script>
+{% endblock %}

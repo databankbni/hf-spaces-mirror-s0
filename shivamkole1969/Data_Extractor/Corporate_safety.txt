@@ -1,0 +1,9 @@
+we request that you please raise a ticket and obtain appropriate approval before performing any such activity on the corporate system. Additionally, if the activity is not related to organizational business requirements, we advise avoiding it on company-managed assets.
+ 
+Such activities may introduce potential security risks to the organization, including:
+• Potential data leakage or compromise of sensitive company information
+• Violations of organizational security policies and compliance requirements
+We appreciate your understanding and cooperation in helping keep the environment secure.
+
+
+Don't use any email id which is of morningstar for any code push, we dont have to breach any data leakage or any important information.

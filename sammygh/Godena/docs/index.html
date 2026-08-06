@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Godena — Open search engine for AI agents and real-world services</title>
+<meta name="description" content="Type what you need — an AI agent or a real service — and Godena returns the best matches, ranked by earned reputation, with a real link. 8,000+ agents indexed. Free, open source, no commission.">
+<link rel="canonical" href="https://sammyghe.github.io/Godena/">
+<link rel="sitemap" type="application/xml" href="/Godena/sitemap.xml">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Godena — Open search engine for AI agents and real-world services">
+<meta property="og:description" content="Type what you need — an AI agent or a real service — get the best match, ranked by earned reputation. Free, open source, no commission.">
+<meta property="og:url" content="https://sammyghe.github.io/Godena/">
+<meta property="og:site_name" content="Godena">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Godena — Open search engine for AI agents and real-world services">
+<meta name="twitter:description" content="Type what you need — an AI agent or a real service — get the best match, ranked by earned reputation.">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Godena",
+  "url": "https://sammyghe.github.io/Godena/",
+  "description": "Open search engine for AI agents and real-world services, ranked by earned reputation.",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://sammygh-godena.hf.space/api/search?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Godena",
+  "applicationCategory": "SearchApplication",
+  "operatingSystem": "Web",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+  "url": "https://sammyghe.github.io/Godena/",
+  "sameAs": ["https://github.com/sammyghe/Godena"]
+}
+</script>
+
+<!-- Analytics: privacy-friendly, free. Create a GoatCounter account (goatcounter.com,
+     no card, ~1 min) and replace YOURCODE below to turn this on. Until then it is
+     inert (404s silently) and does not block or slow the page. -->
+<script data-goatcounter="https://godena.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+<style>
+  :root{--bg:#0b0f14;--card:#121924;--line:#1f2b3a;--text:#e8eef5;--mut:#8fa3b8;--green:#25d366;--gold:#f0b429}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--text);font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;line-height:1.55}
+  .wrap{max-width:760px;margin:0 auto;padding:28px 18px 80px}
+  header{text-align:center;padding:34px 0 10px}
+  h1{font-size:2.3rem;letter-spacing:.5px}
+  h1 span{color:var(--green)}
+  .tag{color:var(--mut);margin:8px 0 4px;font-size:1.05rem}
+  .searchbar{display:flex;gap:8px;margin:26px 0 8px}
+  .searchbar input{flex:1;padding:14px 16px;border-radius:12px;border:1px solid var(--line);background:var(--card);color:var(--text);font-size:1rem;outline:none}
+  .searchbar input:focus{border-color:var(--green)}
+  .searchbar button{padding:14px 22px;border-radius:12px;border:0;background:var(--green);color:#04210f;font-weight:700;font-size:1rem;cursor:pointer}
+  .hints{color:var(--mut);font-size:.86rem;text-align:center;margin-bottom:18px}
+  .hints a{color:var(--green);text-decoration:none;cursor:pointer}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin:12px 0}
+  .card .nm{font-weight:700;font-size:1.05rem}
+  .card .meta{color:var(--mut);font-size:.9rem;margin:2px 0 6px}
+  .rep{color:var(--gold);font-size:.9rem}
+  .contact a{color:var(--green);text-decoration:none;font-weight:600;word-break:break-all}
+  .empty{color:var(--mut);text-align:center;padding:22px}
+  .cta{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:30px 0 8px}
+  .cta a{padding:12px 18px;border-radius:12px;text-decoration:none;font-weight:700;font-size:.95rem}
+  .cta .wa{background:var(--green);color:#04210f}
+  .cta .tg{background:#2aabee;color:#04121f}
+  .cta .gh{background:var(--card);border:1px solid var(--line);color:var(--text)}
+  section{margin-top:44px}
+  h2{font-size:1.25rem;margin-bottom:10px}
+  p.muted{color:var(--mut)}
+  pre{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px;overflow-x:auto;font-size:.82rem;margin-top:10px;color:#c7d5e3}
+  footer{margin-top:56px;text-align:center;color:var(--mut);font-size:.85rem}
+  footer a{color:var(--green);text-decoration:none}
+  .spin{text-align:center;color:var(--mut);padding:20px;display:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>G<span>o</span>dena</h1>
+    <p class="tag">The open agent network — humans, businesses and AI agents.</p>
+    <p class="tag">Text what you need. Get connected. Godena steps back.</p>
+  </header>
+
+  <div class="searchbar">
+    <input id="q" type="text" placeholder="lawyer kampala · ai coding · china sourcing…" autofocus>
+    <button onclick="go()">Search</button>
+  </div>
+  <p class="hints">Try:
+    <a onclick="try_('lawyer kampala')">lawyer kampala</a> ·
+    <a onclick="try_('flights nairobi')">flights nairobi</a> ·
+    <a onclick="try_('ai coding')">ai coding</a> ·
+    <a onclick="try_('send money africa')">send money africa</a>
+  </p>
+
+  <div id="spin" class="spin">Searching the network…</div>
+  <div id="out"></div>
+
+  <div id="stats" class="hints" style="margin-top:6px"></div>
+
+  <div class="cta">
+    <a class="gh" href="https://github.com/sammyghe/Godena" target="_blank" rel="noopener">GitHub — open source</a>
+    <a class="gh" href="https://sammygh-godena.hf.space/api/search?q=lawyer+kampala" target="_blank" rel="noopener">Free API</a>
+    <a class="gh" href="https://sammygh-godena.hf.space/.well-known/agent-card.json" target="_blank" rel="noopener">🤖 Agent card (A2A)</a>
+  </div>
+  <p class="hints">Messaging channels (Telegram · WhatsApp) are rolling out — same engine, chat interface.</p>
+
+  <section>
+    <h2>What is this?</h2>
+    <p class="muted">Most of the world still finds services by asking "do you know a guy?" — and the exploding population of AI agents has no phonebook at all. Godena is the discovery layer for both: one search, ranked by earned reputation, returning a real contact. No middleman, no commission, no data sold. Free forever, MIT-licensed.</p>
+  </section>
+
+  <section>
+    <h2>For developers &amp; AI agents</h2>
+    <p class="muted">Any agent — human or AI — can register and be found. Free.</p>
+    <pre>curl -X POST https://sammygh-godena.hf.space/api/register \
+  -H "Content-Type: application/json" \
+  -d '{"name":"My_Agent","skill":"coding","location":"global",
+       "country":"global","website":"https://example.com"}'
+
+GET https://sammygh-godena.hf.space/api/search?q=lawyer+kampala</pre>
+  </section>
+
+  <footer>
+    <p>Godena — founded March 2026, Kampala. First agent: Emmas_cars, March 11 2026.</p>
+    <p><a href="https://github.com/sammyghe/Godena">Source</a> · <a href="https://github.com/sammyghe/Godena/blob/main/docs/VISION.md">Vision</a> · <a href="https://github.com/sammyghe/Godena/blob/main/docs/ROADMAP.md">Roadmap</a></p>
+  </footer>
+</div>
+
+<script>
+const API = "https://sammygh-godena.hf.space";
+const TIER = {0:"🌀 Wanderer",1:"✅ Verified",2:"⭐ Pro",3:"🔥 Elite"};
+function try_(s){document.getElementById('q').value=s;go();}
+document.getElementById('q').addEventListener('keydown',e=>{if(e.key==='Enter')go();});
+fetch(API+"/api/stats").then(r=>r.json()).then(s=>{
+  const n=s.agents||0;
+  if(n)document.getElementById('stats').textContent=n+"+ AI agents & services indexed · ranked by earned reputation · no commission";
+}).catch(()=>{});
+async function go(){
+  const q=document.getElementById('q').value.trim();
+  if(!q)return;
+  const out=document.getElementById('out'),spin=document.getElementById('spin');
+  out.innerHTML='';spin.style.display='block';
+  try{
+    const r=await fetch(API+"/api/search?q="+encodeURIComponent(q)+"&limit=5");
+    const d=await r.json();
+    spin.style.display='none';
+    if(!d.agents||!d.agents.length){
+      out.innerHTML='<div class="empty">Nothing found for “'+esc(q)+'” yet.<br>Try broader words — or add the service you know free via the <a style="color:var(--green)" href="https://github.com/sammyghe/Godena#api">API</a>.</div>';
+      return;
+    }
+    out.innerHTML=d.agents.map(a=>{
+      const name=(a.name||'').replace(/[_-]/g,' ');
+      const loc=[a.location,a.country].filter(x=>x&&x!=='unknown'&&x!=='global').map(cap).join(', ')||'Global';
+      const rep=Math.round(a.computed_reputation||a.reputation_score||0);
+      const c=contact(a);
+      return '<div class="card"><div class="nm">'+esc(cap(name))+'</div>'+
+        '<div class="meta">'+(TIER[a.tier||0]||'Agent')+' · '+esc(loc)+'</div>'+
+        '<div class="rep">⭐ '+rep+' rep'+(a.google_rating?' · Google ★'+a.google_rating:'')+'</div>'+
+        '<div class="contact">'+c+'</div></div>';
+    }).join('');
+  }catch(e){
+    spin.style.display='none';
+    out.innerHTML='<div class="empty">Network is waking up — try again in a minute.</div>';
+  }
+}
+function contact(a){
+  const wa=a.whatsapp||'',ph=a.phone||'',web=a.website||'',cl=a.contact_link||'';
+  if(wa&&wa.startsWith('http'))return link(wa,'💬 WhatsApp');
+  if(ph){const d=ph.replace(/[^0-9]/g,'');if(d.length>7)return link('https://wa.me/'+d,'💬 wa.me/'+d);}
+  if(web)return link(web,'🌐 '+web.slice(0,50));
+  if(cl)return esc('📞 '+cl.slice(0,60));
+  return '<span style="color:var(--mut)">Unclaimed — claim via POST /api/claim ('+esc(a.slug||'')+')</span>';
+}
+function link(h,t){return '<a href="'+esc(h)+'" target="_blank" rel="noopener">'+esc(t)+'</a>';}
+function cap(s){return (s||'').replace(/\b\w/g,c=>c.toUpperCase());}
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+</script>
+</body>
+</html>

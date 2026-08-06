@@ -1,0 +1,95 @@
+{
+ "captured_at": "2026-08-04T15:51:42Z",
+ "hf_metadata": {
+  "_id": "6a10b190303153bc7ec39be4",
+  "author": "ania3000",
+  "cardData": {
+   "app_file": "app.py",
+   "colorFrom": "blue",
+   "colorTo": "indigo",
+   "emoji": "👀",
+   "pinned": false,
+   "python_version": "3.13",
+   "sdk": "gradio",
+   "sdk_version": "6.14.0",
+   "short_description": "POS, feats and lemmas in UD v2 in context for Ossetic",
+   "title": "Ossetic Morphological Analyzer"
+  },
+  "createdAt": "2026-05-22T19:42:08.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://ania3000-ossetic-morph-analyzer.hf.space",
+  "id": "ania3000/ossetic-morph-analyzer",
+  "lastModified": "2026-07-17T14:52:44.000Z",
+  "likes": 1,
+  "models": [
+   "ossetic-encoders/ossbert-lemm-v2",
+   "ossetic-encoders/ossbert-morph-v2"
+  ],
+  "private": false,
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "ania3000-ossbert-morph-v2.hf.space",
+     "stage": "READY"
+    },
+    {
+     "domain": "ania3000-ossetic-morph-analyzer.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": null,
+    "requested": "cpu-basic"
+   },
+   "replicas": {
+    "requested": 1
+   },
+   "stage": "SLEEPING"
+  },
+  "sdk": "gradio",
+  "sha": "80e00e2d4d817613d7010573e589ae2fa8614b05",
+  "siblings": [
+   {
+    "rfilename": ".gitattributes"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "app.py"
+   },
+   {
+    "rfilename": "requirements.txt"
+   },
+   {
+    "rfilename": "word_segmenter_bundle.pth"
+   }
+  ],
+  "subdomain": "ania3000-ossetic-morph-analyzer",
+  "tags": [
+   "gradio",
+   "region:us"
+  ],
+  "usedStorage": 2685609
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "ania3000/ossetic-morph-analyzer",
+ "repo_type": "spaces",
+ "sha": "80e00e2d4d817613d7010573e589ae2fa8614b05",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/ania3000/ossetic-morph-analyzer"
+}

@@ -1,0 +1,164 @@
+{
+  "manifest_version": "1.0.0",
+  "created_at": "2026-06-12T23:50:00Z",
+  "project": "underdog-lab",
+  "phase": "hackathon-submission",
+  "evaluation_contract": {
+    "taxonomy": {
+      "file": "src/underdog_lab/scenarios/taxonomy.py",
+      "sha256": "f932d65e9abecf4bf7bbb5c45173f2ba587178f6056031fe839f3fd4b55b2a01",
+      "version": "14-factor taxonomy (v1)",
+      "factors": [
+        "key_attacker_unavailable",
+        "key_defender_unavailable",
+        "goalkeeper_unavailable",
+        "multiple_starters_unavailable",
+        "squad_rotation",
+        "fatigue_disadvantage",
+        "rest_advantage",
+        "travel_disadvantage",
+        "altitude_disadvantage",
+        "heat_disadvantage",
+        "home_advantage",
+        "neutral_venue",
+        "defensive_game_state",
+        "must_win_incentive"
+      ]
+    },
+    "ruleset": {
+      "file": "src/underdog_lab/scenarios/adjustments.py",
+      "sha256": "14a8bfc16a6b66b9b76c4961c07f38c39579f34563be95c5e89db11ca3aeb032",
+      "version": "ruleset_v1"
+    },
+    "config": {
+      "file": "src/underdog_lab/config.py",
+      "sha256": "580e93bc73ef0d2d0e17e48288f84995773fe87b0840723fdf6a8e0032aceebb"
+    },
+    "grammar": {
+      "file": "src/underdog_lab/scenarios/grammar.gbnf",
+      "sha256": "81b7fa2055799b8321f74877d2e5b5f8c467ed31137e08c0d683303368173946"
+    },
+    "prompts": {
+      "file": "src/underdog_lab/scenarios/prompts.py",
+      "sha256": "d1097ef86bd316e4eb9f79aa01d7061b084107dc53eba242e6bc8d4036f3e786"
+    },
+    "training_script": {
+      "file": "training/modal_train.py",
+      "sha256": "fc0ca2b366e97fbbb27dae301d3aac9b5643b31bf732489e873ff31694d96737"
+    },
+    "benchmark_script": {
+      "file": "scripts/benchmark_gguf.py",
+      "sha256": "97c7cca145ebac13a8494a8cdf71cabb69f58d582788632fe254f4064df1cf4a"
+    },
+    "gap_fill_script": {
+      "file": "scripts/generate_gap_fill.py",
+      "sha256": "9e319704723cd4fd8d81def52ac549e63af871b08bc7d044eb1471697d3cc32f"
+    },
+    "snapshot_update_script": {
+      "file": "scripts/update_snapshot.py",
+      "sha256": "743d990ae30b1a4f4d840e3d7ce73adcb24a9643698f9058bb42d0de84dae2a5"
+    },
+    "extraction_schema": {
+      "file": "src/underdog_lab/scenarios/schemas.py",
+      "sha256": "e7e96258281f7f3743f7d98ee7df0e710bd657eb8bfd27b04778a76cbc9f7637"
+    },
+    "mock_extractor": {
+      "file": "src/underdog_lab/scenarios/mock_extractor.py",
+      "sha256": "933c58dadad3ad10f3c20676a6037e06d277916042bc5420c2edc52831e2cdd1"
+    },
+    "extractor_factory": {
+      "file": "src/underdog_lab/scenarios/factory.py",
+      "sha256": "4ec2c568e3f4b09a1fc38d05ee2aae0a564cbe972cb85230f19aeaefdf50207e"
+    },
+    "llama_cpp_extractor": {
+      "file": "src/underdog_lab/scenarios/python_llama_cpp_extractor.py",
+      "sha256": "9b3a0bf653e12b06ce13a146cd25bee3995881889970353b59c31604ea56d059"
+    }
+  },
+  "datasets": {
+    "train": {
+      "path": "data/scenarios/train.jsonl",
+      "sha256": "43810359b9bf496b09a150ffc9e67ebcac8aac50fcdd884361d253d7e7902763",
+      "rows": 861,
+      "seed": 42,
+      "gap_fill_seeds": [1986, 42, 2718, 31415],
+      "gap_fill_script": "scripts/generate_gap_fill.py",
+      "provenance": "compositional synthetic generation; human review required",
+      "review_status": "pending"
+    },
+    "validation": {
+      "path": "data/scenarios/validation.jsonl",
+      "sha256": "f22455d9f27ff2c9f411c9cf93d57014a25f1a25911313538d2732c0c887d08f",
+      "rows": 56,
+      "seed": 314,
+      "provenance": "compositional synthetic generation; human review required",
+      "review_status": "pending"
+    },
+    "test": {
+      "path": "data/scenarios/test.jsonl",
+      "sha256": "f188a7266bc1e96d91c234e2443fae2b701fce1218e631d10a01d8785298416f",
+      "rows": 98,
+      "seed": 2718,
+      "provenance": "compositional synthetic generation; human review required",
+      "review_status": "pending",
+      "frozen": true,
+      "review_artifact": "docs/test-set-review.csv"
+    }
+  },
+  "evaluation": {
+    "script": {
+      "file": "scripts/evaluate_extractor.py",
+      "sha256": "83e0bdcf482d12b019e742f358d8846e42273df99f3ee5f245c16101db7164fe"
+    },
+    "metrics": {
+      "factor_micro_f1": {
+        "description": "Micro-averaged precision/recall/F1 over (factor_type, team) pairs",
+        "primary": true
+      },
+      "factor_macro_f1": {
+        "description": "Macro-averaged F1 across factor types",
+        "primary": false
+      },
+      "team_attribution_accuracy": {
+        "description": "Fraction of expected factors where both factor_type and team match any actual factor",
+        "primary": true
+      },
+      "severity_mae_on_matched_factors": {
+        "description": "Mean absolute error of severity on (factor_type, team) matches",
+        "primary": false
+      },
+      "unsupported_claim_f1": {
+        "description": "Binary F1 on presence/absence of unsupported_claims",
+        "primary": true
+      },
+      "ambiguity_detection_f1": {
+        "description": "Binary F1 on presence/absence of ambiguities",
+        "primary": false
+      },
+      "exact_semantic_match_rate": {
+        "description": "Fraction of examples where factor set, unsupported, and ambiguity all match exactly",
+        "primary": false
+      },
+      "median_latency_ms": {
+        "description": "Median extraction latency across test examples",
+        "primary": false
+      }
+    }
+  },
+  "data_generator": {
+    "file": "scripts/generate_synthetic_data.py",
+    "sha256": "e8f78c0fc1e9929d6157e44641e75b8f2e53454cedb5b247b876eb140775774e",
+    "note": "Do not train on output from this generator. Use Modal-generated corpus with human review."
+  },
+  "base_model": {
+    "name": "SmolLM2-360M-Instruct",
+    "repo": "bartowski/SmolLM2-360M-Instruct-GGUF",
+    "filename": "SmolLM2-360M-Instruct-Q8_0.gguf",
+    "runtime": "llama-cpp-python"
+  },
+  "guardrails": {
+    "test_set_isolation": "The frozen test split seed (2718) is disjoint from training seed (42). The training script loads from Hugging Face Hub, not local files. scripts/generate_synthetic_data.py cannot reproduce test split without its exact seed.",
+    "review_requirement": "All validation and test records must be manually reviewed and set to review_status=approved before competition claims are made.",
+    "claim_readiness": "evaluate_extractor.py sets claim_ready=false until every test record has review_status=approved."
+  }
+}

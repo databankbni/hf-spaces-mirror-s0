@@ -1,0 +1,79 @@
+{
+ "captured_at": "2026-08-04T13:34:25Z",
+ "hf_metadata": {
+  "_id": "6a03012668ac6c467b09410e",
+  "author": "FEgroup",
+  "cardData": {
+   "app_file": "app.py",
+   "colorFrom": "pink",
+   "colorTo": "green",
+   "emoji": "🐢",
+   "pinned": false,
+   "python_version": "3.13",
+   "sdk": "gradio",
+   "sdk_version": "6.14.0",
+   "title": "PSX"
+  },
+  "createdAt": "2026-05-12T10:29:58.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://fegroup-psx.hf.space",
+  "id": "FEgroup/PSX",
+  "lastModified": "2026-07-17T05:23:16.000Z",
+  "likes": 0,
+  "private": false,
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "fegroup-psx.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": null,
+    "requested": "cpu-basic"
+   },
+   "replicas": {
+    "requested": 1
+   },
+   "stage": "SLEEPING"
+  },
+  "sdk": "gradio",
+  "sha": "a83d4b6a5ee4ba8df106056e4d9b8fb174058957",
+  "siblings": [
+   {
+    "rfilename": ".gitattributes"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "app.py"
+   },
+   {
+    "rfilename": "requirements.txt"
+   },
+   {
+    "rfilename": "stock.csv.gz"
+   }
+  ],
+  "subdomain": "fegroup-psx",
+  "tags": [
+   "gradio",
+   "region:us"
+  ],
+  "usedStorage": 79943
+ },
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "FEgroup/PSX",
+ "repo_type": "spaces",
+ "sha": "a83d4b6a5ee4ba8df106056e4d9b8fb174058957",
+ "web_url": "https://huggingface.co/spaces/FEgroup/PSX"
+}

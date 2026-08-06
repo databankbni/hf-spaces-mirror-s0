@@ -1,0 +1,87 @@
+{
+ "captured_at": "2026-08-04T15:51:30Z",
+ "hf_metadata": {
+  "_id": "6a4b59fa4626eb0498cf2dbd",
+  "author": "akshay-ratio",
+  "cardData": {
+   "app_file": "app.py",
+   "colorFrom": "red",
+   "colorTo": "blue",
+   "emoji": "📈",
+   "pinned": false,
+   "python_version": "3.13",
+   "sdk": "gradio",
+   "sdk_version": "6.19.0",
+   "title": "Partnerschat"
+  },
+  "createdAt": "2026-07-06T07:32:10.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://akshay-ratio-partnerschat.hf.space",
+  "id": "akshay-ratio/partnerschat",
+  "lastModified": "2026-07-06T10:25:55.000Z",
+  "likes": 0,
+  "models": [
+   "MBZUAI/LaMini-Flan-T5-783M"
+  ],
+  "private": false,
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "akshay-ratio-partnerschat.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "errorMessage": "Launch timed out, workload was not healthy after 30 min",
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": null,
+    "requested": "cpu-basic"
+   },
+   "replicas": {
+    "requested": 1
+   },
+   "stage": "RUNTIME_ERROR"
+  },
+  "sdk": "gradio",
+  "sha": "84c397836d0554b8396c95d8c3af7068236fcec3",
+  "siblings": [
+   {
+    "rfilename": ".gitattributes"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "app.py"
+   },
+   {
+    "rfilename": "requirements.txt"
+   }
+  ],
+  "subdomain": "akshay-ratio-partnerschat",
+  "tags": [
+   "gradio",
+   "region:us"
+  ],
+  "usedStorage": 0
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "akshay-ratio/partnerschat",
+ "repo_type": "spaces",
+ "sha": "84c397836d0554b8396c95d8c3af7068236fcec3",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/akshay-ratio/partnerschat"
+}

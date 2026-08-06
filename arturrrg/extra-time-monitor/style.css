@@ -1,0 +1,2732 @@
+:root {
+  --bg: #000000;
+  --surface: #0a0a0a;
+  --border: #161616;
+  --border-active: #222222;
+  --text-primary: #ffffff;
+  --text-secondary: #8c8c8c;
+  --text-muted: #4d4d4d;
+  /* Awaiting-queue accent — amber: warm and clearly visible, distinct from the
+     red alerts without competing with them. Drives the hourglass + queue modal. */
+  --accent-hot: #f5a623;
+  --accent-hot-soft: rgba(245, 166, 35, 0.14);
+  --accent-hot-border: rgba(245, 166, 35, 0.55);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text-primary);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  font-weight: 400;
+  min-height: 100vh;
+  min-height: 100svh;
+  padding: clamp(10px, 2vw, 24px);
+  position: relative;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* While a popup overlay is open, freeze the page behind it so a tall log list scrolls
+   only inside the modal and never drags the main page (no second scrollbar). The
+   scrollable element is <html> (it carries `overflow-y: scroll`), so locking it is
+   enough. We deliberately do NOT set overflow:hidden on <body>: that would make the
+   body a block formatting context, which contains the header's negative top margin
+   (its bleed to the very top) and drops the navbar down by the body padding while a
+   modal is open. The modal's own list/terminal handles its internal scrolling. */
+html.modal-open {
+  overflow: hidden;
+}
+
+/* ── Ambient background ───────────────────────────────────────────────
+   Two subtle monochrome layers, back→front:
+     body::after (-4)  slow-drifting cool-white aurora haze
+     .bg-fx      (-1)  always-on corner vignette */
+body::after {
+  content: "";
+  position: fixed;
+  inset: -25%;
+  background:
+    radial-gradient(38% 38% at 22% 30%, rgba(255, 255, 255, 0.050), transparent 70%),
+    radial-gradient(34% 34% at 80% 68%, rgba(200, 210, 225, 0.038), transparent 70%),
+    radial-gradient(30% 30% at 58% 18%, rgba(255, 255, 255, 0.034), transparent 70%),
+    radial-gradient(40% 40% at 40% 85%, rgba(170, 180, 195, 0.032), transparent 70%);
+  filter: blur(50px);
+  z-index: -4;
+  pointer-events: none;
+  animation: auroraDrift 34s ease-in-out infinite alternate;
+}
+
+.bg-fx {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  /* Always-on corner vignette (independent of the cursor). */
+  background: radial-gradient(circle at center, rgba(0, 0, 0, 0.06) 20%, rgba(0, 0, 0, 0.88) 100%);
+}
+
+@keyframes auroraDrift {
+  0%   { transform: translate3d(-3%, -2%, 0) scale(1.05) rotate(0deg); }
+  50%  { transform: translate3d(2%, 3%, 0) scale(1.12) rotate(4deg); }
+  100% { transform: translate3d(3%, -3%, 0) scale(1.05) rotate(-3deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body::after { animation: none; }
+}
+
+.app-container {
+  width: 100%;
+  max-width: 1800px;
+  margin: 0 Auto;
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - clamp(20px, 4vw, 48px));
+  min-height: calc(100svh - clamp(20px, 4vw, 48px));
+}
+
+.app-header {
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  /* Bleed over the body's responsive padding so the frosted bar spans edge-to-edge
+     and leaves no scrolling gap above it while stuck. */
+  margin: calc(-1 * clamp(10px, 2vw, 24px)) calc(-1 * clamp(10px, 2vw, 24px)) 10px;
+  padding: 6px clamp(10px, 2vw, 24px);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Fully transparent — the frosted backdrop now lives on the .nav-pill and
+     fades in only as you scroll (driven by setupHeaderScroll in app.js). */
+  background: transparent;
+}
+
+.nav-cluster {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  /* Sit above the nav-morph SVG (z-index:-1) without needing isolation on the
+     pill. This lets tooltip ::after pseudo-elements escape the pill's bounds. */
+  position: relative;
+  z-index: 1;
+  /* Pin the buttons to the pixel grid on their own GPU layer so they never
+     shimmer as the pill's backdrop recomposites underneath them. */
+  transform: translateZ(0);
+}
+
+/* ───────────────────────── Nav pill (scroll draw) ──────────────────────────
+   At rest nothing shows — the header is transparent and the buttons float. As
+   you scroll, JS (setupHeaderScroll in app.js) draws the pill outline (the
+   .nav-morph stroke) from the bottom centre outward: the bottom line draws out,
+   the ends climb the sides rounding the corners, and they meet at the top to
+   close the pill. In step, the pill's own translucent backdrop + blur fade in
+   (background-color + --nav-blur, both set per-frame from JS). */
+.nav-pill {
+  position: relative;
+  /* No isolation: isolate here — that created a stacking context which trapped
+     tooltip z-indexes inside the pill, preventing ::after bubbles from rendering
+     above other page elements. The nav-morph SVG (z-index:-1) sits behind the
+     buttons (z-index:1, set on .nav-cluster below) without needing isolation. */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 9px 22px 11px;
+  border-radius: 999px;
+  -webkit-backdrop-filter: blur(var(--nav-blur, 0)) saturate(150%);
+          backdrop-filter: blur(var(--nav-blur, 0)) saturate(150%);
+  /* Keep the pill on a stable GPU layer so fading the backdrop-filter in/out
+     per scroll frame doesn't re-snap pixels (which jittered the icons + outline
+     on mobile during fast scroll). */
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+.nav-morph {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -1; /* behind the buttons, inside this stacking context */
+  overflow: visible;
+  pointer-events: none;
+}
+
+.nav-morph path {
+  fill: none;
+  stroke: var(--border-active);
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.mute-toggle-btn,
+.queue-toggle-btn,
+.logs-toggle-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  background: radial-gradient(circle at 50% 35%, #161616 0%, #0a0a0a 70%, #060606 100%);
+  border: 1.5px solid #2c2c2c;
+  border-radius: 50%;
+  color: var(--text-secondary);
+  cursor: pointer;
+  flex-shrink: 0;
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.04), 0 2px 6px rgba(0, 0, 0, 0.5);
+  transition: color 0.25s ease, background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, transform 0.15s ease;
+}
+
+.mute-toggle-btn:focus-visible,
+.queue-toggle-btn:focus-visible,
+.logs-toggle-btn:focus-visible {
+  outline: none;
+  border-color: var(--text-secondary);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.12);
+}
+
+/* ── Custom tooltips ──────────────────────────────────────────────────────
+   Our dark, bordered tooltip below each nav button (header sits at the top).
+   ::after is the label, ::before the little upward caret. Shown on hover
+   (fine-pointer devices) or keyboard focus; hidden on touch. */
+.nav-cluster [data-tooltip]::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  top: calc(100% + 9px);
+  left: 50%;
+  transform: translateX(-50%) translateY(-4px);
+  padding: 5px 9px;
+  border-radius: 8px;
+  background: rgba(16, 16, 16, 0.97);
+  border: 1px solid var(--border-active);
+  color: var(--text-primary);
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 400;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.6);
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+.nav-cluster [data-tooltip]::before {
+  content: "";
+  position: absolute;
+  top: calc(100% + 3px);
+  left: 50%;
+  transform: translateX(-50%) translateY(-4px);
+  border: 5px solid transparent;
+  border-bottom-color: var(--border-active);
+  pointer-events: none;
+  opacity: 0;
+  z-index: 400;
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+.nav-cluster [data-tooltip]:focus-visible::after,
+.nav-cluster [data-tooltip]:focus-visible::before {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .nav-cluster [data-tooltip]:hover::after,
+  .nav-cluster [data-tooltip]:hover::before {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+.mute-toggle-btn svg {
+  width: 21px;
+  height: 21px;
+  fill: currentColor;
+  pointer-events: none;
+}
+
+.logs-toggle-btn svg {
+  width: 22px;
+  height: 22px;
+  pointer-events: none;
+}
+
+.logs-toggle-btn.is-active {
+  color: var(--text-primary);
+  border-color: #3d3d3d;
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.06), 0 0 10px rgba(255, 255, 255, 0.12);
+}
+
+.queue-toggle-btn svg {
+  width: 22px;
+  height: 22px;
+  pointer-events: none;
+}
+
+/* ── Animated hourglass ───────────────────────────────────────────────
+   One 2.8s loop, glass stays upright (no flip): sand drains top→bottom over
+   the first half while a thin stream falls, then the flow reverses — sand
+   climbs back bottom→top over the second half — and the loop repeats. */
+.hourglass .hg-frame {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.9;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.hourglass .hg-sand {
+  fill: currentColor;
+  transform-box: fill-box;
+}
+
+.hourglass .hg-stream {
+  fill: currentColor;
+  opacity: 0;
+}
+
+.hourglass .hg-rotor {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.queue-toggle-btn.has-queue .hg-sand-top {
+  animation: hgDrainTop 2.8s ease-in-out infinite;
+}
+
+.queue-toggle-btn.has-queue .hg-sand-bot {
+  animation: hgFillBot 2.8s ease-in-out infinite;
+}
+
+.queue-toggle-btn.has-queue .hg-stream {
+  animation: hgStream 2.8s linear infinite;
+}
+
+/* Hover: no glass flip — instead the sand fills BOTH chambers, growing out from
+   the neck toward each end, and holds full while hovered. The awaiting modal
+   (aria-expanded) still just snaps the sand to its full resting state. */
+.queue-toggle-btn.has-queue:hover .hg-sand-top {
+  animation: hgHoverFillTop 0.55s ease-out forwards;
+}
+.queue-toggle-btn.has-queue:hover .hg-sand-bot {
+  animation: hgHoverFillBot 0.55s ease-out forwards;
+}
+.queue-toggle-btn.has-queue[aria-expanded="true"] .hg-sand-top,
+.queue-toggle-btn.has-queue[aria-expanded="true"] .hg-sand-bot,
+.queue-toggle-btn.has-queue[aria-expanded="true"] .hg-stream {
+  animation: none;
+}
+
+.queue-toggle-btn.has-queue:hover .hg-stream,
+.queue-toggle-btn.has-queue[aria-expanded="true"] .hg-stream {
+  animation: none;
+  opacity: 0;
+}
+
+/* Both chambers fill from the neck outward — top grows upward, bottom grows
+   downward — so the sand appears to fill to both sides. */
+@keyframes hgHoverFillTop {
+  from { transform: scaleY(0); transform-origin: bottom; }
+  to   { transform: scaleY(1); transform-origin: bottom; }
+}
+@keyframes hgHoverFillBot {
+  from { transform: scaleY(0); transform-origin: top; }
+  to   { transform: scaleY(1); transform-origin: top; }
+}
+
+/* Top chamber: drains over the first half (surface lowers toward the neck), holds
+   empty at the turn, then refills over the second half as the flow reverses. The
+   origin stays pinned at the neck (bottom) so it both shrinks toward and grows from
+   the neck. */
+@keyframes hgDrainTop {
+  0% { transform: scaleY(1); transform-origin: bottom; }
+  42% { transform: scaleY(0); transform-origin: bottom; }
+  50% { transform: scaleY(0); transform-origin: bottom; }
+  92% { transform: scaleY(1); transform-origin: bottom; }
+  100% { transform: scaleY(1); transform-origin: bottom; }
+}
+
+/* Bottom chamber: mirror of the top — fills over the first half, holds full at the
+   turn, then drains back over the second half. */
+@keyframes hgFillBot {
+  0% { transform: scaleY(0); transform-origin: bottom; }
+  42% { transform: scaleY(1); transform-origin: bottom; }
+  50% { transform: scaleY(1); transform-origin: bottom; }
+  92% { transform: scaleY(0); transform-origin: bottom; }
+  100% { transform: scaleY(0); transform-origin: bottom; }
+}
+
+/* Stream visible while sand moves in either direction, off at the two turns. */
+@keyframes hgStream {
+  0%, 3% { opacity: 0; }
+  6%, 40% { opacity: 0.9; }
+  44%, 56% { opacity: 0; }
+  60%, 94% { opacity: 0.9; }
+  97%, 100% { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .queue-toggle-btn.has-queue .hg-rotor,
+  .queue-toggle-btn.has-queue .hg-sand-top,
+  .queue-toggle-btn.has-queue .hg-sand-bot,
+  .queue-toggle-btn.has-queue .hg-stream {
+    animation: none;
+  }
+  .queue-toggle-btn.has-queue .hg-stream { opacity: 0; }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .mute-toggle-btn:hover,
+  .queue-toggle-btn:hover,
+  .logs-toggle-btn:hover {
+    color: var(--text-primary);
+    border-color: #3d3d3d;
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.06), 0 2px 10px rgba(0, 0, 0, 0.6);
+  }
+
+  /* Hover comes alive: the log page lifts + tilts, the bell rings. The hourglass
+     no longer flips — its sand fills both chambers (see the hg-sand hover rules). */
+  .logs-toggle-btn:hover svg {
+    animation: logsHoverNudge 0.55s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  .mute-toggle-btn:hover svg {
+    transform-origin: 50% 18%;
+    animation: bellHoverSwing 0.7s ease;
+  }
+}
+
+@keyframes logsHoverNudge {
+  0%   { transform: translateY(0) rotate(0); }
+  45%  { transform: translateY(-2.5px) rotate(-6deg); }
+  75%  { transform: translateY(0) rotate(3deg); }
+  100% { transform: translateY(0) rotate(0); }
+}
+
+@keyframes bellHoverSwing {
+  0%, 100% { transform: rotate(0); }
+  20% { transform: rotate(-17deg); }
+  40% { transform: rotate(13deg); }
+  60% { transform: rotate(-8deg); }
+  80% { transform: rotate(4deg); }
+}
+
+/* Event-driven (not hover): the bell rings + glows whenever an alert fires — the 90'
+   next-goal chime or a push relayed to the open tab. */
+.mute-toggle-btn.bell-alerting {
+  color: var(--text-primary);
+  border-color: rgba(255, 59, 48, 0.6);
+  animation: bellAlertGlow 1.1s ease;
+}
+.mute-toggle-btn.bell-alerting svg {
+  transform-origin: 50% 18%;
+  animation: bellAlertSwing 1.1s ease;
+}
+@keyframes bellAlertGlow {
+  0%, 100% { box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.04), 0 2px 6px rgba(0, 0, 0, 0.5); }
+  30% { box-shadow: 0 0 15px 2px rgba(255, 59, 48, 0.55); }
+}
+@keyframes bellAlertSwing {
+  0%, 100% { transform: rotate(0); }
+  10% { transform: rotate(-22deg); }
+  25% { transform: rotate(18deg); }
+  40% { transform: rotate(-13deg); }
+  55% { transform: rotate(9deg); }
+  70% { transform: rotate(-5deg); }
+  85% { transform: rotate(2deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logs-toggle-btn:hover svg,
+  .mute-toggle-btn:hover svg,
+  .queue-toggle-btn.has-queue:hover .hg-sand-top,
+  .queue-toggle-btn.has-queue:hover .hg-sand-bot,
+  .mute-toggle-btn.bell-alerting,
+  .mute-toggle-btn.bell-alerting svg {
+    animation: none;
+  }
+}
+
+.mute-toggle-btn.is-muted {
+  color: #ef4444;
+  border-color: rgba(239, 68, 68, 0.55);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .mute-toggle-btn.is-muted:hover {
+    color: #ff6b6b;
+    border-color: rgba(239, 68, 68, 0.8);
+  }
+}
+
+.queue-toggle-btn.has-queue {
+  color: var(--accent-hot);
+  border-color: var(--accent-hot-border);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.05), 0 0 12px rgba(245, 166, 35, 0.32);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .queue-toggle-btn.has-queue:hover {
+    color: #ffc04d;
+    border-color: var(--accent-hot);
+  }
+}
+
+.queue-badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  /* Empty queue: badge stays muted to match the idle hourglass colour. */
+  background: var(--text-secondary);
+  color: #0a0a0a;
+  font-size: 10px;
+  font-weight: 800;
+  font-family: monospace;
+  line-height: 1;
+  border-radius: 9px;
+  border: 2px solid #000000;
+  box-sizing: border-box;
+  box-shadow: none;
+  transition: background 0.25s ease, box-shadow 0.25s ease;
+}
+
+.queue-badge[hidden] { display: none; }
+
+/* Active queue: badge lights up amber alongside the lit hourglass. */
+.queue-toggle-btn.has-queue .queue-badge {
+  background: linear-gradient(180deg, #ffcf80 0%, var(--accent-hot) 100%);
+  box-shadow: 0 0 8px rgba(245, 166, 35, 0.45);
+}
+
+/* System-log badge — same shape/placement as the awaiting badge, but tinted the
+   system-exclusion red (matches the logger status dot). Only shown when there is
+   at least one active exclusion (hidden via [hidden] otherwise). */
+.logs-badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, #ff6a60 0%, #ff3b30 100%);
+  color: #0a0a0a;
+  font-size: 10px;
+  font-weight: 800;
+  font-family: monospace;
+  line-height: 1;
+  border-radius: 9px;
+  border: 2px solid #000000;
+  box-sizing: border-box;
+  box-shadow: 0 0 8px rgba(255, 59, 48, 0.5);
+}
+
+.logs-badge[hidden] { display: none; }
+
+/* Light the button itself red while exclusions are present. */
+.logs-toggle-btn.has-logs {
+  color: var(--text-primary);
+  border-color: rgba(255, 59, 48, 0.55);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.05), 0 0 12px rgba(255, 59, 48, 0.3);
+}
+
+.view-viewport {
+  width: 100%;
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.view-pane {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 10px;
+  display: none;
+  opacity: 0;
+}
+
+.view-live-active .pane-live {
+  display: block;
+  animation: paneFadeIn 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes paneFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.99) translateY(4px);
+  }
+  to {
+    opacity: 1;
+    /* Resting state MUST be `none`, not `scale(1)`: a lingering non-none
+       transform (kept alive by `forwards`) turns .pane-live into the containing
+       block for the position:fixed .no-matches-placeholder, so its top:50% would
+       resolve against the collapsed pane (top of page) instead of the viewport.
+       `none` lets the placeholder centre against the real viewport. */
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .view-pane {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: clamp(12px, 2vw, 20px);
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  position: relative;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .dashboard-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 340px));
+    justify-content: center;
+  }
+}
+
+/* Live pane centers its content (grid stretches full width). Must match the
+   specificity of `.view-live-active .pane-live { display: block }` to win. */
+.view-live-active .pane-live {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Vertically centre the cards (and the empty-state placeholder) in the pane.
+     `safe center` keeps them centred when they fit, but falls back to top-aligned
+     once the grid is taller than the viewport so nothing gets clipped above the
+     scroll origin. The height chain is app-container(min-height:100vh, flex col)
+     → view-viewport(flex:1, flex col) → pane-live(flex:1). */
+  justify-content: safe center;
+  flex: 1 1 auto;
+  min-height: 0;
+  /* Small mobile default: on a phone a single card already nearly fills 100svh
+     (shrunk further by the URL bar), so a large bottom nudge would push the
+     document past the viewport and force a page scrollbar even with one card.
+     The desktop nudge below re-applies the taller spacing on wider screens. */
+  padding-bottom: 16px;
+}
+/* Desktop lift: nudge the vertically-centred cards higher under the header so they
+   don't sit dead-centre. Gated on viewport HEIGHT, not just width — a card with the
+   timeline is ~630px tall, so on a short desktop window the reserved bottom space
+   would push the document past the viewport and force a page scrollbar (same overflow
+   the mobile fix addressed). Short windows: no nudge (cards fit, no scrollbar). Tall
+   monitors: the full lift. Tiered so the nudge scales with the spare vertical room. */
+@media (min-width: 768px) and (min-height: 860px) {
+  .view-live-active .pane-live { padding-bottom: 8vh; }
+}
+@media (min-width: 768px) and (min-height: 1000px) {
+  .view-live-active .pane-live { padding-bottom: 14vh; }
+}
+.pane-live .dashboard-grid { align-self: stretch; }
+
+/* Empty state only: nudge the AWAITING placeholder slightly above true centre.
+   The base .pane-live rule already centres vertically; the bottom padding here
+   pushes the flex-centred box upward so it reads as better balanced under the
+   header. (Cards use plain `safe center` from the base rule.) */
+.view-live-active .pane-live:has(.no-matches-placeholder) {
+  justify-content: safe center;
+  padding-bottom: 12vh;
+}
+
+.no-matches-placeholder {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #020202;
+  border: 1px solid var(--border-active);
+  border-radius: 8px;
+  padding: 16px 32px;
+  color: var(--text-muted);
+  font-size: 11px !important;
+  line-height: 16px !important;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  /* In-flow box; the parent pane (.pane-live:has(...)) centres it vertically and
+     the grid (justify-self) centres it horizontally. No position:fixed — that was
+     fragile against transformed/animated ancestors becoming the containing block,
+     which pinned it to the top. */
+  position: static;
+  margin: 0 auto;
+  max-width: 320px;
+  width: calc(100% - 32px);
+  text-align: center;
+  grid-column: 1 / -1;
+  justify-self: center;
+}
+
+.awaiting-modal-overlay[hidden] {
+  display: none;
+}
+
+.awaiting-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  /* Vertically centred. The panel grows symmetrically as rows are added (so it
+     shifts higher while staying centred) until it hits max-height:100%, after
+     which the inner list scrolls. `safe` falls back to top-aligned if the panel
+     ever exceeds the viewport, so nothing clips above the scroll origin. */
+  align-items: safe center;
+  justify-content: center;
+  padding: clamp(12px, 5vh, 64px) 16px;
+  background-color: rgba(0, 0, 0, 0.72);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.awaiting-modal-overlay.is-open {
+  opacity: 1;
+}
+
+.awaiting-modal-panel {
+  width: 100%;
+  max-width: 720px;
+  /* Never taller than the overlay's content box (viewport minus its paddings).
+     This is what makes the overlay's own overflow-y:auto NEVER engage: the panel
+     is structurally clamped to the available space and the inner list/terminal
+     scrolls instead. Replaces the old fragile JS pixel-sizing. */
+  max-height: 100%;
+  min-height: 0;
+  background-color: #020202;
+  border: 1px solid var(--border-active);
+  border-radius: 12px;
+  /* overflow:visible so ::after tooltip pseudo-elements on header buttons (e.g.
+     the export link) can render outside the panel bounds without being clipped.
+     Corner rounding is handled by giving each scrollable child its own explicit
+     border-bottom-radius + overflow:hidden instead (see .awaiting-list and
+     .logger-terminal below). */
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.7);
+  transform: translateY(-12px) scale(0.98);
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.awaiting-modal-overlay.is-open .awaiting-modal-panel {
+  transform: translateY(0) scale(1);
+}
+
+.awaiting-close-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 27px;
+  height: 27px;
+  padding: 5px;
+  margin-left: 4px;
+  background-color: #121212;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: color 0.2s ease, border-color 0.2s ease;
+  box-sizing: border-box;
+}
+
+.awaiting-close-btn svg {
+  width: 15px;
+  height: 15px;
+  pointer-events: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .awaiting-close-btn:hover {
+    color: var(--text-primary);
+    border-color: var(--border-active);
+  }
+}
+
+/* Export-log button — sits in the SYSTEM EXCLUSION LOG header, left of the close button. Same
+   chip shape as the close button; opens the permanent /api/system-log.json in a new tab. */
+.logs-export-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 27px;
+  height: 27px;
+  padding: 5px;
+  background-color: #121212;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  flex-shrink: 0;
+  text-decoration: none;
+  transition: color 0.2s ease, border-color 0.2s ease;
+  box-sizing: border-box;
+}
+
+.logs-export-btn svg {
+  width: 14px;
+  height: 14px;
+  pointer-events: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .logs-export-btn:hover {
+    color: var(--text-primary);
+    border-color: var(--border-active);
+  }
+}
+
+/* Tooltip — same dark bubble as the nav/brand tooltips, anchored below the button. */
+.logs-export-btn[data-tooltip]::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  top: calc(100% + 9px);
+  left: 50%;
+  transform: translateX(-50%) translateY(-4px);
+  padding: 5px 9px;
+  border-radius: 8px;
+  background: rgba(16, 16, 16, 0.97);
+  border: 1px solid var(--border-active);
+  color: var(--text-primary);
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 400;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.6);
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+.logs-export-btn[data-tooltip]:focus-visible::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .logs-export-btn[data-tooltip]:hover::after {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+.awaiting-header {
+  padding: 10px 24px;
+  height: auto;
+  background-color: #050505;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-sizing: border-box;
+  border-top-left-radius: 11px;
+  border-top-right-radius: 11px;
+}
+
+.awaiting-status-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #555;
+  border-radius: 50%;
+}
+
+.awaiting-status-dot.is-active {
+  background-color: var(--accent-hot);
+  box-shadow: 0 0 8px 1px rgba(245, 166, 35, 0.6);
+}
+
+.awaiting-header h2 {
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  color: var(--text-primary);
+  margin: 0;
+  margin-right: auto;
+  white-space: nowrap;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.awaiting-count {
+  font-size: 12px;
+  font-family: monospace;
+  font-weight: 800;
+  color: var(--text-secondary);
+  letter-spacing: 0.08em;
+  background-color: #121212;
+  border: 1px solid var(--border);
+  padding: 5px 12px;
+  height: 27px;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 6px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+.awaiting-list {
+  padding: 8px;
+  max-height: min(70vh, 620px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  background-color: #000000;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+  /* Explicit radius (not inherit) + overflow:hidden so the #000000 background
+     is painted with rounded corners, masking the square-corner bleed without
+     affecting the header's tooltip (which lives in a sibling element above). */
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.awaiting-list::-webkit-scrollbar { width: 4px; }
+.awaiting-list::-webkit-scrollbar-track { background: transparent; }
+.awaiting-list::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+
+.awaiting-empty-state {
+  text-align: center;
+  padding: 32px 16px;
+  font-size: 11px !important;
+  line-height: 16px !important;
+  color: var(--text-muted);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.awaiting-row {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px 16px;
+  background-color: #030303;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .awaiting-row:hover {
+    border-color: var(--border-active);
+    background-color: #050505;
+  }
+}
+
+.awaiting-row-top {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  width: 100%;
+}
+
+.awaiting-min {
+  font-family: monospace;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0;
+  color: var(--accent-hot);
+  background-color: var(--accent-hot-soft);
+  border: 1px solid var(--accent-hot-border);
+  /* Tighter right padding: monospace renders the apostrophe in a full-width cell,
+     so equal padding looks like trailing space after the "'". */
+  padding: 3px 5px 3px 8px;
+  border-radius: 5px;
+  text-align: left;
+  flex-shrink: 0;
+}
+
+.awaiting-league {
+  flex: 1 1 auto;
+  min-width: 0;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  line-height: 1.4;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  margin-right: auto;
+  /* Full league name, wrapping to a second line rather than truncating. */
+  overflow-wrap: anywhere;
+  padding-top: 2px;
+}
+
+.awaiting-1w-link {
+  flex-shrink: 0;
+  height: 18px;   /* keep prior size here; the 22px bump is only for the card pill (matches the star) */
+}
+
+.awaiting-row-main {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+.awaiting-team {
+  flex: 1 1 0;
+  min-width: 0;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  line-height: 1.25;
+  color: var(--text-primary);
+  /* Show the full club name — wrap instead of clipping with an ellipsis. */
+  overflow-wrap: anywhere;
+}
+
+.awaiting-team-home { text-align: right; }
+.awaiting-team-away { text-align: left; }
+
+.awaiting-score {
+  font-family: monospace;
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--text-primary);
+  background-color: #0a0a0a;
+  border: 1px solid var(--border);
+  padding: 4px 12px;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.awaiting-row-eta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding-top: 6px;
+  border-top: 1px solid var(--border);
+}
+
+.awaiting-eta-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.awaiting-eta-value {
+  font-family: monospace;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 767px) {
+  /* Full-screen sheet: panel fills the viewport, header stays pinned at the
+     top and only the list scrolls inside it (mirrors the desktop behaviour). */
+  .awaiting-modal-overlay {
+    padding: 0;
+    align-items: stretch;
+    justify-content: stretch;
+    overflow: hidden;
+  }
+  .awaiting-modal-panel {
+    max-width: 100%;
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    transform: translateY(0) scale(1);
+  }
+  .awaiting-modal-overlay .awaiting-modal-panel {
+    transform: translateY(8px);
+  }
+  .awaiting-modal-overlay.is-open .awaiting-modal-panel {
+    transform: translateY(0);
+  }
+  .awaiting-header {
+    /* Pinned header — clears the status bar / notch via safe-area inset. */
+    flex-shrink: 0;
+    height: auto;
+    min-height: 52px;
+    padding: 10px 18px;
+    padding-top: calc(10px + env(safe-area-inset-top, 0px));
+    gap: 8px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+  .awaiting-header h2 {
+    font-size: 12px;
+    letter-spacing: 0.12em;
+  }
+  .awaiting-count {
+    font-size: 11px;
+    padding: 4px 9px;
+    height: 24px;
+    display: inline-flex;
+    align-items: center;
+    box-sizing: border-box;
+  }
+  .awaiting-header .awaiting-close-btn {
+    width: 24px;
+    height: 24px;
+    padding: 4px;
+    box-sizing: border-box;
+  }
+  .awaiting-header .awaiting-close-btn svg {
+    width: 13px;
+    height: 13px;
+  }
+  .awaiting-list {
+    /* The only scrolling region; fills the remaining height under the header. */
+    flex: 1 1 auto;
+    max-height: none;
+    min-height: 0;
+    padding: 8px 6px calc(16px + env(safe-area-inset-bottom, 0px));
+    -webkit-overflow-scrolling: touch;
+  }
+  .awaiting-row {
+    padding: 11px 12px;
+  }
+  .awaiting-team {
+    font-size: 13px;
+  }
+  .awaiting-score {
+    font-size: 15px;
+    padding: 3px 10px;
+  }
+  /* Cap the other-markets list to exactly 4 rows before scrolling. !important is required because
+     the base .odds-other-list rule appears LATER in the file (same specificity), so without it the
+     desktop 100px wins on source order and a 5th row peeks through. ~21px/row + 1px gap → 88px. */
+  .odds-other-list {
+    height: 88px !important;
+  }
+}
+
+.match-card {
+  background-color: #020202;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  /* visible (not hidden) so the header pills' data-tooltip can hang below the
+     card edge without being clipped. Nothing inside paints to the rounded
+     corners (header is bg-less, body content is inset by 14-16px padding), so
+     dropping the clip costs no corner rounding. */
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
+  opacity: 1;
+  transform: scale(1);
+  transition: transform 0.3s ease, opacity 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  max-width: 360px;
+  margin: 0 auto;
+  height: 100%;
+}
+
+.match-card.no-goal-entry-active {
+  border-color: rgba(47, 191, 113, 0.42);
+  box-shadow:
+    0 0 0 1px rgba(47, 191, 113, 0.10),
+    0 0 14px rgba(47, 191, 113, 0.16);
+}
+
+.match-card.removing {
+  opacity: 0;
+  transform: scale(0.93) translateY(16px);
+  pointer-events: none;
+}
+
+.card-header {
+  padding: 0 14px;
+  /* Min height keeps the header at 40px when the league name is short;
+     the row auto-expands for multi-line names instead of truncating. */
+  min-height: 40px;
+  height: auto;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border);
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  line-height: 1;
+  /* Grow so the league name takes all space before the right-side buttons,
+     and set min-width:0 so the flex child (card-logo-text) can shrink/wrap. */
+  flex: 1 1 auto;
+  min-width: 0;
+  margin-right: 8px;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  line-height: 1;
+}
+
+.card-logo-text {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  /* Allow long league names to wrap to a second line instead of overflowing
+     or being truncated. overflow-wrap:anywhere handles strings with no natural
+     break points (e.g. very long single words / abbreviation chains). */
+  white-space: normal;
+  overflow-wrap: anywhere;
+  line-height: 1.35;
+}
+
+.pulse-dot {
+  width: 6px;
+  height: 6px;
+  background-color: var(--text-muted);
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: inline-block;
+}
+
+.pulse-dot.active {
+  background-color: #ef4444;
+  box-shadow: 0 0 7px 1px rgba(239, 68, 68, 0.75);
+}
+
+.card-body {
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  position: relative;
+  min-height: 650px;
+}
+
+.score-row-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 96px;
+  margin-bottom: 14px;
+}
+
+.teams-score-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  height: 48px;
+}
+
+.team-name-lbl {
+  font-size: 13px !important;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: normal;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  white-space: normal !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 2 !important;
+  -webkit-box-orient: vertical !important;
+  overflow-wrap: anywhere;
+}
+
+.team-name-lbl.name-size-md {
+  font-size: 11.5px !important;
+}
+.team-name-lbl.name-size-sm {
+  font-size: 10px !important;
+}
+.team-name-lbl.name-size-xs {
+  font-size: 9px !important;
+  letter-spacing: -0.02em;
+}
+
+.home-team-lbl { text-align: right; }
+.away-team-lbl { text-align: left; }
+
+.match-score {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-primary);
+  font-family: monospace;
+  background: #000000;
+  padding: 4px 8px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  letter-spacing: -0.02em;
+  flex-shrink: 0;
+}
+
+.match-score-text {
+  font-family: monospace;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.match-live-phase {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  margin-top: 6px;
+  transition: color 0.2s ease;
+}
+
+.match-live-phase.live-active { color: #ef4444; }
+
+.match-live-time {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-secondary);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  margin-top: 2px;
+  transition: color 0.2s ease;
+}
+
+.match-live-time.live-active { color: #ef4444; }
+
+.odds-wrapper {
+  border-top: 1px solid #111111;
+  padding-top: 12px;
+  margin-top: 12px;
+}
+
+.odds-header {
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* Single bordered container holding the two pinned markets (Full Time Result + No-Goal) and,
+   below a divider, the other-markets accordion. The accordion list has its own fixed height and
+   scrolls internally, so opening/closing a row never changes this container's height — the card
+   stays put on hover. */
+.odds-combined {
+  position: relative;   /* anchor for the centered suspend banner */
+  background-color: #030303;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 8px 12px;
+  box-sizing: border-box;
+  /* Fixed height: tall enough for the fullest state (FTR + No-Goal + the Other-markets head and its
+     100px internal-scroll list ≈ 209px of content). Every other state — two markets only, or the
+     suspend banner — pads up to the same height so the box never changes size and the timeline below
+     stays pinned regardless of suspend/market state. */
+  min-height: 210px;
+  display: flex;
+  flex-direction: column;
+}
+
+.odds-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  /* Borderless — the .odds-combined wrapper provides the frame. Base well height;
+     the Next-goal list overrides it below. */
+  height: 68px;
+  max-height: 68px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+}
+
+/* When the market list overflows, JS toggles .odds-scroll so the scrollbar (incl. mobile
+   overlay bars) rides beside the values instead of on top of them. No overflow → no
+   padding → no empty gap. */
+.odds-list.odds-scroll { padding-right: 8px; }
+
+.odds-list::-webkit-scrollbar { width: 4px; }
+.odds-list::-webkit-scrollbar-track { background: transparent; }
+.odds-list::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+.odds-list::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
+
+/* Next-goal market: a single "No Goal" row (the parser surfaces only that outcome). Its
+   height is reserved like Full Time Result so the box stays a constant size whether or not
+   the market is priced — a card showing neither FTR nor No-Goal is the same height as one
+   showing both, which keeps the "Other markets open" footer pinned at the same place. */
+.odds-list--nextgoal {
+  height: 20px;
+  min-height: 20px;
+  max-height: 20px;
+  overflow: hidden;
+}
+
+/* Full Time Result market: a single row — "Full time result" label + the three 1/X/2
+   prices inline on the right. */
+.odds-list--fulltime {
+  height: 20px;
+  min-height: 20px;
+  max-height: 20px;
+  overflow: hidden;
+}
+.odds-row--ftr .ftr-vals {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.odds-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11px;
+  color: var(--text-secondary);
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.odds-line { font-weight: 500; transition: color 0.6s ease; }
+.odds-val {
+  font-family: monospace;
+  color: #22c55e;
+  font-weight: 600;
+  background: #000;
+  padding: 2px 6px;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  transition: color 0.6s ease, border-color 0.6s ease, box-shadow 0.6s ease;
+}
+
+/* ≤1.05 — "take action": red text + pulsing box outline, no row fill. */
+.odds-row-action .odds-line { color: #f87171; font-weight: 700; }
+.odds-row-action .odds-val {
+  color: #fca5a5;
+  border-color: rgba(239, 68, 68, 0.65);
+  animation: oddsActionPulse 1.4s ease-in-out infinite;
+}
+
+@keyframes oddsActionPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+  50% { box-shadow: 0 0 7px 1px rgba(239, 68, 68, 0.5); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .odds-row-action .odds-val { animation: none; }
+}
+
+/* Full Time Result + No-Goal share one container and read as a single merged list — no
+   divider line between them (the bet signal is "both blocks visible at once"). Just a small
+   gap so the 1/X/2 rows don't collide with the No-Goal row. */
+.odds-section { position: relative; }
+.odds-section + .odds-section {
+  margin-top: 4px;
+}
+
+/* Full-event suspend badge — shown when 1win is not accepting bets; both market rows are hidden
+   (their states forced "off") so this is the only thing in the odds box. A small, dark, muted pill
+   centered in the box — deliberately low-key (theme grays, not amber) so a brief suspend reads as
+   "paused", not an alarm. */
+.odds-suspend {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: max-content;
+  max-width: calc(100% - 24px);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  background: #0a0a0a;
+  border: 1px solid var(--border-active);
+  border-radius: 5px;
+  padding: 5px 10px;
+  text-align: center;
+}
+.odds-suspend[hidden] { display: none; }
+
+/* When a market is off it collapses entirely (no reserved gap). */
+.odds-section.is-off { display: none; }
+
+/* Exception: Full Time Result AND No-Goal each keep their single-row height reserved even
+   when off, so the box is a constant size regardless of which markets are active — a card
+   showing neither row stays the same height as one showing both, keeping the "Other markets
+   open" footer at the same vertical position. The row is hidden (no label/prices) but its
+   20px box still occupies space. */
+.odds-section--fulltime.is-off,
+.odds-section--nextgoal.is-off {
+  display: block;
+  visibility: hidden;
+}
+
+/* The section header sits above its list; both sections reuse .odds-header. */
+.odds-section .odds-header { margin-bottom: 6px; }
+
+.odds-placeholder {
+  display: flex;
+  align-items: center;
+  /* Left-aligned so the placeholder lines up with the real market labels ("Full time result",
+     "Other markets open") — a centred placeholder broke the column when a market was absent. */
+  justify-content: flex-start;
+  height: 100%;
+  font-size: 10px;
+  color: var(--text-muted);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-style: italic;
+}
+
+/* Compact "all other markets" list under the No-Goal block: every market still live on the
+   fixture besides FTR + No-Goal, each with its legs as small label+odds chips. Separated from the
+   two pinned markets by a divider; scrolls internally when many markets are open. Driven straight
+   off the odds payload, so a suspended market shows muted and a removed one disappears at once. */
+.odds-other {
+  position: relative;
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+.odds-other[hidden] { display: none; }
+
+.odds-other-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+.odds-other-count {
+  font-family: monospace;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-secondary);
+  background: #000;
+  padding: 1px 7px;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+}
+
+
+/* One ROW per market — full-width name header; the odds for a market reveal inline when its row is
+   open (hover on desktop, tap on mobile), so the default view is a clean vertical list of names.
+   The list has a FIXED height with internal scroll, so opening a row scrolls inside the panel and
+   never grows the card (no height shift on hover). */
+.odds-other-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  height: 100px;          /* fits 4 market rows (~22px each + 1px gaps) without scrolling; 5+ scroll */
+  overflow-y: auto;
+  overflow-x: hidden;
+  /* Hidden scrollbar keeps wheel/touch scrolling while leaving the right edge clear. */
+  scrollbar-width: none;  /* scrollable, but no visible scrollbar stealing the right edge */
+  -ms-overflow-style: none;
+}
+.odds-other-list::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+/* No box around a row — the label stays flush-left with the FTR/No-Goal labels above. "Open" is
+   signalled by the rotated chevron, the brighter label, and the revealed odds below. */
+.odds-mkt-row { border-radius: 5px; }
+.odds-mkt-row.is-suspended { opacity: 0.5; }
+
+.odds-mkt-head {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  font-family: inherit;
+  /* Match the Full Time Result / No-Goal rows so the market labels read as one continuous list:
+     same 11px size and the same left edge (no extra horizontal padding — the row border is
+     transparent and accounted for so the text starts flush with "Full time result" above). */
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  background: transparent;
+  border: none;
+  padding: 4px 0;
+  cursor: pointer;
+  text-align: left;
+  transition: color 0.15s ease;
+}
+.odds-mkt-head:hover,
+.odds-mkt-row.is-open .odds-mkt-head { color: var(--text-primary); }
+.odds-mkt-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+/* Chevron that rotates when the row opens.
+   margin-top: -2px nudges the chevron's visual centre up to match the badge's
+   vertical centre. The badge (.odds-other-count) is ~15px tall (11px font +
+   2px padding + 2px border); the chevron is 6px — flex align-items:center puts
+   the chevron ~2px below the badge midpoint without the nudge. The correction is
+   the same for 1-digit and 2-digit counts because the badge height never changes
+   (only its width does). */
+.odds-mkt-chev {
+  flex: 0 0 auto;
+  width: 6px;
+  height: 6px;
+  border-right: 1.5px solid var(--text-muted);
+  border-bottom: 1.5px solid var(--text-muted);
+  transform: rotate(-45deg);   /* points right when closed */
+  transition: transform 0.18s ease;
+  margin-top: -2px;
+  margin-right: 8px;
+}
+.odds-mkt-row.is-open .odds-mkt-chev { transform: rotate(45deg); border-color: #22c55e; } /* points down */
+
+/* Inline detail: the market's legs as chips. Always in the DOM (empty when closed) so the row's
+   layout box is stable; shown only when open. */
+.odds-mkt-detail {
+  display: none;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 2px 0 8px;
+}
+.odds-mkt-row.is-open .odds-mkt-detail { display: flex; }
+.odds-chip-mkt {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: monospace;
+  font-size: 10px;
+  background: #000;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 1px 5px;
+  white-space: nowrap;
+}
+.odds-chip-mkt .chip-leg { color: var(--text-secondary); font-weight: 500; }
+.odds-chip-mkt .chip-odd { color: #22c55e; font-weight: 700; }
+.odds-mkt-empty { font-size: 10px; color: var(--text-muted); font-style: italic; }
+
+/* Suspended market: amber SUSP tag on the name. */
+.odds-other-susp {
+  margin-left: 5px;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #f0b232;
+  border: 1px solid rgba(240, 178, 50, 0.4);
+  border-radius: 3px;
+  padding: 0 3px;
+  vertical-align: middle;
+}
+
+.skeleton-container { display: none; position: absolute; top: 16px; left: 20px; right: 20px; bottom: 16px; }
+.is-loading .skeleton-container { display: block; }
+.is-loading .score-row-wrapper,
+.is-loading .odds-wrapper,
+.is-loading .timeline-container { opacity: 0; pointer-events: none; }
+
+.score-row-wrapper, .odds-wrapper, .timeline-container { opacity: 1; transition: opacity 0.3s ease; }
+.skeleton-scoreboard { display: flex; justify-content: space-between; align-items: center; gap: 16px; width: 100%; }
+.skeleton-pred { text-align: center; }
+
+@keyframes skeletonPulse { 0% { background-color: #121212; } 50% { background-color: #222222; } 100% { background-color: #121212; } }
+
+.skeleton-element { background-color: #121212; animation: skeletonPulse 1.5s infinite ease-in-out; border-radius: 4px; }
+.skeleton-timeline { margin-top: 16px; border-top: 1px solid var(--border); padding-top: 16px; }
+.skeleton-timeline .skeleton-text { margin-bottom: 12px; }
+.skeleton-timeline .skeleton-box { width: 100%; height: 32px; border-radius: 4px; margin-bottom: 8px; }
+.skeleton-timeline .skeleton-box:last-child { margin-bottom: 0; }
+
+.timeline-container {
+  border-top: 1px solid var(--border);
+  padding-top: 14px;
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+}
+
+.timeline-header { font-size: 9px; letter-spacing: 0.18em; font-weight: 600; color: var(--text-muted); margin-bottom: 8px; text-transform: uppercase; display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.timeline-header-title { white-space: nowrap; }
+
+.event-log {
+  background-color: #000000;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 10px 8px;
+  height: 220px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+  contain: content;
+}
+
+.timeline-period-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #050505;
+  border: 1px solid var(--border);
+  padding: 6px 10px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--text-secondary);
+  margin-top: 12px;
+  margin-bottom: 8px;
+  border-radius: 4px;
+}
+
+.timeline-period-header:first-child { margin-top: 0; }
+.period-score { font-family: monospace; font-size: 10px; color: var(--text-primary); }
+
+.timeline-empty-period {
+  text-align: center;
+  padding: 10px;
+  font-size: 12px;
+  color: var(--text-muted);
+  font-style: italic;
+  background-color: #080808;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+}
+
+.timeline-row-compact {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 6px;
+  padding: 6px 8px;
+  background-color: #080808;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+}
+
+.timeline-row-compact:last-child {
+  margin-bottom: 0;
+}
+
+.tl-time {
+  font-family: monospace;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  flex-shrink: 0;
+  width: 28px;
+  margin-top: 1px;
+}
+
+.tl-icon {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0;
+}
+
+.tl-icon svg {
+  width: 16px !important;
+  height: 16px !important;
+}
+
+.tl-event {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-primary);
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+.event-log::-webkit-scrollbar { width: 4px; }
+.event-log::-webkit-scrollbar-track { background: transparent; }
+.event-log::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+.event-log::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
+
+.brand-link-1w {
+  position: relative;   /* anchor for the data-tooltip pseudo-elements */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #0d0d0d;
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  font-size: 11px;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 0 6px;
+  height: 22px;            /* match the favorite (star) button exactly — same 22px pill height */
+  border-radius: 4px;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  letter-spacing: 0.05em;
+  line-height: 17px;
+  box-sizing: border-box;
+}
+
+/* The 1win wordmark tinted to match the favorite star's colour (--text-secondary #8c8c8c). invert(1)
+   flips the black source to white (keeping the antialiased edges darker so the "1W" stays outlined,
+   not a flat blob), then brightness(0.55) drops the white strokes to ~#8c8c8c — the same grey as the
+   star's default fill. Height drives the size; width auto preserves the ~2:1 ratio. One rule covers
+   all three pill variants (card, log list, awaiting). */
+.brand-1w-logo {
+  height: 10px;
+  width: auto;
+  display: block;
+  filter: invert(1) brightness(0.55);
+}
+/* Slightly smaller logo in the compact log-list pill (16px tall). */
+.log-1w-link .brand-1w-logo,
+.awaiting-1w-link .brand-1w-logo { height: 9px; }
+
+@media (hover: hover) and (pointer: fine) {
+  .brand-link-1w:hover {
+    background-color: #0d0d0d;
+    color: var(--text-primary);
+    /* Softer than straight white — a muted white-grey so the hover reads as a gentle highlight. */
+    border-color: rgba(255, 255, 255, 0.42);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+  }
+}
+
+.brand-link-1w:active { transform: translateY(0); }
+
+.log-1w-link {
+  height: 16px;
+  font-size: 10px;
+  line-height: 15px;
+  padding: 0 5px;
+  letter-spacing: 0.08em;
+  flex-shrink: 0;
+}
+
+.favorite-card-btn {
+  width: 22px;
+  height: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background-color: #0d0d0d;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+  flex: 0 0 auto;
+}
+
+.favorite-card-btn svg {
+  width: 14px;
+  height: 14px;
+  fill: currentColor;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .favorite-card-btn:hover {
+    color: #f5a623;
+    border-color: rgba(245, 166, 35, 0.55);
+  }
+}
+
+.favorite-card-btn.is-active {
+  color: #f5a623;
+  background-color: #0d0d0d;
+  border-color: #f5a623;
+  box-shadow: inset 0 0 0 1px rgba(245, 166, 35, 0.2);
+}
+
+.favorite-card-btn:active {
+  transform: translateY(1px);
+}
+
+/* ── Favorite-button tooltip ──────────────────────────────────────────────
+   Same dark, bordered look as the nav-cluster tooltips. Centred horizontally
+   below the button with the caret pointing up — the 1W brand link to its right
+   leaves enough room that the centred bubble stays inside the card's clipped
+   bounds. Shown on hover (fine pointers) or focus. */
+.favorite-card-btn {
+  position: relative;
+}
+
+.favorite-card-btn[data-tooltip]::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  top: calc(100% + 9px);
+  left: 50%;
+  transform: translateX(-50%) translateY(-4px);
+  padding: 5px 9px;
+  border-radius: 8px;
+  background: rgba(16, 16, 16, 0.97);
+  border: 1px solid var(--border-active);
+  color: var(--text-primary);
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 400;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.6);
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+.favorite-card-btn[data-tooltip]::before {
+  content: "";
+  position: absolute;
+  top: calc(100% + 3px);
+  left: 50%;
+  transform: translateX(-50%) translateY(-4px);
+  border: 5px solid transparent;
+  border-bottom-color: var(--border-active);
+  pointer-events: none;
+  opacity: 0;
+  z-index: 400;
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+.favorite-card-btn[data-tooltip]:focus-visible::after,
+.favorite-card-btn[data-tooltip]:focus-visible::before {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .favorite-card-btn[data-tooltip]:hover::after,
+  .favorite-card-btn[data-tooltip]:hover::before {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+/* ── 1W brand-link tooltip ────────────────────────────────────────────────
+   Same dark bubble as the favorite/nav tooltips, centred under the pill: both
+   caret and bubble use left:50% + translateX(-50%) so they line up on the
+   logo's middle. */
+.brand-link-1w[data-tooltip]::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  top: calc(100% + 9px);
+  left: 50%;
+  transform: translateX(-50%) translateY(-4px);
+  padding: 5px 9px;
+  border-radius: 8px;
+  background: rgba(16, 16, 16, 0.97);
+  border: 1px solid var(--border-active);
+  color: var(--text-primary);
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 400;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.6);
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+.brand-link-1w[data-tooltip]::before {
+  content: "";
+  position: absolute;
+  top: calc(100% + 3px);
+  left: 50%;
+  transform: translateX(-50%) translateY(-4px);
+  border: 5px solid transparent;
+  border-bottom-color: var(--border-active);
+  pointer-events: none;
+  opacity: 0;
+  z-index: 400;
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+.brand-link-1w[data-tooltip]:focus-visible::after { opacity: 1; transform: translateX(-50%) translateY(0); }
+.brand-link-1w[data-tooltip]:focus-visible::before { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+@media (hover: hover) and (pointer: fine) {
+  .brand-link-1w[data-tooltip]:hover::after { opacity: 1; transform: translateX(-50%) translateY(0); }
+  .brand-link-1w[data-tooltip]:hover::before { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+.logger-header {
+  padding: 10px 24px;
+  height: auto;
+  background-color: #050505;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-sizing: border-box;
+  border-top-left-radius: 11px;
+  border-top-right-radius: 11px;
+}
+
+.logger-status-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #555;
+  border-radius: 50%;
+}
+
+.logger-status-dot.is-active {
+  background-color: #ff3b30;
+  box-shadow: 0 0 8px 1px rgba(255, 59, 48, 0.7);
+}
+
+.logger-header h2 {
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  color: var(--text-primary);
+  margin: 0;
+  margin-right: auto;
+}
+
+.logger-count {
+  font-size: 13px;
+  font-family: monospace;
+  font-weight: 800;
+  color: var(--text-secondary);
+  letter-spacing: 0.08em;
+  background-color: #121212;
+  border: 1px solid var(--border);
+  padding: 5px 12px;
+  height: 27px;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+.logger-terminal {
+  padding: 8px;
+  /* The single scrolling region. The panel above is clamped to max-height:100%,
+     so this flexes to fill whatever height remains under the header and scrolls
+     its rows INTERNALLY — the overlay never needs a scrollbar. (Same robust
+     flexbox pattern the mobile .awaiting-list already used; no JS sizing.) */
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  overscroll-behavior: contain;
+  background-color: #000000;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+  /* Explicit radius + overflow:hidden clips this child's #000000 background
+     to rounded bottom corners so the panel's border-radius shows through.
+     The header tooltip is in .logger-header (a sibling), so it is unaffected. */
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.logger-terminal::-webkit-scrollbar { width: 4px; }
+.logger-terminal::-webkit-scrollbar-track { background: transparent; }
+.logger-terminal::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+
+.logger-empty-state {
+  text-align: center;
+  padding: 32px 16px;
+  font-size: 11px !important;
+  line-height: 16px !important;
+  color: var(--text-muted);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.logger-row {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 12px 18px;
+  background-color: #030303;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .logger-row:hover {
+    border-color: var(--border-active);
+    background-color: #050505;
+  }
+}
+
+/* A freshly logged exclusion slides+fades in and flashes its border, so a new entry is
+   noticeable the moment it lands in the terminal. */
+.logger-row--enter {
+  animation: loggerRowEnter 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+@keyframes loggerRowEnter {
+  0% { opacity: 0; transform: translateY(-10px); border-color: rgba(255, 59, 48, 0.65); }
+  60% { border-color: rgba(255, 59, 48, 0.45); }
+  100% { opacity: 1; transform: translateY(0); border-color: var(--border); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .logger-row--enter { animation: none; }
+}
+
+.log-header-line {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.log-tag {
+  font-family: monospace;
+  font-size: 9px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 4px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-align: center;
+  display: inline-block;
+  min-width: 80px;
+}
+
+.log-tag.tag-alert-red { background-color: rgba(255, 59, 48, 0.08); border: 1px solid rgba(255, 59, 48, 0.25); color: #ff3b30; }
+.log-tag.tag-alert-goal { background-color: rgba(239, 68, 68, 0.08); border: 1px solid rgba(239, 68, 68, 0.25); color: #ef4444; }
+.log-tag.tag-filt-url { background-color: rgba(234, 179, 8, 0.08); border: 1px solid rgba(234, 179, 8, 0.25); color: #eab308; }
+.log-tag.tag-filt-limits { background-color: rgba(168, 85, 247, 0.08); border: 1px solid rgba(168, 85, 247, 0.25); color: #a855f7; }
+.log-tag.tag-filt-odds { background-color: rgba(59, 130, 246, 0.08); border: 1px solid rgba(59, 130, 246, 0.25); color: #3b82f6; }
+.log-tag.tag-sys-ft { background-color: rgba(34, 197, 94, 0.08); border: 1px solid rgba(34, 197, 94, 0.25); color: #22c55e; }
+.log-tag.tag-sys-time { background-color: rgba(156, 163, 175, 0.08); border: 1px solid rgba(156, 163, 175, 0.25); color: #9ca3af; }
+.log-tag.tag-sys-filt { background-color: rgba(156, 163, 175, 0.1); border: 1px solid rgba(156, 163, 175, 0.25); color: #9ca3af; }
+
+.log-time {
+  font-family: monospace;
+  font-size: 11px;
+  color: var(--text-secondary);
+}
+
+.log-match-name {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+
+.log-telemetry {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+  background-color: #000000;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 6px 4px;
+  width: 100%;
+}
+
+.tel-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid var(--border);
+}
+
+.tel-box:last-child {
+  border-right: none;
+}
+
+.tel-lbl {
+  font-size: 8px;
+  font-weight: 700;
+  color: var(--text-muted);
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+.tel-val {
+  font-family: monospace;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.tel-val.tel-score {
+  color: var(--text-primary);
+}
+
+.tel-val.tel-time {
+  color: #ef4444;
+}
+
+/* Odds box living inside the SCORE/MIN/EST telemetry row. Given a little extra width so the
+   chips breathe. Chips are laid out in a fixed 2-column grid (a tidy 2x2 for the usual 4
+   lines) rather than free-wrapping, which packed 3-then-1. */
+.tel-box-odds {
+  grid-column: span 2;
+  padding: 0 6px;
+}
+
+.tel-box-odds .tel-val {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+  gap: 5px;
+  width: 100%;
+}
+
+.tel-box-odds .odds-chip {
+  font-size: 11px;
+  padding: 2px 7px;
+  width: 100%;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+/* Dynamic balancing: a 2-column grid normally leaves a lone trailing chip
+   stuck in the left cell. When the LAST chip lands on an odd index (totals of
+   1, 3, 5 …) let it span both columns and center — so 1 chip sits dead-center,
+   3 chips read as two-up + one centered below, etc. Even counts (2, 4 …) keep
+   the tidy corner / 2×2 grid. */
+.tel-box-odds .odds-chip:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+  justify-self: center;
+  width: auto;
+  min-width: 48%;
+}
+
+.tel-box-odds .odds-chip-line {
+  font-size: 10px;
+}
+
+.log-odds-strip {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: #000000;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 8px 12px;
+  width: 100%;
+}
+
+.odds-strip-lbl {
+  font-size: 8px;
+  font-weight: 700;
+  color: var(--text-muted);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  flex-shrink: 0;
+}
+
+.odds-chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.odds-chip {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 5px;
+  font-family: monospace;
+  font-size: 13px;
+  font-weight: 700;
+  background-color: rgba(234, 179, 8, 0.06);
+  border: 1px solid rgba(234, 179, 8, 0.20);
+  border-radius: 5px;
+  padding: 3px 9px;
+  line-height: 1.35;
+}
+
+.odds-chip-line {
+  color: var(--text-secondary);
+  font-size: 11px;
+  letter-spacing: 0.02em;
+}
+
+.odds-chip-sep {
+  color: var(--text-muted);
+}
+
+.odds-chip-val {
+  color: #eab308;
+}
+
+.odds-chip-empty {
+  color: var(--text-muted);
+  background-color: transparent;
+  border-color: var(--border);
+}
+
+
+.log-reason-pane {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  overflow: hidden;
+}
+
+.reason-title {
+  font-size: 9px;
+  font-family: monospace;
+  font-weight: 700;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+}
+
+.log-reason {
+  font-family: monospace;
+  font-size: 13px;
+  color: var(--text-secondary);
+  font-weight: 600;
+  white-space: normal;
+}
+
+.log-expiry {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: auto;
+  font-family: monospace;
+  font-size: 11px;
+  flex-shrink: 0;
+}
+
+.expiry-label {
+  color: var(--text-muted);
+  font-weight: 700;
+}
+
+.expiry-value {
+  color: #ff3b30;
+  font-weight: 700;
+}
+
+/* Tablet view mapping and responsive rules */
+@media (max-width: 1279px) and (min-width: 769px) {
+  .log-reason-pane {
+    display: flex;
+    min-width: 0;
+  }
+  .log-reason {
+    white-space: normal;
+  }
+}
+
+/* =========================================================================
+   TOAST NOTIFICATION SYSTEM (GLOBAL STYLES)
+   ========================================================================= */
+.toast-container {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+@media (min-width: 769px) {
+  .toast-container {
+    right: 24px;
+    top: 24px;
+    bottom: auto;
+    left: auto;
+    width: 360px;
+    align-items: flex-end;
+  }
+}
+
+.custom-toast {
+  pointer-events: auto;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: rgba(5, 5, 5, 0.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.9), 0 0 0 1px rgba(255, 255, 255, 0.03) inset;
+  border-radius: 8px;
+  padding: 12px 14px;
+  position: relative;
+  overflow: hidden;
+  animation: toastEntranceRight 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: transform, opacity;
+}
+
+@keyframes toastEntranceRight {
+  from {
+    opacity: 0;
+    transform: translateX(32px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+.custom-toast.toast-fade-out {
+  opacity: 0;
+  transform: translateX(24px) scale(0.95);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.toast-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 8px;
+  margin-bottom: 8px;
+}
+
+.toast-warn-icon {
+  flex-shrink: 0;
+}
+
+.toast-title {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--text-primary);
+  text-transform: uppercase;
+}
+
+.toast-body {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.toast-match-name {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.toast-reason {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.toast-progress-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  background-color: #F5A623;
+  width: 100%;
+  animation: toastProgressDecrease 4.5s linear forwards;
+  transform-origin: left;
+}
+
+@keyframes toastProgressDecrease {
+  from {
+    transform: scaleX(1);
+  }
+  to {
+    transform: scaleX(0);
+  }
+}
+
+@keyframes toastEntranceBottom {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (max-width: 768px) {
+  .mute-toggle-btn,
+  .queue-toggle-btn,
+  .logs-toggle-btn {
+    flex: 0 0 auto;
+    /* Match the desktop footprint on mobile — the icons read clearly and the
+       tap targets are comfortable. SVG sizes inherit the desktop rules. */
+    width: 42px;
+    height: 42px;
+  }
+
+  .dashboard-grid {
+    margin-bottom: 0;
+  }
+
+  .no-matches-placeholder {
+    /* Same fixed centring as desktop — keep it dead-centre on mobile too. */
+    max-width: 290px;
+    width: calc(100% - 32px);
+  }
+
+  .logger-row {
+    gap: 9px;
+    padding: 12px;
+  }
+
+  .log-match-name {
+    font-size: 13px;
+  }
+
+  .log-telemetry {
+    margin: 2px 0;
+    /* Fixed SCORE | MIN | EST columns; the wide ODDS box drops to its own row
+       below (see .tel-box-odds) so its chips never cram or push the card wider
+       than the viewport. */
+    grid-template-columns: 1fr 1fr 1fr;
+    row-gap: 8px;
+  }
+
+  /* Let every cell shrink below its content width instead of forcing overflow. */
+  .log-telemetry .tel-box {
+    min-width: 0;
+  }
+
+  .tel-box-odds {
+    grid-column: 1 / -1;
+    border-right: none;
+    border-top: 1px solid var(--border);
+    padding-top: 7px;
+    margin-top: 1px;
+  }
+
+  /* Match desktop: a fixed 2-column grid so the usual pair sits 50/50 and a lone
+     trailing chip (totals of 1, 3, 5…) centers below at partial width instead of
+     stretching the full row. The last-odd-child centering rule (.tel-box-odds
+     .odds-chip:last-child:nth-child(odd), defined above) is intentionally NOT
+     overridden here, so that desktop centering carries through on mobile too. */
+  .tel-box-odds .tel-val {
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+  }
+
+  .tel-box-odds .odds-chip {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .log-reason-pane {
+    display: flex;
+  }
+
+  .log-reason {
+    white-space: normal;
+    font-size: 10px;
+  }
+
+  /* Single row on mobile too: dot + title share the line with the count badge and
+     the close button (no wrapped second row). The title shrinks/ellipsises first. */
+  .logger-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px;
+    height: auto; /* Reset fixed desktop height */
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+
+  .logger-status-dot {
+    margin-top: 0;
+    flex-shrink: 0;
+  }
+
+  .logger-header h2 {
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    line-height: 1.3;
+    margin-right: auto;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .logs-modal-panel .awaiting-close-btn {
+    width: 24px;
+    height: 24px;
+    padding: 4px;
+    box-sizing: border-box;
+    margin-left: 0;
+    margin-top: 0;
+    flex-shrink: 0;
+  }
+  .logs-modal-panel .awaiting-close-btn svg {
+    width: 13px;
+    height: 13px;
+  }
+
+  .logger-header .logs-export-btn {
+    width: 24px;
+    height: 24px;
+    padding: 4px;
+    box-sizing: border-box;
+  }
+  .logger-header .logs-export-btn svg {
+    width: 12px;
+    height: 12px;
+  }
+
+  .logger-count {
+    font-size: 10px;
+    letter-spacing: 0.04em;
+    padding: 4px 8px;
+    height: 24px;
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+    white-space: nowrap;
+    box-sizing: border-box;
+  }
+
+  .toast-container {
+    left: 16px;
+    right: 16px;
+    bottom: 16px;
+    top: auto;
+    width: auto;
+    max-width: none;
+    align-items: center;
+  }
+
+  .custom-toast {
+    width: 100%;
+    max-width: 340px;
+    margin: 0 auto;
+    animation: toastEntranceBottom 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .custom-toast.toast-fade-out {
+    opacity: 0;
+    transform: translateY(24px) scale(0.95);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .toast-header {
+    margin-bottom: 6px;
+  }
+
+  .toast-match-name {
+    font-size: 13px !important;
+    line-height: 1.3;
+  }
+
+  .toast-reason {
+    font-size: 10px !important;
+  }
+
+  .toast-progress-bar {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  /* Compact match card on mobile to fit the screen and prevent page scrolling when one match is available */
+  .card-body {
+    padding: 12px 14px;
+    min-height: 440px;
+  }
+
+  .score-row-wrapper {
+    height: 90px;
+    margin-bottom: 12px;
+  }
+
+  .odds-wrapper {
+    padding-top: 11px;
+    margin-top: 11px;
+  }
+
+  .odds-combined {
+    min-height: 200px;
+  }
+
+  .odds-other {
+    margin-top: 12px;
+    padding-top: 10px;
+  }
+
+  .odds-other-list {
+    height: 88px !important; /* fits exactly 4 rows */
+  }
+
+  .timeline-container {
+    padding-top: 12px;
+    margin-top: 12px;
+  }
+
+  .event-log {
+    height: 195px;
+  }
+}

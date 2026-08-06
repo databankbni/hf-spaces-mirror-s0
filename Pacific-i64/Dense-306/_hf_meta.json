@@ -1,0 +1,103 @@
+{
+ "captured_at": "2026-08-04T15:20:36Z",
+ "hf_metadata": {
+  "_id": "6a68c8f8b366dad975d47fbf",
+  "author": "Pacific-i64",
+  "cardData": {
+   "app_port": 7860,
+   "colorFrom": "blue",
+   "colorTo": "gray",
+   "emoji": "📐",
+   "license": "apache-2.0",
+   "models": [
+    "Pacific-i64/Dense-306"
+   ],
+   "pinned": false,
+   "sdk": "docker",
+   "title": "Dense-306"
+  },
+  "createdAt": "2026-07-28T15:21:28.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://pacific-i64-dense-306.hf.space",
+  "id": "Pacific-i64/Dense-306",
+  "lastModified": "2026-07-28T19:23:32.000Z",
+  "likes": 1,
+  "models": [
+   "Pacific-i64/Dense-306"
+  ],
+  "private": false,
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "pacific-i64-dense-306.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": "cpu-basic",
+    "requested": "cpu-basic"
+   },
+   "pySpacesVersion": "0.51.1",
+   "replicas": {
+    "current": 1,
+    "requested": 1
+   },
+   "sha": "6e87f461c8e3e1265ba9b634fb1d160a70a4f78b",
+   "stage": "RUNNING",
+   "volumes": [
+    {
+     "configuredByUserId": "643222d9f76c34519e96a299",
+     "mountPath": "/home/user/app/model",
+     "readOnly": true,
+     "source": "Pacific-i64/Dense-306",
+     "type": "model"
+    }
+   ]
+  },
+  "sdk": "docker",
+  "sha": "6e87f461c8e3e1265ba9b634fb1d160a70a4f78b",
+  "siblings": [
+   {
+    "rfilename": ".gitattributes"
+   },
+   {
+    "rfilename": "Dockerfile"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "__pycache__/app.cpython-313.pyc"
+   },
+   {
+    "rfilename": "app.py"
+   }
+  ],
+  "subdomain": "pacific-i64-dense-306",
+  "tags": [
+   "docker",
+   "region:us"
+  ],
+  "usedStorage": 0
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "Pacific-i64/Dense-306",
+ "repo_type": "spaces",
+ "sha": "6e87f461c8e3e1265ba9b634fb1d160a70a4f78b",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/Pacific-i64/Dense-306"
+}

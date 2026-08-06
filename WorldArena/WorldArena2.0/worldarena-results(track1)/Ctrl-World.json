@@ -1,0 +1,22 @@
+{
+    "Model": "Ctrl-World",
+    "year": "2025",
+    "open_source":"yes",
+    "Metrics": {
+        "Image Quality": 0.5378,
+        "Aesthetic Quality": 0.3865,
+        "JEPA Similarity": 0.787,
+        "Dynamic Degree": 0.4151,
+        "Flow Score": 0.3169,
+        "Motion Smoothness": 0.7446,
+        "Subject Consistency": 0.7063,
+        "Background Consistency": 0.8505,
+        "Photometric Consistency": 0.1421,
+        "Interaction Quality": 0.5272,
+        "Trajectory Accuracy": 0.4524,
+        "Depth Accuracy": 0.945,
+        "Perspectivity": 0.7656,
+        "Instruction Following": 0.5252,
+        "Semantic Alignment": 0.8845
+    }
+}

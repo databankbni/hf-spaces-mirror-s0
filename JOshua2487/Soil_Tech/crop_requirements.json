@@ -1,0 +1,308 @@
+
+{
+  "rice": {
+    "suitable_soil_types": ["clay", "loamy", "silt"],
+    "unsuitable_soil_types": ["sandy", "peat"],
+    "required_om": ["moderate", "high"],
+    "required_moisture": ["moderate", "high"],
+    "required_drainage": ["poor", "moderate"]
+  },
+
+  "corn": {
+    "suitable_soil_types": ["loamy", "sandy", "silt"],
+    "unsuitable_soil_types": ["clay", "peat"],
+    "required_om": ["moderate", "high"],
+    "required_drainage": ["moderate", "excessive"]
+  },
+
+  "tomato": {
+    "suitable_soil_types": ["loamy", "sandy"],
+    "unsuitable_soil_types": ["clay", "peat"],
+    "required_om": ["moderate", "high"],
+    "required_drainage": ["moderate", "excessive"]
+  },
+"eggplant": { 
+"suitable_soil_types": ["loamy", "sandy"], 
+"unsuitable_soil_types": ["clay", "peat"], 
+"required_om": ["moderate", "high"],
+ "required_drainage": ["moderate", "excessive"]
+ },
+"kangkong": {
+  "suitable_soil_types": ["loamy", "sandy", "clay", "silt"],  
+  "unsuitable_soil_types": ["peat"],
+  "required_om": ["moderate", "high"],
+  "required_drainage": ["poor", "moderate"]
+}
+, 
+"camote": { 
+"suitable_soil_types": ["loamy", "sandy"],
+ "unsuitable_soil_types": ["clay", "peat"],
+ "required_om": ["low", "moderate"],
+ "required_drainage": ["moderate", "excessive"]
+},
+"cassava": { 
+"suitable_soil_types": ["loamy", "sandy"],
+ "unsuitable_soil_types": ["clay", "peat"], 
+"required_om": ["low", "moderate"],
+ "required_drainage": ["moderate", "excessive"]
+ },
+"pechay": { 
+"suitable_soil_types": ["loamy", "sandy"], 
+"unsuitable_soil_types": ["clay", "peat"],
+"required_om": ["moderate", "high"], 
+"required_drainage": ["moderate", "excessive"]
+ },
+"onion": {
+ "suitable_soil_types": ["loamy", "sandy"], 
+"unsuitable_soil_types": ["clay", "peat"], 
+"required_om": ["moderate", "high"], 
+"required_drainage": ["moderate", "excessive"]
+ },
+"garlic": {
+ "suitable_soil_types": ["loamy", "sandy"],
+ "unsuitable_soil_types": ["clay", "peat"],
+ "required_om": ["moderate", "high"], 
+ "required_drainage": ["moderate", "excessive"] 
+} ,
+"mustasa": { 
+"suitable_soil_types": ["loamy", "sandy"], 
+"unsuitable_soil_types": ["clay", "peat"], 
+"required_om": ["moderate", "high"], 
+"required_drainage": ["moderate", "excessive"] 
+},
+"ampalaya": { 
+"suitable_soil_types": ["loamy", "sandy"],
+"unsuitable_soil_types": ["clay", "peat"], 
+"required_om": ["moderate", "high"], 
+"required_drainage": ["moderate", "excessive"]
+},
+"alugbati": { 
+"suitable_soil_types": ["loamy", "sandy"], 
+"unsuitable_soil_types": ["clay", "peat"], 
+"required_om": ["moderate", "high"], 
+"required_drainage": ["moderate", "excessive"]
+ },
+"okra": { 
+"suitable_soil_types": ["loamy", "sandy"], 
+"unsuitable_soil_types": ["clay", "peat"], 
+"required_om": ["moderate", "high"], 
+"required_drainage": ["moderate", "excessive"]
+ },
+"sitaw": { 
+"suitable_soil_types": ["loamy", "sandy"], 
+"unsuitable_soil_types": ["clay", "peat"], 
+"required_om": ["moderate", "high"], 
+"required_drainage": ["moderate", "excessive"]
+ },
+"lettuce": { 
+"suitable_soil_types": ["loamy", "sandy"], 
+"unsuitable_soil_types": ["clay", "peat"], 
+"required_om": ["moderate", "high"], 
+"required_drainage": ["moderate", "excessive"]
+ },
+"sili": { 
+"suitable_soil_types": ["loamy", "sandy"], 
+"unsuitable_soil_types": ["clay", "peat"], 
+"required_om": ["moderate", "high"], 
+"required_drainage": ["moderate", "excessive"]
+ },
+"kalamansi": { 
+"suitable_soil_types": ["loamy", "sandy"], 
+"unsuitable_soil_types": ["clay", "peat"], 
+"required_om": ["moderate", "high"], 
+"required_drainage": ["moderate", "excessive"]
+ },
+"malunggay": { 
+"suitable_soil_types": ["loamy", "sandy"], 
+"unsuitable_soil_types": ["clay", "peat"], 
+"required_om": ["low", "moderate"],
+"required_drainage": ["moderate", "excessive"]
+ },
+"tanglad": { 
+"suitable_soil_types": ["loamy", "sandy"], 
+"unsuitable_soil_types": ["clay", "peat"], 
+"required_om": ["moderate", "high"], 
+"required_drainage": ["moderate", "excessive"]
+ },
+"sayote": { 
+"suitable_soil_types": ["loamy", "clay"], 
+"unsuitable_soil_types": ["sandy", "peat"], 
+"required_om": ["moderate", "high"], 
+"required_drainage": ["moderate", "excessive"]
+ },
+"singkamas": { 
+"suitable_soil_types": ["loamy", "sandy"], 
+"unsuitable_soil_types": ["clay", "peat"], 
+"required_om": ["moderate", "high"], 
+"required_drainage": ["moderate", "excessive"]
+ },
+"sigarilyas": { 
+"suitable_soil_types": ["loamy", "sandy"], 
+"unsuitable_soil_types": ["clay", "peat"], 
+"required_om": ["low", "moderate"], 
+"required_drainage": ["moderate", "excessive"] 
+},
+"mani": { 
+"suitable_soil_types": ["loamy", "sandy"], 
+"unsuitable_soil_types": ["clay", "peat"], 
+"required_om": ["low", "moderate"], 
+"required_drainage": ["moderate", "excessive"]
+ },
+"kundol": { 
+"suitable_soil_types": ["loamy", "sandy"], 
+"unsuitable_soil_types": ["clay", "peat"], 
+"required_om": ["moderate", "high"], 
+"required_drainage": ["moderate", "excessive"] 
+},
+"patola": { 
+"suitable_soil_types": ["loamy", "sandy"], 
+"unsuitable_soil_types": ["clay", "peat"], 
+"required_om": ["moderate", "high"], 
+"required_drainage": ["moderate", "excessive"] 
+},
+"upo": { 
+"suitable_soil_types": ["loamy", "sandy"], 
+"unsuitable_soil_types": ["clay", "peat"], 
+"required_om": ["moderate", "high"], 
+"required_drainage": ["moderate", "excessive"]
+ },
+"radish": { 
+"suitable_soil_types": ["loamy", "sandy"], 
+"unsuitable_soil_types": ["clay", "peat"],
+"required_om": ["moderate", "high"], 
+"required_drainage": ["moderate", "excessive"]
+ },
+"pipino": { 
+"suitable_soil_types": ["loamy", "sandy"], 
+"unsuitable_soil_types": ["clay", "peat"], 
+"required_om": ["moderate", "high"], 
+"required_drainage": ["moderate", "excessive"] 
+},
+"luya": {
+  "suitable_soil_types": ["loamy", "sandy", "clay"], 
+  "unsuitable_soil_types": ["peat"],
+  "required_om": ["moderate", "high"],
+  "required_drainage": ["moderate", "excessive"]
+}
+,
+"pako": {
+  "suitable_soil_types": ["loamy", "sandy", "peat"],  
+  "unsuitable_soil_types": ["clay"],
+  "required_om": ["moderate", "high"],
+  "required_drainage": ["poor", "moderate"]
+},
+"carrots": { 
+"suitable_soil_types": ["loamy", "sandy"], 
+"unsuitable_soil_types": ["clay", "peat"], 
+"required_om": ["moderate", "high"], 
+"required_drainage": ["moderate", "excessive"]
+ },
+"potato": { 
+"suitable_soil_types": ["loamy", "sandy"], 
+"unsuitable_soil_types": ["clay", "peat"], 
+"required_om": ["moderate", "high"], 
+"required_drainage": ["moderate", "excessive"] 
+},
+"chinese_petchay": { 
+"suitable_soil_types": ["loamy", "sandy"], 
+"unsuitable_soil_types": ["clay", "peat"], 
+"required_om": ["moderate", "high"], 
+"required_drainage": ["moderate", "excessive"]
+},
+"green_onions": { 
+"suitable_soil_types": ["loamy", "sandy"], 
+"unsuitable_soil_types": ["clay", "peat"], 
+"required_om": ["moderate", "high"], 
+"required_drainage": ["moderate", "excessive"] 
+},
+"repolyo": { 
+"suitable_soil_types": ["loamy", "sandy"], 
+"unsuitable_soil_types": ["clay", "peat"], 
+"required_om": ["moderate", "high"], 
+"required_drainage": ["moderate", "excessive"] 
+},
+"bokchoy": { 
+"suitable_soil_types": ["loamy", "sandy"], 
+"unsuitable_soil_types": ["clay", "peat"], 
+"required_om": ["moderate", "high"], 
+"required_drainage": ["moderate", "excessive"] 
+},
+"papaya": { 
+"suitable_soil_types": ["loamy", "sandy"], 
+"unsuitable_soil_types": ["clay", "peat"], 
+"required_om": ["moderate", "high"], 
+"required_drainage": ["moderate", "excessive"]
+ },
+"baguio_beans": { 
+"suitable_soil_types": ["loamy", "sandy"], 
+"unsuitable_soil_types": ["clay", "peat"], 
+"required_om": ["moderate", "high"], 
+"required_drainage": ["moderate", "excessive"] 
+},
+"monggo": { 
+"suitable_soil_types": ["loamy", "sandy"], 
+"unsuitable_soil_types": ["clay", "peat"], 
+"required_om": ["low", "moderate"], 
+"required_drainage": ["moderate", "excessive"] 
+},
+"turmeric": {
+  "suitable_soil_types": ["loamy", "sandy"],
+  "unsuitable_soil_types": ["clay", "peat"],
+  "required_om": ["high", "moderate"],
+  "required_drainage": ["moderate", "excessive"]
+},
+"asthma_plant": { 
+"suitable_soil_types": ["loamy", "sandy"], 	
+"unsuitable_soil_types": ["clay", "peat"], 
+"required_om": ["low", "moderate"],
+"required_drainage": ["moderate", "excessive"] 
+},
+"oregano": { 
+"suitable_soil_types": ["loamy", "sandy"], 
+"unsuitable_soil_types": ["clay", "peat"],
+ "required_om": ["low", "moderate"], 
+"required_drainage": ["moderate", "excessive"] 
+},
+"lagundi": { 
+"suitable_soil_types": ["loamy", "sandy"],
+ "unsuitable_soil_types": ["clay", "peat"], 
+"required_om": ["low", "moderate"], 
+"required_drainage": ["moderate", "excessive"]
+},
+"basil": { 
+"suitable_soil_types": ["loamy", "sandy"], 
+"unsuitable_soil_types": ["clay", "peat"], 
+"required_om": ["moderate", "high"], 
+"required_drainage": ["moderate", "excessive"]
+},
+"pandan": { 
+"suitable_soil_types": ["loamy", "sandy", "clay"], 
+"unsuitable_soil_types": ["peat"], 
+"required_om": ["moderate", "high"], 
+"required_drainage": ["poor", "moderate"] 
+},
+"mint": { 
+"suitable_soil_types": ["loamy", "sandy"], 
+"unsuitable_soil_types": ["clay", "peat"], 
+"required_om": ["moderate", "high"], 
+"required_drainage": ["moderate", "excessive"] 
+},
+"ube": {
+  "suitable_soil_types": ["loamy", "sandy", "clay"], 
+  "unsuitable_soil_types": ["peat"],
+  "required_om": ["moderate", "high"],
+  "required_drainage": ["moderate", "excessive"]
+},
+"rosemary": { 
+"suitable_soil_types": ["loamy", "sandy"],
+"unsuitable_soil_types": ["clay", "peat"], 
+"required_om": ["low", "moderate"], 
+"required_drainage": ["moderate", "excessive"] 
+},
+"chives": { 
+"suitable_soil_types": ["loamy", "sandy"], 
+"unsuitable_soil_types": ["clay", "peat"], 
+"required_om": ["moderate", "high"], 
+"required_drainage": ["moderate", "excessive"] 
+}
+}

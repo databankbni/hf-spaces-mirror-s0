@@ -1,0 +1,8 @@
+{
+    "name": "judolisreal-root",
+    "private": true,
+    "scripts": {
+        "start": "cd backend && npm install && node index.js",
+        "build": "cd backend && npm install"
+    }
+}

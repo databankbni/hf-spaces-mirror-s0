@@ -1,0 +1,47 @@
+{
+  "commit": "b459b04462d3e3df874c1704fec2d2bc1a71e9ef",
+  "fixtures": [
+    {
+      "away": "Argentina",
+      "date": "2026-07-19",
+      "fixture_id": "WC26-104",
+      "group": "final",
+      "home": "Spain",
+      "kickoff_utc": "2026-07-19T19:00:00+00:00",
+      "lambda_away": 1.06857378,
+      "lambda_home": 1.27195795,
+      "match_number": 104,
+      "p_away": 0.29302348,
+      "p_away_advance": 0.43726331,
+      "p_draw": 0.30116003,
+      "p_home": 0.40581649,
+      "p_home_advance": 0.56273669,
+      "probability_note": "p_home/p_draw/p_away are regulation-90-minute 1X2 probabilities and are what gets scored. p_home_advance/p_away_advance additionally resolve a regulation draw with the Elo-weighted extra-time/penalties rule used by the tournament simulation; they are informative, not scored.",
+      "stage": "final"
+    }
+  ],
+  "forecast_date": "2026-07-19",
+  "forecast_horizon_seconds": 157078,
+  "generated_at": "2026-07-17T23:22:01.018007+00:00",
+  "information_cutoff": "2026-07-15T06:52:17.962583Z",
+  "model": "Elo-to-goals Dixon-Coles fitted model",
+  "provenance": {
+    "calibration_temperature": 0.8857253661047012,
+    "model_version": "elo-dixon-coles-180d-temperature-v1",
+    "scoreline_probability_note": "Exact-score probabilities come from the fitted Dixon-Coles score matrix; temperature scaling applies only to the displayed 1X2 probabilities.",
+    "snapshot_sha256": "f61003852e4169057fe02d84cfc039b03283f909dccfb69457b24317a5056c19",
+    "team_ratings_sha256": "4ca724c50acba5a72eadcb343ac928c3473185bbba02e4983c3b2a331bd8dc4c"
+  },
+  "schema_version": "live-forecast-v2",
+  "sources": [
+    "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026",
+    "https://inside.fifa.com/fifa-world-ranking/men",
+    "https://eloratings.net/World.tsv",
+    "https://www.espn.com/soccer/match/_/gameId/760416/bosnia-herzegovina-canada",
+    "https://www.espn.com/soccer/match/_/gameId/760417/paraguay-united-states",
+    "https://www.sbnation.com/soccer/1117513/world-cup-schedule-2026-how-to-watch-every-match-scores-and-more",
+    "https://www.theguardian.com/football/live/2026/jun/14/fifa-world-cup-2026-live-socceroos-australia-v-turkey-updates-aus-vs-tur-group-d-match-score-latest",
+    "https://api.football-data.org/v4/competitions/WC/matches",
+    "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard"
+  ]
+}

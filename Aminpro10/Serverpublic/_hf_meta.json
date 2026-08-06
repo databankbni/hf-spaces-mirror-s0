@@ -1,0 +1,81 @@
+{
+ "captured_at": "2026-08-04T13:17:18Z",
+ "hf_metadata": {
+  "_id": "6a49709d1fc169f488795e9d",
+  "author": "Aminpro10",
+  "cardData": {
+   "app_port": 7860,
+   "colorFrom": "blue",
+   "colorTo": "purple",
+   "emoji": "🎬",
+   "pinned": false,
+   "sdk": "docker",
+   "title": "Serverpublic"
+  },
+  "createdAt": "2026-07-04T20:44:13.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://aminpro10-serverpublic.hf.space",
+  "id": "Aminpro10/Serverpublic",
+  "lastModified": "2026-07-22T22:14:37.000Z",
+  "likes": 0,
+  "models": [
+   "runwayml/stable-diffusion-v1-5",
+   "stabilityai/stable-diffusion-xl-base-1.0"
+  ],
+  "private": false,
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "aminpro10-serverpublic.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": null,
+    "requested": "cpu-basic"
+   },
+   "replicas": {
+    "requested": 1
+   },
+   "stage": "SLEEPING"
+  },
+  "sdk": "docker",
+  "sha": "a7712bbd7f66900c52c3943710e6fff592452f40",
+  "siblings": [
+   {
+    "rfilename": ".gitattributes"
+   },
+   {
+    "rfilename": "Dockerfile"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "app.py"
+   },
+   {
+    "rfilename": "requirements.txt"
+   }
+  ],
+  "subdomain": "aminpro10-serverpublic",
+  "tags": [
+   "docker",
+   "region:us"
+  ],
+  "usedStorage": 0
+ },
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "Aminpro10/Serverpublic",
+ "repo_type": "spaces",
+ "sha": "a7712bbd7f66900c52c3943710e6fff592452f40",
+ "web_url": "https://huggingface.co/spaces/Aminpro10/Serverpublic"
+}

@@ -1,0 +1,6 @@
+# 안전민국 배포 런타임 의존성 (pytest·anthropic 제외 — anthropic은 함수 내부 지연 import라
+# 키 없는 규칙폴백 경로에선 실행되지 않음 → 0원 동작 보장).
+fastapi>=0.110
+uvicorn[standard]>=0.27
+pydantic>=2.0
+requests>=2.31   # 기상청 단기예보·특보 + 행안부 통계연보 실연동(없으면 sample 폴백)

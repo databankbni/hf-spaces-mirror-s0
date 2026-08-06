@@ -1,0 +1,1223 @@
+{
+ "captured_at": "2026-08-04T15:20:24Z",
+ "hf_metadata": {
+  "_id": "69c42051f9c57524a6f7dbdc",
+  "author": "Nomearod",
+  "cardData": {
+   "app_port": 7860,
+   "colorFrom": "blue",
+   "colorTo": "purple",
+   "emoji": "🔍",
+   "sdk": "docker",
+   "title": "agent-bench"
+  },
+  "createdAt": "2026-03-25T17:50:09.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://nomearod-agentbench.hf.space",
+  "id": "Nomearod/agentbench",
+  "lastModified": "2026-07-23T14:09:07.000Z",
+  "likes": 0,
+  "models": [
+   "deepset/deberta-v3-base-injection",
+   "mistralai/Mistral-7B-Instruct-v0.3",
+   "cross-encoder/ms-marco-MiniLM-L6-v2"
+  ],
+  "private": false,
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "nomearod-agentbench.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": null,
+    "requested": "cpu-basic"
+   },
+   "replicas": {
+    "requested": 1
+   },
+   "stage": "SLEEPING"
+  },
+  "sdk": "docker",
+  "sha": "c054d6cd99dfc9abfec2a2f227e3b7f01fdd0c55",
+  "siblings": [
+   {
+    "rfilename": ".dockerignore"
+   },
+   {
+    "rfilename": ".github/workflows/ci.yaml"
+   },
+   {
+    "rfilename": ".gitignore"
+   },
+   {
+    "rfilename": "CLAUDE.md"
+   },
+   {
+    "rfilename": "DECISIONS.md"
+   },
+   {
+    "rfilename": "Dockerfile"
+   },
+   {
+    "rfilename": "LICENSE"
+   },
+   {
+    "rfilename": "Makefile"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "SECURITY.md"
+   },
+   {
+    "rfilename": "agent_bench/__init__.py"
+   },
+   {
+    "rfilename": "agent_bench/agents/__init__.py"
+   },
+   {
+    "rfilename": "agent_bench/agents/orchestrator.py"
+   },
+   {
+    "rfilename": "agent_bench/core/__init__.py"
+   },
+   {
+    "rfilename": "agent_bench/core/config.py"
+   },
+   {
+    "rfilename": "agent_bench/core/prompts.py"
+   },
+   {
+    "rfilename": "agent_bench/core/provider.py"
+   },
+   {
+    "rfilename": "agent_bench/core/types.py"
+   },
+   {
+    "rfilename": "agent_bench/evaluation/__init__.py"
+   },
+   {
+    "rfilename": "agent_bench/evaluation/calibration/__init__.py"
+   },
+   {
+    "rfilename": "agent_bench/evaluation/calibration/metrics.py"
+   },
+   {
+    "rfilename": "agent_bench/evaluation/calibration/report.py"
+   },
+   {
+    "rfilename": "agent_bench/evaluation/datasets/calibration_v1.json"
+   },
+   {
+    "rfilename": "agent_bench/evaluation/datasets/k8s_golden.json"
+   },
+   {
+    "rfilename": "agent_bench/evaluation/datasets/k8s_golden_pilot.json"
+   },
+   {
+    "rfilename": "agent_bench/evaluation/datasets/tech_docs_golden.json"
+   },
+   {
+    "rfilename": "agent_bench/evaluation/harness.py"
+   },
+   {
+    "rfilename": "agent_bench/evaluation/judges/__init__.py"
+   },
+   {
+    "rfilename": "agent_bench/evaluation/judges/base.py"
+   },
+   {
+    "rfilename": "agent_bench/evaluation/judges/citation_faithfulness.py"
+   },
+   {
+    "rfilename": "agent_bench/evaluation/judges/completeness.py"
+   },
+   {
+    "rfilename": "agent_bench/evaluation/judges/groundedness.py"
+   },
+   {
+    "rfilename": "agent_bench/evaluation/judges/relevance.py"
+   },
+   {
+    "rfilename": "agent_bench/evaluation/metrics.py"
+   },
+   {
+    "rfilename": "agent_bench/evaluation/report.py"
+   },
+   {
+    "rfilename": "agent_bench/evaluation/rubrics/citation_faithfulness.md"
+   },
+   {
+    "rfilename": "agent_bench/evaluation/rubrics/completeness.md"
+   },
+   {
+    "rfilename": "agent_bench/evaluation/rubrics/groundedness.md"
+   },
+   {
+    "rfilename": "agent_bench/evaluation/rubrics/relevance.md"
+   },
+   {
+    "rfilename": "agent_bench/evaluation/variance/__init__.py"
+   },
+   {
+    "rfilename": "agent_bench/evaluation/variance/jury.py"
+   },
+   {
+    "rfilename": "agent_bench/evaluation/variance/rubric_permute.py"
+   },
+   {
+    "rfilename": "agent_bench/langchain_baseline/__init__.py"
+   },
+   {
+    "rfilename": "agent_bench/langchain_baseline/agent.py"
+   },
+   {
+    "rfilename": "agent_bench/langchain_baseline/retriever.py"
+   },
+   {
+    "rfilename": "agent_bench/langchain_baseline/runner.py"
+   },
+   {
+    "rfilename": "agent_bench/langchain_baseline/tools.py"
+   },
+   {
+    "rfilename": "agent_bench/memory/__init__.py"
+   },
+   {
+    "rfilename": "agent_bench/memory/store.py"
+   },
+   {
+    "rfilename": "agent_bench/rag/__init__.py"
+   },
+   {
+    "rfilename": "agent_bench/rag/chunker.py"
+   },
+   {
+    "rfilename": "agent_bench/rag/embedder.py"
+   },
+   {
+    "rfilename": "agent_bench/rag/reranker.py"
+   },
+   {
+    "rfilename": "agent_bench/rag/retriever.py"
+   },
+   {
+    "rfilename": "agent_bench/rag/store.py"
+   },
+   {
+    "rfilename": "agent_bench/security/__init__.py"
+   },
+   {
+    "rfilename": "agent_bench/security/audit_logger.py"
+   },
+   {
+    "rfilename": "agent_bench/security/injection_detector.py"
+   },
+   {
+    "rfilename": "agent_bench/security/output_validator.py"
+   },
+   {
+    "rfilename": "agent_bench/security/pii_redactor.py"
+   },
+   {
+    "rfilename": "agent_bench/security/types.py"
+   },
+   {
+    "rfilename": "agent_bench/serving/__init__.py"
+   },
+   {
+    "rfilename": "agent_bench/serving/app.py"
+   },
+   {
+    "rfilename": "agent_bench/serving/middleware.py"
+   },
+   {
+    "rfilename": "agent_bench/serving/routes.py"
+   },
+   {
+    "rfilename": "agent_bench/serving/schemas.py"
+   },
+   {
+    "rfilename": "agent_bench/serving/static/impressum.html"
+   },
+   {
+    "rfilename": "agent_bench/serving/static/index.html"
+   },
+   {
+    "rfilename": "agent_bench/serving/static/privacy.html"
+   },
+   {
+    "rfilename": "agent_bench/serving/static/reveal_anchor.json"
+   },
+   {
+    "rfilename": "agent_bench/tools/__init__.py"
+   },
+   {
+    "rfilename": "agent_bench/tools/base.py"
+   },
+   {
+    "rfilename": "agent_bench/tools/calculator.py"
+   },
+   {
+    "rfilename": "agent_bench/tools/registry.py"
+   },
+   {
+    "rfilename": "agent_bench/tools/search.py"
+   },
+   {
+    "rfilename": "assets/social_preview.png"
+   },
+   {
+    "rfilename": "configs/anthropic.yaml"
+   },
+   {
+    "rfilename": "configs/calibration/rows/baseline.yaml"
+   },
+   {
+    "rfilename": "configs/calibration/rows/baseline_no_abstain.yaml"
+   },
+   {
+    "rfilename": "configs/calibration/rows/baseline_no_anchors.yaml"
+   },
+   {
+    "rfilename": "configs/calibration/rows/baseline_no_cot.yaml"
+   },
+   {
+    "rfilename": "configs/calibration/rows/jury_kappa_weighted.yaml"
+   },
+   {
+    "rfilename": "configs/calibration/rows/permute.yaml"
+   },
+   {
+    "rfilename": "configs/default.yaml"
+   },
+   {
+    "rfilename": "configs/production.yaml"
+   },
+   {
+    "rfilename": "configs/selfhosted_local.yaml"
+   },
+   {
+    "rfilename": "configs/selfhosted_modal.yaml"
+   },
+   {
+    "rfilename": "configs/tasks/tech_docs.yaml"
+   },
+   {
+    "rfilename": "data/k8s_docs/.gitkeep"
+   },
+   {
+    "rfilename": "data/k8s_docs/QUESTION_PLAN.md"
+   },
+   {
+    "rfilename": "data/k8s_docs/SOURCES.md"
+   },
+   {
+    "rfilename": "data/k8s_docs/k8s_assign_pod_node.md"
+   },
+   {
+    "rfilename": "data/k8s_docs/k8s_configmap.md"
+   },
+   {
+    "rfilename": "data/k8s_docs/k8s_cronjob.md"
+   },
+   {
+    "rfilename": "data/k8s_docs/k8s_daemonset.md"
+   },
+   {
+    "rfilename": "data/k8s_docs/k8s_deployment.md"
+   },
+   {
+    "rfilename": "data/k8s_docs/k8s_dns.md"
+   },
+   {
+    "rfilename": "data/k8s_docs/k8s_endpoint_slices.md"
+   },
+   {
+    "rfilename": "data/k8s_docs/k8s_hpa.md"
+   },
+   {
+    "rfilename": "data/k8s_docs/k8s_ingress.md"
+   },
+   {
+    "rfilename": "data/k8s_docs/k8s_init_containers.md"
+   },
+   {
+    "rfilename": "data/k8s_docs/k8s_job.md"
+   },
+   {
+    "rfilename": "data/k8s_docs/k8s_namespaces.md"
+   },
+   {
+    "rfilename": "data/k8s_docs/k8s_network_policies.md"
+   },
+   {
+    "rfilename": "data/k8s_docs/k8s_node_pressure_eviction.md"
+   },
+   {
+    "rfilename": "data/k8s_docs/k8s_persistent_volumes.md"
+   },
+   {
+    "rfilename": "data/k8s_docs/k8s_pod_lifecycle.md"
+   },
+   {
+    "rfilename": "data/k8s_docs/k8s_pod_security_admission.md"
+   },
+   {
+    "rfilename": "data/k8s_docs/k8s_pod_security_standards.md"
+   },
+   {
+    "rfilename": "data/k8s_docs/k8s_pods.md"
+   },
+   {
+    "rfilename": "data/k8s_docs/k8s_probes.md"
+   },
+   {
+    "rfilename": "data/k8s_docs/k8s_rbac.md"
+   },
+   {
+    "rfilename": "data/k8s_docs/k8s_replicaset.md"
+   },
+   {
+    "rfilename": "data/k8s_docs/k8s_resource_management.md"
+   },
+   {
+    "rfilename": "data/k8s_docs/k8s_secret.md"
+   },
+   {
+    "rfilename": "data/k8s_docs/k8s_service.md"
+   },
+   {
+    "rfilename": "data/k8s_docs/k8s_statefulset.md"
+   },
+   {
+    "rfilename": "data/k8s_docs/k8s_taints_tolerations.md"
+   },
+   {
+    "rfilename": "data/k8s_docs/k8s_volumes.md"
+   },
+   {
+    "rfilename": "data/tech_docs/fastapi_background_tasks.md"
+   },
+   {
+    "rfilename": "data/tech_docs/fastapi_configuration.md"
+   },
+   {
+    "rfilename": "data/tech_docs/fastapi_dependencies.md"
+   },
+   {
+    "rfilename": "data/tech_docs/fastapi_deployment.md"
+   },
+   {
+    "rfilename": "data/tech_docs/fastapi_error_handling.md"
+   },
+   {
+    "rfilename": "data/tech_docs/fastapi_intro.md"
+   },
+   {
+    "rfilename": "data/tech_docs/fastapi_middleware.md"
+   },
+   {
+    "rfilename": "data/tech_docs/fastapi_openapi.md"
+   },
+   {
+    "rfilename": "data/tech_docs/fastapi_pagination.md"
+   },
+   {
+    "rfilename": "data/tech_docs/fastapi_path_params.md"
+   },
+   {
+    "rfilename": "data/tech_docs/fastapi_query_params.md"
+   },
+   {
+    "rfilename": "data/tech_docs/fastapi_request_body.md"
+   },
+   {
+    "rfilename": "data/tech_docs/fastapi_response_model.md"
+   },
+   {
+    "rfilename": "data/tech_docs/fastapi_security.md"
+   },
+   {
+    "rfilename": "data/tech_docs/fastapi_testing.md"
+   },
+   {
+    "rfilename": "data/tech_docs/fastapi_websockets.md"
+   },
+   {
+    "rfilename": "docker/Dockerfile"
+   },
+   {
+    "rfilename": "docker/docker-compose.vllm.yml"
+   },
+   {
+    "rfilename": "docker/docker-compose.yaml"
+   },
+   {
+    "rfilename": "docs/_generated/canary_detection.md"
+   },
+   {
+    "rfilename": "docs/_generated/canary_detection_real.md"
+   },
+   {
+    "rfilename": "docs/_generated/kappa_table.md"
+   },
+   {
+    "rfilename": "docs/_generated/plots/forest_fastapi.png"
+   },
+   {
+    "rfilename": "docs/_generated/plots/icc_contrast.png"
+   },
+   {
+    "rfilename": "docs/_generated/plots/mde_resolution.png"
+   },
+   {
+    "rfilename": "docs/_generated/plots/unfolding_shift.png"
+   },
+   {
+    "rfilename": "docs/_generated/stats_report.md"
+   },
+   {
+    "rfilename": "docs/benchmark_report.md"
+   },
+   {
+    "rfilename": "docs/canary_schema.md"
+   },
+   {
+    "rfilename": "docs/cost_reverification_2026-07.md"
+   },
+   {
+    "rfilename": "docs/judge-design.md"
+   },
+   {
+    "rfilename": "docs/k8s-local-setup.md"
+   },
+   {
+    "rfilename": "docs/langchain_benchmark_anthropic.md"
+   },
+   {
+    "rfilename": "docs/langchain_benchmark_openai.md"
+   },
+   {
+    "rfilename": "docs/provider_comparison.md"
+   },
+   {
+    "rfilename": "docs/retrieval_gate.md"
+   },
+   {
+    "rfilename": "docs/stats-design.md"
+   },
+   {
+    "rfilename": "k8s/helm/agent-bench/Chart.yaml"
+   },
+   {
+    "rfilename": "k8s/helm/agent-bench/templates/_helpers.tpl"
+   },
+   {
+    "rfilename": "k8s/helm/agent-bench/templates/configmap.yaml"
+   },
+   {
+    "rfilename": "k8s/helm/agent-bench/templates/deployment.yaml"
+   },
+   {
+    "rfilename": "k8s/helm/agent-bench/templates/hpa.yaml"
+   },
+   {
+    "rfilename": "k8s/helm/agent-bench/templates/secret.yaml"
+   },
+   {
+    "rfilename": "k8s/helm/agent-bench/templates/service.yaml"
+   },
+   {
+    "rfilename": "k8s/helm/agent-bench/values-dev.yaml"
+   },
+   {
+    "rfilename": "k8s/helm/agent-bench/values-prod.yaml"
+   },
+   {
+    "rfilename": "k8s/helm/agent-bench/values.yaml"
+   },
+   {
+    "rfilename": "measurements/2026-04-15-coldstart-n1.log"
+   },
+   {
+    "rfilename": "measurements/2026-04-15-coldstart-n2.log"
+   },
+   {
+    "rfilename": "measurements/2026-04-15-coldstart-n3.log"
+   },
+   {
+    "rfilename": "measurements/2026-05-04-judge-calibration-labels.jsonl"
+   },
+   {
+    "rfilename": "measurements/2026-05-05-judge-rubric-opus-stress.jsonl"
+   },
+   {
+    "rfilename": "measurements/2026-05-06-3a-paraphrase-recency-probe.jsonl"
+   },
+   {
+    "rfilename": "measurements/2026-05-06-4a-gpt4o-full-probe.jsonl"
+   },
+   {
+    "rfilename": "measurements/2026-05-06-gpt4o-extraction-reasoning-split.md"
+   },
+   {
+    "rfilename": "measurements/README.md"
+   },
+   {
+    "rfilename": "modal/common.py"
+   },
+   {
+    "rfilename": "modal/injection_classifier.py"
+   },
+   {
+    "rfilename": "modal/run_benchmark.py"
+   },
+   {
+    "rfilename": "modal/serve_vllm.py"
+   },
+   {
+    "rfilename": "preflight/2026-06-16_wp5-campaign.md"
+   },
+   {
+    "rfilename": "preflight/2026-06-22_k8s-campaign.md"
+   },
+   {
+    "rfilename": "pyproject.toml"
+   },
+   {
+    "rfilename": "results/calibration_v1_judge_baseline.json"
+   },
+   {
+    "rfilename": "results/calibration_v1_judge_baseline_no_abstain.json"
+   },
+   {
+    "rfilename": "results/calibration_v1_judge_baseline_no_anchors.json"
+   },
+   {
+    "rfilename": "results/calibration_v1_judge_baseline_no_cot.json"
+   },
+   {
+    "rfilename": "results/calibration_v1_judge_jury_kappa_weighted.json"
+   },
+   {
+    "rfilename": "results/calibration_v1_judge_jury_kappa_weighted_members.jsonl"
+   },
+   {
+    "rfilename": "results/calibration_v1_judge_jury_kappa_weighted_v1_1.json"
+   },
+   {
+    "rfilename": "results/calibration_v1_judge_jury_kappa_weighted_v1_1_1_members.jsonl"
+   },
+   {
+    "rfilename": "results/calibration_v1_judge_permute.json"
+   },
+   {
+    "rfilename": "results/calibration_v1_judge_permute_members.jsonl"
+   },
+   {
+    "rfilename": "results/calibration_v1_system_outputs.json"
+   },
+   {
+    "rfilename": "results/canary/predictions_real_v1.json"
+   },
+   {
+    "rfilename": "results/comparison_custom_vs_langchain.md"
+   },
+   {
+    "rfilename": "results/epochs/01KV7XEH72VJEAYEHMYVBKF9ZM/custom-openai_e1.json"
+   },
+   {
+    "rfilename": "results/epochs/01KV7XEH72VJEAYEHMYVBKF9ZM/custom-openai_e2.json"
+   },
+   {
+    "rfilename": "results/epochs/01KV7XEH72VJEAYEHMYVBKF9ZM/custom-openai_e3.json"
+   },
+   {
+    "rfilename": "results/epochs/01KV7XEH72VJEAYEHMYVBKF9ZM/custom-openai_e4.json"
+   },
+   {
+    "rfilename": "results/epochs/01KV7XEH72VJEAYEHMYVBKF9ZM/custom-openai_e5.json"
+   },
+   {
+    "rfilename": "results/epochs/01KV7YAYBVJH77X6NCVF50GVBC/custom-anthropic_e1.json"
+   },
+   {
+    "rfilename": "results/epochs/01KV7YAYBVJH77X6NCVF50GVBC/custom-anthropic_e2.json"
+   },
+   {
+    "rfilename": "results/epochs/01KV7YAYBVJH77X6NCVF50GVBC/custom-anthropic_e3.json"
+   },
+   {
+    "rfilename": "results/epochs/01KV7YAYBVJH77X6NCVF50GVBC/custom-anthropic_e4.json"
+   },
+   {
+    "rfilename": "results/epochs/01KV7YAYBVJH77X6NCVF50GVBC/custom-anthropic_e5.json"
+   },
+   {
+    "rfilename": "results/epochs/01KV7ZV0JXVZ59C03KZFQT4W84/langchain-openai_e1.json"
+   },
+   {
+    "rfilename": "results/epochs/01KV7ZV0JXVZ59C03KZFQT4W84/langchain-openai_e2.json"
+   },
+   {
+    "rfilename": "results/epochs/01KV7ZV0JXVZ59C03KZFQT4W84/langchain-openai_e3.json"
+   },
+   {
+    "rfilename": "results/epochs/01KV7ZV0JXVZ59C03KZFQT4W84/langchain-openai_e4.json"
+   },
+   {
+    "rfilename": "results/epochs/01KV7ZV0JXVZ59C03KZFQT4W84/langchain-openai_e5.json"
+   },
+   {
+    "rfilename": "results/epochs/01KV8145TPQ40CT5109JSYQDD2/langchain-anthropic_e1.json"
+   },
+   {
+    "rfilename": "results/epochs/01KV8145TPQ40CT5109JSYQDD2/langchain-anthropic_e2.json"
+   },
+   {
+    "rfilename": "results/epochs/01KV8145TPQ40CT5109JSYQDD2/langchain-anthropic_e3.json"
+   },
+   {
+    "rfilename": "results/epochs/01KV8145TPQ40CT5109JSYQDD2/langchain-anthropic_e4.json"
+   },
+   {
+    "rfilename": "results/epochs/01KV8145TPQ40CT5109JSYQDD2/langchain-anthropic_e5.json"
+   },
+   {
+    "rfilename": "results/epochs/01KVQFMGKTWP6RCBTR9EXYNH69/custom-openai-k8s_e1.json"
+   },
+   {
+    "rfilename": "results/epochs/01KVQFMGKTWP6RCBTR9EXYNH69/custom-openai-k8s_e2.json"
+   },
+   {
+    "rfilename": "results/epochs/01KVQFMGKTWP6RCBTR9EXYNH69/custom-openai-k8s_e3.json"
+   },
+   {
+    "rfilename": "results/epochs/01KVQFMGKTWP6RCBTR9EXYNH69/custom-openai-k8s_e4.json"
+   },
+   {
+    "rfilename": "results/epochs/01KVQFMGKTWP6RCBTR9EXYNH69/custom-openai-k8s_e5.json"
+   },
+   {
+    "rfilename": "results/epochs/01KVQGR1541AY32GPBQ1WK9WHG/custom-anthropic-k8s_e1.json"
+   },
+   {
+    "rfilename": "results/epochs/01KVQGR1541AY32GPBQ1WK9WHG/custom-anthropic-k8s_e2.json"
+   },
+   {
+    "rfilename": "results/epochs/01KVQGR1541AY32GPBQ1WK9WHG/custom-anthropic-k8s_e3.json"
+   },
+   {
+    "rfilename": "results/epochs/01KVQGR1541AY32GPBQ1WK9WHG/custom-anthropic-k8s_e4.json"
+   },
+   {
+    "rfilename": "results/epochs/01KVQGR1541AY32GPBQ1WK9WHG/custom-anthropic-k8s_e5.json"
+   },
+   {
+    "rfilename": "results/fastapi_legacy_baseline_pinned.json"
+   },
+   {
+    "rfilename": "results/fastapi_postedit.json"
+   },
+   {
+    "rfilename": "results/fastapi_preedit.json"
+   },
+   {
+    "rfilename": "results/k8s_pilot_threshold_0.015.json"
+   },
+   {
+    "rfilename": "results/k8s_pilot_threshold_0.02.json"
+   },
+   {
+    "rfilename": "results/k8s_postedit.json"
+   },
+   {
+    "rfilename": "results/k8s_postedit_fix2.json"
+   },
+   {
+    "rfilename": "results/k8s_postedit_fix2_merge_v2.json"
+   },
+   {
+    "rfilename": "results/k8s_preedit.json"
+   },
+   {
+    "rfilename": "results/k8s_preedit_pinned.json"
+   },
+   {
+    "rfilename": "results/long/fastapi/01KV7XEH72VJEAYEHMYVBKF9ZM.csv"
+   },
+   {
+    "rfilename": "results/long/fastapi/01KV7YAYBVJH77X6NCVF50GVBC.csv"
+   },
+   {
+    "rfilename": "results/long/fastapi/01KV7ZV0JXVZ59C03KZFQT4W84.csv"
+   },
+   {
+    "rfilename": "results/long/fastapi/01KV8145TPQ40CT5109JSYQDD2.csv"
+   },
+   {
+    "rfilename": "results/long/k8s/01KVQFMGKTWP6RCBTR9EXYNH69.csv"
+   },
+   {
+    "rfilename": "results/long/k8s/01KVQGR1541AY32GPBQ1WK9WHG.csv"
+   },
+   {
+    "rfilename": "scripts/_dev/generate_kappa_fixtures.py"
+   },
+   {
+    "rfilename": "scripts/_dev/probe_3a_paraphrase_recency.py"
+   },
+   {
+    "rfilename": "scripts/_dev/probe_4a_gpt4o_full.py"
+   },
+   {
+    "rfilename": "scripts/_dev/reaggregate_jury_v1_1.py"
+   },
+   {
+    "rfilename": "scripts/_dev/rerun_completeness_v1_1_1.py"
+   },
+   {
+    "rfilename": "scripts/_dev/sample_calibration_v1.py"
+   },
+   {
+    "rfilename": "scripts/benchmark.py"
+   },
+   {
+    "rfilename": "scripts/build_reveal_anchor.py"
+   },
+   {
+    "rfilename": "scripts/check_readme_stats.py"
+   },
+   {
+    "rfilename": "scripts/check_readme_test_count.py"
+   },
+   {
+    "rfilename": "scripts/evaluate.py"
+   },
+   {
+    "rfilename": "scripts/ingest.py"
+   },
+   {
+    "rfilename": "scripts/make_plots.py"
+   },
+   {
+    "rfilename": "scripts/preflight_deploy.py"
+   },
+   {
+    "rfilename": "scripts/run_calibration.py"
+   },
+   {
+    "rfilename": "scripts/run_canary_eval.py"
+   },
+   {
+    "rfilename": "scripts/run_epochs.py"
+   },
+   {
+    "rfilename": "scripts/run_langchain_eval.py"
+   },
+   {
+    "rfilename": "scripts/verify_retrieval.py"
+   },
+   {
+    "rfilename": "stats/__init__.py"
+   },
+   {
+    "rfilename": "stats/_validate.py"
+   },
+   {
+    "rfilename": "stats/agreement.py"
+   },
+   {
+    "rfilename": "stats/cluster.py"
+   },
+   {
+    "rfilename": "stats/detection.py"
+   },
+   {
+    "rfilename": "stats/equivalence.py"
+   },
+   {
+    "rfilename": "stats/intervals.py"
+   },
+   {
+    "rfilename": "stats/paired.py"
+   },
+   {
+    "rfilename": "stats/power.py"
+   },
+   {
+    "rfilename": "stats/reliability.py"
+   },
+   {
+    "rfilename": "stats/report.py"
+   },
+   {
+    "rfilename": "stats/schema.py"
+   },
+   {
+    "rfilename": "stats/unfolding.py"
+   },
+   {
+    "rfilename": "stats/variance.py"
+   },
+   {
+    "rfilename": "stats_adapters/__init__.py"
+   },
+   {
+    "rfilename": "stats_adapters/calibration_agreement.py"
+   },
+   {
+    "rfilename": "stats_adapters/calibration_unfolding.py"
+   },
+   {
+    "rfilename": "stats_adapters/canary.py"
+   },
+   {
+    "rfilename": "stats_adapters/from_results_json.py"
+   },
+   {
+    "rfilename": "terraform/main.tf"
+   },
+   {
+    "rfilename": "terraform/modules/gke/main.tf"
+   },
+   {
+    "rfilename": "terraform/modules/gke/outputs.tf"
+   },
+   {
+    "rfilename": "terraform/modules/gke/variables.tf"
+   },
+   {
+    "rfilename": "terraform/modules/networking/main.tf"
+   },
+   {
+    "rfilename": "terraform/modules/networking/variables.tf"
+   },
+   {
+    "rfilename": "terraform/outputs.tf"
+   },
+   {
+    "rfilename": "terraform/terraform.tfvars.example"
+   },
+   {
+    "rfilename": "terraform/variables.tf"
+   },
+   {
+    "rfilename": "tests/__init__.py"
+   },
+   {
+    "rfilename": "tests/conftest.py"
+   },
+   {
+    "rfilename": "tests/evaluation/__init__.py"
+   },
+   {
+    "rfilename": "tests/evaluation/fixtures/rubrics_invalid_arity.md"
+   },
+   {
+    "rfilename": "tests/evaluation/fixtures/rubrics_invalid_no_examples.md"
+   },
+   {
+    "rfilename": "tests/evaluation/fixtures/rubrics_invalid_no_frontmatter.md"
+   },
+   {
+    "rfilename": "tests/evaluation/fixtures/rubrics_invalid_scale.md"
+   },
+   {
+    "rfilename": "tests/evaluation/fixtures/rubrics_valid_binary.md"
+   },
+   {
+    "rfilename": "tests/evaluation/fixtures/rubrics_valid_three_point.md"
+   },
+   {
+    "rfilename": "tests/evaluation/fixtures/rubrics_valid_with_fenced_examples.md"
+   },
+   {
+    "rfilename": "tests/evaluation/fixtures/sklearn_kappa_inputs.json"
+   },
+   {
+    "rfilename": "tests/evaluation/test_calibration_metrics.py"
+   },
+   {
+    "rfilename": "tests/evaluation/test_calibration_report.py"
+   },
+   {
+    "rfilename": "tests/evaluation/test_harness_migration.py"
+   },
+   {
+    "rfilename": "tests/evaluation/test_judges.py"
+   },
+   {
+    "rfilename": "tests/evaluation/test_jury_aggregation.py"
+   },
+   {
+    "rfilename": "tests/evaluation/test_rubric_loading.py"
+   },
+   {
+    "rfilename": "tests/scripts/__init__.py"
+   },
+   {
+    "rfilename": "tests/scripts/test_run_calibration_dispatch.py"
+   },
+   {
+    "rfilename": "tests/stats/__init__.py"
+   },
+   {
+    "rfilename": "tests/stats/fixtures/.gitkeep"
+   },
+   {
+    "rfilename": "tests/stats/fixtures/canary/canaries.json"
+   },
+   {
+    "rfilename": "tests/stats/fixtures/canary/predictions.json"
+   },
+   {
+    "rfilename": "tests/stats/fixtures/golden_mini_fastapi.json"
+   },
+   {
+    "rfilename": "tests/stats/fixtures/golden_mini_k8s.json"
+   },
+   {
+    "rfilename": "tests/stats/fixtures/golden_report_base.md"
+   },
+   {
+    "rfilename": "tests/stats/fixtures/golden_report_divergent_se.md"
+   },
+   {
+    "rfilename": "tests/stats/fixtures/golden_report_failed_equivalence.md"
+   },
+   {
+    "rfilename": "tests/stats/fixtures/golden_report_nonzero_failure.md"
+   },
+   {
+    "rfilename": "tests/stats/fixtures/long_base.csv"
+   },
+   {
+    "rfilename": "tests/stats/fixtures/long_divergent_se.csv"
+   },
+   {
+    "rfilename": "tests/stats/fixtures/long_failed_equivalence.csv"
+   },
+   {
+    "rfilename": "tests/stats/fixtures/long_nonzero_failure.csv"
+   },
+   {
+    "rfilename": "tests/stats/fixtures/make_fixture_tables.py"
+   },
+   {
+    "rfilename": "tests/stats/fixtures/mini_corpus/mini_auth.md"
+   },
+   {
+    "rfilename": "tests/stats/fixtures/mini_corpus/mini_pagination.md"
+   },
+   {
+    "rfilename": "tests/stats/fixtures/mock_config.yaml"
+   },
+   {
+    "rfilename": "tests/stats/fixtures/results_mini.json"
+   },
+   {
+    "rfilename": "tests/stats/test_adapter.py"
+   },
+   {
+    "rfilename": "tests/stats/test_agreement.py"
+   },
+   {
+    "rfilename": "tests/stats/test_calibration_agreement.py"
+   },
+   {
+    "rfilename": "tests/stats/test_calibration_unfolding.py"
+   },
+   {
+    "rfilename": "tests/stats/test_canary_adapter.py"
+   },
+   {
+    "rfilename": "tests/stats/test_cluster.py"
+   },
+   {
+    "rfilename": "tests/stats/test_detection.py"
+   },
+   {
+    "rfilename": "tests/stats/test_equivalence.py"
+   },
+   {
+    "rfilename": "tests/stats/test_intervals.py"
+   },
+   {
+    "rfilename": "tests/stats/test_is_refusal.py"
+   },
+   {
+    "rfilename": "tests/stats/test_isolation.py"
+   },
+   {
+    "rfilename": "tests/stats/test_make_plots.py"
+   },
+   {
+    "rfilename": "tests/stats/test_paired.py"
+   },
+   {
+    "rfilename": "tests/stats/test_power.py"
+   },
+   {
+    "rfilename": "tests/stats/test_reliability.py"
+   },
+   {
+    "rfilename": "tests/stats/test_report.py"
+   },
+   {
+    "rfilename": "tests/stats/test_run_canary_eval.py"
+   },
+   {
+    "rfilename": "tests/stats/test_run_epochs.py"
+   },
+   {
+    "rfilename": "tests/stats/test_schema.py"
+   },
+   {
+    "rfilename": "tests/stats/test_social_preview.py"
+   },
+   {
+    "rfilename": "tests/stats/test_unfolding.py"
+   },
+   {
+    "rfilename": "tests/stats/test_variance.py"
+   },
+   {
+    "rfilename": "tests/test_agent.py"
+   },
+   {
+    "rfilename": "tests/test_app_corpus_map.py"
+   },
+   {
+    "rfilename": "tests/test_audit_logger.py"
+   },
+   {
+    "rfilename": "tests/test_check_readme_test_count.py"
+   },
+   {
+    "rfilename": "tests/test_config_corpora.py"
+   },
+   {
+    "rfilename": "tests/test_corpus_routing.py"
+   },
+   {
+    "rfilename": "tests/test_evaluation.py"
+   },
+   {
+    "rfilename": "tests/test_golden_schema.py"
+   },
+   {
+    "rfilename": "tests/test_injection_detector.py"
+   },
+   {
+    "rfilename": "tests/test_landing_page_inject.py"
+   },
+   {
+    "rfilename": "tests/test_langchain_baseline/__init__.py"
+   },
+   {
+    "rfilename": "tests/test_langchain_baseline/test_agent.py"
+   },
+   {
+    "rfilename": "tests/test_langchain_baseline/test_retriever.py"
+   },
+   {
+    "rfilename": "tests/test_langchain_baseline/test_runner.py"
+   },
+   {
+    "rfilename": "tests/test_langchain_baseline/test_tools.py"
+   },
+   {
+    "rfilename": "tests/test_memory.py"
+   },
+   {
+    "rfilename": "tests/test_meta_corpus.py"
+   },
+   {
+    "rfilename": "tests/test_output_validator.py"
+   },
+   {
+    "rfilename": "tests/test_pii_redactor.py"
+   },
+   {
+    "rfilename": "tests/test_preflight_deploy.py"
+   },
+   {
+    "rfilename": "tests/test_prompt_template.py"
+   },
+   {
+    "rfilename": "tests/test_provider.py"
+   },
+   {
+    "rfilename": "tests/test_rag.py"
+   },
+   {
+    "rfilename": "tests/test_reranker_scores.py"
+   },
+   {
+    "rfilename": "tests/test_reveal_anchor.py"
+   },
+   {
+    "rfilename": "tests/test_reveal_inject.py"
+   },
+   {
+    "rfilename": "tests/test_reveal_render.py"
+   },
+   {
+    "rfilename": "tests/test_search_metadata.py"
+   },
+   {
+    "rfilename": "tests/test_security_config.py"
+   },
+   {
+    "rfilename": "tests/test_security_integration.py"
+   },
+   {
+    "rfilename": "tests/test_security_types.py"
+   },
+   {
+    "rfilename": "tests/test_selfhosted_provider.py"
+   },
+   {
+    "rfilename": "tests/test_serving.py"
+   },
+   {
+    "rfilename": "tests/test_static_pages.py"
+   },
+   {
+    "rfilename": "tests/test_stream_route_events.py"
+   },
+   {
+    "rfilename": "tests/test_stream_stages.py"
+   },
+   {
+    "rfilename": "tests/test_tools.py"
+   }
+  ],
+  "subdomain": "nomearod-agentbench",
+  "tags": [
+   "docker",
+   "region:us"
+  ],
+  "usedStorage": 0
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitignore",
+   "stored_as": "_gitignore"
+  }
+ ],
+ "renamed_gitattributes": [],
+ "repo_id": "Nomearod/agentbench",
+ "repo_type": "spaces",
+ "sha": "c054d6cd99dfc9abfec2a2f227e3b7f01fdd0c55",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/Nomearod/agentbench"
+}

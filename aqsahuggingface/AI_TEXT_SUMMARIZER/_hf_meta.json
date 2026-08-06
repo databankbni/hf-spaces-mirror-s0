@@ -1,0 +1,96 @@
+{
+ "captured_at": "2026-08-04T15:51:45Z",
+ "hf_metadata": {
+  "_id": "6a4ac92cfd152333e4ca7aa8",
+  "author": "aqsahuggingface",
+  "cardData": {
+   "app_file": "app.py",
+   "colorFrom": "blue",
+   "colorTo": "purple",
+   "emoji": "📚",
+   "license": "mit",
+   "pinned": false,
+   "python_version": "3.11",
+   "sdk": "gradio",
+   "sdk_version": "5.38.0",
+   "title": "AI Text Summarizer"
+  },
+  "createdAt": "2026-07-05T21:14:20.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://aqsahuggingface-ai-text-summarizer.hf.space",
+  "id": "aqsahuggingface/AI_TEXT_SUMMARIZER",
+  "lastModified": "2026-07-06T11:07:27.000Z",
+  "likes": 0,
+  "private": false,
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "aqsahuggingface-ai-text-summarizer.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": null,
+    "requested": "cpu-basic"
+   },
+   "replicas": {
+    "requested": 1
+   },
+   "stage": "SLEEPING"
+  },
+  "sdk": "gradio",
+  "sha": "4a59e242daa9a30f3295931686705194cbe25d77",
+  "siblings": [
+   {
+    "rfilename": ".gitattributes"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "app.py"
+   },
+   {
+    "rfilename": "change_input.py"
+   },
+   {
+    "rfilename": "file_reader.py"
+   },
+   {
+    "rfilename": "requirements.txt"
+   },
+   {
+    "rfilename": "scraper.py"
+   },
+   {
+    "rfilename": "summarize_text.py"
+   }
+  ],
+  "subdomain": "aqsahuggingface-ai-text-summarizer",
+  "tags": [
+   "gradio",
+   "region:us"
+  ],
+  "usedStorage": 0
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "aqsahuggingface/AI_TEXT_SUMMARIZER",
+ "repo_type": "spaces",
+ "sha": "4a59e242daa9a30f3295931686705194cbe25d77",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/aqsahuggingface/AI_TEXT_SUMMARIZER"
+}

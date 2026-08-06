@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Build debug: tanpa ikon launcher (sama perilaku release). Akses setup: childmonitor://setup,
+     *#*#818181#*#* di Telepon, tautan open-child-setup di server, atau: adb shell am start -n com.example.childmonitor/.SetupActivity -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" />

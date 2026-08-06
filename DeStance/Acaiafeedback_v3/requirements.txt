@@ -1,0 +1,5 @@
+transformers>=4.31
+torch
+gradio
+numpy
+huggingface_hub

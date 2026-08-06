@@ -1,0 +1,135 @@
+{
+ "captured_at": "2026-08-04T13:22:16Z",
+ "hf_metadata": {
+  "_id": "6a4994b96117940ccb018cd1",
+  "author": "Ashanasri",
+  "cardData": {
+   "app_port": 7860,
+   "colorFrom": "green",
+   "colorTo": "gray",
+   "emoji": "🍽️",
+   "pinned": false,
+   "sdk": "docker",
+   "title": "Smart Restaurant AI Waiter"
+  },
+  "createdAt": "2026-07-04T23:18:17.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://ashanasri-smart-restaurant-ai-waiter.hf.space",
+  "id": "Ashanasri/smart-restaurant-ai-waiter",
+  "lastModified": "2026-07-07T23:07:13.000Z",
+  "likes": 0,
+  "private": false,
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "ashanasri-smart-restaurant-ai-waiter.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": null,
+    "requested": "cpu-basic"
+   },
+   "replicas": {
+    "requested": 1
+   },
+   "stage": "SLEEPING"
+  },
+  "sdk": "docker",
+  "sha": "4c57fdb7ccde5f7335cf9d1a2590cd90cf45eb3a",
+  "siblings": [
+   {
+    "rfilename": ".dockerignore"
+   },
+   {
+    "rfilename": ".env.example"
+   },
+   {
+    "rfilename": ".gitignore"
+   },
+   {
+    "rfilename": "Dockerfile"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "package-lock.json"
+   },
+   {
+    "rfilename": "package.json"
+   },
+   {
+    "rfilename": "public/index.html"
+   },
+   {
+    "rfilename": "scripts/mock-backend.js"
+   },
+   {
+    "rfilename": "src/__tests__/engine.test.ts"
+   },
+   {
+    "rfilename": "src/api/chat.controller.ts"
+   },
+   {
+    "rfilename": "src/config.ts"
+   },
+   {
+    "rfilename": "src/demo/demo-menu.json"
+   },
+   {
+    "rfilename": "src/engine/followup.engine.ts"
+   },
+   {
+    "rfilename": "src/engine/intent.engine.ts"
+   },
+   {
+    "rfilename": "src/engine/menu.filter.ts"
+   },
+   {
+    "rfilename": "src/engine/response.builder.ts"
+   },
+   {
+    "rfilename": "src/server.ts"
+   },
+   {
+    "rfilename": "src/services/ai.service.ts"
+   },
+   {
+    "rfilename": "src/services/conversation.service.ts"
+   },
+   {
+    "rfilename": "src/services/learning.service.ts"
+   },
+   {
+    "rfilename": "src/services/llm.service.ts"
+   },
+   {
+    "rfilename": "src/services/menu.service.ts"
+   },
+   {
+    "rfilename": "src/types/index.ts"
+   },
+   {
+    "rfilename": "src/utils/text.parser.ts"
+   },
+   {
+    "rfilename": "tsconfig.json"
+   }
+  ],
+  "subdomain": "ashanasri-smart-restaurant-ai-waiter",
+  "tags": [
+   "docker",
+   "region:us"
+  ],
+  "usedStorage": 0
+ },
+ "renamed_gitattributes": [],
+ "repo_id": "Ashanasri/smart-restaurant-ai-waiter",
+ "repo_type": "spaces",
+ "sha": "4c57fdb7ccde5f7335cf9d1a2590cd90cf45eb3a",
+ "web_url": "https://huggingface.co/spaces/Ashanasri/smart-restaurant-ai-waiter"
+}

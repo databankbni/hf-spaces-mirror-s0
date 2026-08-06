@@ -1,0 +1,12 @@
+fastapi
+uvicorn
+pydantic
+requests
+google-genai
+cryptography
+opencv-python-headless
+Pillow
+numpy
+reedsolo
+scikit-image
+PyWavelets

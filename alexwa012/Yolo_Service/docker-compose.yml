@@ -1,0 +1,45 @@
+services:
+
+  # ── Python YOLO detection service ──────────────────────────────────────────
+  yolo-detector:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: yolo-detector
+    restart: unless-stopped
+    ports:
+      - "8000:8000"           # exposes /start, /stop, /status, /health
+
+    environment:
+      # Where MediaMTX is reachable FROM inside the container
+      MEDIAMTX_HOST: host.docker.internal
+      MEDIAMTX_PORT: "8554"
+
+      # Where Spring Boot is reachable FROM inside the container
+      SPRING_BASE_URL: "http://host.docker.internal:8081"
+
+      # Detection tuning
+      CONF_THRESHOLD:         "0.4"
+      SNAPSHOT_EVERY:         "30"    # send a JPEG snapshot every N frames
+      MODEL_PATH:             "/app/yolov8n.pt"
+      WEAPON_MODEL_PATH:      "/app/weapon.pt"
+      PLATE_MODEL_PATH:       "/app/plate.pt"       # YOLOv8 licence-plate detector
+      PLATE_CONF_THRESHOLD:   "0.45"
+      OCR_CONF_THRESHOLD:     "0.20"
+      RECONNECT_DELAY:        "5"
+      SETTINGS_POLL_INTERVAL: "15"
+      CAMERA_POLL_INTERVAL:   "30"
+
+      # Force RTSP over TCP inside Docker (avoids UDP multicast issues)
+      OPENCV_FFMPEG_CAPTURE_OPTIONS: "rtsp_transport;tcp"
+      FFMPEG_RTSP_TRANSPORT: "tcp"
+
+    extra_hosts:
+      - "host.docker.internal:host-gateway"   # Linux compatibility
+
+    # Optional: limit CPU so YOLO doesn't starve other services
+    # deploy:
+    #   resources:
+    #     limits:
+    #       cpus: "2.0"
+    #       memory: "4G"

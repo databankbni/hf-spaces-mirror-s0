@@ -1,0 +1,44 @@
+{
+  "label_status": "Inferred from tournament code, date gaps, and each team's first match because the source CSV has no official stage/matchday field.",
+  "draw_logit_adjustment": -0.1703452294353481,
+  "selection_editions": [
+    "AC-2015",
+    "AC-2019",
+    "CA-2015",
+    "CA-2016",
+    "CA-2019",
+    "CA-2021",
+    "EC-2016",
+    "EC-2021",
+    "WC-2018"
+  ],
+  "confirmation_editions": [
+    "AC-2024",
+    "CA-2024",
+    "EC-2024",
+    "WC-2022"
+  ],
+  "n_selection": 84,
+  "n_confirmation": 48,
+  "selection": {
+    "production_log_loss": 0.7857042232956918,
+    "candidate_log_loss": 0.783338444093037
+  },
+  "confirmation": {
+    "production_log_loss": 0.7202664415030059,
+    "candidate_log_loss": 0.7225274244041056
+  },
+  "edition_cluster_bootstrap_95": {
+    "selection": [
+      -0.011023706322458629,
+      0.00718612481352873
+    ],
+    "confirmation": [
+      -0.019814173702935037,
+      0.017456899620594026
+    ]
+  },
+  "research_gate_passed": false,
+  "production_adopted": false,
+  "criterion": "This is research-only. Even a passing historical gate must be pre-registered before prospective evaluation; 2026 matches are excluded because they motivated the hypothesis."
+}

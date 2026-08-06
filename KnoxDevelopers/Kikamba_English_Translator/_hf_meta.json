@@ -1,0 +1,93 @@
+{
+ "captured_at": "2026-08-04T13:54:01Z",
+ "hf_metadata": {
+  "_id": "6a47e94321db1fc0ae4306b1",
+  "author": "KnoxDevelopers",
+  "cardData": {
+   "app_file": "app.py",
+   "colorFrom": "green",
+   "colorTo": "indigo",
+   "emoji": "📚",
+   "license": "apache-2.0",
+   "pinned": false,
+   "python_version": "3.13",
+   "sdk": "gradio",
+   "sdk_version": "6.20.0",
+   "short_description": "Translate texts from English to Kikamba.",
+   "title": "English Kikamba Translator"
+  },
+  "createdAt": "2026-07-03T16:54:27.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://knoxdevelopers-english-kikamba-translator.hf.space",
+  "id": "KnoxDevelopers/English_Kikamba_Translator",
+  "lastModified": "2026-08-03T17:51:11.000Z",
+  "likes": 1,
+  "models": [
+   "facebook/nllb-200-distilled-600M",
+   "KnoxDevelopers/nllb-200-English-to-Kikamba-lang-translation-lora",
+   "KnoxDevelopers/nllb-200-Kikamba-to-English-lang-translation-lora"
+  ],
+  "private": false,
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "knoxdevelopers-kikamba-english-translator.hf.space",
+     "stage": "READY"
+    },
+    {
+     "domain": "knoxdevelopers-english-kikamba-translator.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": "cpu-basic",
+    "requested": "cpu-basic"
+   },
+   "pySpacesVersion": "0.51.1",
+   "replicas": {
+    "current": 1,
+    "requested": 1
+   },
+   "sha": "bbd797bbff437ad2869f89ae2ddba8403a5ff135",
+   "stage": "RUNNING"
+  },
+  "sdk": "gradio",
+  "sha": "bbd797bbff437ad2869f89ae2ddba8403a5ff135",
+  "siblings": [
+   {
+    "rfilename": ".gitattributes"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "app.py"
+   },
+   {
+    "rfilename": "bi-directional_trans.py"
+   },
+   {
+    "rfilename": "requirements.txt"
+   }
+  ],
+  "subdomain": "knoxdevelopers-english-kikamba-translator",
+  "tags": [
+   "gradio",
+   "region:us"
+  ],
+  "usedStorage": 0
+ },
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "KnoxDevelopers/Kikamba_English_Translator",
+ "repo_type": "spaces",
+ "sha": "bbd797bbff437ad2869f89ae2ddba8403a5ff135",
+ "web_url": "https://huggingface.co/spaces/KnoxDevelopers/Kikamba_English_Translator"
+}

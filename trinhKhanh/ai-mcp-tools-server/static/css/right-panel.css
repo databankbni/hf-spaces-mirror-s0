@@ -1,0 +1,60 @@
+/* Panel phải: section box, lưới công cụ */
+
+/* ===== RIGHT PANEL ===== */
+.right-panel {
+  flex: 1;
+  padding: 28px;
+  overflow-y: auto;
+}
+
+.section-box {
+  border-radius: 12px;
+  padding: 22px;
+  margin-bottom: 22px;
+}
+
+.section-free { border: 1px solid #1a5599; background: rgba(0,80,180,.06); }
+
+.section-title {
+  text-align: center;
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 18px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+.section-free .section-title { color: #66aaff; }
+
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.tool-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.06);
+  border-radius: 8px;
+  cursor: default;
+  transition: background .15s;
+}
+
+.tool-card:hover { background: rgba(255,255,255,.09); }
+.tool-icon { font-size: 20px; width: 26px; text-align: center; }
+.tool-name { font-size: 13px; color: #ddd; line-height: 1.3; }
+
+.loading-tools {
+  grid-column: 1/-1;
+  text-align: center;
+  padding: 30px;
+  color: #666;
+}
+
+
+.tool-card { cursor: pointer; }
+.tool-card:hover { background: rgba(180,80,255,.12); border-color: rgba(180,80,255,.3); }

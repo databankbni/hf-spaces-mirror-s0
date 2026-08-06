@@ -1,0 +1,23 @@
+{
+ "captured_at": "2026-08-04T17:08:58Z",
+ "hf_metadata": {
+  "sha": "7748fab773e7b20e980c64d7bdc048b43a2fc571"
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "thamesah/my-first-space",
+ "repo_type": "spaces",
+ "sha": "7748fab773e7b20e980c64d7bdc048b43a2fc571",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/thamesah/my-first-space"
+}

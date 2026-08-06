@@ -1,0 +1,79 @@
+{
+ "captured_at": "2026-08-04T14:33:04Z",
+ "hf_metadata": {
+  "_id": "6a4ab35ffd152333e4c7996e",
+  "author": "Rishmak356",
+  "cardData": {
+   "colorFrom": "red",
+   "colorTo": "yellow",
+   "emoji": "🌖",
+   "pinned": false,
+   "sdk": "docker",
+   "title": "Superkart Sales Backend"
+  },
+  "createdAt": "2026-07-05T19:41:19.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://rishmak356-superkart-sales-backend.hf.space",
+  "id": "Rishmak356/superkart-sales-backend",
+  "lastModified": "2026-07-05T23:12:06.000Z",
+  "likes": 0,
+  "private": false,
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "rishmak356-superkart-sales-backend.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": null,
+    "requested": "cpu-basic"
+   },
+   "replicas": {
+    "requested": 1
+   },
+   "stage": "SLEEPING"
+  },
+  "sdk": "docker",
+  "sha": "2f899ad7b57aea6b84b7c4127de9eeb1ce8bf74e",
+  "siblings": [
+   {
+    "rfilename": ".gitattributes"
+   },
+   {
+    "rfilename": "Dockerfile"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "app.py"
+   },
+   {
+    "rfilename": "requirements.txt"
+   },
+   {
+    "rfilename": "rf_tuned_model.joblib"
+   }
+  ],
+  "subdomain": "rishmak356-superkart-sales-backend",
+  "tags": [
+   "docker",
+   "region:us"
+  ],
+  "usedStorage": 325891
+ },
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "Rishmak356/superkart-sales-backend",
+ "repo_type": "spaces",
+ "sha": "2f899ad7b57aea6b84b7c4127de9eeb1ce8bf74e",
+ "web_url": "https://huggingface.co/spaces/Rishmak356/superkart-sales-backend"
+}

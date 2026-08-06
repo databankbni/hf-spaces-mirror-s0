@@ -1,0 +1,11 @@
+{
+  "observation_path": "data/knowledge/v185_market_price/vehicle_source_price_observation.parquet",
+  "static_kb_path": "data/knowledge/v165_unified/vehicle_static_kb_snapshot.parquet",
+  "v192_1_output_root": "results/v192_1",
+  "output_root": "results/v192_2",
+  "model_root": "models/v192_2",
+  "latest_complete_day": "2026-06-07",
+  "rolling_months": 6,
+  "top_k_values": [5, 10, 15],
+  "random_seed": 1922
+}

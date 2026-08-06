@@ -1,0 +1,7 @@
+torch
+transformers
+gradio>=4.0.0
+numpy
+scipy
+matplotlib
+pandas

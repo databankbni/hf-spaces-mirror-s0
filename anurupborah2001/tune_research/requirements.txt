@@ -1,0 +1,7 @@
+gradio>=5.22.0
+openai-agents>=0.0.15
+openai>=1.68.2
+pydantic>=2.0
+python-dotenv>=1.0.1
+sendgrid>=6.11.0
+requests>=2.32.3

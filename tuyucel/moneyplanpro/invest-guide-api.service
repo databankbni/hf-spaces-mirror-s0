@@ -1,0 +1,14 @@
+[Unit]
+Description=InvestGuide Backend API (FastAPI)
+After=network.target
+
+[Service]
+User=root
+Group=root
+WorkingDirectory=/var/www/invest-guide/backend
+ExecStart=/var/www/invest-guide/backend/venv/bin/uvicorn main:app --host 0.0.0.0 --port 8000 --workers 4
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,27 @@
+{
+ "captured_at": "2026-08-04T17:15:07Z",
+ "hf_metadata": {
+  "sha": "0c1ace790c11bbb8b5ea2b55bdfc46744ae13541"
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  },
+  {
+   "original": ".gitignore",
+   "stored_as": "_gitignore"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "yass4/halt-cot",
+ "repo_type": "spaces",
+ "sha": "0c1ace790c11bbb8b5ea2b55bdfc46744ae13541",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/yass4/halt-cot"
+}

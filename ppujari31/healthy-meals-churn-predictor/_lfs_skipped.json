@@ -1,0 +1,13 @@
+{
+ "lfs_not_stored": [
+  {
+   "oid": "3e05138d8ae594772596cde465890f91cf88f1b5d33f52e56c4cefab5f1fda89",
+   "path": "churn_model.pkl",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6M2UwNTEzOGQ4YWU1OTQ3NzI1OTZjZGU0NjU4OTBmOTFjZjg4ZjFiNWQzM2Y1MmU1NmM0Y2VmYWI1ZjFmZGE4OQpzaXplIDczNzM4NjUK",
+   "size": 7373865,
+   "url": "https://huggingface.co/spaces/ppujari31/healthy-meals-churn-predictor/resolve/ed6588f430175d8ccac8239079aff39a0d4099f2/churn_model.pkl"
+  }
+ ],
+ "overflow_not_stored": [],
+ "oversize_not_stored": []
+}

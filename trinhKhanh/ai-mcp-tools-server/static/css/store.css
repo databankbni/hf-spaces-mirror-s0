@@ -1,0 +1,147 @@
+/* Tab "Mua thêm nội dung" — danh sách chủ đề của kho 1 vạn câu hỏi vì sao */
+
+/* #page-store là .tab-page (flex) -> cho nội dung chiếm hết bề ngang */
+#page-store { flex-direction: column; padding: 28px; overflow-y: auto; }
+
+.store-head { text-align: center; margin-bottom: 6px; }
+
+.store-title {
+  font-size: 19px;
+  font-weight: 700;
+  color: #66ddbb;
+  letter-spacing: .5px;
+}
+
+.store-sub {
+  font-size: 12.5px;
+  color: #888;
+  margin-top: 6px;
+  line-height: 1.6;
+}
+
+.topic-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.topic-card {
+  border: 1px solid #225544;
+  background: rgba(0, 160, 120, .06);
+  border-radius: 12px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: border-color .2s, background .2s;
+}
+
+.topic-card:hover {
+  border-color: #66ddbb;
+  background: rgba(0, 160, 120, .12);
+}
+
+.topic-head { display: flex; align-items: center; gap: 10px; }
+
+.topic-icon { font-size: 26px; line-height: 1; }
+
+.topic-name {
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  text-transform: capitalize;
+}
+
+.topic-stats { display: flex; gap: 8px; flex-wrap: wrap; }
+
+.topic-stat {
+  font-size: 11px;
+  color: #9fd;
+  background: rgba(0, 200, 150, .1);
+  border: 1px solid #225544;
+  border-radius: 20px;
+  padding: 3px 10px;
+}
+
+.topic-stat.muted { color: #888; background: rgba(255, 255, 255, .03); border-color: #333; }
+
+.btn-buy {
+  margin-top: 4px;
+  padding: 10px;
+  background: linear-gradient(90deg, #00a878, #00d9a0);
+  border: none;
+  border-radius: 8px;
+  color: #04241c;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .4px;
+  cursor: pointer;
+  transition: opacity .2s;
+}
+
+.btn-buy:hover { opacity: .85; }
+
+.store-empty {
+  text-align: center;
+  color: #777;
+  font-size: 13px;
+  padding: 40px 0;
+}
+
+.store-empty.error { color: #ff8888; }
+
+/* ── Thiết bị của tôi (chỉ hiện khi đã đăng nhập) ───────────────────────── */
+.mydev-box {
+  margin-top: 22px;
+  border: 1px solid #225544;
+  border-radius: 12px;
+  background: rgba(0, 160, 120, .05);
+  padding: 18px;
+}
+
+.mydev-title {
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 1.1px;
+  color: #66ddbb;
+  margin-bottom: 14px;
+}
+
+.mydev-item {
+  border: 1px solid #1e3f34;
+  border-radius: 9px;
+  padding: 12px 14px;
+  margin-bottom: 10px;
+  background: rgba(0, 0, 0, .2);
+}
+
+.mydev-head { display: flex; align-items: center; gap: 9px; flex-wrap: wrap; }
+
+.mydev-name { font-size: 13.5px; font-weight: 700; color: #fff; }
+
+.mydev-key { font-size: 10.5px; color: #6f8f83; font-family: Consolas, monospace; }
+
+.mydev-chips { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 9px; }
+
+.chip {
+  font-size: 10.5px;
+  padding: 3px 9px;
+  border-radius: 20px;
+  border: 1px solid #333;
+  color: #999;
+  background: rgba(255, 255, 255, .03);
+  text-transform: capitalize;
+}
+
+.chip.ok { color: #9fd; border-color: #225544; background: rgba(0, 200, 150, .1); }
+.chip.off { color: #ff9999; border-color: #552222; background: rgba(255, 60, 60, .07); }
+
+.mydev-claim { display: flex; gap: 9px; margin-top: 14px; flex-wrap: wrap; }
+.mydev-claim .form-input { flex: 1; min-width: 240px; }
+.mydev-claim .btn-buy { margin-top: 0; flex-shrink: 0; padding: 10px 18px; }
+
+.mydev-msg { font-size: 12px; margin-top: 9px; min-height: 16px; }
+.mydev-msg.error { color: #ff9999; }
+.mydev-msg.ok { color: #66ddbb; }

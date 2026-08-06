@@ -1,0 +1,53 @@
+# Stage 1: Build the Yew Frontend and Rust Backend
+FROM rust:bullseye AS builder
+
+# Install OpenSSL and trunk
+RUN apt-get update && apt-get install -y git pkg-config libssl-dev
+RUN cargo install trunk
+RUN rustup target add wasm32-unknown-unknown
+
+# Clone the repository
+RUN git clone https://github.com/OctopusTakopi/cloud-torrent-rs.git /build
+WORKDIR /build
+
+# Build the Yew frontend
+RUN cd frontend && trunk build --release
+
+# Build the Rust backend
+RUN cargo build --release
+
+# Extract the compiled binary to a safe output folder
+RUN mkdir -p /out/bin && \
+    find target/release -maxdepth 1 -type f -executable -name "cloud-torrent*" -exec cp {} /out/bin/cloud-torrent-rs \;
+
+# Stage 2: Final lightweight runtime image
+FROM debian:bullseye-slim
+
+# Install runtime SSL certificates
+RUN apt-get update && apt-get install -y ca-certificates openssl && rm -rf /var/lib/apt/lists/*
+
+# Create the downloads directory AND a dedicated cache directory
+RUN mkdir -p /home/user/app/downloads /home/user/app/.cache && \
+    chown -R 1000:1000 /home/user/app
+
+# Copy the compiled binary from the builder stage
+COPY --from=builder /out/bin/cloud-torrent-rs /usr/local/bin/cloud-torrent-rs
+
+# Switch to the mandatory Hugging Face user (UID 1000)
+USER 1000
+WORKDIR /home/user/app
+
+# FIX: Explicitly set Linux directory variables so the DHT engine writes to the correct location
+ENV HOME=/home/user
+ENV XDG_CACHE_HOME=/home/user/app/.cache
+ENV XDG_CONFIG_HOME=/home/user/app/.config
+ENV XDG_DATA_HOME=/home/user/app/.local/share
+
+# Expose the mandatory Hugging Face port
+EXPOSE 7860
+
+# Start the application
+CMD ["cloud-torrent-rs", \
+     "--listen", "0.0.0.0:7860", \
+     "--download-dir", "/home/user/app/downloads", \
+     "--auth", "afsal:afsal@123"]

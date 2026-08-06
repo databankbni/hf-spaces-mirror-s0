@@ -1,0 +1,22 @@
+{
+  "benchmark_date": "2026-06-13",
+  "test_set": "data/scenarios/test.jsonl (frozen, 98 examples)",
+  "base_model": {
+    "model": "bartowski/SmolLM2-360M-Instruct-GGUF Q8_0",
+    "factor_micro_f1": 0.026058631921824102,
+    "team_attribution_accuracy": 0.043010752688172046,
+    "median_latency_ms": 3675.582021009177,
+    "fallback_rate": 0.09183673469387756
+  },
+  "tuned_model": {
+    "adapter": "sammoftah/underdog-lab-smollm2-360m-lora",
+    "adapter_revision": "69f9aab7e5e7697d4dccfa2b9ecae29d4e132917",
+    "merged_gguf": "models/underdog-tuned-Q8_0.gguf",
+    "factor_micro_f1": 0.027,
+    "team_attribution_accuracy": 0.0323,
+    "median_latency_ms": 2995.4,
+    "fallback_rate": 0.1735
+  },
+  "ship_decision": "NO-SHIP",
+  "reason": "Tuned model improved factor type classification but outputs near-zero severity/certainty, triggering zero-weight hallucination detection. Net F1 gain: +0.09 points (target \u226515). Team attribution regressed. Fallback rate doubled. Shipping base model with deterministic fallback."
+}

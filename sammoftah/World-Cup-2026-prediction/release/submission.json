@@ -1,0 +1,22 @@
+{
+  "deadline": "2026-06-15",
+  "space_url": "https://huggingface.co/spaces/sammoftah/World-Cup-2026-prediction",
+  "github_url": "https://github.com/OsamaMoftah/World-Cup-2026-predicition",
+  "base_model_url": "https://huggingface.co/bartowski/SmolLM2-360M-Instruct-GGUF",
+  "adapter_url": "https://huggingface.co/sammoftah/underdog-lab-smollm2-360m-lora",
+  "dataset_url": "https://huggingface.co/datasets/sammoftah/underdog-lab-scenarios",
+  "live_forecast_path": "predictions/live/2026-06-13T190000Z-WC26-008",
+  "base_model_parameters": 360000000,
+  "parameter_limit": 32000000000,
+  "licenses": {
+    "code": "MIT",
+    "base_model": "Apache-2.0"
+  },
+  "human_actions": {
+    "cold_start_verified_at": "2026-06-13T16:20:54Z",
+    "mobile_smoke_verified_at": "2026-06-13T16:31:25Z",
+    "demo_video_url": "",
+    "social_post_url": "",
+    "hackathon_submission_url": ""
+  }
+}

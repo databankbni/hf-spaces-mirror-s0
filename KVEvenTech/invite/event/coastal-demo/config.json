@@ -1,0 +1,56 @@
+{
+  "brideName": "Maya & Rohan",
+  "familyName": "The Nair Family",
+  "intro": {
+    "tagline": "Love by the Shore",
+    "buttonText": "Ride the Wave",
+    "sequenceInvite": "With joy in our hearts",
+    "sequenceTo": "We invite you to celebrate"
+  },
+  "hero": { "badge": "A Coastal Celebration" },
+  "scratchReveal": {
+    "teaser": "Something beautiful is hidden here...",
+    "heading": "You're Invited!",
+    "revealLabel": "Reveal the surprise"
+  },
+  "countdown": {
+    "label": "Until We Say I Do",
+    "heading": "Counting Down to Forever",
+    "doneMessage": "The tide has turned — we are ONE!"
+  },
+  "celebrations": {
+    "sectionTag": "The Programme",
+    "sectionHeading": "Celebrations by the Sea"
+  },
+  "venue": {
+    "sectionHeading": "Where the Ocean Meets Love",
+    "locationLabel": "The Beach Resort",
+    "directionsLabel": "Get Directions"
+  },
+  "blessings": {
+    "heading": "Thank You for Being Part of Our Story",
+    "suffix": "— Maya & Rohan"
+  },
+  "events": {
+    "haldi": {
+      "title": "Sundowner Sangeet",
+      "badge": "Evening One",
+      "blessing": "Dance under the stars",
+      "date": "20 Mar 2027",
+      "time": "05:00 PM",
+      "venue": "The Beach Shack",
+      "address": "Candolim Beach, Goa"
+    },
+    "halfSaree": {
+      "title": "Beach Wedding Ceremony",
+      "badge": "The Big Day",
+      "blessing": "Two hearts, one ocean",
+      "date": "21 Mar 2027",
+      "time": "04:00 PM",
+      "dateISO": "2027-03-21T16:00:00",
+      "venue": "W Goa Resort",
+      "address": "Vagator Beach, Goa",
+      "mapLink": "https://maps.google.com"
+    }
+  }
+}

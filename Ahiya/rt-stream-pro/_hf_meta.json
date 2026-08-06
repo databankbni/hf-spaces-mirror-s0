@@ -1,0 +1,76 @@
+{
+ "captured_at": "2026-08-04T13:17:13Z",
+ "hf_metadata": {
+  "_id": "6a4a12f6f20640e4fb4a5389",
+  "author": "Ahiya",
+  "cardData": {
+   "colorFrom": "pink",
+   "colorTo": "green",
+   "emoji": "📉",
+   "pinned": false,
+   "sdk": "docker",
+   "title": "Rt Stream Pro"
+  },
+  "createdAt": "2026-07-05T08:16:54.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://ahiya-rt-stream-pro.hf.space",
+  "id": "Ahiya/rt-stream-pro",
+  "lastModified": "2026-07-06T02:05:30.000Z",
+  "likes": 0,
+  "private": false,
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "ahiya-rt-stream-pro.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": null,
+    "requested": "cpu-basic"
+   },
+   "replicas": {
+    "requested": 1
+   },
+   "stage": "SLEEPING"
+  },
+  "sdk": "docker",
+  "sha": "c7c1a86c80bdf87bcfabd1237c6a7d97536160ec",
+  "siblings": [
+   {
+    "rfilename": ".gitattributes"
+   },
+   {
+    "rfilename": "Dockerfile"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "package.json"
+   },
+   {
+    "rfilename": "server.js"
+   }
+  ],
+  "subdomain": "ahiya-rt-stream-pro",
+  "tags": [
+   "docker",
+   "region:us"
+  ],
+  "usedStorage": 0
+ },
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "Ahiya/rt-stream-pro",
+ "repo_type": "spaces",
+ "sha": "c7c1a86c80bdf87bcfabd1237c6a7d97536160ec",
+ "web_url": "https://huggingface.co/spaces/Ahiya/rt-stream-pro"
+}

@@ -1,0 +1,151 @@
+{% extends "base.html" %}
+{% block title %}My Trip | Tanzania Bird Finder{% endblock %}
+{% block content %}
+<section class="admin-hero">
+  <div class="admin-hero-bg"></div>
+  <div class="admin-hero-content">
+    <span class="eyebrow">My Trip</span>
+    <h1>Hello, {{ user.name }}</h1>
+    <p>Your saved birds, favorite parks, and visited locations for Tanzania birding trips.</p>
+  </div>
+</section>
+
+{% if user.role in ('contributor', 'admin') %}
+<section class="admin-section">
+  <div class="admin-section-header">
+    <div>
+      <span class="eyebrow">Expert panel</span>
+      <h2>Contributor dashboard</h2>
+    </div>
+  </div>
+  <div class="admin-stats-row">
+    <article class="admin-stat-card">
+      <div class="admin-stat-icon stats-violet"><i data-lucide="shield-check"></i></div>
+      <div class="admin-stat-body">
+        <span>Role</span>
+        <strong>{{ user.role|title }}</strong>
+      </div>
+    </article>
+    <article class="admin-stat-card">
+      <div class="admin-stat-icon stats-blue"><i data-lucide="scan-search"></i></div>
+      <div class="admin-stat-body">
+        <span>Total predictions</span>
+        <strong>{{ predictions|length }}</strong>
+      </div>
+    </article>
+    <article class="admin-stat-card">
+      <div class="admin-stat-icon stats-amber"><i data-lucide="alert-triangle"></i></div>
+      <div class="admin-stat-body">
+        <span>Pending verification</span>
+        <strong>{{ unverified_count }}</strong>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="admin-section">
+  <div class="admin-section-header">
+    <div>
+      <span class="eyebrow">Review queue</span>
+      <h2>Unverified identifications</h2>
+    </div>
+  </div>
+  <div class="admin-glass-card">
+    {% for p in unverified_predictions %}
+      <div class="admin-record-item">
+        <img src="{{ p.image_path }}" alt="Upload">
+        <div>
+          <strong>{{ p.bird.common_name if p.bird else 'Unknown' }}</strong>
+          <span>{{ "%.0f"|format(p.confidence) }}% confidence &middot; {{ p.created_at.strftime('%b %d') }}</span>
+        </div>
+        <div class="admin-record-actions">
+          <form method="post" action="{{ url_for('verify_prediction', prediction_id=p.id) }}">
+            <input type="hidden" name="action" value="verify">
+            <button class="admin-btn admin-btn-success admin-btn-sm" type="submit">Verify</button>
+          </form>
+          <form method="post" action="{{ url_for('verify_prediction', prediction_id=p.id) }}">
+            <input type="hidden" name="action" value="flag">
+            <button class="admin-btn admin-btn-ghost admin-btn-sm" type="submit">Flag</button>
+          </form>
+        </div>
+      </div>
+    {% else %}
+      <p class="admin-empty">No identifications pending review.</p>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
+
+<section class="admin-section">
+  <div class="admin-records-grid">
+    <div>
+      <div class="admin-section-header">
+        <div>
+          <span class="eyebrow">Favorites</span>
+          <h2>Saved birds and parks</h2>
+        </div>
+      </div>
+      <div class="admin-glass-card">
+        {% for favorite in favorites %}
+          {% if favorite.item_type == 'bird' %}
+            {% set item = birds|selectattr('id', 'equalto', favorite.item_id)|first %}
+            {% if item %}<a class="admin-record-item" href="{{ url_for('species_detail', bird_id=item.id) }}"><img src="{{ item.image_url }}" alt="{{ item.common_name }}"><div><strong>{{ item.common_name }}</strong><span>{{ item.scientific_name }}</span></div><i data-lucide="chevron-right"></i></a>{% endif %}
+          {% else %}
+            {% set item = parks|selectattr('id', 'equalto', favorite.item_id)|first %}
+            {% if item %}<a class="admin-record-item" href="{{ url_for('park_detail', park_id=item.id) }}"><img src="{{ item.image_url }}" alt="{{ item.name }}"><div><strong>{{ item.name }}</strong><span>{{ item.region }}</span></div><i data-lucide="chevron-right"></i></a>{% endif %}
+          {% endif %}
+        {% else %}
+          <p class="admin-empty">No favorites yet. Save birds or parks from their detail pages.</p>
+        {% endfor %}
+      </div>
+    </div>
+    <div>
+      <div class="admin-section-header">
+        <div>
+          <span class="eyebrow">Visited</span>
+          <h2>Tracked places</h2>
+        </div>
+      </div>
+      <div class="admin-glass-card">
+        {% for visit in visits %}
+          {% set park = parks|selectattr('id', 'equalto', visit.park_id)|first %}
+          {% if park %}<a class="admin-record-item" href="{{ url_for('park_detail', park_id=park.id) }}"><img src="{{ park.image_url }}" alt="{{ park.name }}"><div><strong>{{ park.name }}</strong><span>{{ visit.visited_at.strftime('%b %d, %Y') }}</span></div><i data-lucide="chevron-right"></i></a>{% endif %}
+        {% else %}
+          <p class="admin-empty">No visited parks tracked yet.</p>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="admin-section">
+  <div class="admin-section-header">
+    <div>
+      <span class="eyebrow">AI history</span>
+      <h2>Recent bird identifications</h2>
+    </div>
+  </div>
+  <div class="admin-prediction-grid">
+    {% for prediction in predictions %}
+      {% if prediction.bird %}
+        <article class="admin-glass-card admin-prediction-card">
+          <a href="{{ url_for('species_detail', bird_id=prediction.bird.id) }}">
+            <div class="admin-prediction-img">
+              <img src="{{ prediction.image_path }}" alt="Uploaded bird image" loading="lazy">
+              <span class="admin-conf-badge">{{ "%.1f"|format(prediction.confidence) }}%</span>
+            </div>
+            <div class="admin-prediction-body">
+              <h3>{{ prediction.bird.common_name }}</h3>
+              <p class="latin">{{ prediction.bird.scientific_name }}</p>
+              <span class="admin-meta">{{ prediction.created_at.strftime('%b %d, %Y') }} | {{ prediction.model_name }}</span>
+              {% if prediction.status and prediction.status.startswith('verified') %}<span class="badge badge-green">Verified by contributor</span>{% endif %}
+            </div>
+          </a>
+        </article>
+      {% endif %}
+    {% else %}
+      <p class="admin-empty">No AI identifications yet.</p>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

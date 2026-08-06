@@ -1,0 +1,102 @@
+{
+  "_note": "지역 프로파일 — 주소를 입력하면 그 지역 특성에 맞춰 시나리오를 지역화하고 재난을 위험도순으로 추천한다. 위험도(risk)·특성(tags)은 재해연보·재난이력·위험지구 공개데이터 기반의 큐레이션 값이며, 정밀 예측이 아니라 '훈련 우선순위' 용도다. tokens는 시나리오 본문에 끼워넣는 지역 변수(대표 사례지명).",
+  "_source": "행정안전부 재해연보(15016405) · 인명피해우려지역(15025383) · 침수흔적도(15150694) · 지진 이력 / 표준데이터 대피소(15021098·15072620)",
+  "default": {
+    "sido": "", "sigungu": "",
+    "tags": ["일반"],
+    "note": "입력 지역의 대표 특성 데이터가 큐레이션 셋에 없어 일반 시나리오로 진행합니다(지역명만 반영).",
+    "risk": {"flood": 0.6, "earthquake": 0.4, "chemical": 0.35, "landslide": 0.3, "wildfire": 0.25, "infectious": 0.4, "crowd": 0.4},
+    "tokens": {
+      "region": "우리 지역", "river": "인근 하천", "pump": "관내 빗물펌프장",
+      "lowland": "저지대 주거지", "underpass": "관내 지하차도",
+      "shelter": "인근 학교 체육관", "riverside": "하천변 둔치주차장",
+      "oldtown": "노후 상가지역"
+    }
+  },
+  "regions": [
+    {
+      "key": "gwanak", "sido": "서울특별시", "sigungu": "관악구",
+      "match": ["관악", "신림", "봉천", "남현"],
+      "lat": 37.4784, "lon": 126.9516,
+      "tags": ["도시", "저지대", "도림천", "반지하 밀집"],
+      "note": "2022년 신림동 반지하 침수 — 도시침수 최고위험 지역",
+      "risk": {"flood": 0.95, "earthquake": 0.25, "chemical": 0.3, "landslide": 0.45, "wildfire": 0.1, "infectious": 0.35, "crowd": 0.5},
+      "tokens": {
+        "region": "관악구", "river": "도림천", "pump": "신림 빗물펌프장",
+        "lowland": "신림동 반지하 밀집지", "underpass": "신림동 지하차도",
+        "shelter": "신림초 체육관", "riverside": "도림천 둔치주차장",
+        "oldtown": "신림동 노후상가"
+      }
+    },
+    {
+      "key": "gangnam", "sido": "서울특별시", "sigungu": "강남구",
+      "match": ["강남", "역삼", "대치", "삼성동", "논현", "개포"],
+      "lat": 37.5172, "lon": 127.0473,
+      "tags": ["도시", "강남역 상습침수", "양재천", "지하상가"],
+      "note": "강남역 일대 상습 도시침수 — 저지대·지하공간 집중",
+      "risk": {"flood": 0.9, "earthquake": 0.25, "chemical": 0.3, "landslide": 0.15, "wildfire": 0.1, "infectious": 0.4, "crowd": 0.7},
+      "tokens": {
+        "region": "강남구", "river": "양재천", "pump": "강남역 빗물펌프장",
+        "lowland": "강남역 저지대 상가", "underpass": "강남역 지하상가",
+        "shelter": "대치중 체육관", "riverside": "양재천 둔치주차장",
+        "oldtown": "역삼동 노후상가"
+      }
+    },
+    {
+      "key": "cheongju", "sido": "충청북도", "sigungu": "청주시",
+      "match": ["청주", "오송", "흥덕", "청원", "미호"],
+      "lat": 36.6424, "lon": 127.489,
+      "tags": ["하천범람", "오송 지하차도", "미호강", "지하차도 위험"],
+      "note": "2023년 오송 궁평2지하차도 침수 — 하천범람·지하차도 통제 핵심",
+      "risk": {"flood": 0.92, "earthquake": 0.3, "chemical": 0.4, "landslide": 0.4, "wildfire": 0.2, "infectious": 0.35, "crowd": 0.35},
+      "tokens": {
+        "region": "청주시", "river": "미호강", "pump": "오송 빗물펌프장",
+        "lowland": "오송읍 저지대", "underpass": "오송 궁평2지하차도",
+        "shelter": "오송중 체육관", "riverside": "미호강 둔치주차장",
+        "oldtown": "오송읍 노후주택지"
+      }
+    },
+    {
+      "key": "pohang", "sido": "경상북도", "sigungu": "포항시",
+      "match": ["포항", "흥해", "영일"],
+      "lat": 36.019, "lon": 129.3435,
+      "tags": ["지진", "활성단층", "노후주택", "흥해 이재민"],
+      "note": "2017년 포항지진(규모 5.4) — 국내 최대 지진피해, 내진·이재민 수용 핵심",
+      "risk": {"flood": 0.45, "earthquake": 0.95, "chemical": 0.45, "landslide": 0.3, "wildfire": 0.25, "infectious": 0.3, "crowd": 0.35},
+      "tokens": {
+        "region": "포항시", "river": "형산강", "pump": "포항 빗물펌프장",
+        "lowland": "형산강 하류 저지대", "underpass": "포항역 지하차도",
+        "shelter": "흥해실내체육관", "riverside": "형산강 둔치주차장",
+        "oldtown": "흥해읍 노후주택 밀집지"
+      }
+    },
+    {
+      "key": "gyeongju", "sido": "경상북도", "sigungu": "경주시",
+      "match": ["경주", "양남", "감포", "건천"],
+      "lat": 35.8562, "lon": 129.2247,
+      "tags": ["지진", "양산단층", "문화재", "원전 인접"],
+      "note": "2016년 경주지진(규모 5.8) — 계기관측 이래 최대, 양산단층대",
+      "risk": {"flood": 0.4, "earthquake": 0.92, "chemical": 0.4, "landslide": 0.3, "wildfire": 0.35, "infectious": 0.3, "crowd": 0.45},
+      "tokens": {
+        "region": "경주시", "river": "형산강", "pump": "경주 빗물펌프장",
+        "lowland": "북천 하류 저지대", "underpass": "경주역 지하차도",
+        "shelter": "경주실내체육관", "riverside": "형산강 둔치주차장",
+        "oldtown": "성건동 노후상가"
+      }
+    },
+    {
+      "key": "haeundae", "sido": "부산광역시", "sigungu": "해운대구",
+      "match": ["해운대", "송정", "좌동", "우동", "센텀"],
+      "lat": 35.1631, "lon": 129.1639,
+      "tags": ["해안", "온천천", "지진해일", "대규모 인파"],
+      "note": "해안 저지대·온천천 범람 + 해수욕장 대규모 인파(군중) 복합위험",
+      "risk": {"flood": 0.78, "earthquake": 0.5, "chemical": 0.3, "landslide": 0.2, "wildfire": 0.15, "infectious": 0.4, "crowd": 0.85},
+      "tokens": {
+        "region": "해운대구", "river": "온천천", "pump": "해운대 빗물펌프장",
+        "lowland": "해운대 해안 저지대", "underpass": "해운대 지하차도",
+        "shelter": "해운대구민체육센터", "riverside": "온천천 둔치주차장",
+        "oldtown": "반송동 노후상가"
+      }
+    }
+  ]
+}

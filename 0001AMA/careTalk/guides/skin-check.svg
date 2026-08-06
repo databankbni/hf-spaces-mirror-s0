@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-labelledby="t6">
+  <title id="t6">Check pressure areas on skin</title>
+  <rect width="640" height="360" fill="#0f1f1c"/>
+  <rect x="24" y="24" width="592" height="312" rx="18" fill="#16302a" stroke="rgba(238,246,242,0.12)"/>
+  <text x="48" y="64" fill="#8fe0c5" font-family="Georgia, serif" font-size="22" font-weight="700">Skin / pressure — note site &amp; look</text>
+  <!-- simple body outline -->
+  <ellipse cx="280" cy="120" rx="28" ry="32" fill="#f0d5a8"/>
+  <rect x="250" y="150" width="60" height="110" rx="20" fill="#f0d5a8"/>
+  <circle cx="265" cy="280" r="14" fill="rgba(224,112,112,0.85)"/>
+  <circle cx="295" cy="280" r="14" fill="rgba(224,112,112,0.85)"/>
+  <text x="360" y="170" fill="#eef6f2" font-family="sans-serif" font-size="16">Mark exact site</text>
+  <text x="360" y="198" fill="#eef6f2" font-family="sans-serif" font-size="16">Note appearance</text>
+  <text x="360" y="226" fill="#eef6f2" font-family="sans-serif" font-size="16">Ask about pain</text>
+  <text x="360" y="254" fill="#eef6f2" font-family="sans-serif" font-size="16">Tell nurse in charge</text>
+  <text x="48" y="310" fill="#9bb0a8" font-family="sans-serif" font-size="15">Don’t apply creams/dressings outside your role</text>
+</svg>

@@ -1,0 +1,20 @@
+FULL RUNTIME RESET — DO NOT MIX WITH THE TRANSFORMERS 5 HOTFIXES
+
+Replace together in one commit:
+- README.md
+- requirements.txt
+- pre-requirements.txt
+- app.py
+- gerar_saidas.py
+
+Keep the two LoRA .tgz archives and HF_TOKEN secret.
+
+Then:
+1. Factory reboot.
+2. Confirm the build installs Python 3.12, Gradio 4.44.1,
+   Transformers 4.52.4, PEFT 0.15.2 and huggingface_hub 0.30.2.
+3. Use 1 variant and overwrite enabled.
+4. Type GENERATE OUTPUTS exactly.
+
+Do not reuse the WeightConverter, router-shape, config-normalization, or
+Transformers-5 generator hotfixes. They belong to the incompatible runtime.

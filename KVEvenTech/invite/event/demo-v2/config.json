@@ -1,0 +1,124 @@
+{
+  "brideName": "Vasudeva Rao",
+  "groomName": "Sravani",
+  "familyName": "Chodisetti's",
+  "brideParents": "S/o Mr. & Mrs. Simma Rao ",
+  "groomParents": "D/o Mr. & Mrs. Rambabu",
+  "bridePhoto": "bride.webp",
+  "groomPhoto": "groom.webp",
+  "scrollHint": "Scroll down / swipe up to continue",
+  "bgFrames": {
+    "folder": "bg-video_frames",
+    "count": 127,
+    "extension": "jpg",
+    "startIndex": 1
+  },
+  "bgVideoOpacity": 0.5,
+
+  "intro": {
+    "title": "Wedding Invitation",
+    "tagline": "Invites You",
+    "buttonText": "Open Invitation",
+    "sequenceInvite": "We cordially invite you",
+    "sequenceTo": "To celebrate"
+  },
+
+  "hero": {
+    "badge": "You Are Invited",
+    "image": "hero.webp"
+  },
+
+  "introduce": {
+    "brideTitle": "The Groom",
+    "groomTitle": "The Bride",
+    "introduceTag": "Introducing the Couple",
+    "introduceHeading": "Meet the Bride & Groom",
+    "brideBio": "Youngest son of Sri Chodisetti Simma Rao & Smt. Lakshmi",
+    "groomBio": "Daughter of Sri Jakkampudi Rambabu & Smt. Chandrakala"
+  },
+
+  "scratchReveal": {
+    "teaser": "✦ For You ✦",
+    "heading": "A Little Secret",
+    "revealLabel": "Save The Date",
+    "scratchText": "✦ Scratch to Reveal ✦"
+  },
+
+  "countdown": {
+    "label": "Celebration Begins In",
+    "heading": "Counting Down",
+    "doneMessage": "The Celebration Is Here!",
+    "daysLabel": "Days",
+    "hoursLabel": "Hours",
+    "minutesLabel": "Minutes",
+    "secondsLabel": "Seconds"
+  },
+
+  "timeline": {
+    "addToCalendarLabel": "Add to Calendar",
+    "calendarDetails": "We cordially invite you to celebrate this beautiful milestone with us."
+  },
+
+  "celebrations": {
+    "sectionTag": "✦ The Celebrations ✦",
+    "sectionHeading": "Joyous Events"
+  },
+
+  "venue": {
+    "sectionHeading": "Venue & Reception",
+    "locationLabel": "Main Event Location",
+    "directionsLabel": "Get Directions"
+  },
+
+  "gallery": {
+    "tag": "Moments of Togetherness",
+    "heading": "Love Gallery",
+    "preWeddingLabel": "Pre-Wedding",
+    "swipeLabel": "Swipe Left / Right to Browse"
+  },
+
+  "wishes": {
+    "tag": "Social Blessings Feed",
+    "heading": "Wishes Wall",
+    "formHeading": "Tweet a Blessing",
+    "nameLabel": "Your Name",
+    "namePlaceholder": "e.g. Rohan & Preeti",
+    "messageLabel": "Your Blessing",
+    "messagePlaceholder": "Write your loving blessings...",
+    "themeLabel": "Card Theme Style",
+    "submitLabel": "Tweet Blessing",
+    "submittingLabel": "Tweeting...",
+    "emptyLabel": "No blessings in the feed yet. Write the first tweet!",
+    "validationError": "Please fill in both your name and blessing.",
+    "successMessage": "Your blessing has been posted to the wall! 🐦"
+  },
+
+  "blessings": {
+    "heading": "With Best Compliments",
+    "suffix": "& Family & Friends"
+  },
+
+  "events": {
+    "haldi": {
+      "title": "Haldi",
+      "badge": "Haldi",
+      "blessing": "Join us for an evening of joy and laughter",
+      "date": "07 Jul 2026",
+      "time": "06:00 PM",
+      "dateISO": "2026-07-07T18:00:00+05:30",
+      "venue": "At home",
+      "address": "A1 Convention, Visakhapatnam"
+    },
+    "halfSaree": {
+      "title": "Wedding Ceremony",
+      "badge": "WEDDING",
+      "blessing": "Witness a beautiful milestone in {brideName}'s life",
+      "date": "08 Jul 2026",
+      "time": "10:16 PM",
+      "dateISO": "2026-07-08T22:16:00+05:30",
+      "venue": ": Sri Sita Rama Kalyanamandapam",
+      "address": "Akkayyapalem, Highway, Visakhapatnam.",
+      "mapLink": "https://maps.app.goo.gl/LdsPcz9aHaNaPKCb9"
+    }
+  }
+}

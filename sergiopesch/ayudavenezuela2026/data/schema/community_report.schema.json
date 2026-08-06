@@ -1,0 +1,329 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ayudavenezuela2026.org/schema/community_report.schema.json",
+  "title": "AyudaVenezuela2026 Community Report",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "received_at",
+    "source",
+    "category",
+    "description",
+    "location",
+    "consent",
+    "verification"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Stable report identifier."
+    },
+    "received_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "observed_at": {
+      "type": ["string", "null"],
+      "format": "date-time"
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type"],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "self_report",
+            "family_or_neighbor",
+            "field_team",
+            "ngo_partner",
+            "civil_protection",
+            "health_facility",
+            "shelter",
+            "call_center",
+            "whatsapp",
+            "telegram",
+            "sms",
+            "social_media",
+            "proxy_reporter",
+            "media_report",
+            "csv_import",
+            "kobo_odk",
+            "other"
+          ]
+        },
+        "organization": {
+          "type": ["string", "null"]
+        },
+        "source_url": {
+          "type": ["string", "null"],
+          "format": "uri"
+        },
+        "raw_reference": {
+          "type": ["string", "null"],
+          "description": "Internal pointer to raw evidence. Do not expose publicly."
+        }
+      }
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "SAR",
+        "MED",
+        "MISSING",
+        "SHELTER",
+        "WASH",
+        "FOOD",
+        "POWER_COMMS",
+        "CONNECTIVITY",
+        "LOGISTICS",
+        "PROTECTION",
+        "CASH",
+        "INFRA",
+        "RUMOR",
+        "OFFER",
+        "OTHER"
+      ]
+    },
+    "urgency": {
+      "type": "string",
+      "enum": ["U0", "U1", "U2", "U3", "U4"],
+      "default": "U3"
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1
+    },
+    "people_affected": {
+      "type": ["integer", "null"],
+      "minimum": 0
+    },
+    "location": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["text"],
+      "properties": {
+        "text": {
+          "type": "string",
+          "description": "Free-text location, including landmarks or local references."
+        },
+        "admin0": {
+          "type": ["string", "null"],
+          "default": "Venezuela"
+        },
+        "admin1": {
+          "type": ["string", "null"],
+          "description": "State."
+        },
+        "admin2": {
+          "type": ["string", "null"],
+          "description": "Municipality."
+        },
+        "admin3": {
+          "type": ["string", "null"],
+          "description": "Parish or local admin unit."
+        },
+        "pcode": {
+          "type": ["string", "null"]
+        },
+        "landmark": {
+          "type": ["string", "null"]
+        },
+        "coordinates": {
+          "type": ["object", "null"],
+          "additionalProperties": false,
+          "required": ["lat", "lon", "precision"],
+          "properties": {
+            "lat": {
+              "type": "number",
+              "minimum": -90,
+              "maximum": 90
+            },
+            "lon": {
+              "type": "number",
+              "minimum": -180,
+              "maximum": 180
+            },
+            "precision": {
+              "type": "string",
+              "enum": ["exact", "approximate", "admin_area", "unknown"]
+            }
+          }
+        }
+      }
+    },
+    "contact": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": ["string", "null"]
+        },
+        "phone": {
+          "type": ["string", "null"]
+        },
+        "preferred_channel": {
+          "type": ["string", "null"],
+          "enum": ["phone", "sms", "whatsapp", "telegram", "email", "in_person", null]
+        },
+        "language": {
+          "type": ["string", "null"],
+          "description": "Preferred language, if known."
+        }
+      }
+    },
+    "proxy_reporter": {
+      "type": ["object", "null"],
+      "description": "Submitter details when a responder, volunteer, or family member reports on behalf of affected people.",
+      "additionalProperties": false,
+      "properties": {
+        "relationship_to_case": {
+          "type": ["string", "null"],
+          "enum": [
+            "frontline_volunteer",
+            "family",
+            "neighbor",
+            "ngo_staff",
+            "health_worker",
+            "shelter_staff",
+            "community_leader",
+            "other",
+            null
+          ]
+        },
+        "name": {
+          "type": ["string", "null"]
+        },
+        "phone": {
+          "type": ["string", "null"]
+        },
+        "organization": {
+          "type": ["string", "null"]
+        },
+        "direct_observation": {
+          "type": ["boolean", "null"]
+        }
+      }
+    },
+    "consent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["can_contact", "can_share_with_partners", "can_publish_publicly"],
+      "properties": {
+        "can_contact": {
+          "type": "boolean"
+        },
+        "can_share_with_partners": {
+          "type": "boolean"
+        },
+        "can_publish_publicly": {
+          "type": "boolean"
+        },
+        "notes": {
+          "type": ["string", "null"]
+        }
+      }
+    },
+    "safety_flags": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "contains_child_data",
+          "contains_health_data",
+          "contains_gbv_or_protection_data",
+          "contains_migration_status",
+          "contains_exact_private_location",
+          "contains_photo_of_person",
+          "potential_security_risk",
+          "potential_fraud_or_scam",
+          "unsafe_to_publish"
+        ]
+      },
+      "uniqueItems": true,
+      "default": []
+    },
+    "verification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status"],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "unverified",
+            "plausible",
+            "duplicate_candidate",
+            "contacted",
+            "confirmed_by_partner",
+            "confirmed_by_field_team",
+            "contradicted",
+            "stale",
+            "unsafe_to_publish",
+            "resolved"
+          ]
+        },
+        "reviewed_by": {
+          "type": ["string", "null"]
+        },
+        "reviewed_at": {
+          "type": ["string", "null"],
+          "format": "date-time"
+        },
+        "notes": {
+          "type": ["string", "null"]
+        }
+      }
+    },
+    "ai_assist": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "properties": {
+        "model": {
+          "type": ["string", "null"]
+        },
+        "suggested_category": {
+          "type": ["string", "null"]
+        },
+        "suggested_urgency": {
+          "type": ["string", "null"]
+        },
+        "suggested_entities": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "confidence": {
+          "type": ["number", "null"],
+          "minimum": 0,
+          "maximum": 1
+        },
+        "human_accepted": {
+          "type": ["boolean", "null"]
+        }
+      }
+    },
+    "links": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "duplicate_of": {
+          "type": ["string", "null"]
+        },
+        "related_report_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": []
+        },
+        "assigned_partner": {
+          "type": ["string", "null"]
+        }
+      }
+    }
+  }
+}

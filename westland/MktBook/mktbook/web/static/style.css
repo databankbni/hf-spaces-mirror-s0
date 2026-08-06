@@ -1,0 +1,298 @@
+/* MktBook custom styles */
+
+nav {
+    border-bottom: 2px solid var(--pico-primary);
+    margin-bottom: 1rem;
+}
+
+footer {
+    margin-top: 2rem;
+    padding: 1rem 0;
+    text-align: center;
+    border-top: 1px solid var(--pico-muted-border-color);
+}
+
+.feed-item {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--pico-muted-border-color);
+}
+
+.feed-item:last-child {
+    border-bottom: none;
+}
+
+.feed-item small {
+    display: block;
+    color: var(--pico-muted-color);
+    margin-top: 0.25rem;
+}
+
+#activity-feed {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+mark {
+    padding: 0.1rem 0.4rem;
+    border-radius: 4px;
+}
+
+details summary {
+    cursor: pointer;
+    color: var(--pico-primary);
+}
+
+#grading-status {
+    margin-top: 0.5rem;
+    font-style: italic;
+}
+
+.muted {
+    color: var(--pico-muted-color);
+}
+
+/* ── Workout Selector Landing Page ──────────────────────────────────── */
+
+.workout-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.workout-card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    transition: transform 0.15s, box-shadow 0.15s;
+    margin-bottom: 0;
+}
+
+.workout-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+.workout-card-header {
+    padding-bottom: 0.5rem;
+}
+
+.workout-number {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.4rem;
+}
+
+.workout-icon {
+    font-size: 1.2rem;
+}
+
+.workout-card-title {
+    font-size: 1.15rem;
+    margin: 0;
+    line-height: 1.3;
+}
+
+.workout-card-body {
+    flex: 1;
+}
+
+.workout-topic {
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
+}
+
+.workout-meta dt {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--pico-muted-color);
+    margin-top: 0.5rem;
+}
+
+.workout-meta dd {
+    font-size: 0.9rem;
+    margin: 0 0 0.25rem;
+}
+
+.workout-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin: 0.75rem 0;
+}
+
+.workout-tag {
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 0.15rem 0.5rem;
+    border: 1px solid;
+    border-radius: 999px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.workout-card-footer {
+    padding-top: 0.75rem;
+}
+
+.workout-card-footer a[role="button"] {
+    width: 100%;
+    text-align: center;
+    color: #fff !important;
+}
+
+.selector-info {
+    margin-top: 2rem;
+}
+
+/* ── Workout Banner (inside workout pages) ──────────────────────────── */
+
+.workout-banner {
+    background: var(--pico-card-background-color);
+    border-radius: 4px;
+    padding: 0.75rem 1rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+}
+
+.workout-banner-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.workout-banner-icon {
+    font-size: 1.5rem;
+    margin-right: 0.4rem;
+}
+
+.workout-banner-num {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.workout-banner-title {
+    font-size: 1.25rem;
+    margin: 0.2rem 0 0.1rem;
+}
+
+.workout-banner-topic {
+    font-size: 0.875rem;
+    color: var(--pico-muted-color);
+    margin: 0;
+}
+
+.workout-details {
+    min-width: 200px;
+    max-width: 400px;
+}
+
+.workout-details summary {
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.workout-details dl {
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+}
+
+.workout-details dt {
+    font-weight: 700;
+    margin-top: 0.5rem;
+    color: var(--pico-muted-color);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+}
+
+.workout-details dd {
+    margin: 0.1rem 0 0.25rem;
+}
+
+/* ── Workout Nav Badge ──────────────────────────────────────────────── */
+
+.workout-nav-badge {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 0.1rem 0.4rem;
+    border: 1.5px solid;
+    border-radius: 999px;
+    margin-left: 0.5rem;
+    vertical-align: middle;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+/* ── Workout Panel (dashboard feature panel) ────────────────────────── */
+
+.workout-panel {
+    margin-top: 1.5rem;
+}
+
+.workout-panel h4 {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+}
+
+/* ── Bot Form Hint Card ─────────────────────────────────────────────── */
+
+.workout-hint-card {
+    margin-bottom: 1.5rem;
+    background: var(--pico-card-background-color);
+}
+
+.workout-hint-card header {
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.workout-hint-card p {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+/* ── Message Row Highlighting ──────────────────────────────────────── */
+
+.msg-deal-closed {
+    background: rgba(16, 185, 129, 0.08);
+}
+
+.msg-deal-rejected {
+    background: rgba(239, 68, 68, 0.06);
+}
+
+.msg-safety-alert {
+    background: rgba(245, 158, 11, 0.08);
+}
+
+/* ── Responsive tweaks ─────────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+    .workout-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .workout-banner-main {
+        flex-direction: column;
+    }
+
+    .workout-details {
+        max-width: 100%;
+    }
+}

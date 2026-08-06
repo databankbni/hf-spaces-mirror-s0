@@ -1,0 +1,2280 @@
+1
+00:01:53,810 --> 00:01:55,200
+<i>Çabuk ol...</i>
+
+2
+00:01:57,200 --> 00:01:58,500
+<i>Lütfen.</i>
+
+3
+00:01:59,310 --> 00:02:00,780
+<i>Çabuk bitir.</i>
+
+4
+00:02:02,460 --> 00:02:03,780
+<i>Lütfen.</i>
+
+5
+00:02:04,220 --> 00:02:05,390
+<i>Çabuk.</i>
+
+6
+00:02:05,870 --> 00:02:08,010
+<i>Acıma bir son ver!</i>
+
+7
+00:02:08,240 --> 00:02:10,310
+<i>Neden işini bitirmiyorsun?</i>
+
+8
+00:02:10,980 --> 00:02:12,780
+<i>Neden zaman geçiriyorsun?</i>
+
+9
+00:02:14,450 --> 00:02:15,580
+<i>Öldür beni!</i>
+
+10
+00:02:15,580 --> 00:02:17,440
+<i>Yapacaksan hemen yap!</i>
+
+11
+00:02:17,440 --> 00:02:20,300
+<i>Bana işkence etmekten
+o kadar zevk mi alıyorsunuz lan?!</i>
+
+12
+00:02:20,900 --> 00:02:22,130
+Lütfen!
+
+13
+00:02:22,130 --> 00:02:25,430
+Burada ölümü bekleyerek
+oturmaya dayanamıyorum!
+
+14
+00:02:25,430 --> 00:02:27,550
+Delireceğim!
+
+15
+00:02:27,550 --> 00:02:29,640
+Lütfen!
+
+16
+00:02:29,640 --> 00:02:30,480
+Çabuk!
+
+17
+00:02:30,480 --> 00:02:33,140
+Çabuk öldürün beni!
+
+18
+00:02:34,990 --> 00:02:36,590
+Şeyy, Sakata-san.
+
+19
+00:02:36,590 --> 00:02:41,000
+Affedersiniz ama sessiz
+olabilir misiz?
+
+20
+00:02:41,000 --> 00:02:43,540
+Diğer hastaları rahatsız ediyorsunuz.
+
+21
+00:02:43,540 --> 00:02:47,550
+{\a6}[Namu Diş Kliniği]
+
+22
+00:02:45,910 --> 00:02:47,550
+Özür dilerim...
+
+23
+00:02:47,550 --> 00:02:53,510
+{\a6}["Dişçiden Nefret Etmenin
+Yaşı Yoktur!"]
+
+24
+00:02:57,330 --> 00:02:58,810
+<i>Olamaz ya...</i>
+
+25
+00:02:58,810 --> 00:03:00,510
+<i>Dişçiden nefret ediyorum.</i>
+
+26
+00:03:00,510 --> 00:03:02,160
+<i>Bu sakinleştirici koku...</i>
+
+27
+00:03:02,160 --> 00:03:04,270
+<i>Bu rahatlatıcı hafif müzik...</i>
+
+28
+00:03:05,480 --> 00:03:07,290
+<i>Matkabın yankılanan sesi...</i>
+
+29
+00:03:07,290 --> 00:03:11,170
+<i>Sanki idam cezanın uygulanmasını
+bekliyormuş gibiyim.</i>
+
+30
+00:03:11,170 --> 00:03:13,300
+<i>Kahretsin! Eve gitmek istiyorum!</i>
+
+31
+00:03:13,300 --> 00:03:16,870
+<i>Eve gidip, Sadaharu'yu kucaklayarak
+kürkünü okşamak istiyorum!</i>
+
+32
+00:03:16,870 --> 00:03:18,560
+<i>Ama dişim ağrıyor.</i>
+
+33
+00:03:18,560 --> 00:03:20,370
+<i>Ama muayeneden korkuyorum.</i>
+
+34
+00:03:20,600 --> 00:03:22,920
+<i>Bunu kaç kez yaşayacağım?</i>
+
+35
+00:03:22,920 --> 00:03:25,710
+<i>Bu aşağılık hayattan
+kurtulmak istiyorum.</i>
+
+36
+00:03:25,710 --> 00:03:29,870
+<i>Şeker sevdalısını sonunda elbette
+çürükler bekliyor, ama...</i>
+
+37
+00:03:29,870 --> 00:03:33,240
+<i>...karakterimin bu özelliği
+unutuldu yahu.</i>
+
+38
+00:03:33,240 --> 00:03:36,390
+<i>Son zamanlarda beni nerede
+tatlı yerken gördünüz?</i>
+
+39
+00:03:36,390 --> 00:03:38,120
+<i>Matkap kullanacaklar.</i>
+
+40
+00:03:38,120 --> 00:03:40,560
+<i>O şeyi ağzıma kesin sokacaklar.</i>
+
+41
+00:03:40,560 --> 00:03:43,170
+<i>Matkap ağız için uygun değildir.</i>
+
+42
+00:03:43,170 --> 00:03:44,930
+<i>Oraya sokman gereken en son şeydir!</i>
+
+43
+00:03:44,930 --> 00:03:46,400
+<i>Bir doktorun böyle
+yapmaması gerekiyor.</i>
+
+44
+00:03:46,400 --> 00:03:47,930
+<i>Ne yapacağım?</i>
+
+45
+00:03:47,930 --> 00:03:50,910
+<i>Matkap ağzımdayken
+hapşurarak ölecek miyim?</i>
+
+46
+00:03:50,910 --> 00:03:52,210
+<i>Ölür müyüm?</i>
+
+47
+00:03:52,210 --> 00:03:53,170
+<i>Ne yapacağım?</i>
+
+48
+00:03:53,170 --> 00:03:57,400
+<i>O makina dilime değerek
+paramparça ederse ölür miyim?</i>
+
+49
+00:03:57,400 --> 00:03:58,650
+<i>Ölür müyüm?!</i>
+
+50
+00:04:01,570 --> 00:04:02,630
+Dur, dur!
+
+51
+00:04:02,630 --> 00:04:03,950
+Yeter artık!
+
+52
+00:04:03,950 --> 00:04:06,560
+Bu konuda düşünmeyeceğim.
+
+53
+00:04:06,560 --> 00:04:09,000
+Dergi falan okuyayım da
+bu düşüncelerden kurtulayım.
+
+54
+00:04:09,000 --> 00:04:11,510
+JUMP... JUMP...
+
+55
+00:04:11,510 --> 00:04:13,730
+{\a6}[Not: Kodansha'nın yayınladığı
+Haftalık Shounen Dergisi.]
+
+56
+00:04:11,510 --> 00:04:13,870
+Ne? Burası da mı
+Magazine abonesi?
+
+57
+00:04:13,870 --> 00:04:15,510
+Arada bir okumaktan zarar gelmez.
+
+58
+00:04:23,310 --> 00:04:25,760
+Sigara lekelerini temizletmeye mi
+geldin, nikotin bağımlısı?!
+
+59
+00:04:25,760 --> 00:04:27,350
+Suratımdan anlamıyor musun?
+
+60
+00:04:27,350 --> 00:04:31,110
+Eski gümüş mantar
+zaman içinde çürümüş.
+
+61
+00:04:31,110 --> 00:04:33,900
+Zaten içinde "gin" kelimesi
+olan her şeyin sonu hüsranla biter.
+
+62
+00:04:31,110 --> 00:04:33,900
+{\a6}[Not: Gintoki'nin ismindeki
+"Gin" gümüş anlamına geliyor.]
+
+63
+00:04:33,900 --> 00:04:36,240
+Bırak. Önce ben aldım.
+
+64
+00:04:36,240 --> 00:04:37,090
+Hayır, ayna anda dokunduk.
+
+65
+00:04:37,090 --> 00:04:38,730
+JUMP okusana sen.
+
+66
+00:04:38,730 --> 00:04:40,660
+Magazine'i bırak da
+hayranları okusun.
+
+67
+00:04:40,660 --> 00:04:44,300
+Arada bir düşmanı gözlemlemek iyidir.
+
+68
+00:04:44,300 --> 00:04:46,900
+50. yılı olmuşsa n'olmuş yani?
+
+69
+00:04:46,900 --> 00:04:49,110
+Neden Sunday ile birlik oluyorsun ki?
+
+70
+00:04:46,900 --> 00:04:50,390
+{\a6\fs12}[Not: Haftalık manga dergileri Magazine ve Sunday
+1959 yılında başladıkları yayın hayatlarının 50. yılını kutluyor.]
+
+71
+00:04:49,110 --> 00:04:50,390
+Bir şey var.
+
+72
+00:04:50,390 --> 00:04:51,390
+Ne yani, kıskandın mı?
+
+73
+00:04:51,390 --> 00:04:53,160
+Sen de mi katılmak istiyorsun?
+
+74
+00:04:53,160 --> 00:04:55,060
+Partiye davet edilmediğin için
+kızgın mısın?
+
+75
+00:04:55,060 --> 00:04:55,760
+Hayır.
+
+76
+00:04:55,760 --> 00:04:56,950
+Kendi başına eğlen.
+
+77
+00:04:56,950 --> 00:04:59,100
+Bizim için tek tabanca takılması
+daha kolay.
+
+78
+00:04:59,100 --> 00:05:01,750
+Bize karşı şansınız bile yokken
+işbirliği yapmanızın manası yok.
+
+79
+00:05:01,750 --> 00:05:03,720
+O lafı aynen iade ediyorum.
+
+80
+00:05:03,720 --> 00:05:05,550
+Herkesin sizden nefret ettiğini
+anlamıyor musun?
+
+81
+00:05:05,550 --> 00:05:07,220
+Milletin sizden uzak durduğunu
+görmüyor musun?
+
+82
+00:05:07,220 --> 00:05:08,790
+- Lütfen sessiz olun.
+
+83
+00:05:07,220 --> 00:05:09,180
+- Ne yani? Popülermişsiniz gibi mi
+davranıyorsun?
+
+84
+00:05:08,790 --> 00:05:10,170
+- Diğer hastaları rahatsız ediyorsunuz.
+
+85
+00:05:09,180 --> 00:05:12,260
+- Sunday'in Magazine'in dostuymuş gibi
+rol yaptığını hâlâ anlamadınız mı?
+
+86
+00:05:12,260 --> 00:05:14,730
+Geçen gün okuldan eve dönerken
+sizi çöpe atıyordu.
+
+87
+00:05:14,730 --> 00:05:16,260
+Sunday asla öyle bir şey yapmaz!
+
+88
+00:05:16,260 --> 00:05:17,780
+Uydurma.
+
+89
+00:05:17,780 --> 00:05:19,190
+Champion'a sor istersen.
+
+90
+00:05:17,780 --> 00:05:20,270
+{\a6}[Not: "Haftalık Shounen Champion"
+Akita Shoten'den dergi.]
+
+91
+00:05:19,190 --> 00:05:20,270
+O da duydu.
+
+92
+00:05:20,270 --> 00:05:20,790
+Kapa çeneni!
+
+93
+00:05:20,790 --> 00:05:22,380
+Sunday hakkında sen ne bilirsin ki?!
+
+94
+00:05:22,380 --> 00:05:23,990
+Her şey yolundaymış gibi
+davranmaya devam edin!
+
+95
+00:05:23,990 --> 00:05:24,870
+Ama yolunda falan değil!
+
+96
+00:05:24,850 --> 00:05:26,500
+- Hey! Sessiz olmanızı söyledim lan!
+
+97
+00:05:24,870 --> 00:05:25,470
+- Herkes biliyor!
+
+98
+00:05:25,470 --> 00:05:26,500
+- Gangan ve Ace de biliyor!
+
+99
+00:05:25,470 --> 00:05:26,500
+{\a6}[Not: Haftalık manga dergileri.]
+
+100
+00:05:33,320 --> 00:05:35,510
+<i>Bu hıyarla karşılaşmak
+zorundaydım sanki.</i>
+
+101
+00:05:35,510 --> 00:05:39,260
+<i>Onca insan arasından neden
+buna denk geliyorum ki?</i>
+
+102
+00:05:39,260 --> 00:05:41,270
+<i>Sakinleşmeliyim.</i>
+
+103
+00:05:41,270 --> 00:05:44,730
+<i>Zayıflığımı bilmemeli.</i>
+
+104
+00:05:45,290 --> 00:05:49,980
+<i>Bu yaşta hâlâ dişçiden 
+korktuğumu farkettirmemeliyim.</i>
+
+105
+00:05:52,820 --> 00:05:56,370
+Hey, kes şunu artık.
+
+106
+00:05:56,370 --> 00:05:58,180
+Bir kımıldamadan otur...
+
+107
+00:05:58,180 --> 00:06:00,100
+Bacaklarını daha
+kaç kez değiştireceksin?
+
+108
+00:06:00,100 --> 00:06:02,170
+Sakinleşemiyorum.
+
+109
+00:06:02,170 --> 00:06:03,720
+Sana ne demeli?
+
+110
+00:06:03,720 --> 00:06:06,380
+Bacakların deli gibi
+hareket ediyor.
+
+111
+00:06:03,720 --> 00:06:09,390
+{\a6\fs12}[Not: Hareketli Bacak Sendromu Japonya'da
+"Fakirlerin Sarsıntısı" olarak bilinir.]
+
+112
+00:06:06,830 --> 00:06:07,830
+Keser misin şunu?
+
+113
+00:06:07,830 --> 00:06:09,390
+Beni de kendin gibi
+fakir yapacaksın.
+
+114
+00:06:09,390 --> 00:06:12,250
+Senin yüzünden böyle gerildim.
+
+115
+00:06:13,070 --> 00:06:14,190
+Yoksa...
+
+116
+00:06:14,190 --> 00:06:15,300
+...korkuyor musun...
+
+117
+00:06:15,300 --> 00:06:17,700
+...Şeytan Yardımcı Şef?
+
+118
+00:06:17,700 --> 00:06:18,470
+Ne?
+
+119
+00:06:18,470 --> 00:06:19,260
+Neden bahsettiğini anlamadım.
+
+120
+00:06:19,260 --> 00:06:20,790
+Neden korkacakmışım ki?
+
+121
+00:06:20,790 --> 00:06:23,310
+Dişçi korkunç bir yer miydi yoksa?
+
+122
+00:06:23,310 --> 00:06:24,410
+Hayır, hiç de bile.
+
+123
+00:06:24,410 --> 00:06:25,480
+Hem de hiç.
+
+124
+00:06:25,480 --> 00:06:28,520
+Korkulacak bir şey olduğu için
+öyle dedin.
+
+125
+00:06:28,520 --> 00:06:30,060
+Demek ki sen korkuyorsun.
+
+126
+00:06:30,330 --> 00:06:31,730
+Bırak ya.
+
+127
+00:06:31,730 --> 00:06:35,310
+Matkap sesinin korkunç olduğunu
+söyleyen insanlar var ya?
+
+128
+00:06:35,310 --> 00:06:37,030
+Onları hiç anlamıyorum.
+
+129
+00:06:37,030 --> 00:06:38,780
+Ben de.
+
+130
+00:06:38,780 --> 00:06:41,280
+Ağzımdaki diş taşlarını
+temizletmek için...
+
+131
+00:06:41,280 --> 00:06:44,030
+...haftada bir ağzıma
+matkap soktururum.
+
+132
+00:06:44,030 --> 00:06:45,890
+Ne? Sen yaptırmıyor musun?
+
+133
+00:06:45,890 --> 00:06:49,130
+Ben üç günde bir yaptırıyorum.
+
+134
+00:06:49,130 --> 00:06:51,900
+Matkap girmediği zaman
+ağzımın içi bir garip oluyor.
+
+135
+00:06:52,560 --> 00:06:53,910
+Öyle mi?
+
+136
+00:06:53,910 --> 00:06:57,780
+Ben evde kendi matkabımı kullandığımdan
+pek gelmiyorum.
+
+137
+00:06:57,780 --> 00:06:59,680
+Matkapçıyım sonuçta.
+
+138
+00:06:59,680 --> 00:07:01,030
+<i>Matkapçı mı?!</i>
+
+139
+00:07:01,030 --> 00:07:02,180
+<i>Matkapçı ne lan?!</i>
+
+140
+00:07:02,180 --> 00:07:04,070
+<i>Neden kendi matkabın var?!</i>
+
+141
+00:07:04,070 --> 00:07:04,950
+<i>Manyak herif!</i>
+
+142
+00:07:04,950 --> 00:07:06,570
+<i>Matkaplardan korkmuyor!</i>
+
+143
+00:07:07,700 --> 00:07:10,360
+Sen de matkapçısın demek?
+
+144
+00:07:10,360 --> 00:07:11,510
+Tesadüfe bak.
+
+145
+00:07:11,510 --> 00:07:14,940
+Benimle matkap yarışmasına girmeye
+ne dersin?
+
+146
+00:07:14,940 --> 00:07:16,670
+<i>Matkap yarışması mı?!</i>
+
+147
+00:07:16,670 --> 00:07:19,190
+<i>Haydi lan! O saçmalığa
+bulaşmak istemiyorum!</i>
+
+148
+00:07:19,190 --> 00:07:21,280
+<i>Bu herif öyle bir
+yarışmaya mı giriyor?!</i>
+
+149
+00:07:21,280 --> 00:07:23,780
+<i>Ne korkunç bir herif!</i>
+
+150
+00:07:23,780 --> 00:07:25,980
+Olur, o gün boşsam tabii.
+
+151
+00:07:25,980 --> 00:07:27,870
+Programımda yer
+açmaya çalışacağım.
+
+152
+00:07:28,110 --> 00:07:31,850
+Arası kötü ikili burada
+birlikte ne yapıyor böyle?
+
+153
+00:07:32,420 --> 00:07:34,090
+Hasegawa-san.
+
+154
+00:07:34,090 --> 00:07:36,800
+Sizin de mi diş sorununuz var?
+
+155
+00:07:36,800 --> 00:07:39,870
+Yürüyüşe çıkmıştım, bir matkap
+için uğrayayım dedim.
+
+156
+00:07:39,870 --> 00:07:41,610
+Matkap için mi? Nasıl yani?
+
+157
+00:07:41,610 --> 00:07:43,350
+Sen de mi matkap için geldin?
+
+158
+00:07:43,350 --> 00:07:45,660
+Matkap için mi?
+Tedavi olmaya geldim ben.
+
+159
+00:07:45,660 --> 00:07:48,420
+Tuvalet arası için çıkmıştım.
+
+160
+00:07:48,420 --> 00:07:50,270
+Ama var ya...
+
+161
+00:07:50,960 --> 00:07:54,950
+Tedavi gerçekten acıtıyor.
+
+162
+00:07:57,910 --> 00:08:00,090
+Öyle mi...
+
+163
+00:08:00,090 --> 00:08:03,620
+Dişçiye kontrole gitmeni gerektiren o
+uzun süreli tedavilerden nefret ediyorum.
+
+164
+00:08:03,620 --> 00:08:06,760
+Burada tek seferde tedavi
+ettiklerini duydum.
+
+165
+00:08:06,760 --> 00:08:10,240
+Hızlı oldukları doğru,
+ama acıtıyor.
+
+166
+00:08:10,240 --> 00:08:13,110
+Birçok kez haykırasım geldi.
+
+167
+00:08:13,110 --> 00:08:14,310
+Hasegawa-san!
+
+168
+00:08:14,310 --> 00:08:15,640
+İşiniz bitti mi?
+
+169
+00:08:15,640 --> 00:08:17,630
+Özür dilerim! Geliyorum.
+
+170
+00:08:17,630 --> 00:08:19,050
+Ben gidiyorum.
+
+171
+00:08:19,050 --> 00:08:21,810
+Kendinizi hazırlarsanız iyi edersiniz.
+
+172
+00:08:25,680 --> 00:08:27,040
+Anladım...
+
+173
+00:08:27,040 --> 00:08:28,270
+Acıyor...
+
+174
+00:08:28,270 --> 00:08:31,880
+Şeyy, diş tedavileri acıtır zaten.
+
+175
+00:08:31,880 --> 00:08:33,180
+Evet...
+
+176
+00:08:33,180 --> 00:08:36,770
+Acımasaydı zaten
+iyileştiğine inanmazdın.
+
+177
+00:08:36,770 --> 00:08:39,500
+Yüzün solmuş gibi.
+
+178
+00:08:39,500 --> 00:08:40,660
+Hiç de bile.
+
+179
+00:08:41,780 --> 00:08:44,250
+Hasegawa-san, rahat olun!
+
+180
+00:08:44,250 --> 00:08:45,660
+Çok tehlikeli, hareket etmeyin!
+
+181
+00:08:45,660 --> 00:08:47,430
+Hasegawa-san'ı tutun.
+
+182
+00:08:47,430 --> 00:08:48,950
+Koltuğa bağlayın.
+
+183
+00:08:48,950 --> 00:08:50,720
+Evet. Böyle iyi.
+
+184
+00:08:50,720 --> 00:08:54,000
+<i>Biraz fazla acı verici
+gibi gelmiyor mu?</i>
+
+185
+00:08:54,000 --> 00:08:56,420
+<i>Ne biçim muayene yapıyorlar?!</i>
+
+186
+00:08:56,420 --> 00:08:58,500
+Doktor! Hasegawa-san'ın nabzı!
+
+187
+00:08:58,500 --> 00:09:01,200
+Suni tenefüs uygulayın. İşe yaramazsa
+defibrilatörü çıkarın.
+
+188
+00:09:01,200 --> 00:09:02,150
+<i>Defibrilatör mü?!</i>
+
+189
+00:09:02,150 --> 00:09:03,660
+<i>Dişçi neden öyle bir şeye
+ihtiyaç duyuyor?!</i>
+
+190
+00:09:03,660 --> 00:09:05,640
+Doktor! Nabzı atıyor, ama...
+
+191
+00:09:05,640 --> 00:09:07,260
+...şok yüzünden "o şey" yerinden çıktı.
+
+192
+00:09:07,260 --> 00:09:08,130
+<i>"O şey" yerinden mi çıktı?!</i>
+
+193
+00:09:08,130 --> 00:09:09,930
+<i>"O şey" ne?! Ne yerinden çıktı?!</i>
+
+194
+00:09:09,930 --> 00:09:12,550
+Önemli değil. Bir daha
+kullanmayacağız zaten.
+
+195
+00:09:12,550 --> 00:09:13,500
+Ponzu sosuna batırın.
+
+196
+00:09:13,500 --> 00:09:14,250
+<i>Ponzu sosuna batırmak mı?!</i>
+
+197
+00:09:14,250 --> 00:09:15,210
+<i>N'apıyorlar öyle?!</i>
+
+198
+00:09:15,210 --> 00:09:18,700
+Susam sosu daha iyi
+olmaz mıydı, Doktor?
+
+199
+00:09:18,700 --> 00:09:19,650
+<i>Susam sosu mu?!</i>
+
+200
+00:09:19,650 --> 00:09:20,600
+<i>Shabu-shabu mu yiyorlar?!</i>
+
+201
+00:09:20,600 --> 00:09:21,940
+<i>Shabu-shabu yiyorlar, değil mi?!</i>
+
+202
+00:09:21,940 --> 00:09:23,800
+Tamam, bu yeterli.
+
+203
+00:09:23,800 --> 00:09:24,660
+<i>Bitti mi?</i>
+
+204
+00:09:24,660 --> 00:09:26,250
+<i>Ponzu sosuyla mı bitirdiler?!</i>
+
+205
+00:09:26,250 --> 00:09:28,250
+Nasıl hissediyorsunuz, Hasegawa-san?
+
+206
+00:09:28,250 --> 00:09:31,040
+Acı tamamen gitmiş gibi.
+
+207
+00:09:31,040 --> 00:09:33,760
+<i>Sadece acı değil, bedeninin
+bir parçası da gitmiş gibi.</i>
+
+208
+00:09:33,760 --> 00:09:35,460
+<i>Ponzu sosuna batırılmış gibi!</i>
+
+209
+00:09:35,460 --> 00:09:38,630
+Eskisi gibi istediğiniz her şeyi
+yiyebileceksiniz artık.
+
+210
+00:09:38,630 --> 00:09:41,460
+Çok teşekkürler, Doktor.
+
+211
+00:09:42,660 --> 00:09:46,880
+Biraz ağrı kesici ile özel
+hizmetimiz olan diş fırçasını ekledik.
+
+212
+00:09:46,880 --> 00:09:49,400
+İlgilendiğiniz için teşekkürler.
+
+213
+00:09:49,400 --> 00:09:50,920
+Geçmiş olsun.
+
+214
+00:09:50,920 --> 00:09:52,560
+Teşekkür ederim.
+
+215
+00:09:54,380 --> 00:09:57,100
+Kendime geldim yahu.
+
+216
+00:09:57,100 --> 00:10:00,430
+Çok acı vericiydi, ama dişçi
+gerçekten yetenekli.
+
+217
+00:10:00,430 --> 00:10:03,110
+Bakın, diş fırçası bile eklediler!
+
+218
+00:10:05,430 --> 00:10:08,130
+<i>Ekleme derken nereye?!</i>
+
+219
+00:10:08,130 --> 00:10:09,310
+<i>Dur!</i>
+
+220
+00:10:09,310 --> 00:10:12,610
+<i>Dişlerin iyi, ama daha önemli
+bir şeyini kaybetmedin mi?!</i>
+
+221
+00:10:12,610 --> 00:10:14,340
+<i>Eşit takas ilkesini
+aşmışsınız resmen!</i>
+
+222
+00:10:12,610 --> 00:10:14,340
+{\a6}FMA göndermesi.
+
+223
+00:10:14,340 --> 00:10:17,900
+Fırça yıprandığı zaman
+yenisi için gelin.
+
+224
+00:10:17,900 --> 00:10:19,770
+Bir şey diyebilir miyim?
+
+225
+00:10:19,770 --> 00:10:21,300
+<i>Evet! Aklını kullan! Dava aç!</i>
+
+226
+00:10:21,300 --> 00:10:22,960
+<i>Manyak lan bu dişçi!</i>
+
+227
+00:10:22,960 --> 00:10:26,770
+Dişlerimi tamamen temizlemek için
+sert bir diş fırçasına ihtiyacım var.
+
+228
+00:10:26,770 --> 00:10:28,440
+<i>Sorun o değil!</i>
+
+229
+00:10:28,440 --> 00:10:29,750
+Evet, sorun yok.
+
+230
+00:10:29,750 --> 00:10:32,490
+Güvenliğiniz için kamışınıza
+sert bir diş fırçası ekledik.
+
+231
+00:10:32,490 --> 00:10:34,610
+Biraz okşadığınızda sertleşecektir.
+
+232
+00:10:34,610 --> 00:10:36,260
+<i>Sertleşmeyecek!</i>
+
+233
+00:10:36,260 --> 00:10:38,190
+<i>Onunla dişini nasıl fırçalayacaksın?!</i>
+
+234
+00:10:38,190 --> 00:10:39,860
+<i>Sadece karın fırçalayabilir!</i>
+
+235
+00:10:39,860 --> 00:10:42,940
+Geçmiş olsun.
+
+236
+00:10:42,940 --> 00:10:44,910
+Toshi!
+
+237
+00:10:44,910 --> 00:10:46,820
+Siz de mi muayene olmaya geldiniz?
+
+238
+00:10:46,820 --> 00:10:47,990
+Kondo-san...
+
+239
+00:10:47,990 --> 00:10:50,350
+Bu dişçi gerçekten yetenekli.
+
+240
+00:10:50,350 --> 00:10:51,890
+Tamamen iyileştim!
+
+241
+00:10:51,890 --> 00:10:53,960
+Bir elektrikli...
+
+242
+00:10:53,960 --> 00:10:56,290
+...diş fırçası bile eklediler.
+
+243
+00:10:56,530 --> 00:10:58,880
+<i>Elektrikli diş fırçası mı?</i>
+
+244
+00:10:58,880 --> 00:11:01,170
+<i>Hasegawa-san'ın kolu değil mi o?</i>
+
+245
+00:11:01,170 --> 00:11:04,800
+Ponzu sosu gibi kokuyor,
+ama epey kullanışlı.
+
+246
+00:11:04,800 --> 00:11:06,710
+<i>Resmen Hasegawa-san'ın kolu o!</i>
+
+247
+00:11:07,160 --> 00:11:11,430
+Öyle mi? Bu işi makinanın yapması
+pek hoşuma gitmedi.
+
+248
+00:11:11,430 --> 00:11:13,980
+Dişlerini kendi elinle fırçalamalısın.
+
+249
+00:11:13,980 --> 00:11:15,480
+<i>Senin kolun lan o.</i>
+
+250
+00:11:15,480 --> 00:11:17,930
+<i>Elin diş fırçasıyla yer
+değiştirmemiş mi hem?</i>
+
+251
+00:11:17,930 --> 00:11:19,080
+Hasega...
+
+252
+00:11:19,080 --> 00:11:22,100
+Elektrikli diş fırçası çürümeye başlarsa
+lütfen değiştirmek için gelin.
+
+253
+00:11:22,100 --> 00:11:24,230
+<i>Hasegawa-san'ın kolu
+diyecekti, değil mi?!</i>
+
+254
+00:11:24,230 --> 00:11:25,850
+Bakar mısınız...
+
+255
+00:11:25,850 --> 00:11:29,020
+Diş fırçası ağzıma yetişmiyor.
+
+256
+00:11:29,020 --> 00:11:30,170
+Sorun olur mu?
+
+257
+00:11:30,170 --> 00:11:31,220
+Olmaz.
+
+258
+00:11:31,220 --> 00:11:34,490
+Yetişmiyorsa, dişinizi fırçalamak için
+başka bir fırça kullanın.
+
+259
+00:11:34,490 --> 00:11:36,060
+<i>Kolu niye eklediniz o zaman?!</i>
+
+260
+00:11:36,060 --> 00:11:37,920
+<i>Resmen tecavüz bu!</i>
+
+261
+00:11:37,920 --> 00:11:40,110
+Geçmiş olsun.
+
+262
+00:11:40,110 --> 00:11:41,590
+<i>Ne geçmiş olsunu lan!</i>
+
+263
+00:11:41,590 --> 00:11:43,320
+<i>Hastalarınızla adam gibi ilgilenin!</i>
+
+264
+00:11:44,790 --> 00:11:48,270
+<i>Burası diş kliniği falan değil.
+Vücut modifiye yeri.</i>
+
+265
+00:11:48,270 --> 00:11:50,550
+<i>Eyvah! Bu dişçi...</i>
+
+266
+00:11:50,550 --> 00:11:52,010
+<i>...çok fena!</i>
+
+267
+00:12:00,810 --> 00:12:03,480
+<i>N'apıyorsun? Kaçsana!</i>
+
+268
+00:12:03,480 --> 00:12:05,040
+<i>Burası diş kliniği falan değil.</i>
+
+269
+00:12:05,040 --> 00:12:06,920
+<i>Shocker Karargâhı.</i>
+
+270
+00:12:05,040 --> 00:12:10,310
+{\a6\fs12}[Not: Kamen Rider serisinden kötü bir örgüt. Shocker süper insan özellikleri kazanıran vücut modifiyeleri yapıyor.]
+
+271
+00:12:06,920 --> 00:12:08,990
+<i>İnat etme de çek git.</i>
+
+272
+00:12:08,990 --> 00:12:10,310
+<i>Hey, n'apıyorsun?</i>
+
+273
+00:12:10,310 --> 00:12:11,300
+<i>Evine git, lütfen.</i>
+
+274
+00:12:11,300 --> 00:12:12,610
+<i>300 yen veririm.</i>
+
+275
+00:12:12,610 --> 00:12:15,420
+<i>Nesi var bu herifin?
+Neden kaçmıyor?</i>
+
+276
+00:12:15,420 --> 00:12:16,680
+<i>Anlasana lan!</i>
+
+277
+00:12:16,680 --> 00:12:20,010
+<i>Sen gitmeden asla gitmem, aptal!</i>
+
+278
+00:12:20,010 --> 00:12:22,560
+Sıradaki hastalar girsin lütfen.
+
+279
+00:12:22,560 --> 00:12:23,960
+Aynı anda iki kişi.
+
+280
+00:12:24,500 --> 00:12:26,210
+<i>Olamaz. Bu bir şaka olmalı.</i>
+
+281
+00:12:26,210 --> 00:12:27,710
+<i>Cidden giriyor muyuz?</i>
+
+282
+00:12:28,320 --> 00:12:33,270
+Matkap bu sefer ne kadar
+derine inecek bakalım.
+
+283
+00:12:33,270 --> 00:12:35,540
+Ruhuma inebilecek mi acaba?
+
+284
+00:12:35,540 --> 00:12:37,360
+<i>Hayır! Girmek istemiyorum!</i>
+
+285
+00:12:37,360 --> 00:12:39,520
+<i>Bir matkap ruhuma nasıl ulaşsın yahu?!</i>
+
+286
+00:12:39,520 --> 00:12:41,290
+<i>Ağzımdan çıkanı kulağım duymuyor!</i>
+
+287
+00:12:41,290 --> 00:12:43,870
+İnsanlar neden deler?
+
+288
+00:12:43,870 --> 00:12:45,960
+Matkapları olduğu için.
+
+289
+00:12:45,960 --> 00:12:47,420
+<i>O da neydi?!</i>
+
+290
+00:12:47,420 --> 00:12:49,260
+<i>Aptal mıyım lan ben?! Aptal mıyım?!</i>
+
+291
+00:12:49,260 --> 00:12:51,450
+<i>Erkekliği bırak da kaç!</i>
+
+292
+00:12:52,310 --> 00:12:54,260
+<i>Hey! Yardım edin!</i>
+
+293
+00:12:54,260 --> 00:12:55,240
+<i>Kimse yok mu?!</i>
+
+294
+00:12:55,240 --> 00:12:58,000
+<i>Biri bizi durdursun!</i>
+
+295
+00:12:59,240 --> 00:13:05,000
+Altyazı: SyLaR_54
+www.animemangatr.com
+
+296
+00:13:09,890 --> 00:13:11,030
+Merhaba.
+
+297
+00:13:11,910 --> 00:13:14,290
+Ben, Namu Diş Kliniği
+diş hekimi Yabuta.
+
+298
+00:13:14,290 --> 00:13:16,330
+Sakata-san ve Hijikata-san, değil mi?
+
+299
+00:13:16,330 --> 00:13:17,820
+Memnun oldum.
+
+300
+00:13:18,970 --> 00:13:21,120
+Sıkmayın kendinizi.
+
+301
+00:13:21,120 --> 00:13:22,610
+Acımayacak.
+
+302
+00:13:22,610 --> 00:13:25,520
+Rahat olun. Haydi, rahat olun.
+
+303
+00:13:27,250 --> 00:13:30,210
+<i>Suç mahalli!</i>
+
+304
+00:13:30,210 --> 00:13:32,800
+<i>Muayene odasının böyle kırmızı
+olması mı gerekiyor?</i>
+
+305
+00:13:32,800 --> 00:13:34,100
+<i>Daha beyaz olması gerekmiyor muydu?</i>
+
+306
+00:13:34,100 --> 00:13:36,240
+<i>Daha hayat dolu bir yer değil miydi?</i>
+
+307
+00:13:36,650 --> 00:13:39,280
+<i>Muayenehaneler hep böyle kanlı mıydı?</i>
+
+308
+00:13:39,280 --> 00:13:41,640
+<i>Cihazlar hep kanlı mıydı?</i>
+
+309
+00:13:41,640 --> 00:13:43,080
+<i>Muayenehanede zincir mi vardı?</i>
+
+310
+00:13:47,060 --> 00:13:50,960
+<i>Bir dişçinin böyle mi
+olması gerekiyordu?!</i>
+
+311
+00:13:50,960 --> 00:13:54,210
+İkiniz de epey abartmışsınız.
+
+312
+00:13:54,210 --> 00:13:56,800
+Neden hiç ilgilenmediniz?
+
+313
+00:13:56,800 --> 00:13:57,860
+Durum kötü.
+
+314
+00:13:57,860 --> 00:14:00,970
+Ağız bir insanın girişi
+gibi bir şeydir.
+
+315
+00:14:00,970 --> 00:14:04,530
+Bir insanı tanımak için
+ilk adımdır ayrıca.
+
+316
+00:14:04,530 --> 00:14:08,250
+Bir insan hakkında dişinden
+fikir sahibi olabilirsin.
+
+317
+00:14:09,360 --> 00:14:13,050
+Evet, dişlerine bakmayan
+çoğu insan hödüktür.
+
+318
+00:14:13,050 --> 00:14:17,470
+Dişlerini temiz tutanlar ise
+ebeveynlerini dinlemiştir muhtemelen.
+
+319
+00:14:17,880 --> 00:14:22,560
+Bu yüzden küçük hastalarıma
+bu konuda öğüt veriyorum.
+
+320
+00:14:22,560 --> 00:14:26,150
+Bir grupla gezmeye çıktığın zaman
+görünüş ve kişilik önemli değildir.
+
+321
+00:14:26,750 --> 00:14:29,790
+Önce göğüslerine bak.
+
+322
+00:14:29,790 --> 00:14:33,500
+<i>Doktor, senin girişin
+resmen parçalanmış.</i>
+
+323
+00:14:33,500 --> 00:14:36,710
+Bir insan hakkında
+göğüslerinden fikir sahibi olabilirsin.
+
+324
+00:14:36,710 --> 00:14:39,210
+<i>- Bu doktor korkunç!</i>
+
+325
+00:14:37,230 --> 00:14:44,300
+- Büyük göğüs ucuna sahip kadınlar
+daha affedici büyük bir kalbe sahiptir.
+
+326
+00:14:39,210 --> 00:14:41,210
+<i>- Göğüs muhabbeti açtı!</i>
+
+327
+00:14:41,210 --> 00:14:42,840
+<i>- Girişinin parçalanmasını geçtim...</i>
+
+328
+00:14:42,840 --> 00:14:45,390
+<i>- ...içinden
+bok gibi koku geliyor!</i>
+
+329
+00:14:45,390 --> 00:14:48,680
+<i>Kapıdan içeri girdiğinde tuvalet
+kokusu aldığın Niwa-kun'un yeri gibi!</i>
+
+330
+00:14:48,680 --> 00:14:50,450
+<i>Bu herifin girişi tuvalet olmuş!</i>
+
+331
+00:14:51,290 --> 00:14:55,640
+Küçük göğüs ucuna sahip kadınlar ise
+çok kucaklayıcı olurlar.
+
+332
+00:14:55,640 --> 00:14:57,010
+Dikkatli olun.
+
+333
+00:14:57,010 --> 00:14:59,360
+<i>Kimse seni kucaklamak istemez!</i>
+
+334
+00:14:59,360 --> 00:15:01,640
+Göğüs ucu kadınların anahtarıdır.
+
+335
+00:15:01,640 --> 00:15:02,730
+Gerisi önemli değil.
+
+336
+00:15:02,730 --> 00:15:04,700
+<i>Ne tür bir grup buluşmasında
+göğüs ucuna bakılır ki?!</i>
+
+337
+00:15:04,700 --> 00:15:06,500
+<i>Ne tür bir grup buluşmasına
+gittin sen?!</i>
+
+338
+00:15:08,340 --> 00:15:09,180
+Tamam...
+
+339
+00:15:09,180 --> 00:15:11,610
+Muayeneye başlayalım.
+
+340
+00:15:11,610 --> 00:15:14,840
+Asistanım size hızlıca bir baksın.
+
+341
+00:15:14,840 --> 00:15:18,220
+Asistanlarımın sizi muayene
+etmesi de mümkün.
+
+342
+00:15:18,220 --> 00:15:21,970
+<i>Yırttık... bu herif tedavi etmeyecek.</i>
+
+343
+00:15:21,970 --> 00:15:24,480
+Hey! Kızlar!
+
+344
+00:15:24,850 --> 00:15:26,260
+Evet!
+
+345
+00:15:26,260 --> 00:15:26,640
+Evet.
+
+346
+00:15:30,490 --> 00:15:33,150
+Nakayama-san ve
+Savaş Perisi Shazzan-san.
+
+347
+00:15:33,150 --> 00:15:34,400
+Hangisini istersiniz?
+
+348
+00:15:34,400 --> 00:15:35,510
+Nakayama-san!
+
+349
+00:15:35,510 --> 00:15:37,200
+Kesinlikle Nakayama-san!
+
+350
+00:15:37,200 --> 00:15:39,720
+Shazzan-san dışında herkes olur!
+
+351
+00:15:39,720 --> 00:15:41,300
+Ne yapalım?
+
+352
+00:15:41,300 --> 00:15:42,630
+Hangisini istersin?
+
+353
+00:15:42,630 --> 00:15:44,610
+Siyah saçlı olanı tercih ederim.
+
+354
+00:15:44,610 --> 00:15:45,920
+<i>Bu da ne lan?</i>
+
+355
+00:15:45,920 --> 00:15:48,070
+<i>Savaş Perisi Shazzan neden
+diş kliniğinde çalışıyor?!</i>
+
+356
+00:15:48,070 --> 00:15:49,910
+<i>Savaş Perisi Shazzan ne lan?!</i>
+
+357
+00:15:49,910 --> 00:15:51,810
+Sizinle hangisi ilgilensin?
+
+358
+00:15:51,810 --> 00:15:53,290
+- Nakayama-san'ı istiyorum!
+
+359
+00:15:51,990 --> 00:15:53,290
+- Nakayama-san'ı istiyorum!
+
+360
+00:15:53,290 --> 00:15:56,090
+Sakata-daha hızlı davrandı.
+
+361
+00:15:56,090 --> 00:15:57,910
+Sakata-san ile
+Nakayama-san ilgilenecek.
+
+362
+00:15:57,910 --> 00:15:58,930
+Dur!
+
+363
+00:15:58,930 --> 00:16:00,170
+Bir saniye..
+
+364
+00:16:00,420 --> 00:16:02,090
+Güzel.
+
+365
+00:16:02,090 --> 00:16:03,640
+Ucuz kurtuldum.
+
+366
+00:16:05,550 --> 00:16:07,040
+Adım, Nakayama.
+
+367
+00:16:07,040 --> 00:16:09,310
+Sizinle ben ilgileneceğim, Sakata-san.
+
+368
+00:16:09,310 --> 00:16:12,810
+<i>Nakayama sen misin?!</i>
+
+369
+00:16:12,810 --> 00:16:13,610
+<i>Dur!</i>
+
+370
+00:16:13,610 --> 00:16:14,540
+<i>Bekle!</i>
+
+371
+00:16:14,540 --> 00:16:16,970
+<i>Savaş Perisi Shazzan'a
+benziyorsun!</i>
+
+372
+00:16:16,970 --> 00:16:18,800
+<i>Nakayama-san olmadığın besbelli!</i>
+
+373
+00:16:19,500 --> 00:16:21,120
+<i>Hakettin!</i>
+
+374
+00:16:21,120 --> 00:16:21,980
+<i>Neler oluyor bilmiyorum, ama...</i>
+
+375
+00:16:21,980 --> 00:16:25,120
+<i>...sanırım Savaş Perisi Shazzan-san
+bu hanımdı.</i>
+
+376
+00:16:26,200 --> 00:16:29,500
+Size güveniyorum, Shazzan-san.
+
+377
+00:16:38,740 --> 00:16:40,970
+Ben, Savaş Perisi Shazzan.
+
+378
+00:16:40,970 --> 00:16:42,760
+Sizi ben tedavi edeceğim.
+
+379
+00:16:42,760 --> 00:16:44,760
+<i>Neden?!</i>
+
+380
+00:16:44,960 --> 00:16:47,940
+Nakayama-san, Shazzan-san,
+elinizden geleni yapın.
+
+381
+00:16:47,940 --> 00:16:48,960
+Anlaşıldı.
+
+382
+00:16:48,960 --> 00:16:52,270
+<i>Nakayama-san ve Shazzan-san'ın
+ikisi de savaş perisi miymiş?!</i>
+
+383
+00:16:52,270 --> 00:16:57,280
+Tedaviye başlamadan önce bu kliniğin
+sistemini açıklayalım.
+
+384
+00:16:57,280 --> 00:17:01,300
+<i>Ondan önce, nasıl savaş perisine
+dönüştüğünüzü açıklayın!</i>
+
+385
+00:17:01,300 --> 00:17:03,710
+Kliniğimiz diş hastalıklarınızı
+tedavi edecek...
+
+386
+00:17:03,710 --> 00:17:08,180
+...ve bir daha hastalık durumunun
+ortaya çıkmamasını sağlayacak.
+
+387
+00:17:08,180 --> 00:17:10,110
+<i>Bu, bir dişçiyi aşar!</i>
+
+388
+00:17:10,790 --> 00:17:14,290
+Seçeneklerinizi açıklayarak
+devam edelim.
+
+389
+00:17:14,290 --> 00:17:18,670
+A Seçeneği çürüğünüzü tedavi
+ve bedeninizi modifiye eder.
+
+390
+00:17:18,670 --> 00:17:22,550
+B  Seçeneği ise bedeninizi modifiye
+eder ve ücretsiz içecek servisi sunar.
+
+391
+00:17:22,550 --> 00:17:25,210
+<i>B Seçeneği'nin dişlerimle
+bir alâkası yok ki!</i>
+
+392
+00:17:25,210 --> 00:17:26,550
+<i>Neden ücretsiz içecek var?!</i>
+
+393
+00:17:27,230 --> 00:17:28,830
+Bakar mısınız...
+
+394
+00:17:28,830 --> 00:17:32,720
+Modifiye olmaksızın çürüğümü
+tedavi edecek bir seçenek yok mu?
+
+395
+00:17:32,720 --> 00:17:37,210
+A Seçeneği'ni seçerek ayrı ayrı tedavi
+ve modifiye masraflarından kurtulacaksınız.
+
+396
+00:17:37,210 --> 00:17:39,650
+Hayır, modifiye istemiyorum ben.
+
+397
+00:17:39,650 --> 00:17:41,240
+Sadece çürüğü tedavi edin.
+
+398
+00:17:41,240 --> 00:17:45,570
+Öyleyse, Z veya X seçeneklerini
+öneriyorum.
+
+399
+00:17:45,570 --> 00:17:46,780
+Onlar ne?
+
+400
+00:17:47,010 --> 00:17:51,320
+Z Seçeneği çürüğünüz tedavi edilirken
+masaj hizmeti içeriyor.
+
+401
+00:17:51,320 --> 00:17:54,620
+X Seçeneği ise tedavi boyunca
+salata bar sunuyor.
+
+402
+00:17:54,620 --> 00:17:57,550
+Z Seçeneği'ni alayım ben öyleyse.
+
+403
+00:17:57,550 --> 00:17:59,350
+Masajlı olan mı?
+
+404
+00:17:59,350 --> 00:18:01,340
+Her neyse işte. O uygun.
+
+405
+00:18:01,340 --> 00:18:02,280
+Anlaşıldı.
+
+406
+00:18:03,020 --> 00:18:07,130
+<i>Modifiyeden yırttım.</i>
+
+407
+00:18:09,120 --> 00:18:11,890
+Ben, Betty. Memnun oldum, patron.
+
+408
+00:18:13,590 --> 00:18:16,400
+<i>Masaj kızı eklemişler.</i>
+
+409
+00:18:16,400 --> 00:18:18,530
+<i>Sonuçta yine modifiye oldum.</i>
+
+410
+00:18:18,530 --> 00:18:21,780
+<i>Bunun çürükleri engellemekle
+hiç alâkası yok bir de!</i>
+
+411
+00:18:21,780 --> 00:18:23,650
+<i>Bu şeyin hiç işini yapası yok!</i>
+
+412
+00:18:23,650 --> 00:18:28,060
+<i>En azından daha kaliteli
+bir kız ekleselerdi!</i>
+
+413
+00:18:28,500 --> 00:18:30,130
+Açıklamama izin verin.
+
+414
+00:18:30,130 --> 00:18:34,470
+Zevk Kalesi Betty ve Sakata-san
+sinirsel olarak bağlılar.
+
+415
+00:18:34,470 --> 00:18:37,230
+Yani, robot Zevk Kalesi Betty...
+
+416
+00:18:37,230 --> 00:18:41,400
+...Sakata-san'a gerçek bir masaj
+kızı gibi görünüyor.
+
+417
+00:18:38,190 --> 00:18:39,900
+{\a6}[Gerçekte]
+
+418
+00:18:39,900 --> 00:18:43,910
+{\a6}[Gintoki'nin Gözünden]
+
+419
+00:18:41,400 --> 00:18:43,920
+Hizmetimiz mükemmeldir.
+
+420
+00:18:43,920 --> 00:18:45,830
+<i>Ucuz yırttım!</i>
+
+421
+00:18:45,830 --> 00:18:48,450
+<i>Az kalsın aynı duruma düşecektim.</i>
+
+422
+00:18:48,450 --> 00:18:53,180
+<i>Ama savaş perisi seçeneklerini dikkatli
+düşünmem gerektiğini öğrendim bile.</i>
+
+423
+00:18:53,180 --> 00:18:54,550
+<i>X Seçeneği!</i>
+
+424
+00:18:54,550 --> 00:18:56,720
+<i>Salata barlı tedavi.</i>
+
+425
+00:18:56,720 --> 00:18:58,880
+<i>Doğru cevap bu.</i>
+
+426
+00:18:58,880 --> 00:19:02,100
+X Seçeneği'ni istiyorum.
+
+427
+00:19:02,100 --> 00:19:03,020
+Anlaşıldı.
+
+428
+00:19:03,020 --> 00:19:07,390
+<i>Bir bedene hayatta salata
+barı ekleyemezsin.</i>
+
+429
+00:19:07,390 --> 00:19:12,120
+<i>Teşekkürler. Aynı hataya
+düşmekten kurtardın.</i>
+
+430
+00:19:18,080 --> 00:19:21,320
+{\a6}[Not: "Bar" baa olarak okunuyor
+ve anlamı nine.]
+
+431
+00:19:18,080 --> 00:19:21,350
+<i>Salata Nine eklemişler!</i>
+
+432
+00:19:21,350 --> 00:19:22,480
+<i>Kandırıldım!</i>
+
+433
+00:19:21,350 --> 00:19:26,400
+{\a6}[Gerçekte]
+
+434
+00:19:22,480 --> 00:19:24,920
+<i>"Salata bar" derken
+bunu mu kastediyorlarmış?!</i>
+
+435
+00:19:24,920 --> 00:19:26,450
+<i>Bunun ne anlamı var ki?!</i>
+
+436
+00:19:26,400 --> 00:19:28,830
+{\a6}[Hijikata'nın Gözünden]
+
+437
+00:19:26,450 --> 00:19:28,440
+<i>Oturmuş salata yiyor sadece!</i>
+
+438
+00:19:28,440 --> 00:19:31,040
+<i>Bir de mayonez değil de
+sos kullanıyor!</i>
+
+439
+00:19:31,040 --> 00:19:32,110
+<i>Berbat!</i>
+
+440
+00:19:32,110 --> 00:19:34,960
+<i>Hayatımın geri kalanı
+boyunca bu kadının...</i>
+
+441
+00:19:34,960 --> 00:19:36,960
+...mayonezsiz salata
+yemesini mi izleyeceğim?!
+
+442
+00:19:36,960 --> 00:19:39,960
+Tamam, hazırlık aşamasını geçtik.
+
+443
+00:19:39,960 --> 00:19:41,000
+<i>Nasıl bir hazırlık bu?!</i>
+
+444
+00:19:41,000 --> 00:19:42,840
+<i>Hiçbir işe yaramayacak gibi!</i>
+
+445
+00:19:42,840 --> 00:19:45,630
+Asıl tedaviye başlıyoruz.
+
+446
+00:19:45,630 --> 00:19:48,080
+<i>Dişimden önce bedenimi tedavi et!</i>
+
+447
+00:19:48,080 --> 00:19:49,730
+<i>Bana orijinal bedenimi geri ver!</i>
+
+448
+00:19:49,730 --> 00:19:52,010
+İyice açın.
+
+449
+00:19:52,010 --> 00:19:53,390
+Rahatlayın lütfen.
+
+450
+00:19:53,390 --> 00:19:55,580
+Korkacak bir şey yok.
+
+451
+00:19:55,580 --> 00:19:57,610
+<i>Sen korkunçsun.</i>
+
+452
+00:19:57,610 --> 00:19:59,840
+İyice açın.
+
+453
+00:19:59,840 --> 00:20:02,560
+Yüzünüz matkaba temas
+ederse parçalanır.
+
+454
+00:19:32,110 --> 00:19:36,960
+<i>O kocaman matkap
+ağzıma nasıl sığsın lan?!</i>
+
+455
+00:20:08,920 --> 00:20:10,520
+Endişelenmeyin.
+
+456
+00:20:10,520 --> 00:20:15,180
+Bu modifiyeler sayesinde
+bedeniniz daha az acı çekecek.
+
+457
+00:20:15,180 --> 00:20:18,510
+Nasıl? Fazla acıyor olmamalı.
+
+458
+00:20:19,550 --> 00:20:20,770
+<i>Öyle dedin de...</i>
+
+459
+00:20:20,770 --> 00:20:23,150
+<i>Hiç acıtmıyor.</i>
+
+460
+00:20:23,150 --> 00:20:26,130
+Kliniğimiz özel bir
+tedavi uygular, ama...
+
+461
+00:20:26,130 --> 00:20:28,730
+...bu da hastaya başka
+bir yük yükler.
+
+462
+00:20:28,730 --> 00:20:36,530
+Ameliyatla bedeniniz güvenli bir
+tedaviye olanak sağlar duruma gelir.
+
+463
+00:20:36,750 --> 00:20:38,420
+<i>Güvenli mi?</i>
+
+464
+00:20:38,420 --> 00:20:41,080
+<i>Bedenlerimizi modifiye etmenizden
+sonra tedavi güvenli olmaktan çıktı!</i>
+
+465
+00:20:41,080 --> 00:20:42,750
+<i>Bir saniye...</i>
+
+466
+00:20:44,250 --> 00:20:47,500
+<i>Tüm acı onlara aktarılıyor!</i>
+
+467
+00:20:47,700 --> 00:20:52,630
+Acının çoğunu onlar hissettiğinden
+sizi tedavi ederken rahat olun.
+
+468
+00:20:52,630 --> 00:20:55,170
+<i>Sıradan bir acı değil o.</i>
+
+469
+00:20:52,630 --> 00:20:56,110
+{\a6}[Hijikata'nın Gözünden]
+
+470
+00:20:55,170 --> 00:20:58,100
+<i>Bu şey devam ederken
+rahatlaması epey zor.</i>
+
+471
+00:20:56,110 --> 00:20:58,090
+{\a6}[Gerçekte]
+
+472
+00:20:58,100 --> 00:21:02,480
+Onlar olmasaydı, çok daha fazla
+acı çekerdiniz.
+
+473
+00:21:02,480 --> 00:21:05,430
+{\a6}[Gintoki'nin Gözünden]
+
+474
+00:21:02,700 --> 00:21:06,490
+<i>Biz acı hissetmiyoruz, ama ağzımıza
+yapılan bu işlem o kadar acı verici mi?</i>
+
+475
+00:21:05,430 --> 00:21:07,450
+{\a6}[Gerçekte]
+
+476
+00:21:06,490 --> 00:21:08,000
+<i>Uygun mu bu?!</i>
+
+477
+00:21:07,450 --> 00:21:09,500
+{\a6}[Gintoki'nin Gözünden]
+
+478
+00:21:08,000 --> 00:21:09,480
+<i>Hayır. Dur!</i>
+
+479
+00:21:09,480 --> 00:21:10,990
+<i>Bana öyle bakma!</i>
+
+480
+00:21:09,500 --> 00:21:10,970
+{\a6}[Gerçekte]
+
+481
+00:21:10,990 --> 00:21:12,910
+<i>Ne? Benim suçum mu?!</i>
+
+482
+00:21:12,910 --> 00:21:14,310
+<i>Bir yanlış mı yaptım?!</i>
+
+483
+00:21:14,010 --> 00:21:14,980
+{\a6}[Hijikata'nın Gözünden]
+
+484
+00:21:14,310 --> 00:21:16,340
+<i>Benim suçum yok.</i>
+
+485
+00:21:14,980 --> 00:21:15,980
+{\a6}[Gerçekte]
+
+486
+00:21:16,340 --> 00:21:18,140
+<i>Hiçbir suçum yok!</i>
+
+487
+00:21:19,650 --> 00:21:21,660
+<i>Bu da ne?</i>
+
+488
+00:21:21,660 --> 00:21:24,290
+<i>Düşüncelerimde bu garip
+sahneler uçuşuyor.</i>
+
+489
+00:21:24,290 --> 00:21:25,930
+<i>Hey! Bu da ne?</i>
+
+490
+00:21:25,930 --> 00:21:27,500
+<i>Hayatım gözlerimin önünde
+akıp geçiyor sanki?</i>
+
+491
+00:21:27,500 --> 00:21:29,750
+<i>Yoksa bu Betty'nin hayatı mı?</i>
+
+492
+00:21:29,750 --> 00:21:32,580
+<i>Bu sahte anılar ne lan?!</i>
+
+493
+00:21:32,580 --> 00:21:34,370
+<i>Böyle bir şey yaşadığımı
+hiç hatırlamıyorum!</i>
+
+494
+00:21:34,370 --> 00:21:36,060
+<i>Dur! Bana o iğrenç şeyi gösterme!</i>
+
+495
+00:21:36,060 --> 00:21:37,380
+<i>Ben yanlış bir şey yapmadım!</i>
+
+496
+00:21:37,380 --> 00:21:38,500
+<i>Bunun benimle bir alâkası yok!</i>
+
+497
+00:21:38,500 --> 00:21:41,250
+<i>Modifiye edilerek mahvolan benim!</i>
+
+498
+00:21:42,280 --> 00:21:43,920
+<i>Bu da ne?</i>
+
+499
+00:21:43,920 --> 00:21:46,560
+<i>Garip garip sahneler görüyorum.</i>
+
+500
+00:21:47,360 --> 00:21:49,670
+<i>Hey, yoksa bu sahneler...?</i>
+
+501
+00:21:49,670 --> 00:21:51,560
+<i>Bu gördüklerim salata
+moruğun mu hayatı?!</i>
+
+502
+00:21:51,560 --> 00:21:53,870
+<i>Gerçek bir anısı yok bir de!</i>
+
+503
+00:21:53,870 --> 00:21:55,860
+<i>Hepsi sebzeler üstüne!</i>
+
+504
+00:21:55,860 --> 00:21:57,590
+<i>Bundan memnun musun?!</i>
+
+505
+00:21:57,590 --> 00:21:58,960
+<i>Hiçbir anın olmadan ölmek...</i>
+
+506
+00:21:58,960 --> 00:22:00,950
+<i>Hayır, çürüğümün tedavi
+edilmesini istiyorum.</i>
+
+507
+00:22:00,950 --> 00:22:03,770
+<i>O salata moruk umrumda bile değil!</i>
+
+508
+00:22:04,950 --> 00:22:08,280
+<i>Benim suçum yok. Suçum yok.
+Suçum yok!</i>
+
+509
+00:22:08,280 --> 00:22:11,420
+<i>Benim suçum yok. Suçum yok.
+Suçum yok!</i>
+
+510
+00:22:11,420 --> 00:22:12,500
+Evet!
+
+511
+00:22:12,500 --> 00:22:14,260
+Biz bir şey yapmadık...
+
+512
+00:22:14,520 --> 00:22:17,030
+Hayır!
+
+513
+00:22:19,050 --> 00:22:21,600
+Bakar mısınız...
+
+514
+00:22:21,600 --> 00:22:23,760
+Burası diş kliniği değil.
+
+515
+00:22:25,220 --> 00:22:26,750
+Biliyorum.
+
+516
+00:22:26,750 --> 00:22:29,700
+Şeyy, dişiniz çürümüş ama.
+
+517
+00:22:29,700 --> 00:22:31,270
+Bir dişçiye görünün.
+
+518
+00:22:31,270 --> 00:22:33,270
+Çürükler umrumuzda değil.
+
+519
+00:22:33,270 --> 00:22:35,130
+Yakında komple çürür ve düşer.
+
+520
+00:22:35,130 --> 00:22:37,010
+Öyleyse, neden buradasınız?
+
+521
+00:22:40,360 --> 00:22:42,950
+- Lütfen bunu onarın...
+
+522
+00:22:40,360 --> 00:22:42,950
+- Lütfen bunu onarın...
+
+523
+00:24:15,040 --> 00:24:27,010
+{\a6}[Fragman]
+
+524
+00:24:15,550 --> 00:24:16,950
+Pekâlâ, millet.
+
+525
+00:24:16,950 --> 00:24:19,150
+Kulaklarınızı açın ve iyi dinleyin!
+
+526
+00:24:19,150 --> 00:24:20,100
+- Tamam!
+- Evet!
+
+527
+00:24:20,100 --> 00:24:23,190
+GinTama animesinde haftaya...
+"Gerisayım Başlıyor"!
+
+528
+00:24:24,800 --> 00:24:27,010
+Neden hiç tepki yok?
+
+529
+00:24:27,010 --> 00:24:28,140
+Çünkü...
+
+530
+00:24:27,010 --> 00:24:30,020
+{\a6}["Gerisayım Başlıyor"]
+
+531
+00:24:28,140 --> 00:24:29,790
+Artık kandıramazsın.
+
+532
+00:24:30,020 --> 00:24:39,990
+{\a6}[GinTama için gerisayım
+sonunda başlıyor.]
+

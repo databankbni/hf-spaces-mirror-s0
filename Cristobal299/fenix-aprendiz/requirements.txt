@@ -1,0 +1,7 @@
+gradio
+requests
+groq
+supabase
+pypdf
+edge-tts
+ffmpeg

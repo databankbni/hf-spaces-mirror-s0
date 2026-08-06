@@ -1,0 +1,162 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway|Ubuntu&display=swap");
+
+body {
+	background: #E8EBF5;
+	padding: 0;
+	margin: 0;
+	font-family: Raleway;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Force container to fill 100% of the iframe's width and height perfectly */
+.chat-box-container {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    z-index: 999999 !important;
+    display: flex !important;
+    background: #ffffff;
+    border-radius: 0px; /* Removes inner rounded corners inside the parent container */
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: none !important; /* Removes duplicate outer shadow lines */
+}
+
+/* Strip out duplicate header styling since the frontend handles the header layout */
+.chat-box-header {
+    display: none !important;
+}
+
+/* Expand body area to utilize the full width of the wide window screen layout */
+.chat-box-body {
+    flex: 1;
+    background: #f8f8f8;
+    overflow-y: auto;
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Widen sent message blocks */
+.chat-box-body-send {
+    max-width: 75%;
+    width: auto;
+    float: right;
+    background: white;
+    padding: 12px 20px;
+    border-radius: 12px 12px 0px 12px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+    margin-bottom: 14px;
+    clear: both;
+}
+
+.chat-box-body-send p {
+    margin: 0;
+    color: #444;
+    font-size: 14px;
+    margin-bottom: 0.25rem;
+}
+
+.chat-box-body-send span {
+    float: right;
+    color: #777;
+    font-size: 10px;
+}
+
+/* Widen received message blocks */
+.chat-box-body-receive {
+    max-width: 75%;
+    width: auto;
+    float: left;
+    background: #e2f0fe;
+    padding: 12px 20px;
+    border-radius: 12px 12px 12px 0px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+    margin-bottom: 14px;
+    clear: both;
+}
+
+.chat-box-body-receive p {
+    margin: 0;
+    color: #444;
+    font-size: 14px;
+    margin-bottom: 0.25rem;
+}
+
+.chat-box-body-receive span {
+    float: right;
+    color: #777;
+    font-size: 10px;
+}
+
+/* Clean up footer alignment and stick it directly to the bottom */
+.chat-box-footer {
+    display: flex;
+    padding: 15px 20px;
+    background: white;
+    border-top: 1px solid #eee;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.chat-box-footer input {
+    flex: 1;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 50px;
+    background: whitesmoke;
+    font-family: ubuntu;
+    font-weight: 600;
+    color: #444;
+    outline: none;
+}
+
+.chat-box-footer .send {
+    margin-left: 15px;
+    cursor: pointer;
+    font-size: 22px;
+    color: #2C50EF;
+}
+
+/* Hide duplicate launcher trigger button */
+.chat-button {
+    display: none !important;
+}
+
+/* Citation Rendering Blocks */
+.medical-sources-wrapper {
+    margin-top: 8px;
+    padding: 6px 10px;
+    background-color: #f0f9ff;
+    border: 1px solid #bae6fd;
+    border-radius: 6px;
+    font-size: 11px;
+    color: #0369a1;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.source-item {
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* Automated Clean Split for Disclaimers */
+.clinical-disclaimer-block {
+    font-size: 10px;
+    color: #dc2626;
+    border-top: 1px dashed #fca5a5;
+    margin-top: 8px;
+    padding-top: 4px;
+    font-style: italic;
+    line-height: 1.3;
+}

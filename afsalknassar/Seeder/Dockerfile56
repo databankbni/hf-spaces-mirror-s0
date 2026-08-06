@@ -1,0 +1,25 @@
+# 1. Base Image: Official EasyProxy Release
+FROM ghcr.io/realbestia1/easyproxy:latest
+
+# 2. Hugging Face Strict Permissions Fix
+# Temporarily become root to fix folder locks
+USER root
+
+# Fix #1: Create the hardcoded wireproxy log file and make it universally writable
+RUN touch /var/log/wireproxy.log && chmod 777 /var/log/wireproxy.log
+
+# Fix #2: Set the HOME environment variable to /app so Gunicorn writes its hidden files here instead of the root directory '/'
+ENV HOME=/app
+RUN mkdir -p /app && chmod -R 777 /app
+
+# Ensure the data directory is also writable for playlist generation
+RUN mkdir -p /data && chmod -R 777 /data
+
+# 3. Port & Environment Configuration
+ENV PORT=7860
+ENV HOST=0.0.0.0
+
+EXPOSE 7860
+
+# 4. Revert to Hugging Face's required Standard User
+USER 1000

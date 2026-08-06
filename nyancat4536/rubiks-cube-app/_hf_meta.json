@@ -1,0 +1,23 @@
+{
+ "captured_at": "2026-08-04T16:44:52Z",
+ "hf_metadata": {
+  "sha": "60facc604b6d200c211261d3fd0802136eafc783"
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "nyancat4536/rubiks-cube-app",
+ "repo_type": "spaces",
+ "sha": "60facc604b6d200c211261d3fd0802136eafc783",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/nyancat4536/rubiks-cube-app"
+}

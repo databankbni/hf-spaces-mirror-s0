@@ -1,0 +1,23 @@
+{
+ "captured_at": "2026-08-04T16:45:06Z",
+ "hf_metadata": {
+  "sha": "3cadf2c9a8b41d4419f47e7b5401d9f0325f0c35"
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "polinapred/KWKChatbot",
+ "repo_type": "spaces",
+ "sha": "3cadf2c9a8b41d4419f47e7b5401d9f0325f0c35",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/polinapred/KWKChatbot"
+}

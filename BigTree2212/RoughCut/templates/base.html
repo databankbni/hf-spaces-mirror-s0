@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{% block title %}AI Tools Studio{% endblock %}</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ static_url('css/base.css') }}">
+{% block head %}{% endblock %}
+</head>
+<body>
+
+<nav class="topnav">
+  <div class="topnav__inner">
+    <a href="{{ url_for('home') }}" class="topnav__brand">
+      <span class="topnav__led"></span>
+      <span class="topnav__title">AI TOOLS STUDIO</span>
+    </a>
+    <div class="topnav__links">
+      <a href="{{ url_for('home') }}" class="topnav__link {% if active_tool == 'home' %}is-active{% endif %}">Home</a>
+      <a href="{{ url_for('silence_cutter.index') }}" class="topnav__link {% if active_tool == 'silence-cutter' %}is-active{% endif %}">Silence Cutter</a>
+      <a href="{{ url_for('transcript.index') }}" class="topnav__link {% if active_tool == 'transcript' %}is-active{% endif %}">Transcript</a>
+      <a href="{{ url_for('video_downloader.index') }}" class="topnav__link {% if active_tool == 'video-downloader' %}is-active{% endif %}">Downloader</a>
+      <a href="{{ url_for('queue_page') }}" class="topnav__link {% if active_tool == 'queue' %}is-active{% endif %}">Antrian</a>
+    </div>
+  </div>
+</nav>
+
+<main class="page">
+  <div class="page__inner">
+    {% block content %}{% endblock %}
+  </div>
+</main>
+
+<div class="confirm-overlay stage--hidden" id="confirm-overlay">
+  <div class="confirm-modal panel">
+    <p class="confirm-modal__message" id="confirm-modal-message"></p>
+    <input type="text" class="confirm-modal__input stage--hidden" id="confirm-modal-input">
+    <div class="confirm-modal__actions">
+      <button type="button" class="btn--ghost confirm-modal__btn" id="confirm-modal-cancel">Batal</button>
+      <button type="button" class="btn--primary confirm-modal__btn" id="confirm-modal-ok">Ya, lanjutkan</button>
+    </div>
+  </div>
+</div>
+
+<script src="{{ static_url('js/confirm.js') }}"></script>
+{% block scripts %}{% endblock %}
+</body>
+</html>

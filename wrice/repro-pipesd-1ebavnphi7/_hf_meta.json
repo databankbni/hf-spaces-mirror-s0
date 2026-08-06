@@ -1,0 +1,23 @@
+{
+ "captured_at": "2026-08-04T17:15:03Z",
+ "hf_metadata": {
+  "sha": "176d7649787a8eece37fb8d361311dd4389175df"
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "wrice/repro-pipesd-1ebavnphi7",
+ "repo_type": "spaces",
+ "sha": "176d7649787a8eece37fb8d361311dd4389175df",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/wrice/repro-pipesd-1ebavnphi7"
+}

@@ -1,0 +1,23 @@
+{
+ "captured_at": "2026-08-04T16:07:16Z",
+ "hf_metadata": {
+  "sha": "4e0091af1e7cb36386fda2974f861a14682e87b7"
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "danghoang2605/mediflow-ai",
+ "repo_type": "spaces",
+ "sha": "4e0091af1e7cb36386fda2974f861a14682e87b7",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/danghoang2605/mediflow-ai"
+}

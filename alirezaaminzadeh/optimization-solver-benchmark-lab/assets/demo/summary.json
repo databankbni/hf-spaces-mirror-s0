@@ -1,0 +1,16 @@
+{
+  "engine_version": "1.0.0",
+  "product": "Optimization Solver Benchmark Lab",
+  "vendor": "Aria AI Operations Research Team",
+  "problem_types": 9,
+  "solvers": 6,
+  "metrics": 9,
+  "total_benchmark_runs": 324,
+  "unique_instances": 54,
+  "winner_distribution": {
+    "gurobi": 13,
+    "minizinc": 35,
+    "cp_sat": 6
+  },
+  "generated_at": "2026-07-31T21:32:43.094072+00:00"
+}

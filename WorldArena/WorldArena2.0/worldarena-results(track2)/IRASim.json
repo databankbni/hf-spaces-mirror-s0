@@ -1,0 +1,9 @@
+{
+  "Model": "IRASim",
+  "year": "2026",
+  "open_source": "unknown",
+  "Metrics": {
+    "RL Environment(Click Bell)": 53.13,
+    "RL Environment(Adjust Bottle)": 61.33
+  }
+}

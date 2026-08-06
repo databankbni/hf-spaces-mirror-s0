@@ -1,0 +1,73 @@
+{
+ "captured_at": "2026-08-04T13:23:56Z",
+ "hf_metadata": {
+  "_id": "6a49d8e2534648dc27de4922",
+  "author": "Colin-yepp",
+  "cardData": {
+   "colorFrom": "gray",
+   "colorTo": "red",
+   "emoji": "🐠",
+   "pinned": false,
+   "sdk": "docker",
+   "title": "Minesweeperplus"
+  },
+  "createdAt": "2026-07-05T04:09:06.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://colin-yepp-minesweeperplus.hf.space",
+  "id": "Colin-yepp/Minesweeperplus",
+  "lastModified": "2026-07-08T12:14:23.000Z",
+  "likes": 0,
+  "private": false,
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "colin-yepp-minesweeperplus.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": null,
+    "requested": "cpu-basic"
+   },
+   "replicas": {
+    "requested": 1
+   },
+   "stage": "SLEEPING"
+  },
+  "sdk": "docker",
+  "sha": "9976906a06239b65ce604656244094cab76d1a77",
+  "siblings": [
+   {
+    "rfilename": ".gitattributes"
+   },
+   {
+    "rfilename": "Dockerfile"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "entrypoint.sh"
+   }
+  ],
+  "subdomain": "colin-yepp-minesweeperplus",
+  "tags": [
+   "docker",
+   "region:us"
+  ],
+  "usedStorage": 0
+ },
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "Colin-yepp/Minesweeperplus",
+ "repo_type": "spaces",
+ "sha": "9976906a06239b65ce604656244094cab76d1a77",
+ "web_url": "https://huggingface.co/spaces/Colin-yepp/Minesweeperplus"
+}

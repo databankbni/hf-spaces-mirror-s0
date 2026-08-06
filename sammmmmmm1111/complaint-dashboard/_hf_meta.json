@@ -1,0 +1,27 @@
+{
+ "captured_at": "2026-08-04T16:55:42Z",
+ "hf_metadata": {
+  "sha": "f8abd0082a25e7cfcf62e99ea67332aac9216cc7"
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  },
+  {
+   "original": ".gitignore",
+   "stored_as": "_gitignore"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "sammmmmmm1111/complaint-dashboard",
+ "repo_type": "spaces",
+ "sha": "f8abd0082a25e7cfcf62e99ea67332aac9216cc7",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/sammmmmmm1111/complaint-dashboard"
+}

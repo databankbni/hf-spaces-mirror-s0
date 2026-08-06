@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MCSDF 实验图鉴 · k→τ 映射 + 全 pipeline 对照</title>
+<style>
+:root{--bg:#0d1117;--card:#161b22;--line:#30363d;--tx:#e6edf3;--dim:#8b949e;--acc:#63c98a;--warn:#e3b341;--bad:#f85149;--blu:#58a6ff;--pur:#bc8cff;--org:#f0883e}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:15px/1.6 -apple-system,"Segoe UI",Roboto,"Noto Sans SC",sans-serif;padding:28px 3vw 90px}
+h1{font-size:26px;margin:0 0 6px}h2{font-size:20px;margin:40px 0 12px;border-bottom:1px solid var(--line);padding-bottom:6px}
+h3{font-size:15px;margin:0 0 4px}
+.sub{color:var(--dim);margin-bottom:18px}
+.spine{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 18px;margin:14px 0;font-size:14.5px;overflow-x:auto;white-space:nowrap}
+.spine b{color:var(--acc)}
+.maps{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px;margin:14px 0}
+.mapcard{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+.mapcard.hot{border-color:var(--acc)}
+.mapcard .use{color:var(--dim);font-size:12.5px;margin-top:4px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:14px;margin:14px 0}
+.exp{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+.exp.lead{border-color:var(--acc);box-shadow:0 0 0 1px var(--acc) inset}
+.exp .flow{display:flex;align-items:center;gap:6px;margin:8px 0;flex-wrap:wrap;font-size:12px}
+.exp .flow span{border:1px solid var(--line);border-radius:6px;padding:2px 8px;background:#0d1117;white-space:nowrap}
+.exp .flow .arr{border:none;background:none;color:var(--dim);padding:0}
+.ch-none{color:var(--dim)} .ch-17{color:var(--acc);border-color:var(--acc)!important} .ch-23{color:var(--blu);border-color:var(--blu)!important}
+.ch-vace{color:var(--pur);border-color:var(--pur)!important} .cal-sync{color:var(--acc);border-color:var(--acc)!important}
+.cal-leg{color:var(--dim)} .fld{color:var(--org);border-color:var(--org)!important}
+.meta{font-size:12.5px;color:var(--dim);margin-top:6px}
+.meta b{color:var(--tx)}
+.tag{display:inline-block;border-radius:999px;padding:0 9px;font-size:11.5px;border:1px solid var(--line);color:var(--dim);margin-left:6px;vertical-align:2px}
+.tag.run{color:var(--acc);border-color:var(--acc)} .tag.done{color:var(--blu);border-color:var(--blu)} .tag.dead{color:var(--bad);border-color:var(--bad)}
+.wrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;margin:12px 0;font-size:13px;min-width:1050px}
+th,td{border:1px solid var(--line);padding:6px 9px;text-align:center;white-space:nowrap}
+th{background:#0d1117;color:var(--dim);font-weight:600;position:sticky;top:0}
+td.name{text-align:left;font-weight:700}
+.best{color:var(--acc);font-weight:800}
+.note{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--blu);border-radius:8px;padding:11px 15px;margin:12px 0;color:var(--dim);font-size:13.5px}
+svg text{font-family:inherit}
+a{color:var(--blu);text-decoration:none}
+.cal3{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px;margin:14px 0}
+</style>
+</head>
+<body>
+<h1>MCSDF 实验图鉴</h1>
+<div class="sub">任务:DL3DV 场景外推 — 观察 18 帧 → 前推生成 63 帧(81 总)· 所有实验共享同一条几何主干,分歧只在四个旋钮:<b style="color:var(--acc)">内容通道</b> / <b style="color:var(--org)">k→τ 映射</b> / <b style="color:var(--warn)">训练场家族</b> / <b style="color:var(--blu)">采样日历</b> · 2026-07-29</div>
+
+<div class="spine">📐 共享主干:DL3DV 81帧 → <b>VGGT 一致几何</b>(+Umeyama 对齐)→ 前 18 帧点云 → <b>warp splat 到 81 个目标位姿</b> → z_mem(VAE latent)+ <b>knownness k</b>(density 覆盖率,[F,30,52] 每 token)→ 条件注入 + τ(k) 噪声调度 → per-token 扩散(Wan 14B + per-token AdaLN)→ 81 帧输出</div>
+
+<h2>① 核心:knownness map → noise map 的四种翻译函数</h2>
+<div class="sub">τ = 每个 token 的<b>起始噪声</b>(它这辈子见过的最高噪声)。x 轴 = k(被看清的程度),y 轴 = τ。</div>
+<div class="maps">
+
+<div class="mapcard">
+<h3 style="color:var(--dim)">Ⓐ 无映射(uniform / plain)</h3>
+<svg viewBox="0 0 300 170" width="100%">
+<line x1="40" y1="140" x2="280" y2="140" stroke="#30363d"/><line x1="40" y1="20" x2="40" y2="140" stroke="#30363d"/>
+<text x="160" y="160" fill="#8b949e" font-size="11" text-anchor="middle">k →</text>
+<text x="18" y="30" fill="#8b949e" font-size="11">τ=1</text><text x="12" y="143" fill="#8b949e" font-size="11">0.45</text>
+<line x1="40" y1="28" x2="280" y2="28" stroke="#8b949e" stroke-width="3"/>
+<text x="160" y="50" fill="#8b949e" font-size="11" text-anchor="middle">τ ≡ 1(或场均值):k 完全不参与</text>
+</svg>
+<div class="use">baseline r128(均值匹配 uniform)· expG0(标准训练,全员纯噪起步,内容全靠通道)· 老 VACE-ft benchmark 赢家同款</div>
+</div>
+
+<div class="mapcard">
+<h3 style="color:var(--org)">Ⓑ 宽带 + 0.45 地板(早期)</h3>
+<svg viewBox="0 0 300 170" width="100%">
+<line x1="40" y1="140" x2="280" y2="140" stroke="#30363d"/><line x1="40" y1="20" x2="40" y2="140" stroke="#30363d"/>
+<text x="160" y="160" fill="#8b949e" font-size="11" text-anchor="middle">k →</text>
+<text x="18" y="30" fill="#8b949e" font-size="11">τ=1</text><text x="12" y="118" fill="#8b949e" font-size="11">.45</text>
+<rect x="180" y="20" width="100" height="120" fill="#f0883e" opacity="0.08"/>
+<polyline points="40,28 180,113 280,113" fill="none" stroke="#f0883e" stroke-width="3"/>
+<text x="228" y="105" fill="#f0883e" font-size="10.5" text-anchor="middle">k&gt;0.58 饱和</text>
+<text x="130" y="60" fill="#8b949e" font-size="11">τ=clip(1−0.95k, 0.45, 1)</text>
+</svg>
+<div class="use">expA / expB 推理配置。问题:known token 从 0.45 起步 → <b>跳过高噪段 → 纹理死</b>(P-SDEdit 证明)</div>
+</div>
+
+<div class="mapcard">
+<h3 style="color:var(--bad)">Ⓒ 宽带 + 0.85 clamp(expC~F/G 现役)</h3>
+<svg viewBox="0 0 300 170" width="100%">
+<line x1="40" y1="140" x2="280" y2="140" stroke="#30363d"/><line x1="40" y1="20" x2="40" y2="140" stroke="#30363d"/>
+<text x="160" y="160" fill="#8b949e" font-size="11" text-anchor="middle">k →</text>
+<text x="18" y="30" fill="#8b949e" font-size="11">τ=1</text><text x="12" y="52" fill="#8b949e" font-size="11">.85</text>
+<rect x="78" y="20" width="202" height="120" fill="#f85149" opacity="0.10"/>
+<polyline points="40,28 78,48 280,48" fill="none" stroke="#f85149" stroke-width="3"/>
+<text x="180" y="70" fill="#f85149" font-size="11" text-anchor="middle">k&gt;0.16 全部压平在 0.85 —</text>
+<text x="180" y="84" fill="#f85149" font-size="11" text-anchor="middle">覆盖区内部排序被抹掉(≈二值图)</text>
+<text x="130" y="38" fill="#8b949e" font-size="10.5">τ=clip(1−0.95k, 0.85, 1)</text>
+</svg>
+<div class="use">expC / expE 三兄弟 / expE_sync / expF / expF_sync / expG。纹理保住了(0.85 够高),但 k 的连续信息浪费</div>
+</div>
+
+<div class="mapcard hot">
+<h3 style="color:var(--acc)">Ⓓ 窄带线性(expJ,新)</h3>
+<svg viewBox="0 0 300 170" width="100%">
+<line x1="40" y1="140" x2="280" y2="140" stroke="#30363d"/><line x1="40" y1="20" x2="40" y2="140" stroke="#30363d"/>
+<text x="160" y="160" fill="#8b949e" font-size="11" text-anchor="middle">k →</text>
+<text x="18" y="30" fill="#8b949e" font-size="11">τ=1</text><text x="12" y="66" fill="#8b949e" font-size="11">.80</text>
+<rect x="40" y="28" width="240" height="34" fill="#63c98a" opacity="0.10"/>
+<polyline points="40,28 280,62" fill="none" stroke="#63c98a" stroke-width="3"/>
+<text x="160" y="90" fill="#63c98a" font-size="11" text-anchor="middle">τ = 1 − 0.2k,无 clamp:</text>
+<text x="160" y="104" fill="#63c98a" font-size="11" text-anchor="middle">全员 ≥0.8 高噪起步 + 排序全程保留</text>
+</svg>
+<div class="use">expJ_narrow / expJ_ray。k 不再兑换"跳过开头",只兑换"早一点结束"(配 sync 日历 = 完工时刻表)</div>
+</div>
+</div>
+
+<h2>② 采样日历:τ 决定的时序如何展开</h2>
+<div class="cal3">
+<div class="mapcard">
+<h3 class="cal-leg">legacy:错峰起跑 · 同时到终</h3>
+<svg viewBox="0 0 300 150" width="100%">
+<line x1="30" y1="130" x2="290" y2="130" stroke="#30363d"/><text x="160" y="146" fill="#8b949e" font-size="10" text-anchor="middle">日历步 →</text>
+<polyline points="30,25 290,125" fill="none" stroke="#8b949e" stroke-width="2.5"/>
+<polyline points="30,55 108,55 290,125" fill="none" stroke="#f0883e" stroke-width="2.5"/>
+<text x="60" y="48" fill="#f0883e" font-size="10">known 冻结等待</text>
+<text x="200" y="40" fill="#8b949e" font-size="10">unseen 从 1 降</text>
+<text x="240" y="118" fill="#8b949e" font-size="10">全员同时到 0</text>
+</svg>
+<div class="use">问题:known 冻结期"只广播不倾听",unseen 做结构决策时看到的是半噪 splat</div>
+</div>
+<div class="mapcard hot">
+<h3 class="cal-sync">SYNC(expH,已验证 +0.23dB)</h3>
+<svg viewBox="0 0 300 150" width="100%">
+<line x1="30" y1="130" x2="290" y2="130" stroke="#30363d"/><text x="160" y="146" fill="#8b949e" font-size="10" text-anchor="middle">日历步 →</text>
+<polyline points="30,25 290,125" fill="none" stroke="#8b949e" stroke-width="2.5"/>
+<polyline points="30,55 250,125 290,125" fill="none" stroke="#63c98a" stroke-width="2.5"/>
+<circle cx="250" cy="125" r="4" fill="#63c98a"/>
+<text x="120" y="70" fill="#63c98a" font-size="10">known 同时起跑,先到 0 → 钉住</text>
+<text x="215" y="112" fill="#63c98a" font-size="10">变干净参考</text>
+</svg>
+<div class="use">unseen 后半程对着 GT 级邻居做决策;每一步 known 都严格更干净</div>
+</div>
+<div class="mapcard hot">
+<h3 style="color:var(--acc)">SYNC + 窄带(expJ)= 完工时刻表</h3>
+<svg viewBox="0 0 300 150" width="100%">
+<line x1="30" y1="130" x2="290" y2="130" stroke="#30363d"/><text x="160" y="146" fill="#8b949e" font-size="10" text-anchor="middle">日历步 →</text>
+<polyline points="30,25 290,125" fill="none" stroke="#8b949e" stroke-width="2"/>
+<polyline points="30,32 268,125" fill="none" stroke="#9ee6b8" stroke-width="2"/>
+<polyline points="30,40 246,125" fill="none" stroke="#63c98a" stroke-width="2"/>
+<polyline points="30,48 224,125" fill="none" stroke="#2ea043" stroke-width="2.5"/>
+<text x="80" y="24" fill="#8b949e" font-size="10">k=0</text><text x="66" y="62" fill="#2ea043" font-size="10">k=1(最先完工)</text>
+<text x="190" y="140" fill="#63c98a" font-size="9.5"></text>
+<text x="150" y="105" fill="#63c98a" font-size="10">按 k 连续有序完工 → 级联参考</text>
+</svg>
+<div class="use">看得越清 → 完工越早 → 给后面的人当锚;k 的连续排序第一次被日历完整使用</div>
+</div>
+</div>
+
+<h2>③ 每个实验一张卡(pipeline + 它的映射)</h2>
+<div class="cards">
+
+<div class="exp"><h3>baseline r128 <span class="tag done">10k 链</span></h3>
+<div class="flow"><span>warp z_mem</span><span class="arr">→</span><span class="ch-none">无通道(仅 SDEdit 初始化)</span><span class="arr">→</span><span>映射Ⓐ uniform</span><span class="arr">→</span><span class="cal-leg">legacy</span></div>
+<div class="meta">I2V-14B LoRA128 · 对照组:噪声图整层关掉 · <b>12.88</b>,但 PSNR 靠灰糊换(内容能量仅 −5)</div></div>
+
+<div class="exp"><h3>expA / expB <span class="tag run">c3 ~7.5k</span></h3>
+<div class="flow"><span>warp z_mem</span><span class="arr">→</span><span class="ch-none">无通道(内容只在初始化里)</span><span class="arr">→</span><span>映射Ⓑ t.45</span><span class="arr">→</span><span class="fld">A=AsyncPatch场 / B=几何场</span><span class="arr">→</span><span class="cal-leg">legacy</span></div>
+<div class="meta">纯"noise map 扛内容"路线 · 结论:<b>不够</b>(12.65,深帧涂抹)→ 催生了通道化的 expC</div></div>
+
+<div class="exp"><h3>expC <span class="tag dead">冻结@4500</span></h3>
+<div class="flow"><span>warp z_mem+k</span><span class="arr">→</span><span class="ch-17">17ch pemb 通道(每步喂)</span><span class="arr">→</span><span>映射Ⓒ .85</span><span class="arr">→</span><span class="fld">legacy 场+rehearsal</span><span class="arr">→</span><span class="cal-leg">legacy cl.85</span></div>
+<div class="meta">第一个通道化实验(当时还带 memory slot,后删)· 纹理最多/结构最歪的反面教材(12.25 / −45)· warm-start 血统被判拖累</div></div>
+
+<div class="exp"><h3>expE-geo / expE-rand <span class="tag run">c2 排队 own~3.2k</span></h3>
+<div class="flow"><span>warp</span><span class="arr">→</span><span class="ch-17">17ch 通道</span><span class="arr">→</span><span>映射Ⓒ</span><span class="arr">→</span><span class="fld">geo=构造场骰子 / rand=AsyncPatch场</span><span class="arr">→</span><span class="cal-sync">SYNC cl.85</span></div>
+<div class="meta">配方 = rehearsal.10+lift.35+patch_b2 · warm-start expC@3500 · <b>12.93 双双</b> — matched-steps 三连输给干净血统</div></div>
+
+<div class="exp"><h3>expE-scratch(基准线)<span class="tag run">3.2k</span></h3>
+<div class="flow"><span>warp</span><span class="arr">→</span><span class="ch-17">17ch 通道</span><span class="arr">→</span><span>映射Ⓒ</span><span class="arr">→</span><span class="fld">构造场骰子</span><span class="arr">→</span><span class="cal-sync">SYNC cl.85</span></div>
+<div class="meta">geo 配方 + <b>干净血统</b>(fresh init)· 13.15@3000 · 所有新设计的对照锚点</div></div>
+
+<div class="exp lead"><h3>expF(+Plücker ray)🏆 <span class="tag run">2.3k</span></h3>
+<div class="flow"><span>warp</span><span class="arr">→</span><span class="ch-23">23ch = 17ch + 6ch ray(声明式 pose)</span><span class="arr">→</span><span>映射Ⓒ</span><span class="arr">→</span><span class="fld">骰子</span><span class="arr">→</span><span class="cal-sync">SYNC</span></div>
+<div class="meta">单变量 vs scratch = ray 通道 · <b>13.25 @仅1500 现任冠军</b>,test clip 17.1(深帧对齐全场最佳 = 治 view-drift)</div></div>
+
+<div class="exp"><h3>expE_sync / expF_sync <span class="tag run">1.6k</span></h3>
+<div class="flow"><span>warp</span><span class="arr">→</span><span class="ch-17">17ch</span>/<span class="ch-23">23ch</span><span class="arr">→</span><span>映射Ⓒ</span><span class="arr">→</span><span class="fld">骰子 + sync_sched 切片</span><span class="arr">→</span><span class="cal-sync">SYNC(训练配套)</span></div>
+<div class="meta">单变量 = 训练场里加入"钉净+高噪同框"切片 · @1000:PSNR 持平 scratch、unseen 内容能量 +29% · 分化点看 @3000</div></div>
+
+<div class="exp"><h3>expG(VACE-14B)<span class="tag run">2.0k</span></h3>
+<div class="flow"><span>warp 视频+mask</span><span class="arr">→</span><span class="ch-vace">VACE 原生 control 分支(96ch,预训练过,3B 全参训)</span><span class="arr">→</span><span>映射Ⓒ</span><span class="arr">→</span><span class="fld">骰子(rehearsal 用 null_vace)</span><span class="arr">→</span><span class="cal-sync">SYNC</span></div>
+<div class="meta">单变量 vs scratch = 条件通路(原生 vs 自焊 pemb)· <b>13.13 @1500 ≈ scratch@3000</b>,每步效率最高</div></div>
+
+<div class="exp"><h3>expG0(干净 VACE 对照)<span class="tag run">0.3k</span></h3>
+<div class="flow"><span>warp 视频+mask</span><span class="arr">→</span><span class="ch-vace">VACE 原生分支</span><span class="arr">→</span><span>映射Ⓐ 无(全局标量 t)</span><span class="arr">→</span><span class="fld">plain 标准训练</span><span class="arr">→</span><span class="cal-leg">全员 t=1 起步</span></div>
+<div class="meta">FrameCrafter/老 benchmark 赢家的 in-house 复刻 · expG0 vs expG 单变量 = <b>整套 per-token noise 机制的价值</b></div></div>
+
+<div class="exp lead"><h3>expJ_narrow / expJ_ray(窄带)<span class="tag run">刚起</span></h3>
+<div class="flow"><span>warp</span><span class="arr">→</span><span class="ch-17">17ch</span>/<span class="ch-23">23ch</span><span class="arr">→</span><span style="color:var(--acc);border-color:var(--acc)">映射Ⓓ 1−0.2k</span><span class="arr">→</span><span class="fld">骰子 + sync_sched(lam=.2)</span><span class="arr">→</span><span class="cal-sync">SYNC = 完工时刻表</span></div>
+<div class="meta">单变量 vs expE_sync/expF_sync = τ 映射 · 赌"窄带+有序"胜"宽带+饱和":信任只兑换早完工,不兑换跳开头</div></div>
+
+<div class="exp"><h3>采样器实验(推理侧,无训练)</h3>
+<div class="flow"><span class="cal-sync">expH sync 日历</span><span class="arr">·</span><span>cluster-τ K=128</span><span class="arr">·</span><span>24-vs-50 步</span><span class="arr">·</span><span>shift 1/3/5</span><span class="arr">·</span><span>CFG(在飞)</span></div>
+<div class="meta">判决:SYNC ✓(+0.23/+0.7)· cluster ✓ · 24 步 ✓(两次)· shift5=viz 配置 · τ_min 降=劣化 · CFG 扫描出图中</div></div>
+</div>
+
+<h2>④ 总差异表(单变量地图)</h2>
+<div class="wrap"><table>
+<tr><th>实验</th><th>backbone</th><th>血统</th><th>内容通道</th><th>k→τ 映射</th><th>训练场</th><th>日历</th><th>对照谁·单变量</th><th>最新读数</th></tr>
+<tr><td class="name">baseline r128</td><td>I2V</td><td>scratch</td><td>无</td><td>Ⓐ uniform</td><td>uniform</td><td>legacy</td><td>全体 · 无噪声图下限</td><td>12.88(灰)</td></tr>
+<tr><td class="name">expA</td><td>I2V</td><td>scratch</td><td>无</td><td>Ⓑ t.45</td><td>AsyncPatch 场</td><td>legacy</td><td>expB · 场来源</td><td>12.65</td></tr>
+<tr><td class="name">expB</td><td>I2V</td><td>scratch</td><td>无</td><td>Ⓑ t.45</td><td>几何场</td><td>legacy</td><td>expA</td><td>12.65</td></tr>
+<tr><td class="name">expC</td><td>I2V</td><td>warm(B@1500)</td><td>17ch</td><td>Ⓒ .85</td><td>legacy+rehearsal</td><td>legacy</td><td>A/B · +通道</td><td>12.25</td></tr>
+<tr><td class="name">expE-geo</td><td>I2V</td><td>warm(C@3500)</td><td>17ch</td><td>Ⓒ</td><td>构造骰子</td><td>SYNC</td><td>rand · 场家族</td><td>12.93</td></tr>
+<tr><td class="name">expE-rand</td><td>I2V</td><td>warm</td><td>17ch</td><td>Ⓒ</td><td>AsyncPatch</td><td>SYNC</td><td>geo</td><td>12.93</td></tr>
+<tr><td class="name">expE-scratch</td><td>I2V</td><td><b>scratch</b></td><td>17ch</td><td>Ⓒ</td><td>骰子</td><td>SYNC</td><td>twins · 血统</td><td>13.15</td></tr>
+<tr><td class="name">expE_sync</td><td>I2V</td><td>scratch</td><td>17ch</td><td>Ⓒ</td><td>骰子+sync切片</td><td>SYNC</td><td>scratch · 训练配套</td><td>13.30@1k</td></tr>
+<tr><td class="name best">expF 🏆</td><td>I2V</td><td>scratch</td><td><b>23ch(+ray)</b></td><td>Ⓒ</td><td>骰子</td><td>SYNC</td><td>scratch · +声明式pose</td><td class="best">13.25@1.5k</td></tr>
+<tr><td class="name">expF_sync</td><td>I2V</td><td>scratch</td><td>23ch</td><td>Ⓒ</td><td>骰子+sync</td><td>SYNC</td><td>expF·训练配套 / Esync·+ray</td><td>13.23@1k</td></tr>
+<tr><td class="name">expG</td><td><b>VACE</b></td><td>scratch</td><td><b>原生 96ch</b></td><td>Ⓒ</td><td>骰子</td><td>SYNC</td><td>scratch · 条件通路</td><td>13.13@1.5k</td></tr>
+<tr><td class="name">expG0</td><td>VACE</td><td>scratch</td><td>原生 96ch</td><td><b>Ⓐ 无</b></td><td><b>plain 标准</b></td><td>全员t=1</td><td>expG · 整套噪声机制</td><td>训练中</td></tr>
+<tr><td class="name">expJ_narrow</td><td>I2V</td><td>scratch</td><td>17ch</td><td><b>Ⓓ 1−0.2k</b></td><td>骰子+sync(lam.2)</td><td>SYNC 时刻表</td><td>expE_sync · τ映射</td><td>刚起</td></tr>
+<tr><td class="name">expJ_ray</td><td>I2V</td><td>scratch</td><td>23ch</td><td><b>Ⓓ</b></td><td>骰子+sync</td><td>SYNC 时刻表</td><td>expF_sync · τ映射</td><td>刚起</td></tr>
+</table></div>
+
+<div class="note">读表法:任意两行只比"对照谁"列指向的那一个格子 — 这是全舰队的单变量纪律。当前证据链:通道 &gt; 无通道(C/E vs A/B)· 干净血统 &gt; warm(三连)· SYNC &gt; legacy(+0.23)· ray 有效(F 领跑)· 原生通道适应最快(G)· 待决:sync 训练配套幅度(@3k)、窄带 vs 饱和(expJ@1k+)、噪声机制总价值(G vs G0)、CFG。</div>
+
+<div class="sub">相关页:<a href="fleet.html">舰队进度</a> · <a href="latestall.html">最新大阅兵</a> · <a href="exph.html">expH 判决</a> · <a href="fullcompare50.html">24-vs-50</a></div>
+</body>
+</html>

@@ -1,0 +1,9 @@
+*.pdf
+*.docx
+scratch_*.py
+.git
+.gemini
+__pycache__
+*.pyc
+logs/
+.env

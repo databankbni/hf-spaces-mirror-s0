@@ -1,0 +1,79 @@
+{
+ "captured_at": "2026-08-04T13:23:46Z",
+ "hf_metadata": {
+  "_id": "6a4c5bb2642c8debd767e022",
+  "author": "CeMoreno",
+  "cardData": {
+   "colorFrom": "green",
+   "colorTo": "yellow",
+   "emoji": "🐢",
+   "pinned": false,
+   "sdk": "docker",
+   "title": "SuperKartForecastingFrontend"
+  },
+  "createdAt": "2026-07-07T01:51:46.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://cemoreno-superkartforecastingfrontend.hf.space",
+  "id": "CeMoreno/SuperKartForecastingFrontend",
+  "lastModified": "2026-07-08T01:30:05.000Z",
+  "likes": 0,
+  "private": false,
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "cemoreno-superkartforecastingfrontend.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": null,
+    "requested": "cpu-basic"
+   },
+   "replicas": {
+    "requested": 1
+   },
+   "stage": "SLEEPING"
+  },
+  "sdk": "docker",
+  "sha": "4a3afdaf6450445995f0a865add2d1917d22b5a8",
+  "siblings": [
+   {
+    "rfilename": ".gitattributes"
+   },
+   {
+    "rfilename": "Dockerfile"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "SuperKart_Forecasting_Model.joblib"
+   },
+   {
+    "rfilename": "app.py"
+   },
+   {
+    "rfilename": "requirements.txt"
+   }
+  ],
+  "subdomain": "cemoreno-superkartforecastingfrontend",
+  "tags": [
+   "docker",
+   "region:us"
+  ],
+  "usedStorage": 73295
+ },
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "CeMoreno/SuperKartForecastingFrontend",
+ "repo_type": "spaces",
+ "sha": "4a3afdaf6450445995f0a865add2d1917d22b5a8",
+ "web_url": "https://huggingface.co/spaces/CeMoreno/SuperKartForecastingFrontend"
+}

@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<html lang="en" class="notranslate" translate="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="google" content="notranslate">
+    <title>Present Perfect Challenge & Live Monitor</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+    <!-- Ably Realtime CDN para Monitoreo en Tiempo Real -->
+    <script src="https://cdn.ably.com/lib/ably.min-1.js"></script>
+
+    <style>
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --secondary: #f43f5e;
+            --cambridge-blue: #1e1b4b;
+            --duo-green: #10b981;
+            --duo-green-dark: #059669;
+            --danger: #ef4444;
+            --danger-dark: #b91c1c;
+            --background: #f1f5f9;
+            --card-bg: #ffffff;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --border-radius: 20px;
+        }
+
+        /* Bloqueos de selección y traducción */
+        * {
+            box-sizing: border-box;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+            font-family: 'Nunito', sans-serif;
+            touch-action: manipulation;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            height: 100dvh;
+            background-color: var(--background);
+            color: var(--text-main);
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        @media print {
+            body { display: none !important; }
+        }
+
+        /* Responsive Container Principal */
+        .app-container {
+            width: 100%;
+            max-width: 680px;
+            height: 100%;
+            height: 100dvh;
+            background: var(--card-bg);
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 16px 40px rgba(0,0,0,0.08);
+            position: relative;
+            transition: filter 0.2s ease, border-radius 0.2s ease;
+        }
+
+        /* Modo Profesor ampliado */
+        .app-container.teacher-mode {
+            max-width: 1200px;
+            background: #0f172a;
+            color: #f8fafc;
+        }
+
+        @media (min-width: 640px) and (min-height: 600px) {
+            .app-container {
+                height: 94dvh;
+                max-height: 880px;
+                border-radius: 24px;
+                border: 1px solid #e2e8f0;
+            }
+        }
+
+        /* Pantallas */
+        .screen {
+            display: none;
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .screen.active {
+            display: flex;
+        }
+
+        /* Header / Gamificación Header */
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #eef2f5;
+            flex-shrink: 0;
+        }
+
+        .progress-bar-container {
+            flex-grow: 1;
+            height: 14px;
+            background: #eef2f5;
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .progress-bar {
+            height: 100%;
+            width: 0%;
+            background: var(--duo-green);
+            border-radius: 8px;
+            transition: width 0.3s ease;
+        }
+
+        .stats-badges {
+            display: flex;
+            gap: 8px;
+        }
+
+        .badge {
+            font-weight: 800;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            white-space: nowrap;
+        }
+
+        .badge-xp {
+            color: var(--primary);
+            background: #e0e7ff;
+            border: 1px solid #c7d2fe;
+        }
+
+        .badge-streak {
+            color: #d97706;
+            background: #fef3c7;
+            border: 1px solid #fde68a;
+        }
+
+        /* Pantalla 1: Login */
+        .login-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            text-align: center;
+            gap: 20px;
+            padding: 10px;
+        }
+
+        .login-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--cambridge-blue);
+            margin: 0;
+        }
+
+        .input-name {
+            width: 100%;
+            max-width: 320px;
+            padding: 16px;
+            border: 2px solid #e2e8f0;
+            border-radius: 14px;
+            font-size: 1.1rem;
+            outline: none;
+            text-align: center;
+            background: #f8fafc;
+            transition: border-color 0.2s;
+            -webkit-user-select: text;
+            -moz-user-select: text;
+            -ms-user-select: text;
+            user-select: text;
+        }
+
+        .input-name:focus {
+            border-color: var(--primary);
+            background: #fff;
+        }
+
+        .btn-main {
+            width: 100%;
+            max-width: 320px;
+            padding: 16px;
+            border: none;
+            border-radius: 14px;
+            font-size: 1.05rem;
+            font-weight: 800;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.2s;
+            box-shadow: 0 4px 0 rgba(0,0,0,0.1);
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            border-bottom: 4px solid var(--primary-dark);
+        }
+
+        .btn-primary:active {
+            transform: translateY(2px);
+            box-shadow: 0 2px 0 rgba(0,0,0,0.1);
+        }
+
+        /* Ejercicio y Scroll Inteligente */
+        .exercise-body {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 12px 0;
+            overflow-y: auto;
+            gap: 16px;
+        }
+
+        /* Tarjeta de Desafío */
+        .challenge-card {
+            background: #ffffff;
+            border: 2px solid #eef2f5;
+            border-radius: var(--border-radius);
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 14px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.03);
+        }
+
+        .challenge-image-container {
+            width: 100%;
+            height: 190px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #f8fafc;
+            border-radius: 14px;
+            overflow: hidden;
+            padding: 8px;
+            border: 1px solid #f1f5f9;
+        }
+
+        .challenge-image {
+            max-width: 100%;
+            max-height: 175px;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+
+        .sentence-container {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--cambridge-blue);
+            line-height: 1.8;
+            margin: 8px 0;
+            text-align: center;
+            width: 100%;
+        }
+
+        /* Span Contenteditable Auto-Extensible */
+        .editable-gap {
+            display: inline-block;
+            min-width: 65px;
+            padding: 2px 8px;
+            margin: 0 4px;
+            border-bottom: 3.5px solid var(--primary);
+            background: #f1f5f9;
+            border-radius: 8px;
+            outline: none;
+            font-weight: 800;
+            color: var(--primary-dark);
+            font-size: 1.25rem;
+            line-height: 1.4;
+            transition: all 0.2s ease;
+            vertical-align: baseline;
+            white-space: pre-wrap;
+            word-break: break-word;
+            -webkit-user-select: text;
+            -moz-user-select: text;
+            -ms-user-select: text;
+            user-select: text;
+        }
+
+        .editable-gap:focus {
+            background: #ffffff;
+            border-bottom-color: var(--duo-green);
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.15);
+        }
+
+        .verb-hint {
+            color: var(--text-muted);
+            font-size: 1rem;
+            font-weight: 800;
+            font-style: italic;
+            margin-left: 4px;
+        }
+
+        /* Footer y Banner de Feedback */
+        .exercise-footer {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            flex-shrink: 0;
+        }
+
+        .feedback-banner {
+            display: none;
+            padding: 14px 16px;
+            border-radius: 14px;
+            align-items: center;
+            gap: 12px;
+            font-weight: 700;
+        }
+
+        .feedback-banner.correct-banner {
+            display: flex;
+            background: #e6ffed;
+            border: 1.5px solid #2da44e;
+            color: #2da44e;
+        }
+
+        .feedback-banner.wrong-banner {
+            display: flex;
+            background: #ffebe9;
+            border: 1.5px solid #cf222e;
+            color: #cf222e;
+        }
+
+        /* Resultados */
+        .results-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin: 16px 0;
+            max-height: 280px;
+            overflow-y: auto;
+        }
+
+        .result-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 16px;
+            border-radius: 12px;
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+        }
+
+        .result-badge {
+            font-size: 0.75rem;
+            font-weight: 800;
+            padding: 3px 8px;
+            border-radius: 8px;
+            text-transform: uppercase;
+        }
+
+        .result-badge.correct {
+            background: #e6ffed;
+            color: #2da44e;
+        }
+
+        .result-badge.wrong {
+            background: #ffebe9;
+            color: #cf222e;
+        }
+
+        /* Estilos del Monitor en Tiempo Real para el Profesor */
+        .teacher-dashboard {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            height: 100%;
+        }
+
+        .teacher-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #334155;
+        }
+
+        .live-students-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 16px;
+            overflow-y: auto;
+            flex-grow: 1;
+            padding-right: 4px;
+        }
+
+        .student-card {
+            background: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 16px;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            position: relative;
+        }
+
+        .student-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #334155;
+            padding-bottom: 8px;
+        }
+
+        .student-name-title {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: #38bdf8;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .status-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #10b981;
+            box-shadow: 0 0 8px #10b981;
+        }
+
+        .live-typing-box {
+            background: #0f172a;
+            border: 1px solid #475569;
+            border-radius: 10px;
+            padding: 12px;
+            font-size: 1rem;
+            color: #f1f5f9;
+            min-height: 60px;
+            word-break: break-word;
+        }
+
+        .live-typing-highlight {
+            color: #facc15;
+            font-weight: 800;
+            text-decoration: underline;
+        }
+
+        .history-scroll-box {
+            max-height: 120px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            background: #0f172a;
+            padding: 8px;
+            border-radius: 8px;
+            border: 1px solid #334155;
+            font-size: 0.8rem;
+        }
+
+        .app-container.blurred {
+            filter: blur(12px);
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body oncontextmenu="return false;">
+
+    <div class="app-container" id="appContainer">
+        
+        <!-- PANTALLA 1: REGISTRO -->
+        <div class="screen active" id="screenLogin">
+            <div class="login-content">
+                <h1 class="login-logo">Cambridge</h1>
+                <p style="color: var(--text-muted); font-size: 1.05rem; margin-top: -10px; font-weight: 600;">Present Perfect Adventure</p>
+                
+                <input type="text" class="input-name" id="studentName" placeholder="Enter your full name" autocomplete="off" required>
+                
+                <button class="btn-main btn-primary" id="btnStart">Start Challenge</button>
+            </div>
+        </div>
+
+        <!-- PANTALLA 2: EJERCICIO (DESAFÍO) -->
+        <div class="screen" id="screenExercise">
+            <div class="header">
+                <div class="progress-bar-container">
+                    <div class="progress-bar" id="progressBar"></div>
+                </div>
+                <div class="stats-badges">
+                    <div class="badge badge-xp" id="xpBadge">⭐ 0 XP</div>
+                    <div class="badge badge-streak" id="streakBadge">🔥 0</div>
+                </div>
+            </div>
+
+            <div class="exercise-body">
+                <div class="challenge-card">
+                    <div class="challenge-image-container">
+                        <img id="challengeImg" class="challenge-image" src="" alt="Challenge visual guide" decoding="async">
+                    </div>
+
+                    <div class="sentence-container" id="sentenceBox">
+                        <!-- El texto con el span contenteditable se inyectará dinámicamente -->
+                    </div>
+                </div>
+
+                <div class="exercise-footer">
+                    <div class="feedback-banner" id="feedbackBanner">
+                        <span id="feedbackIcon" style="font-size: 1.6rem;"></span>
+                        <div style="display: flex; flex-direction: column;">
+                            <span id="feedbackTitle" style="font-size: 0.95rem; font-weight: 800;"></span>
+                            <span id="feedbackSubtitle" style="font-size: 0.8rem; opacity: 0.9;"></span>
+                        </div>
+                    </div>
+
+                    <button class="btn-main btn-primary" id="btnCheck" style="max-width: 100%;">Check Answer</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- PANTALLA 3: RESULTADOS DEL ESTUDIANTE -->
+        <div class="screen" id="screenResults">
+            <div style="text-align: center; margin-top: 10px;">
+                <h2 style="font-family: 'Playfair Display', serif; color: var(--cambridge-blue); font-size: 2rem; margin-bottom: 5px;">Level Supered! 🚀</h2>
+                <p style="color: var(--text-muted); margin-top: 0; font-weight: 700;" id="resultsStudentName">Student</p>
+                
+                <div style="background: #eef2f5; border: 1px dashed #cbd5e1; padding: 16px; border-radius: 16px; margin: 18px 0; display: flex; justify-content: space-around;">
+                    <div>
+                        <div style="font-size: 0.75rem; text-transform: uppercase; font-weight: 800; color: var(--text-muted);">Score</div>
+                        <div style="font-size: 2rem; font-weight: 800; color: var(--primary);" id="finalScoreText">0 XP</div>
+                    </div>
+                    <div>
+                        <div style="font-size: 0.75rem; text-transform: uppercase; font-weight: 800; color: var(--text-muted);">Max Streak</div>
+                        <div style="font-size: 2rem; font-weight: 800; color: #d97706;" id="finalStreakText">0 🔥</div>
+                    </div>
+                </div>
+
+                <div style="text-align: left; margin-bottom: 8px;">
+                    <span style="font-size:0.8rem; font-weight:800; color:var(--text-muted); text-transform:uppercase;">Activity breakdown</span>
+                </div>
+                
+                <div class="results-list" id="resultsList"></div>
+
+                <div style="margin-top: 16px; color: var(--text-muted); font-size: 0.8rem;">
+                    Your response data has been successfully sent to the teacher.
+                </div>
+            </div>
+        </div>
+
+        <!-- PANTALLA 4: MONITOR EN TIEMPO REAL PARA EL PROFESOR (TEACHER) -->
+        <div class="screen" id="screenTeacher">
+            <div class="teacher-dashboard">
+                <div class="teacher-header">
+                    <div>
+                        <h2 style="margin: 0; color: #38bdf8; font-size: 1.5rem;">📡 Real-Time Class Monitor</h2>
+                        <span style="font-size: 0.85rem; color: #94a3b8;">Live student telemetry dashboard</span>
+                    </div>
+                    <div style="background: #0f172a; padding: 6px 14px; border-radius: 20px; border: 1px solid #334155; font-size: 0.85rem; font-weight: 700; color: #10b981;">
+                        🟢 Active Students: <span id="activeStudentsCount">0</span>
+                    </div>
+                </div>
+
+                <div class="live-students-grid" id="studentsGrid">
+                    <div style="grid-column: 1/-1; text-align: center; color: #64748b; padding: 40px;">
+                        Waiting for students to join and type...
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Sonido Éxito (Apple Pay) -->
+    <audio id="audioSuccess" src="https://res.cloudinary.com/dslu7arqa/video/upload/v1775511433/applepay_jptbaf.mp3"></audio>
+
+    <script>
+        // Configuración de Webhook de Discord y Ably Realtime Key
+        const webhook = "https://discordapp.com/api/webhooks/1469452628629913741/8cjv78gMP_1L7fqHF2jNMryW9o71dhNt3gNns5IkLjqGjmY0pvR59bNkeLqKR_-GyJnm";
+        const ABLY_KEY = "zLtaZw.ID53Wg:UJ3rOKwpfhda37lxinuF24kknvUjk7jub4NO79VC9no";
+
+        // Base de Datos de Ejercicios en Presente Perfecto
+        const rawExercises = [
+            {
+                id: 1,
+                img: "https://res.cloudinary.com/dslu7arqa/image/upload/v1785348916/you_buy_a_house_lcfcut.png",
+                before: "You ",
+                verb: "buy",
+                after: " a house.",
+                validAnswers: ["have bought"]
+            },
+            {
+                id: 2,
+                img: "https://res.cloudinary.com/dslu7arqa/image/upload/v1785348910/thief_steal_the_bag_adg14u.png",
+                before: "The thief ",
+                verb: "steal",
+                after: " a bag.",
+                validAnswers: ["has stolen"]
+            },
+            {
+                id: 3,
+                img: "https://res.cloudinary.com/dslu7arqa/image/upload/v1785348909/get_married_vozfdm.png",
+                before: "They ",
+                verb: "get",
+                after: " married.",
+                validAnswers: ["have gotten", "have got"]
+            },
+            {
+                id: 4,
+                img: "https://res.cloudinary.com/dslu7arqa/image/upload/v1785348909/gaby_win_some_money_byh9mp.png",
+                before: "Gaby ",
+                verb: "win",
+                after: " some money.",
+                validAnswers: ["has won"]
+            },
+            {
+                id: 5,
+                img: "https://res.cloudinary.com/dslu7arqa/image/upload/v1785348916/you_have_been_to_the_dentist_ck8imx.png",
+                before: "You ",
+                verb: "be",
+                after: " to the dentist.",
+                validAnswers: ["have been"]
+            },
+            {
+                id: 6,
+                img: "https://res.cloudinary.com/dslu7arqa/image/upload/v1785348916/your_dog_has_run_away_cptzzb.png",
+                before: "Your dog ",
+                verb: "run",
+                after: " away.",
+                validAnswers: ["has run"]
+            },
+            {
+                id: 7,
+                img: "https://res.cloudinary.com/dslu7arqa/image/upload/v1785348910/we_have_lost_our_keys_vjxwmh.png",
+                before: "We ",
+                verb: "lose",
+                after: " our keys.",
+                validAnswers: ["have lost"]
+            },
+            {
+                id: 8,
+                img: "https://res.cloudinary.com/dslu7arqa/image/upload/v1785348910/the_boy_has_failed_an_exam_cmyjwc.png",
+                before: "The boy ",
+                verb: "fail",
+                after: " an exam.",
+                validAnswers: ["has failed"]
+            },
+            {
+                id: 9,
+                img: "https://res.cloudinary.com/dslu7arqa/image/upload/v1785348910/they_have_fallen_in_love_hd2ekg.png",
+                before: "They ",
+                verb: "fall",
+                after: " in love.",
+                validAnswers: ["have fallen"]
+            },
+            {
+                id: 10,
+                img: "https://res.cloudinary.com/dslu7arqa/image/upload/v1785348910/that_man_has_lost_his_job_r0uci7.png",
+                before: "That man ",
+                verb: "lose",
+                after: " his job.",
+                validAnswers: ["has lost"]
+            },
+            {
+                id: 11,
+                img: "https://res.cloudinary.com/dslu7arqa/image/upload/v1785348909/I_have_been_on_holiday_glglsh.png",
+                before: "I ",
+                verb: "be",
+                after: " on holiday.",
+                validAnswers: ["have been"]
+            },
+            {
+                id: 12,
+                img: "https://res.cloudinary.com/dslu7arqa/image/upload/v1785348910/my_brother_has_climbed_the_mountain_un60ra.png",
+                before: "My brother ",
+                verb: "climb",
+                after: " the mountain.",
+                validAnswers: ["has climbed"]
+            },
+            {
+                id: 13,
+                img: "https://res.cloudinary.com/dslu7arqa/image/upload/v1785348909/Mishelle_has_passed_her_driving_test_ko4dxc.png",
+                before: "Mishelle ",
+                verb: "pass",
+                after: " her driving test.",
+                validAnswers: ["has passed"]
+            },
+            {
+                id: 14,
+                img: "https://res.cloudinary.com/dslu7arqa/image/upload/v1785348909/Amy_has_made_a_new_friend_foui8o.png",
+                before: "Amy ",
+                verb: "make",
+                after: " a new friend.",
+                validAnswers: ["has made"]
+            },
+            {
+                id: 15,
+                img: "https://res.cloudinary.com/dslu7arqa/image/upload/v1785348909/Charles_has_been_in_hospital_nphzhr.png",
+                before: "Charles ",
+                verb: "be",
+                after: " in hospital.",
+                validAnswers: ["has been"]
+            }
+        ];
+
+        // OPTIMIZACIÓN DE CARGA INSTANTÁNEA: PRECARGA DE TODAS LAS IMÁGENES EN MEMORIA CACHÉ
+        const preloadedImagesMap = {};
+        function preloadAllImages() {
+            rawExercises.forEach(ex => {
+                if (ex.img) {
+                    const imgObj = new Image();
+                    imgObj.src = ex.img;
+                    preloadedImagesMap[ex.id] = imgObj;
+                }
+            });
+        }
+        // Ejecutar precarga inmediatamente
+        preloadAllImages();
+
+        // Variables Globales
+        let studentName = "";
+        let studentId = "std_" + Math.random().toString(36).substring(2, 9);
+        let score = 0;
+        let streak = 0;
+        let maxStreak = 0;
+        let exerciseQueue = [];
+        let currentQueueIndex = 0;
+        let activeExercise = null;
+        let studentHistory = [];
+        let isTeacher = false;
+
+        // Conexión Ably Realtime
+        let ablyRealtime = null;
+        let ablyChannel = null;
+        let activeStudentsMap = {};
+
+        try {
+            ablyRealtime = new Ably.Realtime({ key: ABLY_KEY });
+            ablyChannel = ablyRealtime.channels.get('present-perfect-class');
+        } catch (e) {
+            console.error("Ably Realtime initialization error", e);
+        }
+
+        // Eventos de interfaz
+        document.getElementById('btnStart').addEventListener('click', handleStart);
+        document.getElementById('btnCheck').addEventListener('click', handleCheckAnswer);
+
+        document.getElementById('studentName').addEventListener('keyup', function(e) {
+            if (e.key === 'Enter') handleStart();
+        });
+
+        function hideNativeKeyboard() {
+            if (document.activeElement && typeof document.activeElement.blur === 'function') {
+                document.activeElement.blur();
+            }
+        }
+
+        // Bloqueo de atajos de desarrollo e inspección
+        document.addEventListener('keydown', function(e) {
+            if (e.keyCode == 123 || 
+                (e.ctrlKey && e.shiftKey && (e.keyCode == 73 || e.keyCode == 74 || e.keyCode == 67)) || 
+                (e.ctrlKey && e.keyCode == 85) ||
+                (e.key === 'PrintScreen')) {
+                e.preventDefault();
+                return false;
+            }
+        });
+
+        // Anti-pérdida de atención
+        document.addEventListener("visibilitychange", () => {
+            const container = document.getElementById('appContainer');
+            if (document.hidden && !isTeacher) {
+                container.classList.add('blurred');
+            } else {
+                container.classList.remove('blurred');
+            }
+        });
+
+        window.addEventListener("blur", () => {
+            if (!isTeacher) document.getElementById('appContainer').classList.add('blurred');
+        });
+        window.addEventListener("focus", () => {
+            document.getElementById('appContainer').classList.remove('blurred');
+        });
+
+        function handleStart() {
+            const nameInput = document.getElementById('studentName');
+            const inputVal = nameInput.value.trim();
+
+            if (!inputVal) {
+                alert("Please enter your full name.");
+                return;
+            }
+
+            // Modo PROFESOR Invisible
+            if (inputVal.toUpperCase() === "TEACHER") {
+                isTeacher = true;
+                studentName = "TEACHER";
+                document.getElementById('appContainer').classList.add('teacher-mode');
+                document.getElementById('screenLogin').classList.remove('active');
+                document.getElementById('screenTeacher').classList.add('active');
+                initTeacherMonitor();
+                return;
+            }
+
+            // Modo ESTUDIANTE
+            studentName = inputVal;
+            hideNativeKeyboard();
+
+            // Meclar ejercicios (shuffled)
+            exerciseQueue = shuffleArray([...rawExercises]);
+            currentQueueIndex = 0;
+            score = 0;
+            streak = 0;
+            maxStreak = 0;
+            studentHistory = [];
+
+            updateStatsDisplay();
+
+            document.getElementById('screenLogin').classList.remove('active');
+            document.getElementById('screenExercise').classList.add('active');
+
+            loadExercise();
+        }
+
+        function loadExercise() {
+            if (currentQueueIndex >= exerciseQueue.length) {
+                finishSession();
+                return;
+            }
+
+            activeExercise = exerciseQueue[currentQueueIndex];
+
+            // Asignación de imagen desde memoria precargada (Instantáneo)
+            const imgElement = document.getElementById('challengeImg');
+            if (preloadedImagesMap[activeExercise.id] && preloadedImagesMap[activeExercise.id].src) {
+                imgElement.src = preloadedImagesMap[activeExercise.id].src;
+            } else {
+                imgElement.src = activeExercise.img;
+            }
+
+            // Renderizar Frase con Span Contenteditable
+            const sentenceBox = document.getElementById('sentenceBox');
+            sentenceBox.innerHTML = `
+                <span>${activeExercise.before}</span>
+                <span contenteditable="true" class="editable-gap" id="activeGap" autofocus></span>
+                <span>${activeExercise.after}</span>
+                <span class="verb-hint">(${activeExercise.verb})</span>
+            `;
+
+            // Resetear feedback
+            document.getElementById('feedbackBanner').style.display = 'none';
+
+            const activeGap = document.getElementById('activeGap');
+            activeGap.focus();
+
+            // Evento para enviar respuesta con Enter
+            activeGap.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    handleCheckAnswer();
+                }
+            });
+
+            // Transmisión en TIEMPO REAL de lo que el estudiante escribe al Profesor
+            activeGap.addEventListener('input', function() {
+                broadcastStudentTyping(activeGap.innerText);
+            });
+
+            updateProgressBar();
+            broadcastStudentTyping("");
+        }
+
+        function handleCheckAnswer() {
+            const activeGap = document.getElementById('activeGap');
+            if (!activeGap) return;
+
+            const typedText = activeGap.innerText.trim();
+            if (!typedText) return;
+
+            hideNativeKeyboard();
+
+            const isCorrect = activeExercise.validAnswers.some(ans => 
+                ans.toLowerCase() === typedText.toLowerCase()
+            );
+
+            const banner = document.getElementById('feedbackBanner');
+            const icon = document.getElementById('feedbackIcon');
+            const title = document.getElementById('feedbackTitle');
+            const subtitle = document.getElementById('feedbackSubtitle');
+
+            if (isCorrect) {
+                // Correcto
+                score += 10 + (streak * 2);
+                streak++;
+                if (streak > maxStreak) maxStreak = streak;
+
+                // Sonido Éxito Apple Pay
+                const audio = document.getElementById('audioSuccess');
+                if (audio) audio.play().catch(() => {});
+
+                banner.className = "feedback-banner correct-banner";
+                icon.textContent = "🎉";
+                title.textContent = "Awesome!";
+                subtitle.textContent = `Correct form is "${activeExercise.validAnswers[0]}".`;
+                banner.style.display = "flex";
+
+                studentHistory.push({
+                    exercise: `${activeExercise.before} [${typedText}] ${activeExercise.after}`,
+                    correctAnswer: activeExercise.validAnswers[0],
+                    isCorrect: true
+                });
+
+                broadcastStudentAnswer(typedText, true);
+
+                setTimeout(() => {
+                    currentQueueIndex++;
+                    updateStatsDisplay();
+                    loadExercise();
+                }, 1300);
+
+            } else {
+                // Incorrecto
+                score = Math.max(0, score - 2);
+                streak = 0;
+
+                banner.className = "feedback-banner wrong-banner";
+                icon.textContent = "❌";
+                title.textContent = "Not quite!";
+                subtitle.textContent = `Expected: "${activeExercise.validAnswers[0]}". Appending to practice queue.`;
+                banner.style.display = "flex";
+
+                // Re-insertar al final para repetición espaciada
+                exerciseQueue.push(activeExercise);
+
+                studentHistory.push({
+                    exercise: `${activeExercise.before} [${typedText}] ${activeExercise.after}`,
+                    correctAnswer: activeExercise.validAnswers[0],
+                    isCorrect: false
+                });
+
+                broadcastStudentAnswer(typedText, false);
+
+                setTimeout(() => {
+                    currentQueueIndex++;
+                    updateStatsDisplay();
+                    loadExercise();
+                }, 1800);
+            }
+        }
+
+        function updateStatsDisplay() {
+            document.getElementById('xpBadge').textContent = `⭐ ${score} XP`;
+            document.getElementById('streakBadge').textContent = `🔥 ${streak}`;
+        }
+
+        function updateProgressBar() {
+            const bar = document.getElementById('progressBar');
+            const progress = (currentQueueIndex / exerciseQueue.length) * 100;
+            bar.style.width = Math.min(progress, 100) + "%";
+        }
+
+        function finishSession() {
+            hideNativeKeyboard();
+            document.getElementById('screenExercise').classList.remove('active');
+            document.getElementById('screenResults').classList.add('active');
+
+            document.getElementById('resultsStudentName').textContent = studentName;
+            document.getElementById('finalScoreText').textContent = score + " XP";
+            document.getElementById('finalStreakText').textContent = maxStreak + " 🔥";
+
+            renderResultsList();
+            sendDataToDiscord();
+        }
+
+        function renderResultsList() {
+            const list = document.getElementById('resultsList');
+            list.innerHTML = "";
+
+            studentHistory.forEach(item => {
+                const row = document.createElement('div');
+                row.className = "result-item";
+                row.innerHTML = `
+                    <div style="display:flex; flex-direction:column; text-align:left;">
+                        <span style="font-weight:800; font-size:0.95rem; color:var(--cambridge-blue);">${item.exercise}</span>
+                        <span style="font-size:0.75rem; color:var(--text-muted);">Target: ${item.correctAnswer}</span>
+                    </div>
+                    <span class="result-badge ${item.isCorrect ? 'correct' : 'wrong'}">
+                        ${item.isCorrect ? 'Correct' : 'Retry'}
+                    </span>
+                `;
+                list.appendChild(row);
+            });
+        }
+
+        // TELEMETRÍA ABLY REALTIME
+        function broadcastStudentTyping(typedText) {
+            if (!ablyChannel || isTeacher) return;
+            ablyChannel.publish('student-typing', {
+                studentId: studentId,
+                studentName: studentName,
+                questionIndex: currentQueueIndex + 1,
+                totalQuestions: exerciseQueue.length,
+                before: activeExercise ? activeExercise.before : "",
+                after: activeExercise ? activeExercise.after : "",
+                verb: activeExercise ? activeExercise.verb : "",
+                typedText: typedText,
+                score: score,
+                streak: streak,
+                history: studentHistory,
+                timestamp: Date.now()
+            });
+        }
+
+        function broadcastStudentAnswer(typedText, isCorrect) {
+            if (!ablyChannel || isTeacher) return;
+            ablyChannel.publish('student-answer', {
+                studentId: studentId,
+                studentName: studentName,
+                questionIndex: currentQueueIndex + 1,
+                typedText: typedText,
+                isCorrect: isCorrect,
+                score: score,
+                streak: streak,
+                history: studentHistory,
+                timestamp: Date.now()
+            });
+        }
+
+        // MONITOR DEL PROFESOR (TEACHER)
+        function initTeacherMonitor() {
+            if (!ablyChannel) return;
+
+            ablyChannel.subscribe('student-typing', function(msg) {
+                updateStudentCard(msg.data);
+            });
+
+            ablyChannel.subscribe('student-answer', function(msg) {
+                updateStudentCard(msg.data);
+            });
+        }
+
+        function updateStudentCard(data) {
+            activeStudentsMap[data.studentId] = data;
+
+            const grid = document.getElementById('studentsGrid');
+            const countLabel = document.getElementById('activeStudentsCount');
+            
+            const studentsList = Object.values(activeStudentsMap);
+            countLabel.textContent = studentsList.length;
+
+            if (studentsList.length === 0) return;
+
+            grid.innerHTML = "";
+
+            studentsList.forEach(std => {
+                const card = document.createElement('div');
+                card.className = "student-card";
+
+                const historyItemsHTML = (std.history || []).map(h => `
+                    <div style="display:flex; justify-content:space-between; color: ${h.isCorrect ? '#34d399' : '#f87171'};">
+                        <span>${h.exercise}</span>
+                        <span>${h.isCorrect ? '✅' : '❌'}</span>
+                    </div>
+                `).reverse().join('');
+
+                card.innerHTML = `
+                    <div class="student-card-header">
+                        <div class="student-name-title">
+                            <span class="status-dot"></span>
+                            ${std.studentName}
+                        </div>
+                        <span style="font-size:0.8rem; font-weight:800; color:#38bdf8;">
+                            Q ${std.questionIndex || 1} / ${std.totalQuestions || 15}
+                        </span>
+                    </div>
+
+                    <div style="display:flex; justify-content:space-between; font-size:0.85rem; color:#94a3b8; font-weight:700;">
+                        <span>⭐ Score: ${std.score || 0} XP</span>
+                        <span>🔥 Streak: ${std.streak || 0}</span>
+                    </div>
+
+                    <div>
+                        <span style="font-size:0.75rem; text-transform:uppercase; color:#64748b; font-weight:800;">Real-Time Typing:</span>
+                        <div class="live-typing-box">
+                            ${std.before || ''} <span class="live-typing-highlight">${std.typedText || '___'}</span> ${std.after || ''} (${std.verb || ''})
+                        </div>
+                    </div>
+
+                    <div>
+                        <span style="font-size:0.75rem; text-transform:uppercase; color:#64748b; font-weight:800;">Answer History:</span>
+                        <div class="history-scroll-box">
+                            ${historyItemsHTML || '<span style="color:#64748b;">No answers submitted yet</span>'}
+                        </div>
+                    </div>
+                `;
+
+                grid.appendChild(card);
+            });
+        }
+
+        // REPORTE FINAL A DISCORD
+        function sendDataToDiscord() {
+            let historyReport = "";
+            studentHistory.forEach(h => {
+                historyReport += `• ${h.exercise} | Target: **${h.correctAnswer}** -> ${h.isCorrect ? '✅ Correct' : '❌ Retry'}\n`;
+            });
+
+            const payload = {
+                username: "Present Perfect Practice System",
+                embeds: [{
+                    title: "🚀 Student Performance Report",
+                    color: 6514417,
+                    fields: [
+                        { name: "Student Name", value: studentName, inline: true },
+                        { name: "Final Score", value: `${score} XP`, inline: true },
+                        { name: "Max Streak", value: `${maxStreak} 🔥`, inline: true },
+                        { name: "Exercises Telemetry", value: historyReport || "No data" }
+                    ],
+                    timestamp: new Date().toISOString(),
+                    footer: { text: "Present Perfect Grammar System" }
+                }]
+            };
+
+            fetch(webhook, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(payload)
+            }).then(() => console.log("Discord report sent."))
+              .catch(err => console.error("Discord report failed.", err));
+        }
+
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+    </script>
+</body>
+</html>

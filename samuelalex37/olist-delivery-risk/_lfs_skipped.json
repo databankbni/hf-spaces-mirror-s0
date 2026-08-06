@@ -1,0 +1,27 @@
+{
+ "lfs_not_stored": [
+  {
+   "oid": "c1154c24e91fde237d3843f0c2f38f1adcd164a2a41a2e4c598bff761a6e3e7d",
+   "path": "dashboard_data.parquet",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6YzExNTRjMjRlOTFmZGUyMzdkMzg0M2YwYzJmMzhmMWFkY2QxNjRhMmE0MWEyZTRjNTk4YmZmNzYxYTZlM2U3ZApzaXplIDMwNjk3NDkK",
+   "size": 3069749,
+   "url": "https://huggingface.co/spaces/samuelalex37/olist-delivery-risk/resolve/4d09ba8febe31a4bd33cad750540b636666045bd/dashboard_data.parquet"
+  },
+  {
+   "oid": "e1779740ad3031885cd7c0115483f916cb559b9d3dc8bf07bdd1e833e7f7ca86",
+   "path": "model.joblib",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6ZTE3Nzk3NDBhZDMwMzE4ODVjZDdjMDExNTQ4M2Y5MTZjYjU1OWI5ZDNkYzhiZjA3YmRkMWU4MzNlN2Y3Y2E4NgpzaXplIDExOTQ2NDMK",
+   "size": 1194643,
+   "url": "https://huggingface.co/spaces/samuelalex37/olist-delivery-risk/resolve/4d09ba8febe31a4bd33cad750540b636666045bd/model.joblib"
+  },
+  {
+   "oid": "f88baab83bb128c7fcaad1cc0f550ba7392305149ba32cfa990aa8ea271dda7f",
+   "path": "report/report.pdf",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6Zjg4YmFhYjgzYmIxMjhjN2ZjYWFkMWNjMGY1NTBiYTczOTIzMDUxNDliYTMyY2ZhOTkwYWE4ZWEyNzFkZGE3ZgpzaXplIDYzNTEyNTkK",
+   "size": 6351259,
+   "url": "https://huggingface.co/spaces/samuelalex37/olist-delivery-risk/resolve/4d09ba8febe31a4bd33cad750540b636666045bd/report/report.pdf"
+  }
+ ],
+ "overflow_not_stored": [],
+ "oversize_not_stored": []
+}

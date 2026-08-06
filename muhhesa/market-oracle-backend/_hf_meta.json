@@ -1,0 +1,23 @@
+{
+ "captured_at": "2026-08-04T16:41:12Z",
+ "hf_metadata": {
+  "sha": "930a7f6897890261ee0bf7cd5058eeecd54f6f78"
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "muhhesa/market-oracle-backend",
+ "repo_type": "spaces",
+ "sha": "930a7f6897890261ee0bf7cd5058eeecd54f6f78",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/muhhesa/market-oracle-backend"
+}

@@ -1,0 +1,23 @@
+{
+ "captured_at": "2026-08-04T16:20:53Z",
+ "hf_metadata": {
+  "sha": "f5838c4bd6d72efc77feaef704b12e45e32d00a8"
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "gijl/gemma4",
+ "repo_type": "spaces",
+ "sha": "f5838c4bd6d72efc77feaef704b12e45e32d00a8",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/gijl/gemma4"
+}

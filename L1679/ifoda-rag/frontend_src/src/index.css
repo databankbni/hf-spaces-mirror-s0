@@ -1,0 +1,384 @@
+@import "tailwindcss";
+
+@theme {
+  /* === CYBERPUNK PALETTE === */
+  --color-bg-base: #040411;
+  --color-bg-deep: #0a0a1f;
+  --color-bg-panel: #0d0d24;
+  --color-ink: #f0f0ff;
+  --color-ink-dim: #9999bb;
+  --color-ink-faint: #666688;
+
+  --color-neon-cyan: #00f0ff;
+  --color-neon-magenta: #ff2bd6;
+  --color-neon-yellow: #fcee0a;
+  --color-neon-green: #00ff88;
+  --color-neon-orange: #ff6a00;
+  --color-neon-red: #ff2e4c;
+  --color-neon-blue: #4d8bff;
+
+  --color-cyan-glow: rgba(0, 240, 255, 0.5);
+  --color-magenta-glow: rgba(255, 43, 214, 0.5);
+  --color-yellow-glow: rgba(252, 238, 10, 0.5);
+  --color-green-glow: rgba(0, 255, 136, 0.5);
+
+  /* === FLUID TYPOGRAPHY (clamp) === */
+  --font-size-xs: clamp(0.82rem, 0.78rem + 0.2vw, 0.95rem);
+  --font-size-sm: clamp(0.95rem, 0.88rem + 0.3vw, 1.1rem);
+  --font-size-base: clamp(1.05rem, 0.98rem + 0.35vw, 1.25rem);
+  --font-size-md: clamp(1.15rem, 1.06rem + 0.45vw, 1.4rem);
+  --font-size-lg: clamp(1.35rem, 1.2rem + 0.65vw, 1.7rem);
+  --font-size-xl: clamp(1.6rem, 1.4rem + 0.95vw, 2.2rem);
+  --font-size-2xl: clamp(2rem, 1.65rem + 1.5vw, 2.9rem);
+
+  /* === FONTS === */
+  --font-display: "Orbitron", "Rajdhani", sans-serif;
+  --font-ui: "Rajdhani", system-ui, sans-serif;
+  --font-mono: "Share Tech Mono", "Courier New", monospace;
+}
+
+/* === GLOBAL RESETS === */
+html { font-size: 108%; }
+* { box-sizing: border-box; }
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  background: var(--color-bg-base);
+  color: var(--color-ink);
+  font-family: var(--font-ui);
+  font-weight: 600;
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+  user-select: none;
+}
+
+/* === ACCESSIBILITY FONT SCALE ===
+   Placed AFTER global resets so it wins on cascade. Defaults match the
+   current IFODA size (16px / 400 / line-height 1.5). The useFontScale hook
+   overrides these CSS variables on <html> from localStorage on mount. */
+:root {
+  --ifoda-font-size: 16px;
+  --ifoda-font-weight: 400;
+  --ifoda-line-height: 1.5;
+}
+
+html {
+  font-size: var(--ifoda-font-size);
+  transition: font-size 0.2s ease-out;
+}
+
+body {
+  font-weight: var(--ifoda-font-weight);
+  line-height: var(--ifoda-line-height);
+  transition: font-weight 0.2s ease-out, line-height 0.2s ease-out;
+}
+
+/* Allow text selection where it matters */
+input, textarea, [data-selectable] { user-select: text; }
+
+/* === SCROLLBAR === */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track {
+  background: rgba(0, 240, 255, 0.04);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--color-neon-cyan), var(--color-neon-magenta));
+  border-radius: 4px;
+  box-shadow: 0 0 6px rgba(0, 240, 255, 0.5);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--color-neon-cyan), var(--color-neon-yellow));
+}
+
+/* Chat scroll surface — clearly scrollable, with grab cursor when content overflows. */
+.chat-scroll {
+  scroll-behavior: smooth;
+  overscroll-behavior: contain;
+}
+
+/* Compose overlay textarea — large full-screen-tall input. */
+.compose-textarea::placeholder {
+  color: rgba(0, 240, 255, 0.4);
+  font-family: var(--font-mono);
+  letter-spacing: 0.05em;
+}
+.compose-textarea:focus {
+  border-color: rgba(0, 240, 255, 0.6) !important;
+  box-shadow: inset 0 0 32px rgba(0, 240, 255, 0.1), 0 0 32px rgba(0, 240, 255, 0.15) !important;
+}
+.compose-textarea::-webkit-scrollbar { width: 10px; }
+.compose-textarea::-webkit-scrollbar-thumb {
+  background: rgba(0, 240, 255, 0.6);
+  border-radius: 5px;
+}
+
+/* === SELECTION === */
+::selection {
+  background: var(--color-neon-cyan);
+  color: var(--color-bg-deep);
+}
+
+/* === SCANLINES OVERLAY === */
+.scanlines::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1000;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0) 0px,
+    rgba(0, 0, 0, 0) 2px,
+    rgba(0, 240, 255, 0.025) 3px,
+    rgba(0, 0, 0, 0) 4px
+  );
+  mix-blend-mode: overlay;
+}
+
+/* CRT-style vignette */
+.scanlines::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 999;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 40%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
+}
+
+/* === ANIMATIONS === */
+@keyframes glitch-shift {
+  0%, 100% { transform: translate(0); text-shadow: 0 0 8px currentColor; }
+  20% { transform: translate(-1px, 0); }
+  40% { transform: translate(1px, -1px); }
+  60% { transform: translate(0, 1px); }
+  80% { transform: translate(-1px, 1px); }
+}
+
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.85; }
+}
+
+@keyframes scan-down {
+  0% { transform: translateY(-100%); opacity: 0; }
+  10% { opacity: 0.6; }
+  100% { transform: translateY(100vh); opacity: 0; }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 8px var(--color-cyan-glow), 0 0 16px var(--color-cyan-glow); }
+  50% { box-shadow: 0 0 16px var(--color-cyan-glow), 0 0 32px var(--color-cyan-glow); }
+}
+
+@keyframes text-flicker {
+  0%, 100% { opacity: 1; }
+  47% { opacity: 1; }
+  48% { opacity: 0.4; }
+  49% { opacity: 1; }
+  50% { opacity: 1; }
+  75% { opacity: 0.7; }
+}
+
+@keyframes blink-cursor {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+@keyframes border-flow {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes msg-in {
+  from { opacity: 0; transform: translateY(8px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes neon-pulse {
+  0%, 100% { box-shadow: 0 0 6px var(--color-cyan-glow), 0 0 12px var(--color-cyan-glow); }
+  50% { box-shadow: 0 0 14px var(--color-cyan-glow), 0 0 28px var(--color-cyan-glow); }
+}
+
+@keyframes raindrop-fall {
+  0% { transform: translateY(-12vh); opacity: 0; }
+  8% { opacity: 0.45; }
+  85% { opacity: 0.2; }
+  100% { transform: translateY(112vh); opacity: 0; }
+}
+
+/* === PREFERS-REDUCED-MOTION === */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .glitch-text { animation: none; }
+  .flicker { animation: none; }
+  .text-flicker { animation: none; }
+  .blink-cursor { animation: none; }
+  .pulse-glow { animation: none; }
+  .msg-enter { animation: none; }
+  .mode-enter { animation: none; }
+  .neon-pulse { animation: none; }
+  .rain-glass .drop { animation: none; display: none; }
+  .scanlines::before { opacity: 0.15; }
+}
+
+/* === UTILITY CLASSES === */
+.glitch-text { animation: glitch-shift 0.3s infinite; }
+.flicker { animation: flicker 4s infinite; }
+.text-flicker { animation: text-flicker 5s infinite; }
+.blink-cursor { animation: blink-cursor 1s step-end infinite; }
+.pulse-glow { animation: pulse-glow 2s infinite ease-in-out; }
+
+/* Animated neon border (conic gradient sweep) */
+.neon-border {
+  position: relative;
+  isolation: isolate;
+}
+.neon-border::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  z-index: -1;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    90deg,
+    var(--color-neon-cyan),
+    var(--color-neon-magenta),
+    var(--color-neon-yellow),
+    var(--color-neon-cyan)
+  );
+  background-size: 200% 100%;
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  animation: border-flow 4s linear infinite;
+  opacity: 0.7;
+}
+
+/* Corner brackets (cyberpunk frame) */
+.corner-frame {
+  position: relative;
+}
+.corner-frame::before,
+.corner-frame::after {
+  content: '';
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border: 1.5px solid var(--color-neon-cyan);
+  pointer-events: none;
+}
+.corner-frame::before {
+  top: -1px; left: -1px;
+  border-right: none;
+  border-bottom: none;
+}
+.corner-frame::after {
+  bottom: -1px; right: -1px;
+  border-left: none;
+  border-top: none;
+}
+
+/* Hide scrollbar in TG mini app for cleaner UX */
+.tg-webapp ::-webkit-scrollbar { width: 0; }
+
+/* Input placeholder */
+input::placeholder, textarea::placeholder {
+  color: var(--color-ink-faint);
+  font-family: var(--font-mono);
+  letter-spacing: 0.05em;
+}
+
+/* Mode transition */
+.mode-enter { animation: fade-in 0.25s ease-out; }
+
+/* Focus visible ring — cyberpunk style */
+*:focus-visible {
+  outline: 1.5px solid var(--color-neon-cyan);
+  outline-offset: 2px;
+  box-shadow: 0 0 8px var(--color-cyan-glow);
+}
+input:focus-visible,
+textarea:focus-visible { outline: none; }
+
+/* Disable text selection on 3D canvas */
+canvas { display: block; }
+
+/* Message appear animation */
+.msg-enter { animation: msg-in 0.3s ease-out; }
+
+/* Neon pulse on interactive elements */
+.neon-pulse { animation: neon-pulse 2.5s ease-in-out infinite; }
+
+/* Raindrop overlay */
+.rain-glass {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 997;
+  overflow: hidden;
+}
+.rain-glass .drop {
+  position: absolute;
+  width: 1.5px;
+  height: 14px;
+  background: linear-gradient(transparent, rgba(140,170,220,0.3));
+  border-radius: 1px;
+  animation: raindrop-fall linear infinite;
+}
+
+/* === SKELETON LOADING === */
+@keyframes skeleton-shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+.skeleton {
+  background: linear-gradient(90deg, rgba(255,255,255,0.03) 25%, rgba(255,255,255,0.08) 50%, rgba(255,255,255,0.03) 75%);
+  background-size: 200% 100%;
+  animation: skeleton-shimmer 2s ease-in-out infinite;
+  border-radius: 4px;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .hide-on-mobile { display: none !important; }
+}
+
+@media (max-width: 480px) {
+  .neon-border::before { opacity: 0.4; }
+  /* Smaller corner brackets on mobile */
+  .corner-frame::before,
+  .corner-frame::after { width: 10px; height: 10px; }
+  /* Reduce rain on mobile for performance */
+  .rain-glass .drop { display: none; }
+  .rain-glass .drop:nth-child(5n) { display: block; }
+}
+
+@media (max-height: 600px) {
+  .h-screen { height: 100dvh; }
+}
+
+/* === HIGH CONTRAST / A11Y === */
+@media (prefers-contrast: high) {
+  .scanlines::before { opacity: 0.3; }
+  .scanlines::after { opacity: 0.7; }
+  * { text-shadow: none !important; }
+}

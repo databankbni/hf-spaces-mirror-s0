@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MCSDF · 24 vs 50 denoise steps — same-ckpt twin runs</title>
+<style>
+:root{--bg:#0d1117;--card:#161b22;--line:#30363d;--tx:#e6edf3;--dim:#8b949e;--acc:#63c98a;--warn:#e3b341;--bad:#f85149}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:15px/1.6 -apple-system,"Segoe UI",Roboto,"Noto Sans SC",sans-serif;padding:28px 4vw 80px}
+h1{font-size:26px;margin:0 0 6px}h2{font-size:19px;margin:36px 0 10px;border-bottom:1px solid var(--line);padding-bottom:6px}
+.sub{color:var(--dim);margin-bottom:22px}
+.verdict{background:linear-gradient(135deg,#12261a,#161b22);border:1px solid var(--acc);border-radius:10px;padding:16px 20px;margin:18px 0;font-size:16px}
+.verdict b{color:var(--acc)}
+table{border-collapse:collapse;width:100%;margin:12px 0;font-size:14px}
+th,td{border:1px solid var(--line);padding:7px 10px;text-align:center}
+th{background:var(--card);color:var(--dim);font-weight:600}
+td.name{text-align:left;font-weight:600}
+.win{color:var(--acc);font-weight:700}.lose{color:var(--bad)}.wash{color:var(--warn)}
+.note{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--warn);border-radius:8px;padding:12px 16px;margin:14px 0;color:var(--dim);font-size:14px}
+.imgrow{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:10px 0 26px}
+.imgrow figure{margin:0;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:8px}
+.imgrow figcaption{color:var(--dim);font-size:13px;padding:4px 2px;font-weight:600}
+.imgrow img{width:100%;display:block;border-radius:4px}
+.tag{display:inline-block;background:#1f2937;border:1px solid var(--line);border-radius:999px;padding:1px 10px;font-size:12px;color:var(--dim);margin-left:8px}
+@media(max-width:900px){.imgrow{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<h1>24 vs 50 denoise steps · 孪生对照</h1>
+<div class="sub">同 ckpt · 同 4 clips(2 TRAIN + 2 TEST)· 同种子 · 同 cluster-128 τ.85 / t.45 / uniform 各自配置 — <b>唯一变量 = 采样步数</b>(24 = 23 Euler + x0-proj;50 = 49 + x0-proj)。背靠背两个 job(403149 / 403543),ckpt 漂移 ≤500 步。</div>
+
+<div class="verdict">📌 <b>定论:24 步保持默认。</b>严格同-ckpt 的 4 行里,50 步 PSNR 平手或 −0.1dB,unseen 内容能量只多 ~2 分(肉眼不可见,目检两套大图逐行几乎相同),代价是 <b>2.1× 推理时间</b>。此前"24≥50"的旧结论在新架构上重测后仍然成立。</div>
+
+<h2>严格同-ckpt 配对(4-clip 平均,seen-PSNR dB / unseen-gray)</h2>
+<table>
+<tr><th>模型 @ckpt</th><th>24 步</th><th>50 步</th><th>ΔPSNR</th><th>Δgray(负=50 更多内容)</th></tr>
+<tr><td class="name">baseline r128 uniform @3000</td><td>12.88 / −5.2</td><td>12.88 / −5.3</td><td class="wash">0.00</td><td class="wash">−0.1</td></tr>
+<tr><td class="name">expC cl128 τ.85 @4500</td><td>12.25 / −45.2</td><td>12.15 / −46.9</td><td class="lose">−0.10</td><td>−1.7</td></tr>
+<tr><td class="name">expE-rand cl128 τ.85 @4500</td><td>12.93 / −32.6</td><td>12.80 / −34.6</td><td class="lose">−0.13</td><td>−2.0</td></tr>
+<tr><td class="name">expE-scratch cl128 τ.85 @1000</td><td><b>13.15 / −21.5</b></td><td>13.03 / −23.3</td><td class="lose">−0.13</td><td>−1.8</td></tr>
+</table>
+
+<h2>漂移行(24-run ckpt 多 +500 步,仅供参考)</h2>
+<table>
+<tr><th>模型</th><th>24 步 @ckpt</th><th>50 步 @ckpt</th></tr>
+<tr><td class="name">expA t.45</td><td>12.63 / −24.0 @5500</td><td>12.60 / −25.1 @5000</td></tr>
+<tr><td class="name">expB t.45</td><td>12.68 / −21.2 @5500</td><td>12.63 / −26.5 @5000</td></tr>
+<tr><td class="name">expE-geo cl128 τ.85</td><td>12.98 / −26.6 @5000</td><td>12.70 / −26.8 @4500</td></tr>
+</table>
+
+<div class="note">⚠️ 方法论备注:此前 reinfer_expE 的数字(rand@4500=12.68 等)与本表<b>不可比</b> — 两脚本族的 seen-mask 取自不同 cache 的 k(fwd18 voxel-k vs novoxel density-k),mask 不同则 PSNR 区域不同。跨表比较只能在同脚本族内做;本页两列来自同一 full_compare 家族,mask 逐字节相同。</div>
+
+<div class="note">💡 顺带读数(24 列,ckpt 较新):<b>expE-scratch@own-1000 仍是全场第一</b>(13.15,含 TEST clip 111b656f 上 16.5dB 反超 baseline 16.3 且内容能量 3 倍);geo@5000 升至 12.98 在追近。clean-lineage 优势持续。</div>
+
+<h2>逐 clip 大图(左 24 步 · 右 50 步;行序 GT/baseline/A/B/C/geo/rand/scratch)</h2>
+<div class="imgrow"><figure><figcaption>TRAIN 00534f58 · 24 步</figcaption><img src="fc24_00534f58.png" loading="lazy"></figure><figure><figcaption>TRAIN 00534f58 · 50 步</figcaption><img src="fc50_00534f58.png" loading="lazy"></figure></div>
+<div class="imgrow"><figure><figcaption>TRAIN 0003dc82 · 24 步</figcaption><img src="fc24_0003dc82.png" loading="lazy"></figure><figure><figcaption>TRAIN 0003dc82 · 50 步</figcaption><img src="fc50_0003dc82.png" loading="lazy"></figure></div>
+<div class="imgrow"><figure><figcaption>TEST 111b656f · 24 步</figcaption><img src="fc24_111b656f.png" loading="lazy"></figure><figure><figcaption>TEST 111b656f · 50 步</figcaption><img src="fc50_111b656f.png" loading="lazy"></figure></div>
+<div class="imgrow"><figure><figcaption>TEST 2501f488 · 24 步</figcaption><img src="fc24_2501f488.png" loading="lazy"></figure><figure><figcaption>TEST 2501f488 · 50 步</figcaption><img src="fc50_2501f488.png" loading="lazy"></figure></div>
+
+<div class="sub">jobs: full_compare50=403149 · full_compare24=403543 · 2026-07-28 · MCSDF ablation fleet<span class="tag">expF +Plücker 训练中</span><span class="tag">expG VACE-14B 训练中</span></div>
+</body>
+</html>

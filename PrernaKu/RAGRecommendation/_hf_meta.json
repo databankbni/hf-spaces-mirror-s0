@@ -1,0 +1,90 @@
+{
+ "captured_at": "2026-08-04T14:32:51Z",
+ "hf_metadata": {
+  "_id": "6a48eac5ad51e30093d6acd6",
+  "author": "PrernaKu",
+  "cardData": {
+   "app_port": 7860,
+   "colorFrom": "blue",
+   "colorTo": "indigo",
+   "emoji": "🏦",
+   "pinned": false,
+   "sdk": "docker",
+   "title": "HDFC Banking Assistant"
+  },
+  "createdAt": "2026-07-04T11:13:09.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://prernaku-ragrecommendation.hf.space",
+  "id": "PrernaKu/RAGRecommendation",
+  "lastModified": "2026-07-18T10:17:41.000Z",
+  "likes": 0,
+  "models": [
+   "sentence-transformers/all-MiniLM-L6-v2"
+  ],
+  "private": false,
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "prernaku-ragrecommendation.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": null,
+    "requested": "cpu-basic"
+   },
+   "replicas": {
+    "requested": 1
+   },
+   "stage": "SLEEPING",
+   "volumes": [
+    {
+     "configuredByUserId": "6a380362317e59ab2edcc3d9",
+     "mountPath": "/data",
+     "readOnly": false,
+     "source": "PrernaKu/RAGRecommendation-storage",
+     "type": "bucket"
+    }
+   ]
+  },
+  "sdk": "docker",
+  "sha": "f889ec0aece47ba92be66c9607322d83d39dd821",
+  "siblings": [
+   {
+    "rfilename": "BankingAgent.py"
+   },
+   {
+    "rfilename": "Dockerfile"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "app.js"
+   },
+   {
+    "rfilename": "hf_web.py"
+   },
+   {
+    "rfilename": "index.html"
+   },
+   {
+    "rfilename": "styles.css"
+   }
+  ],
+  "subdomain": "prernaku-ragrecommendation",
+  "tags": [
+   "docker",
+   "region:us"
+  ],
+  "usedStorage": 10303
+ },
+ "renamed_gitattributes": [],
+ "repo_id": "PrernaKu/RAGRecommendation",
+ "repo_type": "spaces",
+ "sha": "f889ec0aece47ba92be66c9607322d83d39dd821",
+ "web_url": "https://huggingface.co/spaces/PrernaKu/RAGRecommendation"
+}

@@ -1,0 +1,495 @@
+{
+ "captured_at": "2026-08-04T15:24:36Z",
+ "hf_metadata": {
+  "_id": "6a4925a9cccefb16f31e23cb",
+  "author": "ORRESYDEVELOPER11",
+  "cardData": {
+   "colorFrom": "green",
+   "colorTo": "blue",
+   "emoji": "🐦",
+   "pinned": false,
+   "sdk": "docker",
+   "title": "Tanzania Bird Finder"
+  },
+  "createdAt": "2026-07-04T15:24:25.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://orresydeveloper11-bird-app.hf.space",
+  "id": "ORRESYDEVELOPER11/bird-app",
+  "lastModified": "2026-07-05T09:27:39.000Z",
+  "likes": 0,
+  "private": false,
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "orresydeveloper11-bird-app.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": null,
+    "requested": "cpu-basic"
+   },
+   "replicas": {
+    "requested": 1
+   },
+   "stage": "SLEEPING"
+  },
+  "sdk": "docker",
+  "sha": "bd907bba56c529e839a752be7c87e87348d40a1c",
+  "siblings": [
+   {
+    "rfilename": ".dockerignore"
+   },
+   {
+    "rfilename": ".gitattributes"
+   },
+   {
+    "rfilename": ".github/workflows/build-apk.yml"
+   },
+   {
+    "rfilename": ".github/workflows/deploy.yml"
+   },
+   {
+    "rfilename": ".gitignore"
+   },
+   {
+    "rfilename": ".nojekyll"
+   },
+   {
+    "rfilename": "DEPLOYMENT.md"
+   },
+   {
+    "rfilename": "Dockerfile"
+   },
+   {
+    "rfilename": "Procfile"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "TODO.md"
+   },
+   {
+    "rfilename": "_embeddings_data.py"
+   },
+   {
+    "rfilename": "ai_engine.py"
+   },
+   {
+    "rfilename": "app.py"
+   },
+   {
+    "rfilename": "benchmark_identify.py"
+   },
+   {
+    "rfilename": "certs/cert.pem"
+   },
+   {
+    "rfilename": "certs/key.pem"
+   },
+   {
+    "rfilename": "encode_embeddings.py"
+   },
+   {
+    "rfilename": "identify_cache.py"
+   },
+   {
+    "rfilename": "index.html"
+   },
+   {
+    "rfilename": "mobile-app/.gitignore"
+   },
+   {
+    "rfilename": "mobile-app/android/.gitignore"
+   },
+   {
+    "rfilename": "mobile-app/android/app/.gitignore"
+   },
+   {
+    "rfilename": "mobile-app/android/app/build.gradle"
+   },
+   {
+    "rfilename": "mobile-app/android/app/capacitor.build.gradle"
+   },
+   {
+    "rfilename": "mobile-app/android/app/proguard-rules.pro"
+   },
+   {
+    "rfilename": "mobile-app/android/app/src/androidTest/java/com/getcapacitor/myapp/ExampleInstrumentedTest.java"
+   },
+   {
+    "rfilename": "mobile-app/android/app/src/main/AndroidManifest.xml"
+   },
+   {
+    "rfilename": "mobile-app/android/app/src/main/java/tz/birdfinder/app/MainActivity.java"
+   },
+   {
+    "rfilename": "mobile-app/android/app/src/main/res/drawable-land-hdpi/splash.png"
+   },
+   {
+    "rfilename": "mobile-app/android/app/src/main/res/drawable-land-mdpi/splash.png"
+   },
+   {
+    "rfilename": "mobile-app/android/app/src/main/res/drawable-land-xhdpi/splash.png"
+   },
+   {
+    "rfilename": "mobile-app/android/app/src/main/res/drawable-land-xxhdpi/splash.png"
+   },
+   {
+    "rfilename": "mobile-app/android/app/src/main/res/drawable-land-xxxhdpi/splash.png"
+   },
+   {
+    "rfilename": "mobile-app/android/app/src/main/res/drawable-port-hdpi/splash.png"
+   },
+   {
+    "rfilename": "mobile-app/android/app/src/main/res/drawable-port-mdpi/splash.png"
+   },
+   {
+    "rfilename": "mobile-app/android/app/src/main/res/drawable-port-xhdpi/splash.png"
+   },
+   {
+    "rfilename": "mobile-app/android/app/src/main/res/drawable-port-xxhdpi/splash.png"
+   },
+   {
+    "rfilename": "mobile-app/android/app/src/main/res/drawable-port-xxxhdpi/splash.png"
+   },
+   {
+    "rfilename": "mobile-app/android/app/src/main/res/drawable-v24/ic_launcher_foreground.xml"
+   },
+   {
+    "rfilename": "mobile-app/android/app/src/main/res/drawable/ic_launcher_background.xml"
+   },
+   {
+    "rfilename": "mobile-app/android/app/src/main/res/drawable/splash.png"
+   },
+   {
+    "rfilename": "mobile-app/android/app/src/main/res/layout/activity_main.xml"
+   },
+   {
+    "rfilename": "mobile-app/android/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml"
+   },
+   {
+    "rfilename": "mobile-app/android/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml"
+   },
+   {
+    "rfilename": "mobile-app/android/app/src/main/res/mipmap-hdpi/ic_launcher.png"
+   },
+   {
+    "rfilename": "mobile-app/android/app/src/main/res/mipmap-hdpi/ic_launcher_foreground.png"
+   },
+   {
+    "rfilename": "mobile-app/android/app/src/main/res/mipmap-hdpi/ic_launcher_round.png"
+   },
+   {
+    "rfilename": "mobile-app/android/app/src/main/res/mipmap-mdpi/ic_launcher.png"
+   },
+   {
+    "rfilename": "mobile-app/android/app/src/main/res/mipmap-mdpi/ic_launcher_foreground.png"
+   },
+   {
+    "rfilename": "mobile-app/android/app/src/main/res/mipmap-mdpi/ic_launcher_round.png"
+   },
+   {
+    "rfilename": "mobile-app/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png"
+   },
+   {
+    "rfilename": "mobile-app/android/app/src/main/res/mipmap-xhdpi/ic_launcher_foreground.png"
+   },
+   {
+    "rfilename": "mobile-app/android/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png"
+   },
+   {
+    "rfilename": "mobile-app/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png"
+   },
+   {
+    "rfilename": "mobile-app/android/app/src/main/res/mipmap-xxhdpi/ic_launcher_foreground.png"
+   },
+   {
+    "rfilename": "mobile-app/android/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png"
+   },
+   {
+    "rfilename": "mobile-app/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
+   },
+   {
+    "rfilename": "mobile-app/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_foreground.png"
+   },
+   {
+    "rfilename": "mobile-app/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
+   },
+   {
+    "rfilename": "mobile-app/android/app/src/main/res/values/ic_launcher_background.xml"
+   },
+   {
+    "rfilename": "mobile-app/android/app/src/main/res/values/strings.xml"
+   },
+   {
+    "rfilename": "mobile-app/android/app/src/main/res/values/styles.xml"
+   },
+   {
+    "rfilename": "mobile-app/android/app/src/main/res/xml/file_paths.xml"
+   },
+   {
+    "rfilename": "mobile-app/android/app/src/test/java/com/getcapacitor/myapp/ExampleUnitTest.java"
+   },
+   {
+    "rfilename": "mobile-app/android/build.gradle"
+   },
+   {
+    "rfilename": "mobile-app/android/capacitor.settings.gradle"
+   },
+   {
+    "rfilename": "mobile-app/android/gradle.properties"
+   },
+   {
+    "rfilename": "mobile-app/android/gradle/wrapper/gradle-wrapper.jar"
+   },
+   {
+    "rfilename": "mobile-app/android/gradle/wrapper/gradle-wrapper.properties"
+   },
+   {
+    "rfilename": "mobile-app/android/gradlew"
+   },
+   {
+    "rfilename": "mobile-app/android/gradlew.bat"
+   },
+   {
+    "rfilename": "mobile-app/android/settings.gradle"
+   },
+   {
+    "rfilename": "mobile-app/android/variables.gradle"
+   },
+   {
+    "rfilename": "mobile-app/capacitor.config.json"
+   },
+   {
+    "rfilename": "mobile-app/package-lock.json"
+   },
+   {
+    "rfilename": "mobile-app/package.json"
+   },
+   {
+    "rfilename": "mobile-app/www/index.html"
+   },
+   {
+    "rfilename": "models.py"
+   },
+   {
+    "rfilename": "package-lock.json"
+   },
+   {
+    "rfilename": "railway.json"
+   },
+   {
+    "rfilename": "requirements.txt"
+   },
+   {
+    "rfilename": "resp_test.html"
+   },
+   {
+    "rfilename": "run.log"
+   },
+   {
+    "rfilename": "run.stderr.log"
+   },
+   {
+    "rfilename": "run.stdout.log"
+   },
+   {
+    "rfilename": "runtime.txt"
+   },
+   {
+    "rfilename": "static/birds/Barn_Swallow/Barn_Swallow_0002_130551.jpg"
+   },
+   {
+    "rfilename": "static/birds/Barn_Swallow/Barn_Swallow_0006_131315.jpg"
+   },
+   {
+    "rfilename": "static/birds/Barn_Swallow/Barn_Swallow_0007_131030.jpg"
+   },
+   {
+    "rfilename": "static/birds/Cape_Glossy_Starling/Cape_Glossy_Starling_0002_129310.jpg"
+   },
+   {
+    "rfilename": "static/birds/Cape_Glossy_Starling/Cape_Glossy_Starling_0005_129262.jpg"
+   },
+   {
+    "rfilename": "static/birds/Cape_Glossy_Starling/Cape_Glossy_Starling_0010_129352.jpg"
+   },
+   {
+    "rfilename": "static/birds/Common_Tern/Common_Tern_0001_149721.jpg"
+   },
+   {
+    "rfilename": "static/birds/Common_Tern/Common_Tern_0012_148477.jpg"
+   },
+   {
+    "rfilename": "static/birds/Common_Tern/Common_Tern_0014_149194.jpg"
+   },
+   {
+    "rfilename": "static/birds/Frigatebird/Frigatebird_0001_43101.jpg"
+   },
+   {
+    "rfilename": "static/birds/Frigatebird/Frigatebird_0004_43221.jpg"
+   },
+   {
+    "rfilename": "static/birds/Frigatebird/Frigatebird_0005_42828.jpg"
+   },
+   {
+    "rfilename": "static/birds/Grasshopper_Sparrow/Grasshopper_Sparrow_0001_115938.jpg"
+   },
+   {
+    "rfilename": "static/birds/Grasshopper_Sparrow/Grasshopper_Sparrow_0003_115676.jpg"
+   },
+   {
+    "rfilename": "static/birds/Grasshopper_Sparrow/Grasshopper_Sparrow_0006_115864.jpg"
+   },
+   {
+    "rfilename": "static/birds/Green_Jay/Green_Jay_0003_65767.jpg"
+   },
+   {
+    "rfilename": "static/birds/Green_Jay/Green_Jay_0006_65788.jpg"
+   },
+   {
+    "rfilename": "static/birds/Green_Jay/Green_Jay_0011_65947.jpg"
+   },
+   {
+    "rfilename": "static/birds/Pied_Kingfisher/Pied_Kingfisher_0004_72135.jpg"
+   },
+   {
+    "rfilename": "static/birds/Pied_Kingfisher/Pied_Kingfisher_0011_72143.jpg"
+   },
+   {
+    "rfilename": "static/birds/Pied_Kingfisher/Pied_Kingfisher_0013_72114.jpg"
+   },
+   {
+    "rfilename": "static/birds/Ruby_throated_Hummingbird/Ruby_Throated_Hummingbird_0001_58162.jpg"
+   },
+   {
+    "rfilename": "static/birds/Ruby_throated_Hummingbird/Ruby_Throated_Hummingbird_0005_57349.jpg"
+   },
+   {
+    "rfilename": "static/birds/Ruby_throated_Hummingbird/Ruby_Throated_Hummingbird_0007_57388.jpg"
+   },
+   {
+    "rfilename": "static/birds/White_Pelican/White_Pelican_0003_96691.jpg"
+   },
+   {
+    "rfilename": "static/birds/White_Pelican/White_Pelican_0005_95916.jpg"
+   },
+   {
+    "rfilename": "static/birds/White_Pelican/White_Pelican_0009_97340.jpg"
+   },
+   {
+    "rfilename": "static/css/app.css"
+   },
+   {
+    "rfilename": "static/img/placeholder.svg"
+   },
+   {
+    "rfilename": "static/js/app.js"
+   },
+   {
+    "rfilename": "static/mkcert-ca.pem"
+   },
+   {
+    "rfilename": "templates/404.html"
+   },
+   {
+    "rfilename": "templates/500.html"
+   },
+   {
+    "rfilename": "templates/admin.html"
+   },
+   {
+    "rfilename": "templates/admin_edit_bird.html"
+   },
+   {
+    "rfilename": "templates/admin_edit_park.html"
+   },
+   {
+    "rfilename": "templates/auth.html"
+   },
+   {
+    "rfilename": "templates/base.html"
+   },
+   {
+    "rfilename": "templates/conservation.html"
+   },
+   {
+    "rfilename": "templates/dashboard.html"
+   },
+   {
+    "rfilename": "templates/habitat_detail.html"
+   },
+   {
+    "rfilename": "templates/habitats.html"
+   },
+   {
+    "rfilename": "templates/identify.html"
+   },
+   {
+    "rfilename": "templates/index.html"
+   },
+   {
+    "rfilename": "templates/map.html"
+   },
+   {
+    "rfilename": "templates/park_detail.html"
+   },
+   {
+    "rfilename": "templates/parks.html"
+   },
+   {
+    "rfilename": "templates/partials/species_card.html"
+   },
+   {
+    "rfilename": "templates/species.html"
+   },
+   {
+    "rfilename": "templates/species_detail.html"
+   }
+  ],
+  "subdomain": "orresydeveloper11-bird-app",
+  "tags": [
+   "docker",
+   "region:us"
+  ],
+  "usedStorage": 3252274
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  },
+  {
+   "original": ".gitignore",
+   "stored_as": "_gitignore"
+  },
+  {
+   "original": "mobile-app/.gitignore",
+   "stored_as": "mobile-app/_gitignore"
+  },
+  {
+   "original": "mobile-app/android/.gitignore",
+   "stored_as": "mobile-app/android/_gitignore"
+  },
+  {
+   "original": "mobile-app/android/app/.gitignore",
+   "stored_as": "mobile-app/android/app/_gitignore"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "ORRESYDEVELOPER11/bird-app",
+ "repo_type": "spaces",
+ "sha": "bd907bba56c529e839a752be7c87e87348d40a1c",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/ORRESYDEVELOPER11/bird-app"
+}

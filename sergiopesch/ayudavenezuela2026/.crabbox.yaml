@@ -1,0 +1,104 @@
+profile: ayuda-web
+target: linux
+class: standard
+
+lease:
+  ttl: 2h
+  idleTimeout: 30m
+
+sync:
+  delete: true
+  gitSeed: true
+  fingerprint: true
+  timeout: 15m
+  warnFiles: 4000
+  warnBytes: 209715200
+  failFiles: 12000
+  failBytes: 786432000
+  exclude:
+    - node_modules
+    - dist
+    - .venv-hf
+    - .cache
+    - .vite
+    - playwright-report
+    - test-results
+    - coverage
+    - .crabbox-artifacts
+
+env:
+  allow:
+    - CI
+    - NODE_OPTIONS
+    - QA_*
+    - PERF_*
+    - CHROMIUM_EXECUTABLE_PATH
+    - PLAYWRIGHT_BROWSERS_PATH
+
+profiles:
+  ayuda-web:
+    env:
+      CI: "1"
+      NODE_OPTIONS: "--max-old-space-size=4096"
+
+jobs:
+  build:
+    profile: ayuda-web
+    shell: true
+    command: >
+      bash scripts/crabbox-bootstrap-node.sh &&
+      npm ci &&
+      npm run build:app
+    stop: always
+
+  refresh-data:
+    profile: ayuda-web
+    shell: true
+    command: >
+      bash scripts/crabbox-bootstrap-node.sh &&
+      npm ci &&
+      npm run build:data
+    stop: always
+
+  qa-e2e:
+    profile: ayuda-web
+    shell: true
+    command: >
+      bash scripts/crabbox-bootstrap-node.sh &&
+      npm ci &&
+      npx playwright install --with-deps chromium &&
+      npm run build:app &&
+      mkdir -p .crabbox-artifacts &&
+      (npm run preview -- --host 127.0.0.1 --port 4173 > .crabbox-artifacts/preview.log 2>&1 &) &&
+      (i=0; until curl -fsS http://127.0.0.1:4173/ >/dev/null; do i=$((i + 1)); test "$i" -lt 60 || exit 1; sleep 1; done) &&
+      QA_OUTPUT_DIR=.crabbox-artifacts/qa-full QA_URL=http://127.0.0.1:4173/ npm run qa:ui &&
+      QA_OUTPUT_DIR=.crabbox-artifacts/qa-imagery QA_URL=http://127.0.0.1:4173/ npm run qa:imagery
+    stop: always
+
+  qa-zoom:
+    profile: ayuda-web
+    shell: true
+    command: >
+      bash scripts/crabbox-bootstrap-node.sh &&
+      (if [ -f .crabbox-seed/npm-cache.tgz ]; then mkdir -p .crabbox/npm-cache && tar -xzf .crabbox-seed/npm-cache.tgz -C .crabbox/npm-cache && npm ci --offline --cache .crabbox/npm-cache --no-audit --no-fund; else npm ci; fi) &&
+      browser_path="$(bash scripts/crabbox-prepare-browser.sh)" &&
+      npm run build:app &&
+      mkdir -p .crabbox-artifacts &&
+      (npm run preview -- --host 127.0.0.1 --port 4173 > .crabbox-artifacts/preview.log 2>&1 &) &&
+      (i=0; until curl -fsS http://127.0.0.1:4173/ >/dev/null; do i=$((i + 1)); test "$i" -lt 60 || exit 1; sleep 1; done) &&
+      CHROMIUM_EXECUTABLE_PATH="$browser_path" QA_OUTPUT_DIR=.crabbox-artifacts/qa-zoom QA_URL=http://127.0.0.1:4173/ npm run qa:zoom
+    stop: always
+
+  perf-map:
+    profile: ayuda-web
+    shell: true
+    command: >
+      bash scripts/crabbox-bootstrap-node.sh &&
+      npm ci &&
+      npx playwright install --with-deps chromium &&
+      npm run build:app &&
+      mkdir -p .crabbox-artifacts &&
+      (npm run preview -- --host 127.0.0.1 --port 4173 > .crabbox-artifacts/preview.log 2>&1 &) &&
+      (i=0; until curl -fsS http://127.0.0.1:4173/ >/dev/null; do i=$((i + 1)); test "$i" -lt 60 || exit 1; sleep 1; done) &&
+      PERF_OUTPUT_DIR=.crabbox-artifacts/perf-map PERF_URL=http://127.0.0.1:4173/ npm run perf:map
+    stop: always

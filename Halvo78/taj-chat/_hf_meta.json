@@ -1,0 +1,75 @@
+{
+ "captured_at": "2026-08-04T13:40:00Z",
+ "hf_metadata": {
+  "_id": "695ef8adef830872423711e5",
+  "author": "Halvo78",
+  "cardData": {
+   "app_file": "app.py",
+   "colorFrom": "purple",
+   "colorTo": "blue",
+   "emoji": "🎬",
+   "pinned": false,
+   "sdk": "gradio",
+   "sdk_version": "6.22.0",
+   "title": "TAJ CHAT"
+  },
+  "createdAt": "2026-01-08T00:22:05.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://halvo78-taj-chat.hf.space",
+  "id": "Halvo78/taj-chat",
+  "lastModified": "2026-08-02T13:59:30.000Z",
+  "likes": 0,
+  "private": false,
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "halvo78-taj-chat.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": null,
+    "requested": "cpu-basic"
+   },
+   "replicas": {
+    "requested": 1
+   },
+   "stage": "SLEEPING"
+  },
+  "sdk": "gradio",
+  "sha": "fb055a13edb6af58f729c00d9ad08330a7b32ee3",
+  "siblings": [
+   {
+    "rfilename": ".gitattributes"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "app.py"
+   },
+   {
+    "rfilename": "requirements.txt"
+   }
+  ],
+  "subdomain": "halvo78-taj-chat",
+  "tags": [
+   "gradio",
+   "region:us"
+  ],
+  "usedStorage": 0
+ },
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "Halvo78/taj-chat",
+ "repo_type": "spaces",
+ "sha": "fb055a13edb6af58f729c00d9ad08330a7b32ee3",
+ "web_url": "https://huggingface.co/spaces/Halvo78/taj-chat"
+}

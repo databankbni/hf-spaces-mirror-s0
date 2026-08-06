@@ -1,0 +1,95 @@
+{
+  "leagues": [
+    {
+      "id": "606",
+      "name": "FIFA World Cup",
+      "slug": "fifa.world",
+      "season": {
+        "year": 2026,
+        "displayName": "2026 FIFA World Cup"
+      }
+    }
+  ],
+  "events": [
+    {
+      "id": "760422",
+      "date": "2026-06-14T17:00Z",
+      "season": {
+        "year": 2026,
+        "slug": "group-stage"
+      },
+      "status": {
+        "type": {
+          "name": "STATUS_FULL_TIME",
+          "completed": true
+        }
+      },
+      "competitions": [
+        {
+          "competitors": [
+            {
+              "id": "481",
+              "homeAway": "home",
+              "score": "2",
+              "team": {
+                "id": "481",
+                "displayName": "Germany",
+                "abbreviation": "GER"
+              }
+            },
+            {
+              "id": "2654",
+              "homeAway": "away",
+              "score": "0",
+              "team": {
+                "id": "2654",
+                "displayName": "Curaçao",
+                "abbreviation": "CUW"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "760423",
+      "date": "2026-06-14T23:00Z",
+      "season": {
+        "year": 2026,
+        "slug": "group-stage"
+      },
+      "status": {
+        "type": {
+          "name": "STATUS_SCHEDULED",
+          "completed": false
+        }
+      },
+      "competitions": [
+        {
+          "competitors": [
+            {
+              "id": "500",
+              "homeAway": "home",
+              "score": "0",
+              "team": {
+                "id": "500",
+                "displayName": "Ivory Coast",
+                "abbreviation": "CIV"
+              }
+            },
+            {
+              "id": "209",
+              "homeAway": "away",
+              "score": "0",
+              "team": {
+                "id": "209",
+                "displayName": "Ecuador",
+                "abbreviation": "ECU"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

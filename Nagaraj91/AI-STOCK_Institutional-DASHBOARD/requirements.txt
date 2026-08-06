@@ -1,0 +1,12 @@
+langchain
+langchain-community
+langchain-openai
+langchain-google-genai
+yfinance
+gradio
+pandas
+python-dotenv
+ta
+numpy
+plotly
+beautifulsoup4

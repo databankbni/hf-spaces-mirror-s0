@@ -1,0 +1,330 @@
+{
+  "report_kind": "national_market",
+  "report_date": "2026-07-16",
+  "filename": "national_market_2026-07-16.pdf",
+  "file_url": "/api/market-report/file/national_market_2026-07-16.pdf",
+  "headline": "供给压力缓解，需求侧修复；价格仍承压，暂不确认反转",
+  "summary": "DSI 中供过于求占比较上周下降 1.9 个百分点，供不应求占比上升 2.3 个百分点；但内部车型+年款 30 天价格仍为 -1.5%，因此判断为供需边际改善而非价格反转。",
+  "dashboard_cards": [
+    {
+      "label": "供过于求",
+      "value": "43.9%",
+      "note": "较上周 -1.9pp",
+      "tone": "risk"
+    },
+    {
+      "label": "供不应求",
+      "value": "29.0%",
+      "note": "较上周 +2.3pp",
+      "tone": "positive"
+    },
+    {
+      "label": "DSI改善车款",
+      "value": "4,259",
+      "note": "净改善 +1,398",
+      "tone": "positive"
+    },
+    {
+      "label": "30天价格",
+      "value": "-1.5%",
+      "note": "价格仍承压",
+      "tone": "risk"
+    }
+  ],
+  "internal_snapshot": {
+    "source_file": "行情状态业务校准.xlsx",
+    "model_year_count": 1264,
+    "deal_samples_90d": 4283,
+    "current_inventory": 5110,
+    "listing_count": 5627,
+    "price_change_7d": 0.0018622982232080318,
+    "price_change_14d": -0.002014114606350689,
+    "price_change_30d": -0.014852322252393182,
+    "avg_turnover_days": 30.541793,
+    "acquisition_conversion_rate": 0.178953,
+    "sale_conversion_rate": 0.265276,
+    "loss_rate": 0.236642,
+    "avg_gross_profit": 3020.111931,
+    "metric_as_of": "2026-07-09T14:38:32",
+    "category_counts": {
+      "流动行情": 107,
+      "常规行情": 674,
+      "阴跌行情": 132,
+      "急跌行情": 42,
+      "上涨行情": 16,
+      "结构性行情": 233,
+      "其他行情分类": 60
+    }
+  },
+  "dsi_snapshot": {
+    "previous_source": "/Users/bytedance/Downloads/未保存的查询-2026-07-09 15-35-13.xlsx",
+    "current_source": "/Users/bytedance/Downloads/未保存的查询-2026-07-16 10-55-38.xlsx",
+    "previous_rows": 34642,
+    "current_rows": 34675,
+    "previous_effective_count": 34642,
+    "current_effective_count": 34675,
+    "common_vehicle_count": 33719,
+    "changed_vehicle_count": 7120,
+    "improved_vehicle_count": 4259,
+    "worsened_vehicle_count": 2861,
+    "net_improvement": 1398,
+    "previous_counts": {
+      "供不应求": 9255,
+      "供需平衡": 9509,
+      "供过于求": 15878,
+      "未知": 0
+    },
+    "current_counts": {
+      "供不应求": 10070,
+      "供需平衡": 9380,
+      "供过于求": 15225,
+      "未知": 0
+    },
+    "previous_shares": {
+      "供不应求": 0.2671612493504994,
+      "供需平衡": 0.27449338952716357,
+      "供过于求": 0.45834536112233704,
+      "未知": 0
+    },
+    "current_shares": {
+      "供不应求": 0.29041095890410956,
+      "供需平衡": 0.27051189617880317,
+      "供过于求": 0.4390771449170872,
+      "未知": 0
+    },
+    "share_delta_pp": {
+      "供不应求": 2.3249709553610165,
+      "供需平衡": -0.39814933483603987,
+      "供过于求": -1.9268216205249822,
+      "未知": 0
+    },
+    "transition_counts": {
+      "供需平衡→供需平衡": 6064,
+      "供需平衡→供过于求": 1649,
+      "供不应求→供需平衡": 1022,
+      "供过于求→供过于求": 12842,
+      "供过于求→供需平衡": 2229,
+      "供过于求→供不应求": 290,
+      "供不应求→供不应求": 7693,
+      "供需平衡→供不应求": 1740,
+      "供不应求→供过于求": 190
+    }
+  },
+  "daily_digest": {
+    "report_date": "2026-07-16",
+    "window": "2026年07月14日 20:00 至 2026年07月15日 20:00",
+    "new_car": [
+      "智己LS9 Hyper将于7月16日上市（三电机、全线控转向、大六座SUV）",
+      "坦克300L完成553项升级，新增Hi4-Z混动并加长轴距",
+      "享界G9获北京L3级道路测试牌照，预计8月内上市"
+    ],
+    "discount": "本窗口未取得新的可用降价榜结构化结果；终端优惠变化需结合独立榜单快照和门店实时行情复核。",
+    "policy": "以旧换新按“比例+上限”执行：报废更新新能源最高2万元、燃油最高1.5万元；置换更新最高1.5万元/1.3万元。",
+    "industry": "多家车企上半年业绩预亏，渠道返利、终端支持和售后预期需按品牌持续跟踪，不可一次性外推。",
+    "market": "日报引用协会月度口径；不同周期数据不混同为当日行情，日度判断仍以内外部结构化信号为主。",
+    "source_label": "汽车行业每日采集·最新脱敏版"
+  },
+  "discount_ranking": [
+    {
+      "rank": 1,
+      "brand": "路虎",
+      "series": "揽胜极光",
+      "discount_wan": 23.0,
+      "published_rank": 1
+    },
+    {
+      "rank": 2,
+      "brand": "奔驰",
+      "series": "奔驰EQE",
+      "discount_wan": 23.9,
+      "published_rank": 2
+    },
+    {
+      "rank": 3,
+      "brand": "奔驰",
+      "series": "奔驰EQB",
+      "discount_wan": 17.6,
+      "published_rank": 3
+    },
+    {
+      "rank": 4,
+      "brand": "奔驰",
+      "series": "奔驰A级",
+      "discount_wan": 12.54,
+      "published_rank": 4
+    },
+    {
+      "rank": 5,
+      "brand": "奔驰",
+      "series": "奔驰EQE SUV",
+      "discount_wan": 23.9,
+      "published_rank": 5
+    },
+    {
+      "rank": 6,
+      "brand": "别克",
+      "series": "威朗",
+      "discount_wan": 6.3,
+      "published_rank": 6
+    },
+    {
+      "rank": 7,
+      "brand": "宝马",
+      "series": "宝马i3",
+      "discount_wan": 16.69,
+      "published_rank": 7
+    },
+    {
+      "rank": 8,
+      "brand": "沃尔沃",
+      "series": "沃尔沃XC60 PHEV",
+      "discount_wan": 23.9,
+      "published_rank": 8
+    }
+  ],
+  "structural_opportunities": [
+    {
+      "title": "特斯拉 Model Y 2022",
+      "state": "流动行情",
+      "deals": 62,
+      "cycle": 12.12004747,
+      "price_30d": 0.024776751
+    },
+    {
+      "title": "特斯拉 Model 3 2022",
+      "state": "流动行情",
+      "deals": 60,
+      "cycle": 13.21638825,
+      "price_30d": 0.013082043
+    },
+    {
+      "title": "特斯拉 Model Y 2021",
+      "state": "流动行情",
+      "deals": 31,
+      "cycle": 11.24218704,
+      "price_30d": 0.004936987
+    },
+    {
+      "title": "iCAR iCAR超级V23 2025",
+      "state": "结构性行情",
+      "deals": 18,
+      "cycle": 28.8197678,
+      "price_30d": -0.035007301
+    },
+    {
+      "title": "理想汽车 理想L9 2024",
+      "state": "流动行情",
+      "deals": 15,
+      "cycle": 12.90328869,
+      "price_30d": -0.025159767
+    }
+  ],
+  "structural_risks": [
+    {
+      "title": "本田 飞度 2021",
+      "state": "急跌行情",
+      "deals": 13,
+      "cycle": 24.05259259,
+      "price_30d": -0.135691318
+    },
+    {
+      "title": "别克 英朗 2021",
+      "state": "阴跌行情",
+      "deals": 12,
+      "cycle": 21.31879524,
+      "price_30d": -0.119765396
+    },
+    {
+      "title": "特斯拉 Model Y 2024",
+      "state": "阴跌行情",
+      "deals": 11,
+      "cycle": 7.305770202,
+      "price_30d": -0.117327348
+    },
+    {
+      "title": "领克 领克06 2020",
+      "state": "阴跌行情",
+      "deals": 10,
+      "cycle": 10.1301207,
+      "price_30d": -0.106535363
+    },
+    {
+      "title": "比亚迪 秦PLUS DM 2024",
+      "state": "阴跌行情",
+      "deals": 21,
+      "cycle": 14.42014532,
+      "price_30d": -0.07630177
+    }
+  ],
+  "sections": [
+    {
+      "title": "DSI周度迁移",
+      "summary": "共同车款 33,719 个，状态变化 7,120 个；改善 4,259 个、转弱 2,861 个。"
+    },
+    {
+      "title": "内部经营信号",
+      "summary": "90天成交样本 4,283；收车转化率 17.9%；售车转化率 26.5%；平均周转 30.5 天。"
+    },
+    {
+      "title": "今日关键事件",
+      "summary": "新车关注：智己LS9 Hyper将于7月16日上市（三电机、全线控转向、大六座SUV）；坦克300L完成553项升级，新增Hi4-Z混动并加长轴距；享界G9获北京L3级道路测试牌照，预计8月内上市。以旧换新按“比例+上限”执行：报废更新新能源最高2万元、燃油最高1.5万元；置换更新最高1.5万元/1.3万元。"
+    },
+    {
+      "title": "今天怎么做",
+      "summary": "积极关注供需改善且成交、周转、毛利同时达标的车型；30天价格仍下行的不追高；供过于求和新车降价冲击车型优先去库存。"
+    },
+    {
+      "title": "全国外部验证",
+      "summary": "权威行业数据支持‘总盘谨慎、结构分化’；新能源替代、渠道去库存和以旧换新继续影响二手车供给与残值。"
+    },
+    {
+      "title": "数据边界",
+      "summary": "内部数据是平台样本；DSI只做本报告周度迁移观察；全国月度数据存在滞后；具体车仍需七要素定价和实车检测。"
+    }
+  ],
+  "external_sources": [
+    {
+      "title": "2026年6月份全国乘用车市场分析",
+      "publisher": "中国汽车流通协会乘用车市场信息联席分会",
+      "published_at": "2026-07-14",
+      "url": "https://www.cada.cn/Trends/info_91_10533.html",
+      "facts": [
+        "2026年6月全国乘用车市场零售160.2万辆，同比下降23.2%，环比增长6.1%。",
+        "2026年6月新能源零售渗透率为62.8%，新车市场呈现燃油偏弱、新能源偏强的结构分化。",
+        "渠道处于去库存阶段，新车价格和库存压力仍会传导至二手车残值。"
+      ]
+    },
+    {
+      "title": "车市扫描（2026年6月1日—6月7日）",
+      "publisher": "中国汽车流通协会乘用车市场信息联席分会",
+      "published_at": "2026-06-10",
+      "url": "https://www.cada.cn/Trends/info_91_10516.html",
+      "facts": [
+        "协会披露的最新可核验二手车月度数据为2026年4月：全国交易167万辆，环比下降6.7%，同比下降2.0%，交易金额1135亿元。",
+        "2026年4月新能源二手车交易14.3万辆，环比增长2.0%，同比增长21.6%，渗透率11.6%。"
+      ]
+    },
+    {
+      "title": "2026年汽车以旧换新补贴实施细则",
+      "publisher": "中华人民共和国商务部等8部门",
+      "published_at": "2025-12-30",
+      "url": "https://www.mofcom.gov.cn/zfxxgk/fdzdgknr/ztfl/gnmygl/art/2025/art_1a6dd3bbec924caba382de84e0afad30.html",
+      "facts": [
+        "2026年置换更新购买符合条件的新能源乘用车，按新车销售价格8%补贴，最高1.5万元。",
+        "购买符合条件的2.0升及以下燃油乘用车，按新车销售价格6%补贴，最高1.3万元。",
+        "置换补贴会促进旧车释放，也会通过新车到手价影响相邻二手车价格。"
+      ]
+    },
+    {
+      "title": "关于培育壮大汽车后市场消费若干措施",
+      "publisher": "中华人民共和国商务部等9部门",
+      "published_at": "2026-06-23",
+      "url": "https://www.mofcom.gov.cn/zwgk/zcfb/art/2026/art_db5282fde5404e2b99678c152a36830c.html",
+      "facts": [
+        "政策支持通过二手车经销、回购和出口等方式打通汽车产业链。",
+        "政策鼓励新能源维修能力建设，有利于降低部分新能源二手车后市场不确定性，但不能替代单车电池和车况检测。"
+      ]
+    }
+  ],
+  "created_at": "2026-07-16T12:54:20+08:00"
+}

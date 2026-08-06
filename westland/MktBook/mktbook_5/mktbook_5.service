@@ -1,0 +1,21 @@
+# /etc/systemd/system/mktbook_5.service
+[Unit]
+Description=MktBook 5 (Workout #5) Bayesian Showdown Bot Ecosystem
+After=network.target mktbook.service
+Requires=mktbook.service
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/root
+Environment="PATH=/usr/local/bin:/usr/bin:/bin"
+EnvironmentFile=/root/mktbook_5/.env_5
+ExecStart=/usr/bin/python3 -m mktbook_5.main
+Restart=always
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=mktbook_5
+
+[Install]
+WantedBy=multi-user.target

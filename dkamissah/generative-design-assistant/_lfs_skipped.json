@@ -1,0 +1,13 @@
+{
+ "lfs_not_stored": [
+  {
+   "oid": "9984bfb3abbaf6b9ef39017a164a940d737e341ef65ae8e7db80e267a652b466",
+   "path": "knowledge_base/vectorstore/chroma.sqlite3",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6OTk4NGJmYjNhYmJhZjZiOWVmMzkwMTdhMTY0YTk0MGQ3MzdlMzQxZWY2NWFlOGU3ZGI4MGUyNjdhNjUyYjQ2NgpzaXplIDY0NTkzOTIK",
+   "size": 6459392,
+   "url": "https://huggingface.co/spaces/dkamissah/generative-design-assistant/resolve/9f5bf9e3b9a8203688f04cbe053b2e6c8719d99a/knowledge_base/vectorstore/chroma.sqlite3"
+  }
+ ],
+ "overflow_not_stored": [],
+ "oversize_not_stored": []
+}

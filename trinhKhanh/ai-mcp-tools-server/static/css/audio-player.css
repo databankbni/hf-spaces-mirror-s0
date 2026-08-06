@@ -1,0 +1,36 @@
+/* Player audio truyện trong result box */
+
+/* ===== AUDIO PLAYER ===== */
+.audio-player-wrap {
+  margin-top: 14px;
+  padding: 14px;
+  background: linear-gradient(135deg, #0e0025, #140040);
+  border: 1px solid #3a0060;
+  border-radius: 10px;
+  display: none;
+}
+.audio-player-wrap.show { display: block; }
+.audio-story-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #cc88ff;
+  margin-bottom: 4px;
+  line-height: 1.4;
+}
+.audio-story-meta {
+  font-size: 11px;
+  color: #7766aa;
+  margin-bottom: 10px;
+}
+.audio-player-wrap audio {
+  width: 100%;
+  border-radius: 8px;
+  accent-color: #cc66ff;
+}
+.audio-url-text {
+  font-size: 9px;
+  color: #443366;
+  margin-top: 8px;
+  word-break: break-all;
+  font-family: 'Consolas', monospace;
+}

@@ -1,0 +1,71 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    # Explicit empty env: prevents accidental dependency on injected
+    # secrets. Tests use MockProvider and require no API keys; if a
+    # future test imports a provider that needs a key, it will fail
+    # in CI and in any contributor fork the same way (no silent
+    # divergence based on whether secrets are present).
+    env: {}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('pyproject.toml') }}
+          restore-keys: ${{ runner.os }}-pip-
+
+      - run: pip install -e ".[dev]"
+
+      # Runs the Makefile target so CI and local lint can never drift;
+      # the target covers ruff check, the scoped format check, and mypy.
+      - name: Lint and type check
+        run: make lint
+
+      - name: Run tests
+        run: pytest tests/ -v --tb=short
+
+      # README numbers are pinned to docs/_generated/stats_report.md via the
+      # marker protocol; this fails the build if the README and the report
+      # drift. Stdlib-only, so it runs as a direct script rather than a
+      # Makefile target (the Makefile's $(PYTHON) is a local homebrew path).
+      - name: Check README stats consistency
+        run: python scripts/check_readme_stats.py
+
+      # README figures are generated from the same report and carry a source-hash
+      # of the values they drew; this fails the build if a committed SVG drifted
+      # from the report. Hash-based and matplotlib-free, so it needs no [plots].
+      - name: Check README plots freshness
+        run: python scripts/make_plots.py check
+
+      # The README's test-count claims sit in code chips and bash fences the
+      # stats marker protocol cannot wrap; this fails the build if any claimed
+      # count drifts from what pytest actually collects.
+      - name: Check README test count
+        run: python scripts/check_readme_test_count.py
+
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build Docker image
+        run: docker build -f docker/Dockerfile -t agent-bench:ci .
+
+      - name: Smoke test
+        run: |
+          docker run --rm agent-bench:ci python -c \
+            "from agent_bench import __version__; print(__version__)"

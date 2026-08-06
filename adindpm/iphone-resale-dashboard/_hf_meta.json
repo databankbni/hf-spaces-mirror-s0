@@ -1,0 +1,91 @@
+{
+ "captured_at": "2026-08-04T15:34:52Z",
+ "hf_metadata": {
+  "_id": "6a4869e7b0032ce14539073b",
+  "author": "adindpm",
+  "cardData": {
+   "colorFrom": "yellow",
+   "colorTo": "purple",
+   "emoji": "👁",
+   "license": "mit",
+   "pinned": false,
+   "sdk": "docker",
+   "short_description": "Dashboard visualisasi benchmark harga resale iPhone",
+   "title": "Iphone Resale Dashboard"
+  },
+  "createdAt": "2026-07-04T02:03:19.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://adindpm-iphone-resale-dashboard.hf.space",
+  "id": "adindpm/iphone-resale-dashboard",
+  "lastModified": "2026-07-06T13:52:49.000Z",
+  "likes": 0,
+  "private": false,
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "adindpm-iphone-resale-dashboard.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": "cpu-basic",
+    "requested": "cpu-basic"
+   },
+   "pySpacesVersion": "0.50.4",
+   "replicas": {
+    "current": 1,
+    "requested": 1
+   },
+   "sha": "14596a1ed96a3858999eb4a2171c728751457bee",
+   "stage": "RUNNING"
+  },
+  "sdk": "docker",
+  "sha": "14596a1ed96a3858999eb4a2171c728751457bee",
+  "siblings": [
+   {
+    "rfilename": ".gitattributes"
+   },
+   {
+    "rfilename": "Dockerfile"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "iphone_resale.py"
+   },
+   {
+    "rfilename": "iphone_resale_clean.csv"
+   },
+   {
+    "rfilename": "requirements.txt"
+   }
+  ],
+  "subdomain": "adindpm-iphone-resale-dashboard",
+  "tags": [
+   "docker",
+   "region:us"
+  ],
+  "usedStorage": 0
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "adindpm/iphone-resale-dashboard",
+ "repo_type": "spaces",
+ "sha": "14596a1ed96a3858999eb4a2171c728751457bee",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/adindpm/iphone-resale-dashboard"
+}

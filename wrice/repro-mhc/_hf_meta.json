@@ -1,0 +1,23 @@
+{
+ "captured_at": "2026-08-04T17:09:58Z",
+ "hf_metadata": {
+  "sha": "01d2e47d60f05c0c780e5f14cfb83886682a8a5e"
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "wrice/repro-mhc",
+ "repo_type": "spaces",
+ "sha": "01d2e47d60f05c0c780e5f14cfb83886682a8a5e",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/wrice/repro-mhc"
+}

@@ -1,0 +1,23 @@
+{
+ "captured_at": "2026-08-04T16:24:16Z",
+ "hf_metadata": {
+  "sha": "f2e9a6838d5c46aec198235b02ce09e9e138013a"
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "kc8yho/kit-mcp-bridge",
+ "repo_type": "spaces",
+ "sha": "f2e9a6838d5c46aec198235b02ce09e9e138013a",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/kc8yho/kit-mcp-bridge"
+}

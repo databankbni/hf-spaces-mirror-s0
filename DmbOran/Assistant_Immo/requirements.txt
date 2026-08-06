@@ -1,0 +1,18 @@
+#requirements.txt
+# Core dependencies for the RAG chatbot application
+pydantic
+sentence-transformers
+chromadb
+requests
+python-dotenv
+huggingface-hub
+transformers
+numpy
+torch
+qdrant-client
+groq
+gradio>=4.16.0
+google-generativeai>=0.3.2
+fastapi
+uvicorn
+pymysql

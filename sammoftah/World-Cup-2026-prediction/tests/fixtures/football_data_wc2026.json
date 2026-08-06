@@ -1,0 +1,28 @@
+{
+  "competition": {
+    "id": 2000,
+    "name": "FIFA World Cup",
+    "code": "WC"
+  },
+  "season": {
+    "id": 2026,
+    "startDate": "2026-06-11",
+    "endDate": "2026-07-19"
+  },
+  "matches": [
+    {
+      "id": 900025,
+      "utcDate": "2026-06-14T17:00:00Z",
+      "status": "FINISHED",
+      "stage": "GROUP_STAGE",
+      "group": "GROUP_E",
+      "lastUpdated": "2026-06-14T19:02:00Z",
+      "homeTeam": {"id": 1, "name": "Germany"},
+      "awayTeam": {"id": 2, "name": "Curaçao"},
+      "score": {
+        "duration": "REGULAR",
+        "fullTime": {"home": 2, "away": 0}
+      }
+    }
+  ]
+}

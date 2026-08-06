@@ -1,0 +1,2086 @@
+{
+  "model_info": {
+    "name": "Seed 2.0 Lite",
+    "id": "bytedance/seed-2-0-lite",
+    "developer": "bytedance",
+    "additional_details": {
+      "raw_id": "seed-2.0-lite",
+      "raw_name": "Seed 2.0 Lite",
+      "raw_model_id": "seed-2.0-lite",
+      "raw_model_name": "Seed 2.0 Lite",
+      "raw_organization_id": "bytedance",
+      "raw_organization_name": "ByteDance",
+      "raw_release_date": "2026-02-14",
+      "raw_announcement_date": "2026-02-14",
+      "raw_multimodal": "true",
+      "raw_provider_slug": "bytedance",
+      "raw_provider_name": "ByteDance"
+    },
+    "normalized_id": "bytedance/seed-2.0-lite",
+    "family_id": "bytedance/seed-2-0-lite",
+    "family_slug": "seed-2-0-lite",
+    "family_name": "Seed 2.0 Lite",
+    "variant_key": "default",
+    "variant_label": "Default",
+    "model_route_id": "bytedance__seed-2-0-lite",
+    "model_version": null
+  },
+  "model_group_id": "bytedance/seed-2-0-lite",
+  "model_route_id": "bytedance__seed-2-0-lite",
+  "model_family_name": "Seed 2.0 Lite",
+  "raw_model_ids": [
+    "bytedance/seed-2.0-lite"
+  ],
+  "evaluations_by_category": {
+    "other": [
+      {
+        "schema_version": "0.2.2",
+        "evaluation_id": "llm-stats/first_party/bytedance_seed-2.0-lite/1777108064.422824",
+        "retrieved_timestamp": "1777108064.422824",
+        "benchmark": "llm-stats",
+        "source_data": {
+          "dataset_name": "AIME 2026",
+          "source_type": "url",
+          "url": [
+            "https://llm-stats.com/models/seed-2.0-lite",
+            "https://llm-stats.com/benchmarks/aime-2026",
+            "https://api.llm-stats.com/leaderboard/benchmarks/aime-2026"
+          ],
+          "additional_details": {
+            "raw_benchmark_id": "aime-2026",
+            "raw_model_id": "seed-2.0-lite",
+            "source_role": "aggregator"
+          }
+        },
+        "source_metadata": {
+          "source_name": "LLM Stats API: first_party scores",
+          "source_type": "documentation",
+          "source_organization_name": "LLM Stats",
+          "source_organization_url": "https://llm-stats.com/",
+          "evaluator_relationship": "first_party",
+          "additional_details": {
+            "models_endpoint": "https://api.llm-stats.com/v1/models",
+            "benchmarks_endpoint": "https://api.llm-stats.com/leaderboard/benchmarks",
+            "scores_endpoint": "https://api.llm-stats.com/v1/scores",
+            "scores_endpoint_fallback": "https://api.llm-stats.com/leaderboard/benchmarks/{benchmark_id}",
+            "developer_page_url": "https://llm-stats.com/developer",
+            "attribution_url": "https://llm-stats.com/",
+            "attribution_required": "true",
+            "source_role": "aggregator"
+          }
+        },
+        "eval_library": {
+          "name": "LLM Stats",
+          "version": "unknown"
+        },
+        "model_info": {
+          "name": "Seed 2.0 Lite",
+          "id": "bytedance/seed-2.0-lite",
+          "developer": "bytedance",
+          "additional_details": {
+            "raw_id": "seed-2.0-lite",
+            "raw_name": "Seed 2.0 Lite",
+            "raw_model_id": "seed-2.0-lite",
+            "raw_model_name": "Seed 2.0 Lite",
+            "raw_organization_id": "bytedance",
+            "raw_organization_name": "ByteDance",
+            "raw_release_date": "2026-02-14",
+            "raw_announcement_date": "2026-02-14",
+            "raw_multimodal": "true",
+            "raw_provider_slug": "bytedance",
+            "raw_provider_name": "ByteDance"
+          },
+          "normalized_id": "bytedance/seed-2.0-lite",
+          "family_id": "bytedance/seed-2-0-lite",
+          "family_slug": "seed-2-0-lite",
+          "family_name": "Seed 2.0 Lite",
+          "variant_key": "default",
+          "variant_label": "Default",
+          "model_route_id": "bytedance__seed-2-0-lite"
+        },
+        "generation_config": null,
+        "source_record_url": "https://huggingface.co/datasets/evaleval/card_backend/resolve/main/records/bytedance__seed-2-0-lite/llm_stats_first_party_bytedance_seed_2_0_lite_1777108064_422824.json",
+        "detailed_evaluation_results_meta": null,
+        "detailed_evaluation_results": null,
+        "passthrough_top_level_fields": null,
+        "evaluation_results": [
+          {
+            "evaluation_result_id": "aime-2026::aime-2026-seed-2.0-lite",
+            "evaluation_name": "llm_stats.aime-2026",
+            "source_data": {
+              "dataset_name": "AIME 2026",
+              "source_type": "url",
+              "url": [
+                "https://llm-stats.com/models/seed-2.0-lite",
+                "https://llm-stats.com/benchmarks/aime-2026",
+                "https://api.llm-stats.com/leaderboard/benchmarks/aime-2026"
+              ],
+              "additional_details": {
+                "raw_benchmark_id": "aime-2026",
+                "raw_model_id": "seed-2.0-lite",
+                "source_role": "aggregator"
+              }
+            },
+            "metric_config": {
+              "evaluation_description": "All 30 problems from the 2026 American Invitational Mathematics Examination (AIME I and AIME II), testing olympiad-level mathematical reasoning with integer answers from 000-999. Used as an AI benchmark to evaluate large language models' ability to solve complex mathematical problems requiring multi-step logical deductions and structured symbolic reasoning.",
+              "metric_id": "llm_stats.aime-2026.score",
+              "metric_name": "AIME 2026 score",
+              "metric_kind": "benchmark_score",
+              "metric_unit": "proportion",
+              "lower_is_better": false,
+              "score_type": "continuous",
+              "min_score": 0.0,
+              "max_score": 1.0,
+              "additional_details": {
+                "raw_benchmark_id": "aime-2026",
+                "raw_score_field": "score",
+                "bound_strategy": "inferred_proportion",
+                "raw_name": "AIME 2026",
+                "raw_categories": "[\"math\",\"reasoning\"]",
+                "raw_modality": "text",
+                "raw_verified": "false",
+                "raw_model_count": "12"
+              }
+            },
+            "score_details": {
+              "score": 0.883,
+              "details": {
+                "raw_score": "0.883",
+                "raw_score_field": "score",
+                "raw_model_id": "seed-2.0-lite",
+                "raw_benchmark_id": "aime-2026",
+                "source_urls_json": "[\"https://llm-stats.com/models/seed-2.0-lite\",\"https://llm-stats.com/benchmarks/aime-2026\",\"https://api.llm-stats.com/leaderboard/benchmarks/aime-2026\"]",
+                "raw_score_id": "aime-2026::seed-2.0-lite",
+                "raw_provenance_label": "unknown",
+                "raw_verified": "false"
+              }
+            },
+            "normalized_result": {
+              "benchmark_family_key": "llm_stats",
+              "benchmark_family_name": "AIME 2026",
+              "benchmark_parent_key": "llm_stats",
+              "benchmark_parent_name": "AIME 2026",
+              "benchmark_component_key": "aime_2026",
+              "benchmark_component_name": "Aime 2026",
+              "benchmark_leaf_key": "aime_2026",
+              "benchmark_leaf_name": "Aime 2026",
+              "slice_key": null,
+              "slice_name": null,
+              "metric_name": "Score",
+              "metric_id": "llm_stats.aime-2026.score",
+              "metric_key": "score",
+              "metric_source": "metric_config",
+              "display_name": "Aime 2026 / Score",
+              "canonical_display_name": "Aime 2026 / Score",
+              "raw_evaluation_name": "llm_stats.aime-2026",
+              "is_summary_score": false
+            }
+          },
+          {
+            "evaluation_result_id": "livecodebench-v6::livecodebench-v6-seed-2.0-lite",
+            "evaluation_name": "llm_stats.livecodebench-v6",
+            "source_data": {
+              "dataset_name": "LiveCodeBench v6",
+              "source_type": "url",
+              "url": [
+                "https://llm-stats.com/models/seed-2.0-lite",
+                "https://llm-stats.com/benchmarks/livecodebench-v6",
+                "https://api.llm-stats.com/leaderboard/benchmarks/livecodebench-v6"
+              ],
+              "additional_details": {
+                "raw_benchmark_id": "livecodebench-v6",
+                "raw_model_id": "seed-2.0-lite",
+                "source_role": "aggregator"
+              }
+            },
+            "metric_config": {
+              "evaluation_description": "LiveCodeBench is a holistic and contamination-free evaluation benchmark for large language models for code. It continuously collects new problems from programming contests (LeetCode, AtCoder, CodeForces) and evaluates four different scenarios: code generation, self-repair, code execution, and test output prediction. Problems are annotated with release dates to enable evaluation on unseen problems released after a model's training cutoff.",
+              "metric_id": "llm_stats.livecodebench-v6.score",
+              "metric_name": "LiveCodeBench v6 score",
+              "metric_kind": "benchmark_score",
+              "metric_unit": "proportion",
+              "lower_is_better": false,
+              "score_type": "continuous",
+              "min_score": 0.0,
+              "max_score": 1.0,
+              "additional_details": {
+                "raw_benchmark_id": "livecodebench-v6",
+                "raw_score_field": "score",
+                "bound_strategy": "inferred_proportion",
+                "raw_name": "LiveCodeBench v6",
+                "raw_categories": "[\"general\",\"reasoning\"]",
+                "raw_modality": "text",
+                "raw_verified": "false",
+                "raw_model_count": "45"
+              }
+            },
+            "score_details": {
+              "score": 0.817,
+              "details": {
+                "raw_score": "0.817",
+                "raw_score_field": "score",
+                "raw_model_id": "seed-2.0-lite",
+                "raw_benchmark_id": "livecodebench-v6",
+                "source_urls_json": "[\"https://llm-stats.com/models/seed-2.0-lite\",\"https://llm-stats.com/benchmarks/livecodebench-v6\",\"https://api.llm-stats.com/leaderboard/benchmarks/livecodebench-v6\"]",
+                "raw_score_id": "livecodebench-v6::seed-2.0-lite",
+                "raw_provenance_label": "unknown",
+                "raw_verified": "false"
+              }
+            },
+            "normalized_result": {
+              "benchmark_family_key": "llm_stats",
+              "benchmark_family_name": "LiveCodeBench v6",
+              "benchmark_parent_key": "llm_stats",
+              "benchmark_parent_name": "LiveCodeBench v6",
+              "benchmark_component_key": "livecodebench_v6",
+              "benchmark_component_name": "Livecodebench V6",
+              "benchmark_leaf_key": "livecodebench_v6",
+              "benchmark_leaf_name": "Livecodebench V6",
+              "slice_key": null,
+              "slice_name": null,
+              "metric_name": "Score",
+              "metric_id": "llm_stats.livecodebench-v6.score",
+              "metric_key": "score",
+              "metric_source": "metric_config",
+              "display_name": "Livecodebench V6 / Score",
+              "canonical_display_name": "Livecodebench V6 / Score",
+              "raw_evaluation_name": "llm_stats.livecodebench-v6",
+              "is_summary_score": false
+            }
+          }
+        ],
+        "benchmark_card": null,
+        "instance_level_data": null,
+        "eval_summary_ids": [
+          "llm_stats_aime_2026",
+          "llm_stats_livecodebench_v6"
+        ]
+      }
+    ]
+  },
+  "evaluation_summaries_by_category": {
+    "coding": [
+      {
+        "eval_summary_id": "llm_stats_livecodebench_v6",
+        "benchmark": "LiveCodeBench v6",
+        "benchmark_family_key": "llm_stats",
+        "benchmark_family_name": "LiveCodeBench v6",
+        "benchmark_parent_key": "llm_stats",
+        "benchmark_parent_name": "LiveCodeBench v6",
+        "benchmark_leaf_key": "livecodebench_v6",
+        "benchmark_leaf_name": "Livecodebench V6",
+        "benchmark_component_key": "livecodebench_v6",
+        "benchmark_component_name": "Livecodebench V6",
+        "evaluation_name": "Livecodebench V6",
+        "display_name": "Livecodebench V6",
+        "canonical_display_name": "Livecodebench V6",
+        "is_summary_score": false,
+        "category": "coding",
+        "source_data": {
+          "dataset_name": "LiveCodeBench v6",
+          "source_type": "url",
+          "url": [
+            "https://llm-stats.com/models/seed-2.0-lite",
+            "https://llm-stats.com/benchmarks/livecodebench-v6",
+            "https://api.llm-stats.com/leaderboard/benchmarks/livecodebench-v6"
+          ],
+          "additional_details": {
+            "raw_benchmark_id": "livecodebench-v6",
+            "raw_model_id": "seed-2.0-lite",
+            "source_role": "aggregator"
+          }
+        },
+        "benchmark_card": {
+          "benchmark_details": {
+            "name": "LiveCodeBench",
+            "overview": "LiveCodeBench is a holistic and contamination-free benchmark for evaluating large language models on code-related capabilities. It assesses a broader range of skills including code generation, self-repair, code execution, and test output prediction. The benchmark collects new problems over time from programming contest platforms to prevent data contamination, currently containing over 500 coding problems published between May 2023 and May 2024.",
+            "data_type": "text",
+            "domains": [
+              "code generation",
+              "programming competitions"
+            ],
+            "languages": [
+              "Not specified"
+            ],
+            "similar_benchmarks": [
+              "HumanEval",
+              "MBPP",
+              "APPS",
+              "DS-1000",
+              "ARCADE",
+              "NumpyEval",
+              "PandasEval",
+              "JuICe",
+              "APIBench",
+              "RepoBench",
+              "ODEX",
+              "SWE-Bench",
+              "GoogleCodeRepo",
+              "RepoEval",
+              "Cocomic-Data"
+            ],
+            "resources": [
+              "https://livecodebench.github.io/",
+              "https://arxiv.org/abs/2403.07974"
+            ],
+            "benchmark_type": "single"
+          },
+          "purpose_and_intended_users": {
+            "goal": "To provide a comprehensive and contamination-free evaluation of large language models for code by assessing a broader range of code-related capabilities beyond just code generation.",
+            "audience": [
+              "Researchers and practitioners in academia and industry who are interested in evaluating the capabilities of large language models for code"
+            ],
+            "tasks": [
+              "Code generation",
+              "Self-repair",
+              "Code execution",
+              "Test output prediction"
+            ],
+            "limitations": "The focus on competition programming problems might not be representative of the most general notion of LLM programming capabilities or real-world, open-ended software development tasks.",
+            "out_of_scope_uses": [
+              "Evaluating performance on real-world, open-ended, and unconstrained user-raised problems"
+            ]
+          },
+          "data": {
+            "source": "The data is collected from coding contests on three platforms: LeetCode, AtCoder, and CodeForces, with problems published between May 2023 and May 2024.",
+            "size": "Over 500 coding problems. Specific subsets include 479 samples from 85 problems for code execution and 442 problem instances from 181 LeetCode problems for test output prediction.",
+            "format": "Includes problem statements, public tests, user solutions, and starter code (for LeetCode). Problems are tagged with difficulty labels (Easy, Medium, Hard) from the platforms.",
+            "annotation": "Difficulty labels are provided by the competition platforms. For the code execution dataset, human-submitted solutions were filtered using compile-time and runtime filters followed by manual inspection to ensure quality."
+          },
+          "methodology": {
+            "methods": [
+              "Models are evaluated in a zero-shot setting across four scenarios: code generation, self-repair, code execution, and test output prediction.",
+              "For code generation and self-repair, program correctness is verified using a set of unseen test cases. For code execution, an execution-based correctness metric compares generated output to ground truth. For test output prediction, generated responses are parsed and equivalence checks are used for grading."
+            ],
+            "metrics": [
+              "Pass@1"
+            ],
+            "calculation": "For each problem, 10 candidate answers are generated. The Pass@1 score is the fraction of problems for which a generated program or answer is correct.",
+            "interpretation": "A higher Pass@1 score indicates better performance.",
+            "baseline_results": "The paper reports results for specific models including GPT-4, GPT-4-Turbo, Claude-3-Opus, Claude-3-Sonnet, and Mistral-L, but specific numerical scores are not provided in the given excerpts.",
+            "validation": "Program correctness for code generation and self-repair is verified using a set of unseen test cases. For code execution, an execution-based correctness metric is used to compare generated output to ground truth. For test output prediction, generated responses are parsed and equivalence checks are used for grading."
+          },
+          "ethical_and_legal_considerations": {
+            "privacy_and_anonymity": "Not specified",
+            "data_licensing": "Not specified",
+            "consent_procedures": "Not specified",
+            "compliance_with_regulations": "The benchmark operates under the Fair Use doctrine (§ 107) for copyrighted works, determining that its use of collected problems for academic, non-profit educational purposes constitutes fair use. It does not train on the collected problems."
+          },
+          "possible_risks": [
+            {
+              "category": "Over- or under-reliance",
+              "description": [
+                "In AI-assisted decision-making tasks, reliance measures how much a person trusts (and potentially acts on) a model's output. Over-reliance occurs when a person puts too much trust in a model, accepting a model's output when the model's output is likely incorrect. Under-reliance is the opposite, where the person doesn't trust the model but should."
+              ],
+              "url": "https://www.ibm.com/docs/en/watsonx/saas?topic=SSYOK8/wsj/ai-risk-atlas/over-or-under-reliance.html"
+            },
+            {
+              "category": "Unrepresentative data",
+              "description": [
+                "Unrepresentative data occurs when the training or fine-tuning data is not sufficiently representative of the underlying population or does not measure the phenomenon of interest. Synthetic data might not fully capture the complexity and nuances of real-world data. Causes include possible limitations in the seed data quality, biases in generation methods, or inadequate domain knowledge. Thus, AI models might struggle to generalize effectively to real-world scenarios."
+              ],
+              "url": "https://www.ibm.com/docs/en/watsonx/saas?topic=SSYOK8/wsj/ai-risk-atlas/unrepresentative-data.html"
+            },
+            {
+              "category": "Data contamination",
+              "description": [
+                "Data contamination occurs when incorrect data is used for training. For example, data that is not aligned with model's purpose or data that is already set aside for other development tasks such as testing and evaluation."
+              ],
+              "url": "https://www.ibm.com/docs/en/watsonx/saas?topic=SSYOK8/wsj/ai-risk-atlas/data-contamination.html"
+            },
+            {
+              "category": "Harmful code generation",
+              "description": [
+                "Models might generate code that causes harm or unintentionally affects other systems."
+              ],
+              "url": "https://www.ibm.com/docs/en/watsonx/saas?topic=SSYOK8/wsj/ai-risk-atlas/harmful-code-generation.html"
+            },
+            {
+              "category": "Reproducibility",
+              "description": [
+                "Replicating agent behavior or output can be impacted by changes or updates made to external services and tools. This impact is increased if the agent is built with generative AI."
+              ],
+              "url": "https://www.ibm.com/docs/en/watsonx/saas?topic=SSYOK8/wsj/ai-risk-atlas/reproducibility-agentic.html"
+            }
+          ],
+          "flagged_fields": {},
+          "missing_fields": []
+        },
+        "tags": {
+          "domains": [
+            "code generation",
+            "programming competitions"
+          ],
+          "languages": [
+            "Not specified"
+          ],
+          "tasks": [
+            "Code generation",
+            "Self-repair",
+            "Code execution",
+            "Test output prediction"
+          ]
+        },
+        "subtasks_count": 0,
+        "metrics_count": 1,
+        "metric_names": [
+          "Score"
+        ],
+        "primary_metric_name": "Score",
+        "evalcards": {
+          "annotations": {
+            "reporting_completeness": {
+              "completeness_score": 0.9285714285714286,
+              "total_fields_evaluated": 28,
+              "missing_required_fields": [
+                "evalcards.lifecycle_status",
+                "evalcards.preregistration_url"
+              ],
+              "partial_fields": [],
+              "field_scores": [
+                {
+                  "field_path": "autobenchmarkcard.benchmark_details.name",
+                  "coverage_type": "full",
+                  "score": 1.0
+                },
+                {
+                  "field_path": "autobenchmarkcard.benchmark_details.overview",
+                  "coverage_type": "full",
+                  "score": 1.0
+                },
+                {
+                  "field_path": "autobenchmarkcard.benchmark_details.data_type",
+                  "coverage_type": "full",
+                  "score": 1.0
+                },
+                {
+                  "field_path": "autobenchmarkcard.benchmark_details.domains",
+                  "coverage_type": "full",
+                  "score": 1.0
+                },
+                {
+                  "field_path": "autobenchmarkcard.benchmark_details.languages",
+                  "coverage_type": "full",
+                  "score": 1.0
+                },
+                {
+                  "field_path": "autobenchmarkcard.benchmark_details.similar_benchmarks",
+                  "coverage_type": "full",
+                  "score": 1.0
+                },
+                {
+                  "field_path": "autobenchmarkcard.benchmark_details.resources",
+                  "coverage_type": "full",
+                  "score": 1.0
+                },
+                {
+                  "field_path": "autobenchmarkcard.purpose_and_intended_users.goal",
+                  "coverage_type": "full",
+                  "score": 1.0
+                },
+                {
+                  "field_path": "autobenchmarkcard.purpose_and_intended_users.audience",
+                  "coverage_type": "full",
+                  "score": 1.0
+                },
+                {
+                  "field_path": "autobenchmarkcard.purpose_and_intended_users.tasks",
+                  "coverage_type": "full",
+                  "score": 1.0
+                },
+                {
+                  "field_path": "autobenchmarkcard.purpose_and_intended_users.limitations",
+                  "coverage_type": "full",
+                  "score": 1.0
+                },
+                {
+                  "field_path": "autobenchmarkcard.purpose_and_intended_users.out_of_scope_uses",
+                  "coverage_type": "full",
+                  "score": 1.0
+                },
+                {
+                  "field_path": "autobenchmarkcard.methodology.methods",
+                  "coverage_type": "full",
+                  "score": 1.0
+                },
+                {
+                  "field_path": "autobenchmarkcard.methodology.metrics",
+                  "coverage_type": "full",
+                  "score": 1.0
+                },
+                {
+                  "field_path": "autobenchmarkcard.methodology.calculation",
+                  "coverage_type": "full",
+                  "score": 1.0
+                },
+                {
+                  "field_path": "autobenchmarkcard.methodology.interpretation",
+                  "coverage_type": "full",
+                  "score": 1.0
+                },
+                {
+                  "field_path": "autobenchmarkcard.methodology.baseline_results",
+                  "coverage_type": "full",
+                  "score": 1.0
+                },
+                {
+                  "field_path": "autobenchmarkcard.methodology.validation",
+                  "coverage_type": "full",
+                  "score": 1.0
+                },
+                {
+                  "field_path": "autobenchmarkcard.ethical_and_legal_considerations.privacy_and_anonymity",
+                  "coverage_type": "full",
+                  "score": 1.0
+                },
+                {
+                  "field_path": "autobenchmarkcard.ethical_and_legal_considerations.data_licensing",
+                  "coverage_type": "full",
+                  "score": 1.0
+                },
+                {
+                  "field_path": "autobenchmarkcard.ethical_and_legal_considerations.consent_procedures",
+                  "coverage_type": "full",
+                  "score": 1.0
+                },
+                {
+                  "field_path": "autobenchmarkcard.ethical_and_legal_considerations.compliance_with_regulations",
+                  "coverage_type": "full",
+                  "score": 1.0
+                },
+                {
+                  "field_path": "autobenchmarkcard.data",
+                  "coverage_type": "partial",
+                  "score": 1.0
+                },
+                {
+                  "field_path": "eee_eval.source_metadata.source_type",
+                  "coverage_type": "full",
+                  "score": 1.0
+                },
+                {
+                  "field_path": "eee_eval.source_metadata.source_organization_name",
+                  "coverage_type": "full",
+                  "score": 1.0
+                },
+                {
+                  "field_path": "eee_eval.source_metadata.evaluator_relationship",
+                  "coverage_type": "full",
+                  "score": 1.0
+                },
+                {
+                  "field_path": "evalcards.lifecycle_status",
+                  "coverage_type": "reserved",
+                  "score": 0.0
+                },
+                {
+                  "field_path": "evalcards.preregistration_url",
+                  "coverage_type": "reserved",
+                  "score": 0.0
+                }
+              ],
+              "signal_version": "1.0"
+            },
+            "benchmark_comparability": {
+              "variant_divergence_groups": [],
+              "cross_party_divergence_groups": []
+            }
+          }
+        },
+        "reproducibility_summary": {
+          "results_total": 1,
+          "has_reproducibility_gap_count": 1,
+          "populated_ratio_avg": 0.0
+        },
+        "provenance_summary": {
+          "total_results": 1,
+          "total_groups": 1,
+          "multi_source_groups": 0,
+          "first_party_only_groups": 1,
+          "source_type_distribution": {
+            "first_party": 1,
+            "third_party": 0,
+            "collaborative": 0,
+            "unspecified": 0
+          }
+        },
+        "comparability_summary": {
+          "total_groups": 1,
+          "groups_with_variant_check": 0,
+          "groups_with_cross_party_check": 0,
+          "variant_divergent_count": 0,
+          "cross_party_divergent_count": 0
+        },
+        "metrics": [
+          {
+            "metric_summary_id": "llm_stats_livecodebench_v6_score",
+            "legacy_eval_summary_id": "llm_stats_llm_stats_livecodebench_v6",
+            "evaluation_name": "llm_stats.livecodebench-v6",
+            "display_name": "Livecodebench V6 / Score",
+            "canonical_display_name": "Livecodebench V6 / Score",
+            "benchmark_leaf_key": "livecodebench_v6",
+            "benchmark_leaf_name": "Livecodebench V6",
+            "slice_key": null,
+            "slice_name": null,
+            "lower_is_better": false,
+            "metric_name": "Score",
+            "metric_id": "llm_stats.livecodebench-v6.score",
+            "metric_key": "score",
+            "metric_source": "metric_config",
+            "metric_config": {
+              "evaluation_description": "LiveCodeBench is a holistic and contamination-free evaluation benchmark for large language models for code. It continuously collects new problems from programming contests (LeetCode, AtCoder, CodeForces) and evaluates four different scenarios: code generation, self-repair, code execution, and test output prediction. Problems are annotated with release dates to enable evaluation on unseen problems released after a model's training cutoff.",
+              "metric_id": "llm_stats.livecodebench-v6.score",
+              "metric_name": "LiveCodeBench v6 score",
+              "metric_kind": "benchmark_score",
+              "metric_unit": "proportion",
+              "lower_is_better": false,
+              "score_type": "continuous",
+              "min_score": 0.0,
+              "max_score": 1.0,
+              "additional_details": {
+                "raw_benchmark_id": "livecodebench-v6",
+                "raw_score_field": "score",
+                "bound_strategy": "inferred_proportion",
+                "raw_name": "LiveCodeBench v6",
+                "raw_categories": "[\"general\",\"reasoning\"]",
+                "raw_modality": "text",
+                "raw_verified": "false",
+                "raw_model_count": "45"
+              }
+            },
+            "models_count": 1,
+            "top_score": 0.817,
+            "model_results": [
+              {
+                "model_id": "bytedance/seed-2-0-lite",
+                "model_route_id": "bytedance__seed-2-0-lite",
+                "model_name": "Seed 2.0 Lite",
+                "developer": "bytedance",
+                "variant_key": "default",
+                "raw_model_id": "bytedance/seed-2.0-lite",
+                "score": 0.817,
+                "evaluation_id": "llm-stats/first_party/bytedance_seed-2.0-lite/1777108064.422824",
+                "retrieved_timestamp": "1777108064.422824",
+                "source_metadata": {
+                  "source_name": "LLM Stats API: first_party scores",
+                  "source_type": "documentation",
+                  "source_organization_name": "LLM Stats",
+                  "source_organization_url": "https://llm-stats.com/",
+                  "evaluator_relationship": "first_party",
+                  "additional_details": {
+                    "models_endpoint": "https://api.llm-stats.com/v1/models",
+                    "benchmarks_endpoint": "https://api.llm-stats.com/leaderboard/benchmarks",
+                    "scores_endpoint": "https://api.llm-stats.com/v1/scores",
+                    "scores_endpoint_fallback": "https://api.llm-stats.com/leaderboard/benchmarks/{benchmark_id}",
+                    "developer_page_url": "https://llm-stats.com/developer",
+                    "attribution_url": "https://llm-stats.com/",
+                    "attribution_required": "true",
+                    "source_role": "aggregator"
+                  }
+                },
+                "source_data": {
+                  "dataset_name": "AIME 2026",
+                  "source_type": "url",
+                  "url": [
+                    "https://llm-stats.com/models/seed-2.0-lite",
+                    "https://llm-stats.com/benchmarks/aime-2026",
+                    "https://api.llm-stats.com/leaderboard/benchmarks/aime-2026"
+                  ],
+                  "additional_details": {
+                    "raw_benchmark_id": "aime-2026",
+                    "raw_model_id": "seed-2.0-lite",
+                    "source_role": "aggregator"
+                  }
+                },
+                "source_record_url": "https://huggingface.co/datasets/evaleval/card_backend/resolve/main/records/bytedance__seed-2-0-lite/llm_stats_first_party_bytedance_seed_2_0_lite_1777108064_422824.json",
+                "detailed_evaluation_results": null,
+                "detailed_evaluation_results_meta": null,
+                "passthrough_top_level_fields": null,
+                "instance_level_data": null,
+                "normalized_result": {
+                  "benchmark_family_key": "llm_stats",
+                  "benchmark_family_name": "LiveCodeBench v6",
+                  "benchmark_parent_key": "llm_stats",
+                  "benchmark_parent_name": "LiveCodeBench v6",
+                  "benchmark_component_key": "livecodebench_v6",
+                  "benchmark_component_name": "Livecodebench V6",
+                  "benchmark_leaf_key": "livecodebench_v6",
+                  "benchmark_leaf_name": "Livecodebench V6",
+                  "slice_key": null,
+                  "slice_name": null,
+                  "metric_name": "Score",
+                  "metric_id": "llm_stats.livecodebench-v6.score",
+                  "metric_key": "score",
+                  "metric_source": "metric_config",
+                  "display_name": "Livecodebench V6 / Score",
+                  "canonical_display_name": "Livecodebench V6 / Score",
+                  "raw_evaluation_name": "llm_stats.livecodebench-v6",
+                  "is_summary_score": false
+                },
+                "evalcards": {
+                  "annotations": {
+                    "reproducibility_gap": {
+                      "has_reproducibility_gap": true,
+                      "missing_fields": [
+                        "temperature",
+                        "max_tokens"
+                      ],
+                      "required_field_count": 2,
+                      "populated_field_count": 0,
+                      "signal_version": "1.0"
+                    },
+                    "provenance": {
+                      "source_type": "first_party",
+                      "is_multi_source": false,
+                      "first_party_only": true,
+                      "distinct_reporting_organizations": 1,
+                      "signal_version": "1.0"
+                    },
+                    "variant_divergence": null,
+                    "cross_party_divergence": null
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "subtasks": [],
+        "models_count": 1,
+        "top_score": 0.817,
+        "instance_data": {
+          "available": false,
+          "url_count": 0,
+          "sample_urls": [],
+          "models_with_loaded_instances": 0
+        }
+      }
+    ],
+    "other": [
+      {
+        "eval_summary_id": "llm_stats_aime_2026",
+        "benchmark": "AIME 2026",
+        "benchmark_family_key": "llm_stats",
+        "benchmark_family_name": "AIME 2026",
+        "benchmark_parent_key": "llm_stats",
+        "benchmark_parent_name": "AIME 2026",
+        "benchmark_leaf_key": "aime_2026",
+        "benchmark_leaf_name": "Aime 2026",
+        "benchmark_component_key": "aime_2026",
+        "benchmark_component_name": "Aime 2026",
+        "evaluation_name": "Aime 2026",
+        "display_name": "Aime 2026",
+        "canonical_display_name": "Aime 2026",
+        "is_summary_score": false,
+        "category": "other",
+        "source_data": {
+          "dataset_name": "AIME 2026",
+          "source_type": "url",
+          "url": [
+            "https://llm-stats.com/models/seed-2.0-lite",
+            "https://llm-stats.com/benchmarks/aime-2026",
+            "https://api.llm-stats.com/leaderboard/benchmarks/aime-2026"
+          ],
+          "additional_details": {
+            "raw_benchmark_id": "aime-2026",
+            "raw_model_id": "seed-2.0-lite",
+            "source_role": "aggregator"
+          }
+        },
+        "benchmark_card": null,
+        "tags": {
+          "domains": [],
+          "languages": [],
+          "tasks": []
+        },
+        "subtasks_count": 0,
+        "metrics_count": 1,
+        "metric_names": [
+          "Score"
+        ],
+        "primary_metric_name": "Score",
+        "evalcards": {
+          "annotations": {
+            "reporting_completeness": {
+              "completeness_score": 0.10714285714285714,
+              "total_fields_evaluated": 28,
+              "missing_required_fields": [
+                "autobenchmarkcard.benchmark_details.name",
+                "autobenchmarkcard.benchmark_details.overview",
+                "autobenchmarkcard.benchmark_details.data_type",
+                "autobenchmarkcard.benchmark_details.domains",
+                "autobenchmarkcard.benchmark_details.languages",
+                "autobenchmarkcard.benchmark_details.similar_benchmarks",
+                "autobenchmarkcard.benchmark_details.resources",
+                "autobenchmarkcard.purpose_and_intended_users.goal",
+                "autobenchmarkcard.purpose_and_intended_users.audience",
+                "autobenchmarkcard.purpose_and_intended_users.tasks",
+                "autobenchmarkcard.purpose_and_intended_users.limitations",
+                "autobenchmarkcard.purpose_and_intended_users.out_of_scope_uses",
+                "autobenchmarkcard.methodology.methods",
+                "autobenchmarkcard.methodology.metrics",
+                "autobenchmarkcard.methodology.calculation",
+                "autobenchmarkcard.methodology.interpretation",
+                "autobenchmarkcard.methodology.baseline_results",
+                "autobenchmarkcard.methodology.validation",
+                "autobenchmarkcard.ethical_and_legal_considerations.privacy_and_anonymity",
+                "autobenchmarkcard.ethical_and_legal_considerations.data_licensing",
+                "autobenchmarkcard.ethical_and_legal_considerations.consent_procedures",
+                "autobenchmarkcard.ethical_and_legal_considerations.compliance_with_regulations",
+                "autobenchmarkcard.data",
+                "evalcards.lifecycle_status",
+                "evalcards.preregistration_url"
+              ],
+              "partial_fields": [],
+              "field_scores": [
+                {
+                  "field_path": "autobenchmarkcard.benchmark_details.name",
+                  "coverage_type": "full",
+                  "score": 0.0
+                },
+                {
+                  "field_path": "autobenchmarkcard.benchmark_details.overview",
+                  "coverage_type": "full",
+                  "score": 0.0
+                },
+                {
+                  "field_path": "autobenchmarkcard.benchmark_details.data_type",
+                  "coverage_type": "full",
+                  "score": 0.0
+                },
+                {
+                  "field_path": "autobenchmarkcard.benchmark_details.domains",
+                  "coverage_type": "full",
+                  "score": 0.0
+                },
+                {
+                  "field_path": "autobenchmarkcard.benchmark_details.languages",
+                  "coverage_type": "full",
+                  "score": 0.0
+                },
+                {
+                  "field_path": "autobenchmarkcard.benchmark_details.similar_benchmarks",
+                  "coverage_type": "full",
+                  "score": 0.0
+                },
+                {
+                  "field_path": "autobenchmarkcard.benchmark_details.resources",
+                  "coverage_type": "full",
+                  "score": 0.0
+                },
+                {
+                  "field_path": "autobenchmarkcard.purpose_and_intended_users.goal",
+                  "coverage_type": "full",
+                  "score": 0.0
+                },
+                {
+                  "field_path": "autobenchmarkcard.purpose_and_intended_users.audience",
+                  "coverage_type": "full",
+                  "score": 0.0
+                },
+                {
+                  "field_path": "autobenchmarkcard.purpose_and_intended_users.tasks",
+                  "coverage_type": "full",
+                  "score": 0.0
+                },
+                {
+                  "field_path": "autobenchmarkcard.purpose_and_intended_users.limitations",
+                  "coverage_type": "full",
+                  "score": 0.0
+                },
+                {
+                  "field_path": "autobenchmarkcard.purpose_and_intended_users.out_of_scope_uses",
+                  "coverage_type": "full",
+                  "score": 0.0
+                },
+                {
+                  "field_path": "autobenchmarkcard.methodology.methods",
+                  "coverage_type": "full",
+                  "score": 0.0
+                },
+                {
+                  "field_path": "autobenchmarkcard.methodology.metrics",
+                  "coverage_type": "full",
+                  "score": 0.0
+                },
+                {
+                  "field_path": "autobenchmarkcard.methodology.calculation",
+                  "coverage_type": "full",
+                  "score": 0.0
+                },
+                {
+                  "field_path": "autobenchmarkcard.methodology.interpretation",
+                  "coverage_type": "full",
+                  "score": 0.0
+                },
+                {
+                  "field_path": "autobenchmarkcard.methodology.baseline_results",
+                  "coverage_type": "full",
+                  "score": 0.0
+                },
+                {
+                  "field_path": "autobenchmarkcard.methodology.validation",
+                  "coverage_type": "full",
+                  "score": 0.0
+                },
+                {
+                  "field_path": "autobenchmarkcard.ethical_and_legal_considerations.privacy_and_anonymity",
+                  "coverage_type": "full",
+                  "score": 0.0
+                },
+                {
+                  "field_path": "autobenchmarkcard.ethical_and_legal_considerations.data_licensing",
+                  "coverage_type": "full",
+                  "score": 0.0
+                },
+                {
+                  "field_path": "autobenchmarkcard.ethical_and_legal_considerations.consent_procedures",
+                  "coverage_type": "full",
+                  "score": 0.0
+                },
+                {
+                  "field_path": "autobenchmarkcard.ethical_and_legal_considerations.compliance_with_regulations",
+                  "coverage_type": "full",
+                  "score": 0.0
+                },
+                {
+                  "field_path": "autobenchmarkcard.data",
+                  "coverage_type": "partial",
+                  "score": 0.0
+                },
+                {
+                  "field_path": "eee_eval.source_metadata.source_type",
+                  "coverage_type": "full",
+                  "score": 1.0
+                },
+                {
+                  "field_path": "eee_eval.source_metadata.source_organization_name",
+                  "coverage_type": "full",
+                  "score": 1.0
+                },
+                {
+                  "field_path": "eee_eval.source_metadata.evaluator_relationship",
+                  "coverage_type": "full",
+                  "score": 1.0
+                },
+                {
+                  "field_path": "evalcards.lifecycle_status",
+                  "coverage_type": "reserved",
+                  "score": 0.0
+                },
+                {
+                  "field_path": "evalcards.preregistration_url",
+                  "coverage_type": "reserved",
+                  "score": 0.0
+                }
+              ],
+              "signal_version": "1.0"
+            },
+            "benchmark_comparability": {
+              "variant_divergence_groups": [],
+              "cross_party_divergence_groups": []
+            }
+          }
+        },
+        "reproducibility_summary": {
+          "results_total": 1,
+          "has_reproducibility_gap_count": 1,
+          "populated_ratio_avg": 0.0
+        },
+        "provenance_summary": {
+          "total_results": 1,
+          "total_groups": 1,
+          "multi_source_groups": 0,
+          "first_party_only_groups": 1,
+          "source_type_distribution": {
+            "first_party": 1,
+            "third_party": 0,
+            "collaborative": 0,
+            "unspecified": 0
+          }
+        },
+        "comparability_summary": {
+          "total_groups": 1,
+          "groups_with_variant_check": 0,
+          "groups_with_cross_party_check": 0,
+          "variant_divergent_count": 0,
+          "cross_party_divergent_count": 0
+        },
+        "metrics": [
+          {
+            "metric_summary_id": "llm_stats_aime_2026_score",
+            "legacy_eval_summary_id": "llm_stats_llm_stats_aime_2026",
+            "evaluation_name": "llm_stats.aime-2026",
+            "display_name": "Aime 2026 / Score",
+            "canonical_display_name": "Aime 2026 / Score",
+            "benchmark_leaf_key": "aime_2026",
+            "benchmark_leaf_name": "Aime 2026",
+            "slice_key": null,
+            "slice_name": null,
+            "lower_is_better": false,
+            "metric_name": "Score",
+            "metric_id": "llm_stats.aime-2026.score",
+            "metric_key": "score",
+            "metric_source": "metric_config",
+            "metric_config": {
+              "evaluation_description": "All 30 problems from the 2026 American Invitational Mathematics Examination (AIME I and AIME II), testing olympiad-level mathematical reasoning with integer answers from 000-999. Used as an AI benchmark to evaluate large language models' ability to solve complex mathematical problems requiring multi-step logical deductions and structured symbolic reasoning.",
+              "metric_id": "llm_stats.aime-2026.score",
+              "metric_name": "AIME 2026 score",
+              "metric_kind": "benchmark_score",
+              "metric_unit": "proportion",
+              "lower_is_better": false,
+              "score_type": "continuous",
+              "min_score": 0.0,
+              "max_score": 1.0,
+              "additional_details": {
+                "raw_benchmark_id": "aime-2026",
+                "raw_score_field": "score",
+                "bound_strategy": "inferred_proportion",
+                "raw_name": "AIME 2026",
+                "raw_categories": "[\"math\",\"reasoning\"]",
+                "raw_modality": "text",
+                "raw_verified": "false",
+                "raw_model_count": "12"
+              }
+            },
+            "models_count": 1,
+            "top_score": 0.883,
+            "model_results": [
+              {
+                "model_id": "bytedance/seed-2-0-lite",
+                "model_route_id": "bytedance__seed-2-0-lite",
+                "model_name": "Seed 2.0 Lite",
+                "developer": "bytedance",
+                "variant_key": "default",
+                "raw_model_id": "bytedance/seed-2.0-lite",
+                "score": 0.883,
+                "evaluation_id": "llm-stats/first_party/bytedance_seed-2.0-lite/1777108064.422824",
+                "retrieved_timestamp": "1777108064.422824",
+                "source_metadata": {
+                  "source_name": "LLM Stats API: first_party scores",
+                  "source_type": "documentation",
+                  "source_organization_name": "LLM Stats",
+                  "source_organization_url": "https://llm-stats.com/",
+                  "evaluator_relationship": "first_party",
+                  "additional_details": {
+                    "models_endpoint": "https://api.llm-stats.com/v1/models",
+                    "benchmarks_endpoint": "https://api.llm-stats.com/leaderboard/benchmarks",
+                    "scores_endpoint": "https://api.llm-stats.com/v1/scores",
+                    "scores_endpoint_fallback": "https://api.llm-stats.com/leaderboard/benchmarks/{benchmark_id}",
+                    "developer_page_url": "https://llm-stats.com/developer",
+                    "attribution_url": "https://llm-stats.com/",
+                    "attribution_required": "true",
+                    "source_role": "aggregator"
+                  }
+                },
+                "source_data": {
+                  "dataset_name": "AIME 2026",
+                  "source_type": "url",
+                  "url": [
+                    "https://llm-stats.com/models/seed-2.0-lite",
+                    "https://llm-stats.com/benchmarks/aime-2026",
+                    "https://api.llm-stats.com/leaderboard/benchmarks/aime-2026"
+                  ],
+                  "additional_details": {
+                    "raw_benchmark_id": "aime-2026",
+                    "raw_model_id": "seed-2.0-lite",
+                    "source_role": "aggregator"
+                  }
+                },
+                "source_record_url": "https://huggingface.co/datasets/evaleval/card_backend/resolve/main/records/bytedance__seed-2-0-lite/llm_stats_first_party_bytedance_seed_2_0_lite_1777108064_422824.json",
+                "detailed_evaluation_results": null,
+                "detailed_evaluation_results_meta": null,
+                "passthrough_top_level_fields": null,
+                "instance_level_data": null,
+                "normalized_result": {
+                  "benchmark_family_key": "llm_stats",
+                  "benchmark_family_name": "AIME 2026",
+                  "benchmark_parent_key": "llm_stats",
+                  "benchmark_parent_name": "AIME 2026",
+                  "benchmark_component_key": "aime_2026",
+                  "benchmark_component_name": "Aime 2026",
+                  "benchmark_leaf_key": "aime_2026",
+                  "benchmark_leaf_name": "Aime 2026",
+                  "slice_key": null,
+                  "slice_name": null,
+                  "metric_name": "Score",
+                  "metric_id": "llm_stats.aime-2026.score",
+                  "metric_key": "score",
+                  "metric_source": "metric_config",
+                  "display_name": "Aime 2026 / Score",
+                  "canonical_display_name": "Aime 2026 / Score",
+                  "raw_evaluation_name": "llm_stats.aime-2026",
+                  "is_summary_score": false
+                },
+                "evalcards": {
+                  "annotations": {
+                    "reproducibility_gap": {
+                      "has_reproducibility_gap": true,
+                      "missing_fields": [
+                        "temperature",
+                        "max_tokens"
+                      ],
+                      "required_field_count": 2,
+                      "populated_field_count": 0,
+                      "signal_version": "1.0"
+                    },
+                    "provenance": {
+                      "source_type": "first_party",
+                      "is_multi_source": false,
+                      "first_party_only": true,
+                      "distinct_reporting_organizations": 1,
+                      "signal_version": "1.0"
+                    },
+                    "variant_divergence": null,
+                    "cross_party_divergence": null
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "subtasks": [],
+        "models_count": 1,
+        "top_score": 0.883,
+        "instance_data": {
+          "available": false,
+          "url_count": 0,
+          "sample_urls": [],
+          "models_with_loaded_instances": 0
+        }
+      }
+    ]
+  },
+  "hierarchy_by_category": {
+    "coding": [
+      {
+        "eval_summary_id": "llm_stats_livecodebench_v6",
+        "benchmark": "LiveCodeBench v6",
+        "benchmark_family_key": "llm_stats",
+        "benchmark_family_name": "LiveCodeBench v6",
+        "benchmark_parent_key": "llm_stats",
+        "benchmark_parent_name": "LiveCodeBench v6",
+        "benchmark_leaf_key": "livecodebench_v6",
+        "benchmark_leaf_name": "Livecodebench V6",
+        "benchmark_component_key": "livecodebench_v6",
+        "benchmark_component_name": "Livecodebench V6",
+        "evaluation_name": "Livecodebench V6",
+        "display_name": "Livecodebench V6",
+        "canonical_display_name": "Livecodebench V6",
+        "is_summary_score": false,
+        "category": "coding",
+        "source_data": {
+          "dataset_name": "LiveCodeBench v6",
+          "source_type": "url",
+          "url": [
+            "https://llm-stats.com/models/seed-2.0-lite",
+            "https://llm-stats.com/benchmarks/livecodebench-v6",
+            "https://api.llm-stats.com/leaderboard/benchmarks/livecodebench-v6"
+          ],
+          "additional_details": {
+            "raw_benchmark_id": "livecodebench-v6",
+            "raw_model_id": "seed-2.0-lite",
+            "source_role": "aggregator"
+          }
+        },
+        "benchmark_card": {
+          "benchmark_details": {
+            "name": "LiveCodeBench",
+            "overview": "LiveCodeBench is a holistic and contamination-free benchmark for evaluating large language models on code-related capabilities. It assesses a broader range of skills including code generation, self-repair, code execution, and test output prediction. The benchmark collects new problems over time from programming contest platforms to prevent data contamination, currently containing over 500 coding problems published between May 2023 and May 2024.",
+            "data_type": "text",
+            "domains": [
+              "code generation",
+              "programming competitions"
+            ],
+            "languages": [
+              "Not specified"
+            ],
+            "similar_benchmarks": [
+              "HumanEval",
+              "MBPP",
+              "APPS",
+              "DS-1000",
+              "ARCADE",
+              "NumpyEval",
+              "PandasEval",
+              "JuICe",
+              "APIBench",
+              "RepoBench",
+              "ODEX",
+              "SWE-Bench",
+              "GoogleCodeRepo",
+              "RepoEval",
+              "Cocomic-Data"
+            ],
+            "resources": [
+              "https://livecodebench.github.io/",
+              "https://arxiv.org/abs/2403.07974"
+            ],
+            "benchmark_type": "single"
+          },
+          "purpose_and_intended_users": {
+            "goal": "To provide a comprehensive and contamination-free evaluation of large language models for code by assessing a broader range of code-related capabilities beyond just code generation.",
+            "audience": [
+              "Researchers and practitioners in academia and industry who are interested in evaluating the capabilities of large language models for code"
+            ],
+            "tasks": [
+              "Code generation",
+              "Self-repair",
+              "Code execution",
+              "Test output prediction"
+            ],
+            "limitations": "The focus on competition programming problems might not be representative of the most general notion of LLM programming capabilities or real-world, open-ended software development tasks.",
+            "out_of_scope_uses": [
+              "Evaluating performance on real-world, open-ended, and unconstrained user-raised problems"
+            ]
+          },
+          "data": {
+            "source": "The data is collected from coding contests on three platforms: LeetCode, AtCoder, and CodeForces, with problems published between May 2023 and May 2024.",
+            "size": "Over 500 coding problems. Specific subsets include 479 samples from 85 problems for code execution and 442 problem instances from 181 LeetCode problems for test output prediction.",
+            "format": "Includes problem statements, public tests, user solutions, and starter code (for LeetCode). Problems are tagged with difficulty labels (Easy, Medium, Hard) from the platforms.",
+            "annotation": "Difficulty labels are provided by the competition platforms. For the code execution dataset, human-submitted solutions were filtered using compile-time and runtime filters followed by manual inspection to ensure quality."
+          },
+          "methodology": {
+            "methods": [
+              "Models are evaluated in a zero-shot setting across four scenarios: code generation, self-repair, code execution, and test output prediction.",
+              "For code generation and self-repair, program correctness is verified using a set of unseen test cases. For code execution, an execution-based correctness metric compares generated output to ground truth. For test output prediction, generated responses are parsed and equivalence checks are used for grading."
+            ],
+            "metrics": [
+              "Pass@1"
+            ],
+            "calculation": "For each problem, 10 candidate answers are generated. The Pass@1 score is the fraction of problems for which a generated program or answer is correct.",
+            "interpretation": "A higher Pass@1 score indicates better performance.",
+            "baseline_results": "The paper reports results for specific models including GPT-4, GPT-4-Turbo, Claude-3-Opus, Claude-3-Sonnet, and Mistral-L, but specific numerical scores are not provided in the given excerpts.",
+            "validation": "Program correctness for code generation and self-repair is verified using a set of unseen test cases. For code execution, an execution-based correctness metric is used to compare generated output to ground truth. For test output prediction, generated responses are parsed and equivalence checks are used for grading."
+          },
+          "ethical_and_legal_considerations": {
+            "privacy_and_anonymity": "Not specified",
+            "data_licensing": "Not specified",
+            "consent_procedures": "Not specified",
+            "compliance_with_regulations": "The benchmark operates under the Fair Use doctrine (§ 107) for copyrighted works, determining that its use of collected problems for academic, non-profit educational purposes constitutes fair use. It does not train on the collected problems."
+          },
+          "possible_risks": [
+            {
+              "category": "Over- or under-reliance",
+              "description": [
+                "In AI-assisted decision-making tasks, reliance measures how much a person trusts (and potentially acts on) a model's output. Over-reliance occurs when a person puts too much trust in a model, accepting a model's output when the model's output is likely incorrect. Under-reliance is the opposite, where the person doesn't trust the model but should."
+              ],
+              "url": "https://www.ibm.com/docs/en/watsonx/saas?topic=SSYOK8/wsj/ai-risk-atlas/over-or-under-reliance.html"
+            },
+            {
+              "category": "Unrepresentative data",
+              "description": [
+                "Unrepresentative data occurs when the training or fine-tuning data is not sufficiently representative of the underlying population or does not measure the phenomenon of interest. Synthetic data might not fully capture the complexity and nuances of real-world data. Causes include possible limitations in the seed data quality, biases in generation methods, or inadequate domain knowledge. Thus, AI models might struggle to generalize effectively to real-world scenarios."
+              ],
+              "url": "https://www.ibm.com/docs/en/watsonx/saas?topic=SSYOK8/wsj/ai-risk-atlas/unrepresentative-data.html"
+            },
+            {
+              "category": "Data contamination",
+              "description": [
+                "Data contamination occurs when incorrect data is used for training. For example, data that is not aligned with model's purpose or data that is already set aside for other development tasks such as testing and evaluation."
+              ],
+              "url": "https://www.ibm.com/docs/en/watsonx/saas?topic=SSYOK8/wsj/ai-risk-atlas/data-contamination.html"
+            },
+            {
+              "category": "Harmful code generation",
+              "description": [
+                "Models might generate code that causes harm or unintentionally affects other systems."
+              ],
+              "url": "https://www.ibm.com/docs/en/watsonx/saas?topic=SSYOK8/wsj/ai-risk-atlas/harmful-code-generation.html"
+            },
+            {
+              "category": "Reproducibility",
+              "description": [
+                "Replicating agent behavior or output can be impacted by changes or updates made to external services and tools. This impact is increased if the agent is built with generative AI."
+              ],
+              "url": "https://www.ibm.com/docs/en/watsonx/saas?topic=SSYOK8/wsj/ai-risk-atlas/reproducibility-agentic.html"
+            }
+          ],
+          "flagged_fields": {},
+          "missing_fields": []
+        },
+        "tags": {
+          "domains": [
+            "code generation",
+            "programming competitions"
+          ],
+          "languages": [
+            "Not specified"
+          ],
+          "tasks": [
+            "Code generation",
+            "Self-repair",
+            "Code execution",
+            "Test output prediction"
+          ]
+        },
+        "subtasks_count": 0,
+        "metrics_count": 1,
+        "metric_names": [
+          "Score"
+        ],
+        "primary_metric_name": "Score",
+        "evalcards": {
+          "annotations": {
+            "reporting_completeness": {
+              "completeness_score": 0.9285714285714286,
+              "total_fields_evaluated": 28,
+              "missing_required_fields": [
+                "evalcards.lifecycle_status",
+                "evalcards.preregistration_url"
+              ],
+              "partial_fields": [],
+              "field_scores": [
+                {
+                  "field_path": "autobenchmarkcard.benchmark_details.name",
+                  "coverage_type": "full",
+                  "score": 1.0
+                },
+                {
+                  "field_path": "autobenchmarkcard.benchmark_details.overview",
+                  "coverage_type": "full",
+                  "score": 1.0
+                },
+                {
+                  "field_path": "autobenchmarkcard.benchmark_details.data_type",
+                  "coverage_type": "full",
+                  "score": 1.0
+                },
+                {
+                  "field_path": "autobenchmarkcard.benchmark_details.domains",
+                  "coverage_type": "full",
+                  "score": 1.0
+                },
+                {
+                  "field_path": "autobenchmarkcard.benchmark_details.languages",
+                  "coverage_type": "full",
+                  "score": 1.0
+                },
+                {
+                  "field_path": "autobenchmarkcard.benchmark_details.similar_benchmarks",
+                  "coverage_type": "full",
+                  "score": 1.0
+                },
+                {
+                  "field_path": "autobenchmarkcard.benchmark_details.resources",
+                  "coverage_type": "full",
+                  "score": 1.0
+                },
+                {
+                  "field_path": "autobenchmarkcard.purpose_and_intended_users.goal",
+                  "coverage_type": "full",
+                  "score": 1.0
+                },
+                {
+                  "field_path": "autobenchmarkcard.purpose_and_intended_users.audience",
+                  "coverage_type": "full",
+                  "score": 1.0
+                },
+                {
+                  "field_path": "autobenchmarkcard.purpose_and_intended_users.tasks",
+                  "coverage_type": "full",
+                  "score": 1.0
+                },
+                {
+                  "field_path": "autobenchmarkcard.purpose_and_intended_users.limitations",
+                  "coverage_type": "full",
+                  "score": 1.0
+                },
+                {
+                  "field_path": "autobenchmarkcard.purpose_and_intended_users.out_of_scope_uses",
+                  "coverage_type": "full",
+                  "score": 1.0
+                },
+                {
+                  "field_path": "autobenchmarkcard.methodology.methods",
+                  "coverage_type": "full",
+                  "score": 1.0
+                },
+                {
+                  "field_path": "autobenchmarkcard.methodology.metrics",
+                  "coverage_type": "full",
+                  "score": 1.0
+                },
+                {
+                  "field_path": "autobenchmarkcard.methodology.calculation",
+                  "coverage_type": "full",
+                  "score": 1.0
+                },
+                {
+                  "field_path": "autobenchmarkcard.methodology.interpretation",
+                  "coverage_type": "full",
+                  "score": 1.0
+                },
+                {
+                  "field_path": "autobenchmarkcard.methodology.baseline_results",
+                  "coverage_type": "full",
+                  "score": 1.0
+                },
+                {
+                  "field_path": "autobenchmarkcard.methodology.validation",
+                  "coverage_type": "full",
+                  "score": 1.0
+                },
+                {
+                  "field_path": "autobenchmarkcard.ethical_and_legal_considerations.privacy_and_anonymity",
+                  "coverage_type": "full",
+                  "score": 1.0
+                },
+                {
+                  "field_path": "autobenchmarkcard.ethical_and_legal_considerations.data_licensing",
+                  "coverage_type": "full",
+                  "score": 1.0
+                },
+                {
+                  "field_path": "autobenchmarkcard.ethical_and_legal_considerations.consent_procedures",
+                  "coverage_type": "full",
+                  "score": 1.0
+                },
+                {
+                  "field_path": "autobenchmarkcard.ethical_and_legal_considerations.compliance_with_regulations",
+                  "coverage_type": "full",
+                  "score": 1.0
+                },
+                {
+                  "field_path": "autobenchmarkcard.data",
+                  "coverage_type": "partial",
+                  "score": 1.0
+                },
+                {
+                  "field_path": "eee_eval.source_metadata.source_type",
+                  "coverage_type": "full",
+                  "score": 1.0
+                },
+                {
+                  "field_path": "eee_eval.source_metadata.source_organization_name",
+                  "coverage_type": "full",
+                  "score": 1.0
+                },
+                {
+                  "field_path": "eee_eval.source_metadata.evaluator_relationship",
+                  "coverage_type": "full",
+                  "score": 1.0
+                },
+                {
+                  "field_path": "evalcards.lifecycle_status",
+                  "coverage_type": "reserved",
+                  "score": 0.0
+                },
+                {
+                  "field_path": "evalcards.preregistration_url",
+                  "coverage_type": "reserved",
+                  "score": 0.0
+                }
+              ],
+              "signal_version": "1.0"
+            },
+            "benchmark_comparability": {
+              "variant_divergence_groups": [],
+              "cross_party_divergence_groups": []
+            }
+          }
+        },
+        "reproducibility_summary": {
+          "results_total": 1,
+          "has_reproducibility_gap_count": 1,
+          "populated_ratio_avg": 0.0
+        },
+        "provenance_summary": {
+          "total_results": 1,
+          "total_groups": 1,
+          "multi_source_groups": 0,
+          "first_party_only_groups": 1,
+          "source_type_distribution": {
+            "first_party": 1,
+            "third_party": 0,
+            "collaborative": 0,
+            "unspecified": 0
+          }
+        },
+        "comparability_summary": {
+          "total_groups": 1,
+          "groups_with_variant_check": 0,
+          "groups_with_cross_party_check": 0,
+          "variant_divergent_count": 0,
+          "cross_party_divergent_count": 0
+        },
+        "metrics": [
+          {
+            "metric_summary_id": "llm_stats_livecodebench_v6_score",
+            "legacy_eval_summary_id": "llm_stats_llm_stats_livecodebench_v6",
+            "evaluation_name": "llm_stats.livecodebench-v6",
+            "display_name": "Livecodebench V6 / Score",
+            "canonical_display_name": "Livecodebench V6 / Score",
+            "benchmark_leaf_key": "livecodebench_v6",
+            "benchmark_leaf_name": "Livecodebench V6",
+            "slice_key": null,
+            "slice_name": null,
+            "lower_is_better": false,
+            "metric_name": "Score",
+            "metric_id": "llm_stats.livecodebench-v6.score",
+            "metric_key": "score",
+            "metric_source": "metric_config",
+            "metric_config": {
+              "evaluation_description": "LiveCodeBench is a holistic and contamination-free evaluation benchmark for large language models for code. It continuously collects new problems from programming contests (LeetCode, AtCoder, CodeForces) and evaluates four different scenarios: code generation, self-repair, code execution, and test output prediction. Problems are annotated with release dates to enable evaluation on unseen problems released after a model's training cutoff.",
+              "metric_id": "llm_stats.livecodebench-v6.score",
+              "metric_name": "LiveCodeBench v6 score",
+              "metric_kind": "benchmark_score",
+              "metric_unit": "proportion",
+              "lower_is_better": false,
+              "score_type": "continuous",
+              "min_score": 0.0,
+              "max_score": 1.0,
+              "additional_details": {
+                "raw_benchmark_id": "livecodebench-v6",
+                "raw_score_field": "score",
+                "bound_strategy": "inferred_proportion",
+                "raw_name": "LiveCodeBench v6",
+                "raw_categories": "[\"general\",\"reasoning\"]",
+                "raw_modality": "text",
+                "raw_verified": "false",
+                "raw_model_count": "45"
+              }
+            },
+            "models_count": 1,
+            "top_score": 0.817,
+            "model_results": [
+              {
+                "model_id": "bytedance/seed-2-0-lite",
+                "model_route_id": "bytedance__seed-2-0-lite",
+                "model_name": "Seed 2.0 Lite",
+                "developer": "bytedance",
+                "variant_key": "default",
+                "raw_model_id": "bytedance/seed-2.0-lite",
+                "score": 0.817,
+                "evaluation_id": "llm-stats/first_party/bytedance_seed-2.0-lite/1777108064.422824",
+                "retrieved_timestamp": "1777108064.422824",
+                "source_metadata": {
+                  "source_name": "LLM Stats API: first_party scores",
+                  "source_type": "documentation",
+                  "source_organization_name": "LLM Stats",
+                  "source_organization_url": "https://llm-stats.com/",
+                  "evaluator_relationship": "first_party",
+                  "additional_details": {
+                    "models_endpoint": "https://api.llm-stats.com/v1/models",
+                    "benchmarks_endpoint": "https://api.llm-stats.com/leaderboard/benchmarks",
+                    "scores_endpoint": "https://api.llm-stats.com/v1/scores",
+                    "scores_endpoint_fallback": "https://api.llm-stats.com/leaderboard/benchmarks/{benchmark_id}",
+                    "developer_page_url": "https://llm-stats.com/developer",
+                    "attribution_url": "https://llm-stats.com/",
+                    "attribution_required": "true",
+                    "source_role": "aggregator"
+                  }
+                },
+                "source_data": {
+                  "dataset_name": "AIME 2026",
+                  "source_type": "url",
+                  "url": [
+                    "https://llm-stats.com/models/seed-2.0-lite",
+                    "https://llm-stats.com/benchmarks/aime-2026",
+                    "https://api.llm-stats.com/leaderboard/benchmarks/aime-2026"
+                  ],
+                  "additional_details": {
+                    "raw_benchmark_id": "aime-2026",
+                    "raw_model_id": "seed-2.0-lite",
+                    "source_role": "aggregator"
+                  }
+                },
+                "source_record_url": "https://huggingface.co/datasets/evaleval/card_backend/resolve/main/records/bytedance__seed-2-0-lite/llm_stats_first_party_bytedance_seed_2_0_lite_1777108064_422824.json",
+                "detailed_evaluation_results": null,
+                "detailed_evaluation_results_meta": null,
+                "passthrough_top_level_fields": null,
+                "instance_level_data": null,
+                "normalized_result": {
+                  "benchmark_family_key": "llm_stats",
+                  "benchmark_family_name": "LiveCodeBench v6",
+                  "benchmark_parent_key": "llm_stats",
+                  "benchmark_parent_name": "LiveCodeBench v6",
+                  "benchmark_component_key": "livecodebench_v6",
+                  "benchmark_component_name": "Livecodebench V6",
+                  "benchmark_leaf_key": "livecodebench_v6",
+                  "benchmark_leaf_name": "Livecodebench V6",
+                  "slice_key": null,
+                  "slice_name": null,
+                  "metric_name": "Score",
+                  "metric_id": "llm_stats.livecodebench-v6.score",
+                  "metric_key": "score",
+                  "metric_source": "metric_config",
+                  "display_name": "Livecodebench V6 / Score",
+                  "canonical_display_name": "Livecodebench V6 / Score",
+                  "raw_evaluation_name": "llm_stats.livecodebench-v6",
+                  "is_summary_score": false
+                },
+                "evalcards": {
+                  "annotations": {
+                    "reproducibility_gap": {
+                      "has_reproducibility_gap": true,
+                      "missing_fields": [
+                        "temperature",
+                        "max_tokens"
+                      ],
+                      "required_field_count": 2,
+                      "populated_field_count": 0,
+                      "signal_version": "1.0"
+                    },
+                    "provenance": {
+                      "source_type": "first_party",
+                      "is_multi_source": false,
+                      "first_party_only": true,
+                      "distinct_reporting_organizations": 1,
+                      "signal_version": "1.0"
+                    },
+                    "variant_divergence": null,
+                    "cross_party_divergence": null
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "subtasks": [],
+        "models_count": 1,
+        "top_score": 0.817,
+        "instance_data": {
+          "available": false,
+          "url_count": 0,
+          "sample_urls": [],
+          "models_with_loaded_instances": 0
+        }
+      }
+    ],
+    "other": [
+      {
+        "eval_summary_id": "llm_stats_aime_2026",
+        "benchmark": "AIME 2026",
+        "benchmark_family_key": "llm_stats",
+        "benchmark_family_name": "AIME 2026",
+        "benchmark_parent_key": "llm_stats",
+        "benchmark_parent_name": "AIME 2026",
+        "benchmark_leaf_key": "aime_2026",
+        "benchmark_leaf_name": "Aime 2026",
+        "benchmark_component_key": "aime_2026",
+        "benchmark_component_name": "Aime 2026",
+        "evaluation_name": "Aime 2026",
+        "display_name": "Aime 2026",
+        "canonical_display_name": "Aime 2026",
+        "is_summary_score": false,
+        "category": "other",
+        "source_data": {
+          "dataset_name": "AIME 2026",
+          "source_type": "url",
+          "url": [
+            "https://llm-stats.com/models/seed-2.0-lite",
+            "https://llm-stats.com/benchmarks/aime-2026",
+            "https://api.llm-stats.com/leaderboard/benchmarks/aime-2026"
+          ],
+          "additional_details": {
+            "raw_benchmark_id": "aime-2026",
+            "raw_model_id": "seed-2.0-lite",
+            "source_role": "aggregator"
+          }
+        },
+        "benchmark_card": null,
+        "tags": {
+          "domains": [],
+          "languages": [],
+          "tasks": []
+        },
+        "subtasks_count": 0,
+        "metrics_count": 1,
+        "metric_names": [
+          "Score"
+        ],
+        "primary_metric_name": "Score",
+        "evalcards": {
+          "annotations": {
+            "reporting_completeness": {
+              "completeness_score": 0.10714285714285714,
+              "total_fields_evaluated": 28,
+              "missing_required_fields": [
+                "autobenchmarkcard.benchmark_details.name",
+                "autobenchmarkcard.benchmark_details.overview",
+                "autobenchmarkcard.benchmark_details.data_type",
+                "autobenchmarkcard.benchmark_details.domains",
+                "autobenchmarkcard.benchmark_details.languages",
+                "autobenchmarkcard.benchmark_details.similar_benchmarks",
+                "autobenchmarkcard.benchmark_details.resources",
+                "autobenchmarkcard.purpose_and_intended_users.goal",
+                "autobenchmarkcard.purpose_and_intended_users.audience",
+                "autobenchmarkcard.purpose_and_intended_users.tasks",
+                "autobenchmarkcard.purpose_and_intended_users.limitations",
+                "autobenchmarkcard.purpose_and_intended_users.out_of_scope_uses",
+                "autobenchmarkcard.methodology.methods",
+                "autobenchmarkcard.methodology.metrics",
+                "autobenchmarkcard.methodology.calculation",
+                "autobenchmarkcard.methodology.interpretation",
+                "autobenchmarkcard.methodology.baseline_results",
+                "autobenchmarkcard.methodology.validation",
+                "autobenchmarkcard.ethical_and_legal_considerations.privacy_and_anonymity",
+                "autobenchmarkcard.ethical_and_legal_considerations.data_licensing",
+                "autobenchmarkcard.ethical_and_legal_considerations.consent_procedures",
+                "autobenchmarkcard.ethical_and_legal_considerations.compliance_with_regulations",
+                "autobenchmarkcard.data",
+                "evalcards.lifecycle_status",
+                "evalcards.preregistration_url"
+              ],
+              "partial_fields": [],
+              "field_scores": [
+                {
+                  "field_path": "autobenchmarkcard.benchmark_details.name",
+                  "coverage_type": "full",
+                  "score": 0.0
+                },
+                {
+                  "field_path": "autobenchmarkcard.benchmark_details.overview",
+                  "coverage_type": "full",
+                  "score": 0.0
+                },
+                {
+                  "field_path": "autobenchmarkcard.benchmark_details.data_type",
+                  "coverage_type": "full",
+                  "score": 0.0
+                },
+                {
+                  "field_path": "autobenchmarkcard.benchmark_details.domains",
+                  "coverage_type": "full",
+                  "score": 0.0
+                },
+                {
+                  "field_path": "autobenchmarkcard.benchmark_details.languages",
+                  "coverage_type": "full",
+                  "score": 0.0
+                },
+                {
+                  "field_path": "autobenchmarkcard.benchmark_details.similar_benchmarks",
+                  "coverage_type": "full",
+                  "score": 0.0
+                },
+                {
+                  "field_path": "autobenchmarkcard.benchmark_details.resources",
+                  "coverage_type": "full",
+                  "score": 0.0
+                },
+                {
+                  "field_path": "autobenchmarkcard.purpose_and_intended_users.goal",
+                  "coverage_type": "full",
+                  "score": 0.0
+                },
+                {
+                  "field_path": "autobenchmarkcard.purpose_and_intended_users.audience",
+                  "coverage_type": "full",
+                  "score": 0.0
+                },
+                {
+                  "field_path": "autobenchmarkcard.purpose_and_intended_users.tasks",
+                  "coverage_type": "full",
+                  "score": 0.0
+                },
+                {
+                  "field_path": "autobenchmarkcard.purpose_and_intended_users.limitations",
+                  "coverage_type": "full",
+                  "score": 0.0
+                },
+                {
+                  "field_path": "autobenchmarkcard.purpose_and_intended_users.out_of_scope_uses",
+                  "coverage_type": "full",
+                  "score": 0.0
+                },
+                {
+                  "field_path": "autobenchmarkcard.methodology.methods",
+                  "coverage_type": "full",
+                  "score": 0.0
+                },
+                {
+                  "field_path": "autobenchmarkcard.methodology.metrics",
+                  "coverage_type": "full",
+                  "score": 0.0
+                },
+                {
+                  "field_path": "autobenchmarkcard.methodology.calculation",
+                  "coverage_type": "full",
+                  "score": 0.0
+                },
+                {
+                  "field_path": "autobenchmarkcard.methodology.interpretation",
+                  "coverage_type": "full",
+                  "score": 0.0
+                },
+                {
+                  "field_path": "autobenchmarkcard.methodology.baseline_results",
+                  "coverage_type": "full",
+                  "score": 0.0
+                },
+                {
+                  "field_path": "autobenchmarkcard.methodology.validation",
+                  "coverage_type": "full",
+                  "score": 0.0
+                },
+                {
+                  "field_path": "autobenchmarkcard.ethical_and_legal_considerations.privacy_and_anonymity",
+                  "coverage_type": "full",
+                  "score": 0.0
+                },
+                {
+                  "field_path": "autobenchmarkcard.ethical_and_legal_considerations.data_licensing",
+                  "coverage_type": "full",
+                  "score": 0.0
+                },
+                {
+                  "field_path": "autobenchmarkcard.ethical_and_legal_considerations.consent_procedures",
+                  "coverage_type": "full",
+                  "score": 0.0
+                },
+                {
+                  "field_path": "autobenchmarkcard.ethical_and_legal_considerations.compliance_with_regulations",
+                  "coverage_type": "full",
+                  "score": 0.0
+                },
+                {
+                  "field_path": "autobenchmarkcard.data",
+                  "coverage_type": "partial",
+                  "score": 0.0
+                },
+                {
+                  "field_path": "eee_eval.source_metadata.source_type",
+                  "coverage_type": "full",
+                  "score": 1.0
+                },
+                {
+                  "field_path": "eee_eval.source_metadata.source_organization_name",
+                  "coverage_type": "full",
+                  "score": 1.0
+                },
+                {
+                  "field_path": "eee_eval.source_metadata.evaluator_relationship",
+                  "coverage_type": "full",
+                  "score": 1.0
+                },
+                {
+                  "field_path": "evalcards.lifecycle_status",
+                  "coverage_type": "reserved",
+                  "score": 0.0
+                },
+                {
+                  "field_path": "evalcards.preregistration_url",
+                  "coverage_type": "reserved",
+                  "score": 0.0
+                }
+              ],
+              "signal_version": "1.0"
+            },
+            "benchmark_comparability": {
+              "variant_divergence_groups": [],
+              "cross_party_divergence_groups": []
+            }
+          }
+        },
+        "reproducibility_summary": {
+          "results_total": 1,
+          "has_reproducibility_gap_count": 1,
+          "populated_ratio_avg": 0.0
+        },
+        "provenance_summary": {
+          "total_results": 1,
+          "total_groups": 1,
+          "multi_source_groups": 0,
+          "first_party_only_groups": 1,
+          "source_type_distribution": {
+            "first_party": 1,
+            "third_party": 0,
+            "collaborative": 0,
+            "unspecified": 0
+          }
+        },
+        "comparability_summary": {
+          "total_groups": 1,
+          "groups_with_variant_check": 0,
+          "groups_with_cross_party_check": 0,
+          "variant_divergent_count": 0,
+          "cross_party_divergent_count": 0
+        },
+        "metrics": [
+          {
+            "metric_summary_id": "llm_stats_aime_2026_score",
+            "legacy_eval_summary_id": "llm_stats_llm_stats_aime_2026",
+            "evaluation_name": "llm_stats.aime-2026",
+            "display_name": "Aime 2026 / Score",
+            "canonical_display_name": "Aime 2026 / Score",
+            "benchmark_leaf_key": "aime_2026",
+            "benchmark_leaf_name": "Aime 2026",
+            "slice_key": null,
+            "slice_name": null,
+            "lower_is_better": false,
+            "metric_name": "Score",
+            "metric_id": "llm_stats.aime-2026.score",
+            "metric_key": "score",
+            "metric_source": "metric_config",
+            "metric_config": {
+              "evaluation_description": "All 30 problems from the 2026 American Invitational Mathematics Examination (AIME I and AIME II), testing olympiad-level mathematical reasoning with integer answers from 000-999. Used as an AI benchmark to evaluate large language models' ability to solve complex mathematical problems requiring multi-step logical deductions and structured symbolic reasoning.",
+              "metric_id": "llm_stats.aime-2026.score",
+              "metric_name": "AIME 2026 score",
+              "metric_kind": "benchmark_score",
+              "metric_unit": "proportion",
+              "lower_is_better": false,
+              "score_type": "continuous",
+              "min_score": 0.0,
+              "max_score": 1.0,
+              "additional_details": {
+                "raw_benchmark_id": "aime-2026",
+                "raw_score_field": "score",
+                "bound_strategy": "inferred_proportion",
+                "raw_name": "AIME 2026",
+                "raw_categories": "[\"math\",\"reasoning\"]",
+                "raw_modality": "text",
+                "raw_verified": "false",
+                "raw_model_count": "12"
+              }
+            },
+            "models_count": 1,
+            "top_score": 0.883,
+            "model_results": [
+              {
+                "model_id": "bytedance/seed-2-0-lite",
+                "model_route_id": "bytedance__seed-2-0-lite",
+                "model_name": "Seed 2.0 Lite",
+                "developer": "bytedance",
+                "variant_key": "default",
+                "raw_model_id": "bytedance/seed-2.0-lite",
+                "score": 0.883,
+                "evaluation_id": "llm-stats/first_party/bytedance_seed-2.0-lite/1777108064.422824",
+                "retrieved_timestamp": "1777108064.422824",
+                "source_metadata": {
+                  "source_name": "LLM Stats API: first_party scores",
+                  "source_type": "documentation",
+                  "source_organization_name": "LLM Stats",
+                  "source_organization_url": "https://llm-stats.com/",
+                  "evaluator_relationship": "first_party",
+                  "additional_details": {
+                    "models_endpoint": "https://api.llm-stats.com/v1/models",
+                    "benchmarks_endpoint": "https://api.llm-stats.com/leaderboard/benchmarks",
+                    "scores_endpoint": "https://api.llm-stats.com/v1/scores",
+                    "scores_endpoint_fallback": "https://api.llm-stats.com/leaderboard/benchmarks/{benchmark_id}",
+                    "developer_page_url": "https://llm-stats.com/developer",
+                    "attribution_url": "https://llm-stats.com/",
+                    "attribution_required": "true",
+                    "source_role": "aggregator"
+                  }
+                },
+                "source_data": {
+                  "dataset_name": "AIME 2026",
+                  "source_type": "url",
+                  "url": [
+                    "https://llm-stats.com/models/seed-2.0-lite",
+                    "https://llm-stats.com/benchmarks/aime-2026",
+                    "https://api.llm-stats.com/leaderboard/benchmarks/aime-2026"
+                  ],
+                  "additional_details": {
+                    "raw_benchmark_id": "aime-2026",
+                    "raw_model_id": "seed-2.0-lite",
+                    "source_role": "aggregator"
+                  }
+                },
+                "source_record_url": "https://huggingface.co/datasets/evaleval/card_backend/resolve/main/records/bytedance__seed-2-0-lite/llm_stats_first_party_bytedance_seed_2_0_lite_1777108064_422824.json",
+                "detailed_evaluation_results": null,
+                "detailed_evaluation_results_meta": null,
+                "passthrough_top_level_fields": null,
+                "instance_level_data": null,
+                "normalized_result": {
+                  "benchmark_family_key": "llm_stats",
+                  "benchmark_family_name": "AIME 2026",
+                  "benchmark_parent_key": "llm_stats",
+                  "benchmark_parent_name": "AIME 2026",
+                  "benchmark_component_key": "aime_2026",
+                  "benchmark_component_name": "Aime 2026",
+                  "benchmark_leaf_key": "aime_2026",
+                  "benchmark_leaf_name": "Aime 2026",
+                  "slice_key": null,
+                  "slice_name": null,
+                  "metric_name": "Score",
+                  "metric_id": "llm_stats.aime-2026.score",
+                  "metric_key": "score",
+                  "metric_source": "metric_config",
+                  "display_name": "Aime 2026 / Score",
+                  "canonical_display_name": "Aime 2026 / Score",
+                  "raw_evaluation_name": "llm_stats.aime-2026",
+                  "is_summary_score": false
+                },
+                "evalcards": {
+                  "annotations": {
+                    "reproducibility_gap": {
+                      "has_reproducibility_gap": true,
+                      "missing_fields": [
+                        "temperature",
+                        "max_tokens"
+                      ],
+                      "required_field_count": 2,
+                      "populated_field_count": 0,
+                      "signal_version": "1.0"
+                    },
+                    "provenance": {
+                      "source_type": "first_party",
+                      "is_multi_source": false,
+                      "first_party_only": true,
+                      "distinct_reporting_organizations": 1,
+                      "signal_version": "1.0"
+                    },
+                    "variant_divergence": null,
+                    "cross_party_divergence": null
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "subtasks": [],
+        "models_count": 1,
+        "top_score": 0.883,
+        "instance_data": {
+          "available": false,
+          "url_count": 0,
+          "sample_urls": [],
+          "models_with_loaded_instances": 0
+        }
+      }
+    ]
+  },
+  "total_evaluations": 1,
+  "last_updated": "2026-04-25T09:07:44.422824Z",
+  "categories_covered": [
+    "coding",
+    "other"
+  ],
+  "variants": [
+    {
+      "variant_key": "default",
+      "variant_label": "Default",
+      "evaluation_count": 1,
+      "raw_model_ids": [
+        "bytedance/seed-2.0-lite"
+      ],
+      "last_updated": "2026-04-25T09:07:44.422824Z"
+    }
+  ],
+  "reproducibility_summary": {
+    "results_total": 2,
+    "has_reproducibility_gap_count": 2,
+    "populated_ratio_avg": 0.0
+  },
+  "provenance_summary": {
+    "total_results": 2,
+    "total_groups": 2,
+    "multi_source_groups": 0,
+    "first_party_only_groups": 2,
+    "source_type_distribution": {
+      "first_party": 2,
+      "third_party": 0,
+      "collaborative": 0,
+      "unspecified": 0
+    }
+  },
+  "comparability_summary": {
+    "total_groups": 2,
+    "groups_with_variant_check": 0,
+    "groups_with_cross_party_check": 0,
+    "variant_divergent_count": 0,
+    "cross_party_divergent_count": 0
+  }
+}

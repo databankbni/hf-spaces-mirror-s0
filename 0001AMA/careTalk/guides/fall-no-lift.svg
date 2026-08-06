@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-labelledby="t2">
+  <title id="t2">Do not haul someone up after a fall</title>
+  <rect width="640" height="360" fill="#0f1f1c"/>
+  <rect x="24" y="24" width="592" height="312" rx="18" fill="#16302a" stroke="rgba(238,246,242,0.12)"/>
+  <text x="48" y="64" fill="#f0d5a8" font-family="Georgia, serif" font-size="22" font-weight="700">Don’t haul them up</text>
+  <rect x="80" y="250" width="480" height="14" rx="4" fill="rgba(238,246,242,0.15)"/>
+  <ellipse cx="250" cy="236" rx="28" ry="24" fill="#f0d5a8"/>
+  <rect x="278" y="220" width="140" height="36" rx="18" fill="#9bb0a8"/>
+  <!-- crossed out lift arms -->
+  <path d="M400 140 L480 210 M480 140 L400 210" stroke="#e07070" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="440" cy="175" r="58" fill="none" stroke="#e07070" stroke-width="6"/>
+  <text x="48" y="300" fill="#9bb0a8" font-family="sans-serif" font-size="15">If injury may be present, keep them comfortable and get clinical advice</text>
+</svg>

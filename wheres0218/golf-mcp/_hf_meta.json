@@ -1,0 +1,23 @@
+{
+ "captured_at": "2026-08-04T17:09:53Z",
+ "hf_metadata": {
+  "sha": "86a93ecf84dc21e8934e39b36b9b963989c662b0"
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "wheres0218/golf-mcp",
+ "repo_type": "spaces",
+ "sha": "86a93ecf84dc21e8934e39b36b9b963989c662b0",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/wheres0218/golf-mcp"
+}

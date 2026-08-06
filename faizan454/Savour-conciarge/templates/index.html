@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Savour Concierge</title>
+  <link rel="stylesheet" href="/static/style.css"/>
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="sidebar-logo">
+      <div class="logo-icon">🍽️</div>
+      <div>
+        <p class="logo-name">Savour</p>
+        <p class="logo-sub">Concierge</p>
+      </div>
+    </div>
+
+    <div class="sidebar-section">
+      <p class="sidebar-label">Quick Actions</p>
+      <button class="quick-btn" onclick="askQuestion('Show me your full menu')">🍛 View Full Menu</button>
+      <button class="quick-btn" onclick="askQuestion('What are your opening hours?')">🕐 Opening Hours</button>
+      <button class="quick-btn" onclick="askQuestion('How can I reserve a table?')">🪑 Reserve a Table</button>
+      <button class="quick-btn" onclick="askQuestion('Do you offer home delivery?')">🛵 Home Delivery</button>
+      <button class="quick-btn" onclick="askQuestion('What are your current deals?')">🎉 Today's Deals</button>
+      <button class="quick-btn" onclick="askQuestion('What payment methods do you accept?')">💳 Payment Methods</button>
+    </div>
+
+    <div class="sidebar-section">
+      <p class="sidebar-label">Contact Us</p>
+      <div class="contact-item">📞 +92-51-1234567</div>
+      <div class="contact-item">📍 Blue Area, Islamabad</div>
+      <div class="contact-item">🕐 Mon-Thu: 12PM - 11PM</div>
+    </div>
+
+    <div class="sidebar-section">
+      <p class="sidebar-label">Status</p>
+      <div class="status-item">
+        <div class="status-dot green"></div>
+        <span>Concierge Online</span>
+      </div>
+      <div class="status-item">
+        <div class="status-dot green"></div>
+        <span>Kitchen Open</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main">
+
+    <!-- Top Header -->
+    <div class="topbar">
+      <div class="topbar-left">
+        <h2>Savour Concierge 🍽️</h2>
+        <p>Your personal restaurant assistant — available 24/7</p>
+      </div>
+      <div class="topbar-right">
+        <div class="agent-info">
+          <div class="agent-avatar">S</div>
+          <div>
+            <p class="agent-name">Savour Assistant</p>
+            <p class="agent-status">● Online Now</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats Bar -->
+    <div class="stats-bar">
+      <div class="stat">
+        <p class="stat-number">24/7</p>
+        <p class="stat-label">Available</p>
+      </div>
+      <div class="stat">
+        <p class="stat-number">30s</p>
+        <p class="stat-label">Avg Reply</p>
+      </div>
+      <div class="stat">
+        <p class="stat-number">100%</p>
+        <p class="stat-label">Halal</p>
+      </div>
+      <div class="stat">
+        <p class="stat-number">⭐ 4.8</p>
+        <p class="stat-label">Rating</p>
+      </div>
+    </div>
+
+    <!-- Chat Area -->
+    <div class="chat-box" id="chat-box">
+      <div class="welcome-msg">
+        <div class="welcome-icon">👨‍🍳</div>
+        <h3>Welcome to Savour Restaurant!</h3>
+        <p>I'm your personal concierge. Ask me about our menu, deals, reservations or delivery!</p>
+        <div class="welcome-tags">
+          <span onclick="askQuestion('What are your best dishes?')">🍛 Best Dishes</span>
+          <span onclick="askQuestion('Show me your deals')">🎉 Deals</span>
+          <span onclick="askQuestion('Book a table')">🪑 Book Table</span>
+          <span onclick="askQuestion('Order delivery')">🛵 Delivery</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Input Area -->
+    <div class="input-area">
+      <input type="text" id="user-input" placeholder="Ask about menu, deals, reservations..."/>
+      <button onclick="sendMessage()">Send 🍽️</button>
+    </div>
+
+  </div>
+
+</body>
+<script src="/static/chatbot.js"></script>
+</html>

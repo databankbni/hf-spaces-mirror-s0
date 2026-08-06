@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DHAAL — Scam Scanner (dev demo)</title>
+<style>
+  :root { --navy:#1f3864; --red:#b91c1c; --amber:#b45309; --green:#15803d; }
+  * { box-sizing: border-box; margin: 0; }
+  body { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; background:#f4f6fb; color:#16181d; min-height:100vh; }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 24px 16px 64px; }
+  header { text-align:center; padding: 28px 0 20px; }
+  header h1 { color: var(--navy); font-size: 1.9rem; letter-spacing:.5px; }
+  header p { color:#555; margin-top:6px; font-size:.95rem; }
+  textarea { width:100%; min-height:140px; padding:14px; border:1.5px solid #c9d3e8; border-radius:12px; font-size:1rem; resize:vertical; background:#fff; }
+  textarea:focus { outline:2px solid var(--navy); }
+  .row { display:flex; gap:10px; margin-top:12px; flex-wrap:wrap; }
+  button { border:0; border-radius:10px; padding:12px 22px; font-size:1rem; font-weight:600; cursor:pointer; }
+  .primary { background:var(--navy); color:#fff; flex:1; }
+  .ghost { background:#e8edf7; color:var(--navy); }
+  .card { margin-top:20px; background:#fff; border-radius:14px; padding:20px; box-shadow:0 2px 10px rgba(20,40,80,.08); display:none; }
+  .verdict { font-size:1.35rem; font-weight:800; display:flex; align-items:center; gap:10px; }
+  .SCAM { color:var(--red);} .SUSPICIOUS { color:var(--amber);} .SAFE { color:var(--green);}
+  .conf { font-size:.85rem; color:#666; font-weight:500; }
+  .anatomy { margin-top:14px; line-height:1.65; background:#fafbfe; border:1px solid #e6eaf4; border-radius:10px; padding:12px; white-space:pre-wrap; }
+  mark { background:#fde3e3; color:#8f1d1d; border-radius:4px; padding:0 3px; font-weight:600; }
+  .tags { margin-top:12px; display:flex; flex-wrap:wrap; gap:8px; }
+  .tag { background:#eef2fb; color:var(--navy); font-size:.8rem; padding:5px 10px; border-radius:999px; font-weight:600; }
+  .explain { margin-top:14px; color:#333; line-height:1.55; }
+  .cite { margin-top:12px; font-size:.85rem; color:#555; border-left:3px solid var(--navy); padding-left:10px; line-height:1.5; }
+  .meta { margin-top:12px; font-size:.78rem; color:#999; }
+  .samples { margin-top:26px; }
+  .samples h3 { font-size:.9rem; color:#666; margin-bottom:8px; }
+  .chip { display:inline-block; background:#fff; border:1px solid #d7dfef; border-radius:999px; padding:7px 12px; margin:4px 4px 0 0; font-size:.82rem; cursor:pointer; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>🛡️ DHAAL</h1>
+    <p>Paste any suspicious SMS / WhatsApp / email — get an explained verdict in seconds.<br>Dev demo · rules-v0 engine · nothing you paste is stored.</p>
+  </header>
+
+  <textarea id="txt" placeholder="Paste the suspicious message here…"></textarea>
+  <div class="row">
+    <button class="primary" onclick="scan()">Scan message</button>
+    <button class="ghost" onclick="document.getElementById('txt').value=''">Clear</button>
+  </div>
+
+  <div class="card" id="card">
+    <div class="verdict"><span id="vlabel"></span><span class="conf" id="vconf"></span></div>
+    <div class="anatomy" id="anatomy"></div>
+    <div class="tags" id="tags"></div>
+    <div class="explain" id="explain"></div>
+    <div class="cite" id="cite"></div>
+    <div class="meta" id="meta"></div>
+  </div>
+
+  <div class="samples">
+    <h3>Try a real documented scam script:</h3>
+    <span class="chip" onclick="fill(0)">FedEx digital arrest</span>
+    <span class="chip" onclick="fill(1)">Electricity disconnection</span>
+    <span class="chip" onclick="fill(2)">KYC suspension</span>
+    <span class="chip" onclick="fill(3)">Genuine bank alert (should be SAFE)</span>
+  </div>
+</div>
+
+<script>
+const API = location.origin.includes("file:") ? "http://localhost:8000" : location.origin;
+const SAMPLES = [
+  "This is FedEx. Your parcel containing illegal items has been seized by Customs. Mumbai Police have issued an arrest warrant. Transfer funds to the RBI verification account immediately and do not tell your family.",
+  "Dear Consumer, Your electricity will be disconnected tonight 9:30 PM due to non-update of your previous month bill. Please immediately contact our officer http://bses-update.online/pay -BSES",
+  "HDFC ALERT: Your net banking will be deactivated. Complete re-KYC in 24 hours or account will be frozen. Verify now: hdfc-rekyc.xyz. Share OTP with our executive.",
+  "Dear Customer, Rs 4,500.00 is debited from A/c XX1234 on 04-Jul-26 at AMAZON PAY. Avl Bal: Rs 32,110.50. If not done by you, call 1800 1111 09 (SBI)."
+];
+function fill(i){ document.getElementById('txt').value = SAMPLES[i]; scan(); }
+
+function esc(s){ return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;"); }
+
+function highlight(text, tactics){
+  let spans = [];
+  for (const arr of Object.values(tactics)) for (const s of arr) spans.push(s);
+  spans.sort((a,b)=>a.start-b.start);
+  let out = "", pos = 0;
+  for (const s of spans){
+    if (s.start < pos) continue;
+    out += esc(text.slice(pos, s.start)) + "<mark>" + esc(text.slice(s.start, s.end)) + "</mark>";
+    pos = s.end;
+  }
+  return out + esc(text.slice(pos));
+}
+
+async function scan(){
+  const text = document.getElementById('txt').value.trim();
+  if (!text) return;
+  const card = document.getElementById('card');
+  card.style.display = "block";
+  document.getElementById('vlabel').textContent = "Analysing…";
+  try {
+    const res = await fetch(API + "/analyze", {
+      method: "POST", headers: {"Content-Type":"application/json"},
+      body: JSON.stringify({text})
+    });
+    const r = await res.json();
+    const icon = r.verdict === "SCAM" ? "🚨" : r.verdict === "SUSPICIOUS" ? "⚠️" : "✅";
+    const v = document.getElementById('vlabel');
+    v.textContent = icon + " " + r.verdict + (r.scam_type !== "none" && r.scam_type !== "unknown" ? " — " + r.scam_type.replace(/_/g," ") : "");
+    v.className = r.verdict;
+    document.getElementById('vconf').textContent = "confidence " + Math.round(r.confidence*100) + "%";
+    document.getElementById('anatomy').innerHTML = highlight(text, r.tactics);
+    document.getElementById('tags').innerHTML = Object.keys(r.tactics).map(t=>`<span class="tag">${t.replace(/_/g," ")}</span>`).join("");
+    document.getElementById('explain').textContent = r.explanation;
+    document.getElementById('cite').innerHTML = (r.citations||[]).map(c=>`<b>${esc(c.source)}:</b> ${esc(c.point)}`).join("<br>");
+    document.getElementById('meta').textContent = `engine ${r.engine} · ${r.latency_ms} ms`;
+  } catch(e) {
+    document.getElementById('vlabel').textContent = "API unreachable — start backend: uvicorn app.main:app";
+  }
+}
+</script>
+</body>
+</html>

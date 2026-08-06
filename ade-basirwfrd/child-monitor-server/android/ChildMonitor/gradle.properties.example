@@ -1,0 +1,3 @@
+# Salin ke gradle.properties (jangan commit secret).
+# Setelah backend always-on live, ganti URL ini.
+DEFAULT_SERVER_URL=https://child-monitor-server.fly.dev

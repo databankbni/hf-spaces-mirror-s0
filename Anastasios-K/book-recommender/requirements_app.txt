@@ -1,0 +1,9 @@
+# Demo app dependencies
+gradio>=4.0
+pandas
+numpy
+pyarrow
+# optional: NumPy fallback
+faiss-cpu
+# optional: only needed for LLM-phrased explanations
+anthropic

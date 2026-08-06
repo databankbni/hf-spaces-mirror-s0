@@ -1,0 +1,27 @@
+{
+ "captured_at": "2026-08-04T16:11:10Z",
+ "hf_metadata": {
+  "sha": "5e2801e6914469cd7cabfc6ea68c867fb82778ec"
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  },
+  {
+   "original": ".gitignore",
+   "stored_as": "_gitignore"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "evaleval/general-eval-card",
+ "repo_type": "spaces",
+ "sha": "5e2801e6914469cd7cabfc6ea68c867fb82778ec",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/evaleval/general-eval-card"
+}

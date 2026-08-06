@@ -1,0 +1,68 @@
+{
+ "captured_at": "2026-08-04T14:32:24Z",
+ "hf_metadata": {
+  "_id": "6a3c5831b5de814b17de6172",
+  "author": "Planai1",
+  "cardData": {
+   "colorFrom": "yellow",
+   "colorTo": "yellow",
+   "emoji": "💻",
+   "pinned": false,
+   "sdk": "docker",
+   "title": "PlanAiman"
+  },
+  "createdAt": "2026-06-24T22:20:33.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://planai1-planaiman.hf.space",
+  "id": "Planai1/PlanAiman",
+  "lastModified": "2026-07-23T16:34:47.000Z",
+  "likes": 0,
+  "private": false,
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "planai1-planaiman.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": null,
+    "requested": "cpu-basic"
+   },
+   "replicas": {
+    "requested": 1
+   },
+   "stage": "SLEEPING"
+  },
+  "sdk": "docker",
+  "sha": "a8b5c12e06fac2554ea80a73cd7905258fb6f082",
+  "siblings": [
+   {
+    "rfilename": "Dockerfile"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "config.yaml"
+   },
+   {
+    "rfilename": "gitattributes"
+   }
+  ],
+  "subdomain": "planai1-planaiman",
+  "tags": [
+   "docker",
+   "region:us"
+  ],
+  "usedStorage": 0
+ },
+ "renamed_gitattributes": [],
+ "repo_id": "Planai1/PlanAiman",
+ "repo_type": "spaces",
+ "sha": "a8b5c12e06fac2554ea80a73cd7905258fb6f082",
+ "web_url": "https://huggingface.co/spaces/Planai1/PlanAiman"
+}

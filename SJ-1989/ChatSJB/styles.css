@@ -1,0 +1,109 @@
+:root {
+    color-scheme: dark;
+    --element-padding: 10px 0;
+}
+
+.light,
+.dark {
+    --body-background-fill: var(--body-background-fill-dark);
+    --background-fill-primary: var(--background-fill-primary-dark);
+    --background-fill-secondary: var(--background-fill-secondary-dark);
+
+    --block-background-fill: var(--block-background-fill-dark);
+    --block-border-color: var(--block-border-color-dark);
+
+    --input-background-fill: var(--input-background-fill-dark);
+
+    --body-text-color: var(--body-text-color-dark);
+
+    --button-secondary-background-fill: var(--button-secondary-background-fill-dark);
+    --button-secondary-background-fill-hover: var(--button-secondary-background-fill-hover-dark);
+    --button-secondary-border-color: var(--button-secondary-border-color_dark);
+    --button-secondary-text-color: var(--button-secondary-text-color-dark);
+}
+
+.gradio-container {
+    width: min(50vw, 1000px);
+    min-width: 350px;
+    margin: auto;
+    padding: 10px 0 0 0 !important;
+}
+
+.gallery-item {
+    background: #1e293b !important;
+    color: #ffffff !important;
+    border-color: #334155 !important;
+}
+
+.gallery-item:hover {
+    background: #334155 !important;
+    color: #ffffff !important;
+}
+
+#clear-button {
+    background-color: #334155 !important;
+    color: #ffffff !important;
+    border: 1px solid #475569 !important;
+}
+
+#clear-button:hover {
+    background-color: #475569 !important;
+}
+
+#clear-button:active {
+    background-color: #1e293b !important;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 5px;
+}
+
+#intro {
+    text-align: center;
+    padding: var(--element-padding);
+}
+
+#explanation {
+    padding: var(--element-padding);
+}
+
+#answer {
+    min-height: 220px;
+}
+
+#logo-container {
+    padding: 0 !important;
+    margin: 0 !important;
+    height: 100px;
+}
+
+#logo-container .logo {
+    display: block;
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin: 0 auto;
+}
+
+button {
+    font-size: 16px !important;
+}
+
+footer {
+    display: none !important;
+}
+
+@media (max-width: 600px) {
+    .gradio-container {
+        padding-top: 10px !important;
+    }
+
+    #logo-container {
+        margin-top: -20px !important;
+    }
+
+    #logo-container .logo {
+        width: 90px;
+    }
+}

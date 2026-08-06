@@ -1,0 +1,279 @@
+from rest_framework import serializers
+from .models import Order, OrderItem, Commission
+from catalog.models import Product, ProductVariant  # جديد
+
+
+class OrderItemSerializer(serializers.ModelSerializer):
+    product_id = serializers.PrimaryKeyRelatedField(
+        queryset=Product.objects.filter(is_available=True), source="product"
+    )
+    product_title = serializers.CharField(source="product.title", read_only=True)
+    variant_id = serializers.PrimaryKeyRelatedField(
+        queryset=ProductVariant.objects.filter(is_available=True),
+        source="variant",
+        required=False,
+        allow_null=True,
+    )
+
+    class Meta:
+        model = OrderItem
+        fields = (
+            "product_id",
+            "product_title",
+            "variant_id",
+            "variant_size_name",
+            "quantity",
+            "price_at_order_time",
+            "shipping_price",
+            "shipping_location",
+        )
+        read_only_fields = ("price_at_order_time", "variant_size_name", "shipping_price")
+
+    def validate(self, attrs):
+        product = attrs.get("product")
+        variant = attrs.get("variant")
+
+        if (
+            product
+            and product.variants.filter(is_available=True).exists()
+            and not variant
+        ):
+            raise serializers.ValidationError(
+                {"variant_id": "برجاء اختيار المقاس المطلوب لهذا المنتج."}
+            )
+        if variant and product and variant.product_id != product.id:
+            raise serializers.ValidationError(
+                {"variant_id": "المقاس المختار لا ينتمي لهذا المنتج."}
+            )
+        return attrs
+
+
+class OrderSerializer(serializers.ModelSerializer):
+    items = OrderItemSerializer(many=True)
+    commission = serializers.SerializerMethodField()
+    deposit_proof_image = serializers.ImageField(required=False, allow_null=True)
+
+    class Meta:
+        model = Order
+        fields = (
+            "id",
+            "order_number",
+            "customer_name",
+            "customer_phone",
+            "customer_governorate",
+            "customer_address",
+            "status",
+            "shipping_price",
+            "total_price",
+            "notes",
+            "created_at",
+            "items",
+            "commission",
+            "deposit_proof_image",
+            "deposit_amount",
+        )
+        read_only_fields = ("order_number", "total_price", "deposit_amount", "shipping_price")
+
+    def validate(self, attrs):
+        items = attrs.get("items", [])
+        total_deposit = sum(
+            (item["product"].deposit_amount or 0) * item.get("quantity", 1)
+            for item in items
+            if getattr(item["product"], "requires_deposit", False)
+        )
+        if total_deposit > 0 and not attrs.get("deposit_proof_image"):
+            raise serializers.ValidationError(
+                {"deposit_proof_image": "يجب رفع صورة إيصال الديبوزيت لهذا الطلب."}
+            )
+        attrs["_total_deposit"] = total_deposit
+        return attrs
+
+    def get_commission(self, obj):
+        commission = getattr(obj, "commission", None)
+        if not commission:
+            return None
+        return {
+            "id": str(commission.id),
+            "amount": commission.amount,
+            "is_settled": commission.is_settled,
+            "settled_at": commission.settled_at,
+        }
+
+    def update(self, instance, validated_data):
+        status = validated_data.get("status", instance.status)
+        old_status = instance.status
+
+        for attr, value in validated_data.items():
+            setattr(instance, attr, value)
+        instance.save()
+
+        if status != old_status:
+            from django.utils import timezone
+
+            commission = getattr(instance, "commission", None)
+            if status == "commission_settled" and commission:
+                commission.is_settled = True
+                commission.settled_at = timezone.now()
+                commission.save()
+            elif old_status == "commission_settled" and commission:
+                commission.is_settled = False
+                commission.settled_at = None
+                commission.save()
+
+        return instance
+
+    def create(self, validated_data):
+        try:
+            total_deposit = validated_data.pop("_total_deposit", 0)
+            items_data = validated_data.pop("items")
+            
+            validated_data.pop("shipping_price", None)
+
+            def item_unit_price(item_data):
+                variant = item_data.get("variant")
+                return variant.price if variant else item_data["product"].final_price
+
+            def get_item_shipping_price(item_data):
+                product = item_data["product"]
+                shipping_location = item_data.get("shipping_location", "")
+                if not shipping_location:
+                    return product.default_shipping_price or 0
+                
+                parts = [p.strip() for p in shipping_location.split(" - ", 1)]
+                gov_name = parts[0]
+                area_name = parts[1] if len(parts) > 1 else None
+                
+                rate_qs = product.shipping_rates.filter(governorate__name=gov_name)
+                if area_name:
+                    rate_qs = rate_qs.filter(area__name=area_name)
+                else:
+                    rate_qs = rate_qs.filter(area__isnull=True)
+                
+                rate = rate_qs.first()
+                if rate:
+                    return rate.price
+                return product.default_shipping_price or 0
+
+            total_shipping_price = 0
+            for item in items_data:
+                unit_shipping = get_item_shipping_price(item)
+                item["_calculated_shipping_price"] = unit_shipping
+                total_shipping_price += unit_shipping * item.get("quantity", 1)
+
+            total = (
+                sum(
+                    [
+                        item_unit_price(item) * item.get("quantity", 1)
+                        for item in items_data
+                    ]
+                )
+                + total_shipping_price
+            )
+
+            order = Order.objects.create(
+                total_price=total,
+                shipping_price=total_shipping_price,
+                deposit_amount=total_deposit,
+                **validated_data,
+            )
+
+            request = self.context.get("request")
+            if request and request.user.is_authenticated:
+                order.user = request.user
+                order.save()
+
+            commission_total = 0
+            for item_data in items_data:
+                variant = item_data.get("variant")
+                unit_price = item_unit_price(item_data)
+
+                OrderItem.objects.create(
+                    order=order,
+                    product=item_data["product"],
+                    variant=variant,
+                    variant_size_name=variant.size_name if variant else None,
+                    quantity=item_data.get("quantity", 1),
+                    price_at_order_time=unit_price,
+                    shipping_price=item_data.get("_calculated_shipping_price", 0),
+                    shipping_location=item_data.get("shipping_location", ""),
+                )
+                commission_total += item_data[
+                    "product"
+                ].commission_value * item_data.get("quantity", 1)
+
+            if commission_total > 0:
+                Commission.objects.create(order=order, amount=commission_total)
+
+            self._send_telegram_notification(order)
+            return order
+        except Exception as e:
+            import traceback
+
+            print(f"Error creating order: {e}")
+            print(traceback.format_exc())
+            raise
+
+    def _send_telegram_notification(self, order):
+        """Send Telegram notification with order details"""
+        try:
+            from telegram_bot.services import notify_admin
+            from html import escape
+
+            lines = []
+            for item in order.items.all():
+                product = item.product
+                base = product.base_price
+                commission = product.commission_value
+                after_commission = item.price_at_order_time
+                description = escape(product.description or "لا يوجد وصف")
+                item_shipping = item.shipping_price or 0
+                item_location = escape(item.shipping_location or "غير محدد")
+                size_line = (
+                    f"📏 المقاس: {escape(item.variant_size_name)}\n"
+                    if item.variant_size_name
+                    else ""
+                )
+                lines.append(
+                    f"━━━━━━━━━━━━━━━━━━\n"
+                    f"📦 <b>{product.title}</b> x{item.quantity}\n"
+                    f"{size_line}"
+                    f"📝 الوصف: {description}\n"
+                    f"💰 السعر قبل العمولة: {base} ج\n"
+                    f"💵 العمولة: {commission} ج\n"
+                    f"💲 السعر بعد العمولة: {after_commission} ج\n"
+                    f"🚚 الشحن: {item_shipping} ج\n"
+                    f"📍 مكان الشحن: {item_location}"
+                )
+
+            items_text = "\n\n".join(lines) or "لا توجد عناصر بعد"
+
+            message = (
+                f"🛒 <b>أوردر جديد</b>\n"
+                f"━━━━━━━━━━━━━━━━━━\n"
+                f"🆔 رقم الأوردر: {order.order_number}\n"
+                f"👤 العميل: {escape(order.customer_name)}\n"
+                f"📱 رقم الهاتف: {escape(order.customer_phone)}\n"
+                f"📍 المحافظة: {escape(order.customer_governorate)}"
+                + (f" - {escape(order.customer_area)}" if order.customer_area else "")
+                + "\n"
+                f"🏠 العنوان: {escape(order.customer_address)}\n"
+                f"━━━━━━━━━━━━━━━━━━\n"
+                f"📦 المنتجات:\n\n{items_text}\n"
+                f"━━━━━━━━━━━━━━━━━━\n"
+                f"🚚 تكلفة الشحن: {order.shipping_price} ج\n"
+                f"💵 الإجمالي: {order.total_price} ج"
+            )
+            buttons = [
+                {
+                    "text": "✅ موافقة",
+                    "callback_data": f"order_approve:{order.order_number}",
+                },
+                {
+                    "text": "❌ رفض",
+                    "callback_data": f"order_reject:{order.order_number}",
+                },
+            ]
+
+            notify_admin("new_order", order.id, message, buttons=buttons)
+        except Exception as e:
+            print(f"Failed to send Telegram notification: {e}")

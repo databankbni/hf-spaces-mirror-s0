@@ -1,0 +1,30 @@
+{
+  "annex_c_combinations": 495,
+  "annex_c_failures": [],
+  "downstream_matches_verified": [
+    89,
+    90,
+    91,
+    92,
+    93,
+    94,
+    95,
+    96,
+    97,
+    98,
+    99,
+    100,
+    101,
+    102,
+    104,
+    103
+  ],
+  "release_blocking": false,
+  "round_of_32_slots": 16,
+  "scope": "Published matches 73-104, including the third-place match, and all 495 Annex C third-place assignments. Fair-play data is not available in the snapshot.",
+  "sources": [
+    "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/fifa-world-cup-2026-match-schedule-fixtures-results-teams-stadiums",
+    "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_knockout_stage"
+  ],
+  "status": "verified"
+}

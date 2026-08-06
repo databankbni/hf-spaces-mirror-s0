@@ -1,0 +1,22 @@
+{
+    "Model": "IRASim",
+    "year": "2024",
+    "open_source":"yes",
+    "Metrics": {
+        "Image Quality": 0.4518,
+        "Aesthetic Quality": 0.3143,
+        "JEPA Similarity": 0.6215,
+        "Dynamic Degree": 0.1899,
+        "Flow Score": 0.0934,
+        "Motion Smoothness": 0.6096,
+        "Subject Consistency": 0.4802,
+        "Background Consistency": 0.657,
+        "Photometric Consistency": 0.1044,
+        "Interaction Quality": 0.3788,
+        "Trajectory Accuracy": 0.2268,
+        "Depth Accuracy": 0.8968,
+        "Perspectivity": 0.5156,
+        "Instruction Following": 0.3818,
+        "Semantic Alignment": 0.8803
+    }
+}

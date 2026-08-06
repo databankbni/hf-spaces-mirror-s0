@@ -1,0 +1,23 @@
+{
+ "captured_at": "2026-08-04T16:07:27Z",
+ "hf_metadata": {
+  "sha": "e6dbdefbef6d38aef3e975b20ecdb49c50bdb8ff"
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "duson12/stock-analysis",
+ "repo_type": "spaces",
+ "sha": "e6dbdefbef6d38aef3e975b20ecdb49c50bdb8ff",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/duson12/stock-analysis"
+}

@@ -1,0 +1,174 @@
+{
+ "captured_at": "2026-08-04T15:20:24Z",
+ "hf_metadata": {
+  "_id": "6a4bcc11a19d9cac0a0f1b74",
+  "author": "Nagaraj91",
+  "cardData": {
+   "app_file": "app.py",
+   "colorFrom": "pink",
+   "colorTo": "purple",
+   "emoji": "🔥",
+   "pinned": false,
+   "python_version": "3.13",
+   "sdk": "gradio",
+   "sdk_version": "6.19.0",
+   "title": "AI-STOCK Institutional-DASHBOARD"
+  },
+  "createdAt": "2026-07-06T15:38:57.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://nagaraj91-ai-stock-institutional-dashboard.hf.space",
+  "id": "Nagaraj91/AI-STOCK_Institutional-DASHBOARD",
+  "lastModified": "2026-07-06T16:28:17.000Z",
+  "likes": 0,
+  "private": false,
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "nagaraj91-ai-stock-institutional-dashboard.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": null,
+    "requested": "cpu-basic"
+   },
+   "replicas": {
+    "requested": 1
+   },
+   "stage": "SLEEPING"
+  },
+  "sdk": "gradio",
+  "sha": "3eb4f09aa5fee0546efe6ee2d13084941a3a2cc2",
+  "siblings": [
+   {
+    "rfilename": ".gitattributes"
+   },
+   {
+    "rfilename": ".gitignore"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "__pycache__/agent.cpython-310.pyc"
+   },
+   {
+    "rfilename": "__pycache__/dashboard_models.cpython-310.pyc"
+   },
+   {
+    "rfilename": "__pycache__/models.cpython-310.pyc"
+   },
+   {
+    "rfilename": "__pycache__/tools.cpython-310.pyc"
+   },
+   {
+    "rfilename": "agent.py"
+   },
+   {
+    "rfilename": "app.py"
+   },
+   {
+    "rfilename": "dashboard_models.py"
+   },
+   {
+    "rfilename": "debug_mc.py"
+   },
+   {
+    "rfilename": "models.py"
+   },
+   {
+    "rfilename": "requirements.txt"
+   },
+   {
+    "rfilename": "services/__pycache__/chart_builder.cpython-310.pyc"
+   },
+   {
+    "rfilename": "services/__pycache__/fundamental_analysis.cpython-310.pyc"
+   },
+   {
+    "rfilename": "services/__pycache__/moneycontrol_scraper.cpython-310.pyc"
+   },
+   {
+    "rfilename": "services/__pycache__/mutual_fund_analysis.cpython-310.pyc"
+   },
+   {
+    "rfilename": "services/__pycache__/overlap_calculator.cpython-310.pyc"
+   },
+   {
+    "rfilename": "services/__pycache__/scoring_engine.cpython-310.pyc"
+   },
+   {
+    "rfilename": "services/__pycache__/technical_analysis.cpython-310.pyc"
+   },
+   {
+    "rfilename": "services/__pycache__/ticker_resolver.cpython-310.pyc"
+   },
+   {
+    "rfilename": "services/__pycache__/valuation_service.cpython-310.pyc"
+   },
+   {
+    "rfilename": "services/chart_builder.py"
+   },
+   {
+    "rfilename": "services/fundamental_analysis.py"
+   },
+   {
+    "rfilename": "services/moneycontrol_scraper.py"
+   },
+   {
+    "rfilename": "services/mutual_fund_analysis.py"
+   },
+   {
+    "rfilename": "services/overlap_calculator.py"
+   },
+   {
+    "rfilename": "services/scoring_engine.py"
+   },
+   {
+    "rfilename": "services/technical_analysis.py"
+   },
+   {
+    "rfilename": "services/ticker_resolver.py"
+   },
+   {
+    "rfilename": "services/valuation_service.py"
+   },
+   {
+    "rfilename": "test_yf_mf.py"
+   },
+   {
+    "rfilename": "tools.py"
+   }
+  ],
+  "subdomain": "nagaraj91-ai-stock-institutional-dashboard",
+  "tags": [
+   "gradio",
+   "region:us"
+  ],
+  "usedStorage": 0
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  },
+  {
+   "original": ".gitignore",
+   "stored_as": "_gitignore"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "Nagaraj91/AI-STOCK_Institutional-DASHBOARD",
+ "repo_type": "spaces",
+ "sha": "3eb4f09aa5fee0546efe6ee2d13084941a3a2cc2",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/Nagaraj91/AI-STOCK_Institutional-DASHBOARD"
+}

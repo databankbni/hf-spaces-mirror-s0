@@ -1,0 +1,211 @@
+{% extends "base.html" %}
+{% block title %}LTI 1.3 Registrations — MktBook{% endblock %}
+{% block content %}
+
+<div style="display:flex; align-items:baseline; gap:0.8rem; flex-wrap:wrap; margin-bottom:0.5rem;">
+    <h1 style="margin:0;">LTI 1.3 Platform Registrations</h1>
+    <a href="/admin" role="button" class="outline secondary" style="font-size:0.85em; padding:0.3rem 0.8rem;">
+        ← Back to Admin
+    </a>
+</div>
+<p style="color:#888;">Register your LMS (Canvas, Blackboard/Ultra) so students can launch MktBook as an InBox tool.</p>
+
+{# ── Status banner ── #}
+{% if done == 'registered' %}
+<article style="border-left:4px solid #10b981; background:#f0fff4; margin-bottom:1rem;">
+    <p style="margin:0;">&#x2705; Registration saved successfully.</p>
+</article>
+{% elif done == 'deleted' %}
+<article style="border-left:4px solid #e67e22; background:#fff8f0; margin-bottom:1rem;">
+    <p style="margin:0;">&#x1F5D1; Registration deleted.</p>
+</article>
+{% endif %}
+
+{% if error %}
+<article style="border-left:4px solid #c0392b; background:#fff5f5; margin-bottom:1rem;">
+    <p style="margin:0;">&#x26A0; {{ error }}</p>
+</article>
+{% endif %}
+
+{# ── Tool URLs for reference ── #}
+<article>
+    <header><strong>Your Tool URLs</strong> <small style="color:#888;">(copy these into your LMS)</small></header>
+    <table>
+        <tbody>
+            <tr>
+                <td><strong>OIDC Login URL</strong></td>
+                <td><code>{{ base_url }}/lti/login</code></td>
+            </tr>
+            <tr>
+                <td><strong>Launch / Redirect URI</strong></td>
+                <td><code>{{ base_url }}/lti/launch</code></td>
+            </tr>
+            <tr>
+                <td><strong>JWKS URL</strong></td>
+                <td><code>{{ base_url }}/lti/jwks</code></td>
+            </tr>
+            <tr>
+                <td><strong>Config JSON</strong></td>
+                <td><a href="{{ base_url }}/lti/config" target="_blank"><code>{{ base_url }}/lti/config</code></a></td>
+            </tr>
+        </tbody>
+    </table>
+</article>
+
+{# ── Existing registrations ── #}
+{% if registrations %}
+<article>
+    <header><strong>Registered LMS Platforms</strong></header>
+    <table>
+        <thead>
+            <tr>
+                <th>Label</th>
+                <th>Issuer</th>
+                <th>Client ID</th>
+                <th>Deployment IDs</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for reg in registrations %}
+            <tr>
+                <td><strong>{{ reg.label }}</strong></td>
+                <td><small>{{ reg.issuer }}</small></td>
+                <td><code style="font-size:0.8em;">{{ reg.client_id }}</code></td>
+                <td>
+                    {% if reg.deployment_ids_list %}
+                        {% for dep_id in reg.deployment_ids_list %}<code style="font-size:0.78em;">{{ dep_id }}</code><br>{% endfor %}
+                    {% else %}
+                        <small style="color:#aaa;">(none yet)</small>
+                    {% endif %}
+                </td>
+                <td>
+                    <form method="post" action="/admin/lti/{{ reg.id }}/delete" style="margin:0;"
+                          onsubmit="return confirm('Delete registration for {{ reg.label }}?');">
+                        <button type="submit" class="outline" style="border-color:#c0392b; color:#c0392b; font-size:0.8em; padding:0.2rem 0.6rem;">
+                            Delete
+                        </button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</article>
+{% else %}
+<p>No LMS platforms registered yet. Add one below.</p>
+{% endif %}
+
+{# ── Add registration form ── #}
+<article>
+    <header><strong>Add New LMS Registration</strong></header>
+
+    <details style="margin-bottom:1rem;">
+        <summary style="cursor:pointer; color:#3d9eff;">Canvas instructions ↓</summary>
+        <ol style="font-size:0.87em; margin-top:0.5rem;">
+            <li>Canvas Admin → Developer Keys → <strong>+ LTI Key</strong></li>
+            <li>Method: <strong>Paste JSON</strong> → paste the URL <code>{{ base_url }}/lti/config</code></li>
+            <li>Note the numeric <strong>Client ID</strong> Canvas assigns</li>
+            <li>Toggle the key to <strong>ON</strong></li>
+            <li>Course Settings → Apps → <strong>Add App → By Client ID</strong></li>
+            <li>Note the <strong>Deployment ID</strong> Canvas shows after installing</li>
+            <li>Fill the form below with:
+                <ul>
+                    <li>Issuer: <code>https://canvas.instructure.com</code></li>
+                    <li>Auth Login URL: <code>https://canvas.instructure.com/api/lti/authorize_redirect</code></li>
+                    <li>Auth Token URL: <code>https://canvas.instructure.com/login/oauth2/token</code></li>
+                    <li>JWKS URL: <code>https://canvas.instructure.com/api/lti/security/jwks</code></li>
+                </ul>
+            </li>
+        </ol>
+    </details>
+
+    <details style="margin-bottom:1rem;">
+        <summary style="cursor:pointer; color:#e67e22;">Blackboard / Ultra instructions ↓</summary>
+        <ol style="font-size:0.87em; margin-top:0.5rem;">
+            <li>Blackboard Admin → LTI Tool Providers → <strong>Register LTI 1.3 Tool</strong></li>
+            <li>Enter your OIDC Login URL, Redirect URI, and JWKS URL from above</li>
+            <li>Blackboard will generate a <strong>Client ID</strong> and <strong>Deployment ID</strong></li>
+            <li>Fill the form below with:
+                <ul>
+                    <li>Issuer: <code>https://blackboard.com</code></li>
+                    <li>Auth Login URL: <code>https://YOUR-BB-DOMAIN/api/v1/gateway/oidcauth</code></li>
+                    <li>Auth Token URL: <code>https://YOUR-BB-DOMAIN/api/v1/gateway/oauth2/jwttoken</code></li>
+                    <li>JWKS URL: <code>https://YOUR-BB-DOMAIN/api/v1/gateway/lti/public/publickey</code></li>
+                </ul>
+            </li>
+        </ol>
+    </details>
+
+    <form method="post" action="/admin/lti/register">
+        <div class="grid">
+            <label>
+                Label <small style="color:#888;">(e.g., "Canvas Production")</small>
+                <input type="text" name="label" required placeholder="Canvas Production">
+            </label>
+            <label>
+                Issuer (iss)
+                <input type="url" name="issuer" required placeholder="https://canvas.instructure.com">
+            </label>
+        </div>
+        <div class="grid">
+            <label>
+                Client ID
+                <input type="text" name="client_id" required placeholder="10000000000042">
+            </label>
+            <label>
+                Auth Login URL
+                <input type="url" name="auth_login_url" required
+                       placeholder="https://canvas.instructure.com/api/lti/authorize_redirect">
+            </label>
+        </div>
+        <div class="grid">
+            <label>
+                Auth Token URL
+                <input type="url" name="auth_token_url" required
+                       placeholder="https://canvas.instructure.com/login/oauth2/token">
+            </label>
+            <label>
+                JWKS URL (LMS public keys)
+                <input type="url" name="key_set_url" required
+                       placeholder="https://canvas.instructure.com/api/lti/security/jwks">
+            </label>
+        </div>
+        <label>
+            Deployment IDs <small style="color:#888;">(one per line — add after deploying to a course)</small>
+            <textarea name="deployment_ids_raw" rows="3"
+                      placeholder="One deployment ID per line&#10;Can be left blank initially"></textarea>
+        </label>
+        <button type="submit" style="background:#3d9eff; border-color:#3d9eff;">
+            Save Registration
+        </button>
+    </form>
+</article>
+
+{# ── Grade passback instructions ── #}
+<article>
+    <header><strong>Grade Passback</strong></header>
+    <p style="font-size:0.9em;">
+        After students launch via LTI and link their bots, you can push grades to the LMS gradebook
+        from the <strong>Grading page</strong> for each workout
+        (<a href="/w/1/grading">W1</a>,
+         <a href="/w/2/grading">W2</a>,
+         <a href="/w/3/grading">W3</a>,
+         <a href="/w/4/grading">W4</a>,
+         <a href="/w/5/grading">W5</a>).
+    </p>
+    <p style="font-size:0.9em;">
+        Ensure your tool's RSA private key exists at:
+        <code>{{ lti_key_path }}</code>
+        <br><small>Generate it on the server: <code>openssl genrsa -out {{ lti_key_path }} 2048 &amp;&amp; chmod 600 {{ lti_key_path }}</code></small>
+    </p>
+</article>
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+// Parse deployment_ids JSON for display via template filter fallback
+// (fromjson filter is added in the Jinja2 environment — no JS needed)
+</script>
+{% endblock %}

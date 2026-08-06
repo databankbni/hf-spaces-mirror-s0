@@ -1,0 +1,27 @@
+{
+  "commit": "2857073f05fb53298be84ddd68b8ad3d53fc6cc2",
+  "fixtures": [
+    {
+      "away": "Switzerland",
+      "date": "2026-06-13",
+      "fixture_id": "WC26-008",
+      "group": "B",
+      "home": "Qatar",
+      "kickoff_utc": "2026-06-13T19:00:00+00:00",
+      "lambda_away": 2.9892153,
+      "lambda_home": 0.42512769,
+      "p_away": 0.87580503,
+      "p_draw": 0.09770468,
+      "p_home": 0.0264903
+    }
+  ],
+  "forecast_date": "2026-06-13",
+  "generated_at": "2026-06-13T16:06:25.043306+00:00",
+  "information_cutoff": "2026-06-13T04:30:00Z",
+  "model": "Elo-to-goals Dixon-Coles fitted model",
+  "schema_version": "live-forecast-v1",
+  "sources": [
+    "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026",
+    "https://www.theguardian.com/football/2026/jun/13/how-to-watch-world-cup-brazil-morocco-haiti-scotland"
+  ]
+}

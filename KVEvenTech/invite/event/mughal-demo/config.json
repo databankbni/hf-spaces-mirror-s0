@@ -1,0 +1,79 @@
+{
+  "brideName": "Zara & Aryan",
+  "familyName": "The Khan Family",
+  "intro": {
+    "tagline": "A Royal Union",
+    "buttonText": "Enter The Durbar",
+    "sequenceInvite": "With the blessings of the Almighty",
+    "sequenceTo": "You are cordially summoned to witness"
+  },
+  "hero": { "badge": "A Grand Celebration" },
+  "scratchReveal": {
+    "teaser": "A royal secret awaits...",
+    "heading": "Your Exclusive Invitation",
+    "revealLabel": "Unseal the decree"
+  },
+  "countdown": {
+    "label": "Until The Grand Ceremony",
+    "heading": "The Auspicious Hour",
+    "doneMessage": "The celebrations have begun!"
+  },
+  "couple": {
+    "sectionTag": "Two Families, One Destiny",
+    "sectionHeading": "The Blessed Union",
+    "andText": "&",
+    "bride": {
+      "name": "Zara",
+      "fullName": "Zara Khan",
+      "title": "The Bride",
+      "parents": "Daughter of",
+      "fatherName": "Mr. Irfan Khan",
+      "motherName": "Mrs. Shaheen Khan",
+      "photo": "bride.png"
+    },
+    "groom": {
+      "name": "Aryan",
+      "fullName": "Aryan Sharma",
+      "title": "The Groom",
+      "parents": "Son of",
+      "fatherName": "Mr. Rajesh Sharma",
+      "motherName": "Mrs. Priya Sharma",
+      "photo": "groom.png"
+    }
+  },
+  "celebrations": {
+    "sectionTag": "The Royal Programme",
+    "sectionHeading": "Sacred Ceremonies"
+  },
+  "venue": {
+    "sectionHeading": "The Venue",
+    "locationLabel": "The Grand Palace",
+    "directionsLabel": "Get Directions"
+  },
+  "blessings": {
+    "heading": "Your Presence Honours Us",
+    "suffix": "\u2014 The Khan & Sharma Families"
+  },
+  "events": {
+    "haldi": {
+      "title": "Haldi & Mehndi",
+      "badge": "Day One",
+      "blessing": "Begin with colour and joy",
+      "date": "14 Feb 2027",
+      "time": "10:00 AM",
+      "venue": "Khan Haveli Gardens",
+      "address": "Old City, Hyderabad"
+    },
+    "halfSaree": {
+      "title": "Nikah & Reception",
+      "badge": "The Grand Day",
+      "blessing": "Two souls, one destiny",
+      "date": "15 Feb 2027",
+      "time": "06:00 PM",
+      "dateISO": "2027-02-15T18:00:00",
+      "venue": "Royal Palace Banquet",
+      "address": "Necklace Road, Hyderabad",
+      "mapLink": "https://maps.google.com"
+    }
+  }
+}

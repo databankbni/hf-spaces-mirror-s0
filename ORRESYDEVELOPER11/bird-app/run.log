@@ -1,0 +1,334 @@
+ * Serving Flask app 'app'
+ * Debug mode: on
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+Press CTRL+C to quit
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 468-471-791
+127.0.0.1 - - [30/Apr/2026 18:06:29] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Apr/2026 18:06:30] "GET /bird-image/American_Goldfinch/American_Goldfinch_0003_32236.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [30/Apr/2026 18:06:30] "GET /static/js/app.js HTTP/1.1" 200 -
+127.0.0.1 - - [30/Apr/2026 18:06:30] "GET /bird-image/Mallard/Mallard_0004_76958.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [30/Apr/2026 18:06:30] "GET /bird-image/Western_Grebe/Western_Grebe_0001_36481.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [30/Apr/2026 18:06:30] "GET /bird-image/Brown_Pelican/Brown_Pelican_0002_94773.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [30/Apr/2026 18:06:30] "GET /static/css/app.css HTTP/1.1" 200 -
+127.0.0.1 - - [30/Apr/2026 18:06:30] "GET /bird-image/Painted_Bunting/Painted_Bunting_0002_16887.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [30/Apr/2026 18:06:30] "GET /bird-image/Blue_Jay/Blue_Jay_0002_62657.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [30/Apr/2026 18:07:29] "GET /favicon.ico HTTP/1.1" 404 -
+127.0.0.1 - - [30/Apr/2026 18:08:52] "GET /species HTTP/1.1" 200 -
+127.0.0.1 - - [30/Apr/2026 18:08:52] "GET /static/css/app.css HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:08:52] "GET /bird-image/American_Goldfinch/American_Goldfinch_0003_32236.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:08:52] "GET /bird-image/Blue_Jay/Blue_Jay_0002_62657.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:08:52] "GET /bird-image/Brown_Pelican/Brown_Pelican_0002_94773.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:08:52] "GET /bird-image/Mallard/Mallard_0004_76958.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:08:52] "GET /bird-image/Painted_Bunting/Painted_Bunting_0002_16887.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:08:52] "GET /static/js/app.js HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:08:52] "GET /bird-image/Western_Grebe/Western_Grebe_0001_36481.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:08:52] "GET /bird-image/White_Pelican/White_Pelican_0003_96691.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [30/Apr/2026 18:08:52] "GET /bird-image/Ivory_Gull/Ivory_Gull_0004_49019.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [30/Apr/2026 18:08:52] "GET /bird-image/Horned_Puffin/Horned_Puffin_0003_101045.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [30/Apr/2026 18:08:52] "GET /bird-image/Loggerhead_Shrike/Loggerhead_Shrike_0007_106101.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [30/Apr/2026 18:08:52] "GET /bird-image/Cedar_Waxwing/Cedar_Waxwing_0001_179170.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [30/Apr/2026 18:08:52] "GET /bird-image/Scarlet_Tanager/Scarlet_Tanager_0003_137724.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [30/Apr/2026 18:08:52] "GET /bird-image/Western_Meadowlark/Western_Meadowlark_0003_78864.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [30/Apr/2026 18:08:53] "GET /bird-image/Indigo_Bunting/Indigo_Bunting_0003_13049.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [30/Apr/2026 18:08:53] "GET /bird-image/Clark_Nutcracker/Clark_Nutcracker_0003_85296.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [30/Apr/2026 18:08:53] "GET /bird-image/Horned_Lark/Horned_Lark_0001_73835.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [30/Apr/2026 18:08:54] "GET /species HTTP/1.1" 200 -
+127.0.0.1 - - [30/Apr/2026 18:08:54] "GET /static/css/app.css HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:08:54] "GET /bird-image/American_Goldfinch/American_Goldfinch_0003_32236.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:08:54] "GET /bird-image/Blue_Jay/Blue_Jay_0002_62657.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:08:54] "GET /bird-image/Painted_Bunting/Painted_Bunting_0002_16887.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:08:54] "GET /bird-image/Brown_Pelican/Brown_Pelican_0002_94773.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:08:54] "GET /bird-image/Mallard/Mallard_0004_76958.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:08:54] "GET /static/js/app.js HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:08:54] "GET /bird-image/Western_Grebe/Western_Grebe_0001_36481.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:08:54] "GET /bird-image/White_Pelican/White_Pelican_0003_96691.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:08:54] "GET /bird-image/Ivory_Gull/Ivory_Gull_0004_49019.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:08:54] "GET /bird-image/Horned_Puffin/Horned_Puffin_0003_101045.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:08:54] "GET /bird-image/Loggerhead_Shrike/Loggerhead_Shrike_0007_106101.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:08:54] "GET /bird-image/Cedar_Waxwing/Cedar_Waxwing_0001_179170.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:08:54] "GET /bird-image/Western_Meadowlark/Western_Meadowlark_0003_78864.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:08:54] "GET /bird-image/Scarlet_Tanager/Scarlet_Tanager_0003_137724.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:08:54] "GET /bird-image/Indigo_Bunting/Indigo_Bunting_0003_13049.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:08:54] "GET /bird-image/Clark_Nutcracker/Clark_Nutcracker_0003_85296.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:08:54] "GET /bird-image/Horned_Lark/Horned_Lark_0001_73835.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:09:13] "GET /parks HTTP/1.1" 200 -
+127.0.0.1 - - [30/Apr/2026 18:09:13] "GET /static/css/app.css HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:09:13] "GET /static/js/app.js HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:09:28] "GET /parks/4 HTTP/1.1" 200 -
+127.0.0.1 - - [30/Apr/2026 18:09:28] "GET /static/css/app.css HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:09:28] "GET /bird-image/Western_Meadowlark/Western_Meadowlark_0003_78864.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:09:28] "GET /bird-image/Loggerhead_Shrike/Loggerhead_Shrike_0007_106101.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:09:28] "GET /bird-image/Indigo_Bunting/Indigo_Bunting_0003_13049.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:09:28] "GET /bird-image/Painted_Bunting/Painted_Bunting_0002_16887.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:09:28] "GET /static/js/app.js HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:09:47] "GET /conservation HTTP/1.1" 200 -
+127.0.0.1 - - [30/Apr/2026 18:09:47] "GET /static/css/app.css HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:09:47] "GET /bird-image/Western_Meadowlark/Western_Meadowlark_0003_78864.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:09:47] "GET /bird-image/Brown_Pelican/Brown_Pelican_0002_94773.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:09:47] "GET /bird-image/Cedar_Waxwing/Cedar_Waxwing_0001_179170.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:09:47] "GET /bird-image/Artic_Tern/Artic_Tern_0011_143355.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [30/Apr/2026 18:09:47] "GET /static/js/app.js HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:09:47] "GET /bird-image/White_Pelican/White_Pelican_0003_96691.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:10:07] "GET /habitats HTTP/1.1" 200 -
+127.0.0.1 - - [30/Apr/2026 18:10:07] "GET /static/css/app.css HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:10:07] "GET /static/js/app.js HTTP/1.1" 304 -
+ * Detected change in 'c:\\jack project\\models.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 468-471-791
+127.0.0.1 - - [30/Apr/2026 18:18:47] "GET /habitats HTTP/1.1" 200 -
+127.0.0.1 - - [30/Apr/2026 18:18:48] "GET /static/js/app.js HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:18:48] "GET /static/css/app.css HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:19:02] "GET /species HTTP/1.1" 200 -
+127.0.0.1 - - [30/Apr/2026 18:19:02] "GET /static/css/app.css HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:19:02] "GET /bird-image/American_Goldfinch/American_Goldfinch_0003_32236.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:19:02] "GET /bird-image/Blue_Jay/Blue_Jay_0002_62657.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:19:02] "GET /bird-image/Painted_Bunting/Painted_Bunting_0002_16887.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:19:02] "GET /bird-image/Brown_Pelican/Brown_Pelican_0002_94773.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:19:02] "GET /bird-image/Mallard/Mallard_0004_76958.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:19:02] "GET /static/js/app.js HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:19:02] "GET /bird-image/Horned_Lark/Horned_Lark_0001_73835.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:19:02] "GET /bird-image/Clark_Nutcracker/Clark_Nutcracker_0003_85296.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:19:02] "GET /bird-image/White_Pelican/White_Pelican_0003_96691.jpg HTTP/1.1" 304 -
+ * Detected change in 'c:\\jack project\\app.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 468-471-791
+127.0.0.1 - - [30/Apr/2026 18:19:06] "GET /bird-image/Western_Grebe/Western_Grebe_0001_36481.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:19:06] "GET /parks HTTP/1.1" 200 -
+127.0.0.1 - - [30/Apr/2026 18:19:06] "GET /bird-image/Scarlet_Tanager/Scarlet_Tanager_0003_137724.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:19:06] "GET /bird-image/Ivory_Gull/Ivory_Gull_0004_49019.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:19:06] "GET /bird-image/Western_Meadowlark/Western_Meadowlark_0003_78864.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:19:06] "GET /bird-image/Horned_Puffin/Horned_Puffin_0003_101045.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:19:06] "GET /bird-image/Loggerhead_Shrike/Loggerhead_Shrike_0007_106101.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:19:06] "GET /bird-image/Indigo_Bunting/Indigo_Bunting_0003_13049.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:19:06] "GET /static/css/app.css HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:19:06] "GET /static/js/app.js HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:19:09] "GET /conservation HTTP/1.1" 200 -
+127.0.0.1 - - [30/Apr/2026 18:19:09] "GET /static/css/app.css HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:19:09] "GET /bird-image/White_Pelican/White_Pelican_0003_96691.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:19:09] "GET /static/js/app.js HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:19:09] "GET /bird-image/Artic_Tern/Artic_Tern_0011_143355.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:19:09] "GET /bird-image/Pied_Kingfisher/Pied_Kingfisher_0004_72135.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [30/Apr/2026 18:19:09] "GET /bird-image/Cedar_Waxwing/Cedar_Waxwing_0001_179170.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:19:09] "GET /bird-image/Western_Meadowlark/Western_Meadowlark_0003_78864.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:19:09] "GET /bird-image/Cape_Glossy_Starling/Cape_Glossy_Starling_0002_129310.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [30/Apr/2026 18:19:09] "GET /bird-image/Brown_Pelican/Brown_Pelican_0002_94773.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:19:16] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Apr/2026 18:19:16] "GET /static/css/app.css HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:19:16] "GET /bird-image/American_Goldfinch/American_Goldfinch_0003_32236.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:19:16] "GET /static/js/app.js HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:19:16] "GET /bird-image/Blue_Jay/Blue_Jay_0002_62657.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:19:16] "GET /bird-image/Painted_Bunting/Painted_Bunting_0002_16887.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:19:16] "GET /bird-image/Brown_Pelican/Brown_Pelican_0002_94773.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:19:16] "GET /bird-image/Mallard/Mallard_0004_76958.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:19:16] "GET /bird-image/Western_Grebe/Western_Grebe_0001_36481.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:19:33] "GET /species HTTP/1.1" 200 -
+127.0.0.1 - - [30/Apr/2026 18:19:33] "GET /static/css/app.css HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:19:33] "GET /bird-image/American_Goldfinch/American_Goldfinch_0003_32236.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:19:33] "GET /bird-image/Blue_Jay/Blue_Jay_0002_62657.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:19:33] "GET /bird-image/Painted_Bunting/Painted_Bunting_0002_16887.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:19:33] "GET /bird-image/Brown_Pelican/Brown_Pelican_0002_94773.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:19:33] "GET /bird-image/Mallard/Mallard_0004_76958.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:19:33] "GET /static/js/app.js HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:19:33] "GET /bird-image/Western_Grebe/Western_Grebe_0001_36481.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:19:33] "GET /bird-image/White_Pelican/White_Pelican_0003_96691.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:19:33] "GET /bird-image/Ivory_Gull/Ivory_Gull_0004_49019.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:19:33] "GET /bird-image/Horned_Puffin/Horned_Puffin_0003_101045.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:19:33] "GET /bird-image/Loggerhead_Shrike/Loggerhead_Shrike_0007_106101.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:19:33] "GET /bird-image/Cedar_Waxwing/Cedar_Waxwing_0001_179170.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:19:33] "GET /bird-image/Western_Meadowlark/Western_Meadowlark_0003_78864.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:19:33] "GET /bird-image/Pied_Kingfisher/Pied_Kingfisher_0004_72135.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:19:33] "GET /bird-image/Cape_Glossy_Starling/Cape_Glossy_Starling_0002_129310.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:19:33] "GET /bird-image/Indigo_Bunting/Indigo_Bunting_0003_13049.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:19:33] "GET /bird-image/Clark_Nutcracker/Clark_Nutcracker_0003_85296.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:19:33] "GET /bird-image/Scarlet_Tanager/Scarlet_Tanager_0003_137724.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:19:33] "GET /bird-image/Horned_Lark/Horned_Lark_0001_73835.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:19:33] "GET /bird-image/Barn_Swallow/Barn_Swallow_0002_130551.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [30/Apr/2026 18:19:33] "GET /bird-image/Frigatebird/Frigatebird_0001_43101.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [30/Apr/2026 18:19:33] "GET /bird-image/Grasshopper_Sparrow/Grasshopper_Sparrow_0001_115938.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [30/Apr/2026 18:19:33] "GET /bird-image/Common_Tern/Common_Tern_0001_149721.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [30/Apr/2026 18:19:33] "GET /bird-image/Green_Jay/Green_Jay_0003_65767.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [30/Apr/2026 18:19:33] "GET /bird-image/Ruby_throated_Hummingbird/Ruby_Throated_Hummingbird_0001_58162.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [30/Apr/2026 18:19:51] "GET /parks HTTP/1.1" 200 -
+127.0.0.1 - - [30/Apr/2026 18:19:51] "GET /static/css/app.css HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:19:51] "GET /static/js/app.js HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:20:47] "GET /map HTTP/1.1" 200 -
+127.0.0.1 - - [30/Apr/2026 18:20:47] "GET /static/css/app.css HTTP/1.1" 200 -
+127.0.0.1 - - [30/Apr/2026 18:20:47] "GET /static/js/app.js HTTP/1.1" 200 -
+ * Detected change in 'c:\\jack project\\app.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 468-471-791
+127.0.0.1 - - [30/Apr/2026 18:20:52] "GET /api/map-data HTTP/1.1" 200 -
+ * Detected change in 'c:\\jack project\\app.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 468-471-791
+ * Detected change in 'c:\\jack project\\app.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 468-471-791
+127.0.0.1 - - [30/Apr/2026 18:22:00] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Apr/2026 18:22:01] "GET /map HTTP/1.1" 200 -
+127.0.0.1 - - [30/Apr/2026 18:22:01] "GET /species HTTP/1.1" 200 -
+127.0.0.1 - - [30/Apr/2026 18:22:01] "GET /parks HTTP/1.1" 200 -
+127.0.0.1 - - [30/Apr/2026 18:23:35] "GET /parks/9 HTTP/1.1" 200 -
+127.0.0.1 - - [30/Apr/2026 18:23:36] "GET /bird-image/Cape_Glossy_Starling/Cape_Glossy_Starling_0002_129310.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:23:36] "GET /bird-image/Ruby_throated_Hummingbird/Ruby_Throated_Hummingbird_0001_58162.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:23:36] "GET /static/css/app.css HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:23:36] "GET /bird-image/Grasshopper_Sparrow/Grasshopper_Sparrow_0001_115938.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:23:36] "GET /static/js/app.js HTTP/1.1" 200 -
+127.0.0.1 - - [30/Apr/2026 18:23:36] "GET /bird-image/Barn_Swallow/Barn_Swallow_0002_130551.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:24:33] "GET /conservation HTTP/1.1" 200 -
+127.0.0.1 - - [30/Apr/2026 18:24:33] "GET /static/css/app.css HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:24:33] "GET /bird-image/White_Pelican/White_Pelican_0003_96691.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:24:33] "GET /bird-image/Pied_Kingfisher/Pied_Kingfisher_0004_72135.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:24:33] "GET /bird-image/Cape_Glossy_Starling/Cape_Glossy_Starling_0002_129310.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:24:33] "GET /static/js/app.js HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:24:34] "GET /login HTTP/1.1" 200 -
+127.0.0.1 - - [30/Apr/2026 18:24:34] "GET /static/css/app.css HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:24:34] "GET /static/js/app.js HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:24:43] "GET /register HTTP/1.1" 200 -
+127.0.0.1 - - [30/Apr/2026 18:24:43] "GET /static/css/app.css HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:24:43] "GET /static/js/app.js HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:24:58] "POST /register HTTP/1.1" 302 -
+c:\jack project\app.py:33: LegacyAPIWarning: The Query.get() method is considered legacy as of the 1.x series of SQLAlchemy and becomes a legacy construct in 2.0. The method is now available as Session.get() (deprecated since: 2.0) (Background on SQLAlchemy 2.0 at: https://sqlalche.me/e/b8d9)
+  return User.query.get(user_id) if user_id else None
+127.0.0.1 - - [30/Apr/2026 18:24:58] "GET /dashboard HTTP/1.1" 200 -
+127.0.0.1 - - [30/Apr/2026 18:24:58] "GET /static/css/app.css HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:24:58] "GET /static/js/app.js HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:25:16] "GET /species HTTP/1.1" 200 -
+127.0.0.1 - - [30/Apr/2026 18:25:16] "GET /static/css/app.css HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:25:16] "GET /bird-image/White_Pelican/White_Pelican_0003_96691.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:25:16] "GET /bird-image/Pied_Kingfisher/Pied_Kingfisher_0004_72135.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:25:16] "GET /bird-image/Cape_Glossy_Starling/Cape_Glossy_Starling_0002_129310.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:25:16] "GET /bird-image/Grasshopper_Sparrow/Grasshopper_Sparrow_0001_115938.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:25:16] "GET /static/js/app.js HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:25:16] "GET /bird-image/Barn_Swallow/Barn_Swallow_0002_130551.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:25:16] "GET /bird-image/Frigatebird/Frigatebird_0001_43101.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:25:16] "GET /bird-image/Green_Jay/Green_Jay_0003_65767.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:25:16] "GET /bird-image/Common_Tern/Common_Tern_0001_149721.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:25:16] "GET /bird-image/Ruby_throated_Hummingbird/Ruby_Throated_Hummingbird_0001_58162.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:25:19] "GET /habitats HTTP/1.1" 200 -
+127.0.0.1 - - [30/Apr/2026 18:25:19] "GET /static/css/app.css HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:25:19] "GET /static/js/app.js HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:25:20] "GET /parks HTTP/1.1" 200 -
+127.0.0.1 - - [30/Apr/2026 18:25:20] "GET /static/css/app.css HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:25:20] "GET /static/js/app.js HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:25:22] "GET /map HTTP/1.1" 200 -
+127.0.0.1 - - [30/Apr/2026 18:25:22] "GET /static/css/app.css HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:25:22] "GET /static/js/app.js HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:25:22] "GET /api/map-data HTTP/1.1" 200 -
+127.0.0.1 - - [30/Apr/2026 18:25:23] "GET /conservation HTTP/1.1" 200 -
+127.0.0.1 - - [30/Apr/2026 18:25:23] "GET /bird-image/White_Pelican/White_Pelican_0003_96691.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:25:23] "GET /static/css/app.css HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:25:23] "GET /bird-image/Pied_Kingfisher/Pied_Kingfisher_0004_72135.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:25:23] "GET /bird-image/Cape_Glossy_Starling/Cape_Glossy_Starling_0002_129310.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:25:23] "GET /static/js/app.js HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:25:25] "GET /dashboard HTTP/1.1" 200 -
+127.0.0.1 - - [30/Apr/2026 18:25:25] "GET /static/css/app.css HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:25:25] "GET /static/js/app.js HTTP/1.1" 304 -
+ * Detected change in 'c:\\jack project\\models.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 468-471-791
+ * Detected change in 'c:\\jack project\\app.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 468-471-791
+ * Detected change in 'c:\\jack project\\app.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 468-471-791
+ * Detected change in 'c:\\jack project\\app.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 468-471-791
+c:\jack project\app.py:40: LegacyAPIWarning: The Query.get() method is considered legacy as of the 1.x series of SQLAlchemy and becomes a legacy construct in 2.0. The method is now available as Session.get() (deprecated since: 2.0) (Background on SQLAlchemy 2.0 at: https://sqlalche.me/e/b8d9)
+  return User.query.get(user_id) if user_id else None
+127.0.0.1 - - [30/Apr/2026 18:30:23] "GET /dashboard HTTP/1.1" 200 -
+127.0.0.1 - - [30/Apr/2026 18:30:23] "GET /static/css/app.css HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:30:23] "GET /static/js/app.js HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:30:30] "GET /habitats HTTP/1.1" 200 -
+127.0.0.1 - - [30/Apr/2026 18:30:30] "GET /static/css/app.css HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:30:30] "GET /static/js/app.js HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:30:45] "GET /identify HTTP/1.1" 200 -
+127.0.0.1 - - [30/Apr/2026 18:30:45] "GET /static/css/app.css HTTP/1.1" 200 -
+127.0.0.1 - - [30/Apr/2026 18:30:45] "GET /static/js/app.js HTTP/1.1" 200 -
+127.0.0.1 - - [30/Apr/2026 18:31:07] "POST /identify HTTP/1.1" 200 -
+127.0.0.1 - - [30/Apr/2026 18:31:07] "GET /static/uploads/4dec6b18a8f044a3b15adf19b81b6006-IMG0000005.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [30/Apr/2026 18:31:07] "GET /static/css/app.css HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:31:07] "GET /bird-image/Grasshopper_Sparrow/Grasshopper_Sparrow_0001_115938.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:31:07] "GET /bird-image/Barn_Swallow/Barn_Swallow_0002_130551.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:31:07] "GET /bird-image/White_Pelican/White_Pelican_0003_96691.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:31:07] "GET /static/js/app.js HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:31:07] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Apr/2026 18:31:07] "GET /identify HTTP/1.1" 200 -
+127.0.0.1 - - [30/Apr/2026 18:31:07] "GET /map HTTP/1.1" 200 -
+127.0.0.1 - - [30/Apr/2026 18:31:07] "GET /admin HTTP/1.1" 302 -
+127.0.0.1 - - [30/Apr/2026 18:31:07] "GET /login HTTP/1.1" 200 -
+127.0.0.1 - - [30/Apr/2026 18:31:36] "GET /species/22 HTTP/1.1" 200 -
+127.0.0.1 - - [30/Apr/2026 18:31:36] "GET /static/css/app.css HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:31:36] "GET /bird-image/Barn_Swallow/Barn_Swallow_0002_130551.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:31:36] "GET /bird-image/Cape_Glossy_Starling/Cape_Glossy_Starling_0002_129310.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:31:36] "GET /bird-image/Grasshopper_Sparrow/Grasshopper_Sparrow_0001_115938.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:31:36] "GET /bird-image/Ruby_throated_Hummingbird/Ruby_Throated_Hummingbird_0001_58162.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:31:36] "GET /static/js/app.js HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:32:02] "GET /parks HTTP/1.1" 200 -
+127.0.0.1 - - [30/Apr/2026 18:32:02] "GET /static/css/app.css HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:32:02] "GET /static/js/app.js HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:32:10] "GET /habitats HTTP/1.1" 200 -
+127.0.0.1 - - [30/Apr/2026 18:32:10] "GET /static/css/app.css HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:32:10] "GET /static/js/app.js HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:32:11] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Apr/2026 18:32:11] "GET /static/css/app.css HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:32:11] "GET /bird-image/White_Pelican/White_Pelican_0003_96691.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:32:11] "GET /static/js/app.js HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:32:11] "GET /bird-image/Pied_Kingfisher/Pied_Kingfisher_0004_72135.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:32:11] "GET /bird-image/Cape_Glossy_Starling/Cape_Glossy_Starling_0002_129310.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:32:11] "GET /bird-image/Grasshopper_Sparrow/Grasshopper_Sparrow_0001_115938.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:32:11] "GET /bird-image/Barn_Swallow/Barn_Swallow_0002_130551.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:33:02] "GET /logout HTTP/1.1" 302 -
+127.0.0.1 - - [30/Apr/2026 18:33:02] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Apr/2026 18:33:02] "GET /static/css/app.css HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:33:02] "GET /bird-image/White_Pelican/White_Pelican_0003_96691.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:33:02] "GET /static/js/app.js HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:33:02] "GET /bird-image/Pied_Kingfisher/Pied_Kingfisher_0004_72135.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:33:02] "GET /bird-image/Cape_Glossy_Starling/Cape_Glossy_Starling_0002_129310.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:33:02] "GET /bird-image/Grasshopper_Sparrow/Grasshopper_Sparrow_0001_115938.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:33:02] "GET /bird-image/Barn_Swallow/Barn_Swallow_0002_130551.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:33:11] "GET /identify HTTP/1.1" 200 -
+127.0.0.1 - - [30/Apr/2026 18:33:11] "GET /static/css/app.css HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:33:11] "GET /static/js/app.js HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:33:46] "POST /identify HTTP/1.1" 200 -
+127.0.0.1 - - [30/Apr/2026 18:33:47] "GET /static/uploads/539e990a55894b40be8e2eca4d0f3c79-American_Crow_0001_25053.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [30/Apr/2026 18:33:47] "GET /static/css/app.css HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:33:47] "GET /static/js/app.js HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:33:47] "GET /bird-image/Grasshopper_Sparrow/Grasshopper_Sparrow_0001_115938.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:33:47] "GET /bird-image/Pied_Kingfisher/Pied_Kingfisher_0004_72135.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:33:47] "GET /bird-image/Green_Jay/Green_Jay_0003_65767.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:34:53] "GET /habitats HTTP/1.1" 200 -
+127.0.0.1 - - [30/Apr/2026 18:34:53] "GET /static/css/app.css HTTP/1.1" 304 -
+127.0.0.1 - - [30/Apr/2026 18:34:53] "GET /static/js/app.js HTTP/1.1" 304 -
+ * Detected change in 'c:\\jack project\\app.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 468-471-791
+127.0.0.1 - - [30/Apr/2026 18:46:34] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Apr/2026 18:46:34] "GET /parks HTTP/1.1" 200 -
+127.0.0.1 - - [30/Apr/2026 18:46:34] "GET /map HTTP/1.1" 200 -
+127.0.0.1 - - [30/Apr/2026 18:46:34] "GET /identify HTTP/1.1" 200 -
+127.0.0.1 - - [30/Apr/2026 18:46:34] "GET /admin HTTP/1.1" 302 -
+127.0.0.1 - - [30/Apr/2026 18:46:34] "GET /login HTTP/1.1" 200 -
+ * Detected change in 'c:\\jack project\\app.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 468-471-791
+ * Detected change in 'c:\\jack project\\app.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 468-471-791

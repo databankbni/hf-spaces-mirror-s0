@@ -1,0 +1,145 @@
+{
+ "captured_at": "2026-08-04T15:15:38Z",
+ "hf_metadata": {
+  "_id": "6a1dadb66c3a012e75aa4319",
+  "author": "JOshua2487",
+  "cardData": {
+   "colorFrom": "indigo",
+   "colorTo": "green",
+   "emoji": "📚",
+   "license": "mit",
+   "pinned": false,
+   "sdk": "docker",
+   "title": "Soil Tech"
+  },
+  "createdAt": "2026-06-01T16:05:10.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://joshua2487-soil-tech.hf.space",
+  "id": "JOshua2487/Soil_Tech",
+  "lastModified": "2026-07-29T15:28:45.000Z",
+  "likes": 0,
+  "private": false,
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "joshua2487-soil-tech.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": "cpu-basic",
+    "requested": "cpu-basic"
+   },
+   "pySpacesVersion": "0.51.1",
+   "replicas": {
+    "current": 1,
+    "requested": 1
+   },
+   "sha": "5d22149a69ac2d08d1a4946cc82aeee8cc1f4d28",
+   "stage": "RUNNING"
+  },
+  "sdk": "docker",
+  "sha": "5d22149a69ac2d08d1a4946cc82aeee8cc1f4d28",
+  "siblings": [
+   {
+    "rfilename": ".gitattributes"
+   },
+   {
+    "rfilename": ".gitignore"
+   },
+   {
+    "rfilename": ".vscode/settings.json"
+   },
+   {
+    "rfilename": "Dockerfile"
+   },
+   {
+    "rfilename": "Procfile"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "__pycache__/app.cpython-310.pyc"
+   },
+   {
+    "rfilename": "__pycache__/chat_route.cpython-310.pyc"
+   },
+   {
+    "rfilename": "__pycache__/crop_aliases.cpython-310.pyc"
+   },
+   {
+    "rfilename": "__pycache__/crop_normalizer.cpython-310.pyc"
+   },
+   {
+    "rfilename": "__pycache__/language_utils.cpython-310.pyc"
+   },
+   {
+    "rfilename": "amendments.json"
+   },
+   {
+    "rfilename": "app.py"
+   },
+   {
+    "rfilename": "backendstrucute.md"
+   },
+   {
+    "rfilename": "chat_route.py"
+   },
+   {
+    "rfilename": "crop_aliases.py"
+   },
+   {
+    "rfilename": "crop_normalizer.py"
+   },
+   {
+    "rfilename": "crop_requirements.json"
+   },
+   {
+    "rfilename": "language_utils.py"
+   },
+   {
+    "rfilename": "requirements.txt"
+   },
+   {
+    "rfilename": "runtime.txt"
+   },
+   {
+    "rfilename": "soil_model_v7_efficientb3.weights.h5"
+   },
+   {
+    "rfilename": "soil_profile.json"
+   }
+  ],
+  "subdomain": "joshua2487-soil-tech",
+  "tags": [
+   "docker",
+   "region:us"
+  ],
+  "usedStorage": 119487800
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  },
+  {
+   "original": ".gitignore",
+   "stored_as": "_gitignore"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "JOshua2487/Soil_Tech",
+ "repo_type": "spaces",
+ "sha": "5d22149a69ac2d08d1a4946cc82aeee8cc1f4d28",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/JOshua2487/Soil_Tech"
+}

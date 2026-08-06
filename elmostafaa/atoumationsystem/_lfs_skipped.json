@@ -1,0 +1,13 @@
+{
+ "lfs_not_stored": [
+  {
+   "oid": "5221a21f5e53248b01c21d7bf502c30a75d613f25ee58ed448f2de4434b30370",
+   "path": "fonts/TEHAFS2TharwatEmara.ttf",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6NTIyMWEyMWY1ZTUzMjQ4YjAxYzIxZDdiZjUwMmMzMGE3NWQ2MTNmMjVlZTU4ZWQ0NDhmMmRlNDQzNGIzMDM3MApzaXplIDIzMTkxNTYK",
+   "size": 2319156,
+   "url": "https://huggingface.co/spaces/elmostafaa/atoumationsystem/resolve/b0ece724a413b95d60d0e98763c5fb0f05bef0e6/fonts/TEHAFS2TharwatEmara.ttf"
+  }
+ ],
+ "overflow_not_stored": [],
+ "oversize_not_stored": []
+}

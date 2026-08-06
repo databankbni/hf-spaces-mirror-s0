@@ -1,0 +1,4 @@
+[console_scripts]
+dim-backfill-sanitize = app.ingestion.api.backfill_sanitize_cli:backfill_sanitize_main
+dim-corpus-coverage = app.ingestion.api.cli:corpus_coverage_main
+dim-load-pages-json = app.ingestion.api.load_pages_json_cli:main

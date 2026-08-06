@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ANEForge demos</title>
+<style>
+  :root { color-scheme: dark; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: #0b0d12; color: #e7e9ee;
+    font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 48px 20px 72px; }
+  header { text-align: center; margin-bottom: 40px; }
+  h1 { font-size: 2.2rem; margin: 0 0 8px; letter-spacing: -0.02em; }
+  .tag { color: #aeb4c2; font-size: 1.05rem; margin: 0 auto; max-width: 640px; }
+  .links { margin-top: 18px; }
+  .links a {
+    color: #c9d2ff; text-decoration: none; border: 1px solid #2a3040; border-radius: 999px;
+    padding: 6px 14px; margin: 0 4px; display: inline-block; font-size: 0.9rem;
+  }
+  .links a:hover { border-color: #5566aa; background: #151926; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 22px; }
+  figure {
+    margin: 0; background: #11141d; border: 1px solid #1e2432; border-radius: 14px;
+    overflow: hidden; display: flex; flex-direction: column;
+  }
+  figure img { width: 100%; height: auto; display: block; background: #000; }
+  figcaption { padding: 14px 16px; }
+  figcaption b { display: block; margin-bottom: 4px; font-size: 1rem; }
+  figcaption span { color: #9aa2b2; font-size: 0.9rem; }
+  .note { text-align: center; color: #7f8797; font-size: 0.88rem; margin-top: 40px; }
+  code { background: #1a1f2b; padding: 2px 6px; border-radius: 6px; font-size: 0.85em; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>ANEForge demos</h1>
+      <p class="tag">Computation on the Apple Neural Engine, without CoreML. Every animation below is
+        recorded from a runnable example whose math executes on the engine.</p>
+      <p class="links">
+        <a target="_blank" rel="noopener" href="https://github.com/sbryngelson/ANEForge">GitHub</a>
+        <a target="_blank" rel="noopener" href="https://pypi.org/project/aneforge/">PyPI</a>
+        <a target="_blank" rel="noopener" href="https://huggingface.co/aneforge">Hub org</a>
+        <a target="_blank" rel="noopener" href="https://huggingface.co/datasets/aneforge/ane-rooflines">Rooflines dataset</a>
+        <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2606.17090">Paper</a>
+      </p>
+    </header>
+
+    <div class="grid">
+      <figure>
+        <img src="fluid_vorticity.webp" alt="2-D incompressible fluid winding the word ANEForge into filaments" loading="lazy" />
+        <figcaption><b>Fluid vorticity</b><span>2-D incompressible Navier-Stokes: the word "ANEForge" is
+          painted as dye and wound into filaments. Every FFT in the 2,200-step pseudo-spectral loop runs on the ANE.</span></figcaption>
+      </figure>
+      <figure>
+        <img src="reaction_diffusion.webp" alt="Gray-Scott reaction-diffusion pattern" loading="lazy" />
+        <figcaption><b>Reaction-diffusion</b><span>A Gray-Scott system stepped on the engine &mdash; the
+          real-space companion to the fluid demo.</span></figcaption>
+      </figure>
+      <figure>
+        <img src="demo.png" alt="Character transformer trained on the ANE generating text" loading="lazy" />
+        <figcaption><b>On-engine training</b><span>A small char transformer trains end to end on the ANE
+          (forward + backward + Adam), then generates text one character per on-engine forward pass.</span></figcaption>
+      </figure>
+    </div>
+
+    <p class="note">The Apple Neural Engine only exists on Apple Silicon, so these run on your own Mac
+      &mdash; <code>pip install aneforge</code> &mdash; not on this page.</p>
+  </div>
+</body>
+</html>

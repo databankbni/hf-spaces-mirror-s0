@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block title %}{{ habitat.name }} | Tanzania Bird Finder{% endblock %}
+{% block content %}
+<section class="detail-hero">
+  <img src="{{ habitat.image_url }}" alt="{{ habitat.name }} habitat">
+  <div>
+    <span class="icon-badge large"><i data-lucide="{{ habitat.icon }}"></i></span>
+    <span class="eyebrow">Habitat profile</span>
+    <h1>{{ habitat.name }}</h1>
+    <p>{{ habitat.description }}</p>
+    <div class="metric-row">
+      <span><i data-lucide="thermometer"></i>{{ habitat.climate }}</span>
+      <span><i data-lucide="leaf"></i>{{ habitat.ecosystem_data }}</span>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-heading">
+    <span class="eyebrow">Species in this habitat</span>
+    <h2>{{ birds|length }} profiled records</h2>
+  </div>
+  <div class="grid card-grid">
+    {% for bird in birds %}
+      {% include "partials/species_card.html" %}
+    {% endfor %}
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-heading">
+    <span class="eyebrow">Places to explore</span>
+    <h2>Parks and conservation areas with {{ habitat.name }} habitat</h2>
+  </div>
+  <div class="grid park-grid">
+    {% for park in parks %}
+      <article class="park-card">
+        <a href="{{ url_for('park_detail', park_id=park.id) }}">
+          <img src="{{ park.image_url }}" alt="{{ park.name }}">
+          <div class="card-body">
+            <span class="status">{{ park.region }}</span>
+            <h2>{{ park.name }}</h2>
+            <p>{{ park.description }}</p>
+          </div>
+        </a>
+      </article>
+    {% else %}
+      <p class="empty-state">No park records yet for this habitat.</p>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

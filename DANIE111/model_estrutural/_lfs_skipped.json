@@ -1,0 +1,12 @@
+{
+ "lfs_not_stored": [
+  {
+   "oid": "96efd7378660cdb72d458d5915ca2acca8e6924c251fc0e2d1ec6bd290aedb70",
+   "path": "TodosNegocios2.xlsx",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6OTZlZmQ3Mzc4NjYwY2RiNzJkNDU4ZDU5MTVjYTJhY2NhOGU2OTI0YzI1MWZjMGUyZDFlYzZiZDI5MGFlZGI3MApzaXplIDI5NjQ2ODUxCg==",
+   "size": 29646851,
+   "url": "https://huggingface.co/spaces/DANIE111/model_estrutural/resolve/db25f054d0a1670294da09bf4412ad7b42a10b61/TodosNegocios2.xlsx"
+  }
+ ],
+ "oversize_not_stored": []
+}

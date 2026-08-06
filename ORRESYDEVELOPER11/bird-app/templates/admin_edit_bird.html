@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}Edit Bird | Tanzania Bird Finder{% endblock %}
+{% block content %}
+<section class="admin-hero">
+  <div class="admin-hero-bg"></div>
+  <div class="admin-hero-content">
+    <span class="eyebrow">Admin edit</span>
+    <h1>{{ bird.common_name }}</h1>
+    <p>{{ bird.scientific_name }}</p>
+  </div>
+</section>
+<section class="admin-section">
+  <div class="admin-form-grid admin-form-single">
+    <div class="admin-glass-card">
+      <div class="admin-form-header">
+        <i data-lucide="feather"></i>
+        <h2>Edit bird details</h2>
+      </div>
+      <form method="post">
+        <label>Common / local name<input name="common_name" value="{{ bird.common_name }}" required></label>
+        <label>Scientific name<input name="scientific_name" value="{{ bird.scientific_name }}" required></label>
+        <label>Habitat<select name="habitat_id">{% for habitat in habitats %}<option value="{{ habitat.id }}" {{ 'selected' if bird.habitat_id == habitat.id else '' }}>{{ habitat.name }}</option>{% endfor %}</select></label>
+        <label>Region<input name="region" value="{{ bird.region }}"></label>
+        <label>Movement<input name="migration_pattern" value="{{ bird.migration_pattern }}"></label>
+        <label>Status<input name="conservation_status" value="{{ bird.conservation_status }}"></label>
+        <label>Image URL<input name="image_url" value="{{ bird.image_url }}"></label>
+        <label>Description<textarea name="description" rows="5">{{ bird.description }}</textarea></label>
+        <button class="admin-btn admin-btn-primary" type="submit">Update bird</button>
+      </form>
+    </div>
+  </div>
+</section>
+{% endblock %}

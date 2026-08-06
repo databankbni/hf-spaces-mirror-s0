@@ -1,0 +1,87 @@
+{
+ "captured_at": "2026-08-04T15:34:35Z",
+ "hf_metadata": {
+  "_id": "6a2e7748c5212beb9396ddd4",
+  "author": "Zen-Tech-AI",
+  "cardData": {
+   "colorFrom": "pink",
+   "colorTo": "green",
+   "emoji": "😻",
+   "pinned": false,
+   "sdk": "docker",
+   "short_description": "Zen-Tech Intelligence Wing AI Division",
+   "title": "ZTIW"
+  },
+  "createdAt": "2026-06-14T09:41:28.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://zen-tech-ai-ztiw.hf.space",
+  "id": "Zen-Tech-AI/ZTIW",
+  "lastModified": "2026-07-14T09:54:56.000Z",
+  "likes": 0,
+  "private": false,
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "zen-tech-ai-ztiw.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": "cpu-basic",
+    "requested": "cpu-basic"
+   },
+   "pySpacesVersion": "0.51.0",
+   "replicas": {
+    "current": 1,
+    "requested": 1
+   },
+   "sha": "a25720e18d5dec9074259d0f276250fbedc1df0f",
+   "stage": "RUNNING"
+  },
+  "sdk": "docker",
+  "sha": "a25720e18d5dec9074259d0f276250fbedc1df0f",
+  "siblings": [
+   {
+    "rfilename": ".gitattributes"
+   },
+   {
+    "rfilename": "Dockerfile"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "main.py"
+   },
+   {
+    "rfilename": "requirements.txt"
+   }
+  ],
+  "subdomain": "zen-tech-ai-ztiw",
+  "tags": [
+   "docker",
+   "region:us"
+  ],
+  "usedStorage": 0
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "Zen-Tech-AI/ZTIW",
+ "repo_type": "spaces",
+ "sha": "a25720e18d5dec9074259d0f276250fbedc1df0f",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/Zen-Tech-AI/ZTIW"
+}

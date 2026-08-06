@@ -1,0 +1,6 @@
+#fastapi
+#uvicorn[standard]
+#web.py
+flask
+psycopg2-binary
+requests

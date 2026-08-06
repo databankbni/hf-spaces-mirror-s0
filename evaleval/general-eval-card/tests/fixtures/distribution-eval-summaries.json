@@ -1,0 +1,282 @@
+{
+  "math500": {
+    "evaluation_name": "MATH-500",
+    "metric_config": {
+      "evaluation_description": "Accuracy",
+      "lower_is_better": false,
+      "score_type": null,
+      "min_score": 0,
+      "max_score": 1,
+      "unit": "percent"
+    },
+    "leaderboard_metrics": [
+      {
+        "column_key": "accuracy",
+        "metric_summary_id": "math-500%3Aaccuracy",
+        "metric_id": "accuracy",
+        "metric_name": "Accuracy",
+        "display_name": "Accuracy",
+        "canonical_display_name": "Accuracy",
+        "lower_is_better": false,
+        "unit": "percent",
+        "scope": "root",
+        "subtask_key": null,
+        "subtask_name": null
+      },
+      {
+        "column_key": "accuracy::vals ai math500",
+        "metric_summary_id": "math-500%3Aaccuracy",
+        "metric_id": "accuracy",
+        "metric_name": "Accuracy",
+        "display_name": "Accuracy",
+        "canonical_display_name": "Accuracy",
+        "lower_is_better": false,
+        "unit": "percent",
+        "scope": "subtask",
+        "subtask_key": "vals ai math500",
+        "subtask_name": "vals ai math500"
+      }
+    ],
+    "leaderboard_rows": [
+      {
+        "values": {
+          "accuracy": 89,
+          "accuracy::vals ai math500": 89
+        },
+        "model_info": {
+          "name": "MiniMax M2.1",
+          "release_date": "2025-12-20"
+        }
+      },
+      {
+        "values": {
+          "accuracy": 54.8,
+          "accuracy::vals ai math500": 54.8
+        },
+        "model_info": {
+          "name": "Jamba Large 1.6",
+          "release_date": null
+        }
+      },
+      {
+        "values": {
+          "accuracy": 25.4,
+          "accuracy::vals ai math500": 25.4
+        },
+        "model_info": {
+          "name": "Jamba Mini 1.6",
+          "release_date": null
+        }
+      },
+      {
+        "values": {
+          "accuracy": 76.8
+        },
+        "model_info": {
+          "name": "Claude 3.7 Sonnet",
+          "release_date": "2025-02-19"
+        }
+      },
+      {
+        "values": {
+          "accuracy": 64.2
+        },
+        "model_info": {
+          "name": "Claude 3 5 Haiku",
+          "release_date": "2024-10-22"
+        }
+      },
+      {
+        "values": {
+          "accuracy": 91.6,
+          "accuracy::vals ai math500": 91.6
+        },
+        "model_info": {
+          "name": "Claude 3 7 Sonnet 20250219 Thinking",
+          "release_date": null
+        }
+      },
+      {
+        "values": {
+          "accuracy": 72.4
+        },
+        "model_info": {
+          "name": "Claude 3.5 Sonnet",
+          "release_date": "2024-10-22"
+        }
+      },
+      {
+        "values": {
+          "accuracy": 90.4
+        },
+        "model_info": {
+          "name": "Claude Opus 4",
+          "release_date": "2025-05-22"
+        }
+      }
+    ]
+  },
+  "agentharm": {
+    "evaluation_name": "AgentHarm",
+    "metric_config": {
+      "evaluation_description": null,
+      "lower_is_better": false,
+      "score_type": null,
+      "min_score": null,
+      "max_score": null,
+      "unit": "proportion"
+    },
+    "leaderboard_metrics": [
+      {
+        "column_key": "inspect_evals/avg_full_score",
+        "metric_summary_id": "agentharm%3Ainspect_evals%2Favg_full_score",
+        "metric_id": "inspect_evals/avg_full_score",
+        "metric_name": null,
+        "display_name": null,
+        "canonical_display_name": null,
+        "lower_is_better": false,
+        "unit": "proportion",
+        "scope": "root",
+        "subtask_key": null,
+        "subtask_name": null
+      },
+      {
+        "column_key": "inspect_evals/avg_refusals",
+        "metric_summary_id": "agentharm%3Ainspect_evals%2Favg_refusals",
+        "metric_id": "inspect_evals/avg_refusals",
+        "metric_name": null,
+        "display_name": null,
+        "canonical_display_name": null,
+        "lower_is_better": false,
+        "unit": "proportion",
+        "scope": "root",
+        "subtask_key": null,
+        "subtask_name": null
+      },
+      {
+        "column_key": "inspect_evals/avg_score",
+        "metric_summary_id": "agentharm%3Ainspect_evals%2Favg_score",
+        "metric_id": "inspect_evals/avg_score",
+        "metric_name": null,
+        "display_name": null,
+        "canonical_display_name": null,
+        "lower_is_better": false,
+        "unit": "proportion",
+        "scope": "root",
+        "subtask_key": null,
+        "subtask_name": null
+      },
+      {
+        "column_key": "inspect_evals/avg_score_non_refusals",
+        "metric_summary_id": "agentharm%3Ainspect_evals%2Favg_score_non_refusals",
+        "metric_id": "inspect_evals/avg_score_non_refusals",
+        "metric_name": null,
+        "display_name": null,
+        "canonical_display_name": null,
+        "lower_is_better": false,
+        "unit": "proportion",
+        "scope": "root",
+        "subtask_key": null,
+        "subtask_name": null
+      }
+    ],
+    "leaderboard_rows": [
+      {
+        "values": {
+          "inspect_evals/avg_full_score": 0.23863636363636365,
+          "inspect_evals/avg_refusals": 0.6534090909090909,
+          "inspect_evals/avg_score": 0.339788715072806,
+          "inspect_evals/avg_score_non_refusals": 0.8732825917252146
+        },
+        "model_info": {
+          "name": "Claude 3.7 Sonnet",
+          "release_date": "2025-02-19"
+        }
+      },
+      {
+        "values": {
+          "inspect_evals/avg_full_score": 0.375,
+          "inspect_evals/avg_refusals": 0.022727272727272728,
+          "inspect_evals/avg_score": 0.7212594696969696,
+          "inspect_evals/avg_score_non_refusals": 0.7380329457364341
+        },
+        "model_info": {
+          "name": "DeepSeek",
+          "release_date": "2025-12-01"
+        }
+      },
+      {
+        "values": {
+          "inspect_evals/avg_full_score": 0.29545454545454547,
+          "inspect_evals/avg_refusals": 0.3352272727272727,
+          "inspect_evals/avg_score": 0.47781385281385286,
+          "inspect_evals/avg_score_non_refusals": 0.7170533170533171
+        },
+        "model_info": {
+          "name": "Gemini 2.0 Flash",
+          "release_date": "2024-12-11"
+        }
+      },
+      {
+        "values": {
+          "inspect_evals/avg_full_score": 0.125,
+          "inspect_evals/avg_refusals": 0.38636363636363635,
+          "inspect_evals/avg_score": 0.3750411993309721,
+          "inspect_evals/avg_score_non_refusals": 0.582783189033189
+        },
+        "model_info": {
+          "name": "Llama 3.3",
+          "release_date": null
+        }
+      },
+      {
+        "values": {
+          "inspect_evals/avg_full_score": 0.4034090909090909,
+          "inspect_evals/avg_refusals": 0.045454545454545456,
+          "inspect_evals/avg_score": 0.6345533254624164,
+          "inspect_evals/avg_score_non_refusals": 0.6624317151102865
+        },
+        "model_info": {
+          "name": "Mistral Large",
+          "release_date": "2024-11-01"
+        }
+      },
+      {
+        "values": {
+          "inspect_evals/avg_full_score": 0.3125,
+          "inspect_evals/avg_refusals": 0.4772727272727273,
+          "inspect_evals/avg_score": 0.4302323150334514,
+          "inspect_evals/avg_score_non_refusals": 0.8007963956333523
+        },
+        "model_info": {
+          "name": "Mistral Small",
+          "release_date": "2026-03-16"
+        }
+      },
+      {
+        "values": {
+          "inspect_evals/avg_full_score": 0.35795454545454547,
+          "inspect_evals/avg_refusals": 0.42613636363636365,
+          "inspect_evals/avg_score": 0.4916531385281386,
+          "inspect_evals/avg_score_non_refusals": 0.8254125412541253
+        },
+        "model_info": {
+          "name": "GPT-4o",
+          "release_date": "2024-05-13"
+        }
+      },
+      {
+        "values": {
+          "inspect_evals/avg_full_score": 0.32386363636363635,
+          "inspect_evals/avg_refusals": 0.19318181818181818,
+          "inspect_evals/avg_score": 0.5942812868949233,
+          "inspect_evals/avg_score_non_refusals": 0.7107523931467593
+        },
+        "model_info": {
+          "name": "GPT-4o mini",
+          "release_date": "2024-07-18"
+        }
+      }
+    ]
+  }
+}

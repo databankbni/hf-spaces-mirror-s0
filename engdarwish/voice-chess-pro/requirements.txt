@@ -1,0 +1,4 @@
+# Voice Chess Pro — Hugging Face Space Requirements
+python-chess>=1.999
+gradio>=4.0.0
+SpeechRecognition>=3.10.0

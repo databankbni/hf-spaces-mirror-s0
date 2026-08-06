@@ -1,0 +1,56 @@
+# For reduced memory usage in deployment:
+# - Consider lazy loading AI models in ai_engine.py
+# - Monitor memory usage with tools like memray
+# FastAPI
+fastapi
+uvicorn
+python-multipart
+
+# Database
+motor
+pymongo
+dnspython
+certifi
+
+# Data Validation
+pydantic
+pydantic-settings
+
+# Environment Variables
+python-dotenv
+
+# AI / ML
+torch
+transformers
+sentence-transformers
+accelerate
+tokenizers
+safetensors
+huggingface-hub
+keybert
+faiss-cpu
+numpy
+scikit-learn
+
+# LangChain
+langchain
+langchain-community
+
+# File Processing
+PyPDF2
+python-docx
+pymupdf
+
+# Authentication
+bcrypt
+python-jose[cryptography]
+email-validator
+
+# Utilities
+requests
+typing-extensions
+
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch==2.4.1+cpu
+transformers==4.44.2
+sentence-transformers==3.0.1

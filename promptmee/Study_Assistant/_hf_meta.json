@@ -1,0 +1,23 @@
+{
+ "captured_at": "2026-08-04T16:45:10Z",
+ "hf_metadata": {
+  "sha": "4a0bfe3328f445b633eb4bf3b797bd155aa0c591"
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "promptmee/Study_Assistant",
+ "repo_type": "spaces",
+ "sha": "4a0bfe3328f445b633eb4bf3b797bd155aa0c591",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/promptmee/Study_Assistant"
+}

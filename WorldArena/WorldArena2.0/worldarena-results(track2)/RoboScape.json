@@ -1,0 +1,9 @@
+{
+  "Model": "RoboScape",
+  "year": "2026",
+  "open_source": "unknown",
+  "Metrics": {
+    "RL Environment(Click Bell)": 68.75,
+    "RL Environment(Adjust Bottle)": 60.74
+  }
+}

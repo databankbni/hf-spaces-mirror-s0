@@ -1,0 +1,23 @@
+{
+ "captured_at": "2026-08-04T17:00:04Z",
+ "hf_metadata": {
+  "sha": "046522581f39688fe9acdb9dbe9dd0ed66cdbd44"
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "st192011/ASR-Adversarial-Defense",
+ "repo_type": "spaces",
+ "sha": "046522581f39688fe9acdb9dbe9dd0ed66cdbd44",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/st192011/ASR-Adversarial-Defense"
+}

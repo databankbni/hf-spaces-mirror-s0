@@ -1,0 +1,23 @@
+{
+ "captured_at": "2026-08-04T16:41:16Z",
+ "hf_metadata": {
+  "sha": "14ed261d206ed68e065784ee2ace01f6a05b7e14"
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "ndpennie/radiant-revive-ai-demo",
+ "repo_type": "spaces",
+ "sha": "14ed261d206ed68e065784ee2ace01f6a05b7e14",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/ndpennie/radiant-revive-ai-demo"
+}

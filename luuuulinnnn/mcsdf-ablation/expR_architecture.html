@@ -1,0 +1,334 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>expR 架构设计</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #0d1117; color: #e6edf3;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+    line-height: 1.6;
+  }
+  .wrap { max-width: 1280px; margin: 0 auto; padding: 36px 24px 72px; }
+  h1 { font-size: 26px; font-weight: 700; letter-spacing: .02em; }
+  h1 .acc { color: #63c98a; }
+  .sub { color: #9aa8b3; font-size: 14px; margin-top: 6px; }
+  .legend { display: flex; flex-wrap: wrap; gap: 18px; margin: 18px 0 10px; font-size: 13px; color: #c6d0d9; }
+  .legend .it { display: flex; align-items: center; gap: 7px; }
+  .sw { width: 22px; height: 10px; border-radius: 3px; display: inline-block; }
+  .diagram { margin: 10px 0 36px; border: 1px solid #21262d; border-radius: 12px; padding: 14px 10px; background: #0d1117; overflow-x: auto; }
+  svg { width: 100%; height: auto; display: block; min-width: 720px; }
+
+  /* ---- SVG classes ---- */
+  .box  { fill: #161b22; stroke: #2b3138; stroke-width: 1.5; }
+  .boxg { fill: #161b22; stroke: #63c98a; stroke-width: 1.5; }
+  .boxr { fill: #161b22; stroke: #f28779; stroke-width: 1.5; }
+  .sub1 { fill: #1c2128; stroke: #2b3138; stroke-width: 1; }
+  .ctxfill { fill: rgba(99,201,138,.16); stroke: #63c98a; stroke-width: 1; }
+  .lg { stroke: #63c98a; stroke-width: 2; fill: none; }
+  .lo { stroke: #e3a25b; stroke-width: 2; fill: none; }
+  .lb { stroke: #6cb6ff; stroke-width: 2; fill: none; }
+  .lr { stroke: #f28779; stroke-width: 2; fill: none; }
+  .ln { stroke: #8b949e; stroke-width: 2; fill: none; }
+  .sep { stroke: #21262d; stroke-width: 1; stroke-dasharray: 4 7; }
+  text { fill: #e6edf3; font-size: 13px; }
+  .band { font-size: 17px; font-weight: 700; }
+  .tt  { font-size: 14px; font-weight: 600; }
+  .th  { font-size: 17px; font-weight: 700; }
+  .tb  { font-size: 13px; font-weight: 600; }
+  .tsm { font-size: 12px; fill: #9aa8b3; }
+  .t12 { font-size: 12px; }
+  .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
+  .cg { fill: #63c98a; } .co { fill: #e3a25b; } .cb { fill: #6cb6ff; } .cr { fill: #f28779; }
+  .mid { text-anchor: middle; } .end { text-anchor: end; }
+
+  h2 { font-size: 19px; margin: 34px 0 14px; padding-left: 12px; border-left: 4px solid #63c98a; }
+  .tablewrap { overflow-x: auto; border: 1px solid #21262d; border-radius: 10px; }
+  table { border-collapse: collapse; width: 100%; min-width: 720px; font-size: 14px; }
+  th, td { padding: 10px 16px; text-align: left; border-bottom: 1px solid #21262d; vertical-align: top; }
+  thead th { background: #161b22; color: #9aa8b3; font-size: 13px; font-weight: 600; letter-spacing: .04em; }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:hover { background: #12161c; }
+  td.vn { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; color: #63c98a; font-weight: 600; white-space: nowrap; }
+  .tag { display: inline-block; padding: 1px 8px; border-radius: 999px; font-size: 12px; border: 1px solid #2b3138; color: #9aa8b3; margin-left: 6px; }
+  ul.notes { list-style: none; }
+  ul.notes li { position: relative; padding: 8px 0 8px 26px; border-bottom: 1px dashed #21262d; font-size: 14.5px; }
+  ul.notes li:last-child { border-bottom: none; }
+  ul.notes li::before { content: "▸"; position: absolute; left: 4px; color: #63c98a; }
+  ul.notes b { color: #e6edf3; }
+  code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .92em; background: #161b22; border: 1px solid #2b3138; border-radius: 5px; padding: 1px 6px; }
+  footer { margin-top: 42px; color: #6e7a85; font-size: 12.5px; border-top: 1px solid #21262d; padding-top: 14px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>expR <span class="acc">架构设计</span></h1>
+  <p class="sub">97 像素帧 → Wan 因果 VAE → 25 latent 帧 · 三路条件注入 · 两阶段异质噪声构造 · rate-form 推理 (per-token 时钟)</p>
+  <div class="legend">
+    <span class="it"><span class="sw" style="background:#63c98a"></span>内容路径</span>
+    <span class="it"><span class="sw" style="background:#e3a25b"></span>噪声 / timestep</span>
+    <span class="it"><span class="sw" style="background:#6cb6ff"></span>相机 / 几何</span>
+    <span class="it"><span class="sw" style="background:#f28779"></span>损失</span>
+  </div>
+</header>
+
+<figure class="diagram">
+<svg viewBox="0 0 1240 1845" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="expR 架构图: 数据布局, 条件注入, 噪声构造, 推理">
+  <defs>
+    <marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#63c98a"/></marker>
+    <marker id="ao" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#e3a25b"/></marker>
+    <marker id="ab" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#6cb6ff"/></marker>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#f28779"/></marker>
+    <marker id="an" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#8b949e"/></marker>
+  </defs>
+
+  <!-- ═══════════ BAND 1 数据布局 ═══════════ -->
+  <text x="40" y="50" class="band cg">① 数据布局</text>
+
+  <rect x="40" y="70" width="330" height="130" rx="8" class="box"/>
+  <text x="56" y="96" class="tt">97 像素帧</text>
+  <text x="146" y="96" class="tsm">(480 × 832)</text>
+  <rect x="56" y="112" width="53" height="36" class="ctxfill"/>
+  <rect x="109" y="112" width="247" height="36" class="sub1"/>
+  <text x="56" y="170" class="t12 cg">F1–F17 · 17 观测帧</text>
+  <text x="212" y="170" class="tsm">F18–F97 · 80 未来帧</text>
+
+  <line x1="370" y1="135" x2="422" y2="135" class="lg" marker-end="url(#ag)"/>
+
+  <rect x="425" y="95" width="230" height="84" rx="8" class="box"/>
+  <text x="540" y="122" class="tt mid">Wan 因果 VAE</text>
+  <text x="540" y="142" class="mid">1 + 4k 时间分块</text>
+  <text x="540" y="163" class="tsm mid">97 帧 → 25 latent 帧</text>
+
+  <line x1="655" y1="137" x2="707" y2="137" class="lg" marker-end="url(#ag)"/>
+
+  <rect x="710" y="70" width="490" height="130" rx="8" class="box"/>
+  <text x="726" y="92" class="tt">25 latent 帧</text>
+  <text x="846" y="92" class="tsm mono">[16, 25, 60, 104]</text>
+  <rect x="726" y="104" width="92" height="34" class="ctxfill"/>
+  <rect x="818" y="104" width="366" height="34" class="sub1"/>
+  <text x="726" y="160" class="t12 cg">z0–z4 · 5 clean ctx</text>
+  <text x="876" y="160" class="tsm">z5–z24 · 20 target</text>
+  <text x="726" y="188" class="t12">patchify(1,2,2) → 每帧 30×52 = 1560 token · 全序列 L = 39000</text>
+
+  <line x1="40" y1="232" x2="1200" y2="232" class="sep"/>
+
+  <!-- ═══════════ BAND 2 条件注入 ═══════════ -->
+  <text x="40" y="264" class="band cb">② 条件注入 · 三路并行 → token 流</text>
+
+  <!-- (a) 文本 -->
+  <rect x="40" y="290" width="330" height="60" rx="8" class="box"/>
+  <text x="205" y="326" class="tt mid">文本 → T5 嵌入</text>
+  <line x1="205" y1="350" x2="205" y2="396" class="ln" marker-end="url(#an)"/>
+  <rect x="40" y="400" width="330" height="64" rx="8" class="box"/>
+  <text x="205" y="427" class="tb mid">cross-attention 注入</text>
+  <text x="205" y="449" class="tsm mid">每个 DiT block</text>
+  <line x1="205" y1="464" x2="205" y2="620" class="ln" marker-end="url(#an)"/>
+
+  <!-- (b) 相机-帧级 -->
+  <rect x="430" y="278" width="350" height="76" rx="8" class="box"/>
+  <text x="446" y="302" class="tt cb">相机 · 帧级位姿 9D</text>
+  <text x="446" y="324" class="t12">每 latent 帧相对位姿 · Δt ‖ 6D-rot</text>
+  <text x="446" y="344" class="tsm">参考帧: F17</text>
+  <line x1="605" y1="354" x2="605" y2="388" class="lb" marker-end="url(#ab)"/>
+  <rect x="430" y="392" width="350" height="64" rx="8" class="box"/>
+  <text x="446" y="416" class="tb">零初始化 Pose MLP</text>
+  <text x="446" y="440" class="t12 mono">9 → 256 → 5120</text>
+  <line x1="605" y1="456" x2="605" y2="490" class="lb" marker-end="url(#ab)"/>
+  <rect x="430" y="494" width="350" height="64" rx="8" class="box"/>
+  <text x="446" y="518" class="tb">该帧全部 token 加法注入</text>
+  <text x="446" y="542" class="tsm">patch embedding 之后</text>
+  <line x1="605" y1="558" x2="605" y2="620" class="lb" marker-end="url(#ab)"/>
+
+  <!-- (c) 相机-token级 Plücker -->
+  <rect x="820" y="278" width="380" height="90" rx="8" class="box"/>
+  <text x="836" y="302" class="tt cb">相机 · token 级 Plücker 光线图</text>
+  <text x="1184" y="302" class="t12 cb end">[A2/B2]</text>
+  <text x="836" y="326" class="t12">6ch · 每 latent 像素: dir₃ ‖ moment₃</text>
+  <text x="836" y="348" class="tsm">由 c2w + K 在线计算</text>
+  <line x1="1010" y1="368" x2="1010" y2="396" class="lb" marker-end="url(#ab)"/>
+  <rect x="820" y="400" width="380" height="60" rx="8" class="box"/>
+  <text x="836" y="424" class="tb">扩展 patch embedding +6ch</text>
+  <text x="836" y="446" class="tsm">新增通道零初始化</text>
+  <line x1="1010" y1="460" x2="1010" y2="490" class="lb" marker-end="url(#ab)"/>
+  <rect x="820" y="494" width="380" height="60" rx="8" class="box"/>
+  <text x="836" y="530" class="tb">与 x_t 通道拼接 → 进入 patchify</text>
+  <line x1="1010" y1="554" x2="1010" y2="620" class="lb" marker-end="url(#ab)"/>
+
+  <!-- latent 内容干线 (①→token 流) -->
+  <path d="M 955 200 V 244 H 800 V 620" class="lg" marker-end="url(#ag)"/>
+  <text x="792" y="612" class="t12 cg end">x₀ → ③ 加噪 → x_t</text>
+
+  <!-- token 流汇合条 -->
+  <rect x="40" y="625" width="1160" height="52" rx="8" class="boxg"/>
+  <text x="620" y="648" class="tt mid cg">patchify → DiT token 流 · L = 39000</text>
+  <text x="620" y="668" class="tsm mid">文本 cross-attn · 帧级 pose 加法 · [A2/B2] Plücker 拼接 · 内容 x_t</text>
+
+  <line x1="40" y1="702" x2="1130" y2="702" class="sep"/>
+
+  <!-- ═══════════ BAND 3 噪声构造 (训练) ═══════════ -->
+  <text x="40" y="739" class="band co">③ 噪声构造 · 训练</text>
+
+  <!-- token 流干线绕行至 DiT -->
+  <path d="M 1160 677 V 715 H 1224 V 1206 H 896" class="lg" marker-end="url(#ag)"/>
+  <text x="1216" y="708" class="t12 cg end">token 流 → DiT</text>
+
+  <!-- 噪声源 -->
+  <rect x="40" y="765" width="190" height="135" rx="8" class="box"/>
+  <text x="135" y="820" class="tt mid">ctx 5 帧</text>
+  <text x="135" y="846" class="tb mid co">钉 t = 0.02</text>
+
+  <rect x="260" y="760" width="540" height="140" rx="8" class="box"/>
+  <text x="276" y="786" class="tb co">Stage-1 · target 20 帧 · 帧级三族</text>
+  <rect x="276" y="800" width="160" height="84" rx="6" class="sub1"/>
+  <text x="356" y="834" class="tt mid co">40%</text>
+  <text x="356" y="858" class="t12 mid">共享标量</text>
+  <rect x="452" y="800" width="160" height="84" rx="6" class="sub1"/>
+  <text x="532" y="834" class="tt mid co">35%</text>
+  <text x="532" y="858" class="t12 mid">AR(1) ± 坡道</text>
+  <rect x="628" y="800" width="156" height="84" rx="6" class="sub1"/>
+  <text x="706" y="826" class="tt mid co">25%</text>
+  <text x="706" y="846" class="t12 mid">rate-slice</text>
+  <text x="706" y="866" class="t12 mid mono">t=clip(1−c/T)</text>
+
+  <line x1="800" y1="830" x2="855" y2="830" class="lo" marker-end="url(#ao)"/>
+
+  <rect x="860" y="760" width="340" height="140" rx="8" class="box"/>
+  <text x="876" y="786" class="tb co">Stage-2 [Bsc/B2]</text>
+  <text x="876" y="810" class="t12">60% 抽样替换为空间 shrink-slice 场</text>
+  <text x="876" y="834" class="t12 mono">t = n₀(x,y,f) · (1−c)</text>
+  <text x="876" y="858" class="tsm">漂移斑块图 · 空间异质</text>
+
+  <!-- 汇合成 per-token t 场 -->
+  <line x1="135" y1="900" x2="522" y2="951" class="lo" marker-end="url(#ao)"/>
+  <line x1="530" y1="900" x2="618" y2="951" class="lo" marker-end="url(#ao)"/>
+  <line x1="1030" y1="900" x2="718" y2="951" class="lo" marker-end="url(#ao)"/>
+  <rect x="470" y="955" width="300" height="50" rx="8" class="box"/>
+  <text x="620" y="986" class="tb mid co">per-token t 场</text>
+
+  <line x1="560" y1="1005" x2="264" y2="1031" class="lo" marker-end="url(#ao)"/>
+  <line x1="660" y1="1005" x2="660" y2="1026" class="lo" marker-end="url(#ao)"/>
+
+  <rect x="60" y="1035" width="340" height="56" rx="8" class="box"/>
+  <text x="230" y="1070" class="tt mid mono">x_t = (1−t)·x₀ + t·ε</text>
+
+  <rect x="470" y="1030" width="360" height="92" rx="8" class="box"/>
+  <text x="650" y="1056" class="tb mid">sinusoidal → time_embedding</text>
+  <text x="650" y="1078" class="mid mono co">t_mod [1, L, 6, dim]</text>
+  <text x="650" y="1102" class="tsm mid">可训练调制 · has_seq AdaLN</text>
+
+  <line x1="230" y1="1091" x2="418" y2="1156" class="lg" marker-end="url(#ag)"/>
+  <line x1="650" y1="1122" x2="632" y2="1156" class="lo" marker-end="url(#ao)"/>
+
+  <!-- DiT -->
+  <rect x="330" y="1160" width="560" height="92" rx="8" class="box"/>
+  <text x="610" y="1192" class="th mid">DiT 40 blocks</text>
+  <text x="610" y="1214" class="mid">LoRA-64 或 full-FT [C]</text>
+  <text x="610" y="1236" class="tsm mid">输入: ② token 流 + t_mod 调制 + 文本 cross-attn</text>
+
+  <line x1="610" y1="1252" x2="610" y2="1284" class="lg" marker-end="url(#ag)"/>
+  <rect x="574" y="1288" width="72" height="44" rx="8" class="box"/>
+  <text x="610" y="1316" class="tt mid mono">v̂</text>
+  <line x1="646" y1="1310" x2="695" y2="1310" class="lr" marker-end="url(#ar)"/>
+  <rect x="700" y="1282" width="470" height="64" rx="8" class="boxr"/>
+  <text x="716" y="1308" class="tt cr">MSE · 仅 target 帧</text>
+  <text x="716" y="1332" class="mono">v = (x_t − x₀) / t</text>
+
+  <line x1="40" y1="1400" x2="1200" y2="1400" class="sep"/>
+
+  <!-- ═══════════ BAND 4 推理 ═══════════ -->
+  <text x="40" y="1437" class="band cg">④ 推理 · rate-form + 已定稿求解器</text>
+
+  <rect x="40" y="1460" width="360" height="86" rx="8" class="box"/>
+  <text x="220" y="1492" class="tb mid mono">ctx: (1−0.02)·x₀ + 0.02·ε</text>
+  <text x="220" y="1518" class="t12 mid cg">全程钉住 (每步重钉)</text>
+
+  <rect x="430" y="1460" width="360" height="86" rx="8" class="box"/>
+  <text x="610" y="1492" class="tb mid">target: 全 token 纯噪声起步</text>
+  <text x="610" y="1518" class="tsm mid mono">ε ~ N(0, I)</text>
+
+  <rect x="820" y="1460" width="380" height="86" rx="8" class="box"/>
+  <text x="1010" y="1492" class="tb mid co">每 token 时钟 t(e) = clip(1−e/T)</text>
+  <text x="1010" y="1518" class="tsm mid">T: uniform 或由 k 导出的空间 map</text>
+
+  <line x1="220" y1="1546" x2="328" y2="1595" class="lo" marker-end="url(#ao)"/>
+  <line x1="610" y1="1546" x2="442" y2="1595" class="lo" marker-end="url(#ao)"/>
+  <line x1="1010" y1="1546" x2="562" y2="1595" class="lo" marker-end="url(#ao)"/>
+
+  <rect x="230" y="1600" width="380" height="80" rx="8" class="box"/>
+  <text x="420" y="1632" class="tb mid">日历 50 步 · shift = 5 弯折</text>
+  <text x="420" y="1656" class="tsm mid">高噪声区步长密集</text>
+
+  <line x1="610" y1="1640" x2="645" y2="1640" class="lo" marker-end="url(#ao)"/>
+
+  <rect x="650" y="1600" width="360" height="80" rx="8" class="box"/>
+  <text x="830" y="1632" class="tt mid">CFG scale 5</text>
+  <text x="830" y="1656" class="tsm mid">空 prompt 双前向</text>
+
+  <line x1="420" y1="1680" x2="548" y2="1735" class="lo" marker-end="url(#ao)"/>
+  <line x1="830" y1="1680" x2="702" y2="1735" class="lo" marker-end="url(#ao)"/>
+
+  <rect x="330" y="1740" width="580" height="80" rx="8" class="boxg"/>
+  <text x="620" y="1772" class="tt mid cg">t → 0: x₀-投影并钉住</text>
+  <text x="620" y="1796" class="tsm mid">作为后续步的干净 attention 参照</text>
+</svg>
+</figure>
+
+<h2>变体一览</h2>
+<div class="tablewrap">
+<table>
+  <thead>
+    <tr><th>变体</th><th>噪声构造</th><th>相机控制</th><th>训练方式</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="vn">expR0<span class="tag">基线</span></td>
+      <td>仅共享标量 · 无 Stage-1 异质</td>
+      <td>帧级 pose MLP</td>
+      <td>LoRA-64</td>
+    </tr>
+    <tr>
+      <td class="vn">expR_A</td>
+      <td>Stage-1 帧级三族 (40/35/25)</td>
+      <td>帧级 pose MLP</td>
+      <td>LoRA-64</td>
+    </tr>
+    <tr>
+      <td class="vn">expR_Bsc</td>
+      <td>Stage-1 + Stage-2 空间 shrink-slice (60% 替换)</td>
+      <td>帧级 pose MLP</td>
+      <td>LoRA-64</td>
+    </tr>
+    <tr>
+      <td class="vn">expR_A2 / expR_B2</td>
+      <td>同 A / 同 Bsc</td>
+      <td>帧级 pose MLP + Plücker 光线图 (token 级)</td>
+      <td>LoRA-64</td>
+    </tr>
+    <tr>
+      <td class="vn">expR_C</td>
+      <td>Stage-1 帧级三族</td>
+      <td>帧级 pose MLP</td>
+      <td>full-FT + ZeRO-1 + batch 128</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h2>要点备注</h2>
+<ul class="notes">
+  <li><b>零初始化原则</b> — pose MLP 末层与 Plücker 新增通道均零初始化：warm-start 安全，训练起点与预训练模型行为完全一致。</li>
+  <li><b>训练分布 ⊇ 推理访问状态</b> — 训练噪声构造是推理全部访问状态的超集（预检 uncovered mass = 0）。</li>
+  <li><b>pose MLP 已测为弱控制</b> — 探针实验证实帧级 pose MLP 控制信号弱；token 级 Plücker 注入（<code>A2/B2</code>）是修复路径。</li>
+</ul>
+
+<footer>expR 架构设计 · Wan 因果 VAE + DiT-40 · rate-form 逐 token 时钟 · 本页为自包含静态文档，无外部资源。</footer>
+
+</div>
+</body></html>

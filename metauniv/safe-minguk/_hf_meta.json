@@ -1,0 +1,27 @@
+{
+ "captured_at": "2026-08-04T16:41:08Z",
+ "hf_metadata": {
+  "sha": "689fdd1c6f6062687442fb43d546b72fd4bd2535"
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  },
+  {
+   "original": ".gitignore",
+   "stored_as": "_gitignore"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "metauniv/safe-minguk",
+ "repo_type": "spaces",
+ "sha": "689fdd1c6f6062687442fb43d546b72fd4bd2535",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/metauniv/safe-minguk"
+}

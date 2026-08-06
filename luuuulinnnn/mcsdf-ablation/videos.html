@@ -1,0 +1,76 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<title>MCSDF 推理视频</title>
+<style>
+ body { background:#0d1117; color:#e6edf3; font-family:-apple-system,'Segoe UI','Noto Sans SC',sans-serif;
+        max-width:1080px; margin:0 auto; padding:28px 20px 60px; line-height:1.6; }
+ h1 { color:#63c98a; font-size:1.5em; border-bottom:1px solid #2b3138; padding-bottom:.4em; }
+ h2 { color:#63c98a; font-size:1.15em; margin-top:1.8em; }
+ h3 { font-size:.95em; margin:1em 0 .3em; color:#8b949e; }
+ .note { background:#161b22; border:1px solid #2b3138; border-radius:8px; padding:10px 14px; font-size:.92em; }
+ video { border-radius:8px; background:#000; }
+</style></head><body>
+<h1>MCSDF 推理视频</h1>
+<div class="note">文件托管于 dataset 仓库 <code>luuuulinnnn/mcsdf-videos</code>(私有时本页播放器需 owner 登录或改 Public;
+也可直接在<a href="https://huggingface.co/datasets/luuuulinnnn/mcsdf-videos/tree/main" style="color:#6cb6ff">仓库文件页</a>点开预览)。</div>
+<h2 id="kwarp">核心 thesis 验证(warp 线,expS_ck@10000)— [GT | memory | 生成 | k 热图]</h2>
+<h3 style='color:#e6edf3'>TEST · 111b656f</h3>
+<h3>1 normal18:全 18 帧 memory + kmap tau</h3>
+<video controls preload="metadata" style="width:100%" src="https://huggingface.co/datasets/luuuulinnnn/mcsdf-videos/resolve/main/kwarp_1_normal18_111b656f_s10000.mp4"></video>
+<h3>2 uniformTau:同 memory,均值匹配标量 tau(去掉空间结构 → 未见区变灰泥)</h3>
+<video controls preload="metadata" style="width:100%" src="https://huggingface.co/datasets/luuuulinnnn/mcsdf-videos/resolve/main/kwarp_2_uniformTau_111b656f_s10000.mp4"></video>
+<h3>3 half9:只累积前 9 帧</h3>
+<video controls preload="metadata" style="width:100%" src="https://huggingface.co/datasets/luuuulinnnn/mcsdf-videos/resolve/main/kwarp_3_half9_111b656f_s10000.mp4"></video>
+<h3>4 frozenF17:单帧 memory(第 17 帧)</h3>
+<video controls preload="metadata" style="width:100%" src="https://huggingface.co/datasets/luuuulinnnn/mcsdf-videos/resolve/main/kwarp_4_frozenF17_111b656f_s10000.mp4"></video>
+<h3>5 frozenF1:单帧 memory(第 1 帧)→ 见过保真 + 未见合理虚构</h3>
+<video controls preload="metadata" style="width:100%" src="https://huggingface.co/datasets/luuuulinnnn/mcsdf-videos/resolve/main/kwarp_5_frozenF1_111b656f_s10000.mp4"></video>
+<h3>6 f1+错误map:单帧 memory 但 map 谎称全见过 → 未见区退化(map 承重的证据)</h3>
+<video controls preload="metadata" style="width:100%" src="https://huggingface.co/datasets/luuuulinnnn/mcsdf-videos/resolve/main/kwarp_6_f1_wrongK_111b656f_s10000.mp4"></video>
+<h3 style='color:#e6edf3'>TRAIN · 0003dc82</h3>
+<h3>1 normal18:全 18 帧 memory + kmap tau</h3>
+<video controls preload="metadata" style="width:100%" src="https://huggingface.co/datasets/luuuulinnnn/mcsdf-videos/resolve/main/kwarp_1_normal18_0003dc82_s10000.mp4"></video>
+<h3>2 uniformTau:同 memory,均值匹配标量 tau(去掉空间结构 → 未见区变灰泥)</h3>
+<video controls preload="metadata" style="width:100%" src="https://huggingface.co/datasets/luuuulinnnn/mcsdf-videos/resolve/main/kwarp_2_uniformTau_0003dc82_s10000.mp4"></video>
+<h3>3 half9:只累积前 9 帧</h3>
+<video controls preload="metadata" style="width:100%" src="https://huggingface.co/datasets/luuuulinnnn/mcsdf-videos/resolve/main/kwarp_3_half9_0003dc82_s10000.mp4"></video>
+<h3>4 frozenF17:单帧 memory(第 17 帧)</h3>
+<video controls preload="metadata" style="width:100%" src="https://huggingface.co/datasets/luuuulinnnn/mcsdf-videos/resolve/main/kwarp_4_frozenF17_0003dc82_s10000.mp4"></video>
+<h3>5 frozenF1:单帧 memory(第 1 帧)→ 见过保真 + 未见合理虚构</h3>
+<video controls preload="metadata" style="width:100%" src="https://huggingface.co/datasets/luuuulinnnn/mcsdf-videos/resolve/main/kwarp_5_frozenF1_0003dc82_s10000.mp4"></video>
+<h3>6 f1+错误map:单帧 memory 但 map 谎称全见过 → 未见区退化(map 承重的证据)</h3>
+<video controls preload="metadata" style="width:100%" src="https://huggingface.co/datasets/luuuulinnnn/mcsdf-videos/resolve/main/kwarp_6_f1_wrongK_0003dc82_s10000.mp4"></video>
+<h2>knownness 操纵验证(5 条件,Bsc@5000,空间调度,shift5+cfg5)— [GT | 生成 | k 热图]</h2>
+<h3>1 normal:真实 17 帧 ctx,k=18 视角计数</h3>
+<video controls preload="metadata" style="width:100%" src="https://huggingface.co/datasets/luuuulinnnn/mcsdf-videos/resolve/main/kmanip_1_normal_111b656f_s5000.mp4"></video>
+<h3>2 half9:前 9 帧真实后冻结,k=9 视角计数</h3>
+<video controls preload="metadata" style="width:100%" src="https://huggingface.co/datasets/luuuulinnnn/mcsdf-videos/resolve/main/kmanip_2_half9_111b656f_s5000.mp4"></video>
+<h3>3 frozenF17:全冻在第 17 帧,k=单视角</h3>
+<video controls preload="metadata" style="width:100%" src="https://huggingface.co/datasets/luuuulinnnn/mcsdf-videos/resolve/main/kmanip_3_frozenF17_111b656f_s5000.mp4"></video>
+<h3>4 frozenF1:全冻在第 1 帧,k=单视角</h3>
+<video controls preload="metadata" style="width:100%" src="https://huggingface.co/datasets/luuuulinnnn/mcsdf-videos/resolve/main/kmanip_4_frozenF1_111b656f_s5000.mp4"></video>
+<h3>5 f1+错误k:ctx 冻在 F1 但 k 谎称全见过(因果对照)</h3>
+<video controls preload="metadata" style="width:100%" src="https://huggingface.co/datasets/luuuulinnnn/mcsdf-videos/resolve/main/kmanip_5_f1_wrongK_111b656f_s5000.mp4"></video>
+<h2>Bsc 空间调度 kmap 三联(k 高的块先钉住)</h2>
+<h3>TEST · 111b656f</h3>
+<video controls preload="metadata" style="width:100%" src="https://huggingface.co/datasets/luuuulinnnn/mcsdf-videos/resolve/main/expR_Bsc_kmap_111b656f_s5000.mp4"></video>
+<h3>TRAIN · 0003dc82</h3>
+<video controls preload="metadata" style="width:100%" src="https://huggingface.co/datasets/luuuulinnnn/mcsdf-videos/resolve/main/expR_Bsc_kmap_0003dc82_s5000.mp4"></video>
+<h2>expR 双臂 — [GT | expR_A@5000 | expR_Bsc@4500],97 帧,同 eps 配对(旧求解器配置)</h2>
+<h3>TEST · 111b656f</h3>
+<video controls preload="metadata" style="width:100%" src="https://huggingface.co/datasets/luuuulinnnn/mcsdf-videos/resolve/main/expR_111b656f_A5000_B4500.mp4"></video>
+<h3>TEST · 2501f488</h3>
+<video controls preload="metadata" style="width:100%" src="https://huggingface.co/datasets/luuuulinnnn/mcsdf-videos/resolve/main/expR_2501f488_A5000_B4500.mp4"></video>
+<h3>TRAIN · 0003dc82</h3>
+<video controls preload="metadata" style="width:100%" src="https://huggingface.co/datasets/luuuulinnnn/mcsdf-videos/resolve/main/expR_0003dc82_A5000_B4500.mp4"></video>
+<h3>TRAIN · 00534f58</h3>
+<video controls preload="metadata" style="width:100%" src="https://huggingface.co/datasets/luuuulinnnn/mcsdf-videos/resolve/main/expR_00534f58_A5000_B4500.mp4"></video>
+<h2>expS_ck — [GT | expS_ck@6500],81 帧</h2>
+<h3>TEST · 111b656f</h3>
+<video controls preload="metadata" style="width:100%" src="https://huggingface.co/datasets/luuuulinnnn/mcsdf-videos/resolve/main/expS_111b656f_s6500.mp4"></video>
+<h3>TEST · 2501f488</h3>
+<video controls preload="metadata" style="width:100%" src="https://huggingface.co/datasets/luuuulinnnn/mcsdf-videos/resolve/main/expS_2501f488_s6500.mp4"></video>
+<h3>TRAIN · 0003dc82</h3>
+<video controls preload="metadata" style="width:100%" src="https://huggingface.co/datasets/luuuulinnnn/mcsdf-videos/resolve/main/expS_0003dc82_s6500.mp4"></video>
+<h3>TRAIN · 00534f58</h3>
+<video controls preload="metadata" style="width:100%" src="https://huggingface.co/datasets/luuuulinnnn/mcsdf-videos/resolve/main/expS_00534f58_s6500.mp4"></video>
+</body></html>

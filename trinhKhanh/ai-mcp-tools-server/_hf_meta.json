@@ -1,0 +1,18 @@
+{
+ "captured_at": "2026-08-04T17:09:07Z",
+ "hf_metadata": {
+  "sha": "351a2cac1bd82528ed24a6eaba0cd8a9d455b621"
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitignore",
+   "stored_as": "_gitignore"
+  }
+ ],
+ "renamed_gitattributes": [],
+ "repo_id": "trinhKhanh/ai-mcp-tools-server",
+ "repo_type": "spaces",
+ "sha": "351a2cac1bd82528ed24a6eaba0cd8a9d455b621",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/trinhKhanh/ai-mcp-tools-server"
+}

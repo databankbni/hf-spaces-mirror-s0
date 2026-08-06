@@ -1,0 +1,76 @@
+{
+ "lfs_not_stored": [
+  {
+   "oid": "611dfa778d2ff3d6a7a776a993c0659061477eb79316d7c3a3453a44d41e38b1",
+   "path": "static/images/Crackked/1.png",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6NjExZGZhNzc4ZDJmZjNkNmE3YTc3NmE5OTNjMDY1OTA2MTQ3N2ViNzkzMTZkN2MzYTM0NTNhNDRkNDFlMzhiMQpzaXplIDE2NDM4OTMK",
+   "size": 1643893,
+   "url": "https://huggingface.co/spaces/captain-jackked/quest/resolve/83add54ecaf13f49bcde46b6e9a9b4566772139b/static/images/Crackked/1.png"
+  },
+  {
+   "oid": "5ce1b50a5de4fa241fbdc45da77565855c9d674622c47abff2a60ac444f7d0df",
+   "path": "static/images/Jackked/1.png",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6NWNlMWI1MGE1ZGU0ZmEyNDFmYmRjNDVkYTc3NTY1ODU1YzlkNjc0NjIyYzQ3YWJmZjJhNjBhYzQ0NGY3ZDBkZgpzaXplIDEyMzM0NTEK",
+   "size": 1233451,
+   "url": "https://huggingface.co/spaces/captain-jackked/quest/resolve/83add54ecaf13f49bcde46b6e9a9b4566772139b/static/images/Jackked/1.png"
+  },
+  {
+   "oid": "861e099159ce94c73d036853be6a998968ef7bd67a13b7ec8c3175cb17af826d",
+   "path": "static/images/archive/2.1.12.png",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6ODYxZTA5OTE1OWNlOTRjNzNkMDM2ODUzYmU2YTk5ODk2OGVmN2JkNjdhMTNiN2VjOGMzMTc1Y2IxN2FmODI2ZApzaXplIDIxMTU3MDMK",
+   "size": 2115703,
+   "url": "https://huggingface.co/spaces/captain-jackked/quest/resolve/83add54ecaf13f49bcde46b6e9a9b4566772139b/static/images/archive/2.1.12.png"
+  },
+  {
+   "oid": "7998aeef54dac423694634eace6bca7d74a280066a15fdc67256615e4b06bc30",
+   "path": "static/images/archive/2.3.3.gif",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6Nzk5OGFlZWY1NGRhYzQyMzY5NDYzNGVhY2U2YmNhN2Q3NGEyODAwNjZhMTVmZGM2NzI1NjYxNWU0YjA2YmMzMApzaXplIDUwNTc3MzMK",
+   "size": 5057733,
+   "url": "https://huggingface.co/spaces/captain-jackked/quest/resolve/83add54ecaf13f49bcde46b6e9a9b4566772139b/static/images/archive/2.3.3.gif"
+  },
+  {
+   "oid": "d8e7c59fe308a0f3f72de274599f2a0b0d68c486588487c759997457e3100df1",
+   "path": "static/images/archive/3.2.1.png",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6ZDhlN2M1OWZlMzA4YTBmM2Y3MmRlMjc0NTk5ZjJhMGIwZDY4YzQ4NjU4ODQ4N2M3NTk5OTc0NTdlMzEwMGRmMQpzaXplIDE0MjY5ODIK",
+   "size": 1426982,
+   "url": "https://huggingface.co/spaces/captain-jackked/quest/resolve/83add54ecaf13f49bcde46b6e9a9b4566772139b/static/images/archive/3.2.1.png"
+  },
+  {
+   "oid": "149e24d0462e66e8ab0f74451879c42fff4b66ee480e8a64d94b27901a30c872",
+   "path": "static/images/scrolls/cardio_debt_infographic.png",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6MTQ5ZTI0ZDA0NjJlNjZlOGFiMGY3NDQ1MTg3OWM0MmZmZjRiNjZlZTQ4MGU4YTY0ZDk0YjI3OTAxYTMwYzg3MgpzaXplIDc0ODUzNzMK",
+   "size": 7485373,
+   "url": "https://huggingface.co/spaces/captain-jackked/quest/resolve/83add54ecaf13f49bcde46b6e9a9b4566772139b/static/images/scrolls/cardio_debt_infographic.png"
+  },
+  {
+   "oid": "4f310fa48cc39e43d9ab97db1c4b871bb58128af0dc6a785b4411f5f71cb1d3f",
+   "path": "static/images/scrolls/demo_switch_up.gif",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6NGYzMTBmYTQ4Y2MzOWU0M2Q5YWI5N2RiMWM0Yjg3MWJiNTgxMjhhZjBkYzZhNzg1YjQ0MTFmNWY3MWNiMWQzZgpzaXplIDE2NzcxMDcK",
+   "size": 1677107,
+   "url": "https://huggingface.co/spaces/captain-jackked/quest/resolve/83add54ecaf13f49bcde46b6e9a9b4566772139b/static/images/scrolls/demo_switch_up.gif"
+  },
+  {
+   "oid": "c901c07e3b70537800045070ad3c02ccee60bd25638586304eb1919f0bd92ea5",
+   "path": "static/images/scrolls/exercise_categories.png",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6YzkwMWMwN2UzYjcwNTM3ODAwMDQ1MDcwYWQzYzAyY2NlZTYwYmQyNTYzODU4NjMwNGViMTkxOWYwYmQ5MmVhNQpzaXplIDE5Mzg5MTYK",
+   "size": 1938916,
+   "url": "https://huggingface.co/spaces/captain-jackked/quest/resolve/83add54ecaf13f49bcde46b6e9a9b4566772139b/static/images/scrolls/exercise_categories.png"
+  },
+  {
+   "oid": "e12fb0a615c9eaf29f4ac50029fa80cefd600582f425c28c82b9aa00b6ff3985",
+   "path": "static/images/scrolls/muscle_and_strength.png",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6ZTEyZmIwYTYxNWM5ZWFmMjlmNGFjNTAwMjlmYTgwY2VmZDYwMDU4MmY0MjVjMjhjODJiOWFhMDBiNmZmMzk4NQpzaXplIDcwMTkwMzgK",
+   "size": 7019038,
+   "url": "https://huggingface.co/spaces/captain-jackked/quest/resolve/83add54ecaf13f49bcde46b6e9a9b4566772139b/static/images/scrolls/muscle_and_strength.png"
+  },
+  {
+   "oid": "b4aac53b17d431f957f3ae64ee9ebfbd31977100381d717bc7eee71d9e9918c3",
+   "path": "static/images/scrolls/rigid_vs_flexible.png",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6YjRhYWM1M2IxN2Q0MzFmOTU3ZjNhZTY0ZWU5ZWJmYmQzMTk3NzEwMDM4MWQ3MTdiYzdlZWU3MWQ5ZTk5MThjMwpzaXplIDg2OTY3NTAK",
+   "size": 8696750,
+   "url": "https://huggingface.co/spaces/captain-jackked/quest/resolve/83add54ecaf13f49bcde46b6e9a9b4566772139b/static/images/scrolls/rigid_vs_flexible.png"
+  }
+ ],
+ "overflow_not_stored": [],
+ "oversize_not_stored": []
+}

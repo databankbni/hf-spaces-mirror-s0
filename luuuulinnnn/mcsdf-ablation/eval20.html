@@ -1,0 +1,59 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<title>eval20 — 20 保留 clip 定量面板</title>
+<style>
+ body { background:#0d1117; color:#e6edf3; font-family:-apple-system,'Segoe UI','Noto Sans SC',sans-serif;
+        max-width:1000px; margin:0 auto; padding:28px 20px 60px; line-height:1.65; }
+ h1 { color:#63c98a; font-size:1.5em; border-bottom:1px solid #2b3138; padding-bottom:.4em; }
+ h2 { color:#63c98a; font-size:1.2em; margin-top:1.6em; }
+ .verdict { background:#12261a; border:1px solid #2ea043; border-radius:8px; padding:12px 16px; }
+ .note { background:#161b22; border:1px solid #2b3138; border-radius:8px; padding:10px 14px; font-size:.92em; }
+ table { border-collapse:collapse; margin:.6em 0; } td,th { border:1px solid #2b3138; padding:5px 12px; }
+ code { background:#11161d; padding:1px 5px; border-radius:4px; color:#a5d6ff; }
+</style></head><body>
+<h1>eval20 — 20 个保留 clip 的定量面板(仪器修复第一轮)</h1>
+<div class="note">LPIPS(alex) 为主指标(越低越好),全帧 PSNR 为辅;目标帧 px[24,48,72,96] 均值;
+配对 eps;expR 臂 shift5+CFG5;中期 ckpt(A@6000 / Bsc@5000 / expS@8000);单 seed。</div>
+<h2>各臂总表</h2>
+<table><tr><th>臂</th><th>LPIPS ↓</th><th>PSNR ↑</th><th>ckpt</th></tr><tr><td>A_uniform</td><td>0.6221 ± 0.0218</td><td>11.29 ± 0.70</td><td>@6000</td></tr><tr><td>B_uniform</td><td>0.6401 ± 0.0179</td><td>11.21 ± 0.53</td><td>@5000</td></tr><tr><td>B_spatialT</td><td>0.6411 ± 0.0177</td><td>11.20 ± 0.47</td><td>@5000</td></tr><tr><td>expS_base</td><td>0.4168 ± 0.0407</td><td>18.52 ± 0.77</td><td>@8000</td></tr></table>
+<h2>配对差(LPIPS,负 = 前者好)</h2>
+<table><tr><th>对比</th><th>配对差 ± 95%CI</th><th>前者 wins</th><th>判定</th></tr><tr><td>B_uniform − A_uniform</td><td>+0.0180 ± 0.0139</td><td>6/20</td><td>显著</td></tr><tr><td>B_spatialT − B_uniform</td><td>+0.0010 ± 0.0065</td><td>8/20</td><td>不显著</td></tr><tr><td>B_spatialT − A_uniform</td><td>+0.0190 ± 0.0128</td><td>5/20</td><td>显著</td></tr></table>
+<h2>按帧深度 LPIPS</h2>
+<table><tr><th>帧</th><th>A_uniform</th><th>B_uniform</th><th>B_spatialT</th></tr><tr><td>px24</td><td>0.5551</td><td>0.5877</td><td>0.5865</td></tr><tr><td>px48</td><td>0.6348</td><td>0.6548</td><td>0.6508</td></tr><tr><td>px72</td><td>0.6440</td><td>0.6596</td><td>0.6621</td></tr><tr><td>px96</td><td>0.6543</td><td>0.6582</td><td>0.6649</td></tr></table>
+<div class="verdict"><b>三个结论</b><br>
+1. <b>空间调度在 20 clip 上完全无效应</b>:B_spatialT − B_uniform = +0.0010 ± 0.0065(完美零)——
+连空间训练过的 Bsc 自己都不因空间 k 调度获益,Stage-B 假设在当前设置下被定量证伪。<br>
+2. A 优于两个 B 臂(+0.018,CI 排除 0)——但 B 落后 1000 步,<b>需训练完成后等步数复核</b>再定 Stage-B 训练是否有害。<br>
+3. expS(warp 线)LPIPS 0.417 / seen-PSNR 13.96±0.90(20 clip)——感知质量远超闭卷线(任务不同,不直接可比,但 warp 内容通道的价值一目了然。)</div>
+<div class="note">复核计划:四臂(A/Bsc/C/R0)训练全部到位后,同 ckpt 步数重跑本面板 + 3 seed。</div>
+<h2>Floor 扫描(expS_ck@10000,20 clip × 5 floor,seed 固定)</h2>
+<table><tr><th>floor</th><th>LPIPS ↓</th><th>PSNR ↑</th><th>seen-PSNR</th><th>配对差 vs .85(wins)</th></tr>
+<tr><td>0.45</td><td>0.4704 ± 0.0277</td><td>17.56</td><td>14.06</td><td>+0.0625(0/20)</td></tr>
+<tr><td>0.55</td><td>0.4583 ± 0.0296</td><td>17.70</td><td>14.06</td><td>+0.0504(0/20)</td></tr>
+<tr><td>0.65</td><td>0.4426 ± 0.0316</td><td>17.87</td><td>14.12</td><td>+0.0348(1/20)</td></tr>
+<tr><td>0.75</td><td>0.4248 ± 0.0350</td><td>18.08</td><td>14.17</td><td>+0.0169(3/20)</td></tr>
+<tr><td><b>0.85</b></td><td><b>0.4079 ± 0.0397</b></td><td><b>18.32</b></td><td>14.16</td><td>—</td></tr></table>
+<div class="verdict"><b>判读</b>:0.85 仍是最优工作点(单调序,与零训练时代一致);训练覆盖 U(0.45,0.95) 买到的
+不是更好的点,而是<b>整段刻度盘的可用性</b> — 深 floor 只付出平缓的感知代价(0.45 仅 +0.06 LPIPS,无崩溃;
+对照 expQ0 时代未覆盖模型的深 map 灰化崩溃 gray -47~-96),且 <b>seen-PSNR 全程持平</b>(14.06-14.17):
+已观测区域的重建保真度与 floor 无关,深 floor 的代价全部来自整图感知质量。
+即:覆盖把悬崖变成了坡道,"保真 vs 生成自由度"成为可安全调节的推理期旋钮。</div>
+<h2>第 2 轮(最终 ckpt,A@10000 / Bsc@10000* / expS@10000)</h2>
+<table><tr><th>臂</th><th>LPIPS ↓</th><th>PSNR ↑</th></tr>
+<tr><td><b>expS_base(warp 线)</b></td><td><b>0.4094 ± 0.0407</b></td><td><b>18.34</b></td></tr>
+<tr><td>A_uniform</td><td>0.6119 ± 0.0256</td><td>11.48</td></tr>
+<tr><td>B_uniform</td><td>0.6307 ± 0.0209</td><td>11.20</td></tr>
+<tr><td>B_spatialT</td><td>0.6306 ± 0.0209</td><td>11.19</td></tr></table>
+<table><tr><th>配对差(LPIPS)</th><th>Δ ± 95%CI</th><th>wins</th></tr>
+<tr><td>B_uniform − A_uniform</td><td>+0.0187 ± 0.0157 ★</td><td>7/20</td></tr>
+<tr><td>B_spatialT − B_uniform</td><td><b>−0.0000 ± 0.0048</b>(精确零)</td><td>11/20</td></tr>
+<tr><td>B_spatialT − A_uniform</td><td>+0.0187 ± 0.0141 ★</td><td>5/20</td></tr></table>
+<div class="verdict"><b>步数对齐终审:Stage-B 判决定谳。</b><br>
+① 空间调度对空间训练过的模型收益 = <b>精确零</b>(−0.0000 ± 0.0048);<br>
+② 等步数下 Bsc 仍落后 A +0.019(CI 排除零)— 60% 训练预算花在空间族上<b>轻微有害</b>
+(挤占了帧级/共享族的学习);<br>
+③ 与 map 消融合看,机制边界闭环:<b>噪声 map 承重当且仅当耦合内容注入</b>(expS SDEdit 形式 20/20 显著;
+expR 纯噪声起点线上训练侧和推理侧都无增益)。</div>
+<div class="note">*个别 Bsc 行加载到 @9500 档(评测启动时训练尚差 300 步;500 步的训练增益 ≈ 0.001 LPIPS,
+远小于 0.019 的差距,不影响结论)。训练增益参考:各臂从中期到最终仅改善 ~0.01 LPIPS — 
+10k 步后收益趋平。</div>
+</body></html>

@@ -1,0 +1,6240 @@
+{
+  "attempt_id": "3d164e18-39ef-416e-b986-96b5a5d4e12d",
+  "claims": [
+    {
+      "challenge_claim_sha256": "bdf296450b900b06ca2efbc1ffe702d9547371e3d847e6a31c71d977e0bfa052",
+      "claim_id": "claim-1",
+      "evidence_kind": "computed_projection_invariant",
+      "limitation": "This verifies the implemented projection invariant on one synthetic matrix, not trained-model stability relative to HC.",
+      "metrics": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0000000000000002
+      },
+      "observation": "A seeded 4x4 CPU projection was nonnegative and doubly stochastic; its measured spectral norm was 1.",
+      "status": "partial",
+      "text": "mHC constrains hyper-connection residual mappings by projecting them onto a manifold to preserve stability relative to unconstrained HC (Figure 1, Section 4.1)."
+    },
+    {
+      "challenge_claim_sha256": "fa35812d9e1626bcfe1702f946f3926128f6012071af6ef378e0241e30881823",
+      "claim_id": "claim-2",
+      "evidence_kind": "toy_dimensional_ablation",
+      "limitation": "This tests dimensional consistency only; it does not reproduce Table 1 task quality or trained component ablations.",
+      "metrics": {
+        "hidden_dims": [
+          8,
+          16,
+          32
+        ],
+        "rows": 216,
+        "stream_counts": [
+          2,
+          4,
+          8
+        ],
+        "valid_shape_rows": 216,
+        "variants": 8
+      },
+      "observation": "216 of 216 seeded synthetic-tensor rows preserved their expected output shape across eight mapping variants.",
+      "status": "partial",
+      "text": "HC component ablations test the roles of pre, post, and residual mappings while maintaining dimensional consistency with fixed mappings (Table 1)."
+    },
+    {
+      "challenge_claim_sha256": "15537486e4923b51864ce7b52999581519cde779ca9e03eda2ad93117abc9735",
+      "claim_id": "claim-3",
+      "evidence_kind": "toy_random_matrix_propagation",
+      "limitation": "This tests only a toy residual-propagation mechanism; it does not reproduce loss gaps, trained gradient norms, or the paper's model-scale figures.",
+      "metrics": {
+        "depths": [
+          10,
+          50,
+          100
+        ],
+        "rows": 27,
+        "seeds": [
+          17,
+          42,
+          123
+        ],
+        "stream_counts": [
+          2,
+          4,
+          8
+        ]
+      },
+      "observation": "Computed 27 paired seeded raw/projected residual-matrix compositions at depths 10, 50, and 100.",
+      "status": "partial",
+      "text": "Training and propagation analyses show unconstrained HC has larger loss gaps, gradient norms, and residual propagation instability than mHC (Figure 2, Figure 3, Figure 5, Figure 7)."
+    },
+    {
+      "challenge_claim_sha256": "2fd1e3570d1437de16597b0b942dc8d2f4a0045e84fd066bf01da44a86c86959",
+      "claim_id": "claim-4",
+      "evidence_kind": "unavailable",
+      "limitation": "No kernel fusion, recomputing, communication-overlap, or system-overhead benchmark was run.",
+      "observation": "No kernel or system measurement was produced.",
+      "status": "unavailable",
+      "text": "The paper introduces kernel fusion, recomputing, and communication-overlap infrastructure to reduce mHC system overhead (Section 4.3, Table 2, Table 3, Figure 4)."
+    },
+    {
+      "challenge_claim_sha256": "f67e1f1f781f58d9e6c928002254a5dda7d94078db32408893971d6985094a02",
+      "claim_id": "claim-5",
+      "evidence_kind": "unavailable",
+      "limitation": "No 27B training or downstream benchmark was run.",
+      "observation": "No model-scale or downstream measurement was produced.",
+      "status": "unavailable",
+      "text": "At 27B scale, mHC outperforms the baseline and surpasses HC on most zero-shot and few-shot downstream benchmarks (Table 4)."
+    }
+  ],
+  "dimensional_ablations": [
+    {
+      "expected_shape": [
+        8,
+        2,
+        8
+      ],
+      "hidden_dim": 8,
+      "observed_shape": [
+        8,
+        2,
+        8
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "fixed",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 17,
+      "stream_count": 2,
+      "variant_name": "All-Fixed"
+    },
+    {
+      "expected_shape": [
+        8,
+        2,
+        8
+      ],
+      "hidden_dim": 8,
+      "observed_shape": [
+        8,
+        2,
+        8
+      ],
+      "output_shape_valid": true,
+      "post_mode": "manifold",
+      "pre_mode": "manifold",
+      "res_mode": "manifold",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 17,
+      "stream_count": 2,
+      "variant_name": "mHC-Full-Manifold"
+    },
+    {
+      "expected_shape": [
+        8,
+        2,
+        8
+      ],
+      "hidden_dim": 8,
+      "observed_shape": [
+        8,
+        2,
+        8
+      ],
+      "output_shape_valid": true,
+      "post_mode": "unconstrained",
+      "pre_mode": "unconstrained",
+      "res_mode": "unconstrained",
+      "residual_projection": {
+        "is_doubly_stochastic": false,
+        "max_column_error": 1.7295222282409668,
+        "max_row_error": 1.708805799484253,
+        "nonnegative": false,
+        "spectral_norm": 1.048180103302002
+      },
+      "seed": 17,
+      "stream_count": 2,
+      "variant_name": "Unconstrained-HC"
+    },
+    {
+      "expected_shape": [
+        8,
+        2,
+        8
+      ],
+      "hidden_dim": 8,
+      "observed_shape": [
+        8,
+        2,
+        8
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "manifold",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 17,
+      "stream_count": 2,
+      "variant_name": "Pre-Manifold-Only"
+    },
+    {
+      "expected_shape": [
+        8,
+        2,
+        8
+      ],
+      "hidden_dim": 8,
+      "observed_shape": [
+        8,
+        2,
+        8
+      ],
+      "output_shape_valid": true,
+      "post_mode": "manifold",
+      "pre_mode": "fixed",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 17,
+      "stream_count": 2,
+      "variant_name": "Post-Manifold-Only"
+    },
+    {
+      "expected_shape": [
+        8,
+        2,
+        8
+      ],
+      "hidden_dim": 8,
+      "observed_shape": [
+        8,
+        2,
+        8
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "fixed",
+      "res_mode": "manifold",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 17,
+      "stream_count": 2,
+      "variant_name": "Res-Manifold-Only"
+    },
+    {
+      "expected_shape": [
+        8,
+        2,
+        8
+      ],
+      "hidden_dim": 8,
+      "observed_shape": [
+        8,
+        2,
+        8
+      ],
+      "output_shape_valid": true,
+      "post_mode": "manifold",
+      "pre_mode": "manifold",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 17,
+      "stream_count": 2,
+      "variant_name": "Pre+Post-Manifold"
+    },
+    {
+      "expected_shape": [
+        8,
+        2,
+        8
+      ],
+      "hidden_dim": 8,
+      "observed_shape": [
+        8,
+        2,
+        8
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "manifold",
+      "res_mode": "manifold",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 17,
+      "stream_count": 2,
+      "variant_name": "Pre+Res-Manifold"
+    },
+    {
+      "expected_shape": [
+        8,
+        2,
+        16
+      ],
+      "hidden_dim": 16,
+      "observed_shape": [
+        8,
+        2,
+        16
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "fixed",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 17,
+      "stream_count": 2,
+      "variant_name": "All-Fixed"
+    },
+    {
+      "expected_shape": [
+        8,
+        2,
+        16
+      ],
+      "hidden_dim": 16,
+      "observed_shape": [
+        8,
+        2,
+        16
+      ],
+      "output_shape_valid": true,
+      "post_mode": "manifold",
+      "pre_mode": "manifold",
+      "res_mode": "manifold",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0000001192092896
+      },
+      "seed": 17,
+      "stream_count": 2,
+      "variant_name": "mHC-Full-Manifold"
+    },
+    {
+      "expected_shape": [
+        8,
+        2,
+        16
+      ],
+      "hidden_dim": 16,
+      "observed_shape": [
+        8,
+        2,
+        16
+      ],
+      "output_shape_valid": true,
+      "post_mode": "unconstrained",
+      "pre_mode": "unconstrained",
+      "res_mode": "unconstrained",
+      "residual_projection": {
+        "is_doubly_stochastic": false,
+        "max_column_error": 1.2619580030441284,
+        "max_row_error": 1.230942964553833,
+        "nonnegative": false,
+        "spectral_norm": 1.3939436674118042
+      },
+      "seed": 17,
+      "stream_count": 2,
+      "variant_name": "Unconstrained-HC"
+    },
+    {
+      "expected_shape": [
+        8,
+        2,
+        16
+      ],
+      "hidden_dim": 16,
+      "observed_shape": [
+        8,
+        2,
+        16
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "manifold",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 17,
+      "stream_count": 2,
+      "variant_name": "Pre-Manifold-Only"
+    },
+    {
+      "expected_shape": [
+        8,
+        2,
+        16
+      ],
+      "hidden_dim": 16,
+      "observed_shape": [
+        8,
+        2,
+        16
+      ],
+      "output_shape_valid": true,
+      "post_mode": "manifold",
+      "pre_mode": "fixed",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 17,
+      "stream_count": 2,
+      "variant_name": "Post-Manifold-Only"
+    },
+    {
+      "expected_shape": [
+        8,
+        2,
+        16
+      ],
+      "hidden_dim": 16,
+      "observed_shape": [
+        8,
+        2,
+        16
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "fixed",
+      "res_mode": "manifold",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 17,
+      "stream_count": 2,
+      "variant_name": "Res-Manifold-Only"
+    },
+    {
+      "expected_shape": [
+        8,
+        2,
+        16
+      ],
+      "hidden_dim": 16,
+      "observed_shape": [
+        8,
+        2,
+        16
+      ],
+      "output_shape_valid": true,
+      "post_mode": "manifold",
+      "pre_mode": "manifold",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 17,
+      "stream_count": 2,
+      "variant_name": "Pre+Post-Manifold"
+    },
+    {
+      "expected_shape": [
+        8,
+        2,
+        16
+      ],
+      "hidden_dim": 16,
+      "observed_shape": [
+        8,
+        2,
+        16
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "manifold",
+      "res_mode": "manifold",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 0.9999999403953552
+      },
+      "seed": 17,
+      "stream_count": 2,
+      "variant_name": "Pre+Res-Manifold"
+    },
+    {
+      "expected_shape": [
+        8,
+        2,
+        32
+      ],
+      "hidden_dim": 32,
+      "observed_shape": [
+        8,
+        2,
+        32
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "fixed",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 17,
+      "stream_count": 2,
+      "variant_name": "All-Fixed"
+    },
+    {
+      "expected_shape": [
+        8,
+        2,
+        32
+      ],
+      "hidden_dim": 32,
+      "observed_shape": [
+        8,
+        2,
+        32
+      ],
+      "output_shape_valid": true,
+      "post_mode": "manifold",
+      "pre_mode": "manifold",
+      "res_mode": "manifold",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 0.9999998807907104
+      },
+      "seed": 17,
+      "stream_count": 2,
+      "variant_name": "mHC-Full-Manifold"
+    },
+    {
+      "expected_shape": [
+        8,
+        2,
+        32
+      ],
+      "hidden_dim": 32,
+      "observed_shape": [
+        8,
+        2,
+        32
+      ],
+      "output_shape_valid": true,
+      "post_mode": "unconstrained",
+      "pre_mode": "unconstrained",
+      "res_mode": "unconstrained",
+      "residual_projection": {
+        "is_doubly_stochastic": false,
+        "max_column_error": 1.3570071458816528,
+        "max_row_error": 1.8721730709075928,
+        "nonnegative": false,
+        "spectral_norm": 0.9699764251708984
+      },
+      "seed": 17,
+      "stream_count": 2,
+      "variant_name": "Unconstrained-HC"
+    },
+    {
+      "expected_shape": [
+        8,
+        2,
+        32
+      ],
+      "hidden_dim": 32,
+      "observed_shape": [
+        8,
+        2,
+        32
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "manifold",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 17,
+      "stream_count": 2,
+      "variant_name": "Pre-Manifold-Only"
+    },
+    {
+      "expected_shape": [
+        8,
+        2,
+        32
+      ],
+      "hidden_dim": 32,
+      "observed_shape": [
+        8,
+        2,
+        32
+      ],
+      "output_shape_valid": true,
+      "post_mode": "manifold",
+      "pre_mode": "fixed",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 17,
+      "stream_count": 2,
+      "variant_name": "Post-Manifold-Only"
+    },
+    {
+      "expected_shape": [
+        8,
+        2,
+        32
+      ],
+      "hidden_dim": 32,
+      "observed_shape": [
+        8,
+        2,
+        32
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "fixed",
+      "res_mode": "manifold",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0000001192092896
+      },
+      "seed": 17,
+      "stream_count": 2,
+      "variant_name": "Res-Manifold-Only"
+    },
+    {
+      "expected_shape": [
+        8,
+        2,
+        32
+      ],
+      "hidden_dim": 32,
+      "observed_shape": [
+        8,
+        2,
+        32
+      ],
+      "output_shape_valid": true,
+      "post_mode": "manifold",
+      "pre_mode": "manifold",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 17,
+      "stream_count": 2,
+      "variant_name": "Pre+Post-Manifold"
+    },
+    {
+      "expected_shape": [
+        8,
+        2,
+        32
+      ],
+      "hidden_dim": 32,
+      "observed_shape": [
+        8,
+        2,
+        32
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "manifold",
+      "res_mode": "manifold",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 17,
+      "stream_count": 2,
+      "variant_name": "Pre+Res-Manifold"
+    },
+    {
+      "expected_shape": [
+        8,
+        4,
+        8
+      ],
+      "hidden_dim": 8,
+      "observed_shape": [
+        8,
+        4,
+        8
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "fixed",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 17,
+      "stream_count": 4,
+      "variant_name": "All-Fixed"
+    },
+    {
+      "expected_shape": [
+        8,
+        4,
+        8
+      ],
+      "hidden_dim": 8,
+      "observed_shape": [
+        8,
+        4,
+        8
+      ],
+      "output_shape_valid": true,
+      "post_mode": "manifold",
+      "pre_mode": "manifold",
+      "res_mode": "manifold",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0000001192092896
+      },
+      "seed": 17,
+      "stream_count": 4,
+      "variant_name": "mHC-Full-Manifold"
+    },
+    {
+      "expected_shape": [
+        8,
+        4,
+        8
+      ],
+      "hidden_dim": 8,
+      "observed_shape": [
+        8,
+        4,
+        8
+      ],
+      "output_shape_valid": true,
+      "post_mode": "unconstrained",
+      "pre_mode": "unconstrained",
+      "res_mode": "unconstrained",
+      "residual_projection": {
+        "is_doubly_stochastic": false,
+        "max_column_error": 3.3080291748046875,
+        "max_row_error": 2.8449368476867676,
+        "nonnegative": false,
+        "spectral_norm": 5.020124435424805
+      },
+      "seed": 17,
+      "stream_count": 4,
+      "variant_name": "Unconstrained-HC"
+    },
+    {
+      "expected_shape": [
+        8,
+        4,
+        8
+      ],
+      "hidden_dim": 8,
+      "observed_shape": [
+        8,
+        4,
+        8
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "manifold",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 17,
+      "stream_count": 4,
+      "variant_name": "Pre-Manifold-Only"
+    },
+    {
+      "expected_shape": [
+        8,
+        4,
+        8
+      ],
+      "hidden_dim": 8,
+      "observed_shape": [
+        8,
+        4,
+        8
+      ],
+      "output_shape_valid": true,
+      "post_mode": "manifold",
+      "pre_mode": "fixed",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 17,
+      "stream_count": 4,
+      "variant_name": "Post-Manifold-Only"
+    },
+    {
+      "expected_shape": [
+        8,
+        4,
+        8
+      ],
+      "hidden_dim": 8,
+      "observed_shape": [
+        8,
+        4,
+        8
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "fixed",
+      "res_mode": "manifold",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0000001192092896
+      },
+      "seed": 17,
+      "stream_count": 4,
+      "variant_name": "Res-Manifold-Only"
+    },
+    {
+      "expected_shape": [
+        8,
+        4,
+        8
+      ],
+      "hidden_dim": 8,
+      "observed_shape": [
+        8,
+        4,
+        8
+      ],
+      "output_shape_valid": true,
+      "post_mode": "manifold",
+      "pre_mode": "manifold",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 17,
+      "stream_count": 4,
+      "variant_name": "Pre+Post-Manifold"
+    },
+    {
+      "expected_shape": [
+        8,
+        4,
+        8
+      ],
+      "hidden_dim": 8,
+      "observed_shape": [
+        8,
+        4,
+        8
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "manifold",
+      "res_mode": "manifold",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 0.9999999403953552
+      },
+      "seed": 17,
+      "stream_count": 4,
+      "variant_name": "Pre+Res-Manifold"
+    },
+    {
+      "expected_shape": [
+        8,
+        4,
+        16
+      ],
+      "hidden_dim": 16,
+      "observed_shape": [
+        8,
+        4,
+        16
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "fixed",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 17,
+      "stream_count": 4,
+      "variant_name": "All-Fixed"
+    },
+    {
+      "expected_shape": [
+        8,
+        4,
+        16
+      ],
+      "hidden_dim": 16,
+      "observed_shape": [
+        8,
+        4,
+        16
+      ],
+      "output_shape_valid": true,
+      "post_mode": "manifold",
+      "pre_mode": "manifold",
+      "res_mode": "manifold",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 17,
+      "stream_count": 4,
+      "variant_name": "mHC-Full-Manifold"
+    },
+    {
+      "expected_shape": [
+        8,
+        4,
+        16
+      ],
+      "hidden_dim": 16,
+      "observed_shape": [
+        8,
+        4,
+        16
+      ],
+      "output_shape_valid": true,
+      "post_mode": "unconstrained",
+      "pre_mode": "unconstrained",
+      "res_mode": "unconstrained",
+      "residual_projection": {
+        "is_doubly_stochastic": false,
+        "max_column_error": 0.9434441328048706,
+        "max_row_error": 2.488280773162842,
+        "nonnegative": false,
+        "spectral_norm": 2.5737154483795166
+      },
+      "seed": 17,
+      "stream_count": 4,
+      "variant_name": "Unconstrained-HC"
+    },
+    {
+      "expected_shape": [
+        8,
+        4,
+        16
+      ],
+      "hidden_dim": 16,
+      "observed_shape": [
+        8,
+        4,
+        16
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "manifold",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 17,
+      "stream_count": 4,
+      "variant_name": "Pre-Manifold-Only"
+    },
+    {
+      "expected_shape": [
+        8,
+        4,
+        16
+      ],
+      "hidden_dim": 16,
+      "observed_shape": [
+        8,
+        4,
+        16
+      ],
+      "output_shape_valid": true,
+      "post_mode": "manifold",
+      "pre_mode": "fixed",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 17,
+      "stream_count": 4,
+      "variant_name": "Post-Manifold-Only"
+    },
+    {
+      "expected_shape": [
+        8,
+        4,
+        16
+      ],
+      "hidden_dim": 16,
+      "observed_shape": [
+        8,
+        4,
+        16
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "fixed",
+      "res_mode": "manifold",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 0.9999999403953552
+      },
+      "seed": 17,
+      "stream_count": 4,
+      "variant_name": "Res-Manifold-Only"
+    },
+    {
+      "expected_shape": [
+        8,
+        4,
+        16
+      ],
+      "hidden_dim": 16,
+      "observed_shape": [
+        8,
+        4,
+        16
+      ],
+      "output_shape_valid": true,
+      "post_mode": "manifold",
+      "pre_mode": "manifold",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 17,
+      "stream_count": 4,
+      "variant_name": "Pre+Post-Manifold"
+    },
+    {
+      "expected_shape": [
+        8,
+        4,
+        16
+      ],
+      "hidden_dim": 16,
+      "observed_shape": [
+        8,
+        4,
+        16
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "manifold",
+      "res_mode": "manifold",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 0.9999999403953552
+      },
+      "seed": 17,
+      "stream_count": 4,
+      "variant_name": "Pre+Res-Manifold"
+    },
+    {
+      "expected_shape": [
+        8,
+        4,
+        32
+      ],
+      "hidden_dim": 32,
+      "observed_shape": [
+        8,
+        4,
+        32
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "fixed",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 17,
+      "stream_count": 4,
+      "variant_name": "All-Fixed"
+    },
+    {
+      "expected_shape": [
+        8,
+        4,
+        32
+      ],
+      "hidden_dim": 32,
+      "observed_shape": [
+        8,
+        4,
+        32
+      ],
+      "output_shape_valid": true,
+      "post_mode": "manifold",
+      "pre_mode": "manifold",
+      "res_mode": "manifold",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 5.960464477539063e-08,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 17,
+      "stream_count": 4,
+      "variant_name": "mHC-Full-Manifold"
+    },
+    {
+      "expected_shape": [
+        8,
+        4,
+        32
+      ],
+      "hidden_dim": 32,
+      "observed_shape": [
+        8,
+        4,
+        32
+      ],
+      "output_shape_valid": true,
+      "post_mode": "unconstrained",
+      "pre_mode": "unconstrained",
+      "res_mode": "unconstrained",
+      "residual_projection": {
+        "is_doubly_stochastic": false,
+        "max_column_error": 3.786639928817749,
+        "max_row_error": 3.4984235763549805,
+        "nonnegative": false,
+        "spectral_norm": 3.592982769012451
+      },
+      "seed": 17,
+      "stream_count": 4,
+      "variant_name": "Unconstrained-HC"
+    },
+    {
+      "expected_shape": [
+        8,
+        4,
+        32
+      ],
+      "hidden_dim": 32,
+      "observed_shape": [
+        8,
+        4,
+        32
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "manifold",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 17,
+      "stream_count": 4,
+      "variant_name": "Pre-Manifold-Only"
+    },
+    {
+      "expected_shape": [
+        8,
+        4,
+        32
+      ],
+      "hidden_dim": 32,
+      "observed_shape": [
+        8,
+        4,
+        32
+      ],
+      "output_shape_valid": true,
+      "post_mode": "manifold",
+      "pre_mode": "fixed",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 17,
+      "stream_count": 4,
+      "variant_name": "Post-Manifold-Only"
+    },
+    {
+      "expected_shape": [
+        8,
+        4,
+        32
+      ],
+      "hidden_dim": 32,
+      "observed_shape": [
+        8,
+        4,
+        32
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "fixed",
+      "res_mode": "manifold",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 17,
+      "stream_count": 4,
+      "variant_name": "Res-Manifold-Only"
+    },
+    {
+      "expected_shape": [
+        8,
+        4,
+        32
+      ],
+      "hidden_dim": 32,
+      "observed_shape": [
+        8,
+        4,
+        32
+      ],
+      "output_shape_valid": true,
+      "post_mode": "manifold",
+      "pre_mode": "manifold",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 17,
+      "stream_count": 4,
+      "variant_name": "Pre+Post-Manifold"
+    },
+    {
+      "expected_shape": [
+        8,
+        4,
+        32
+      ],
+      "hidden_dim": 32,
+      "observed_shape": [
+        8,
+        4,
+        32
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "manifold",
+      "res_mode": "manifold",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 0.9999998807907104
+      },
+      "seed": 17,
+      "stream_count": 4,
+      "variant_name": "Pre+Res-Manifold"
+    },
+    {
+      "expected_shape": [
+        8,
+        8,
+        8
+      ],
+      "hidden_dim": 8,
+      "observed_shape": [
+        8,
+        8,
+        8
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "fixed",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 17,
+      "stream_count": 8,
+      "variant_name": "All-Fixed"
+    },
+    {
+      "expected_shape": [
+        8,
+        8,
+        8
+      ],
+      "hidden_dim": 8,
+      "observed_shape": [
+        8,
+        8,
+        8
+      ],
+      "output_shape_valid": true,
+      "post_mode": "manifold",
+      "pre_mode": "manifold",
+      "res_mode": "manifold",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0000001192092896
+      },
+      "seed": 17,
+      "stream_count": 8,
+      "variant_name": "mHC-Full-Manifold"
+    },
+    {
+      "expected_shape": [
+        8,
+        8,
+        8
+      ],
+      "hidden_dim": 8,
+      "observed_shape": [
+        8,
+        8,
+        8
+      ],
+      "output_shape_valid": true,
+      "post_mode": "unconstrained",
+      "pre_mode": "unconstrained",
+      "res_mode": "unconstrained",
+      "residual_projection": {
+        "is_doubly_stochastic": false,
+        "max_column_error": 6.09374475479126,
+        "max_row_error": 4.278270244598389,
+        "nonnegative": false,
+        "spectral_norm": 5.798282146453857
+      },
+      "seed": 17,
+      "stream_count": 8,
+      "variant_name": "Unconstrained-HC"
+    },
+    {
+      "expected_shape": [
+        8,
+        8,
+        8
+      ],
+      "hidden_dim": 8,
+      "observed_shape": [
+        8,
+        8,
+        8
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "manifold",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 17,
+      "stream_count": 8,
+      "variant_name": "Pre-Manifold-Only"
+    },
+    {
+      "expected_shape": [
+        8,
+        8,
+        8
+      ],
+      "hidden_dim": 8,
+      "observed_shape": [
+        8,
+        8,
+        8
+      ],
+      "output_shape_valid": true,
+      "post_mode": "manifold",
+      "pre_mode": "fixed",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 17,
+      "stream_count": 8,
+      "variant_name": "Post-Manifold-Only"
+    },
+    {
+      "expected_shape": [
+        8,
+        8,
+        8
+      ],
+      "hidden_dim": 8,
+      "observed_shape": [
+        8,
+        8,
+        8
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "fixed",
+      "res_mode": "manifold",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 1.1920928955078125e-07,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 0.9999998807907104
+      },
+      "seed": 17,
+      "stream_count": 8,
+      "variant_name": "Res-Manifold-Only"
+    },
+    {
+      "expected_shape": [
+        8,
+        8,
+        8
+      ],
+      "hidden_dim": 8,
+      "observed_shape": [
+        8,
+        8,
+        8
+      ],
+      "output_shape_valid": true,
+      "post_mode": "manifold",
+      "pre_mode": "manifold",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 17,
+      "stream_count": 8,
+      "variant_name": "Pre+Post-Manifold"
+    },
+    {
+      "expected_shape": [
+        8,
+        8,
+        8
+      ],
+      "hidden_dim": 8,
+      "observed_shape": [
+        8,
+        8,
+        8
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "manifold",
+      "res_mode": "manifold",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 1.1920928955078125e-07,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 17,
+      "stream_count": 8,
+      "variant_name": "Pre+Res-Manifold"
+    },
+    {
+      "expected_shape": [
+        8,
+        8,
+        16
+      ],
+      "hidden_dim": 16,
+      "observed_shape": [
+        8,
+        8,
+        16
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "fixed",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 17,
+      "stream_count": 8,
+      "variant_name": "All-Fixed"
+    },
+    {
+      "expected_shape": [
+        8,
+        8,
+        16
+      ],
+      "hidden_dim": 16,
+      "observed_shape": [
+        8,
+        8,
+        16
+      ],
+      "output_shape_valid": true,
+      "post_mode": "manifold",
+      "pre_mode": "manifold",
+      "res_mode": "manifold",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 0.9999998211860657
+      },
+      "seed": 17,
+      "stream_count": 8,
+      "variant_name": "mHC-Full-Manifold"
+    },
+    {
+      "expected_shape": [
+        8,
+        8,
+        16
+      ],
+      "hidden_dim": 16,
+      "observed_shape": [
+        8,
+        8,
+        16
+      ],
+      "output_shape_valid": true,
+      "post_mode": "unconstrained",
+      "pre_mode": "unconstrained",
+      "res_mode": "unconstrained",
+      "residual_projection": {
+        "is_doubly_stochastic": false,
+        "max_column_error": 5.065323829650879,
+        "max_row_error": 3.4122371673583984,
+        "nonnegative": false,
+        "spectral_norm": 4.284177303314209
+      },
+      "seed": 17,
+      "stream_count": 8,
+      "variant_name": "Unconstrained-HC"
+    },
+    {
+      "expected_shape": [
+        8,
+        8,
+        16
+      ],
+      "hidden_dim": 16,
+      "observed_shape": [
+        8,
+        8,
+        16
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "manifold",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 17,
+      "stream_count": 8,
+      "variant_name": "Pre-Manifold-Only"
+    },
+    {
+      "expected_shape": [
+        8,
+        8,
+        16
+      ],
+      "hidden_dim": 16,
+      "observed_shape": [
+        8,
+        8,
+        16
+      ],
+      "output_shape_valid": true,
+      "post_mode": "manifold",
+      "pre_mode": "fixed",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 17,
+      "stream_count": 8,
+      "variant_name": "Post-Manifold-Only"
+    },
+    {
+      "expected_shape": [
+        8,
+        8,
+        16
+      ],
+      "hidden_dim": 16,
+      "observed_shape": [
+        8,
+        8,
+        16
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "fixed",
+      "res_mode": "manifold",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0000001192092896
+      },
+      "seed": 17,
+      "stream_count": 8,
+      "variant_name": "Res-Manifold-Only"
+    },
+    {
+      "expected_shape": [
+        8,
+        8,
+        16
+      ],
+      "hidden_dim": 16,
+      "observed_shape": [
+        8,
+        8,
+        16
+      ],
+      "output_shape_valid": true,
+      "post_mode": "manifold",
+      "pre_mode": "manifold",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 17,
+      "stream_count": 8,
+      "variant_name": "Pre+Post-Manifold"
+    },
+    {
+      "expected_shape": [
+        8,
+        8,
+        16
+      ],
+      "hidden_dim": 16,
+      "observed_shape": [
+        8,
+        8,
+        16
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "manifold",
+      "res_mode": "manifold",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 1.1920928955078125e-07,
+        "max_row_error": 1.1920928955078125e-07,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 17,
+      "stream_count": 8,
+      "variant_name": "Pre+Res-Manifold"
+    },
+    {
+      "expected_shape": [
+        8,
+        8,
+        32
+      ],
+      "hidden_dim": 32,
+      "observed_shape": [
+        8,
+        8,
+        32
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "fixed",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 17,
+      "stream_count": 8,
+      "variant_name": "All-Fixed"
+    },
+    {
+      "expected_shape": [
+        8,
+        8,
+        32
+      ],
+      "hidden_dim": 32,
+      "observed_shape": [
+        8,
+        8,
+        32
+      ],
+      "output_shape_valid": true,
+      "post_mode": "manifold",
+      "pre_mode": "manifold",
+      "res_mode": "manifold",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 0.9999999403953552
+      },
+      "seed": 17,
+      "stream_count": 8,
+      "variant_name": "mHC-Full-Manifold"
+    },
+    {
+      "expected_shape": [
+        8,
+        8,
+        32
+      ],
+      "hidden_dim": 32,
+      "observed_shape": [
+        8,
+        8,
+        32
+      ],
+      "output_shape_valid": true,
+      "post_mode": "unconstrained",
+      "pre_mode": "unconstrained",
+      "res_mode": "unconstrained",
+      "residual_projection": {
+        "is_doubly_stochastic": false,
+        "max_column_error": 5.519141674041748,
+        "max_row_error": 6.43938684463501,
+        "nonnegative": false,
+        "spectral_norm": 4.414111137390137
+      },
+      "seed": 17,
+      "stream_count": 8,
+      "variant_name": "Unconstrained-HC"
+    },
+    {
+      "expected_shape": [
+        8,
+        8,
+        32
+      ],
+      "hidden_dim": 32,
+      "observed_shape": [
+        8,
+        8,
+        32
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "manifold",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 17,
+      "stream_count": 8,
+      "variant_name": "Pre-Manifold-Only"
+    },
+    {
+      "expected_shape": [
+        8,
+        8,
+        32
+      ],
+      "hidden_dim": 32,
+      "observed_shape": [
+        8,
+        8,
+        32
+      ],
+      "output_shape_valid": true,
+      "post_mode": "manifold",
+      "pre_mode": "fixed",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 17,
+      "stream_count": 8,
+      "variant_name": "Post-Manifold-Only"
+    },
+    {
+      "expected_shape": [
+        8,
+        8,
+        32
+      ],
+      "hidden_dim": 32,
+      "observed_shape": [
+        8,
+        8,
+        32
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "fixed",
+      "res_mode": "manifold",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 17,
+      "stream_count": 8,
+      "variant_name": "Res-Manifold-Only"
+    },
+    {
+      "expected_shape": [
+        8,
+        8,
+        32
+      ],
+      "hidden_dim": 32,
+      "observed_shape": [
+        8,
+        8,
+        32
+      ],
+      "output_shape_valid": true,
+      "post_mode": "manifold",
+      "pre_mode": "manifold",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 17,
+      "stream_count": 8,
+      "variant_name": "Pre+Post-Manifold"
+    },
+    {
+      "expected_shape": [
+        8,
+        8,
+        32
+      ],
+      "hidden_dim": 32,
+      "observed_shape": [
+        8,
+        8,
+        32
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "manifold",
+      "res_mode": "manifold",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 1.1920928955078125e-07,
+        "max_row_error": 1.1920928955078125e-07,
+        "nonnegative": true,
+        "spectral_norm": 0.9999998807907104
+      },
+      "seed": 17,
+      "stream_count": 8,
+      "variant_name": "Pre+Res-Manifold"
+    },
+    {
+      "expected_shape": [
+        8,
+        2,
+        8
+      ],
+      "hidden_dim": 8,
+      "observed_shape": [
+        8,
+        2,
+        8
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "fixed",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 42,
+      "stream_count": 2,
+      "variant_name": "All-Fixed"
+    },
+    {
+      "expected_shape": [
+        8,
+        2,
+        8
+      ],
+      "hidden_dim": 8,
+      "observed_shape": [
+        8,
+        2,
+        8
+      ],
+      "output_shape_valid": true,
+      "post_mode": "manifold",
+      "pre_mode": "manifold",
+      "res_mode": "manifold",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 42,
+      "stream_count": 2,
+      "variant_name": "mHC-Full-Manifold"
+    },
+    {
+      "expected_shape": [
+        8,
+        2,
+        8
+      ],
+      "hidden_dim": 8,
+      "observed_shape": [
+        8,
+        2,
+        8
+      ],
+      "output_shape_valid": true,
+      "post_mode": "unconstrained",
+      "pre_mode": "unconstrained",
+      "res_mode": "unconstrained",
+      "residual_projection": {
+        "is_doubly_stochastic": false,
+        "max_column_error": 0.4908689856529236,
+        "max_row_error": 1.1890828609466553,
+        "nonnegative": false,
+        "spectral_norm": 1.2291312217712402
+      },
+      "seed": 42,
+      "stream_count": 2,
+      "variant_name": "Unconstrained-HC"
+    },
+    {
+      "expected_shape": [
+        8,
+        2,
+        8
+      ],
+      "hidden_dim": 8,
+      "observed_shape": [
+        8,
+        2,
+        8
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "manifold",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 42,
+      "stream_count": 2,
+      "variant_name": "Pre-Manifold-Only"
+    },
+    {
+      "expected_shape": [
+        8,
+        2,
+        8
+      ],
+      "hidden_dim": 8,
+      "observed_shape": [
+        8,
+        2,
+        8
+      ],
+      "output_shape_valid": true,
+      "post_mode": "manifold",
+      "pre_mode": "fixed",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 42,
+      "stream_count": 2,
+      "variant_name": "Post-Manifold-Only"
+    },
+    {
+      "expected_shape": [
+        8,
+        2,
+        8
+      ],
+      "hidden_dim": 8,
+      "observed_shape": [
+        8,
+        2,
+        8
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "fixed",
+      "res_mode": "manifold",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 42,
+      "stream_count": 2,
+      "variant_name": "Res-Manifold-Only"
+    },
+    {
+      "expected_shape": [
+        8,
+        2,
+        8
+      ],
+      "hidden_dim": 8,
+      "observed_shape": [
+        8,
+        2,
+        8
+      ],
+      "output_shape_valid": true,
+      "post_mode": "manifold",
+      "pre_mode": "manifold",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 42,
+      "stream_count": 2,
+      "variant_name": "Pre+Post-Manifold"
+    },
+    {
+      "expected_shape": [
+        8,
+        2,
+        8
+      ],
+      "hidden_dim": 8,
+      "observed_shape": [
+        8,
+        2,
+        8
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "manifold",
+      "res_mode": "manifold",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 42,
+      "stream_count": 2,
+      "variant_name": "Pre+Res-Manifold"
+    },
+    {
+      "expected_shape": [
+        8,
+        2,
+        16
+      ],
+      "hidden_dim": 16,
+      "observed_shape": [
+        8,
+        2,
+        16
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "fixed",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 42,
+      "stream_count": 2,
+      "variant_name": "All-Fixed"
+    },
+    {
+      "expected_shape": [
+        8,
+        2,
+        16
+      ],
+      "hidden_dim": 16,
+      "observed_shape": [
+        8,
+        2,
+        16
+      ],
+      "output_shape_valid": true,
+      "post_mode": "manifold",
+      "pre_mode": "manifold",
+      "res_mode": "manifold",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0000001192092896
+      },
+      "seed": 42,
+      "stream_count": 2,
+      "variant_name": "mHC-Full-Manifold"
+    },
+    {
+      "expected_shape": [
+        8,
+        2,
+        16
+      ],
+      "hidden_dim": 16,
+      "observed_shape": [
+        8,
+        2,
+        16
+      ],
+      "output_shape_valid": true,
+      "post_mode": "unconstrained",
+      "pre_mode": "unconstrained",
+      "res_mode": "unconstrained",
+      "residual_projection": {
+        "is_doubly_stochastic": false,
+        "max_column_error": 3.8365981578826904,
+        "max_row_error": 5.102295875549316,
+        "nonnegative": false,
+        "spectral_norm": 2.9271810054779053
+      },
+      "seed": 42,
+      "stream_count": 2,
+      "variant_name": "Unconstrained-HC"
+    },
+    {
+      "expected_shape": [
+        8,
+        2,
+        16
+      ],
+      "hidden_dim": 16,
+      "observed_shape": [
+        8,
+        2,
+        16
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "manifold",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 42,
+      "stream_count": 2,
+      "variant_name": "Pre-Manifold-Only"
+    },
+    {
+      "expected_shape": [
+        8,
+        2,
+        16
+      ],
+      "hidden_dim": 16,
+      "observed_shape": [
+        8,
+        2,
+        16
+      ],
+      "output_shape_valid": true,
+      "post_mode": "manifold",
+      "pre_mode": "fixed",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 42,
+      "stream_count": 2,
+      "variant_name": "Post-Manifold-Only"
+    },
+    {
+      "expected_shape": [
+        8,
+        2,
+        16
+      ],
+      "hidden_dim": 16,
+      "observed_shape": [
+        8,
+        2,
+        16
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "fixed",
+      "res_mode": "manifold",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 42,
+      "stream_count": 2,
+      "variant_name": "Res-Manifold-Only"
+    },
+    {
+      "expected_shape": [
+        8,
+        2,
+        16
+      ],
+      "hidden_dim": 16,
+      "observed_shape": [
+        8,
+        2,
+        16
+      ],
+      "output_shape_valid": true,
+      "post_mode": "manifold",
+      "pre_mode": "manifold",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 42,
+      "stream_count": 2,
+      "variant_name": "Pre+Post-Manifold"
+    },
+    {
+      "expected_shape": [
+        8,
+        2,
+        16
+      ],
+      "hidden_dim": 16,
+      "observed_shape": [
+        8,
+        2,
+        16
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "manifold",
+      "res_mode": "manifold",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 42,
+      "stream_count": 2,
+      "variant_name": "Pre+Res-Manifold"
+    },
+    {
+      "expected_shape": [
+        8,
+        2,
+        32
+      ],
+      "hidden_dim": 32,
+      "observed_shape": [
+        8,
+        2,
+        32
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "fixed",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 42,
+      "stream_count": 2,
+      "variant_name": "All-Fixed"
+    },
+    {
+      "expected_shape": [
+        8,
+        2,
+        32
+      ],
+      "hidden_dim": 32,
+      "observed_shape": [
+        8,
+        2,
+        32
+      ],
+      "output_shape_valid": true,
+      "post_mode": "manifold",
+      "pre_mode": "manifold",
+      "res_mode": "manifold",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 0.9999998807907104
+      },
+      "seed": 42,
+      "stream_count": 2,
+      "variant_name": "mHC-Full-Manifold"
+    },
+    {
+      "expected_shape": [
+        8,
+        2,
+        32
+      ],
+      "hidden_dim": 32,
+      "observed_shape": [
+        8,
+        2,
+        32
+      ],
+      "output_shape_valid": true,
+      "post_mode": "unconstrained",
+      "pre_mode": "unconstrained",
+      "res_mode": "unconstrained",
+      "residual_projection": {
+        "is_doubly_stochastic": false,
+        "max_column_error": 1.4158227443695068,
+        "max_row_error": 1.7660350799560547,
+        "nonnegative": false,
+        "spectral_norm": 1.7409156560897827
+      },
+      "seed": 42,
+      "stream_count": 2,
+      "variant_name": "Unconstrained-HC"
+    },
+    {
+      "expected_shape": [
+        8,
+        2,
+        32
+      ],
+      "hidden_dim": 32,
+      "observed_shape": [
+        8,
+        2,
+        32
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "manifold",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 42,
+      "stream_count": 2,
+      "variant_name": "Pre-Manifold-Only"
+    },
+    {
+      "expected_shape": [
+        8,
+        2,
+        32
+      ],
+      "hidden_dim": 32,
+      "observed_shape": [
+        8,
+        2,
+        32
+      ],
+      "output_shape_valid": true,
+      "post_mode": "manifold",
+      "pre_mode": "fixed",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 42,
+      "stream_count": 2,
+      "variant_name": "Post-Manifold-Only"
+    },
+    {
+      "expected_shape": [
+        8,
+        2,
+        32
+      ],
+      "hidden_dim": 32,
+      "observed_shape": [
+        8,
+        2,
+        32
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "fixed",
+      "res_mode": "manifold",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 42,
+      "stream_count": 2,
+      "variant_name": "Res-Manifold-Only"
+    },
+    {
+      "expected_shape": [
+        8,
+        2,
+        32
+      ],
+      "hidden_dim": 32,
+      "observed_shape": [
+        8,
+        2,
+        32
+      ],
+      "output_shape_valid": true,
+      "post_mode": "manifold",
+      "pre_mode": "manifold",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 42,
+      "stream_count": 2,
+      "variant_name": "Pre+Post-Manifold"
+    },
+    {
+      "expected_shape": [
+        8,
+        2,
+        32
+      ],
+      "hidden_dim": 32,
+      "observed_shape": [
+        8,
+        2,
+        32
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "manifold",
+      "res_mode": "manifold",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 42,
+      "stream_count": 2,
+      "variant_name": "Pre+Res-Manifold"
+    },
+    {
+      "expected_shape": [
+        8,
+        4,
+        8
+      ],
+      "hidden_dim": 8,
+      "observed_shape": [
+        8,
+        4,
+        8
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "fixed",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 42,
+      "stream_count": 4,
+      "variant_name": "All-Fixed"
+    },
+    {
+      "expected_shape": [
+        8,
+        4,
+        8
+      ],
+      "hidden_dim": 8,
+      "observed_shape": [
+        8,
+        4,
+        8
+      ],
+      "output_shape_valid": true,
+      "post_mode": "manifold",
+      "pre_mode": "manifold",
+      "res_mode": "manifold",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 1.1920928955078125e-07,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 0.9999998807907104
+      },
+      "seed": 42,
+      "stream_count": 4,
+      "variant_name": "mHC-Full-Manifold"
+    },
+    {
+      "expected_shape": [
+        8,
+        4,
+        8
+      ],
+      "hidden_dim": 8,
+      "observed_shape": [
+        8,
+        4,
+        8
+      ],
+      "output_shape_valid": true,
+      "post_mode": "unconstrained",
+      "pre_mode": "unconstrained",
+      "res_mode": "unconstrained",
+      "residual_projection": {
+        "is_doubly_stochastic": false,
+        "max_column_error": 2.5087015628814697,
+        "max_row_error": 2.7429263591766357,
+        "nonnegative": false,
+        "spectral_norm": 3.1580870151519775
+      },
+      "seed": 42,
+      "stream_count": 4,
+      "variant_name": "Unconstrained-HC"
+    },
+    {
+      "expected_shape": [
+        8,
+        4,
+        8
+      ],
+      "hidden_dim": 8,
+      "observed_shape": [
+        8,
+        4,
+        8
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "manifold",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 42,
+      "stream_count": 4,
+      "variant_name": "Pre-Manifold-Only"
+    },
+    {
+      "expected_shape": [
+        8,
+        4,
+        8
+      ],
+      "hidden_dim": 8,
+      "observed_shape": [
+        8,
+        4,
+        8
+      ],
+      "output_shape_valid": true,
+      "post_mode": "manifold",
+      "pre_mode": "fixed",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 42,
+      "stream_count": 4,
+      "variant_name": "Post-Manifold-Only"
+    },
+    {
+      "expected_shape": [
+        8,
+        4,
+        8
+      ],
+      "hidden_dim": 8,
+      "observed_shape": [
+        8,
+        4,
+        8
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "fixed",
+      "res_mode": "manifold",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 5.960464477539063e-08,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 42,
+      "stream_count": 4,
+      "variant_name": "Res-Manifold-Only"
+    },
+    {
+      "expected_shape": [
+        8,
+        4,
+        8
+      ],
+      "hidden_dim": 8,
+      "observed_shape": [
+        8,
+        4,
+        8
+      ],
+      "output_shape_valid": true,
+      "post_mode": "manifold",
+      "pre_mode": "manifold",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 42,
+      "stream_count": 4,
+      "variant_name": "Pre+Post-Manifold"
+    },
+    {
+      "expected_shape": [
+        8,
+        4,
+        8
+      ],
+      "hidden_dim": 8,
+      "observed_shape": [
+        8,
+        4,
+        8
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "manifold",
+      "res_mode": "manifold",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 42,
+      "stream_count": 4,
+      "variant_name": "Pre+Res-Manifold"
+    },
+    {
+      "expected_shape": [
+        8,
+        4,
+        16
+      ],
+      "hidden_dim": 16,
+      "observed_shape": [
+        8,
+        4,
+        16
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "fixed",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 42,
+      "stream_count": 4,
+      "variant_name": "All-Fixed"
+    },
+    {
+      "expected_shape": [
+        8,
+        4,
+        16
+      ],
+      "hidden_dim": 16,
+      "observed_shape": [
+        8,
+        4,
+        16
+      ],
+      "output_shape_valid": true,
+      "post_mode": "manifold",
+      "pre_mode": "manifold",
+      "res_mode": "manifold",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 42,
+      "stream_count": 4,
+      "variant_name": "mHC-Full-Manifold"
+    },
+    {
+      "expected_shape": [
+        8,
+        4,
+        16
+      ],
+      "hidden_dim": 16,
+      "observed_shape": [
+        8,
+        4,
+        16
+      ],
+      "output_shape_valid": true,
+      "post_mode": "unconstrained",
+      "pre_mode": "unconstrained",
+      "res_mode": "unconstrained",
+      "residual_projection": {
+        "is_doubly_stochastic": false,
+        "max_column_error": 2.971970319747925,
+        "max_row_error": 2.4036197662353516,
+        "nonnegative": false,
+        "spectral_norm": 2.8200035095214844
+      },
+      "seed": 42,
+      "stream_count": 4,
+      "variant_name": "Unconstrained-HC"
+    },
+    {
+      "expected_shape": [
+        8,
+        4,
+        16
+      ],
+      "hidden_dim": 16,
+      "observed_shape": [
+        8,
+        4,
+        16
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "manifold",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 42,
+      "stream_count": 4,
+      "variant_name": "Pre-Manifold-Only"
+    },
+    {
+      "expected_shape": [
+        8,
+        4,
+        16
+      ],
+      "hidden_dim": 16,
+      "observed_shape": [
+        8,
+        4,
+        16
+      ],
+      "output_shape_valid": true,
+      "post_mode": "manifold",
+      "pre_mode": "fixed",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 42,
+      "stream_count": 4,
+      "variant_name": "Post-Manifold-Only"
+    },
+    {
+      "expected_shape": [
+        8,
+        4,
+        16
+      ],
+      "hidden_dim": 16,
+      "observed_shape": [
+        8,
+        4,
+        16
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "fixed",
+      "res_mode": "manifold",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 0.9999997615814209
+      },
+      "seed": 42,
+      "stream_count": 4,
+      "variant_name": "Res-Manifold-Only"
+    },
+    {
+      "expected_shape": [
+        8,
+        4,
+        16
+      ],
+      "hidden_dim": 16,
+      "observed_shape": [
+        8,
+        4,
+        16
+      ],
+      "output_shape_valid": true,
+      "post_mode": "manifold",
+      "pre_mode": "manifold",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 42,
+      "stream_count": 4,
+      "variant_name": "Pre+Post-Manifold"
+    },
+    {
+      "expected_shape": [
+        8,
+        4,
+        16
+      ],
+      "hidden_dim": 16,
+      "observed_shape": [
+        8,
+        4,
+        16
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "manifold",
+      "res_mode": "manifold",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0000001192092896
+      },
+      "seed": 42,
+      "stream_count": 4,
+      "variant_name": "Pre+Res-Manifold"
+    },
+    {
+      "expected_shape": [
+        8,
+        4,
+        32
+      ],
+      "hidden_dim": 32,
+      "observed_shape": [
+        8,
+        4,
+        32
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "fixed",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 42,
+      "stream_count": 4,
+      "variant_name": "All-Fixed"
+    },
+    {
+      "expected_shape": [
+        8,
+        4,
+        32
+      ],
+      "hidden_dim": 32,
+      "observed_shape": [
+        8,
+        4,
+        32
+      ],
+      "output_shape_valid": true,
+      "post_mode": "manifold",
+      "pre_mode": "manifold",
+      "res_mode": "manifold",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 0.9999998807907104
+      },
+      "seed": 42,
+      "stream_count": 4,
+      "variant_name": "mHC-Full-Manifold"
+    },
+    {
+      "expected_shape": [
+        8,
+        4,
+        32
+      ],
+      "hidden_dim": 32,
+      "observed_shape": [
+        8,
+        4,
+        32
+      ],
+      "output_shape_valid": true,
+      "post_mode": "unconstrained",
+      "pre_mode": "unconstrained",
+      "res_mode": "unconstrained",
+      "residual_projection": {
+        "is_doubly_stochastic": false,
+        "max_column_error": 4.368459701538086,
+        "max_row_error": 3.6378226280212402,
+        "nonnegative": false,
+        "spectral_norm": 2.3648831844329834
+      },
+      "seed": 42,
+      "stream_count": 4,
+      "variant_name": "Unconstrained-HC"
+    },
+    {
+      "expected_shape": [
+        8,
+        4,
+        32
+      ],
+      "hidden_dim": 32,
+      "observed_shape": [
+        8,
+        4,
+        32
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "manifold",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 42,
+      "stream_count": 4,
+      "variant_name": "Pre-Manifold-Only"
+    },
+    {
+      "expected_shape": [
+        8,
+        4,
+        32
+      ],
+      "hidden_dim": 32,
+      "observed_shape": [
+        8,
+        4,
+        32
+      ],
+      "output_shape_valid": true,
+      "post_mode": "manifold",
+      "pre_mode": "fixed",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 42,
+      "stream_count": 4,
+      "variant_name": "Post-Manifold-Only"
+    },
+    {
+      "expected_shape": [
+        8,
+        4,
+        32
+      ],
+      "hidden_dim": 32,
+      "observed_shape": [
+        8,
+        4,
+        32
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "fixed",
+      "res_mode": "manifold",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 0.9999998211860657
+      },
+      "seed": 42,
+      "stream_count": 4,
+      "variant_name": "Res-Manifold-Only"
+    },
+    {
+      "expected_shape": [
+        8,
+        4,
+        32
+      ],
+      "hidden_dim": 32,
+      "observed_shape": [
+        8,
+        4,
+        32
+      ],
+      "output_shape_valid": true,
+      "post_mode": "manifold",
+      "pre_mode": "manifold",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 42,
+      "stream_count": 4,
+      "variant_name": "Pre+Post-Manifold"
+    },
+    {
+      "expected_shape": [
+        8,
+        4,
+        32
+      ],
+      "hidden_dim": 32,
+      "observed_shape": [
+        8,
+        4,
+        32
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "manifold",
+      "res_mode": "manifold",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 1.1920928955078125e-07,
+        "nonnegative": true,
+        "spectral_norm": 1.0000001192092896
+      },
+      "seed": 42,
+      "stream_count": 4,
+      "variant_name": "Pre+Res-Manifold"
+    },
+    {
+      "expected_shape": [
+        8,
+        8,
+        8
+      ],
+      "hidden_dim": 8,
+      "observed_shape": [
+        8,
+        8,
+        8
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "fixed",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 42,
+      "stream_count": 8,
+      "variant_name": "All-Fixed"
+    },
+    {
+      "expected_shape": [
+        8,
+        8,
+        8
+      ],
+      "hidden_dim": 8,
+      "observed_shape": [
+        8,
+        8,
+        8
+      ],
+      "output_shape_valid": true,
+      "post_mode": "manifold",
+      "pre_mode": "manifold",
+      "res_mode": "manifold",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 0.9999999403953552
+      },
+      "seed": 42,
+      "stream_count": 8,
+      "variant_name": "mHC-Full-Manifold"
+    },
+    {
+      "expected_shape": [
+        8,
+        8,
+        8
+      ],
+      "hidden_dim": 8,
+      "observed_shape": [
+        8,
+        8,
+        8
+      ],
+      "output_shape_valid": true,
+      "post_mode": "unconstrained",
+      "pre_mode": "unconstrained",
+      "res_mode": "unconstrained",
+      "residual_projection": {
+        "is_doubly_stochastic": false,
+        "max_column_error": 3.2540786266326904,
+        "max_row_error": 4.876366138458252,
+        "nonnegative": false,
+        "spectral_norm": 4.503913879394531
+      },
+      "seed": 42,
+      "stream_count": 8,
+      "variant_name": "Unconstrained-HC"
+    },
+    {
+      "expected_shape": [
+        8,
+        8,
+        8
+      ],
+      "hidden_dim": 8,
+      "observed_shape": [
+        8,
+        8,
+        8
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "manifold",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 42,
+      "stream_count": 8,
+      "variant_name": "Pre-Manifold-Only"
+    },
+    {
+      "expected_shape": [
+        8,
+        8,
+        8
+      ],
+      "hidden_dim": 8,
+      "observed_shape": [
+        8,
+        8,
+        8
+      ],
+      "output_shape_valid": true,
+      "post_mode": "manifold",
+      "pre_mode": "fixed",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 42,
+      "stream_count": 8,
+      "variant_name": "Post-Manifold-Only"
+    },
+    {
+      "expected_shape": [
+        8,
+        8,
+        8
+      ],
+      "hidden_dim": 8,
+      "observed_shape": [
+        8,
+        8,
+        8
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "fixed",
+      "res_mode": "manifold",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 1.1920928955078125e-07,
+        "nonnegative": true,
+        "spectral_norm": 0.9999999403953552
+      },
+      "seed": 42,
+      "stream_count": 8,
+      "variant_name": "Res-Manifold-Only"
+    },
+    {
+      "expected_shape": [
+        8,
+        8,
+        8
+      ],
+      "hidden_dim": 8,
+      "observed_shape": [
+        8,
+        8,
+        8
+      ],
+      "output_shape_valid": true,
+      "post_mode": "manifold",
+      "pre_mode": "manifold",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 42,
+      "stream_count": 8,
+      "variant_name": "Pre+Post-Manifold"
+    },
+    {
+      "expected_shape": [
+        8,
+        8,
+        8
+      ],
+      "hidden_dim": 8,
+      "observed_shape": [
+        8,
+        8,
+        8
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "manifold",
+      "res_mode": "manifold",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 42,
+      "stream_count": 8,
+      "variant_name": "Pre+Res-Manifold"
+    },
+    {
+      "expected_shape": [
+        8,
+        8,
+        16
+      ],
+      "hidden_dim": 16,
+      "observed_shape": [
+        8,
+        8,
+        16
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "fixed",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 42,
+      "stream_count": 8,
+      "variant_name": "All-Fixed"
+    },
+    {
+      "expected_shape": [
+        8,
+        8,
+        16
+      ],
+      "hidden_dim": 16,
+      "observed_shape": [
+        8,
+        8,
+        16
+      ],
+      "output_shape_valid": true,
+      "post_mode": "manifold",
+      "pre_mode": "manifold",
+      "res_mode": "manifold",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 1.1920928955078125e-07,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 0.9999998211860657
+      },
+      "seed": 42,
+      "stream_count": 8,
+      "variant_name": "mHC-Full-Manifold"
+    },
+    {
+      "expected_shape": [
+        8,
+        8,
+        16
+      ],
+      "hidden_dim": 16,
+      "observed_shape": [
+        8,
+        8,
+        16
+      ],
+      "output_shape_valid": true,
+      "post_mode": "unconstrained",
+      "pre_mode": "unconstrained",
+      "res_mode": "unconstrained",
+      "residual_projection": {
+        "is_doubly_stochastic": false,
+        "max_column_error": 3.8948111534118652,
+        "max_row_error": 5.559169292449951,
+        "nonnegative": false,
+        "spectral_norm": 4.412273406982422
+      },
+      "seed": 42,
+      "stream_count": 8,
+      "variant_name": "Unconstrained-HC"
+    },
+    {
+      "expected_shape": [
+        8,
+        8,
+        16
+      ],
+      "hidden_dim": 16,
+      "observed_shape": [
+        8,
+        8,
+        16
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "manifold",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 42,
+      "stream_count": 8,
+      "variant_name": "Pre-Manifold-Only"
+    },
+    {
+      "expected_shape": [
+        8,
+        8,
+        16
+      ],
+      "hidden_dim": 16,
+      "observed_shape": [
+        8,
+        8,
+        16
+      ],
+      "output_shape_valid": true,
+      "post_mode": "manifold",
+      "pre_mode": "fixed",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 42,
+      "stream_count": 8,
+      "variant_name": "Post-Manifold-Only"
+    },
+    {
+      "expected_shape": [
+        8,
+        8,
+        16
+      ],
+      "hidden_dim": 16,
+      "observed_shape": [
+        8,
+        8,
+        16
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "fixed",
+      "res_mode": "manifold",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 42,
+      "stream_count": 8,
+      "variant_name": "Res-Manifold-Only"
+    },
+    {
+      "expected_shape": [
+        8,
+        8,
+        16
+      ],
+      "hidden_dim": 16,
+      "observed_shape": [
+        8,
+        8,
+        16
+      ],
+      "output_shape_valid": true,
+      "post_mode": "manifold",
+      "pre_mode": "manifold",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 42,
+      "stream_count": 8,
+      "variant_name": "Pre+Post-Manifold"
+    },
+    {
+      "expected_shape": [
+        8,
+        8,
+        16
+      ],
+      "hidden_dim": 16,
+      "observed_shape": [
+        8,
+        8,
+        16
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "manifold",
+      "res_mode": "manifold",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 1.1920928955078125e-07,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 0.9999998807907104
+      },
+      "seed": 42,
+      "stream_count": 8,
+      "variant_name": "Pre+Res-Manifold"
+    },
+    {
+      "expected_shape": [
+        8,
+        8,
+        32
+      ],
+      "hidden_dim": 32,
+      "observed_shape": [
+        8,
+        8,
+        32
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "fixed",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 42,
+      "stream_count": 8,
+      "variant_name": "All-Fixed"
+    },
+    {
+      "expected_shape": [
+        8,
+        8,
+        32
+      ],
+      "hidden_dim": 32,
+      "observed_shape": [
+        8,
+        8,
+        32
+      ],
+      "output_shape_valid": true,
+      "post_mode": "manifold",
+      "pre_mode": "manifold",
+      "res_mode": "manifold",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 1.1920928955078125e-07,
+        "max_row_error": 1.1920928955078125e-07,
+        "nonnegative": true,
+        "spectral_norm": 0.9999997615814209
+      },
+      "seed": 42,
+      "stream_count": 8,
+      "variant_name": "mHC-Full-Manifold"
+    },
+    {
+      "expected_shape": [
+        8,
+        8,
+        32
+      ],
+      "hidden_dim": 32,
+      "observed_shape": [
+        8,
+        8,
+        32
+      ],
+      "output_shape_valid": true,
+      "post_mode": "unconstrained",
+      "pre_mode": "unconstrained",
+      "res_mode": "unconstrained",
+      "residual_projection": {
+        "is_doubly_stochastic": false,
+        "max_column_error": 4.349425315856934,
+        "max_row_error": 3.827390193939209,
+        "nonnegative": false,
+        "spectral_norm": 4.490365982055664
+      },
+      "seed": 42,
+      "stream_count": 8,
+      "variant_name": "Unconstrained-HC"
+    },
+    {
+      "expected_shape": [
+        8,
+        8,
+        32
+      ],
+      "hidden_dim": 32,
+      "observed_shape": [
+        8,
+        8,
+        32
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "manifold",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 42,
+      "stream_count": 8,
+      "variant_name": "Pre-Manifold-Only"
+    },
+    {
+      "expected_shape": [
+        8,
+        8,
+        32
+      ],
+      "hidden_dim": 32,
+      "observed_shape": [
+        8,
+        8,
+        32
+      ],
+      "output_shape_valid": true,
+      "post_mode": "manifold",
+      "pre_mode": "fixed",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 42,
+      "stream_count": 8,
+      "variant_name": "Post-Manifold-Only"
+    },
+    {
+      "expected_shape": [
+        8,
+        8,
+        32
+      ],
+      "hidden_dim": 32,
+      "observed_shape": [
+        8,
+        8,
+        32
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "fixed",
+      "res_mode": "manifold",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 1.1920928955078125e-07,
+        "max_row_error": 1.1920928955078125e-07,
+        "nonnegative": true,
+        "spectral_norm": 0.9999999403953552
+      },
+      "seed": 42,
+      "stream_count": 8,
+      "variant_name": "Res-Manifold-Only"
+    },
+    {
+      "expected_shape": [
+        8,
+        8,
+        32
+      ],
+      "hidden_dim": 32,
+      "observed_shape": [
+        8,
+        8,
+        32
+      ],
+      "output_shape_valid": true,
+      "post_mode": "manifold",
+      "pre_mode": "manifold",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 42,
+      "stream_count": 8,
+      "variant_name": "Pre+Post-Manifold"
+    },
+    {
+      "expected_shape": [
+        8,
+        8,
+        32
+      ],
+      "hidden_dim": 32,
+      "observed_shape": [
+        8,
+        8,
+        32
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "manifold",
+      "res_mode": "manifold",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 1.1920928955078125e-07,
+        "nonnegative": true,
+        "spectral_norm": 0.9999998807907104
+      },
+      "seed": 42,
+      "stream_count": 8,
+      "variant_name": "Pre+Res-Manifold"
+    },
+    {
+      "expected_shape": [
+        8,
+        2,
+        8
+      ],
+      "hidden_dim": 8,
+      "observed_shape": [
+        8,
+        2,
+        8
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "fixed",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 123,
+      "stream_count": 2,
+      "variant_name": "All-Fixed"
+    },
+    {
+      "expected_shape": [
+        8,
+        2,
+        8
+      ],
+      "hidden_dim": 8,
+      "observed_shape": [
+        8,
+        2,
+        8
+      ],
+      "output_shape_valid": true,
+      "post_mode": "manifold",
+      "pre_mode": "manifold",
+      "res_mode": "manifold",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 0.9999999403953552
+      },
+      "seed": 123,
+      "stream_count": 2,
+      "variant_name": "mHC-Full-Manifold"
+    },
+    {
+      "expected_shape": [
+        8,
+        2,
+        8
+      ],
+      "hidden_dim": 8,
+      "observed_shape": [
+        8,
+        2,
+        8
+      ],
+      "output_shape_valid": true,
+      "post_mode": "unconstrained",
+      "pre_mode": "unconstrained",
+      "res_mode": "unconstrained",
+      "residual_projection": {
+        "is_doubly_stochastic": false,
+        "max_column_error": 3.573939323425293,
+        "max_row_error": 4.890381813049316,
+        "nonnegative": false,
+        "spectral_norm": 2.92645525932312
+      },
+      "seed": 123,
+      "stream_count": 2,
+      "variant_name": "Unconstrained-HC"
+    },
+    {
+      "expected_shape": [
+        8,
+        2,
+        8
+      ],
+      "hidden_dim": 8,
+      "observed_shape": [
+        8,
+        2,
+        8
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "manifold",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 123,
+      "stream_count": 2,
+      "variant_name": "Pre-Manifold-Only"
+    },
+    {
+      "expected_shape": [
+        8,
+        2,
+        8
+      ],
+      "hidden_dim": 8,
+      "observed_shape": [
+        8,
+        2,
+        8
+      ],
+      "output_shape_valid": true,
+      "post_mode": "manifold",
+      "pre_mode": "fixed",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 123,
+      "stream_count": 2,
+      "variant_name": "Post-Manifold-Only"
+    },
+    {
+      "expected_shape": [
+        8,
+        2,
+        8
+      ],
+      "hidden_dim": 8,
+      "observed_shape": [
+        8,
+        2,
+        8
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "fixed",
+      "res_mode": "manifold",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 123,
+      "stream_count": 2,
+      "variant_name": "Res-Manifold-Only"
+    },
+    {
+      "expected_shape": [
+        8,
+        2,
+        8
+      ],
+      "hidden_dim": 8,
+      "observed_shape": [
+        8,
+        2,
+        8
+      ],
+      "output_shape_valid": true,
+      "post_mode": "manifold",
+      "pre_mode": "manifold",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 123,
+      "stream_count": 2,
+      "variant_name": "Pre+Post-Manifold"
+    },
+    {
+      "expected_shape": [
+        8,
+        2,
+        8
+      ],
+      "hidden_dim": 8,
+      "observed_shape": [
+        8,
+        2,
+        8
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "manifold",
+      "res_mode": "manifold",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 123,
+      "stream_count": 2,
+      "variant_name": "Pre+Res-Manifold"
+    },
+    {
+      "expected_shape": [
+        8,
+        2,
+        16
+      ],
+      "hidden_dim": 16,
+      "observed_shape": [
+        8,
+        2,
+        16
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "fixed",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 123,
+      "stream_count": 2,
+      "variant_name": "All-Fixed"
+    },
+    {
+      "expected_shape": [
+        8,
+        2,
+        16
+      ],
+      "hidden_dim": 16,
+      "observed_shape": [
+        8,
+        2,
+        16
+      ],
+      "output_shape_valid": true,
+      "post_mode": "manifold",
+      "pre_mode": "manifold",
+      "res_mode": "manifold",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 0.9999999403953552
+      },
+      "seed": 123,
+      "stream_count": 2,
+      "variant_name": "mHC-Full-Manifold"
+    },
+    {
+      "expected_shape": [
+        8,
+        2,
+        16
+      ],
+      "hidden_dim": 16,
+      "observed_shape": [
+        8,
+        2,
+        16
+      ],
+      "output_shape_valid": true,
+      "post_mode": "unconstrained",
+      "pre_mode": "unconstrained",
+      "res_mode": "unconstrained",
+      "residual_projection": {
+        "is_doubly_stochastic": false,
+        "max_column_error": 3.0259041786193848,
+        "max_row_error": 2.852917194366455,
+        "nonnegative": false,
+        "spectral_norm": 1.8459187746047974
+      },
+      "seed": 123,
+      "stream_count": 2,
+      "variant_name": "Unconstrained-HC"
+    },
+    {
+      "expected_shape": [
+        8,
+        2,
+        16
+      ],
+      "hidden_dim": 16,
+      "observed_shape": [
+        8,
+        2,
+        16
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "manifold",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 123,
+      "stream_count": 2,
+      "variant_name": "Pre-Manifold-Only"
+    },
+    {
+      "expected_shape": [
+        8,
+        2,
+        16
+      ],
+      "hidden_dim": 16,
+      "observed_shape": [
+        8,
+        2,
+        16
+      ],
+      "output_shape_valid": true,
+      "post_mode": "manifold",
+      "pre_mode": "fixed",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 123,
+      "stream_count": 2,
+      "variant_name": "Post-Manifold-Only"
+    },
+    {
+      "expected_shape": [
+        8,
+        2,
+        16
+      ],
+      "hidden_dim": 16,
+      "observed_shape": [
+        8,
+        2,
+        16
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "fixed",
+      "res_mode": "manifold",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 0.9999999403953552
+      },
+      "seed": 123,
+      "stream_count": 2,
+      "variant_name": "Res-Manifold-Only"
+    },
+    {
+      "expected_shape": [
+        8,
+        2,
+        16
+      ],
+      "hidden_dim": 16,
+      "observed_shape": [
+        8,
+        2,
+        16
+      ],
+      "output_shape_valid": true,
+      "post_mode": "manifold",
+      "pre_mode": "manifold",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 123,
+      "stream_count": 2,
+      "variant_name": "Pre+Post-Manifold"
+    },
+    {
+      "expected_shape": [
+        8,
+        2,
+        16
+      ],
+      "hidden_dim": 16,
+      "observed_shape": [
+        8,
+        2,
+        16
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "manifold",
+      "res_mode": "manifold",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 123,
+      "stream_count": 2,
+      "variant_name": "Pre+Res-Manifold"
+    },
+    {
+      "expected_shape": [
+        8,
+        2,
+        32
+      ],
+      "hidden_dim": 32,
+      "observed_shape": [
+        8,
+        2,
+        32
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "fixed",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 123,
+      "stream_count": 2,
+      "variant_name": "All-Fixed"
+    },
+    {
+      "expected_shape": [
+        8,
+        2,
+        32
+      ],
+      "hidden_dim": 32,
+      "observed_shape": [
+        8,
+        2,
+        32
+      ],
+      "output_shape_valid": true,
+      "post_mode": "manifold",
+      "pre_mode": "manifold",
+      "res_mode": "manifold",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 123,
+      "stream_count": 2,
+      "variant_name": "mHC-Full-Manifold"
+    },
+    {
+      "expected_shape": [
+        8,
+        2,
+        32
+      ],
+      "hidden_dim": 32,
+      "observed_shape": [
+        8,
+        2,
+        32
+      ],
+      "output_shape_valid": true,
+      "post_mode": "unconstrained",
+      "pre_mode": "unconstrained",
+      "res_mode": "unconstrained",
+      "residual_projection": {
+        "is_doubly_stochastic": false,
+        "max_column_error": 1.1813733577728271,
+        "max_row_error": 2.6057167053222656,
+        "nonnegative": false,
+        "spectral_norm": 1.7622754573822021
+      },
+      "seed": 123,
+      "stream_count": 2,
+      "variant_name": "Unconstrained-HC"
+    },
+    {
+      "expected_shape": [
+        8,
+        2,
+        32
+      ],
+      "hidden_dim": 32,
+      "observed_shape": [
+        8,
+        2,
+        32
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "manifold",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 123,
+      "stream_count": 2,
+      "variant_name": "Pre-Manifold-Only"
+    },
+    {
+      "expected_shape": [
+        8,
+        2,
+        32
+      ],
+      "hidden_dim": 32,
+      "observed_shape": [
+        8,
+        2,
+        32
+      ],
+      "output_shape_valid": true,
+      "post_mode": "manifold",
+      "pre_mode": "fixed",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 123,
+      "stream_count": 2,
+      "variant_name": "Post-Manifold-Only"
+    },
+    {
+      "expected_shape": [
+        8,
+        2,
+        32
+      ],
+      "hidden_dim": 32,
+      "observed_shape": [
+        8,
+        2,
+        32
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "fixed",
+      "res_mode": "manifold",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 123,
+      "stream_count": 2,
+      "variant_name": "Res-Manifold-Only"
+    },
+    {
+      "expected_shape": [
+        8,
+        2,
+        32
+      ],
+      "hidden_dim": 32,
+      "observed_shape": [
+        8,
+        2,
+        32
+      ],
+      "output_shape_valid": true,
+      "post_mode": "manifold",
+      "pre_mode": "manifold",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 123,
+      "stream_count": 2,
+      "variant_name": "Pre+Post-Manifold"
+    },
+    {
+      "expected_shape": [
+        8,
+        2,
+        32
+      ],
+      "hidden_dim": 32,
+      "observed_shape": [
+        8,
+        2,
+        32
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "manifold",
+      "res_mode": "manifold",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 0.9999998807907104
+      },
+      "seed": 123,
+      "stream_count": 2,
+      "variant_name": "Pre+Res-Manifold"
+    },
+    {
+      "expected_shape": [
+        8,
+        4,
+        8
+      ],
+      "hidden_dim": 8,
+      "observed_shape": [
+        8,
+        4,
+        8
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "fixed",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 123,
+      "stream_count": 4,
+      "variant_name": "All-Fixed"
+    },
+    {
+      "expected_shape": [
+        8,
+        4,
+        8
+      ],
+      "hidden_dim": 8,
+      "observed_shape": [
+        8,
+        4,
+        8
+      ],
+      "output_shape_valid": true,
+      "post_mode": "manifold",
+      "pre_mode": "manifold",
+      "res_mode": "manifold",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 0.9999999403953552
+      },
+      "seed": 123,
+      "stream_count": 4,
+      "variant_name": "mHC-Full-Manifold"
+    },
+    {
+      "expected_shape": [
+        8,
+        4,
+        8
+      ],
+      "hidden_dim": 8,
+      "observed_shape": [
+        8,
+        4,
+        8
+      ],
+      "output_shape_valid": true,
+      "post_mode": "unconstrained",
+      "pre_mode": "unconstrained",
+      "res_mode": "unconstrained",
+      "residual_projection": {
+        "is_doubly_stochastic": false,
+        "max_column_error": 1.5537309646606445,
+        "max_row_error": 4.109628200531006,
+        "nonnegative": false,
+        "spectral_norm": 2.900243043899536
+      },
+      "seed": 123,
+      "stream_count": 4,
+      "variant_name": "Unconstrained-HC"
+    },
+    {
+      "expected_shape": [
+        8,
+        4,
+        8
+      ],
+      "hidden_dim": 8,
+      "observed_shape": [
+        8,
+        4,
+        8
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "manifold",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 123,
+      "stream_count": 4,
+      "variant_name": "Pre-Manifold-Only"
+    },
+    {
+      "expected_shape": [
+        8,
+        4,
+        8
+      ],
+      "hidden_dim": 8,
+      "observed_shape": [
+        8,
+        4,
+        8
+      ],
+      "output_shape_valid": true,
+      "post_mode": "manifold",
+      "pre_mode": "fixed",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 123,
+      "stream_count": 4,
+      "variant_name": "Post-Manifold-Only"
+    },
+    {
+      "expected_shape": [
+        8,
+        4,
+        8
+      ],
+      "hidden_dim": 8,
+      "observed_shape": [
+        8,
+        4,
+        8
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "fixed",
+      "res_mode": "manifold",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 123,
+      "stream_count": 4,
+      "variant_name": "Res-Manifold-Only"
+    },
+    {
+      "expected_shape": [
+        8,
+        4,
+        8
+      ],
+      "hidden_dim": 8,
+      "observed_shape": [
+        8,
+        4,
+        8
+      ],
+      "output_shape_valid": true,
+      "post_mode": "manifold",
+      "pre_mode": "manifold",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 123,
+      "stream_count": 4,
+      "variant_name": "Pre+Post-Manifold"
+    },
+    {
+      "expected_shape": [
+        8,
+        4,
+        8
+      ],
+      "hidden_dim": 8,
+      "observed_shape": [
+        8,
+        4,
+        8
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "manifold",
+      "res_mode": "manifold",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 0.9999998807907104
+      },
+      "seed": 123,
+      "stream_count": 4,
+      "variant_name": "Pre+Res-Manifold"
+    },
+    {
+      "expected_shape": [
+        8,
+        4,
+        16
+      ],
+      "hidden_dim": 16,
+      "observed_shape": [
+        8,
+        4,
+        16
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "fixed",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 123,
+      "stream_count": 4,
+      "variant_name": "All-Fixed"
+    },
+    {
+      "expected_shape": [
+        8,
+        4,
+        16
+      ],
+      "hidden_dim": 16,
+      "observed_shape": [
+        8,
+        4,
+        16
+      ],
+      "output_shape_valid": true,
+      "post_mode": "manifold",
+      "pre_mode": "manifold",
+      "res_mode": "manifold",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 1.1920928955078125e-07,
+        "nonnegative": true,
+        "spectral_norm": 0.9999999403953552
+      },
+      "seed": 123,
+      "stream_count": 4,
+      "variant_name": "mHC-Full-Manifold"
+    },
+    {
+      "expected_shape": [
+        8,
+        4,
+        16
+      ],
+      "hidden_dim": 16,
+      "observed_shape": [
+        8,
+        4,
+        16
+      ],
+      "output_shape_valid": true,
+      "post_mode": "unconstrained",
+      "pre_mode": "unconstrained",
+      "res_mode": "unconstrained",
+      "residual_projection": {
+        "is_doubly_stochastic": false,
+        "max_column_error": 3.3763067722320557,
+        "max_row_error": 3.8718509674072266,
+        "nonnegative": false,
+        "spectral_norm": 3.749664545059204
+      },
+      "seed": 123,
+      "stream_count": 4,
+      "variant_name": "Unconstrained-HC"
+    },
+    {
+      "expected_shape": [
+        8,
+        4,
+        16
+      ],
+      "hidden_dim": 16,
+      "observed_shape": [
+        8,
+        4,
+        16
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "manifold",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 123,
+      "stream_count": 4,
+      "variant_name": "Pre-Manifold-Only"
+    },
+    {
+      "expected_shape": [
+        8,
+        4,
+        16
+      ],
+      "hidden_dim": 16,
+      "observed_shape": [
+        8,
+        4,
+        16
+      ],
+      "output_shape_valid": true,
+      "post_mode": "manifold",
+      "pre_mode": "fixed",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 123,
+      "stream_count": 4,
+      "variant_name": "Post-Manifold-Only"
+    },
+    {
+      "expected_shape": [
+        8,
+        4,
+        16
+      ],
+      "hidden_dim": 16,
+      "observed_shape": [
+        8,
+        4,
+        16
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "fixed",
+      "res_mode": "manifold",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 0.9999998211860657
+      },
+      "seed": 123,
+      "stream_count": 4,
+      "variant_name": "Res-Manifold-Only"
+    },
+    {
+      "expected_shape": [
+        8,
+        4,
+        16
+      ],
+      "hidden_dim": 16,
+      "observed_shape": [
+        8,
+        4,
+        16
+      ],
+      "output_shape_valid": true,
+      "post_mode": "manifold",
+      "pre_mode": "manifold",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 123,
+      "stream_count": 4,
+      "variant_name": "Pre+Post-Manifold"
+    },
+    {
+      "expected_shape": [
+        8,
+        4,
+        16
+      ],
+      "hidden_dim": 16,
+      "observed_shape": [
+        8,
+        4,
+        16
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "manifold",
+      "res_mode": "manifold",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 0.9999999403953552
+      },
+      "seed": 123,
+      "stream_count": 4,
+      "variant_name": "Pre+Res-Manifold"
+    },
+    {
+      "expected_shape": [
+        8,
+        4,
+        32
+      ],
+      "hidden_dim": 32,
+      "observed_shape": [
+        8,
+        4,
+        32
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "fixed",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 123,
+      "stream_count": 4,
+      "variant_name": "All-Fixed"
+    },
+    {
+      "expected_shape": [
+        8,
+        4,
+        32
+      ],
+      "hidden_dim": 32,
+      "observed_shape": [
+        8,
+        4,
+        32
+      ],
+      "output_shape_valid": true,
+      "post_mode": "manifold",
+      "pre_mode": "manifold",
+      "res_mode": "manifold",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 1.1920928955078125e-07,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 0.9999999403953552
+      },
+      "seed": 123,
+      "stream_count": 4,
+      "variant_name": "mHC-Full-Manifold"
+    },
+    {
+      "expected_shape": [
+        8,
+        4,
+        32
+      ],
+      "hidden_dim": 32,
+      "observed_shape": [
+        8,
+        4,
+        32
+      ],
+      "output_shape_valid": true,
+      "post_mode": "unconstrained",
+      "pre_mode": "unconstrained",
+      "res_mode": "unconstrained",
+      "residual_projection": {
+        "is_doubly_stochastic": false,
+        "max_column_error": 1.0346477031707764,
+        "max_row_error": 2.843247652053833,
+        "nonnegative": false,
+        "spectral_norm": 2.8927438259124756
+      },
+      "seed": 123,
+      "stream_count": 4,
+      "variant_name": "Unconstrained-HC"
+    },
+    {
+      "expected_shape": [
+        8,
+        4,
+        32
+      ],
+      "hidden_dim": 32,
+      "observed_shape": [
+        8,
+        4,
+        32
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "manifold",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 123,
+      "stream_count": 4,
+      "variant_name": "Pre-Manifold-Only"
+    },
+    {
+      "expected_shape": [
+        8,
+        4,
+        32
+      ],
+      "hidden_dim": 32,
+      "observed_shape": [
+        8,
+        4,
+        32
+      ],
+      "output_shape_valid": true,
+      "post_mode": "manifold",
+      "pre_mode": "fixed",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 123,
+      "stream_count": 4,
+      "variant_name": "Post-Manifold-Only"
+    },
+    {
+      "expected_shape": [
+        8,
+        4,
+        32
+      ],
+      "hidden_dim": 32,
+      "observed_shape": [
+        8,
+        4,
+        32
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "fixed",
+      "res_mode": "manifold",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 1.1920928955078125e-07,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 123,
+      "stream_count": 4,
+      "variant_name": "Res-Manifold-Only"
+    },
+    {
+      "expected_shape": [
+        8,
+        4,
+        32
+      ],
+      "hidden_dim": 32,
+      "observed_shape": [
+        8,
+        4,
+        32
+      ],
+      "output_shape_valid": true,
+      "post_mode": "manifold",
+      "pre_mode": "manifold",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 123,
+      "stream_count": 4,
+      "variant_name": "Pre+Post-Manifold"
+    },
+    {
+      "expected_shape": [
+        8,
+        4,
+        32
+      ],
+      "hidden_dim": 32,
+      "observed_shape": [
+        8,
+        4,
+        32
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "manifold",
+      "res_mode": "manifold",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 123,
+      "stream_count": 4,
+      "variant_name": "Pre+Res-Manifold"
+    },
+    {
+      "expected_shape": [
+        8,
+        8,
+        8
+      ],
+      "hidden_dim": 8,
+      "observed_shape": [
+        8,
+        8,
+        8
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "fixed",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 123,
+      "stream_count": 8,
+      "variant_name": "All-Fixed"
+    },
+    {
+      "expected_shape": [
+        8,
+        8,
+        8
+      ],
+      "hidden_dim": 8,
+      "observed_shape": [
+        8,
+        8,
+        8
+      ],
+      "output_shape_valid": true,
+      "post_mode": "manifold",
+      "pre_mode": "manifold",
+      "res_mode": "manifold",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 1.1920928955078125e-07,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 123,
+      "stream_count": 8,
+      "variant_name": "mHC-Full-Manifold"
+    },
+    {
+      "expected_shape": [
+        8,
+        8,
+        8
+      ],
+      "hidden_dim": 8,
+      "observed_shape": [
+        8,
+        8,
+        8
+      ],
+      "output_shape_valid": true,
+      "post_mode": "unconstrained",
+      "pre_mode": "unconstrained",
+      "res_mode": "unconstrained",
+      "residual_projection": {
+        "is_doubly_stochastic": false,
+        "max_column_error": 2.6982288360595703,
+        "max_row_error": 4.891347885131836,
+        "nonnegative": false,
+        "spectral_norm": 4.6661505699157715
+      },
+      "seed": 123,
+      "stream_count": 8,
+      "variant_name": "Unconstrained-HC"
+    },
+    {
+      "expected_shape": [
+        8,
+        8,
+        8
+      ],
+      "hidden_dim": 8,
+      "observed_shape": [
+        8,
+        8,
+        8
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "manifold",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 123,
+      "stream_count": 8,
+      "variant_name": "Pre-Manifold-Only"
+    },
+    {
+      "expected_shape": [
+        8,
+        8,
+        8
+      ],
+      "hidden_dim": 8,
+      "observed_shape": [
+        8,
+        8,
+        8
+      ],
+      "output_shape_valid": true,
+      "post_mode": "manifold",
+      "pre_mode": "fixed",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 123,
+      "stream_count": 8,
+      "variant_name": "Post-Manifold-Only"
+    },
+    {
+      "expected_shape": [
+        8,
+        8,
+        8
+      ],
+      "hidden_dim": 8,
+      "observed_shape": [
+        8,
+        8,
+        8
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "fixed",
+      "res_mode": "manifold",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 123,
+      "stream_count": 8,
+      "variant_name": "Res-Manifold-Only"
+    },
+    {
+      "expected_shape": [
+        8,
+        8,
+        8
+      ],
+      "hidden_dim": 8,
+      "observed_shape": [
+        8,
+        8,
+        8
+      ],
+      "output_shape_valid": true,
+      "post_mode": "manifold",
+      "pre_mode": "manifold",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 123,
+      "stream_count": 8,
+      "variant_name": "Pre+Post-Manifold"
+    },
+    {
+      "expected_shape": [
+        8,
+        8,
+        8
+      ],
+      "hidden_dim": 8,
+      "observed_shape": [
+        8,
+        8,
+        8
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "manifold",
+      "res_mode": "manifold",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0000001192092896
+      },
+      "seed": 123,
+      "stream_count": 8,
+      "variant_name": "Pre+Res-Manifold"
+    },
+    {
+      "expected_shape": [
+        8,
+        8,
+        16
+      ],
+      "hidden_dim": 16,
+      "observed_shape": [
+        8,
+        8,
+        16
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "fixed",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 123,
+      "stream_count": 8,
+      "variant_name": "All-Fixed"
+    },
+    {
+      "expected_shape": [
+        8,
+        8,
+        16
+      ],
+      "hidden_dim": 16,
+      "observed_shape": [
+        8,
+        8,
+        16
+      ],
+      "output_shape_valid": true,
+      "post_mode": "manifold",
+      "pre_mode": "manifold",
+      "res_mode": "manifold",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 1.1920928955078125e-07,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 0.9999998807907104
+      },
+      "seed": 123,
+      "stream_count": 8,
+      "variant_name": "mHC-Full-Manifold"
+    },
+    {
+      "expected_shape": [
+        8,
+        8,
+        16
+      ],
+      "hidden_dim": 16,
+      "observed_shape": [
+        8,
+        8,
+        16
+      ],
+      "output_shape_valid": true,
+      "post_mode": "unconstrained",
+      "pre_mode": "unconstrained",
+      "res_mode": "unconstrained",
+      "residual_projection": {
+        "is_doubly_stochastic": false,
+        "max_column_error": 7.50971794128418,
+        "max_row_error": 6.7381792068481445,
+        "nonnegative": false,
+        "spectral_norm": 4.314737796783447
+      },
+      "seed": 123,
+      "stream_count": 8,
+      "variant_name": "Unconstrained-HC"
+    },
+    {
+      "expected_shape": [
+        8,
+        8,
+        16
+      ],
+      "hidden_dim": 16,
+      "observed_shape": [
+        8,
+        8,
+        16
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "manifold",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 123,
+      "stream_count": 8,
+      "variant_name": "Pre-Manifold-Only"
+    },
+    {
+      "expected_shape": [
+        8,
+        8,
+        16
+      ],
+      "hidden_dim": 16,
+      "observed_shape": [
+        8,
+        8,
+        16
+      ],
+      "output_shape_valid": true,
+      "post_mode": "manifold",
+      "pre_mode": "fixed",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 123,
+      "stream_count": 8,
+      "variant_name": "Post-Manifold-Only"
+    },
+    {
+      "expected_shape": [
+        8,
+        8,
+        16
+      ],
+      "hidden_dim": 16,
+      "observed_shape": [
+        8,
+        8,
+        16
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "fixed",
+      "res_mode": "manifold",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 0.9999998807907104
+      },
+      "seed": 123,
+      "stream_count": 8,
+      "variant_name": "Res-Manifold-Only"
+    },
+    {
+      "expected_shape": [
+        8,
+        8,
+        16
+      ],
+      "hidden_dim": 16,
+      "observed_shape": [
+        8,
+        8,
+        16
+      ],
+      "output_shape_valid": true,
+      "post_mode": "manifold",
+      "pre_mode": "manifold",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 123,
+      "stream_count": 8,
+      "variant_name": "Pre+Post-Manifold"
+    },
+    {
+      "expected_shape": [
+        8,
+        8,
+        16
+      ],
+      "hidden_dim": 16,
+      "observed_shape": [
+        8,
+        8,
+        16
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "manifold",
+      "res_mode": "manifold",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 0.9999997615814209
+      },
+      "seed": 123,
+      "stream_count": 8,
+      "variant_name": "Pre+Res-Manifold"
+    },
+    {
+      "expected_shape": [
+        8,
+        8,
+        32
+      ],
+      "hidden_dim": 32,
+      "observed_shape": [
+        8,
+        8,
+        32
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "fixed",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 123,
+      "stream_count": 8,
+      "variant_name": "All-Fixed"
+    },
+    {
+      "expected_shape": [
+        8,
+        8,
+        32
+      ],
+      "hidden_dim": 32,
+      "observed_shape": [
+        8,
+        8,
+        32
+      ],
+      "output_shape_valid": true,
+      "post_mode": "manifold",
+      "pre_mode": "manifold",
+      "res_mode": "manifold",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 1.1920928955078125e-07,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 0.9999999403953552
+      },
+      "seed": 123,
+      "stream_count": 8,
+      "variant_name": "mHC-Full-Manifold"
+    },
+    {
+      "expected_shape": [
+        8,
+        8,
+        32
+      ],
+      "hidden_dim": 32,
+      "observed_shape": [
+        8,
+        8,
+        32
+      ],
+      "output_shape_valid": true,
+      "post_mode": "unconstrained",
+      "pre_mode": "unconstrained",
+      "res_mode": "unconstrained",
+      "residual_projection": {
+        "is_doubly_stochastic": false,
+        "max_column_error": 5.097741603851318,
+        "max_row_error": 3.2033822536468506,
+        "nonnegative": false,
+        "spectral_norm": 4.724956512451172
+      },
+      "seed": 123,
+      "stream_count": 8,
+      "variant_name": "Unconstrained-HC"
+    },
+    {
+      "expected_shape": [
+        8,
+        8,
+        32
+      ],
+      "hidden_dim": 32,
+      "observed_shape": [
+        8,
+        8,
+        32
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "manifold",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 123,
+      "stream_count": 8,
+      "variant_name": "Pre-Manifold-Only"
+    },
+    {
+      "expected_shape": [
+        8,
+        8,
+        32
+      ],
+      "hidden_dim": 32,
+      "observed_shape": [
+        8,
+        8,
+        32
+      ],
+      "output_shape_valid": true,
+      "post_mode": "manifold",
+      "pre_mode": "fixed",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 123,
+      "stream_count": 8,
+      "variant_name": "Post-Manifold-Only"
+    },
+    {
+      "expected_shape": [
+        8,
+        8,
+        32
+      ],
+      "hidden_dim": 32,
+      "observed_shape": [
+        8,
+        8,
+        32
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "fixed",
+      "res_mode": "manifold",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 1.1920928955078125e-07,
+        "nonnegative": true,
+        "spectral_norm": 1.0000001192092896
+      },
+      "seed": 123,
+      "stream_count": 8,
+      "variant_name": "Res-Manifold-Only"
+    },
+    {
+      "expected_shape": [
+        8,
+        8,
+        32
+      ],
+      "hidden_dim": 32,
+      "observed_shape": [
+        8,
+        8,
+        32
+      ],
+      "output_shape_valid": true,
+      "post_mode": "manifold",
+      "pre_mode": "manifold",
+      "res_mode": "fixed",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 0.0,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 123,
+      "stream_count": 8,
+      "variant_name": "Pre+Post-Manifold"
+    },
+    {
+      "expected_shape": [
+        8,
+        8,
+        32
+      ],
+      "hidden_dim": 32,
+      "observed_shape": [
+        8,
+        8,
+        32
+      ],
+      "output_shape_valid": true,
+      "post_mode": "fixed",
+      "pre_mode": "manifold",
+      "res_mode": "manifold",
+      "residual_projection": {
+        "is_doubly_stochastic": true,
+        "max_column_error": 1.1920928955078125e-07,
+        "max_row_error": 0.0,
+        "nonnegative": true,
+        "spectral_norm": 1.0
+      },
+      "seed": 123,
+      "stream_count": 8,
+      "variant_name": "Pre+Res-Manifold"
+    }
+  ],
+  "paper_id": "mDhyxu8WRb",
+  "provenance": {
+    "api_cost_usd": 0.0,
+    "command": "uv run python -m mhc_repro.cli --output-json evidence.json --output-csv summary.csv --n-iters 100",
+    "depths": [
+      10,
+      50,
+      100
+    ],
+    "device": "cpu",
+    "hidden_dims": [
+      8,
+      16,
+      32
+    ],
+    "projection_seed": 42,
+    "python_version": "3.10.12",
+    "pytorch_version": "2.13.0+cu130",
+    "seeds": [
+      17,
+      42,
+      123
+    ],
+    "sinkhorn_iterations": 100,
+    "source_revision": "arxiv:2512.24880v2+github:tokenbender/mHC-manifold-constrained-hyper-connections@ad20d0d8db4d6fc7e8d9b148281167141da20d47",
+    "stream_counts": [
+      2,
+      4,
+      8
+    ]
+  },
+  "schema_version": "1.0.0",
+  "summary": {
+    "all_claims_verified": false,
+    "claim_statuses": {
+      "claim-1": "partial",
+      "claim-2": "partial",
+      "claim-3": "partial",
+      "claim-4": "unavailable",
+      "claim-5": "unavailable"
+    }
+  },
+  "title": "mHC: Manifold-Constrained Hyper-Connections",
+  "toy_propagation": [
+    {
+      "depth": 10,
+      "evidence_kind": "toy_random_matrix_propagation",
+      "projected_backward_amax": 0.5000038421245032,
+      "projected_forward_amax": 0.5000038421245032,
+      "seed": 17,
+      "stream_count": 2,
+      "unconstrained_backward_amax": 23.0145833320915,
+      "unconstrained_forward_amax": 23.0145833320915
+    },
+    {
+      "depth": 50,
+      "evidence_kind": "toy_random_matrix_propagation",
+      "projected_backward_amax": 0.5000000000000006,
+      "projected_forward_amax": 0.5000000000000006,
+      "seed": 17,
+      "stream_count": 2,
+      "unconstrained_backward_amax": 2505.5063992443293,
+      "unconstrained_forward_amax": 2505.5063992443293
+    },
+    {
+      "depth": 100,
+      "evidence_kind": "toy_random_matrix_propagation",
+      "projected_backward_amax": 0.5000000000000009,
+      "projected_forward_amax": 0.5000000000000009,
+      "seed": 17,
+      "stream_count": 2,
+      "unconstrained_backward_amax": 6337.999750068271,
+      "unconstrained_forward_amax": 6337.999750068271
+    },
+    {
+      "depth": 10,
+      "evidence_kind": "toy_random_matrix_propagation",
+      "projected_backward_amax": 0.2500018005739551,
+      "projected_forward_amax": 0.2500018005739551,
+      "seed": 17,
+      "stream_count": 4,
+      "unconstrained_backward_amax": 553.8782076324252,
+      "unconstrained_forward_amax": 553.8782076324252
+    },
+    {
+      "depth": 50,
+      "evidence_kind": "toy_random_matrix_propagation",
+      "projected_backward_amax": 0.2500000000000003,
+      "projected_forward_amax": 0.2500000000000003,
+      "seed": 17,
+      "stream_count": 4,
+      "unconstrained_backward_amax": 1004473278178.048,
+      "unconstrained_forward_amax": 1004473278178.048
+    },
+    {
+      "depth": 100,
+      "evidence_kind": "toy_random_matrix_propagation",
+      "projected_backward_amax": 0.2500000000000006,
+      "projected_forward_amax": 0.2500000000000006,
+      "seed": 17,
+      "stream_count": 4,
+      "unconstrained_backward_amax": 4.10740740494628e+23,
+      "unconstrained_forward_amax": 4.10740740494628e+23
+    },
+    {
+      "depth": 10,
+      "evidence_kind": "toy_random_matrix_propagation",
+      "projected_backward_amax": 0.12500266267158586,
+      "projected_forward_amax": 0.12500266267158586,
+      "seed": 17,
+      "stream_count": 8,
+      "unconstrained_backward_amax": 26960.69550149313,
+      "unconstrained_forward_amax": 26960.69550149313
+    },
+    {
+      "depth": 50,
+      "evidence_kind": "toy_random_matrix_propagation",
+      "projected_backward_amax": 0.12500000000000025,
+      "projected_forward_amax": 0.12500000000000025,
+      "seed": 17,
+      "stream_count": 8,
+      "unconstrained_backward_amax": 3.663912878813217e+20,
+      "unconstrained_forward_amax": 3.663912878813217e+20
+    },
+    {
+      "depth": 100,
+      "evidence_kind": "toy_random_matrix_propagation",
+      "projected_backward_amax": 0.1250000000000005,
+      "projected_forward_amax": 0.1250000000000005,
+      "seed": 17,
+      "stream_count": 8,
+      "unconstrained_backward_amax": 1.517522704806789e+43,
+      "unconstrained_forward_amax": 1.517522704806789e+43
+    },
+    {
+      "depth": 10,
+      "evidence_kind": "toy_random_matrix_propagation",
+      "projected_backward_amax": 0.5000000324135816,
+      "projected_forward_amax": 0.5000000324135816,
+      "seed": 42,
+      "stream_count": 2,
+      "unconstrained_backward_amax": 0.4027574356007665,
+      "unconstrained_forward_amax": 0.4027574356007665
+    },
+    {
+      "depth": 50,
+      "evidence_kind": "toy_random_matrix_propagation",
+      "projected_backward_amax": 0.5000000000000004,
+      "projected_forward_amax": 0.5000000000000004,
+      "seed": 42,
+      "stream_count": 2,
+      "unconstrained_backward_amax": 69.71536226287196,
+      "unconstrained_forward_amax": 69.71536226287196
+    },
+    {
+      "depth": 100,
+      "evidence_kind": "toy_random_matrix_propagation",
+      "projected_backward_amax": 0.5000000000000009,
+      "projected_forward_amax": 0.5000000000000009,
+      "seed": 42,
+      "stream_count": 2,
+      "unconstrained_backward_amax": 338.12946121326763,
+      "unconstrained_forward_amax": 338.12946121326763
+    },
+    {
+      "depth": 10,
+      "evidence_kind": "toy_random_matrix_propagation",
+      "projected_backward_amax": 0.25001832837089416,
+      "projected_forward_amax": 0.25001832837089416,
+      "seed": 42,
+      "stream_count": 4,
+      "unconstrained_backward_amax": 2342.0937340235414,
+      "unconstrained_forward_amax": 2342.0937340235414
+    },
+    {
+      "depth": 50,
+      "evidence_kind": "toy_random_matrix_propagation",
+      "projected_backward_amax": 0.2500000000000006,
+      "projected_forward_amax": 0.2500000000000006,
+      "seed": 42,
+      "stream_count": 4,
+      "unconstrained_backward_amax": 7475852061.099697,
+      "unconstrained_forward_amax": 7475852061.099697
+    },
+    {
+      "depth": 100,
+      "evidence_kind": "toy_random_matrix_propagation",
+      "projected_backward_amax": 0.25000000000000094,
+      "projected_forward_amax": 0.25000000000000094,
+      "seed": 42,
+      "stream_count": 4,
+      "unconstrained_backward_amax": 7.757818017780972e+19,
+      "unconstrained_forward_amax": 7.757818017780972e+19
+    },
+    {
+      "depth": 10,
+      "evidence_kind": "toy_random_matrix_propagation",
+      "projected_backward_amax": 0.1250013816785551,
+      "projected_forward_amax": 0.1250013816785551,
+      "seed": 42,
+      "stream_count": 8,
+      "unconstrained_backward_amax": 22413.01952022974,
+      "unconstrained_forward_amax": 22413.01952022974
+    },
+    {
+      "depth": 50,
+      "evidence_kind": "toy_random_matrix_propagation",
+      "projected_backward_amax": 0.12500000000000022,
+      "projected_forward_amax": 0.12500000000000022,
+      "seed": 42,
+      "stream_count": 8,
+      "unconstrained_backward_amax": 6.547878340157785e+20,
+      "unconstrained_forward_amax": 6.547878340157785e+20
+    },
+    {
+      "depth": 100,
+      "evidence_kind": "toy_random_matrix_propagation",
+      "projected_backward_amax": 0.12500000000000042,
+      "projected_forward_amax": 0.12500000000000042,
+      "seed": 42,
+      "stream_count": 8,
+      "unconstrained_backward_amax": 1.0485477581721702e+41,
+      "unconstrained_forward_amax": 1.0485477581721702e+41
+    },
+    {
+      "depth": 10,
+      "evidence_kind": "toy_random_matrix_propagation",
+      "projected_backward_amax": 0.5000000019995968,
+      "projected_forward_amax": 0.5000000019995968,
+      "seed": 123,
+      "stream_count": 2,
+      "unconstrained_backward_amax": 0.05274445562892857,
+      "unconstrained_forward_amax": 0.05274445562892857
+    },
+    {
+      "depth": 50,
+      "evidence_kind": "toy_random_matrix_propagation",
+      "projected_backward_amax": 0.5000000000000006,
+      "projected_forward_amax": 0.5000000000000006,
+      "seed": 123,
+      "stream_count": 2,
+      "unconstrained_backward_amax": 0.011413122621120202,
+      "unconstrained_forward_amax": 0.011413122621120202
+    },
+    {
+      "depth": 100,
+      "evidence_kind": "toy_random_matrix_propagation",
+      "projected_backward_amax": 0.5000000000000009,
+      "projected_forward_amax": 0.5000000000000009,
+      "seed": 123,
+      "stream_count": 2,
+      "unconstrained_backward_amax": 0.007292964285635867,
+      "unconstrained_forward_amax": 0.007292964285635867
+    },
+    {
+      "depth": 10,
+      "evidence_kind": "toy_random_matrix_propagation",
+      "projected_backward_amax": 0.2500074761684252,
+      "projected_forward_amax": 0.2500074761684252,
+      "seed": 123,
+      "stream_count": 4,
+      "unconstrained_backward_amax": 49.095324306997455,
+      "unconstrained_forward_amax": 49.095324306997455
+    },
+    {
+      "depth": 50,
+      "evidence_kind": "toy_random_matrix_propagation",
+      "projected_backward_amax": 0.25000000000000044,
+      "projected_forward_amax": 0.25000000000000044,
+      "seed": 123,
+      "stream_count": 4,
+      "unconstrained_backward_amax": 72698952041.1823,
+      "unconstrained_forward_amax": 72698952041.1823
+    },
+    {
+      "depth": 100,
+      "evidence_kind": "toy_random_matrix_propagation",
+      "projected_backward_amax": 0.25000000000000056,
+      "projected_forward_amax": 0.25000000000000056,
+      "seed": 123,
+      "stream_count": 4,
+      "unconstrained_backward_amax": 1.523909766670727e+23,
+      "unconstrained_forward_amax": 1.523909766670727e+23
+    },
+    {
+      "depth": 10,
+      "evidence_kind": "toy_random_matrix_propagation",
+      "projected_backward_amax": 0.12500141601114562,
+      "projected_forward_amax": 0.12500141601114562,
+      "seed": 123,
+      "stream_count": 8,
+      "unconstrained_backward_amax": 5566.543841233574,
+      "unconstrained_forward_amax": 5566.543841233574
+    },
+    {
+      "depth": 50,
+      "evidence_kind": "toy_random_matrix_propagation",
+      "projected_backward_amax": 0.12500000000000025,
+      "projected_forward_amax": 0.12500000000000025,
+      "seed": 123,
+      "stream_count": 8,
+      "unconstrained_backward_amax": 1.786795356447086e+20,
+      "unconstrained_forward_amax": 1.786795356447086e+20
+    },
+    {
+      "depth": 100,
+      "evidence_kind": "toy_random_matrix_propagation",
+      "projected_backward_amax": 0.12500000000000042,
+      "projected_forward_amax": 0.12500000000000042,
+      "seed": 123,
+      "stream_count": 8,
+      "unconstrained_backward_amax": 2.4578530241627705e+40,
+      "unconstrained_forward_amax": 2.4578530241627705e+40
+    }
+  ],
+  "upstream_revision": "arxiv:2512.24880v2+github:tokenbender/mHC-manifold-constrained-hyper-connections@ad20d0d8db4d6fc7e8d9b148281167141da20d47"
+}

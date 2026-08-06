@@ -1,0 +1,9 @@
+gradio>=5.0,<6
+pandas>=2.0
+# Pinned: gradio 5.49.1 bundles a matching plotly.js; an unbounded plotly can pull a
+# newer schema the bundled renderer can't parse, blanking every gr.Plot. 6.8.0 is the
+# version the running Space renders with today.
+plotly==6.8.0
+jsonschema>=4.0
+apscheduler>=3.10
+huggingface_hub>=0.20

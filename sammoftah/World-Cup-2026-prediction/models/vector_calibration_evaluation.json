@@ -1,0 +1,83 @@
+{
+  "baseline": "shipped global temperature calibration",
+  "method": "regularized five-parameter multiclass vector scaling",
+  "rolling_origin_regularization_scores": {
+    "0.0001": 0.7525188824528779,
+    "0.001": 0.7526886773719569,
+    "0.01": 0.7541321350490496,
+    "0.1": 0.7578710034159443
+  },
+  "selected_regularization": 0.0001,
+  "parameters": [
+    1.0484497532436863,
+    0.8770152538723214,
+    0.9388567787680596,
+    0.8290372459085292,
+    0.49591824484502284
+  ],
+  "slices": {
+    "selection_descriptive": {
+      "baseline": {
+        "n": 7914,
+        "log_loss": 0.7917934118271145,
+        "brier": 0.4641057448243238,
+        "rps": 0.1471617663399534,
+        "ece": 0.00846231279824596
+      },
+      "candidate": {
+        "n": 7914,
+        "log_loss": 0.7651349976317772,
+        "brier": 0.44767783933088434,
+        "rps": 0.14003929365045623,
+        "ece": 0.009059596794553856
+      },
+      "blocked_log_loss_difference_95": [
+        -0.032996290530500585,
+        -0.020046464365746766
+      ]
+    },
+    "robustness_2026_viewed": {
+      "baseline": {
+        "n": 351,
+        "log_loss": 0.7931215868621926,
+        "brier": 0.46119749518248465,
+        "rps": 0.1453477516943903,
+        "ece": 0.04067188143421708
+      },
+      "candidate": {
+        "n": 351,
+        "log_loss": 0.7638626804396227,
+        "brier": 0.44661751123246113,
+        "rps": 0.13839649327242182,
+        "ece": 0.035138558590492315
+      },
+      "blocked_log_loss_difference_95": [
+        -0.05139728352686812,
+        -0.005637635590483102
+      ]
+    },
+    "robustness_2026_neutral_viewed": {
+      "baseline": {
+        "n": 143,
+        "log_loss": 0.7916431257734952,
+        "brier": 0.45920689749839105,
+        "rps": 0.1474630439153726,
+        "ece": 0.10246247217248158
+      },
+      "candidate": {
+        "n": 143,
+        "log_loss": 0.6571008523753717,
+        "brier": 0.37555349693483997,
+        "rps": 0.10922584831530416,
+        "ece": 0.16122760848044432
+      },
+      "blocked_log_loss_difference_95": [
+        -0.14603544930037682,
+        -0.12198283454688964
+      ]
+    }
+  },
+  "research_gate_passed": false,
+  "production_adopted": false,
+  "claim_boundary": "The 2026 slice has already been viewed and used in prior model decisions. It is a robustness diagnostic, not pristine confirmation. Production adoption requires a future pre-registered evaluation period."
+}

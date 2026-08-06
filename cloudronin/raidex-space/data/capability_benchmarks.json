@@ -1,0 +1,52 @@
+{
+  "_note": "Sourced 2026-06-19 from each model's official materials (system/model cards, technical reports, launch pages). Models are each lab's current flagship as of June 2026. 1 = the developer reports that benchmark (or a same-family variant, e.g. MMLU-Pro, MMMU-Pro, GMMLU, SimpleQA-Verified, AIME 2026, t2-bench) for this model; 0 = not reported or unconfirmed. Cells reflect each developer's established reporting pattern; see per-model notes for variant and edge-case details. The contrast holds: capability is widely reported, RAI/safety benchmarks rarely. The RAI grid mirrors Raidex's 8 constituents; AdvGLUE (robustness) and ConfAIde (privacy) are not reported in any flagship card, so they are 0 across the board.",
+  "capability_benchmarks": ["MMLU", "GPQA", "AIME", "SWE-bench", "MMMU", "ARC-AGI-2", "FrontierMath", "tau2-bench", "HLE"],
+  "rai_benchmarks": ["BBQ", "WMDP", "SimpleQA", "StrongREJECT", "ETHICS", "XSTest", "AdvGLUE", "ConfAIde"],
+  "models": {
+    "GPT-5.5": {
+      "capability": [1, 1, 1, 1, 1, 1, 1, 1, 0],
+      "rai": [0, 0, 0, 1, 0, 0, 0, 0],
+      "source": "https://openai.com/index/introducing-gpt-5-5/"
+    },
+    "Claude Opus 4.8": {
+      "capability": [1, 1, 0, 1, 0, 0, 0, 0, 1],
+      "rai": [1, 0, 1, 0, 0, 0, 0, 0],
+      "source": "https://www.anthropic.com/news/claude-opus-4-8"
+    },
+    "Gemini 3.1 Pro": {
+      "capability": [1, 1, 1, 1, 1, 1, 0, 1, 1],
+      "rai": [0, 0, 1, 0, 0, 0, 0, 0],
+      "source": "https://deepmind.google/models/model-cards/gemini-3-1-pro/"
+    },
+    "Grok 4.3": {
+      "capability": [0, 1, 1, 0, 0, 1, 0, 0, 1],
+      "rai": [0, 1, 0, 0, 0, 0, 0, 0],
+      "source": "https://x.ai/news/grok-4-3"
+    },
+    "DeepSeek V4": {
+      "capability": [1, 1, 1, 1, 0, 0, 0, 1, 1],
+      "rai": [0, 0, 0, 0, 0, 0, 0, 0],
+      "source": "https://huggingface.co/deepseek-ai"
+    },
+    "GLM-5.2": {
+      "capability": [1, 1, 1, 1, 0, 0, 0, 1, 1],
+      "rai": [0, 0, 0, 0, 0, 0, 0, 0],
+      "source": "https://huggingface.co/zai-org/GLM-5.2"
+    },
+    "Qwen3.7 Max": {
+      "capability": [1, 1, 0, 1, 0, 0, 0, 0, 1],
+      "rai": [0, 0, 0, 0, 0, 0, 0, 0],
+      "source": "https://qwen.ai/blog?id=qwen3.7"
+    }
+  },
+  "notes": {
+    "GPT-5.5": "OpenAI's flagship as of June 2026 (GPT-5.2 was retired 2026-06-12; GPT-5.6 expected later in June). Reports the full capability suite (MMLU multilingual, GPQA, AIME, SWE-bench Verified, MMMU-Pro, ARC-AGI-2, FrontierMath, tau2) + StrongREJECT-filtered in the system card; HLE unconfirmed.",
+    "Claude Opus 4.8": "Current Anthropic flagship (supersedes 4.6/4.7). MMLU via GMMLU (multilingual); AIME not reported (uses USAMO 2026); reports BBQ (system card 4.4.2) and SimpleQA-Verified.",
+    "Gemini 3.1 Pro": "Google's latest flagship with a published model card (Gemini 3.5 Pro was announced at I/O May 2026 but has no public model card / benchmarks yet). MMLU via MMMLU; MMMU via MMMU-Pro; tau2-bench as t2-bench; SimpleQA via SimpleQA-Verified. Safety reported via Google's Frontier Safety Framework + internal evals, not public RAI benchmarks.",
+    "Grok 4.3": "xAI's flagship as of June 2026 (released Apr 30; Grok 5 still in training). Capability on the launch/model pages (GPQA, AIME, ARC-AGI-2, HLE); WMDP (bio/chem/cyber) in the model card. xAI cards are safety-focused; capability lives on the launch page.",
+    "DeepSeek V4": "DeepSeek's flagship (V4-Pro, Apr 24 2026 preview; supersedes V3.2). MMLU via MMLU-Pro; tau2 as tau2-Bench. Reports a SimpleQA-style score as an agentic web-search task, not closed-book RAI factuality — so not counted in the RAI grid. No RAI/safety benchmark section.",
+    "GLM-5.2": "Zhipu/Z.ai's flagship (June 13 2026, MIT open weights; supersedes GLM-5). MMLU via MMLU-Pro; AIME; tau2 as tau2-Bench. No safety/RAI benchmark section in card or report.",
+    "Qwen3.7 Max": "Alibaba's flagship (closed-weight, May 2026). MMLU via MMLU-Pro; AIME and tau2 not reported for the 3.7-Max flagship; technical report forthcoming. No safety/RAI section.",
+    "_rai_coverage": "Robustness (AdvGLUE) and privacy (ConfAIde) are not reported in any current flagship model card or technical report — 0 across all developers. Raidex runs all 8."
+  }
+}

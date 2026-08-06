@@ -1,0 +1,94 @@
+{
+ "captured_at": "2026-08-04T13:40:21Z",
+ "hf_metadata": {
+  "_id": "69a5403d2c9d7bc7051a77a8",
+  "author": "Innovision",
+  "cardData": {
+   "app_file": "app.py",
+   "colorFrom": "green",
+   "colorTo": "indigo",
+   "emoji": "🐨",
+   "license": "apache-2.0",
+   "pinned": false,
+   "sdk": "gradio",
+   "sdk_version": "6.6.0",
+   "short_description": "De-KCIB (Deep Knowledge Center for Injury Biomechanics)",
+   "title": "De-KCIB Copilot by Innovision"
+  },
+  "createdAt": "2026-03-02T07:46:05.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://innovision-de-kcib-copilot.hf.space",
+  "id": "Innovision/De-KCIB_Copilot",
+  "lastModified": "2026-07-08T06:10:16.000Z",
+  "likes": 0,
+  "private": false,
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "innovision-de-kcib-kick-off.hf.space",
+     "stage": "READY"
+    },
+    {
+     "domain": "innovision-de-kcib.hf.space",
+     "stage": "READY"
+    },
+    {
+     "domain": "innovision-de-kcib-copilot.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": null,
+    "requested": "cpu-basic"
+   },
+   "replicas": {
+    "requested": 1
+   },
+   "stage": "SLEEPING"
+  },
+  "sdk": "gradio",
+  "sha": "8ab3c3fe6ffe0b639ef8628da686e56ea6089f40",
+  "siblings": [
+   {
+    "rfilename": ".gitattributes"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "app.py"
+   },
+   {
+    "rfilename": "logo1.png"
+   },
+   {
+    "rfilename": "logo2.png"
+   },
+   {
+    "rfilename": "logo3.png"
+   },
+   {
+    "rfilename": "requirements.txt"
+   }
+  ],
+  "subdomain": "innovision-de-kcib-copilot",
+  "tags": [
+   "gradio",
+   "region:us"
+  ],
+  "usedStorage": 116936
+ },
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "Innovision/De-KCIB_Copilot",
+ "repo_type": "spaces",
+ "sha": "8ab3c3fe6ffe0b639ef8628da686e56ea6089f40",
+ "web_url": "https://huggingface.co/spaces/Innovision/De-KCIB_Copilot"
+}

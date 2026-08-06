@@ -1,0 +1,27 @@
+{
+ "captured_at": "2026-08-04T16:02:06Z",
+ "hf_metadata": {
+  "sha": "531939534c1f43ab4de022c1661578778064eb95"
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  },
+  {
+   "original": ".gitignore",
+   "stored_as": "_gitignore"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "cloudronin/raidex-space",
+ "repo_type": "spaces",
+ "sha": "531939534c1f43ab4de022c1661578778064eb95",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/cloudronin/raidex-space"
+}

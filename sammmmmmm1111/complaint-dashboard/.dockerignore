@@ -1,0 +1,9 @@
+.env
+.env.*
+venv/
+__pycache__/
+*.pyc
+logs/
+test_import.py
+check_file.py
+update.py

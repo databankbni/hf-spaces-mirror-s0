@@ -1,0 +1,91 @@
+{
+ "captured_at": "2026-08-04T14:32:12Z",
+ "hf_metadata": {
+  "_id": "6a6bdff7b8f7820f861d42d1",
+  "author": "Nanthasit",
+  "cardData": {
+   "app_file": "app.py",
+   "colorFrom": "blue",
+   "colorTo": "indigo",
+   "emoji": "🌐",
+   "pinned": false,
+   "python_version": "3.12",
+   "sdk": "gradio",
+   "short_description": "Interactive web-agent demo powered by SakThai models",
+   "title": "SakThai Web Agent"
+  },
+  "createdAt": "2026-07-30T23:36:23.000Z",
+  "datasets": [
+   "Nanthasit/sakthai-coder-browser"
+  ],
+  "disabled": false,
+  "gated": false,
+  "host": "https://nanthasit-sakthai-web-agent.hf.space",
+  "id": "Nanthasit/sakthai-web-agent",
+  "lastModified": "2026-08-01T03:05:14.000Z",
+  "likes": 0,
+  "models": [
+   "Nanthasit/sakthai-coder-browser"
+  ],
+  "private": false,
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "nanthasit-sakthai-web-agent.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": null,
+    "requested": "cpu-basic"
+   },
+   "replicas": {
+    "requested": 1
+   },
+   "stage": "PAUSED"
+  },
+  "sdk": "gradio",
+  "sha": "6c23263c98d77ce6e9e49462a2114dc7b3f2c306",
+  "siblings": [
+   {
+    "rfilename": ".eval_results/health-2026-07-31-sakthai-web-agent.yaml"
+   },
+   {
+    "rfilename": ".eval_results/health-sakthai-web-agent-2026-08-01.yaml"
+   },
+   {
+    "rfilename": ".gitattributes"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "app.py"
+   },
+   {
+    "rfilename": "packages.txt"
+   },
+   {
+    "rfilename": "requirements.txt"
+   }
+  ],
+  "subdomain": "nanthasit-sakthai-web-agent",
+  "tags": [
+   "gradio",
+   "region:us"
+  ],
+  "usedStorage": 0
+ },
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "Nanthasit/sakthai-web-agent",
+ "repo_type": "spaces",
+ "sha": "6c23263c98d77ce6e9e49462a2114dc7b3f2c306",
+ "web_url": "https://huggingface.co/spaces/Nanthasit/sakthai-web-agent"
+}

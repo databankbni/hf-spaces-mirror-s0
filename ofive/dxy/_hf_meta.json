@@ -1,0 +1,31 @@
+{
+ "captured_at": "2026-08-04T16:44:54Z",
+ "hf_metadata": {
+  "sha": "f7786cfdc1908a88de2b0b3f55a7215b8ec53423"
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  },
+  {
+   "original": ".gitignore",
+   "stored_as": "_gitignore"
+  },
+  {
+   "original": ".idea/.gitignore",
+   "stored_as": ".idea/_gitignore"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "ofive/dxy",
+ "repo_type": "spaces",
+ "sha": "f7786cfdc1908a88de2b0b3f55a7215b8ec53423",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/ofive/dxy"
+}

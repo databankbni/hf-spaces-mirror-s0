@@ -1,0 +1,158 @@
+{
+ "captured_at": "2026-08-04T13:24:04Z",
+ "hf_metadata": {
+  "_id": "6a40c1bc8791003d8e7ddd30",
+  "author": "Daneel0505",
+  "cardData": {
+   "app_file": "app.py",
+   "colorFrom": "yellow",
+   "colorTo": "gray",
+   "emoji": "👀",
+   "license": "mit",
+   "pinned": false,
+   "python_version": "3.13",
+   "sdk": "gradio",
+   "sdk_version": "6.19.0",
+   "title": "Modelnet10 Classifier"
+  },
+  "createdAt": "2026-06-28T06:39:56.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://daneel0505-modelnet10-classifier.hf.space",
+  "id": "Daneel0505/modelnet10-classifier",
+  "lastModified": "2026-07-16T00:56:59.000Z",
+  "likes": 0,
+  "private": false,
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "daneel0505-modelnet10-classifier.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": null,
+    "requested": "cpu-basic"
+   },
+   "replicas": {
+    "requested": 1
+   },
+   "stage": "SLEEPING"
+  },
+  "sdk": "gradio",
+  "sha": "87c0facd5af92ef57a8e2ae314f5825c499ca889",
+  "siblings": [
+   {
+    "rfilename": ".gitattributes"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "app.py"
+   },
+   {
+    "rfilename": "best_model.pt"
+   },
+   {
+    "rfilename": "class_names.json"
+   },
+   {
+    "rfilename": "examples/bed_v0.png"
+   },
+   {
+    "rfilename": "examples/bed_v1.png"
+   },
+   {
+    "rfilename": "examples/bed_v2.png"
+   },
+   {
+    "rfilename": "examples/bed_v3.png"
+   },
+   {
+    "rfilename": "examples/chair_v0.png"
+   },
+   {
+    "rfilename": "examples/chair_v1.png"
+   },
+   {
+    "rfilename": "examples/chair_v2.png"
+   },
+   {
+    "rfilename": "examples/chair_v3.png"
+   },
+   {
+    "rfilename": "examples/monitor_v0.png"
+   },
+   {
+    "rfilename": "examples/monitor_v1.png"
+   },
+   {
+    "rfilename": "examples/monitor_v2.png"
+   },
+   {
+    "rfilename": "examples/monitor_v3.png"
+   },
+   {
+    "rfilename": "examples/sofa_v0.png"
+   },
+   {
+    "rfilename": "examples/sofa_v1.png"
+   },
+   {
+    "rfilename": "examples/sofa_v2.png"
+   },
+   {
+    "rfilename": "examples/sofa_v3.png"
+   },
+   {
+    "rfilename": "examples/table_v0.png"
+   },
+   {
+    "rfilename": "examples/table_v1.png"
+   },
+   {
+    "rfilename": "examples/table_v2.png"
+   },
+   {
+    "rfilename": "examples/table_v3.png"
+   },
+   {
+    "rfilename": "examples/toilet_v0.png"
+   },
+   {
+    "rfilename": "examples/toilet_v1.png"
+   },
+   {
+    "rfilename": "examples/toilet_v2.png"
+   },
+   {
+    "rfilename": "examples/toilet_v3.png"
+   },
+   {
+    "rfilename": "off2obj.py"
+   },
+   {
+    "rfilename": "requirements.txt"
+   }
+  ],
+  "subdomain": "daneel0505-modelnet10-classifier",
+  "tags": [
+   "gradio",
+   "region:us"
+  ],
+  "usedStorage": 68159321
+ },
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "Daneel0505/modelnet10-classifier",
+ "repo_type": "spaces",
+ "sha": "87c0facd5af92ef57a8e2ae314f5825c499ca889",
+ "web_url": "https://huggingface.co/spaces/Daneel0505/modelnet10-classifier"
+}

@@ -1,0 +1,100 @@
+{
+ "captured_at": "2026-08-04T14:31:26Z",
+ "hf_metadata": {
+  "_id": "6a49160b188ffded12f48f45",
+  "author": "Maheshopt",
+  "cardData": {
+   "app_file": "PS5MonthlyPlanner.py",
+   "colorFrom": "blue",
+   "colorTo": "purple",
+   "emoji": "🎮",
+   "pinned": false,
+   "python_version": "3.10",
+   "sdk": "gradio",
+   "sdk_version": "4.0.0",
+   "title": "PS5 Monthly Planner"
+  },
+  "createdAt": "2026-07-04T14:17:47.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://maheshopt-ps5-monthly-planner.hf.space",
+  "id": "Maheshopt/PS5_monthly_planner",
+  "lastModified": "2026-07-11T18:39:05.000Z",
+  "likes": 0,
+  "private": false,
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "maheshopt-ps5-monthly-planner.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": null,
+    "requested": "cpu-basic"
+   },
+   "replicas": {
+    "requested": 1
+   },
+   "stage": "SLEEPING"
+  },
+  "sdk": "gradio",
+  "sha": "2ad5e447a05bba4fe3e8fa84fcdfe25b083bec4b",
+  "siblings": [
+   {
+    "rfilename": ".gitattributes"
+   },
+   {
+    "rfilename": ".gitignore"
+   },
+   {
+    "rfilename": ".gradio/certificate.pem"
+   },
+   {
+    "rfilename": "HF_DEPLOY.md"
+   },
+   {
+    "rfilename": "PS5MonthlyPlanner.py"
+   },
+   {
+    "rfilename": "PS5MonthlyPlanner_report.html"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "app.py"
+   },
+   {
+    "rfilename": "monthly_games_cache.json"
+   },
+   {
+    "rfilename": "requirements.txt"
+   },
+   {
+    "rfilename": "upload_files.py"
+   },
+   {
+    "rfilename": "upload_to_hf.py"
+   }
+  ],
+  "subdomain": "maheshopt-ps5-monthly-planner",
+  "tags": [
+   "gradio",
+   "region:us"
+  ],
+  "usedStorage": 0
+ },
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "Maheshopt/PS5_monthly_planner",
+ "repo_type": "spaces",
+ "sha": "2ad5e447a05bba4fe3e8fa84fcdfe25b083bec4b",
+ "web_url": "https://huggingface.co/spaces/Maheshopt/PS5_monthly_planner"
+}

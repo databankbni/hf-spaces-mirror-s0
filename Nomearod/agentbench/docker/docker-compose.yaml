@@ -1,0 +1,11 @@
+services:
+  agent-bench:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+    # No volume mount — container uses its own build-time ingested store.
+    # The image is self-contained: model + store are baked in at build.

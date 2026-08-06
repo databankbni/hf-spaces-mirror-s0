@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PS5 Monthly Planner Technical Report</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 1100px; margin: 0 auto; padding: 32px; line-height: 1.6; background: #f4f7fb; color: #1f2a3d; }
+    h1, h2, h3 { color: #0d2d66; }
+    h1 { margin-bottom: 0.25em; }
+    section { margin-bottom: 32px; padding: 24px; background: #ffffff; border-radius: 16px; box-shadow: 0 12px 36px rgba(31, 42, 61, 0.08); }
+    pre { background: #eef4ff; padding: 16px; border-radius: 12px; overflow-x: auto; }
+    code { font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace; }
+    ul { margin-top: 0.5em; }
+    p { margin: 0.8em 0; }
+    .note { background: #e8f1ff; border-left: 4px solid #4b7bd1; padding: 12px 16px; border-radius: 10px; }
+  </style>
+</head>
+<body>
+  <h1>PS5 Monthly Planner — Technical Report</h1>
+  <p>This report describes the implementation of the PS5 Monthly Planner project, including architecture, scraping logic, Gradio UI wiring, data persistence, and important code details.</p>
+
+  <section>
+    <h2>Project Overview</h2>
+    <p>The project uses <strong>Gradio</strong> for a browser-based UI and <strong>BeautifulSoup</strong> for scraping PlayStation release data from <code>psindex.co.uk</code>. The app loads monthly PS5 release listings, shows them in a paginated table, allows game selection, and generates a planner with daily playtime estimates.</p>
+  </section>
+
+  <section>
+    <h2>Main Files</h2>
+    <ul>
+      <li><code>PS5MonthlyPlanner.py</code>: application implementation and scraper logic</li>
+      <li><code>planner_memory.json</code>: persisted planner history saved between runs</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Dependencies</h2>
+    <ul>
+      <li><strong>gradio</strong>: UI framework</li>
+      <li><strong>beautifulsoup4</strong>: HTML parsing</li>
+      <li><strong>requests</strong> optional, used if installed; otherwise <code>urllib</code> is used</li>
+      <li><strong>json</strong>, <strong>datetime</strong>, <strong>re</strong>, <strong>os</strong>, <strong>time</strong></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Data Persistence</h2>
+    <h3>Memory file</h3>
+    <p>The file <code>planner_memory.json</code> stores saved planner entries and the most recent planner selection. The loader gracefully handles invalid JSON and creates a backup when the file is corrupted.</p>
+    <pre><code>def load_memory():
+    if os.path.exists(MEMORY_FILE):
+        try:
+            with open(MEMORY_FILE, "r", encoding="utf-8") as f:
+                return json.load(f)
+        except json.JSONDecodeError as e:
+            print(f"Warning: could not parse {MEMORY_FILE}: {e}. Resetting saved history.")
+</code></pre>
+    <p><code>save_memory()</code> uses <code>json.dump(..., default=str)</code> so non-serializable objects like <code>datetime.date</code> can be saved safely.</p>
+  </section>
+
+  <section>
+    <h2>Fetching Remote HTML</h2>
+    <p>The function <code>fetch_url_text()</code> provides resilient page retrieval:</p>
+    <ul>
+      <li>Prefer <code>requests.get()</code> when available</li>
+      <li>Fallback to <code>urllib.request.urlopen()</code></li>
+      <li>Use browser-like headers to avoid blocking</li>
+      <li>Cache responses for up to 600 seconds</li>
+      <li>Retry on 429 Too Many Requests with exponential backoff</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Release Date Parsing</h2>
+    <p>Release dates are normalized into Python <code>datetime.date</code> using <code>parse_release_date()</code>. It supports:</p>
+    <ul>
+      <li><code>YYYY-MM-DD</code></li>
+      <li><code>DD Month YYYY</code></li>
+      <li><code>DD Month</code> plus default year</li>
+      <li><code>TBA</code>, <code>TBD</code>, and <code>UNKNOWN</code> as future dates</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Scraping Monthly Game Releases</h2>
+    <p>The heart of the scraper is <code>fetch_games(month, year)</code>:</p>
+    <ul>
+      <li>Builds primary and calendar URLs for the selected month</li>
+      <li>Tries page selectors in order: <code>div.min-w-0.space-y-2</code>, <code>div.space-y-2</code>, and <code>article</code></li>
+      <li>Extracts title text from either visible link text or <code>aria-label</code></li>
+      <li>Ignores placeholder entries like <code>View game</code> or <code>View editions</code></li>
+      <li>Removes duplicate game URLs</li>
+      <li>Extracts date text from paragraph or nested elements, with a regex fallback</li>
+      <li>Sorts results by release date and title</li>
+    </ul>
+    <pre><code>def fetch_games(month, year):
+    month_num = datetime.datetime.strptime(month, "%B").month
+    url_primary = f"https://www.psindex.co.uk/releases/{year}/{month_num:02d}"
+    url_calendar = f"https://www.psindex.co.uk/releases/{year}/{month_num:02d}/calendar"
+    urls = [url_primary, url_calendar]
+    ...
+</code></pre>
+  </section>
+
+  <section>
+    <h2>Planner Generation</h2>
+    <p><code>generate_planner()</code> builds the monthly plan and computes the daily hour goal.</p>
+    <h3>Daily hours formula</h3>
+    <pre><code>days = (first day of next month) - (first day of current month)
+daily_hours = round(game.get("hours", 40) / days, 2)
+</code></pre>
+    <p>For December, it correctly wraps to January of the next year.</p>
+    <p>The function also saves the planner to history and updates the past planner dropdown.</p>
+  </section>
+
+  <section>
+    <h2>Pagination and Filtering</h2>
+    <ul>
+      <li><code>render_games_page()</code> displays 12 games per page</li>
+      <li><code>load_monthly_games()</code> fetches and stores games in <code>LAST_GAMES</code></li>
+      <li><code>change_games_page()</code> moves between pages</li>
+      <li><code>filter_game_choices()</code> filters dropdown entries based on the search textbox</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>UI Wiring with Gradio</h2>
+    <p>The app uses a <code>gr.Blocks()</code> layout consisting of:</p>
+    <ul>
+      <li>Month and year dropdowns</li>
+      <li>Load Games button</li>
+      <li>HTML display panel for the game list</li>
+      <li>Search textbox + game selector</li>
+      <li>Generate Planner button</li>
+      <li>Cover image and game info panels</li>
+      <li>Planner HTML output</li>
+      <li>Past planner dropdown and load button</li>
+    </ul>
+    <p>Callback wiring is implemented with <code>.click()</code> and <code>.change()</code> handlers.</p>
+  </section>
+
+  <section>
+    <h2>Styling and Launch</h2>
+    <p>Custom CSS is injected during <code>demo.launch()</code> to provide a light-blue background and modern panel styling.</p>
+    <p>The app now only launches when run directly, thanks to:</p>
+    <pre><code>if __name__ == "__main__":
+    demo.launch(...)
+</code></pre>
+  </section>
+
+  <section>
+    <h2>Important Implementation Details</h2>
+    <ul>
+      <li><strong>Global state:</strong> <code>LAST_GAMES</code> stores currently loaded games for detail display.</li>
+      <li><strong>History safety:</strong> invalid JSON is backed up and reset automatically.</li>
+      <li><strong>Date serialization:</strong> planner saves use <code>default=str</code> so <code>datetime.date</code> does not break JSON.</li>
+      <li><strong>Fallback scraping:</strong> if the page structure changes, the scraper tries multiple selectors.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>How the App Works End-to-End</h2>
+    <ol>
+      <li>User selects month/year and clicks <strong>Load Games</strong>.</li>
+      <li>App calls <code>fetch_games()</code> and parses the PS Index release page.</li>
+      <li>Games load into the HTML table and dropdown.
+      <li>User can filter games using the search box.</li>
+      <li>User selects a game and clicks <strong>Generate Planner</strong>.</li>
+      <li>App computes daily hours and returns the planner HTML.</li>
+      <li>Planner is saved to <code>planner_memory.json</code> for later retrieval.</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Conclusion</h2>
+    <p>This project is a compact web-based PS5 release planner built around scraping, UI state, and history persistence. It is designed to remain robust against page structure changes and to store user planner output safely.</p>
+  </section>
+</body>
+</html>

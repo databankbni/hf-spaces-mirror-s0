@@ -1,0 +1,188 @@
+<!-- ============================================================
+     PUSAT AI AGENT — Dashboard (tempel ke Elementor: widget HTML)
+     Agent dikelompokkan per fungsi, tiap grup berupa dropdown.
+     Edit bagian KONFIGURASI di bawah sesuai URL milikmu.
+     ============================================================ -->
+<div id="aihub">
+  <div class="aihub-head">
+    <div>
+      <h2 class="aihub-title">🤖 Pusat AI Agent</h2>
+      <p class="aihub-sub">Semua AI agent Taharica dalam satu tempat — dikelompokkan per fungsi</p>
+    </div>
+    <div class="aihub-status" id="aihub-backend">
+      <span class="aihub-dot pending"></span><span>Cek status backend…</span>
+    </div>
+  </div>
+  <div class="aihub-toolbar">
+    <button class="aihub-toggle-all" id="aihub-expand" type="button">Buka semua</button>
+    <button class="aihub-toggle-all" id="aihub-collapse" type="button">Tutup semua</button>
+  </div>
+  <div id="aihub-groups"></div>
+</div>
+
+<style>
+html, body { background: #0f1420 !important; }
+#aihub { font-family: 'Poppins', system-ui, sans-serif; max-width: 1100px; margin: 0 auto; color: #e5e7eb;
+         background: transparent; padding: 28px 20px; }
+#aihub * { box-sizing: border-box; }
+.aihub-head { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:14px; margin-bottom:16px; }
+.aihub-title { font-size:26px; font-weight:800; margin:0; color:#f8fafc; }
+.aihub-sub { margin:4px 0 0; color:#94a3b8; font-size:14px; }
+.aihub-status { display:flex; align-items:center; gap:8px; font-size:13px; font-weight:600; background:#1a2130; color:#cbd5e1; padding:8px 14px; border-radius:999px; border:1px solid #2a3344; }
+.aihub-dot { width:10px; height:10px; border-radius:50%; display:inline-block; flex-shrink:0; }
+.aihub-dot.online { background:#22c55e; box-shadow:0 0 0 4px rgba(34,197,94,.22); }
+.aihub-dot.offline { background:#ef4444; box-shadow:0 0 0 4px rgba(239,68,68,.22); }
+.aihub-dot.pending { background:#f59e0b; }
+.aihub-dot.static  { background:#3b82f6; }
+
+.aihub-toolbar { display:flex; gap:8px; justify-content:flex-end; margin-bottom:14px; }
+.aihub-toggle-all { background:transparent; border:1px solid #2a3344; color:#94a3b8; font-family:inherit; font-size:12px; padding:5px 12px; border-radius:8px; cursor:pointer; }
+.aihub-toggle-all:hover { background:#1a2130; color:#cbd5e1; }
+
+/* Grup dropdown */
+.aihub-group { margin-bottom:14px; border:1px solid #273044; border-radius:16px; background:#131824; overflow:hidden; }
+.aihub-group > summary { list-style:none; cursor:pointer; display:flex; align-items:center; gap:12px; padding:16px 20px; user-select:none; }
+.aihub-group > summary::-webkit-details-marker { display:none; }
+.aihub-group > summary:hover { background:#161d2b; }
+.aihub-group-icon { width:38px; height:38px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:20px; flex-shrink:0; }
+.aihub-group-name { font-size:16px; font-weight:700; color:#f1f5f9; }
+.aihub-group-count { font-size:11.5px; color:#94a3b8; background:#1f2737; padding:2px 10px; border-radius:999px; }
+.aihub-chev { margin-left:auto; color:#94a3b8; font-size:13px; transition:transform .2s; }
+.aihub-group[open] .aihub-chev { transform:rotate(180deg); }
+.aihub-group-body { padding:2px 18px 20px; }
+
+.aihub-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:16px; }
+.aihub-card { background:#161c2a; border:1px solid #273044; border-radius:14px; padding:20px; display:flex; flex-direction:column; box-shadow:0 4px 18px rgba(0,0,0,.3); transition:transform .15s, box-shadow .15s, border-color .15s; }
+.aihub-card:hover { transform:translateY(-3px); box-shadow:0 12px 30px rgba(0,0,0,.5); border-color:#3b4860; }
+.aihub-card-top { display:flex; align-items:center; gap:12px; margin-bottom:12px; }
+.aihub-icon { width:46px; height:46px; border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:23px; flex-shrink:0; }
+.aihub-card h3 { margin:0; font-size:16px; font-weight:700; color:#f1f5f9; }
+.aihub-badge { font-size:11px; font-weight:700; padding:3px 9px; border-radius:999px; display:inline-flex; align-items:center; gap:5px; margin-top:3px; }
+.aihub-desc { color:#94a3b8; font-size:13px; line-height:1.6; flex:1; margin:0 0 16px; }
+.aihub-btn { display:inline-block; text-align:center; text-decoration:none; background:#3b82f6; color:#fff !important; font-weight:600; font-size:13.5px; padding:11px 16px; border-radius:10px; transition:background .15s; }
+.aihub-btn:hover { background:#2563eb; }
+.aihub-btn.ghost { background:transparent; color:#cbd5e1 !important; border:1px solid #3b4860; }
+.aihub-btn.ghost:hover { background:#1f2737; }
+</style>
+
+<script>
+(function () {
+  // ===== KONFIGURASI (edit sesuai punyamu) =====
+  var BACKEND_URL = "https://arapaza-ai-agent.hf.space";
+  var LINK_DASHBOARD_INTERN = "https://eknowledge.taharica.com/admin-dashboard-intern/";
+  var LINK_SPREADSHEET      = "https://docs.google.com/spreadsheets/d/1086rJ803Dl5K-YZIFBbF6ObLE5Upt7mnJcokpLvbVEM/edit";
+  var LINK_API_DOCS         = BACKEND_URL + "/docs";
+  var LINK_BMS              = "https://eknowledge.taharica.com/ai-agent-bms/";
+  var LINK_PENETRASI        = "https://eknowledge.taharica.com/agent-penetrasi/";
+  var LINK_KONTEN_IG        = "https://eknowledge.taharica.com/agent-content/";
+  var LINK_HOBO             = "https://eknowledge.taharica.com/ai-hobo/";
+  var LINK_FAKOPP           = "https://eknowledge.taharica.com/ai-fakopp/";
+  var LINK_HMP              = "https://eknowledge.taharica.com/ai-hmp/";
+  var LINK_TIMBANGAN        = "https://eknowledge.taharica.com/ai-timbangan/";
+  var LINK_LOADCELL         = "https://eknowledge.taharica.com/ai-loadcell/";
+  var LINK_MICROEPSILON     = "https://eknowledge.taharica.com/ai-microepsilon/";
+
+  // ===== Grup agent (per fungsi) =====
+  var GROUPS = [
+    {
+      nama:"Marketing & Konten", icon:"📣", bg:"rgba(236,72,153,.16)",
+      agents:[
+        { icon:"🗂️", bg:"rgba(59,130,246,.16)", nama:"Content Planner",
+          desc:"Bikin brief konten per-slide (Instagram, LinkedIn, dll) otomatis dari topik + link referensi. Langsung jadi task untuk tim desain.",
+          live:true, btn:{ text:"Buka Dashboard Intern", url:LINK_DASHBOARD_INTERN } },
+        { icon:"✍️", bg:"rgba(34,197,94,.16)", nama:"Article + SEO Generator",
+          desc:"Generate artikel SEO lengkap dari keyword, auto cek & perbaiki ala Yoast, lalu publish draft ke 9 website WordPress.",
+          live:false, staticLabel:"Google Sheet", btn:{ text:"Buka Spreadsheet", url:LINK_SPREADSHEET } },
+        { icon:"🔎", bg:"rgba(239,68,68,.16)", nama:"SEO Checker",
+          desc:"Nilai artikel pakai standar Yoast (SEO + readability), kasih skor, checklist, dan saran perbaikan. Dipakai oleh generator artikel.",
+          live:true, btn:{ text:"Lihat API Docs", url:LINK_API_DOCS } },
+        { icon:"🎨", bg:"rgba(236,72,153,.16)", nama:"Konten Instagram Generator",
+          desc:"Tulis brief → 4 agent (detailing, layouting, checker, checker visual) menyusun 1-5 slide konten IG format 4:5 siap-unduh.",
+          live:true, btn:{ text:"Buka Konten Generator", url:LINK_KONTEN_IG } },
+        { icon:"🚀", bg:"rgba(139,92,246,.16)", nama:"Market Penetration Strategist",
+          desc:"Isi profil bisnis → 11 AI agent (riset pasar, kompetitor, persona → positioning, pricing, channel → content, SEO, ads, lead gen → analitik) menyusun strategi penetrasi pasar + rencana 30/60/90 hari.",
+          live:true, btn:{ text:"Buka Market Strategist", url:LINK_PENETRASI } }
+      ]
+    },
+    {
+      nama:"Sales & Service Produk", icon:"🛠️", bg:"rgba(14,165,233,.16)",
+      agents:[
+        { icon:"🏢", bg:"rgba(168,85,247,.16)", nama:"BMS Sales Assistant",
+          desc:"Tempel chat customer (+ gambar CAD). Agent menerjemahkan permintaan teknis Building Management System jadi mudah dipahami + rekomendasi balasan siap pakai. Mode chat.",
+          live:true, btn:{ text:"Buka BMS Assistant", url:LINK_BMS } },
+        { icon:"🌡️", bg:"rgba(14,165,233,.16)", nama:"HOBO Data Logger",
+          desc:"Sales & service HOBO (Onset) data logger. Analisa kebutuhan, rekomendasi produk (cek onsetcomp.com & loggerindo.com), teknis, service, compare & estimasi harga.",
+          live:true, btn:{ text:"Buka HOBO Assistant", url:LINK_HOBO } },
+        { icon:"🌳", bg:"rgba(16,185,129,.16)", nama:"Fakopp",
+          desc:"Sales & service alat uji pohon & kayu (Fakopp). Rekomendasi produk (cek fakopp.com), metode ukur, service, compare & estimasi harga. Mode chat + skematik.",
+          live:true, btn:{ text:"Buka Fakopp Assistant", url:LINK_FAKOPP } },
+        { icon:"🏗️", bg:"rgba(217,119,6,.16)", nama:"HMP (Uji Tanah)",
+          desc:"Sales & service alat uji daya dukung & pemadatan tanah (HMP — LWD/LFG, plate load test). Rekomendasi produk (cek hmp-online.de), metode uji, service, compare & harga.",
+          live:true, btn:{ text:"Buka HMP Assistant", url:LINK_HMP } },
+        { icon:"⚖️", bg:"rgba(99,102,241,.16)", nama:"Timbangan",
+          desc:"Sales & service timbangan & load cell (counting, lantai, platform, truk, lab, gantung). Analisa kapasitas/ketelitian, rekomendasi (cek timbanganindonesia.com), tera/kalibrasi, compare & harga.",
+          live:true, btn:{ text:"Buka Timbangan Assistant", url:LINK_TIMBANGAN } },
+        { icon:"🔩", bg:"rgba(220,38,38,.16)", nama:"Load Cell",
+          desc:"Sales & service load cell dari merek keagenan (CAS, Zemic, Dini Argeo, Kistler, Vibra, dll). Analisa aplikasi/kapasitas/tipe, rekomendasi (cek rajaloadcell.com), konfigurasi, kalibrasi, compare & harga.",
+          live:true, btn:{ text:"Buka Load Cell Assistant", url:LINK_LOADCELL } },
+        { icon:"📏", bg:"rgba(120,190,32,.16)", nama:"Micro-Epsilon",
+          desc:"Sales & service sensor presisi Micro-Epsilon (optoNCDT laser, confocalDT, eddyNCDT, capaNCDT, thermoMETER, scanCONTROL, wireSENSOR). Analisa besaran/target/akurasi, pilih teknologi & produk (cek micro-epsilon.com), integrasi, kalibrasi, compare & harga.",
+          live:true, btn:{ text:"Buka Micro-Epsilon Assistant", url:LINK_MICROEPSILON } }
+      ]
+    }
+  ];
+
+  function badge(a) {
+    if (a.live) return '<span class="aihub-badge" data-live="1" style="background:rgba(245,158,11,.18);color:#fcd34d;"><span class="aihub-dot pending"></span>cek…</span>';
+    return '<span class="aihub-badge" style="background:rgba(59,130,246,.18);color:#93c5fd;"><span class="aihub-dot static"></span>' + (a.staticLabel || "Aktif") + '</span>';
+  }
+
+  function cardHTML(a) {
+    var extra = (a.btn.url.indexOf("GANTI_") === 0)
+      ? '<span class="aihub-btn ghost" title="Edit URL di kode dashboard">⚠️ Set URL dulu</span>'
+      : '<a class="aihub-btn" href="' + a.btn.url + '" target="_blank" rel="noopener">' + a.btn.text + '</a>';
+    return '<div class="aihub-card">'
+      + '<div class="aihub-card-top"><div class="aihub-icon" style="background:' + a.bg + '">' + a.icon + '</div>'
+      + '<div><h3>' + a.nama + '</h3>' + badge(a) + '</div></div>'
+      + '<p class="aihub-desc">' + a.desc + '</p>'
+      + extra + '</div>';
+  }
+
+  document.getElementById("aihub-groups").innerHTML = GROUPS.map(function (g) {
+    return '<details class="aihub-group" open>'
+      + '<summary>'
+      + '<span class="aihub-group-icon" style="background:' + g.bg + '">' + g.icon + '</span>'
+      + '<span class="aihub-group-name">' + g.nama + '</span>'
+      + '<span class="aihub-group-count">' + g.agents.length + ' agent</span>'
+      + '<span class="aihub-chev">▾</span>'
+      + '</summary>'
+      + '<div class="aihub-group-body"><div class="aihub-grid">'
+      + g.agents.map(cardHTML).join("")
+      + '</div></div></details>';
+  }).join("");
+
+  // Buka / tutup semua grup
+  document.getElementById("aihub-expand").addEventListener("click", function () {
+    document.querySelectorAll(".aihub-group").forEach(function (d) { d.open = true; });
+  });
+  document.getElementById("aihub-collapse").addEventListener("click", function () {
+    document.querySelectorAll(".aihub-group").forEach(function (d) { d.open = false; });
+  });
+
+  // ===== Cek status backend (1 ping untuk semua agent berbasis HF) =====
+  fetch(BACKEND_URL + "/", { cache: "no-store" })
+    .then(function (r) { return r.ok; })
+    .then(function (ok) { setBackend(ok); })
+    .catch(function () { setBackend(false); });
+
+  function setBackend(ok) {
+    var el = document.getElementById("aihub-backend");
+    el.innerHTML = '<span class="aihub-dot ' + (ok ? "online" : "offline") + '"></span><span>Backend AI ' + (ok ? "Online" : "Offline") + '</span>';
+    document.querySelectorAll('.aihub-badge[data-live="1"]').forEach(function (b) {
+      b.style.background = ok ? "rgba(34,197,94,.18)" : "rgba(239,68,68,.18)";
+      b.style.color = ok ? "#86efac" : "#fca5a5";
+      b.innerHTML = '<span class="aihub-dot ' + (ok ? "online" : "offline") + '"></span>' + (ok ? "Online" : "Offline");
+    });
+  }
+})();
+</script>

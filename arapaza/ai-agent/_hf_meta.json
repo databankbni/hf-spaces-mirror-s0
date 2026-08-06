@@ -1,0 +1,226 @@
+{
+ "captured_at": "2026-08-04T15:51:45Z",
+ "hf_metadata": {
+  "_id": "6a2a1f6859c528b2c94a7523",
+  "author": "arapaza",
+  "cardData": {
+   "app_port": 7860,
+   "colorFrom": "blue",
+   "colorTo": "indigo",
+   "emoji": "🤖",
+   "pinned": false,
+   "sdk": "docker",
+   "title": "AI Agent Content Planner"
+  },
+  "createdAt": "2026-06-11T02:37:28.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://arapaza-ai-agent.hf.space",
+  "id": "arapaza/ai-agent",
+  "lastModified": "2026-07-14T09:16:36.000Z",
+  "likes": 0,
+  "private": false,
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "arapaza-ai-agent.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": "cpu-basic",
+    "requested": "cpu-basic"
+   },
+   "pySpacesVersion": "0.51.0",
+   "replicas": {
+    "current": 1,
+    "requested": 1
+   },
+   "sha": "74a2d09ef1d60bb7320962d669b02a0bb7ebef05",
+   "stage": "RUNNING"
+  },
+  "sdk": "docker",
+  "sha": "74a2d09ef1d60bb7320962d669b02a0bb7ebef05",
+  "siblings": [
+   {
+    "rfilename": ".claude/settings.local.json"
+   },
+   {
+    "rfilename": ".gitignore"
+   },
+   {
+    "rfilename": "Dockerfile"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "STRUKTUR.md"
+   },
+   {
+    "rfilename": "_arsip-latihan/API Key.txt"
+   },
+   {
+    "rfilename": "_arsip-latihan/agent_brief.py"
+   },
+   {
+    "rfilename": "_arsip-latihan/baca_link.py"
+   },
+   {
+    "rfilename": "_arsip-latihan/cek_model.py"
+   },
+   {
+    "rfilename": "_arsip-latihan/hello.py"
+   },
+   {
+    "rfilename": "_arsip-latihan/test_gemini.py"
+   },
+   {
+    "rfilename": "agent-bms/agent-bms.md"
+   },
+   {
+    "rfilename": "agent-bms/bms.html"
+   },
+   {
+    "rfilename": "agent-content-planner/agent-brief-checker.md"
+   },
+   {
+    "rfilename": "agent-content-planner/agent-content-planner.md"
+   },
+   {
+    "rfilename": "agent-fakopp/agent-fakopp.md"
+   },
+   {
+    "rfilename": "agent-fakopp/fakopp.html"
+   },
+   {
+    "rfilename": "agent-hmp/agent-hmp.md"
+   },
+   {
+    "rfilename": "agent-hmp/hmp.html"
+   },
+   {
+    "rfilename": "agent-hobo/agent-hobo.md"
+   },
+   {
+    "rfilename": "agent-hobo/hobo.html"
+   },
+   {
+    "rfilename": "agent-konten-ig/CARA-UPLOAD-GAMBAR.md"
+   },
+   {
+    "rfilename": "agent-konten-ig/agent-konten-ig.md"
+   },
+   {
+    "rfilename": "agent-konten-ig/aset/.gitkeep"
+   },
+   {
+    "rfilename": "agent-konten-ig/brand/CARA-PASANG-BRAND.md"
+   },
+   {
+    "rfilename": "agent-konten-ig/konten-ig.html"
+   },
+   {
+    "rfilename": "agent-konten-ig/referensi/.gitkeep"
+   },
+   {
+    "rfilename": "agent-loadcell/agent-loadcell.md"
+   },
+   {
+    "rfilename": "agent-loadcell/loadcell.html"
+   },
+   {
+    "rfilename": "agent-microepsilon/agent-microepsilon.md"
+   },
+   {
+    "rfilename": "agent-microepsilon/microepsilon.html"
+   },
+   {
+    "rfilename": "agent-penetrasi/agent-penetrasi.md"
+   },
+   {
+    "rfilename": "agent-penetrasi/penetrasi.html"
+   },
+   {
+    "rfilename": "agent-seo/agent-seo-checker.md"
+   },
+   {
+    "rfilename": "agent-seo/agent-seo-generator.md"
+   },
+   {
+    "rfilename": "agent-timbangan/agent-timbangan.md"
+   },
+   {
+    "rfilename": "agent-timbangan/timbangan.html"
+   },
+   {
+    "rfilename": "dashboard/dashboard.html"
+   },
+   {
+    "rfilename": "dashboard/dashboard.md"
+   },
+   {
+    "rfilename": "main.py"
+   },
+   {
+    "rfilename": "mesin_agent.py"
+   },
+   {
+    "rfilename": "mesin_bms.py"
+   },
+   {
+    "rfilename": "mesin_brief_checker.py"
+   },
+   {
+    "rfilename": "mesin_fakopp.py"
+   },
+   {
+    "rfilename": "mesin_hmp.py"
+   },
+   {
+    "rfilename": "mesin_hobo.py"
+   },
+   {
+    "rfilename": "mesin_konten_ig.py"
+   },
+   {
+    "rfilename": "mesin_loadcell.py"
+   },
+   {
+    "rfilename": "mesin_microepsilon.py"
+   },
+   {
+    "rfilename": "mesin_penetrasi.py"
+   },
+   {
+    "rfilename": "mesin_seo.py"
+   },
+   {
+    "rfilename": "mesin_timbangan.py"
+   },
+   {
+    "rfilename": "requirements.txt"
+   }
+  ],
+  "subdomain": "arapaza-ai-agent",
+  "tags": [
+   "docker",
+   "region:us"
+  ],
+  "usedStorage": 0
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitignore",
+   "stored_as": "_gitignore"
+  }
+ ],
+ "renamed_gitattributes": [],
+ "repo_id": "arapaza/ai-agent",
+ "repo_type": "spaces",
+ "sha": "74a2d09ef1d60bb7320962d669b02a0bb7ebef05",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/arapaza/ai-agent"
+}

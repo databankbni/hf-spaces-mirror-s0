@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>El Círculo Sagrado · El Retorno del Alma</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@400;500;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --void:#120726; --void2:#1c0d38; --neb:#2d1b52;
+    --neb-glow:#6b2fb3; --violet:#8b5cf6; --lilac:#b57bff; --neb-pink:#e0aaff;
+    --gold:#f5c451; --gold-soft:#ffd27f; --gold-pale:#ffe9b0; --gold-white:#fff6e0;
+    --ink:#ece6ff; --ink-dim:#b9a9e6; --ink-mute:#8b78bd;
+    --disp:"Cinzel Decorative", serif;
+    --sub:"Cinzel", serif;
+    --body:"EB Garamond", serif;
+    --stage-a:var(--void); --stage-b:var(--neb-glow);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  body{
+    font-family:var(--body); color:var(--ink);
+    background:var(--void); overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+    min-height:100dvh;
+  }
+  /* Fondo vivo que cambia de luz por etapa: morado nebulosa -> luz dorada */
+  #cielo{
+    position:fixed; inset:0; z-index:-2;
+    background:
+      radial-gradient(120% 90% at 50% 118%, var(--stage-b) 0%, transparent 60%),
+      radial-gradient(140% 120% at 50% -20%, #3a1f6e 0%, transparent 55%),
+      linear-gradient(180deg, var(--void) 0%, var(--void2) 45%, var(--stage-a) 100%);
+    transition:background 1600ms ease, filter 1600ms ease;
+  }
+  #estrellas{position:fixed; inset:0; z-index:-1; pointer-events:none; opacity:.9}
+
+  .escena{
+    display:none; min-height:100dvh; width:100%;
+    flex-direction:column; align-items:center; justify-content:center;
+    text-align:center; padding:clamp(22px,7vw,60px) 22px calc(34px + env(safe-area-inset-bottom));
+    gap:26px; animation:emerge 1200ms ease both;
+  }
+  .escena.viva{display:flex}
+  @keyframes emerge{from{opacity:0; transform:translateY(18px)} to{opacity:1; transform:none}}
+
+  .marca{font-family:var(--sub); letter-spacing:.42em; text-transform:uppercase;
+    font-size:12px; color:var(--lilac); opacity:.8}
+  h1{font-family:var(--disp); font-weight:900; line-height:1.02;
+    font-size:clamp(38px,12vw,74px); letter-spacing:.02em;
+    background:linear-gradient(180deg,#fff 0%,var(--neb-pink) 55%,var(--lilac) 100%);
+    -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;
+    text-shadow:0 0 46px rgba(181,123,255,.35)}
+  .lema{font-style:italic; font-size:clamp(17px,4.6vw,22px); color:var(--ink-dim);
+    max-width:34ch; line-height:1.5}
+  .susurro{font-family:var(--sub); font-size:13px; letter-spacing:.24em;
+    text-transform:uppercase; color:var(--ink-mute)}
+
+  .brasa{
+    font-family:var(--sub); font-weight:600; letter-spacing:.16em; text-transform:uppercase;
+    font-size:15px; color:#1a0e34; cursor:pointer; user-select:none;
+    padding:16px 34px; border:none; border-radius:999px;
+    background:linear-gradient(180deg,var(--gold-pale),var(--gold));
+    box-shadow:0 0 0 1px rgba(255,236,180,.6), 0 14px 40px -10px rgba(245,196,81,.6),
+               0 0 60px -8px rgba(245,196,81,.55);
+    transition:transform .25s ease, box-shadow .35s ease; position:relative;
+  }
+  .brasa:hover,.brasa:focus-visible{transform:translateY(-2px);
+    box-shadow:0 0 0 1px rgba(255,236,180,.8), 0 18px 52px -8px rgba(245,196,81,.75),
+               0 0 90px -6px rgba(245,196,81,.8); outline:none}
+  .brasa.tenue{background:transparent; color:var(--lilac);
+    box-shadow:inset 0 0 0 1px rgba(181,123,255,.45); text-shadow:none}
+  .brasa.tenue:hover{box-shadow:inset 0 0 0 1px rgba(224,170,255,.9); transform:translateY(-1px)}
+
+  /* ---------- ESCALERA DEL RETORNO ---------- */
+  #escena-escalera{justify-content:flex-start; gap:0; padding-top:clamp(30px,9vw,70px)}
+  .cima{font-family:var(--disp); font-weight:900; font-size:clamp(30px,10vw,56px);
+    letter-spacing:.14em; margin-bottom:6px;
+    color:var(--gold-white); text-shadow:0 0 30px rgba(245,196,81,.7),0 0 70px rgba(245,196,81,.35);
+    opacity:.25; transition:opacity 1.2s ease, text-shadow 1.2s ease}
+  .cima.encendida{opacity:1}
+  .cima small{display:block; font-family:var(--sub); font-weight:500; font-size:12px;
+    letter-spacing:.32em; color:var(--gold-soft); margin-top:6px; text-shadow:none}
+  .peldanos{display:flex; flex-direction:column-reverse; gap:14px; width:100%;
+    max-width:560px; margin:22px 0 30px}
+  .peldano{
+    display:flex; align-items:center; gap:16px; text-align:left;
+    padding:16px 18px; border-radius:16px;
+    background:linear-gradient(180deg,rgba(45,27,82,.55),rgba(28,13,56,.55));
+    box-shadow:inset 0 0 0 1px rgba(181,123,255,.16);
+    opacity:.28; filter:saturate(.6); transform:translateY(8px);
+    transition:opacity .8s ease, transform .8s ease, box-shadow .8s ease, filter .8s ease;
+  }
+  .peldano.abierto{opacity:1; transform:none; filter:none;
+    box-shadow:inset 0 0 0 1px rgba(224,170,255,.5), 0 10px 34px -14px rgba(139,92,246,.7)}
+  .peldano .num{font-family:var(--disp); font-weight:900; font-size:26px; min-width:40px;
+    text-align:center; color:var(--lilac)}
+  .peldano.abierto .num{background:linear-gradient(180deg,var(--gold-pale),var(--gold));
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .peldano .cuerpo h3{font-family:var(--sub); font-weight:600; letter-spacing:.14em;
+    font-size:16px; color:var(--ink)}
+  .peldano .cuerpo p{font-size:15.5px; color:var(--ink-dim); line-height:1.4; margin-top:3px}
+  .escalera-cta{margin-top:6px}
+
+  /* ---------- PUERTA DEL RETORNO (descifrador) ---------- */
+  .arco{width:118px; height:150px; margin:4px auto 6px; position:relative}
+  .arco::before{content:""; position:absolute; inset:0;
+    border:2px solid rgba(224,170,255,.55); border-radius:59px 59px 10px 10px;
+    box-shadow:0 0 40px rgba(181,123,255,.5), inset 0 0 40px rgba(181,123,255,.35)}
+  .arco::after{content:""; position:absolute; left:50%; top:14%; width:60%; height:78%;
+    transform:translateX(-50%); border-radius:50px 50px 6px 6px;
+    background:radial-gradient(60% 70% at 50% 30%, rgba(255,240,200,.28), transparent 70%)}
+  form{display:flex; flex-direction:column; gap:13px; width:100%; max-width:400px}
+  .campo{position:relative; text-align:left}
+  .campo label{font-family:var(--sub); font-size:11px; letter-spacing:.2em;
+    text-transform:uppercase; color:var(--ink-mute); margin-left:4px}
+  .campo input, .fila select, .fila input{
+    width:100%; margin-top:6px; padding:14px 16px; font-family:var(--body); font-size:17px;
+    color:var(--ink); background:rgba(28,13,56,.7); border:none; border-radius:12px;
+    box-shadow:inset 0 0 0 1px rgba(181,123,255,.3); transition:box-shadow .25s ease}
+  .campo input:focus, .fila select:focus, .fila input:focus{outline:none;
+    box-shadow:inset 0 0 0 1px rgba(224,170,255,.9), 0 0 24px -6px rgba(181,123,255,.6)}
+  .fila{display:grid; grid-template-columns:1fr 1.4fr 1.1fr; gap:9px}
+  .fila .campo{margin:0}
+  select{appearance:none}
+  .aviso{font-size:14px; color:var(--gold-soft); min-height:18px; font-style:italic}
+
+  /* ---------- LA CASA (tribu + 12 puertas) ---------- */
+  .revelado{font-family:var(--sub); letter-spacing:.16em; text-transform:uppercase;
+    font-size:13px; color:var(--ink-mute)}
+  .tribu-nombre{font-family:var(--disp); font-weight:900; font-size:clamp(34px,11vw,60px);
+    letter-spacing:.04em;
+    background:linear-gradient(180deg,var(--gold-white),var(--gold-soft) 60%,var(--gold));
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+    text-shadow:0 0 50px rgba(245,196,81,.45)}
+  .tribu-sim{font-style:italic; color:var(--ink-dim); font-size:18px; max-width:30ch}
+  .cifras{display:flex; gap:22px; flex-wrap:wrap; justify-content:center;
+    font-family:var(--sub); color:var(--ink-mute); font-size:13px; letter-spacing:.06em}
+  .cifras b{display:block; font-family:var(--disp); font-weight:700; font-size:24px;
+    color:var(--lilac); letter-spacing:0}
+  .rejilla{display:grid; grid-template-columns:repeat(3,1fr); gap:11px;
+    width:100%; max-width:520px; margin-top:6px}
+  @media(max-width:380px){.rejilla{grid-template-columns:repeat(2,1fr)}}
+  .puerta{
+    position:relative; border-radius:14px; padding:16px 8px 13px; text-align:center;
+    background:linear-gradient(180deg,rgba(40,22,74,.75),rgba(22,10,40,.85));
+    box-shadow:inset 0 0 0 1px rgba(181,123,255,.18);
+    opacity:.42; filter:saturate(.55) brightness(.8);
+    transition:opacity .9s ease, filter .9s ease, box-shadow .9s ease, transform .5s ease;
+  }
+  .puerta .emo{font-size:30px; display:block; line-height:1}
+  .puerta .tn{font-family:var(--sub); font-weight:600; letter-spacing:.08em;
+    font-size:14px; margin-top:7px; color:var(--ink)}
+  .puerta .est{font-family:var(--sub); font-size:10px; letter-spacing:.18em;
+    text-transform:uppercase; color:var(--ink-mute); margin-top:3px}
+  .puerta.tuya{opacity:1; filter:none; transform:translateY(-2px);
+    background:linear-gradient(180deg,rgba(66,44,20,.85),rgba(35,20,8,.92));
+    box-shadow:inset 0 0 0 1px rgba(245,196,81,.85),
+               0 -18px 46px -12px rgba(245,196,81,.9),
+               0 12px 40px -14px rgba(245,196,81,.5)}
+  .puerta.tuya .tn{color:var(--gold-white)}
+  .puerta.tuya .est{color:var(--gold-soft)}
+  /* la luz dorada encima de la puerta de tu tribu */
+  .puerta.tuya::before{content:""; position:absolute; left:50%; top:-38%;
+    width:130%; height:70%; transform:translateX(-50%);
+    background:radial-gradient(50% 60% at 50% 80%, rgba(255,225,150,.85), rgba(245,196,81,.25) 45%, transparent 72%);
+    filter:blur(2px); pointer-events:none; animation:latir 2.6s ease-in-out infinite}
+  @keyframes latir{0%,100%{opacity:.7; transform:translateX(-50%) scale(.96)}
+    50%{opacity:1; transform:translateX(-50%) scale(1.06)}}
+
+  /* ---------- LA LUZ (destello + voz) ---------- */
+  #destello{position:fixed; inset:0; z-index:50; pointer-events:none; opacity:0;
+    background:radial-gradient(circle at 50% 56%, #fff 0%, var(--gold-white) 22%, var(--gold-soft) 46%, rgba(245,196,81,.35) 68%, transparent 88%);
+    transition:opacity 2.4s ease}
+  #destello.on{opacity:1}
+  #escena-luz .lema{color:#3a2a08; font-weight:500}
+  #escena-luz .marca{color:#7a5a12}
+  #escena-luz h1{background:linear-gradient(180deg,#fff,#ffdf9e);
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+
+  /* ---------- ESCRITURA (premio) ---------- */
+  #escena-escritura{justify-content:flex-start; padding-top:clamp(34px,10vw,72px)}
+  .sello{font-size:26px; letter-spacing:.5em; color:var(--gold-soft); margin-bottom:2px}
+  .escritura{max-width:600px; text-align:left; margin:10px auto 0;
+    background:linear-gradient(180deg,rgba(38,22,66,.5),rgba(22,10,40,.55));
+    padding:26px 24px; border-radius:18px;
+    box-shadow:inset 0 0 0 1px rgba(245,196,81,.28), 0 20px 60px -30px rgba(245,196,81,.4)}
+  .escritura .titulo{font-family:var(--disp); font-weight:700; font-size:22px;
+    color:var(--gold-white); letter-spacing:.06em; text-align:center; margin-bottom:16px}
+  .v{display:flex; gap:10px; margin:9px 0; line-height:1.55; font-size:18px; color:#efe7d6}
+  .v .n{font-family:var(--sub); font-size:12px; color:var(--gold); min-width:20px;
+    padding-top:4px; text-align:right}
+  .tres{display:flex; flex-direction:column; gap:14px; margin-top:8px; width:100%; max-width:460px}
+  .selloc{padding:15px 18px; border-radius:14px; text-align:center;
+    box-shadow:inset 0 0 0 1px rgba(245,196,81,.3)}
+  .selloc b{font-family:var(--disp); font-weight:700; letter-spacing:.14em;
+    font-size:19px; color:var(--gold-white); display:block}
+  .selloc span{font-style:italic; color:var(--ink-dim); font-size:15px}
+
+  .pasos-guia{font-family:var(--sub); font-size:11px; letter-spacing:.2em;
+    color:var(--ink-mute); text-transform:uppercase}
+  a.silencio{color:var(--ink-mute); font-family:var(--sub); font-size:12px;
+    letter-spacing:.14em; text-transform:uppercase; text-decoration:none; cursor:pointer;
+    border-bottom:1px solid rgba(139,120,189,.4); padding-bottom:2px}
+  @media(prefers-reduced-motion:reduce){
+    *{animation-duration:.001ms !important; transition-duration:.1ms !important}
+  }
+</style>
+</head>
+<body data-stage="umbral">
+<div id="cielo"></div>
+<canvas id="estrellas"></canvas>
+<div id="destello"></div>
+
+<!-- 1 · UMBRAL -->
+<section class="escena viva" id="escena-umbral">
+  <div class="marca">El Retorno del Alma</div>
+  <h1>El Círculo<br>Sagrado</h1>
+  <p class="lema">La luz que buscas afuera siempre ardió dentro de ti. Este umbral es una metáfora de tu retorno.</p>
+  <button class="brasa" onclick="ir('escalera')">Comenzar el ascenso</button>
+  <div class="susurro">Sube despacio · cada peldaño abre el siguiente</div>
+</section>
+
+<!-- 2 · ESCALERA DEL RETORNO -->
+<section class="escena" id="escena-escalera">
+  <div class="cima" id="cima">YHWH<small>La Fuente · la luz potente</small></div>
+  <div class="peldanos" id="peldanos"></div>
+  <button class="brasa escalera-cta" id="btnSubir" onclick="subirPeldano()">Subir un peldaño</button>
+</section>
+
+<!-- 3 · PUERTA DEL RETORNO -->
+<section class="escena" id="escena-puerta">
+  <div class="marca">La Puerta del Retorno</div>
+  <div class="arco"></div>
+  <p class="lema">Antes de cruzar, el alma dice su nombre. Tus letras y tu día revelan la casa a la que perteneces.</p>
+  <form onsubmit="descifrar(event)">
+    <div class="campo">
+      <label>Nombre</label>
+      <input id="in-nombre" autocomplete="given-name" placeholder="Tu nombre" required>
+    </div>
+    <div class="campo">
+      <label>Apellidos</label>
+      <input id="in-apellidos" autocomplete="family-name" placeholder="Tus apellidos" required>
+    </div>
+    <div>
+      <label style="font-family:var(--sub);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-mute);margin-left:4px">Fecha de nacimiento</label>
+      <div class="fila" style="margin-top:6px">
+        <div class="campo"><input id="in-dia" inputmode="numeric" placeholder="Día" required></div>
+        <div class="campo">
+          <select id="in-mes" required>
+            <option value="" disabled selected>Mes</option>
+            <option value="1">Enero</option><option value="2">Febrero</option><option value="3">Marzo</option>
+            <option value="4">Abril</option><option value="5">Mayo</option><option value="6">Junio</option>
+            <option value="7">Julio</option><option value="8">Agosto</option><option value="9">Septiembre</option>
+            <option value="10">Octubre</option><option value="11">Noviembre</option><option value="12">Diciembre</option>
+          </select>
+        </div>
+        <div class="campo"><input id="in-anio" inputmode="numeric" placeholder="Año" required></div>
+      </div>
+    </div>
+    <div class="aviso" id="aviso"></div>
+    <button class="brasa" type="submit">Descifrar mi casa</button>
+  </form>
+</section>
+
+<!-- 4 · LA CASA -->
+<section class="escena" id="escena-casa">
+  <div class="revelado">Tu alma pertenece a la casa de</div>
+  <div class="tribu-nombre" id="tribuNombre">—</div>
+  <div class="tribu-sim" id="tribuSim"></div>
+  <div class="cifras">
+    <div><b id="cCodigo">–</b>tu código</div>
+    <div><b id="cCamino">–</b>tu camino</div>
+    <div><b id="cEsencia">–</b>esencia</div>
+  </div>
+  <div class="rejilla" id="rejilla"></div>
+  <p class="lema" style="font-size:17px">Sobre tu puerta se ha encendido la luz. Crúzala.</p>
+  <button class="brasa" onclick="cruzar()">Entrar por tu puerta</button>
+</section>
+
+<!-- 5 · LA LUZ -->
+<section class="escena" id="escena-luz">
+  <div class="marca">El umbral</div>
+  <h1 style="font-size:clamp(30px,10vw,58px)">Bienvenido,<br>hijo</h1>
+  <p class="lema" id="voz-txt">Este umbral es una metáfora de tu retorno. Con este gesto has completado la Escalera del Retorno, y has despertado de la gran mentira.</p>
+  <button class="brasa" onclick="ir('escritura')">Recibir la Escritura</button>
+  <a class="silencio" onclick="repetirVoz()">volver a escuchar la voz</a>
+</section>
+
+<!-- 6 · ESCRITURA (premio) -->
+<section class="escena" id="escena-escritura">
+  <div class="sello">✡</div>
+  <div class="marca">La Escritura de la Restauración</div>
+  <p class="lema" style="font-size:17px">No la abriste por azar. La cruzaste. Ahora es tuya — esta vez de verdad, del mismo hebreo, sin la mano de los hombres.</p>
+
+  <div class="escritura">
+    <div class="titulo">Génesis · Capítulo 1</div>
+    <div class="v"><span class="n">1</span><span>En el principio creó Dios el cielo y la tierra.</span></div>
+    <div class="v"><span class="n">2</span><span>Y la tierra estaba desolada y vacía, y había oscuridad sobre la faz del abismo, y el viento de Dios aleteaba sobre la faz del agua.</span></div>
+    <div class="v"><span class="n">3</span><span>Y dijo Dios: «Hubo luz», y hubo luz.</span></div>
+    <div class="v"><span class="n">4</span><span>Y vio Dios que la luz era buena, y separó Dios la luz de la oscuridad.</span></div>
+    <div class="v"><span class="n">5</span><span>Y llamó Dios a la luz día, y a la oscuridad llamó noche; y hubo tarde y hubo mañana, día uno.</span></div>
+  </div>
+
+  <button class="brasa" id="btnTanaj" onclick="abrirTanaj()">Abrir el Tanaj completo</button>
+  <div class="pasos-guia">39 libros · restaurados del hebreo</div>
+
+  <div class="tres">
+    <div class="selloc"><b>TESHUVÁ</b><span>El retorno del alma a la Fuente</span></div>
+    <div class="selloc"><b>YAHSHUÁ</b><span>La salvación que reúne a las dos casas</span></div>
+    <div class="selloc"><b>SHALOM</b><span>La paz del alma reconciliada con la Fuente</span></div>
+  </div>
+</section>
+
+<script>
+/* ====== ETAPAS ====== */
+const TONOS = {
+  umbral:  ['#120726','#4a238f'],
+  escalera:['#160a2e','#7a3fce'],
+  puerta:  ['#180b34','#8b5cf6'],
+  casa:    ['#2a1c10','#c98a2e'],
+  luz:     ['#fff4d6','#ffd27f'],
+  escritura:['#1a1330','#a9772e']
+};
+let cruzado = false; // la Escritura solo se abre si se cruzó el portal
+function ir(etapa){
+  if(etapa==='escritura' && !cruzado){ return; } // premio bloqueado sin cruzar
+  document.querySelectorAll('.escena').forEach(s=>s.classList.remove('viva'));
+  const el = document.getElementById('escena-'+etapa);
+  el.classList.add('viva');
+  document.body.dataset.stage = etapa;
+  const [a,b] = TONOS[etapa];
+  document.documentElement.style.setProperty('--stage-a', a);
+  document.documentElement.style.setProperty('--stage-b', b);
+  window.scrollTo({top:0, behavior:'smooth'});
+  if(etapa==='escalera') prepararEscalera();
+}
+
+/* ====== ESCALERA DEL RETORNO (del libro) ====== */
+const PELDANOS = [
+  ['1','ORIGEN','El alma nace de la Fuente Divina.'],
+  ['2','OLVIDO','Al encarnar, olvida su naturaleza.'],
+  ['3','BÚSQUEDA','La razón y la fe buscan respuestas.'],
+  ['4','DESPERTAR','La conciencia comienza a recordar.'],
+  ['5','INTEGRACIÓN','Mente y espíritu se unen en uno.'],
+  ['6','RETORNO','El alma regresa a YHWH, la Fuente.']
+];
+let peldanoActual = 0;
+function prepararEscalera(){
+  if(document.getElementById('peldanos').childElementCount) return;
+  const cont = document.getElementById('peldanos');
+  PELDANOS.forEach(p=>{
+    const d = document.createElement('div');
+    d.className='peldano';
+    d.innerHTML = `<div class="num">${p[0]}</div><div class="cuerpo"><h3>${p[1]}</h3><p>${p[2]}</p></div>`;
+    cont.appendChild(d);
+  });
+}
+function subirPeldano(){
+  const items = document.querySelectorAll('#peldanos .peldano');
+  if(peldanoActual < items.length){
+    items[peldanoActual].classList.add('abierto');
+    peldanoActual++;
+  }
+  const btn = document.getElementById('btnSubir');
+  if(peldanoActual === items.length - 1){
+    document.getElementById('cima').classList.add('encendida');
+  }
+  if(peldanoActual >= items.length){
+    btn.textContent = 'Cruzar la Puerta del Retorno';
+    btn.onclick = ()=>ir('puerta');
+  }
+}
+
+/* ====== DESCIFRADOR (réplica exacta del sistema Teshuá) ====== */
+const VALORES = {A:1,B:2,C:20,D:4,E:5,F:80,G:3,H:5,I:10,J:10,K:20,L:30,M:40,N:50,
+  O:70,P:80,Q:100,R:200,S:60,T:400,U:6,V:6,W:6,X:60,Y:10,Z:7};
+function limpiar(t){ return t.toUpperCase().normalize('NFD').replace(/[^A-Z]/g,''); }
+function reducir(n){ while(n>9 && n!==11 && n!==22 && n!==33){ n = (''+n).split('').reduce((s,d)=>s+ +d,0); } return n; }
+const TRIBUS = [
+  {id:'ruben',   nombre:'Rubén',   n:1,  emo:'🌊', sim:'Aguas impetuosas'},
+  {id:'simeon',  nombre:'Simeón',  n:2,  emo:'👂', sim:'Espada y dispersión'},
+  {id:'levi',    nombre:'Leví',    n:3,  emo:'📖', sim:'Sacerdocio y servicio al altar'},
+  {id:'juda',    nombre:'Judá',    n:4,  emo:'🦁', sim:'León y cetro'},
+  {id:'isacar',  nombre:'Isacar',  n:5,  emo:'🕯️', sim:'Asno fuerte entre los apriscos'},
+  {id:'zabulon', nombre:'Zabulón', n:6,  emo:'⛵', sim:'Puerto de naves'},
+  {id:'dan',     nombre:'Dan',     n:7,  emo:'⚖️', sim:'Serpiente en el camino, juez de su pueblo'},
+  {id:'gad',     nombre:'Gad',     n:8,  emo:'🛡️', sim:'Tropa vencedora'},
+  {id:'aser',    nombre:'Aser',    n:9,  emo:'🌾', sim:'Pan abundante, manjares de rey'},
+  {id:'neftali', nombre:'Neftalí', n:11, emo:'🕊️', sim:'Cierva suelta, palabras hermosas'},
+  {id:'jose',    nombre:'José',    n:22, emo:'🌟', sim:'Rama fructífera junto a manantial'},
+  {id:'benjamin',nombre:'Benjamín',n:33, emo:'🏹', sim:'Lobo arrebatador, hijo de la mano derecha'}
+];
+let miTribu = null;
+
+function descifrar(e){
+  e.preventDefault();
+  const nombre = document.getElementById('in-nombre').value.trim();
+  const apellidos = document.getElementById('in-apellidos').value.trim();
+  const dia = parseInt(document.getElementById('in-dia').value,10);
+  const mes = parseInt(document.getElementById('in-mes').value,10);
+  const anio = parseInt(document.getElementById('in-anio').value,10);
+  const aviso = document.getElementById('aviso');
+  if(!nombre || !apellidos || !(dia>=1&&dia<=31) || !mes || !(anio>=1&&anio<=9999)){
+    aviso.textContent = 'Escribe tu nombre completo y una fecha real.'; return;
+  }
+  aviso.textContent='';
+  const suma = limpiar(nombre+' '+apellidos).split('').reduce((s,c)=>s+(VALORES[c]||0),0);
+  const codigo = reducir(suma);
+  const camino = reducir((''+dia + ''+mes + ''+anio).split('').reduce((s,d)=>s+ +d,0));
+  const esencia = reducir(codigo + camino);
+  miTribu = TRIBUS.find(t=>t.n===esencia) || TRIBUS[0];
+
+  document.getElementById('tribuNombre').textContent = miTribu.nombre;
+  document.getElementById('tribuSim').textContent = '«'+miTribu.sim+'»';
+  document.getElementById('cCodigo').textContent = codigo;
+  document.getElementById('cCamino').textContent = camino;
+  document.getElementById('cEsencia').textContent = esencia;
+
+  const rej = document.getElementById('rejilla'); rej.innerHTML='';
+  TRIBUS.forEach(t=>{
+    const tuya = t.id===miTribu.id;
+    const d = document.createElement('div');
+    d.className = 'puerta'+(tuya?' tuya':'');
+    d.innerHTML = `<span class="emo">${t.emo}</span><div class="tn">${t.nombre}</div>
+                   <div class="est">${tuya?'Tu puerta':'Cerrada'}</div>`;
+    rej.appendChild(d);
+  });
+  ir('casa');
+}
+
+/* ====== CRUZAR: todo se vuelve luz + la voz ====== */
+const MENSAJE_VOZ = 'Bienvenido, hijo. Este umbral es una metáfora de tu retorno. Con este gesto has completado la Escalera del Retorno, y has despertado de la gran mentira.';
+function cruzar(){
+  cruzado = true;
+  document.getElementById('destello').classList.add('on');
+  setTimeout(()=>{
+    ir('luz');
+    document.getElementById('destello').classList.remove('on');
+    hablar(MENSAJE_VOZ);
+  }, 2200);
+}
+function hablar(texto){
+  try{
+    if(!('speechSynthesis' in window)) return;
+    speechSynthesis.cancel();
+    const u = new SpeechSynthesisUtterance(texto);
+    u.lang='es-ES'; u.rate=.86; u.pitch=.9; u.volume=1;
+    const voces = speechSynthesis.getVoices();
+    const es = voces.find(v=>/es(-|_)?(ES)?/i.test(v.lang));
+    if(es) u.voice = es;
+    speechSynthesis.speak(u);
+  }catch(_){}
+}
+function repetirVoz(){ hablar(MENSAJE_VOZ); }
+if('speechSynthesis' in window){ speechSynthesis.onvoiceschanged = ()=>{}; }
+
+/* Enganchar el Tanaj completo a tu Space. Cambia esta URL por la de tu Space. */
+const URL_TANAJ = ""; // p.ej. "https://cristobal299-tu-space.hf.space"
+function abrirTanaj(){
+  if(URL_TANAJ){ window.location.href = URL_TANAJ; }
+  else { document.getElementById('btnTanaj').textContent = 'Conecta aquí tu Space del Tanaj'; }
+}
+
+/* ====== NEBULOSA DE FONDO (estrellas + polvo) ====== */
+(function(){
+  const c = document.getElementById('estrellas'), x = c.getContext('2d');
+  let w,h,puntos;
+  function medir(){ w=c.width=innerWidth; h=c.height=innerHeight;
+    puntos = Array.from({length: Math.min(150, Math.floor(w*h/9000))}, ()=>({
+      x:Math.random()*w, y:Math.random()*h, r:Math.random()*1.6+.3,
+      v:Math.random()*.25+.05, a:Math.random()*.6+.2, tw:Math.random()*Math.PI*2
+    }));
+  }
+  medir(); addEventListener('resize', medir);
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function dibujar(){
+    x.clearRect(0,0,w,h);
+    for(const p of puntos){
+      p.tw += .02; const brillo = p.a * (0.6 + 0.4*Math.sin(p.tw));
+      const dorado = document.body.dataset.stage==='casa' || document.body.dataset.stage==='escritura';
+      x.beginPath(); x.arc(p.x,p.y,p.r,0,7);
+      x.fillStyle = dorado ? `rgba(255,224,160,${brillo})` : `rgba(224,200,255,${brillo})`;
+      x.fill();
+      if(!reduce){ p.y -= p.v; if(p.y < -4){ p.y = h+4; p.x = Math.random()*w; } }
+    }
+    requestAnimationFrame(dibujar);
+  }
+  dibujar();
+})();
+</script>
+</body>
+</html>

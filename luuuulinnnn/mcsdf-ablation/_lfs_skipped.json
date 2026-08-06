@@ -1,0 +1,419 @@
+{
+ "lfs_not_stored": [
+  {
+   "oid": "43533d73bbe80e417a384c4e917759520be70e1d503d47a364823fb9ed1822ad",
+   "path": "combo_0003dc82.png",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6NDM1MzNkNzNiYmU4MGU0MTdhMzg0YzRlOTE3NzU5NTIwYmU3MGUxZDUwM2Q0N2EzNjQ4MjNmYjllZDE4MjJhZApzaXplIDQ2Mjg2NDIK",
+   "size": 4628642,
+   "url": "https://huggingface.co/spaces/luuuulinnnn/mcsdf-ablation/resolve/7c2f14b593e31f46b942390230c815c688093c5e/combo_0003dc82.png"
+  },
+  {
+   "oid": "d6b5026338a3e41665322e656d7329fd9c0acebd79fe966fb43a28013c8e0c15",
+   "path": "combo_00534f58.png",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6ZDZiNTAyNjMzOGEzZTQxNjY1MzIyZTY1NmQ3MzI5ZmQ5YzBhY2ViZDc5ZmU5NjZmYjQzYTI4MDEzYzhlMGMxNQpzaXplIDQ1OTQ3NjQK",
+   "size": 4594764,
+   "url": "https://huggingface.co/spaces/luuuulinnnn/mcsdf-ablation/resolve/7c2f14b593e31f46b942390230c815c688093c5e/combo_00534f58.png"
+  },
+  {
+   "oid": "383c0ffb1f53b2944d80d4d283f9a0949f27580769bc4ea0e69602f86beb686b",
+   "path": "combo_111b656f.png",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6MzgzYzBmZmIxZjUzYjI5NDRkODBkNGQyODNmOWEwOTQ5ZjI3NTgwNzY5YmM0ZWEwZTY5NjAyZjg2YmViNjg2YgpzaXplIDQ0MjA4NjYK",
+   "size": 4420866,
+   "url": "https://huggingface.co/spaces/luuuulinnnn/mcsdf-ablation/resolve/7c2f14b593e31f46b942390230c815c688093c5e/combo_111b656f.png"
+  },
+  {
+   "oid": "19593d5f61b458ce84cd7583bceb2f026480d87551225e71f1e93f40fbd94eb6",
+   "path": "combo_2501f488.png",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6MTk1OTNkNWY2MWI0NThjZTg0Y2Q3NTgzYmNlYjJmMDI2NDgwZDg3NTUxMjI1ZTcxZjFlOTNmNDBmYmQ5NGViNgpzaXplIDQ0MDA1MjcK",
+   "size": 4400527,
+   "url": "https://huggingface.co/spaces/luuuulinnnn/mcsdf-ablation/resolve/7c2f14b593e31f46b942390230c815c688093c5e/combo_2501f488.png"
+  },
+  {
+   "oid": "151feba0b8c59c49f01e6b439640246489d13af70a036be2b26f28086baed9ef",
+   "path": "everything_111b656f.mp4",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6MTUxZmViYTBiOGM1OWM0OWYwMWU2YjQzOTY0MDI0NjQ4OWQxM2FmNzBhMDM2YmUyYjI2ZjI4MDg2YmFlZDllZgpzaXplIDMwNTczMjA4Cg==",
+   "size": 30573208,
+   "url": "https://huggingface.co/spaces/luuuulinnnn/mcsdf-ablation/resolve/7c2f14b593e31f46b942390230c815c688093c5e/everything_111b656f.mp4"
+  },
+  {
+   "oid": "7ced33d9c12c9f61a763f006483d262f64969449c61fdd3fe1f9a79369faac16",
+   "path": "everything_2501f488.mp4",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6N2NlZDMzZDljMTJjOWY2MWE3NjNmMDA2NDgzZDI2MmY2NDk2OTQ0OWM2MWZkZDNmZTFmOWE3OTM2OWZhYWMxNgpzaXplIDI3NjI2OTYxCg==",
+   "size": 27626961,
+   "url": "https://huggingface.co/spaces/luuuulinnnn/mcsdf-ablation/resolve/7c2f14b593e31f46b942390230c815c688093c5e/everything_2501f488.mp4"
+  },
+  {
+   "oid": "23f745be5d014ed044899c7343caf858578fdf3b409dab317373b4ca50993c0b",
+   "path": "expE_first.png",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6MjNmNzQ1YmU1ZDAxNGVkMDQ0ODk5YzczNDNjYWY4NTg1NzhmZGYzYjQwOWRhYjMxNzM3M2I0Y2E1MDk5M2MwYgpzaXplIDEzNDE1NDE5Cg==",
+   "size": 13415419,
+   "url": "https://huggingface.co/spaces/luuuulinnnn/mcsdf-ablation/resolve/7c2f14b593e31f46b942390230c815c688093c5e/expE_first.png"
+  },
+  {
+   "oid": "cb77c78bc3cf24899aa111dd8aa553439ded315dc999c2184d073dcc727515ff",
+   "path": "expFvs_0003dc82.png",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6Y2I3N2M3OGJjM2NmMjQ4OTlhYTExMWRkOGFhNTUzNDM5ZGVkMzE1ZGM5OTljMjE4NGQwNzNkY2M3Mjc1MTVmZgpzaXplIDIyOTY3ODkK",
+   "size": 2296789,
+   "url": "https://huggingface.co/spaces/luuuulinnnn/mcsdf-ablation/resolve/7c2f14b593e31f46b942390230c815c688093c5e/expFvs_0003dc82.png"
+  },
+  {
+   "oid": "b9839502a1c2477b67b389bae08e73487a1907fd1bc8c2195cb37e6cd4314b71",
+   "path": "expFvs_00534f58.png",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6Yjk4Mzk1MDJhMWMyNDc3YjY3YjM4OWJhZTA4ZTczNDg3YTE5MDdmZDFiYzhjMjE5NWNiMzdlNmNkNDMxNGI3MQpzaXplIDIzMjU2MjQK",
+   "size": 2325624,
+   "url": "https://huggingface.co/spaces/luuuulinnnn/mcsdf-ablation/resolve/7c2f14b593e31f46b942390230c815c688093c5e/expFvs_00534f58.png"
+  },
+  {
+   "oid": "9377c81b5b06d60cca46779b222004242dea3fcef0a0854d3a02ac7ee3b34e47",
+   "path": "expFvs_111b656f.png",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6OTM3N2M4MWI1YjA2ZDYwY2NhNDY3NzliMjIyMDA0MjQyZGVhM2ZjZWYwYTA4NTRkM2EwMmFjN2VlM2IzNGU0NwpzaXplIDIyMDcxMDcK",
+   "size": 2207107,
+   "url": "https://huggingface.co/spaces/luuuulinnnn/mcsdf-ablation/resolve/7c2f14b593e31f46b942390230c815c688093c5e/expFvs_111b656f.png"
+  },
+  {
+   "oid": "289059ef373749c0af5c1df68d62999f04f2ac5947555a3fde9af87fbca24f35",
+   "path": "expFvs_2501f488.png",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6Mjg5MDU5ZWYzNzM3NDljMGFmNWMxZGY2OGQ2Mjk5OWYwNGYyYWM1OTQ3NTU1YTNmZGU5YWY4N2ZiY2EyNGYzNQpzaXplIDIyNTQ1NjMK",
+   "size": 2254563,
+   "url": "https://huggingface.co/spaces/luuuulinnnn/mcsdf-ablation/resolve/7c2f14b593e31f46b942390230c815c688093c5e/expFvs_2501f488.png"
+  },
+  {
+   "oid": "8d9ebda397491e90b30d54c0fc5ec3784b6030ae2c1f23c09d5e5f7e4fa2a075",
+   "path": "expH_0003dc82.png",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6OGQ5ZWJkYTM5NzQ5MWU5MGIzMGQ1NGMwZmM1ZWMzNzg0YjYwMzBhZTJjMWYyM2MwOWQ1ZTVmN2U0ZmEyYTA3NQpzaXplIDQ5MTIzMzIK",
+   "size": 4912332,
+   "url": "https://huggingface.co/spaces/luuuulinnnn/mcsdf-ablation/resolve/7c2f14b593e31f46b942390230c815c688093c5e/expH_0003dc82.png"
+  },
+  {
+   "oid": "d89bcb8df67096c13b50cff965dc04c12bd427aacca3d4452124e46c512f2842",
+   "path": "expH_00534f58.png",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6ZDg5YmNiOGRmNjcwOTZjMTNiNTBjZmY5NjVkYzA0YzEyYmQ0MjdhYWNjYTNkNDQ1MjEyNGU0NmM1MTJmMjg0MgpzaXplIDUwNTc2ODIK",
+   "size": 5057682,
+   "url": "https://huggingface.co/spaces/luuuulinnnn/mcsdf-ablation/resolve/7c2f14b593e31f46b942390230c815c688093c5e/expH_00534f58.png"
+  },
+  {
+   "oid": "0d3dc1cafdcf0aa9fd872de51b92b7767e335f5aa1371d572e397f727e705e9e",
+   "path": "expH_111b656f.png",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6MGQzZGMxY2FmZGNmMGFhOWZkODcyZGU1MWI5MmI3NzY3ZTMzNWY1YWExMzcxZDU3MmUzOTdmNzI3ZTcwNWU5ZQpzaXplIDQ3MDQ2MTcK",
+   "size": 4704617,
+   "url": "https://huggingface.co/spaces/luuuulinnnn/mcsdf-ablation/resolve/7c2f14b593e31f46b942390230c815c688093c5e/expH_111b656f.png"
+  },
+  {
+   "oid": "4884a5dfcd779f2a509bb72d99370a98548d94e97bc141281554ba9ea9fa3645",
+   "path": "expH_2501f488.png",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6NDg4NGE1ZGZjZDc3OWYyYTUwOWJiNzJkOTkzNzBhOTg1NDhkOTRlOTdiYzE0MTI4MTU1NGJhOWVhOWZhMzY0NQpzaXplIDQ3NTQ0NTEK",
+   "size": 4754451,
+   "url": "https://huggingface.co/spaces/luuuulinnnn/mcsdf-ablation/resolve/7c2f14b593e31f46b942390230c815c688093c5e/expH_2501f488.png"
+  },
+  {
+   "oid": "629f7b04ab0ed1b8d49ca7b4dfc294ebadfef16187504e2cb509d2e71c5b8e60",
+   "path": "expe_first.html",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6NjI5ZjdiMDRhYjBlZDFiOGQ0OWNhN2I0ZGZjMjk0ZWJhZGZlZjE2MTg3NTA0ZTJjYjUwOWQyZTcxYzViOGU2MApzaXplIDE3ODg3NDMwCg==",
+   "size": 17887430,
+   "url": "https://huggingface.co/spaces/luuuulinnnn/mcsdf-ablation/resolve/7c2f14b593e31f46b942390230c815c688093c5e/expe_first.html"
+  },
+  {
+   "oid": "4d5ffb99e3151b637f61a72a44ea364a8f6ad5a3518908666ccab925814f45bb",
+   "path": "f50_0003dc82.png",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6NGQ1ZmZiOTllMzE1MWI2MzdmNjFhNzJhNDRlYTM2NGE4ZjZhZDVhMzUxODkwODY2NmNjYWI5MjU4MTRmNDViYgpzaXplIDk3MTA4MjQK",
+   "size": 9710824,
+   "url": "https://huggingface.co/spaces/luuuulinnnn/mcsdf-ablation/resolve/7c2f14b593e31f46b942390230c815c688093c5e/f50_0003dc82.png"
+  },
+  {
+   "oid": "c58ba73969cc4d1e265fd7f929db6233ce3d93b390ab5938756498eef6cae889",
+   "path": "f50_00534f58.png",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6YzU4YmE3Mzk2OWNjNGQxZTI2NWZkN2Y5MjlkYjYyMzNjZTNkOTNiMzkwYWI1OTM4NzU2NDk4ZWVmNmNhZTg4OQpzaXplIDEwMTc5MTc4Cg==",
+   "size": 10179178,
+   "url": "https://huggingface.co/spaces/luuuulinnnn/mcsdf-ablation/resolve/7c2f14b593e31f46b942390230c815c688093c5e/f50_00534f58.png"
+  },
+  {
+   "oid": "844cf7ec3eb0dcefa7f8f62204b5b62f09098898e8bce5965cfb735152015997",
+   "path": "f50_111b656f.png",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6ODQ0Y2Y3ZWMzZWIwZGNlZmE3ZjhmNjIyMDRiNWI2MmYwOTA5ODg5OGU4YmNlNTk2NWNmYjczNTE1MjAxNTk5NwpzaXplIDk0MjkyMzEK",
+   "size": 9429231,
+   "url": "https://huggingface.co/spaces/luuuulinnnn/mcsdf-ablation/resolve/7c2f14b593e31f46b942390230c815c688093c5e/f50_111b656f.png"
+  },
+  {
+   "oid": "8e09a70c6948301b56a51a24c007f7daf6c711a4d93774111221f73c6d1dd540",
+   "path": "f50_2501f488.png",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6OGUwOWE3MGM2OTQ4MzAxYjU2YTUxYTI0YzAwN2Y3ZGFmNmM3MTFhNGQ5Mzc3NDExMTIyMWY3M2M2ZDFkZDU0MApzaXplIDkzNTEwNjkK",
+   "size": 9351069,
+   "url": "https://huggingface.co/spaces/luuuulinnnn/mcsdf-ablation/resolve/7c2f14b593e31f46b942390230c815c688093c5e/f50_2501f488.png"
+  },
+  {
+   "oid": "3f069e53293410daaad3490836d688b25777cdd7267ba852bd4bc0bbecaca1d7",
+   "path": "f50b_0003dc82.png",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6M2YwNjllNTMyOTM0MTBkYWFhZDM0OTA4MzZkNjg4YjI1Nzc3Y2RkNzI2N2JhODUyYmQ0YmMwYmJlY2FjYTFkNwpzaXplIDI2NTU0MjYK",
+   "size": 2655426,
+   "url": "https://huggingface.co/spaces/luuuulinnnn/mcsdf-ablation/resolve/7c2f14b593e31f46b942390230c815c688093c5e/f50b_0003dc82.png"
+  },
+  {
+   "oid": "d3cb73a35835874dfeb9a822b970fbb45c13405899dcfd96b6b6031246c0dbd0",
+   "path": "f50b_00534f58.png",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6ZDNjYjczYTM1ODM1ODc0ZGZlYjlhODIyYjk3MGZiYjQ1YzEzNDA1ODk5ZGNmZDk2YjZiNjAzMTI0NmMwZGJkMApzaXplIDI2NTA3NzUK",
+   "size": 2650775,
+   "url": "https://huggingface.co/spaces/luuuulinnnn/mcsdf-ablation/resolve/7c2f14b593e31f46b942390230c815c688093c5e/f50b_00534f58.png"
+  },
+  {
+   "oid": "560e9f49246f51c49a852e89aa06c6ef19b61cbd60e9c5cc28904f6a84ecb0fc",
+   "path": "f50b_111b656f.png",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6NTYwZTlmNDkyNDZmNTFjNDlhODUyZTg5YWEwNmM2ZWYxOWI2MWNiZDYwZTljNWNjMjg5MDRmNmE4NGVjYjBmYwpzaXplIDI1NDk2NTgK",
+   "size": 2549658,
+   "url": "https://huggingface.co/spaces/luuuulinnnn/mcsdf-ablation/resolve/7c2f14b593e31f46b942390230c815c688093c5e/f50b_111b656f.png"
+  },
+  {
+   "oid": "356f4f7a54ddd4e003f45386f677d5366e7d81b7dafd504c731ee7ae241d1128",
+   "path": "f50b_2501f488.png",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6MzU2ZjRmN2E1NGRkZDRlMDAzZjQ1Mzg2ZjY3N2Q1MzY2ZTdkODFiN2RhZmQ1MDRjNzMxZWU3YWUyNDFkMTEyOApzaXplIDI1MTU0MzkK",
+   "size": 2515439,
+   "url": "https://huggingface.co/spaces/luuuulinnnn/mcsdf-ablation/resolve/7c2f14b593e31f46b942390230c815c688093c5e/f50b_2501f488.png"
+  },
+  {
+   "oid": "235b64aefdccd5d39bc5e06ab6bea5ac6a2096ea2845f8d248dd35f1543eea29",
+   "path": "fc24_0003dc82.png",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6MjM1YjY0YWVmZGNjZDVkMzliYzVlMDZhYjZiZWE1YWM2YTIwOTZlYTI4NDVmOGQyNDhkZDM1ZjE1NDNlZWEyOQpzaXplIDYyMDczOTIK",
+   "size": 6207392,
+   "url": "https://huggingface.co/spaces/luuuulinnnn/mcsdf-ablation/resolve/7c2f14b593e31f46b942390230c815c688093c5e/fc24_0003dc82.png"
+  },
+  {
+   "oid": "b69c240c60776506af51b86b6d9314982938855b58ca5867f08a36eba370131a",
+   "path": "fc24_00534f58.png",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6YjY5YzI0MGM2MDc3NjUwNmFmNTFiODZiNmQ5MzE0OTgyOTM4ODU1YjU4Y2E1ODY3ZjA4YTM2ZWJhMzcwMTMxYQpzaXplIDY1NzY2NDAK",
+   "size": 6576640,
+   "url": "https://huggingface.co/spaces/luuuulinnnn/mcsdf-ablation/resolve/7c2f14b593e31f46b942390230c815c688093c5e/fc24_00534f58.png"
+  },
+  {
+   "oid": "9c34c146f1abef2afe673fe45aafbecbeace240b058be13d0f9a1fbd80101c88",
+   "path": "fc24_111b656f.png",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6OWMzNGMxNDZmMWFiZWYyYWZlNjczZmU0NWFhZmJlY2JlYWNlMjQwYjA1OGJlMTNkMGY5YTFmYmQ4MDEwMWM4OApzaXplIDYwMDI1OTcK",
+   "size": 6002597,
+   "url": "https://huggingface.co/spaces/luuuulinnnn/mcsdf-ablation/resolve/7c2f14b593e31f46b942390230c815c688093c5e/fc24_111b656f.png"
+  },
+  {
+   "oid": "23d95924d00d22cf0507fa8d7d964beef1b91cf368d28465f68d7bffcf30cdf0",
+   "path": "fc24_2501f488.png",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6MjNkOTU5MjRkMDBkMjJjZjA1MDdmYThkN2Q5NjRiZWVmMWI5MWNmMzY4ZDI4NDY1ZjY4ZDdiZmZjZjMwY2RmMApzaXplIDYwMDc1MTIK",
+   "size": 6007512,
+   "url": "https://huggingface.co/spaces/luuuulinnnn/mcsdf-ablation/resolve/7c2f14b593e31f46b942390230c815c688093c5e/fc24_2501f488.png"
+  },
+  {
+   "oid": "6249d8dedfe6199ca87d7323f5b03358d9c06e2a716c64bb6b875b9d19388e0b",
+   "path": "fc50_0003dc82.png",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6NjI0OWQ4ZGVkZmU2MTk5Y2E4N2Q3MzIzZjViMDMzNThkOWMwNmUyYTcxNmM2NGJiNmI4NzViOWQxOTM4OGUwYgpzaXplIDYyMDUxOTUK",
+   "size": 6205195,
+   "url": "https://huggingface.co/spaces/luuuulinnnn/mcsdf-ablation/resolve/7c2f14b593e31f46b942390230c815c688093c5e/fc50_0003dc82.png"
+  },
+  {
+   "oid": "a2fe0c71e7844adfc9b51b9d70aec6b6abbda80932d21061a8217ceadbc1fcac",
+   "path": "fc50_00534f58.png",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6YTJmZTBjNzFlNzg0NGFkZmM5YjUxYjlkNzBhZWM2YjZhYmJkYTgwOTMyZDIxMDYxYTgyMTdjZWFkYmMxZmNhYwpzaXplIDY1MzgxNDAK",
+   "size": 6538140,
+   "url": "https://huggingface.co/spaces/luuuulinnnn/mcsdf-ablation/resolve/7c2f14b593e31f46b942390230c815c688093c5e/fc50_00534f58.png"
+  },
+  {
+   "oid": "e0f37186a0902f4d18046929952a6694175e68f12456395a3f3f7a8074dcb224",
+   "path": "fc50_111b656f.png",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6ZTBmMzcxODZhMDkwMmY0ZDE4MDQ2OTI5OTUyYTY2OTQxNzVlNjhmMTI0NTYzOTVhM2YzZjdhODA3NGRjYjIyNApzaXplIDYwMDY2OTYK",
+   "size": 6006696,
+   "url": "https://huggingface.co/spaces/luuuulinnnn/mcsdf-ablation/resolve/7c2f14b593e31f46b942390230c815c688093c5e/fc50_111b656f.png"
+  },
+  {
+   "oid": "87c2e266227fba441adbcf725199ad447da4c7e6f3ab43a2624f0a3bf17bf136",
+   "path": "fc50_2501f488.png",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6ODdjMmUyNjYyMjdmYmE0NDFhZGJjZjcyNTE5OWFkNDQ3ZGE0YzdlNmYzYWI0M2EyNjI0ZjBhM2JmMTdiZjEzNgpzaXplIDYwMDY4OTQK",
+   "size": 6006894,
+   "url": "https://huggingface.co/spaces/luuuulinnnn/mcsdf-ablation/resolve/7c2f14b593e31f46b942390230c815c688093c5e/fc50_2501f488.png"
+  },
+  {
+   "oid": "28421bc2c4c96a4d94f36c7e1857c3c7b01c2c670e52dc82993e75f01e3224d0",
+   "path": "init_canvas.png",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6Mjg0MjFiYzJjNGM5NmE0ZDk0ZjM2YzdlMTg1N2MzYzdiMDFjMmM2NzBlNTJkYzgyOTkzZTc1ZjAxZTMyMjRkMApzaXplIDQ0MjE5ODMK",
+   "size": 4421983,
+   "url": "https://huggingface.co/spaces/luuuulinnnn/mcsdf-ablation/resolve/7c2f14b593e31f46b942390230c815c688093c5e/init_canvas.png"
+  },
+  {
+   "oid": "7a6cc5be389085302ed6a94a582f58e804bd6c84247a47c58e0e50f87e38448e",
+   "path": "latest2_0003dc82.png",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6N2E2Y2M1YmUzODkwODUzMDJlZDZhOTRhNTgyZjU4ZTgwNGJkNmM4NDI0N2E0N2M1OGUwZTUwZjg3ZTM4NDQ4ZQpzaXplIDk0NTA5MDAK",
+   "size": 9450900,
+   "url": "https://huggingface.co/spaces/luuuulinnnn/mcsdf-ablation/resolve/7c2f14b593e31f46b942390230c815c688093c5e/latest2_0003dc82.png"
+  },
+  {
+   "oid": "c425179d75ac434c589737d238e0eead45aa9fc3486ed0309f0af5b2167a645c",
+   "path": "latest2_00534f58.png",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6YzQyNTE3OWQ3NWFjNDM0YzU4OTczN2QyMzhlMGVlYWQ0NWFhOWZjMzQ4NmVkMDMwOWYwYWY1YjIxNjdhNjQ1YwpzaXplIDEwMDM1NDE3Cg==",
+   "size": 10035417,
+   "url": "https://huggingface.co/spaces/luuuulinnnn/mcsdf-ablation/resolve/7c2f14b593e31f46b942390230c815c688093c5e/latest2_00534f58.png"
+  },
+  {
+   "oid": "3e9a03a4a53bfd6e0239308ede8156fc858b11d566f60c1016b5f99916ba48e3",
+   "path": "latest2_111b656f.png",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6M2U5YTAzYTRhNTNiZmQ2ZTAyMzkzMDhlZGU4MTU2ZmM4NThiMTFkNTY2ZjYwYzEwMTZiNWY5OTkxNmJhNDhlMwpzaXplIDkxMzQwNDUK",
+   "size": 9134045,
+   "url": "https://huggingface.co/spaces/luuuulinnnn/mcsdf-ablation/resolve/7c2f14b593e31f46b942390230c815c688093c5e/latest2_111b656f.png"
+  },
+  {
+   "oid": "2f03a509c58cb367988aadaa32918022ae902d753e1a5a485ae669ef3de18e3d",
+   "path": "latest2_2501f488.png",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6MmYwM2E1MDljNThjYjM2Nzk4OGFhZGFhMzI5MTgwMjJhZTkwMmQ3NTNlMWE1YTQ4NWFlNjY5ZWYzZGUxOGUzZApzaXplIDg5NzUwNzQK",
+   "size": 8975074,
+   "url": "https://huggingface.co/spaces/luuuulinnnn/mcsdf-ablation/resolve/7c2f14b593e31f46b942390230c815c688093c5e/latest2_2501f488.png"
+  },
+  {
+   "oid": "ef2baf1af500babed46811b720b6f1f84249e59b78b7709ac5bb0824c4fdf317",
+   "path": "latest_0003dc82.png",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6ZWYyYmFmMWFmNTAwYmFiZWQ0NjgxMWI3MjBiNmYxZjg0MjQ5ZTU5Yjc4Yjc3MDlhYzViYjA4MjRjNGZkZjMxNwpzaXplIDc4NTAyMjUK",
+   "size": 7850225,
+   "url": "https://huggingface.co/spaces/luuuulinnnn/mcsdf-ablation/resolve/7c2f14b593e31f46b942390230c815c688093c5e/latest_0003dc82.png"
+  },
+  {
+   "oid": "5132d83ff4ef85ba48c5c96f0504cceb3e32173892006f66ec104eee6f7afc5c",
+   "path": "latest_00534f58.png",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6NTEzMmQ4M2ZmNGVmODViYTQ4YzVjOTZmMDUwNGNjZWIzZTMyMTczODkyMDA2ZjY2ZWMxMDRlZWU2ZjdhZmM1YwpzaXplIDgyNTY2OTMK",
+   "size": 8256693,
+   "url": "https://huggingface.co/spaces/luuuulinnnn/mcsdf-ablation/resolve/7c2f14b593e31f46b942390230c815c688093c5e/latest_00534f58.png"
+  },
+  {
+   "oid": "96750e73ed73c8ab7ec6e302e97cd0bc8e06c6876e8cd95f41a35d4c91c4ec45",
+   "path": "latest_111b656f.png",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6OTY3NTBlNzNlZDczYzhhYjdlYzZlMzAyZTk3Y2QwYmM4ZTA2YzY4NzZlOGNkOTVmNDFhMzVkNGM5MWM0ZWM0NQpzaXplIDc2MTEzNjgK",
+   "size": 7611368,
+   "url": "https://huggingface.co/spaces/luuuulinnnn/mcsdf-ablation/resolve/7c2f14b593e31f46b942390230c815c688093c5e/latest_111b656f.png"
+  },
+  {
+   "oid": "c3621696db2c3bc4b07bed4037afe79f497ef79367a8f9e2842adcb8efc763d4",
+   "path": "latest_2501f488.png",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6YzM2MjE2OTZkYjJjM2JjNGIwN2JlZDQwMzdhZmU3OWY0OTdlZjc5MzY3YThmOWUyODQyYWRjYjhlZmM3NjNkNApzaXplIDc0ODc2NjQK",
+   "size": 7487664,
+   "url": "https://huggingface.co/spaces/luuuulinnnn/mcsdf-ablation/resolve/7c2f14b593e31f46b942390230c815c688093c5e/latest_2501f488.png"
+  },
+  {
+   "oid": "770a0272d98cb1f5e9c340fc6da3343d100ded56690cd6d4c98e5920e2efd37c",
+   "path": "nd_lvl3_spaghetti.png",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6NzcwYTAyNzJkOThjYjFmNWU5YzM0MGZjNmRhMzM0M2QxMDBkZWQ1NjY5MGNkNmQ0Yzk4ZTU5MjBlMmVmZDM3YwpzaXplIDI0OTg5NjAK",
+   "size": 2498960,
+   "url": "https://huggingface.co/spaces/luuuulinnnn/mcsdf-ablation/resolve/7c2f14b593e31f46b942390230c815c688093c5e/nd_lvl3_spaghetti.png"
+  },
+  {
+   "oid": "9a493b1a302d5645ff97c93029d47294c38e5af4d4be5494826445b83bc45aea",
+   "path": "project_io.png",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6OWE0OTNiMWEzMDJkNTY0NWZmOTdjOTMwMjlkNDcyOTRjMzhlNWFmNGQ0YmU1NDk0ODI2NDQ1YjgzYmM0NWFlYQpzaXplIDE2MjQ4NTcK",
+   "size": 1624857,
+   "url": "https://huggingface.co/spaces/luuuulinnnn/mcsdf-ablation/resolve/7c2f14b593e31f46b942390230c815c688093c5e/project_io.png"
+  },
+  {
+   "oid": "b3d3d8969dd11c7b739baea50bf67d8dcae00074473f4225262461c321e45356",
+   "path": "s50_0003dc82.png",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6YjNkM2Q4OTY5ZGQxMWM3YjczOWJhZWE1MGJmNjdkOGRjYWUwMDA3NDQ3M2Y0MjI1MjYyNDYxYzMyMWU0NTM1NgpzaXplIDk1MTY5NDcK",
+   "size": 9516947,
+   "url": "https://huggingface.co/spaces/luuuulinnnn/mcsdf-ablation/resolve/7c2f14b593e31f46b942390230c815c688093c5e/s50_0003dc82.png"
+  },
+  {
+   "oid": "eb56661c9614c32463d7bbdfa6cf8a4f1520e4bf01e9427e43ea1fb13218d290",
+   "path": "s50_00534f58.png",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6ZWI1NjY2MWM5NjE0YzMyNDYzZDdiYmRmYTZjZjhhNGYxNTIwZTRiZjAxZTk0MjdlNDNlYTFmYjEzMjE4ZDI5MApzaXplIDEwMDY0MDc2Cg==",
+   "size": 10064076,
+   "url": "https://huggingface.co/spaces/luuuulinnnn/mcsdf-ablation/resolve/7c2f14b593e31f46b942390230c815c688093c5e/s50_00534f58.png"
+  },
+  {
+   "oid": "0ad1e0c29491142802f3d29d490a225b45ba8dad387e63c484426bced7d197b4",
+   "path": "s50_111b656f.png",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6MGFkMWUwYzI5NDkxMTQyODAyZjNkMjlkNDkwYTIyNWI0NWJhOGRhZDM4N2U2M2M0ODQ0MjZiY2VkN2QxOTdiNApzaXplIDkzMDE3NTIK",
+   "size": 9301752,
+   "url": "https://huggingface.co/spaces/luuuulinnnn/mcsdf-ablation/resolve/7c2f14b593e31f46b942390230c815c688093c5e/s50_111b656f.png"
+  },
+  {
+   "oid": "7e37955620e4632cccf1bddfe84e0e717af0a1a37ee2529721bd75d4b29864f1",
+   "path": "s50_2501f488.png",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6N2UzNzk1NTYyMGU0NjMyY2NjZjFiZGRmZTg0ZTBlNzE3YWYwYTFhMzdlZTI1Mjk3MjFiZDc1ZDRiMjk4NjRmMQpzaXplIDkyMTY0MDYK",
+   "size": 9216406,
+   "url": "https://huggingface.co/spaces/luuuulinnnn/mcsdf-ablation/resolve/7c2f14b593e31f46b942390230c815c688093c5e/s50_2501f488.png"
+  },
+  {
+   "oid": "9d7f4d466acefc71b9d8868854a59307329eab586e9a89e9d0fed345313afd04",
+   "path": "signals_111b656f.mp4",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6OWQ3ZjRkNDY2YWNlZmM3MWI5ZDg4Njg4NTRhNTkzMDczMjllYWI1ODZlOWE4OWU5ZDBmZWQzNDUzMTNhZmQwNApzaXplIDk1MTYxNDcK",
+   "size": 9516147,
+   "url": "https://huggingface.co/spaces/luuuulinnnn/mcsdf-ablation/resolve/7c2f14b593e31f46b942390230c815c688093c5e/signals_111b656f.mp4"
+  },
+  {
+   "oid": "ac15b7adb7e16a6aafe2c2082340b8f9d840abcaedf704a5634abb02bdf4f8de",
+   "path": "signals_2501f488.mp4",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6YWMxNWI3YWRiN2UxNmE2YWFmZTJjMjA4MjM0MGI4ZjlkODQwYWJjYWVkZjcwNGE1NjM0YWJiMDJiZGY0ZjhkZQpzaXplIDgzMzI0NDYK",
+   "size": 8332446,
+   "url": "https://huggingface.co/spaces/luuuulinnnn/mcsdf-ablation/resolve/7c2f14b593e31f46b942390230c815c688093c5e/signals_2501f488.mp4"
+  },
+  {
+   "oid": "6e6e05ad5a39aec4211d2915c406369a792e4fa9e9161c2a4472d62e32d1404c",
+   "path": "slow_111b656f.mp4",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6NmU2ZTA1YWQ1YTM5YWVjNDIxMWQyOTE1YzQwNjM2OWE3OTJlNGZhOWU5MTYxYzJhNDQ3MmQ2MmUzMmQxNDA0YwpzaXplIDQ2MzUzMjE1Cg==",
+   "size": 46353215,
+   "url": "https://huggingface.co/spaces/luuuulinnnn/mcsdf-ablation/resolve/7c2f14b593e31f46b942390230c815c688093c5e/slow_111b656f.mp4"
+  },
+  {
+   "oid": "f5d328df902454ee427ec133e0f793ce01cad93864a2c3075964fff39692a121",
+   "path": "slow_2501f488.mp4",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6ZjVkMzI4ZGY5MDI0NTRlZTQyN2VjMTMzZTBmNzkzY2UwMWNhZDkzODY0YTJjMzA3NTk2NGZmZjM5NjkyYTEyMQpzaXplIDQxMjY1MTQyCg==",
+   "size": 41265142,
+   "url": "https://huggingface.co/spaces/luuuulinnnn/mcsdf-ablation/resolve/7c2f14b593e31f46b942390230c815c688093c5e/slow_2501f488.mp4"
+  },
+  {
+   "oid": "d2cc680cf062008f0e4d9d824ea897df138b05a1da0d1ccd72d8d2f04944bf06",
+   "path": "slow_35ebb843.mp4",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6ZDJjYzY4MGNmMDYyMDA4ZjBlNGQ5ZDgyNGVhODk3ZGYxMzhiMDVhMWRhMGQxY2NkNzJkOGQyZjA0OTQ0YmYwNgpzaXplIDQ2MTk1MjM2Cg==",
+   "size": 46195236,
+   "url": "https://huggingface.co/spaces/luuuulinnnn/mcsdf-ablation/resolve/7c2f14b593e31f46b942390230c815c688093c5e/slow_35ebb843.mp4"
+  },
+  {
+   "oid": "abb38179512bf9190c8b7fdae4b9ea7f23f67b3bedea4e559bf2de343ad0110a",
+   "path": "slow_3605ab74.mp4",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6YWJiMzgxNzk1MTJiZjkxOTBjOGI3ZmRhZTRiOWVhN2YyM2Y2N2IzYmVkZWE0ZTU1OWJmMmRlMzQzYWQwMTEwYQpzaXplIDQyMTgxODkwCg==",
+   "size": 42181890,
+   "url": "https://huggingface.co/spaces/luuuulinnnn/mcsdf-ablation/resolve/7c2f14b593e31f46b942390230c815c688093c5e/slow_3605ab74.mp4"
+  },
+  {
+   "oid": "42a2645d511b0b79de04681e9faadb83cbf20415b94731fc722716f0860ec058",
+   "path": "slow_56daa9fd.mp4",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6NDJhMjY0NWQ1MTFiMGI3OWRlMDQ2ODFlOWZhYWRiODNjYmYyMDQxNWI5NDczMWZjNzIyNzE2ZjA4NjBlYzA1OApzaXplIDMxNzc5NTAzCg==",
+   "size": 31779503,
+   "url": "https://huggingface.co/spaces/luuuulinnnn/mcsdf-ablation/resolve/7c2f14b593e31f46b942390230c815c688093c5e/slow_56daa9fd.mp4"
+  },
+  {
+   "oid": "397affb7fe82ebc8994badb2494ce64b2ddfdf6ea500a8b417b94a7d75abdc67",
+   "path": "slow_64d76920.mp4",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6Mzk3YWZmYjdmZTgyZWJjODk5NGJhZGIyNDk0Y2U2NGIyZGRmZGY2ZWE1MDBhOGI0MTdiOTRhN2Q3NWFiZGM2NwpzaXplIDQ4NzA4ODU0Cg==",
+   "size": 48708854,
+   "url": "https://huggingface.co/spaces/luuuulinnnn/mcsdf-ablation/resolve/7c2f14b593e31f46b942390230c815c688093c5e/slow_64d76920.mp4"
+  },
+  {
+   "oid": "28696c18758c3c7b27a9658199db533d55f32f836ba052a71e1ee00462e22b42",
+   "path": "sota_0003dc82.png",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6Mjg2OTZjMTg3NThjM2M3YjI3YTk2NTgxOTlkYjUzM2Q1NWYzMmY4MzZiYTA1MmE3MWUxZWUwMDQ2MmUyMmI0MgpzaXplIDIzNjUxMzUK",
+   "size": 2365135,
+   "url": "https://huggingface.co/spaces/luuuulinnnn/mcsdf-ablation/resolve/7c2f14b593e31f46b942390230c815c688093c5e/sota_0003dc82.png"
+  },
+  {
+   "oid": "09e602c47908bf780134fed9acc0b59b0d1d00952a67b067aeb9ac2053b1ffd9",
+   "path": "sota_00534f58.png",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6MDllNjAyYzQ3OTA4YmY3ODAxMzRmZWQ5YWNjMGI1OWIwZDFkMDA5NTJhNjdiMDY3YWViOWFjMjA1M2IxZmZkOQpzaXplIDI1ODM4NDQK",
+   "size": 2583844,
+   "url": "https://huggingface.co/spaces/luuuulinnnn/mcsdf-ablation/resolve/7c2f14b593e31f46b942390230c815c688093c5e/sota_00534f58.png"
+  },
+  {
+   "oid": "9ef5034dee83aa1dab10eb0507b75cc4bc5876b77d13b264ab724e45e30449d9",
+   "path": "sota_111b656f.png",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6OWVmNTAzNGRlZTgzYWExZGFiMTBlYjA1MDdiNzVjYzRiYzU4NzZiNzdkMTNiMjY0YWI3MjRlNDVlMzA0NDlkOQpzaXplIDIzMTMyNDkK",
+   "size": 2313249,
+   "url": "https://huggingface.co/spaces/luuuulinnnn/mcsdf-ablation/resolve/7c2f14b593e31f46b942390230c815c688093c5e/sota_111b656f.png"
+  },
+  {
+   "oid": "d50fb1e1e882ddc622baf8d3749bf1bb55f15f6ee4c115bbe589e163eda714f9",
+   "path": "sota_2501f488.png",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6ZDUwZmIxZTFlODgyZGRjNjIyYmFmOGQzNzQ5YmYxYmI1NWYxNWY2ZWU0YzExNWJiZTU4OWUxNjNlZGE3MTRmOQpzaXplIDIxOTAwODMK",
+   "size": 2190083,
+   "url": "https://huggingface.co/spaces/luuuulinnnn/mcsdf-ablation/resolve/7c2f14b593e31f46b942390230c815c688093c5e/sota_2501f488.png"
+  }
+ ],
+ "overflow_not_stored": [],
+ "oversize_not_stored": []
+}

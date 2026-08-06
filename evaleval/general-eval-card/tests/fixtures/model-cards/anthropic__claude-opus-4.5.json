@@ -1,0 +1,241 @@
+{
+  "model_group_id": "anthropic/claude-opus-4.5",
+  "model_route_id": "anthropic__claude-opus-4.5",
+  "model_family_name": "Claude Opus 4.5",
+  "developer": "anthropic",
+  "params_billions": null,
+  "total_evaluations": 49,
+  "benchmark_count": 10,
+  "benchmark_family_count": 10,
+  "categories_covered": [
+    "agentic",
+    "coding",
+    "knowledge",
+    "other",
+    "reasoning"
+  ],
+  "last_updated": "2026-04-25T09:07:44.422824Z",
+  "variants": [
+    {
+      "variant_key": "default",
+      "variant_label": "Default",
+      "evaluation_count": 40,
+      "raw_model_ids": [
+        "anthropic/claude-opus-4-5",
+        "anthropic/claude-opus-4.5"
+      ],
+      "last_updated": "2026-04-20T16:39:22.266076Z"
+    },
+    {
+      "variant_key": "20251101",
+      "variant_label": "2025-11-01",
+      "evaluation_count": 4,
+      "raw_model_ids": [
+        "anthropic/claude-opus-4-5-20251101",
+        "anthropic/claude-opus-4-5-20251101-fc",
+        "anthropic/claude-opus-4-5-20251101-prompt"
+      ],
+      "last_updated": "2026-04-25T09:07:44.422824Z"
+    },
+    {
+      "variant_key": "2025-11-01",
+      "variant_label": "2025-11-01",
+      "evaluation_count": 5,
+      "raw_model_ids": [
+        "anthropic/claude-opus-4-5-20251101-thinking-16k",
+        "anthropic/claude-opus-4-5-20251101-thinking-32k",
+        "anthropic/claude-opus-4-5-20251101-thinking-64k",
+        "anthropic/claude-opus-4-5-20251101-thinking-8k",
+        "anthropic/claude-opus-4-5-20251101-thinking-none"
+      ],
+      "last_updated": "2026-04-07T08:15:57.578212Z"
+    }
+  ],
+  "score_summary": {
+    "count": 164,
+    "min": 0.0708,
+    "max": 95.5,
+    "average": 25.281729268292686
+  },
+  "reproducibility_summary": {
+    "results_total": 164,
+    "has_reproducibility_gap_count": 164,
+    "populated_ratio_avg": 0
+  },
+  "provenance_summary": {
+    "total_results": 164,
+    "total_groups": 76,
+    "multi_source_groups": 0,
+    "first_party_only_groups": 9,
+    "source_type_distribution": {
+      "first_party": 9,
+      "third_party": 155,
+      "collaborative": 0,
+      "unspecified": 0
+    }
+  },
+  "comparability_summary": {
+    "total_groups": 76,
+    "groups_with_variant_check": 6,
+    "groups_with_cross_party_check": 0,
+    "variant_divergent_count": 6,
+    "cross_party_divergent_count": 0
+  },
+  "benchmark_names": [
+    "ARC Prize evaluations leaderboard JSON",
+    "ARC-AGI v2",
+    "AppWorld Benchmark",
+    "Artificial Analysis LLM API",
+    "BFCL leaderboard CSV",
+    "BrowseComp-Plus",
+    "MCP Atlas",
+    "MMMLU",
+    "MMMU (validation)",
+    "OSWorld",
+    "SWE-Bench Verified",
+    "SWE-bench Verified",
+    "Swe Bench",
+    "Tau2 Retail",
+    "Tau2 Telecom",
+    "Terminal Bench 2 0",
+    "Terminal-Bench 2.0",
+    "τ-bench (Tool-Agent-User Interaction Benchmark)"
+  ],
+  "top_benchmark_scores": [
+    {
+      "benchmark": "Terminal Bench 2 0",
+      "benchmarkKey": "terminal_bench_2_0",
+      "canonical_display_name": "Terminal bench 2 0 / Accuracy",
+      "evaluation_name": "terminal-bench-2.0",
+      "score": 63.1,
+      "metric": "Task resolution accuracy across 87 terminal tasks with 5 trials each",
+      "lower_is_better": false
+    },
+    {
+      "benchmark": "Artificial Analysis LLM API",
+      "benchmarkKey": "artificial_analysis_llms_artificial_analysis_artificial_analysis_math_index",
+      "canonical_display_name": "artificial_analysis.artificial_analysis_math_index / Artificial Analysis Math Index",
+      "evaluation_name": "artificial_analysis.artificial_analysis_math_index",
+      "score": 62.7,
+      "metric": "Artificial Analysis composite math index.",
+      "lower_is_better": false
+    },
+    {
+      "benchmark": "Artificial Analysis LLM API",
+      "benchmarkKey": "artificial_analysis_llms_artificial_analysis_median_output_tokens_per_second",
+      "canonical_display_name": "artificial_analysis.median_output_tokens_per_second / Median output tokens per second",
+      "evaluation_name": "artificial_analysis.median_output_tokens_per_second",
+      "score": 52.885,
+      "metric": "Median output generation speed reported by Artificial Analysis.",
+      "lower_is_better": false
+    },
+    {
+      "benchmark": "Artificial Analysis LLM API",
+      "benchmarkKey": "artificial_analysis_llms_artificial_analysis_artificial_analysis_intelligence_index",
+      "canonical_display_name": "artificial_analysis.artificial_analysis_intelligence_index / Artificial Analysis Intelligence Index",
+      "evaluation_name": "artificial_analysis.artificial_analysis_intelligence_index",
+      "score": 43.1,
+      "metric": "Artificial Analysis composite intelligence index.",
+      "lower_is_better": false
+    },
+    {
+      "benchmark": "Artificial Analysis LLM API",
+      "benchmarkKey": "artificial_analysis_llms_artificial_analysis_artificial_analysis_coding_index",
+      "canonical_display_name": "artificial_analysis.artificial_analysis_coding_index / Artificial Analysis Coding Index",
+      "evaluation_name": "artificial_analysis.artificial_analysis_coding_index",
+      "score": 42.9,
+      "metric": "Artificial Analysis composite coding index.",
+      "lower_is_better": false
+    },
+    {
+      "benchmark": "Artificial Analysis LLM API",
+      "benchmarkKey": "artificial_analysis_llms_artificial_analysis_price_1m_output_tokens",
+      "canonical_display_name": "artificial_analysis.price_1m_output_tokens / Price 1m Output Tokens",
+      "evaluation_name": "artificial_analysis.price_1m_output_tokens",
+      "score": 25,
+      "metric": "Price per 1M output tokens in USD.",
+      "lower_is_better": true
+    },
+    {
+      "benchmark": "Artificial Analysis LLM API",
+      "benchmarkKey": "artificial_analysis_llms_artificial_analysis_price_1m_blended_3_to_1",
+      "canonical_display_name": "artificial_analysis.price_1m_blended_3_to_1 / Price 1m Blended 3 To 1",
+      "evaluation_name": "artificial_analysis.price_1m_blended_3_to_1",
+      "score": 10,
+      "metric": "Blended price per 1M tokens using a 3:1 input-to-output ratio.",
+      "lower_is_better": true
+    },
+    {
+      "benchmark": "Artificial Analysis LLM API",
+      "benchmarkKey": "artificial_analysis_llms_artificial_analysis_price_1m_input_tokens",
+      "canonical_display_name": "artificial_analysis.price_1m_input_tokens / Price 1m Input Tokens",
+      "evaluation_name": "artificial_analysis.price_1m_input_tokens",
+      "score": 5,
+      "metric": "Price per 1M input tokens in USD.",
+      "lower_is_better": true
+    },
+    {
+      "benchmark": "BFCL leaderboard CSV",
+      "benchmarkKey": "bfcl",
+      "canonical_display_name": "Bfcl / Format sensitivity / Format Sensitivity Standard Deviation",
+      "evaluation_name": "format_sensitivity",
+      "score": 3.65,
+      "metric": "format_sensitivity",
+      "lower_is_better": true
+    },
+    {
+      "benchmark": "Artificial Analysis LLM API",
+      "benchmarkKey": "artificial_analysis_llms_artificial_analysis_median_time_to_first_token_seconds",
+      "canonical_display_name": "artificial_analysis.median_time_to_first_token_seconds / Median Time To First Token Seconds",
+      "evaluation_name": "artificial_analysis.median_time_to_first_token_seconds",
+      "score": 1.311,
+      "metric": "Median time to first token reported by Artificial Analysis.",
+      "lower_is_better": true
+    },
+    {
+      "benchmark": "Artificial Analysis LLM API",
+      "benchmarkKey": "artificial_analysis_llms_artificial_analysis_median_time_to_first_answer_token",
+      "canonical_display_name": "artificial_analysis.median_time_to_first_answer_token / Median time to first answer token",
+      "evaluation_name": "artificial_analysis.median_time_to_first_answer_token",
+      "score": 1.311,
+      "metric": "Median time to first answer token reported by Artificial Analysis.",
+      "lower_is_better": true
+    },
+    {
+      "benchmark": "Tau2 Telecom",
+      "benchmarkKey": "llm_stats_tau2_telecom",
+      "canonical_display_name": "Tau2 Telecom / Score",
+      "evaluation_name": "llm_stats.tau2-telecom",
+      "score": 0.982,
+      "metric": "τ²-Bench telecom domain evaluates conversational agents in a dual-control environment modeled as a Dec-POMDP, where both agent and user use tools in shared telecommunications troubleshooting scenarios that test coordination and communication capabilities.",
+      "lower_is_better": false
+    },
+    {
+      "benchmark": "MMMLU",
+      "benchmarkKey": "llm_stats_mmmlu",
+      "canonical_display_name": "Mmmlu / Score",
+      "evaluation_name": "llm_stats.mmmlu",
+      "score": 0.908,
+      "metric": "Multilingual Massive Multitask Language Understanding dataset released by OpenAI, featuring professionally translated MMLU test questions across 14 languages including Arabic, Bengali, German, Spanish, French, Hindi, Indonesian, Italian, Japanese, Korean, Portuguese, Swahili, Yoruba, and Chinese. Contains approximately 15,908 multiple-choice questions per language covering 57 subjects.",
+      "lower_is_better": false
+    },
+    {
+      "benchmark": "Artificial Analysis LLM API",
+      "benchmarkKey": "artificial_analysis_llms_artificial_analysis_mmlu_pro",
+      "canonical_display_name": "artificial_analysis.mmlu_pro / MMLU-Pro",
+      "evaluation_name": "artificial_analysis.mmlu_pro",
+      "score": 0.889,
+      "metric": "Benchmark score on MMLU-Pro.",
+      "lower_is_better": false
+    },
+    {
+      "benchmark": "Tau2 Retail",
+      "benchmarkKey": "llm_stats_tau2_retail",
+      "canonical_display_name": "Tau2 Retail / Score",
+      "evaluation_name": "llm_stats.tau2-retail",
+      "score": 0.889,
+      "metric": "τ²-bench retail domain evaluates conversational AI agents in customer service scenarios within a dual-control environment where both agent and user can interact with tools. Tests tool-agent-user interaction, rule adherence, and task consistency in retail customer support contexts.",
+      "lower_is_better": false
+    }
+  ]
+}

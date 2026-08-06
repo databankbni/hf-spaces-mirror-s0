@@ -1,0 +1,77 @@
+{
+  "generatedAt": "2026-07-07T14:54:06.660Z",
+  "bounds": {
+    "west": -67.02415466308594,
+    "south": 10.608306921073636,
+    "east": -67.0107650756836,
+    "north": 10.614381049157403
+  },
+  "zoomLevels": [
+    20
+  ],
+  "tilePixelSize": 512,
+  "selection": {
+    "mode": "hotspots",
+    "hotspotTileRadius": 4,
+    "hotspots": "public/data/worst-damage-hotspots.json"
+  },
+  "source": {
+    "before": {
+      "label": "Vantor LG02 pre-event imagery, 7 Apr 2026",
+      "cogUrl": "https://vantor-opendata.s3.amazonaws.com/events/Venezuela-Earthquake-Jun-2026/B120001100513B10.tif",
+      "bounds": {
+        "west": -67.085575,
+        "south": 10.518145,
+        "east": -66.967422,
+        "north": 10.679827
+      },
+      "gsdMeters": 0.415
+    },
+    "after": {
+      "label": "Vantor LG05 post-event imagery, 27 Jun 2026",
+      "cogUrl": "https://vantor-opendata.s3.amazonaws.com/events/Venezuela-Earthquake-Jun-2026/B15000110186C610.tif",
+      "bounds": {
+        "west": -67.043108,
+        "south": 10.524025,
+        "east": -66.942944,
+        "north": 10.642557
+      },
+      "gsdMeters": 0.3494610093253814
+    }
+  },
+  "method": {
+    "type": "deterministic-retina-enhancement",
+    "generative": false,
+    "operations": [
+      "512px source tile fetch",
+      "scene-sampled percentile luminance stretch",
+      "mild unsharp mask",
+      "mild saturation lift"
+    ],
+    "note": "No diffusion, GAN, or learned texture synthesis is used. Output is for visual inspection and preserves the raw Vantor COG fallback."
+  },
+  "counts": {
+    "before": {
+      "requested": 229,
+      "written": 223,
+      "skipped": 6,
+      "calibration": {
+        "low": 70,
+        "high": 206,
+        "samples": 385024,
+        "fallback": false
+      }
+    },
+    "after": {
+      "requested": 229,
+      "written": 226,
+      "skipped": 3,
+      "calibration": {
+        "low": 90,
+        "high": 201,
+        "samples": 393216,
+        "fallback": false
+      }
+    }
+  }
+}

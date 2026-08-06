@@ -1,0 +1,6 @@
+claim_id,status,evidence_kind,observation,limitation
+claim-1,partial,computed_projection_invariant,A seeded 4x4 CPU projection was nonnegative and doubly stochastic; its measured spectral norm was 1.,"This verifies the implemented projection invariant on one synthetic matrix, not trained-model stability relative to HC."
+claim-2,partial,toy_dimensional_ablation,216 of 216 seeded synthetic-tensor rows preserved their expected output shape across eight mapping variants.,This tests dimensional consistency only; it does not reproduce Table 1 task quality or trained component ablations.
+claim-3,partial,toy_random_matrix_propagation,"Computed 27 paired seeded raw/projected residual-matrix compositions at depths 10, 50, and 100.","This tests only a toy residual-propagation mechanism; it does not reproduce loss gaps, trained gradient norms, or the paper's model-scale figures."
+claim-4,unavailable,unavailable,No kernel or system measurement was produced.,"No kernel fusion, recomputing, communication-overlap, or system-overhead benchmark was run."
+claim-5,unavailable,unavailable,No model-scale or downstream measurement was produced.,No 27B training or downstream benchmark was run.

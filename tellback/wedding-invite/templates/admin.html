@@ -1,0 +1,1885 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin — Wedding Invitation</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%92%8D%3C/text%3E%3C/svg%3E">
+  <!-- Moul, Great Vibes and Battambang are needed by the canvas poster studio -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Hanuman:wght@400;700&family=Battambang:wght@400;700&family=Moul&family=Great+Vibes&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Playfair Display', 'Hanuman', serif;
+      background: #faf6ee;
+      color: #3a3226;
+      padding-bottom: 4rem;
+    }
+    .wrap { max-width: 860px; margin: 0 auto; padding: 1.5rem 1rem; }
+    header.top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-bottom: 1rem;
+    }
+    h1 { color: #a8873a; font-size: 1.5rem; }
+    .top a {
+      color: #a8873a;
+      text-decoration: none;
+      border: 1px solid #c9a84c;
+      border-radius: 999px;
+      padding: 0.4rem 1rem;
+      font-size: 0.9rem;
+      margin-left: 0.4rem;
+    }
+    .jump {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      background: #faf6ee;
+      margin: 0 -1rem 1.2rem;
+      padding: 0.6rem 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      box-shadow: 0 2px 8px rgba(160,130,60,0.08);
+    }
+    .jump a {
+      color: #a8873a;
+      text-decoration: none;
+      background: #fff;
+      border: 1px solid #efe3c8;
+      border-radius: 999px;
+      padding: 0.45rem 0.9rem;
+      font-size: 0.85rem;
+      white-space: nowrap;
+    }
+    @media (max-width: 640px) {
+      .jump { flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+      .jump::-webkit-scrollbar { display: none; }
+    }
+    .flash { padding: 0.8rem 1.1rem; border-radius: 10px; margin-bottom: 1rem; font-size: 0.95rem; }
+    .flash.success { background: #e8f4e6; color: #2d5016; }
+    .flash.error { background: #fce8e6; color: #b94e48; }
+    .warn { background: #fdf3d7; color: #8a6d1a; padding: 0.8rem 1.1rem; border-radius: 10px; margin-bottom: 1rem; font-size: 0.9rem; }
+    .card {
+      background: #fff;
+      border: 1px solid #efe3c8;
+      border-radius: 16px;
+      padding: 1.6rem;
+      margin-bottom: 1.4rem;
+      box-shadow: 0 4px 18px rgba(160,130,60,0.08);
+    }
+    h2 { color: #a8873a; font-size: 1.15rem; margin-bottom: 1rem; border-bottom: 2px solid #f3e8cf; padding-bottom: 0.4rem; }
+    label { display: block; font-weight: 700; font-size: 0.88rem; margin: 0.9rem 0 0.3rem; }
+    input[type="text"], input[type="number"], input[type="date"], textarea, select {
+      width: 100%;
+      padding: 0.65rem 0.8rem;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 16px; /* 16px+ stops iPhone from auto-zooming on focus */
+      background: #fff;
+    }
+    .swatches { display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center; }
+    .swatch {
+      width: 42px; height: 42px;
+      border: 2px solid #fff;
+      border-radius: 50%;
+      cursor: pointer;
+      box-shadow: 0 1px 6px rgba(0,0,0,0.25);
+    }
+    input[type="color"] { width: 58px; height: 42px; border: 1px solid #ddd; border-radius: 8px; padding: 2px; background: #fff; cursor: pointer; }
+    .check-row { display: flex; align-items: center; gap: 0.55rem; font-weight: 400; margin: 0.7rem 0 0; cursor: pointer; }
+    .check-row input { width: 20px; height: 20px; accent-color: #a8873a; flex-shrink: 0; }
+    .sec-row {
+      display: flex; align-items: center; gap: 0.5rem;
+      padding: 0.5rem 0.6rem;
+      border: 1px solid #f0e6cf; border-radius: 10px;
+      margin-bottom: 0.4rem; background: #fffdf7;
+    }
+    .sec-row .sec-name { flex: 1; font-size: 0.92rem; min-width: 0; }
+    .sec-row .sec-hide { display: flex; align-items: center; gap: 0.3rem; font-weight: 400; font-size: 0.82rem; margin: 0; white-space: nowrap; }
+    .sec-row button { border: 1px solid #e2d6bb; background: #fff; border-radius: 8px; width: 36px; height: 36px; cursor: pointer; font-size: 0.9rem; flex-shrink: 0; }
+    .faq-edit {
+      border: 1px solid #f0e6cf; border-radius: 10px; background: #fffdf7;
+      padding: 0.6rem; margin-bottom: 0.7rem;
+      display: grid; gap: 0.45rem;
+    }
+    @media (min-width: 640px) { .faq-edit { grid-template-columns: 1fr 1fr; } }
+    .faq-edit button { border: none; background: #fce8e6; color: #b94e48; border-radius: 8px; padding: 0.45rem; cursor: pointer; }
+    @media (min-width: 640px) { .faq-edit button { grid-column: span 2; } }
+    .chart { display: flex; align-items: flex-end; gap: 3px; height: 90px; margin-top: 0.8rem; }
+    .chart .bar { flex: 1; background: linear-gradient(180deg, #c9a84c, #a8873a); border-radius: 3px 3px 0 0; min-height: 2px; position: relative; }
+    .chart .bar small { position: absolute; top: 100%; left: 50%; transform: translateX(-50%) rotate(45deg); font-size: 0.55rem; color: #999; margin-top: 4px; white-space: nowrap; }
+    .chart-wrap { padding-bottom: 1.6rem; }
+    .guest-rows { margin-top: 1.2rem; }
+    .guest-row {
+      display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap;
+      padding: 0.7rem 0.2rem;
+      border-bottom: 1px solid #f0e6cf;
+    }
+    .guest-info { flex: 1; min-width: 180px; }
+    .guest-status { display: flex; gap: 0.7rem; flex-wrap: wrap; font-size: 0.8rem; margin-top: 0.2rem; }
+    .st-on { color: #2d5016; font-weight: 700; }
+    .st-no { color: #b94e48; font-weight: 700; }
+    .st-off { color: #999; }
+    .pill { background: #faf3e3; border: 1px solid #efe3c8; border-radius: 999px; padding: 0.1rem 0.6rem; font-size: 0.78rem; color: #a8873a; }
+    .guest-actions { display: flex; gap: 0.35rem; flex-wrap: wrap; }
+    .guest-actions .btn { margin-top: 0; }
+    .pill-row { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-top: 1rem; }
+    .pill-btn {
+      border: 1px solid #c9a84c; background: #fff; color: #a8873a;
+      border-radius: 999px; padding: 0.4rem 0.95rem;
+      font-family: inherit; font-size: 0.82rem; cursor: pointer;
+    }
+    .pill-btn.active { background: linear-gradient(135deg, #c9a84c, #a8873a); color: #fff; }
+    .studio-grid { display: grid; grid-template-columns: 1fr; gap: 1.2rem; margin-top: 1rem; }
+    @media (min-width: 720px) { .studio-grid { grid-template-columns: 1fr 320px; align-items: start; } }
+    .studio-preview { text-align: center; }
+    #ps-canvas {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 12px;
+      box-shadow: 0 8px 30px rgba(60, 45, 10, 0.25);
+      background: #fff;
+    }
+    textarea { resize: vertical; min-height: 84px; }
+    .btn {
+      display: inline-block;
+      margin-top: 1.2rem;
+      padding: 0.7rem 1.6rem;
+      border: none;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #c9a84c, #a8873a);
+      color: #fff;
+      font-family: inherit;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .btn-sm { padding: 0.35rem 0.9rem; font-size: 0.82rem; margin-top: 0.4rem; }
+    .btn-red { background: #b94e48; }
+    .btn-outline { background: #fff; color: #a8873a; border: 1px solid #c9a84c; }
+    input[type="file"] { margin-top: 0.4rem; font-size: 0.9rem; max-width: 100%; }
+    .thumb-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 0.8rem; margin-top: 1rem; }
+    .thumb { text-align: center; }
+    .thumb img { width: 100%; height: 110px; object-fit: cover; border-radius: 10px; border: 1px solid #eee; }
+    .hero-preview { max-width: 320px; width: 100%; border-radius: 12px; display: block; margin-top: 0.8rem; }
+    .qr-preview { max-width: 180px; width: 100%; border-radius: 10px; display: block; margin-top: 0.6rem; border: 1px solid #eee; }
+    .hint { font-size: 0.82rem; color: #888; margin-top: 0.3rem; }
+    .grid-2 { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+    @media (min-width: 640px) { .grid-2 { grid-template-columns: 1fr 1fr; } }
+    .sched-row {
+      display: grid;
+      grid-template-columns: 110px 1fr 1fr 40px;
+      grid-template-areas: "time kh en del";
+      gap: 0.5rem;
+      margin-bottom: 0.5rem;
+      align-items: center;
+    }
+    .sched-row .st-time { grid-area: time; }
+    .sched-row .st-kh { grid-area: kh; }
+    .sched-row .st-en { grid-area: en; }
+    .sched-row button { grid-area: del; border: none; background: #fce8e6; color: #b94e48; border-radius: 8px; height: 40px; cursor: pointer; font-size: 1rem; }
+    @media (max-width: 640px) {
+      .sched-row {
+        grid-template-columns: 1fr 1fr 40px;
+        grid-template-areas:
+          "time time del"
+          "kh   kh   kh"
+          "en   en   en";
+        border: 1px solid #f0e6cf;
+        border-radius: 10px;
+        padding: 0.6rem;
+        margin-bottom: 0.7rem;
+        background: #fffdf7;
+      }
+    }
+    .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .save-bar { position: sticky; bottom: 0.8rem; z-index: 25; text-align: center; margin-top: 1.2rem; }
+    .save-bar .btn { box-shadow: 0 6px 20px rgba(60,45,10,0.3); margin-top: 0; }
+    @media (max-width: 640px) {
+      .save-bar .btn { width: 100%; }
+      .btn { padding: 0.8rem 1.6rem; }
+    }
+    .stats { display: flex; gap: 0.8rem; flex-wrap: wrap; margin-bottom: 1rem; }
+    .stat { background: #faf3e3; border: 1px solid #efe3c8; border-radius: 12px; padding: 0.7rem 1.2rem; text-align: center; }
+    .stat b { display: block; font-size: 1.5rem; color: #a8873a; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+    th, td { text-align: left; padding: 0.55rem 0.5rem; border-bottom: 1px solid #f0e6cf; vertical-align: top; }
+    th { color: #a8873a; font-size: 0.85rem; }
+    .yes { color: #2d5016; font-weight: 700; }
+    .no { color: #b94e48; }
+    .wish-item { border-bottom: 1px solid #f0e6cf; padding: 0.8rem 0.2rem; display: flex; justify-content: space-between; gap: 1rem; align-items: flex-start; }
+    .wish-item b { color: #a8873a; }
+    .wish-item p { font-size: 0.95rem; margin-top: 0.2rem; }
+    details { border: 1px solid #f0e6cf; border-radius: 12px; padding: 0.6rem 1rem; margin-bottom: 0.8rem; background: #fffdf7; }
+    details[open] { padding-bottom: 1rem; }
+    summary { cursor: pointer; font-weight: 700; color: #a8873a; padding: 0.3rem 0; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <h1>💍 Admin Panel</h1>
+      <nav>
+        <a href="{{ url_for('index') }}" target="_blank">View Site ↗</a>
+        <a href="{{ url_for('checkin') }}">🛎 Check-in</a>
+        <a href="{{ url_for('wall') }}" target="_blank">📺 Wishes Wall</a>
+        <a href="{{ url_for('backup') }}">🛟 Backup</a>
+        <a href="{{ url_for('logout') }}">Logout</a>
+      </nav>
+    </header>
+
+    <nav class="jump">
+      <a href="#design">🎨 Design</a>
+      <a href="#text">✏️ Text</a>
+      <a href="#schedule">🕐 Schedule</a>
+      <a href="#cover">🖼 Cover</a>
+      <a href="#background">🌄 Background</a>
+      <a href="#gallery">📸 Gallery</a>
+      <a href="#khqr">💳 KHQR</a>
+      <a href="#video-admin">🎬 Video</a>
+      <a href="#music">🎵 Music</a>
+      <a href="#guest-photo-admin">📷 Guest Photos</a>
+      <a href="#rsvps">✅ RSVPs</a>
+      <a href="#wishes">💌 Wishes</a>
+      <a href="#guest-links">🔗 Guest Links</a>
+    </nav>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% for category, message in messages %}
+        <div class="flash {{ category }}">{{ message }}</div>
+      {% endfor %}
+    {% endwith %}
+
+    {% if not hf_enabled %}
+    <div class="warn">
+      ⚠ Hugging Face sync is OFF — changes will be lost when the Space restarts.
+      Set the <b>HF_TOKEN</b> and <b>DATASET_REPO</b> secrets in your Space settings to keep data safe.
+    </div>
+    {% endif %}
+
+    <!-- Launch readiness checklist -->
+    {% set missing_required = checklist | selectattr('2') | rejectattr('1') | list %}
+    <details class="card" style="padding:1rem 1.4rem;" {% if missing_required %}open{% endif %}>
+      <summary style="font-size:1.05rem;">
+        🚀 Launch Checklist —
+        {% if missing_required %}
+        <span style="color:#b94e48;">{{ missing_required | length }} required item(s) missing</span>
+        {% else %}
+        <span style="color:#2d5016;">all required items done ✓</span>
+        {% endif %}
+      </summary>
+      <div style="margin-top:0.8rem;">
+        {% for label, ok, required in checklist %}
+        <div style="padding:0.3rem 0; font-size:0.92rem;">
+          {% if ok %}<span style="color:#2d5016;">✅</span>
+          {% elif required %}<span style="color:#b94e48;">❌</span>
+          {% else %}<span style="color:#b0a68f;">◻️</span>{% endif %}
+          {{ label }}
+          {% if not required and not ok %}<span class="hint" style="display:inline;">(optional)</span>{% endif %}
+        </div>
+        {% endfor %}
+      </div>
+    </details>
+
+    <!-- Activity feed -->
+    {% if activity %}
+    <details class="card" style="padding:1rem 1.4rem;">
+      <summary style="font-size:1.05rem;">🕑 Recent Activity — {{ activity | length }} latest event(s)</summary>
+      <div style="margin-top:0.8rem;">
+        {% for e in activity %}
+        <div style="padding:0.32rem 0; font-size:0.92rem; display:flex; gap:0.5rem;">
+          <span>{{ e.icon }}</span>
+          <span style="flex:1;">{{ e.text }}</span>
+          <span class="hint" style="white-space:nowrap;">{{ e.ago }}</span>
+        </div>
+        {% endfor %}
+      </div>
+    </details>
+    {% endif %}
+
+    <!-- Design & feature settings -->
+    <form class="card" id="design" method="post" action="{{ url_for('save_design') }}">
+      <h2>🎨 Design &amp; Features</h2>
+
+      <label>Theme Color</label>
+      <div class="swatches">
+        {% for name, hex in theme_presets %}
+        <button type="button" class="swatch" style="background: {{ hex }};" title="{{ name }}"
+                onclick="document.getElementById('theme-color').value = '{{ hex }}'"></button>
+        {% endfor %}
+        <input type="color" id="theme-color" name="theme_color" value="{{ c.theme_color }}">
+      </div>
+      <div class="hint">Tap a preset or pick any color — recolors buttons, titles and ornaments across the site.</div>
+
+      <label>Background Photo Overlay</label>
+      <input type="range" name="bg_overlay" min="0" max="0.9" step="0.05" value="{{ c.bg_overlay }}" style="width:100%;">
+      <div class="hint">Slide left = photo shows stronger · slide right = softer, more cream.</div>
+
+      <div class="grid-2">
+        <div>
+          <label for="font_kh_heading">Khmer Heading Font</label>
+          <select id="font_kh_heading" name="font_kh_heading">
+            {% for fnt in kh_fonts %}<option {{ 'selected' if c.font_kh_heading == fnt }}>{{ fnt }}</option>{% endfor %}
+          </select>
+        </div>
+        <div>
+          <label for="font_en_script">English Script Font</label>
+          <select id="font_en_script" name="font_en_script">
+            {% for fnt in script_fonts %}<option {{ 'selected' if c.font_en_script == fnt }}>{{ fnt }}</option>{% endfor %}
+          </select>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div>
+          <label for="petal_emoji">Falling Emoji</label>
+          <input type="text" id="petal_emoji" name="petal_emoji" value="{{ c.petal_emoji }}" maxlength="8">
+        </div>
+        <div>
+          <label for="petal_count">How Many (0 = off)</label>
+          <input type="number" id="petal_count" name="petal_count" min="0" max="20" value="{{ c.petal_count }}">
+        </div>
+      </div>
+
+      <label class="check-row"><input type="checkbox" name="show_envelope" {{ 'checked' if c.show_envelope == 'yes' }}> 💌 "Tap to Open" envelope intro</label>
+      <label class="check-row"><input type="checkbox" name="hero_slideshow" {{ 'checked' if c.hero_slideshow == 'yes' }}> 🎞 Hero slideshow (cover photo + first 4 gallery photos)</label>
+      <label class="check-row"><input type="checkbox" name="guest_upload" {{ 'checked' if c.guest_upload == 'yes' }}> 📷 Let guests upload photos (you approve before they show)</label>
+      <label class="check-row"><input type="checkbox" name="voice_wishes" {{ 'checked' if c.voice_wishes == 'yes' }}> 🎙 Let guests record voice blessings (you approve first)</label>
+      <label class="check-row"><input type="checkbox" name="after_mode" {{ 'checked' if c.after_mode == 'yes' }}> 💍 After-Wedding mode (hides RSVP — keepsake site)</label>
+
+      <div class="grid-2">
+        <div>
+          <label for="rsvp_deadline">RSVP Deadline (empty = always open)</label>
+          <input type="date" id="rsvp_deadline" name="rsvp_deadline" value="{{ c.rsvp_deadline }}">
+        </div>
+        <div>
+          <label for="default_lang">Default Language</label>
+          <select id="default_lang" name="default_lang">
+            <option value="kh" {{ 'selected' if c.default_lang != 'en' }}>ខ្មែរ Khmer</option>
+            <option value="en" {{ 'selected' if c.default_lang == 'en' }}>English</option>
+          </select>
+        </div>
+      </div>
+
+      <label>Section Order &amp; Visibility</label>
+      <div class="hint">Use ▲▼ to reorder the page. Tick "Hide" to remove a section without deleting its content.</div>
+      <input type="hidden" name="section_order" id="section-order">
+      <div id="sec-list">
+        {% for sid, slabel in admin_sections %}
+        <div class="sec-row" data-id="{{ sid }}">
+          <span class="sec-name">{{ slabel }}</span>
+          <label class="sec-hide"><input type="checkbox" name="section_hidden" value="{{ sid }}" {{ 'checked' if sid in c.section_hidden }}> Hide</label>
+          <button type="button" onclick="moveSec(this, -1)">▲</button>
+          <button type="button" onclick="moveSec(this, 1)">▼</button>
+        </div>
+        {% endfor %}
+      </div>
+
+      <div class="hint" style="margin-top:1rem;">Guest table numbers are managed in the 🔗 Guest Links card below.</div>
+
+      <div class="save-bar">
+        <button class="btn" type="submit">💾 Save Design &amp; Features</button>
+      </div>
+    </form>
+
+    <!-- Text content + schedule (one form) -->
+    <form class="card" id="text" method="post" action="{{ url_for('save_text') }}">
+      <h2>✏️ Edit Text (Khmer &amp; English)</h2>
+      <div class="hint" style="margin-bottom:0.6rem;">Every text on the invitation page can be edited here. Click a group to open it.</div>
+      {% for group, group_fields in field_groups %}
+      <details {% if loop.first %}open{% endif %}>
+        <summary>{{ group }}</summary>
+        {% for key, label, widget in group_fields %}
+          <label for="{{ key }}">{{ label }}</label>
+          {% if widget == 'textarea' %}
+            <textarea id="{{ key }}" name="{{ key }}">{{ c[key] }}</textarea>
+          {% else %}
+            <input type="text" id="{{ key }}" name="{{ key }}" value="{{ c[key] }}">
+          {% endif %}
+        {% endfor %}
+      </details>
+      {% endfor %}
+
+      <h2 id="schedule" style="margin-top:1.8rem;">🕐 Wedding Schedule</h2>
+      <div class="hint" style="margin-bottom:0.7rem;">Time · Title (Khmer) · Title (English)</div>
+      <div id="sched-rows">
+        {% for item in c.schedule %}
+        <div class="sched-row">
+          <input class="st-time" type="text" name="schedule_time" value="{{ item.time }}" placeholder="07:00 AM">
+          <input class="st-kh" type="text" name="schedule_title_kh" value="{{ item.title_kh }}" placeholder="ពិធី...">
+          <input class="st-en" type="text" name="schedule_title_en" value="{{ item.title_en }}" placeholder="Ceremony...">
+          <button type="button" onclick="this.parentElement.remove()">✕</button>
+        </div>
+        {% endfor %}
+      </div>
+      <button type="button" class="btn btn-sm btn-outline" onclick="addSchedRow()">+ Add Row</button>
+
+      <h2 id="story" style="margin-top:1.8rem;">💞 Love Story Timeline</h2>
+      <div class="hint" style="margin-bottom:0.7rem;">Year/date · Milestone (Khmer) · Milestone (English) — e.g. 2019 · ជួបគ្នាដំបូង · First met</div>
+      <div id="story-rows">
+        {% for item in c.story %}
+        <div class="sched-row">
+          <input class="st-time" type="text" name="story_time" value="{{ item.time }}" placeholder="2019">
+          <input class="st-kh" type="text" name="story_title_kh" value="{{ item.title_kh }}" placeholder="ជួបគ្នាដំបូង...">
+          <input class="st-en" type="text" name="story_title_en" value="{{ item.title_en }}" placeholder="First met...">
+          <button type="button" onclick="this.parentElement.remove()">✕</button>
+        </div>
+        {% endfor %}
+      </div>
+      <button type="button" class="btn btn-sm btn-outline" onclick="addStoryRow()">+ Add Milestone</button>
+
+      <h2 id="faq" style="margin-top:1.8rem;">❓ FAQ</h2>
+      <div class="hint" style="margin-bottom:0.7rem;">Question and answer in both languages. Empty rows are removed.</div>
+      <div id="faq-rows">
+        {% for item in c.faq %}
+        <div class="faq-edit">
+          <input type="text" name="faq_q_kh" value="{{ item.q_kh }}" placeholder="សំណួរ (Khmer)">
+          <input type="text" name="faq_q_en" value="{{ item.q_en }}" placeholder="Question (English)">
+          <input type="text" name="faq_a_kh" value="{{ item.a_kh }}" placeholder="ចម្លើយ (Khmer)">
+          <input type="text" name="faq_a_en" value="{{ item.a_en }}" placeholder="Answer (English)">
+          <button type="button" onclick="this.parentElement.remove()">✕ Remove</button>
+        </div>
+        {% endfor %}
+      </div>
+      <button type="button" class="btn btn-sm btn-outline" onclick="addFaqRow()">+ Add Question</button>
+
+      <div class="save-bar">
+        <button class="btn" type="submit">💾 Save All Text &amp; Schedule</button>
+      </div>
+    </form>
+
+    <!-- Cover photo -->
+    <div class="card" id="cover">
+      <h2>🖼 Cover Photo (Hero Background)</h2>
+      <form method="post" action="{{ url_for('upload_hero') }}" enctype="multipart/form-data">
+        <input type="file" name="photo" accept="image/*" required>
+        <div class="hint">Automatically compressed for fast loading. Used as the full-screen background at the top.</div>
+        <button class="btn btn-sm" type="submit">Upload Cover Photo</button>
+      </form>
+      {% if c.hero_photo %}
+        <img class="hero-preview" src="{{ url_for('photos', filename=c.hero_photo) }}" alt="Current cover photo">
+        <form method="post" action="{{ url_for('remove_file') }}">
+          <input type="hidden" name="key" value="hero_photo">
+          <button class="btn btn-sm btn-red" type="submit">Remove Cover Photo</button>
+        </form>
+      {% endif %}
+    </div>
+
+    <!-- Page background -->
+    <div class="card" id="background">
+      <h2>🌄 Page Background Photo</h2>
+      <form method="post" action="{{ url_for('upload_bg') }}" enctype="multipart/form-data">
+        <input type="file" name="photo" accept="image/*" required>
+        <div class="hint">Shown softly behind the whole page, under the content cards. Compressed automatically.</div>
+        <button class="btn btn-sm" type="submit">Upload Background</button>
+      </form>
+      {% if c.bg_photo %}
+        <img class="hero-preview" src="{{ url_for('photos', filename=c.bg_photo) }}" alt="Current page background">
+        <form method="post" action="{{ url_for('remove_file') }}">
+          <input type="hidden" name="key" value="bg_photo">
+          <button class="btn btn-sm btn-red" type="submit">Remove Background</button>
+        </form>
+      {% endif %}
+    </div>
+
+    <!-- Gallery -->
+    <div class="card" id="gallery">
+      <h2>📸 Photo Gallery</h2>
+      <form method="post" action="{{ url_for('upload_gallery') }}" enctype="multipart/form-data">
+        <input type="file" name="photos" accept="image/*" multiple required>
+        <div class="hint">Select multiple photos at once — they are compressed automatically.</div>
+        <button class="btn btn-sm" type="submit">Upload Photos</button>
+      </form>
+      {% if c.gallery %}
+      <div class="thumb-grid">
+        {% for img in c.gallery %}
+        <div class="thumb">
+          <img src="{{ url_for('photos', filename=img) }}" alt="">
+          <div style="display:flex; gap:0.3rem; justify-content:center; flex-wrap:wrap;">
+            <form method="post" action="{{ url_for('move_photo') }}" style="display:inline;">
+              <input type="hidden" name="filename" value="{{ img }}">
+              <input type="hidden" name="dir" value="up">
+              <button class="btn btn-sm btn-outline" type="submit" {{ 'disabled' if loop.first }}>◀</button>
+            </form>
+            <form method="post" action="{{ url_for('move_photo') }}" style="display:inline;">
+              <input type="hidden" name="filename" value="{{ img }}">
+              <input type="hidden" name="dir" value="down">
+              <button class="btn btn-sm btn-outline" type="submit" {{ 'disabled' if loop.last }}>▶</button>
+            </form>
+            <form method="post" action="{{ url_for('delete_photo') }}" style="display:inline;">
+              <input type="hidden" name="filename" value="{{ img }}">
+              <button class="btn btn-sm btn-red" type="submit">✕</button>
+            </form>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      {% else %}
+      <p class="hint" style="margin-top:1rem;">No gallery photos yet.</p>
+      {% endif %}
+    </div>
+
+    <!-- KHQR -->
+    <div class="card" id="khqr">
+      <h2>💳 KHQR Gift Codes</h2>
+      <div class="hint">Upload KHQR codes for each side of the family. The gift section appears once at least one is uploaded — guests switch between Groom's and Bride's side on the page.</div>
+      {% for side, side_label in (('groom', "🤵 Groom's Side"), ('bride', "👰 Bride's Side")) %}
+      <label style="margin-top:1.2rem;">{{ side_label }}</label>
+      <div class="grid-2">
+        {% for cur in ('usd', 'khr') %}
+        {% set key = 'khqr_' + side + '_' + cur %}
+        <div>
+          <form method="post" action="{{ url_for('upload_khqr') }}" enctype="multipart/form-data">
+            <input type="hidden" name="slot" value="{{ side }}_{{ cur }}">
+            <input type="file" name="photo" accept="image/*" required>
+            <button class="btn btn-sm" type="submit">Upload {{ cur | upper }} QR</button>
+          </form>
+          {% if c[key] %}
+          <img class="qr-preview" src="{{ url_for('photos', filename=c[key]) }}" alt="KHQR {{ side }} {{ cur }}">
+          <form method="post" action="{{ url_for('remove_file') }}">
+            <input type="hidden" name="key" value="{{ key }}">
+            <button class="btn btn-sm btn-red" type="submit">Remove</button>
+          </form>
+          {% endif %}
+        </div>
+        {% endfor %}
+      </div>
+      {% endfor %}
+    </div>
+
+    <!-- Video -->
+    <div class="card" id="video-admin">
+      <h2>🎬 Pre-Wedding Video</h2>
+      <div class="hint">Paste a YouTube link in ✏️ Text → 🎬 Video &amp; 👗 Dress Code, or upload a video file here (MP4, up to ~60 MB). The section appears once either is set.</div>
+      <form method="post" action="{{ url_for('upload_video') }}" enctype="multipart/form-data" style="margin-top:0.6rem;">
+        <input type="file" name="video" accept="video/*" required>
+        <button class="btn btn-sm" type="submit">Upload Video</button>
+      </form>
+      {% if c.video %}
+      <p class="hint" style="margin-top:0.8rem;">Current: <b>{{ c.video }}</b></p>
+      <video controls preload="metadata" src="{{ url_for('photos', filename=c.video) }}" style="max-width:320px; width:100%; border-radius:10px; margin-top:0.5rem;"></video>
+      <form method="post" action="{{ url_for('remove_file') }}">
+        <input type="hidden" name="key" value="video">
+        <button class="btn btn-sm btn-red" type="submit">Remove Video</button>
+      </form>
+      {% endif %}
+      {% if c.video_url %}
+      <p class="hint" style="margin-top:0.8rem;">YouTube link set: <b>{{ c.video_url }}</b></p>
+      {% endif %}
+    </div>
+
+    <!-- Music -->
+    <div class="card" id="music">
+      <h2>🎵 Background Music</h2>
+      <form method="post" action="{{ url_for('upload_music') }}" enctype="multipart/form-data">
+        <input type="file" name="music" accept="audio/*" required>
+        <div class="hint">MP3, M4A, OGG or WAV. Guests get a play button (browsers block autoplay).</div>
+        <button class="btn btn-sm" type="submit">Upload Music</button>
+      </form>
+      {% if c.music %}
+      <p class="hint" style="margin-top:0.8rem;">Current: <b>{{ c.music }}</b></p>
+      <audio controls src="{{ url_for('photos', filename=c.music) }}" style="margin-top:0.5rem; max-width:100%;"></audio>
+      <form method="post" action="{{ url_for('remove_file') }}">
+        <input type="hidden" name="key" value="music">
+        <button class="btn btn-sm btn-red" type="submit">Remove Music</button>
+      </form>
+      {% endif %}
+    </div>
+
+    <!-- RSVPs -->
+    <div class="card" id="rsvps">
+      <h2>✅ RSVP Responses</h2>
+      <div class="stats">
+        <div class="stat"><b>{{ stats.yes }}</b> Attending</div>
+        <div class="stat"><b>{{ stats.guests }}</b> Total Guests</div>
+        <div class="stat"><b>{{ stats.no }}</b> Can't Attend</div>
+        <div class="stat"><b>{{ visit_stats.visits }}</b> Page Visits</div>
+        <div class="stat"><b>{{ visit_stats.unique_guests }}</b> Guest Links Opened</div>
+      </div>
+      <div class="chart-wrap">
+        <label>Visits — last 14 days</label>
+        <div class="chart">
+          {% for d in chart %}
+          <div class="bar" style="height: {{ (d.count / chart_max * 100) | round(1) }}%;" title="{{ d.day }}: {{ d.count }}">
+            {% if loop.index0 % 2 == 0 %}<small>{{ d.day }}</small>{% endif %}
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      <a class="btn btn-sm btn-outline" href="{{ url_for('export_rsvps') }}">⬇ Export to Excel (CSV)</a>
+      {% if tg_enabled %}
+      <p class="hint" style="margin-top:0.6rem;">📲 Telegram alerts are ON — you get a message for every new RSVP and wish.</p>
+      {% else %}
+      <p class="hint" style="margin-top:0.6rem;">
+        📲 Want a Telegram message for every new RSVP? Create a bot with
+        <b>@BotFather</b>, then add <b>TELEGRAM_BOT_TOKEN</b> and <b>TELEGRAM_CHAT_ID</b>
+        secrets in your Space settings.
+      </p>
+      {% endif %}
+      {% if rsvps %}
+      <div class="table-wrap">
+      <table>
+        <tr><th>Name</th><th>Attending</th><th>Guests</th><th>Companions</th><th>Note</th><th></th></tr>
+        {% for r in rsvps %}
+        <tr>
+          <td>{{ r.name }}</td>
+          <td class="{{ 'yes' if r.attending == 'yes' else 'no' }}">{{ '✔ Yes' if r.attending == 'yes' else '✘ No' }}</td>
+          <td>{{ r.guests if r.attending == 'yes' else '—' }}</td>
+          <td>{{ r.companions or '' }}</td>
+          <td>{{ r.note }}</td>
+          <td>
+            <form method="post" action="{{ url_for('delete_rsvp') }}">
+              <input type="hidden" name="id" value="{{ r.id }}">
+              <button class="btn btn-sm btn-red" type="submit">✕</button>
+            </form>
+          </td>
+        </tr>
+        {% endfor %}
+      </table>
+      </div>
+      {% else %}
+      <p class="hint">No RSVP responses yet.</p>
+      {% endif %}
+    </div>
+
+    <!-- Wishes -->
+    <div class="card" id="wishes">
+      <h2>💌 Guest Wishes</h2>
+      {% if wishes %}
+        {% for w in wishes %}
+        <div class="wish-item" {% if w.hidden %}style="opacity:0.5;"{% endif %}>
+          <div>
+            <b>{{ w.name }}</b>{% if w.hidden %} <span style="color:#b94e48;font-size:0.8rem;">(hidden)</span>{% endif %}
+            <p>{{ w.message }}</p>
+          </div>
+          <div style="display:flex; gap:0.4rem; flex-shrink:0;">
+            <form method="post" action="{{ url_for('toggle_wish') }}">
+              <input type="hidden" name="id" value="{{ w.id }}">
+              <button class="btn btn-sm btn-outline" type="submit">{{ 'Show' if w.hidden else 'Hide' }}</button>
+            </form>
+            <form method="post" action="{{ url_for('delete_wish') }}">
+              <input type="hidden" name="id" value="{{ w.id }}">
+              <button class="btn btn-sm btn-red" type="submit">Delete</button>
+            </form>
+          </div>
+        </div>
+        {% endfor %}
+      {% else %}
+      <p class="hint">No wishes yet.</p>
+      {% endif %}
+    </div>
+
+    <!-- Gift ledger -->
+    <div class="card" id="gifts">
+      <h2>🧧 Gift Ledger (កត់ត្រាចងដៃ)</h2>
+      <div class="hint">Private record of what each guest gave — totals per currency, exportable for the family book. Guests never see this.</div>
+      <div class="stats" style="margin-top:0.8rem;">
+        <div class="stat"><b>${{ gift_totals.USD }}</b> USD total</div>
+        <div class="stat"><b>៛{{ gift_totals.KHR }}</b> KHR total</div>
+        <div class="stat"><b>{{ gifts | length }}</b> Entries</div>
+      </div>
+      <form method="post" action="{{ url_for('save_gift') }}">
+        <div class="grid-2">
+          <div>
+            <label for="gift-name">Guest Name</label>
+            <input type="text" id="gift-name" name="name" list="guest-names-list" required>
+            <datalist id="guest-names-list">
+              {% for g in guest_rows %}<option value="{{ g.name }}">{% endfor %}
+            </datalist>
+          </div>
+          <div>
+            <label for="gift-amount">Amount</label>
+            <input type="text" id="gift-amount" name="amount" placeholder="50">
+          </div>
+        </div>
+        <div class="grid-2">
+          <div>
+            <label for="gift-currency">Currency / Type</label>
+            <select id="gift-currency" name="currency">
+              <option value="USD" selected>USD $</option>
+              <option value="KHR">KHR ៛</option>
+              <option value="Gift">Gift (not money)</option>
+            </select>
+          </div>
+          <div>
+            <label for="gift-note">Note (optional)</label>
+            <input type="text" id="gift-note" name="note" placeholder="e.g. gold necklace">
+          </div>
+        </div>
+        <button class="btn btn-sm" type="submit">+ Record Gift</button>
+        {% if gifts %}
+        <a class="btn btn-sm btn-outline" href="{{ url_for('export_gifts') }}">⬇ Export CSV</a>
+        {% endif %}
+      </form>
+      {% if gifts %}
+      <div class="table-wrap" style="margin-top:1rem;">
+        <table>
+          <tr><th>Name</th><th>Amount</th><th>Note</th><th></th></tr>
+          {% for g in gifts %}
+          <tr>
+            <td>{{ g.name }}</td>
+            <td>{{ '$' if g.currency == 'USD' else ('៛' if g.currency == 'KHR' else '🎁') }}{{ g.amount }}</td>
+            <td>{{ g.note }}</td>
+            <td>
+              <form method="post" action="{{ url_for('delete_gift') }}">
+                <input type="hidden" name="id" value="{{ g.id }}">
+                <button class="btn btn-sm btn-red" type="submit">✕</button>
+              </form>
+            </td>
+          </tr>
+          {% endfor %}
+        </table>
+      </div>
+      {% endif %}
+    </div>
+
+    <!-- Voice blessing moderation -->
+    <div class="card" id="voice-admin">
+      <h2>🎙 Voice Blessings</h2>
+      {% if c.voice_wishes != 'yes' %}
+      <div class="hint">Voice blessings are OFF — enable them in 🎨 Design &amp; Features.</div>
+      {% endif %}
+      {% set vpending = voice_items | rejectattr('approved') | list %}
+      {% set vapproved = voice_items | selectattr('approved') | list %}
+      {% if vpending %}
+      <label>Waiting for approval ({{ vpending | length }})</label>
+      {% for v in vpending %}
+      <div class="wish-item">
+        <div style="flex:1; min-width:0;">
+          <b>{{ v.name or '—' }}</b>
+          <audio controls preload="none" src="{{ url_for('photos', filename=v.file) }}" style="width:100%; margin-top:0.3rem;"></audio>
+        </div>
+        <div style="display:flex; gap:0.4rem; flex-shrink:0;">
+          <form method="post" action="{{ url_for('moderate_voice') }}">
+            <input type="hidden" name="id" value="{{ v.id }}">
+            <input type="hidden" name="action" value="approve">
+            <button class="btn btn-sm" type="submit">✔</button>
+          </form>
+          <form method="post" action="{{ url_for('moderate_voice') }}">
+            <input type="hidden" name="id" value="{{ v.id }}">
+            <input type="hidden" name="action" value="delete">
+            <button class="btn btn-sm btn-red" type="submit">✕</button>
+          </form>
+        </div>
+      </div>
+      {% endfor %}
+      {% else %}
+      <p class="hint" style="margin-top:0.6rem;">No voice blessings waiting for approval.</p>
+      {% endif %}
+      {% if vapproved %}
+      <label style="margin-top:1rem;">Approved ({{ vapproved | length }})</label>
+      {% for v in vapproved %}
+      <div class="wish-item">
+        <div style="flex:1; min-width:0;">
+          <b>{{ v.name or '—' }}</b>
+          <audio controls preload="none" src="{{ url_for('photos', filename=v.file) }}" style="width:100%; margin-top:0.3rem;"></audio>
+        </div>
+        <form method="post" action="{{ url_for('moderate_voice') }}">
+          <input type="hidden" name="id" value="{{ v.id }}">
+          <input type="hidden" name="action" value="delete">
+          <button class="btn btn-sm btn-red" type="submit">Delete</button>
+        </form>
+      </div>
+      {% endfor %}
+      {% endif %}
+    </div>
+
+    <!-- Guest photo moderation -->
+    <div class="card" id="guest-photo-admin">
+      <h2>📷 Guest Photo Uploads</h2>
+      {% if c.guest_upload != 'yes' %}
+      <div class="hint">Guest uploads are currently OFF — enable them in 🎨 Design &amp; Features.</div>
+      {% endif %}
+      {% set pending = guest_photos | rejectattr('approved') | list %}
+      {% set approved = guest_photos | selectattr('approved') | list %}
+      {% if pending %}
+      <label>Waiting for approval ({{ pending | length }})</label>
+      <div class="thumb-grid">
+        {% for p in pending %}
+        <div class="thumb">
+          <img src="{{ url_for('photos', filename=p.file) }}" alt="">
+          {% if p.name %}<div class="hint">{{ p.name }}</div>{% endif %}
+          <form method="post" action="{{ url_for('moderate_guest_photo') }}" style="display:inline;">
+            <input type="hidden" name="id" value="{{ p.id }}">
+            <input type="hidden" name="action" value="approve">
+            <button class="btn btn-sm" type="submit">✔ Approve</button>
+          </form>
+          <form method="post" action="{{ url_for('moderate_guest_photo') }}" style="display:inline;">
+            <input type="hidden" name="id" value="{{ p.id }}">
+            <input type="hidden" name="action" value="delete">
+            <button class="btn btn-sm btn-red" type="submit">✕</button>
+          </form>
+        </div>
+        {% endfor %}
+      </div>
+      {% else %}
+      <p class="hint" style="margin-top:0.6rem;">No photos waiting for approval.</p>
+      {% endif %}
+      {% if approved %}
+      <label style="margin-top:1.2rem;">Approved &amp; visible on the page ({{ approved | length }})</label>
+      <div class="thumb-grid">
+        {% for p in approved %}
+        <div class="thumb">
+          <img src="{{ url_for('photos', filename=p.file) }}" alt="">
+          {% if p.name %}<div class="hint">{{ p.name }}</div>{% endif %}
+          <form method="post" action="{{ url_for('moderate_guest_photo') }}">
+            <input type="hidden" name="id" value="{{ p.id }}">
+            <input type="hidden" name="action" value="delete">
+            <button class="btn btn-sm btn-red" type="submit">Delete</button>
+          </form>
+        </div>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+
+    <!-- Guest list: personalized links, tracking, sharing -->
+    <div class="card" id="guest-links">
+      <h2>🔗 Personalized Guest Links</h2>
+      <form method="post" action="{{ url_for('save_guests') }}">
+        <label for="invite_template">Invitation Message Template</label>
+        <div class="hint"><b>{name}</b> becomes the guest's name, <b>{link}</b> their personal link — used by the Msg, Share and Telegram buttons.</div>
+        <textarea id="invite_template" name="invite_template" rows="3">{{ c.invite_template }}</textarea>
+        <label for="remind_template">Reminder Message Template</label>
+        <div class="hint">For guests who haven't answered — switch the mode below to "Reminder" and the same buttons send this message instead.</div>
+        <textarea id="remind_template" name="remind_template" rows="3">{{ c.remind_template }}</textarea>
+        <label for="thanks_template">Thank-You Message Template</label>
+        <div class="hint">After the wedding — switch the mode to "Thanks" and use the ✅ Attending filter to thank everyone who came.</div>
+        <textarea id="thanks_template" name="thanks_template" rows="3">{{ c.thanks_template }}</textarea>
+        <label for="guest-list-input">Guest List</label>
+        <div class="hint">One per line: <b>Name</b>, <b>Name = Table</b>, or <b>Name = Table = Group</b> (e.g. groom / bride / friends). Groups get their own filter below.</div>
+        <textarea id="guest-list-input" name="guest_list" rows="7" placeholder="សុខា = 1 = groom&#10;Vibol &amp; Family = 12 = bride&#10;លោកគ្រូ ចាន់ថា">{{ guest_list_text }}</textarea>
+        <button class="btn btn-sm" type="submit">💾 Save Guest List</button>
+        {% if guest_rows %}
+        <a class="btn btn-sm btn-outline" href="{{ url_for('export_guests') }}">⬇ Export CSV</a>
+        <button type="button" class="btn btn-sm btn-outline" onclick="seatingChart(this)">🍽 Seating Chart</button>
+        <button type="button" class="btn btn-sm btn-outline" onclick="placeCards(this)">🪪 Place Cards</button>
+        {% endif %}
+      </form>
+
+      <label style="margin-top:1.4rem;">Helper Check-in Link</label>
+      <div class="hint">Give this to the person at the reception desk — it opens guest check-in without your admin password.</div>
+      <button type="button" class="btn btn-sm btn-outline" data-copy="{{ helper_link }}" onclick="copyText(this)">📋 Copy Helper Link</button>
+
+      {% if guest_rows %}
+      <div class="pill-row">
+        <span class="hint" style="align-self:center;">Show:</span>
+        <button type="button" class="pill-btn active" onclick="filterGuests(this, 'all')">All</button>
+        <button type="button" class="pill-btn" onclick="filterGuests(this, 'norsvp')">⌛ No RSVP</button>
+        <button type="button" class="pill-btn" onclick="filterGuests(this, 'unopened')">👁 Not opened</button>
+        <button type="button" class="pill-btn" onclick="filterGuests(this, 'yes')">✅ Attending</button>
+        {% for grp in guest_groups %}
+        <button type="button" class="pill-btn" onclick="filterGuests(this, 'g:{{ grp }}')">🏷 {{ grp }}</button>
+        {% endfor %}
+      </div>
+      <div class="pill-row">
+        <span class="hint" style="align-self:center;">Message:</span>
+        <button type="button" class="pill-btn active" onclick="setMsgMode(this, 'invite')">💌 Invitation</button>
+        <button type="button" class="pill-btn" onclick="setMsgMode(this, 'remind')">🔔 Reminder</button>
+        <button type="button" class="pill-btn" onclick="setMsgMode(this, 'thanks')">💐 Thanks</button>
+      </div>
+      <div class="guest-rows">
+        {% for g in guest_rows %}
+        <div class="guest-row"
+             data-rsvp="{{ 'yes' if g.rsvp and g.rsvp.attending == 'yes' else ('no' if g.rsvp else 'none') }}"
+             data-opened="{{ '1' if g.opened else '0' }}" data-group="{{ g.group }}"
+             data-msg="{{ g.msg }}" data-remind="{{ g.remind }}" data-thanks="{{ g.thanks }}"
+             data-tg="{{ g.tg }}" data-tgr="{{ g.tgr }}" data-tgt="{{ g.tgt }}">
+          <div class="guest-info">
+            <b>{{ g.name }}</b>{% if g.table %} <span class="pill">🍽 {{ g.table }}</span>{% endif %}{% if g.group %} <span class="pill">🏷 {{ g.group }}</span>{% endif %}
+            <div class="guest-status">
+              <span class="{{ 'st-on' if g.opened else 'st-off' }}">👁 {{ 'Opened' if g.opened else 'Not opened' }}</span>
+              {% if g.rsvp %}
+                {% if g.rsvp.attending == 'yes' %}
+                <span class="st-on">✅ Attending ({{ g.rsvp.guests }})</span>
+                {% else %}
+                <span class="st-no">✘ Can't attend</span>
+                {% endif %}
+              {% else %}
+              <span class="st-off">⌛ No RSVP</span>
+              {% endif %}
+            </div>
+          </div>
+          <div class="guest-actions">
+            <button type="button" class="btn btn-sm btn-outline" data-copy="{{ g.link }}" onclick="copyText(this)">Link</button>
+            <button type="button" class="btn btn-sm btn-outline js-msg" data-copy="{{ g.msg }}" onclick="copyText(this)">Msg</button>
+            <a class="btn btn-sm btn-outline js-tg" href="{{ g.tg }}" target="_blank" rel="noopener">Telegram</a>
+            <button type="button" class="btn btn-sm btn-outline js-share" data-msg="{{ g.msg }}" onclick="shareGuest(this)">📤 Share</button>
+            <a class="btn btn-sm btn-outline" href="{{ g.qr }}">QR</a>
+            <button type="button" class="btn btn-sm btn-outline" data-name="{{ g.name }}" onclick="openPosterStudio(this)">🖼 Poster</button>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      {% endif %}
+
+      <label style="margin-top:1.4rem;">Printable QR Poster</label>
+      <div class="hint">A print-ready poster with a QR code that opens the invitation — for physical invites or the welcome sign.</div>
+      <a class="btn btn-sm btn-outline" href="{{ url_for('poster') }}">🖨 Download QR Poster</a>
+    </div>
+
+    <!-- Backup & restore -->
+    <div class="card" id="backup-card">
+      <h2>🛟 Backup &amp; Restore</h2>
+      <div class="hint">Download a full backup (settings, guest list, RSVPs, wishes, and all photos) regularly — especially before the wedding day.</div>
+      <a class="btn btn-sm" href="{{ url_for('backup') }}" style="margin-top:0.6rem;">⬇ Download Backup</a>
+      <label style="margin-top:1.4rem;">Restore from a Backup</label>
+      <div class="hint">⚠ Restoring <b>overwrites</b> current data with the backup's contents.</div>
+      <form method="post" action="{{ url_for('restore') }}" enctype="multipart/form-data"
+            onsubmit="return confirm('Restore this backup? Current data will be overwritten.');">
+        <input type="file" name="backup" accept=".zip" required>
+        <button class="btn btn-sm btn-red" type="submit">↩ Restore Backup</button>
+      </form>
+    </div>
+
+    <!-- Poster studio: customizable per-guest invitation poster -->
+    <div class="card" id="poster-studio">
+      <h2>🖼 Poster Studio</h2>
+      <div class="hint">Design a personalized invitation poster — tap 🖼 Poster next to a guest to fill in their name, or edit everything freely. The preview updates live.</div>
+      <div class="studio-grid">
+        <div class="studio-controls">
+          <div class="grid-2">
+            <div>
+              <label for="ps-bg">Background</label>
+              <select id="ps-bg">
+                <option value="cream" selected>Classic Cream</option>
+                <option value="rose">Rose Blush</option>
+                <option value="sage">Sage Garden</option>
+                <option value="lavender">Lavender Mist</option>
+                <option value="pearl">Pearl White</option>
+                <option value="wine">Burgundy Wine</option>
+                <option value="night">Golden Night</option>
+                <option value="photo">Photo Background</option>
+                <option value="custom">Custom Colors ↓</option>
+              </select>
+            </div>
+            <div>
+              <label for="ps-size">Poster Size</label>
+              <select id="ps-size">
+                <option value="1080x1620" selected>Classic (print)</option>
+                <option value="1080x1920">Story (9:16)</option>
+                <option value="1080x1080">Square</option>
+              </select>
+            </div>
+          </div>
+          <label for="ps-photo">Photo</label>
+          <select id="ps-photo">
+            <option value="">— No photo —</option>
+            {% if c.hero_photo %}<option value="{{ c.hero_photo }}" selected>Cover photo</option>{% endif %}
+            {% if c.bg_photo %}<option value="{{ c.bg_photo }}">Background photo</option>{% endif %}
+            {% for gimg in c.gallery %}
+            <option value="{{ gimg }}">Gallery photo {{ loop.index }}</option>
+            {% endfor %}
+          </select>
+          <label for="ps-upload">Or Upload Your Own Photo</label>
+          <input type="file" id="ps-upload" accept="image/*">
+          <div class="grid-2">
+            <div>
+              <label for="ps-layout">Photo Position</label>
+              <select id="ps-layout">
+                <option value="top" selected>Above the names</option>
+                <option value="middle">Below the names</option>
+              </select>
+            </div>
+            <div>
+              <label for="ps-shape">Photo Frame</label>
+              <select id="ps-shape">
+                <option value="circle" selected>Circle</option>
+                <option value="rounded">Rounded</option>
+                <option value="arch">Arch</option>
+                <option value="heart">Heart</option>
+              </select>
+            </div>
+          </div>
+          <label for="ps-psize">Photo Size</label>
+          <input type="range" id="ps-psize" min="150" max="310" step="10" value="240" style="width:100%;">
+          <label for="ps-focus">Photo Focus (up ↔ down)</label>
+          <input type="range" id="ps-focus" min="-40" max="40" step="5" value="0" style="width:100%;">
+          <label for="ps-tilt">Photo Tilt</label>
+          <input type="range" id="ps-tilt" min="-10" max="10" step="1" value="0" style="width:100%;">
+          <label for="ps-veil">Photo Background Veil (darker → lighter)</label>
+          <input type="range" id="ps-veil" min="0.2" max="0.8" step="0.05" value="0.55" style="width:100%;">
+          <label for="ps-blur">Photo Background Blur</label>
+          <input type="range" id="ps-blur" min="0" max="12" step="1" value="0" style="width:100%;">
+          <div class="grid-2">
+            <div>
+              <label for="ps-border">Frame Style</label>
+              <select id="ps-border">
+                <option value="double" selected>Double line</option>
+                <option value="single">Single line</option>
+                <option value="none">No frame</option>
+              </select>
+            </div>
+            <div>
+              <label for="ps-symbol">Symbol between Names</label>
+              <select id="ps-symbol">
+                <option value="&amp;" selected>&amp;</option>
+                <option value="♥">♥</option>
+                <option value="🌸">🌸</option>
+                <option value="∞">∞</option>
+              </select>
+            </div>
+          </div>
+          <div class="grid-2">
+            <div>
+              <label for="ps-accent">Accent Color</label>
+              <input type="color" id="ps-accent" value="#c9a84c">
+            </div>
+            <div>
+              <label for="ps-ink">Text Color</label>
+              <input type="color" id="ps-ink" value="#3a3226">
+            </div>
+          </div>
+          <div class="grid-2">
+            <div>
+              <label for="ps-grad1">Custom Gradient — Top</label>
+              <input type="color" id="ps-grad1" value="#f6ecd9">
+            </div>
+            <div>
+              <label for="ps-grad2">Custom Gradient — Bottom</label>
+              <input type="color" id="ps-grad2" value="#f2e4c8">
+            </div>
+          </div>
+          <div class="hint">Gradient colors apply when the background is set to "Custom Colors".</div>
+          <div class="grid-2">
+            <div>
+              <label for="ps-namestyle">Names Style</label>
+              <select id="ps-namestyle">
+                <option value="khmer" selected>Khmer (Moul)</option>
+                <option value="script">English Script</option>
+              </select>
+            </div>
+            <div>
+              <label for="ps-scale">Text Size</label>
+              <input type="range" id="ps-scale" min="85" max="125" step="5" value="100" style="width:100%; margin-top:0.6rem;">
+            </div>
+          </div>
+          <div class="grid-2">
+            <div>
+              <label for="ps-header">Top Ornament</label>
+              <select id="ps-header">
+                <option value="heart" selected>Heart</option>
+                <option value="monogram">Monogram</option>
+                <option value="none">None</option>
+              </select>
+            </div>
+            <div>
+              <label for="ps-monogram">Monogram Text</label>
+              <input type="text" id="ps-monogram" maxlength="12" value="{{ c.groom_name_en[:1] }} ♥ {{ c.bride_name_en[:1] }}">
+            </div>
+          </div>
+          <div class="grid-2">
+            <div>
+              <label for="ps-bodyfont">Body Font</label>
+              <select id="ps-bodyfont">
+                <option value="Hanuman" selected>Hanuman</option>
+                <option value="Battambang">Battambang</option>
+              </select>
+            </div>
+            <div>
+              <label for="ps-format">Export Format</label>
+              <select id="ps-format">
+                <option value="png" selected>PNG (best quality)</option>
+                <option value="jpg">JPG (smaller file)</option>
+              </select>
+            </div>
+          </div>
+          <label>Decorations &amp; Effects</label>
+          <div style="display:flex; gap:0.9rem; flex-wrap:wrap;">
+            <label class="check-row" style="margin-top:0.3rem;"><input type="checkbox" id="ps-divider" checked> Divider</label>
+            <label class="check-row" style="margin-top:0.3rem;"><input type="checkbox" id="ps-corners" checked> Corners</label>
+            <label class="check-row" style="margin-top:0.3rem;"><input type="checkbox" id="ps-vignette"> Vignette</label>
+            <label class="check-row" style="margin-top:0.3rem;"><input type="checkbox" id="ps-texture"> Texture</label>
+            <label class="check-row" style="margin-top:0.3rem;"><input type="checkbox" id="ps-shadow"> Text Shadow</label>
+          </div>
+          <label for="ps-extra">Extra Line (under the guest line)</label>
+          <input type="text" id="ps-extra" value="">
+          <label for="ps-guest">Guest Line</label>
+          <input type="text" id="ps-guest" value="">
+          <label for="ps-eyebrow">Top Line</label>
+          <input type="text" id="ps-eyebrow" value="{{ c.eyebrow_kh }}">
+          <label for="ps-groom">Groom</label>
+          <input type="text" id="ps-groom" value="{{ c.groom_name_kh }}">
+          <label for="ps-bride">Bride</label>
+          <input type="text" id="ps-bride" value="{{ c.bride_name_kh }}">
+          <label for="ps-date">Date Line</label>
+          <input type="text" id="ps-date" value="{{ c.date_kh }}">
+          <label for="ps-caption">Bottom Caption</label>
+          <input type="text" id="ps-caption" value="{{ c.venue_name_kh }}">
+          <label>Presets</label>
+          <div style="display:flex; gap:0.4rem; flex-wrap:wrap; align-items:center;">
+            <select id="ps-presets" style="flex:1; min-width:130px;">
+              <option value="">— My saved designs —</option>
+            </select>
+            <button type="button" class="btn btn-sm btn-outline" onclick="savePreset()">💾 Save</button>
+            <button type="button" class="btn btn-sm btn-red" onclick="deletePreset()">✕</button>
+          </div>
+          <div style="display:flex; gap:0.5rem; flex-wrap:wrap; margin-top:1rem;">
+            <button type="button" class="btn" id="ps-download">⬇ Download</button>
+            <button type="button" class="btn btn-outline" id="ps-share" style="color:#a8873a;">📤 Share</button>
+            <button type="button" class="btn btn-outline" id="ps-shuffle" style="color:#a8873a;">🎲 Surprise Me</button>
+          </div>
+          <button type="button" class="btn btn-outline" id="ps-batch" style="margin-top:0.6rem;" onclick="batchPosters(this)">📦 Posters for All Guests</button>
+          <div class="hint">Downloads one poster per guest using the current design — allow multiple downloads when your browser asks.</div>
+        </div>
+        <div class="studio-preview">
+          <canvas id="ps-canvas" width="1080" height="1620"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function addSchedRow() {
+      const div = document.createElement('div');
+      div.className = 'sched-row';
+      div.innerHTML = `
+        <input class="st-time" type="text" name="schedule_time" placeholder="07:00 AM">
+        <input class="st-kh" type="text" name="schedule_title_kh" placeholder="ពិធី...">
+        <input class="st-en" type="text" name="schedule_title_en" placeholder="Ceremony...">
+        <button type="button" onclick="this.parentElement.remove()">✕</button>`;
+      document.getElementById('sched-rows').appendChild(div);
+    }
+
+    function addStoryRow() {
+      const div = document.createElement('div');
+      div.className = 'sched-row';
+      div.innerHTML = `
+        <input class="st-time" type="text" name="story_time" placeholder="2019">
+        <input class="st-kh" type="text" name="story_title_kh" placeholder="ជួបគ្នាដំបូង...">
+        <input class="st-en" type="text" name="story_title_en" placeholder="First met...">
+        <button type="button" onclick="this.parentElement.remove()">✕</button>`;
+      document.getElementById('story-rows').appendChild(div);
+    }
+
+    function addFaqRow() {
+      const div = document.createElement('div');
+      div.className = 'faq-edit';
+      div.innerHTML = `
+        <input type="text" name="faq_q_kh" placeholder="សំណួរ (Khmer)">
+        <input type="text" name="faq_q_en" placeholder="Question (English)">
+        <input type="text" name="faq_a_kh" placeholder="ចម្លើយ (Khmer)">
+        <input type="text" name="faq_a_en" placeholder="Answer (English)">
+        <button type="button" onclick="this.parentElement.remove()">✕ Remove</button>`;
+      document.getElementById('faq-rows').appendChild(div);
+    }
+
+    // Guest list: copy a link or message with visual feedback
+    function copyText(btn) {
+      navigator.clipboard.writeText(btn.dataset.copy).then(() => {
+        const original = btn.textContent;
+        btn.textContent = '✔';
+        setTimeout(() => { btn.textContent = original; }, 1400);
+      });
+    }
+
+    // Guest list filters: All / No RSVP / Not opened / Attending
+    function filterGuests(btn, mode) {
+      btn.parentElement.querySelectorAll('.pill-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('.guest-row').forEach(row => {
+        const show = mode === 'all'
+          || (mode === 'norsvp' && row.dataset.rsvp === 'none')
+          || (mode === 'unopened' && row.dataset.opened === '0')
+          || (mode === 'yes' && row.dataset.rsvp === 'yes')
+          || (mode.startsWith('g:') && row.dataset.group === mode.slice(2));
+        row.style.display = show ? '' : 'none';
+      });
+    }
+
+    // Message mode: the Msg/Share/Telegram buttons switch between the
+    // invitation template and the reminder template
+    function setMsgMode(btn, mode) {
+      btn.parentElement.querySelectorAll('.pill-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('.guest-row').forEach(row => {
+        const msg = mode === 'remind' ? row.dataset.remind
+                  : mode === 'thanks' ? row.dataset.thanks : row.dataset.msg;
+        row.querySelector('.js-msg').dataset.copy = msg;
+        row.querySelector('.js-share').dataset.msg = msg;
+        row.querySelector('.js-tg').href = mode === 'remind' ? row.dataset.tgr
+                                        : mode === 'thanks' ? row.dataset.tgt : row.dataset.tg;
+      });
+    }
+
+    // Native share sheet — lets you send to Messenger, Facebook, WhatsApp, etc.
+    function shareGuest(btn) {
+      const msg = btn.dataset.msg;
+      if (navigator.share) {
+        navigator.share({ text: msg }).catch(() => {});
+      } else {
+        navigator.clipboard.writeText(msg);
+        btn.textContent = '✔ Copied';
+        setTimeout(() => { btn.textContent = '📤 Share'; }, 1600);
+      }
+    }
+
+    // ---------- Poster Studio ----------
+    // Drawn on a canvas so Khmer text renders correctly (server-side image
+    // libraries can't shape Khmer script). Live preview + full-res download.
+    const PS_GREETING = {{ c.greeting_kh | tojson }};
+    const PS_DECOR = {
+      heart: "{{ url_for('static', filename='decor/heart.png') }}",
+      kbach: "{{ url_for('static', filename='decor/kbach-line.png') }}",
+      corner: "{{ url_for('static', filename='decor/corner.svg') }}"
+    };
+    // Each background: canvas gradient stops + matching text palette
+    const PS_BACKGROUNDS = {
+      cream:    { stops: ['#f6ecd9', '#f7e8ea', '#f2e4c8'], ink: '#3a3226', gold: '#a8873a', ring: '#c9a84c' },
+      rose:     { stops: ['#fbe3e8', '#f7d2da', '#f5e6da'], ink: '#4a2e35', gold: '#b0616f', ring: '#c98a96' },
+      sage:     { stops: ['#eaf2e3', '#d9e7cf', '#f0ead2'], ink: '#33402a', gold: '#6f8a54', ring: '#93ab7a' },
+      lavender: { stops: ['#efe7f5', '#e2d5ee', '#f4e9ef'], ink: '#3d3247', gold: '#8a6fa8', ring: '#a98fc4' },
+      pearl:    { stops: ['#ffffff', '#f6f2ea', '#efe9dd'], ink: '#4a4234', gold: '#a8873a', ring: '#c9a84c' },
+      wine:     { stops: ['#4a1f26', '#5d2a33', '#33161c'], ink: '#f6e7d8', gold: '#e2b76f', ring: '#d9a05b' },
+      night:    { stops: ['#2b2118', '#3a2c1d', '#1f1812'], ink: '#f7ecd4', gold: '#e5c569', ring: '#c9a84c' },
+      photo:    { stops: null, ink: '#ffffff', gold: '#f3e3b8', ring: '#f3e3b8' }
+    };
+    const psCanvas = document.getElementById('ps-canvas');
+    const psCtx = psCanvas.getContext('2d');
+    // roundRect fallback for older mobile browsers
+    if (!psCtx.roundRect) {
+      CanvasRenderingContext2D.prototype.roundRect = function (x, y, w, h, r) {
+        this.moveTo(x + r, y);
+        this.arcTo(x + w, y, x + w, y + h, r);
+        this.arcTo(x + w, y + h, x, y + h, r);
+        this.arcTo(x, y + h, x, y, r);
+        this.arcTo(x, y, x + w, y, r);
+        this.closePath();
+      };
+    }
+    const psImgCache = {};
+    function psLoadImg(src) {
+      if (psImgCache[src]) return psImgCache[src];
+      psImgCache[src] = new Promise(res => {
+        const i = new Image();
+        i.onload = () => res(i);
+        i.onerror = () => res(null);
+        i.src = src;
+      });
+      return psImgCache[src];
+    }
+    function psFitFont(ctx, text, font, size, maxWidth) {
+      do {
+        ctx.font = font.replace('{s}', size);
+        size -= 2;
+      } while (ctx.measureText(text).width > maxWidth && size > 18);
+    }
+    // cover-crop an image into a destination rect; focus shifts the crop
+    // vertically (-40 = show more top … 40 = show more bottom)
+    function psDrawCover(ctx, img, x, y, w, h, focus = 0) {
+      const scale = Math.max(w / img.width, h / img.height);
+      const sw = w / scale, sh = h / scale;
+      let sy = (img.height - sh) / 2 + (focus / 100) * (img.height - sh);
+      sy = Math.max(0, Math.min(img.height - sh, sy));
+      ctx.drawImage(img, (img.width - sw) / 2, sy, sw, sh, x, y, w, h);
+    }
+    // Uploaded photo (never sent to the server — used straight from the file)
+    let psUploadURL = null;
+    document.getElementById('ps-upload').addEventListener('change', e => {
+      const file = e.target.files[0];
+      if (!file) return;
+      if (psUploadURL) URL.revokeObjectURL(psUploadURL);
+      psUploadURL = URL.createObjectURL(file);
+      delete psImgCache['__upload__'];
+      const sel = document.getElementById('ps-photo');
+      if (![...sel.options].some(o => o.value === '__upload__')) {
+        sel.add(new Option('Your uploaded photo', '__upload__'));
+      }
+      sel.value = '__upload__';
+      schedulePoster();
+    });
+    // Accent & text colors follow the background palette until manually changed
+    const psAccent = document.getElementById('ps-accent');
+    psAccent.addEventListener('input', () => { psAccent.dataset.dirty = '1'; });
+    const psInk = document.getElementById('ps-ink');
+    psInk.addEventListener('input', () => { psInk.dataset.dirty = '1'; });
+    async function drawPoster() {
+      await Promise.all(['46px Moul', "80px 'Great Vibes'", '46px Hanuman', '46px Battambang']
+        .map(f => document.fonts.load(f)));
+      const bgKey = document.getElementById('ps-bg').value;
+      let bg = PS_BACKGROUNDS[bgKey];
+      if (bgKey === 'custom') {
+        // build a palette that stays readable on the chosen colors
+        const g1 = document.getElementById('ps-grad1').value;
+        const g2 = document.getElementById('ps-grad2').value;
+        const lum = hex => {
+          const n = parseInt(hex.slice(1), 16);
+          return (0.299 * (n >> 16) + 0.587 * ((n >> 8) & 255) + 0.114 * (n & 255)) / 255;
+        };
+        const mix = '#' + [16, 8, 0].map(sh =>
+          Math.round((((parseInt(g1.slice(1), 16) >> sh) & 255)
+                    + ((parseInt(g2.slice(1), 16) >> sh) & 255)) / 2)
+            .toString(16).padStart(2, '0')).join('');
+        bg = (lum(g1) + lum(g2)) / 2 < 0.5
+          ? { stops: [g1, mix, g2], ink: '#f7ecd4', gold: '#e5c569', ring: '#c9a84c' }
+          : { stops: [g1, mix, g2], ink: '#3a3226', gold: '#a8873a', ring: '#c9a84c' };
+      }
+      if (!psAccent.dataset.dirty) psAccent.value = bg.ring;
+      if (!psInk.dataset.dirty) psInk.value = bg.ink;
+      const accent = psAccent.value;
+      const gold = psAccent.dataset.dirty ? accent : bg.gold;
+      const ink = psInk.value;
+      const scale = parseInt(document.getElementById('ps-scale').value, 10) / 100;
+      const nameFont = document.getElementById('ps-namestyle').value === 'script'
+        ? "{s}px 'Great Vibes'" : '{s}px Moul';
+      const veil = parseFloat(document.getElementById('ps-veil').value);
+      const blur = parseInt(document.getElementById('ps-blur').value, 10);
+      const focus = parseInt(document.getElementById('ps-focus').value, 10);
+      const border = document.getElementById('ps-border').value;
+      const symbol = document.getElementById('ps-symbol').value;
+      const photoFile = document.getElementById('ps-photo').value;
+      const shape = document.getElementById('ps-shape').value;
+      const layout = document.getElementById('ps-layout').value;
+      const tilt = parseInt(document.getElementById('ps-tilt').value, 10) * Math.PI / 180;
+      const header = document.getElementById('ps-header').value;
+      const monogram = document.getElementById('ps-monogram').value.trim();
+      const bodyFont = document.getElementById('ps-bodyfont').value;
+      const showDivider = document.getElementById('ps-divider').checked;
+      const showCorners = document.getElementById('ps-corners').checked;
+      const vignette = document.getElementById('ps-vignette').checked;
+      const texture = document.getElementById('ps-texture').checked;
+      const shadow = document.getElementById('ps-shadow').checked;
+      const textShadow = on => {
+        ctx.shadowColor = (on && shadow) ? 'rgba(0, 0, 0, 0.35)' : 'transparent';
+        ctx.shadowBlur = (on && shadow) ? 14 : 0;
+        ctx.shadowOffsetY = (on && shadow) ? 4 : 0;
+      };
+      const [W, H] = document.getElementById('ps-size').value.split('x').map(Number);
+      if (psCanvas.width !== W || psCanvas.height !== H) {
+        psCanvas.width = W;
+        psCanvas.height = H;
+      }
+      const t = {
+        eyebrow: document.getElementById('ps-eyebrow').value.trim(),
+        groom: document.getElementById('ps-groom').value.trim(),
+        bride: document.getElementById('ps-bride').value.trim(),
+        date: document.getElementById('ps-date').value.trim(),
+        guest: document.getElementById('ps-guest').value.trim(),
+        extra: document.getElementById('ps-extra').value.trim(),
+        caption: document.getElementById('ps-caption').value.trim()
+      };
+      const photoSrc = photoFile === '__upload__' ? psUploadURL
+                     : photoFile ? '/photos/' + photoFile : null;
+      const [heart, kbach, corner, photo] = await Promise.all([
+        psLoadImg(PS_DECOR.heart),
+        psLoadImg(PS_DECOR.kbach),
+        psLoadImg(PS_DECOR.corner),
+        photoSrc ? psLoadImg(photoSrc) : Promise.resolve(null)
+      ]);
+      const ctx = psCtx;
+      ctx.clearRect(0, 0, W, H);
+      // background
+      if (bgKey === 'photo' && photo) {
+        if (blur) ctx.filter = 'blur(' + blur + 'px)';
+        psDrawCover(ctx, photo, -blur, -blur, W + blur * 2, H + blur * 2, focus);
+        ctx.filter = 'none';
+        ctx.fillStyle = 'rgba(20, 15, 8, ' + veil + ')';
+        ctx.fillRect(0, 0, W, H);
+      } else {
+        const stops = (bg.stops || PS_BACKGROUNDS.cream.stops);
+        const grad = ctx.createLinearGradient(0, 0, 0, H);
+        grad.addColorStop(0, stops[0]);
+        grad.addColorStop(0.55, stops[1]);
+        grad.addColorStop(1, stops[2]);
+        ctx.fillStyle = grad;
+        ctx.fillRect(0, 0, W, H);
+      }
+      // subtle dotted texture in the palette's gold
+      if (texture) {
+        const tile = document.createElement('canvas');
+        tile.width = tile.height = 54;
+        const tctx = tile.getContext('2d');
+        tctx.globalAlpha = 0.12;
+        tctx.fillStyle = bg.gold;
+        tctx.beginPath();
+        tctx.arc(13, 13, 2.2, 0, Math.PI * 2);
+        tctx.fill();
+        tctx.beginPath();
+        tctx.arc(40, 40, 2.2, 0, Math.PI * 2);
+        tctx.fill();
+        ctx.fillStyle = ctx.createPattern(tile, 'repeat');
+        ctx.fillRect(0, 0, W, H);
+      }
+      // soft vignette around the edges
+      if (vignette) {
+        const v = ctx.createRadialGradient(W / 2, H / 2, Math.min(W, H) * 0.45,
+                                           W / 2, H / 2, Math.max(W, H) * 0.72);
+        v.addColorStop(0, 'rgba(0,0,0,0)');
+        v.addColorStop(1, 'rgba(0,0,0,0.3)');
+        ctx.fillStyle = v;
+        ctx.fillRect(0, 0, W, H);
+      }
+      // frame in the accent color (double / single / none)
+      if (border !== 'none') {
+        ctx.strokeStyle = accent;
+        ctx.lineWidth = 6;
+        ctx.strokeRect(40, 40, W - 80, H - 80);
+        if (border === 'double') {
+          ctx.lineWidth = 2;
+          ctx.strokeRect(58, 58, W - 116, H - 116);
+        }
+      }
+      // kbach corner ornaments
+      if (showCorners && corner && corner.naturalWidth) {
+        const cs = 120;
+        [[74, 74, 0], [W - 74, 74, Math.PI / 2],
+         [W - 74, H - 74, Math.PI], [74, H - 74, -Math.PI / 2]].forEach(([cx, cy, rot]) => {
+          ctx.save();
+          ctx.translate(cx, cy);
+          ctx.rotate(rot);
+          ctx.drawImage(corner, 0, 0, cs, cs);
+          ctx.restore();
+        });
+      }
+      ctx.textAlign = 'center';
+      // flow layout: measure block heights, center vertically, then draw
+      const framedPhoto = photo && bgKey !== 'photo';
+      let r = parseInt(document.getElementById('ps-psize').value, 10);
+      const photoBlockH = () => {
+        if (!framedPhoto) return 0;
+        if (shape === 'circle') return r * 2 + 45;
+        if (shape === 'arch') return Math.round(r * 2.2) + 45;
+        if (shape === 'heart') return Math.round(r * 1.9) + 45;
+        return Math.round(r * 1.5) + 45;  // rounded
+      };
+      const blockH = () => ({
+        header: header !== 'none' ? 150 : 0,
+        eyebrow: t.eyebrow ? Math.round(75 * scale) : 0,
+        photo: photoBlockH(),
+        names: Math.round(290 * scale),
+        divider: showDivider ? 65 : 0,
+        date: t.date ? Math.round(80 * scale) : 0,
+        guest: t.guest ? Math.round(100 * scale) : 0,
+        extra: t.extra ? Math.round(78 * scale) : 0
+      });
+      let hts = blockH();
+      let total = Object.values(hts).reduce((a, b) => a + b, 0);
+      // shrink the photo until everything fits above the caption area
+      while (framedPhoto && total > H - 230 && r > 110) {
+        r -= 10;
+        hts = blockH();
+        total = Object.values(hts).reduce((a, b) => a + b, 0);
+      }
+      let y = Math.max(88, (H - 150 - total) / 2 + 10);
+      const order = layout === 'top'
+        ? ['header', 'eyebrow', 'photo', 'names', 'divider', 'date', 'guest', 'extra']
+        : ['header', 'eyebrow', 'names', 'divider', 'photo', 'date', 'guest', 'extra'];
+      for (const block of order) {
+        if (!hts[block]) continue;
+        if (block === 'header') {
+          if (header === 'monogram' && monogram) {
+            ctx.beginPath();
+            ctx.arc(W / 2, y + 60, 58, 0, Math.PI * 2);
+            ctx.strokeStyle = accent;
+            ctx.lineWidth = 4;
+            ctx.stroke();
+            ctx.fillStyle = accent;
+            psFitFont(ctx, monogram, "{s}px 'Great Vibes'", 52, 92);
+            ctx.fillText(monogram, W / 2, y + 78);
+          } else if (heart) {
+            ctx.drawImage(heart, W / 2 - 55, y, 110, 110);
+          }
+        } else if (block === 'eyebrow') {
+          textShadow(true);
+          ctx.fillStyle = gold;
+          psFitFont(ctx, t.eyebrow, '{s}px Moul', Math.round(36 * scale), W - 220);
+          ctx.fillText(t.eyebrow, W / 2, y + Math.round(45 * scale));
+          textShadow(false);
+        } else if (block === 'names') {
+          textShadow(true);
+          ctx.fillStyle = ink;
+          psFitFont(ctx, t.groom, nameFont, Math.round(60 * scale), W - 200);
+          ctx.fillText(t.groom, W / 2, y + Math.round(62 * scale));
+          ctx.font = Math.round(74 * scale) + "px 'Great Vibes'";
+          ctx.fillStyle = accent;
+          ctx.fillText(symbol, W / 2, y + Math.round(148 * scale));
+          ctx.fillStyle = ink;
+          psFitFont(ctx, t.bride, nameFont, Math.round(60 * scale), W - 200);
+          ctx.fillText(t.bride, W / 2, y + Math.round(252 * scale));
+          textShadow(false);
+        } else if (block === 'divider') {
+          if (kbach) ctx.drawImage(kbach, W / 2 - 180, y + 12, 360, 28);
+        } else if (block === 'photo') {
+          ctx.save();
+          if (tilt) {  // gentle polaroid tilt around the photo's center
+            const pcy = y + (hts.photo - 45) / 2;
+            ctx.translate(W / 2, pcy);
+            ctx.rotate(tilt);
+            ctx.translate(-W / 2, -pcy);
+          }
+          const ring = () => {
+            ctx.strokeStyle = accent;
+            ctx.lineWidth = 8;
+            ctx.stroke();
+          };
+          if (shape === 'circle') {
+            const cx = W / 2, cy = y + r;
+            ctx.save();
+            ctx.beginPath();
+            ctx.arc(cx, cy, r, 0, Math.PI * 2);
+            ctx.clip();
+            psDrawCover(ctx, photo, cx - r, cy - r, r * 2, r * 2, focus);
+            ctx.restore();
+            ctx.beginPath();
+            ctx.arc(cx, cy, r + 5, 0, Math.PI * 2);
+            ring();
+          } else if (shape === 'arch') {
+            const pw = Math.min(Math.round(r * 1.7), W - 260);
+            const ph = Math.round(r * 2.2);
+            const px = (W - pw) / 2;
+            const archPath = (x0, y0, w0, h0) => {
+              ctx.beginPath();
+              ctx.moveTo(x0, y0 + w0 / 2);
+              ctx.arc(x0 + w0 / 2, y0 + w0 / 2, w0 / 2, Math.PI, 0);
+              ctx.lineTo(x0 + w0, y0 + h0);
+              ctx.lineTo(x0, y0 + h0);
+              ctx.closePath();
+            };
+            ctx.save();
+            archPath(px, y, pw, ph);
+            ctx.clip();
+            psDrawCover(ctx, photo, px, y, pw, ph, focus);
+            ctx.restore();
+            archPath(px - 5, y - 5, pw + 10, ph + 10);
+            ring();
+          } else if (shape === 'heart') {
+            const sz = Math.min(Math.round(r * 1.6), Math.round((W - 220) / 1.7));
+            const cx = W / 2, cy = y + Math.round(sz * 0.68) + 6;
+            const heartPath = pad => {
+              const s = sz + pad;
+              ctx.beginPath();
+              ctx.moveTo(cx, cy + s * 0.48);
+              ctx.bezierCurveTo(cx - s * 0.85, cy - s * 0.16,
+                                cx - s * 0.5, cy - s * 0.68, cx, cy - s * 0.3);
+              ctx.bezierCurveTo(cx + s * 0.5, cy - s * 0.68,
+                                cx + s * 0.85, cy - s * 0.16, cx, cy + s * 0.48);
+              ctx.closePath();
+            };
+            ctx.save();
+            heartPath(0);
+            ctx.clip();
+            psDrawCover(ctx, photo, cx - sz * 0.85, y, sz * 1.7, Math.round(sz * 1.2), focus);
+            ctx.restore();
+            heartPath(10);
+            ring();
+          } else {
+            const pw = Math.min(Math.round(r * 2.6), W - 180);
+            const ph = Math.round(r * 1.5);
+            const px = (W - pw) / 2;
+            ctx.save();
+            ctx.beginPath();
+            ctx.roundRect(px, y, pw, ph, 26);
+            ctx.clip();
+            psDrawCover(ctx, photo, px, y, pw, ph, focus);
+            ctx.restore();
+            ctx.beginPath();
+            ctx.roundRect(px - 4, y - 4, pw + 8, ph + 8, 30);
+            ring();
+          }
+          ctx.restore();
+        } else if (block === 'date') {
+          textShadow(true);
+          ctx.fillStyle = gold;
+          psFitFont(ctx, t.date, '{s}px ' + bodyFont, Math.round(40 * scale), W - 220);
+          ctx.fillText(t.date, W / 2, y + Math.round(48 * scale));
+          textShadow(false);
+        } else if (block === 'guest') {
+          textShadow(true);
+          ctx.fillStyle = ink;
+          psFitFont(ctx, t.guest, 'bold {s}px ' + bodyFont, Math.round(50 * scale), W - 200);
+          ctx.fillText(t.guest, W / 2, y + Math.round(60 * scale));
+          textShadow(false);
+        } else if (block === 'extra') {
+          textShadow(true);
+          ctx.fillStyle = gold;
+          psFitFont(ctx, t.extra, '{s}px ' + bodyFont, Math.round(38 * scale), W - 220);
+          ctx.fillText(t.extra, W / 2, y + Math.round(46 * scale));
+          textShadow(false);
+        }
+        y += hts[block];
+      }
+      if (t.caption) {
+        textShadow(true);
+        ctx.fillStyle = gold;
+        psFitFont(ctx, t.caption, '{s}px ' + bodyFont, Math.round(34 * scale), W - 240);
+        ctx.fillText(t.caption, W / 2, H - 95);
+        textShadow(false);
+      }
+    }
+    let psPending = false;
+    function schedulePoster() {
+      if (psPending) return;
+      psPending = true;
+      requestAnimationFrame(() => { psPending = false; drawPoster(); });
+    }
+    const PS_CONTROLS = ['ps-bg', 'ps-size', 'ps-photo', 'ps-layout', 'ps-shape',
+     'ps-psize', 'ps-focus', 'ps-tilt', 'ps-veil', 'ps-blur', 'ps-border', 'ps-symbol',
+     'ps-accent', 'ps-ink', 'ps-grad1', 'ps-grad2', 'ps-namestyle', 'ps-scale',
+     'ps-header', 'ps-monogram', 'ps-bodyfont', 'ps-format', 'ps-divider',
+     'ps-corners', 'ps-vignette', 'ps-texture', 'ps-shadow',
+     'ps-guest', 'ps-eyebrow', 'ps-groom', 'ps-bride', 'ps-date',
+     'ps-extra', 'ps-caption'];
+    PS_CONTROLS.forEach(id => {
+      document.getElementById(id).addEventListener('input', schedulePoster);
+    });
+
+    // Saved poster designs (kept on this device)
+    function psReadPresets() {
+      try { return JSON.parse(localStorage.getItem('psPresets') || '{}'); } catch (e) { return {}; }
+    }
+    function psListPresets() {
+      const sel = document.getElementById('ps-presets');
+      const current = sel.value;
+      sel.innerHTML = '<option value="">— My saved designs —</option>';
+      Object.keys(psReadPresets()).forEach(name => sel.add(new Option(name, name)));
+      sel.value = current;
+    }
+    function savePreset() {
+      const name = prompt('Name this design:');
+      if (!name) return;
+      const state = {};
+      PS_CONTROLS.forEach(id => {
+        const el = document.getElementById(id);
+        state[id] = el.type === 'checkbox' ? el.checked : el.value;
+      });
+      const presets = psReadPresets();
+      presets[name.slice(0, 30)] = state;
+      try { localStorage.setItem('psPresets', JSON.stringify(presets)); } catch (e) {}
+      psListPresets();
+      document.getElementById('ps-presets').value = name.slice(0, 30);
+    }
+    function deletePreset() {
+      const sel = document.getElementById('ps-presets');
+      if (!sel.value) return;
+      const presets = psReadPresets();
+      delete presets[sel.value];
+      try { localStorage.setItem('psPresets', JSON.stringify(presets)); } catch (e) {}
+      psListPresets();
+    }
+    document.getElementById('ps-presets').addEventListener('change', e => {
+      const state = psReadPresets()[e.target.value];
+      if (!state) return;
+      PS_CONTROLS.forEach(id => {
+        const el = document.getElementById(id);
+        if (!(id in state)) return;
+        if (el.type === 'checkbox') el.checked = state[id];
+        else el.value = state[id];
+      });
+      // applied colors are deliberate choices — keep them over palette defaults
+      psAccent.dataset.dirty = '1';
+      psInk.dataset.dirty = '1';
+      schedulePoster();
+    });
+    psListPresets();
+    function openPosterStudio(btn) {
+      document.getElementById('ps-guest').value = PS_GREETING + ' ' + btn.dataset.name;
+      schedulePoster();
+      document.getElementById('poster-studio').scrollIntoView({ behavior: 'smooth' });
+    }
+    function downloadCanvas(canvas, filename, mime, quality) {
+      return new Promise(resolve => canvas.toBlob(blob => {
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = filename;
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        setTimeout(() => URL.revokeObjectURL(a.href), 8000);
+        resolve();
+      }, mime || 'image/png', quality));
+    }
+    function psFormat() {
+      return document.getElementById('ps-format').value === 'jpg'
+        ? { ext: 'jpg', mime: 'image/jpeg', q: 0.92 }
+        : { ext: 'png', mime: 'image/png', q: undefined };
+    }
+    document.getElementById('ps-download').addEventListener('click', async () => {
+      await drawPoster();
+      const guest = document.getElementById('ps-guest').value.trim();
+      const f = psFormat();
+      await downloadCanvas(psCanvas, 'invitation-' + (guest || 'poster') + '.' + f.ext, f.mime, f.q);
+    });
+
+    // Share the poster straight to Telegram / Messenger / anywhere
+    document.getElementById('ps-share').addEventListener('click', async () => {
+      await drawPoster();
+      const f = psFormat();
+      psCanvas.toBlob(async blob => {
+        const file = new File([blob], 'poster.' + f.ext, { type: f.mime });
+        if (navigator.canShare && navigator.canShare({ files: [file] })) {
+          try { await navigator.share({ files: [file] }); return; } catch (e) {}
+        }
+        alert('Sharing is not supported in this browser — use Download instead.');
+      }, f.mime, f.q);
+    });
+
+    // Random tasteful design
+    document.getElementById('ps-shuffle').addEventListener('click', () => {
+      const pick = arr => arr[Math.floor(Math.random() * arr.length)];
+      const set = (id, v) => { document.getElementById(id).value = v; };
+      set('ps-bg', pick(['cream', 'rose', 'sage', 'lavender', 'pearl', 'wine', 'night']));
+      set('ps-symbol', pick(['&', '♥', '🌸', '∞']));
+      set('ps-border', pick(['double', 'double', 'single']));
+      set('ps-header', pick(['heart', 'monogram']));
+      set('ps-shape', pick(['circle', 'rounded', 'arch', 'heart']));
+      set('ps-namestyle', pick(['khmer', 'khmer', 'script']));
+      set('ps-tilt', pick(['0', '0', '-3', '3']));
+      document.getElementById('ps-vignette').checked = Math.random() < 0.4;
+      document.getElementById('ps-texture').checked = Math.random() < 0.4;
+      document.getElementById('ps-corners').checked = Math.random() < 0.7;
+      delete psAccent.dataset.dirty;
+      delete psInk.dataset.dirty;
+      schedulePoster();
+    });
+
+    // Batch: one poster per guest with the current design
+    const PS_GUESTS = [{% for g in guest_rows %}{{ g.name | tojson }}{{ ',' if not loop.last }}{% endfor %}];
+    async function batchPosters(btn) {
+      if (!PS_GUESTS.length) { alert('Save your guest list first.'); return; }
+      btn.disabled = true;
+      const guestField = document.getElementById('ps-guest');
+      const before = guestField.value;
+      for (let i = 0; i < PS_GUESTS.length; i++) {
+        btn.textContent = '⏳ ' + (i + 1) + ' / ' + PS_GUESTS.length;
+        guestField.value = PS_GREETING + ' ' + PS_GUESTS[i];
+        await drawPoster();
+        await downloadCanvas(psCanvas, 'invitation-' + PS_GUESTS[i] + '.png');
+        await new Promise(r => setTimeout(r, 350));
+      }
+      guestField.value = before;
+      await drawPoster();
+      btn.textContent = '📦 Posters for All Guests';
+      btn.disabled = false;
+    }
+
+    // Printable place cards: A4 sheets of 10 cards (name, table, mini QR)
+    async function placeCards(btn) {
+      if (!PS_TABLES.length) { alert('Save your guest list first.'); return; }
+      btn.disabled = true;
+      const original = btn.textContent;
+      await Promise.all(['40px Hanuman'].map(f => document.fonts.load(f)));
+      const loadImg = src => new Promise(res => {
+        const i = new Image();
+        i.onload = () => res(i);
+        i.onerror = () => res(null);
+        i.src = src;
+      });
+      const W = 1240, H = 1754, cols = 2, rows = 5, per = cols * rows;
+      const cw = (W - 80) / cols, ch = (H - 80) / rows;
+      const sheets = Math.ceil(PS_TABLES.length / per);
+      for (let s = 0; s < sheets; s++) {
+        btn.textContent = '⏳ sheet ' + (s + 1) + ' / ' + sheets;
+        const batch = PS_TABLES.slice(s * per, (s + 1) * per);
+        const qrs = await Promise.all(batch.map(g =>
+          loadImg('/admin/guest-qr?name=' + encodeURIComponent(g.name))));
+        const cv = document.createElement('canvas');
+        cv.width = W; cv.height = H;
+        const ctx = cv.getContext('2d');
+        ctx.fillStyle = '#ffffff';
+        ctx.fillRect(0, 0, W, H);
+        batch.forEach((g, i) => {
+          const x = 40 + (i % cols) * cw, y = 40 + Math.floor(i / cols) * ch;
+          ctx.setLineDash([8, 8]);
+          ctx.strokeStyle = '#c9b98f';
+          ctx.lineWidth = 1;
+          ctx.strokeRect(x + 6, y + 6, cw - 12, ch - 12);
+          ctx.setLineDash([]);
+          ctx.textAlign = 'center';
+          const cx = x + cw / 2;
+          ctx.fillStyle = '#3a3226';
+          psFitFont(ctx, g.name, 'bold {s}px Hanuman', 42, cw - 60);
+          ctx.fillText(g.name, cx, y + 78);
+          if (g.table) {
+            ctx.fillStyle = '#a8873a';
+            ctx.font = '32px Hanuman';
+            ctx.fillText('តុ ' + g.table, cx, y + 128);
+          }
+          const qr = qrs[i];
+          if (qr) ctx.drawImage(qr, cx - 70, y + ch - 175, 140, 140);
+        });
+        await downloadCanvas(cv, 'place-cards-' + (s + 1) + '.png');
+        await new Promise(r => setTimeout(r, 350));
+      }
+      btn.textContent = original;
+      btn.disabled = false;
+    }
+
+    // Print-ready seating chart grouped by table
+    const PS_TABLES = [{% for g in guest_rows %}{ name: {{ g.name | tojson }}, table: {{ g.table | tojson }} }{{ ',' if not loop.last }}{% endfor %}];
+    async function seatingChart(btn) {
+      await Promise.all(['46px Moul', '46px Hanuman'].map(f => document.fonts.load(f)));
+      const groups = {};
+      PS_TABLES.forEach(g => {
+        const key = g.table || '…';
+        (groups[key] = groups[key] || []).push(g.name);
+      });
+      const keys = Object.keys(groups).sort((a, b) =>
+        (parseInt(a, 10) || 9999) - (parseInt(b, 10) || 9999) || a.localeCompare(b));
+      // flatten into lines: table header + guest names
+      const lines = [];
+      keys.forEach(k => {
+        lines.push({ text: (k === '…' ? 'ភ្ញៀវផ្សេងទៀត' : 'តុ ' + k), head: true });
+        groups[k].forEach(n => lines.push({ text: n, head: false }));
+        lines.push({ text: '', head: false });
+      });
+      const W = 1080, H = 1620;
+      const cv = document.createElement('canvas');
+      cv.width = W; cv.height = H;
+      const ctx = cv.getContext('2d');
+      ctx.fillStyle = '#fdf9f2';
+      ctx.fillRect(0, 0, W, H);
+      ctx.strokeStyle = '#c9a84c';
+      ctx.lineWidth = 5;
+      ctx.strokeRect(35, 35, W - 70, H - 70);
+      ctx.textAlign = 'center';
+      ctx.fillStyle = '#a8873a';
+      ctx.font = '52px Moul';
+      ctx.fillText('ផែនការតុ', W / 2, 135);
+      ctx.font = '30px Hanuman';
+      ctx.fillText('Seating Chart', W / 2, 185);
+      // two columns; shrink line height until everything fits
+      const colX = [W * 0.28, W * 0.72];
+      const top = 250, bottom = H - 80;
+      let lineH = 46;
+      const perCol = () => Math.floor((bottom - top) / lineH);
+      while (lines.length > perCol() * 2 && lineH > 24) lineH -= 2;
+      const fs = Math.max(20, Math.round(lineH * 0.62));
+      lines.forEach((ln, i) => {
+        const col = Math.floor(i / perCol());
+        if (col > 1) return; // beyond two columns — admin has a very long list
+        const y = top + (i % perCol()) * lineH;
+        ctx.textAlign = 'center';
+        if (ln.head) {
+          ctx.fillStyle = '#a8873a';
+          ctx.font = 'bold ' + fs + 'px Hanuman';
+        } else {
+          ctx.fillStyle = '#3a3226';
+          ctx.font = fs + 'px Hanuman';
+        }
+        if (ln.text) ctx.fillText(ln.text, colX[col], y);
+      });
+      await downloadCanvas(cv, 'seating-chart.png');
+    }
+    drawPoster();
+
+    // Design panel: section reordering
+    function moveSec(btn, dir) {
+      const row = btn.closest('.sec-row');
+      const sib = dir < 0 ? row.previousElementSibling : row.nextElementSibling;
+      if (!sib) return;
+      if (dir < 0) row.parentNode.insertBefore(row, sib);
+      else row.parentNode.insertBefore(sib, row);
+    }
+    document.getElementById('design').addEventListener('submit', () => {
+      document.getElementById('section-order').value =
+        [...document.querySelectorAll('.sec-row')].map(r => r.dataset.id).join(',');
+    });
+  </script>
+</body>
+</html>

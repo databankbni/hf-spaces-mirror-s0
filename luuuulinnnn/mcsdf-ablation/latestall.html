@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>最新 ckpt 大阅兵 v2 — expE_sync 登顶 · expG 事故与回滚</title>
+<style>
+:root{--bg:#0d1117;--card:#161b22;--line:#30363d;--tx:#e6edf3;--dim:#8b949e;--acc:#63c98a;--warn:#e3b341;--bad:#f85149;--blu:#58a6ff}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:15px/1.6 -apple-system,"Segoe UI",Roboto,"Noto Sans SC",sans-serif;padding:28px 3vw 80px}
+h1{font-size:26px;margin:0 0 6px}h2{font-size:19px;margin:34px 0 10px;border-bottom:1px solid var(--line);padding-bottom:6px}
+.sub{color:var(--dim);margin-bottom:20px}
+.verdict{background:linear-gradient(135deg,#12261a,#161b22);border:1px solid var(--acc);border-radius:10px;padding:16px 20px;margin:16px 0;font-size:16px}
+.verdict b{color:var(--acc)}
+.alarm{background:linear-gradient(135deg,#2a1416,#161b22);border:1px solid var(--bad);border-radius:10px;padding:14px 18px;margin:14px 0;font-size:14.5px}
+.alarm b{color:var(--bad)}
+.wrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;margin:12px 0;font-size:13.5px;min-width:820px}
+th,td{border:1px solid var(--line);padding:6px 10px;text-align:center;white-space:nowrap}
+th{background:var(--card);color:var(--dim);font-weight:600}
+td.name{text-align:left;font-weight:600}
+.best{color:var(--acc);font-weight:800}.second{color:var(--blu);font-weight:700}.bad{color:var(--bad)}
+.note{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--warn);border-radius:8px;padding:11px 15px;margin:12px 0;color:var(--dim);font-size:13.5px}
+figure{margin:10px 0 24px;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:8px}
+figcaption{color:var(--dim);font-size:13px;padding:4px 2px;font-weight:600}
+img{width:100%;display:block;border-radius:4px}
+a{color:var(--blu);text-decoration:none}
+</style>
+</head>
+<body>
+<h1>最新 ckpt 大阅兵 v2 <span style="color:var(--dim);font-size:15px">(11 模型 + GT · 全员当刻最新 ckpt)</span></h1>
+<div class="sub">2026-07-29 · 各模型自己的已验证配置(E/F 家族 SYNC cl.85,expJ 缺 ckpt 下轮进)· 4 clips · fwd18-k 度量族 · job=405784(4 卡并行)· <a href="latestall_v1.html">上一轮存档</a></div>
+
+<div class="verdict">🏁 <b>FINAL-EDITION 50-STEP BOARD (2026-07-29 evening · all latest ckpts · A/B/expK/expL COMPLETED 10k):</b>
+<b>expF +ray @5000 = 13.07 retakes #1</b> · expG0-plain @3000 13.03 (#2 — the no-machinery VACE control keeps holding) · expF_sync @4500 13.00 · scratch @6000 12.93 · then a statistical tie band 12.85–12.88 (baseline / rand / Esync / expL_nk-1.3B@9500 / expG@4000 / geo) · <b>expJ twins @3000 = 12.78 — the @1500 crown (13.12) did NOT hold</b> (regressed into the pack; highest content energy −32 among structural models; re-judge @6k/10k) · A/B FINAL @10k = 12.62 both (pure-field ceiling now definitive) · expK FINAL @10k 12.43 · expL_uni FINAL 10.82.
+<br><b>Honest read:</b> positions 4–10 span 0.08 dB — far inside the ±0.3 dev-set noise; the only separations that exceed noise are the expF-family edge, expG0's strength, and the tails. Definitive ranking needs full 10k + the 20-clip official eval.</div>
+<div class="verdict">🏆 <b>50-STEP ERA, GRAND BOARD (mandatory 50 forwards, all latest ckpts, 17 models):</b> <b>expJ_narrow @1500 = 13.12</b> (test clip 16.9) takes #1 on its FIRST readout — the narrow-band τ=1−0.2k timetable wins. expE-scratch @5000 13.10 · <b>expG0 plain @1500 13.05 (#3 — the no-machinery clean-VACE control is startlingly strong)</b> · expF_sync 13.03 · expJ_ray 12.93 · Esync/rand/F/baseline/expL_nk(1.3B) 12.8-12.9 band · expG 12.82 (recovering post-rollback) · expK 12.35 · expC 12.15 · expL_uni 11.22. NOTE: 50-step numbers are a NEW family — do not compare with the 24-step tables below/archived.</div>
+<div class="verdict">🏆 <b>新科状元:expE_sync @1500 = 13.20</b>(TEST 大 clip <b>17.1dB</b> 追平全场纪录)。sync-<b>训练配套</b>模型只用 1500 步就超过 legacy-训练的 scratch@3000(13.15)— expH 的"翻转日历"从推理端红利升级为<b>训练端红利</b>。第 3/4 名也是 sync 双子/expF 家族(13.07/13.05):前四名全部 = 干净血统 × SYNC。</div>
+
+<div class="alarm">🚨 <b>事故报告:expG @2000 崩坏(13.13→12.20,test 16.2→14.9)</b>,viz 满屏椒盐斑、结构溶解 — 3B vace 分支全参在 lr 5e-5 下烧糊(提交时已标记的风险兑现)。<b>已处置</b>:回滚到崩前快照 s1500,lr 降至 1e-5,链条重启(405831-33)。快照守护立功:没有 s1500 底账这次就只能从头再来。</div>
+
+<h2>排行(4-clip 平均)</h2>
+<div class="wrap"><table>
+<tr><th>#</th><th>模型 @step</th><th>PSNR</th><th>gray</th><th>00534f</th><th>0003dc</th><th>111b65 T</th><th>2501f4 T</th></tr>
+<tr><td>1</td><td class="name best">expE_sync @1500</td><td class="best">13.20</td><td>−22.3</td><td>11.7</td><td>13.5</td><td class="best">17.1</td><td>10.5</td></tr>
+<tr><td>2</td><td class="name second">expE-scratch @3000</td><td>13.15</td><td>−22.7</td><td>11.9</td><td>13.6</td><td>16.6</td><td>10.5</td></tr>
+<tr><td>3</td><td class="name second">expF_sync +ray @1500</td><td>13.07</td><td>−25.1</td><td>11.5</td><td>13.4</td><td>16.8</td><td>10.6</td></tr>
+<tr><td>4</td><td class="name">expF +ray @2000</td><td>13.05</td><td>−24.7</td><td>11.8</td><td>13.5</td><td>16.5</td><td>10.4</td></tr>
+<tr><td>5</td><td class="name">expE-geo @6500</td><td>12.95</td><td>−21.4</td><td>11.7</td><td>13.1</td><td>16.5</td><td>10.5</td></tr>
+<tr><td>6</td><td class="name">expE-rand @6500</td><td>12.93</td><td>−19.8</td><td>11.5</td><td>13.1</td><td>16.5</td><td>10.6</td></tr>
+<tr><td>7</td><td class="name">baseline @3000</td><td>12.88</td><td class="bad">−5.2</td><td>12.1</td><td>12.6</td><td>16.3</td><td>10.5</td></tr>
+<tr><td>8</td><td class="name">expA @7500</td><td>12.62</td><td>−23.0</td><td>11.9</td><td>11.8</td><td>16.2</td><td>10.6</td></tr>
+<tr><td>9</td><td class="name">expB @7500</td><td>12.60</td><td>−24.4</td><td>12.0</td><td>11.7</td><td>16.1</td><td>10.6</td></tr>
+<tr><td>10</td><td class="name">expC @4500</td><td>12.25</td><td>−45.2</td><td>11.2</td><td>12.2</td><td>15.5</td><td>10.1</td></tr>
+<tr><td>11</td><td class="name bad">expG @2000(崩坏,已回滚)</td><td class="bad">12.20</td><td>−16.5</td><td>11.4</td><td>12.3</td><td>14.9</td><td>10.2</td></tr>
+</table></div>
+
+<div class="note">读数解读:① <b>sync 训练配套的收益确认</b>:@1000 时是"PSNR 平手+内容多",@1500 已是"PSNR 领先" — Esync/Fsync 双双压过各自的 legacy 孪生;② expF @2000 较自己 @1500 的 13.25 小幅回落(±0.2 波动带内,@3000 再看);③ A/B @7500 双双横盘(12.6x),纯场路线的天花板越发清楚;④ expJ 双臂 / expG0 尚无 ckpt,下轮参赛。</div>
+
+<h2>FINAL 50-step composites (14B board + 1.3B board)</h2>
+<figure><figcaption>TEST 111b656f — 14 rows</figcaption><img src="f50_111b656f.png" loading="lazy"></figure>
+<figure><figcaption>TEST 111b656f — 1.3B trio at 10k</figcaption><img src="f50b_111b656f.png" loading="lazy"></figure>
+<figure><figcaption>TEST 2501f488</figcaption><img src="f50_2501f488.png" loading="lazy"></figure>
+<figure><figcaption>TRAIN 0003dc82</figcaption><img src="f50_0003dc82.png" loading="lazy"></figure>
+<h2>(archived earlier s50 run) composites</h2>
+<figure><figcaption>TEST 111b656f — expJ_narrow 16.9 leads</figcaption><img src="s50_111b656f.png" loading="lazy"></figure>
+<figure><figcaption>TEST 2501f488</figcaption><img src="s50_2501f488.png" loading="lazy"></figure>
+<figure><figcaption>TRAIN 00534f58</figcaption><img src="s50_00534f58.png" loading="lazy"></figure>
+<figure><figcaption>TRAIN 0003dc82</figcaption><img src="s50_0003dc82.png" loading="lazy"></figure>
+<h2>(archived 24-step v2) 逐 clip 大图(行序 = GT/baseline/A/B/C/geo/rand/scratch/Esync/F/Fsync/G)</h2>
+<figure><figcaption>TEST 111b656f — expE_sync 17.1dB 领跑</figcaption><img src="latest2_111b656f.png" loading="lazy"></figure>
+<figure><figcaption>TEST 2501f488</figcaption><img src="latest2_2501f488.png" loading="lazy"></figure>
+<figure><figcaption>TRAIN 00534f58</figcaption><img src="latest2_00534f58.png" loading="lazy"></figure>
+<figure><figcaption>TRAIN 0003dc82</figcaption><img src="latest2_0003dc82.png" loading="lazy"></figure>
+
+<div class="sub">相关:<a href="pipelines.html">实验图鉴</a> · <a href="fleet.html">舰队进度</a> · <a href="exph.html">expH</a> · 在途:expJ 双臂 / expG0 / expK(1.3B 沙盒)/ expL 双臂(seq-concat)/ CameraAnything 外部基线集成</div>
+</body>
+</html>

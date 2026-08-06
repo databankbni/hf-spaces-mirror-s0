@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ModelDNA — AI Model Provenance</title>
+<style>
+  :root {
+    --bg: #030712;
+    --bg2: #111318;
+    --bg3: #1a1d27;
+    --text: #C5C6C7;
+    --text-dim: #7a7d85;
+    --accent: #65D423;
+    --accent2: #4aab1a;
+    --border: #222530;
+    --code-bg: #060709;
+    --green: #4ade80;
+    --yellow: #facc15;
+    --red: #f87171;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--bg); color:var(--text); font-family: 'IBM Plex Sans', system-ui, -apple-system, sans-serif, system-ui, -apple-system, sans-serif; line-height:1.6; }
+  code, pre, .mono { font-family: 'Space Mono', Monaco, Menlo, Consolas, monospace, 'Fira Code', 'Cascadia Code', monospace; }
+
+  /* NAV */
+  nav { border-bottom:1px solid var(--border); padding:1rem 2rem; display:flex; justify-content:space-between; align-items:center; background:var(--bg); position:sticky; top:0; z-index:100; }
+  .logo { font-size:1.1rem; font-weight:700; color:var(--accent); letter-spacing:-0.02em; display:flex; align-items:center; gap:0.5rem; }
+  .logo span { color:var(--text-dim); font-weight:400; font-size:0.85rem; }
+  nav a { color:var(--text-dim); text-decoration:none; font-size:0.9rem; margin-left:1.5rem; transition:color .2s; }
+  nav a:hover { color:var(--text); }
+  .nav-cta { background:var(--accent); color:#030712; padding:0.4rem 1rem; border-radius:6px; font-weight:600; font-size:0.85rem; margin-left:1.5rem; }
+  .nav-cta:hover { opacity:.9; color:#030712; }
+
+  /* HERO */
+  .hero { max-width:860px; margin:0 auto; padding:5rem 2rem 4rem; text-align:center; }
+  .badge { display:inline-block; background:rgba(101,212,35,0.1); border:1px solid rgba(101,212,35,0.3); color:var(--accent); padding:0.25rem 0.75rem; border-radius:999px; font-size:0.78rem; mono; margin-bottom:1.5rem; }
+  h1 { font-size:clamp(2rem, 5vw, 3.2rem); font-weight:700; line-height:1.15; letter-spacing:-0.03em; margin-bottom:1rem; }
+  h1 em { color:var(--accent); font-style:normal; }
+  .hero-sub { color:var(--text-dim); font-size:1.1rem; max-width:580px; margin:0 auto 0.75rem; }
+  .honest-line { color:var(--accent2); font-size:0.9rem; font-style:italic; margin-bottom:2rem; }
+  .cta-group { display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; }
+  .btn-primary { background:var(--accent); color:#030712; padding:0.75rem 1.75rem; border-radius:8px; font-weight:700; text-decoration:none; font-size:0.95rem; display:inline-block; }
+  .btn-secondary { background:transparent; color:var(--text); padding:0.75rem 1.75rem; border-radius:8px; font-weight:500; text-decoration:none; font-size:0.95rem; border:1px solid var(--border); display:inline-block; }
+  .btn-primary:hover { opacity:.9; } .btn-secondary:hover { border-color:var(--text-dim); }
+  .hero-note { font-size:0.8rem; color:var(--text-dim); margin-top:1rem; }
+
+  /* STATS BAR */
+  .stats { border-top:1px solid var(--border); border-bottom:1px solid var(--border); padding:1.5rem 2rem; display:flex; justify-content:center; gap:4rem; flex-wrap:wrap; }
+  .stat { text-align:center; }
+  .stat-num { font-size:1.6rem; font-weight:700; color:var(--accent); mono; }
+  .stat-label { font-size:0.78rem; color:var(--text-dim); margin-top:0.2rem; }
+
+  /* SECTION */
+  section { max-width:920px; margin:0 auto; padding:4rem 2rem; }
+  .section-label { color:var(--accent); font-size:0.78rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; mono; margin-bottom:0.75rem; }
+  h2 { font-size:1.9rem; font-weight:700; letter-spacing:-0.02em; margin-bottom:1rem; }
+  h3 { font-size:1.1rem; font-weight:600; margin-bottom:0.5rem; }
+
+  /* VALUE PROPS */
+  .props { display:grid; grid-template-columns:repeat(auto-fit, minmax(260px,1fr)); gap:1.5rem; margin-top:2rem; }
+  .prop { background:var(--bg2); border:1px solid var(--border); border-radius:12px; padding:1.5rem; }
+  .prop-icon { font-size:1.5rem; margin-bottom:0.75rem; }
+  .prop h3 { color:var(--text); }
+  .prop p { color:var(--text-dim); font-size:0.9rem; line-height:1.6; margin-top:0.4rem; }
+
+  /* TERMINAL */
+  .terminal { background:var(--code-bg); border:1px solid var(--border); border-radius:12px; padding:1.5rem; margin-top:2rem; overflow-x:auto; }
+  .terminal-bar { display:flex; gap:0.4rem; margin-bottom:1rem; }
+  .dot { width:12px; height:12px; border-radius:50%; }
+  .dot-r { background:#f87171; } .dot-y { background:#facc15; } .dot-g { background:#4ade80; }
+  pre { color:var(--text); font-size:0.82rem; line-height:1.7; white-space:pre; }
+  .t-cmd { color:var(--accent); }
+  .t-dim { color:var(--text-dim); }
+  .t-pass { color:var(--green); }
+  .t-warn { color:var(--yellow); }
+  .t-key { color:#a5b4fc; }
+  .t-val { color:var(--accent2); }
+  .t-verdict { color:var(--accent); font-weight:700; }
+
+  /* HOW IT WORKS */
+  .steps { display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:1.5rem; margin-top:2rem; }
+  .step { position:relative; padding-left:2.5rem; }
+  .step-num { position:absolute; left:0; top:0; width:1.75rem; height:1.75rem; background:rgba(101,212,35,0.15); border:1px solid rgba(101,212,35,0.3); border-radius:50%; display:flex; align-items:center; justify-content:center; color:var(--accent); font-size:0.78rem; font-weight:700; mono; }
+  .step h3 { color:var(--text); font-size:1rem; }
+  .step p { color:var(--text-dim); font-size:0.88rem; margin-top:0.3rem; }
+  .step-tag { display:inline-block; background:rgba(101,212,35,0.1); color:var(--accent); font-size:0.7rem; padding:0.15rem 0.5rem; border-radius:4px; mono; margin-top:0.4rem; }
+
+  /* PRICING */
+  .plans { display:grid; grid-template-columns:repeat(auto-fit, minmax(210px,1fr)); gap:1rem; margin-top:2rem; }
+  .plan { background:var(--bg2); border:1px solid var(--border); border-radius:12px; padding:1.5rem; position:relative; }
+  .plan.featured { border-color:var(--accent2); }
+  .plan-badge { position:absolute; top:-0.6rem; left:50%; transform:translateX(-50%); background:var(--accent2); color:#030712; font-size:0.7rem; font-weight:700; padding:0.15rem 0.6rem; border-radius:999px; white-space:nowrap; }
+  .plan-name { font-size:0.85rem; font-weight:600; color:var(--text-dim); text-transform:uppercase; letter-spacing:0.05em; }
+  .plan-price { font-size:2rem; font-weight:700; mono; margin:0.5rem 0; color:var(--text); }
+  .plan-price span { font-size:0.85rem; color:var(--text-dim); font-weight:400; }
+  .plan ul { list-style:none; margin:1rem 0; font-size:0.85rem; color:var(--text-dim); }
+  .plan ul li { padding:0.25rem 0; display:flex; align-items:flex-start; gap:0.5rem; }
+  .plan ul li::before { content:'✓'; color:var(--accent); font-size:0.8rem; flex-shrink:0; margin-top:0.1rem; }
+  .plan-btn { display:block; text-align:center; padding:0.6rem; border-radius:7px; font-size:0.85rem; font-weight:600; text-decoration:none; margin-top:1rem; border:1px solid var(--border); color:var(--text); transition:all .2s; }
+  .plan-btn:hover, .plan.featured .plan-btn { background:var(--accent); color:#030712; border-color:var(--accent); }
+  .lab-tag { background:var(--bg3); border:1px solid var(--border); color:var(--text-dim); font-size:0.78rem; padding:0.3rem 0.75rem; border-radius:20px; white-space:nowrap; font-family:var(--mono); }
+
+  /* FAQ */
+  .faqs { margin-top:2rem; display:flex; flex-direction:column; gap:1rem; }
+  .faq { background:var(--bg2); border:1px solid var(--border); border-radius:10px; padding:1.25rem; }
+  .faq h3 { font-size:0.95rem; color:var(--text); }
+  .faq p { color:var(--text-dim); font-size:0.88rem; margin-top:0.4rem; line-height:1.6; }
+
+  /* FOOTER */
+  footer { border-top:1px solid var(--border); padding:2rem; text-align:center; }
+  .footer-brand { font-size:0.9rem; color:var(--text); margin-bottom:0.5rem; }
+  .footer-links { display:flex; gap:1.5rem; justify-content:center; flex-wrap:wrap; margin:0.75rem 0; }
+  .footer-links a { color:var(--text-dim); text-decoration:none; font-size:0.82rem; }
+  .footer-links a:hover { color:var(--accent); }
+  .footer-copy { color:var(--text-dim); font-size:0.78rem; margin-top:0.75rem; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">
+    modeldna.ai
+    <span>a RadicalNotion product</span>
+  </div>
+  <div style="display:flex; align-items:center; flex-wrap:wrap;">
+    <a href="#how">How It Works</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#faq">FAQ</a>
+    <a href="https://huggingface.co/spaces/RadicalNotionAI/modeldna" target="_blank" class="nav-cta">Scan a Model</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="badge mono">powered by ModelAtlas · 2,200+ models indexed</div>
+  <h1>The <em>DNA test</em><br>for AI models.</h1>
+  <p class="hero-sub">Identify model provenance, detect derivative lineage, and audit architecture before you deploy. Scan any HuggingFace model in seconds.</p>
+  <p class="honest-line">No backdoor detection. No security claims. Just architectural truth.</p>
+  <div class="cta-group">
+    <a href="https://huggingface.co/spaces/RadicalNotionAI/modeldna" target="_blank" class="btn-primary">Scan a Model Free</a>
+    <a href="#how" class="btn-secondary">See How It Works</a>
+  </div>
+  <p class="hero-note">Stage 1 architecture screening is free and unlimited. No credit card required.</p>
+</div>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat"><div class="stat-num mono">2,450+</div><div class="stat-label">Models in reference corpus</div></div>
+  <div class="stat"><div class="stat-num mono">27</div><div class="stat-label">Base architecture families</div></div>
+  <div class="stat"><div class="stat-num mono">&lt;3s</div><div class="stat-label">Stage 1 screening latency</div></div>
+  <div class="stat"><div class="stat-num mono">60+</div><div class="stat-label">Labs tracked</div></div>
+</div>
+
+<!-- LAB COVERAGE GRID -->
+<div style="background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:2.5rem 2rem;">
+  <div style="max-width:960px;margin:0 auto;">
+    <div style="text-align:center;color:var(--text-dim);font-size:0.78rem;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:1.5rem;">Labs covered in the ModelAtlas reference corpus</div>
+    <div style="display:flex;flex-wrap:wrap;gap:0.6rem;justify-content:center;">
+      <span class="lab-tag">Meta · 661 models</span>
+      <span class="lab-tag">Qwen · 227 models</span>
+      <span class="lab-tag">Mistral · 212 models</span>
+      <span class="lab-tag">Google · 76 models</span>
+      <span class="lab-tag">Microsoft · 41 models</span>
+      <span class="lab-tag">DeepSeek · 29 models</span>
+      <span class="lab-tag">Zhipu AI · 23 models</span>
+      <span class="lab-tag">IBM · 19 models</span>
+      <span class="lab-tag">EleutherAI · 18 models</span>
+      <span class="lab-tag">OpenAI · 16 models</span>
+      <span class="lab-tag">Tencent · 12 models</span>
+      <span class="lab-tag">NVIDIA · 11 models</span>
+      <span class="lab-tag">MiniMax · 8 models</span>
+      <span class="lab-tag">Cohere · 8 models</span>
+      <span class="lab-tag">TII UAE · 9 models</span>
+      <span class="lab-tag">StepFun · 7 models</span>
+      <span class="lab-tag">AntGroup / inclusionAI · Bailing, Ling, LLaDA2</span>
+      <span class="lab-tag">Moonshot · Kimi, Kimi-Linear, K2</span>
+      <span class="lab-tag">ByteDance Seed · Seed-OSS</span>
+      <span class="lab-tag">Baidu · ERNIE 4.5, Qianfan</span>
+      <span class="lab-tag">Xiaomi · MiMo V2.x</span>
+      <span class="lab-tag">BAAI · Emu3, Emu3.5</span>
+      <span class="lab-tag">OpenBMB · MiniCPM</span>
+      <span class="lab-tag">InternLM · S1</span>
+      <span class="lab-tag">FreedomIntelligence · Pangu-R</span>
+      <span class="lab-tag">+ 25 more labs</span>
+    </div>
+  </div>
+</div>
+
+<!-- VALUE PROPS -->
+<section>
+  <div class="section-label">Why ModelDNA</div>
+  <h2>More than a similarity score.</h2>
+  <div class="props">
+    <div class="prop">
+      <div class="prop-icon">🧬</div>
+      <h3>Deep Derivative Detection</h3>
+      <p>We compare against 2,200+ verified architectures across 545 organizations. Identifies fine-tunes, distillations, and repackaged models that config checks miss.</p>
+    </div>
+    <div class="prop">
+      <div class="prop-icon">⚡</div>
+      <h3>Two-Stage Analysis</h3>
+      <p>Stage 1 screens architecture configs instantly (free, unlimited). Stage 2 computes five weight-level signals for definitive lineage determination.</p>
+    </div>
+    <div class="prop">
+      <div class="prop-icon">📋</div>
+      <h3>Audit-Ready Output</h3>
+      <p>Pro plans export SBOM-compatible reports and PDF audit trails with lineage origin, technique provenance, and compliance verdict — ready for governance review.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TERMINAL DEMO -->
+<section>
+  <div class="section-label">Live Example</div>
+  <h2>See the analysis in action.</h2>
+  <p style="color:var(--text-dim);font-size:0.85rem;margin-bottom:1.5rem;">Stage 1 output is live today. Stage 2 weight analysis shown below is a roadmap preview.</p>
+  <div class="terminal">
+    <div class="terminal-bar"><div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div></div>
+    <pre><span class="t-cmd">$ modeldna scan poolside/Laguna-XS.2</span>
+
+<span class="t-dim">[INIT]  Connecting to ModelAtlas reference database (2,241 models)</span>
+<span class="t-dim">[SCAN]  Fetching config.json...</span>
+
+<span class="t-pass">── STAGE 1: Architectural Screening ──────────────────────────</span>
+<span class="t-key">  Architecture:     </span><span class="t-val">LagunaForCausalLM</span>
+<span class="t-key">  Hidden size:      </span><span class="t-val">2048</span>
+<span class="t-key">  Vocab size:       </span><span class="t-val">100,352</span>
+<span class="t-key">  Lineage family:   </span><span class="t-val">GQA+SWA Hybrid</span>
+<span class="t-key">  Stage 1 verdict:  </span><span class="t-val">SIMILAR DESIGN → proceed to Stage 2</span>
+
+<span class="t-pass">── STAGE 2: Weight-Level DNA Fingerprint ─────────────────────</span>
+<span class="t-key">  EAS  Embedding anchor similarity: </span><span class="t-val">0.12</span>  <span class="t-dim">▪▪░░░░░░░░  low</span>
+<span class="t-key">  END  Norm distribution:           </span><span class="t-val">0.31</span>  <span class="t-dim">▪▪▪░░░░░░░  low</span>
+<span class="t-key">  NLF  Norm layer fingerprint:       </span><span class="t-val">0.28</span>  <span class="t-dim">▪▪░░░░░░░░  low</span>
+<span class="t-key">  LEP  Layer energy profile:         </span><span class="t-val">0.41</span>  <span class="t-dim">▪▪▪▪░░░░░░  moderate</span>
+<span class="t-key">  WVC  Weight cosine:                </span><span class="t-val">0.18</span>  <span class="t-dim">▪░░░░░░░░░  low</span>
+
+<span class="t-verdict">── VERDICT ────────────────────────────────────────────────────</span>
+<span class="t-key">  Composite DNA Score:  </span><span class="t-verdict">0.26 / 1.00</span>
+<span class="t-key">  Classification:       </span><span class="t-verdict">ARCHITECTURAL INSPIRATION (not weight-derived)</span>
+<span class="t-key">  Lineage:              </span><span class="t-val">GQA+SWA Hybrid — adopted pattern from StepFun (Feb 2026)</span>
+<span class="t-key">  Weights:              </span><span class="t-val">INDEPENDENT — different vocab rules out tokenizer inheritance</span>
+
+<span class="t-pass">  ✓ No weight inheritance detected</span>
+<span class="t-dim">Report saved: ./modeldna-report-laguna-xs2.json</span>
+<span class="t-dim">Powered by ModelAtlas · modeldna.ai · a RadicalNotion product</span></pre>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how">
+  <div class="section-label">Process</div>
+  <h2>Two stages. One verdict.</h2>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <h3>Architecture Screening</h3>
+      <p>We parse the model config to identify architecture family, vocab, and technique signatures. Resolves the majority of cases instantly.</p>
+      <span class="step-tag">FREE · UNLIMITED · &lt;3s</span>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <h3>Weight-Level Analysis <span style="font-size:0.7rem;background:rgba(101,212,35,0.15);border:1px solid rgba(101,212,35,0.3);color:var(--accent);padding:0.1rem 0.5rem;border-radius:4px;vertical-align:middle;font-weight:600;">ROADMAP</span></h3>
+      <p>Five statistical signals (EAS, END, NLF, LEP, WVC) will analyze weight distributions to detect derivative relationships configs can't reveal.</p>
+      <span class="step-tag">STAGE 2 · Coming soon</span>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <h3>Enriched Verdict</h3>
+      <p>Composite DNA score, lineage classification, and optional ModelAtlas enrichment — VRAM estimates, ARS scores, and technique origin chain.</p>
+      <span class="step-tag">PRO · JSON / PDF / SBOM</span>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing">
+  <div class="section-label">Pricing</div>
+  <h2>Developer-priced. Enterprise-capable.</h2>
+  <p style="color:var(--text-dim); font-size:0.9rem; margin-top:0.5rem;">The ModelAtlas knowledge engine runs on RadicalNotion infrastructure. You get enterprise-grade depth at a fraction of incumbent pricing.</p>
+  <p style="color:var(--text-dim);font-size:0.82rem;margin-top:0.75rem;">All scanning is Stage 1 — architecture screening from config.json only. No weight download required. <span style="color:var(--accent);">Stage 2 weight-level analysis is on the roadmap.</span></p>
+  <div class="plans" style="margin-top:2rem;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));">
+    <div class="plan">
+      <div class="plan-name">Free</div>
+      <div class="plan-price">$0<span>/mo</span></div>
+      <p style="font-size:0.78rem;color:var(--text-dim);margin-bottom:0.75rem;">For anyone using open weights on HuggingFace.</p>
+      <ul>
+        <li>Unlimited Stage 1 scanning — all public HF models</li>
+        <li>Architecture family identification</li>
+        <li>Claim validation — flags unverifiable assertions</li>
+        <li>Derivative discovery — find models sharing your base</li>
+        <li>JSON output</li>
+      </ul>
+      <a href="https://huggingface.co/spaces/RadicalNotionAI/modeldna" target="_blank" class="plan-btn">Start Scanning</a>
+    </div>
+    <div class="plan featured">
+      <div class="plan-badge">For AI Infrastructure Engineers</div>
+      <div class="plan-name">Pro</div>
+      <div class="plan-price">$199<span>/mo</span></div>
+      <p style="font-size:0.78rem;color:var(--text-dim);margin-bottom:0.75rem;">For MLOps and AI platform teams vetting models at scale.</p>
+      <ul>
+        <li>Everything in Free</li>
+        <li>Full API access — bulk scanning for pipelines</li>
+        <li>ModelAtlas enrichment — VRAM, ARS, technique chain</li>
+        <li>Derivative alerts — notified when copies appear</li>
+        <li>PDF + SBOM audit export for compliance review</li>
+        <li>5 team seats + priority support</li>
+      </ul>
+      <a href="#" class="plan-btn">Get Pro</a>
+    </div>
+    <div class="plan">
+      <div class="plan-name">Custom</div>
+      <div class="plan-price" style="font-size:1.4rem;">Contact Us</div>
+      <p style="font-size:0.78rem;color:var(--text-dim);margin-bottom:0.75rem;">For open weight hosters, compliance teams, and enterprises.</p>
+      <ul>
+        <li>Everything in Pro</li>
+        <li>Private model ingestion + on-premise deployment</li>
+        <li>Custom ModelAtlas reference databases</li>
+        <li>Automated moderation for model hosting platforms</li>
+        <li>SLA guarantees + dedicated engineering</li>
+      </ul>
+      <a href="mailto:tim@radicalnotion.ai" class="plan-btn">Contact Sales</a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="section-label">Honest Answers</div>
+  <h2>What modeldna does — and doesn't.</h2>
+  <div class="faqs">
+    <div class="faq">
+      <h3>Does this detect backdoors or malware?</h3>
+      <p>No. modeldna analyzes statistical fingerprints for provenance and derivative lineage. We do not perform security vulnerability scanning or malware detection. These are different problems requiring different tools.</p>
+    </div>
+    <div class="faq">
+      <h3>Is this cryptographic proof of ownership?</h3>
+      <p>No. Our results are based on statistical fingerprinting — high-confidence evidence of lineage, not cryptographic signatures. Results are suitable for compliance review and audit documentation but not legal disputes over IP ownership.</p>
+    </div>
+    <div class="faq">
+      <h3>How does the ModelAtlas reference database work?</h3>
+      <p>ModelAtlas continuously scans and indexes public model releases, extracting architecture signatures, technique taxonomies, and lineage relationships. The reference database is private and updated weekly. The CLI queries it via API — you never see the raw database.</p>
+    </div>
+    <div class="faq">
+      <h3>Can I scan quantized models (GGUF, AWQ, FP8)?</h3>
+      <p>Stage 1 works on any model with a config.json. Stage 2 weight analysis requires dequantization to BF16 first — this is handled automatically for supported formats. GGUF Q4/Q8 and safetensors FP8 are supported; AWQ/GPTQ support is in development.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">modeldna.ai · powered by ModelAtlas · a RadicalNotion product</div>
+  <div class="footer-links">
+    <a href="#">Documentation</a>
+    <a href="#">API Reference</a>
+    <a href="#">Status</a>
+    <a href="#">Privacy Policy</a>
+    <a href="#">Terms of Service</a>
+    <a href="https://radicalnotion.ai">RadicalNotion.ai</a>
+  </div>
+  <div class="footer-copy">© 2026 RadicalNotion.ai. All rights reserved.</div>
+</footer>
+
+</body>
+</html>

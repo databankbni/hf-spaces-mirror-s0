@@ -1,0 +1,92 @@
+{
+ "captured_at": "2026-08-04T15:34:54Z",
+ "hf_metadata": {
+  "_id": "6a075590dc960678e3053d6c",
+  "author": "afsalknassar",
+  "cardData": {
+   "colorFrom": "pink",
+   "colorTo": "indigo",
+   "emoji": "🐠",
+   "pinned": false,
+   "sdk": "docker",
+   "title": "Seeder"
+  },
+  "createdAt": "2026-05-15T17:19:12.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://afsalknassar-seeder.hf.space",
+  "id": "afsalknassar/Seeder",
+  "lastModified": "2026-07-11T15:28:01.000Z",
+  "likes": 0,
+  "private": false,
+  "runtime": {
+   "abuse": {
+    "detector": "manual/hub",
+    "flaggedAt": "2026-07-31T20:13:45.067Z",
+    "reason": "[USER-LOCKED-OUT]Locked by abuse-handler by rule: cmdline match: 'wireproxy' in 'wireproxy -c /tmp/easyproxy-warp/wireproxy.conf'. socks5 proxy on :1080 (triggered by Space afsalknassar/cinepro-org)"
+   },
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "afsalknassar-seeder.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "errorMessage": "Flagged as abusive",
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": null,
+    "requested": "cpu-basic"
+   },
+   "replicas": {
+    "requested": 1
+   },
+   "stage": "PAUSED"
+  },
+  "sdk": "docker",
+  "sha": "ca52a0b69116f45da038b47e84aec0c94c600026",
+  "siblings": [
+   {
+    "rfilename": ".gitattributes"
+   },
+   {
+    "rfilename": "Dockerfile"
+   },
+   {
+    "rfilename": "Dockerfile1"
+   },
+   {
+    "rfilename": "Dockerfile21"
+   },
+   {
+    "rfilename": "Dockerfile56"
+   },
+   {
+    "rfilename": "README.md"
+   }
+  ],
+  "subdomain": "afsalknassar-seeder",
+  "tags": [
+   "docker",
+   "region:us"
+  ],
+  "usedStorage": 0
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "afsalknassar/Seeder",
+ "repo_type": "spaces",
+ "sha": "ca52a0b69116f45da038b47e84aec0c94c600026",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/afsalknassar/Seeder"
+}

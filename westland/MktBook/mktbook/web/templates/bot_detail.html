@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+{% block title %}{{ bot.bot_name }} - MktBook{% endblock %}
+{% block content %}
+<hgroup>
+    <h1>{{ bot.bot_name }}</h1>
+    <p>by {{ bot.student_name }} &mdash; {% if bot.is_active %}<mark>Active</mark>{% else %}Inactive{% endif %}</p>
+</hgroup>
+
+<div class="grid">
+    <article>
+        <header>Configuration</header>
+        <dl>
+            <dt>Personality</dt>
+            <dd>{{ bot.personality or 'Not set' }}</dd>
+            <dt>Marketing Objective</dt>
+            <dd>{{ bot.objective or 'Not set' }}</dd>
+            <dt>Behavior Rules</dt>
+            <dd>{{ bot.behavior_rules or 'Not set' }}</dd>
+        </dl>
+        <a href="/bots/{{ bot.id }}/edit" role="button" class="outline">Edit</a>
+    </article>
+
+    <article>
+        <header>Stats</header>
+        <dl>
+            <dt>Total Messages</dt>
+            <dd>{{ stats.messages }}</dd>
+            <dt>Total Conversations</dt>
+            <dd>{{ stats.conversations }}</dd>
+            <dt>Human Interactions</dt>
+            <dd>{{ stats.human_interactions }}</dd>
+        </dl>
+    </article>
+</div>
+
+{% if grades %}
+<article>
+    <header>Grade History</header>
+    <table>
+        <thead>
+            <tr>
+                <th>Run</th>
+                <th>Overall</th>
+                <th>Objective</th>
+                <th>Quality</th>
+                <th>Human</th>
+                <th>Volume</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for g in grades %}
+            <tr>
+                <td>{{ g.grading_run_id }}</td>
+                <td><strong>{{ "%.1f"|format(g.overall_score) }}</strong></td>
+                <td>{{ "%.1f"|format(g.objective_score) }}</td>
+                <td>{{ "%.1f"|format(g.quality_score) }}</td>
+                <td>{{ "%.1f"|format(g.human_score) }}</td>
+                <td>{{ "%.1f"|format(g.volume_score) }}</td>
+                <td>{{ g.created_at }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</article>
+{% endif %}
+
+<article>
+    <header>Recent Conversations</header>
+    {% if conversations %}
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Type</th>
+                <th>Turns</th>
+                <th>Started</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for c in conversations %}
+            <tr>
+                <td>#{{ c.id }}</td>
+                <td>{{ c.type }}</td>
+                <td>{{ c.turn_count }}</td>
+                <td>{{ c.started_at }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <p>No conversations yet.</p>
+    {% endif %}
+</article>
+{% endblock %}

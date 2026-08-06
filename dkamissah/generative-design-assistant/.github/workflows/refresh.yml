@@ -1,0 +1,88 @@
+name: Weekly Knowledge Base Refresh
+
+on:
+  schedule:
+    # Every Sunday at 02:00 UTC
+    - cron: "0 2 * * 0"
+  workflow_dispatch:
+    # Allow manual trigger from GitHub UI
+    inputs:
+      max_papers:
+        description: "Max papers per arXiv query"
+        required: false
+        default: "30"
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    name: Re-ingest papers and update vector store
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          persist-credentials: true
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Re-ingest papers from arXiv + Semantic Scholar
+        run: |
+          MAX=${{ github.event.inputs.max_papers || '30' }}
+          PYTHONPATH=. python src/data/ingest_papers.py --max $MAX
+          echo "Ingestion complete"
+
+      - name: Verify vector store
+        run: |
+          PYTHONPATH=. python -c "
+          from src.tools.knowledge_retriever import KnowledgeRetriever
+          r = KnowledgeRetriever()
+          count = r.collection.count()
+          print(f'Vector store updated: {count} documents')
+          assert count > 0, 'Vector store is empty after refresh'
+          "
+
+      - name: Commit updated vector store
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add knowledge_base/vectorstore/
+          git diff --staged --quiet || git commit -m "chore: weekly knowledge base refresh [skip ci]"
+          git push origin HEAD:master
+
+      - name: Deploy updated knowledge base to HF Spaces
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: |
+          pip install "huggingface_hub[hf_xet]"
+          python - << 'EOF'
+          from huggingface_hub import HfApi
+          import os
+
+          api = HfApi()
+          api.upload_folder(
+              folder_path    = "knowledge_base/vectorstore",
+              repo_id        = "dkamissah/generative-design-assistant",
+              repo_type      = "space",
+              path_in_repo   = "knowledge_base/vectorstore",
+              token          = os.environ["HF_TOKEN"],
+              commit_message = "chore: weekly knowledge base refresh"
+          )
+          print("Knowledge base updated on HF Spaces")
+          EOF
+
+      - name: Post refresh summary
+        run: |
+          echo "### Knowledge Base Refresh Summary" >> $GITHUB_STEP_SUMMARY
+          echo "- **Schedule:** Weekly (Sunday 02:00 UTC)" >> $GITHUB_STEP_SUMMARY
+          echo "- **Max papers per query:** ${{ github.event.inputs.max_papers || '30' }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **HF Space updated:** ✅" >> $GITHUB_STEP_SUMMARY

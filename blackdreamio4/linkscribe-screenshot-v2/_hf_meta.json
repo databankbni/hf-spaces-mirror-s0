@@ -1,0 +1,23 @@
+{
+ "captured_at": "2026-08-04T16:01:53Z",
+ "hf_metadata": {
+  "sha": "94fd7de5b10cf79c8bfd393da99e682982577c55"
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "blackdreamio4/linkscribe-screenshot-v2",
+ "repo_type": "spaces",
+ "sha": "94fd7de5b10cf79c8bfd393da99e682982577c55",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/blackdreamio4/linkscribe-screenshot-v2"
+}

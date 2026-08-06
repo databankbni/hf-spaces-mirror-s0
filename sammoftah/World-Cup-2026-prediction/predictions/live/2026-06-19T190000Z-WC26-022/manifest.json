@@ -1,0 +1,6 @@
+{
+  "algorithm": "sha256",
+  "file": "forecast.json",
+  "immutable": true,
+  "sha256": "1ee6dbfcdb4dbebcc41a441cc983f12df321c59b877f54a313ec3fde1c552220"
+}

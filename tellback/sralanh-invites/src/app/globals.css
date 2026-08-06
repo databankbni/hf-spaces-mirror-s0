@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  min-height: 100vh;
+}
+
+/* Khmer text benefits from a little extra line-height for stacked glyphs. */
+.font-khmer,
+:lang(km) {
+  line-height: 1.7;
+}

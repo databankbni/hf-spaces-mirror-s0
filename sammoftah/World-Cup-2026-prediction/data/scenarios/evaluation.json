@@ -1,0 +1,33 @@
+{
+  "label": "Base Q8",
+  "backend": "SmolLM2-360M via llama.cpp (validated fallback enabled)",
+  "examples": 98,
+  "factor_micro_f1": 0.026058631921824102,
+  "factor_macro_f1": 0.041777497990258664,
+  "factor_f1_by_type": {
+    "altitude_disadvantage": 0.0,
+    "defensive_game_state": 0.0,
+    "fatigue_disadvantage": 0.0,
+    "goalkeeper_unavailable": 0.03773584905660377,
+    "heat_disadvantage": 0.5,
+    "home_advantage": 0.020833333333333336,
+    "key_attacker_unavailable": 0.0,
+    "key_defender_unavailable": 0.0,
+    "multiple_starters_unavailable": 0.0,
+    "must_win_incentive": 0.0,
+    "neutral_venue": 0.026315789473684206,
+    "rest_advantage": 0.0,
+    "squad_rotation": 0.0,
+    "travel_disadvantage": 0.0
+  },
+  "team_attribution_accuracy": 0.043010752688172046,
+  "end_to_end_exact_match": 0.02040816326530612,
+  "severity_mae": 0.4,
+  "unsupported_claim_f1": 0.4262295081967213,
+  "ambiguity_detection_f1": 0.10526315789473684,
+  "schema_validity_rate": 1.0,
+  "fallback_rate": 0.09183673469387756,
+  "median_latency_ms": 3675.582021009177,
+  "p90_latency_ms": 10723.562416998902,
+  "cold_start_warning": "Run once before benchmarking to exclude model-load time."
+}

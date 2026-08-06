@@ -1,0 +1,67 @@
+{
+  "adapter": {
+    "adapter": "sammoftah/underdog-lab-smollm2-360m-lora",
+    "adapter_revision": "69f9aab7e5e7697d4dccfa2b9ecae29d4e132917",
+    "factor_micro_f1": 0.027,
+    "fallback_rate": 0.1735,
+    "median_latency_ms": 2995.4,
+    "merged_gguf": "models/underdog-tuned-Q8_0.gguf",
+    "team_attribution_accuracy": 0.0323
+  },
+  "artifacts": {
+    "results/base_q8.json": {
+      "sha256": "87ccea0477255fd4872d26e868784467cdb6d5147478bb81d0d246421bcdd69b"
+    },
+    "results/ship_decision.json": {
+      "sha256": "26441c2622b4fade12a2f496886477045650aebf3331fd9dd8206af305b8e8df"
+    },
+    "results/tuned_q8.json": {
+      "sha256": "b00f2720df620baff3dc6052ee934f34c4a1483fbd52ed9001b7c1a7dd5c3a0a"
+    }
+  },
+  "checks": {
+    "fallback_rate_controlled": false,
+    "minimum_f1_gain": false,
+    "no_attribution_regression": false,
+    "schema_validity": true
+  },
+  "claim": "The adapter is not shipped. The base model plus deterministic fallback remains the production extraction path.",
+  "computed_decision": "NO-SHIP",
+  "declared_decision": "NO-SHIP",
+  "failed_checks": [
+    "minimum_f1_gain",
+    "no_attribution_regression",
+    "fallback_rate_controlled"
+  ],
+  "metrics": {
+    "base": {
+      "factor_micro_f1": 0.026058631921824102,
+      "fallback_rate": 0.09183673469387756,
+      "median_latency_ms": 3675.582021009177,
+      "schema_validity_rate": 1.0,
+      "team_attribution_accuracy": 0.043010752688172046
+    },
+    "deltas": {
+      "factor_micro_f1": 0.0009683951052029231,
+      "fallback_rate": 0.08163265306122448,
+      "median_latency_ms": -680.2151250158204,
+      "team_attribution_accuracy": -0.010752688172043015
+    },
+    "tuned": {
+      "factor_micro_f1": 0.027027027027027025,
+      "fallback_rate": 0.17346938775510204,
+      "median_latency_ms": 2995.3668959933566,
+      "schema_validity_rate": 1.0,
+      "team_attribution_accuracy": 0.03225806451612903
+    }
+  },
+  "release_blocking": false,
+  "selected_runtime": "base_plus_fallback",
+  "status": "closed",
+  "thresholds": {
+    "maximum_attribution_regression": 0.0,
+    "maximum_fallback_increase": 0.02,
+    "minimum_f1_gain": 0.15,
+    "minimum_schema_validity": 0.99
+  }
+}

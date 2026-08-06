@@ -1,0 +1,152 @@
+[
+  {
+    "id": "vid_001",
+    "title": "React vs Vue in 2026",
+    "creator": "tech_guru",
+    "tags": [
+      "tech",
+      "coding",
+      "webdev"
+    ],
+    "likes": 1200,
+    "video_url": "https://assets.mixkit.co/videos/preview/mixkit-hands-of-a-programmer-typing-on-a-keyboard-41375-large.mp4"
+  },
+  {
+    "id": "vid_002",
+    "title": "How to make the perfect espresso",
+    "creator": "coffee_crafter",
+    "tags": [
+      "lifestyle",
+      "coffee",
+      "cooking"
+    ],
+    "likes": 850,
+    "video_url": "https://assets.mixkit.co/videos/preview/mixkit-coffee-pouring-into-a-cup-40507-large.mp4"
+  },
+  {
+    "id": "vid_003",
+    "title": "Lo-Fi Beats for Coding/Relaxing",
+    "creator": "soundscape",
+    "tags": [
+      "music",
+      "lofi",
+      "relaxing"
+    ],
+    "likes": 5400,
+    "video_url": "https://assets.mixkit.co/videos/preview/mixkit-spinning-vinyl-record-with-blue-and-purple-lights-810-large.mp4"
+  },
+  {
+    "id": "vid_004",
+    "title": "Top 10 indie games you missed",
+    "creator": "gamer_hub",
+    "tags": [
+      "gaming",
+      "indie",
+      "tech"
+    ],
+    "likes": 980,
+    "video_url": "https://assets.mixkit.co/videos/preview/mixkit-arcade-game-screen-with-bright-colors-41656-large.mp4"
+  },
+  {
+    "id": "vid_005",
+    "title": "Building a serverless API on Cloud Run",
+    "creator": "cloud_coder",
+    "tags": [
+      "tech",
+      "cloud",
+      "devops"
+    ],
+    "likes": 1500,
+    "video_url": "https://assets.mixkit.co/videos/preview/mixkit-hands-of-a-programmer-typing-on-a-keyboard-41375-large.mp4"
+  },
+  {
+    "id": "vid_006",
+    "title": "My morning coffee routine",
+    "creator": "daily_vlog",
+    "tags": [
+      "lifestyle",
+      "vlog",
+      "coffee"
+    ],
+    "likes": 320,
+    "video_url": "https://assets.mixkit.co/videos/preview/mixkit-coffee-pouring-into-a-cup-40507-large.mp4"
+  },
+  {
+    "id": "vid_007",
+    "title": "Why Python is still king",
+    "creator": "data_wizard",
+    "tags": [
+      "tech",
+      "python",
+      "coding"
+    ],
+    "likes": 2300,
+    "video_url": "https://assets.mixkit.co/videos/preview/mixkit-hands-of-a-programmer-typing-on-a-keyboard-41375-large.mp4"
+  },
+  {
+    "id": "vid_008",
+    "title": "Unboxing the newest VR headset",
+    "creator": "tech_guru",
+    "tags": [
+      "tech",
+      "gaming",
+      "vr"
+    ],
+    "likes": 3100,
+    "video_url": "https://assets.mixkit.co/videos/preview/mixkit-arcade-game-screen-with-bright-colors-41656-large.mp4"
+  },
+  {
+    "id": "vid_009",
+    "title": "15-minute quick home workout",
+    "creator": "fitness_first",
+    "tags": [
+      "fitness",
+      "lifestyle",
+      "workout"
+    ],
+    "likes": 750,
+    "video_url": "https://assets.mixkit.co/videos/preview/mixkit-tree-with-yellow-flowers-under-blue-sky-4548-large.mp4"
+  },
+  {
+    "id": "vid_010",
+    "title": "Synthwave mix for gaming session",
+    "creator": "soundscape",
+    "tags": [
+      "music",
+      "synthwave",
+      "gaming"
+    ],
+    "likes": 4200,
+    "video_url": "https://assets.mixkit.co/videos/preview/mixkit-spinning-vinyl-record-with-blue-and-purple-lights-810-large.mp4"
+  },
+  {
+    "id": "vid_011",
+    "title": "shekhar tonite",
+    "creator": "shekhar tonite",
+    "tags": [
+      "satire"
+    ],
+    "likes": 0,
+    "video_url": "https://cdn.jsdelivr.net/gh/akhi799/vibe-feed-cdn@main/videos/1783358294-v2.mp4"
+  },
+  {
+    "id": "vid_012",
+    "title": "shekhar tonite",
+    "creator": "shekhar tonite",
+    "tags": [
+      "satire"
+    ],
+    "likes": 0,
+    "video_url": "https://cdn.jsdelivr.net/gh/akhi799/vibe-feed-cdn@main/videos/1783358513-v2.mp4"
+  },
+  {
+    "id": "vid_013",
+    "title": "shekhar tonite",
+    "creator": "shekhar tonite",
+    "tags": [
+      "coding"
+    ],
+    "likes": 0,
+    "video_url": "https://cdn.jsdelivr.net/gh/akhi799/vibe-feed-cdn@main/videos/1783359084-v2.mp4"
+  }
+]

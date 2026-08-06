@@ -1,0 +1,127 @@
+{
+ "captured_at": "2026-08-04T15:31:49Z",
+ "hf_metadata": {
+  "_id": "6a4a6766f2f9b57ae1aa28c1",
+  "author": "VanYooAI",
+  "cardData": {
+   "app_file": "app.py",
+   "colorFrom": "yellow",
+   "colorTo": "yellow",
+   "emoji": "🐣",
+   "pinned": false,
+   "sdk": "gradio",
+   "title": "Jovan OS Lite"
+  },
+  "createdAt": "2026-07-05T14:17:10.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://vanyooai-jovan-os-lite.hf.space",
+  "id": "VanYooAI/jovan-os-lite",
+  "lastModified": "2026-07-05T14:26:03.000Z",
+  "likes": 0,
+  "private": false,
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "vanyooai-jovan-os-lite.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": null,
+    "requested": "cpu-basic"
+   },
+   "replicas": {
+    "requested": 1
+   },
+   "stage": "SLEEPING"
+  },
+  "sdk": "gradio",
+  "sha": "c747737a03a310ca2eb1951d2f3198386ea80a3a",
+  "siblings": [
+   {
+    "rfilename": ".env.example"
+   },
+   {
+    "rfilename": ".gitignore"
+   },
+   {
+    "rfilename": ".python-version"
+   },
+   {
+    "rfilename": "DEMO_SCRIPT.md"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "app.py"
+   },
+   {
+    "rfilename": "dashboard.ipynb"
+   },
+   {
+    "rfilename": "database.py"
+   },
+   {
+    "rfilename": "demo_outputs.py"
+   },
+   {
+    "rfilename": "main.py"
+   },
+   {
+    "rfilename": "notebook_ui.py"
+   },
+   {
+    "rfilename": "os_agents.py"
+   },
+   {
+    "rfilename": "prompts.py"
+   },
+   {
+    "rfilename": "pyproject.toml"
+   },
+   {
+    "rfilename": "requirements.txt"
+   },
+   {
+    "rfilename": "schemas.py"
+   },
+   {
+    "rfilename": "scoring.py"
+   },
+   {
+    "rfilename": "seed.py"
+   },
+   {
+    "rfilename": "seed_demo.py"
+   },
+   {
+    "rfilename": "tools.py"
+   },
+   {
+    "rfilename": "uv.lock"
+   }
+  ],
+  "subdomain": "vanyooai-jovan-os-lite",
+  "tags": [
+   "gradio",
+   "region:us"
+  ],
+  "usedStorage": 0
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitignore",
+   "stored_as": "_gitignore"
+  }
+ ],
+ "renamed_gitattributes": [],
+ "repo_id": "VanYooAI/jovan-os-lite",
+ "repo_type": "spaces",
+ "sha": "c747737a03a310ca2eb1951d2f3198386ea80a3a",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/VanYooAI/jovan-os-lite"
+}

@@ -1,0 +1,27 @@
+{
+  "name": "VOMEBOOK Search",
+  "short_name": "VOMEBOOK",
+  "description": "TXT 搜索与全文检索空间",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "theme_color": "#1a1c1e",
+  "background_color": "#1a1c1e",
+  "categories": ["books", "education", "search"],
+  "lang": "zh-CN",
+  "icons": [
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

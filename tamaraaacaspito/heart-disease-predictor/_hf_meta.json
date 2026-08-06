@@ -1,0 +1,23 @@
+{
+ "captured_at": "2026-08-04T17:08:55Z",
+ "hf_metadata": {
+  "sha": "3a5e6c7186aa4bee6ab0273d8bfe5964f78a5e14"
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "tamaraaacaspito/heart-disease-predictor",
+ "repo_type": "spaces",
+ "sha": "3a5e6c7186aa4bee6ab0273d8bfe5964f78a5e14",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/tamaraaacaspito/heart-disease-predictor"
+}

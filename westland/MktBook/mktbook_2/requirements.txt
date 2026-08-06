@@ -1,0 +1,20 @@
+# mktbook_2 Python Dependencies
+# Install with: pip install -r requirements.txt
+
+# Web Framework
+fastapi>=0.110,<1
+uvicorn[standard]>=0.29,<1
+jinja2>=3.1,<4
+python-multipart>=0.0.9
+
+# Database
+aiosqlite>=0.20,<1
+
+# LLM Integration
+openai>=1.30,<2
+
+# Configuration Management
+pydantic-settings>=2.2,<3
+
+# WebSocket Support
+wsproto>=1.2,<2

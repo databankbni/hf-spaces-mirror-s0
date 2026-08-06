@@ -1,0 +1,25 @@
+# /etc/systemd/system/mktbook_2.service
+# Place this file on your DigitalOcean server and run:
+#   sudo systemctl enable mktbook_2.service
+#   sudo systemctl start mktbook_2.service
+
+[Unit]
+Description=MktBook 2 (Workout #2) Bot Ecosystem
+After=network.target mktbook.service
+Requires=mktbook.service
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/root
+Environment="PATH=/usr/local/bin:/usr/bin:/bin"
+EnvironmentFile=/root/mktbook_2/.env_2
+ExecStart=/usr/bin/python3 -m mktbook_2.main
+Restart=always
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=mktbook_2
+
+[Install]
+WantedBy=multi-user.target

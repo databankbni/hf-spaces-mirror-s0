@@ -1,0 +1,18 @@
+{
+ "captured_at": "2026-08-04T16:23:57Z",
+ "hf_metadata": {
+  "sha": "a9e68ece73d21e963bd1c17cec8bcd6c5016456f"
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitignore",
+   "stored_as": "_gitignore"
+  }
+ ],
+ "renamed_gitattributes": [],
+ "repo_id": "insoluble/euclid-style-linter",
+ "repo_type": "spaces",
+ "sha": "a9e68ece73d21e963bd1c17cec8bcd6c5016456f",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/insoluble/euclid-style-linter"
+}

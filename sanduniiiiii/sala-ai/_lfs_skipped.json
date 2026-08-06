@@ -1,0 +1,13 @@
+{
+ "lfs_not_stored": [
+  {
+   "oid": "2cfe8a05b31ab4e7bafb579183bb29d6908a9da5595a7bdcf7d50e41b66f39a5",
+   "path": "chroma_db/products/chroma.sqlite3",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6MmNmZThhMDViMzFhYjRlN2JhZmI1NzkxODNiYjI5ZDY5MDhhOWRhNTU5NWE3YmRjZjdkNTBlNDFiNjZmMzlhNQpzaXplIDI4OTE3NzYK",
+   "size": 2891776,
+   "url": "https://huggingface.co/spaces/sanduniiiiii/sala-ai/resolve/c0325b6e884907e05c98daea2c91b6b69ebde0be/chroma_db/products/chroma.sqlite3"
+  }
+ ],
+ "overflow_not_stored": [],
+ "oversize_not_stored": []
+}

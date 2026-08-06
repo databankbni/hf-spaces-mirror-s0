@@ -1,0 +1,22 @@
+{
+    "Model": "WorldScape-0.2(Moe)",
+    "year": "2026",
+    "open_source":"no",
+    "Metrics": {
+        "Image Quality": 0.5977,
+        "Aesthetic Quality": 0.4118,
+        "JEPA Similarity": 0.7304,
+        "Dynamic Degree": 0.4532,
+        "Flow Score": 0.2213,
+        "Motion Smoothness": 0.7109,
+        "Subject Consistency": 0.7143,
+        "Background Consistency": 0.8705,
+        "Photometric Consistency": 0.0774,
+        "Interaction Quality": 0.6196,
+        "Trajectory Accuracy": 0.3325,
+        "Depth Accuracy": 0.9339,
+        "Perspectivity": 0.836,
+        "Instruction Following": 0.692,
+        "Semantic Alignment": 0.891
+    }
+}

@@ -1,0 +1,61 @@
+{
+ "lfs_not_stored": [
+  {
+   "oid": "1abb961b7f657ca4b6ea5adfdd2f6323dc61644d97ea9856c943c688bc815ae5",
+   "path": "EN.pdf",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6MWFiYjk2MWI3ZjY1N2NhNGI2ZWE1YWRmZGQyZjYzMjNkYzYxNjQ0ZDk3ZWE5ODU2Yzk0M2M2ODhiYzgxNWFlNQpzaXplIDY4NjY0NjQ5Cg==",
+   "size": 68664649,
+   "url": "https://huggingface.co/spaces/L1679/ifoda-rag/resolve/b505c17187ffe41aa047ce42bbcf4efe1759d80f/EN.pdf"
+  },
+  {
+   "oid": "ed1b02872dbea6839b788faadb2faad2a72a8a5d92e82fe9a7a855e6b583ddf1",
+   "path": "[RE-1]_Full_pages_Product-Catalog.pdf",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6ZWQxYjAyODcyZGJlYTY4MzliNzg4ZmFhZGIyZmFhZDJhNzJhOGE1ZDkyZTgyZmU5YTdhODU1ZTZiNTgzZGRmMQpzaXplIDUyOTc0NTkK",
+   "size": 5297459,
+   "url": "https://huggingface.co/spaces/L1679/ifoda-rag/resolve/b505c17187ffe41aa047ce42bbcf4efe1759d80f/%5BRE-1%5D_Full_pages_Product-Catalog.pdf"
+  },
+  {
+   "oid": "ee8ddf6ed5bd0bfb12a1009b9639090af67d4b487fb91155495f05c5b9f69d62",
+   "path": "[RE]RU УДАБРЕНИЯ (2).pdf",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6ZWU4ZGRmNmVkNWJkMGJmYjEyYTEwMDliOTYzOTA5MGFmNjdkNGI0ODdmYjkxMTU1NDk1ZjA1YzViOWY2OWQ2MgpzaXplIDM3OTc2OTczCg==",
+   "size": 37976973,
+   "url": "https://huggingface.co/spaces/L1679/ifoda-rag/resolve/b505c17187ffe41aa047ce42bbcf4efe1759d80f/%5BRE%5DRU%20%D0%A3%D0%94%D0%90%D0%91%D0%A0%D0%95%D0%9D%D0%98%D0%AF%20%282%29.pdf"
+  },
+  {
+   "oid": "b2897368374852e0f4add241b50788bbd42fc80bcefa97936720c12d1bd7f629",
+   "path": "chroma_db/chroma.sqlite3",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6YjI4OTczNjgzNzQ4NTJlMGY0YWRkMjQxYjUwNzg4YmJkNDJmYzgwYmNlZmE5NzkzNjcyMGMxMmQxYmQ3ZjYyOQpzaXplIDc3NzQyMDgK",
+   "size": 7774208,
+   "url": "https://huggingface.co/spaces/L1679/ifoda-rag/resolve/b505c17187ffe41aa047ce42bbcf4efe1759d80f/chroma_db/chroma.sqlite3"
+  },
+  {
+   "oid": "3d5833f3f30c055df53bf3a8c1470a4967aa28160e39f699c60b0153417743f8",
+   "path": "frontend_src/public/models/city.glb",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6M2Q1ODMzZjNmMzBjMDU1ZGY1M2JmM2E4YzE0NzBhNDk2N2FhMjgxNjBlMzlmNjk5YzYwYjAxNTM0MTc3NDNmOApzaXplIDQwNTc4ODgK",
+   "size": 4057888,
+   "url": "https://huggingface.co/spaces/L1679/ifoda-rag/resolve/b505c17187ffe41aa047ce42bbcf4efe1759d80f/frontend_src/public/models/city.glb"
+  },
+  {
+   "oid": "d265bff46c91751d85d3e4ebb4df06b3b5fdbeaf7436f4308b3ad5becaf643bd",
+   "path": "ifoda EN.pdf",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6ZDI2NWJmZjQ2YzkxNzUxZDg1ZDNlNGViYjRkZjA2YjNiNWZkYmVhZjc0MzZmNDMwOGIzYWQ1YmVjYWY2NDNiZApzaXplIDg0NzUwODk5Cg==",
+   "size": 84750899,
+   "url": "https://huggingface.co/spaces/L1679/ifoda-rag/resolve/b505c17187ffe41aa047ce42bbcf4efe1759d80f/ifoda%20EN.pdf"
+  },
+  {
+   "oid": "3d5833f3f30c055df53bf3a8c1470a4967aa28160e39f699c60b0153417743f8",
+   "path": "static/models/city.glb",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6M2Q1ODMzZjNmMzBjMDU1ZGY1M2JmM2E4YzE0NzBhNDk2N2FhMjgxNjBlMzlmNjk5YzYwYjAxNTM0MTc3NDNmOApzaXplIDQwNTc4ODgK",
+   "size": 4057888,
+   "url": "https://huggingface.co/spaces/L1679/ifoda-rag/resolve/b505c17187ffe41aa047ce42bbcf4efe1759d80f/static/models/city.glb"
+  },
+  {
+   "oid": "bf06ce2e32bc73e389cc7dca1bc6c1b12cdb5d43061ca7ff62d77fdb9032c50d",
+   "path": "КАТАЛОГ ПРЕПАРАТОВ (2)(en) (2).docx",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6YmYwNmNlMmUzMmJjNzNlMzg5Y2M3ZGNhMWJjNmMxYjEyY2RiNWQ0MzA2MWNhN2ZmNjJkNzdmZGI5MDMyYzUwZApzaXplIDQzNTk1NDQK",
+   "size": 4359544,
+   "url": "https://huggingface.co/spaces/L1679/ifoda-rag/resolve/b505c17187ffe41aa047ce42bbcf4efe1759d80f/%D0%9A%D0%90%D0%A2%D0%90%D0%9B%D0%9E%D0%93%20%D0%9F%D0%A0%D0%95%D0%9F%D0%90%D0%A0%D0%90%D0%A2%D0%9E%D0%92%20%282%29%28en%29%20%282%29.docx"
+  }
+ ],
+ "oversize_not_stored": []
+}

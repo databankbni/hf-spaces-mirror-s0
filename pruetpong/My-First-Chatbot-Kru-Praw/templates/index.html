@@ -1,0 +1,2891 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>คุยกับพี่ในอนาคต (Talk with Your Future Self)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&family=Sarabun:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --pri: #4338CA;
+            --pri-l: #14B8A6;
+            --pri-d: #3730A3;
+            --acc: #FB7185;
+            --acc-l: #FDA4AF;
+            --bg: linear-gradient(140deg, #4F46E5 0%, #0EA5A4 100%);
+            --user-bbl: #4338CA;
+            --bot-bbl: #FFFFFF;
+            --txt: #1F2937;
+            --txt2: #6B7280;
+            --rad: 1.25rem;
+            --rad-m: 0.75rem;
+            --rad-s: 0.5rem;
+            --shd: 0 20px 60px rgba(30, 27, 75, .22);
+            --shd-m: 0 8px 24px rgba(30, 27, 75, .12);
+            --tr: all .3s cubic-bezier(.4, 0, .2, 1);
+            --font: 'Sarabun', 'Prompt', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0
+        }
+
+        html,
+        body {
+            height: 100%;
+            font-family: var(--font);
+            overflow-x: hidden
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--txt);
+            min-height: 100vh
+        }
+
+        /* ── SCREENS ── */
+        .scr {
+            display: none;
+            min-height: 100vh
+        }
+
+        .scr.on {
+            display: flex;
+            flex-direction: column
+        }
+
+        /* ══════════════════════════════════
+        LOADING SCREEN
+        ══════════════════════════════════ */
+        #s-load,
+        #s-initload {
+            align-items: center;
+            justify-content: center
+        }
+
+        .load-card {
+            background: rgba(255, 255, 255, .95);
+            border-radius: var(--rad);
+            padding: 2.5rem 2rem;
+            text-align: center;
+            max-width: 360px;
+            width: 90%;
+            box-shadow: var(--shd)
+        }
+
+        .load-emoji {
+            font-size: 2.6rem;
+            margin-bottom: .6rem;
+            animation: bounce 1.6s ease-in-out infinite
+        }
+
+        .spinner {
+            width: 52px;
+            height: 52px;
+            border: 4px solid #E5E7EB;
+            border-top-color: var(--pri-l);
+            border-radius: 50%;
+            animation: spin .8s linear infinite;
+            margin: 0 auto 1.25rem
+        }
+
+        .load-title {
+            font-family: 'Prompt', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--pri);
+            margin-bottom: .5rem
+        }
+
+        .load-sub {
+            font-size: .875rem;
+            color: var(--txt2)
+        }
+
+        .dots span {
+            display: inline-block;
+            font-size: 1.4rem;
+            color: var(--pri-l);
+            animation: bounce 1.2s ease-in-out infinite;
+            margin-top: 1rem
+        }
+
+        .dots span:nth-child(2) {
+            animation-delay: .2s
+        }
+
+        .dots span:nth-child(3) {
+            animation-delay: .4s
+        }
+
+        /* ══════════════════════════════════
+        WIZARD SCREEN
+        ══════════════════════════════════ */
+        #s-wizard {
+            align-items: center;
+            justify-content: flex-start;
+            padding: 1.5rem 1rem 2rem
+        }
+
+        .wiz-wrap {
+            width: 100%;
+            max-width: 600px;
+            animation: fadeUp .5s ease
+        }
+
+        .school-hd {
+            text-align: center;
+            margin-bottom: 1.5rem
+        }
+
+        .school-hd__ico {
+            font-size: 2.5rem;
+            margin-bottom: .3rem
+        }
+
+        .school-hd__nm {
+            color: rgba(255, 255, 255, .88);
+            font-size: .8rem;
+            font-weight: 500
+        }
+
+        .school-hd__ttl {
+            color: #fff;
+            font-family: 'Prompt', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, .2);
+            margin-top: .2rem
+        }
+
+        .school-hd__sub {
+            color: rgba(255, 255, 255, .75);
+            font-size: .78rem;
+            margin-top: .15rem
+        }
+
+        /* Progress bar */
+        .prog {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            padding: 0 .5rem
+        }
+
+        .pstep {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: .35rem;
+            position: relative;
+            z-index: 1
+        }
+
+        .pstep__c {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, .2);
+            border: 2.5px solid rgba(255, 255, 255, .4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: .85rem;
+            color: rgba(255, 255, 255, .65);
+            transition: var(--tr)
+        }
+
+        .pstep.on .pstep__c {
+            background: #fff;
+            border-color: #fff;
+            color: var(--pri);
+            box-shadow: 0 0 0 4px rgba(255, 255, 255, .25)
+        }
+
+        .pstep.done .pstep__c {
+            background: var(--acc);
+            border-color: var(--acc);
+            color: #fff
+        }
+
+        .pstep__lb {
+            color: rgba(255, 255, 255, .65);
+            font-size: .68rem;
+            font-weight: 500;
+            white-space: nowrap;
+            transition: var(--tr)
+        }
+
+        .pstep.on .pstep__lb {
+            color: #fff;
+            font-weight: 700
+        }
+
+        .pstep.done .pstep__lb {
+            color: var(--acc-l)
+        }
+
+        .pline {
+            flex: 1;
+            height: 3px;
+            background: rgba(255, 255, 255, .2);
+            border-radius: 2px;
+            margin: 0 .35rem;
+            margin-bottom: 1.5rem;
+            max-width: 90px;
+            transition: var(--tr)
+        }
+
+        .pline.done {
+            background: var(--acc)
+        }
+
+        /* Wizard card */
+        .wiz-card {
+            background: rgba(255, 255, 255, .97);
+            border-radius: var(--rad);
+            padding: 1.75rem;
+            box-shadow: var(--shd);
+            backdrop-filter: blur(20px)
+        }
+
+        .wstep {
+            display: none
+        }
+
+        .wstep.on {
+            display: block;
+            animation: fadeIn .3s ease
+        }
+
+        .step-hd {
+            text-align: center;
+            margin-bottom: 1.5rem
+        }
+
+        .step-hd__ico {
+            font-size: 2.25rem;
+            display: block;
+            margin-bottom: .4rem
+        }
+
+        .step-hd__ttl {
+            font-family: 'Prompt', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--pri)
+        }
+
+        .step-hd__sub {
+            color: var(--txt2);
+            font-size: .825rem;
+            margin-top: .2rem
+        }
+
+        /* Form */
+        .fg {
+            display: flex;
+            flex-direction: column;
+            gap: .35rem
+        }
+
+        .fgrid {
+            display: grid;
+            gap: .9rem
+        }
+
+        .fgrid2 {
+            grid-template-columns: 1fr 1fr
+        }
+
+        @media(max-width:480px) {
+            .fgrid2 {
+                grid-template-columns: 1fr
+            }
+        }
+
+        .span2 {
+            grid-column: span 2
+        }
+
+        @media(max-width:480px) {
+            .span2 {
+                grid-column: span 1
+            }
+        }
+
+        label.fl {
+            font-size: .8rem;
+            font-weight: 700;
+            color: var(--txt);
+            display: flex;
+            align-items: center;
+            gap: .3rem
+        }
+
+        .req {
+            color: #EF4444
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: .55rem .8rem;
+            border: 2px solid #E5E7EB;
+            border-radius: var(--rad-s);
+            font-family: var(--font);
+            font-size: .875rem;
+            color: var(--txt);
+            background: #fff;
+            outline: none;
+            transition: var(--tr);
+            appearance: none
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            border-color: var(--pri-l);
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, .14)
+        }
+
+        input.err,
+        select.err,
+        textarea.err {
+            border-color: #EF4444
+        }
+
+        textarea {
+            resize: none;
+            min-height: 78px;
+            line-height: 1.55
+        }
+
+        .ferr {
+            font-size: .72rem;
+            color: #EF4444;
+            display: none
+        }
+
+        .ferr.on {
+            display: block
+        }
+
+        .fhint {
+            font-size: .72rem;
+            color: var(--txt2)
+        }
+
+        /* Story-prompt hint (open-ended fields) */
+        .qhint {
+            font-size: .74rem;
+            color: var(--pri);
+            background: #EEF2FF;
+            border-left: 3px solid var(--pri-l);
+            border-radius: 0 var(--rad-s) var(--rad-s) 0;
+            padding: .3rem .55rem;
+            line-height: 1.45
+        }
+
+        /* "ดูตัวอย่าง" expandable disclosure */
+        .ex {
+            margin-top: .1rem
+        }
+
+        .ex>summary {
+            font-size: .72rem;
+            color: var(--pri-l);
+            cursor: pointer;
+            list-style: none;
+            display: inline-flex;
+            align-items: center;
+            gap: .25rem;
+            user-select: none;
+            width: fit-content
+        }
+
+        .ex>summary::-webkit-details-marker {
+            display: none
+        }
+
+        .ex>summary::before {
+            content: '▸';
+            transition: transform .2s ease
+        }
+
+        .ex[open]>summary::before {
+            transform: rotate(90deg)
+        }
+
+        .ex__body {
+            font-size: .74rem;
+            color: var(--txt2);
+            background: #F8F9FB;
+            border: 1px dashed #D1D5DB;
+            border-radius: var(--rad-s);
+            padding: .5rem .65rem;
+            margin-top: .3rem;
+            line-height: 1.55;
+            font-style: italic
+        }
+
+        /* Soft length nudge (non-blocking) */
+        .nudge {
+            font-size: .72rem;
+            color: #B45309;
+            display: none
+        }
+
+        .nudge.on {
+            display: block;
+            animation: fadeIn .2s ease
+        }
+
+        /* Inline privacy reminder */
+        .privline {
+            display: flex;
+            align-items: center;
+            gap: .35rem;
+            font-size: .72rem;
+            color: #047857;
+            background: #ECFDF5;
+            border-radius: var(--rad-s);
+            padding: .3rem .55rem;
+            margin-bottom: .25rem
+        }
+
+        /* P5: Future self-continuity rating (slider) */
+        input[type=range] {
+            appearance: auto;
+            -webkit-appearance: auto;
+            padding: 0;
+            border: none;
+            height: auto;
+            background: transparent;
+            accent-color: var(--pri-l);
+            cursor: pointer
+        }
+
+        input[type=range]:focus {
+            box-shadow: none
+        }
+
+        .fsc-row {
+            display: flex;
+            align-items: center;
+            gap: .7rem
+        }
+
+        .fsc-val {
+            font-weight: 700;
+            color: var(--pri);
+            min-width: 1.4em;
+            text-align: center;
+            font-size: 1rem
+        }
+
+        .fsc-post {
+            background: #EEF2FF;
+            border: 1px solid #C7D2FE;
+            border-radius: var(--rad-m);
+            padding: .8rem .9rem;
+            display: flex;
+            flex-direction: column;
+            gap: .4rem
+        }
+
+        .fsc-post__q {
+            font-size: .82rem;
+            font-weight: 700;
+            color: var(--pri)
+        }
+
+        .fsc-delta {
+            font-size: .78rem;
+            color: #047857;
+            min-height: 1.1em
+        }
+
+        /* ══════════════════════════════════
+        CONSENT / PDPA SCREEN
+        ══════════════════════════════════ */
+        #s-consent {
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem 1rem
+        }
+
+        .consent-card {
+            background: rgba(255, 255, 255, .98);
+            border-radius: var(--rad);
+            padding: 1.75rem;
+            max-width: 560px;
+            width: 100%;
+            box-shadow: var(--shd);
+            animation: fadeUp .5s ease;
+            max-height: 92vh;
+            overflow-y: auto
+        }
+
+        .consent-hd {
+            text-align: center;
+            margin-bottom: 1.1rem
+        }
+
+        .consent-hd__ico {
+            font-size: 2.4rem
+        }
+
+        .consent-hd__ttl {
+            font-family: 'Prompt', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--pri);
+            margin-top: .3rem
+        }
+
+        .consent-hd__sub {
+            font-size: .8rem;
+            color: var(--txt2);
+            margin-top: .15rem
+        }
+
+        .consent-sec {
+            background: #F8F9FB;
+            border: 1px solid #E9ECF0;
+            border-radius: var(--rad-m);
+            padding: .85rem 1rem;
+            margin-bottom: .8rem
+        }
+
+        .consent-sec__ttl {
+            font-size: .82rem;
+            font-weight: 700;
+            color: var(--txt);
+            display: flex;
+            align-items: center;
+            gap: .4rem;
+            margin-bottom: .45rem
+        }
+
+        .consent-sec ul {
+            margin: 0;
+            padding-left: 1.2rem
+        }
+
+        .consent-sec li {
+            font-size: .8rem;
+            color: var(--txt);
+            line-height: 1.6;
+            margin-bottom: .2rem
+        }
+
+        .consent-warn {
+            background: #FEF2F2;
+            border-color: #FECACA
+        }
+
+        .consent-warn .consent-sec__ttl {
+            color: #B91C1C
+        }
+
+        .consent-chk {
+            display: flex;
+            align-items: flex-start;
+            gap: .55rem;
+            padding: .7rem .25rem .9rem;
+            cursor: pointer
+        }
+
+        .consent-chk input {
+            width: 20px;
+            height: 20px;
+            min-width: 20px;
+            margin-top: .1rem;
+            accent-color: var(--pri-l);
+            cursor: pointer
+        }
+
+        .consent-chk label {
+            font-size: .82rem;
+            color: var(--txt);
+            line-height: 1.55;
+            cursor: pointer;
+            font-weight: 500
+        }
+
+        .consent-note {
+            font-size: .72rem;
+            color: var(--txt2);
+            text-align: center;
+            margin-top: .7rem;
+            line-height: 1.5
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: .4rem;
+            padding: .6rem 1.2rem;
+            border-radius: var(--rad-s);
+            font-family: var(--font);
+            font-size: .875rem;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            transition: var(--tr)
+        }
+
+        .btn:disabled {
+            opacity: .5;
+            cursor: not-allowed
+        }
+
+        .btn-pri {
+            background: linear-gradient(135deg, var(--pri-l), var(--pri));
+            color: #fff;
+            box-shadow: 0 4px 12px rgba(67, 56, 202, .28);
+            flex: 1
+        }
+
+        .btn-pri:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(67, 56, 202, .38)
+        }
+
+        .btn-sec {
+            background: #F3F4F6;
+            color: var(--txt2)
+        }
+
+        .btn-sec:hover {
+            background: #E5E7EB
+        }
+
+        .btn-acc {
+            background: linear-gradient(135deg, #FB7185, #F43F5E);
+            color: #fff;
+            width: 100%;
+            padding: .85rem;
+            font-size: 1rem;
+            border-radius: var(--rad-m);
+            box-shadow: 0 4px 12px rgba(244, 63, 94, .3)
+        }
+
+        .btn-acc:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(244, 63, 94, .42)
+        }
+
+        .step-nav {
+            display: flex;
+            gap: .7rem;
+            margin-top: 1.5rem;
+            align-items: center
+        }
+
+        /* ══════════════════════════════════
+        CHAT SCREEN
+        ══════════════════════════════════ */
+        #s-chat {
+            padding: 0;
+            flex-direction: column
+        }
+
+        .chat-layout {
+            display: flex;
+            height: 100vh;
+            width: 100%
+        }
+
+        /* Sidebar — off-canvas hamburger drawer (ทุกขนาดจอ) */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 300px;
+            max-width: 84vw;
+            background: linear-gradient(160deg, rgba(67, 56, 202, .96), rgba(13, 148, 136, .94));
+            backdrop-filter: blur(20px);
+            border-right: 1px solid rgba(255, 255, 255, .18);
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: .875rem;
+            overflow-y: auto;
+            z-index: 1100;
+            transform: translateX(-105%);
+            transition: transform .32s cubic-bezier(.4, 0, .2, 1);
+            box-shadow: 6px 0 30px rgba(30, 27, 75, .28)
+        }
+
+        .sidebar.open {
+            transform: translateX(0)
+        }
+
+        .sidebar-ov {
+            position: fixed;
+            inset: 0;
+            background: rgba(15, 23, 42, .5);
+            backdrop-filter: blur(2px);
+            z-index: 1050;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity .3s ease, visibility .3s ease
+        }
+
+        .sidebar-ov.on {
+            opacity: 1;
+            visibility: visible
+        }
+
+        .sb-close {
+            align-self: flex-end;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            border: none;
+            background: rgba(255, 255, 255, .18);
+            color: #fff;
+            font-size: 1.1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--tr);
+            flex-shrink: 0;
+            margin-bottom: -.4rem
+        }
+
+        .sb-close:hover {
+            background: rgba(255, 255, 255, .3);
+            transform: rotate(90deg)
+        }
+
+        /* Hamburger button in header */
+        .hamb {
+            font-size: 1.15rem
+        }
+
+        .pcard {
+            background: rgba(255, 255, 255, .97);
+            border-radius: var(--rad-m);
+            padding: 1.1rem;
+            text-align: center;
+            box-shadow: var(--shd-m)
+        }
+
+        .pcard__av {
+            width: 68px;
+            height: 68px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--pri-l), var(--pri));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.7rem;
+            margin: 0 auto .7rem;
+            box-shadow: 0 4px 12px rgba(67, 56, 202, .3)
+        }
+
+        .pcard__nm {
+            font-family: 'Prompt', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--pri)
+        }
+
+        .pcard__yr {
+            font-size: .75rem;
+            color: var(--txt2);
+            margin-top: .1rem
+        }
+
+        .pcard__badge {
+            display: inline-flex;
+            align-items: center;
+            gap: .3rem;
+            padding: .25rem .7rem;
+            border-radius: 1rem;
+            font-size: .72rem;
+            font-weight: 600;
+            margin-top: .6rem
+        }
+
+        .ccard {
+            background: rgba(255, 255, 255, .97);
+            border-radius: var(--rad-m);
+            padding: 1rem;
+            box-shadow: var(--shd-m)
+        }
+
+        .ccard__hd {
+            font-size: .72rem;
+            font-weight: 700;
+            color: var(--txt2);
+            text-transform: uppercase;
+            letter-spacing: .05em;
+            margin-bottom: .6rem
+        }
+
+        .ccard__sec {
+            margin-bottom: .65rem
+        }
+
+        .ccard__lbl {
+            font-size: .72rem;
+            font-weight: 700;
+            color: var(--txt);
+            margin-bottom: .3rem
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: .3rem
+        }
+
+        .tag {
+            padding: .18rem .45rem;
+            border-radius: .3rem;
+            font-size: .68rem;
+            font-weight: 500
+        }
+
+        .mctr {
+            background: rgba(255, 255, 255, .12);
+            border-radius: var(--rad-s);
+            padding: .55rem .8rem;
+            color: #fff
+        }
+
+        .mctr__top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: .775rem;
+            font-weight: 500
+        }
+
+        .mctr__bar {
+            height: 4px;
+            background: rgba(255, 255, 255, .18);
+            border-radius: 2px;
+            margin-top: .4rem;
+            overflow: hidden
+        }
+
+        .mctr__fill {
+            height: 100%;
+            background: var(--acc);
+            border-radius: 2px;
+            transition: width .5s ease
+        }
+
+        .sb-actions {
+            display: flex;
+            flex-direction: column;
+            gap: .45rem;
+            margin-top: auto;
+            padding-top: .5rem
+        }
+
+        .btn-sb {
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+            padding: .55rem .8rem;
+            background: rgba(255, 255, 255, .12);
+            border: 1px solid rgba(255, 255, 255, .25);
+            border-radius: var(--rad-s);
+            color: #fff;
+            font-family: var(--font);
+            font-size: .8rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--tr);
+            width: 100%
+        }
+
+        .btn-sb:hover {
+            background: rgba(255, 255, 255, .22);
+            transform: translateY(-1px)
+        }
+
+        /* Chat main */
+        .chat-main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+            background: #F5F6FA
+        }
+
+        /* Header */
+        .chat-hdr {
+            background: #fff;
+            border-bottom: 1px solid #E9ECF0;
+            padding: .8rem 1rem;
+            display: flex;
+            align-items: center;
+            gap: .7rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, .05);
+            flex-shrink: 0
+        }
+
+        .hdr-av {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--pri-l), var(--pri));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            flex-shrink: 0
+        }
+
+        .hdr-info {
+            flex: 1;
+            min-width: 0
+        }
+
+        .hdr-nm {
+            font-family: 'Prompt', sans-serif;
+            font-size: .975rem;
+            font-weight: 700;
+            color: var(--pri);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis
+        }
+
+        .hdr-sub {
+            font-size: .72rem;
+            color: var(--txt2)
+        }
+
+        .hdr-btns {
+            display: flex;
+            gap: .3rem;
+            flex-shrink: 0
+        }
+
+        .ibtn {
+            width: 34px;
+            height: 34px;
+            border-radius: var(--rad-s);
+            background: #F3F4F6;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: .95rem;
+            transition: var(--tr);
+            flex-shrink: 0
+        }
+
+        .ibtn:hover {
+            background: #E5E7EB
+        }
+
+        /* Profile strip — quick info (แสดงทุกจอ คู่กับ hamburger) */
+        .mob-strip {
+            display: flex;
+            background: linear-gradient(135deg, var(--pri-l), var(--pri));
+            padding: .5rem 1rem;
+            align-items: center;
+            gap: .4rem;
+            overflow-x: auto;
+            white-space: nowrap;
+            flex-shrink: 0;
+            scrollbar-width: none
+        }
+
+        .mob-strip::-webkit-scrollbar {
+            display: none
+        }
+
+        .mob-tag {
+            padding: .18rem .5rem;
+            background: rgba(255, 255, 255, .2);
+            border-radius: 1rem;
+            color: #fff;
+            font-size: .7rem;
+            flex-shrink: 0
+        }
+
+        /* Messages */
+        .msgs {
+            flex: 1;
+            overflow-y: auto;
+            padding: 1.1rem 1rem .75rem;
+            display: flex;
+            flex-direction: column;
+            gap: .9rem;
+            scroll-behavior: smooth
+        }
+
+        .msgs::-webkit-scrollbar {
+            width: 5px
+        }
+
+        .msgs::-webkit-scrollbar-track {
+            background: transparent
+        }
+
+        .msgs::-webkit-scrollbar-thumb {
+            background: #D1D5DB;
+            border-radius: 3px
+        }
+
+        .mrow {
+            display: flex;
+            align-items: flex-end;
+            gap: .45rem;
+            animation: fadeUp .3s ease
+        }
+
+        .mrow.u {
+            flex-direction: row-reverse
+        }
+
+        .mav {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--pri-l), var(--pri));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: .85rem;
+            flex-shrink: 0;
+            box-shadow: 0 2px 6px rgba(67, 56, 202, .2)
+        }
+
+        .mrow.u .mav {
+            background: linear-gradient(135deg, #6B7280, #374151)
+        }
+
+        .bwrap {
+            display: flex;
+            flex-direction: column;
+            max-width: 80%
+        }
+
+        .mrow.u .bwrap {
+            align-items: flex-end
+        }
+
+        .bbl {
+            padding: .7rem .9rem;
+            border-radius: 1rem;
+            font-size: .875rem;
+            line-height: 1.65;
+            word-break: break-word;
+            position: relative
+        }
+
+        .bbl.bot {
+            background: #fff;
+            color: var(--txt);
+            border-bottom-left-radius: .2rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, .07)
+        }
+
+        .bbl.usr {
+            background: linear-gradient(135deg, var(--pri-l), var(--pri));
+            color: #fff;
+            border-bottom-right-radius: .2rem
+        }
+
+        .bbl .cur {
+            display: inline-block;
+            width: 2px;
+            height: 1em;
+            background: currentColor;
+            margin-left: 2px;
+            animation: blink .7s infinite;
+            vertical-align: text-bottom
+        }
+
+        .btime {
+            font-size: .65rem;
+            color: var(--txt2);
+            margin-top: .2rem;
+            padding: 0 .2rem
+        }
+
+        .bbl p {
+            margin: 0 0 .35rem
+        }
+
+        .bbl p:last-child {
+            margin-bottom: 0
+        }
+
+        .bbl strong {
+            font-weight: 700
+        }
+
+        .bbl ul,
+        .bbl ol {
+            padding-left: 1.2rem;
+            margin: .3rem 0
+        }
+
+        .bbl li {
+            margin-bottom: .18rem
+        }
+
+        /* ── Markdown content (chat bubble + summary modal) ── */
+        .bbl h1,
+        .bbl h2,
+        .bbl h3,
+        .bbl h4,
+        .bbl h5,
+        .bbl h6,
+        .modal__body h1,
+        .modal__body h2,
+        .modal__body h3,
+        .modal__body h4,
+        .modal__body h5,
+        .modal__body h6 {
+            font-family: 'Prompt', sans-serif;
+            font-weight: 700;
+            color: var(--pri);
+            margin: .55rem 0 .3rem;
+            line-height: 1.35
+        }
+
+        .bbl h1,
+        .modal__body h1 {
+            font-size: 1.15rem
+        }
+
+        .bbl h2,
+        .modal__body h2 {
+            font-size: 1.05rem
+        }
+
+        .bbl h3,
+        .modal__body h3 {
+            font-size: .98rem
+        }
+
+        .bbl h4,
+        .bbl h5,
+        .bbl h6,
+        .modal__body h4,
+        .modal__body h5,
+        .modal__body h6 {
+            font-size: .9rem
+        }
+
+        .bbl>h1:first-child,
+        .bbl>h2:first-child,
+        .bbl>h3:first-child,
+        .modal__body>h1:first-child,
+        .modal__body>h2:first-child,
+        .modal__body>h3:first-child {
+            margin-top: 0
+        }
+
+        .bbl.usr h1,
+        .bbl.usr h2,
+        .bbl.usr h3,
+        .bbl.usr h4,
+        .bbl.usr h5,
+        .bbl.usr h6 {
+            color: #fff
+        }
+
+        .bbl em,
+        .modal__body em {
+            font-style: italic
+        }
+
+        .bbl del,
+        .modal__body del {
+            text-decoration: line-through;
+            opacity: .75
+        }
+
+        .bbl code,
+        .modal__body code {
+            background: rgba(67, 56, 202, .09);
+            color: var(--pri-d);
+            padding: .08em .35em;
+            border-radius: .25rem;
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            font-size: .85em
+        }
+
+        .bbl.usr code {
+            background: rgba(255, 255, 255, .22);
+            color: #fff
+        }
+
+        .bbl pre,
+        .modal__body pre {
+            background: #1F2937;
+            color: #F3F4F6;
+            padding: .65rem .8rem;
+            border-radius: var(--rad-s);
+            overflow-x: auto;
+            margin: .45rem 0;
+            font-size: .8em;
+            line-height: 1.55
+        }
+
+        .bbl pre code,
+        .modal__body pre code {
+            background: transparent;
+            color: inherit;
+            padding: 0;
+            font-size: 1em
+        }
+
+        .bbl blockquote,
+        .modal__body blockquote {
+            border-left: 3px solid var(--pri-l);
+            padding: .2rem .7rem;
+            margin: .4rem 0;
+            color: var(--txt2);
+            background: rgba(67, 56, 202, .04);
+            border-radius: 0 var(--rad-s) var(--rad-s) 0
+        }
+
+        .bbl.usr blockquote {
+            border-left-color: rgba(255, 255, 255, .7);
+            color: rgba(255, 255, 255, .92);
+            background: rgba(255, 255, 255, .12)
+        }
+
+        .bbl a,
+        .modal__body a {
+            color: var(--pri-l);
+            text-decoration: underline;
+            word-break: break-all
+        }
+
+        .bbl.usr a {
+            color: var(--acc-l)
+        }
+
+        .bbl hr,
+        .modal__body hr {
+            border: none;
+            border-top: 1px solid #E5E7EB;
+            margin: .6rem 0
+        }
+
+        .modal__body p {
+            margin: 0 0 .4rem
+        }
+
+        .modal__body p:last-child {
+            margin-bottom: 0
+        }
+
+        .modal__body strong {
+            font-weight: 700;
+            color: var(--pri-d)
+        }
+
+        .modal__body ul,
+        .modal__body ol {
+            padding-left: 1.3rem;
+            margin: .35rem 0
+        }
+
+        .modal__body li {
+            margin-bottom: .22rem
+        }
+
+        /* Typing indicator */
+        .typ-row {
+            display: flex;
+            align-items: flex-end;
+            gap: .45rem;
+            animation: fadeUp .3s ease
+        }
+
+        .typ-bbl {
+            background: #fff;
+            padding: .7rem .9rem;
+            border-radius: 1rem;
+            border-bottom-left-radius: .2rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, .07);
+            display: flex;
+            gap: .3rem;
+            align-items: center
+        }
+
+        .tdot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #9CA3AF;
+            animation: bounce 1.2s ease-in-out infinite
+        }
+
+        .tdot:nth-child(2) {
+            animation-delay: .2s
+        }
+
+        .tdot:nth-child(3) {
+            animation-delay: .4s
+        }
+
+        /* Milestone card */
+        .mstone {
+            background: linear-gradient(135deg, #FFF1F2, #FFE4E6);
+            border: 2px solid #FB7185;
+            border-radius: var(--rad-m);
+            padding: .9rem 1.1rem;
+            text-align: center;
+            animation: bounceIn .5s ease;
+            margin: 0 auto;
+            max-width: 340px;
+            width: 100%
+        }
+
+        .mstone__ic {
+            font-size: 1.9rem;
+            margin-bottom: .3rem
+        }
+
+        .mstone__ttl {
+            font-family: 'Prompt', sans-serif;
+            font-size: .9rem;
+            font-weight: 700;
+            color: #9F1239
+        }
+
+        .mstone__tx {
+            font-size: .775rem;
+            color: #BE123C;
+            margin-top: .2rem;
+            line-height: 1.5
+        }
+
+        /* Suggestions */
+        .sug-bar {
+            padding: .55rem 1rem;
+            background: #fff;
+            border-top: 1px solid #F0F2F5;
+            display: flex;
+            align-items: center;
+            gap: .35rem;
+            flex-wrap: wrap;
+            flex-shrink: 0
+        }
+
+        .sug-lbl {
+            font-size: .72rem;
+            color: var(--txt2);
+            font-weight: 700;
+            white-space: nowrap;
+            flex-shrink: 0
+        }
+
+        .sug-chip {
+            padding: .25rem .6rem;
+            background: #EEF2FF;
+            color: var(--pri);
+            border: 1.5px solid #C7D2FE;
+            border-radius: 1rem;
+            font-size: .72rem;
+            font-weight: 500;
+            cursor: pointer;
+            font-family: var(--font);
+            transition: var(--tr);
+            white-space: nowrap;
+            max-width: 200px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            flex-shrink: 0
+        }
+
+        .sug-chip:hover {
+            background: var(--pri-l);
+            color: #fff;
+            border-color: var(--pri-l)
+        }
+
+        /* Input area */
+        .inp-area {
+            background: #fff;
+            border-top: 1px solid #E9ECF0;
+            padding: .7rem 1rem;
+            flex-shrink: 0
+        }
+
+        .inp-row {
+            display: flex;
+            gap: .45rem;
+            align-items: flex-end
+        }
+
+        .chat-inp {
+            flex: 1;
+            border: 2px solid #E5E7EB;
+            border-radius: var(--rad-m);
+            padding: .5rem .8rem;
+            font-family: var(--font);
+            font-size: .9rem;
+            resize: none;
+            outline: none;
+            transition: var(--tr);
+            min-height: 42px;
+            max-height: 120px;
+            overflow-y: auto;
+            line-height: 1.5;
+            background: #fff
+        }
+
+        .chat-inp:focus {
+            border-color: var(--pri-l);
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, .12)
+        }
+
+        .chat-inp:disabled {
+            background: #F9FAFB;
+            cursor: not-allowed
+        }
+
+        .btn-send {
+            width: 42px;
+            height: 42px;
+            border-radius: var(--rad-m);
+            background: linear-gradient(135deg, var(--pri-l), var(--pri));
+            border: none;
+            color: #fff;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--tr);
+            flex-shrink: 0;
+            box-shadow: 0 4px 10px rgba(67, 56, 202, .28)
+        }
+
+        .btn-send:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 14px rgba(67, 56, 202, .4)
+        }
+
+        .btn-send:disabled {
+            background: #D1D5DB;
+            box-shadow: none;
+            cursor: not-allowed
+        }
+
+        /* Action bar */
+        .act-bar {
+            display: flex;
+            gap: .35rem;
+            padding: .35rem 1rem .45rem;
+            background: #fff;
+            flex-shrink: 0
+        }
+
+        .abtn {
+            flex: 1;
+            padding: .38rem .2rem;
+            background: #F9FAFB;
+            border: 1px solid #E5E7EB;
+            border-radius: var(--rad-s);
+            font-family: var(--font);
+            font-size: .7rem;
+            font-weight: 500;
+            color: var(--txt2);
+            cursor: pointer;
+            transition: var(--tr);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: .2rem;
+            white-space: nowrap
+        }
+
+        .abtn:hover:not(:disabled) {
+            background: #EEF2FF;
+            color: var(--pri);
+            border-color: #C7D2FE
+        }
+
+        .abtn:disabled {
+            opacity: .4;
+            cursor: not-allowed
+        }
+
+        /* ══════════════════════════════════
+        MODAL
+        ══════════════════════════════════ */
+        .modal-ov {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, .52);
+            backdrop-filter: blur(4px);
+            z-index: 1000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem
+        }
+
+        .modal-ov.on {
+            display: flex;
+            animation: fadeIn .2s ease
+        }
+
+        .modal {
+            background: #fff;
+            border-radius: var(--rad);
+            padding: 1.5rem;
+            max-width: 480px;
+            width: 100%;
+            max-height: 82vh;
+            display: flex;
+            flex-direction: column;
+            gap: .875rem;
+            box-shadow: var(--shd);
+            animation: fadeUp .3s ease
+        }
+
+        .modal__hd {
+            display: flex;
+            align-items: center;
+            justify-content: space-between
+        }
+
+        .modal__ttl {
+            font-family: 'Prompt', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--pri)
+        }
+
+        .modal__body {
+            flex: 1;
+            overflow-y: auto;
+            font-size: .85rem;
+            line-height: 1.75;
+            color: var(--txt);
+            background: #F8F9FB;
+            border-radius: var(--rad-s);
+            padding: .9rem;
+            border: 1px solid #E9ECF0;
+            min-height: 120px;
+            word-wrap: break-word
+        }
+
+        .modal__ft {
+            display: flex;
+            gap: .65rem
+        }
+
+        /* Toast */
+        .toast {
+            position: fixed;
+            bottom: 1.5rem;
+            left: 50%;
+            transform: translateX(-50%) translateY(80px);
+            background: #1F2937;
+            color: #fff;
+            padding: .55rem 1.1rem;
+            border-radius: var(--rad-m);
+            font-size: .825rem;
+            z-index: 2000;
+            transition: transform .3s ease;
+            white-space: nowrap;
+            pointer-events: none
+        }
+
+        .toast.on {
+            transform: translateX(-50%) translateY(0)
+        }
+
+        /* ── ACCESSIBILITY POLISH ── */
+        .ibtn:focus-visible,
+        .btn:focus-visible,
+        .btn-sb:focus-visible,
+        .sug-chip:focus-visible,
+        .abtn:focus-visible,
+        .sb-close:focus-visible {
+            outline: 3px solid var(--acc);
+            outline-offset: 2px
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: .001ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: .001ms !important;
+                scroll-behavior: auto !important
+            }
+        }
+
+        /* ── ANIMATIONS ── */
+        @keyframes spin {
+            to {
+                transform: rotate(360deg)
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(16px)
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0)
+            }
+        }
+
+        @keyframes bounce {
+
+            0%,
+            60%,
+            100% {
+                transform: translateY(0)
+            }
+
+            30% {
+                transform: translateY(-6px)
+            }
+        }
+
+        @keyframes bounceIn {
+            0% {
+                opacity: 0;
+                transform: scale(.8)
+            }
+
+            60% {
+                transform: scale(1.05)
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1)
+            }
+        }
+
+        @keyframes blink {
+
+            0%,
+            100% {
+                opacity: 1
+            }
+
+            50% {
+                opacity: 0
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ===== LOADING ===== -->
+    <div id="s-load" class="scr on">
+        <div class="load-card">
+            <div class="spinner"></div>
+            <div class="load-title">คุยกับพี่ในอนาคต<br><span style="font-size:.8rem;font-weight:400">Talk with Your
+                    Future Self</span></div>
+            <div class="load-sub">โรงเรียนสาธิต มหาวิทยาลัยศิลปากร (มัธยมศึกษา)</div>
+            <div class="dots"><span>●</span><span>●</span><span>●</span></div>
+        </div>
+    </div>
+
+    <!-- ===== CONSENT / PDPA ===== -->
+    <div id="s-consent" class="scr">
+        <div class="consent-card">
+            <div class="consent-hd">
+                <div class="consent-hd__ico">🔒</div>
+                <div class="consent-hd__ttl">ก่อนเริ่ม — เรื่องข้อมูลของน้อง</div>
+                <div class="consent-hd__sub">โปรดอ่านสักครู่ เพื่อความปลอดภัยของน้องเอง</div>
+            </div>
+
+            <div class="consent-sec">
+                <div class="consent-sec__ttl">📋 กิจกรรมนี้คืออะไร</div>
+                <ul>
+                    <li>เป็นกิจกรรมการศึกษาเพื่อช่วยให้น้องคิดถึงเส้นทางอาชีพในอนาคต โดยพูดคุยกับ "ตัวเองในอีก 10
+                        ปีข้างหน้า"</li>
+                    <li>ข้อมูลที่น้องกรอกจะถูกส่งไปยังระบบ AI เพื่อใช้สร้างบทสนทนาเท่านั้น</li>
+                    <li>ข้อมูลถูกเก็บไว้ชั่วคราวระหว่างใช้งาน ไม่มีการบันทึกถาวรในฐานข้อมูล และไม่ใช้เพื่อการโฆษณา</li>
+                </ul>
+            </div>
+
+            <div class="consent-sec consent-warn">
+                <div class="consent-sec__ttl">⚠️ สิ่งที่ "ไม่ควร" กรอก</div>
+                <ul>
+                    <li>เลขบัตรประชาชน ที่อยู่บ้าน เบอร์โทรศัพท์ อีเมล</li>
+                    <li>ข้อมูลอ่อนไหว เช่น ข้อมูลสุขภาพ ศาสนา เชื้อชาติ หรือเรื่องส่วนตัวที่ละเอียดอ่อนมาก</li>
+                    <li>ข้อมูลส่วนตัวของคนอื่น (เพื่อน ครอบครัว) ที่ระบุตัวบุคคลได้</li>
+                    <li>แนะนำให้ใช้ <strong>ชื่อเล่น</strong> แทนชื่อ-นามสกุลจริง</li>
+                </ul>
+            </div>
+
+            <label class="consent-chk" for="chk-consent">
+                <input type="checkbox" id="chk-consent" onchange="toggleConsent()">
+                <label for="chk-consent">ฉันอ่านและเข้าใจแล้ว จะไม่กรอกข้อมูลส่วนตัวที่ละเอียดอ่อน
+                    และยินยอมให้ใช้ข้อมูลเพื่อกิจกรรมการศึกษานี้</label>
+            </label>
+
+            <button class="btn btn-acc" id="btn-consent" onclick="acceptConsent()" disabled>เริ่มเลย →</button>
+
+            <div class="consent-note">
+                หากน้องอายุต่ำกว่า 18 ปี ควรใช้งานภายใต้การดูแลของคุณครู<br>
+                และโรงเรียนอาจขอความยินยอมจากผู้ปกครองตามนโยบาย PDPA
+                <br><br>
+                <span style="opacity:.78;display:block;border-top:1px dashed #D1D5DB;padding-top:.6rem">
+                    กิจกรรมนี้ได้รับ<strong>แรงบันดาลใจหลัก</strong>จากงานวิจัย “Future You” (Pataranutaporn et al.,
+                    MIT Media Lab × KASIKORN Labs/KBTG, 2024) ซึ่งศึกษาการพูดคุยกับ “ตัวเองในอนาคต”
+                    เพื่อเสริมความรู้สึกเชื่อมโยงกับอนาคต (future self-continuity) —
+                    แอปนี้พัฒนาต่อยอดให้เหมาะกับนักเรียนไทย
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== WIZARD ===== -->
+    <div id="s-wizard" class="scr">
+        <div class="wiz-wrap">
+
+            <!-- School badge -->
+            <div class="school-hd">
+                <div class="school-hd__ico">🏫</div>
+                <div class="school-hd__nm">โรงเรียนสาธิต มหาวิทยาลัยศิลปากร (มัธยมศึกษา)</div>
+                <div class="school-hd__ttl">💬 คุยกับพี่ในอนาคต</div>
+                <div class="school-hd__sub">คุยกับตัวเองในอนาคต 10 ปีข้างหน้า</div>
+            </div>
+
+            <!-- Progress -->
+            <div class="prog">
+                <div class="pstep on" id="p1">
+                    <div class="pstep__c">1</div>
+                    <div class="pstep__lb">ตัวตน</div>
+                </div>
+                <div class="pline" id="pl1"></div>
+                <div class="pstep" id="p2">
+                    <div class="pstep__c">2</div>
+                    <div class="pstep__lb">ความฝัน</div>
+                </div>
+                <div class="pline" id="pl2"></div>
+                <div class="pstep" id="p3">
+                    <div class="pstep__c">3</div>
+                    <div class="pstep__lb">ฉันคนนี้</div>
+                </div>
+            </div>
+
+            <!-- Card -->
+            <div class="wiz-card">
+
+                <!-- Step 1 -->
+                <div class="wstep on" id="ws1">
+                    <div class="step-hd">
+                        <span class="step-hd__ico">👤</span>
+                        <div class="step-hd__ttl">ตัวตนของฉัน</div>
+                        <div class="step-hd__sub">ข้อมูลพื้นฐานเพื่อสร้างพี่ในอนาคตของคุณ</div>
+                    </div>
+                    <div class="fgrid fgrid2">
+                        <div class="fg">
+                            <label class="fl" for="f-name">ชื่อเล่น <span class="req">*</span></label>
+                            <input type="text" id="f-name" placeholder="เช่น ฟ้า, ต้นกล้า, มิว" maxlength="40">
+                            <span class="fhint">🔒 ใช้ชื่อเล่นก็พอ ไม่ต้องใส่นามสกุลจริง</span>
+                            <span class="ferr" id="e-name">กรุณาระบุชื่อเล่น</span>
+                        </div>
+                        <div class="fg">
+                            <label class="fl" for="f-age">อายุ <span class="req">*</span></label>
+                            <input type="number" id="f-age" placeholder="อายุ (ปี)" min="13" max="20">
+                            <span class="ferr" id="e-age">กรุณาระบุอายุ 13–20 ปี</span>
+                        </div>
+                        <div class="fg">
+                            <label class="fl" for="f-gender">เพศ <span class="req">*</span></label>
+                            <select id="f-gender">
+                                <option value="ชาย">ชาย</option>
+                                <option value="หญิง">หญิง</option>
+                            </select>
+                        </div>
+                        <div class="fg">
+                            <label class="fl" for="f-grade">ระดับชั้น <span class="req">*</span></label>
+                            <select id="f-grade">
+                                <option value="ม.4">ม.4</option>
+                                <option value="ม.5">ม.5</option>
+                                <option value="ม.6">ม.6</option>
+                            </select>
+                        </div>
+                        <div class="fg span2">
+                            <label class="fl" for="f-prog">แผนการเรียน <span class="req">*</span></label>
+                            <select id="f-prog">
+                                <option value="">-- เลือกแผนการเรียน --</option>
+                            </select>
+                            <span class="ferr" id="e-prog">กรุณาเลือกแผนการเรียน</span>
+                        </div>
+                    </div>
+                    <div class="step-nav">
+                        <div></div>
+                        <button class="btn btn-pri" onclick="goStep(2)">ถัดไป →</button>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="wstep" id="ws2">
+                    <div class="step-hd">
+                        <span class="step-hd__ico">🌟</span>
+                        <div class="step-hd__ttl">ความฝันของฉัน</div>
+                        <div class="step-hd__sub">บอกเราเกี่ยวกับเป้าหมายและความสนใจของคุณ</div>
+                    </div>
+                    <div class="fgrid">
+                        <div class="privline">🔒 เล่าได้เต็มที่ แต่ไม่ต้องใส่ข้อมูลส่วนตัวที่อ่อนไหวนะ</div>
+                        <div class="fg">
+                            <label class="fl" for="f-career">อาชีพในฝัน <span class="req">*</span></label>
+                            <input type="text" id="f-career" placeholder="เช่น วิศวกร, นักออกแบบ, แพทย์, นักแปล">
+                            <span class="ferr" id="e-career">กรุณาระบุอาชีพในฝัน</span>
+                        </div>
+                        <div class="fg">
+                            <label class="fl" for="f-int">สิ่งที่สนใจ <span class="req">*</span></label>
+                            <input type="text" id="f-int" placeholder="เช่น คณิตศาสตร์, ศิลปะ, ภาษาต่างประเทศ">
+                            <span class="ferr" id="e-int">กรุณาระบุสิ่งที่สนใจ</span>
+                        </div>
+                        <div class="fg">
+                            <label class="fl" for="f-str">จุดแข็งของน้อง <span class="req">*</span></label>
+                            <div class="qhint">💡 เล่าเหตุการณ์ที่น้องทำอะไรได้ดีจนรู้สึกภูมิใจ หรือที่เพื่อน/ครูชม —
+                                เล่าเป็นเรื่องสั้น ๆ ได้เลย</div>
+                            <textarea id="f-str" data-nudge="e-str-n"
+                                placeholder="เช่น เล่าว่าครั้งหนึ่งน้องทำอะไร แล้วรู้ว่าตัวเองเก่งเรื่องนี้..."></textarea>
+                            <details class="ex">
+                                <summary>ดูตัวอย่างการเล่า</summary>
+                                <div class="ex__body">"ตอนทำโปรเจกต์กลุ่ม เพื่อน ๆ
+                                    มักให้หนูเป็นคนวางแผนและแก้ปัญหาเฉพาะหน้า
+                                    หนูรู้สึกว่าตัวเองสงบและคิดเป็นระบบเวลาคนอื่นเริ่มวุ่นวาย"</div>
+                            </details>
+                            <span class="nudge" id="e-str-n">✏️ ลองเล่าเพิ่มอีกนิด ยิ่งเล่าละเอียด
+                                พี่ยิ่งเข้าใจน้องมากขึ้น</span>
+                            <span class="ferr" id="e-str">กรุณาเล่าเกี่ยวกับจุดแข็งของน้อง</span>
+                        </div>
+                    </div>
+                    <div class="step-nav">
+                        <button class="btn btn-sec" onclick="goStep(1)">← ย้อนกลับ</button>
+                        <button class="btn btn-pri" onclick="goStep(3)">ถัดไป →</button>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="wstep" id="ws3">
+                    <div class="step-hd">
+                        <span class="step-hd__ico">💎</span>
+                        <div class="step-hd__ttl">ฉันคนนี้</div>
+                        <div class="step-hd__sub">ช่วยให้พี่ในอนาคตเข้าใจตัวตนที่แท้จริงของคุณ</div>
+                    </div>
+                    <div class="fgrid">
+                        <div class="privline">🔒 เล่าได้เต็มที่ แต่ไม่ต้องใส่ข้อมูลส่วนตัวที่อ่อนไหวนะ</div>
+                        <div class="fg">
+                            <label class="fl" for="f-chal">สิ่งที่ท้าทายสำหรับน้อง <span class="req">*</span></label>
+                            <div class="qhint">💡 เล่าเรื่องที่น้องเคยรู้สึกว่ายากหรือท้อ แล้วรับมือกับมันยังไง</div>
+                            <textarea id="f-chal" data-nudge="e-chal-n"
+                                placeholder="เช่น เล่าว่ามีวิชาหรือสถานการณ์ไหนที่ทำให้น้องรู้สึกท้อ แล้วน้องทำยังไง..."></textarea>
+                            <details class="ex">
+                                <summary>ดูตัวอย่างการเล่า</summary>
+                                <div class="ex__body">"หนูพูดหน้าห้องแล้วมือสั่นทุกครั้ง เคยอยากหลีกเลี่ยงไปเลย
+                                    แต่พอลองฝึกพูดหน้ากระจกบ่อย ๆ ก็เริ่มดีขึ้นทีละนิด"</div>
+                            </details>
+                            <span class="nudge" id="e-chal-n">✏️ ลองเล่าเพิ่มอีกนิด จะช่วยให้พี่เข้าใจน้องมากขึ้น</span>
+                            <span class="ferr" id="e-chal">กรุณาเล่าเกี่ยวกับสิ่งที่ท้าทาย</span>
+                        </div>
+                        <div class="fg">
+                            <label class="fl" for="f-pers">ลักษณะนิสัยของน้อง <span class="req">*</span></label>
+                            <div class="qhint">💡 เพื่อนสนิทมักพูดถึงน้องว่ายังไง? หรือเล่าสิ่งที่น้องชอบทำเวลาว่าง
+                            </div>
+                            <textarea id="f-pers" data-nudge="e-pers-n"
+                                placeholder="เช่น เล่าว่าเวลาอยู่กับเพื่อน น้องมักเป็นคนแบบไหน ชอบทำอะไร..."></textarea>
+                            <details class="ex">
+                                <summary>ดูตัวอย่างการเล่า</summary>
+                                <div class="ex__body">"เพื่อนชอบบอกว่าหนูเป็นคนคิดเยอะแต่ใจดี
+                                    เวลามีใครเครียดหนูจะเป็นคนแรกที่เข้าไปถามว่าเป็นอะไร"</div>
+                            </details>
+                            <span class="nudge" id="e-pers-n">✏️ ลองเล่าเพิ่มอีกนิด จะช่วยให้พี่เข้าใจน้องมากขึ้น</span>
+                            <span class="ferr" id="e-pers">กรุณาเล่าเกี่ยวกับลักษณะนิสัย</span>
+                        </div>
+                        <div class="fg">
+                            <label class="fl" for="f-val">ค่านิยม / สิ่งที่น้องยึดถือ <span class="req">*</span></label>
+                            <div class="qhint">💡 เล่าเหตุการณ์ที่ทำให้น้องรู้ว่าอะไรสำคัญกับน้องจริง ๆ — เช่น
+                                ตอนที่ตัดสินใจอะไรบางอย่างแล้วภูมิใจ</div>
+                            <textarea id="f-val" data-nudge="e-val-n"
+                                placeholder="เช่น เล่าเรื่องที่ทำให้น้องเห็นว่าอะไรคือสิ่งสำคัญสำหรับน้อง..."></textarea>
+                            <details class="ex">
+                                <summary>ดูตัวอย่างการเล่า</summary>
+                                <div class="ex__body">"ครั้งหนึ่งหนูเลือกสละเวลาติวให้เพื่อนแทนที่จะอ่านหนังสือของตัวเอง
+                                    เพราะหนูรู้สึกว่าการได้ช่วยคนอื่นมีความหมายกับหนูมาก"</div>
+                            </details>
+                            <span class="nudge" id="e-val-n">✏️ ลองเล่าเพิ่มอีกนิด จะช่วยให้พี่เข้าใจน้องมากขึ้น</span>
+                            <span class="ferr" id="e-val">กรุณาเล่าเกี่ยวกับค่านิยมของน้อง</span>
+                        </div>
+                        <div class="fg">
+                            <label class="fl" for="f-fsc-pre">ก่อนเริ่ม: ตอนนี้น้องนึกภาพตัวเองในอีก 10
+                                ปีได้ชัดแค่ไหน?</label>
+                            <div class="fsc-row">
+                                <input type="range" id="f-fsc-pre" min="1" max="7" value="4" oninput="updFscPre()">
+                                <span class="fsc-val" id="fsc-pre-val">4</span>
+                            </div>
+                            <span class="fhint">1 = ยังเลือนราง • 7 = ชัดเจนมาก</span>
+                        </div>
+                    </div>
+                    <div class="step-nav" style="flex-direction:column;gap:.6rem">
+                        <button class="btn btn-acc" id="btn-init" onclick="initFutureMe()">✨ พบกับพี่ในอนาคต
+                            ของฉัน</button>
+                        <button class="btn btn-sec" style="align-self:flex-start" onclick="goStep(2)">←
+                            ย้อนกลับ</button>
+                    </div>
+                </div>
+
+            </div><!-- /wiz-card -->
+        </div><!-- /wiz-wrap -->
+    </div><!-- /s-wizard -->
+
+    <!-- ===== INIT LOADING ===== -->
+    <div id="s-initload" class="scr">
+        <div class="load-card">
+            <div class="load-emoji">🕰️</div>
+            <div class="spinner"></div>
+            <div class="load-title" id="lname">กำลังสร้างพี่ในอนาคต...</div>
+            <div class="load-sub">พี่กำลังเดินทางย้อนเวลามาหาน้อง รอสักครู่นะ</div>
+            <div class="dots"><span>●</span><span>●</span><span>●</span></div>
+        </div>
+    </div>
+
+    <!-- ===== CHAT ===== -->
+    <div id="s-chat" class="scr">
+        <div class="chat-layout">
+
+            <!-- Sidebar -->
+            <aside class="sidebar" id="sidebar">
+                <button class="sb-close" onclick="toggleSidebar(false)" aria-label="ปิดเมนู">✕</button>
+                <div class="pcard">
+                    <div class="pcard__av" id="sb-av">✨</div>
+                    <div class="pcard__nm" id="sb-nm">พี่ในอนาคต</div>
+                    <div class="pcard__yr" id="sb-yr">อนาคตปี ...</div>
+                    <div class="pcard__badge" id="sb-badge">แผนการเรียน</div>
+                </div>
+                <div class="ccard">
+                    <div class="ccard__hd">🗺️ เส้นทางที่รออยู่</div>
+                    <div class="ccard__sec">
+                        <div class="ccard__lbl">🎓 สาขามหาวิทยาลัย</div>
+                        <div class="tags" id="sb-maj"></div>
+                    </div>
+                    <div class="ccard__sec">
+                        <div class="ccard__lbl">💼 อาชีพที่เป็นไปได้</div>
+                        <div class="tags" id="sb-car"></div>
+                    </div>
+                    <div class="ccard__sec">
+                        <div class="ccard__lbl">🔑 ทักษะสำคัญ</div>
+                        <div class="tags" id="sb-skl"></div>
+                    </div>
+                </div>
+                <div>
+                    <div class="mctr">
+                        <div class="mctr__top"><span>💬 ข้อความที่เหลือ</span><span id="ctr-n">10/10</span></div>
+                        <div class="mctr__bar">
+                            <div class="mctr__fill" id="ctr-bar" style="width:100%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sb-actions">
+                    <button class="btn-sb" onclick="toggleSidebar(false);openSummary()" id="sb-sum">📋
+                        สรุปการสนทนา</button>
+                    <button class="btn-sb" onclick="toggleSidebar(false);resetAll()">👤 เริ่มพี่ในอนาคตใหม่</button>
+                </div>
+            </aside>
+
+            <!-- Chat main -->
+            <div class="chat-main">
+                <div class="chat-hdr">
+                    <button class="ibtn hamb" onclick="toggleSidebar(true)" aria-label="เปิดเมนู"
+                        title="เมนู">☰</button>
+                    <div class="hdr-av" id="hdr-av">✨</div>
+                    <div class="hdr-info">
+                        <div class="hdr-nm" id="hdr-nm">พี่ในอนาคต</div>
+                        <div class="hdr-sub" id="hdr-sub">กำลังเตรียมพร้อม...</div>
+                    </div>
+                    <div class="hdr-btns">
+                        <button class="ibtn" onclick="openSummary()" title="สรุปการสนทนา">📋</button>
+                        <button class="ibtn" onclick="resetAll()" title="เริ่มใหม่">🔄</button>
+                    </div>
+                </div>
+
+                <div class="mob-strip" id="mob-strip"></div>
+
+                <div class="msgs" id="msgs"></div>
+
+                <div class="sug-bar" id="sug-bar">
+                    <span class="sug-lbl">💡 ถามต่อ:</span>
+                </div>
+
+                <div class="inp-area">
+                    <div class="inp-row">
+                        <textarea class="chat-inp" id="cinp" rows="1" placeholder="พิมพ์ข้อความถึงพี่ในอนาคต..."
+                            disabled></textarea>
+                        <button class="btn-send" id="bsend" onclick="sendMsg()" disabled>➤</button>
+                    </div>
+                </div>
+
+                <div class="act-bar">
+                    <button class="abtn" id="ab-retry" onclick="retryLast()" disabled>🔄 ลองใหม่</button>
+                    <button class="abtn" id="ab-undo" onclick="undoLast()" disabled>↩️ ย้อน</button>
+                    <button class="abtn" id="ab-clear" onclick="clearChat()" disabled>🗑️ ล้างแชท</button>
+                    <button class="abtn" id="ab-sum" onclick="openSummary()" disabled>📋 สรุป</button>
+                </div>
+            </div>
+
+        </div><!-- /chat-layout -->
+        <div class="sidebar-ov" id="sidebar-ov" onclick="toggleSidebar(false)"></div>
+    </div><!-- /s-chat -->
+
+    <!-- ===== SUMMARY MODAL ===== -->
+    <div class="modal-ov" id="modal-sum">
+        <div class="modal">
+            <div class="modal__hd">
+                <div class="modal__ttl">📋 สรุปการสนทนากับพี่ในอนาคต</div>
+                <button class="ibtn" onclick="closeModal()">✕</button>
+            </div>
+            <div class="fsc-post" id="fsc-post-box">
+                <div class="fsc-post__q">ตอนนี้น้องนึกภาพตัวเองในอีก 10 ปีได้ชัดแค่ไหนแล้ว?</div>
+                <div class="fsc-row">
+                    <input type="range" id="f-fsc-post" min="1" max="7" value="5" oninput="updFscPost()">
+                    <span class="fsc-val" id="fsc-post-val">5</span>
+                </div>
+                <div class="fsc-delta" id="fsc-delta"></div>
+                <button class="btn btn-pri" onclick="makeSummary()" style="margin-top:.5rem">📊
+                    สร้างสรุปการสนทนา</button>
+            </div>
+            <div class="modal__body" id="modal-body">กำลังสร้างสรุป...</div>
+            <div class="modal__ft">
+                <button class="btn btn-pri" id="btn-copy" onclick="copySummary()">📋 คัดลอกข้อความ</button>
+                <button class="btn btn-sec" onclick="closeModal()">ปิด</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="toast" id="toast"></div>
+
+    <!-- ===== SERVER DATA (injected by Jinja2) ===== -->
+    <script type="application/json" id="d-app-info">{{ app_info_json | safe }}</script>
+    <script type="application/json" id="d-study-programs">{{ study_programs_json | safe }}</script>
+    <script type="application/json" id="d-career-data">{{ career_path_json | safe }}</script>
+
+    <script>
+        // ─────────────────────────────────────────
+        // DATA (parsed from JSON script tags)
+        // ─────────────────────────────────────────
+        const APP_INFO = JSON.parse(document.getElementById('d-app-info').textContent);
+        const STUDY_PROGRAMS = JSON.parse(document.getElementById('d-study-programs').textContent);
+        const CAREER_DATA = JSON.parse(document.getElementById('d-career-data').textContent);
+
+        // ─────────────────────────────────────────
+        // STATE
+        // ─────────────────────────────────────────
+        const S = {
+            sessionId: null, name: '', gender: 'ชาย', programKey: '',
+            futureYear: 0, career: {},
+            history: [],        // [{role,content}]
+            msgCount: 0,        // user messages sent
+            isStreaming: false,
+            MAX: APP_INFO.max_history,
+            MILESTONES: [5, 10],
+            msShown: new Set(),
+            lastBot: '',
+            temp: APP_INFO.default_temperature || 0.65,
+            maxTok: APP_INFO.default_max_tokens || 1600,
+            fscPre: 4,          // P5: คะแนนมองเห็นอนาคต ก่อนเริ่มคุย
+            fscPost: null,      // P5: คะแนนมองเห็นอนาคต หลังคุย
+        };
+
+        // ─────────────────────────────────────────
+        // INIT
+        // ─────────────────────────────────────────
+        document.addEventListener('DOMContentLoaded', () => {
+            // Populate program dropdown
+            const sel = document.getElementById('f-prog');
+            STUDY_PROGRAMS.forEach(p => {
+                const o = document.createElement('option');
+                o.value = p; o.textContent = p;
+                sel.appendChild(o);
+            });
+
+            // Counter shows real max from backend
+            document.getElementById('ctr-n').textContent = `${S.MAX}/${S.MAX}`;
+
+            // Auto-resize chat textarea
+            const inp = document.getElementById('cinp');
+            inp.addEventListener('input', () => {
+                inp.style.height = 'auto';
+                inp.style.height = Math.min(inp.scrollHeight, 120) + 'px';
+            });
+            inp.addEventListener('keydown', e => {
+                if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMsg(); }
+            });
+
+            // Soft length nudge on the open-ended story fields (non-blocking)
+            document.querySelectorAll('textarea[data-nudge]').forEach(t => {
+                const nudge = document.getElementById(t.dataset.nudge);
+                t.addEventListener('input', () => {
+                    if (nudge) nudge.classList.toggle('on',
+                        t.value.trim().length > 0 && t.value.trim().length < STORY_MIN);
+                });
+            });
+
+            setTimeout(() => showScr('consent'), 750);
+        });
+
+        const STORY_MIN = 25;   // chars below which we gently encourage more detail
+
+        // ─────────────────────────────────────────
+        // CONSENT (PDPA) GATE
+        // ─────────────────────────────────────────
+        function toggleConsent() {
+            const ok = document.getElementById('chk-consent').checked;
+            document.getElementById('btn-consent').disabled = !ok;
+        }
+
+        function acceptConsent() {
+            showScr('wizard');
+            window.scrollTo({ top: 0 });
+        }
+
+        // ─────────────────────────────────────────
+        // SCREEN MANAGEMENT
+        // ─────────────────────────────────────────
+        function showScr(name) {
+            document.querySelectorAll('.scr').forEach(s => s.classList.remove('on'));
+            document.getElementById('s-' + name).classList.add('on');
+        }
+
+        // ─────────────────────────────────────────
+        // HAMBURGER SIDEBAR (drawer)
+        // ─────────────────────────────────────────
+        function toggleSidebar(force) {
+            const sb = document.getElementById('sidebar');
+            const ov = document.getElementById('sidebar-ov');
+            if (!sb || !ov) return;
+            const open = (force != null) ? force : !sb.classList.contains('open');
+            sb.classList.toggle('open', open);
+            ov.classList.toggle('on', open);
+        }
+
+        // กด Esc เพื่อปิด drawer ก่อน แล้วค่อยปิด modal
+        document.addEventListener('keydown', e => {
+            if (e.key !== 'Escape') return;
+            const sb = document.getElementById('sidebar');
+            if (sb && sb.classList.contains('open')) { toggleSidebar(false); return; }
+            const modal = document.getElementById('modal-sum');
+            if (modal && modal.classList.contains('on')) closeModal();
+        });
+
+        // ─────────────────────────────────────────
+        // WIZARD NAVIGATION
+        // ─────────────────────────────────────────
+        let curStep = 1;
+
+        function goStep(n) {
+            if (n > curStep && !validateStep(curStep)) return;
+            [1, 2, 3].forEach(i => {
+                const p = document.getElementById('p' + i);
+                const c = p.querySelector('.pstep__c');
+                p.classList.remove('on', 'done');
+                if (i < n) { p.classList.add('done'); c.textContent = '✓'; }
+                else if (i === n) { p.classList.add('on'); c.textContent = i; }
+                else { c.textContent = i; }
+            });
+            [1, 2].forEach(i => {
+                const l = document.getElementById('pl' + i);
+                if (l) l.classList.toggle('done', i < n);
+            });
+            document.getElementById('ws' + curStep).classList.remove('on');
+            curStep = n;
+            document.getElementById('ws' + n).classList.add('on');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        const V = {
+            1: [
+                { id: 'f-name', eid: 'e-name', ok: v => v.trim().length > 0 },
+                { id: 'f-age', eid: 'e-age', ok: v => v >= 13 && v <= 20 },
+                { id: 'f-prog', eid: 'e-prog', ok: v => v !== '' },
+            ],
+            2: [
+                { id: 'f-career', eid: 'e-career', ok: v => v.trim().length > 0 },
+                { id: 'f-int', eid: 'e-int', ok: v => v.trim().length > 0 },
+                { id: 'f-str', eid: 'e-str', ok: v => v.trim().length > 0 },
+            ],
+            3: [
+                { id: 'f-chal', eid: 'e-chal', ok: v => v.trim().length > 0 },
+                { id: 'f-pers', eid: 'e-pers', ok: v => v.trim().length > 0 },
+                { id: 'f-val', eid: 'e-val', ok: v => v.trim().length > 0 },
+            ],
+        };
+
+        function validateStep(step) {
+            let valid = true;
+            (V[step] || []).forEach(({ id, eid, ok }) => {
+                const el = document.getElementById(id);
+                const err = document.getElementById(eid);
+                const val = el.type === 'number' ? parseFloat(el.value) : el.value;
+                const pass = ok(val);
+                el.classList.toggle('err', !pass);
+                if (err) err.classList.toggle('on', !pass);
+                if (!pass) valid = false;
+            });
+            return valid;
+        }
+
+        // ─────────────────────────────────────────
+        // INITIALIZE FUTURE ME
+        // ─────────────────────────────────────────
+        async function initFutureMe() {
+            if (!validateStep(3)) return;
+            const btn = document.getElementById('btn-init');
+            btn.disabled = true; btn.textContent = '⏳ กำลังสร้าง...';
+
+            const name = document.getElementById('f-name').value.trim();
+            document.getElementById('lname').textContent = `กำลังสร้างพี่ในอนาคตของ ${name}...`;
+            showScr('initload');
+
+            const profile = {
+                student_name: name,
+                student_age: parseInt(document.getElementById('f-age').value),
+                user_gender: document.getElementById('f-gender').value,
+                current_education_level: document.getElementById('f-grade').value,
+                study_program: document.getElementById('f-prog').value,
+                current_interests: document.getElementById('f-int').value.trim(),
+                dream_career: document.getElementById('f-career').value.trim(),
+                strengths: document.getElementById('f-str').value.trim(),
+                challenges: document.getElementById('f-chal').value.trim(),
+                personality_traits: document.getElementById('f-pers').value.trim(),
+                values: document.getElementById('f-val').value.trim(),
+            };
+
+            try {
+                const res = await fetch('/api/initialize', {
+                    method: 'POST', headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(profile),
+                });
+                if (!res.ok) throw new Error(await res.text());
+                const data = await res.json();
+
+                S.sessionId = data.session_id;
+                S.name = profile.student_name;
+                S.gender = profile.user_gender;
+                S.programKey = profile.study_program;
+                S.futureYear = data.future_year;
+                S.career = data.career_info || {};
+                S.history = []; S.msgCount = 0; S.msShown = new Set();
+                S.fscPre = parseInt(document.getElementById('f-fsc-pre').value) || 4;  // P5
+                S.fscPost = null;
+
+                setupChatUI(profile, data);
+                showScr('chat');
+                await streamGreeting();
+            } catch (e) {
+                showScr('wizard');
+                btn.disabled = false; btn.textContent = '✨ พบกับพี่ในอนาคตของฉัน';
+                showToast('❌ เกิดข้อผิดพลาด: ' + e.message.slice(0, 80));
+            }
+        }
+
+        function setupChatUI(profile, data) {
+            const c = S.career;
+            const emoji = c.emoji || '✨';
+            const bg = c.tag_bg || '#EEF2FF';
+            const tx = c.tag_text || '#4338CA';
+
+            // Sidebar
+            document.getElementById('sb-av').textContent = emoji;
+            document.getElementById('hdr-av').textContent = emoji;
+            document.getElementById('sb-nm').textContent = `พี่${S.name}`;
+            document.getElementById('sb-yr').textContent = `อนาคตปี ${data.future_year}`;
+            document.getElementById('hdr-nm').textContent = `พี่${S.name}`;
+            document.getElementById('hdr-sub').textContent = `${profile.study_program} • ${profile.dream_career}`;
+
+            const badge = document.getElementById('sb-badge');
+            badge.textContent = `${emoji} ${profile.study_program}`;
+            badge.style.background = bg; badge.style.color = tx;
+
+            renderTags('sb-maj', c.university_majors || [], bg, tx);
+            renderTags('sb-car', c.careers || [], bg, tx);
+            renderTags('sb-skl', c.key_skills || [], '#ECFDF5', '#065F46');
+
+            // Mobile strip
+            const strip = document.getElementById('mob-strip');
+            strip.innerHTML = '';
+            const progSpan = document.createElement('span');
+            progSpan.textContent = `${emoji} ${profile.study_program}`;
+            strip.appendChild(progSpan);
+            (c.careers || []).slice(0, 2).forEach(x => {
+                const t = document.createElement('span');
+                t.className = 'mob-tag'; t.textContent = `💼 ${x}`;
+                strip.appendChild(t);
+            });
+            const yrTag = document.createElement('span');
+            yrTag.className = 'mob-tag'; yrTag.textContent = `📅 ปี ${data.future_year}`;
+            strip.appendChild(yrTag);
+
+            document.getElementById('msgs').innerHTML = '';
+            updateCtr();
+            setTimeout(fetchSuggestions, 3500);
+        }
+
+        function renderTags(id, items, bg, col) {
+            const wrap = document.getElementById(id);
+            wrap.innerHTML = '';
+            items.forEach(item => {
+                const t = document.createElement('span');
+                t.className = 'tag';
+                t.textContent = item;
+                t.style.background = bg; t.style.color = col;
+                wrap.appendChild(t);
+            });
+        }
+
+        // ─────────────────────────────────────────
+        // SSE READER (buffered)
+        // ─────────────────────────────────────────
+        async function readSSE(reader, onChunk, onDone, onErr) {
+            const dec = new TextDecoder();
+            let buf = '';
+            try {
+                while (true) {
+                    const { done, value } = await reader.read();
+                    if (done) break;
+                    buf += dec.decode(value, { stream: true });
+                    const lines = buf.split('\n');
+                    buf = lines.pop();
+                    for (const line of lines) {
+                        if (!line.startsWith('data: ')) continue;
+                        const raw = line.slice(6).trim();
+                        if (raw === '[DONE]') { onDone && onDone(); return; }
+                        try {
+                            const p = JSON.parse(raw);
+                            if (p.error) { onErr && onErr(p.error); return; }
+                            if (p.content) onChunk(p.content);
+                        } catch { }
+                    }
+                }
+            } catch (e) { onErr && onErr('⚠️ เกิดข้อผิดพลาดในการเชื่อมต่อ'); }
+            onDone && onDone();
+        }
+
+        // ─────────────────────────────────────────
+        // STREAMING GREETING
+        // ─────────────────────────────────────────
+        async function streamGreeting() {
+            const mid = addBotBubble('');
+            try {
+                const res = await fetch('/api/greeting/stream', {
+                    method: 'POST', headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ session_id: S.sessionId }),
+                });
+                const reader = res.body.getReader();
+                let content = '';
+                let finished = false;
+                await readSSE(reader,
+                    chunk => { content += chunk; updBubble(mid, content, true); scrollMsgs(); },
+                    () => { if (!finished) { finished = true; finishGreeting(mid, content); } },
+                    err => { updBubble(mid, err || '⚠️ ไม่สามารถเชื่อมต่อได้', false); enableInput(); }
+                );
+            } catch (e) {
+                updBubble(mid, '⚠️ ไม่สามารถเชื่อมต่อ LLM กรุณาตรวจสอบ API Key', false);
+                enableInput();
+            }
+        }
+
+        function finishGreeting(mid, content) {
+            updBubble(mid, content, false);
+            S.history.push({ role: 'assistant', content });
+            S.lastBot = content;
+            enableInput();
+            updateCtr(); scrollMsgs();
+        }
+
+        // ─────────────────────────────────────────
+        // SEND MESSAGE
+        // ─────────────────────────────────────────
+        async function sendMsg() {
+            const inp = document.getElementById('cinp');
+            const text = inp.value.trim();
+            if (!text || S.isStreaming) return;
+            if (S.msgCount >= S.MAX) { showToast('🚫 ครบจำนวนข้อความแล้ว'); return; }
+
+            inp.value = ''; inp.style.height = 'auto';
+            addUserBubble(text);
+            const prevHistory = [...S.history];
+            S.history.push({ role: 'user', content: text });
+            S.msgCount++;
+            updateCtr(); disableInput(); updateActBtns();
+            checkMilestone(S.msgCount);
+
+            const typId = addTyping();
+            scrollMsgs();
+            S.isStreaming = true;
+
+            try {
+                const res = await fetch('/api/chat/stream', {
+                    method: 'POST', headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        session_id: S.sessionId,
+                        message: text,
+                        history: prevHistory,
+                        temperature: S.temp,
+                        max_tokens: S.maxTok,
+                    }),
+                });
+                removeTyping(typId);
+                const mid = addBotBubble('');
+                let content = '';
+                let finished = false;
+                const reader = res.body.getReader();
+                await readSSE(reader,
+                    chunk => { content += chunk; updBubble(mid, content, true); scrollMsgs(); },
+                    () => {
+                        if (finished) return;
+                        finished = true;
+                        updBubble(mid, content, false);
+                        S.history.push({ role: 'assistant', content });
+                        S.lastBot = content;
+                        setTimeout(fetchSuggestions, 600);
+                    },
+                    err => { updBubble(mid, err, false); }
+                );
+            } catch (e) {
+                removeTyping(typId);
+                addBotBubble('⚠️ เกิดข้อผิดพลาดในการเชื่อมต่อ กรุณาลองใหม่อีกครั้ง');
+                S.history.pop(); S.msgCount--;
+            }
+
+            S.isStreaming = false;
+            enableInput(S.msgCount < S.MAX);
+            updateCtr(); updateActBtns(); scrollMsgs();
+        }
+
+        // ─────────────────────────────────────────
+        // BUBBLE HELPERS
+        // ─────────────────────────────────────────
+        let _mc = 0;
+        let _summaryRaw = '';
+
+        function addUserBubble(text) {
+            const id = 'msg-' + (++_mc);
+            const row = document.createElement('div');
+            row.className = 'mrow u'; row.id = id;
+            const bbl = `<div class="bbl usr">${esc(text)}</div>`;
+            row.innerHTML = `<div class="mav">👤</div><div class="bwrap">${bbl}<div class="btime">${now()}</div></div>`;
+            document.getElementById('msgs').appendChild(row);
+            return id;
+        }
+
+        function addBotBubble(content) {
+            const id = 'msg-' + (++_mc);
+            const emoji = S.career.emoji || '✨';
+            const row = document.createElement('div');
+            row.className = 'mrow'; row.id = id;
+            const inner = content ? md(content) : '<span class="cur"></span>';
+            row.innerHTML = `<div class="mav">${emoji}</div><div class="bwrap"><div class="bbl bot" id="bbl-${id}">${inner}</div><div class="btime">${now()}</div></div>`;
+            document.getElementById('msgs').appendChild(row);
+            return id;
+        }
+
+        function updBubble(id, content, streaming) {
+            const el = document.getElementById('bbl-' + id);
+            if (!el) return;
+            el.innerHTML = md(content) + (streaming ? '<span class="cur"></span>' : '');
+        }
+
+        function addTyping() {
+            const id = 'typ-' + Date.now();
+            const emoji = S.career.emoji || '✨';
+            const row = document.createElement('div');
+            row.className = 'typ-row'; row.id = id;
+            row.innerHTML = `<div class="mav">${emoji}</div><div class="typ-bbl"><div class="tdot"></div><div class="tdot"></div><div class="tdot"></div></div>`;
+            document.getElementById('msgs').appendChild(row);
+            scrollMsgs();
+            return id;
+        }
+
+        function removeTyping(id) {
+            const el = document.getElementById(id);
+            if (el) el.remove();
+        }
+
+        // ─────────────────────────────────────────
+        // MILESTONES
+        // ─────────────────────────────────────────
+        const MS_DATA = {
+            5: {
+                ic: '🌟', ttl: 'น้องเริ่มค้นพบแรงบันดาลใจแล้ว!',
+                tx: 'การพูดคุยกับพี่ในอนาคตวันนี้จะช่วยนำทางสู่อนาคตที่สดใสของน้องได้เลย ✨'
+            },
+            10: {
+                ic: '🎯', ttl: 'น้องมองเห็นเส้นทางชัดเจนขึ้นแล้ว!',
+                tx: 'พี่ภูมิใจในความมุ่งมั่นและความกล้าในการค้นหาตัวเองของน้องมากๆ เลย 💪'
+            },
+        };
+
+        function checkMilestone(count) {
+            if (!S.MILESTONES.includes(count) || S.msShown.has(count)) return;
+            S.msShown.add(count);
+            const d = MS_DATA[count];
+            const isFinal = count === Math.max(...S.MILESTONES);   // P6: ปุ่มปิดท้ายที่ milestone สุดท้าย
+            setTimeout(() => {
+                const card = document.createElement('div');
+                card.className = 'mstone';
+                let inner = `<div class="mstone__ic">${d.ic}</div><div class="mstone__ttl">${d.ttl}</div><div class="mstone__tx">${d.tx}</div>`;
+                if (isFinal) {
+                    inner += `<button class="btn btn-acc" onclick="openSummary()" style="margin-top:.7rem;width:auto;padding:.5rem 1.2rem">💛 ขอบคุณพี่ในอนาคต</button>`;
+                }
+                card.innerHTML = inner;
+                document.getElementById('msgs').appendChild(card);
+                scrollMsgs();
+            }, 400);
+        }
+
+        // ─────────────────────────────────────────
+        // SUGGESTED QUESTIONS
+        // ─────────────────────────────────────────
+        async function fetchSuggestions() {
+            try {
+                const res = await fetch('/api/suggestions', {
+                    method: 'POST', headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ session_id: S.sessionId, history: S.history.slice(-6) }),
+                });
+                const data = await res.json();
+                renderSuggs(data.questions || []);
+            } catch { }
+        }
+
+        function renderSuggs(questions) {
+            const bar = document.getElementById('sug-bar');
+            bar.innerHTML = '<span class="sug-lbl">💡 ถามต่อ:</span>';
+            questions.forEach(q => {
+                const chip = document.createElement('button');
+                chip.className = 'sug-chip'; chip.textContent = q; chip.title = q;
+                chip.onclick = () => {
+                    document.getElementById('cinp').value = q;
+                    sendMsg();
+                };
+                bar.appendChild(chip);
+            });
+        }
+
+        // ─────────────────────────────────────────
+        // SUMMARY MODAL
+        // ─────────────────────────────────────────
+        // P5: เปิด modal → แสดงสไลเดอร์ให้น้องประเมินตัวเองหลังคุย แล้วกดสร้างสรุป
+        function openSummary() {
+            if (S.history.length < 2) { showToast('💬 ยังไม่มีการสนทนาให้สรุป'); return; }
+            document.getElementById('modal-sum').classList.add('on');
+            const post = document.getElementById('f-fsc-post');
+            post.value = (S.fscPost != null ? S.fscPost : S.fscPre);
+            updFscPost();
+            document.getElementById('btn-copy').disabled = true;
+            document.getElementById('modal-body').innerHTML =
+                '<em>ปรับคะแนนด้านบนให้ตรงกับความรู้สึกตอนนี้ แล้วกด “สร้างสรุปการสนทนา” ได้เลยครับ/ค่ะ</em>';
+        }
+
+        function updFscPre() {
+            document.getElementById('fsc-pre-val').textContent =
+                document.getElementById('f-fsc-pre').value;
+        }
+
+        function updFscPost() {
+            const v = parseInt(document.getElementById('f-fsc-post').value);
+            document.getElementById('fsc-post-val').textContent = v;
+            const d = v - S.fscPre;
+            const el = document.getElementById('fsc-delta');
+            if (d > 0) el.textContent = `🌟 ก่อนเริ่ม ${S.fscPre} → ตอนนี้ ${v} : น้องมองเห็นอนาคตชัดขึ้น +${d}!`;
+            else el.textContent = `ก่อนเริ่ม ${S.fscPre} → ตอนนี้ ${v}`;
+        }
+
+        async function makeSummary() {
+            S.fscPost = parseInt(document.getElementById('f-fsc-post').value);
+            updFscPost();
+            const body = document.getElementById('modal-body');
+            body.innerHTML = '<em>⏳ กำลังสร้างสรุป...</em>';
+            _summaryRaw = '';
+            try {
+                const res = await fetch('/api/summary', {
+                    method: 'POST', headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        session_id: S.sessionId, history: S.history,
+                        fsc_pre: S.fscPre, fsc_post: S.fscPost,
+                    }),
+                });
+                const data = await res.json();
+                _summaryRaw = data.summary || '';
+                body.innerHTML = _summaryRaw ? md(_summaryRaw) : 'ไม่สามารถสร้างสรุปได้';
+                document.getElementById('btn-copy').disabled = false;
+            } catch {
+                body.innerHTML = '⚠️ เกิดข้อผิดพลาดในการสร้างสรุป';
+            }
+        }
+
+        function closeModal() {
+            document.getElementById('modal-sum').classList.remove('on');
+        }
+
+        function copySummary() {
+            const text = _summaryRaw || document.getElementById('modal-body').textContent;
+            const btn = document.getElementById('btn-copy');
+            const copy = t => {
+                const ta = document.createElement('textarea');
+                ta.value = t; document.body.appendChild(ta);
+                ta.select(); document.execCommand('copy'); document.body.removeChild(ta);
+            };
+            try {
+                navigator.clipboard.writeText(text).catch(() => copy(text));
+            } catch { copy(text); }
+            btn.textContent = '✅ คัดลอกแล้ว!';
+            showToast('✅ คัดลอกข้อความแล้ว สามารถวางในฟอร์มได้เลย');
+            setTimeout(() => { btn.textContent = '📋 คัดลอกข้อความ'; }, 2500);
+        }
+
+        document.getElementById('modal-sum').addEventListener('click', function (e) {
+            if (e.target === this) closeModal();
+        });
+
+        // ─────────────────────────────────────────
+        // CHAT ACTIONS
+        // ─────────────────────────────────────────
+        function retryLast() {
+            if (S.isStreaming) return;
+            if (S.history.length >= 2 && S.history[S.history.length - 1].role === 'assistant') {
+                S.history.pop();
+                removeLastRow();
+            }
+            if (S.history.length > 0 && S.history[S.history.length - 1].role === 'user') {
+                const lastUser = S.history.pop();
+                removeLastRow();
+                S.msgCount = Math.max(0, S.msgCount - 1);
+                document.getElementById('cinp').value = lastUser.content;
+                sendMsg();
+            }
+        }
+
+        function undoLast() {
+            if (S.isStreaming) return;
+            if (S.history.length >= 2) {
+                if (S.history[S.history.length - 1].role === 'assistant') { S.history.pop(); removeLastRow(); }
+                if (S.history.length > 0 && S.history[S.history.length - 1].role === 'user') {
+                    S.history.pop(); removeLastRow();
+                    S.msgCount = Math.max(0, S.msgCount - 1);
+                }
+                updateCtr(); updateActBtns();
+            }
+        }
+
+        function removeLastRow() {
+            const area = document.getElementById('msgs');
+            const rows = area.querySelectorAll('.mrow, .mstone');
+            if (rows.length > 0) rows[rows.length - 1].remove();
+        }
+
+        function clearChat() {
+            if (S.isStreaming) return;
+            document.getElementById('msgs').innerHTML = '';
+            const greeting = S.history.find(m => m.role === 'assistant');
+            if (greeting) {
+                S.history = [greeting];
+                const mid = addBotBubble(greeting.content);
+                updBubble(mid, greeting.content, false);
+            } else {
+                S.history = [];
+            }
+            S.msgCount = 0; S.msShown = new Set();
+            updateCtr(); updateActBtns();
+            document.getElementById('sug-bar').innerHTML = '<span class="sug-lbl">💡 ถามต่อ:</span>';
+            showToast('🗑️ ล้างการสนทนาแล้ว');
+        }
+
+        function resetAll() {
+            showScr('wizard');
+            S.sessionId = null; S.history = []; S.msgCount = 0; S.msShown = new Set();
+            curStep = 1;
+            [1, 2, 3].forEach(i => {
+                document.getElementById('ws' + i).classList.toggle('on', i === 1);
+                const p = document.getElementById('p' + i);
+                p.classList.toggle('on', i === 1); p.classList.remove('done');
+                p.querySelector('.pstep__c').textContent = i;
+            });
+            ['pl1', 'pl2'].forEach(id => { const l = document.getElementById(id); if (l) l.classList.remove('done'); });
+            const btn = document.getElementById('btn-init');
+            btn.disabled = false; btn.textContent = '✨ พบกับพี่ในอนาคตของฉัน';
+            window.scrollTo({ top: 0 });
+        }
+
+        // ─────────────────────────────────────────
+        // UI STATE HELPERS
+        // ─────────────────────────────────────────
+        function enableInput(ok = true) {
+            document.getElementById('cinp').disabled = !ok;
+            document.getElementById('bsend').disabled = !ok;
+            if (ok) {
+                document.getElementById('ab-clear').disabled = false;
+                document.getElementById('ab-sum').disabled = false;
+                document.getElementById('sb-sum').disabled = false;
+            }
+        }
+
+        function disableInput() {
+            document.getElementById('cinp').disabled = true;
+            document.getElementById('bsend').disabled = true;
+        }
+
+        function updateActBtns() {
+            const has = S.history.length >= 2;
+            document.getElementById('ab-retry').disabled = !has || S.isStreaming;
+            document.getElementById('ab-undo').disabled = !has || S.isStreaming;
+            document.getElementById('ab-clear').disabled = S.isStreaming;
+        }
+
+        function updateCtr() {
+            const rem = S.MAX - S.msgCount;
+            document.getElementById('ctr-n').textContent = `${rem}/${S.MAX}`;
+            const pct = (rem / S.MAX) * 100;
+            const fill = document.getElementById('ctr-bar');
+            fill.style.width = pct + '%';
+            fill.style.background = rem <= 3 ? '#EF4444' : rem <= 7 ? '#F59E0B' : '#22C55E';
+        }
+
+        function scrollMsgs() {
+            const a = document.getElementById('msgs');
+            setTimeout(() => { a.scrollTop = a.scrollHeight; }, 50);
+        }
+
+        // ─────────────────────────────────────────
+        // UTILITIES
+        // ─────────────────────────────────────────
+        function now() {
+            return new Date().toLocaleTimeString('th-TH', { hour: '2-digit', minute: '2-digit' });
+        }
+
+        function esc(t) {
+            return String(t)
+                .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+        }
+
+        // ─────────────────────────────────────────
+        // MARKDOWN RENDERER (XSS-safe)
+        // Strategy: extract code → escape ALL html → apply markdown
+        //           on escaped text → restore escaped code. No raw HTML
+        //           from the model can ever reach the DOM.
+        // ─────────────────────────────────────────
+        function md(text) {
+            if (!text) return '';
+            let s = String(text).replace(/\r\n?/g, '\n');
+
+            // 1) Extract fenced + inline code (store raw; escaped on restore)
+            const blocks = [];
+            s = s.replace(/```[\w-]*\n?([\s\S]*?)```/g, (_, code) => {
+                blocks.push(code.replace(/\n+$/, ''));
+                return `\u0000B${blocks.length - 1}\u0000`;
+            });
+            const inls = [];
+            s = s.replace(/`([^`\n]+)`/g, (_, code) => {
+                inls.push(code);
+                return `\u0000I${inls.length - 1}\u0000`;
+            });
+
+            // 2) Escape ALL remaining HTML (everything from the model)
+            s = s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
+            // 3) Headings
+            s = s.replace(/^######\s+(.*)$/gm, '<h6>$1</h6>')
+                .replace(/^#####\s+(.*)$/gm, '<h5>$1</h5>')
+                .replace(/^####\s+(.*)$/gm, '<h4>$1</h4>')
+                .replace(/^###\s+(.*)$/gm, '<h3>$1</h3>')
+                .replace(/^##\s+(.*)$/gm, '<h2>$1</h2>')
+                .replace(/^#\s+(.*)$/gm, '<h1>$1</h1>');
+
+            // 4) Blockquote (note: '>' is already escaped to &gt;)
+            s = s.replace(/^&gt;\s+(.*)$/gm, '<blockquote>$1</blockquote>');
+
+            // 5) Horizontal rule
+            s = s.replace(/^\s*---+\s*$/gm, '<hr>');
+
+            // 6) Lists — group consecutive items
+            s = s.replace(/(?:^[ \t]*[*\-]\s+.*(?:\n|$))+/gm, m => {
+                const items = m.trim().split('\n')
+                    .map(l => '<li>' + l.replace(/^[ \t]*[*\-]\s+/, '') + '</li>').join('');
+                return '<ul>' + items + '</ul>\n';
+            });
+            s = s.replace(/(?:^[ \t]*\d+\.\s+.*(?:\n|$))+/gm, m => {
+                const items = m.trim().split('\n')
+                    .map(l => '<li>' + l.replace(/^[ \t]*\d+\.\s+/, '') + '</li>').join('');
+                return '<ol>' + items + '</ol>\n';
+            });
+
+            // 7) Inline: bold, italic, strikethrough, links (http/https only)
+            s = s.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+                .replace(/__([^_]+)__/g, '<strong>$1</strong>')
+                .replace(/(^|[^*])\*([^*\n]+)\*/g, '$1<em>$2</em>')
+                .replace(/~~([^~]+)~~/g, '<del>$1</del>')
+                .replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g,
+                    '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>');
+
+            // 8) Paragraph / line breaks
+            s = s.replace(/\n{2,}/g, '\u0001').replace(/\n/g, '<br>').replace(/\u0001/g, '<br><br>');
+
+            // 9) Tidy stray <br> around block elements
+            s = s.replace(/<br>\s*(<(?:h[1-6]|ul|ol|li|blockquote|hr|pre))/g, '$1')
+                .replace(/(<\/(?:h[1-6]|ul|ol|blockquote|pre)>)\s*<br>/g, '$1');
+
+            // 10) Restore inline code (escaped content)
+            s = s.replace(/\u0000I(\d+)\u0000/g, (_, i) => '<code>' + esc(inls[+i]) + '</code>');
+
+            // 11) Restore fenced code blocks (escaped content)
+            s = s.replace(/\u0000B(\d+)\u0000/g, (_, i) =>
+                '<pre><code>' + esc(blocks[+i]) + '</code></pre>');
+
+            return s;
+        }
+
+        function showToast(msg, ms = 2800) {
+            const t = document.getElementById('toast');
+            t.textContent = msg; t.classList.add('on');
+            setTimeout(() => t.classList.remove('on'), ms);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+{
+ "captured_at": "2026-08-04T15:31:28Z",
+ "hf_metadata": {
+  "_id": "6a4be3325d083f6eef740c06",
+  "author": "Sahil1Khan",
+  "cardData": {
+   "app_file": "app.py",
+   "colorFrom": "blue",
+   "colorTo": "indigo",
+   "emoji": "🏢",
+   "pinned": false,
+   "python_version": "3.13",
+   "sdk": "gradio",
+   "sdk_version": "6.19.0",
+   "title": "Caluo"
+  },
+  "createdAt": "2026-07-06T17:17:38.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://sahil1khan-caluo.hf.space",
+  "id": "Sahil1Khan/Caluo",
+  "lastModified": "2026-07-06T17:22:34.000Z",
+  "likes": 0,
+  "private": false,
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "sahil1khan-caluo.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": null,
+    "requested": "cpu-basic"
+   },
+   "replicas": {
+    "requested": 1
+   },
+   "stage": "SLEEPING"
+  },
+  "sdk": "gradio",
+  "sha": "773fd267f4d4eca8c710f40e54b839f062849cd7",
+  "siblings": [
+   {
+    "rfilename": ".gitattributes"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "__pycache__/calculator.cpython-312.pyc"
+   },
+   {
+    "rfilename": "__pycache__/converter_ui.cpython-312.pyc"
+   },
+   {
+    "rfilename": "__pycache__/length.cpython-312.pyc"
+   },
+   {
+    "rfilename": "__pycache__/main.cpython-312.pyc"
+   },
+   {
+    "rfilename": "__pycache__/mode_manager.cpython-312.pyc"
+   },
+   {
+    "rfilename": "__pycache__/ui.cpython-312.pyc"
+   },
+   {
+    "rfilename": "app.py"
+   },
+   {
+    "rfilename": "calculator.py"
+   },
+   {
+    "rfilename": "converter_ui.py"
+   },
+   {
+    "rfilename": "length.py"
+   },
+   {
+    "rfilename": "main.py"
+   },
+   {
+    "rfilename": "mode_manager.py"
+   },
+   {
+    "rfilename": "requirements.txt"
+   },
+   {
+    "rfilename": "ui.py"
+   }
+  ],
+  "subdomain": "sahil1khan-caluo",
+  "tags": [
+   "gradio",
+   "region:us"
+  ],
+  "usedStorage": 0
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "Sahil1Khan/Caluo",
+ "repo_type": "spaces",
+ "sha": "773fd267f4d4eca8c710f40e54b839f062849cd7",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/Sahil1Khan/Caluo"
+}

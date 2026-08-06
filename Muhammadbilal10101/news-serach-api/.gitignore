@@ -1,0 +1,2 @@
+# Local docker test artifacts only
+*.log

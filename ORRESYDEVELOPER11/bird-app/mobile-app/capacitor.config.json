@@ -1,0 +1,25 @@
+{
+  "appId": "tz.birdfinder.app",
+  "appName": " Tanzania Bird Finder",
+  "webDir": "www",
+  "bundledWebRuntime": false,
+  "server": {
+    "url": "https://orresydeveloper11-bird-app.hf.space",
+    "cleartext": false,
+    "allowNavigation": ["orresydeveloper11-bird-app.hf.space"]
+  },
+  "android": {
+    "buildOptions": {
+      "keystorePath": null,
+      "keystoreAlias": null
+    }
+  },
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 2000,
+      "backgroundColor": "#1a3a2a",
+      "androidSplashResourceName": "splash",
+      "showSpinner": false
+    }
+  }
+}

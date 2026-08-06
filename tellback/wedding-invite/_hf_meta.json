@@ -1,0 +1,23 @@
+{
+ "captured_at": "2026-08-04T17:09:00Z",
+ "hf_metadata": {
+  "sha": "1742e049b96ad8e9c5757e5aa22f3e4102f84c33"
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "tellback/wedding-invite",
+ "repo_type": "spaces",
+ "sha": "1742e049b96ad8e9c5757e5aa22f3e4102f84c33",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/tellback/wedding-invite"
+}

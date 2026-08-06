@@ -1,0 +1,16 @@
+{
+  "fetched_at": "2026-06-21T12:48:25Z",
+  "date_range": "2026-02-21 to 2026-06-21",
+  "counts": {
+    "play_store": 1409,
+    "app_store": 250,
+    "reddit": 12,
+    "spotify_community": 91,
+    "trustpilot": 200,
+    "youtube": 92
+  },
+  "total": 2054,
+  "status": "success",
+  "errors": [],
+  "duration_seconds": 1.98
+}

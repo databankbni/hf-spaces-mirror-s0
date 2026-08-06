@@ -1,0 +1,132 @@
+{
+ "captured_at": "2026-08-04T13:22:16Z",
+ "hf_metadata": {
+  "_id": "6a0c2a76e8c5e11a87d2d783",
+  "author": "ArshAnsari",
+  "cardData": {
+   "app_file": "app.py",
+   "colorFrom": "blue",
+   "colorTo": "indigo",
+   "emoji": "📖",
+   "pinned": false,
+   "sdk": "gradio",
+   "sdk_version": "5.33.1",
+   "title": "NextRead"
+  },
+  "createdAt": "2026-05-19T09:16:38.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://arshansari-nextread.hf.space",
+  "id": "ArshAnsari/NextRead",
+  "lastModified": "2026-07-07T11:03:24.000Z",
+  "likes": 0,
+  "private": false,
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "arshansari-nextread.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": null,
+    "requested": "cpu-basic"
+   },
+   "replicas": {
+    "requested": 1
+   },
+   "stage": "SLEEPING"
+  },
+  "sdk": "gradio",
+  "sha": "f8505e7b04ce330365e9606f0462e717274e6396",
+  "siblings": [
+   {
+    "rfilename": ".gitattributes"
+   },
+   {
+    "rfilename": ".gitignore"
+   },
+   {
+    "rfilename": "DEMO/DEMO.gif"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "app.py"
+   },
+   {
+    "rfilename": "books_cleaned.csv"
+   },
+   {
+    "rfilename": "books_with_categories.csv"
+   },
+   {
+    "rfilename": "books_with_emotions.csv"
+   },
+   {
+    "rfilename": "build_vector_db.py"
+   },
+   {
+    "rfilename": "chroma_db/b33ef57d-c001-4522-901f-68629192fd6c/data_level0.bin"
+   },
+   {
+    "rfilename": "chroma_db/b33ef57d-c001-4522-901f-68629192fd6c/header.bin"
+   },
+   {
+    "rfilename": "chroma_db/b33ef57d-c001-4522-901f-68629192fd6c/index_metadata.pickle"
+   },
+   {
+    "rfilename": "chroma_db/b33ef57d-c001-4522-901f-68629192fd6c/length.bin"
+   },
+   {
+    "rfilename": "chroma_db/b33ef57d-c001-4522-901f-68629192fd6c/link_lists.bin"
+   },
+   {
+    "rfilename": "chroma_db/chroma.sqlite3"
+   },
+   {
+    "rfilename": "cover-not-found.jpg"
+   },
+   {
+    "rfilename": "data-exploration.ipynb"
+   },
+   {
+    "rfilename": "requirements.txt"
+   },
+   {
+    "rfilename": "requirements_conda.txt"
+   },
+   {
+    "rfilename": "sentiment-analysis.ipynb"
+   },
+   {
+    "rfilename": "tagged_description.txt"
+   },
+   {
+    "rfilename": "text-classification.ipynb"
+   },
+   {
+    "rfilename": "vector-search.ipynb"
+   }
+  ],
+  "subdomain": "arshansari-nextread",
+  "tags": [
+   "gradio",
+   "region:us"
+  ],
+  "usedStorage": 111714622
+ },
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "ArshAnsari/NextRead",
+ "repo_type": "spaces",
+ "sha": "f8505e7b04ce330365e9606f0462e717274e6396",
+ "web_url": "https://huggingface.co/spaces/ArshAnsari/NextRead"
+}

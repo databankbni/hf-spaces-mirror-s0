@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MLO — Your AI Waiter</title>
+  <style>
+    :root {
+      --bg: #faf9f6;
+      --surface: #ffffff;
+      --ink: #1a1a17;
+      --ink-soft: #6b6a64;
+      --accent: #15803d;
+      --accent-soft: #ecf7ef;
+      --border: #e8e6df;
+      --user-bubble: #1a1a17;
+      --shadow: 0 1px 3px rgba(0,0,0,.06), 0 4px 14px rgba(0,0,0,.04);
+      --radius: 18px;
+    }
+    * { box-sizing: border-box; margin: 0; }
+    html, body { height: 100%; }
+    body {
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      display: flex;
+      flex-direction: column;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Top bar: minimal ─────────────────────────── */
+    header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 14px 20px;
+    }
+    .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 16px; letter-spacing: .2px; }
+    .brand .logo {
+      width: 34px; height: 34px; border-radius: 50%;
+      background: var(--accent); color: #fff;
+      display: flex; align-items: center; justify-content: center; font-size: 17px;
+    }
+    .newchat {
+      border: 1px solid var(--border); background: var(--surface); color: var(--ink-soft);
+      border-radius: 999px; padding: 7px 14px; font-size: 13px; cursor: pointer;
+      transition: all .15s;
+    }
+    .newchat:hover { color: var(--accent); border-color: var(--accent); }
+
+    /* ── Chat area ────────────────────────────────── */
+    #scroll { flex: 1; overflow-y: auto; }
+    #chat { max-width: 760px; margin: 0 auto; padding: 8px 20px 24px; display: flex; flex-direction: column; gap: 18px; }
+
+    /* Empty-state hero */
+    #hero { text-align: center; padding: 9vh 24px 0; }
+    #hero .wave { font-size: 44px; }
+    #hero h1 { font-size: 28px; margin: 14px 0 8px; font-weight: 700; }
+    #hero p { color: var(--ink-soft); font-size: 15.5px; line-height: 1.6; max-width: 480px; margin: 0 auto; }
+    .starters { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 26px; }
+    .starter {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 14px;
+      padding: 12px 16px; font-size: 14px; cursor: pointer; color: var(--ink);
+      box-shadow: var(--shadow); transition: all .15s;
+    }
+    .starter:hover { border-color: var(--accent); background: var(--accent-soft); }
+
+    /* Messages */
+    .msg { display: flex; flex-direction: column; max-width: 92%; }
+    .msg.user { align-self: flex-end; align-items: flex-end; }
+    .msg.ai { align-self: flex-start; align-items: flex-start; }
+    .bubble {
+      padding: 13px 17px; border-radius: var(--radius);
+      font-size: 15px; line-height: 1.65; white-space: pre-wrap;
+    }
+    .msg.user .bubble { background: var(--user-bubble); color: #fff; border-bottom-right-radius: 6px; }
+    .msg.ai .bubble { background: var(--surface); border: 1px solid var(--border); box-shadow: var(--shadow); border-bottom-left-radius: 6px; }
+
+    /* Typing dots */
+    .dots { display: inline-flex; gap: 5px; padding: 6px 2px; }
+    .dots span { width: 7px; height: 7px; border-radius: 50%; background: var(--ink-soft); opacity: .4; animation: blink 1.2s infinite; }
+    .dots span:nth-child(2) { animation-delay: .2s; }
+    .dots span:nth-child(3) { animation-delay: .4s; }
+    @keyframes blink { 0%,80%,100% { opacity: .25; } 40% { opacity: .9; } }
+
+    /* Food cards */
+    .cards { display: flex; gap: 10px; overflow-x: auto; padding: 10px 2px 4px; max-width: 100%; scrollbar-width: thin; }
+    .card {
+      min-width: 148px; max-width: 148px; background: var(--surface);
+      border: 1px solid var(--border); border-radius: 14px; overflow: hidden;
+      flex-shrink: 0; cursor: pointer; box-shadow: var(--shadow); transition: transform .15s;
+    }
+    .card:hover { transform: translateY(-2px); }
+    .card img, .card .noimg { width: 100%; height: 86px; object-fit: cover; display: block; background: var(--accent-soft); }
+    .card .noimg { display: flex; align-items: center; justify-content: center; font-size: 30px; }
+    .card .cbody { padding: 9px 11px; }
+    .card .cname { font-size: 13px; font-weight: 600; line-height: 1.3; }
+    .card .cinfo { font-size: 11.5px; color: var(--ink-soft); margin-top: 3px; }
+    .card .soldout { color: #dc2626; font-size: 11px; font-weight: 700; margin-top: 2px; }
+
+    /* Order card */
+    .order-card {
+      margin-top: 10px; background: var(--accent-soft); border: 1px solid #bbe3c5;
+      border-radius: 14px; padding: 14px 16px; max-width: 420px; box-shadow: var(--shadow);
+    }
+    .order-card .otitle { font-weight: 700; font-size: 14px; color: var(--accent); display: flex; align-items: center; gap: 7px; }
+    .order-card .oline { display: flex; justify-content: space-between; font-size: 13.5px; padding: 3px 0; color: var(--ink); }
+    .order-card .ototal { display: flex; justify-content: space-between; font-weight: 700; font-size: 14px; border-top: 1px dashed #bbe3c5; margin-top: 7px; padding-top: 7px; }
+    .order-card .ostatus { font-size: 12px; color: var(--ink-soft); margin-top: 6px; }
+
+    /* Follow-up chips */
+    .suggestions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+    .chip {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 999px;
+      padding: 7px 14px; font-size: 13px; cursor: pointer; color: var(--ink-soft); transition: all .15s;
+    }
+    .chip:hover { color: var(--accent); border-color: var(--accent); background: var(--accent-soft); }
+
+    /* ── Composer ─────────────────────────────────── */
+    footer { padding: 10px 20px 22px; }
+    .composer {
+      max-width: 760px; margin: 0 auto; display: flex; align-items: flex-end; gap: 10px;
+      background: var(--surface); border: 1px solid var(--border); border-radius: 26px;
+      padding: 8px 8px 8px 20px; box-shadow: var(--shadow);
+    }
+    .composer:focus-within { border-color: var(--accent); }
+    #input {
+      flex: 1; border: none; outline: none; resize: none; background: transparent;
+      font: inherit; font-size: 15px; line-height: 1.5; max-height: 130px; padding: 8px 0;
+      color: var(--ink);
+    }
+    #send {
+      width: 40px; height: 40px; border-radius: 50%; border: none; cursor: pointer;
+      background: var(--accent); color: #fff; font-size: 17px; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center; transition: opacity .15s;
+    }
+    #send:disabled { opacity: .35; cursor: default; }
+    .hint { text-align: center; color: var(--ink-soft); font-size: 11.5px; margin-top: 10px; }
+
+    @media (max-width: 560px) {
+      #hero h1 { font-size: 22px; }
+      .msg { max-width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand"><div class="logo">🍽️</div> MLO</div>
+    <button class="newchat" id="reset">✦ New chat</button>
+  </header>
+
+  <div id="scroll">
+    <div id="hero">
+      <div class="wave">👋</div>
+      <h1>Karibu! Mimi ni <span style="color:var(--accent)">MLO</span></h1>
+      <p>Your personal AI waiter. Niulize chochote kuhusu menyu — vyakula, bei, calories, mzio (allergies), au nikupendekezee kitu kitamu. English au Kiswahili, zote zinakubalika.</p>
+      <div class="starters" id="starters"></div>
+    </div>
+    <div id="chat"></div>
+  </div>
+
+  <footer>
+    <div class="composer">
+      <textarea id="input" rows="1" placeholder="Andika ujumbe… / Type a message…"></textarea>
+      <button id="send" title="Send">➤</button>
+    </div>
+    <div class="hint">MLO anaelezea na kushauri — order unakamilisha kwenye Cart</div>
+  </footer>
+
+  <script>
+    // ── Setup: slug & API come from the URL, no visible settings ──
+    const qs = new URLSearchParams(location.search);
+    const SLUG = qs.get('slug') || qs.get('restaurant') || 'bravo-coco-beach';
+    const API = (qs.get('api') || location.origin).replace(/\/+$/, '');
+
+    const chat = document.getElementById('chat');
+    const scrollBox = document.getElementById('scroll');
+    const input = document.getElementById('input');
+    const sendBtn = document.getElementById('send');
+    const hero = document.getElementById('hero');
+    let sessionId = null;
+    let busy = false;
+
+    const STARTERS = [
+      'Nipendekezee chakula kitamu',
+      'I want something healthy',
+      'Kuna chakula gani cha pilipili?',
+      'What are your cheapest meals?',
+    ];
+    const startersEl = document.getElementById('starters');
+    STARTERS.forEach((s) => {
+      const b = document.createElement('div');
+      b.className = 'starter';
+      b.textContent = s;
+      b.onclick = () => sendMessage(s);
+      startersEl.appendChild(b);
+    });
+
+    function scrollDown() { scrollBox.scrollTop = scrollBox.scrollHeight; }
+
+    function addUser(text) {
+      hero.style.display = 'none';
+      const m = document.createElement('div');
+      m.className = 'msg user';
+      m.innerHTML = '<div class="bubble"></div>';
+      m.querySelector('.bubble').textContent = text;
+      chat.appendChild(m);
+      scrollDown();
+    }
+
+    function addTyping() {
+      const m = document.createElement('div');
+      m.className = 'msg ai';
+      m.innerHTML = '<div class="bubble"><span class="dots"><span></span><span></span><span></span></span></div>';
+      chat.appendChild(m);
+      scrollDown();
+      return m;
+    }
+
+    // Escape HTML, then render **dish names** as bold.
+    function renderReply(text) {
+      const esc = text
+        .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+      return esc.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+    }
+
+    function addAi(data) {
+      const m = document.createElement('div');
+      m.className = 'msg ai';
+      m.innerHTML = '<div class="bubble"></div>';
+      m.querySelector('.bubble').innerHTML = renderReply(data.reply);
+
+      if (data.results && data.results.length) {
+        const row = document.createElement('div');
+        row.className = 'cards';
+        data.results.slice(0, 6).forEach((it) => {
+          const card = document.createElement('div');
+          card.className = 'card';
+          const img = it.image
+            ? `<img src="${it.image}" alt="" loading="lazy" onerror="this.outerHTML='<div class=noimg>🍽️</div>'">`
+            : '<div class="noimg">🍽️</div>';
+          const price = it.price != null ? 'TZS ' + it.price.toLocaleString() : '';
+          const cal = it.calories != null ? it.calories + ' cal' : '';
+          const sold = it.is_available ? '' : '<div class="soldout">Imeisha leo</div>';
+          card.innerHTML = `${img}<div class="cbody"><div class="cname"></div><div class="cinfo">${[price, cal].filter(Boolean).join(' · ')}</div>${sold}</div>`;
+          card.querySelector('.cname').textContent = it.name;
+          card.onclick = () => sendMessage('Niambie kuhusu ' + it.name);
+          row.appendChild(card);
+        });
+        m.appendChild(row);
+      }
+
+      // Cart card: items the waiter added to the guest's cart
+      if (data.cart && data.cart.items && data.cart.items.length) {
+        const o = data.cart;
+        const card = document.createElement('div');
+        card.className = 'order-card';
+        let html = `<div class="otitle">🛒 Cart</div>`;
+        o.items.forEach((it) => {
+          const sub = it.subtotal != null ? 'TZS ' + it.subtotal.toLocaleString() : '';
+          html += `<div class="oline"><span>${it.quantity}× ${it.name}</span><span>${sub}</span></div>`;
+        });
+        if (o.total != null) {
+          html += `<div class="ototal"><span>Jumla / Total</span><span>TZS ${o.total.toLocaleString()}</span></div>`;
+        }
+        html += `<div class="ostatus">Fungua sehemu ya Cart kukamilisha order yako</div>`;
+        card.innerHTML = html;
+        m.appendChild(card);
+      }
+
+      if (data.suggestions && data.suggestions.length) {
+        const s = document.createElement('div');
+        s.className = 'suggestions';
+        data.suggestions.slice(0, 2).forEach((sug) => {
+          const c = document.createElement('div');
+          c.className = 'chip';
+          c.textContent = sug;
+          c.onclick = () => sendMessage(sug);
+          s.appendChild(c);
+        });
+        m.appendChild(s);
+      }
+      chat.appendChild(m);
+      scrollDown();
+    }
+
+    function addNote(text) {
+      const m = document.createElement('div');
+      m.className = 'msg ai';
+      m.innerHTML = '<div class="bubble"></div>';
+      m.querySelector('.bubble').textContent = text;
+      chat.appendChild(m);
+      scrollDown();
+    }
+
+    async function sendMessage(text) {
+      const message = (text ?? input.value).trim();
+      if (!message || busy) return;
+      busy = true; sendBtn.disabled = true;
+      input.value = ''; autosize();
+      addUser(message);
+      const typing = addTyping();
+
+      try {
+        const body = { restaurantSlug: SLUG, message };
+        if (sessionId) body.sessionId = sessionId;
+        const res = await fetch(API + '/api/ai/chat', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(body),
+        });
+        const data = await res.json();
+        typing.remove();
+        if (data.sessionId) sessionId = data.sessionId;
+        if (data.reply) addAi(data);
+        else addNote('Samahani, kuna hitilafu kidogo. Tafadhali jaribu tena. 🙏');
+      } catch {
+        typing.remove();
+        addNote('Samahani, siwezi kufika jikoni kwa sasa. Tafadhali jaribu tena baadaye. 🙏');
+      } finally {
+        busy = false; sendBtn.disabled = false; input.focus();
+      }
+    }
+
+    function resetChat() {
+      sessionId = null;
+      chat.innerHTML = '';
+      hero.style.display = '';
+      input.focus();
+    }
+
+    function autosize() {
+      input.style.height = 'auto';
+      input.style.height = Math.min(input.scrollHeight, 130) + 'px';
+    }
+
+    sendBtn.onclick = () => sendMessage();
+    document.getElementById('reset').onclick = resetChat;
+    input.addEventListener('input', autosize);
+    input.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMessage(); }
+    });
+    input.focus();
+  </script>
+</body>
+</html>

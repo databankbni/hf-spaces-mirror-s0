@@ -1,0 +1,33 @@
+# API Keys and Secrets
+.env
+
+# Python Environment
+venv/
+.venv/
+env/
+*.py[cod]
+__pycache__/
+.pytest_cache/
+
+
+
+# Evaluation Logs and Debugging
+evaluation_debug/
+temp_error.txt
+error.txt
+data/test_set/evaluation_report.json
+
+# IDE Settings
+.vscode/
+.idea/
+
+# OS Junk
+.DS_Store
+Thumbs.db
+
+.vercel
+
+# Image Artifacts
+*.png
+*.jpg
+*.jpeg

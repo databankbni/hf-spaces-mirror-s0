@@ -1,0 +1,23 @@
+{
+ "captured_at": "2026-08-04T16:59:38Z",
+ "hf_metadata": {
+  "sha": "19f1f23036d7b69a9fcbffc2cdbd1be1b2c2f38e"
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "shrishtisonkar/codesleuth-api",
+ "repo_type": "spaces",
+ "sha": "19f1f23036d7b69a9fcbffc2cdbd1be1b2c2f38e",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/shrishtisonkar/codesleuth-api"
+}

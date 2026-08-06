@@ -1,0 +1,13 @@
+.env
+__pycache__/
+*.pyc
+data/index/
+data/raw/
+data/output/reviews_raw.jsonl
+data/output/reviews_clean.jsonl
+data/output/reviews_broad.jsonl
+data/output/chunks.jsonl
+node_modules/
+.next/
+.env.local
+models/

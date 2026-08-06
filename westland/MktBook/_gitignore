@@ -1,0 +1,38 @@
+# Environment / secrets
+.env
+.env_*
+!.env_*.example
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+venv_5/
+
+# R history
+.Rhistory
+
+# Build artifacts
+build/
+dist/
+release/
+installer/
+*.spec
+*.exe
+*.zip
+*.tar.gz
+
+# Database files (keep schema, not live data)
+*.db
+*.db-shm
+*.db-wal
+
+# Generated content
+mktbook_4/generated_images/
+
+# OS
+.DS_Store
+Thumbs.db
+.vs/

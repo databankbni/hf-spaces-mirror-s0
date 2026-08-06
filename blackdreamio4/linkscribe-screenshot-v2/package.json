@@ -1,0 +1,13 @@
+{
+  "name": "hf-puppeteer-screenshot",
+  "version": "1.0.0",
+  "description": "Puppeteer screenshot app for Hugging Face Spaces",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.22.2",
+    "puppeteer": "^22.12.0"
+  }
+}

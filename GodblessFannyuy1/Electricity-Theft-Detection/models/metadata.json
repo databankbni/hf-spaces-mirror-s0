@@ -1,0 +1,28 @@
+{
+    "model_name": "LightGBM",
+    "features": [
+        "mean_consumption",
+        "std_consumption",
+        "min_consumption",
+        "max_consumption",
+        "zero_consumption_ratio",
+        "missing_consumption_ratio",
+        "volatility",
+        "sudden_drops"
+    ],
+    "imbalance_ratio": 10.720954356846473,
+    "test_metrics": {
+        "accuracy": 0.7568141592920354,
+        "roc_auc": 0.7850999411921717,
+        "confusion_matrix": [
+            [
+                5935,
+                1817
+            ],
+            [
+                244,
+                479
+            ]
+        ]
+    }
+}

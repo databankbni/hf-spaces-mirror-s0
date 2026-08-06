@@ -1,0 +1,167 @@
+{% extends "base.html" %}
+{% set active_page = 'bots' %}
+{% block title %}Bots — Workout #{{ workout.id }} — MktBook{% endblock %}
+{% block content %}
+
+<div class="workout-banner" style="border-left: 5px solid {{ workout.color }};">
+    <span class="workout-banner-icon">{{ workout.icon }}</span>
+    <span class="workout-banner-num" style="color:{{ workout.color }};">Workout #{{ workout.id }}</span>
+    <strong>{{ workout.title }}</strong>
+    <span class="muted"> &mdash; {{ workout.metric }}</span>
+</div>
+
+<hgroup>
+    <h1>Bots</h1>
+    <p>{{ bots|length }} registered bot{{ 's' if bots|length != 1 else '' }} for Workout #{{ workout.id }}</p>
+</hgroup>
+
+{% if workout.id == 5 %}
+<article style="border-left: 4px solid {{ workout.color }}; padding: 1rem 1.25rem; margin-bottom: 1rem;">
+    <strong>Choose your Ecosystem before registering a new bot:</strong>
+    <div style="display:flex; gap:2rem; margin-top:0.6rem; align-items:center; flex-wrap:wrap;">
+        <label style="display:flex; align-items:center; gap:0.4rem; cursor:pointer; font-weight:600;">
+            <input type="radio" name="eco_choice" id="eco_a" value="A"
+                   style="accent-color:#3d9eff; width:1.1rem; height:1.1rem;">
+            <mark style="background:#3d9eff; color:#fff; padding:0.15rem 0.6rem; border-radius:0.3rem;">Ecosystem A</mark>
+        </label>
+        <label style="display:flex; align-items:center; gap:0.4rem; cursor:pointer; font-weight:600;">
+            <input type="radio" name="eco_choice" id="eco_b" value="B"
+                   style="accent-color:#10b981; width:1.1rem; height:1.1rem;">
+            <mark style="background:#10b981; color:#fff; padding:0.15rem 0.6rem; border-radius:0.3rem;">Ecosystem B</mark>
+        </label>
+        <a id="new-bot-btn" href="#" role="button"
+           aria-disabled="true"
+           style="background:#aaa; border-color:#aaa; cursor:not-allowed; opacity:0.55; pointer-events:none;">
+            {{ workout.icon }} Register New Bot
+        </a>
+    </div>
+    <small style="color:var(--pico-muted-color, #888); display:block; margin-top:0.4rem;">
+        You must select one ecosystem. This selection overrides all other assignments.
+    </small>
+</article>
+<script>
+(function () {
+    var radios = document.querySelectorAll('input[name="eco_choice"]');
+    var btn = document.getElementById('new-bot-btn');
+    radios.forEach(function (r) {
+        r.addEventListener('change', function () {
+            btn.href = '/w/5/bots/new?ecosystem=' + r.value;
+            btn.style.background = r.value === 'A' ? '#3d9eff' : '#10b981';
+            btn.style.borderColor = r.value === 'A' ? '#3d9eff' : '#10b981';
+            btn.style.cursor = 'pointer';
+            btn.style.opacity = '1';
+            btn.style.pointerEvents = 'auto';
+            btn.removeAttribute('aria-disabled');
+        });
+    });
+})();
+</script>
+{% else %}
+<a href="/w/{{ workout.id }}/bots/new" role="button" style="background:{{ workout.color }}; border-color:{{ workout.color }};">
+    {{ workout.icon }} Register New Bot
+</a>
+{% endif %}
+
+{% if bots %}
+<table>
+    <thead>
+        <tr>
+            <th>Bot Name</th>
+            <th>Student</th>
+            <th>Status</th>
+            <th>Messages</th>
+            <th>Conversations</th>
+            {% if workout.id == 1 %}
+            <th>Guardrails</th>
+            <th>RAG Strategy</th>
+            {% elif workout.id == 2 %}
+            <th>Engagement Rate</th>
+            <th>Human Pulls</th>
+            {% elif workout.id == 3 %}
+            <th>Avg Turns</th>
+            <th>Deal Activity</th>
+            {% elif workout.id == 4 %}
+            <th>Style Set</th>
+            <th>IP Rules</th>
+            {% elif workout.id == 5 %}
+            <th>Ecosystem</th>
+            <th>Hypothesis</th>
+            {% endif %}
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for bot in bots %}
+        <tr>
+            <td><a href="/w/{{ workout.id }}/bots/{{ bot.id }}">{{ bot.bot_name }}</a></td>
+            <td>{{ bot.student_name }}</td>
+            <td>{% if bot.is_active %}<mark>Active</mark>{% else %}Inactive{% endif %}</td>
+            <td>{{ stats[bot.id].messages }}</td>
+            <td>{{ stats[bot.id].conversations }}</td>
+
+            {% if workout.id == 1 %}
+            <td>{% if bot.behavior_rules %}<mark style="background:var(--pico-ins-color)">Set</mark>{% else %}<small>Missing</small>{% endif %}</td>
+            <td>{% if bot.objective %}<mark>Configured</mark>{% else %}<small>Not set</small>{% endif %}</td>
+
+            {% elif workout.id == 2 %}
+            {% set eng = (stats[bot.id].messages / stats[bot.id].conversations) if stats[bot.id].conversations > 0 else 0 %}
+            <td>{{ "%.1f"|format(eng) }} msg/conv</td>
+            <td>{{ stats[bot.id].human_interactions }}</td>
+
+            {% elif workout.id == 3 %}
+            {% set avg = (stats[bot.id].messages / stats[bot.id].conversations) if stats[bot.id].conversations > 0 else 0 %}
+            <td>{{ "%.1f"|format(avg) }}</td>
+            <td>{% if avg >= 5 %}<mark>🔥 Active</mark>{% elif avg >= 3 %}<mark>Warming</mark>{% else %}<small>Cold</small>{% endif %}</td>
+
+            {% elif workout.id == 4 %}
+            <td>{% if bot.personality %}<mark>Set</mark>{% else %}<small>Missing</small>{% endif %}</td>
+            <td>{% if bot.behavior_rules %}<mark style="background:var(--pico-ins-color)">Configured</mark>{% else %}<small>Missing</small>{% endif %}</td>
+
+            {% elif workout.id == 5 %}
+            {% set _rules = (bot.behavior_rules or '').strip() %}
+            {% set _rtag = _rules[:12].upper() %}
+            {% if _rtag == 'ECO_OVERRIDE' %}
+                {% set in_eco_a = _rules[13:14].upper() == 'A' %}
+            {% else %}
+            {% set _p = (bot.personality or '').lower() %}
+            {% set _o = (bot.objective or '').lower() %}
+            {% set _r = _rules.lower() %}
+            {% set _pa = ('ecosystem a' in _p or 'eco a' in _p) and ('ecosystem b' not in _p and 'eco b' not in _p) %}
+            {% set _oa = ('ecosystem a' in _o or 'eco a' in _o) and ('ecosystem b' not in _o and 'eco b' not in _o) %}
+            {% set _ra = ('ecosystem a' in _r or 'eco a' in _r) and ('ecosystem b' not in _r and 'eco b' not in _r) %}
+            {% set _pb = ('ecosystem b' in _p or 'eco b' in _p) and ('ecosystem a' not in _p and 'eco a' not in _p) %}
+            {% set _ob = ('ecosystem b' in _o or 'eco b' in _o) and ('ecosystem a' not in _o and 'eco a' not in _o) %}
+            {% set _rb = ('ecosystem b' in _r or 'eco b' in _r) and ('ecosystem a' not in _r and 'eco a' not in _r) %}
+            {% set in_eco_a = (_pa or _oa or _ra) and not (_pb or _ob or _rb) %}
+            {% endif %}
+            <td>
+                {% if in_eco_a %}
+                <mark style="background:#3d9eff; color:#fff;">Ecosystem A</mark>
+                {% else %}
+                <mark style="background:#10b981; color:#fff;">Ecosystem B</mark>
+                {% endif %}
+            </td>
+            <td><small>{{ bot.objective[:60] if bot.objective else '—' }}{% if bot.objective|length > 60 %}…{% endif %}</small></td>
+            {% endif %}
+
+            <td>
+                <a href="/w/{{ workout.id }}/bots/{{ bot.id }}/edit">Edit</a>
+                &nbsp;|&nbsp;
+                {% if authenticated %}
+                <a href="#" style="color:var(--pico-del-color, #c00);"
+                   onclick="event.preventDefault(); if(confirm('Delete {{ bot.bot_name }} and all its messages? This cannot be undone.')) fetch('/api/bots/{{ bot.id }}', {method:'DELETE'}).then(r => { if(r.ok) location.reload(); else r.text().then(t => alert('Delete failed: ' + t)); })">Delete</a>
+                {% else %}
+                <a href="/login?next=/w/{{ workout.id }}/bots" style="color:var(--pico-muted-color, #888); font-size:0.85em;">🔒 Delete</a>
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<article>
+    <p>No bots registered for Workout #{{ workout.id }} yet.</p>
+    <a href="/w/{{ workout.id }}/bots/new" role="button">Register Your First Bot</a>
+</article>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,81 @@
+{
+ "captured_at": "2026-08-04T13:24:02Z",
+ "hf_metadata": {
+  "_id": "67d79d7efe22eb862f44f177",
+  "author": "DANIE111",
+  "cardData": {
+   "app_file": "app.py",
+   "colorFrom": "gray",
+   "colorTo": "gray",
+   "emoji": "📚",
+   "pinned": false,
+   "sdk": "gradio",
+   "sdk_version": "5.21.0",
+   "title": "Model Estrutural"
+  },
+  "createdAt": "2025-03-17T03:56:46.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://danie111-model-estrutural.hf.space",
+  "id": "DANIE111/model_estrutural",
+  "lastModified": "2026-08-04T13:16:27.000Z",
+  "likes": 0,
+  "private": false,
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "danie111-model-estrutural.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": "cpu-basic",
+    "requested": "cpu-basic"
+   },
+   "pySpacesVersion": "0.51.1",
+   "replicas": {
+    "current": 1,
+    "requested": 1
+   },
+   "sha": "db25f054d0a1670294da09bf4412ad7b42a10b61",
+   "stage": "RUNNING"
+  },
+  "sdk": "gradio",
+  "sha": "db25f054d0a1670294da09bf4412ad7b42a10b61",
+  "siblings": [
+   {
+    "rfilename": ".gitattributes"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "TodosNegocios2.xlsx"
+   },
+   {
+    "rfilename": "app.py"
+   },
+   {
+    "rfilename": "requirements.txt"
+   }
+  ],
+  "subdomain": "danie111-model-estrutural",
+  "tags": [
+   "gradio",
+   "region:us"
+  ],
+  "usedStorage": 691580213
+ },
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "DANIE111/model_estrutural",
+ "repo_type": "spaces",
+ "sha": "db25f054d0a1670294da09bf4412ad7b42a10b61",
+ "web_url": "https://huggingface.co/spaces/DANIE111/model_estrutural"
+}

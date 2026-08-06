@@ -1,0 +1,18 @@
+{
+ "captured_at": "2026-08-04T16:44:53Z",
+ "hf_metadata": {
+  "sha": "3d604126ce1f27656a4de3572f3d3fc1979c7c8f"
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitignore",
+   "stored_as": "_gitignore"
+  }
+ ],
+ "renamed_gitattributes": [],
+ "repo_id": "ob1one12/ensar-subtitles",
+ "repo_type": "spaces",
+ "sha": "3d604126ce1f27656a4de3572f3d3fc1979c7c8f",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/ob1one12/ensar-subtitles"
+}

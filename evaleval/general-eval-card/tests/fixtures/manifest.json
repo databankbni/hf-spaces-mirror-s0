@@ -1,0 +1,81 @@
+{
+  "$comment": "Pinned snapshot of HF cache files used by Tier A pipeline-contract tests and Tier B adapter snapshot tests. Refresh via `pnpm refresh-fixtures`. Each fixture entry has a `why` field explaining the specific code path it exercises (multi-variant model, first/third-party badge, Safety regression-bait, coding hierarchy key, etc). Curation rule: every fixture must justify its inclusion via `why`; no random sampling.",
+  "snapshot_source": ".cache/hf-data",
+  "snapshot_ts": "2026-04-27T22:32:59.376Z",
+  "evals": [
+    {
+      "id": "apex_v1",
+      "why": "Mercor first-party badge; pipeline category=knowledge; subtasks"
+    },
+    {
+      "id": "artificial_analysis_llms_artificial_analysis_aime",
+      "why": "Artificial Analysis third-party badge; source_type=documentation in pipeline"
+    },
+    {
+      "id": "helm_classic_truthfulqa",
+      "why": "Safety regression-bait — pipeline category=knowledge but inferCategoryFromBenchmark returns Safety"
+    },
+    {
+      "id": "helm_safety_simplesafetytests",
+      "why": "Safety regression-bait — pipeline category=general for an obvious safety eval"
+    },
+    {
+      "id": "helm_capabilities",
+      "why": "Composite parent eval; pipeline category=knowledge"
+    },
+    {
+      "id": "helm_lite_narrativeqa",
+      "why": "Subtask leaf under helm_lite parent; pipeline category=reasoning, regex returns General"
+    },
+    {
+      "id": "appworld",
+      "why": "Pipeline category=coding (one of the 3 keys we added to PIPELINE_CATEGORY_MAP); inferCategoryFromBenchmark returns Agentic"
+    }
+  ],
+  "models": [
+    {
+      "id": "openai__gpt-5-2-pro",
+      "why": "5 variants — exercises variant_lookup and per-variant grouping in flattenModelEvaluations"
+    },
+    {
+      "id": "google__gemini-3-flash",
+      "why": "Already covered by parity harness; medium-size; multi-category hierarchy"
+    },
+    {
+      "id": "ai21__j1-grande-v1-17b",
+      "why": "Has `safety` hierarchy_by_category key"
+    },
+    {
+      "id": "bytedance__seed-2-0-lite",
+      "why": "Has `coding` hierarchy_by_category key (the substring-fallacy bug case); small"
+    }
+  ],
+  "developers": [
+    {
+      "id": "openai",
+      "why": "KNOWN_DEVELOPER_NAMES canonicalization (openai → OpenAI)"
+    },
+    {
+      "id": "anthropic",
+      "why": "Multiple model families; typical case"
+    },
+    {
+      "id": "01-ai",
+      "why": "Dash-prefix slug — exercises pipelineSlugify edge case"
+    }
+  ],
+  "model_cards": [
+    {
+      "id": "openai__gpt-5",
+      "why": "6 variants; rich top_benchmark_scores; hfModelCardToEvaluationCardData edge case"
+    },
+    {
+      "id": "anthropic__claude-opus-4.5",
+      "why": "Dotted route_id (vs dashed in model detail files) — capturing the route-id mismatch"
+    },
+    {
+      "id": "01-ai__yi-34b",
+      "why": "Developer name canonicalization (01-ai → 01.AI per KNOWN_DEVELOPER_NAMES)"
+    }
+  ]
+}

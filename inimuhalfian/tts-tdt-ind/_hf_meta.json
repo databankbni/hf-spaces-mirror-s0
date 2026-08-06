@@ -1,0 +1,23 @@
+{
+ "captured_at": "2026-08-04T16:23:56Z",
+ "hf_metadata": {
+  "sha": "9ed8c103d457e5df82fcc5595b1ed74b65f76381"
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "inimuhalfian/tts-tdt-ind",
+ "repo_type": "spaces",
+ "sha": "9ed8c103d457e5df82fcc5595b1ed74b65f76381",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/inimuhalfian/tts-tdt-ind"
+}

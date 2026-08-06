@@ -1,0 +1,95 @@
+{
+ "captured_at": "2026-08-04T15:51:45Z",
+ "hf_metadata": {
+  "_id": "6a49a2d4b0032ce14561c1bc",
+  "author": "antonypamo",
+  "cardData": {
+   "colorFrom": "indigo",
+   "colorTo": "pink",
+   "emoji": "💻",
+   "pinned": false,
+   "sdk": "docker",
+   "title": "Savant Production Api"
+  },
+  "createdAt": "2026-07-05T00:18:28.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://antonypamo-savant-production-api.hf.space",
+  "id": "antonypamo/savant-production-api",
+  "lastModified": "2026-07-08T01:30:20.000Z",
+  "likes": 0,
+  "models": [
+   "antonypamo/RRFSAVANTMADE"
+  ],
+  "private": false,
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "antonypamo-savant-production-api.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": null,
+    "requested": "cpu-basic"
+   },
+   "replicas": {
+    "requested": 1
+   },
+   "stage": "SLEEPING"
+  },
+  "sdk": "docker",
+  "sha": "3144d2ae2cd4ae14896401248bf713bf21afd2a0",
+  "siblings": [
+   {
+    "rfilename": ".gitattributes"
+   },
+   {
+    "rfilename": "Dockerfile"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "app.py"
+   },
+   {
+    "rfilename": "logreg_rrf_savant.joblib"
+   },
+   {
+    "rfilename": "requirements.txt"
+   },
+   {
+    "rfilename": "rrf_nodes.pt"
+   },
+   {
+    "rfilename": "savant_rrf_api_manifest_phi12.json"
+   }
+  ],
+  "subdomain": "antonypamo-savant-production-api",
+  "tags": [
+   "docker",
+   "region:us"
+  ],
+  "usedStorage": 14838
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "antonypamo/savant-production-api",
+ "repo_type": "spaces",
+ "sha": "3144d2ae2cd4ae14896401248bf713bf21afd2a0",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/antonypamo/savant-production-api"
+}

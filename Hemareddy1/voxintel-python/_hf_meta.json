@@ -1,0 +1,119 @@
+{
+ "captured_at": "2026-08-04T13:40:07Z",
+ "hf_metadata": {
+  "_id": "6a4a567092b7e57819309e33",
+  "author": "Hemareddy1",
+  "cardData": {
+   "app_port": 7860,
+   "colorFrom": "blue",
+   "colorTo": "purple",
+   "emoji": "🎙️",
+   "pinned": false,
+   "sdk": "docker",
+   "title": "VoxIntel Python NLP Service"
+  },
+  "createdAt": "2026-07-05T13:04:48.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://hemareddy1-voxintel-python.hf.space",
+  "id": "Hemareddy1/voxintel-python",
+  "lastModified": "2026-07-05T13:08:23.000Z",
+  "likes": 0,
+  "private": false,
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "hemareddy1-voxintel-python.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": null,
+    "requested": "cpu-basic"
+   },
+   "replicas": {
+    "requested": 1
+   },
+   "stage": "SLEEPING"
+  },
+  "sdk": "docker",
+  "sha": "3e9deb5cc879f1397644587539138057330f651c",
+  "siblings": [
+   {
+    "rfilename": ".env.example"
+   },
+   {
+    "rfilename": ".gitattributes"
+   },
+   {
+    "rfilename": ".python-version"
+   },
+   {
+    "rfilename": "Dockerfile"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "app.py"
+   },
+   {
+    "rfilename": "code_followup_generator.py"
+   },
+   {
+    "rfilename": "coding_question_generator.py"
+   },
+   {
+    "rfilename": "coding_questions.py"
+   },
+   {
+    "rfilename": "confidence_analysis.py"
+   },
+   {
+    "rfilename": "feedback_generator.py"
+   },
+   {
+    "rfilename": "followup_generator.py"
+   },
+   {
+    "rfilename": "hybrid_question_generator.py"
+   },
+   {
+    "rfilename": "plagiarism_checker.py"
+   },
+   {
+    "rfilename": "question_generator.py"
+   },
+   {
+    "rfilename": "requirements.txt"
+   },
+   {
+    "rfilename": "resume_intelligence.py"
+   },
+   {
+    "rfilename": "resume_parser.py"
+   },
+   {
+    "rfilename": "semantic_evaluator.py"
+   }
+  ],
+  "subdomain": "hemareddy1-voxintel-python",
+  "tags": [
+   "docker",
+   "region:us"
+  ],
+  "usedStorage": 0
+ },
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "Hemareddy1/voxintel-python",
+ "repo_type": "spaces",
+ "sha": "3e9deb5cc879f1397644587539138057330f651c",
+ "web_url": "https://huggingface.co/spaces/Hemareddy1/voxintel-python"
+}

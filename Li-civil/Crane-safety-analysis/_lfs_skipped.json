@@ -1,0 +1,19 @@
+{
+ "lfs_not_stored": [
+  {
+   "oid": "c3836edaba3559bd7f40e310d1c5c63a4f4e50bda3fabdd54d4e7672269fc342",
+   "path": "Crane_working_1.mp4",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6YzM4MzZlZGFiYTM1NTliZDdmNDBlMzEwZDFjNWM2M2E0ZjRlNTBiZGEzZmFiZGQ1NGQ0ZTc2NzIyNjlmYzM0MgpzaXplIDE3MDU4MjEyCg==",
+   "size": 17058212,
+   "url": "https://huggingface.co/spaces/Li-civil/Crane-safety-analysis/resolve/9e28e618e11cfe03039a6f54451e3afcf8acbb05/Crane_working_1.mp4"
+  },
+  {
+   "oid": "96b390bef70e30ecc2382376c04daf0824fd06c9beba5d9a47aee5d0f1a0a2a9",
+   "path": "Crane_working_2.mp4",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6OTZiMzkwYmVmNzBlMzBlY2MyMzgyMzc2YzA0ZGFmMDgyNGZkMDZjOWJlYmE1ZDlhNDdhZWU1ZDBmMWEwYTJhOQpzaXplIDMzNzQzMzkzCg==",
+   "size": 33743393,
+   "url": "https://huggingface.co/spaces/Li-civil/Crane-safety-analysis/resolve/9e28e618e11cfe03039a6f54451e3afcf8acbb05/Crane_working_2.mp4"
+  }
+ ],
+ "oversize_not_stored": []
+}

@@ -1,0 +1,97 @@
+{
+ "captured_at": "2026-08-04T13:34:32Z",
+ "hf_metadata": {
+  "_id": "6a476d679b0045c223c98aa9",
+  "author": "GaoShengyuan",
+  "cardData": {
+   "app_port": 7860,
+   "colorFrom": "gray",
+   "colorTo": "green",
+   "emoji": "📈",
+   "sdk": "docker",
+   "title": "WealthPilot Structured Product Demo"
+  },
+  "createdAt": "2026-07-03T08:05:59.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://gaoshengyuan-structured-product-demo.hf.space",
+  "id": "GaoShengyuan/structured-product-demo",
+  "lastModified": "2026-07-06T06:42:21.000Z",
+  "likes": 1,
+  "private": false,
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "gaoshengyuan-structured-product-demo.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": null,
+    "requested": "cpu-basic"
+   },
+   "replicas": {
+    "requested": 1
+   },
+   "stage": "SLEEPING"
+  },
+  "sdk": "docker",
+  "sha": "1db449ddb3d791d0bae20713b3538ef81f9f3678",
+  "siblings": [
+   {
+    "rfilename": ".gitattributes"
+   },
+   {
+    "rfilename": ".gitignore"
+   },
+   {
+    "rfilename": "Dockerfile"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "app.js"
+   },
+   {
+    "rfilename": "index.html"
+   },
+   {
+    "rfilename": "package-lock.json"
+   },
+   {
+    "rfilename": "package.json"
+   },
+   {
+    "rfilename": "render.yaml"
+   },
+   {
+    "rfilename": "requirements.txt"
+   },
+   {
+    "rfilename": "server.js"
+   },
+   {
+    "rfilename": "styles.css"
+   }
+  ],
+  "subdomain": "gaoshengyuan-structured-product-demo",
+  "tags": [
+   "docker",
+   "region:us"
+  ],
+  "usedStorage": 0
+ },
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "GaoShengyuan/structured-product-demo",
+ "repo_type": "spaces",
+ "sha": "1db449ddb3d791d0bae20713b3538ef81f9f3678",
+ "web_url": "https://huggingface.co/spaces/GaoShengyuan/structured-product-demo"
+}

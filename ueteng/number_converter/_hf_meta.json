@@ -1,0 +1,23 @@
+{
+ "captured_at": "2026-08-04T17:09:43Z",
+ "hf_metadata": {
+  "sha": "55d608460ce78ad524f3e5acafad7c60108e7083"
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "ueteng/number_converter",
+ "repo_type": "spaces",
+ "sha": "55d608460ce78ad524f3e5acafad7c60108e7083",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/ueteng/number_converter"
+}

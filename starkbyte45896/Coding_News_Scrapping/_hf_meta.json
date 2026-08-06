@@ -1,0 +1,18 @@
+{
+ "captured_at": "2026-08-04T16:59:51Z",
+ "hf_metadata": {
+  "sha": "356d23db9f3854bcd4f15bae7167c972a8acf533"
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitignore",
+   "stored_as": "_gitignore"
+  }
+ ],
+ "renamed_gitattributes": [],
+ "repo_id": "starkbyte45896/Coding_News_Scrapping",
+ "repo_type": "spaces",
+ "sha": "356d23db9f3854bcd4f15bae7167c972a8acf533",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/starkbyte45896/Coding_News_Scrapping"
+}

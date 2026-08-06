@@ -1,0 +1,136 @@
+{
+ "captured_at": "2026-08-04T15:20:39Z",
+ "hf_metadata": {
+  "_id": "69906e972e87fc8e2598c4e3",
+  "author": "PhenoX-AI-Alliance",
+  "cardData": {
+   "app_file": "app.py",
+   "colorFrom": "purple",
+   "colorTo": "blue",
+   "emoji": "🔮",
+   "license": "mit",
+   "pinned": false,
+   "sdk": "gradio",
+   "title": "MAGI System"
+  },
+  "createdAt": "2026-02-14T12:46:15.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://phenox-ai-alliance-magi-system.hf.space",
+  "id": "PhenoX-AI-Alliance/Magi-System",
+  "lastModified": "2026-07-23T00:34:26.000Z",
+  "likes": 0,
+  "private": false,
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "phenox-ai-alliance-magi-system.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": "cpu-basic",
+    "requested": "cpu-basic"
+   },
+   "pySpacesVersion": "0.51.1",
+   "replicas": {
+    "current": 1,
+    "requested": 1
+   },
+   "sha": "4d801706a1b1254fb4fd4b69aa3c4da99084018a",
+   "stage": "RUNNING"
+  },
+  "sdk": "gradio",
+  "sha": "4d801706a1b1254fb4fd4b69aa3c4da99084018a",
+  "siblings": [
+   {
+    "rfilename": ".gitattributes"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "app.py"
+   },
+   {
+    "rfilename": "magi/20260515_221039_Magi_System2_config.py.bak"
+   },
+   {
+    "rfilename": "magi/__pycache__/agents.cpython-312.pyc"
+   },
+   {
+    "rfilename": "magi/__pycache__/agents.cpython-313.pyc"
+   },
+   {
+    "rfilename": "magi/__pycache__/config.cpython-311.pyc"
+   },
+   {
+    "rfilename": "magi/__pycache__/config.cpython-312.pyc"
+   },
+   {
+    "rfilename": "magi/__pycache__/config.cpython-313.pyc"
+   },
+   {
+    "rfilename": "magi/__pycache__/core.cpython-312.pyc"
+   },
+   {
+    "rfilename": "magi/__pycache__/core.cpython-313.pyc"
+   },
+   {
+    "rfilename": "magi/__pycache__/desktop.ini"
+   },
+   {
+    "rfilename": "magi/__pycache__/prompts.cpython-312.pyc"
+   },
+   {
+    "rfilename": "magi/__pycache__/prompts.cpython-313.pyc"
+   },
+   {
+    "rfilename": "magi/agents.py"
+   },
+   {
+    "rfilename": "magi/config.py"
+   },
+   {
+    "rfilename": "magi/config.py.bak"
+   },
+   {
+    "rfilename": "magi/core.py"
+   },
+   {
+    "rfilename": "magi/desktop.ini"
+   },
+   {
+    "rfilename": "magi/prompts.py"
+   },
+   {
+    "rfilename": "requirements.txt"
+   }
+  ],
+  "subdomain": "phenox-ai-alliance-magi-system",
+  "tags": [
+   "gradio",
+   "region:us"
+  ],
+  "usedStorage": 5050644
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "PhenoX-AI-Alliance/Magi-System",
+ "repo_type": "spaces",
+ "sha": "4d801706a1b1254fb4fd4b69aa3c4da99084018a",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/PhenoX-AI-Alliance/Magi-System"
+}

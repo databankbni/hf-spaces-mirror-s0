@@ -1,0 +1,85 @@
+{
+ "captured_at": "2026-08-04T15:34:54Z",
+ "hf_metadata": {
+  "_id": "6a315bfc671ba44c169f9eed",
+  "author": "adijay3rd",
+  "cardData": {
+   "app_file": "app.py",
+   "colorFrom": "green",
+   "colorTo": "green",
+   "emoji": "🖥️",
+   "pinned": false,
+   "sdk": "gradio",
+   "short_description": "Real-time analysis of backend log throughput.",
+   "title": "Telemetry Data Grid"
+  },
+  "createdAt": "2026-06-16T14:21:48.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://adijay3rd-crypto-screener.hf.space",
+  "id": "adijay3rd/crypto-screener",
+  "lastModified": "2026-07-07T15:26:28.000Z",
+  "likes": 1,
+  "private": false,
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "adijay3rd-crypto-screener.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": "cpu-basic",
+    "requested": "cpu-basic"
+   },
+   "pySpacesVersion": "0.50.4",
+   "replicas": {
+    "current": 1,
+    "requested": 1
+   },
+   "sha": "f044de2055b694be72156e42ef44d63b60cff894",
+   "stage": "RUNNING"
+  },
+  "sdk": "gradio",
+  "sha": "f044de2055b694be72156e42ef44d63b60cff894",
+  "siblings": [
+   {
+    "rfilename": ".gitattributes"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "app.py"
+   },
+   {
+    "rfilename": "requirements.txt"
+   }
+  ],
+  "subdomain": "adijay3rd-crypto-screener",
+  "tags": [
+   "gradio",
+   "region:us"
+  ],
+  "usedStorage": 0
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "adijay3rd/crypto-screener",
+ "repo_type": "spaces",
+ "sha": "f044de2055b694be72156e42ef44d63b60cff894",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/adijay3rd/crypto-screener"
+}

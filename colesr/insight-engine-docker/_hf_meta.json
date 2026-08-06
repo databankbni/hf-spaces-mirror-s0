@@ -1,0 +1,27 @@
+{
+ "captured_at": "2026-08-04T16:02:07Z",
+ "hf_metadata": {
+  "sha": "7c58fff2d6d240906c35b4b65d4d417c79fb5e43"
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  },
+  {
+   "original": ".gitignore",
+   "stored_as": "_gitignore"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "colesr/insight-engine-docker",
+ "repo_type": "spaces",
+ "sha": "7c58fff2d6d240906c35b4b65d4d417c79fb5e43",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/colesr/insight-engine-docker"
+}

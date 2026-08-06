@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tanzania Bird Finder</title>
+<style>
+:root {
+  --ink: #15201b; --muted: #66756d; --line: #dfe7e2;
+  --surface: #ffffff; --soft: #f5f7f1; --forest: #285b45;
+  --moss: #7a9a56; --sky: #dceaf4; --amber: #d29234; --rust: #9f5638;
+  --shadow: 0 18px 45px rgba(24,38,31,0.13);
+  --radius-lg: 12px;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  background: linear-gradient(145deg, #f5f7f1 0%, #e8efe8 100%);
+  color: var(--ink); min-height: 100vh; line-height: 1.6;
+}
+.container { max-width: 720px; margin: 0 auto; padding: 48px 24px; }
+.card {
+  background: var(--surface); border-radius: var(--radius-lg);
+  box-shadow: var(--shadow); padding: 40px; margin-bottom: 24px;
+}
+h1 {
+  font-size: 2rem; font-weight: 700; letter-spacing: -0.02em;
+  color: var(--forest); margin-bottom: 8px;
+}
+h1 span { color: var(--moss); }
+.subtitle { color: var(--muted); font-size: 1.05rem; margin-bottom: 32px; }
+h2 {
+  font-size: 1.15rem; font-weight: 600; color: var(--forest);
+  margin-top: 28px; margin-bottom: 10px;
+}
+ul { padding-left: 20px; color: var(--ink); }
+li { margin-bottom: 6px; }
+.badge {
+  display: inline-block; background: var(--sky); color: #1a3a5c;
+  padding: 4px 12px; border-radius: 20px; font-size: 0.8rem;
+  font-weight: 600; margin-right: 6px; margin-bottom: 6px;
+}
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--forest); color: #fff; text-decoration: none;
+  padding: 12px 28px; border-radius: 8px; font-weight: 600;
+  font-size: 0.95rem; transition: transform 0.2s, box-shadow 0.2s;
+}
+.btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(40,91,69,0.3); }
+.btn-secondary {
+  background: var(--surface); color: var(--forest);
+  border: 2px solid var(--line);
+}
+.btn-group { display: flex; gap: 12px; flex-wrap: wrap; margin: 24px 0; }
+.features {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0;
+}
+.feature {
+  background: var(--soft); padding: 20px; border-radius: 8px;
+  text-align: center;
+}
+.feature .icon { font-size: 2rem; margin-bottom: 8px; }
+.feature h3 { font-size: 0.95rem; color: var(--forest); margin-bottom: 4px; }
+.feature p { font-size: 0.85rem; color: var(--muted); }
+code {
+  background: var(--soft); padding: 2px 8px; border-radius: 4px;
+  font-size: 0.9rem; color: var(--rust);
+}
+footer {
+  text-align: center; color: var(--muted); font-size: 0.85rem;
+  padding: 24px 0; border-top: 1px solid var(--line); margin-top: 24px;
+}
+@media (max-width: 600px) {
+  .container { padding: 24px 16px; }
+  .card { padding: 24px; }
+  .features { grid-template-columns: 1fr; }
+  h1 { font-size: 1.6rem; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="card">
+    <h1>Tanzania <span>Bird Finder</span></h1>
+    <p class="subtitle">AI-powered bird identification for Tanzania's 1,100+ species</p>
+
+    <div class="features">
+      <div class="feature">
+        <div class="icon">&#128038;</div>
+        <h3>AI Identification</h3>
+        <p>MobileNetV2 + color + texture fusion</p>
+      </div>
+      <div class="feature">
+        <div class="icon">&#128200;</div>
+        <h3>Grad-CAM Heatmaps</h3>
+        <p>Explainable AI visualizations</p>
+      </div>
+      <div class="feature">
+        <div class="icon">&#127758;</div>
+        <h3>Tanzania Species</h3>
+        <p>12 curated Tanzania birds</p>
+      </div>
+      <div class="feature">
+        <div class="icon">&#128247;</div>
+        <h3>EXIF Metadata</h3>
+        <p>Camera, GPS, date extraction</p>
+      </div>
+    </div>
+
+    <h2>Tech Stack</h2>
+    <p>
+      <span class="badge">Python</span>
+      <span class="badge">Flask</span>
+      <span class="badge">TensorFlow</span>
+      <span class="badge">MobileNetV2</span>
+      <span class="badge">Pillow</span>
+      <span class="badge">SQLAlchemy</span>
+    </p>
+
+    <h2>About</h2>
+    <p>Upload a photo of a bird and the AI identifies which of the 12 Tanzania species it matches, showing confidence score, top alternatives, Grad-CAM visualization, and bird details.</p>
+
+    <div class="btn-group">
+      <a href="https://github.com/" class="btn">View on GitHub</a>
+      <a href="README.md" class="btn btn-secondary">Read the Docs</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Live App</h2>
+    <p>The backend (Flask + TensorFlow) requires a proper Python host and <strong>cannot run on GitHub Pages</strong>.</p>
+    <p>To try the live app:</p>
+    <ol style="margin: 12px 0 12px 20px;">
+      <li>Deploy on <strong>Railway</strong> (free): push repo &rarr; railway.app &rarr; New Project</li>
+      <li>Or run locally: <code>pip install -r requirements.txt &amp;&amp; python app.py --no-ssl</code></li>
+    </ol>
+    <p style="color: var(--muted); font-size: 0.9rem;">Opens at <code>http://localhost:5000</code></p>
+  </div>
+
+  <footer>
+    Built with Flask &amp; TensorFlow &bull; Tanzania Bird Finder
+  </footer>
+</div>
+</body>
+</html>

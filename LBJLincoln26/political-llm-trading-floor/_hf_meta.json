@@ -1,0 +1,1950 @@
+{
+ "captured_at": "2026-08-06T02:53:41Z",
+ "hf_metadata": {
+  "_id": "69de4aa5ab90003d414afa1b",
+  "author": "LBJLincoln26",
+  "cardData": {
+   "app_file": "app.py",
+   "colorFrom": "purple",
+   "colorTo": "red",
+   "emoji": "🏛️",
+   "pinned": true,
+   "python_version": "3.11",
+   "sdk": "gradio",
+   "sdk_version": "5.23.0",
+   "title": "Nomos42 Political LLM Trading Floor"
+  },
+  "createdAt": "2026-04-14T14:09:41.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://lbjlincoln26-political-llm-trading-floor.hf.space",
+  "id": "LBJLincoln26/political-llm-trading-floor",
+  "lastModified": "2026-08-06T02:47:13.000Z",
+  "likes": 0,
+  "private": false,
+  "region": "us",
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "lbjlincoln26-political-llm-trading-floor.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": "cpu-basic",
+    "requested": "cpu-basic"
+   },
+   "pySpacesVersion": "0.51.1",
+   "replicas": {
+    "current": 1,
+    "requested": 1
+   },
+   "sha": "ad7001495b10213f8004a59bd9b07ade4ddeefb6",
+   "stage": "RUNNING"
+  },
+  "sdk": "gradio",
+  "sha": "ad7001495b10213f8004a59bd9b07ade4ddeefb6",
+  "siblings": [
+   {
+    "rfilename": ".gitattributes"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "app.py"
+   },
+   {
+    "rfilename": "build_full_dataset.py"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-000.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-001.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-002.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-003.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-004.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-005.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-006.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-007.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-008.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-009.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-010.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-011.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-012.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-013.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-014.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-015.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-016.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-017.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-018.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-019.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-020.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-021.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-022.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-023.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-024.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-025.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-026.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-027.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-028.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-029.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-030.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-031.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-032.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-033.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-034.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-035.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-036.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-037.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-038.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-039.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-040.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-041.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-042.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-043.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-044.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-045.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-046.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-047.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-048.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-049.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-050.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-051.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-052.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-053.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-054.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-055.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-056.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-057.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-058.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-059.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-060.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-061.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-062.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-063.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-064.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-065.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-066.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-067.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-068.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-069.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-070.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-071.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-072.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-073.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-074.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-075.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-076.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-077.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-078.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-079.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-080.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-081.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-082.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-083.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-084.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-085.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-086.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-087.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-088.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-089.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-090.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-091.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-092.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-093.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-094.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-095.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-096.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-097.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-098.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-099.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-100.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-101.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-102.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-103.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-104.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-105.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-106.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-107.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-108.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-109.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-110.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-111.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-112.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-113.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-114.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-115.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-116.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-117.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-118.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-119.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-120.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-121.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-122.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-123.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-124.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-125.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-126.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-127.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-128.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-129.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-130.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-131.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-132.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-133.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-134.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-135.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-136.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-137.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-138.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-139.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-140.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-141.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-142.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-143.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-144.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-145.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-146.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-147.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-148.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-149.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-150.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-151.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-152.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-153.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-154.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-155.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-156.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-157.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-158.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-159.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-160.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-161.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-162.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-163.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-164.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-165.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-166.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-167.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-168.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-169.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-170.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-171.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-172.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-173.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-174.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-175.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-176.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-177.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-178.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-179.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-180.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-181.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-182.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-183.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-184.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-185.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-186.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-187.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-188.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-189.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-190.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-191.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-192.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-193.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-194.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-195.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-196.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-197.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-198.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-199.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-200.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-201.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-202.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-203.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-204.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-205.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-206.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-207.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-208.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-209.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-210.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-211.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-212.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-213.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-214.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-215.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-216.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-217.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-218.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-219.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-220.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-221.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-222.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-223.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-224.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-225.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-226.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-227.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-228.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-229.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-230.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-231.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-232.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-233.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-234.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-235.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-236.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-237.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-238.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-239.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-240.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-241.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-242.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-243.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-244.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-245.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-246.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-247.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-248.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-249.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-250.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-251.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-252.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-253.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-254.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-255.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-256.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-257.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-258.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-259.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-260.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-261.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-262.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-263.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-264.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-265.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-266.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-267.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-268.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-269.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-270.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-271.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-272.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-273.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-274.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-275.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-276.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-277.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-278.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-279.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-280.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-281.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-282.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-283.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-284.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-285.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-286.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-287.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-288.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-289.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-290.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-291.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-292.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-293.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-294.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-295.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-296.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-297.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-298.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-299.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-300.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-301.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-302.jsonl"
+   },
+   {
+    "rfilename": "data/arena/axelrod-log/day-303.jsonl"
+   },
+   {
+    "rfilename": "data/decisions/day-000.json"
+   },
+   {
+    "rfilename": "data/decisions/day-001.json"
+   },
+   {
+    "rfilename": "data/decisions/day-002.json"
+   },
+   {
+    "rfilename": "data/decisions/day-003.json"
+   },
+   {
+    "rfilename": "data/decisions/day-004.json"
+   },
+   {
+    "rfilename": "data/decisions/day-005.json"
+   },
+   {
+    "rfilename": "data/decisions/day-006.json"
+   },
+   {
+    "rfilename": "data/decisions/day-007.json"
+   },
+   {
+    "rfilename": "data/decisions/day-008.json"
+   },
+   {
+    "rfilename": "data/decisions/day-009.json"
+   },
+   {
+    "rfilename": "data/decisions/day-010.json"
+   },
+   {
+    "rfilename": "data/decisions/day-011.json"
+   },
+   {
+    "rfilename": "data/decisions/day-012.json"
+   },
+   {
+    "rfilename": "data/decisions/day-013.json"
+   },
+   {
+    "rfilename": "data/decisions/day-014.json"
+   },
+   {
+    "rfilename": "data/decisions/day-015.json"
+   },
+   {
+    "rfilename": "data/decisions/day-016.json"
+   },
+   {
+    "rfilename": "data/decisions/day-017.json"
+   },
+   {
+    "rfilename": "data/decisions/day-018.json"
+   },
+   {
+    "rfilename": "data/decisions/day-019.json"
+   },
+   {
+    "rfilename": "data/decisions/day-020.json"
+   },
+   {
+    "rfilename": "data/decisions/day-021.json"
+   },
+   {
+    "rfilename": "data/decisions/day-022.json"
+   },
+   {
+    "rfilename": "data/decisions/day-023.json"
+   },
+   {
+    "rfilename": "data/decisions/day-024.json"
+   },
+   {
+    "rfilename": "data/decisions/day-025.json"
+   },
+   {
+    "rfilename": "data/decisions/day-026.json"
+   },
+   {
+    "rfilename": "data/decisions/day-027.json"
+   },
+   {
+    "rfilename": "data/decisions/day-028.json"
+   },
+   {
+    "rfilename": "data/decisions/day-029.json"
+   },
+   {
+    "rfilename": "data/decisions/day-030.json"
+   },
+   {
+    "rfilename": "data/decisions/day-031.json"
+   },
+   {
+    "rfilename": "data/decisions/day-032.json"
+   },
+   {
+    "rfilename": "data/decisions/day-033.json"
+   },
+   {
+    "rfilename": "data/decisions/day-034.json"
+   },
+   {
+    "rfilename": "data/decisions/day-035.json"
+   },
+   {
+    "rfilename": "data/decisions/day-036.json"
+   },
+   {
+    "rfilename": "data/decisions/day-037.json"
+   },
+   {
+    "rfilename": "data/decisions/day-038.json"
+   },
+   {
+    "rfilename": "data/decisions/day-039.json"
+   },
+   {
+    "rfilename": "data/decisions/day-040.json"
+   },
+   {
+    "rfilename": "data/decisions/day-041.json"
+   },
+   {
+    "rfilename": "data/decisions/day-042.json"
+   },
+   {
+    "rfilename": "data/decisions/day-043.json"
+   },
+   {
+    "rfilename": "data/decisions/day-044.json"
+   },
+   {
+    "rfilename": "data/decisions/day-045.json"
+   },
+   {
+    "rfilename": "data/decisions/day-046.json"
+   },
+   {
+    "rfilename": "data/decisions/day-047.json"
+   },
+   {
+    "rfilename": "data/decisions/day-048.json"
+   },
+   {
+    "rfilename": "data/decisions/day-049.json"
+   },
+   {
+    "rfilename": "data/decisions/day-050.json"
+   },
+   {
+    "rfilename": "data/decisions/day-051.json"
+   },
+   {
+    "rfilename": "data/decisions/day-052.json"
+   },
+   {
+    "rfilename": "data/decisions/day-053.json"
+   },
+   {
+    "rfilename": "data/decisions/day-054.json"
+   },
+   {
+    "rfilename": "data/decisions/day-055.json"
+   },
+   {
+    "rfilename": "data/decisions/day-056.json"
+   },
+   {
+    "rfilename": "data/decisions/day-057.json"
+   },
+   {
+    "rfilename": "data/decisions/day-058.json"
+   },
+   {
+    "rfilename": "data/decisions/day-059.json"
+   },
+   {
+    "rfilename": "data/decisions/day-060.json"
+   },
+   {
+    "rfilename": "data/decisions/day-061.json"
+   },
+   {
+    "rfilename": "data/decisions/day-062.json"
+   },
+   {
+    "rfilename": "data/decisions/day-063.json"
+   },
+   {
+    "rfilename": "data/decisions/day-064.json"
+   },
+   {
+    "rfilename": "data/decisions/day-065.json"
+   },
+   {
+    "rfilename": "data/decisions/day-066.json"
+   },
+   {
+    "rfilename": "data/decisions/day-067.json"
+   },
+   {
+    "rfilename": "data/decisions/day-068.json"
+   },
+   {
+    "rfilename": "data/decisions/day-069.json"
+   },
+   {
+    "rfilename": "data/decisions/day-070.json"
+   },
+   {
+    "rfilename": "data/decisions/day-071.json"
+   },
+   {
+    "rfilename": "data/decisions/day-072.json"
+   },
+   {
+    "rfilename": "data/decisions/day-073.json"
+   },
+   {
+    "rfilename": "data/decisions/day-074.json"
+   },
+   {
+    "rfilename": "data/decisions/day-075.json"
+   },
+   {
+    "rfilename": "data/decisions/day-076.json"
+   },
+   {
+    "rfilename": "data/decisions/day-077.json"
+   },
+   {
+    "rfilename": "data/decisions/day-078.json"
+   },
+   {
+    "rfilename": "data/decisions/day-079.json"
+   },
+   {
+    "rfilename": "data/decisions/day-080.json"
+   },
+   {
+    "rfilename": "data/decisions/day-081.json"
+   },
+   {
+    "rfilename": "data/decisions/day-082.json"
+   },
+   {
+    "rfilename": "data/decisions/day-083.json"
+   },
+   {
+    "rfilename": "data/decisions/day-084.json"
+   },
+   {
+    "rfilename": "data/decisions/day-085.json"
+   },
+   {
+    "rfilename": "data/decisions/day-086.json"
+   },
+   {
+    "rfilename": "data/decisions/day-087.json"
+   },
+   {
+    "rfilename": "data/decisions/day-088.json"
+   },
+   {
+    "rfilename": "data/decisions/day-089.json"
+   },
+   {
+    "rfilename": "data/decisions/day-090.json"
+   },
+   {
+    "rfilename": "data/decisions/day-091.json"
+   },
+   {
+    "rfilename": "data/decisions/day-092.json"
+   },
+   {
+    "rfilename": "data/decisions/day-093.json"
+   },
+   {
+    "rfilename": "data/decisions/day-094.json"
+   },
+   {
+    "rfilename": "data/decisions/day-095.json"
+   },
+   {
+    "rfilename": "data/decisions/day-096.json"
+   },
+   {
+    "rfilename": "data/decisions/day-097.json"
+   },
+   {
+    "rfilename": "data/decisions/day-098.json"
+   },
+   {
+    "rfilename": "data/decisions/day-099.json"
+   },
+   {
+    "rfilename": "data/decisions/day-100.json"
+   },
+   {
+    "rfilename": "data/decisions/day-101.json"
+   },
+   {
+    "rfilename": "data/decisions/day-102.json"
+   },
+   {
+    "rfilename": "data/decisions/day-103.json"
+   },
+   {
+    "rfilename": "data/decisions/day-104.json"
+   },
+   {
+    "rfilename": "data/decisions/day-105.json"
+   },
+   {
+    "rfilename": "data/decisions/day-106.json"
+   },
+   {
+    "rfilename": "data/decisions/day-107.json"
+   },
+   {
+    "rfilename": "data/decisions/day-108.json"
+   },
+   {
+    "rfilename": "data/decisions/day-109.json"
+   },
+   {
+    "rfilename": "data/decisions/day-110.json"
+   },
+   {
+    "rfilename": "data/decisions/day-111.json"
+   },
+   {
+    "rfilename": "data/decisions/day-112.json"
+   },
+   {
+    "rfilename": "data/decisions/day-113.json"
+   },
+   {
+    "rfilename": "data/decisions/day-114.json"
+   },
+   {
+    "rfilename": "data/decisions/day-115.json"
+   },
+   {
+    "rfilename": "data/decisions/day-116.json"
+   },
+   {
+    "rfilename": "data/decisions/day-117.json"
+   },
+   {
+    "rfilename": "data/decisions/day-118.json"
+   },
+   {
+    "rfilename": "data/decisions/day-119.json"
+   },
+   {
+    "rfilename": "data/decisions/day-120.json"
+   },
+   {
+    "rfilename": "data/decisions/day-121.json"
+   },
+   {
+    "rfilename": "data/decisions/day-122.json"
+   },
+   {
+    "rfilename": "data/decisions/day-123.json"
+   },
+   {
+    "rfilename": "data/decisions/day-124.json"
+   },
+   {
+    "rfilename": "data/decisions/day-125.json"
+   },
+   {
+    "rfilename": "data/decisions/day-126.json"
+   },
+   {
+    "rfilename": "data/decisions/day-127.json"
+   },
+   {
+    "rfilename": "data/decisions/day-128.json"
+   },
+   {
+    "rfilename": "data/decisions/day-129.json"
+   },
+   {
+    "rfilename": "data/decisions/day-130.json"
+   },
+   {
+    "rfilename": "data/decisions/day-131.json"
+   },
+   {
+    "rfilename": "data/decisions/day-132.json"
+   },
+   {
+    "rfilename": "data/decisions/day-133.json"
+   },
+   {
+    "rfilename": "data/decisions/day-134.json"
+   },
+   {
+    "rfilename": "data/decisions/day-135.json"
+   },
+   {
+    "rfilename": "data/decisions/day-136.json"
+   },
+   {
+    "rfilename": "data/decisions/day-137.json"
+   },
+   {
+    "rfilename": "data/decisions/day-138.json"
+   },
+   {
+    "rfilename": "data/decisions/day-139.json"
+   },
+   {
+    "rfilename": "data/decisions/day-140.json"
+   },
+   {
+    "rfilename": "data/decisions/day-141.json"
+   },
+   {
+    "rfilename": "data/decisions/day-142.json"
+   },
+   {
+    "rfilename": "data/decisions/day-143.json"
+   },
+   {
+    "rfilename": "data/decisions/day-144.json"
+   },
+   {
+    "rfilename": "data/decisions/day-145.json"
+   },
+   {
+    "rfilename": "data/decisions/day-146.json"
+   },
+   {
+    "rfilename": "data/decisions/day-147.json"
+   },
+   {
+    "rfilename": "data/decisions/day-148.json"
+   },
+   {
+    "rfilename": "data/decisions/day-149.json"
+   },
+   {
+    "rfilename": "data/decisions/day-150.json"
+   },
+   {
+    "rfilename": "data/decisions/day-151.json"
+   },
+   {
+    "rfilename": "data/decisions/day-152.json"
+   },
+   {
+    "rfilename": "data/decisions/day-153.json"
+   },
+   {
+    "rfilename": "data/decisions/day-154.json"
+   },
+   {
+    "rfilename": "data/decisions/day-155.json"
+   },
+   {
+    "rfilename": "data/decisions/day-156.json"
+   },
+   {
+    "rfilename": "data/decisions/day-157.json"
+   },
+   {
+    "rfilename": "data/decisions/day-158.json"
+   },
+   {
+    "rfilename": "data/decisions/day-159.json"
+   },
+   {
+    "rfilename": "data/decisions/day-160.json"
+   },
+   {
+    "rfilename": "data/decisions/day-161.json"
+   },
+   {
+    "rfilename": "data/decisions/day-162.json"
+   },
+   {
+    "rfilename": "data/decisions/day-163.json"
+   },
+   {
+    "rfilename": "data/decisions/day-164.json"
+   },
+   {
+    "rfilename": "data/decisions/day-165.json"
+   },
+   {
+    "rfilename": "data/decisions/day-166.json"
+   },
+   {
+    "rfilename": "data/decisions/day-167.json"
+   },
+   {
+    "rfilename": "data/decisions/day-168.json"
+   },
+   {
+    "rfilename": "data/decisions/day-169.json"
+   },
+   {
+    "rfilename": "data/decisions/day-170.json"
+   },
+   {
+    "rfilename": "data/decisions/day-171.json"
+   },
+   {
+    "rfilename": "data/decisions/day-172.json"
+   },
+   {
+    "rfilename": "data/decisions/day-173.json"
+   },
+   {
+    "rfilename": "data/decisions/day-174.json"
+   },
+   {
+    "rfilename": "data/decisions/day-175.json"
+   },
+   {
+    "rfilename": "data/decisions/day-176.json"
+   },
+   {
+    "rfilename": "data/decisions/day-177.json"
+   },
+   {
+    "rfilename": "data/decisions/day-178.json"
+   },
+   {
+    "rfilename": "data/decisions/day-179.json"
+   },
+   {
+    "rfilename": "data/decisions/day-180.json"
+   },
+   {
+    "rfilename": "data/decisions/day-181.json"
+   },
+   {
+    "rfilename": "data/decisions/day-182.json"
+   },
+   {
+    "rfilename": "data/decisions/day-183.json"
+   },
+   {
+    "rfilename": "data/decisions/day-184.json"
+   },
+   {
+    "rfilename": "data/decisions/day-185.json"
+   },
+   {
+    "rfilename": "data/decisions/day-186.json"
+   },
+   {
+    "rfilename": "data/decisions/day-187.json"
+   },
+   {
+    "rfilename": "data/decisions/day-188.json"
+   },
+   {
+    "rfilename": "data/decisions/day-189.json"
+   },
+   {
+    "rfilename": "data/decisions/day-190.json"
+   },
+   {
+    "rfilename": "data/decisions/day-191.json"
+   },
+   {
+    "rfilename": "data/decisions/day-192.json"
+   },
+   {
+    "rfilename": "data/decisions/day-193.json"
+   },
+   {
+    "rfilename": "data/decisions/day-194.json"
+   },
+   {
+    "rfilename": "data/decisions/day-195.json"
+   },
+   {
+    "rfilename": "data/decisions/day-196.json"
+   },
+   {
+    "rfilename": "data/decisions/day-197.json"
+   },
+   {
+    "rfilename": "data/decisions/day-198.json"
+   },
+   {
+    "rfilename": "data/decisions/day-199.json"
+   },
+   {
+    "rfilename": "data/decisions/day-200.json"
+   },
+   {
+    "rfilename": "data/decisions/day-201.json"
+   },
+   {
+    "rfilename": "data/decisions/day-202.json"
+   },
+   {
+    "rfilename": "data/decisions/day-203.json"
+   },
+   {
+    "rfilename": "data/decisions/day-204.json"
+   },
+   {
+    "rfilename": "data/decisions/day-205.json"
+   },
+   {
+    "rfilename": "data/decisions/day-206.json"
+   },
+   {
+    "rfilename": "data/decisions/day-207.json"
+   },
+   {
+    "rfilename": "data/decisions/day-208.json"
+   },
+   {
+    "rfilename": "data/decisions/day-209.json"
+   },
+   {
+    "rfilename": "data/decisions/day-210.json"
+   },
+   {
+    "rfilename": "data/decisions/day-211.json"
+   },
+   {
+    "rfilename": "data/decisions/day-212.json"
+   },
+   {
+    "rfilename": "data/decisions/day-213.json"
+   },
+   {
+    "rfilename": "data/decisions/day-214.json"
+   },
+   {
+    "rfilename": "data/decisions/day-215.json"
+   },
+   {
+    "rfilename": "data/decisions/day-216.json"
+   },
+   {
+    "rfilename": "data/decisions/day-217.json"
+   },
+   {
+    "rfilename": "data/decisions/day-218.json"
+   },
+   {
+    "rfilename": "data/decisions/day-219.json"
+   },
+   {
+    "rfilename": "data/decisions/day-220.json"
+   },
+   {
+    "rfilename": "data/decisions/day-221.json"
+   },
+   {
+    "rfilename": "data/decisions/day-222.json"
+   },
+   {
+    "rfilename": "data/decisions/day-223.json"
+   },
+   {
+    "rfilename": "data/decisions/day-224.json"
+   },
+   {
+    "rfilename": "data/decisions/day-225.json"
+   },
+   {
+    "rfilename": "data/decisions/day-226.json"
+   },
+   {
+    "rfilename": "data/decisions/day-227.json"
+   },
+   {
+    "rfilename": "data/decisions/day-228.json"
+   },
+   {
+    "rfilename": "data/decisions/day-229.json"
+   },
+   {
+    "rfilename": "data/decisions/day-230.json"
+   },
+   {
+    "rfilename": "data/decisions/day-231.json"
+   },
+   {
+    "rfilename": "data/decisions/day-232.json"
+   },
+   {
+    "rfilename": "data/decisions/day-233.json"
+   },
+   {
+    "rfilename": "data/decisions/day-234.json"
+   },
+   {
+    "rfilename": "data/decisions/day-235.json"
+   },
+   {
+    "rfilename": "data/decisions/day-236.json"
+   },
+   {
+    "rfilename": "data/decisions/day-237.json"
+   },
+   {
+    "rfilename": "data/decisions/day-238.json"
+   },
+   {
+    "rfilename": "data/decisions/day-239.json"
+   },
+   {
+    "rfilename": "data/decisions/day-240.json"
+   },
+   {
+    "rfilename": "data/decisions/day-241.json"
+   },
+   {
+    "rfilename": "data/decisions/day-242.json"
+   },
+   {
+    "rfilename": "data/decisions/day-243.json"
+   },
+   {
+    "rfilename": "data/decisions/day-244.json"
+   },
+   {
+    "rfilename": "data/decisions/day-245.json"
+   },
+   {
+    "rfilename": "data/decisions/day-246.json"
+   },
+   {
+    "rfilename": "data/decisions/day-247.json"
+   },
+   {
+    "rfilename": "data/decisions/day-248.json"
+   },
+   {
+    "rfilename": "data/decisions/day-249.json"
+   },
+   {
+    "rfilename": "data/decisions/day-250.json"
+   },
+   {
+    "rfilename": "data/decisions/day-251.json"
+   },
+   {
+    "rfilename": "data/decisions/day-252.json"
+   },
+   {
+    "rfilename": "data/decisions/day-253.json"
+   },
+   {
+    "rfilename": "data/decisions/day-254.json"
+   },
+   {
+    "rfilename": "data/decisions/day-255.json"
+   },
+   {
+    "rfilename": "data/decisions/day-256.json"
+   },
+   {
+    "rfilename": "data/decisions/day-257.json"
+   },
+   {
+    "rfilename": "data/decisions/day-258.json"
+   },
+   {
+    "rfilename": "data/decisions/day-259.json"
+   },
+   {
+    "rfilename": "data/decisions/day-260.json"
+   },
+   {
+    "rfilename": "data/decisions/day-261.json"
+   },
+   {
+    "rfilename": "data/decisions/day-262.json"
+   },
+   {
+    "rfilename": "data/decisions/day-263.json"
+   },
+   {
+    "rfilename": "data/decisions/day-264.json"
+   },
+   {
+    "rfilename": "data/decisions/day-265.json"
+   },
+   {
+    "rfilename": "data/decisions/day-266.json"
+   },
+   {
+    "rfilename": "data/decisions/day-267.json"
+   },
+   {
+    "rfilename": "data/decisions/day-268.json"
+   },
+   {
+    "rfilename": "data/decisions/day-269.json"
+   },
+   {
+    "rfilename": "data/decisions/day-270.json"
+   },
+   {
+    "rfilename": "data/decisions/day-271.json"
+   },
+   {
+    "rfilename": "data/decisions/day-272.json"
+   },
+   {
+    "rfilename": "data/decisions/day-273.json"
+   },
+   {
+    "rfilename": "data/decisions/day-274.json"
+   },
+   {
+    "rfilename": "data/decisions/day-275.json"
+   },
+   {
+    "rfilename": "data/decisions/day-276.json"
+   },
+   {
+    "rfilename": "data/decisions/day-277.json"
+   },
+   {
+    "rfilename": "data/decisions/day-278.json"
+   },
+   {
+    "rfilename": "data/decisions/day-279.json"
+   },
+   {
+    "rfilename": "data/decisions/day-280.json"
+   },
+   {
+    "rfilename": "data/decisions/day-281.json"
+   },
+   {
+    "rfilename": "data/decisions/day-282.json"
+   },
+   {
+    "rfilename": "data/decisions/day-283.json"
+   },
+   {
+    "rfilename": "data/decisions/day-284.json"
+   },
+   {
+    "rfilename": "data/decisions/day-285.json"
+   },
+   {
+    "rfilename": "data/decisions/day-286.json"
+   },
+   {
+    "rfilename": "data/decisions/day-287.json"
+   },
+   {
+    "rfilename": "data/decisions/day-288.json"
+   },
+   {
+    "rfilename": "data/decisions/day-289.json"
+   },
+   {
+    "rfilename": "data/decisions/day-290.json"
+   },
+   {
+    "rfilename": "data/decisions/day-291.json"
+   },
+   {
+    "rfilename": "data/decisions/day-292.json"
+   },
+   {
+    "rfilename": "data/decisions/day-293.json"
+   },
+   {
+    "rfilename": "data/decisions/day-294.json"
+   },
+   {
+    "rfilename": "data/decisions/day-295.json"
+   },
+   {
+    "rfilename": "data/decisions/day-296.json"
+   },
+   {
+    "rfilename": "data/decisions/day-297.json"
+   },
+   {
+    "rfilename": "data/decisions/day-298.json"
+   },
+   {
+    "rfilename": "data/decisions/day-299.json"
+   },
+   {
+    "rfilename": "data/decisions/day-300.json"
+   },
+   {
+    "rfilename": "data/decisions/day-301.json"
+   },
+   {
+    "rfilename": "data/decisions/day-302.json"
+   },
+   {
+    "rfilename": "data/decisions/day-303.json"
+   },
+   {
+    "rfilename": "data/political-full-cats.json"
+   },
+   {
+    "rfilename": "data/political-predictions.json"
+   },
+   {
+    "rfilename": "data/political_events.json"
+   },
+   {
+    "rfilename": "data/prompts/overrides.json"
+   },
+   {
+    "rfilename": "data/runtime/agent_logs.json"
+   },
+   {
+    "rfilename": "data/runtime/council_plans.json"
+   },
+   {
+    "rfilename": "data/runtime/state.json"
+   },
+   {
+    "rfilename": "data/youtube/manual-ingested.json"
+   },
+   {
+    "rfilename": "extend_predictions_all_categories.py"
+   },
+   {
+    "rfilename": "gateway_client.py"
+   },
+   {
+    "rfilename": "island_oracle.py"
+   },
+   {
+    "rfilename": "provider_health.py"
+   },
+   {
+    "rfilename": "requirements.txt"
+   }
+  ],
+  "subdomain": "lbjlincoln26-political-llm-trading-floor",
+  "tags": [
+   "gradio",
+   "region:us"
+  ],
+  "usedStorage": 999998429
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "LBJLincoln26/political-llm-trading-floor",
+ "repo_type": "spaces",
+ "sha": "ad7001495b10213f8004a59bd9b07ade4ddeefb6",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/LBJLincoln26/political-llm-trading-floor"
+}

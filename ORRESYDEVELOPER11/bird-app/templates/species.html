@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block title %}Species Library | Tanzania Bird Finder{% endblock %}
+{% block content %}
+<section class="page-hero">
+  <span class="eyebrow">Species library</span>
+  <h1>Browse verified bird records</h1>
+  <p>Filter by habitat, conservation status, or search by common and scientific name.</p>
+</section>
+
+<section class="toolbar">
+  <label class="search-box">
+    <i data-lucide="search"></i>
+    <input data-filter-search placeholder="Search species">
+  </label>
+  <select data-filter-select="habitat">
+    <option value="">All habitats</option>
+    {% for habitat in habitats %}
+      <option value="{{ habitat.name }}">{{ habitat.name }}</option>
+    {% endfor %}
+  </select>
+  <select data-filter-select="status">
+    <option value="">All statuses</option>
+    {% for status in statuses %}
+      <option value="{{ status }}">{{ status }}</option>
+    {% endfor %}
+  </select>
+</section>
+
+<section class="section">
+  <div class="grid card-grid" data-filter-grid>
+    {% for bird in birds %}
+      <article class="species-card" data-name="{{ bird.common_name }} {{ bird.scientific_name }}" data-habitat="{{ bird.habitat.name }}" data-status="{{ bird.conservation_status }}">
+        <a href="{{ url_for('species_detail', bird_id=bird.id) }}">
+          <img src="{{ bird.image_url }}" alt="{{ bird.common_name }}" loading="lazy">
+          <div class="card-body">
+            <span class="status">{{ bird.conservation_status }}</span>
+            <h2>{{ bird.common_name }}</h2>
+            <p class="latin">{{ bird.scientific_name }}</p>
+            <p>{{ bird.description }}</p>
+            <div class="meta-line">
+              <span><i data-lucide="map-pin"></i>{{ bird.region }}</span>
+              <span><i data-lucide="route"></i>{{ bird.migration_pattern }}</span>
+            </div>
+          </div>
+        </a>
+      </article>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,87 @@
+{
+ "captured_at": "2026-08-06T03:09:23Z",
+ "hf_metadata": {
+  "_id": "6a726544221e3c71ff08b547",
+  "author": "aneforge",
+  "cardData": {
+   "colorFrom": "gray",
+   "colorTo": "indigo",
+   "emoji": "🍎",
+   "license": "mit",
+   "pinned": false,
+   "sdk": "static",
+   "title": "ANEForge Demos"
+  },
+  "createdAt": "2026-08-04T22:18:44.000Z",
+  "datasets": [
+   "aneforge/ane-rooflines"
+  ],
+  "disabled": false,
+  "gated": false,
+  "host": "https://aneforge-demos.static.hf.space",
+  "id": "aneforge/demos",
+  "lastModified": "2026-08-05T14:14:05.000Z",
+  "likes": 0,
+  "private": false,
+  "region": "us",
+  "runtime": {
+   "hardware": {
+    "current": null,
+    "requested": null
+   },
+   "replicas": {
+    "current": 1,
+    "requested": 1
+   },
+   "stage": "RUNNING"
+  },
+  "sdk": "static",
+  "sha": "3306c2544b97620f18ee549bec50972c2dc02d78",
+  "siblings": [
+   {
+    "rfilename": ".gitattributes"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "demo.png"
+   },
+   {
+    "rfilename": "fluid_vorticity.webp"
+   },
+   {
+    "rfilename": "index.html"
+   },
+   {
+    "rfilename": "reaction_diffusion.webp"
+   },
+   {
+    "rfilename": "style.css"
+   }
+  ],
+  "subdomain": "aneforge-demos",
+  "tags": [
+   "static",
+   "region:us"
+  ],
+  "usedStorage": 2163040
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "aneforge/demos",
+ "repo_type": "spaces",
+ "sha": "3306c2544b97620f18ee549bec50972c2dc02d78",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/aneforge/demos"
+}

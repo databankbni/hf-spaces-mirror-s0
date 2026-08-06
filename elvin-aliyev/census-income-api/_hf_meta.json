@@ -1,0 +1,23 @@
+{
+ "captured_at": "2026-08-04T16:10:41Z",
+ "hf_metadata": {
+  "sha": "9d872d91234c214c6951d1b9a752587c156557a0"
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "elvin-aliyev/census-income-api",
+ "repo_type": "spaces",
+ "sha": "9d872d91234c214c6951d1b9a752587c156557a0",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/elvin-aliyev/census-income-api"
+}

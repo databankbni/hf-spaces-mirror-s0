@@ -1,0 +1,29 @@
+{
+  "indexed_at": "2026-06-22T10:36:56Z",
+  "mode": "full",
+  "embedding_model": "BAAI/bge-small-en-v1.5",
+  "embedding_dimensions": 384,
+  "filter_stats": {
+    "input_total": 2054,
+    "skipped_irrelevant": 1345,
+    "selected": 606,
+    "skipped_non_english": 55,
+    "skipped_unclassified": 48
+  },
+  "records_selected": 606,
+  "chunks_created": 606,
+  "chunks_indexed": 606,
+  "vector_store_count": 606,
+  "multi_chunk_records": 0,
+  "source_distribution": {
+    "youtube": 16,
+    "play_store": 366,
+    "trustpilot": 37,
+    "spotify_community": 86,
+    "app_store": 90,
+    "reddit": 11
+  },
+  "chroma_path": "data/index/chroma",
+  "chunks_output": "data\\output\\chunks.jsonl",
+  "duration_seconds": 31.07
+}

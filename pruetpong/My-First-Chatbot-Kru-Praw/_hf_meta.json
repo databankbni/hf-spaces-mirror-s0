@@ -1,0 +1,23 @@
+{
+ "captured_at": "2026-08-04T16:45:10Z",
+ "hf_metadata": {
+  "sha": "e8454d18af09518bb8abe7bf543cce66280eb98e"
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "pruetpong/My-First-Chatbot-Kru-Praw",
+ "repo_type": "spaces",
+ "sha": "e8454d18af09518bb8abe7bf543cce66280eb98e",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/pruetpong/My-First-Chatbot-Kru-Praw"
+}

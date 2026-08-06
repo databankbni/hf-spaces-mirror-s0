@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% block title %}Dashboard - MktBook{% endblock %}
+{% block content %}
+<meta http-equiv="refresh" content="30">
+<h1>Dashboard</h1>
+
+<div class="grid">
+    <div>
+        <article>
+            <header>Leaderboard</header>
+            {% if leaderboard %}
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Bot</th>
+                        <th>Student</th>
+                        <th>Score</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for entry in leaderboard %}
+                    <tr>
+                        <td>{{ loop.index }}</td>
+                        <td><a href="/bots/{{ entry.bot_id }}">{{ entry.bot_name }}</a></td>
+                        <td>{{ entry.student_name }}</td>
+                        <td>{{ "%.1f"|format(entry.overall_score) }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            {% else %}
+            <p>No grades yet. Run grading from the <a href="/grading">Grading</a> page.</p>
+            {% endif %}
+        </article>
+    </div>
+
+    <div>
+        <article>
+            <header>Live Activity</header>
+            <div id="activity-feed">
+                {% for msg in messages %}
+                <div class="feed-item">
+                    <strong>{{ msg.author_name }}</strong>: {{ msg.content[:100] }}{% if msg.content|length > 100 %}...{% endif %}
+                    <small>{{ msg.created_at }}</small>
+                </div>
+                {% endfor %}
+                {% if not messages %}
+                <p>No messages yet. Add bots to get started.</p>
+                {% endif %}
+            </div>
+        </article>
+    </div>
+</div>
+
+<article>
+    <header>Active Bots ({{ bots|selectattr("is_active")|list|length }} / {{ bots|length }})</header>
+    <div class="grid">
+        {% for bot in bots %}
+        <div>
+            <a href="/bots/{{ bot.id }}">
+                <strong>{{ bot.bot_name }}</strong>
+            </a>
+            <br>
+            <small>{{ bot.student_name }} &mdash; {% if bot.is_active %}<mark>Active</mark>{% else %}Inactive{% endif %}</small>
+        </div>
+        {% endfor %}
+    </div>
+    {% if not bots %}
+    <p>No bots registered. <a href="/bots/new">Add one!</a></p>
+    {% endif %}
+</article>
+{% endblock %}

@@ -1,0 +1,236 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<title>Noise-map 因果消融</title>
+<style>
+ body { background:#0d1117; color:#e6edf3; font-family:-apple-system,'Segoe UI','Noto Sans SC',sans-serif;
+        max-width:1000px; margin:0 auto; padding:28px 20px 60px; line-height:1.65; }
+ h1 { color:#63c98a; font-size:1.5em; border-bottom:1px solid #2b3138; padding-bottom:.4em; }
+ h2 { color:#63c98a; font-size:1.2em; margin-top:1.6em; }
+ .note { background:#161b22; border:1px solid #2b3138; border-radius:8px; padding:10px 14px; font-size:.92em; }
+ pre { background:#11161d; border:1px solid #2b3138; border-radius:8px; padding:12px; overflow-x:auto;
+       color:#a5d6ff; font-size:.9em; line-height:1.5; }
+ table { border-collapse:collapse; margin:.6em 0; } td,th { border:1px solid #2b3138; padding:5px 12px; }
+</style></head><body>
+<h1>Noise-map 因果消融:knownness→噪声水平 是否真的驱动生成质量?</h1>
+<div class="note">expS_ck@10000 · 六臂 · 同模型/同 memory/同 eps · warp 通道的 k 输入在所有臂保持诚实 —
+<b>唯一变量 = tau 调度如何从 k 导出</b>。20 保留 clip,LPIPS 主指标,配对差 + 95%CI。<b>结果计算中,完成后本页自动补全。</b></div>
+<h2>证明结构(每个箭头 = 一个配对差)</h2>
+<pre>generation quality ← 哪些环节因果承重?
+  ├─ SDEdit 初始化本身        → kmap vs purenoise
+  ├─ 平均噪声量               → purenoise vs unimean
+  ├─ 空间结构(任意异质性)     → unimean vs rolled
+  ├─ 观测对齐(结构放对位置)   → rolled vs kmap      ← 命题最强形式
+  ├─ 对齐方向正确性           → kmap vs inverted(破坏性对照)
+  └─ 连续分级 vs 二值          → kmap vs binary</pre>
+<h2>六臂的 tau 场(TEST 111b656f,latent 帧 10;暗 = 信任 memory,亮 = 纯噪声)</h2>
+<div style="display:inline-block;margin:4px;text-align:center"><img src="data:image/png;base64,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" style="border-radius:6px"><br><span style="font-size:.85em;color:#8b949e">kmap(正解)</span></div>
+<div style="display:inline-block;margin:4px;text-align:center"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAaAAAADwCAIAAADJrSdNAAADLklEQVR4nO3UQQ3AIADAwDEF6MIR7lFBSJo7BX11rLk/gKL/dQDALQYHZBkckGVwQJbBAVkGB2QZHJBlcECWwQFZBgdkGRyQZXBAlsEBWQYHZBkckGVwQJbBAVkGB2QZHJBlcECWwQFZBgdkGRyQZXBAlsEBWQYHZBkckGVwQJbBAVkGB2QZHJBlcECWwQFZBgdkGRyQZXBAlsEBWQYHZBkckGVwQJbBAVkGB2QZHJBlcECWwQFZBgdkGRyQZXBAlsEBWQYHZBkckGVwQJbBAVkGB2QZHJBlcECWwQFZBgdkGRyQZXBAlsEBWQYHZBkckGVwQJbBAVkGB2QZHJBlcECWwQFZBgdkGRyQZXBAlsEBWQYHZBkckGVwQJbBAVkGB2QZHJBlcECWwQFZBgdkGRyQZXBAlsEBWQYHZBkckGVwQJbBAVkGB2QZHJBlcECWwQFZBgdkGRyQZXBAlsEBWQYHZBkckGVwQJbBAVkGB2QZHJBlcECWwQFZBgdkGRyQZXBAlsEBWQYHZBkckGVwQJbBAVkGB2QZHJBlcECWwQFZBgdkGRyQZXBAlsEBWQYHZBkckGVwQJbBAVkGB2QZHJBlcECWwQFZBgdkGRyQZXBAlsEBWQYHZBkckGVwQJbBAVkGB2QZHJBlcECWwQFZBgdkGRyQZXBAlsEBWQYHZBkckGVwQJbBAVkGB2QZHJBlcECWwQFZBgdkGRyQZXBAlsEBWQYHZBkckGVwQJbBAVkGB2QZHJBlcECWwQFZBgdkGRyQZXBAlsEBWQYHZBkckGVwQJbBAVkGB2QZHJBlcECWwQFZBgdkGRyQZXBAlsEBWQYHZBkckGVwQJbBAVkGB2QZHJBlcECWwQFZBgdkGRyQZXBAlsEBWQYHZBkckGVwQJbBAVkGB2QZHJBlcECWwQFZBgdkGRyQZXBAlsEBWQYHZBkckGVwQJbBAVkGB2QZHJBlcECWwQFZBgdkGRyQZXBAlsEBWQYHZBkckGVwQJbBAVkGB2QZHJBlcECWwQFZBgdkGRyQZXBAlsEBWQYHZBkckGVwQJbBAVkGB2QZHJBlcECWwQFZBgdkGRyQdQDnCAKznI+KcwAAAABJRU5ErkJggg==" style="border-radius:6px"><br><span style="font-size:.85em;color:#8b949e">unimean(去空间结构)</span></div>
+<div style="display:inline-block;margin:4px;text-align:center"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAaAAAADwCAIAAADJrSdNAAADLUlEQVR4nO3UQQ3AIADAwDH/nhAGD1QQkuZOQV8da88PoOh/HQBwi8EBWQYHZBkckGVwQJbBAVkGB2QZHJBlcECWwQFZBgdkGRyQZXBAlsEBWQYHZBkckGVwQJbBAVkGB2QZHJBlcECWwQFZBgdkGRyQZXBAlsEBWQYHZBkckGVwQJbBAVkGB2QZHJBlcECWwQFZBgdkGRyQZXBAlsEBWQYHZBkckGVwQJbBAVkGB2QZHJBlcECWwQFZBgdkGRyQZXBAlsEBWQYHZBkckGVwQJbBAVkGB2QZHJBlcECWwQFZBgdkGRyQZXBAlsEBWQYHZBkckGVwQJbBAVkGB2QZHJBlcECWwQFZBgdkGRyQZXBAlsEBWQYHZBkckGVwQJbBAVkGB2QZHJBlcECWwQFZBgdkGRyQZXBAlsEBWQYHZBkckGVwQJbBAVkGB2QZHJBlcECWwQFZBgdkGRyQZXBAlsEBWQYHZBkckGVwQJbBAVkGB2QZHJBlcECWwQFZBgdkGRyQZXBAlsEBWQYHZBkckGVwQJbBAVkGB2QZHJBlcECWwQFZBgdkGRyQZXBAlsEBWQYHZBkckGVwQJbBAVkGB2QZHJBlcECWwQFZBgdkGRyQZXBAlsEBWQYHZBkckGVwQJbBAVkGB2QZHJBlcECWwQFZBgdkGRyQZXBAlsEBWQYHZBkckGVwQJbBAVkGB2QZHJBlcECWwQFZBgdkGRyQZXBAlsEBWQYHZBkckGVwQJbBAVkGB2QZHJBlcECWwQFZBgdkGRyQZXBAlsEBWQYHZBkckGVwQJbBAVkGB2QZHJBlcECWwQFZBgdkGRyQZXBAlsEBWQYHZBkckGVwQJbBAVkGB2QZHJBlcECWwQFZBgdkGRyQZXBAlsEBWQYHZBkckGVwQJbBAVkGB2QZHJBlcECWwQFZBgdkGRyQZXBAlsEBWQYHZBkckGVwQJbBAVkGB2QZHJBlcECWwQFZBgdkGRyQZXBAlsEBWQYHZBkckGVwQJbBAVkGB2QZHJBlcECWwQFZBgdkGRyQZXBAlsEBWQYHZBkckGVwQJbBAVkGB2QZHJBlcECWwQFZBgdkHZ/7BJbLGOiVAAAAAElFTkSuQmCC" style="border-radius:6px"><br><span style="font-size:.85em;color:#8b949e">purenoise(去初始化)</span></div>
+<div style="display:inline-block;margin:4px;text-align:center"><img src="data:image/png;base64,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" style="border-radius:6px"><br><span style="font-size:.85em;color:#8b949e">rolled(错位对齐)</span></div>
+<div style="display:inline-block;margin:4px;text-align:center"><img src="data:image/png;base64,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" style="border-radius:6px"><br><span style="font-size:.85em;color:#8b949e">inverted(反向对齐)</span></div>
+<div style="display:inline-block;margin:4px;text-align:center"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAaAAAADwCAIAAADJrSdNAAAENUlEQVR4nO3dQU7cQBRF0e7E2VmWjcTCugcZMKUCBhe2r88ZRgpqIbj6g6fifrv9vsFHHs+XvT8CrPZr7w8AMIvAAVkCB2QJHJAlcECWwAFZAgdk3e3g+En2dPwkFxyQJXBAlsABWQIHZAkckCVwQJbAAVl2cJySPR2f4YIDsgQOyBI4IEvggCyBA7IEDsgSOCDLDo5Ls6drc8EBWQIHZAkckCVwQJbAAVkCB2QJHJBlBwcbsKc7JhcckCVwQJbAAVkCB2QJHJAlcECWwAFZy94fAMr+LH+nfn37u/9zwQFZAgdkCRyQJXBAlsABWQIHZAkckOU9ODgBe7evccEBWQIHZAkckCVwQJbAAVkCB2QJHJDlPThSttqLzX7HbcTebVsuOCBL4IAsgQOyBA7IEjggS+CALIEDspbR7mavHRB8x+jn1r7smlxwQJbAAVkCB2QJHJAlcECWwAFZAgdkeQ8ODmSr/elZ9q2z94kuOCBL4IAsgQOyBA7IEjggS+CALIEDsu6P5+uq/3C0HQ3McJYd2dEc7d09FxyQJXBAlsABWQIHZAkckCVwQJbAAVneg9uZvdUxVb//R9upzeaCA7IEDsgSOCBL4IAsgQOyBA7IEjgga/geXHUHRNvanVf15/xqe7cRFxyQJXBAlsABWQIHZAkckCVwQJbAAVn+LioE2cG9ccEBWQIHZAkckCVwQJbAAVkCB2QJHJAlcECWwAFZAgdkCRyQJXBAlsABWQIHZAkckLXs/QF43+g9L+/xwee54IAsgQOyBA7IEjggS+CALIEDsgQOyLKDOyh7N/g+FxyQJXBAlsABWQIHZAkckCVwQJbAAVkCB2QJHJAlcECWwAFZAgdkCRyQJXBAlsABWQIHZAkckCVwQJbAAVkCB2QJHJAlcECWwAFZw7+L6u9ycmWP58u7/+734lxccECWwAFZAgdkCRyQJXBAlsABWQIHZAkckCVwQJbAAVkCB2QJHJAlcECWwAFZAgdk3R/P11X/wXtYcHyj9+yuxgUHZAkckCVwQJbAAVkCB2QJHJAlcECWwAFZAgdkCRyQJXBAlsABWQIHZAkckCVwQNbwPTjvvnFlo/fU/F68Oct7cy44IEvggCyBA7IEDsgSOCBL4IAsgQOylr0/APCxtbuz2Xu9rb7+7D2dCw7IEjggS+CALIEDsgQOyBI4IEvggCw7OAjaal929j2dCw7IEjggS+CALIEDsgQOyBI4IEvggCw7OGBo9nttW+3gRl/HBQdkCRyQJXBAlsABWQIHZAkckCVwQJYdHJzYaP81e7+2ldHn3Gof54IDsgQOyBI4IEvggCyBA7IEDsgSOCDLDg5WmL3bWusse7e11n6f/V1U4HIEDsgSOCBL4IAsgQOyBA7IEjggyw4OVthr78bXuOCALIEDsgQOyBI4IEvggCyBA7IEDsj6B0juehG9SvusAAAAAElFTkSuQmCC" style="border-radius:6px"><br><span style="font-size:.85em;color:#8b949e">binary(二值化)</span></div>
+<div class="note">rolled 臂保持直方图与空间连续性、只破坏"观测对齐"——它与 kmap 的差值是"map 放对位置"的净价值,
+比随机 shuffle 干净(shuffle 会同时引入椒盐式失配)。</div>
+<h2>结果(20 保留 clip,配对,LPIPS 主指标)</h2>
+<table><tr><th>臂</th><th>LPIPS ↓</th><th>PSNR ↑</th><th>seen-PSNR</th><th>unseen-PSNR</th></tr>
+<tr><td><b>kmap(正解)</b></td><td><b>0.4109 ± 0.0407</b></td><td>18.32</td><td>19.13</td><td><b>18.23</b></td></tr>
+<tr><td>binary(二值化)</td><td>0.4071 ± 0.0412</td><td>18.35</td><td>19.15</td><td>18.50</td></tr>
+<tr><td>purenoise(去初始化)</td><td>0.4595</td><td>17.88</td><td>18.61</td><td>18.21</td></tr>
+<tr><td>rolled(错位对齐)</td><td>0.4684</td><td>17.91</td><td>19.12</td><td>16.95</td></tr>
+<tr><td>unimean(去空间结构)</td><td>0.4721</td><td>17.93</td><td>19.10</td><td>17.02</td></tr>
+<tr><td>inverted(反向对齐)</td><td>0.4802</td><td>17.92</td><td>19.05</td><td>16.95</td></tr></table>
+<h2>配对差(负 = 前者好,★ = CI 排除零)</h2>
+<table><tr><th>对比</th><th>ΔLPIPS ± 95%CI</th><th>wins</th></tr>
+<tr><td><b>kmap − rolled(观测对齐的净价值)</b></td><td><b>−0.0576 ± 0.0185 ★</b></td><td><b>20/20</b></td></tr>
+<tr><td>kmap − unimean(空间结构+对齐)</td><td>−0.0612 ± 0.0198 ★</td><td>20/20</td></tr>
+<tr><td>kmap − inverted(vs 反向)</td><td>−0.0693 ± 0.0192 ★</td><td>20/20</td></tr>
+<tr><td>kmap − purenoise(vs 无初始化)</td><td>−0.0486 ± 0.0182 ★</td><td>18/20</td></tr>
+<tr><td>rolled − inverted(对齐方向剂量)</td><td>−0.0118 ± 0.0049 ★</td><td>17/20</td></tr>
+<tr><td>unimean − rolled(错位结构≈无结构)</td><td>+0.0036 ± 0.0031</td><td>6/20</td></tr>
+<tr><td>kmap − binary(连续 vs 二值调度)</td><td>+0.0037 ± 0.0050(无差)</td><td>7/20</td></tr></table>
+<div class="verdict"><b>判决:noise level 的观测对齐因果地驱动生成质量。</b><br>
+① <b>kmap 对每个错位臂都是 20/20 全胜</b>(−0.05~−0.07 LPIPS,CI 全部排除零);<br>
+② <b>最强形式成立</b>:rolled 臂保持直方图与连续性、只错位 → 仍然全败(−0.058),且错位结构 ≈ 无结构(unimean),
+反向对齐更糟 — 帮忙的不是"异质性",是<b>放对位置的异质性</b>;<br>
+③ 机制定位:错位臂的伤害集中在 <b>unseen 区域</b>(17.0 vs 18.2 — 被迫从空画布的半噪声起步烤入灰底),
+seen 区域各臂持平;purenoise 反而好于 unimean — <b>不能选择性信任时,宁可全不信任</b>;<br>
+④ 诚实脚注:<b>调度的连续分级无增量</b>(kmap ≈ binary[≥5 次] 甚至略负)— 承重的是 seen/unseen 二值区分 + 
+连续 k 作为<b>模型输入</b>(训练变量),不是调度的连续档位。</div>
+<h2 id="seen-table">Seen 区域 PSNR 表(expS 六臂,kcount ≥ 5/18,20 clip)</h2>
+<table><tr><th>臂</th><th>seen-PSNR ↑</th><th>Δ vs kmap(配对)</th><th>unseen-PSNR(参考)</th></tr><tr style="color:#63c98a"><td>kmap</td><td>19.13 ± 0.84</td><td>+0.00 ± 0.00</td><td>18.23 ± 1.45</td></tr><tr><td>binary</td><td>19.15 ± 0.86</td><td>+0.02 ± 0.10</td><td>18.50 ± 1.65</td></tr><tr><td>unimean</td><td>19.10 ± 0.73</td><td>-0.03 ± 0.19</td><td>17.02 ± 0.84</td></tr><tr><td>rolled</td><td>19.12 ± 0.78</td><td>-0.01 ± 0.14</td><td>16.95 ± 0.82</td></tr><tr><td>inverted</td><td>19.05 ± 0.83</td><td>-0.08 ± 0.23</td><td>16.95 ± 0.85</td></tr><tr><td>purenoise</td><td>18.61 ± 0.87</td><td>-0.52 ± 0.42</td><td>18.21 ± 1.82</td></tr></table>
+<div class="note">seen 区各臂统计持平 — 已观测区域的保真由 z_mem 内容 + 0.85 floor 兜底;
+臂间全部分离发生在 unseen 区(错位臂灰化 ~-1.2dB)。"错误的 map 惩罚生成自由度、不动记忆保真"。</div>
+<h2>六臂视频墙 — 11 个 clip × 6 臂,[GT | 生成 | tau 场](展开查看)</h2>
+<details><summary style="cursor:pointer;color:#63c98a;margin:.6em 0">clip 0003dc82(6 条)</summary>
+<h3 style="color:#8b949e;font-size:.9em">kmap(正解)</h3>
+<video controls preload="none" style="width:100%;border-radius:8px;background:#000" src="https://huggingface.co/datasets/luuuulinnnn/mcsdf-videos/resolve/main/mapabl_kmap_0003dc82_s10000.mp4"></video>
+<h3 style="color:#8b949e;font-size:.9em">binary</h3>
+<video controls preload="none" style="width:100%;border-radius:8px;background:#000" src="https://huggingface.co/datasets/luuuulinnnn/mcsdf-videos/resolve/main/mapabl_binary_0003dc82_s10000.mp4"></video>
+<h3 style="color:#8b949e;font-size:.9em">unimean(去结构)</h3>
+<video controls preload="none" style="width:100%;border-radius:8px;background:#000" src="https://huggingface.co/datasets/luuuulinnnn/mcsdf-videos/resolve/main/mapabl_unimean_0003dc82_s10000.mp4"></video>
+<h3 style="color:#8b949e;font-size:.9em">rolled(错位)</h3>
+<video controls preload="none" style="width:100%;border-radius:8px;background:#000" src="https://huggingface.co/datasets/luuuulinnnn/mcsdf-videos/resolve/main/mapabl_rolled_0003dc82_s10000.mp4"></video>
+<h3 style="color:#8b949e;font-size:.9em">inverted(反向)</h3>
+<video controls preload="none" style="width:100%;border-radius:8px;background:#000" src="https://huggingface.co/datasets/luuuulinnnn/mcsdf-videos/resolve/main/mapabl_inverted_0003dc82_s10000.mp4"></video>
+<h3 style="color:#8b949e;font-size:.9em">purenoise</h3>
+<video controls preload="none" style="width:100%;border-radius:8px;background:#000" src="https://huggingface.co/datasets/luuuulinnnn/mcsdf-videos/resolve/main/mapabl_purenoise_0003dc82_s10000.mp4"></video>
+</details>
+<details><summary style="cursor:pointer;color:#63c98a;margin:.6em 0">clip 111b656f(6 条)</summary>
+<h3 style="color:#8b949e;font-size:.9em">kmap(正解)</h3>
+<video controls preload="none" style="width:100%;border-radius:8px;background:#000" src="https://huggingface.co/datasets/luuuulinnnn/mcsdf-videos/resolve/main/mapabl_kmap_111b656f_s10000.mp4"></video>
+<h3 style="color:#8b949e;font-size:.9em">binary</h3>
+<video controls preload="none" style="width:100%;border-radius:8px;background:#000" src="https://huggingface.co/datasets/luuuulinnnn/mcsdf-videos/resolve/main/mapabl_binary_111b656f_s10000.mp4"></video>
+<h3 style="color:#8b949e;font-size:.9em">unimean(去结构)</h3>
+<video controls preload="none" style="width:100%;border-radius:8px;background:#000" src="https://huggingface.co/datasets/luuuulinnnn/mcsdf-videos/resolve/main/mapabl_unimean_111b656f_s10000.mp4"></video>
+<h3 style="color:#8b949e;font-size:.9em">rolled(错位)</h3>
+<video controls preload="none" style="width:100%;border-radius:8px;background:#000" src="https://huggingface.co/datasets/luuuulinnnn/mcsdf-videos/resolve/main/mapabl_rolled_111b656f_s10000.mp4"></video>
+<h3 style="color:#8b949e;font-size:.9em">inverted(反向)</h3>
+<video controls preload="none" style="width:100%;border-radius:8px;background:#000" src="https://huggingface.co/datasets/luuuulinnnn/mcsdf-videos/resolve/main/mapabl_inverted_111b656f_s10000.mp4"></video>
+<h3 style="color:#8b949e;font-size:.9em">purenoise</h3>
+<video controls preload="none" style="width:100%;border-radius:8px;background:#000" src="https://huggingface.co/datasets/luuuulinnnn/mcsdf-videos/resolve/main/mapabl_purenoise_111b656f_s10000.mp4"></video>
+</details>
+<details><summary style="cursor:pointer;color:#63c98a;margin:.6em 0">clip 2501f488(6 条)</summary>
+<h3 style="color:#8b949e;font-size:.9em">kmap(正解)</h3>
+<video controls preload="none" style="width:100%;border-radius:8px;background:#000" src="https://huggingface.co/datasets/luuuulinnnn/mcsdf-videos/resolve/main/mapabl_kmap_2501f488_s10000.mp4"></video>
+<h3 style="color:#8b949e;font-size:.9em">binary</h3>
+<video controls preload="none" style="width:100%;border-radius:8px;background:#000" src="https://huggingface.co/datasets/luuuulinnnn/mcsdf-videos/resolve/main/mapabl_binary_2501f488_s10000.mp4"></video>
+<h3 style="color:#8b949e;font-size:.9em">unimean(去结构)</h3>
+<video controls preload="none" style="width:100%;border-radius:8px;background:#000" src="https://huggingface.co/datasets/luuuulinnnn/mcsdf-videos/resolve/main/mapabl_unimean_2501f488_s10000.mp4"></video>
+<h3 style="color:#8b949e;font-size:.9em">rolled(错位)</h3>
+<video controls preload="none" style="width:100%;border-radius:8px;background:#000" src="https://huggingface.co/datasets/luuuulinnnn/mcsdf-videos/resolve/main/mapabl_rolled_2501f488_s10000.mp4"></video>
+<h3 style="color:#8b949e;font-size:.9em">inverted(反向)</h3>
+<video controls preload="none" style="width:100%;border-radius:8px;background:#000" src="https://huggingface.co/datasets/luuuulinnnn/mcsdf-videos/resolve/main/mapabl_inverted_2501f488_s10000.mp4"></video>
+<h3 style="color:#8b949e;font-size:.9em">purenoise</h3>
+<video controls preload="none" style="width:100%;border-radius:8px;background:#000" src="https://huggingface.co/datasets/luuuulinnnn/mcsdf-videos/resolve/main/mapabl_purenoise_2501f488_s10000.mp4"></video>
+</details>
+<details><summary style="cursor:pointer;color:#63c98a;margin:.6em 0">clip 35ebb843(6 条)</summary>
+<h3 style="color:#8b949e;font-size:.9em">kmap(正解)</h3>
+<video controls preload="none" style="width:100%;border-radius:8px;background:#000" src="https://huggingface.co/datasets/luuuulinnnn/mcsdf-videos/resolve/main/mapabl_kmap_35ebb843_s10000.mp4"></video>
+<h3 style="color:#8b949e;font-size:.9em">binary</h3>
+<video controls preload="none" style="width:100%;border-radius:8px;background:#000" src="https://huggingface.co/datasets/luuuulinnnn/mcsdf-videos/resolve/main/mapabl_binary_35ebb843_s10000.mp4"></video>
+<h3 style="color:#8b949e;font-size:.9em">unimean(去结构)</h3>
+<video controls preload="none" style="width:100%;border-radius:8px;background:#000" src="https://huggingface.co/datasets/luuuulinnnn/mcsdf-videos/resolve/main/mapabl_unimean_35ebb843_s10000.mp4"></video>
+<h3 style="color:#8b949e;font-size:.9em">rolled(错位)</h3>
+<video controls preload="none" style="width:100%;border-radius:8px;background:#000" src="https://huggingface.co/datasets/luuuulinnnn/mcsdf-videos/resolve/main/mapabl_rolled_35ebb843_s10000.mp4"></video>
+<h3 style="color:#8b949e;font-size:.9em">inverted(反向)</h3>
+<video controls preload="none" style="width:100%;border-radius:8px;background:#000" src="https://huggingface.co/datasets/luuuulinnnn/mcsdf-videos/resolve/main/mapabl_inverted_35ebb843_s10000.mp4"></video>
+<h3 style="color:#8b949e;font-size:.9em">purenoise</h3>
+<video controls preload="none" style="width:100%;border-radius:8px;background:#000" src="https://huggingface.co/datasets/luuuulinnnn/mcsdf-videos/resolve/main/mapabl_purenoise_35ebb843_s10000.mp4"></video>
+</details>
+<details><summary style="cursor:pointer;color:#63c98a;margin:.6em 0">clip 3605ab74(6 条)</summary>
+<h3 style="color:#8b949e;font-size:.9em">kmap(正解)</h3>
+<video controls preload="none" style="width:100%;border-radius:8px;background:#000" src="https://huggingface.co/datasets/luuuulinnnn/mcsdf-videos/resolve/main/mapabl_kmap_3605ab74_s10000.mp4"></video>
+<h3 style="color:#8b949e;font-size:.9em">binary</h3>
+<video controls preload="none" style="width:100%;border-radius:8px;background:#000" src="https://huggingface.co/datasets/luuuulinnnn/mcsdf-videos/resolve/main/mapabl_binary_3605ab74_s10000.mp4"></video>
+<h3 style="color:#8b949e;font-size:.9em">unimean(去结构)</h3>
+<video controls preload="none" style="width:100%;border-radius:8px;background:#000" src="https://huggingface.co/datasets/luuuulinnnn/mcsdf-videos/resolve/main/mapabl_unimean_3605ab74_s10000.mp4"></video>
+<h3 style="color:#8b949e;font-size:.9em">rolled(错位)</h3>
+<video controls preload="none" style="width:100%;border-radius:8px;background:#000" src="https://huggingface.co/datasets/luuuulinnnn/mcsdf-videos/resolve/main/mapabl_rolled_3605ab74_s10000.mp4"></video>
+<h3 style="color:#8b949e;font-size:.9em">inverted(反向)</h3>
+<video controls preload="none" style="width:100%;border-radius:8px;background:#000" src="https://huggingface.co/datasets/luuuulinnnn/mcsdf-videos/resolve/main/mapabl_inverted_3605ab74_s10000.mp4"></video>
+<h3 style="color:#8b949e;font-size:.9em">purenoise</h3>
+<video controls preload="none" style="width:100%;border-radius:8px;background:#000" src="https://huggingface.co/datasets/luuuulinnnn/mcsdf-videos/resolve/main/mapabl_purenoise_3605ab74_s10000.mp4"></video>
+</details>
+<details><summary style="cursor:pointer;color:#63c98a;margin:.6em 0">clip 56daa9fd(6 条)</summary>
+<h3 style="color:#8b949e;font-size:.9em">kmap(正解)</h3>
+<video controls preload="none" style="width:100%;border-radius:8px;background:#000" src="https://huggingface.co/datasets/luuuulinnnn/mcsdf-videos/resolve/main/mapabl_kmap_56daa9fd_s10000.mp4"></video>
+<h3 style="color:#8b949e;font-size:.9em">binary</h3>
+<video controls preload="none" style="width:100%;border-radius:8px;background:#000" src="https://huggingface.co/datasets/luuuulinnnn/mcsdf-videos/resolve/main/mapabl_binary_56daa9fd_s10000.mp4"></video>
+<h3 style="color:#8b949e;font-size:.9em">unimean(去结构)</h3>
+<video controls preload="none" style="width:100%;border-radius:8px;background:#000" src="https://huggingface.co/datasets/luuuulinnnn/mcsdf-videos/resolve/main/mapabl_unimean_56daa9fd_s10000.mp4"></video>
+<h3 style="color:#8b949e;font-size:.9em">rolled(错位)</h3>
+<video controls preload="none" style="width:100%;border-radius:8px;background:#000" src="https://huggingface.co/datasets/luuuulinnnn/mcsdf-videos/resolve/main/mapabl_rolled_56daa9fd_s10000.mp4"></video>
+<h3 style="color:#8b949e;font-size:.9em">inverted(反向)</h3>
+<video controls preload="none" style="width:100%;border-radius:8px;background:#000" src="https://huggingface.co/datasets/luuuulinnnn/mcsdf-videos/resolve/main/mapabl_inverted_56daa9fd_s10000.mp4"></video>
+<h3 style="color:#8b949e;font-size:.9em">purenoise</h3>
+<video controls preload="none" style="width:100%;border-radius:8px;background:#000" src="https://huggingface.co/datasets/luuuulinnnn/mcsdf-videos/resolve/main/mapabl_purenoise_56daa9fd_s10000.mp4"></video>
+</details>
+<details><summary style="cursor:pointer;color:#63c98a;margin:.6em 0">clip 64d76920(6 条)</summary>
+<h3 style="color:#8b949e;font-size:.9em">kmap(正解)</h3>
+<video controls preload="none" style="width:100%;border-radius:8px;background:#000" src="https://huggingface.co/datasets/luuuulinnnn/mcsdf-videos/resolve/main/mapabl_kmap_64d76920_s10000.mp4"></video>
+<h3 style="color:#8b949e;font-size:.9em">binary</h3>
+<video controls preload="none" style="width:100%;border-radius:8px;background:#000" src="https://huggingface.co/datasets/luuuulinnnn/mcsdf-videos/resolve/main/mapabl_binary_64d76920_s10000.mp4"></video>
+<h3 style="color:#8b949e;font-size:.9em">unimean(去结构)</h3>
+<video controls preload="none" style="width:100%;border-radius:8px;background:#000" src="https://huggingface.co/datasets/luuuulinnnn/mcsdf-videos/resolve/main/mapabl_unimean_64d76920_s10000.mp4"></video>
+<h3 style="color:#8b949e;font-size:.9em">rolled(错位)</h3>
+<video controls preload="none" style="width:100%;border-radius:8px;background:#000" src="https://huggingface.co/datasets/luuuulinnnn/mcsdf-videos/resolve/main/mapabl_rolled_64d76920_s10000.mp4"></video>
+<h3 style="color:#8b949e;font-size:.9em">inverted(反向)</h3>
+<video controls preload="none" style="width:100%;border-radius:8px;background:#000" src="https://huggingface.co/datasets/luuuulinnnn/mcsdf-videos/resolve/main/mapabl_inverted_64d76920_s10000.mp4"></video>
+<h3 style="color:#8b949e;font-size:.9em">purenoise</h3>
+<video controls preload="none" style="width:100%;border-radius:8px;background:#000" src="https://huggingface.co/datasets/luuuulinnnn/mcsdf-videos/resolve/main/mapabl_purenoise_64d76920_s10000.mp4"></video>
+</details>
+<details><summary style="cursor:pointer;color:#63c98a;margin:.6em 0">clip 67961acd(6 条)</summary>
+<h3 style="color:#8b949e;font-size:.9em">kmap(正解)</h3>
+<video controls preload="none" style="width:100%;border-radius:8px;background:#000" src="https://huggingface.co/datasets/luuuulinnnn/mcsdf-videos/resolve/main/mapabl_kmap_67961acd_s10000.mp4"></video>
+<h3 style="color:#8b949e;font-size:.9em">binary</h3>
+<video controls preload="none" style="width:100%;border-radius:8px;background:#000" src="https://huggingface.co/datasets/luuuulinnnn/mcsdf-videos/resolve/main/mapabl_binary_67961acd_s10000.mp4"></video>
+<h3 style="color:#8b949e;font-size:.9em">unimean(去结构)</h3>
+<video controls preload="none" style="width:100%;border-radius:8px;background:#000" src="https://huggingface.co/datasets/luuuulinnnn/mcsdf-videos/resolve/main/mapabl_unimean_67961acd_s10000.mp4"></video>
+<h3 style="color:#8b949e;font-size:.9em">rolled(错位)</h3>
+<video controls preload="none" style="width:100%;border-radius:8px;background:#000" src="https://huggingface.co/datasets/luuuulinnnn/mcsdf-videos/resolve/main/mapabl_rolled_67961acd_s10000.mp4"></video>
+<h3 style="color:#8b949e;font-size:.9em">inverted(反向)</h3>
+<video controls preload="none" style="width:100%;border-radius:8px;background:#000" src="https://huggingface.co/datasets/luuuulinnnn/mcsdf-videos/resolve/main/mapabl_inverted_67961acd_s10000.mp4"></video>
+<h3 style="color:#8b949e;font-size:.9em">purenoise</h3>
+<video controls preload="none" style="width:100%;border-radius:8px;background:#000" src="https://huggingface.co/datasets/luuuulinnnn/mcsdf-videos/resolve/main/mapabl_purenoise_67961acd_s10000.mp4"></video>
+</details>
+<details><summary style="cursor:pointer;color:#63c98a;margin:.6em 0">clip 6f83cd77(6 条)</summary>
+<h3 style="color:#8b949e;font-size:.9em">kmap(正解)</h3>
+<video controls preload="none" style="width:100%;border-radius:8px;background:#000" src="https://huggingface.co/datasets/luuuulinnnn/mcsdf-videos/resolve/main/mapabl_kmap_6f83cd77_s10000.mp4"></video>
+<h3 style="color:#8b949e;font-size:.9em">binary</h3>
+<video controls preload="none" style="width:100%;border-radius:8px;background:#000" src="https://huggingface.co/datasets/luuuulinnnn/mcsdf-videos/resolve/main/mapabl_binary_6f83cd77_s10000.mp4"></video>
+<h3 style="color:#8b949e;font-size:.9em">unimean(去结构)</h3>
+<video controls preload="none" style="width:100%;border-radius:8px;background:#000" src="https://huggingface.co/datasets/luuuulinnnn/mcsdf-videos/resolve/main/mapabl_unimean_6f83cd77_s10000.mp4"></video>
+<h3 style="color:#8b949e;font-size:.9em">rolled(错位)</h3>
+<video controls preload="none" style="width:100%;border-radius:8px;background:#000" src="https://huggingface.co/datasets/luuuulinnnn/mcsdf-videos/resolve/main/mapabl_rolled_6f83cd77_s10000.mp4"></video>
+<h3 style="color:#8b949e;font-size:.9em">inverted(反向)</h3>
+<video controls preload="none" style="width:100%;border-radius:8px;background:#000" src="https://huggingface.co/datasets/luuuulinnnn/mcsdf-videos/resolve/main/mapabl_inverted_6f83cd77_s10000.mp4"></video>
+<h3 style="color:#8b949e;font-size:.9em">purenoise</h3>
+<video controls preload="none" style="width:100%;border-radius:8px;background:#000" src="https://huggingface.co/datasets/luuuulinnnn/mcsdf-videos/resolve/main/mapabl_purenoise_6f83cd77_s10000.mp4"></video>
+</details>
+<details><summary style="cursor:pointer;color:#63c98a;margin:.6em 0">clip 7541cb2f(6 条)</summary>
+<h3 style="color:#8b949e;font-size:.9em">kmap(正解)</h3>
+<video controls preload="none" style="width:100%;border-radius:8px;background:#000" src="https://huggingface.co/datasets/luuuulinnnn/mcsdf-videos/resolve/main/mapabl_kmap_7541cb2f_s10000.mp4"></video>
+<h3 style="color:#8b949e;font-size:.9em">binary</h3>
+<video controls preload="none" style="width:100%;border-radius:8px;background:#000" src="https://huggingface.co/datasets/luuuulinnnn/mcsdf-videos/resolve/main/mapabl_binary_7541cb2f_s10000.mp4"></video>
+<h3 style="color:#8b949e;font-size:.9em">unimean(去结构)</h3>
+<video controls preload="none" style="width:100%;border-radius:8px;background:#000" src="https://huggingface.co/datasets/luuuulinnnn/mcsdf-videos/resolve/main/mapabl_unimean_7541cb2f_s10000.mp4"></video>
+<h3 style="color:#8b949e;font-size:.9em">rolled(错位)</h3>
+<video controls preload="none" style="width:100%;border-radius:8px;background:#000" src="https://huggingface.co/datasets/luuuulinnnn/mcsdf-videos/resolve/main/mapabl_rolled_7541cb2f_s10000.mp4"></video>
+<h3 style="color:#8b949e;font-size:.9em">inverted(反向)</h3>
+<video controls preload="none" style="width:100%;border-radius:8px;background:#000" src="https://huggingface.co/datasets/luuuulinnnn/mcsdf-videos/resolve/main/mapabl_inverted_7541cb2f_s10000.mp4"></video>
+<h3 style="color:#8b949e;font-size:.9em">purenoise</h3>
+<video controls preload="none" style="width:100%;border-radius:8px;background:#000" src="https://huggingface.co/datasets/luuuulinnnn/mcsdf-videos/resolve/main/mapabl_purenoise_7541cb2f_s10000.mp4"></video>
+</details>
+<details><summary style="cursor:pointer;color:#63c98a;margin:.6em 0">clip 893070ce(6 条)</summary>
+<h3 style="color:#8b949e;font-size:.9em">kmap(正解)</h3>
+<video controls preload="none" style="width:100%;border-radius:8px;background:#000" src="https://huggingface.co/datasets/luuuulinnnn/mcsdf-videos/resolve/main/mapabl_kmap_893070ce_s10000.mp4"></video>
+<h3 style="color:#8b949e;font-size:.9em">binary</h3>
+<video controls preload="none" style="width:100%;border-radius:8px;background:#000" src="https://huggingface.co/datasets/luuuulinnnn/mcsdf-videos/resolve/main/mapabl_binary_893070ce_s10000.mp4"></video>
+<h3 style="color:#8b949e;font-size:.9em">unimean(去结构)</h3>
+<video controls preload="none" style="width:100%;border-radius:8px;background:#000" src="https://huggingface.co/datasets/luuuulinnnn/mcsdf-videos/resolve/main/mapabl_unimean_893070ce_s10000.mp4"></video>
+<h3 style="color:#8b949e;font-size:.9em">rolled(错位)</h3>
+<video controls preload="none" style="width:100%;border-radius:8px;background:#000" src="https://huggingface.co/datasets/luuuulinnnn/mcsdf-videos/resolve/main/mapabl_rolled_893070ce_s10000.mp4"></video>
+<h3 style="color:#8b949e;font-size:.9em">inverted(反向)</h3>
+<video controls preload="none" style="width:100%;border-radius:8px;background:#000" src="https://huggingface.co/datasets/luuuulinnnn/mcsdf-videos/resolve/main/mapabl_inverted_893070ce_s10000.mp4"></video>
+<h3 style="color:#8b949e;font-size:.9em">purenoise</h3>
+<video controls preload="none" style="width:100%;border-radius:8px;background:#000" src="https://huggingface.co/datasets/luuuulinnnn/mcsdf-videos/resolve/main/mapabl_purenoise_893070ce_s10000.mp4"></video>
+</details>
+<h2 id="expr-twin">孪生实验:同款操纵在 expR(闭卷线)上 — 全部归零</h2>
+<div class="note">五臂(uniform / kmapT β=.5 / kmapTdeep β=.9 / rolledT / invertedT),T map 只改各 token
+完成时间(纯噪声起点,无内容掺入);A@10000 与 Bsc@9500,20 clip,配对 eps,shift5+cfg5。</div>
+<table><tr><th>模型</th><th>臂</th><th>LPIPS ↓</th><th>seen-PSNR</th><th>unseen-PSNR</th><th>Δ vs uniform</th></tr>
+<tr><td rowspan="5">expR_A@10000</td><td>uniform</td><td>0.6119</td><td>11.60</td><td>12.07</td><td>—</td></tr>
+<tr><td>kmapT</td><td>0.6115</td><td>11.76</td><td>11.93</td><td>−0.0005 ± 0.0057</td></tr>
+<tr><td>kmapTdeep</td><td>0.6229</td><td>12.12</td><td>11.79</td><td>+0.0109 ± 0.0108</td></tr>
+<tr><td>rolledT</td><td>0.6071</td><td>11.73</td><td>12.11</td><td>−0.0048 ± 0.0049</td></tr>
+<tr><td>invertedT</td><td>0.6061</td><td>11.64</td><td>12.30</td><td>−0.0059 ± 0.0050</td></tr>
+<tr><td rowspan="5">expR_Bsc@9500</td><td>uniform</td><td>0.6272</td><td>11.65</td><td>11.66</td><td>—</td></tr>
+<tr><td>kmapT</td><td>0.6278</td><td>11.58</td><td>11.76</td><td>+0.0006 ± 0.0046</td></tr>
+<tr><td>kmapTdeep</td><td>0.6359</td><td>11.85</td><td>11.73</td><td>+0.0088 ± 0.0091</td></tr>
+<tr><td>rolledT</td><td>0.6263</td><td>11.62</td><td>11.71</td><td>−0.0008 ± 0.0041</td></tr>
+<tr><td>invertedT</td><td>0.6265</td><td>11.65</td><td>11.80</td><td>−0.0007 ± 0.0053</td></tr></table>
+<div class="verdict"><b>机制边界的双向证据闭环。</b>同一套对齐操纵:warp 线上 kmap 对 rolled <b>−0.058、20/20 全胜</b>;
+闭卷线上五臂挤在 ±0.006 内,连反向对齐都不受罚(invertedT 甚至名义上最低),空间训练过的 Bsc 也一样;
+唯一的边缘效应是 β=0.9 的过深调度轻微有害(~+0.01)。结论:<b>observation-based noise map 的因果力
+来自"噪声水平 = 内容掺入比例"这一耦合(SDEdit 形式);当噪声只编码时序时(纯噪声起点 rate 形式),
+map 既不帮忙也不伤害</b> — 这就是本方法生效条件的精确刻画。</div>
+</body></html>

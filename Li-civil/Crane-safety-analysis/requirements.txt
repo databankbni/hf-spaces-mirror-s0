@@ -1,0 +1,10 @@
+fastapi
+uvicorn[standard]
+opencv-python-headless
+numpy
+matplotlib
+pydantic
+gradio>=4.0
+zai-sdk
+sniffio>=1.2.0
+anyio>=3.7.0

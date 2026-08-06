@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /admin.html
+Disallow: /history
+Disallow: /history.html
+
+Sitemap: https://aiscamdetector.in/sitemap.xml

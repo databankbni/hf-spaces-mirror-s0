@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MktBook — Select Workout</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.classless.min.css">
+    <style>
+        body { max-width: 720px; margin: 0 auto; padding: 1.5rem; }
+        .workout-card {
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 1rem 1.25rem;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+        .workout-card:hover { border-color: currentColor; }
+        .workout-card-info { flex: 1; }
+        .workout-card-title { font-weight: 700; font-size: 1em; }
+        .workout-card-desc { font-size: 0.83em; color: #666; margin-top: 0.2rem; }
+    </style>
+</head>
+<body>
+    <h2>Select a Workout to Embed</h2>
+    <p style="color:#555; font-size:0.9em;">
+        Choose which MktBook workout to link into this LMS assignment.
+        Students will see the Marketplace InBox for the selected workout.
+    </p>
+
+    {% for w in workouts %}
+    <form method="post" action="/lti/deep-link/submit">
+        <input type="hidden" name="workout_id" value="{{ w.id }}">
+        <input type="hidden" name="dl_return_url" value="{{ dl_return_url }}">
+        <input type="hidden" name="reg_issuer" value="{{ reg_issuer }}">
+        <input type="hidden" name="reg_client_id" value="{{ reg_client_id }}">
+        <input type="hidden" name="deployment_id" value="{{ deployment_id }}">
+        <div class="workout-card" style="border-color:{{ w.color }}20;">
+            <div class="workout-card-info">
+                <div class="workout-card-title" style="color:{{ w.color }};">
+                    {{ w.icon }} Workout #{{ w.id }}: {{ w.title }}
+                </div>
+                <div class="workout-card-desc">{{ w.topic }}</div>
+            </div>
+            <button type="submit"
+                    style="background:{{ w.color }}; border-color:{{ w.color }}; white-space:nowrap; margin:0;">
+                Embed This Workout
+            </button>
+        </div>
+    </form>
+    {% endfor %}
+
+    {% if not dl_return_url %}
+    <p style="color:#c0392b; font-size:0.85em;">
+        &#x26A0; No deep_link_return_url provided by the LMS — grade linking may not work.
+    </p>
+    {% endif %}
+</body>
+</html>

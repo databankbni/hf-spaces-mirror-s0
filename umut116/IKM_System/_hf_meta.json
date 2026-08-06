@@ -1,0 +1,23 @@
+{
+ "captured_at": "2026-08-04T17:09:43Z",
+ "hf_metadata": {
+  "sha": "d43d302cc3f7598a595a2aff42756e8925a5ccb1"
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "umut116/IKM_System",
+ "repo_type": "spaces",
+ "sha": "d43d302cc3f7598a595a2aff42756e8925a5ccb1",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/umut116/IKM_System"
+}

@@ -1,0 +1,125 @@
+Name: Joel Chacon Castillo
+Title: Software Engineer | AI Researcher | Full-Stack Developer | exOracle
+Location: Guanajuato, Mexico
+Contact:
+- Mobile: +52 442 121 39 60
+- Mobile Alternate: +52 473 121 18 25
+- Email: joelchaconcastillo@gmail.com
+- LinkedIn: www.linkedin.com/in/joel-chacon-castillo-351bb4194
+- GitHub: github.com/joelchaconcastillo
+- Google Scholar: scholar.google.com/citations?user=zZpJfLsAAAAJ&hl=en
+- Portfolio: portfolio-psi-pearlqq88d3c0ap.vercel.app/resume
+- Other Profiles:
+    - uhunt.onlinejudge.org/id/725785
+    - leetcode.com/u/joelchacon/
+
+Top Skills:
+- RAG, LlamaIndex, LangChain
+- Python, PyTorch, Keras
+- Machine Learning, NLP, Deep Learning
+- FastAPI, Preact, Oracle JET
+- Kubernetes, Docker, CI/CD, SQL, NoSQL
+- Parallel Computing, Scientific Computing
+
+Certifications:
+- Meta React Specialization (2025)
+- AI Agents in LangGraph (Deeplearning.AI, 2025)
+- Mastering REST APIs with FastAPI (Packt, 2025)
+- Post-training of LLMs (Deeplearning.AI, 2025)
+- Pydantic for LLM Workflows (Deeplearning.AI, 2025)
+- Oracle Cloud Infrastructure 2024 Certified AI Foundations Associate (2024)
+- NLP Specializations: Probabilistic Models, Sequence Models, Attention Models, Classification and Vector Spaces (Deeplearning.AI, 2024)
+- React Basics (Meta, 2024)
+- HTML and CSS in depth (Meta, 2023)
+- Introduction to Back-End and Front-End Development (Meta, 2023)
+- Programming with JavaScript (Meta, 2023)
+- Version Control (Meta, 2023)
+- Advanced Learning Algorithms (Coursera, 2022)
+- Supervised Machine Learning (Coursera, 2022)
+- Coding Interview Preparation (AlgoExpert, 2022)
+- Crash Course on Python (Coursera, 2022)
+- Intro to Machine Learning (Kaggle, 2022)
+
+Fellowships & Awards:
+- Post-doctorate Research Fellowship (NASA, 2023)
+- Thesis Scholarships (IDEA Guanajuato & CIMAT, 2022)
+- Registration Scholarship NEO 2020
+- PhD Scholarship (Conacyt, 2017-2022)
+- Master Scholarship (Conacyt, 2015-2017)
+- Bachelor's Thesis Scholarship (Conacyt, 2013-2014)
+- Sport Scholarship (Irapuato Institute of Technology, 2012-2013)
+- Government Scholarship PRONABES (2009-2014)
+
+Education:
+- Specialization, Generative AI for Software Development | Deeplearning.AI, 2025 | Remote
+- Specialization, Natural Language Processing | Deeplearning.AI, 2024 | Remote
+- Specialization, Machine Learning | Deeplearning.AI, 2022 | Remote
+- PhD, Computer Science | Center for Research in Mathematics (CIMAT), 2017-2023 | Mexico
+- Master's degree, Computer Science | CIMAT, 2015-2017 | Mexico
+- Bachelor of Engineering, Computer Science | Irapuato Institute of Technology, 2009-2014 | Mexico
+
+Experience:
+
+1. Oracle | Senior Software Developer | 2023-2025 | Remote
+- Backend: FastAPI, SQLAlchemy, Pydantic for microservices and scalable APIs.
+- GraphQL: Federated BFF layer with optimized resolvers.
+- Frontend: Preact, Oracle JET.
+- Docker/Kubernetes: Local dev environments and production maintenance.
+- Developed AI-driven recommendation systems and RAG pipelines.
+- CI/CD Enhancements: AI-assisted code reviews, SonarQube, automated quality checks.
+- Specialized in secure cloud deployment with Oracle Cloud Infrastructure.
+
+2. University of Texas at Dallas | Research Collaborator | 2024 | Remote
+- Improved F-ZCN model for wildfire prediction using AI.
+
+3. University of Texas at Dallas | Post-doctorate Research Associate | 2023 | In-Office
+- Link prediction and machine learning experiments on NASA supercomputers.
+
+4. University of Texas at Dallas | Internship in Research | 2022-2023 | Remote
+- Geometric Deep Learning for wildfire prediction using Topological Data Analysis.
+
+5. Center for Research in Mathematics | Full-Stack Developer | 2014-2015 | In-Office
+- Development of institutional web systems and analysis of open-source tools.
+
+6. National Laboratory of Genomics for Biodiversity | Full-Stack Developer | 2013-2014 | In-Office
+- Web system for RNA analysis, storage, and visualization.
+- Technologies: HTML, JavaScript, PHP, NodeJS, MySQL, Perl, R, C++.
+
+7. Freelance | Open Source Developer | 2025-Present
+- PyTestGenAI: Automated unit and integration test generation.
+- RecomPy: Python library for recommendation systems.
+- agentic-codegen: Production-ready AI-generated code pipelines.
+
+8. Independent Researcher | 2025
+- OptiGenAI: AI toolkit for automatic optimization problem generation.
+- Novel algorithms for advanced link prediction in graphs.
+
+Research Experience:
+- Menu Planning Problem for CIANNA (2019-2021)
+- Advisor: Dr. Carlos Segura Gonzáles
+- Flexible application for personalized nutritional planning using meta-heuristic optimization.
+- Web system for Small RNA Analysis (2012-2014)
+- Advisor: Dr. Nelly Beatriz Santoyo Rivera
+
+Recognitions:
+- Competitive Programming: Hashcode, Code Jam, Meta Hacker Cup, Kick Start (2020-2022)
+- Mathematical Optimization Competitions: International Student Competition in Structural Optimization (2019,2021), Kaggle competitions
+
+Teaching Assistantship:
+- Data Structures II (2022), Linear Algebra (2020), Meta-heuristics & Mathematical Optimization (2019), Basic Programming C/C++ (2017)
+
+Computer Skills:
+- Programming Languages: C, C++, Python, PyTorch, Keras, R, Perl, PHP, C#
+- Web Technologies: HTML5, PHP, JavaScript, JSON, jQuery, React, FastAPI
+- Database: SQL, MySQL, SQLAlchemy, Alembic
+- Others: Bash Scripting, OpenMP, MPI, Kubernetes
+
+Positions of Responsibility:
+- Reviewer: IEEE Congress on Evolutionary Computation (2022,2023)
+- Committee Member: International Genetic and Evolutionary Computation Conference (2020,2021,2022)
+
+Personal Interests:
+- Enjoys doing competitive programming.
+- Best friend: Raul, a cat.
+- Raul eats a lot of tuna and meat
+- Raul always wake up at 5am and wants to play

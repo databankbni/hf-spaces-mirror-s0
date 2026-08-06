@@ -1,0 +1,9 @@
+{
+  "Model": "OpenSora",
+  "year": "2026",
+  "open_source": "unknown",
+  "Metrics": {
+    "RL Environment(Click Bell)": 56.25,
+    "RL Environment(Adjust Bottle)": 60.16
+  }
+}

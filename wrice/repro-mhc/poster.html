@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>mHC CPU Evidence</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #10243e;
+      --muted: #56677a;
+      --paper: #f5f8f4;
+      --card: #ffffff;
+      --partial: #a45b00;
+      --unavailable: #7d3245;
+      --line: #d7e1dc;
+      --accent: #176b68;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font: 16px/1.5 system-ui, sans-serif;
+    }
+    main { width: min(1180px, 94vw); margin: 0 auto; padding: 3rem 0; }
+    header { border-bottom: 4px solid var(--accent); padding-bottom: 1.5rem; }
+    h1 { margin: 0; font-size: clamp(2rem, 5vw, 4rem); line-height: 1; }
+    h2 { margin-top: 2.4rem; }
+    .scope {
+      margin-top: 1.4rem;
+      padding: 1rem 1.2rem;
+      border-left: 6px solid var(--partial);
+      background: #fff4dd;
+      font-weight: 650;
+    }
+    .claims {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    article {
+      padding: 1.1rem;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--card);
+    }
+    article h3 { margin: 0 0 .55rem; }
+    .badge {
+      display: inline-block;
+      margin-right: .4rem;
+      padding: .15rem .55rem;
+      border-radius: 999px;
+      color: white;
+      font-size: .78rem;
+      font-weight: 750;
+    }
+    .partial { background: var(--partial); }
+    .unavailable { background: var(--unavailable); }
+    .kind { color: var(--muted); font-family: ui-monospace, monospace; }
+    table { width: 100%; border-collapse: collapse; background: var(--card); }
+    th, td { padding: .65rem; border: 1px solid var(--line); text-align: left; }
+    th { background: #e7f0ed; }
+    .fine { color: var(--muted); font-size: .9rem; }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <p class="kind">ICML 2026 Agent Repro Challenge · mDhyxu8WRb</p>
+      <h1>mHC CPU evidence</h1>
+      <div class="scope">
+        Toy CPU mechanism audit. Computed projection, dimensional, and
+        residual-composition results are not trained-model measurements.
+        No 27B training or downstream evaluation was run.
+      </div>
+    </header>
+
+    <h2>Five live claims</h2>
+    <section id="claims" class="claims" aria-live="polite"></section>
+
+    <h2>Computed evidence coverage</h2>
+    <table>
+      <thead>
+        <tr><th>Evidence</th><th>Grid</th><th>Rows</th></tr>
+      </thead>
+      <tbody id="coverage"></tbody>
+    </table>
+    <p id="provenance" class="fine"></p>
+  </main>
+  <script>
+    const escapeHtml = (value) => String(value)
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;");
+
+    fetch("./evidence.json")
+      .then((response) => {
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        return response.json();
+      })
+      .then((evidence) => {
+        document.querySelector("#claims").innerHTML = evidence.claims.map((claim) => `
+          <article>
+            <h3>${escapeHtml(claim.claim_id)}</h3>
+            <p>
+              <span class="badge ${escapeHtml(claim.status)}">${escapeHtml(claim.status)}</span>
+              <span class="kind">${escapeHtml(claim.evidence_kind)}</span>
+            </p>
+            <p>${escapeHtml(claim.observation)}</p>
+            <p class="fine"><strong>Limit:</strong> ${escapeHtml(claim.limitation)}</p>
+          </article>
+        `).join("");
+        document.querySelector("#coverage").innerHTML = `
+          <tr>
+            <td>Dimensional ablations</td>
+            <td>3 stream counts × 3 hidden dimensions × 3 seeds × 8 variants</td>
+            <td>${evidence.dimensional_ablations.length}</td>
+          </tr>
+          <tr>
+            <td>Toy residual propagation</td>
+            <td>3 depths × 3 stream counts × 3 seeds</td>
+            <td>${evidence.toy_propagation.length}</td>
+          </tr>
+        `;
+        const p = evidence.provenance;
+        document.querySelector("#provenance").textContent =
+          `CPU · Python ${p.python_version} · PyTorch ${p.pytorch_version} · API cost USD ${p.api_cost_usd.toFixed(2)} · ${evidence.upstream_revision}`;
+      })
+      .catch((error) => {
+        document.querySelector("#claims").textContent =
+          `Unable to load committed evidence: ${error.message}`;
+      });
+  </script>
+</body>
+</html>

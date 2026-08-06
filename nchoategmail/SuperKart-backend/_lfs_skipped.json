@@ -1,0 +1,13 @@
+{
+ "lfs_not_stored": [
+  {
+   "oid": "1853158d5024a574a5f217ca70e6745a91ecf11cadd68b3f095f38733c2e6b62",
+   "path": "superkart_sales_prediction_model_v1_0.joblib",
+   "pointer_b64": "dmVyc2lvbiBodHRwczovL2dpdC1sZnMuZ2l0aHViLmNvbS9zcGVjL3YxCm9pZCBzaGEyNTY6MTg1MzE1OGQ1MDI0YTU3NGE1ZjIxN2NhNzBlNjc0NWE5MWVjZjExY2FkZDY4YjNmMDk1ZjM4NzMzYzJlNmI2MgpzaXplIDE1NjA5Njk5Cg==",
+   "size": 15609699,
+   "url": "https://huggingface.co/spaces/nchoategmail/SuperKart-backend/resolve/862ac0920a45866fcf360e4a0916a27be9880689/superkart_sales_prediction_model_v1_0.joblib"
+  }
+ ],
+ "overflow_not_stored": [],
+ "oversize_not_stored": []
+}

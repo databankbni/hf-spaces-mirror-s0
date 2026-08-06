@@ -1,0 +1,23 @@
+{
+ "captured_at": "2026-08-04T17:10:19Z",
+ "hf_metadata": {
+  "sha": "e0e151aee43d37107e909c59475f132704e97dcb"
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "vomebook/Search",
+ "repo_type": "spaces",
+ "sha": "e0e151aee43d37107e909c59475f132704e97dcb",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/vomebook/Search"
+}

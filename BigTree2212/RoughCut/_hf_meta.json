@@ -1,0 +1,138 @@
+{
+ "captured_at": "2026-08-04T13:22:24Z",
+ "hf_metadata": {
+  "_id": "6a4c6a09a19d9cac0a25285f",
+  "author": "BigTree2212",
+  "cardData": {
+   "app_port": 7860,
+   "colorFrom": "gray",
+   "colorTo": "yellow",
+   "emoji": "🎛️",
+   "pinned": false,
+   "sdk": "docker",
+   "title": "AI Tools Studio"
+  },
+  "createdAt": "2026-07-07T02:52:57.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://bigtree2212-roughcut.hf.space",
+  "id": "BigTree2212/RoughCut",
+  "lastModified": "2026-07-13T07:47:04.000Z",
+  "likes": 0,
+  "private": false,
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "bigtree2212-roughcut.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": null,
+    "requested": "cpu-basic"
+   },
+   "replicas": {
+    "requested": 1
+   },
+   "stage": "SLEEPING"
+  },
+  "sdk": "docker",
+  "sha": "28820fdee71d65d93d6a99eefcdab3ee160b1820",
+  "siblings": [
+   {
+    "rfilename": "Dockerfile"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "app.py"
+   },
+   {
+    "rfilename": "blueprints/__init__.py"
+   },
+   {
+    "rfilename": "blueprints/silence_cutter/__init__.py"
+   },
+   {
+    "rfilename": "blueprints/silence_cutter/processor.py"
+   },
+   {
+    "rfilename": "blueprints/transcript/__init__.py"
+   },
+   {
+    "rfilename": "blueprints/video_downloader/__init__.py"
+   },
+   {
+    "rfilename": "blueprints/video_downloader/downloader.py"
+   },
+   {
+    "rfilename": "queue_manager.py"
+   },
+   {
+    "rfilename": "requirements.txt"
+   },
+   {
+    "rfilename": "start.sh"
+   },
+   {
+    "rfilename": "static/css/base.css"
+   },
+   {
+    "rfilename": "static/css/silence_cutter.css"
+   },
+   {
+    "rfilename": "static/css/transcript.css"
+   },
+   {
+    "rfilename": "static/css/video_downloader.css"
+   },
+   {
+    "rfilename": "static/js/confirm.js"
+   },
+   {
+    "rfilename": "static/js/queue.js"
+   },
+   {
+    "rfilename": "static/js/silence_cutter.js"
+   },
+   {
+    "rfilename": "static/js/transcript.js"
+   },
+   {
+    "rfilename": "static/js/video_downloader.js"
+   },
+   {
+    "rfilename": "templates/base.html"
+   },
+   {
+    "rfilename": "templates/home.html"
+   },
+   {
+    "rfilename": "templates/queue.html"
+   },
+   {
+    "rfilename": "templates/silence_cutter/index.html"
+   },
+   {
+    "rfilename": "templates/transcript/index.html"
+   },
+   {
+    "rfilename": "templates/video_downloader/index.html"
+   }
+  ],
+  "subdomain": "bigtree2212-roughcut",
+  "tags": [
+   "docker",
+   "region:us"
+  ],
+  "usedStorage": 0
+ },
+ "renamed_gitattributes": [],
+ "repo_id": "BigTree2212/RoughCut",
+ "repo_type": "spaces",
+ "sha": "28820fdee71d65d93d6a99eefcdab3ee160b1820",
+ "web_url": "https://huggingface.co/spaces/BigTree2212/RoughCut"
+}

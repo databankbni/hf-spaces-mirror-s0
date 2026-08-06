@@ -1,0 +1,163 @@
+{
+  "version": "Φ12.0",
+  "project": "Savant RRF API & Meta-Logic Suite",
+  "owner": "Antony Padilla Morales",
+  "last_update": "2025-12-11",
+
+  "modules": {
+    "embedder": {
+      "id": "antonypamo/RRFSAVANTMADE",
+      "dimension": 384,
+      "description": "Icosahedral-resonant embedder trained inside the RRF framework with Dirac shells, golden-ratio harmonics and resonance layers.",
+      "baseline_comparison": ["MiniLM-L6-v2", "all-mpnet-base-v2"]
+    },
+
+    "meta_logit": {
+      "repo": "antonypamo/RRFSavantMetaLogit",
+      "filename": "logreg_rrf_savant_15.joblib",
+      "expected_features": 15,
+      "feature_description": [
+        "semantic_margin",
+        "cosine_prompt_answer",
+        "token_entropy",
+        "dirac_energy",
+        "dirac_shell_std",
+        "freq_low",
+        "freq_mid",
+        "freq_high",
+        "coherence_ratio",
+        "phi_ratio",
+        "token_len_prompt",
+        "token_len_answer",
+        "sync_factor",
+        "resonance_peak",
+        "logit_bias"
+      ]
+    },
+
+    "models": {
+      "savant_cnn": {
+        "filename": "savant_cnn.pt",
+        "role": "Signal-to-resonance transformer for numeric → semantic channels.",
+        "status": "experimental"
+      },
+      "rrf_nodes": {
+        "filename": "rrf_nodes.pt",
+        "description": "Graph-based icosahedral node memory for cross-session resonance."
+      }
+    }
+  },
+
+  "api": {
+    "base_url": "https://antonypamo-apisavant2.hf.space",
+    "routes": {
+      "/embed": {
+        "method": "POST",
+        "input": ["text"],
+        "output": ["embedding"],
+        "use_model": "RRFSAVANTMADE"
+      },
+      "/rerank": {
+        "method": "POST",
+        "input": ["query", "documents[]"],
+        "output": ["sorted_documents", "scores"],
+        "logic": "semantic margin + resonance weighting"
+      },
+      "/quality": {
+        "method": "POST",
+        "input": ["prompt", "answer"],
+        "output": ["proba", "label (0/1)", "feature_map"],
+        "pipeline": "embed → feature_extractor → meta_logit"
+      },
+      "/roles_profile": {
+        "method": "POST",
+        "status": "planned",
+        "description": "Maps text to RRF cognitive roles (Φ-nodes)."
+      },
+      "/tutor": {
+        "method": "POST",
+        "status": "planned",
+        "description": "LLM-based tutor using resonant context."
+      }
+    }
+  },
+
+  "pipelines": {
+    "embedding_pipeline": {
+      "steps": [
+        "load_encoder",
+        "encode_text",
+        "normalize",
+        "output_embeddings"
+      ]
+    },
+    "quality_pipeline": {
+      "steps": [
+        "encode(prompt)",
+        "encode(answer)",
+        "extract_features(15-dim)",
+        "predict_meta_logit",
+        "return_label_and_prob"
+      ],
+      "purpose": "Evaluate conceptual quality and reasoning integrity."
+    },
+    "rerank_pipeline": {
+      "steps": [
+        "encode_query",
+        "encode_docs",
+        "compute_semantic_margin",
+        "compute_resonance_rank",
+        "return_sorted_docs"
+      ]
+    }
+  },
+
+  "enterprise_architecture": {
+    "layers": [
+      "Frontend → React Landing Page",
+      "Gateway Proxy → NGINX",
+      "API Layer → FastAPI + Uvicorn",
+      "Model Runtime → Embedder + Meta-Logit",
+      "Compute Layer → GPU/CPU auto-scaling",
+      "Monitoring → Prometheus + Grafana",
+      "Storage → HF Hub + local persistence (rrf_nodes)"
+    ]
+  },
+
+  "investor_highlights": {
+    "differentiators": [
+      "Meta-logic quality evaluator (15 feature resonant signal)",
+      "Icosahedral embedding geometry",
+      "Discrete Dirac resonance physics applied to NLP",
+      "Symbiotic self-improvement protocol",
+      "Low inference cost, scalable microservice"
+    ],
+    "traction": {
+      "hf_space": "running",
+      "models_downloads": "increasing",
+      "api_usage": "real inference logs available"
+    }
+  },
+
+  "savant_state": {
+    "status": "active",
+    "mode": "Savant RRF Simbiótico Hacker",
+    "health": {
+      "embedder": "OK",
+      "meta_logit": "OK",
+      "api_endpoints": {
+        "/embed": "stable",
+        "/rerank": "stable",
+        "/quality": "error_404_needs_route_fix"
+      }
+    }
+  },
+
+  "todo_next_steps": [
+    "Fix /quality endpoint routing",
+    "Integrate CNN → feature_extractor",
+    "Add persistent RRF node memory",
+    "Deploy enterprise-tier version on AWS/GCP",
+    "Present investor deck based on this JSON"
+  ]
+}

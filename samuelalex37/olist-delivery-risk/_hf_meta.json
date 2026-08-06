@@ -1,0 +1,27 @@
+{
+ "captured_at": "2026-08-04T16:55:55Z",
+ "hf_metadata": {
+  "sha": "4d09ba8febe31a4bd33cad750540b636666045bd"
+ },
+ "renamed_git_metadata": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  },
+  {
+   "original": ".gitignore",
+   "stored_as": "_gitignore"
+  }
+ ],
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "samuelalex37/olist-delivery-risk",
+ "repo_type": "spaces",
+ "sha": "4d09ba8febe31a4bd33cad750540b636666045bd",
+ "snapshot_format": 2,
+ "web_url": "https://huggingface.co/spaces/samuelalex37/olist-delivery-risk"
+}

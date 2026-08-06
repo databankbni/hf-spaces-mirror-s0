@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Enterprise Unified Business OS</title>
+    <!-- Charting & Export Libraries -->
+    <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css?v=23.0">
+</head>
+<body data-theme="dark">
+<div class="app-container">
+    <header class="main-header">
+        <div class="logo-section">
+            <button class="mobile-menu-btn" onclick="toggleSidebar()"><i class="fa-solid fa-bars"></i></button>
+            <i class="fa-solid fa-layer-group logo-icon"></i>
+            <div class="logo-text">Unified Business OS <span class="tag">ENTERPRISE</span></div>
+        </div>
+        <div class="header-tools">
+            <button id="theme-toggle" class="icon-btn" title="Toggle Light/Dark Mode" onclick="toggleTheme()"><i class="fa-solid fa-moon"></i></button>
+            <div class="status-indicator"><span class="status-dot"></span> System Optimal</div>
+        </div>
+    </header>
+    
+    <div class="workspace">
+        <nav class="sidebar" id="main-sidebar">
+            <div class="nav-item active" id="btn-nav-grid" onclick="toggleView('grid')" title="Data Engine (Excel)"><i class="fa-solid fa-table"></i></div>
+            <div class="nav-item" id="btn-nav-visual" onclick="toggleView('visual')" title="BI Studio Dashboard"><i class="fa-solid fa-chart-pie"></i></div>
+            <div class="nav-item" id="btn-nav-report" onclick="toggleView('report')" title="Smart Publisher"><i class="fa-solid fa-file-word"></i></div>
+            <div class="nav-spacer"></div>
+        </nav>
+        
+        <main class="grid-panel" id="main-grid-panel">
+            
+            <!-- PILLAR 1: DATA ENGINE -->
+            <div id="view-grid" class="view-section">
+                <div class="excel-ribbon">
+                    <div class="ribbon-group">
+                        <span class="ribbon-label">Data Prep & Load</span>
+                        <div class="ribbon-btn-row">
+                            <button class="tool-btn" onclick="document.getElementById('up').click()"><i class="fa-solid fa-file-import"></i> Universal Import</button>
+                            <input type="file" id="up" accept=".csv, .xlsx, .xls" hidden>
+                            <button class="tool-btn" onclick="exportToCSV()"><i class="fa-solid fa-file-export"></i> Export CSV</button>
+                        </div>
+                    </div>
+                    <div class="ribbon-group">
+                        <span class="ribbon-label">Deep Normalization</span>
+                        <div class="ribbon-btn-row">
+                            <button class="tool-btn" onclick="promoteHeader()"><i class="fa-solid fa-arrow-up"></i> Promote Header</button>
+                            <button class="tool-btn" id="btn-clean"><i class="fa-solid fa-wand-magic-sparkles"></i> AI Deep Clean</button>
+                            <button class="tool-btn" onclick="openDataModeler()"><i class="fa-solid fa-filter"></i> Data Modeler</button>
+                        </div>
+                    </div>
+                    <div class="ribbon-group" style="border:none;">
+                        <span class="ribbon-label">Aggregation</span>
+                        <button class="tool-btn" onclick="generatePivot()"><i class="fa-solid fa-table-list"></i> Auto-Pivot Table</button>
+                    </div>
+                </div>
+
+                <div class="formula-bar-container">
+                    <div class="formula-bar-label">fx</div>
+                    <input type="text" id="grid-formula-bar" placeholder="Select a cell to view/edit contents..." disabled />
+                </div>
+
+                <div class="sheet-tabs-container">
+                    <div id="sheet-tabs" class="sheet-tabs"></div>
+                    <div class="add-sheet-btn" id="btn-add-sheet" title="Add Worksheet"><i class="fa-solid fa-plus"></i></div>
+                </div>
+
+                <div class="spreadsheet-wrapper"><div id="spreadsheet" class="spreadsheet"></div></div>
+                
+                <div class="status-bar">
+                    <div style="display: flex; gap: 20px; font-weight: 600;">
+                        <div class="stat-item">Rows: <span id="stat-count" style="color:var(--text-main);">0</span></div>
+                        <div class="stat-item">Revenue: <span id="stat-revenue" style="color:var(--accent);">0</span></div>
+                        <div class="stat-item">Expenses: <span id="stat-expenses" style="color:#ef4444;">0</span></div>
+                        <div class="stat-item">Net: <span id="stat-profit" style="color:var(--accent);">0</span></div>
+                    </div>
+                    <div class="stat-spacer"></div>
+                    <div class="stat-item" id="sel-range" style="font-family: monospace;">Ready</div>
+                </div>
+            </div>
+
+            <!-- PILLAR 2: POWER BI STUDIO -->
+            <div id="view-visual" class="view-section hidden">
+                <div class="viz-container">
+                    <div class="bi-sidebar">
+                        <h3 style="color:var(--accent); margin-bottom:15px; font-size:14px;"><i class="fa-solid fa-sliders"></i> Visual Config</h3>
+                        
+                        <label class="bi-label">1. Chart Type</label>
+                        <select id="chart-type" class="viz-select bi-input">
+                            <optgroup label="Most Popular">
+                                <option value="bar">Bar Chart</option>
+                                <option value="line">Line Graph</option>
+                                <option value="pie">Pie Chart</option>
+                                <option value="scatter">Scatter Plot</option>
+                                <option value="area">Area Chart</option>
+                                <option value="donut">Donut Chart</option>
+                            </optgroup>
+                            <optgroup label="A–Z Library">
+                                <option value="area-stacked">Area Chart (Stacked)</option>
+                                <option value="bar-stacked">Bar Chart (Stacked)</option>
+                                <option value="box">Box and Whisker Plot</option>
+                                <option value="bubble">Bubble Chart</option>
+                                <option value="candlestick">Candlestick Chart</option>
+                                <option value="choropleth">Choropleth Map</option>
+                                <option value="circle-pack">Circle Packing</option>
+                                <option value="dendrogram">Dendrogram</option>
+                                <option value="density">Density Plot</option>
+                                <option value="funnel">Funnel Chart</option>
+                                <option value="gantt">Gantt Chart</option>
+                                <option value="heatmap">Heatmap</option>
+                                <option value="hexbin">Hexabin Map</option>
+                                <option value="histogram">Histogram</option>
+                                <option value="line-log">Line Graph (Logarithmic)</option>
+                                <option value="lollipop">Lollipop Chart</option>
+                                <option value="marimekko">Marimekko Chart</option>
+                                <option value="network">Network Diagram</option>
+                                <option value="ohlc">OHLC Chart</option>
+                                <option value="parallel">Parallel Coordinates Plot</option>
+                                <option value="population">Population Pyramid</option>
+                                <option value="radar">Radar Chart</option>
+                                <option value="radial-bar">Radial Bar Chart</option>
+                                <option value="sankey">Sankey Diagram</option>
+                                <option value="scatter-connect">Scatter Plot (Connected)</option>
+                                <option value="streamgraph">Streamgraph</option>
+                                <option value="sunburst">Sunburst Diagram</option>
+                                <option value="surface">Surface Plot</option>
+                                <option value="ternary">Ternary Plot</option>
+                                <option value="timeline">Timeline</option>
+                                <option value="treemap">Treemap</option>
+                                <option value="violin">Violin Plot</option>
+                                <option value="waterfall">Waterfall Chart</option>
+                            </optgroup>
+                        </select>
+
+                        <label class="bi-label">2. X Axis / Source</label>
+                        <select id="x-axis" class="viz-select bi-input"></select>
+
+                        <label class="bi-label">3. Y Axis / Value</label>
+                        <select id="y-axis" class="viz-select bi-input"></select>
+                        
+                        <label class="bi-label">4. Math Aggregation</label>
+                        <select id="y-agg" class="viz-select bi-input">
+                            <option value="sum">Sum (Total)</option>
+                            <option value="avg">Average</option>
+                            <option value="count">Count (Volume)</option>
+                        </select>
+
+                        <label class="bi-label">5. Canvas Theme</label>
+                        <select id="chart-theme" class="viz-select bi-input" style="border-color:var(--accent);">
+                            <option value="corporate">Corporate Standard</option>
+                            <option value="emerald">Emerald Insight</option>
+                            <option value="cyberpunk">Cyberpunk Neon</option>
+                        </select>
+
+                        <button class="tool-btn success" onclick="previewChart()" style="width:100%; justify-content:center; margin-top:10px;"><i class="fa-solid fa-eye"></i> Preview Chart</button>
+                        <button class="tool-btn success" onclick="saveToBoard()" style="width:100%; justify-content:center; margin-top:10px; background:var(--bg-dark); color:var(--accent); border:1px solid var(--accent);"><i class="fa-solid fa-floppy-disk"></i> Save to Slide</button>
+                        <button class="tool-btn success" onclick="generateKPI()" style="width:100%; justify-content:center; margin-top:10px; background:var(--bg-dark); color:var(--text-main); border:1px solid var(--border);"><i class="fa-solid fa-hashtag"></i> Add KPI Number</button>
+                    </div>
+                    
+                    <div class="viz-main">
+                        <!-- Sub-Navigation for Builder vs Canvas -->
+                        <div class="viz-tabs" style="display:flex; border-bottom:1px solid var(--border); background:var(--bg-panel);">
+                            <button id="tab-builder" class="viz-tab-btn active" onclick="switchVizMode('builder')">1. Chart Builder</button>
+                            <button id="tab-canvas" class="viz-tab-btn" onclick="switchVizMode('canvas')">2. Presentation Slide</button>
+                        </div>
+                        
+                        <!-- MODE 1: Chart Builder Preview -->
+                        <div id="viz-builder-mode" style="flex:1; display:flex; flex-direction:column; padding:15px; overflow-y:auto;">
+                            <div id="ai-insight-banner" style="background: rgba(14, 165, 233, 0.1); border: 1px solid var(--accent); padding: 15px; border-radius: 8px; margin-bottom: 15px; color: var(--text-main); font-size: 13px;">
+                                <button onclick="generateInsights()" class="tool-btn" style="background: var(--accent); color:white; margin-bottom:10px; font-weight:bold;"><i class="fa-solid fa-brain"></i> Generate AI Insights</button>
+                                <div id="ai-insight-text">Run the analyzer to review this dataset's correlations.</div>
+                            </div>
+                            <div id="preview-chart-area" style="flex:1; background:var(--bg-panel); border:1px solid var(--border); border-radius:8px; display:flex; align-items:center; justify-content:center; color:var(--text-dim);">
+                                Build a chart on the left to preview it here.
+                            </div>
+                        </div>
+
+                        <!-- MODE 2: The 16:9 Presentation Slide (Absolute Positioning) -->
+                        <div id="viz-canvas-mode" class="hidden" style="flex:1; padding: 20px; overflow:auto; background:var(--bg-dark); display:flex; align-items:center; justify-content:center; flex-direction:column;">
+                            <div style="width: 100%; max-width: 1280px; display:flex; justify-content:space-between; margin-bottom:10px;">
+                                <span style="color:var(--text-dim); font-size:12px;"><i class="fa-solid fa-desktop"></i> Perfect 16:9 Slide Canvas — Drag headers & Resize from bottom-right corners</span>
+                                <div style="display:flex; gap:5px;">
+                                    <button class="tool-btn" onclick="exportSlide('jpg')" style="background:transparent; color:#10b981; border:1px solid #10b981; padding:2px 8px;"><i class="fa-solid fa-file-image"></i> JPG</button>
+                                    <button class="tool-btn" onclick="exportSlide('png')" style="background:transparent; color:#10b981; border:1px solid #10b981; padding:2px 8px;"><i class="fa-solid fa-file-image"></i> PNG</button>
+                                    <button class="tool-btn" onclick="exportSlide('pdf')" style="background:transparent; color:#ef4444; border:1px solid #ef4444; padding:2px 8px;"><i class="fa-solid fa-file-pdf"></i> PDF</button>
+                                    <button class="tool-btn" onclick="document.getElementById('presentation-board').innerHTML=''" style="background:transparent; color:var(--text-dim); border:1px solid var(--border); padding:2px 8px; margin-left: 10px;"><i class="fa-solid fa-trash"></i> Clear</button>
+                                </div>
+                            </div>
+                            <div class="presentation-board-wrapper">
+                                <div id="presentation-board" class="presentation-slide">
+                                    <!-- Absolute positioning widgets go here -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PILLAR 3: SMART PUBLISHER -->
+            <div id="view-report" class="view-section hidden">
+                <div class="report-toolbar ribbon">
+                    <select class="viz-select" style="width:90px; height:28px;" onchange="formatDoc('formatBlock', this.value)">
+                        <option value="P">Normal</option>
+                        <option value="H1">Title</option>
+                        <option value="H2">Header</option>
+                        <option value="H3">Subhead</option>
+                    </select>
+                    <select class="viz-select" style="width:110px; height:28px;" onchange="formatDoc('fontName', this.value)">
+                        <option value="Arial">Arial</option><option value="Georgia">Georgia</option><option value="Courier New">Courier</option>
+                    </select>
+                    <select class="viz-select" style="width:60px; height:28px;" onchange="formatDoc('fontSize', this.value)">
+                        <option value="3">12</option><option value="4">14</option><option value="5">18</option>
+                    </select>
+
+                    <div class="tool-divider"></div>
+                    <button class="ribbon-btn" onclick="formatDoc('bold')" title="Bold"><i class="fa-solid fa-bold"></i></button>
+                    <button class="ribbon-btn" onclick="formatDoc('italic')" title="Italic"><i class="fa-solid fa-italic"></i></button>
+                    <button class="ribbon-btn" onclick="formatDoc('underline')" title="Underline"><i class="fa-solid fa-underline"></i></button>
+                    <button class="ribbon-btn" onclick="formatDoc('removeFormat')" title="Clear Formatting"><i class="fa-solid fa-eraser"></i></button>
+
+                    <div class="tool-divider"></div>
+                    <input type="color" onchange="formatDoc('foreColor', this.value)" title="Text Color" style="height:24px; width:28px; border:none; background:transparent; cursor:pointer;">
+                    <input type="color" onchange="formatDoc('hiliteColor', this.value)" title="Highlight Color" value="#0ea5e9" style="height:24px; width:28px; border:none; background:transparent; cursor:pointer;">
+
+                    <div class="tool-divider"></div>
+                    <button class="ribbon-btn" onclick="formatDoc('justifyLeft')"><i class="fa-solid fa-align-left"></i></button>
+                    <button class="ribbon-btn" onclick="formatDoc('justifyCenter')"><i class="fa-solid fa-align-center"></i></button>
+                    <button class="ribbon-btn" onclick="formatDoc('insertUnorderedList')"><i class="fa-solid fa-list-ul"></i></button>
+                    
+                    <div class="tool-divider"></div>
+                    <button class="ribbon-btn" onclick="insertTable()" title="Insert Table"><i class="fa-solid fa-table"></i></button>
+                    <button class="ribbon-btn" onclick="insertMedia('image')" title="Image"><i class="fa-regular fa-image"></i></button>
+                    <button class="tool-btn small" style="margin-left: 5px; background: rgba(14, 165, 233, 0.1); color:var(--accent); border: 1px solid var(--accent);" onclick="insertSavedChart()"><i class="fa-solid fa-floppy-disk"></i> Insert Saved Chart</button>
+
+                    <div class="tool-divider"></div>
+                    <button class="tool-btn small" onclick="publisherAI('summarize')" style="background:transparent; color:var(--accent); border: 1px solid var(--border);"><i class="fa-solid fa-compress"></i> AI Summarize</button>
+                    <button class="tool-btn small" onclick="publisherAI('professional')" style="background:transparent; color:var(--accent); border: 1px solid var(--border);"><i class="fa-solid fa-user-tie"></i> AI Professionalize</button>
+
+                    <div style="flex:1; min-width: 20px;"></div>
+                    
+                    <select id="page-layout-size" class="viz-select" style="width: 140px; height: 28px; margin-right: 5px;" onchange="adjustPageLayout()">
+                        <option value="a4-portrait">Format: Word (A4)</option>
+                        <option value="ppt-slide">Format: PPT Slide</option>
+                    </select>
+                    <button class="tool-btn success" onclick="generateAIReport()"><i class="fa-solid fa-bolt"></i> Auto-Report</button>
+                    <button class="tool-btn" onclick="addBlankPage()" style="background:#475569; margin: 0 5px;"><i class="fa-solid fa-plus"></i> Page</button>
+                    <button class="tool-btn" onclick="window.print()" style="background:#ef4444; color:white;"><i class="fa-solid fa-print"></i> Export</button>
+                </div>
+                
+                <div class="document-canvas-container" id="report-pages-container">
+                    <div class="page-canvas a4-portrait" contenteditable="true" spellcheck="false" id="page-1">
+                        <h1>Strategic Business Report</h1>
+                        <p>Format text using the unified toolbar above, or click "Insert Saved Chart" to embed visualizations from the BI Studio.</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <aside class="ai-panel collapsed" id="ai-panel">
+            <button class="ai-toggle-btn" onclick="toggleAIPanel()"><i class="fa-solid fa-chevron-left" id="ai-toggle-icon"></i></button>
+            <div class="ai-header"><i class="fa-solid fa-robot"></i> System Co-Pilot</div>
+            <div id="chat-box" class="chat-box">
+                <div class="message system-message"><div class="bubble">System active. Type "Combine a sample column..." to merge new data directly into your active sheet!</div></div>
+            </div>
+            <div class="chat-input-area" id="ai-input-container">
+                <textarea id="ai-input" placeholder="E.g., 'Combine sample sales data'"></textarea>
+                <button id="send-btn" type="button"><i class="fa-solid fa-paper-plane"></i></button>
+            </div>
+        </aside>
+    </div>
+</div>
+
+<div id="data-modeler-modal" class="modal-overlay hidden">
+    <div class="modal">
+        <div class="modal-header">Power Query Modeler</div>
+        <div class="modal-body" id="modeler-body">
+            <p style="margin-bottom:10px;">Select columns to retain in the transformed table:</p>
+            <div id="modeler-cols" style="max-height:180px; overflow-y:auto; margin-bottom:15px; border:1px solid var(--border); padding:10px; background:var(--bg-dark); border-radius:4px;"></div>
+            <p style="margin-bottom:5px;">Universal Text Filter (Optional):</p>
+            <input type="text" id="modeler-filter" class="modal-input" placeholder="Keep rows containing text..." />
+        </div>
+        <div class="modal-footer">
+            <button class="tool-btn" onclick="document.getElementById('data-modeler-modal').classList.add('hidden')">Cancel</button>
+            <button class="tool-btn success" onclick="applyDataModel()">Generate Clean Table</button>
+        </div>
+    </div>
+</div>
+
+<div id="chart-zoom-modal" class="modal-overlay hidden" style="z-index: 200;">
+    <div class="modal" style="width: 90vw; height: 90vh; max-width: none; display: flex; flex-direction: column;">
+        <div class="modal-header" style="display:flex; justify-content:space-between; align-items:center;">
+            <span><i class="fa-solid fa-projector"></i> Presentation Mode</span>
+            <button class="close-btn" onclick="document.getElementById('chart-zoom-modal').classList.add('hidden')" style="font-size: 20px;"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="modal-body" style="flex: 1; padding: 0;">
+            <div id="zoomed-chart-area" style="width: 100%; height: 100%;"></div>
+        </div>
+    </div>
+</div>
+
+<script src="script.js?v=23.0"></script>
+</body>
+</html>

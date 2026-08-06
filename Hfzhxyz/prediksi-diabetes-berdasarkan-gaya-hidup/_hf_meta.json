@@ -1,0 +1,84 @@
+{
+ "captured_at": "2026-08-04T13:40:09Z",
+ "hf_metadata": {
+  "_id": "69f8928f9b9ebdde100b2583",
+  "author": "Hfzhxyz",
+  "cardData": {
+   "app_file": "app.py",
+   "colorFrom": "pink",
+   "colorTo": "green",
+   "emoji": "📚",
+   "license": "mit",
+   "pinned": false,
+   "python_version": "3.13",
+   "sdk": "gradio",
+   "sdk_version": "6.14.0",
+   "short_description": "Aplikasi prediksi risiko diabetes berbasis machine learning ",
+   "title": "Prediksi Diabetes Berdasarkan Gaya Hidup"
+  },
+  "createdAt": "2026-05-04T12:35:27.000Z",
+  "disabled": false,
+  "gated": false,
+  "host": "https://hfzhxyz-prediksi-diabetes-berdasarkan-gaya-hidup.hf.space",
+  "id": "Hfzhxyz/prediksi-diabetes-berdasarkan-gaya-hidup",
+  "lastModified": "2026-07-13T14:02:10.000Z",
+  "likes": 0,
+  "private": false,
+  "runtime": {
+   "devMode": false,
+   "domains": [
+    {
+     "domain": "hfzhxyz-prediksi-diabetes-berdasarkan-gaya-hidup.hf.space",
+     "stage": "READY"
+    }
+   ],
+   "gcTimeout": 172800,
+   "hardware": {
+    "current": "cpu-basic",
+    "requested": "cpu-basic"
+   },
+   "pySpacesVersion": "0.51.0",
+   "replicas": {
+    "current": 1,
+    "requested": 1
+   },
+   "sha": "da6666619d0fdcfc15600afc58e9cead2b51d186",
+   "stage": "RUNNING"
+  },
+  "sdk": "gradio",
+  "sha": "da6666619d0fdcfc15600afc58e9cead2b51d186",
+  "siblings": [
+   {
+    "rfilename": ".gitattributes"
+   },
+   {
+    "rfilename": "README.md"
+   },
+   {
+    "rfilename": "app.py"
+   },
+   {
+    "rfilename": "diabetes_model (2).pkl"
+   },
+   {
+    "rfilename": "requirements.txt"
+   }
+  ],
+  "subdomain": "hfzhxyz-prediksi-diabetes-berdasarkan-gaya-hidup",
+  "tags": [
+   "gradio",
+   "region:us"
+  ],
+  "usedStorage": 477819
+ },
+ "renamed_gitattributes": [
+  {
+   "original": ".gitattributes",
+   "stored_as": "_gitattributes"
+  }
+ ],
+ "repo_id": "Hfzhxyz/prediksi-diabetes-berdasarkan-gaya-hidup",
+ "repo_type": "spaces",
+ "sha": "da6666619d0fdcfc15600afc58e9cead2b51d186",
+ "web_url": "https://huggingface.co/spaces/Hfzhxyz/prediksi-diabetes-berdasarkan-gaya-hidup"
+}

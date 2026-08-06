@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#1e3a5f" />
+    <meta name="description" content="careTalk — rules-led, AI-assisted care-documentation prototype. Demonstration only. Turns spoken observations into structured draft notes for staff review." />
+    <meta name="apple-mobile-web-app-title" content="careTalk" />
+    <link rel="icon" type="image/png" href="./icons/favicon.png" />
+    <title>careTalk — Speak the care. Keep the notes.</title>
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem("don.ui.theme");
+          if (t !== "light" && t !== "dark") {
+            t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+          }
+          document.documentElement.setAttribute("data-theme", t);
+        } catch (e) {}
+      })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,550;9..144,700&family=Source+Sans+3:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Public demo (HF Spaces): always start signed out; bust SW when app version changes -->
+    <script>
+      (function () {
+        try {
+          var h = location.hostname || "";
+          var isDemo = /\.hf\.space$/i.test(h) || /huggingface\.co$/i.test(h);
+          if (!isDemo) return;
+          sessionStorage.removeItem("don.session.userId");
+          sessionStorage.removeItem("don.train.authed");
+          var appVer = "1.1.31";
+          var flag = "don.demo.appVer";
+          if (localStorage.getItem(flag) === appVer) return;
+          localStorage.setItem(flag, appVer);
+          if (!("serviceWorker" in navigator)) return;
+          navigator.serviceWorker
+            .getRegistrations()
+            .then(function (regs) {
+              return Promise.all(regs.map(function (r) { return r.unregister(); }));
+            })
+            .then(function () {
+              return caches.keys();
+            })
+            .then(function (keys) {
+              return Promise.all(keys.map(function (k) { return caches.delete(k); }));
+            })
+            .then(function () {
+              location.reload();
+            })
+            .catch(function () {});
+        } catch (e) {}
+      })();
+    </script>
+    <script type="module" crossorigin src="./assets/app-Cr21RCtM.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/theme-CuaEyjDL.js">
+    <link rel="stylesheet" crossorigin href="./assets/app-DT9iTHEE.css">
+  <link rel="manifest" href="./manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="./registerSW.js"></script></head>
+  <body>
+    <button
+      type="button"
+      class="theme-toggle"
+      data-theme-toggle
+      aria-label="Switch to dark theme"
+      title="Dark theme"
+    >
+      <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="4" />
+        <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
+      </svg>
+      <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 14.5A8.5 8.5 0 1 1 9.5 3a7 7 0 0 0 11.5 11.5z" />
+      </svg>
+    </button>
+    <div class="demo-banner" role="status">
+      Demo to collect feedback.
+    </div>
+    <!-- Sign in / register (default first screen) -->
+    <div class="gate" id="userAuth" role="dialog" aria-labelledby="userAuthTitle">
+      <div class="gate-card">
+        <div class="gate-brand">
+          <div class="avatar" aria-hidden="true">C</div>
+          <h1 id="userAuthTitle">careTalk</h1>
+          <p class="tag tag-theme">AI-assisted voice documentation · draft notes · live webhooks</p>
+          <p class="tag">Public prototype — fictional demo roles available</p>
+        </div>
+        <div class="demo-quick" id="demoQuick" aria-label="One-tap demonstration">
+          <p class="demo-quick-title">Try without registering</p>
+          <button type="button" class="primary-btn" id="btnDemoCarer">Try as support worker</button>
+          <button type="button" class="ghost-btn" id="btnDemoManager">Try as manager</button>
+          <p class="hint">
+            Opens a demo session with fictional residents only.
+            Generated wording is a <strong>draft</strong> for staff review — not an approved care record.
+          </p>
+        </div>
+        <div class="user-auth-tabs" role="tablist">
+          <button type="button" class="reports-tab active" data-user-auth-tab="signin" aria-selected="true">Sign in</button>
+          <button type="button" class="reports-tab" data-user-auth-tab="register" aria-selected="false">Register</button>
+        </div>
+        <form id="signInForm" class="auth-form">
+          <label>
+            Email
+            <input id="signInEmail" type="text" inputmode="email" autocomplete="username" required placeholder="you@example.com" />
+          </label>
+          <label>
+            Password
+            <input id="signInPassword" type="password" autocomplete="current-password" required />
+          </label>
+          <button type="submit" class="primary-btn">Sign in</button>
+        </form>
+        <form id="registerForm" class="auth-form hidden">
+          <label>
+            Full name
+            <input id="regName" type="text" autocomplete="name" required />
+          </label>
+          <label>
+            Email
+            <input id="regEmail" type="email" autocomplete="email" required />
+          </label>
+          <label>
+            Password
+            <input id="regPassword" type="password" autocomplete="new-password" required minlength="4" />
+          </label>
+          <label>
+            Role request
+            <select id="regRole">
+              <option value="carer">Support worker / carer</option>
+              <option value="admin">Manager / nurse / supervisor (admin)</option>
+            </select>
+          </label>
+          <p class="hint" id="regHint">
+            Support workers: verify your email — you are approved automatically after that.
+            Admin access: verify email, then another admin must approve you.
+            The first account on this device becomes admin immediately.
+          </p>
+          <button type="submit" class="primary-btn">Register</button>
+        </form>
+        <form id="verifyEmailForm" class="auth-form hidden">
+          <p class="hint">We opened your email app with a 6-digit code. Enter it below to verify.</p>
+          <label>
+            Email
+            <input id="verifyEmail" type="email" autocomplete="email" required readonly />
+          </label>
+          <label>
+            Verification code
+            <input id="verifyCode" type="text" inputmode="numeric" pattern="[0-9]{6}" maxlength="6" required />
+          </label>
+          <button type="submit" class="primary-btn">Verify email</button>
+          <button type="button" class="ghost-btn" id="btnResendCode">Resend code</button>
+        </form>
+        <p class="hint" id="userAuthPending" hidden></p>
+        <!-- Only shown when returning to the mode gate (already signed in) -->
+        <button type="button" class="ghost-btn" id="userAuthBack" hidden>Back</button>
+        <p class="hint">
+          <a href="./">About careTalk</a> · for agencies &amp; nursing homes
+        </p>
+        <p class="tag auth-version" id="appVersion" hidden></p>
+      </div>
+    </div>
+
+    <!-- Mode gate: shown after sign-in -->
+    <div class="gate hidden" id="modeGate" role="dialog" aria-labelledby="gateTitle">
+      <div class="gate-card">
+        <div class="gate-brand">
+          <div class="avatar" aria-hidden="true">C</div>
+          <h1 id="gateTitle">careTalk</h1>
+          <p class="tag">AI-assisted voice documentation · draft notes · live webhooks</p>
+        </div>
+        <div class="gate-session" id="gateSession">
+          <p class="hint" id="gateUserLine">Sign in required</p>
+          <button type="button" class="ghost-btn" id="btnSignOut" hidden>Sign out</button>
+          <button type="button" class="ghost-btn" id="btnOpenAuth">Sign in</button>
+        </div>
+        <p class="gate-ask">Choose how you want to use careTalk</p>
+        <div class="gate-actions">
+          <button type="button" class="gate-btn learn" id="btnLearnMode">
+            <strong>Talk to careTalk</strong>
+            <span>Carer help — speak to careTalk, voice notes &amp; agency reports</span>
+          </button>
+          <button type="button" class="gate-btn train" id="btnTrainMode">
+            <strong>Give careTalk more knowledge</strong>
+            <span>Head nurse — add knowledge (admin registration + PIN)</span>
+          </button>
+          <button type="button" class="gate-btn reports" id="btnReports">
+            <strong>Reports</strong>
+            <span>Reports, training gaps &amp; registrations</span>
+          </button>
+        </div>
+        <p class="hint" id="gateLockHint">Sign in or register — support workers verify email; admins need another admin.</p>
+      </div>
+    </div>
+
+    <!-- Reports -->
+    <div class="app hidden" id="reportsApp">
+      <header class="hero">
+        <div class="avatar" aria-hidden="true">C</div>
+        <div>
+          <h1>Reports</h1>
+          <p class="tag">Outbox, gaps, users &amp; registrations</p>
+        </div>
+        <button type="button" class="ghost-btn" id="reportsExit">Back</button>
+      </header>
+      <section class="reports-panel">
+        <div class="reports-tabs" role="tablist">
+          <button type="button" class="reports-tab active" data-reports-tab="all" aria-selected="true">All</button>
+          <button type="button" class="reports-tab" data-reports-tab="reports" aria-selected="false">Reports</button>
+          <button type="button" class="reports-tab" data-reports-tab="gaps" aria-selected="false">Gaps</button>
+          <button type="button" class="reports-tab" data-reports-tab="regs" aria-selected="false">Regs</button>
+          <button type="button" class="reports-tab" data-reports-tab="users" aria-selected="false">Users</button>
+        </div>
+        <p class="hint" id="reportsCount"></p>
+        <ul class="reports-list" id="reportsList"></ul>
+        <pre class="record reports-detail hidden" id="reportsDetail"></pre>
+      </section>
+    </div>
+
+    <!-- Train auth -->
+    <div class="gate hidden" id="trainAuth" role="dialog" aria-labelledby="authTitle">
+      <div class="gate-card">
+        <h2 id="authTitle">Head nurse sign-in</h2>
+        <p class="tag">Enter your PIN to give careTalk more knowledge</p>
+        <form id="authForm" class="auth-form">
+          <label>
+            PIN
+            <input id="trainPin" type="password" inputmode="numeric" autocomplete="current-password" required />
+          </label>
+          <p class="hint" id="authHint">Default PIN on first install: 2473 — change it after sign-in.</p>
+          <button type="submit" class="primary-btn">Unlock — Give careTalk more knowledge</button>
+          <button type="button" class="ghost-btn" id="authBack">Back</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Train workspace -->
+    <div class="app hidden" id="trainApp">
+      <header class="hero">
+        <div class="avatar" aria-hidden="true">C</div>
+        <div>
+          <h1>Train careTalk</h1>
+          <p class="tag">Head nurse knowledge studio</p>
+        </div>
+        <button type="button" class="ghost-btn" id="trainExit">Exit</button>
+      </header>
+
+      <section class="train-panel">
+        <h2>Topics careTalk is familiar with</h2>
+        <p class="hint">Everything careTalk can draw on right now, with where it came from.</p>
+        <div class="topic-toolbar">
+          <label class="topic-search">
+            <span class="sr-only">Search topics</span>
+            <input
+              id="topicSearch"
+              type="search"
+              placeholder="Search topics…"
+              autocomplete="off"
+            />
+          </label>
+          <span id="topicCount" class="hint"></span>
+        </div>
+        <ul class="knowledge-list topic-catalog" id="topicCatalog"></ul>
+
+        <h2>Train from the web</h2>
+        <p class="hint">
+          careTalk searches trusted UK care sources (NHS, GOV.UK, SCIE, NICE, Skills for Care, and more) for each topic, then fetches and trains himself.
+        </p>
+        <div class="train-form">
+          <label class="check">
+            <input id="webTrainGapsOnly" type="checkbox" />
+            Gaps only (capabilities + untrained added topics) — otherwise train all topics
+          </label>
+          <button type="button" class="primary-btn" id="webTrainBtn">Search web &amp; train careTalk</button>
+        </div>
+        <div id="webTrainProgress" class="url-preview hidden"></div>
+
+        <h2>Train from a single URL</h2>
+        <form id="urlTrainForm" class="train-form">
+          <label>
+            Knowledge URL
+            <input
+              id="kUrl"
+              type="url"
+              required
+              placeholder="https://www.gov.uk/… or a care-training page"
+            />
+          </label>
+          <p class="hint">Paste one page URL if you already know the source.</p>
+          <button type="submit" class="primary-btn" id="urlTrainBtn">Fetch &amp; train from URL</button>
+        </form>
+        <div id="urlTrainPreview" class="url-preview hidden"></div>
+
+        <h2>Add topic</h2>
+        <form id="topicForm" class="train-form">
+          <label>Topic name <input id="topicTitle" required placeholder="e.g. Medication refusal, Night-time falls" /></label>
+          <label>Keywords <input id="topicKeywords" placeholder="medicine, refuse, mar" /></label>
+          <label>Notes (optional) <textarea id="topicNotes" rows="2" placeholder="What careTalk should learn about…"></textarea></label>
+          <p class="hint">After you add a topic, use <strong>Fetch &amp; train</strong> on it (or Search web &amp; train careTalk) to pull up-to-date guidance.</p>
+          <button type="submit" class="primary-btn">Add topic</button>
+        </form>
+        <ul class="knowledge-list" id="customTopicList"></ul>
+
+        <h2>Unresolved training incidents</h2>
+        <p class="hint">When careTalk doesn’t know what to do, he logs a gap here and emails the agency.</p>
+        <ul class="knowledge-list" id="incidentList"></ul>
+
+        <h2>Agency forwarding</h2>
+        <form id="agencyForm" class="train-form">
+          <label>Agency name <input id="agencyName" placeholder="Sunrise Care Agency" /></label>
+          <label>Agency email <input id="agencyEmail" type="email" placeholder="reports@agency.example" /></label>
+          <label>Webhook URL (optional) <input id="agencyWebhook" type="url" placeholder="https://…" /></label>
+          <label class="check">
+            <input id="agencyAuto" type="checkbox" checked />
+            Auto-forward support worker reports from Talk to careTalk
+          </label>
+          <button type="submit" class="primary-btn">Save agency settings</button>
+        </form>
+
+        <h2>Change PIN</h2>
+        <form id="pinForm" class="train-form">
+          <label>New PIN <input id="newPin" type="password" inputmode="numeric" minlength="4" required /></label>
+          <button type="submit" class="primary-btn">Update PIN</button>
+        </form>
+
+        <h2>Home knowledge entries</h2>
+        <p class="hint">Custom items added in Give careTalk more knowledge (also listed in the catalogue above).</p>
+        <ul class="knowledge-list" id="knowledgeList"></ul>
+      </section>
+    </div>
+
+    <!-- Talk to careTalk / carer mode -->
+    <div class="app hidden" id="learnApp">
+      <header class="hero">
+        <div class="avatar" aria-hidden="true">C</div>
+        <div>
+          <h1>careTalk</h1>
+          <p class="tag">Talk to careTalk — carer help</p>
+        </div>
+        <label class="you">
+          Signed in as
+          <input id="carerName" value="" readonly placeholder="Sign in for your name" />
+        </label>
+        <button type="button" class="ghost-btn mode-switch" id="learnExit" title="Change mode">Modes</button>
+      </header>
+
+      <div class="chat" id="chat" aria-live="polite"></div>
+
+      <form class="dock" id="composer">
+        <button type="button" class="mic" id="micBtn" aria-label="Talk to careTalk" aria-pressed="false">🎤</button>
+        <input
+          id="input"
+          autocomplete="off"
+          placeholder='Try “careTalk, Meggie just fell…” or just “careTalk”'
+        />
+        <button type="submit" class="send" id="sendBtn">Send</button>
+      </form>
+      <p class="fine" id="statusLine">Say <strong>careTalk</strong> anytime. I’ll ask if you need help.</p>
+    </div>
+
+    <div class="toast" id="toast" role="status"></div>
+    <div class="lightbox hidden" id="lightbox" role="dialog" aria-modal="true" aria-label="Enlarged guide image">
+      <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Close">Close</button>
+      <img id="lightboxImg" alt="" />
+    </div>
+  </body>
+</html>
