@@ -7,7 +7,7 @@ dikelompokkan `<owner>/<nama>/`.
 * Shard: `s0`
 * Periode: `2026.08`
 * Space: 229
-* Byte: 639649848 (0.60 GiB)
+* Byte: 1114773807 (1.04 GiB)
 
 Arsip permanennya ada di Software Heritage. Kalau repo ini suatu saat
 dihapus, salinan SWH tetap ada dan tetap bisa diambil.
